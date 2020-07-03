@@ -1,0 +1,42 @@
+PNJ = {
+	truce_until = 1840.1.1
+	value = 200
+}
+leader = {
+	name = "Ghazanfur Khan"
+	date = 1836.1.1
+	type = land
+	personality = disciplined
+	background = natural_born_leader
+	prestige = 0.2
+}
+
+army = {
+	name = "Army of the Mir of Hunza"
+	location = 3454
+	regiment = {
+		name= "1. Burushaski Warriors"
+		type = irregular
+		home = 3454
+	}
+	regiment = {
+		name= "2. Burushaski Warriors"
+		type = irregular
+		home = 3454
+	}
+	regiment = {
+		name= "3. Burushaski Warriors"
+		type = irregular
+		home = 3454
+	}
+	regiment = {
+		name= "1. Cavalry"
+		type = cavalry
+		home = 3464
+	}
+	regiment = {
+		name= "3. Cavalry"
+		type = cavalry
+		home = 3454
+	}
+}

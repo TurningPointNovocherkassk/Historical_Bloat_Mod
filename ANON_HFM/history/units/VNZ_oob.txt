@@ -1,0 +1,91 @@
+CLM = {
+	truce_until = 1837.1.1
+	value = -50
+}
+PBC = {
+	value = -25
+}
+
+leader = {
+	name = "José Antonio Páez"
+	date = 1836.1.1
+	type = land
+	personality = au_fait
+	background = school_of_offense	
+	prestige = 0.4
+}
+	
+
+navy = {
+	name = "Armada Nacional de Venezuela"
+	location = 2264
+	ship = {
+		name= "La Juana"
+		type = frigate
+	}
+
+	ship = {
+		name= "El Centauro"
+		type = frigate
+	}
+	
+	ship = {
+		name= "Intrépido Bolívar"
+		type = manowar
+	}
+
+	ship = {
+		name = "1. Buque de transporte"
+		type = clipper_transport
+	}
+	
+}
+	
+army = {
+	name = "Ejército de Venezuela"
+	location = 2264
+	regiment = {
+		name= "1. División de Infantería"
+		type = infantry
+		home = 2264
+	}
+	regiment = {
+		name= "2. División de Infantería"
+		type = infantry
+		home = 2264
+	}
+	regiment = {
+		name= "3. División de Infantería"
+		type = infantry
+		home = 2267
+	}
+
+	regiment = {
+		name= "1. División de Húsares"
+		type = hussar
+		home = 2274
+	}
+	regiment = {
+		name= "2. División de Húsares"
+		type = hussar
+		home = 2268
+	}
+	
+	regiment = {
+		name= "1. División de Artillería"
+		type = artillery
+		home = 2268
+	}
+	regiment = {
+		name= "2. División de Artillería"
+		type = artillery
+		home = 2266
+	}
+	regiment = {
+		name= "3. División de Artillería"
+		type = artillery
+		home = 2277
+	}
+
+}
+

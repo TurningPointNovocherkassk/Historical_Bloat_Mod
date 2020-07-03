@@ -1,0 +1,3462 @@
+
+# ################################################################
+# #Pastry war 
+# country_event = {
+	# id = 1220000
+	# title = "EVTNAME1220000"
+	# desc = "EVTDESC1220000"
+	# fire_only_once = yes	
+	# major = yes
+	
+	# trigger = {
+		# OR = {
+			# tag = FRA
+			# tag = BOR
+		# }
+		# year = 1838
+		# month = 4
+		# NOT = { has_country_flag = pastry_war }
+		# NOT = { war_with = MEX }
+	# }
+
+	# option = {
+		# name = "EVT1220000OPTA"
+		# prestige = 10
+		# relation = {
+			# who = MEX
+			# value = -15
+		# } 
+		# MEX = {
+			# country_event = { id=1220001 days=60 }
+		# }
+		# set_country_flag = pastry_war
+		# ai_chance = { factor = 80 }
+	# }
+	
+	# option = {
+		# name = "EVT1220000OPTB"
+		# prestige = -10
+		# rich_strata = {
+			# militancy  = 0.01
+		# }
+		# set_country_flag = pastry_war
+		
+		# ai_chance = { factor = 20 }
+	# }
+# }
+
+# #Pastry war - Mexican Response
+# country_event = {
+	# id = 1220001
+	# title = "EVTNAME1220000"
+	# desc = "EVTDESC1220001"
+	# is_triggered_only = yes
+	# fire_only_once = yes
+	
+	# option = {
+		# name = "EVT1220001OPTA" #No
+		# prestige = 10
+		# random_country = {
+			# limit = {
+				# owns = 425
+			# }
+			# country_event = { id=1220002 days=30 } #Trigger French Blockade
+		# }
+		# relation = {
+			# who = FROM
+			# value = -15
+		# } 
+		# ai_chance = { factor = 95 }
+	# }
+	
+	# option = {
+		# name = "EVT1220001OPTB" #Yes
+		# prestige = -10
+		# random_country = {
+			# limit = {
+				# owns = 425
+			# }
+			# country_event = { id=1220003 days=15 }
+		# }
+		# relation = {
+			# who = FROM
+			# value = 20
+		# } 
+		# treasury = -125000
+		# ai_chance = { factor = 5 }
+	# }
+# }
+
+# #Pastry war - Mexico Refuses!
+# country_event = {
+	# id = 1220002
+	# title = "EVTNAME1220002"
+	# desc = "EVTDESC1220002"
+	# picture = "PDA_Refuse"
+	# fire_only_once = yes	
+	# is_triggered_only = yes
+
+	# option = {
+		# name = "EVT1220002OPTA" #Blockade
+		# prestige = 10
+		# relation = {
+			# who = MEX
+			# value = -15
+		# } 
+		# MEX = {
+		# #	country_event = { id=1220004 days=60 } #Send Blockade
+			# set_country_flag = pastry_war_blockade
+		# }
+		# ai_chance = { factor = 1 }
+	# }
+	
+	# option = {
+		# name = "EVT1220002OPTB" #NoBlockade
+		# prestige = -10
+		# rich_strata = {
+			# militancy  = 0.01
+		# }
+	# }
+# }
+
+# #Pastry war - Mexico Backs Down
+# country_event = {
+	# id = 1220003
+	# title = "EVTNAME1220003"
+	# desc = "EVTDESC1220003"
+	# fire_only_once = yes	
+	# picture = "treaty"
+	# is_triggered_only = yes
+	
+	# option = {
+		# name = "EVTOPT1220003"
+		# prestige = 10
+		# random_country = {
+			# limit = {
+				# owns = 425
+			# }
+			# relation = {
+				# who = MEX
+				# value = 100
+			# }	
+			# diplomatic_influence = {
+				# who = MEX
+				# value = 100
+			# }		
+		# }		
+		# treasury = 125000
+	# }
+# }
+
+# #Pastry war - French Blockade
+# country_event = {
+	# id = 1220004
+	# title = "EVTNAME1220004"
+	# desc = "EVTDESC1220004"
+	# picture = "PDA_Blockade"
+	# fire_only_once = yes	
+	
+	# trigger = {
+		# tag = MEX
+		# year = 1838
+		# month = 10
+		# has_country_flag = pastry_war_blockade
+	# }
+
+	# option = {
+		# name = "EVT1220004OPTA" #War
+		# prestige = 10
+		# random_country = {
+			# limit = {
+				# owns = 425
+			# }
+			# country_event = 1220009 #Notification event
+			# war = {
+				# target = MEX
+				# attacker_goal = {
+					# casus_belli = humiliate
+				# }
+				# defender_goal = {
+					# casus_belli = acquire_all_cores
+				# }
+				# defender_goal = {
+					# casus_belli = status_quo
+				# }
+				# call_ally = yes
+			# }
+		# }
+		# set_global_flag = pastry_war_true
+		# ai_chance = { factor = 95 }
+	# }
+	
+	# option = {
+		# name = "EVT1220004OPTB"
+		# prestige = -10
+		# poor_strata = { militancy = 1.5 }
+		# middle_strata = { militancy = 1.5 }
+		# rich_strata = { militancy = 1.5 }
+		# treasury = -125000
+		# random_country = {
+			# limit = {
+				# owns = 425
+			# }
+			# country_event = { id=1220003 days=15 }
+		# }
+		# ai_chance = { factor = 5 }
+	# }
+# }
+
+# #Pastry war - French Blockade
+# country_event = {
+	# id = 1220005
+	# title = "EVTNAME1220005"
+	# desc = "EVTDESC1220005"
+	# picture = "PDA_Blockade"
+	# fire_only_once = yes	
+	
+	# trigger = {
+		# tag = MEX
+		# year = 1839
+		# month = 3
+		# NOT = { has_global_flag = pastry_war_true }
+		# OR = {
+			# war_with = FRA
+			# war_with = BOR
+		# }
+		# NOT = {
+			# OR = {
+				# truce_with = FRA
+				# truce_with = BOR
+			# }	
+		# }
+	# }
+
+	# option = {
+		# name = "EVT1220005OPTA" #Sign peace, pay reparations
+		# prestige = -5
+		# treasury = -125000
+		# random_country = {
+			# limit = {
+				# owns = 425
+				# war_with = THIS
+			# }
+			# country_event = { id=1220006 days=5 }
+		# }
+		# set_global_flag = pastry_war_end_pay
+		# ai_chance = { factor = 15 }
+	# }
+
+	# option = {
+		# name = "EVT1220005OPTB" #Sign peace, agree to pay reparations in the future
+		# prestige = -2.5
+		# random_country = {
+			# limit = {
+				# owns = 425
+				# war_with = THIS
+			# }
+			# country_event = { id=1220007 days=5 }
+		# }
+		# set_global_flag = pastry_war_end_nay
+		# ai_chance = { factor = 80 }
+	# }
+	
+	# option = {
+		# name = "EVT1220005OPTC" #Keep fighting
+		# prestige = 10
+		# poor_strata = { militancy = 1.5 }
+		# middle_strata = { militancy = 1.5 }
+		# rich_strata = { militancy = 1.5 }
+		# random_country = {
+			# limit = {
+				# owns = 425
+				# war_with = THIS
+			# }
+			# country_event = { id=1220008 days=5 }
+		# }
+		# set_global_flag = pastry_war_end_nay
+		# ai_chance = { factor = 5 }
+	# }
+# }
+
+# #Pastry war - Mexico signs peace and pays reparations
+# country_event = {
+	# id = 1220006
+	# title = "EVTNAME1220006"
+	# desc = "EVTDESC1220006"
+	# fire_only_once = yes	
+	# picture = "treaty"
+	# is_triggered_only = yes
+	
+	# option = {
+		# name = "EVT1220006OPTA"
+		# prestige = 10
+		# treasury = 125000
+		# relation = {
+			# who = MEX
+			# value = 100
+		# }	
+		# diplomatic_influence = {
+			# who = MEX
+			# value = 100
+		# }
+		# war_exhaustion = -10
+		# end_war = MEX
+		# any_country = {
+			# limit = {
+				# war_with = THIS
+				# alliance_with = MEX
+			# }
+			# end_war = THIS
+		# }
+		# any_country = {
+			# limit = {
+				# war_with = MEX
+				# alliance_with = THIS
+			# }
+			# end_war = MEX
+		# }
+		# 2162 = {
+			# secede_province = FROM
+		# }
+	# }
+# }
+# #Pastry war - Mexico signs peace and promises to pay reparations in the future
+# country_event = {
+	# id = 1220007
+	# title = "EVTNAME1220007"
+	# desc = "EVTDESC1220007"
+	# fire_only_once = yes	
+	# picture = "treaty"
+	# is_triggered_only = yes
+	
+	# option = {
+		# name = "EVT1220007OPTA"
+		# prestige = 10
+		# relation = {
+			# who = MEX
+			# value = 100
+		# }	
+		# diplomatic_influence = {
+			# who = MEX
+			# value = 100
+		# }
+		# war_exhaustion = -10
+		# end_war = MEX
+		# any_country = {
+			# limit = {
+				# war_with = THIS
+				# alliance_with = MEX
+			# }
+			# end_war = THIS
+		# }
+		# any_country = {
+			# limit = {
+				# war_with = MEX
+				# alliance_with = THIS
+			# }
+			# end_war = MEX
+		# }
+		# 2162 = {
+			# secede_province = FROM
+		# }
+	# }
+# }
+# #Pastry war - Mexico not backing down
+# country_event = {
+	# id = 1220008
+	# title = "EVTNAME1220008"
+	# desc = "EVTDESC1220008"
+	# fire_only_once = yes	
+	# picture = "treaty"
+	# is_triggered_only = yes
+	
+	# option = {
+		# name = "EVT1220008OPTA"
+		# war_exhaustion = 10
+	# }
+# }
+
+#Pastry war - Notification event for the frogs
+country_event = {
+	id = 1220009
+	title = "EVTNAME1220009"
+	desc = "EVTDESC1220009"
+	fire_only_once = yes	
+	picture = "treaty"
+	is_triggered_only = yes
+	
+	immediate = {
+		2162 = {
+			secede_province = THIS
+			sub_unit = { type = frigate value = current }
+			sub_unit = { type = frigate value = current }
+			sub_unit = { type = frigate value = current }
+			sub_unit = { type = frigate value = current }
+			sub_unit = { type = frigate value = current }
+			sub_unit = { type = frigate value = current }
+			sub_unit = { type = manowar value = current }
+			sub_unit = { type = manowar value = current }
+			sub_unit = { type = manowar value = current }
+		}
+	}
+	
+	option = {
+		name = "EVT1220009OPTA"
+	}
+}
+#####################################################
+#Reinstitution of the constitution of 1824
+country_event = {
+	id = 1220010
+	title = "EVTNAME1220010"
+	desc = "EVTDESC1220010"
+	fire_only_once = yes	
+	picture = "treaty"
+	
+	trigger = {
+		tag = MEX
+		USA = { has_country_flag = hasmanifestdestiny }
+		TEX = { exists = no }
+		NOT = { has_global_flag = constitution_1824 }
+		NOT = { has_global_flag = constitution_1824_no }
+		OR = {
+			87 = { is_core = USA }
+			104 = { is_core = USA }
+			96 = { is_core = USA }
+			100 = { is_core = USA }
+			105 = { is_core = USA }
+			138 = { is_core = USA }
+			133 = { is_core = USA }
+		}
+		#has_global_flag = mexican_american_war
+		#war_with = USA
+		#NOT = { truce_with = USA }
+	}
+
+	mean_time_to_happen = {
+		days = 12
+	}
+	
+	option = {
+		name = "EVT1220001OPTA" #Yes, accept the reforms
+		war_exhaustion = -10
+		government = democracy
+		political_reform = federalism
+		political_reform = state_equal_weight
+		political_reform = wealth_weighted_voting
+		political_reform = harassment
+		political_reform = free_press
+		any_pop = { 
+			limit = {
+				type = soldiers
+			}
+			reduce_pop = 1.75
+		}
+		any_pop = {
+			scaled_militancy = {
+				ideology = liberal
+				factor = -4
+			}
+			scaled_consciousness = {
+				ideology = liberal
+				factor = -4
+			}
+			scaled_militancy = {
+				ideology = anarcho_liberal
+				factor = -4
+			}
+			scaled_consciousness = {
+				ideology = anarcho_liberal
+				factor = -4
+			}
+			scaled_militancy = {
+				ideology = communist
+				factor = -4
+			}
+			scaled_consciousness = {
+				ideology = communist
+				factor = -4
+			}
+			scaled_militancy = {
+				ideology = socialist
+				factor = -4
+			}
+			scaled_consciousness = {
+				ideology = socialist
+				factor = -4
+			}
+			
+			scaled_militancy = {
+				ideology = conservative
+				factor = 4
+			}
+			scaled_consciousness = {
+				ideology = conservative
+				factor = 4
+			}
+			scaled_militancy = {
+				ideology = reactionary
+				factor = 4
+			}
+			scaled_consciousness = {
+				ideology = reactionary
+				factor = 4
+			}
+		}
+		set_global_flag = constitution_1824
+		ai_chance = { factor = 75 }
+	}
+	option = {
+		name = "EVT1220001OPTB" #No, double-down on the conscription
+		war_exhaustion = 10
+		political_reform = unitary
+		political_reform = mandatory_service
+		#political_reform = appointed
+		#political_reform = none_voting
+		#political_reform = yes_meeting
+		#political_reform = state_press
+		#political_reform = no_trade_unions
+		#political_reform = first_past_the_post
+		#political_reform = harassment
+		any_pop = { 
+			limit = {
+				type = soldiers
+			}
+			reduce_pop = 1.75
+		}
+		any_pop = {
+			scaled_militancy = {
+				ideology = liberal
+				factor = 3
+			}
+			scaled_consciousness = {
+				ideology = liberal
+				factor = 3
+			}
+			scaled_militancy = {
+				ideology = anarcho_liberal
+				factor = 3
+			}
+			scaled_consciousness = {
+				ideology = anarcho_liberal
+				factor = 3
+			}
+			scaled_militancy = {
+				ideology = communist
+				factor = 3
+			}
+			scaled_consciousness = {
+				ideology = communist
+				factor = 3
+			}
+			scaled_militancy = {
+				ideology = socialist
+				factor = 3
+			}
+			scaled_consciousness = {
+				ideology = socialist
+				factor = 3
+			}
+			
+			scaled_militancy = {
+				ideology = conservative
+				factor = -3
+			}
+			scaled_consciousness = {
+				ideology = conservative
+				factor = -3
+			}
+			scaled_militancy = {
+				ideology = reactionary
+				factor = -3
+			}
+			scaled_consciousness = {
+				ideology = reactionary
+				factor = -3
+			}
+		}
+		set_global_flag = constitution_1824_no
+		ai_chance = { factor = 25 }
+	}
+}
+#####################################################
+#Santa Anna asked to rule Mexico again
+country_event = {
+	id = 1220011
+	title = "EVTNAME1220010"
+	desc = "EVTDESC1220010"
+	fire_only_once = yes	
+	picture = "antonio_lopez_de_santa_ana"
+	
+	trigger = {
+		tag = MEX
+		USA = { has_country_flag = hasmanifestdestiny }
+		NOT = { has_global_flag = santa_anna_dictatorship }
+		NOT = {
+			OR = {
+				owns = 87
+				owns = 104
+				owns = 96
+				owns = 100
+				owns = 105
+				owns = 138
+				owns = 133
+			}
+		}
+		has_global_flag = mexican_american_war
+		has_global_flag = constitution_1824
+		NOT = { year = 1857 }
+	}
+
+	mean_time_to_happen = {
+		months = 6
+		modifier = {
+			factor = 10
+			year = 1845
+			NOT = { year = 1850 }
+		}
+		modifier = {
+			factor = 5
+			year = 1850
+			NOT = { year = 1853 }
+		}
+		modifier = {
+			factor = 0.25
+			year = 1853
+		}
+	}
+	
+	option = {
+		name = "EVT1220011OPTA" #Yes, bring him in
+		war_exhaustion = -30
+		government = presidential_dictatorship
+		ruling_party_ideology = reactionary
+		nationalvalue = nv_autocracy
+		political_reform = totalitarianism
+		political_reform = mandatory_service
+		political_reform = party_appointed
+		political_reform = none_voting
+		political_reform = underground_parties
+		political_reform = no_meeting
+		political_reform = state_press
+		political_reform = no_trade_unions
+		political_reform = first_past_the_post
+		define_general = {
+			name = "Antonio López de Santa Anna"
+			personality = au_fait
+			background = natural_born_leader
+			prestige = 50
+		}
+		add_country_modifier = {
+			name = global_liberal_agitation
+			duration = -1
+		}
+		set_global_flag = santa_anna_dictatorship
+		any_pop = {
+			scaled_militancy = {
+				ideology = liberal
+				factor = 4
+			}
+			scaled_consciousness = {
+				ideology = liberal
+				factor = 4
+			}
+			scaled_militancy = {
+				ideology = anarcho_liberal
+				factor = 4
+			}
+			scaled_consciousness = {
+				ideology = anarcho_liberal
+				factor = 4
+			}
+			scaled_militancy = {
+				ideology = communist
+				factor = 4
+			}
+			scaled_consciousness = {
+				ideology = communist
+				factor = 4
+			}
+			scaled_militancy = {
+				ideology = socialist
+				factor = 4
+			}
+			scaled_consciousness = {
+				ideology = socialist
+				factor = 4
+			}
+			
+			scaled_militancy = {
+				ideology = conservative
+				factor = -4
+			}
+			scaled_consciousness = {
+				ideology = conservative
+				factor = -4
+			}
+			scaled_militancy = {
+				ideology = reactionary
+				factor = -4
+			}
+			scaled_consciousness = {
+				ideology = reactionary
+				factor = -4
+			}
+		}
+		ai_chance = { factor = 75 }
+	}
+	option = {
+		name = "EVT1220011OPTB" #Nonsense!
+		any_pop = {
+			limit = {
+				OR = {
+					is_primary_culture = yes
+					is_accepted_culture = yes
+				}
+				OR = {
+					type = soldiers
+					type = aristocrats
+					type = officers
+					type = bureaucrats
+					type = clergymen
+				}
+			}
+			ideology = {
+				value = conservative
+				factor = 0.75
+			}
+			ideology = {
+				value = reactionary
+				factor = 0.35
+			}
+			militancy = 9
+			consciousness = 9
+		}
+		set_global_flag = santa_anna_dictatorship_no
+		ai_chance = { factor = 25 }
+	}
+}
+#####################################################
+#Ayutla plan/revolution
+country_event = {
+	id = 1220012
+	title = "EVTNAME1220012"
+	desc = "EVTDESC1220012"
+	picture = "treaty"
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = MEX
+		NOT = { has_global_flag = ayutla_revolution }
+		OR = {
+			has_global_flag = santa_anna_dictatorship
+			ruling_party_ideology = conservative
+			ruling_party_ideology = reactionary
+		}
+		year = 1854
+		NOT = { year = 1857 }
+	}
+
+	mean_time_to_happen = {
+		months = 3
+	}
+	
+	immediate = {
+		remove_country_modifier = global_liberal_agitation
+	}
+	
+	option = {
+		name = "EVT1220012OPTA"
+		set_global_flag = ayutla_revolution
+		add_country_modifier = {
+			name = global_liberal_agitation
+			duration = 3650
+		}
+		any_owned = {
+			limit = { region = MEX_2170 }
+			add_province_modifier = { name = ayutla_sympathies duration = 3650 }
+			rich_strata = {
+				consciousness = 3
+				ideology = { value = conservative factor = 0.25 }
+				ideology = { value = reactionary factor = 0.125 }
+			}
+			middle_strata = {
+				consciousness = 1.5
+				militancy = 1.5
+				ideology = { value = liberal factor = 0.125 }
+				ideology = { value = anarcho_liberal factor = 0.06 }
+			}
+			poor_strata = {
+				consciousness = 3
+				militancy = 3
+				ideology = { value = liberal factor = 0.25 }
+				ideology = { value = anarcho_liberal factor = 0.125 }
+			}
+		}
+	}
+}
+
+#Ayutla spreads
+province_event = {
+	id = 1220013
+	title = "EVTNAME1220013"
+	desc = "EVTDESC1220013"
+	
+	allow_multiple_instances = no
+	
+	trigger = {
+		owner = {
+			tag = MEX
+			has_global_flag = ayutla_revolution
+		}
+		OR = {
+			AND = {
+				owner = {
+					OR = {
+						has_global_flag = santa_anna_dictatorship
+						has_country_modifier = global_liberal_agitation
+					}
+					NOT = { has_global_flag = santa_anna_emperor }
+				}
+				average_militancy = 2
+			}
+			AND = {
+				owner = {
+					OR = {
+						ruling_party_ideology = conservative
+						ruling_party_ideology = reactionary
+					}
+				}
+				OR = {
+					average_militancy = 3
+					average_consciousness = 3
+				}
+			}
+		}
+		NOT = { has_province_modifier = ayutla_sympathies }
+		NOT = { year = 1858 }
+	}
+	
+	mean_time_to_happen = {
+		months = 3
+		modifier = {
+			factor = 0.25
+			average_consciousness = 4
+		}
+		modifier = {
+			factor = 0.25
+			average_militancy = 4
+		}
+	}
+	
+	option = {
+		name = "EVT1220013OPTA"
+		state_scope = {
+			any_owned = { add_province_modifier = { name = ayutla_sympathies duration = 3650 } }
+			rich_strata = {
+				consciousness = 3
+				ideology = { value = conservative factor = 0.25 }
+				ideology = { value = reactionary factor = 0.125 }
+			}
+			middle_strata = {
+				consciousness = 1.5
+				militancy = 1.5
+				ideology = { value = liberal factor = 0.125 }
+				ideology = { value = anarcho_liberal factor = 0.06 }
+			}
+			poor_strata = {
+				consciousness = 3
+				militancy = 3
+				ideology = { value = liberal factor = 0.25 }
+				ideology = { value = anarcho_liberal factor = 0.125 }
+			}
+		}
+	}
+}
+
+#Liberal revolution doubles down, Santa Anna asked to fuck off.
+country_event = {
+	id = 1220014
+	title = "EVTNAME1220014"
+	desc = "EVTDESC1220014"
+	fire_only_once = yes	
+	picture = "treaty"
+	
+	trigger = {
+		tag = MEX
+		has_global_flag = ayutla_revolution
+		has_country_modifier = global_liberal_agitation
+		OR = {
+			has_global_flag = santa_anna_dictatorship
+			ruling_party_ideology = conservative
+			ruling_party_ideology = reactionary
+		}
+		year = 1855
+		NOT = { has_global_flag = ayutla_revolution_end }
+		NOT = { has_global_flag = ayutla_revolution_continues }
+	}
+
+	mean_time_to_happen = {
+		months = 8
+	}
+	
+	option = {
+		name = "EVT1220014OPTA" #ok retard, transition period
+		set_global_flag = ayutla_revolution_end
+		remove_country_modifier = global_liberal_agitation
+		any_owned = {
+			limit = { has_province_modifier = ayutla_sympathies }
+			remove_province_modifier = ayutla_sympathies
+		}
+		government = provisional_government
+		ruling_party_ideology = liberal
+		nationalvalue = nv_order
+		political_reform = none_voting
+		political_reform = harassment
+		political_reform = appointed
+		political_reform = free_press
+		political_reform = yes_meeting
+		any_pop = {
+			scaled_militancy = {
+				ideology = liberal
+				factor = -4
+			}
+			scaled_militancy = {
+				ideology = anarcho_liberal
+				factor = -4
+			}
+			scaled_militancy = {
+				ideology = communist
+				factor = -3
+			}
+			scaled_militancy = {
+				ideology = socialist
+				factor = -3
+			}
+			
+			scaled_militancy = {
+				ideology = conservative
+				factor = 4
+			}
+			scaled_militancy = {
+				ideology = reactionary
+				factor = 4
+			}
+		}
+		country_event = 1220015
+		ai_chance = { factor = 0.75 }
+	}
+	option = {
+		name = "EVT1220014OPTB" #no way fag
+		set_global_flag = ayutla_revolution_continues
+		any_pop = {
+			scaled_militancy = {
+				ideology = liberal
+				factor = 4
+			}
+			scaled_militancy = {
+				ideology = anarcho_liberal
+				factor = 4
+			}
+			scaled_militancy = {
+				ideology = communist
+				factor = 9
+			}
+			scaled_militancy = {
+				ideology = socialist
+				factor = 9
+			}
+			
+			scaled_militancy = {
+				ideology = conservative
+				factor = -3
+			}
+			scaled_militancy = {
+				ideology = reactionary
+				factor = -3
+			}
+		}
+		ai_chance = { factor = 0.25 }
+	}
+}
+#Notification event with flavor.
+country_event = {
+	id = 1220015
+	title = "EVTNAME1220015"
+	desc = "EVTDESC1220015"
+	picture = "treaty"
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVT1220015OPTA"
+	}
+}
+##################################
+#Santa Anna the Emperor
+country_event = {
+	id = 1220016
+	title = "EVTNAME1220016"
+	desc = "EVTDESC1220016"
+	picture = "antonio_lopez_de_santa_ana"
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVT1220016OPTA"
+		government = absolute_monarchy
+		ruling_party_ideology = reactionary
+		nationalvalue = nv_autocracy
+		political_reform = totalitarianism
+		political_reform = mandatory_service
+		political_reform = party_appointed
+		political_reform = none_voting
+		political_reform = underground_parties
+		political_reform = no_meeting
+		political_reform = state_press
+		political_reform = no_trade_unions
+		political_reform = first_past_the_post
+		add_country_modifier = {
+			name = global_liberal_agitation
+			duration = 3650
+		}
+		plurality = 5
+		any_pop = {
+			scaled_militancy = {
+				ideology = liberal
+				factor = 4
+			}
+			scaled_consciousness = {
+				ideology = liberal
+				factor = 4
+			}
+			scaled_militancy = {
+				ideology = anarcho_liberal
+				factor = 4
+			}
+			scaled_consciousness = {
+				ideology = anarcho_liberal
+				factor = 4
+			}
+			scaled_militancy = {
+				ideology = communist
+				factor = 9
+			}
+			scaled_consciousness = {
+				ideology = communist
+				factor = 9
+			}
+			scaled_militancy = {
+				ideology = socialist
+				factor = 9
+			}
+			scaled_consciousness = {
+				ideology = socialist
+				factor = 9
+			}
+			
+			scaled_militancy = {
+				ideology = conservative
+				factor = -9
+			}
+			scaled_consciousness = {
+				ideology = conservative
+				factor = -9
+			}
+			scaled_militancy = {
+				ideology = reactionary
+				factor = -9
+			}
+			scaled_consciousness = {
+				ideology = reactionary
+				factor = -9
+			}
+		}
+	}
+	option = {
+		name = "EVT1220016OPTB"
+		government = prussian_constitutionalism
+		ruling_party_ideology = reactionary
+		nationalvalue = nv_order
+		political_reform = unitary
+		political_reform = mandatory_service
+		political_reform = party_appointed
+		political_reform = landed_voting
+		political_reform = harassment
+		political_reform = yes_meeting
+		political_reform = state_press
+		political_reform = no_trade_unions
+		political_reform = first_past_the_post
+		add_country_modifier = {
+			name = global_liberal_agitation
+			duration = 1825
+		}
+		plurality = 2.5
+		any_pop = {
+			scaled_militancy = {
+				ideology = liberal
+				factor = 4
+			}
+			scaled_consciousness = {
+				ideology = liberal
+				factor = 4
+			}
+			scaled_militancy = {
+				ideology = anarcho_liberal
+				factor = 4
+			}
+			scaled_consciousness = {
+				ideology = anarcho_liberal
+				factor = 4
+			}
+			scaled_militancy = {
+				ideology = communist
+				factor = 4
+			}
+			scaled_consciousness = {
+				ideology = communist
+				factor = 4
+			}
+			scaled_militancy = {
+				ideology = socialist
+				factor = 4
+			}
+			scaled_consciousness = {
+				ideology = socialist
+				factor = 4
+			}
+			
+			scaled_militancy = {
+				ideology = conservative
+				factor = -9
+			}
+			scaled_consciousness = {
+				ideology = conservative
+				factor = -9
+			}
+			scaled_militancy = {
+				ideology = reactionary
+				factor = -9
+			}
+			scaled_consciousness = {
+				ideology = reactionary
+				factor = -9
+			}
+		}
+	}
+	option = {
+		name = "EVT1220016OPTC"
+		government = hms_government
+		ruling_party_ideology = reactionary
+		nationalvalue = nv_order
+		political_reform = unitary
+		political_reform = mandatory_service
+		political_reform = appointed
+		political_reform = wealth_voting
+		political_reform = gerrymandering
+		political_reform = yes_meeting
+		political_reform = state_press
+		political_reform = no_trade_unions
+		political_reform = first_past_the_post
+		add_country_modifier = {
+			name = global_liberal_agitation
+			duration = 912
+		}
+		plurality = 1.25
+		any_pop = {
+			scaled_militancy = {
+				ideology = liberal
+				factor = 2
+			}
+			scaled_consciousness = {
+				ideology = liberal
+				factor = 2
+			}
+			scaled_militancy = {
+				ideology = anarcho_liberal
+				factor = 2
+			}
+			scaled_consciousness = {
+				ideology = anarcho_liberal
+				factor = 2
+			}
+			scaled_militancy = {
+				ideology = communist
+				factor = 3
+			}
+			scaled_consciousness = {
+				ideology = communist
+				factor = 3
+			}
+			scaled_militancy = {
+				ideology = socialist
+				factor = 3
+			}
+			scaled_consciousness = {
+				ideology = socialist
+				factor = 3
+			}
+			
+			scaled_militancy = {
+				ideology = conservative
+				factor = -9
+			}
+			scaled_consciousness = {
+				ideology = conservative
+				factor = -9
+			}
+			scaled_militancy = {
+				ideology = reactionary
+				factor = -9
+			}
+			scaled_consciousness = {
+				ideology = reactionary
+				factor = -9
+			}
+		}
+	}
+}
+#####################################################
+#####################################################
+#####################################################
+#####################################################
+#####################################################
+#####################################################
+#####################################################
+# Yucatan secession
+
+country_event = {
+	id = 1220017
+	title = "EVTNAME1220017"
+	desc = "EVTDESC1220017"
+	picture = "treaty"
+	fire_only_once = yes
+
+	trigger = {
+		tag = MEX
+		YUC = { exists = no }
+		year = 1841
+		NOT = { centralization = federalism }
+		#has_country_flag = yucatan_setup
+		NOT = { has_country_flag = yucatan_independence }
+		NOT = { has_global_flag = constitution_1824 }
+	}
+	
+	mean_time_to_happen = {
+		months = 3
+	}
+	
+	immediate = {
+		any_owned = {
+			limit = {
+				is_core = YUC
+			}
+			secede_province = YUC
+		}
+		set_country_flag = yucatan_independence
+		YUC = { #Imán rallying the Mayans, sets up the Caste War.
+			any_pop = {
+				limit = {
+					culture = mayan
+					type = soldiers
+				}
+				reduce_pop = 2.4
+			}
+		}
+	}
+	
+	option = { # Send Quintana Roo to seek a diplomatic compromise
+		name = "EVT1220017OPTA"
+		YUC = { country_event = { id = 1220018 days = 240 } }
+		relation = {
+			who = YUC
+			value = 200
+		}
+		diplomatic_influence = {
+			who = YUC
+			value = 400
+		}
+		military_access = YUC
+		create_alliance = YUC
+		ai_chance = {
+			factor = 55
+			modifier = {
+				factor = 1.25
+				war = yes
+			}
+			modifier = {
+				factor = 1.5
+				num_of_revolts = 1
+			}
+		}	
+	}
+	
+	option = { # Last resort
+		name = "EVT1220017OPTB"
+		relation = {
+			who = YUC
+			value = -400
+		}
+		diplomatic_influence = {
+			who = YUC
+			value = -400
+		}
+		leave_alliance = YUC
+		end_military_access = YUC
+		YUC = {
+			any_pop = { militancy = -6 }
+			relation = { who = THIS value = -400 }
+			leave_alliance = THIS
+			end_military_access = THIS
+		}
+		war = {
+			target = YUC
+			attacker_goal = {
+				#casus_belli = civil_war
+				casus_belli = annex_core_country
+			}
+			defender_goal = {
+				casus_belli = become_independent
+			}
+		}
+		ai_chance = {
+			factor = 35
+			modifier = {
+				factor = 0.25
+				war = yes
+			}
+			modifier = {
+				factor = 0.5
+				num_of_revolts = 1
+			}
+		}	
+	}
+
+	option = { # Simply abandon
+		name = "EVT1220017OPTC"
+		prestige = -5
+		YUC = {
+			any_pop = { militancy = -6 }
+		}
+		any_pop = {
+			limit = {
+				OR = {
+					is_primary_culture = yes
+					is_accepted_culture = yes
+				}
+			}
+			militancy = 2
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
+	
+	option = { # We will support them! (Play as YUC)
+		name = "EVT1220017OPTD"
+		relation = {
+			who = YUC
+			value = 200
+		}
+		diplomatic_influence = {
+			who = YUC
+			value = 400
+		}
+		military_access = YUC
+		create_alliance = YUC
+		change_tag_no_core_switch = YUC
+		YUC = { country_event = { id = 1220018 days = 240 } }
+		ai_chance = {
+			factor = 0
+		}	
+	}
+}
+
+#Quintana Roo travels to Merida seeking a diplomatic solution, Quintana Roo's mediation
+country_event = {
+	id = 1220018
+	title = "EVTNAME1220018"
+	desc = "EVTDESC1220018"
+	picture = "treaty"
+	is_triggered_only = yes
+	
+	option = { # Accept
+		name = "EVT1220018OPTA"
+		random_country = { limit = { owns = 2172 } country_event = 1220019 }
+		ai_chance = {
+			factor = 100
+		}	
+	}
+	option = { # Refuse
+		name = "EVT1220018OPTB"
+		random_country = { limit = { owns = 2172 } country_event = 1220024 }
+		ai_chance = {
+			factor = 0
+		}	
+	}
+}
+
+#Quintana Roo travels to Merida seeking a diplomatic solution, response to MEX - YUC accepts
+country_event = {
+	id = 1220019
+	title = "EVTNAME1220019"
+	desc = "EVTDESC1220019"
+	picture = "treaty"
+	is_triggered_only = yes
+	
+	option = { # Accept their conditions, game over for YUC
+		name = "EVT1220019OPTA"
+		YUC = { country_event = { id = 1220020 days = 5 } }
+		ai_chance = {
+			factor = 0
+		}	
+	}
+	option = { # Refuse, to war with YUC it is (August 1842, MEX troops take over 3443)
+		name = "EVT1220019OPTB"
+		YUC = { country_event = { id = 1220021 days = 5 } }
+		ai_chance = {
+			factor = 100
+		}	
+	}
+}
+
+#Quintana Roo travels to Merida seeking a diplomatic solution, response to YUC - YUC annexed by MEX
+country_event = {
+	id = 1220020
+	title = "EVTNAME1220020"
+	desc = "EVTDESC1220020"
+	picture = "treaty"
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVT1220020OPTA"
+		MEX = { inherit = YUC }
+		#add economically positive modifiers to coastal YUC provinces but gives more autonomy (does not avert caste war)
+		#3443 2184 2183 3357 3358 2185
+		any_owned = {
+			limit = {
+				OR = {
+					province_id = 3443
+					province_id = 2184
+					province_id = 2183
+					province_id = 3357
+					province_id = 3358
+					province_id = 2185
+				}
+			}
+			add_province_modifier = { name = YUC_autonomy_modifier duration = 3650 }
+		}
+		change_tag_no_core_switch = MEX
+		ai_chance = {
+			factor = 100
+		}	
+	}
+}
+
+#Quintana Roo travels to Merida seeking a diplomatic solution, response to MEX - YUC Refuses, to war it is
+country_event = {
+	id = 1220021
+	title = "EVTNAME1220021"
+	desc = "EVTDESC1220021"
+	picture = "treaty"
+	is_triggered_only = yes
+	
+	option = { # War declaration
+		name = "EVT1220021OPTA"
+		random_country = { limit = { owns = 2172 } country_event = 1220022 }
+		ai_chance = {
+			factor = 100
+		}	
+	}
+}
+
+#Quintana Roo travels to Merida seeking a diplomatic solution, response to MEX - YUC Refuses, to war it is notification event for MEX
+country_event = {
+	id = 1220022
+	title = "EVTNAME1220022"
+	desc = "EVTDESC1220022"
+	picture = "treaty"
+	is_triggered_only = yes
+	
+	option = { # War declaration
+		name = "EVT1220022OPTA"
+		relation = {
+			who = YUC
+			value = -400
+		}
+		diplomatic_influence = {
+			who = YUC
+			value = -400
+		}
+		leave_alliance = YUC
+		end_military_access = YUC
+		YUC = {
+			relation = { who = THIS value = -400 }
+			leave_alliance = THIS
+			end_military_access = THIS
+			country_event = 1220023
+		}
+		war = {
+			target = YUC
+			attacker_goal = {
+				#casus_belli = civil_war
+				casus_belli = annex_core_country
+			}
+			defender_goal = {
+				casus_belli = status_quo
+			}
+		}
+		ai_chance = {
+			factor = 100
+		}	
+	}
+}
+
+#Quintana Roo travels to Merida seeking a diplomatic solution, response to MEX - YUC Refuses, to war it is notification event for YUC
+country_event = {
+	id = 1220023
+	title = "EVTNAME1220023"
+	desc = "EVTDESC1220023"
+	picture = "treaty"
+	is_triggered_only = yes
+	
+	option = { # Ok retard
+		name = "EVT1220023OPTA"
+		ai_chance = {
+			factor = 100
+		}	
+	}
+}
+
+#Quintana Roo travels to Merida seeking a diplomatic solution, YUC refuses Quintana Roo's terms
+country_event = {
+	id = 1220024
+	title = "EVTNAME1220024"
+	desc = "EVTDESC1220024"
+	picture = "treaty"
+	is_triggered_only = yes
+	
+	option = { # Ok retard
+		name = "EVT1220024OPTA"
+		relation = {
+			who = YUC
+			value = -400
+		}
+		diplomatic_influence = {
+			who = YUC
+			value = -400
+		}
+		YUC = {
+			relation = {
+				who = THIS
+				value = -400
+			}
+			diplomatic_influence = {
+				who = THIS
+				value = -400
+			}
+		}
+		ai_chance = {
+			factor = 100
+		}	
+	}
+}
+
+# MEX - YUC war: Peña y Barragán (Guy in charge of the whole attempted re-annexation of YUC) is cornered. He commits to withdraw all troops from Yucatan in exchange for his surrender. Wat do?
+country_event = {
+	id = 1220025
+	title = "EVTNAME1220025"
+	desc = "EVTDESC1220025"
+	picture = "treaty"
+	
+	trigger = {
+		tag = YUC
+		war_with = MEX
+		national_provinces_occupied = 0.15
+		any_owned_province = { country_units_in_province = MEX }
+		NOT = {
+			has_country_flag = pena_barragan_surrender
+			has_country_flag = pena_barragan_captured
+			has_country_flag = pena_barragan_executed
+		}
+	}
+	
+	option = { # Let him flee to Tampico
+		name = "EVT1220025OPTA"
+		set_country_flag = pena_barragan_surrender
+		MEX = { country_event = 1220026 }
+		ai_chance = {
+			factor = 70
+		}	
+	}
+	option = { # Capture and use him as a bargain chip (Achieve full independence this way)
+		name = "EVT1220025OPTB"
+		set_country_flag = pena_barragan_captured
+		MEX = { country_event = 1220027 }
+		ai_chance = {
+			factor = 20
+		}	
+	}
+	option = { # Execute him
+		name = "EVT1220025OPTC"
+		set_country_flag = pena_barragan_executed
+		MEX = { country_event = 1220028 }
+		ai_chance = {
+			factor = 10
+		}	
+	}
+}
+
+country_event = { # Peña y Barragán allowed to flee under the condition that he removes all MEX troops from YUC
+	id = 1220026
+	title = "EVTNAME1220026"
+	desc = "EVTDESC1220026"
+	picture = "treaty"
+	is_triggered_only = yes
+	
+	option = { # Honor his word
+		name = "EVT1220026OPTA"
+		war_exhaustion = 40
+		prestige = -10
+		end_war = YUC
+		any_country = {
+			limit = {
+				war_with = THIS
+				alliance_with = YUC
+			}
+			end_war = THIS
+		}
+		any_country = {
+			limit = {
+				war_with = YUC
+				alliance_with = THIS
+			}
+			end_war = YUC
+		}
+		YUC = { country_event = 1220029 }
+		set_global_flag = YUC_ceasefire
+		ai_chance = {
+			factor = 70
+		}	
+	}
+	option = { # lolno
+		name = "EVT1220026OPTB"
+		war_exhaustion = 60
+		badboy = 5
+		scaled_militancy = {
+			ideology = conservative
+			factor = 3
+		}
+		scaled_militancy = {
+			ideology = reactionary
+			factor = 3
+		}
+		YUC = { country_event = 1220030 }
+		ai_chance = {
+			factor = 30
+		}	
+	}
+}
+
+country_event = { # Peña y Barragán captured, used as a bargain chip. He personally blames Santa Anna and is willing to set an example if his safe passage is not negotiated
+	id = 1220027
+	title = "EVTNAME1220027"
+	desc = "EVTDESC1220027"
+	picture = "treaty"
+	is_triggered_only = yes
+	
+	option = { # Abandon all claims on YUC, we cannot allow our armies to fall into discord
+		name = "EVT1220027OPTA"
+		war_exhaustion = 20
+		prestige = -20
+		end_war = YUC
+		any_country = {
+			limit = {
+				war_with = THIS
+				alliance_with = YUC
+			}
+			end_war = THIS
+		}
+		any_country = {
+			limit = {
+				war_with = YUC
+				alliance_with = THIS
+			}
+			end_war = YUC
+		}
+		YUC = {
+			any_owned = {
+				limit = {
+					is_core = MEX
+					is_core = YUC
+					NOT = { is_core = T4B }
+				}
+				remove_core = MEX
+			}
+			country_event = 1220031
+		}
+		ai_chance = {
+			factor = 33.3
+			modifier = {
+				factor = 3
+				YUC = { ai = no }
+			}
+		}	
+	}
+	option = { # call for ceasefire, for now
+		name = "EVT1220027OPTB"
+		war_exhaustion = 40
+		prestige = -10
+		end_war = YUC
+		any_country = {
+			limit = {
+				war_with = THIS
+				alliance_with = YUC
+			}
+			end_war = THIS
+		}
+		any_country = {
+			limit = {
+				war_with = YUC
+				alliance_with = THIS
+			}
+			end_war = YUC
+		}
+		scaled_militancy = {
+			ideology = conservative
+			factor = 3
+		}
+		scaled_militancy = {
+			ideology = reactionary
+			factor = 3
+		}
+		YUC = { country_event = 1220032 }
+		set_global_flag = YUC_ceasefire
+		ai_chance = {
+			factor = 33.3
+			modifier = {
+				factor = 0
+				YUC = { ai = no }
+			}
+		}	
+	}
+	option = { # lolno
+		name = "EVT1220027OPTC"
+		war_exhaustion = 60
+		badboy = 5
+		scaled_militancy = {
+			ideology = conservative
+			factor = 4
+		}
+		scaled_militancy = {
+			ideology = reactionary
+			factor = 4
+		}
+		any_pop = { 
+			limit = {
+				type = soldiers
+			}
+			militancy = 9
+		}
+		YUC = { country_event = 1220030 }
+		ai_chance = {
+			factor = 33.3
+			modifier = {
+				factor = 3
+				YUC = { ai = yes }
+			}
+		}	
+	}
+}
+
+country_event = { # Peña y Barragán is executed by the savage army of Yucatan
+	id = 1220028
+	title = "EVTNAME1220028"
+	desc = "EVTDESC1220028"
+	picture = "treaty"
+	is_triggered_only = yes
+	
+	option = { # Ok retard, we don't care
+		name = "EVT1220028OPTA"
+		prestige = -10
+		scaled_militancy = {
+			ideology = conservative
+			factor = 4
+		}
+		scaled_militancy = {
+			ideology = reactionary
+			factor = 4
+		}
+		YUC = { country_event = 1220033 }
+		ai_chance = {
+			factor = 33.3
+		}	
+	}
+	option = { # call for ceasefire, for now
+		name = "EVT1220028OPTB"
+		war_exhaustion = 40
+		prestige = -10
+		end_war = YUC
+		any_country = {
+			limit = {
+				war_with = THIS
+				alliance_with = YUC
+			}
+			end_war = THIS
+		}
+		any_country = {
+			limit = {
+				war_with = YUC
+				alliance_with = THIS
+			}
+			end_war = YUC
+		}
+		scaled_militancy = {
+			ideology = conservative
+			factor = 3
+		}
+		scaled_militancy = {
+			ideology = reactionary
+			factor = 3
+		}
+		YUC = { country_event = 1220032 }
+		set_global_flag = YUC_ceasefire
+		ai_chance = {
+			factor = 33.3
+		}	
+	}
+	option = { # Abandon all claims on YUC, we're better off without these savages
+		name = "EVT1220028OPTC"
+		war_exhaustion = 20
+		prestige = -20
+		end_war = YUC
+		any_country = {
+			limit = {
+				war_with = THIS
+				alliance_with = YUC
+			}
+			end_war = THIS
+		}
+		any_country = {
+			limit = {
+				war_with = YUC
+				alliance_with = THIS
+			}
+			end_war = YUC
+		}
+		YUC = {
+			any_owned = {
+				limit = {
+					is_core = MEX
+					is_core = YUC
+					NOT = { is_core = T4B }
+				}
+				remove_core = MEX
+			}
+			country_event = 1220031
+		}
+		ai_chance = {
+			factor = 33.3
+		}	
+	}
+}
+
+# Notification event, MEX honors their word and ends the war after the Barragan guy escapes
+country_event = {
+	id = 1220029
+	title = "EVTNAME1220029"
+	desc = "EVTDESC1220029"
+	picture = "treaty"
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVT1220029OPTA"
+		relation = { who = MEX value = 200 }
+		MEX = { relation = { who = THIS value = 200 } }
+		ai_chance = {
+			factor = 100
+		}	
+	}
+}
+# Notification event, MEX refuses
+country_event = {
+	id = 1220030
+	title = "EVTNAME1220030"
+	desc = "EVTDESC1220030"
+	picture = "treaty"
+	is_triggered_only = yes
+	
+	option = { #
+		name = "EVT1220030OPTA"
+		ai_chance = {
+			factor = 100
+		}	
+	}
+}
+# Notification event, MEX withdraws all their claims on YUC
+country_event = {
+	id = 1220031
+	title = "EVTNAME1220031"
+	desc = "EVTDESC1220031"
+	picture = "treaty"
+	is_triggered_only = yes
+	
+	option = { #
+		name = "EVT1220031OPTA"
+		ai_chance = {
+			factor = 100
+		}	
+	}
+}
+# Notification event, MEX calls for ceasefire.
+country_event = {
+	id = 1220032
+	title = "EVTNAME1220032"
+	desc = "EVTDESC1220032"
+	picture = "treaty"
+	is_triggered_only = yes
+	
+	option = { #
+		name = "EVT1220032OPTA"
+		ai_chance = {
+			factor = 100
+		}	
+	}
+}
+
+# Santa Anna's YUC blockade
+country_event = {
+	id = 1220033
+	title = "EVTNAME1220033"
+	desc = "EVTDESC1220033"
+	picture = "treaty"
+	is_triggered_only = yes
+	
+	option = { # Enact blockade
+		name = "EVT1220033OPTA"
+		treasury = -2500
+		YUC = {
+			add_country_modifier = {
+				name = smol_badboy
+				duration = 913
+			}
+			relation = {
+				who = THIS
+				value = -150
+			}
+			set_country_flag = YUC_has_blockade
+			country_event = 1220111	
+		}
+		ai_chance = {
+			factor = 75
+		}	
+	}
+	option = { # Enact harsher blockade
+		name = "EVT1220033OPTB"
+		treasury = -5000
+		YUC = {
+			add_country_modifier = {
+				name = smol_badboy
+				duration = 1825
+			}
+			relation = {
+				who = THIS
+				value = -150
+			} 
+			set_country_flag = YUC_has_blockade
+			country_event = 1220111
+		}
+		ai_chance = {
+			factor = 20
+			modifier = {
+				factor = 5
+				money = 5100
+			}
+		}	
+	}
+	option = { # We don't have time for this
+		name = "EVT1220033OPTC"
+		ai_chance = {
+			factor = 5
+		}	
+	}
+}
+# Notification event, MEX enacts blockade
+country_event = {
+	id = 1220111
+	title = "EVTNAME1220111"
+	desc = "EVTDESC1220111"
+	picture = "treaty"
+	is_triggered_only = yes
+	
+	option = { #
+		name = "EVT1220111OPTA"
+		ai_chance = {
+			factor = 1
+		}	
+	}
+}
+
+# Barbachano (YUC politician) seeks a compromise: make YUC vassal or remain sovereign
+country_event = {
+	id = 1220034
+	title = "EVTNAME1220034"
+	desc = "EVTDESC1220034"
+	picture = "treaty"
+	is_triggered_only = yes
+	
+	option = { #Propose becoming an autonomous territory within Mexico
+		name = "EVT1220034OPTA"
+		MEX = { country_event = 1220035 }
+		ai_chance = {
+			factor = 75
+		}	
+	}
+	option = { #Remain sovereign
+		name = "EVT1220034OPTC"
+		ai_chance = {
+			factor = 25
+		}	
+	}
+}
+# YUC asks MEX to become an autonomous territory within Mexico
+country_event = {
+	id = 1220035
+	title = "EVTNAME1220035"
+	desc = "EVTDESC1220035"
+	picture = "treaty"
+	is_triggered_only = yes
+	
+	option = { #Yes, makes all conservatives angry.
+		name = "EVT1220035OPTA"
+		set_global_flag = YUC_autonomous
+		YUC = {
+			country_event = 1220036
+		}
+		create_vassal = YUC
+		create_alliance = YUC
+		relation = {
+			who = YUC
+			value = 400
+		} 
+		diplomatic_influence = {
+			who = YUC
+			value = 400
+		}
+		any_pop = {
+			scaled_militancy = {
+				ideology = conservative
+				factor = 4
+			}
+			scaled_militancy = {
+				ideology = reactionary
+				factor = 4
+			}
+		}
+		ai_chance = {
+			factor = 85
+		}	
+	}
+	option = { #No
+		name = "EVT1220035OPTB"
+		YUC = { country_event = 1220037 }
+		ai_chance = {
+			factor = 15
+		}	
+	}
+}
+# Notification event, MEX accepts; lifts blockade
+country_event = {
+	id = 1220036
+	title = "EVTNAME1220036"
+	desc = "EVTDESC1220036"
+	picture = "treaty"
+	is_triggered_only = yes
+	
+	option = { #
+		name = "EVT1220036OPTA"
+		remove_country_modifier = smol_badboy
+		relation = {
+			who = MEX
+			value = 400
+		} 
+		ai_chance = {
+			factor = 1
+		}	
+	}
+}
+# Notification event, MEX refuses
+country_event = {
+	id = 1220037
+	title = "EVTNAME1220037"
+	desc = "EVTDESC1220037"
+	picture = "treaty"
+	is_triggered_only = yes
+	
+	option = { #
+		name = "EVT1220037OPTA"
+		ai_chance = {
+			factor = 1
+		}	
+	}
+}
+
+# MEX_YUC_annexation_1846, MEX conservatives revoke YUC's autonomy
+country_event = {
+	id = 1220038
+	title = "EVTNAME1220038"
+	desc = "EVTDESC1220038"
+	picture = "treaty"
+	is_triggered_only = yes
+	
+	option = { #
+		name = "EVT1220038OPTA"
+		YUC = { country_event = 1220039 }
+		ai_chance = {
+			factor = 95
+		}	
+	}
+	option = { # Leave them that way
+		name = "EVT1220038OPTB"
+		ai_chance = {
+			factor = 5
+		}	
+	}
+}
+# Notification event for YUC. MEX revokes YUC's autonomy
+country_event = {
+	id = 1220039
+	title = "EVTNAME1220039"
+	desc = "EVTDESC1220039"
+	picture = "treaty"
+	is_triggered_only = yes
+	
+	option = { # Accept fate
+		name = "EVT1220039OPTA"
+		MEX = {
+			inherit = YUC
+			country_event = 1220040
+		}
+		ai_chance = {
+			factor = 15
+			# modifier = {
+				# factor = 100
+				# MEX = { ai = no }
+			# }
+		}	
+	}
+	option = { # Declare independence again
+		name = "EVT1220039OPTB"
+		set_global_flag = 2nd_YUC_republic
+		MEX = {
+			country_event = 1220041
+			release_vassal = YUC
+		}
+		relation = {
+			who = MEX
+			value = -400
+		}			
+		ai_chance = {
+			factor = 85
+		}	
+	}
+}
+# Notification event, YUC annexed
+country_event = {
+	id = 1220040
+	title = "EVTNAME1220040"
+	desc = "EVTDESC1220040"
+	picture = "treaty"
+	is_triggered_only = yes
+	
+	option = { #
+		name = "EVT1220040OPTA"
+		YUC = {
+			all_core = {
+				rich_strata = {
+					consciousness = 2
+					militancy = 2
+					ideology = { value = liberal factor = 0.25 }
+					ideology = { value = anarcho_liberal factor = 0.125 }
+				}
+				middle_strata = {
+					consciousness = 3
+					militancy = 3
+					ideology = { value = liberal factor = 0.125 }
+					ideology = { value = anarcho_liberal factor = 0.06 }
+				}
+				poor_strata = {
+					consciousness = 4
+					militancy = 4
+					ideology = { value = liberal factor = 0.25 }
+					ideology = { value = anarcho_liberal factor = 0.125 }
+				}
+			}
+		}
+		ai_chance = {
+			factor = 100
+		}	
+	}
+}
+# Notification event, YUC declares independence again
+country_event = {
+	id = 1220041
+	title = "EVTNAME1220041"
+	desc = "EVTDESC1220041"
+	picture = "treaty"
+	is_triggered_only = yes
+	
+	option = { #
+		name = "EVT1220041OPTA"
+		diplomatic_influence = {
+			who = YUC
+			value = -400
+		}	
+		relation = {
+			who = YUC
+			value = -400
+		}	
+		ai_chance = {
+			factor = 100
+		}	
+	}
+}
+
+# Diplomat from Texas/Yucatan (TEX-YUC alliance starting 1842), also FRA/BOR alliance/sphere with TEX-YUC
+# April 23 1843 Peña y Barragán is cornered and forced to flee for Tampico. Texas independence-like event, truce ensues XXXXXX
+# Santa Anna refuses to recognize YUC's independence, enacting a blockade to YUC (crippling economic malus) xxxxxxxxxxxxxxxx
+#, Barbachano (YUC politician) seeks a compromise: make YUC vassal or remain sovereign XXXXXXXXXX
+# December 5 1843 YUC is reincorporated to MEX as a vassal, makes MEX conservatives extremely angry since YUC citizens are free to elect their own mandataries XXXXXXXXX
+# Jan 1 1846 YUC declares independence once again after YUC's exceptionality is suppressed by the central government (annex vs let free for now) XXXXXXXXXXXXX
+# When the constitution of 1824 is reinstated, YUC is asked to become part of mexico once more. Internal strife in YUC makes them unable to reach consensus since USA is about to invade MEX (represented with unrest in Merida and Campeche) xxxxxxxx
+# During the MEX - USA war, USA enacts blockade on YUC (bad_badboy) which makes YUC to send a diplomatic delegation to USA in order to lift the blockade and going as far as to suggest YUC's annexation by the USA xxxxxxxxx
+# Begin caste war 1848
+
+# !!!!!!!!!!!!!!WARNING: 1220111 in use!!!!!!!!!!!!!!!!!
+
+#constitution_1824
+
+# When the constitution of 1824 is reinstated, YUC is asked to become part of Mexico once more. Internal strife in YUC makes them unable to reach consensus since USA is about to invade MEX
+# 2183 Merida, 2184 Campeche
+country_event = {
+	id = 1220042
+	title = "EVTNAME1220042"
+	desc = "EVTDESC1220042"
+	picture = "treaty"
+	
+	trigger = {
+		tag = YUC
+		has_global_flag = constitution_1824
+		has_global_flag = 2nd_YUC_republic
+		is_vassal = no
+		NOT = {
+			has_country_flag = 2nd_YUC_annex
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 12
+	}
+	
+	option = {
+		name = "EVT1220042OPTA"
+		any_owned = {
+			limit = {
+				OR = {
+					province_id = 2183
+					province_id = 2184
+				}
+			}
+			any_pop = {
+				militancy = 3
+				consciousness = 3
+			}
+		}
+		ai_chance = {
+			factor = 55
+			modifier = {
+				factor = 1.5
+				TEX = {
+					OR = {
+						exists = no
+						any_core = { owned_by = USA }
+					}
+				}
+			}
+			modifier = {
+				factor = 100
+				OR = {
+					has_global_flag = mexican_american_war
+					MEX = { war_with = USA }
+				}
+			}
+		}	
+	}
+	option = {
+		name = "EVT1220042OPTB"
+		any_owned = {
+			limit = {
+				OR = {
+					province_id = 2183
+					province_id = 2184
+				}
+			}
+			any_pop = {
+				militancy = 5
+				consciousness = 5
+			}
+		}
+		MEX = { country_event = 1220043 }
+		ai_chance = {
+			factor = 45
+		}	
+	}
+}
+# Notification event for MEX, YUC seeks to reunite with the motherland
+country_event = {
+	id = 1220043
+	title = "EVTNAME1220043"
+	desc = "EVTDESC1220043"
+	picture = "treaty"
+	is_triggered_only = yes
+	
+	option = { # Accept
+		name = "EVT1220043OPTA"
+		inherit = YUC
+		ai_chance = {
+			factor = 100
+		}	
+	}
+	option = { # Nope
+		name = "EVT1220043OPTB"
+		diplomatic_influence = {
+			who = YUC
+			value = -400
+		}	
+		relation = {
+			who = YUC
+			value = -400
+		}
+		YUC = {
+			all_core = { remove_core = MEX }
+			country_event = 1220044
+		}
+		ai_chance = {
+			factor = 0
+		}	
+	}
+}
+# Notification event for MEX, YUC seeks to reunite with the motherland
+country_event = {
+	id = 1220044
+	title = "EVTNAME1220044"
+	desc = "EVTDESC1220044"
+	picture = "treaty"
+	is_triggered_only = yes
+	
+	option = { # fugg :--DD
+		name = "EVT1220044OPTA"
+		prestige = -5
+		ai_chance = {
+			factor = 100
+		}	
+	}
+}
+# YUC - USA enacts a blockade because murrika fuck yeah
+country_event = {
+	id = 1220045
+	title = "EVTNAME1220045"
+	desc = "EVTDESC1220045"
+	picture = "PDA_blockade"
+	is_triggered_only = yes
+	
+	option = { # Request the uplifting of all blockades on Yucatan
+		name = "EVT1220045OPTA"
+		USA = { country_event = { id = 1220046 days = 15 } }
+		ai_chance = {
+			factor = 75
+		}	
+	}
+	option = { # Request Annexation
+		name = "EVT1220045OPTB"
+		prestige = -5
+		USA = { country_event = { id = 1220049 days = 15 } }
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 100
+				USA = {
+					ai = no
+				}
+			}
+		}	
+	}
+	option = { # Do nothing
+		name = "EVT1220044OPTA"
+		prestige = -5
+		ai_chance = {
+			factor = 0
+		}	
+	}
+}
+# USA enacts a blockade because murrika fuck yeah, YUC Complains
+country_event = {
+	id = 1220046
+	title = "EVTNAME1220046"
+	desc = "EVTDESC1220046"
+	picture = "treaty"
+	is_triggered_only = yes
+	
+	option = { # lift blockade
+		name = "EVT1220046OPTA"
+		diplomatic_influence = {
+			who = YUC
+			value = 100
+		}	
+		relation = {
+			who = YUC
+			value = 100
+		}
+		YUC = { country_event = { id = 1220047 days = 15 } }
+		ai_chance = {
+			factor = 60
+		}	
+	}
+	option = { # lolno
+		name = "EVT1220046OPTB"
+		diplomatic_influence = {
+			who = YUC
+			value = -400
+		}	
+		relation = {
+			who = YUC
+			value = -400
+		}	
+		YUC = { country_event = { id = 1220048 days = 15 } }
+		ai_chance = {
+			factor = 40
+		}	
+	}
+}
+# USA enacts a blockade because murrika fuck yeah, YUC Complains, USA lifts blockade
+country_event = {
+	id = 1220047
+	title = "EVTNAME1220047"
+	desc = "EVTDESC1220047"
+	picture = "treaty"
+	is_triggered_only = yes
+	
+	option = { #
+		name = "EVT1220047OPTA"
+		remove_country_modifier = smol_badboy
+		relation = {
+			who = USA
+			value = 150
+		}
+		ai_chance = {
+			factor = 100
+		}	
+	}
+}
+# USA enacts a blockade because murrika fuck yeah, YUC Complains, USA won't lift blockade
+country_event = {
+	id = 1220048
+	title = "EVTNAME1220048"
+	desc = "EVTDESC1220048"
+	picture = "treaty"
+	is_triggered_only = yes
+	
+	option = { #
+		name = "EVT1220048OPTA"
+		relation = {
+			who = USA
+			value = -400
+		}
+		ai_chance = {
+			factor = 100
+		}	
+	}
+}
+# USA enacts a blockade because murrika fuck yeah, YUC asks for annexation because why not
+country_event = {
+	id = 1220049
+	title = "EVTNAME1220049"
+	desc = "EVTDESC1220049"
+	picture = "treaty"
+	is_triggered_only = yes
+	
+	option = { # no
+		name = "EVT1220049OPTA"
+		YUC = { country_event = 1220050 }
+		ai_chance = {
+			factor = 85
+		}	
+	}
+	option = { # ok retard
+		name = "EVT1220049OPTA"
+		inherit = YUC
+		MEX = { country_event = 1220051 }
+		YUC = { all_core = { add_core = THIS } }
+		ai_chance = {
+			factor = 15 # James Knox Polk likes this, though
+			modifier = {
+				factor = 1.66
+				USA = {
+					war_with = MEX
+				}
+			}
+			modifier = {
+				factor = 1.5
+				TEX = {
+					exists = no
+				}
+			}
+			modifier = {
+				factor = 1.5
+				USA = {
+					OR = {
+						ruling_party_ideology = conservative
+						ruling_party_ideology = reactionary
+					}
+				}
+			}
+			modifier = {
+				factor = 1.5
+				USA = {
+					OR = {
+						upper_house = {
+							ideology = conservative
+							value = 0.5
+						}
+						upper_house = {
+							ideology = reactionary
+							value = 0.25
+						}
+					}
+				}
+			}
+		}	
+	}
+}
+# USA enacts a blockade because murrika fuck yeah, YUC asks for annexation because why not, USA says no
+country_event = {
+	id = 1220050
+	title = "EVTNAME1220050"
+	desc = "EVTDESC1220050"
+	picture = "treaty"
+	is_triggered_only = yes
+	
+	option = { #
+		name = "EVT1220050OPTA"
+		relation = {
+			who = USA
+			value = -400
+		}
+		USA = {
+			diplomatic_influence = {
+				who = YUC
+				value = -400
+			}	
+		}
+		ai_chance = {
+			factor = 100
+		}	
+	}
+}
+# USA enacts a blockade because murrika fuck yeah, YUC asks for annexation because why not, notification for MEX
+country_event = {
+	id = 1220051
+	title = "EVTNAME1220051"
+	desc = "EVTDESC1220051"
+	picture = "treaty"
+	news = yes
+	news_desc_long = "EVTDESC1220051_NEWS_LONG"
+	news_desc_medium = "EVTDESC1220051_NEWS_MEDIUM"
+	news_desc_short = "EVTDESC1220051_NEWS_SHORT"
+	is_triggered_only = yes
+	
+	option = { #
+		name = "EVT1220051OPTA"
+		relation = {
+			who = USA
+			value = -400
+		}
+		USA = {
+			diplomatic_influence = {
+				who = MEX
+				value = -400
+			}	
+		}
+		ai_chance = {
+			factor = 100
+		}	
+	}
+}
+# do a big news thinger for the annexation of yucatan xxx
+# do a cleanup event to remove smol_badboy after the mexican war ends xxxxxxxxxx
+country_event = {
+	id = 1220052
+	title = "EVTNAME1220052"
+	desc = "EVTDESC1220052"
+	picture = "treaty"
+	fire_only_once = yes
+	
+	trigger = {
+		tag = YUC
+		OR = {
+			MEX = {
+				truce_with = USA
+			}
+			USA = {
+				truce_with = MEX
+			}
+		}
+		NOT = { war_with = USA }
+		has_country_modifier = smol_badboy
+	}
+	
+	option = {
+		name = "EVT1220052OPTA"
+		remove_country_modifier = smol_badboy
+		ai_chance = {
+			factor = 100
+		}	
+	}
+}
+# do a caste war for USA as well lmao add it to the events.
+country_event = {
+	id = 1220053
+	title = "EVTNAME1220053"
+	desc = "EVTDESC1220053"
+	picture = "caste_war"
+	fire_only_once = yes
+	
+	trigger = {
+		OR = {
+			owns = 2183 #Campeche
+			owns = 2184 #Merida
+			owns = 3358 #Valladolid
+			owns = 2185 #Bacalar/Chan Santa Cruz
+			owns = 3360 #Tihosuco
+			owns = 3635 #Tepich
+			#owns = 3359 #Chichimila
+		}
+		year = 1848
+		NOT = { has_global_flag = caste_war_begin }
+	}
+	
+	mean_time_to_happen = {
+		months = 6
+	}
+	
+	immediate = {
+		YUC = { all_core = { add_core = CSC } }
+		any_owned = {
+			limit = {
+				OR = {
+					province_id = 2185
+					province_id = 3360
+					province_id = 3635
+					#province_id = 3359
+				}
+			}
+			secede_province = CSC
+		}
+	}
+	
+	option = {
+		name = "EVT1220053OPTA"
+		set_global_flag = caste_war_begin
+		country_event = 1220054 #Notification event
+		CSC = {
+			any_pop = {	limit = { type = soldiers }	reduce_pop = 3 }
+			any_pop = { limit = { type = artisans } pop_type = soldiers }
+			any_pop = { limit = { NOT = { culture = mayan } } move_pop = 3346 }
+			3346 = {
+				change_province_name = "Corozal"
+				owner = { country_event = 1220064 } #Notification event for ENG
+			}
+			define_general = {
+				name = "Manuel Antonio Ay"
+				personality = keen
+				background = natural_born_leader
+				prestige = 5
+			}
+			define_general = {
+				name = "Cecilio Chi"
+				personality = efficient
+				background = expert_raider
+				prestige = 5
+			}
+			define_general = {
+				name = "Jacinto Pat"
+				personality = bold
+				background = nationalist
+				prestige = 5
+			}
+		}
+		any_owned = {
+			limit = {
+				OR = {
+					region = MEX_2183
+					region = MEX_2184
+					region = MEX_3358
+					is_core = CSC
+				}
+			}
+			any_pop = {
+				limit = {
+					culture = mayan
+				}
+				militancy = 5
+				consciousness = 5
+			}
+			add_province_modifier = {
+				name = nationalist_agitation
+				duration = 1095
+			}
+		}
+		war = {
+			target = CSC
+			attacker_goal = {
+				#casus_belli = civil_war
+				casus_belli = annex_core_country
+			}
+			defender_goal = {
+				#casus_belli = civil_war
+				casus_belli = annex_core_country
+			}
+			call_ally = yes
+		}
+		ai_chance = {
+			factor = 100
+		}	
+	}
+}
+country_event = {
+	id = 1220054
+	title = "EVTNAME1220054"
+	desc = "EVTDESC1220054"
+	picture = "caste_war"
+	is_triggered_only = yes
+	
+	option = { # Damn!
+		name = "EVT1220054OPTA"
+		ai_chance = {
+			factor = 100
+		}	
+	}
+	option = { # We will support them!
+		name = "EVT1220054OPTB"
+		change_tag_no_core_switch = CSC
+		ai_chance = {
+			factor = 0
+		}	
+	}
+}
+# when YUC has X number of provinces occupied by CSC, an event to ask for MEX's help will fire: YUC-MEX alliance war with CSC ends and 3360 Tihosuco 3635 Tepich and 3359 Chichimila seceded to YUC. August 1848 decreed reincorporation to MEX
+# in 1893, spencer-mariscal treaty between MEX and ENG which makes ENG renounce to their CSC sphereling so MEX is free to attack.
+
+country_event = {
+	id = 1220055
+	title = "EVTNAME1220055"
+	desc = "EVTDESC1220055"
+	picture = "caste_war"
+	fire_only_once = yes
+	
+	trigger = {
+		tag = YUC
+		war_with = CSC
+		national_provinces_occupied = 0.25
+		any_owned_province = { country_units_in_province = CSC }
+		NOT = {
+			has_country_flag = YUC_MEX_question
+		}
+	}
+	
+	mean_time_to_happen = { days = 15 }
+	
+	immediate = {
+		set_country_flag = YUC_MEX_question
+		2185 = { remove_core = YUC remove_core = MEX }
+	}
+	
+	option = { # Ask MEX for help
+		name = "EVT1220055OPTA"
+		set_global_flag = YUC_MEX_pls_help
+		MEX = { country_event = { id = 1220056 days = 5 } }
+		ai_chance = {
+			factor = 100
+		}	
+	}
+	option = { # No, this is OUR war!
+		name = "EVT1220055OPTB"
+		prestige = 5
+		iron = 10
+		wool = 10
+		timber = 25
+		small_arms = 10
+		ammunition = 25
+		leadership = 20
+		ai_chance = {
+			factor = 0
+		}	
+	}
+}
+country_event = {
+	id = 1220056
+	title = "EVTNAME1220056"
+	desc = "EVTDESC1220056"
+	picture = "caste_war"
+	is_triggered_only = yes
+	
+	option = { # We will support them!
+		name = "EVT1220056OPTA"
+		FROM = { country_event = { id = 1220057 days = 5 } }
+		CSC = { country_event = { id = 1220059 days = 5 } }
+		ai_chance = {
+			factor = 100
+		}	
+	}
+	option = { # No, you're on your own
+		name = "EVT1220056OPTB"
+		FROM = {
+			country_event = { id = 1220058 days = 5 }
+			relation = { who = THIS value = -400 }
+		}
+		ai_chance = {
+			factor = 0
+		}	
+	}
+}
+country_event = {
+	id = 1220057
+	title = "EVTNAME1220057"
+	desc = "EVTDESC1220057"
+	picture = "caste_war"
+	is_triggered_only = yes
+	
+	option = { # Great!
+		name = "EVT1220057OPTA"
+		FROM = {
+			create_alliance = THIS
+			create_vassal = THIS
+			any_owned = {
+				limit = { is_core = YUC }
+				secede_province = YUC
+			}
+			FROM = { country_event = { id = 1220060 days = 1 } }
+		}
+		capital = 2183
+		ai_chance = {
+			factor = 100
+		}	
+	}
+}
+country_event = {
+	id = 1220058
+	title = "EVTNAME1220058"
+	desc = "EVTDESC1220058"
+	picture = "caste_war"
+	is_triggered_only = yes
+	
+	option = { # Damn!
+		name = "EVT1220058OPTA"
+		relation = { who = FROM value = -400 }
+		ai_chance = {
+			factor = 100
+		}	
+	}
+}
+country_event = {
+	id = 1220059
+	title = "EVTNAME1220059"
+	desc = "EVTDESC1220059"
+	picture = "caste_war"
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVT1220059OPTA"
+		ai_chance = {
+			factor = 100
+		}	
+	}
+}
+country_event = {
+	id = 1220060
+	title = "EVTNAME1220060"
+	desc = "EVTDESC1220060"
+	picture = "caste_war"
+	is_triggered_only = yes
+	
+	option = { # To Arms!
+		name = "EVT1220060OPTA"
+		war = {
+			target = CSC
+			attacker_goal = {
+				casus_belli = acquire_core_state
+				state_province_id = 3635
+			}
+			defender_goal = {
+				casus_belli = status_quo
+			}
+			call_ally = yes
+		}
+		ai_chance = {
+			factor = 100
+		}	
+	}
+}
+country_event = {
+	id = 1220061
+	title = "EVTNAME1220061"
+	desc = "EVTDESC1220061"
+	picture = "caste_war"
+	fire_only_once = yes
+	
+	trigger = {
+		tag = YUC
+		has_global_flag = YUC_MEX_pls_help
+		MEX = {
+			owns = 3360
+			owns = 3635
+		}
+		NOT = {
+			has_country_flag = YUC_MEX_province_shuffle
+		}
+	}
+	
+	option = {
+		name = "EVT1220061OPTA"
+		MEX = {
+			any_owned = {
+				limit = {
+					OR = {
+						province_id = 3360
+						province_id = 3635
+					}
+				}
+				secede_province = YUC
+			}
+			2185 = {
+				secede_province = CSC
+				add_core = MEX
+				add_core = YUC
+			}
+		}
+		ai_chance = {
+			factor = 100
+		}	
+	}
+}
+country_event = {
+	id = 1220062
+	title = "EVTNAME1220062"
+	desc = "EVTDESC1220062"
+	picture = "caste_war"
+	is_triggered_only = yes
+	
+	option = { # yes
+		name = "EVT1220062OPTA"
+		MEX = {
+			country_event = 1220063
+			inherit = YUC
+		}
+		ai_chance = {
+			factor = 100
+		}	
+	}
+	option = { # no
+		name = "EVT1220062OPTA"
+		prestige = 5
+		ai_chance = {
+			factor = 0
+		}	
+	}
+}
+country_event = {
+	id = 1220063
+	title = "EVTNAME1220063"
+	desc = "EVTDESC1220063"
+	picture = "caste_war"
+	is_triggered_only = yes
+	
+	option = { # yes
+		name = "EVT1220063OPTA"
+		ai_chance = {
+			factor = 100
+		}	
+	}
+}
+country_event = {
+	id = 1220064
+	title = "EVTNAME1220064"
+	desc = "EVTDESC1220064"
+	picture = "caste_war"
+	is_triggered_only = yes
+	
+	option = { # yes
+		name = "EVT1220064OPTA"
+		ai_chance = {
+			factor = 100
+		}	
+	}
+}
+# Der ewige Anglo helps Chan Santa Cruz by supplying weapons, canned food, ammo and explosives, adds to sphere (after initial war is over) xxxxx
+# CSC asks ENG for help
+country_event = {
+	id = 1220065
+	title = "EVTNAME1220065"
+	desc = "EVTDESC1220065"
+	picture = "caste_war"
+	is_triggered_only = yes
+	
+	option = { # yes
+		name = "EVT1220065OPTA"
+		300 = { owner = { country_event = { id = 1220066 days = 5 } } }
+		ai_chance = {
+			factor = 100
+		}	
+	}
+	option = { # no
+		name = "EVT1220065OPTA"
+		prestige = 5
+		ai_chance = {
+			factor = 0
+		}	
+	}
+}
+country_event = {
+	id = 1220066
+	title = "EVTNAME1220066"
+	desc = "EVTDESC1220066"
+	is_triggered_only = yes
+	
+	option = { # yes
+		name = "EVT1220066OPTA"
+		FROM = { country_event = 1220067 }
+		random_owned = {
+			limit = { owner = { NOT = { check_variable = { which = owed_cash_money value = 1 } } } }
+			owner = { set_variable = { which = owed_cash_money value = 20 } }
+		}
+		random_owned = {
+			limit = { owner = { check_variable = { which = owed_cash_money value = 9 } } }
+			owner = { change_variable = { which = owed_cash_money value = 20 } }
+		}
+		random_owned = {
+			limit = { owner = { NOT = { check_variable = { which = owed_artillery value = 1 } } } }
+			owner = { set_variable = { which = owed_artillery value = 10 } }
+		}
+		random_owned = {
+			limit = { owner = { check_variable = { which = owed_artillery value = 1 } } }
+			owner = { change_variable = { which = owed_artillery value = 10 } }
+		}
+		random_owned = {
+			limit = { owner = { NOT = { check_variable = { which = owed_canned_food value = 1 } } } }
+			owner = { set_variable = { which = owed_canned_food value = 10 } }
+		}
+		random_owned = {
+			limit = { owner = { check_variable = { which = owed_canned_food value = 1 } } }
+			owner = { change_variable = { which = owed_canned_food value = 10 } }
+		}
+		random_owned = {
+			limit = { owner = { NOT = { check_variable = { which = owed_small_arms value = 1 } } } }
+			owner = { set_variable = { which = owed_small_arms value = 10 } }
+		}
+		random_owned = {
+			limit = { owner = { check_variable = { which = owed_small_arms value = 1 } } }
+			owner = { change_variable = { which = owed_small_arms value = 10 } }
+		}
+		random_owned = {
+			limit = { owner = { NOT = { check_variable = { which = owed_ammunition value = 1 } } } }
+			owner = { set_variable = { which = owed_ammunition value = 10 } }
+		}
+		random_owned = {
+			limit = { owner = { check_variable = { which = owed_ammunition value = 1 } } }
+			owner = { change_variable = { which = owed_ammunition value = 10 } }
+		}
+		CSC = {
+			treasury = 20000
+			small_arms = 10
+			ammunition = 10
+			canned_food = 10
+			artillery = 10
+		}
+		relation = { who = CSC value = 400 }
+		diplomatic_influence = { who = CSC value = 400 }
+		ai_chance = {
+			factor = 100
+		}	
+	}
+	option = { # no
+		name = "EVT1220066OPTA"
+		FROM = { country_event = 1220068 }
+		ai_chance = {
+			factor = 0
+		}	
+	}
+}
+country_event = {
+	id = 1220067
+	title = "EVTNAME1220067"
+	desc = "EVTDESC1220067"
+	is_triggered_only = yes
+	
+	option = { # 
+		name = "EVT1220067OPTA"
+		create_alliance = FROM
+		relation = { who = FROM value = 400 }
+		ai_chance = {
+			factor = 100
+		}	
+	}
+}
+country_event = {
+	id = 1220068
+	title = "EVTNAME1220068"
+	desc = "EVTDESC1220068"
+	is_triggered_only = yes
+	
+	option = { # 
+		name = "EVT1220067OPTA"
+		relation = { who = ENG value = -400 }
+		FROM = { diplomatic_influence = { who = CSC value = -400 } }
+		add_country_modifier = { name = unrecognized_country duration = 1825 }
+		ai_chance = {
+			factor = 100
+		}	
+	}
+}
+# YUC - TEX, T4B, CAL, C4L, DES alliance
+country_event = {
+	id = 1220069
+	title = "EVTNAME1220069"
+	desc = "EVTDESC1220069"
+	is_triggered_only = yes
+	
+	option = { # 
+		name = "EVT1220069OPTA"
+		create_alliance = FROM
+		relation = { who = FROM value = 400 }
+		FROM = { country_event = { id = 1220070 days = 5 } }
+		random_owned = {
+			limit = { owner = { tag = TEX } }
+			owner = { set_global_flag = YUC_allied_TEX }
+		}
+		random_owned = {
+			limit = { owner = { tag = RGR } }
+			owner = { set_global_flag = YUC_allied_RGR }
+		}
+		random_owned = {
+			limit = { owner = { tag = CAL } }
+			owner = { set_global_flag = YUC_allied_CAL }
+		}
+		random_owned = {
+			limit = { owner = { tag = C4L } }
+			owner = { set_global_flag = YUC_allied_C4L }
+		}
+		random_owned = {
+			limit = {
+				owner = { tag = T4B }
+				NOT = {
+					OR = {
+						has_global_flag = YUC_allied_T4B_1
+						has_global_flag = YUC_allied_T4B_2
+						has_global_flag = YUC_allied_T4B_3
+					}
+				}
+			}
+			owner = { set_global_flag = YUC_allied_T4B_1 }
+		}
+		random_owned = {
+			limit = {
+				owner = { tag = T4B }
+				has_global_flag = YUC_allied_T4B_1
+				NOT = {
+					OR = {
+						has_global_flag = YUC_allied_T4B_2
+						has_global_flag = YUC_allied_T4B_3
+					}
+				}
+			}
+			owner = { set_global_flag = YUC_allied_T4B_2 }
+		}
+		random_owned = {
+			limit = {
+				owner = { tag = T4B }
+				has_global_flag = YUC_allied_T4B_1
+				has_global_flag = YUC_allied_T4B_2
+				NOT = {
+					has_global_flag = YUC_allied_T4B_3
+				}
+			}
+			owner = { set_global_flag = YUC_allied_T4B_3 }
+		}
+		random_owned = {
+			limit = { owner = { tag = DES } }
+			owner = { set_global_flag = YUC_allied_DES }
+		}
+		ai_chance = {
+			factor = 100
+		}	
+	}
+	option = { # 
+		name = "EVT1220069OPTB"
+		FROM = { country_event = { id = 1220071 days = 5 } }
+		ai_chance = {
+			factor = 0
+		}	
+	}
+}
+country_event = {
+	id = 1220070
+	title = "EVTNAME1220070"
+	desc = "EVTDESC1220070"
+	is_triggered_only = yes
+	
+	option = { # 
+		name = "EVT1220070OPTA"
+		relation = { who = FROM value = 400 }
+		ai_chance = {
+			factor = 100
+		}	
+	}
+}
+country_event = {
+	id = 1220071
+	title = "EVTNAME1220071"
+	desc = "EVTDESC1220071"
+	is_triggered_only = yes
+	
+	option = { # 
+		name = "EVT1220071OPTA"
+		relation = { who = FROM value = -150 }
+		ai_chance = {
+			factor = 100
+		}	
+	}
+}
+# CSC genocides non-mayans, notification for YUC or whoever owns the province
+province_event = {
+	id = 1220072
+	title = "EVTNAME1220072"
+	desc = "EVTDESC1220072"
+	
+	trigger = {
+		is_core = YUC
+		NOT = { owned_by = CSC }
+		controller = {
+			tag = CSC
+			OR = {
+				war_with = MEX
+				war_with = YUC
+				war_with = USA
+			}
+		}
+	}
+	
+	mean_time_to_happen = { days = 1 }
+	
+	option = { # 
+		name = "EVT1220072OPTA"
+		any_pop = {
+			limit = {
+				NOT = { culture = mayan }
+			}
+			random_list = {
+				25 = { reduce_pop = 0.80 }
+				25 = { reduce_pop = 0.75 }
+				25 = { reduce_pop = 0.70 }
+				25 = { reduce_pop = 0.65 }
+			}
+			militancy = 5
+			consciousness = 5
+		}
+		owner = { country_event = 1220073 }
+		ai_chance = {
+			factor = 100
+		}	
+	}
+	option = { # 
+		name = "EVT1220072OPTB"
+		any_pop = {
+			limit = {
+				culture = mayan
+				type = soldiers
+			}
+			militancy = 2
+			consciousness = 2
+		}
+		ai_chance = {
+			factor = 0
+		}	
+	}
+}
+country_event = {
+	id = 1220073
+	title = "EVTNAME1220073"
+	desc = "EVTDESC1220073"
+	is_triggered_only = yes
+	
+	option = { # 
+		name = "EVT1220073OPTA"
+		relation = { who = FROM value = -400 }
+		ai_chance = {
+			factor = 100
+		}	
+	}
+}
+# Spencer-Mariscal Treaty
+country_event = {
+	id = 1220074
+	title = "EVTNAME1220074"
+	desc = "EVTDESC1220074"
+	is_triggered_only = yes
+	
+	option = { # In order to stop recognizing CSC, ENG needs Mexico to renounce all claims in Belize
+		name = "EVT1220074OPTA"
+		FROM = { country_event = { id = 1220075 days = 5 } }
+		ai_chance = {
+			factor = 100
+		}	
+	}
+	option = { # We cannot stop being anglokikes
+		FROM = { country_event = { id = 1220076 days = 5 } }
+		name = "EVT1220074OPTB"
+		ai_chance = {
+			factor = 0
+		}	
+	}
+	option = { # Simply stop funding the rebels lolz
+		FROM = { country_event = { id = 1220077 days = 5 } }
+		prestige = -5
+		badboy = -2
+		name = "EVT1220074OPTB"
+		ai_chance = {
+			factor = 0
+		}	
+	}
+}
+country_event = {
+	id = 1220075
+	title = "EVTNAME1220075"
+	desc = "EVTDESC1220075"
+	is_triggered_only = yes
+	
+	option = { # We shall renounce to all claims in Belize
+		name = "EVT1220075OPTA"
+		3346 = { remove_core = THIS remove_core = YUC }
+		2190 = { remove_core = THIS remove_core = YUC }
+		3445 = { remove_core = THIS remove_core = YUC }
+		relation = { who = FROM value = 400 }
+		FROM = {
+			country_event = { id = 1220078 days = 5 }
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = { # Never.
+		name = "EVT1220075OPTA"
+		relation = { who = FROM value = -400 }
+		FROM = {
+			country_event = { id = 1220079 days = 5 }
+			diplomatic_influence = { who = THIS value = -400 }
+		}
+		ai_chance = {
+			factor = 100
+		}	
+	}
+}
+country_event = {
+	id = 1220076
+	title = "EVTNAME1220076"
+	desc = "EVTDESC1220076"
+	is_triggered_only = yes
+	
+	option = { # 
+		name = "EVT1220076OPTA"
+		relation = { who = FROM value = -400 }
+		FROM = { diplomatic_influence = { who = THIS value = -400 } }
+		ai_chance = {
+			factor = 100
+		}	
+	}
+}
+country_event = {
+	id = 1220077
+	title = "EVTNAME1220077"
+	desc = "EVTDESC1220077"
+	is_triggered_only = yes
+	
+	option = { # 
+		name = "EVT1220076OPTA"
+		relation = { who = FROM value = 100 }
+		FROM = {
+			diplomatic_influence = { who = CSC value = -400 }
+			leave_alliance = CSC
+			release_vassal = CSC
+			diplomatic_influence = {
+				who = CSC
+				value = -200
+			}
+		}
+		CSC = {
+			add_country_modifier = { name = unrecognized_country duration = 1825 }
+			country_event = 1220080
+		}
+		ai_chance = {
+			factor = 100
+		}	
+	}
+}
+country_event = {
+	id = 1220078
+	title = "EVTNAME1220078"
+	desc = "EVTDESC1220078"
+	is_triggered_only = yes
+	
+	option = { # 
+		name = "EVT1220078OPTA"
+		badboy = -2
+		relation = { who = FROM value = 100 }
+		FROM = {
+			diplomatic_influence = { who = THIS value = 75 }
+			country_event = { id = 1220077 days = 5 }
+		}
+		ai_chance = {
+			factor = 100
+		}	
+	}
+}
+country_event = {
+	id = 1220079
+	title = "EVTNAME1220079"
+	desc = "EVTDESC1220079"
+	is_triggered_only = yes
+	
+	option = { # 
+		name = "EVT1220079OPTA"
+		relation = { who = FROM value = -100 }
+		diplomatic_influence = { who = FROM value = -400 }
+		ai_chance = {
+			factor = 100
+		}	
+	}
+}
+country_event = {
+	id = 1220080
+	title = "EVTNAME1220080"
+	desc = "EVTDESC1220080"
+	is_triggered_only = yes
+	
+	option = { # 
+		name = "EVT1220080OPTA"
+		relation = { who = FROM value = -100 }
+		diplomatic_influence = { who = FROM value = -400 }
+		ai_chance = {
+			factor = 100
+		}	
+	}
+}
+# Do Tabasco secessions and YUC-T4B union (when tabasco secedes, check if santa elena peten belongs to MEX, if it doesn't, secede carmelita to honduras)
+# Also do Yaqui Wars

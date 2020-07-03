@@ -1,0 +1,82 @@
+VNZ = {
+	truce_until = 1837.1.1
+	value = -50
+}
+ECU = {
+	truce_until = 1837.1.1
+	value = -50
+}
+PBC = {
+	value = -25
+}
+
+
+navy = {
+	name = "Fuerza Naval del Caribe"
+	location = 2254
+	ship = {
+		name= "Quitasueño"
+		type = frigate
+	}
+	
+	ship = {
+		name= "Gran Bolívar"
+		type = manowar
+	}
+
+	ship = {
+		name = "1. Buque de transporte"
+		type = clipper_transport
+	}
+	
+}
+
+navy = {
+	name = "Fuerza Naval del Pacífico"
+	location = 2258
+	ship = {
+		name= "Valle del Cauca"
+		type = frigate
+	}
+	
+	ship = {
+		name= "Leona"
+		type = manowar
+	}
+
+	ship = {
+		name = "1. Buque de transporte"
+		type = clipper_transport
+	}
+	
+}
+
+army = {
+	name = "Ejército de Colombia"
+	location = 2247
+	regiment = {
+		name= "1. Brigada de Infantería"
+		type = infantry
+		home = 2247
+	}
+
+	regiment = {
+		name= "2. Brigada de Infantería"
+		type = infantry
+		home = 2252
+	}
+
+	regiment = {
+		name= "3. Brigada de Infantería"
+		type = infantry
+		home = 2254
+	}
+
+	regiment = {
+		name= "1. Brigada de Caballería"
+		type = cuirassier
+		home = 2250
+	}
+
+}
+

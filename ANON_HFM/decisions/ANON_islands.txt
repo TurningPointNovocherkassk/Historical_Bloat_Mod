@@ -1,0 +1,1222 @@
+political_decisions = {
+
+	C4R_primary_culture = {
+		picture = map_caribbean
+		potential = {
+			tag = C4R
+			NOT = { has_country_flag = C4R_primary_culture }
+			NOT = { has_country_flag = C4R_primary_culture_selected }
+		}
+				
+		allow = {
+		}
+		
+		effect = {
+			set_country_flag = C4R_primary_culture
+			random_country = {
+				limit = {
+					tag = C4R
+					exists = yes
+				}
+				country_event = 1999997000
+			}
+		}
+		ai_will_do = { factor = 1 }
+	}
+	C4R_religion = {
+		picture = map_caribbean
+		potential = {
+			tag = C4R
+			NOT = { has_country_flag = C4R_religion }
+			has_country_flag = C4R_primary_culture_selected
+		}
+				
+		allow = {
+		}
+		
+		effect = {
+			set_country_flag = C4R_religion
+			random_country = {
+				limit = {
+					tag = C4R
+					exists = yes
+				}
+				country_event = 1999997001
+			}
+		}
+		ai_will_do = { factor = 1 }
+	}
+	C4R_by_sword = {
+		picture = map_caribbean
+		potential = {
+			OR = {
+				tag = MTQ
+				tag = GLP
+				tag = TTB
+				tag = BRB
+				tag = GND
+				tag = JAM
+			}
+			NOT = {
+				exists = C4R
+				has_country_flag = C4R_by_sword
+			}
+		}
+		
+		allow = {
+			nationalism_n_imperialism = 1
+			OR = {
+				is_secondary_power = yes
+				is_greater_power = yes
+			}
+			war_policy = jingoism
+			war = no
+			is_vassal = no
+		}
+		
+		effect = {
+			set_country_flag = C4R_by_sword
+			MTQ = { all_core = { add_core = THIS } }
+			GLP = { all_core = { add_core = THIS } }
+			TTB = { all_core = { add_core = THIS } }
+			BRB = { all_core = { add_core = THIS } }
+			GND = { all_core = { add_core = THIS } }
+			JAM = { all_core = { add_core = THIS } }
+			
+			2224 = { add_core = THIS }
+			2225 = { add_core = THIS }
+			2226 = { add_core = THIS }
+			2227 = { add_core = THIS }
+			2230 = { add_core = THIS }
+			2223 = { add_core = THIS }
+			45 = { add_core = THIS }
+			3246 = { add_core = THIS }
+			2217 = { add_core = THIS }
+			2218 = { add_core = THIS }
+			
+			ENG_2228 = { add_core = THIS } # Lesser Antilles
+			ENG_2219 = { add_core = THIS } # Bahamas
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	form_C4R = {
+		picture = map_caribbean
+		potential = {
+			OR = {
+				tag = MTQ
+				tag = GLP
+				tag = TTB
+				tag = BRB
+				tag = GND
+				tag = JAM
+			}
+			NOT = { exists = C4R }
+		}
+		
+		allow = {
+			war = no
+			is_vassal = no
+			nationalism_n_imperialism = 1
+			invention = national_fraternity
+			OR = {
+				is_secondary_power = yes
+				is_greater_power = yes
+			}
+			MTQ = {
+				OR = {
+					in_sphere = THIS
+					vassal_of = THIS
+					ai = no
+					all_core = {
+						owned_by = THIS
+					}
+				}
+			}
+			GLP = {
+				OR = {
+					in_sphere = THIS
+					vassal_of = THIS
+					ai = no
+					all_core = {
+						owned_by = THIS
+					}
+				}
+			}
+			TTB = {
+				OR = {
+					in_sphere = THIS
+					vassal_of = THIS
+					ai = no
+					all_core = {
+						owned_by = THIS
+					}
+				}
+			}
+			BRB = {
+				OR = {
+					in_sphere = THIS
+					vassal_of = THIS
+					ai = no
+					all_core = {
+						owned_by = THIS
+					}
+				}
+			}
+			GND = {
+				OR = {
+					in_sphere = THIS
+					vassal_of = THIS
+					ai = no
+					all_core = {
+						owned_by = THIS
+					}
+				}
+			}
+			JAM = {
+				OR = {
+					in_sphere = THIS
+					vassal_of = THIS
+					ai = no
+					all_core = {
+						owned_by = THIS
+					}
+				}
+			}
+		}
+		
+		effect = {
+			prestige = 10
+			MTQ = { all_core = { add_core = THIS } }
+			GLP = { all_core = { add_core = THIS } }
+			TTB = { all_core = { add_core = THIS } }
+			BRB = { all_core = { add_core = THIS } }
+			GND = { all_core = { add_core = THIS } }
+			JAM = { all_core = { add_core = THIS } }
+			2224 = { add_core = THIS }
+			2225 = { add_core = THIS }
+			2226 = { add_core = THIS }
+			2227 = { add_core = THIS }
+			2230 = { add_core = THIS }
+			2223 = { add_core = THIS }
+			45 = { add_core = THIS }
+			3246 = { add_core = THIS }
+			2217 = { add_core = THIS }
+			2218 = { add_core = THIS }
+			ENG_2228 = { add_core = THIS } # Lesser Antilles
+			ENG_2219 = { add_core = THIS } # Bahamas
+			any_country = {
+				limit = {
+					ai = yes
+					exists = yes
+					OR = {
+						in_sphere = THIS
+						vassal_of = THIS
+					}
+					OR = {
+						tag = MTQ
+						tag = GLP
+						tag = TTB
+						tag = BRB
+						tag = GND
+						tag = JAM
+					}
+				}
+				annex_to = THIS
+			}	
+			random_country = {
+				limit = {
+					exists = yes
+					ai = no
+					OR = {
+						tag = MTQ
+						tag = GLP
+						tag = TTB
+						tag = BRB
+						tag = GND
+						tag = JAM
+					}
+				}
+				country_event = 11101
+			}
+			centralization = federalism
+			change_tag = C4R
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	reform_C4R_outside = {
+		picture = map_caribbean
+		potential = {
+			is_greater_power = yes
+			NOT = { has_country_flag = post_colonial_country }
+			NOT = {
+				OR = {
+					tag = MTQ
+					tag = GLP
+					tag = TTB
+					tag = BRB
+					tag = GND
+					tag = JAM
+					tag = ENG
+					tag = ENL
+				}
+			}
+			NOT = { exists = C4R }
+			any_owned_province = {
+				OR = {
+					continent = south_america
+					continent = north_america
+				}
+			}
+			is_vassal = no
+			ai = no
+			NOT = { has_global_flag = reform_C4R_outside }
+		}
+
+		allow = {
+			MTQ = {
+				OR = {
+					in_sphere = THIS
+					vassal_of = THIS
+					ai = no
+					all_core = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								OR = {
+									in_sphere = THIS
+									vassal_of = THIS
+								}
+								war = no
+								is_greater_power = no
+							}
+						}
+					}
+				}
+			}
+			GLP = {
+				OR = {
+					in_sphere = THIS
+					vassal_of = THIS
+					ai = no
+					all_core = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								OR = {
+									in_sphere = THIS
+									vassal_of = THIS
+								}
+								war = no
+								is_greater_power = no
+							}
+						}
+					}
+				}
+			}
+			TTB = {
+				OR = {
+					in_sphere = THIS
+					vassal_of = THIS
+					ai = no
+					all_core = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								OR = {
+									in_sphere = THIS
+									vassal_of = THIS
+								}
+								war = no
+								is_greater_power = no
+							}
+						}
+					}
+				}
+			}
+			BRB = {
+				OR = {
+					in_sphere = THIS
+					vassal_of = THIS
+					ai = no
+					all_core = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								OR = {
+									in_sphere = THIS
+									vassal_of = THIS
+								}
+								war = no
+								is_greater_power = no
+							}
+						}
+					}
+				}
+			}
+			GND = {
+				OR = {
+					in_sphere = THIS
+					vassal_of = THIS
+					ai = no
+					all_core = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								OR = {
+									in_sphere = THIS
+									vassal_of = THIS
+								}
+								war = no
+								is_greater_power = no
+							}
+						}
+					}
+				}
+			}
+			JAM = {
+				OR = {
+					in_sphere = THIS
+					vassal_of = THIS
+					ai = no
+					all_core = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								OR = {
+									in_sphere = THIS
+									vassal_of = THIS
+								}
+								war = no
+								is_greater_power = no
+							}
+						}
+					}
+				}
+			}
+		}
+
+		effect = {
+			prestige = 10
+			set_global_flag = reform_C4R_outside
+			any_country = {
+				limit = {
+					owns = 2237
+					owns = 2238
+					vassal_of = THIS
+				}
+				2237 = { secede_province = THIS }
+				2238 = { secede_province = THIS }
+			}
+			any_country = {
+				limit = {
+					owns = 2217
+					vassal_of = THIS
+				}
+				2217 = { secede_province = THIS }
+			}
+			any_country = {
+				limit = {
+					owns = 2233
+					vassal_of = THIS
+				}
+				2233 = { secede_province = THIS }
+			}
+			any_country = {
+				limit = {
+					owns = 2229
+					vassal_of = THIS
+				}
+				2229 = { secede_province = THIS }
+			}
+			any_country = {
+				limit = {
+					owns = 2228
+					vassal_of = THIS
+				}
+				2228 = { secede_province = THIS }
+			}
+			any_country = {
+				limit = {
+					owns = 2230
+					vassal_of = THIS
+				}
+				2230 = { secede_province = THIS }
+			}
+			any_country = {
+				limit = {
+					OR = {
+						tag = MTQ
+						tag = GLP
+						tag = TTB
+						tag = BRB
+						tag = GND
+						tag = JAM
+					}
+					NOT = { tag = THIS }
+					OR = {
+						in_sphere = THIS
+						vassal_of = THIS
+					}
+				}
+				annex_to = THIS
+			}
+			MTQ = { all_core = { add_core = C4R } }
+			GLP = { all_core = { add_core = C4R } }
+			TTB = { all_core = { add_core = C4R } }
+			BRB = { all_core = { add_core = C4R } }
+			GND = { all_core = { add_core = C4R } }
+			JAM = { all_core = { add_core = C4R } }
+			any_owned = {
+				limit = {
+					is_core = C4R
+					is_core = THIS
+				}
+				remove_core = C4R
+			}
+			release_vassal = C4R
+			create_alliance = C4R
+			create_vassal = C4R
+			relation = {
+				who = C4R
+				value = 100
+			}
+			diplomatic_influence = {
+				who = C4R
+				value = 200
+			}
+		}
+
+		ai_will_do = { factor = 1 }
+	}
+
+	D4N_primary_culture = {
+		picture = map_caribbean
+		potential = {
+			tag = D4N
+			NOT = { has_country_flag = D4N_primary_culture }
+			NOT = { has_country_flag = D4N_primary_culture_selected }
+		}
+				
+		allow = {
+		}
+		
+		effect = {
+			set_country_flag = D4N_primary_culture
+			random_country = {
+				limit = {
+					tag = D4N
+					exists = yes
+				}
+				country_event = 1999997002
+			}
+		}
+		ai_will_do = { factor = 1 }
+	}
+	D4N_religion = {
+		picture = map_caribbean
+		potential = {
+			tag = D4N
+			NOT = { has_country_flag = D4N_religion }
+			has_country_flag = D4N_primary_culture_selected
+		}
+				
+		allow = {
+		}
+		
+		effect = {
+			set_country_flag = D4N_religion
+			random_country = {
+				limit = {
+					tag = D4N
+					exists = yes
+				}
+				country_event = 1999997003
+			}
+		}
+		ai_will_do = { factor = 1 }
+	}
+	D4N_by_sword = {
+		picture = map_caribbean
+		potential = {
+			OR = {
+				tag = ARB
+				tag = BON
+				tag = CUR
+			}
+			NOT = {
+				exists = D4N
+				has_country_flag = D4N_by_sword
+			}
+		}
+		
+		allow = {
+			nationalism_n_imperialism = 1
+			OR = {
+				is_secondary_power = yes
+				is_greater_power = yes
+			}
+			war_policy = jingoism
+			war = no
+			is_vassal = no
+		}
+		
+		effect = {
+			set_country_flag = D4N_by_sword
+			ARB = { all_core = { add_core = THIS } }
+			BON = { all_core = { add_core = THIS } }
+			CUR = { all_core = { add_core = THIS } }
+			2236 = { add_core = THIS }
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	form_D4N = {
+		picture = map_caribbean
+		potential = {
+			OR = {
+				tag = ARB
+				tag = BON
+				tag = CUR
+			}
+			NOT = { exists = D4N }
+		}
+		
+		allow = {
+			war = no
+			is_vassal = no
+			nationalism_n_imperialism = 1
+			invention = national_fraternity
+			OR = {
+				is_secondary_power = yes
+				is_greater_power = yes
+			}
+			ARB = {
+				OR = {
+					in_sphere = THIS
+					vassal_of = THIS
+					ai = no
+					all_core = {
+						owned_by = THIS
+					}
+				}
+			}
+			BON = {
+				OR = {
+					in_sphere = THIS
+					vassal_of = THIS
+					ai = no
+					all_core = {
+						owned_by = THIS
+					}
+				}
+			}
+		}
+		
+		effect = {
+			prestige = 10
+			ARB = {
+				all_core = { add_core = THIS }
+			}
+			BON = {
+				all_core = { add_core = THIS }
+			}
+			CUR = {
+				all_core = { add_core = THIS }
+			}
+			2236 = { add_core = THIS }
+			any_country = {
+				limit = {
+					ai = yes
+					exists = yes
+					OR = {
+						in_sphere = THIS
+						vassal_of = THIS
+					}
+					OR = {
+						tag = ARB
+						tag = BON
+						tag = CUR
+					}
+				}
+				annex_to = THIS
+			}	
+			random_country = {
+				limit = {
+					exists = yes
+					ai = no
+					OR = {
+						tag = ARB
+						tag = BON
+						tag = CUR
+					}
+				}
+				country_event = 11101
+			}
+			add_accepted_culture = dutch
+			centralization = federalism
+			change_tag = D4N
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	reform_D4N_outside = {
+		picture = map_caribbean
+		potential = {
+			is_greater_power = yes
+			#is_culture_group = latin_american_cultures
+			NOT = { has_country_flag = post_colonial_country }
+			NOT = {
+				OR = {
+					tag = ARB
+					tag = BON
+					tag = CUR
+					tag = NET
+				}
+			}
+			NOT = { exists = D4N }
+			any_owned_province = {
+				OR = {
+					continent = south_america
+					continent = north_america
+				}
+			}
+			is_vassal = no
+			ai = no
+			NOT = { has_global_flag = reform_D4N_outside }
+		}
+
+		allow = {
+			ARB = {
+				OR = {
+					in_sphere = THIS
+					vassal_of = THIS
+					ai = no
+					all_core = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								OR = {
+									in_sphere = THIS
+									vassal_of = THIS
+								}
+								war = no
+								is_greater_power = no
+							}
+						}
+					}
+				}
+			}
+			BON = {
+				OR = {
+					in_sphere = THIS
+					vassal_of = THIS
+					ai = no
+					all_core = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								OR = {
+									in_sphere = THIS
+									vassal_of = THIS
+								}
+								war = no
+								is_greater_power = no
+							}
+						}
+					}
+				}
+			}
+			CUR = {
+				OR = {
+					in_sphere = THIS
+					vassal_of = THIS
+					ai = no
+					all_core = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								OR = {
+									in_sphere = THIS
+									vassal_of = THIS
+								}
+								war = no
+								is_greater_power = no
+							}
+						}
+					}
+				}
+			}
+		}
+
+		effect = {
+		set_global_flag = reform_D4N_outside
+			prestige = 10
+			any_country = {
+				limit = {
+					owns = 2235
+					owns = 2234
+					owns = 3353
+					owns = 2236
+					vassal_of = THIS
+				}
+				2235 = { secede_province = THIS }
+				2234 = { secede_province = THIS }
+				3353 = { secede_province = THIS }
+				2236 = { secede_province = THIS }
+			}
+			any_country = {
+				limit = {
+					OR = {
+						tag = ARB
+						tag = BON
+						tag = CUR
+					}
+					NOT = { tag = THIS }
+					OR = {
+						in_sphere = THIS
+						vassal_of = THIS
+					}
+				}
+				annex_to = THIS
+			}
+			ARB = { all_core = { add_core = D4N } }
+			BON = { all_core = { add_core = D4N } }
+			CUR = { all_core = { add_core = D4N } }
+			2236 = { add_core = D4N }
+			45 = { add_core = D4N }
+			any_owned = {
+				limit = {
+					is_core = D4N
+					is_core = THIS
+				}
+				remove_core = D4N
+			}
+			release_vassal = D4N
+			create_alliance = D4N
+			create_vassal = D4N
+			relation = {
+				who = D4N
+				value = 100
+			}
+			diplomatic_influence = {
+				who = D4N
+				value = 200
+			}
+			D4N = {
+				centralization = federalism
+			}
+		}
+
+		ai_will_do = { factor = 1 }
+	}
+
+	#MEX reassert control over the Revillagigedo Islands and Clipperton Island (Already claimed by MEX since 1821's constitution.)
+	annex_mexican_pacific_islands = {
+		picture = FRA_devils_island
+		potential = {
+			tag = MEX
+			3332 = { empty = yes }
+			3333 = { empty = yes }
+			NOT = { has_country_flag = annex_mexican_pacific_islands }
+		}
+		
+		allow = {
+			war = no
+			year = 1848
+		}
+		
+		effect = {
+			prestige = 3
+			set_country_flag = annex_mexican_pacific_islands
+			3332 = {
+				secede_province = THIS
+				add_core = THIS
+				life_rating = 20
+			}
+			3333 = {
+				secede_province = THIS
+				add_core = THIS
+				#life_rating = 20 #NOPE, +20 will be added in a future event.
+			}
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	#UCA or COS annex Cocos Island
+	annex_cocos_island = {
+		picture = FRA_devils_island
+		potential = {
+			OR = {
+				tag = UCA
+				tag = COS
+			}
+			3334 = { empty = yes }
+			NOT = { has_country_flag = annex_los_cocos_island }
+		}
+		
+		allow = {
+			war = no
+			OR = {
+				is_greater_power = yes
+				nationalism_n_imperialism = 1
+				year = 1869
+			}
+		}
+		
+		effect = {
+			prestige = 3
+			set_country_flag = annex_los_cocos_island
+			3334 = {
+				secede_province = THIS
+				add_core = THIS
+				life_rating = 25
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { year = 1869 }
+			}
+		}
+	}
+		
+	#Assume ownership of the Prince Edward Islands (ENG 1908, give to cape colony; has ENG claims)
+	annex_prince_edward_islands = {
+		picture = FRA_devils_island
+		potential = {
+			any_owned_province = {
+				OR = {
+					region = ENG_2087 #Cape Colony
+					region = ENG_2092 #Northern Cape
+					region = ENG_2096 #Eastern Cape
+					region = ORA_2103 #Vrystaat
+					region = TRN_2108 #Transvaal
+					region = ZUL_2113 #Zululand - Natal
+				}
+			}
+			3339 = { empty = yes } #Prince Edward Islands
+			NOT = { has_country_flag = annex_prince_edward_islands }
+			civilized = yes
+		}
+		
+		allow = {
+			war = no
+			total_num_of_ports = 1
+			total_amount_of_ships = 2
+			OR = {
+				invention = the_dark_continent
+				year = 1908
+			}
+		}
+		
+		effect = {
+			prestige = 5
+			set_country_flag = annex_prince_edward_islands
+			3339 = {
+				secede_province = THIS
+				add_core = THIS
+				life_rating = 5
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { year = 1908 }
+			}
+		}
+	}
+	
+	#Assume ownership of the Crozet, Kerguelen and Amsterdam & St. Paul Islands (FRA 1893, give FRA cores; all have FRA claims)
+	annex_prince_FRA_subantarctic = {
+		picture = FRA_devils_island
+		potential = {
+			OR = {
+				owns = 2126 #Bourbon
+				AND = {
+					has_country_flag = annex_prince_edward_islands
+					NOT = {
+						OR = {
+							tag = ENG
+							tag = ENL
+						}
+					}
+				}
+			}
+			3340 = { empty = yes } #Crozet Islands
+			3341 = { empty = yes } #Kerguelen Islands
+			3342 = { empty = yes } #Amsterdam & St. Paul Islands
+			NOT = { has_country_flag = annex_prince_FRA_subantarctic }
+		}
+		
+		allow = {
+			war = no
+			OR = {
+				invention = the_dark_continent
+				year = 1893
+			}
+		}
+		
+		effect = {
+			prestige = 10
+			set_country_flag = annex_prince_FRA_subantarctic
+			3340 = {
+				secede_province = THIS
+				add_core = THIS
+				life_rating = 5
+			}
+			3341 = {
+				secede_province = THIS
+				add_core = THIS
+				life_rating = 5
+			}
+			3342 = {
+				secede_province = THIS
+				add_core = THIS
+				life_rating = 15
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { year = 1893 }
+			}
+		}
+	}
+	
+	#Assume ownership of the Bouvet Island (NOR 1927, liferate +5 when annexed; has ENG claims)
+	annex_bouvet_island = {
+		picture = FRA_devils_island
+		potential = {
+			OR = {
+				OR = {
+					tag = NOR
+					tag = SCA
+					has_country_modifier = leader_of_kalmar
+				}
+				any_owned_province = {
+					OR = {
+						region = ENG_2087 #Cape Colony
+						region = ENG_2092 #Northern Cape
+						region = ENG_2096 #Eastern Cape
+						region = ORA_2103 #Vrystaat
+						region = TRN_2108 #Transvaal
+						region = ZUL_2113 #Zululand - Natal
+					}
+				}
+			}
+			3338 = { empty = yes } #Bouvet Island
+			NOT = { has_country_flag = annex_bouvet_island }
+			civilized = yes
+		}
+		
+		allow = {
+			war = no
+			total_num_of_ports = 1
+			total_amount_of_ships = 2
+			OR = {
+				invention = the_dark_continent
+				year = 1927
+			}
+		}
+		
+		effect = {
+			prestige = 5
+			set_country_flag = annex_bouvet_island
+			3338 = {
+				secede_province = THIS
+				add_core = THIS
+				life_rating = 5
+			}
+			300 = {
+				owner = {
+					country_event = 1999997004
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { year = 1927 }
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					tag = ENG
+					tag = ENL
+				}
+			}
+		}
+	}
+	
+	#Protest the claims of whoever owns Bouvet 
+	protest_bouvet = {
+		picture = FRA_devils_island
+		potential = {
+			has_country_flag = bouvet_island_claim
+			NOT = { has_country_flag = protest_bouvet }
+			3338 = {
+				NOT = { owned_by = THIS }
+				is_core = THIS
+			}
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			set_country_flag = protest_bouvet
+			3338 = {
+				owner = {
+					country_event = 1999997005
+				}
+			}
+			
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	#Rename Bouvet as NOR or SCA to Bouvetøya
+	rename_bouvet_NOR = {
+		picture = gtfo
+		potential = {
+			OR = {
+				tag = NOR
+				tag = SCA
+				has_country_modifier = leader_of_kalmar
+			}
+			owns = 3338
+			NOT = { has_global_flag = rename_bouvet_NOR }
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = rename_bouvet_NOR
+			clr_global_flag = rename_bouvet_normal
+			3338  = { change_province_name = "Bouvetøya" }
+		}
+		ai_will_do = { factor = 1 }
+	}
+	rename_bouvet_normal = {
+		picture = gtfo
+		potential = {
+			NOR = {
+				OR = {
+					tag = NOR
+					tag = SCA
+					has_country_modifier = leader_of_kalmar
+				}
+			}
+			owns = 3338
+			NOT = { has_global_flag = rename_bouvet_normal }
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = rename_bouvet_normal
+			clr_global_flag = rename_bouvet_NOR
+			3338  = { change_province_name = "Bouvet Island" }
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	#Kerguelen coal mining operation, but a penal colony instead
+	kerguelen_coal = {
+		picture = FRA_devils_island
+		potential = {
+			owns = 3341 #Kerguelen Islands
+			NOT = { has_country_flag = kerguelen_coal }
+		}
+		
+		allow = {
+			war = no
+			money = 10001
+		}
+		
+		effect = {
+			set_country_flag = kerguelen_coal
+			treasury = -10000
+			prestige = 5
+			penal_system = colonial_transportation
+			#colonial_policy = settlement 
+			add_country_modifier = { name = penal_colonies duration = -1 }
+			3341 = {
+				add_province_modifier = { name = penal_colony duration = -1 }
+				add_province_modifier = { name = blood_and_iron_mine duration = -1 }
+				change_province_name = "Desolation Islands"
+			}
+		}
+		ai_will_do = { factor = 0 }
+	}
+
+	
+	#Isla Cocos penal colony.
+	isla_cocos_penal_colony = {
+		picture = FRA_devils_island
+		potential = {
+			owns = 3334 #Isla del Coco
+			NOT = { has_country_flag = isla_cocos_penal_colony }
+		}
+		
+		allow = {
+			war = no
+			money = 1001
+		}
+		
+		effect = {
+			set_country_flag = isla_cocos_penal_colony
+			treasury = -1000
+			prestige = 1
+			penal_system = colonial_transportation
+			#colonial_policy = settlement 
+			add_country_modifier = { name = penal_colonies duration = -1 }
+			3334 = {
+				add_province_modifier = { name = penal_colony duration = -1 }
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { year = 1878 }
+			}
+		}
+	}
+	
+	#FRA takes over clipperton, clipperton fiasco
+	#Clipperton conflict (FRA vs MEX), part 1: MEX claimed on its first constitution, earliest activity on the island dates to 1847~1849 by guano miners (annexed to MEX)
+	#Clipperton conflict (FRA vs MEX), part 2: France lays claim in 1858 (Core to FRA) after not recognizing the mexican constitution of 1857 which led to the 2nd french intervetion in 1863
+	#Clipperton conflict (FRA vs USA vs MEX), part 3: 1856 Guano Act comes into place, USA lays a claim on the island. (whenever USA owns Hawaii)
+	#Clipperton conflict (FRA vs MEX), part 4: 1898 Americans abandon the claim, things aren't settled between FRA and MEX yet
+	#Clipperton conflict (FRA vs MEX), part 5: 1906 MEX offers a guano mining concession to ENG and develops the island (Raise life rating, add migration & production bonus.)
+	#Clipperton conflict (FRA vs MEX), part 6: in 1930 FRA asks PAP for mediation on the issue, PAP designates ITA's king, who arbitrates in favor of FRA (However, this decision will be weighted by several factors as not to railroad.)
+	
+	
+	#bay islands fiasco
+	#Honduras free, ENG takes over annexing to belize (andd BLZ core), honduras protests (add something to exclude form monroe doctrine until the treaty of 1859)
+	#1859 USA wants ENG to sign treaty of Lennox Wyke-Cruz, which recognizes the bay islands as part of honduras; if ENG refuses, activate monroe.
+	#William Walker banana republic in Nicaragua helps the british settlers in 1860. Honduras responds by capturing and killing him (could lead to war with Walker's Nicaragua)
+	#1866 roatan is declared an important port, RGO changes to fruit and gives a bonus to production, give them a malus to assimilation. Belize still claims the island.
+	#Do something with Poyais taking over this shithole since its inhabitants speak english and consider themselves british subjects.
+	
+}

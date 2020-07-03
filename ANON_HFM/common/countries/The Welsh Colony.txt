@@ -1,0 +1,157 @@
+color = { 129 10 127 }
+graphical_culture = EuropeanGC
+
+party = {
+	name = "WHA_liberal"
+	start_date = 1830.1.1
+	end_date = 9000.1.1
+
+	ideology = liberal
+
+	social_policy = no_position_set
+	economic_policy = laissez_faire
+	trade_policy = free_trade
+	religious_policy = pluralism
+	citizenship_policy = limited_citizenship
+	war_policy = anti_military
+}
+
+party = {
+	name = "WHA_conservative"
+	start_date = 1830.1.1
+	end_date = 9000.1.1
+
+	ideology = conservative
+
+	social_policy = no_position_set
+	economic_policy = interventionism
+	trade_policy = protectionism
+	religious_policy = moralism
+	citizenship_policy = limited_citizenship
+	war_policy = pro_military
+}
+
+
+party = {
+	name = "WHA_socialist"
+	start_date = 1849.1.1
+	end_date = 9000.1.1
+
+	ideology = socialist
+
+	social_policy = welfare_state
+	economic_policy = state_capitalism
+	trade_policy = free_trade
+	religious_policy = secularized
+	citizenship_policy = full_citizenship
+	war_policy = anti_military
+}
+
+party = {
+	name = "WHA_reactionary"
+	start_date = 1820.1.1
+	end_date = 9000.1.1
+
+	ideology = reactionary
+
+	social_policy = no_position_set
+	economic_policy = state_capitalism
+	trade_policy = protectionism
+	religious_policy = moralism
+	citizenship_policy = residency
+	war_policy = jingoism
+}
+
+party = {
+	name = "WHA_anarcho_liberal"
+	start_date = 1830.1.1
+	end_date = 9000.1.1
+
+	ideology = anarcho_liberal
+
+	social_policy = no_state_interference
+	economic_policy = laissez_faire
+	trade_policy = free_trade
+	religious_policy = pro_atheism
+	citizenship_policy = full_citizenship
+	war_policy = pro_military
+}
+
+party = {
+	name = "WHA_communist"
+	start_date = 1848.1.1
+	end_date = 9000.1.1
+
+	ideology = communist
+
+	social_policy = populist_welfare
+	economic_policy = planned_economy
+	trade_policy = protectionism
+	religious_policy = pro_atheism
+	citizenship_policy = full_citizenship
+	war_policy = pro_military
+}
+
+party = {
+	name = "WHA_fascist"
+	start_date = 1900.1.1
+	end_date = 9000.1.1
+
+	ideology = fascist
+
+	social_policy = populist_welfare
+	economic_policy = state_capitalism
+	trade_policy = protectionism
+	religious_policy = moralism
+	citizenship_policy = residency
+	war_policy = jingoism
+}
+
+unit_names = {
+	dreadnought = {
+		"Y Wladfa" "Y Wladychfa Gymreig" "Yr Ariannin" "Chubut" "Batagonia" "Phorth Madryn" "Rada Tilly" "Gaiman" "Trefelin" "John Daniel Evans" "Dyffryn Camwy"
+		"Cymraeg y Wladfa" "Lle Cul" "Nant y Pysgod" "Cwm Hyfryd" "Bro Hydref" "Caer Antur" "Rhyd yr Indiaid" "Dôl y Plu" "Trerawson" "Afon Camwy"
+		"Aber Gyrants" "Dyffryn y Merthyron" "Dyffryn Oer" "Tre Lew" "Dol Afon" "Tre Felin" "Lewis Jones" "Michael Jones" "Mimosa" "Tehuelche" "Patagonés"
+		"Vesta" "Llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogoch"
+	}
+	ironclad = {
+		"Y Wladfa" "Y Wladychfa Gymreig" "Yr Ariannin" "Chubut" "Batagonia" "Phorth Madryn" "Rada Tilly" "Gaiman" "Trefelin" "John Daniel Evans" "Dyffryn Camwy"
+		"Cymraeg y Wladfa" "Lle Cul" "Nant y Pysgod" "Cwm Hyfryd" "Bro Hydref" "Caer Antur" "Rhyd yr Indiaid" "Dôl y Plu" "Trerawson" "Afon Camwy"
+		"Aber Gyrants" "Dyffryn y Merthyron" "Dyffryn Oer" "Tre Lew" "Dol Afon" "Tre Felin" "Lewis Jones" "Michael Jones" "Mimosa" "Tehuelche" "Patagonés"
+		"Vesta" "Llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogoch"
+	}
+	manowar = {
+		"Y Wladfa" "Y Wladychfa Gymreig" "Yr Ariannin" "Chubut" "Batagonia" "Phorth Madryn" "Rada Tilly" "Gaiman" "Trefelin" "John Daniel Evans" "Dyffryn Camwy"
+		"Cymraeg y Wladfa" "Lle Cul" "Nant y Pysgod" "Cwm Hyfryd" "Bro Hydref" "Caer Antur" "Rhyd yr Indiaid" "Dôl y Plu" "Trerawson" "Afon Camwy"
+		"Aber Gyrants" "Dyffryn y Merthyron" "Dyffryn Oer" "Tre Lew" "Dol Afon" "Tre Felin" "Lewis Jones" "Michael Jones" "Mimosa" "Tehuelche" "Patagonés"
+		"Vesta" "Llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogoch"
+	}
+	cruiser = {
+		"Y Wladfa" "Y Wladychfa Gymreig" "Yr Ariannin" "Chubut" "Batagonia" "Phorth Madryn" "Rada Tilly" "Gaiman" "Trefelin" "John Daniel Evans" "Dyffryn Camwy"
+		"Cymraeg y Wladfa" "Lle Cul" "Nant y Pysgod" "Cwm Hyfryd" "Bro Hydref" "Caer Antur" "Rhyd yr Indiaid" "Dôl y Plu" "Trerawson" "Afon Camwy"
+		"Aber Gyrants" "Dyffryn y Merthyron" "Dyffryn Oer" "Tre Lew" "Dol Afon" "Tre Felin" "Lewis Jones" "Michael Jones" "Mimosa" "Tehuelche" "Patagonés"
+		"Vesta" "Llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogoch"
+	}
+	frigate = {
+		"Y Wladfa" "Y Wladychfa Gymreig" "Yr Ariannin" "Chubut" "Batagonia" "Phorth Madryn" "Rada Tilly" "Gaiman" "Trefelin" "John Daniel Evans" "Dyffryn Camwy"
+		"Cymraeg y Wladfa" "Lle Cul" "Nant y Pysgod" "Cwm Hyfryd" "Bro Hydref" "Caer Antur" "Rhyd yr Indiaid" "Dôl y Plu" "Trerawson" "Afon Camwy"
+		"Aber Gyrants" "Dyffryn y Merthyron" "Dyffryn Oer" "Tre Lew" "Dol Afon" "Tre Felin" "Lewis Jones" "Michael Jones" "Mimosa" "Tehuelche" "Patagonés"
+		"Vesta" "Llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogoch"
+	}
+	monitor = {
+		"Y Wladfa" "Y Wladychfa Gymreig" "Yr Ariannin" "Chubut" "Batagonia" "Phorth Madryn" "Rada Tilly" "Gaiman" "Trefelin" "John Daniel Evans" "Dyffryn Camwy"
+		"Cymraeg y Wladfa" "Lle Cul" "Nant y Pysgod" "Cwm Hyfryd" "Bro Hydref" "Caer Antur" "Rhyd yr Indiaid" "Dôl y Plu" "Trerawson" "Afon Camwy"
+		"Aber Gyrants" "Dyffryn y Merthyron" "Dyffryn Oer" "Tre Lew" "Dol Afon" "Tre Felin" "Lewis Jones" "Michael Jones" "Mimosa" "Tehuelche" "Patagonés"
+		"Vesta" "Llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogoch"
+	}
+	clipper_transport = { 
+	}
+	steam_transport = { 
+	}
+	commerce_raider = {
+		"Y Wladfa" "Y Wladychfa Gymreig" "Yr Ariannin" "Chubut" "Batagonia" "Phorth Madryn" "Rada Tilly" "Gaiman" "Trefelin" "John Daniel Evans" "Dyffryn Camwy"
+		"Cymraeg y Wladfa" "Lle Cul" "Nant y Pysgod" "Cwm Hyfryd" "Bro Hydref" "Caer Antur" "Rhyd yr Indiaid" "Dôl y Plu" "Trerawson" "Afon Camwy"
+		"Aber Gyrants" "Dyffryn y Merthyron" "Dyffryn Oer" "Tre Lew" "Dol Afon" "Tre Felin" "Lewis Jones" "Michael Jones" "Mimosa" "Tehuelche" "Patagonés"
+		"Vesta" "Llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogoch"
+	}
+}

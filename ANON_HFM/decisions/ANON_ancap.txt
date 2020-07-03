@@ -1,0 +1,40 @@
+political_decisions = {
+
+	russia_pls_help_uwu = {
+		picture = map_india
+		potential = {
+			tag = EIC
+			is_vassal = no
+			OR = {
+				1587 = {
+					owned_by = RUS
+				}
+				any_neighbor_country = {
+					tag = RUS
+				}
+			}
+		}
+
+		allow = {
+			OR = {
+				ENG = { war_with = THIS }
+				ENL = { war_with = THIS }
+			}
+			OR = {
+				1587 = {
+					owned_by = RUS
+				}
+				any_neighbor_country = {
+					tag = RUS
+				}
+			}
+		}
+
+		effect = {
+			RUS = {
+				country_event = 7979000
+			}
+		}
+		ai_will_do = { factor = 1 }
+	}	
+}

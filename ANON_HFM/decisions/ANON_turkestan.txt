@@ -1,0 +1,3038 @@
+political_decisions = {
+
+	the_great_game_wakhan = {
+		picture = gtfo
+		potential = {
+			OR = {
+				government = absolute_monarchy
+				government = prussian_constitutionalism
+				government = hms_government
+			}
+			OR = {
+				is_greater_power = yes
+				is_secondary_power = yes
+			}
+			tag = RUS
+			has_global_flag = crimea_has_happened
+			OR = {
+				AND = {
+					ai = yes
+					year = 1865
+				}
+				AND = {
+					ai = no
+					nationalism_n_imperialism = 1
+				}
+			}
+			WKH = {
+				civilized = no
+				ai = yes
+				exists = yes
+				is_vassal = no
+			}
+			has_global_flag = the_great_game_kokand
+			NOT = { has_global_flag = the_great_game_wakhan }
+		}
+		
+		allow = {
+			WKH = { exists = yes }
+			war = no
+			nationalism_n_imperialism = 1
+		}
+		
+		effect = {
+			set_global_flag = the_great_game_wakhan
+			badboy = 1
+			add_casus_belli = {
+				target = WKH
+				type = annex_core_country
+				months = 60
+			}
+			war = {
+				target = WKH
+				attacker_goal = { casus_belli = annex_core_country }
+				defender_goal = { casus_belli = status_quo }
+				call_ally = yes
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	the_great_game_burma = {
+		picture = gtfo
+		potential = {
+			OR = {
+				government = absolute_monarchy
+				government = prussian_constitutionalism
+				government = hms_government
+			}
+			is_greater_power = yes
+			tag = RUS
+			BUR = {
+				civilized = no
+				ai = yes
+				exists = yes
+				neighbour = RUS
+				is_vassal = no
+			}
+			has_global_flag = the_great_game_tibet
+			TIB = {
+				exists = no
+			}
+			NOT = { has_global_flag = the_great_game_burma }
+		}
+		
+		allow = {
+			TIB = { exists = yes }
+			war = no
+			nationalism_n_imperialism = 1
+			owns = 1587
+			owns = 1590
+		}
+		
+		effect = {
+			set_global_flag = the_great_game_burma
+			badboy = 5
+			add_casus_belli = {
+				target = BUR
+				type = annex_core_country
+				months = 60
+			}
+			war = {
+				target = BUR
+				attacker_goal = { casus_belli = annex_core_country }
+				defender_goal = { casus_belli = status_quo }
+				call_ally = yes
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	the_great_game_tibet = {
+		picture = gtfo
+		potential = {
+			OR = {
+				government = absolute_monarchy
+				government = prussian_constitutionalism
+				government = hms_government
+			}
+			is_greater_power = yes
+			tag = RUS
+			TIB = {
+				civilized = no
+				ai = yes
+				exists = yes
+				neighbour = RUS
+			}
+			has_global_flag = the_great_game_kashgaria
+			UYG = {
+				exists = no
+			}
+			NOT = { has_global_flag = the_great_game_tibet }
+		}
+		
+		allow = {
+			TIB = { exists = yes }
+			war = no
+			nationalism_n_imperialism = 1
+			owns = 1595
+			owns = 1600
+		}
+		
+		effect = {
+			set_global_flag = the_great_game_tibet
+			badboy = 5
+			add_casus_belli = {
+				target = TIB
+				type = annex_core_country
+				months = 60
+			}
+			war = {
+				target = TIB
+				attacker_goal = { casus_belli = annex_core_country }
+				defender_goal = { casus_belli = status_quo }
+				call_ally = yes
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	the_great_game_kashgaria = {
+		picture = gtfo
+		potential = {
+			OR = {
+				government = absolute_monarchy
+				government = prussian_constitutionalism
+				government = hms_government
+			}
+			OR = {
+				is_greater_power = yes
+				is_secondary_power = yes
+			}
+			tag = RUS
+			UYG = {
+				civilized = no
+				ai = yes
+				exists = yes
+				neighbour = RUS
+				NOT = {
+					OR = {
+						is_vassal = yes
+						substate_of = QNG
+					}
+				}
+			}
+			has_global_flag = crimea_has_happened
+			has_global_flag = livadia_success
+			has_global_flag = middlejuz_taken
+			NOT = { has_global_flag = the_great_game_kashgaria }
+		}
+		
+		allow = {
+			UYG = { exists = yes }
+			war = no
+			nationalism_n_imperialism = 1
+		}
+		
+		effect = {
+			set_global_flag = the_great_game_kashgaria
+			badboy = 2.5
+			add_casus_belli = {
+				target = UYG
+				type = annex_core_country
+				months = 60
+			}
+			war = {
+				target = UYG
+				attacker_goal = { casus_belli = annex_core_country }
+				defender_goal = { casus_belli = status_quo }
+				call_ally = yes
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	ili_treaty = {
+		picture = peking_convention
+		potential = {
+			tag = QNG
+			has_global_flag = livadia_fail
+			NOT = {
+				OR = {
+					has_global_flag = livadia_success
+					has_global_flag = livadia_back
+				}
+				has_global_flag = ili_treaty
+			}
+			has_global_flag = ever_victorious_army
+		}
+		
+		allow = {
+			RUS = {
+				owns = 1595
+			}
+			UYG = {
+				OR = {
+					exists = no
+					vassal_of = THIS
+				}
+			}
+			XIN = {	vassal_of = THIS }
+		}
+		
+		effect = {
+			set_global_flag = ili_treaty
+			RUS = { country_event = 888888011 }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	livadia_treaty = {
+		picture = peking_convention
+		potential = {
+			tag = QNG
+			has_global_flag = dungan_rebellion
+			has_global_flag = RUS_yining
+			NOT = { has_global_flag = livadia_treaty }
+		}
+		
+		allow = {
+			RUS = {
+				owns = 1595
+				owns = 3580
+				owns = 3581
+			}
+			UYG = {	exists = no	}
+			XIN = {	vassal_of = THIS }
+		}
+		
+		effect = {
+			set_global_flag = livadia_treaty
+			RUS = { country_event = 888888001 }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	RUS_yining = { #Russia takes over Kuldzha (Yining) during the dungan revolt 80125
+		picture = peking_convention
+		potential = {
+			tag = RUS
+			is_greater_power = yes
+			has_global_flag = treaty_of_tarbagatay
+			has_global_flag = dungan_rebellion
+			NOT = { has_global_flag = RUS_yining }
+		}
+		
+		allow = {
+			#war = no
+			owns = 1188
+			owns = 1186
+			owns = 3461
+			XIN = {
+				exists = yes
+				is_vassal = yes
+				owns = 1595
+				owns = 3580
+				owns = 3581
+			}
+		}
+		
+		effect = {
+			set_global_flag = RUS_yining
+			1595 = {
+				#add_core = RUS
+				secede_province = RUS
+			}
+			3580 = {
+				#add_core = RUS
+				secede_province = RUS
+			}
+			3581 = {
+				#add_core = RUS
+				secede_province = RUS
+			}
+			any_country = {
+				limit = {
+					OR = {
+						tag = QNG
+						tag = UYG
+					}
+				}
+				country_event = 888888000
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	treaty_of_tarbagatay = {
+		picture = peking_convention
+		potential = {
+			tag = RUS
+			is_greater_power = yes
+			1188 = {
+				owner = {
+					OR = {
+						tag = QNG
+						vassal_of = QNG
+						substate_of = QNG
+					}
+				}
+			}
+			1186 = {
+				owner = {
+					OR = {
+						tag = QNG
+						vassal_of = QNG
+						substate_of = QNG
+					}
+				}
+			}
+			3461 = {
+				owner = {
+					OR = {
+						tag = QNG
+						vassal_of = QNG
+						substate_of = QNG
+					}
+				}
+			}
+			1068 = {
+				owner = {
+					OR = {
+						tag = QNG
+						vassal_of = QNG
+						substate_of = QNG
+					}
+				}
+			}
+			QNG = {
+				neighbour = RUS
+				has_global_flag = convention_of_peking
+				exists = yes
+			}
+			NOT = { has_global_flag = treaty_of_tarbagatay }
+		}
+		
+		allow = {
+			NOT = { truce_with = QNG }
+			J01 = {
+				OR = {
+					AND = {
+						exists = no
+						OR = {
+							1185 = { owned_by = RUS }
+							2606 = { owned_by = RUS }
+							1187 = { owned_by = RUS }
+						}
+					}
+					vassal_of = RUS
+				}
+			}
+			1188 = {
+				owner = {
+					OR = {
+						tag = QNG
+						vassal_of = QNG
+						substate_of = QNG
+					}
+				}
+			}
+			1186 = {
+				owner = {
+					OR = {
+						tag = QNG
+						vassal_of = QNG
+						substate_of = QNG
+					}
+				}
+			}
+			3461 = {
+				owner = {
+					OR = {
+						tag = QNG
+						vassal_of = QNG
+						substate_of = QNG
+					}
+				}
+			}
+			1068 = {
+				owner = {
+					OR = {
+						tag = QNG
+						vassal_of = QNG
+						substate_of = QNG
+					}
+				}
+			}
+		}
+		
+		effect = {
+			set_global_flag = treaty_of_tarbagatay
+			RUS_1185 = { add_core = RUS }
+			1068 = { add_core = RUS }
+			QNG = { country_event = 888888006 }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	BKY_become_J02 = {
+		picture = treaty_of_turkmanchay
+		potential = {
+			tag = BKY
+			J02 = { exists = no }
+		}
+		
+		allow = {
+			is_vassal = no
+		}
+		
+		effect = {
+			change_tag = J02
+			BKY = { all_core = { remove_core = THIS } }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	absorb_kazakh_tribes = {
+		picture = treaty_of_turkmanchay
+		potential = {
+			primary_culture = kazak
+			OR = {
+				has_country_flag = vassalize_J00
+				has_country_flag = vassalize_J01
+				has_country_flag = vassalize_J02
+				has_country_flag = vassalize_BKY
+			}
+			NOT = {
+				has_global_flag = kazakhstan_united
+			}
+		}
+		
+		allow = {
+			J00 = {
+				exists = yes
+				vassal_of = THIS
+			}
+			J01 = {
+				exists = yes
+				vassal_of = THIS
+			}
+			J02 = {
+				exists = yes
+				vassal_of = THIS
+			}
+			BKY = {
+				OR = {
+					AND = {
+						exists = yes
+						vassal_of = THIS
+					}
+					exists = no
+				}
+			}
+		}
+		
+		effect = {
+			any_country = {
+				limit = {
+					OR = {
+						tag = J00
+						tag = J01
+						tag = J02
+						tag = BKY
+					}
+					vassal_of = THIS
+				}
+				all_core = { add_core = KAZ }
+				annex_to = THIS
+			}
+			set_global_flag= kazakhstan_united
+			change_tag = KAZ
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	unify_J00 = {
+		picture = treaty_of_turkmanchay
+		potential = {
+			primary_culture = kazak
+			NOT = { tag = J00 }
+			J00 = { ai = yes }
+		}
+		
+		allow = {
+			J00 = {
+				exists = yes
+				relation = { who = THIS value = 150 }
+				alliance_with = THIS
+				NOT = { vassal_of = THIS }
+			}
+		}
+		
+		effect = {
+			create_vassal = J00
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	unify_J01 = {
+		picture = treaty_of_turkmanchay
+		potential = {
+			primary_culture = kazak
+			NOT = { tag = J01 }
+			J01 = { ai = yes }
+		}
+		
+		allow = {
+			J01 = {
+				exists = yes
+				relation = { who = THIS value = 150 }
+				alliance_with = THIS
+				NOT = { vassal_of = THIS }
+			}
+		}
+		
+		effect = {
+			create_vassal = J01
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	unify_J02 = {
+		picture = treaty_of_turkmanchay
+		potential = {
+			primary_culture = kazak
+			NOT = { tag = J02 }
+			J02 = { ai = yes }
+		}
+		
+		allow = {
+			J02 = {
+				exists = yes
+				relation = { who = THIS value = 150 }
+				alliance_with = THIS
+				NOT = { vassal_of = THIS }
+			}
+		}
+		
+		effect = {
+			create_vassal = J02
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	unify_BKY = {
+		picture = treaty_of_turkmanchay
+		potential = {
+			primary_culture = kazak
+			NOT = { tag = BKY }
+			BKY = { ai = yes }
+		}
+		
+		allow = {
+			BKY = {
+				exists = yes
+				relation = { who = THIS value = 150 }
+				alliance_with = THIS
+				NOT = { vassal_of = THIS }
+			}
+		}
+		
+		effect = {
+			create_vassal = BKY
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	absorb_bukey = {
+		picture = treaty_of_turkmanchay
+		potential = {
+			OR = {
+				government = absolute_monarchy
+				government = prussian_constitutionalism
+				government = hms_government
+			}
+			is_greater_power = yes
+			tag = RUS
+			OR = {
+				AND = {
+					ai = yes
+					year = 1845
+				}
+				AND = {
+					ai = no
+					state_n_government = 1
+				}
+			}
+			exists = BKY
+			BKY = {
+				civilized = no
+				ai = yes
+			}
+			has_recently_lost_war = no
+		}
+		
+		allow = {
+			BKY = {
+				OR = {
+					in_sphere = RUS
+					vassal_of = RUS
+				}
+			}
+			state_n_government = 1
+		}
+		
+		effect = {
+			inherit = BKY
+			prestige = 5
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	the_great_game_kyzylsu = {
+		picture = gtfo
+		potential = {
+			OR = {
+				government = absolute_monarchy
+				government = prussian_constitutionalism
+				government = hms_government
+			}
+			OR = {
+				is_greater_power = yes
+				is_secondary_power = yes
+			}
+			tag = RUS
+			OR = {
+				AND = {
+					ai = yes
+					year = 1864
+				}
+				AND = {
+					ai = no
+					nationalism_n_imperialism = 1
+				}
+			}
+			OR = {
+				1194 = { empty = yes }
+				3523 = { empty = yes }
+				3525 = { empty = yes }
+				1205 = { empty = yes }
+			}
+			NOT = { has_global_flag = kyzylsu_taken }
+		}
+		
+		allow = {
+			2702 = { owned_by = THIS }
+			2612 = { owned_by = THIS }
+			nationalism_n_imperialism = 1
+		}
+		
+		effect = {
+			random_owned = {
+				limit = {
+					OR = {
+						1194 = { empty = yes }
+						3523 = { empty = yes }
+						3525 = { empty = yes }
+						1205 = { empty = yes }
+					}
+					1193 = { empty = no }
+					1197 = { empty = no }
+				}
+				1194 = { secede_province = THIS }
+				3523 = { secede_province = THIS }
+				3525 = { secede_province = THIS }
+				1205 = { secede_province = THIS }
+			}
+			set_global_flag = kyzylsu_taken
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	the_great_game_turkmenia = {
+		picture = gtfo
+		potential = {
+			OR = {
+				government = absolute_monarchy
+				government = prussian_constitutionalism
+				government = hms_government
+			}
+			OR = {
+				is_greater_power = yes
+				is_secondary_power = yes
+			}
+			tag = RUS
+			OR = {
+				AND = {
+					ai = yes
+					year = 1865
+				}
+				AND = {
+					ai = no
+					nationalism_n_imperialism = 1
+				}
+			}
+			TKM = {
+				civilized = no
+				ai = yes
+				exists = yes
+			}
+			OR = {
+				has_global_flag = middlejuz_taken
+				has_global_flag = kyzylsu_taken
+			}
+			NOT = { has_global_flag = the_great_game_turkmenia }
+		}
+		
+		allow = {
+			TKM = { exists = yes }
+			war = no
+			nationalism_n_imperialism = 1
+		}
+		
+		effect = {
+			set_global_flag = the_great_game_turkmenia
+			badboy = 1
+			add_casus_belli = {
+				target = TKM
+				type = annex_core_country
+				months = 60
+			}
+			war = {
+				target = TKM
+				attacker_goal = { casus_belli = annex_core_country }
+				defender_goal = { casus_belli = status_quo }
+				call_ally = yes
+			}	
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	the_great_game_darwaz = {
+		picture = gtfo
+		potential = {
+			OR = {
+				government = absolute_monarchy
+				government = prussian_constitutionalism
+				government = hms_government
+			}
+			OR = {
+				is_greater_power = yes
+				is_secondary_power = yes
+			}
+			tag = RUS
+			OR = {
+				AND = {
+					ai = yes
+					year = 1865
+				}
+				AND = {
+					ai = no
+					nationalism_n_imperialism = 1
+				}
+			}
+			DWZ = {
+				civilized = no
+				ai = yes
+				is_vassal = no
+				exists = yes
+			}
+			OR = {
+				has_global_flag = middlejuz_taken
+				has_global_flag = kyzylsu_taken
+			}
+			NOT = { has_global_flag = the_great_game_darwaz }
+		}
+		
+		allow = {
+			DWZ = { exists = yes }
+			war = no
+			nationalism_n_imperialism = 1
+		}
+		
+		effect = {
+			set_global_flag = the_great_game_darwaz
+			badboy = 1
+			add_casus_belli = {
+				target = DWZ
+				type = annex_core_country
+				months = 60
+			}
+			war = {
+				target = DWZ
+				attacker_goal = { casus_belli = annex_core_country }
+				defender_goal = { casus_belli = status_quo }
+				call_ally = yes
+			}	
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	the_great_game_kazakhstan = {
+		picture = gtfo
+		potential = {
+			OR = {
+				government = absolute_monarchy
+				government = prussian_constitutionalism
+				government = hms_government
+			}
+			OR = {
+				is_greater_power = yes
+				is_secondary_power = yes
+			}
+			tag = RUS
+			OR = {
+				AND = {
+					ai = yes
+					year = 1848
+				}
+				AND = {
+					ai = no
+					state_n_government = 1
+				}
+			}
+			J01 = {
+				civilized = no
+				ai = yes
+			}
+			NOT = { has_global_flag = middlejuz_taken }
+		}
+		
+		allow = {
+			J01 = { exists = yes }
+			war = no
+			state_n_government = 1
+		}
+		
+		effect = {
+			set_global_flag = middlejuz_taken
+			badboy = 1
+			add_casus_belli = {
+				target = J01
+				type = annex_core_country
+				months = 60
+			}
+			war = {
+				target = J01
+				attacker_goal = { casus_belli = annex_core_country }
+				defender_goal = { casus_belli = status_quo }
+				call_ally = yes
+			}	
+			random_owned = {
+				limit = {
+					OR = {
+						2612 = { empty = yes }
+						2702 = { empty = yes }
+					}
+					2611 = { empty = no }
+					1181 = { empty = no }
+				}
+				2612 = { secede_province = THIS }
+				2702 = { secede_province = THIS }
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	rename_uralsk = {
+		picture = gtfo
+		potential = {
+			OR = {
+				AND = {
+					is_culture_group = east_slavic
+					OR = {
+						AND = {
+							owns = 2610 NOT = { has_global_flag = slavic_rename_uralsk }
+						}
+						AND = {
+							owns = 1182 NOT = { has_global_flag = slavic_rename_guryev }
+						}
+						AND = {
+							owns = 1183 NOT = { has_global_flag = slavic_rename_aqtobe }
+						}
+						AND = {
+							owns = 2702 NOT = { has_global_flag = slavic_rename_aralsk }
+						}
+						AND = {
+							owns = 3529 NOT = { has_global_flag = slavic_rename_orda }
+						}
+					}
+				}
+				AND = {
+					is_culture_group = turanian
+					OR = {
+						AND = {
+							owns = 2610 NOT = { has_global_flag = turanian_rename_uralsk }
+						}
+						AND = {
+							owns = 1182 NOT = { has_global_flag = turanian_rename_guryev }
+						}
+						AND = {
+							owns = 1183 NOT = { has_global_flag = turanian_rename_aqtobe }
+						}
+						AND = {
+							owns = 2702 NOT = { has_global_flag = turanian_rename_aralsk }
+						}
+						AND = {
+							owns = 3529 NOT = { has_global_flag = turanian_rename_orda }
+						}
+					}
+				}
+			}
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			###slavic###
+			random_owned = {
+				limit = {
+					province_id = 2610
+					owner = {
+						is_culture_group = east_slavic
+					}
+				}
+				2610 = { change_province_name = "Uralsk"
+					state_scope = {
+						change_region_name = "Uralsk"
+					}
+				}
+				owner = { 
+					set_global_flag = slavic_rename_uralsk
+					clr_global_flag = turanian_rename_uralsk
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 1182
+					owner = {
+						is_culture_group = east_slavic
+					}
+				}
+				1182 = { change_province_name = "Guryev" }
+				owner = { 
+					set_global_flag = slavic_rename_guryev
+					clr_global_flag = turanian_rename_guryev
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 1183
+					owner = {
+						is_culture_group = east_slavic
+					}
+				}
+				1183 = { change_province_name = "Aktyubinsk" }
+				owner = { 
+					set_global_flag = slavic_rename_aqtobe
+					clr_global_flag = turanian_rename_aqtobe
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 2702
+					owner = {
+						is_culture_group = east_slavic
+					}
+				}
+				2702 = { change_province_name = "Aralsk" }
+				owner = { 
+					set_global_flag = slavic_rename_aralsk
+					clr_global_flag = turanian_rename_aralsk
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 3529
+					owner = {
+						is_culture_group = east_slavic
+					}
+				}
+				3529 = { change_province_name = "Khanskaya Stavka" }
+				owner = { 
+					set_global_flag = slavic_rename_orda
+					clr_global_flag = turanian_rename_orda
+				}
+			}
+			
+			###turanian###
+			random_owned = {
+				limit = {
+					province_id = 2610
+					owner = {
+						is_culture_group = turanian
+					}
+				}
+				2610 = { change_province_name = "Oral"
+					state_scope = {
+						change_region_name = "Oral"
+					}
+				}
+				owner = { 
+					set_global_flag = turanian_rename_uralsk
+					clr_global_flag = slavic_rename_uralsk
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 1182
+					owner = {
+						is_culture_group = turanian
+					}
+				}
+				1182 = { change_province_name = "Atyrau" }
+				owner = { 
+					set_global_flag = turanian_rename_guryev
+					clr_global_flag = slavic_rename_guryev
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 1183
+					owner = {
+						is_culture_group = turanian
+					}
+				}
+				1183 = { change_province_name = "Aqtobe" }
+				owner = { 
+					set_global_flag = turanian_rename_aqtobe
+					clr_global_flag = slavic_rename_aqtobe
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 2702
+					owner = {
+						is_culture_group = turanian
+					}
+				}
+				2702 = { change_province_name = "Alty-Kuduk" }
+				owner = { 
+					set_global_flag = turanian_rename_aralsk
+					clr_global_flag = slavic_rename_aralsk
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 3529
+					owner = {
+						is_culture_group = turanian
+					}
+				}
+				3529 = { change_province_name = "Khan Ordasi" }
+				owner = { 
+					set_global_flag = turanian_rename_orda
+					clr_global_flag = slavic_rename_orda
+				}
+			}
+		}
+		ai_will_do = { factor = 1 }
+	}
+	rename_akmolinsk = {
+		picture = gtfo
+		potential = {
+			OR = {
+				AND = {
+					is_culture_group = east_slavic
+					OR = {
+						AND = {
+							owns = 1181 NOT = { has_global_flag = slavic_rename_almolinsk }
+						}
+						AND = {
+							owns = 1184 NOT = { has_global_flag = slavic_rename_kokshetau }
+						}
+						AND = {
+							owns = 2611 NOT = { has_global_flag = slavic_rename_turgay }
+						}
+						AND = {
+							owns = 2612 NOT = { has_global_flag = slavic_rename_aktash }
+						}
+					}
+				}
+				AND = {
+					is_culture_group = turanian
+					OR = {
+						AND = {
+							owns = 1181 NOT = { has_global_flag = turanian_rename_almolinsk }
+						}
+						AND = {
+							owns = 1184 NOT = { has_global_flag = turanian_rename_kokshetau }
+						}
+						AND = {
+							owns = 2611 NOT = { has_global_flag = turanian_rename_turgay }
+						}
+						AND = {
+							owns = 2612 NOT = { has_global_flag = turanian_rename_aktash }
+						}
+					}
+				}
+			}
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			###slavic###
+			random_owned = {
+				limit = {
+					province_id = 1181
+					owner = {
+						is_culture_group = east_slavic
+					}
+				}
+				1181 = { change_province_name = "Akmolinsk"
+					state_scope = {
+						change_region_name = "Akmolinsk"
+					}
+				}
+				owner = { 
+					set_global_flag = slavic_rename_almolinsk
+					clr_global_flag = turanian_rename_almolinsk
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 1184
+					owner = {
+						is_culture_group = east_slavic
+					}
+				}
+				1184 = { change_province_name = "Kokchetav" }
+				owner = { 
+					set_global_flag = slavic_rename_kokshetau
+					clr_global_flag = turanian_rename_kokshetau
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 2611
+					owner = {
+						is_culture_group = east_slavic
+					}
+				}
+				2611 = { change_province_name = "Turgay" }
+				owner = { 
+					set_global_flag = slavic_rename_turgay
+					clr_global_flag = turanian_rename_turgay
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 2612
+					owner = {
+						is_culture_group = east_slavic
+					}
+				}
+				2612 = { change_province_name = "Karsakpay" }
+				owner = { 
+					set_global_flag = slavic_rename_aktash
+					clr_global_flag = turanian_rename_aktash
+				}
+			}
+			
+			###turanian###
+			random_owned = {
+				limit = {
+					province_id = 1181
+					owner = {
+						is_culture_group = turanian
+					}
+				}
+				1181 = { change_province_name = "Qaraghandy"
+					state_scope = {
+						change_region_name = "Aqmol"
+					}
+				}
+				owner = { 
+					set_global_flag = turanian_rename_almolinsk
+					clr_global_flag = slavic_rename_almolinsk
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 1184
+					owner = {
+						is_culture_group = turanian
+					}
+				}
+				1184 = { change_province_name = "Kokshetau" }
+				owner = { 
+					set_global_flag = turanian_rename_kokshetau
+					clr_global_flag = slavic_rename_kokshetau
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 2611
+					owner = {
+						is_culture_group = turanian
+					}
+				}
+				2611 = { change_province_name = "Torghay" }
+				owner = { 
+					set_global_flag = turanian_rename_turgay
+					clr_global_flag = slavic_rename_turgay
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 2612
+					owner = {
+						is_culture_group = turanian
+					}
+				}
+				2612 = { change_province_name = "Qarsaqpai" }
+				owner = { 
+					set_global_flag = turanian_rename_aktash
+					clr_global_flag = slavic_rename_aktash
+				}
+			}
+		}
+		ai_will_do = { factor = 1 }
+	}
+	rename_syrdarya = {
+		picture = gtfo
+		potential = {
+			OR = {
+				AND = {
+					is_culture_group = iranian
+					OR = {
+						AND = {
+							owns = 1195 NOT = { has_global_flag = iranian_rename_tashkent }
+						}
+						AND = {
+							owns = 1185 NOT = { has_global_flag = iranian_rename_turkistan }
+						}
+						AND = {
+							owns = 29 NOT = { has_global_flag = iranian_rename_kyzylkum }
+						}
+						AND = {
+							owns = 1197 NOT = { has_global_flag = iranian_rename_chimkent }
+						}
+						AND = {
+							owns = 3462 NOT = { has_global_flag = iranian_rename_taraz }
+						}
+						AND = {
+							owns = 1193 NOT = { has_global_flag = iranian_rename_akmechet }
+						}
+						AND = {
+							owns = 3463 NOT = { has_global_flag = iranian_rename_ayteke }
+						}
+					}
+				}
+				AND = {
+					is_culture_group = turanian
+					OR = {
+						AND = {
+							owns = 1195 NOT = { has_global_flag = turanian_rename_tashkent }
+						}
+						AND = {
+							owns = 1185 NOT = { has_global_flag = turanian_rename_turkistan }
+						}
+						AND = {
+							owns = 29 NOT = { has_global_flag = turanian_rename_kyzylkum }
+						}
+						AND = {
+							owns = 1197 NOT = { has_global_flag = turanian_rename_chimkent }
+						}
+						AND = {
+							owns = 3462 NOT = { has_global_flag = turanian_rename_taraz }
+						}
+						AND = {
+							owns = 1193 NOT = { has_global_flag = turanian_rename_akmechet }
+						}
+						AND = {
+							owns = 3463 NOT = { has_global_flag = turanian_rename_ayteke }
+						}
+					}
+				}
+				AND = {
+					is_culture_group = east_slavic
+					OR = {
+						AND = {
+							owns = 1195 NOT = { has_global_flag = slavic_rename_tashkent }
+						}
+						AND = {
+							owns = 1185 NOT = { has_global_flag = slavic_rename_turkistan }
+						}
+						AND = {
+							owns = 29 NOT = { has_global_flag = slavic_rename_kyzylkum }
+						}
+						AND = {
+							owns = 1197 NOT = { has_global_flag = slavic_rename_chimkent }
+						}
+						AND = {
+							owns = 3462 NOT = { has_global_flag = slavic_rename_taraz }
+						}
+						AND = {
+							owns = 1193 NOT = { has_global_flag = slavic_rename_akmechet }
+						}
+						AND = {
+							owns = 3463 NOT = { has_global_flag = slavic_rename_ayteke }
+						}
+					}
+				}
+			}
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			###iranian###
+			random_owned = {
+				limit = {
+					province_id = 1195
+					owner = {
+						is_culture_group = iranian
+					}
+				}
+				1195 = { change_province_name = "Chashkand"
+					state_scope = {
+						change_region_name = "Chashkand"
+					}
+				}
+				owner = { 
+					set_global_flag = iranian_rename_tashkent
+					clr_global_flag = turanian_rename_tashkent
+					clr_global_flag = slavic_rename_tashkent
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 1185
+					owner = {
+						is_culture_group = iranian
+					}
+				}
+				1185 = { change_province_name = "Shavgar" }
+				owner = { 
+					set_global_flag = iranian_rename_turkistan
+					clr_global_flag = turanian_rename_turkistan
+					clr_global_flag = slavic_rename_turkistan
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 29
+					owner = {
+						is_culture_group = iranian
+					}
+				}
+				29 = { change_province_name = "Zarafshan" }
+				owner = { 
+					set_global_flag = iranian_rename_kyzylkum
+					clr_global_flag = turanian_rename_kyzylkum
+					clr_global_flag = slavic_rename_kyzylkum
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 1197
+					owner = {
+						is_culture_group = iranian
+					}
+				}
+				1197 = { change_province_name = "Chimkand" }
+				owner = { 
+					set_global_flag = iranian_rename_chimkent
+					clr_global_flag = turanian_rename_chimkent
+					clr_global_flag = slavic_rename_chimkent
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 3462
+					owner = {
+						is_culture_group = iranian
+					}
+				}
+				3462 = { change_province_name = "Namakan-i Kuchek" }
+				owner = { 
+					set_global_flag = iranian_rename_taraz
+					clr_global_flag = turanian_rename_taraz
+					clr_global_flag = slavic_rename_taraz
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 1193
+					owner = {
+						is_culture_group = iranian
+					}
+				}
+				1193 = { change_province_name = "Sefid-Masjed" }
+				owner = { 
+					set_global_flag = iranian_rename_akmechet
+					clr_global_flag = turanian_rename_akmechet
+					clr_global_flag = slavic_rename_akmechet
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 3463
+					owner = {
+						is_culture_group = iranian
+					}
+				}
+				3463 = { change_province_name = "Qazal" }
+				owner = { 
+					set_global_flag = iranian_rename_ayteke
+					clr_global_flag = turanian_rename_ayteke
+					clr_global_flag = slavic_rename_ayteke
+				}
+			}
+			
+			###turanian###
+			random_owned = {
+				limit = {
+					province_id = 1195
+					owner = {
+						is_culture_group = turanian
+					}
+				}
+				1195 = { change_province_name = "Chachkent"
+					state_scope = {
+						change_region_name = "Chachkent"
+					}
+				}
+				owner = { 
+					set_global_flag = turanian_rename_tashkent
+					clr_global_flag = iranian_rename_tashkent
+					clr_global_flag = slavic_rename_tashkent
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 1185
+					owner = {
+						is_culture_group = turanian
+					}
+				}
+				1185 = { change_province_name = "Hazrat-i Turkiston" }
+				owner = { 
+					set_global_flag = turanian_rename_turkistan
+					clr_global_flag = iranian_rename_turkistan
+					clr_global_flag = slavic_rename_turkistan
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 29
+					owner = {
+						is_culture_group = turanian
+					}
+				}
+				29 = { change_province_name = "Kyzyl-Kum" }
+				owner = { 
+					set_global_flag = turanian_rename_kyzylkum
+					clr_global_flag = iranian_rename_kyzylkum
+					clr_global_flag = slavic_rename_kyzylkum
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 1197
+					owner = {
+						is_culture_group = turanian
+					}
+				}
+				1197 = { change_province_name = "Shymkent" }
+				owner = { 
+					set_global_flag = turanian_rename_chimkent
+					clr_global_flag = iranian_rename_chimkent
+					clr_global_flag = slavic_rename_chimkent
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 3462
+					owner = {
+						is_culture_group = turanian
+					}
+				}
+				3462 = { change_province_name = "Namangan-i Köchek" }
+				owner = { 
+					set_global_flag = turanian_rename_taraz
+					clr_global_flag = iranian_rename_taraz
+					clr_global_flag = slavic_rename_taraz
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 1193
+					owner = {
+						is_culture_group = turanian
+					}
+				}
+				1193 = { change_province_name = "Ak-Mechet" }
+				owner = { 
+					set_global_flag = turanian_rename_akmechet
+					clr_global_flag = iranian_rename_akmechet
+					clr_global_flag = slavic_rename_akmechet
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 3463
+					owner = {
+						is_culture_group = turanian
+					}
+				}
+				3463 = { change_province_name = "Qazaly" }
+				owner = { 
+					set_global_flag = turanian_rename_ayteke
+					clr_global_flag = iranian_rename_ayteke
+					clr_global_flag = slavic_rename_ayteke
+				}
+			}
+			
+			###slavic###
+			random_owned = {
+				limit = {
+					province_id = 1195
+					owner = {
+						is_culture_group = east_slavic
+					}
+				}
+				1195 = { change_province_name = "Tashkent"
+					state_scope = {
+						change_region_name = "Tashkent"
+					}
+				}
+				owner = { 
+					set_global_flag = slavic_rename_tashkent
+					clr_global_flag = iranian_rename_tashkent
+					clr_global_flag = turanian_rename_tashkent
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 1185
+					owner = {
+						is_culture_group = east_slavic
+					}
+				}
+				1185 = { change_province_name = "Turkestan" }
+				owner = { 
+					set_global_flag = slavic_rename_turkistan
+					clr_global_flag = iranian_rename_turkistan
+					clr_global_flag = turanian_rename_turkistan
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 29
+					owner = {
+						is_culture_group = east_slavic
+					}
+				}
+				29 = { change_province_name = "Kyzylkumy" }
+				owner = { 
+					set_global_flag = slavic_rename_kyzylkum
+					clr_global_flag = iranian_rename_kyzylkum
+					clr_global_flag = turanian_rename_kyzylkum
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 1197
+					owner = {
+						is_culture_group = east_slavic
+					}
+				}
+				1197 = { change_province_name = "Chimkent" }
+				owner = { 
+					set_global_flag = slavic_rename_chimkent
+					clr_global_flag = iranian_rename_chimkent
+					clr_global_flag = turanian_rename_chimkent
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 3462
+					owner = {
+						is_culture_group = east_slavic
+					}
+				}
+				3462 = { change_province_name = "Aulie-Ata" }
+				owner = { 
+					set_global_flag = slavic_rename_taraz
+					clr_global_flag = iranian_rename_taraz
+					clr_global_flag = turanian_rename_taraz
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 1193
+					owner = {
+						is_culture_group = east_slavic
+					}
+				}
+				1193 = { change_province_name = "Perovsk" }
+				owner = { 
+					set_global_flag = slavic_rename_akmechet
+					clr_global_flag = iranian_rename_akmechet
+					clr_global_flag = turanian_rename_akmechet
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 3463
+					owner = {
+						is_culture_group = east_slavic
+					}
+				}
+				3463 = { change_province_name = "Kazalinsk" }
+				owner = { 
+					set_global_flag = slavic_rename_ayteke
+					clr_global_flag = iranian_rename_ayteke
+					clr_global_flag = turanian_rename_ayteke
+				}
+			}
+		}
+		ai_will_do = { factor = 1 }
+	}
+	rename_ferghana = {
+		picture = gtfo
+		potential = {
+			OR = {
+				AND = {
+					is_culture_group = iranian
+					OR = {
+						AND = {
+							owns = 1202 NOT = { has_global_flag = iranian_rename_ferghana }
+						}
+						AND = {
+							owns = 1203 NOT = { has_global_flag = iranian_rename_osh }
+						}
+						AND = {
+							owns = 1189 NOT = { has_global_flag = iranian_rename_bishkek }
+						}
+						AND = {
+							owns = 1190 NOT = { has_global_flag = iranian_rename_naryn }
+						}
+					}
+				}
+				AND = {
+					is_culture_group = turanian
+					OR = {
+						AND = {
+							owns = 1202 NOT = { has_global_flag = turanian_rename_ferghana }
+						}
+						AND = {
+							owns = 1203 NOT = { has_global_flag = turanian_rename_osh }
+						}
+						AND = {
+							owns = 1189 NOT = { has_global_flag = turanian_rename_bishkek }
+						}
+						AND = {
+							owns = 1190 NOT = { has_global_flag = turanian_rename_naryn }
+						}
+					}
+				}
+				AND = {
+					is_culture_group = east_slavic
+					OR = {
+						AND = {
+							owns = 1202 NOT = { has_global_flag = slavic_rename_ferghana }
+						}
+						AND = {
+							owns = 1203 NOT = { has_global_flag = slavic_rename_osh }
+						}
+						AND = {
+							owns = 1189 NOT = { has_global_flag = slavic_rename_bishkek }
+						}
+						AND = {
+							owns = 1190 NOT = { has_global_flag = slavic_rename_naryn }
+						}
+					}
+				}
+			}
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			###iranian###
+			random_owned = {
+				limit = {
+					province_id = 1202
+					owner = {
+						is_culture_group = iranian
+					}
+				}
+				1202 = { change_province_name = "Khavakand"
+					state_scope = {
+						change_region_name = "Farghana"
+					}
+				}
+				owner = { 
+					set_global_flag = iranian_rename_ferghana
+					clr_global_flag = turanian_rename_ferghana
+					clr_global_flag = slavic_rename_ferghana
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 1203
+					owner = {
+						is_culture_group = iranian
+					}
+				}
+				1203 = { change_province_name = "Osh" }
+				owner = { 
+					set_global_flag = iranian_rename_osh
+					clr_global_flag = turanian_rename_osh
+					clr_global_flag = slavic_rename_osh
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 1189
+					owner = {
+						is_culture_group = iranian
+					}
+				}
+				1189 = { change_province_name = "Frunze" }
+				owner = { 
+					set_global_flag = iranian_rename_bishkek
+					clr_global_flag = turanian_rename_bishkek
+					clr_global_flag = slavic_rename_bishkek
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 1190
+					owner = {
+						is_culture_group = iranian
+					}
+				}
+				1190 = { change_province_name = "Norin" }
+				owner = { 
+					set_global_flag = iranian_rename_naryn
+					clr_global_flag = turanian_rename_naryn
+					clr_global_flag = slavic_rename_naryn
+				}
+			}
+			
+			###turanian###
+			random_owned = {
+				limit = {
+					province_id = 1202
+					owner = {
+						is_culture_group = turanian
+					}
+				}
+				1202 = { change_province_name = "Qoqon"
+					state_scope = {
+						change_region_name = "Fargona"
+					}
+				}
+				owner = { 
+					set_global_flag = turanian_rename_ferghana
+					clr_global_flag = iranian_rename_ferghana
+					clr_global_flag = slavic_rename_ferghana
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 1203
+					owner = {
+						is_culture_group = turanian
+					}
+				}
+				1203 = { change_province_name = "O'sh" }
+				owner = { 
+					set_global_flag = turanian_rename_osh
+					clr_global_flag = iranian_rename_osh
+					clr_global_flag = slavic_rename_osh
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 1189
+					owner = {
+						is_culture_group = turanian
+					}
+				}
+				1189 = { change_province_name = "Pishpek" }
+				owner = { 
+					set_global_flag = turanian_rename_bishkek
+					clr_global_flag = iranian_rename_bishkek
+					clr_global_flag = slavic_rename_bishkek
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 1190
+					owner = {
+						is_culture_group = turanian
+					}
+				}
+				1190 = { change_province_name = "Narin" }
+				owner = { 
+					set_global_flag = turanian_rename_naryn
+					clr_global_flag = iranian_rename_naryn
+					clr_global_flag = slavic_rename_naryn
+				}
+			}
+			
+			###slavic###
+			random_owned = {
+				limit = {
+					province_id = 1202
+					owner = {
+						is_culture_group = east_slavic
+					}
+				}
+				1202 = { change_province_name = "Kokand"
+					state_scope = {
+						change_region_name = "Fergana"
+					}
+				}
+				owner = { 
+					set_global_flag = slavic_rename_ferghana
+					clr_global_flag = iranian_rename_ferghana
+					clr_global_flag = turanian_rename_ferghana
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 1203
+					owner = {
+						is_culture_group = east_slavic
+					}
+				}
+				1203 = { change_province_name = "Osh" }
+				owner = { 
+					set_global_flag = slavic_rename_osh
+					clr_global_flag = iranian_rename_osh
+					clr_global_flag = turanian_rename_osh
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 1189
+					owner = {
+						is_culture_group = east_slavic
+					}
+				}
+				1189 = { change_province_name = "Bishkek" }
+				owner = { 
+					set_global_flag = slavic_rename_bishkek
+					clr_global_flag = iranian_rename_bishkek
+					clr_global_flag = turanian_rename_bishkek
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 1190
+					owner = {
+						is_culture_group = east_slavic
+					}
+				}
+				1190 = { change_province_name = "Naryn" }
+				owner = { 
+					set_global_flag = slavic_rename_naryn
+					clr_global_flag = iranian_rename_naryn
+					clr_global_flag = turanian_rename_naryn
+				}
+			}
+		}
+		ai_will_do = { factor = 1 }
+	}
+	rename_samarkand = {
+		picture = gtfo
+		potential = {
+			OR = {
+				AND = {
+					is_culture_group = iranian
+					OR = {
+						AND = {
+							owns = 1199 NOT = { has_global_flag = iranian_rename_samarkand }
+						}
+						AND = {
+							owns = 3527 NOT = { has_global_flag = iranian_rename_nur }
+						}
+						AND = {
+							owns = 1201 NOT = { has_global_flag = iranian_rename_khojand }
+						}
+					}
+				}
+				AND = {
+					is_culture_group = turanian
+					OR = {
+						AND = {
+							owns = 1199 NOT = { has_global_flag = turanian_rename_samarkand }
+						}
+						AND = {
+							owns = 3527 NOT = { has_global_flag = turanian_rename_nur }
+						}
+						AND = {
+							owns = 1201 NOT = { has_global_flag = turanian_rename_khojand }
+						}
+					}
+				}
+				AND = {
+					is_culture_group = east_slavic
+					OR = {
+						AND = {
+							owns = 1199 NOT = { has_global_flag = slavic_rename_samarkand }
+						}
+						AND = {
+							owns = 3527 NOT = { has_global_flag = slavic_rename_nur }
+						}
+						AND = {
+							owns = 1201 NOT = { has_global_flag = slavic_rename_khojand }
+						}
+					}
+				}
+			}
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			###iranian###
+			random_owned = {
+				limit = {
+					province_id = 1199
+					owner = {
+						is_culture_group = iranian
+					}
+				}
+				1199 = { change_province_name = "Samarkand"
+					state_scope = {
+						change_region_name = "Samarkand"
+					}
+				}
+				owner = { 
+					set_global_flag = iranian_rename_samarkand
+					clr_global_flag = turanian_rename_samarkand
+					clr_global_flag = slavic_rename_samarkand
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 3527
+					owner = {
+						is_culture_group = iranian
+					}
+				}
+				3527 = { change_province_name = "Nurato" }
+				owner = { 
+					set_global_flag = iranian_rename_nur
+					clr_global_flag = turanian_rename_nur
+					clr_global_flag = slavic_rename_nur
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 1201
+					owner = {
+						is_culture_group = iranian
+					}
+				}
+				1201 = { change_province_name = "Khujand" }
+				owner = { 
+					set_global_flag = iranian_rename_khojand
+					clr_global_flag = turanian_rename_khojand
+					clr_global_flag = slavic_rename_khojand
+				}
+			}
+			
+			###turanian###
+			random_owned = {
+				limit = {
+					province_id = 1199
+					owner = {
+						is_culture_group = turanian
+					}
+				}
+				1199 = { change_province_name = "Samarqand"
+					state_scope = {
+						change_region_name = "Samarqand"
+					}
+				}
+				owner = { 
+					set_global_flag = turanian_rename_samarkand
+					clr_global_flag = iranian_rename_samarkand
+					clr_global_flag = slavic_rename_samarkand
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 3527
+					owner = {
+						is_culture_group = turanian
+					}
+				}
+				3527 = { change_province_name = "Nurota" }
+				owner = { 
+					set_global_flag = turanian_rename_nur
+					clr_global_flag = iranian_rename_nur
+					clr_global_flag = slavic_rename_nur
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 1201
+					owner = {
+						is_culture_group = turanian
+					}
+				}
+				1201 = { change_province_name = "Khojent" }
+				owner = { 
+					set_global_flag = turanian_rename_khojand
+					clr_global_flag = iranian_rename_khojand
+					clr_global_flag = slavic_rename_khojand
+				}
+			}
+			
+			###slavic###
+			random_owned = {
+				limit = {
+					province_id = 1199
+					owner = {
+						is_culture_group = east_slavic
+					}
+				}
+				1199 = { change_province_name = "Samarkand"
+					state_scope = {
+						change_region_name = "Samarkand"
+					}
+				}
+				owner = { 
+					set_global_flag = slavic_rename_samarkand
+					clr_global_flag = iranian_rename_samarkand
+					clr_global_flag = turanian_rename_samarkand
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 3527
+					owner = {
+						is_culture_group = east_slavic
+					}
+				}
+				3527 = { change_province_name = "Nurata" }
+				owner = { 
+					set_global_flag = slavic_rename_nur
+					clr_global_flag = iranian_rename_nur
+					clr_global_flag = turanian_rename_nur
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 1201
+					owner = {
+						is_culture_group = east_slavic
+					}
+				}
+				1201 = { change_province_name = "Khodzhent" }
+				owner = { 
+					set_global_flag = slavic_rename_khojand
+					clr_global_flag = iranian_rename_khojand
+					clr_global_flag = turanian_rename_khojand
+				}
+			}
+		}
+		ai_will_do = { factor = 1 }
+	}
+	rename_bukhara = {
+		picture = gtfo
+		potential = {
+			OR = {
+				AND = {
+					is_culture_group = iranian
+					owns = 1198 NOT = { has_global_flag = iranian_rename_bukhara }
+				}
+				AND = {
+					is_culture_group = turanian
+					owns = 1198 NOT = { has_global_flag = turanian_rename_bukhara }
+				}
+				AND = {
+					is_culture_group = east_slavic
+					owns = 1198 NOT = { has_global_flag = slavic_rename_bukhara }
+				}
+			}
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			###iranian###
+			random_owned = {
+				limit = {
+					province_id = 1198
+					owner = {
+						is_culture_group = iranian
+					}
+				}
+				1198 = { change_province_name = "Bukhara"
+					state_scope = {
+						change_region_name = "Bukhara"
+					}
+				}
+				1206 = { change_province_name = "Lab-e Ab" }
+				1200 = { change_province_name = "Nakhshab" }
+				1207 = { change_province_name = "Kûlob" }
+				owner = { 
+					set_global_flag = iranian_rename_bukhara
+					clr_global_flag = turanian_rename_bukhara
+					clr_global_flag = slavic_rename_bukhara
+				}
+			}
+			
+			###turanian###
+			random_owned = {
+				limit = {
+					province_id = 1198
+					owner = {
+						is_culture_group = turanian
+					}
+				}
+				1198 = { change_province_name = "Bukhoro"
+					state_scope = {
+						change_region_name = "Bukhoro"
+					}
+				}
+				1206 = { change_province_name = "Farap" }
+				1200 = { change_province_name = "Qarshi" }
+				1207 = { change_province_name = "Qulob" }
+				owner = { 
+					set_global_flag = turanian_rename_bukhara
+					clr_global_flag = iranian_rename_bukhara
+					clr_global_flag = slavic_rename_bukhara
+				}
+			}
+			
+			###slavic###
+			random_owned = {
+				limit = {
+					province_id = 1198
+					owner = {
+						is_culture_group = east_slavic
+					}
+				}
+				1198 = { change_province_name = "Bukhara"
+					state_scope = {
+						change_region_name = "Bukhara"
+					}
+				}
+				1206 = { change_province_name = "Farap" }
+				1200 = { change_province_name = "Karshi" }
+				1207 = { change_province_name = "Kulyab" }
+				owner = { 
+					set_global_flag = slavic_rename_bukhara
+					clr_global_flag = iranian_rename_bukhara
+					clr_global_flag = turanian_rename_bukhara
+				}
+			}
+		}
+		ai_will_do = { factor = 1 }
+	}
+	rename_khiva = {
+		picture = gtfo
+		potential = {
+			OR = {
+				AND = {
+					is_culture_group = iranian
+					owns = 1191 NOT = { has_global_flag = iranian_rename_khiva }
+				}
+				AND = {
+					is_culture_group = turanian
+					owns = 1191 NOT = { has_global_flag = turanian_rename_khiva }
+				}
+				AND = {
+					is_culture_group = east_slavic
+					owns = 1191 NOT = { has_global_flag = slavic_rename_khiva }
+				}
+			}
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {			
+			###iranian###
+			random_owned = {
+				limit = {
+					province_id = 1191
+					owner = {
+						is_culture_group = iranian
+					}
+				}
+				1191 = { change_province_name = "Khiveh"
+					state_scope = {
+						change_region_name = "Khiveh"
+					}
+				}
+				3524 = { change_province_name = "Kath" }
+				1192 = { change_province_name = "Zamakhshar" }
+				1196 = { change_province_name = "Gorganch" }
+				owner = { 
+					set_global_flag = iranian_rename_khiva
+					clr_global_flag = turanian_rename_khiva
+					clr_global_flag = slavic_rename_khiva
+				}
+			}
+			
+			###turanian###
+			random_owned = {
+				limit = {
+					province_id = 1191
+					owner = {
+						is_culture_group = turanian
+					}
+				}
+				1191 = { change_province_name = "Khiva"
+					state_scope = {
+						change_region_name = "Khiva"
+					}
+				}
+				3524 = { change_province_name = "Kos" }
+				1192 = { change_province_name = "Khojayli" }
+				1196 = { change_province_name = "Urganch" }
+				owner = { 
+					set_global_flag = turanian_rename_khiva
+					clr_global_flag = iranian_rename_khiva
+					clr_global_flag = slavic_rename_khiva
+				}
+			}
+			
+			###slavic###
+			random_owned = {
+				limit = {
+					province_id = 1191
+					owner = {
+						is_culture_group = east_slavic
+					}
+				}
+				1191 = { change_province_name = "Khiva"
+					state_scope = {
+						change_region_name = "Khiva"
+					}
+				}
+				3524 = { change_province_name = "Kos" }
+				1192 = { change_province_name = "Khodzheyly" }
+				1196 = { change_province_name = "Urgench" }
+				owner = { 
+					set_global_flag = slavic_rename_khiva
+					clr_global_flag = iranian_rename_khiva
+					clr_global_flag = turanian_rename_khiva
+				}
+			}
+		}
+		ai_will_do = { factor = 1 }
+	}
+	rename_charjuy = {
+		picture = gtfo
+		potential = {
+			OR = {
+				AND = {
+					is_culture_group = iranian
+					owns = 3478 NOT = { has_global_flag = iranian_rename_charjuy }
+				}
+				AND = {
+					is_culture_group = turanian
+					owns = 3478 NOT = { has_global_flag = turanian_rename_charjuy }
+				}
+				AND = {
+					is_culture_group = east_slavic
+					owns = 3478 NOT = { has_global_flag = slavic_rename_charjuy }
+				}
+			}
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {			
+			###iranian###
+			random_owned = {
+				limit = {
+					province_id = 3478
+					owner = {
+						is_culture_group = iranian
+					}
+				}
+				3478 = { change_province_name = "Chharjvy" }
+				owner = { 
+					set_global_flag = iranian_rename_charjuy
+					clr_global_flag = turanian_rename_charjuy
+					clr_global_flag = slavic_rename_charjuy
+				}
+			}
+			
+			###turanian###
+			random_owned = {
+				limit = {
+					province_id = 3478
+					owner = {
+						is_culture_group = turanian
+					}
+				}
+				3478 = { change_province_name = "Chärjew" }
+				owner = { 
+					set_global_flag = turanian_rename_charjuy
+					clr_global_flag = iranian_rename_charjuy
+					clr_global_flag = slavic_rename_charjuy
+				}
+			}
+			
+			###slavic###
+			random_owned = {
+				limit = {
+					province_id = 3478
+					owner = {
+						is_culture_group = east_slavic
+					}
+				}
+				3478 = { change_province_name = "Chardzhou" }
+				owner = { 
+					set_global_flag = slavic_rename_charjuy
+					clr_global_flag = iranian_rename_charjuy
+					clr_global_flag = turanian_rename_charjuy
+				}
+			}
+		}
+		ai_will_do = { factor = 1 }
+	}
+	rename_transcaspia = {
+		picture = gtfo
+		potential = {
+			OR = {
+				AND = {
+					is_culture_group = iranian
+					owns = 1205 NOT = { has_global_flag = iranian_rename_transcaspia }
+				}
+				AND = {
+					is_culture_group = turanian
+					owns = 1205 NOT = { has_global_flag = turanian_rename_transcaspia }
+				}
+				AND = {
+					is_culture_group = east_slavic
+					owns = 1205 NOT = { has_global_flag = slavic_rename_transcaspia }
+				}
+			}
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {			
+			###iranian###
+			random_owned = {
+				limit = {
+					province_id = 1205
+					owner = {
+						is_culture_group = iranian
+					}
+				}
+				1205 = { change_province_name = "Barakat"
+					state_scope = {
+						change_region_name = "Khwarazm"
+					}
+				}
+				1194 = { change_province_name = "Sefidqoh" }
+				3523 = { change_province_name = "Khunehbala" }
+				3480 = { change_province_name = "Derweze" }
+				owner = { 
+					set_global_flag = iranian_rename_transcaspia
+					clr_global_flag = turanian_rename_transcaspia
+					clr_global_flag = slavic_rename_transcaspia
+				}
+			}
+			
+			###turanian###
+			random_owned = {
+				limit = {
+					province_id = 1205
+					owner = {
+						is_culture_group = turanian
+					}
+				}
+				1205 = { change_province_name = "Gazandjyk"
+					state_scope = {
+						change_region_name = "Turkmenistan"
+					}
+				}
+				1194 = { change_province_name = "Aqtau" }
+				3523 = { change_province_name = "Jasliq" }
+				3480 = { change_province_name = "Kara-Kum" }
+				owner = { 
+					set_global_flag = iranian_rename_transcaspia
+					clr_global_flag = turanian_rename_transcaspia
+					clr_global_flag = slavic_rename_transcaspia
+				}
+				owner = { 
+					set_global_flag = turanian_rename_transcaspia
+					clr_global_flag = iranian_rename_transcaspia
+					clr_global_flag = slavic_rename_transcaspia
+				}
+			}
+			
+			###slavic###
+			random_owned = {
+				limit = {
+					province_id = 1205
+					owner = {
+						is_culture_group = east_slavic
+					}
+				}
+				1205 = { change_province_name = "Kazandzhik"
+					state_scope = {
+						change_region_name = "Zakaspiya"
+					}
+				}
+				1194 = { change_province_name = "Aktau" }
+				3523 = { change_province_name = "Zhaslyk" }
+				3480 = { change_province_name = "Karakumy" }
+				owner = { 
+					set_global_flag = slavic_rename_transcaspia
+					clr_global_flag = iranian_rename_transcaspia
+					clr_global_flag = turanian_rename_transcaspia
+				}
+			}
+		}
+		ai_will_do = { factor = 1 }
+	}
+	rename_chaharken = {
+		picture = gtfo
+		potential = {
+			OR = {
+				AND = {
+					is_culture_group = iranian
+					OR = {
+						AND = {
+							owns = 1204 NOT = { has_global_flag = iranian_rename_chaharken }
+						}
+						AND = {
+							owns = 3528 NOT = { has_global_flag = iranian_rename_anau }
+						}
+						AND = {
+							owns = 3473 NOT = { has_global_flag = iranian_rename_tejent }
+						}
+						AND = {
+							owns = 3468 NOT = { has_global_flag = iranian_rename_panjdeh }
+						}
+						AND = {
+							owns = 686 NOT = { has_global_flag = iranian_rename_merv }
+						}
+					}
+				}
+				AND = {
+					is_culture_group = turanian
+					OR = {
+						AND = {
+							owns = 1204 NOT = { has_global_flag = turanian_rename_chaharken }
+						}
+						AND = {
+							owns = 3528 NOT = { has_global_flag = turanian_rename_anau }
+						}
+						AND = {
+							owns = 3473 NOT = { has_global_flag = turanian_rename_tejent }
+						}
+						AND = {
+							owns = 3468 NOT = { has_global_flag = turanian_rename_panjdeh }
+						}
+						AND = {
+							owns = 686 NOT = { has_global_flag = turanian_rename_merv }
+						}
+					}
+				}
+				AND = {
+					is_culture_group = east_slavic
+					OR = {
+						AND = {
+							owns = 1204 NOT = { has_global_flag = slavic_rename_chaharken }
+						}
+						AND = {
+							owns = 3528 NOT = { has_global_flag = slavic_rename_anau }
+						}
+						AND = {
+							owns = 3473 NOT = { has_global_flag = slavic_rename_tejent }
+						}
+						AND = {
+							owns = 3468 NOT = { has_global_flag = slavic_rename_panjdeh }
+						}
+						AND = {
+							owns = 686 NOT = { has_global_flag = slavic_rename_merv }
+						}
+					}
+				}
+			}
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {			
+			###iranian###
+			random_owned = {
+				limit = {
+					province_id = 1204
+					owner = {
+						is_culture_group = iranian
+					}
+				}
+				1204 = { change_province_name = "Chaharken" }
+				owner = { 
+					set_global_flag = iranian_rename_chaharken
+					clr_global_flag = turanian_rename_chaharken
+					clr_global_flag = slavic_rename_chaharken
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 3528
+					owner = {
+						is_culture_group = iranian
+					}
+				}
+				3528 = { change_province_name = "Abe Nav" }
+				owner = { 
+					set_global_flag = iranian_rename_anau
+					clr_global_flag = turanian_rename_anau
+					clr_global_flag = slavic_rename_anau
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 3473
+					owner = {
+						is_culture_group = iranian
+					}
+				}
+				3473 = { change_province_name = "Tejand" }
+				owner = { 
+					set_global_flag = iranian_rename_tejent
+					clr_global_flag = turanian_rename_tejent
+					clr_global_flag = slavic_rename_tejent
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 3468
+					owner = {
+						is_culture_group = iranian
+					}
+				}
+				3468 = { change_province_name = "Panjdah" }
+				owner = { 
+					set_global_flag = iranian_rename_panjdeh
+					clr_global_flag = turanian_rename_panjdeh
+					clr_global_flag = slavic_rename_panjdeh
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 686
+					owner = {
+						is_culture_group = iranian
+					}
+				}
+				686 = { change_province_name = "Merv" }
+				owner = { 
+					set_global_flag = iranian_rename_merv
+					clr_global_flag = turanian_rename_merv
+					clr_global_flag = slavic_rename_merv
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 3591
+					owner = {
+						is_culture_group = iranian
+					}
+				}
+				3591 = { change_province_name = "Dargan" }
+				owner = { 
+					set_global_flag = iranian_rename_darganata
+					clr_global_flag = turanian_rename_darganata
+					clr_global_flag = slavic_rename_darganata
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 3592
+					owner = {
+						is_culture_group = iranian
+					}
+				}
+				3592 = { change_province_name = "Sadag" }
+				owner = { 
+					set_global_flag = iranian_rename_ravnina
+					clr_global_flag = turanian_rename_ravnina
+					clr_global_flag = slavic_rename_ravnina
+				}
+			}
+			
+			###turanian###
+			random_owned = {
+				limit = {
+					province_id = 1204
+					owner = {
+						is_culture_group = turanian
+					}
+				}
+				1204 = { change_province_name = "Cheleken" }
+				owner = { 
+					set_global_flag = turanian_rename_chaharken
+					clr_global_flag = iranian_rename_chaharken
+					clr_global_flag = slavic_rename_chaharken
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 3528
+					owner = {
+						is_culture_group = turanian
+					}
+				}
+				3528 = { change_province_name = "Änew" }
+				owner = { 
+					set_global_flag = turanian_rename_anau
+					clr_global_flag = iranian_rename_anau
+					clr_global_flag = slavic_rename_anau
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 3473
+					owner = {
+						is_culture_group = turanian
+					}
+				}
+				3473 = { change_province_name = "Tejent" }
+				owner = { 
+					set_global_flag = turanian_rename_tejent
+					clr_global_flag = iranian_rename_tejent
+					clr_global_flag = slavic_rename_tejent
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 3468
+					owner = {
+						is_culture_group = turanian
+					}
+				}
+				3468 = { change_province_name = "Panjdeh" }
+				owner = { 
+					set_global_flag = turanian_rename_panjdeh
+					clr_global_flag = iranian_rename_panjdeh
+					clr_global_flag = slavic_rename_panjdeh
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 686
+					owner = {
+						is_culture_group = turanian
+					}
+				}
+				686 = { change_province_name = "Marv" }
+				owner = { 
+					set_global_flag = turanian_rename_merv
+					clr_global_flag = iranian_rename_merv
+					clr_global_flag = slavic_rename_merv
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 3591
+					owner = {
+						is_culture_group = turanian
+					}
+				}
+				3591 = { change_province_name = "Dargan-Ata" }
+				owner = { 
+					set_global_flag = turanian_rename_darganata
+					clr_global_flag = iranian_rename_darganata
+					clr_global_flag = slavic_rename_darganata
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 3592
+					owner = {
+						is_culture_group = turanian
+					}
+				}
+				3592 = { change_province_name = "Düz-Teke" }
+				owner = { 
+					set_global_flag = turanian_rename_ravnina
+					clr_global_flag = iranian_rename_ravnina
+					clr_global_flag = slavic_rename_ravnina
+				}
+			}
+			
+			###slavic###
+			random_owned = {
+				limit = {
+					province_id = 1204
+					owner = {
+						is_culture_group = east_slavic
+					}
+				}
+				1204 = { change_province_name = "Cheleken" }
+				owner = { 
+					set_global_flag = slavic_rename_chaharken
+					clr_global_flag = iranian_rename_chaharken
+					clr_global_flag = turanian_rename_chaharken
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 3528
+					owner = {
+						is_culture_group = east_slavic
+					}
+				}
+				3528 = { change_province_name = "Annau" }
+				owner = { 
+					set_global_flag = slavic_rename_anau
+					clr_global_flag = iranian_rename_anau
+					clr_global_flag = turanian_rename_anau
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 3473
+					owner = {
+						is_culture_group = east_slavic
+					}
+				}
+				3473 = { change_province_name = "Tedzhen" }
+				owner = { 
+					set_global_flag = slavic_rename_tejent
+					clr_global_flag = iranian_rename_tejent
+					clr_global_flag = turanian_rename_tejent
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 3468
+					owner = {
+						is_culture_group = east_slavic
+					}
+				}
+				3468 = { change_province_name = "Pendzhde" }
+				owner = { 
+					set_global_flag = slavic_rename_panjdeh
+					clr_global_flag = iranian_rename_panjdeh
+					clr_global_flag = turanian_rename_panjdeh
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 686
+					owner = {
+						is_culture_group = east_slavic
+					}
+				}
+				686 = { change_province_name = "Marv" }
+				owner = { 
+					set_global_flag = slavic_rename_merv
+					clr_global_flag = iranian_rename_merv
+					clr_global_flag = turanian_rename_merv
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 3591
+					owner = {
+						is_culture_group = east_slavic
+					}
+				}
+				3591 = { change_province_name = "Darganata" }
+				owner = { 
+					set_global_flag = slavic_rename_darganata
+					clr_global_flag = iranian_rename_darganata
+					clr_global_flag = turanian_rename_darganata
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 3592
+					owner = {
+						is_culture_group = east_slavic
+					}
+				}
+				3592 = { change_province_name = "Ravnina" }
+				owner = { 
+					set_global_flag = slavic_rename_ravnina
+					clr_global_flag = iranian_rename_ravnina
+					clr_global_flag = turanian_rename_ravnina
+				}
+			}
+		}
+		ai_will_do = { factor = 1 }
+	}
+	rename_kyzylsu = {
+		picture = gtfo
+		potential = {
+			OR = {
+				AND = {
+					is_culture_group = iranian
+					owns = 3525 NOT = { has_global_flag = iranian_rename_kyzylsu }
+				}
+				AND = {
+					is_culture_group = turanian
+					owns = 3525 NOT = { has_global_flag = turanian_rename_kyzylsu }
+				}
+				AND = {
+					is_culture_group = east_slavic
+					owns = 3525 NOT = { has_global_flag = slavic_rename_kyzylsu }
+				}
+			}
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {			
+			###iranian###
+			random_owned = {
+				limit = {
+					province_id = 3525
+					owner = {
+						is_culture_group = iranian
+					}
+				}
+				3525 = { change_province_name = "Dehestan" }
+				owner = { 
+					set_global_flag = iranian_rename_kyzylsu
+					clr_global_flag = turanian_rename_kyzylsu
+					clr_global_flag = slavic_rename_kyzylsu
+				}
+			}
+			
+			###turanian###
+			random_owned = {
+				limit = {
+					province_id = 3525
+					owner = {
+						is_culture_group = turanian
+					}
+				}
+				3525 = { change_province_name = "Kyzyl-Su" }
+				owner = { 
+					set_global_flag = turanian_rename_kyzylsu
+					clr_global_flag = iranian_rename_kyzylsu
+					clr_global_flag = slavic_rename_kyzylsu
+				}
+			}
+			
+			###slavic###
+			random_owned = {
+				limit = {
+					province_id = 3525
+					owner = {
+						is_culture_group = east_slavic
+					}
+				}
+				3525 = { change_province_name = "Krasnovodsk" }
+				owner = { 
+					set_global_flag = slavic_rename_kyzylsu
+					clr_global_flag = iranian_rename_kyzylsu
+					clr_global_flag = turanian_rename_kyzylsu
+				}
+			}
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	rename_karagan = {
+		picture = gtfo
+		potential = {
+			OR = {
+				AND = {
+					is_culture_group = iranian
+					owns = 3526 NOT = { has_global_flag = iranian_rename_karagan }
+				}
+				AND = {
+					is_culture_group = turanian
+					owns = 3526 NOT = { has_global_flag = turanian_rename_karagan }
+				}
+				AND = {
+					is_culture_group = east_slavic
+					owns = 3526 NOT = { has_global_flag = slavic_rename_karagan }
+				}
+			}
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {			
+			###iranian###
+			random_owned = {
+				limit = {
+					province_id = 3526
+					owner = {
+						is_culture_group = iranian
+					}
+				}
+				3526 = { change_province_name = "Khunehbala" }
+				owner = { 
+					set_global_flag = iranian_rename_karagan
+					clr_global_flag = turanian_rename_karagan
+					clr_global_flag = slavic_rename_karagan
+				}
+			}
+			
+			###turanian###
+			random_owned = {
+				limit = {
+					province_id = 3526
+					owner = {
+						is_culture_group = turanian
+					}
+				}
+				3526 = { change_province_name = "Mangystau" }
+				owner = { 
+					set_global_flag = turanian_rename_karagan
+					clr_global_flag = iranian_rename_karagan
+					clr_global_flag = slavic_rename_karagan
+				}
+			}
+			
+			###slavic###
+			random_owned = {
+				limit = {
+					province_id = 3526
+					owner = {
+						is_culture_group = east_slavic
+					}
+				}
+				3526 = { change_province_name = "Novopetrovskoe" }
+				owner = { 
+					set_global_flag = slavic_rename_karagan
+					clr_global_flag = iranian_rename_karagan
+					clr_global_flag = turanian_rename_karagan
+				}
+			}
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	#https://en.wikipedia.org/wiki/Treaty_of_Kulja
+	#https://en.wikipedia.org/wiki/Treaty_of_Livadia
+	#https://en.wikipedia.org/wiki/Treaty_of_Saint_Petersburg_(1881)
+	
+	
+}

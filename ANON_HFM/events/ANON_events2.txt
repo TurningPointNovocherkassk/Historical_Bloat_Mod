@@ -1,0 +1,546 @@
+
+country_event = {
+	id = 9999999
+	title = "EVTNAME9999999"
+	desc = "EVTDESC9999999"
+	picture = "News"
+	is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPTA9999999"
+			any_pop = { 
+				limit = { type = soldiers } 
+				reduce_pop = 1.025
+			}
+		}
+		option = {
+			name = "EVTOPTB9999999"
+			any_pop = { 
+				limit = { type = soldiers } 
+				reduce_pop = 1.05
+			}
+		}
+		option = {
+			name = "EVTOPTC9999999"
+			any_pop = { 
+				limit = { type = soldiers } 
+				reduce_pop = 1.1
+			}
+		}
+		option = {
+			name = "EVTOPTD9999999"
+		}
+}
+
+country_event = {
+	id = 9999998
+	title = "EVTNAME9999998"
+	desc = "EVTDESC9999998"
+	picture = "News"
+	is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPTA9999998"
+			#create_vassal = VNZ
+			#form_alliance = VNZ
+			create_vassal = CLM
+			form_alliance = CLM
+			create_vassal = ECU
+			form_alliance = ECU
+		}
+		option = {
+			name = "EVTOPTB9999998"
+			diplomatic_influence = {
+				who = SPA
+				value = 400
+			}
+			form_alliance = SPA
+		}
+		option = {
+			name = "EVTOPTA9999998"
+			create_vassal = HAI
+			form_alliance = HAI
+		}
+		option = {
+			name = "EVTOPTB9999998"
+			diplomatic_influence = {
+				who = HAI
+				value = 400
+			}
+			form_alliance = HAI
+		}
+		option = {
+			name = "EVTOPTC9999998"
+		}
+}
+
+country_event = {
+	id = 9999997
+	title = "EVTNAME9999997"
+	desc = "EVTDESC9999997"
+	picture = "News"
+	is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPTA9999997"
+			TUR = {
+				any_owned = {
+					limit = {
+						is_core = GRE
+					}
+					remove_core = TUR
+					secede_province = GRE
+				}
+			}
+		}
+		option = {
+			name = "EVTOPTB9999997"
+		}
+}
+
+country_event = {
+	id = 9999996
+	title = "ooga booga release contry"
+	desc = "reles"
+	picture = "News"
+	is_triggered_only = yes
+	
+		option = {
+			name = "armenia"
+				any_owned = {
+					limit = {
+						is_core = CLC
+					}
+					secede_province = CLC
+				}
+				any_owned = {
+					limit = {
+						is_core = ARM
+					}
+					secede_province = ARM
+				}
+		}
+		option = {
+			name = "assyria"
+				any_owned = {
+					limit = {
+						is_core = ASY
+					}
+					secede_province = ASY
+				}
+		}
+		option = {
+			name = "no thx"
+		}
+}
+
+country_event = {
+	id = 9999995
+	title = "EVTNAME9999995"
+	desc = "EVTDESC9999995"
+	picture = "News"
+	is_triggered_only = yes
+	
+		immediate = {
+			MEX_2149 = { add_core = RGR add_core = TRG }
+			MEX_2147 = { add_core = RGR add_core = TRG }
+			MEX_2142 = { add_core = RGR add_core = TRG }
+			2153 = { add_core = RGR add_core = TRG }
+			2158 = { add_core = RGR add_core = TRG }
+			2154 = { add_core = RGR add_core = TRG }
+			2662 = { add_core = RGR add_core = TRG }
+			2148 = { add_core = RGR add_core = TRG }
+			3397 = { add_core = RGR add_core = TRG }
+			108 = { add_core = RGR add_core = TRG }
+			TEX_132 = { add_core = TEX add_core = TRG } #Texas
+			TEX_133 = { add_core = TEX add_core = TRG } #Trans Pecos
+			105 = { add_core = TEX add_core = TRG } #Santa Fe
+			129 = { add_core = TEX add_core = TRG } #Guymon
+			128 = { add_core = TEX add_core = TRG } #Hugoton
+			103 = { add_core = TEX add_core = TRG } #Pueblo
+			109 = { add_core = TEX add_core = TRG } #Aspen
+			3398 = { add_core = TEX add_core = TRG } #Warm Springs
+			107 = { add_core = TEX add_core = TRG } #Riverside
+		}
+	
+		option = {
+			name = "EVTOPTA9999995"
+			MEX = {
+				any_owned = {
+					limit = {
+						OR = {
+							is_core = TEX
+							is_core = RGR
+							is_core = TRG
+						}
+					}
+					secede_province = THIS
+				}
+			}
+			change_tag = TRG
+		}
+		option = {
+			name = "EVTOPTB9999995"
+		}
+}
+
+country_event = {
+	id = 9999994
+	title = "Instant ATC"
+	desc = "Instant ATC"
+	picture = "News"
+	is_triggered_only = yes
+	
+		option = {
+			name = "ok"
+			any_country = {
+				limit = {
+					owns = 2209
+					owns = 3276
+					owns = 2210
+				}
+				2209 = { secede_province = THIS }
+				3276 = { secede_province = THIS }
+				2210 = { secede_province = THIS }
+			}
+			any_country = {
+				limit = {
+					owns = 2211
+					owns = 2212
+					owns = 44
+				}
+				2211 = { secede_province = THIS }
+				2212 = { secede_province = THIS }
+				44 = { secede_province = THIS }
+			}
+			any_country = {
+				limit = {
+					owns = 2222
+				}
+				2222 = { secede_province = THIS }
+			}
+			any_country = {
+				limit = {
+					owns = 2216
+					owns = 2214
+				}
+				2216 = { secede_province = THIS }
+				2214 = { secede_province = THIS }
+			}
+			any_country = {
+				limit = {
+					OR = {
+						tag = CUB
+						tag = DOM
+						tag = PRI
+					}
+					NOT = { tag = THIS }
+					OR = {
+						in_sphere = THIS
+						vassal_of = THIS
+					}
+				}
+				annex_to = THIS
+			}
+			CUB = { all_core = { add_core = ATC } }
+			DOM = { all_core = { add_core = ATC } }
+			PRI = { all_core = { add_core = ATC } }
+			any_owned = {
+				limit = {
+					is_core = ATC
+					is_core = THIS
+				}
+				remove_core = ATC
+			}
+			release_vassal = ATC
+			create_alliance = ATC
+			create_vassal = ATC
+			relation = {
+				who = ATC
+				value = 100
+			}
+			diplomatic_influence = {
+				who = ATC
+				value = 200
+			}
+			ATC = {
+				centralization = federalism
+			}
+		}
+		option = {
+			name = "no"
+		}
+}
+
+country_event = {
+	id = 9999993
+	title = "ooga booga spawn land units"
+	desc = "instant land unit creation for 1 day"
+	picture = "News"
+	is_triggered_only = yes
+	
+		option = {
+			name = "ok"
+			leadership = 80
+			treasury = 10000
+			regular_clothes = 600
+			small_arms = 600
+			ammunition = 400
+			canned_food = 400
+			artillery = 200
+			wine = 400
+			liquor = 400
+			add_country_modifier = { name = ANON_total_war duration = -1 }
+			set_country_flag = ANON_total_war_flag
+
+		}
+		option = {
+			name = "no thx"
+		}
+		option = {
+			name = "release hungary"
+			AUS = {
+				release = HUN
+				any_owned = {
+					limit = {
+						OR = {
+							is_core = HUN
+							is_core = CRO
+						}
+						NOT = { is_core = DLM }
+					}
+					secede_province = HUN
+				}
+			}
+		}
+		
+}
+
+country_event = {
+	id = 9999992
+	title = "Disable Shadow of War spam"
+	desc = "Disables Shadow of War event spam for spectator"
+	picture = "News"
+	is_triggered_only = yes
+	
+		option = {
+			name = "okdisable"
+			set_global_flag = disable_shadwar
+
+		}
+		option = {
+			name = "no thx"
+		}
+}
+
+country_event = {
+	id = 9999991
+	title = "EVTNAME9999991"
+	desc = "EVTDESC9999991"
+	picture = "News"
+	
+	trigger = {
+		invention = ANON_total_war
+		NOT = { has_country_flag = ANON_untotal_war_prepare }
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "EVTOPTA9999991"
+		leadership = 20
+		treasury = 5000
+		regular_clothes = 150
+		small_arms = 150
+		ammunition = 100
+		canned_food = 100
+		artillery = 50
+		wine = 100
+		liquor = 100
+		wool = 100
+					
+		add_country_modifier = {
+			name = ANON_total_war_mod
+			duration = 62 #AI is retarded
+		}
+		set_country_flag = ANON_untotal_war_prepare
+	}
+
+}
+
+
+country_event = {
+	id = 9999990
+	title = "A Change of Overlord"
+	desc = "$FROMCOUNTRY$ is now our new overlord."
+	picture = "treaty"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Damn."
+		FROM = { create_vassal = THIS }
+	}
+}
+
+country_event = {
+	id = 9999989
+	title = "Instant CSA"
+	desc = "Holy fuck instant CSA!"
+	picture = "treaty"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "You don't belong in Dixie"
+		any_country = {
+			#limit = {
+			#	OR = {
+			#		tag = USA
+			#		tag = TEX
+			#		tag = MEX
+			#	}
+			#}
+			any_owned = {
+				limit = {
+					OR = {
+						state_id = 131
+						state_id = 136
+						state_id = 132
+						state_id = 105
+						state_id = 100
+						state_id = 146
+						state_id = 129
+						province_id = 96
+						
+						state_id = 143
+						state_id = 139
+						state_id = 194
+						state_id = 195
+						state_id = 200
+						state_id = 201
+						state_id = 205
+						state_id = 209
+						state_id = 60
+						state_id = 218
+						
+						state_id = 187
+						state_id = 190
+						state_id = 2146
+					}
+				}
+				add_core = CSA
+				#secede_province = CSA
+			}
+		}
+	}
+}
+country_event = {
+	id = 9999988
+	title = "Absorb TEXMEX"
+	desc = "ok"
+	picture = "treaty"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "retard"
+		inherit = TEX
+		inherit = MEX
+	}
+}
+
+country_event = {
+	id = 9999987
+	title = "Absorb Kashgaria & Tibet"
+	desc = "ok"
+	picture = "treaty"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "retard"
+		inherit = UYG
+		inherit = TIB
+		inherit = J01
+		inherit = ALT
+		3461 = { secede_province = RUS }
+		1186 = { secede_province = RUS }
+		1188 = { secede_province = RUS }
+		3580 = { secede_province = RUS }
+		3581 = { secede_province = RUS }
+		1595 = { secede_province = RUS }
+		QNG = { inherit = XIN }
+	}
+}
+
+country_event = {
+	id = 9999986
+	title = "1st Dungan Revolt Trigger"
+	desc = "ok"
+	picture = "treaty"
+	
+	is_triggered_only = yes
+	
+	option = {
+		XIN = { country_event = 888888016 }
+	}
+}
+
+country_event = {
+	id = 9999985
+	title = "Neutrality Test"
+	desc = "ok"
+	picture = "treaty"
+	
+	is_triggered_only = yes
+	
+	option = {
+		neutrality = yes
+	}
+}
+
+country_event = {
+	id = 9999984
+	title = "Release Ukraine"
+	desc = "SLAVA UKRAINI HEROYAM SLAVA MOLYMOSH BOZHE YEDYNYI ZA NASHU UKRAINU BLAHOSSLOVY BOZHE"
+	picture = "treaty"
+	
+	is_triggered_only = yes
+	
+	option = {
+		any_owned = {
+			limit = {
+				is_core = UKR
+			}
+			secede_province = UKR
+		}
+		any_owned = {
+			limit = {
+				is_core = MDV
+			}
+			secede_province = MDV
+		}
+		UKR = { 
+			capital = 958
+		}
+		change_tag_no_core_switch = UKR
+	}
+}
+
+country_event = {
+	id = 9999983
+	title = "TOTAL WAR POLANS"
+	desc = "All Polish Partitions receive their respective revolt events."
+	picture = "treaty"
+	
+	is_triggered_only = yes
+	
+	option = {
+		CPL = { country_event = 500001 }
+		KRA = { country_event = 600051 }
+		PZN = { country_event = 666666004 }
+	}
+}

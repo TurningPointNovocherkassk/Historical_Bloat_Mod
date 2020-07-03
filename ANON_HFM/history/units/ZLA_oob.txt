@@ -1,0 +1,45 @@
+
+army = {
+	name = "Ejército Federal de Venezuela"
+	location = 2270
+	leader = {
+		name = "Jorge Sutherland"
+		date = 1836.1.1
+		type = land
+		personality = au_fait
+		background = sycophant	
+		prestige = 0.20
+	}
+	
+	regiment = {
+		name= "1. División de Infantería"
+		type = infantry
+		home = 2270
+	}
+
+	regiment = {
+		name= "2. División de Infantería"
+		type = infantry
+		home = 2270
+	}
+
+	regiment = {
+		name= "1. División de Caballería"
+		type = cavalry
+		home = 2268
+	}
+	
+	regiment = {
+		name= "1. División de Húsares"
+		type = hussar
+		home = 2271
+	}
+	
+	regiment = {
+		name= "1. División de Artillería"
+		type = artillery
+		home = 2271
+	}
+
+}
+

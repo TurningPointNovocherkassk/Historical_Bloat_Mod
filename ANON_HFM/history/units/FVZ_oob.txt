@@ -1,0 +1,59 @@
+
+army = {
+	name = "Ejército Federal de Venezuela"
+	location = 2272
+	leader = {
+		name = "Ezequiel Zamora"
+		date = 1836.1.1
+		type = land
+		personality = charismatic
+		background = hated	
+		prestige = 0.25
+	}
+	leader = {
+		name = "Juan Crisóstomo Falcón"
+		date = 1836.1.1
+		type = land
+		personality = defiant
+		background = natural_born_leader		
+		prestige = 0.25
+	}
+	
+	regiment = {
+		name= "1. División de Infantería"
+		type = infantry
+		home = 2272
+	}
+
+	regiment = {
+		name= "2. División de Infantería"
+		type = infantry
+		home = 2272
+	}
+
+	regiment = {
+		name= "1. División de Caballería"
+		type = cavalry
+		home = 2268
+	}
+
+	regiment = {
+		name= "2. División de Caballería"
+		type = cavalry
+		home = 2271
+	}
+	
+	regiment = {
+		name= "1. División de Húsares"
+		type = hussar
+		home = 2271
+	}
+	
+	regiment = {
+		name= "1. División de Artillería"
+		type = artillery
+		home = 2271
+	}
+
+}
+

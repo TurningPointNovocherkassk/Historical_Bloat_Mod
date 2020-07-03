@@ -1,0 +1,33 @@
+army = {
+	name = "Army of the Bukey Horde"
+	location = 3529
+	regiment = {
+		name= "1st. Bukey Cavalry"
+		type = cavalry
+		home = 3529
+	}
+	regiment = {
+		name= "2nd. Bukey Cavalry"
+		type = cavalry
+		home = 3529
+	}
+	regiment = {
+		name= "3rd. Bukey Cavalry"
+		type = cavalry
+		home = 3529
+	}
+	regiment = {
+		name= "4th. Bukey Cavalry"
+		type = cavalry
+		home = 3529
+	}
+}
+
+leader = {
+	name = "Jäñgir-Kerey Khan"
+	type = land
+	date = 1836.1.1
+	background = cavalry_school
+	personality = audacious
+	}
+	

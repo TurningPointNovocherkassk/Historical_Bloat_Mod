@@ -1,0 +1,56 @@
+CRL = { value = 400 }
+NAR = { value = 400 }
+AFG = { value = 400 }
+
+PNJ = { value = -200 }
+
+
+leader = {
+	name = "Sayyid Akbar Shah"
+	type = land
+	date = 1836.1.1
+	personality = skilled
+	background = expert_raider
+	prestige = 0.2
+}
+
+army = {
+	name = "Army of Sayyid Akbar Shah"
+	location = 3537
+	regiment = {
+		name= "1. Sayyidzi"
+		type = irregular
+		home = 3537
+	}
+
+	regiment = {
+		name= "2. Sayyidzi"
+		type = irregular
+		home = 3537
+	}
+
+	regiment = {
+		name= "3. Sayyidzi"
+		type = irregular
+		home = 3537
+	}
+
+	regiment = {
+		name= "1. Pakhtun"
+		type = cavalry
+		home = 3537
+	}
+
+	regiment = {
+		name= "2. Pakhtun"
+		type = cavalry
+		home = 3537
+	}
+
+	regiment = {
+		name= "3. Pakhtun"
+		type = cavalry
+		home = 3537
+	}
+
+}

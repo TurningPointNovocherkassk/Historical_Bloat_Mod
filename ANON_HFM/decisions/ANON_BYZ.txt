@@ -1,0 +1,2919 @@
+political_decisions = {
+	
+	BYZ_dismantle_ottomans = {
+		picture = "eastern_crisis_dismantle_ottomans"
+		potential = {
+			tag = BYZ
+			NOT = { has_country_flag = BYZ_dismantle_ottomans }
+		}
+		
+		allow = {
+			war = no
+			has_country_flag = claim_anatolia_byz
+			has_country_flag = claim_balkans_byz
+			has_country_flag = claim_arbanon_byz
+			has_country_flag = claim_w_balkans_byz
+			all_core = { owned_by = THIS }
+			is_greater_power = yes
+			TUR = {
+				is_greater_power = no
+			}
+		}
+		
+		effect = {
+			set_country_flag = BYZ_dismantle_ottomans
+			badboy = 5
+			prestige = 15
+			#any_country = {
+			#	limit = {
+			#		any_owned_province = { is_core = TUR }
+			#	}
+			#	any_owned = {
+			#		limit = {
+			#			is_core = TUR
+			#		}
+			#		remove_core = TUR
+			#	}
+			#}
+			TUR = {
+				all_core = {
+					remove_core = TUR
+				}
+				any_pop = {
+					limit = { NOT = { has_pop_culture = turkish } }
+					militancy = 9
+					consciousness = 9
+				}
+			}
+			any_pop = {
+				limit = {
+					OR = {
+						has_pop_religion = orthodox
+						has_pop_religion = apostolic
+						has_pop_religion = nestorian
+						has_pop_religion = catholic
+						has_pop_religion = maronite
+						has_pop_religion = syriac
+					}
+				}
+				militancy = -10
+				consciousness = -10
+			}
+			any_country = {
+				any_pop = {
+					limit = {
+						location = {
+							OR = {
+								is_core = ROM
+								is_core = BUL
+								is_core = SER
+								is_core = BOS
+								is_core = GRE
+								is_core = BYZ
+								is_core = MON
+								is_core = ARM
+								is_core = GRA
+								is_core = GEO
+								is_core = CLC
+								is_core = ASY
+								is_core = TCA
+							}
+						}
+						has_pop_culture = turkish
+					}
+					reduce_pop = 0.70
+				}
+			}
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	vassalize_serbia = {
+		picture = greater_serbia
+		potential = {
+			tag = BYZ
+			exists = SER
+			NOT = { has_country_flag = vassalize_serbia }
+			NOT = { has_country_flag = greek_pacifism }
+			SER = { ai = yes }
+		}
+		allow = {
+			war = no
+			relation = {
+				who = SER
+				value = 200
+			}
+			NOT = { exists = YUG }
+			SER = {
+				war = no
+				is_vassal = no
+				in_sphere = BYZ
+				alliance_with = BYZ
+			}
+			OR = {
+				SER = { NOT = { all_core = { owned_by = SER } } }
+				exists = BOS
+			}
+		}
+		effect = {
+			prestige = 10
+			create_vassal = SER
+			create_alliance = SER
+			set_country_flag = vassalize_serbia
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	vassalize_montenegro = {
+		picture = montenegro_map
+		potential = {
+			tag = BYZ
+			exists = MON
+			NOT = { has_country_flag = vassalize_montenegro }
+			NOT = { has_country_flag = greek_pacifism }
+			MON = { ai = yes }
+		}
+		allow = {
+			war = no
+			relation = {
+				who = MON
+				value = 200
+			}
+			NOT = { exists = YUG }
+			MON = {
+				war = no
+				is_vassal = no
+				in_sphere = BYZ
+				alliance_with = BYZ
+			}
+		}
+		effect = {
+			prestige = 10
+			create_vassal = MON
+			create_alliance = MON
+			set_country_flag = vassalize_montenegro
+		}
+		ai_will_do = {
+			factor = 1
+		}		
+	}
+	
+	
+	integrate_serbia = {
+	picture = greater_serbia
+		potential = {
+			tag = BYZ
+			exists = SER
+			NOT = { has_country_flag = integrate_serbia }
+			NOT = { has_country_flag = greek_pacifism }
+			#has_country_flag = vassalize_serbia
+			SER = { ai = yes }
+		}
+		allow = {
+			SER = {
+				war = no
+				vassal_of = BYZ
+				in_sphere = BYZ
+			}
+			NOT = { exists = YUG }
+			BYZ = {
+				war = no
+				invention = national_fraternity
+				invention = expansionism
+				is_greater_power = yes
+				all_core = { owned_by = THIS }
+				relation = {
+					who = SER
+					value = 200
+				}
+			}
+		}
+		effect = {
+			set_country_flag = integrate_serbia
+			prestige = 10
+			SER = { all_core = { add_core = BYZ } }
+			BYZ = { inherit = SER }
+			any_pop = {
+				limit = { has_pop_culture = serb }
+				scaled_militancy = { factor = 3 ideology = reactionary }
+				scaled_consciousness = { factor = 3 ideology = conservative }
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	integrate_montenegro = {
+	picture = montenegro_map
+		potential = {
+			tag = BYZ
+			exists = MON
+			NOT = { has_country_flag = integrate_montenegro }
+			NOT = { has_country_flag = greek_pacifism }
+			#has_country_flag = vassalize_serbia
+			MON = { ai = yes }
+		}
+		allow = {
+			MON = {
+				war = no
+				vassal_of = BYZ
+				in_sphere = BYZ
+			}
+			NOT = { exists = YUG }
+			BYZ = {
+				war = no
+				invention = national_fraternity
+				invention = expansionism
+				is_greater_power = yes
+				all_core = { owned_by = THIS }
+				relation = {
+					who = MON
+					value = 200
+				}
+			}
+		}
+		effect = {
+			set_country_flag = integrate_montenegro
+			prestige = 10
+			MON = { all_core = { add_core = BYZ } }
+			BYZ = { inherit = MON }
+			any_pop = {
+				limit = { has_pop_culture = montenegrin }
+				scaled_militancy = { factor = 3 ideology = reactionary }
+				scaled_consciousness = { factor = 3 ideology = conservative }
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	greek_destiny = {
+		picture = unite_with_greece
+		potential = {
+			NOT = { has_country_flag = greek_destiny }
+			tag = GRE
+			OR = {
+				GRE = { all_core = { owned_by = THIS } }
+				AND = {
+					GRE_826 = { owned_by = GRE }
+					TUR_832 = { owned_by = GRE }
+					GRE_837 = { owned_by = GRE }
+				}
+			}
+		}
+		allow = {
+			tag = GRE
+			OR = {
+				GRE = { all_core = { owned_by = THIS } }
+				AND = {
+					GRE_826 = { owned_by = GRE }
+					TUR_832 = { owned_by = GRE }
+					GRE_837 = { owned_by = GRE }
+				}
+			}
+			invention = proto_existentialism
+			romanticism = 1
+		}
+		effect = {
+			set_country_flag = greek_destiny
+			country_event = 6666660
+		}
+	}
+	
+	unite_with_byzantium = {
+	picture = unite_with_greece
+		potential = {
+			primary_culture = greek
+			NOT = { tag = BYZ }
+			exists = BYZ
+			NOT = { has_country_flag = unite_with_byzantium }
+		}
+
+		allow = {
+			war = no
+			OR = {
+				vassal_of = BYZ
+				is_vassal = no
+			}
+			OR = {
+				part_of_sphere = no
+				sphere_owner = { is_sphere_leader_of = BYZ }
+				in_sphere = BYZ
+			}
+			BYZ = {
+				war = no
+				is_vassal = no
+			}
+		}
+
+		effect = {
+			set_country_flag = unite_with_byzantium
+			random_country = {
+				limit = {
+					tag = BYZ
+					ai = yes
+					THIS = { ai = yes }
+				}
+				inherit = THIS
+			}
+			random_country = {
+				limit = {
+					tag = BYZ
+					ai = yes
+					THIS = { ai = no }
+				}
+				any_owned = { secede_province = THIS }
+				THIS = {
+					remove_accepted_culture = turkish
+					random_owned = {
+						limit = { province_id = 834 }
+						owner = { capital = 834 }
+					}
+					change_tag = BYZ
+				}	
+			}
+			random_country = {
+				limit = {
+					tag = BYZ
+					ai = no
+				}
+				country_event = 60130
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				government = fascist_dictatorship
+				BYZ = {
+					NOT = { government = fascist_dictatorship }
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = { government = fascist_dictatorship }
+				BYZ = { government = fascist_dictatorship }
+			}
+			modifier = {
+				factor = 0
+				NOT = { government = proletarian_dictatorship }
+				BYZ = { government = proletarian_dictatorship }
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					government = democracy
+					government = hms_government
+				}
+				BYZ = {
+					NOT = {
+						government = democracy
+						government = hms_government
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				BYZ = {
+					OR = {
+						government = democracy
+						government = hms_government
+					}
+				}
+				NOT = {
+					government = democracy
+					government = hms_government
+				}
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					government = presidential_dictatorship
+					government = bourgeois_dictatorship
+					government = absolute_monarchy
+				}
+			}
+		}
+	}
+
+	accept_bulgarians = {
+		picture = tsar_ferdinand_bulgaria
+		potential = {
+			NOT = { has_country_flag = accept_bulgarians }
+			tag = BYZ
+			#has_country_flag = claim_balkans_byz	
+			any_owned_province = {
+				any_pop = {
+					has_pop_culture = bulgarian
+				}
+			}
+			NOT = { has_country_flag = greek_pacifism }
+		}
+		allow = {
+			owns = 809
+			citizens_rights = culture_voting_only
+		}
+		effect = {
+			add_accepted_culture = bulgarian
+			set_country_flag = accept_bulgarians
+			any_pop = {
+				limit = {
+					is_accepted_culture = no
+					is_primary_culture = no
+				}
+				consciousness = 5
+			}
+			any_pop = {
+				limit = { has_pop_culture = bulgarian }
+				militancy = -9
+			}
+		}
+	}
+	accept_serbs = {
+		picture = fast_rap_tupac_serbia
+		potential = {
+			NOT = { has_country_flag = accept_serbs }
+			tag = BYZ
+			any_owned_province = {
+				any_pop = {
+					has_pop_culture = serb
+				}
+			}
+			NOT = { has_country_flag = greek_pacifism }
+		}
+		allow = {
+			owns = 794
+			NOT = { exists = YUG }
+			citizens_rights = culture_voting_only
+		}
+		effect = {
+			add_accepted_culture = serb
+			set_country_flag = accept_serbs
+			any_pop = {
+				limit = {
+					is_accepted_culture = no
+					is_primary_culture = no
+				}
+				consciousness = 5
+			}
+			any_pop = {
+				limit = { has_pop_culture = serb }
+				militancy = -9
+			}
+		}
+	}
+	accept_montenegrins = {
+		picture = montenegrins
+		potential = {
+			NOT = { has_country_flag = accept_montenegrins }
+			tag = BYZ
+			any_owned_province = {
+				any_pop = {
+					has_pop_culture = montenegrin
+				}
+			}
+			NOT = { has_country_flag = greek_pacifism }
+			has_country_flag = integrate_montenegro
+		}
+		allow = {
+			owns = 2583
+			NOT = { exists = YUG }
+			citizens_rights = culture_voting_only
+		}
+		effect = {
+			add_accepted_culture = montenegrin
+			set_country_flag = accept_montenegrins
+			any_pop = {
+				limit = {
+					is_accepted_culture = no
+					is_primary_culture = no
+				}
+				consciousness = 5
+			}
+			any_pop = {
+				limit = { has_pop_culture = montenegrin }
+				militancy = -9
+			}
+		}
+	}
+	accept_armenians = {
+		picture = armenian_fedayi
+		potential = {
+			NOT = { has_country_flag = accept_armenians }
+			tag = BYZ
+			#has_country_flag = claim_anatolia_byz
+			any_owned_province = {
+				any_pop = {
+					has_pop_culture = armenian
+				}
+			}
+			NOT = { has_country_flag = greek_pacifism }
+		}
+		allow = {
+			owns = 894
+			NOT = { exists = GRA }
+			citizens_rights = culture_voting_only
+		}
+		effect = {
+			set_country_flag = accept_armenians
+			add_accepted_culture = armenian
+			any_pop = {
+				limit = {
+					is_accepted_culture = no
+					is_primary_culture = no
+				}
+				consciousness = 5
+			}
+			any_pop = {
+				limit = { has_pop_culture = armenian }
+				militancy = -9
+			}
+		}
+	}
+	accept_assyrians = {
+		picture = assyrians
+		potential = {
+			NOT = { has_country_flag = accept_assyrians }
+			tag = BYZ
+			any_owned_province = {
+				any_pop = {
+					has_pop_culture = assyrian
+				}
+			}
+			NOT = { has_country_flag = greek_pacifism }
+		}
+		allow = {
+			owns = 913
+			citizens_rights = culture_voting_only
+		}
+		effect = {
+			set_country_flag = accept_assyrians
+			add_accepted_culture = assyrian
+			any_pop = {
+				limit = {
+					is_accepted_culture = no
+					is_primary_culture = no
+				}
+				consciousness = 5
+			}
+			any_pop = {
+				limit = { has_pop_culture = assyrian }
+				militancy = -9
+			}
+		}
+	}
+	accept_copts = {
+		picture = copt_monks
+		potential = {
+			NOT = { has_country_flag = accept_copts }
+			tag = BYZ
+			any_owned_province = {
+				any_pop = {
+					has_pop_culture = copt
+				}
+			}
+			NOT = { has_country_flag = greek_pacifism }
+		}
+		allow = {
+			owns = 1745
+			citizens_rights = culture_voting_only
+		}
+		effect = {
+			set_country_flag = accept_copts
+			add_accepted_culture = copt
+			any_pop = {
+				limit = {
+					is_accepted_culture = no
+					is_primary_culture = no
+				}
+				consciousness = 5
+			}
+			any_pop = {
+				limit = { has_pop_culture = copt }
+				militancy = -9
+			}
+		}
+	}
+
+	turkish_question = {
+		picture = gtfo
+		potential = {
+			OR = {
+				tag = BYZ
+				tag = GRE
+			}
+			NOT = { has_country_flag = turkish_no_slaughter }
+			NOT = { has_country_flag = turkish_slaughter }
+			OR = {
+				owns = 876 #ankara
+				owns = 805 #thessanoliniki
+				owns = 834 #athens
+				owns = 860 #constantinople
+				owns = 882 #trebizond
+				owns = 894 #adana
+				owns = 900 #antioch
+			}
+			NOT = { has_country_flag = greek_pacifism }
+		}
+		allow = {
+			AND = {
+				OR = {
+					ruling_party_ideology = reactionary
+					ruling_party_ideology = fascist
+				}		
+				any_owned_province = {
+					any_pop = {
+						OR = {
+							is_culture_group = turko_semitic
+							has_pop_culture = turkish
+						} 
+					}
+				}
+			}
+			war = no
+			invention = manifest_destiny
+			invention = rhetoric_of_hate
+			owns = 876 #ankara
+			owns = 805 #thessanoliniki
+			owns = 834 #athens
+			owns = 860 #constantinople
+			owns = 882 #trebizond
+			owns = 894 #adana
+			owns = 900 #antioch
+		}
+		effect = {
+			THIS = { country_event = 6000015 }
+		}
+	}
+
+	#solve kars border conflict BYZ - RUS
+	#885 886 1096
+	solve_border_disputes_BYZ_RUS = {
+		picture = gtfo
+		potential = {
+			tag = BYZ
+			NOT = {	has_global_flag = solve_border_disputes_BYZ_RUS }
+			1096 = {
+				is_core = BYZ
+				is_core = RUS
+				NOT = { owned_by = TUR }
+				OR = {
+					owned_by = BYZ
+					owned_by = RUS
+				}
+			}
+			885 = {
+				is_core = BYZ
+				is_core = RUS
+				NOT = { owned_by = TUR }
+				OR = {
+					owned_by = BYZ
+					owned_by = RUS
+				}
+			}
+			886 = {
+				is_core = BYZ
+				is_core = RUS
+				NOT = { owned_by = TUR }
+				OR = {
+					owned_by = BYZ
+					owned_by = RUS
+				}
+			}
+			3438 = {
+				is_core = BYZ
+				is_core = RUS
+				NOT = { owned_by = TUR }
+				OR = {
+					owned_by = BYZ
+					owned_by = RUS
+				}
+			}
+		}
+		allow = {
+			BYZ = {
+				war = no
+				relation = { who = RUS value = 150 }
+				has_country_flag = claim_anatolia_byz
+			}
+			RUS = {
+				war = no
+				relation = { who = BYZ value = 150 }
+			}
+		}
+		effect = {
+			set_global_flag = solve_border_disputes_BYZ_RUS
+			1096 = {
+				secede_province = RUS
+				remove_core = BYZ
+			}
+			885 = {
+				secede_province = BYZ
+				remove_core = RUS
+			}
+			886 = {
+				secede_province = BYZ
+				remove_core = RUS
+			}
+			3438 = {
+				secede_province = BYZ
+				remove_core = RUS
+			}
+		}
+	}
+
+	restore_empire_borders_byz = {
+		picture = bicephalous_eagle
+		potential = {
+			tag = BYZ
+			NOT = { has_country_flag = BYZ_borders }
+			NOT = { has_country_flag = greek_pacifism }
+		}
+		
+		allow = {
+			NOT = { has_country_flag = BYZ_borders }
+			#has_country_flag = claim_rome_byz
+			BYZ = { is_greater_power = yes all_core = { owned_by = THIS } }
+			nationalism_n_imperialism = 1	
+			war_policy = jingoism
+			war = no
+		}
+		
+		effect = {
+			prestige = 25
+			#badboy = -25
+			set_country_flag = BYZ_borders
+			add_country_modifier = {
+				name = greek_supremacy
+				duration = -1
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	
+	greek_rename_transjordan = {
+		picture = gtfo
+		potential = {
+			primary_culture = greek
+			owns = 908
+			NOT = { has_global_flag = greek_rename_transjordan }
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = greek_rename_transjordan
+			clr_global_flag = normal_rename_transjordan
+			#prestige = 2
+			908 = { #    
+				change_province_name = "Areopolis" 
+				state_scope = {
+					change_region_name = "Palaestina Salutaris"
+				}
+			}  
+			910 = { change_province_name = "Basienis" }
+			911 = { change_province_name = "Maan" }
+			922 = { change_province_name = "Aila" }
+			909 = { change_province_name = "Gerasa" }
+		}
+		ai_will_do = { factor = 1 }
+	}	
+	
+	normal_rename_transjordan = {
+		picture = gtfo
+		potential = {
+			NOT = { primary_culture = greek }
+			owns = 908
+			NOT = { has_global_flag = normal_rename_transjordan }
+			has_global_flag = greek_rename_transjordan
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = normal_rename_transjordan
+			clr_global_flag = greek_rename_transjordan
+			#prestige = 2
+			908 = { #   
+				change_province_name = "Amman" 
+				state_scope = {
+					change_region_name = "Transjordan"
+				}
+			}  
+			910 = { change_province_name = "Azraq" }
+			911 = { change_province_name = "Ma'an" }
+			922 = { change_province_name = "Aqaba" }
+			909 = { change_province_name = "Jerash" }
+		}
+		ai_will_do = { factor = 1 }
+	}	
+	
+	greek_rename_palestine = {
+		picture = gtfo
+		potential = {
+			primary_culture = greek
+			owns = 917
+			NOT = { has_global_flag = greek_rename_palestine }
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = greek_rename_palestine
+			clr_global_flag = normal_rename_palestine
+			#prestige = 2
+			917 = { #     
+				change_province_name = "Hierosolyma" 
+				state_scope = {
+					change_region_name = "Palaestina"
+				}
+			}  
+			921 = { change_province_name = "Ierichó" }
+			920 = { change_province_name = "Daroum" }
+			919 = { change_province_name = "Ioppa" }
+			918 = { change_province_name = "Neapolis Palaestina" }
+		}
+		ai_will_do = { factor = 1 }
+	}	
+	
+	normal_rename_palestine = {
+		picture = gtfo
+		potential = {
+			NOT = { primary_culture = greek }
+			owns = 917
+			NOT = { has_global_flag = normal_rename_palestine }
+			has_global_flag = greek_rename_palestine
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = normal_rename_palestine
+			clr_global_flag = greek_rename_palestine
+			#prestige = 2
+			917 = { #   
+				change_province_name = "Jerusalem" 
+				state_scope = {
+					change_region_name = "Palestine"
+				}
+			}  
+			921 = { change_province_name = "Beersheba" }
+			920 = { change_province_name = "Gaza" }
+			919 = { change_province_name = "Jaffa" }
+			918 = { change_province_name = "Nablus" }
+		}
+		ai_will_do = { factor = 1 }
+	}	
+	
+	greek_rename_lebanon = {
+		picture = gtfo
+		potential = {
+			primary_culture = greek
+			owns = 913
+			NOT = { has_global_flag = greek_rename_lebanon }
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = greek_rename_lebanon
+			clr_global_flag = normal_rename_lebanon
+			#prestige = 2
+			913 = { #   
+				change_province_name = "Berytus" 
+				state_scope = {
+					change_region_name = "Phoenike"
+				}
+			}  
+			915 = { change_province_name = "Sidon" }
+			912 = { change_province_name = "Helioupolis" }
+			914 = { change_province_name = "Tripoli" }
+			916 = { change_province_name = "Tyros" }
+			905 = { change_province_name = "Laodikeia" }
+		}
+		ai_will_do = { factor = 1 }
+	}	
+	
+	normal_rename_lebanon = {
+		picture = gtfo
+		potential = {
+			NOT = { primary_culture = greek }
+			owns = 913
+			NOT = { has_global_flag = normal_rename_lebanon }
+			has_global_flag = greek_rename_lebanon
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = normal_rename_lebanon
+			clr_global_flag = greek_rename_lebanon
+			#prestige = 2
+			913 = { #   
+				change_province_name = "Beirut" 
+				state_scope = {
+					change_region_name = "Lebanon"
+				}
+			}  
+			915 = { change_province_name = "Sidon" }
+			912 = { change_province_name = "Baalbeck" }
+			914 = { change_province_name = "Trablos" }
+			916 = { change_province_name = "Acre" }
+			905 = { change_province_name = "Latakia" }
+		}
+		ai_will_do = { factor = 1 }
+	}	
+	
+	greek_rename_syria = {
+		picture = gtfo
+		potential = {
+			primary_culture = greek
+			owns = 902
+			NOT = { has_global_flag = greek_rename_syria }
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = greek_rename_syria
+			clr_global_flag = normal_rename_syria
+			#prestige = 2
+			902 = { #      
+				change_province_name = "Damaskos" 
+				state_scope = {
+					change_region_name = "Damaskos"
+				}
+			}  
+			903 = { change_province_name = "Emesa" }
+			906 = { change_province_name = "Seleukeia Pieria" }
+			907 = { change_province_name = "Palmyra" }
+			904 = { change_province_name = "Epiphania" }
+			3324 = { change_province_name = "Gaulantis" }
+		}
+		ai_will_do = { factor = 1 }
+	}	
+	
+	normal_rename_syria = {
+		picture = gtfo
+		potential = {
+			NOT = { primary_culture = greek }
+			owns = 902
+			NOT = { has_global_flag = normal_rename_syria }
+			has_global_flag = greek_rename_syria
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = normal_rename_syria
+			clr_global_flag = greek_rename_syria
+			#prestige = 2
+			902 = { #   
+				change_province_name = "Damascus" 
+				state_scope = {
+					change_region_name = "Syria Minor"
+				}
+			}  
+			903 = { change_province_name = "Homs" }
+			906 = { change_province_name = "As-Suwayda" }
+			907 = { change_province_name = "Palmyra" }
+			904 = { change_province_name = "Hama" }
+			3324 = { change_province_name = "Golan" }
+		}
+		ai_will_do = { factor = 1 }
+	}	
+	
+	greek_rename_bosnia = {
+		picture = gtfo
+		potential = {
+			primary_culture = greek
+			owns = 783
+			NOT = { has_global_flag = greek_rename_bosnia }
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = greek_rename_bosnia
+			clr_global_flag = normal_rename_bosnia
+			#prestige = 2
+			783 = { #   
+				change_province_name = "Vrelovosna" 
+				state_scope = {
+					change_region_name = "Vosnía"
+				}
+			}  
+			784 = { change_province_name = "Uduina" }
+			785 = { change_province_name = "Bánia Loúka" }
+			786 = { change_province_name = "Salines" }
+			787 = { change_province_name = "Brescoa" }
+			788 = { change_province_name = "Móstaros" }
+			789 = { change_province_name = "Delminion" }
+		}
+		ai_will_do = { factor = 1 }
+	}	
+	
+	normal_rename_bosnia = {
+		picture = gtfo
+		potential = {
+			NOT = { primary_culture = greek }
+			owns = 783
+			NOT = { has_global_flag = normal_rename_bosnia }
+			has_global_flag = greek_rename_bosnia
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = normal_rename_bosnia
+			clr_global_flag = greek_rename_bosnia
+			#prestige = 2
+			783 = { #   
+				change_province_name = "Sarajevo" 
+				state_scope = {
+					change_region_name = "Bosnia"
+				}
+			}  
+			784 = { change_province_name = "Bihac" }
+			785 = { change_province_name = "Banja Luka" }
+			786 = { change_province_name = "Tuzla" }
+			787 = { change_province_name = "Foca" }  
+			788 = { change_province_name = "Mostar" }  
+			789 = { change_province_name = "Livno" }
+		}
+		ai_will_do = { factor = 1 }
+	}	
+	
+#	claim_egypt_byz = {
+#		picture = justinian_I
+#		potential = {
+#			tag = BYZ
+#			NOT = { has_country_flag = claim_egypt_byz }
+#			has_country_flag = BYZ_borders
+#		}
+#		
+#		allow = {
+#			NOT = { has_country_flag = claim_egypt_byz }
+#			has_country_flag = BYZ_borders
+#			BYZ = { is_greater_power = yes all_core = { owned_by = THIS } }
+#			OR = {
+#				AND = {
+#					invention = national_fraternity		
+#					nationalism_n_imperialism = 1	
+#				}
+#			}
+#			war_policy = jingoism
+#			war = no
+#		}
+#		
+#		effect = {
+#			prestige = 5
+#			badboy = 6
+#			set_country_flag = claim_egypt_byz
+#			EGY_1751 = { #Alexandria
+#				add_core = BYZ
+#			}
+#			EGY_1755 = { #Sinai
+#				add_core = BYZ
+#			}
+#			EGY_1745 = { #Cairo
+#				add_core = BYZ
+#			}
+#			EGY_1762 = { #Middle Egypt
+#				add_core = BYZ
+#			}
+#			EGY_1771 = { #Upper Egypt
+#				add_core = BYZ
+#			}
+#			EGY_1758 = { #Egyptian Egypt
+#				add_core = BYZ
+#			}
+#			#add_accepted_culture = copt
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	
+#	claim_levant_byz = {
+#		picture = justinian_I
+#		potential = {
+#			tag = BYZ
+#			NOT = { has_country_flag = claim_levant_byz }
+#			has_country_flag = BYZ_borders
+#		}
+#		
+#		allow = {
+#			NOT = { has_country_flag = claim_levant_byz }
+#			has_country_flag = BYZ_borders
+#			BYZ = { is_greater_power = yes all_core = { owned_by = THIS } }
+#			OR = {
+#				AND = {
+#					invention = national_fraternity		
+#					nationalism_n_imperialism = 1	
+#				}
+#			}
+#			war_policy = jingoism
+#			war = no
+#		}
+#		
+#		effect = {
+#			prestige = 5
+#			badboy = 6
+#			set_country_flag = claim_levant_byz
+#			SYR = { all_core = { add_core = THIS } }
+#			ASY = { all_core = { add_core = THIS } }
+#			LBN = { all_core = { add_core = THIS } }
+#			#add_accepted_culture = assyrian
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	
+#	claim_jerusalem_byz = {
+#		picture = justinian_I
+#		potential = {
+#			tag = BYZ
+#			NOT = { has_country_flag = claim_jerusalem_byz }
+#			has_country_flag = BYZ_borders
+#		}
+#		
+#		allow = {
+#			NOT = { has_country_flag = claim_jerusalem_byz }
+#			has_country_flag = BYZ_borders
+#			BYZ = { is_greater_power = yes all_core = { owned_by = THIS } }
+#			OR = {
+#				AND = {
+#					invention = national_fraternity		
+#					nationalism_n_imperialism = 1	
+#				}
+#			}
+#			war_policy = jingoism
+#			war = no
+#		}
+#		
+#		effect = {
+#			prestige = 20
+#			badboy = 6
+#			set_country_flag = claim_jerusalem_byz
+#			PLS = { all_core = { add_core = THIS } }
+#			JOR = { all_core = { add_core = THIS } }
+#			1154 = {
+#				add_core = THIS
+#			}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	
+#	claim_cyrenaica_byz = {
+#		picture = justinian_I
+#		potential = {
+#			tag = BYZ
+#			NOT = { has_country_flag = claim_cyrenaica_byz }
+#			has_country_flag = BYZ_borders
+#		}
+#		
+#		allow = {
+#			NOT = { has_country_flag = claim_cyrenaica_byz }
+#			has_country_flag = BYZ_borders
+#			BYZ = { is_greater_power = yes all_core = { owned_by = THIS } }
+#			OR = {
+#				AND = {
+#					invention = national_fraternity		
+#					nationalism_n_imperialism = 1	
+#				}
+#			}
+#			war_policy = jingoism
+#			war = no
+#		}
+#		
+#		effect = {
+#			prestige = 5
+#			badboy = 6
+#			set_country_flag = claim_cyrenaica_byz
+#			TRI_1735 = { #Cyrenaica
+#				add_core = BYZ
+#			}
+#			TRI_1731 = { #Tripolitania
+#				add_core = BYZ
+#			}
+#			TRI_1735 = { #Tunisia
+#				add_core = BYZ
+#			}
+#			#add_accepted_culture = berber
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	
+#	claim_mauretania_byz = {
+#		picture = justinian_I
+#		potential = {
+#			tag = BYZ
+#			NOT = { has_country_flag = claim_mauretania_byz }
+#			has_country_flag = BYZ_borders
+#		}
+#		
+#		allow = {
+#			NOT = { has_country_flag = claim_mauretania_byz }
+#			has_country_flag = BYZ_borders
+#			BYZ = { is_greater_power = yes all_core = { owned_by = THIS } }
+#			OR = {
+#				AND = {
+#					invention = national_fraternity		
+#					nationalism_n_imperialism = 1	
+#				}
+#			}
+#			war_policy = jingoism
+#			war = no
+#		}
+#		
+#		effect = {
+#			prestige = 5
+#			badboy = 6
+#			set_country_flag = claim_mauretania_byz
+#			ALD = { all_core = { add_core = THIS } }
+#			MOR_1683 = { #Taza
+#				add_core = BYZ
+#			}
+#			MOR_1688 = { #Rif
+#				add_core = BYZ
+#			}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	
+#	claim_corsica_byz = {
+#		picture = justinian_I
+#		potential = {
+#			tag = BYZ
+#			NOT = { has_country_flag = claim_corsica_byz }
+#			has_country_flag = BYZ_borders
+#		}
+#		
+#		allow = {
+#			NOT = { has_country_flag = claim_corsica_byz }
+#			has_country_flag = BYZ_borders
+#			BYZ = { is_greater_power = yes all_core = { owned_by = THIS } }
+#			OR = {
+#				AND = {
+#					invention = national_fraternity		
+#					nationalism_n_imperialism = 1	
+#				}
+#			}
+#			war_policy = jingoism
+#			war = no
+#		}
+#		
+#		effect = {
+#			prestige = 5
+#			badboy = 6
+#			set_country_flag = claim_corsica_byz
+#			502 = { #Baleares
+#				add_core = BYZ
+#			}
+#			SAR_765 = { #Corsica & Sardinia
+#				add_core = BYZ
+#			}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	
+#	claim_granada_byz = {
+#		picture = justinian_I
+#		potential = {
+#			tag = BYZ
+#			NOT = { has_country_flag = claim_granada_byz }
+#			has_country_flag = BYZ_borders
+#		}
+#		
+#		allow = {
+#			NOT = { has_country_flag = claim_granada_byz }
+#			has_country_flag = BYZ_borders
+#			BYZ = { is_greater_power = yes all_core = { owned_by = THIS } }
+#			OR = {
+#				AND = {
+#					invention = national_fraternity		
+#					nationalism_n_imperialism = 1	
+#				}
+#			}
+#			war_policy = jingoism
+#			war = no
+#		}
+#		
+#		effect = {
+#			prestige = 5
+#			badboy = 6
+#			set_country_flag = claim_granada_byz
+#			SPA_512 = { #Andalucia
+#				add_core = BYZ
+#			}
+#			SPA_513 = { #Granada
+#				add_core = BYZ
+#			}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	
+#	claim_n_italy_byz = {
+#		picture = justinian_I
+#		potential = {
+#			tag = BYZ
+#			NOT = { has_country_flag = claim_n_italy_byz }
+#			has_country_flag = BYZ_borders
+#		}
+#		
+#		allow = {
+#			NOT = { has_country_flag = claim_n_italy_byz }
+#			has_country_flag = BYZ_borders
+#			BYZ = { is_greater_power = yes all_core = { owned_by = THIS } }
+#			OR = {
+#				AND = {
+#					invention = national_fraternity		
+#					nationalism_n_imperialism = 1	
+#				}
+#			}
+#			war_policy = jingoism
+#			war = no
+#		}
+#		
+#		effect = {
+#			prestige = 5
+#			badboy = 15
+#			set_country_flag = claim_n_italy_byz
+#			SAR_720 = { #Piemonte
+#				add_core = BYZ
+#			}
+#			TUS_744 = { #Tuscany
+#				add_core = BYZ
+#			}
+#			PAP_741 = { #Emilia-Romagna
+#				add_core = BYZ
+#			}
+#			AUS_726 = { #Lombardia
+#				add_core = BYZ
+#			}
+#			AUS_734 = { #S. Tyrol
+#				add_core = BYZ
+#			}
+#			AUS_729 = { #Venetia
+#				add_core = BYZ
+#			}
+#			#add_accepted_culture = north_italian
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}	
+#	claim_provence_byz = {
+#		picture = justinian_I
+#		potential = {
+#			tag = BYZ
+#			NOT = { has_country_flag = claim_provence_byz }
+#			has_country_flag = BYZ_borders
+#		}
+#		
+#		allow = {
+#			NOT = { has_country_flag = claim_provence_byz }
+#			has_country_flag = BYZ_borders
+#			BYZ = { is_greater_power = yes all_core = { owned_by = THIS } }
+#			OR = {
+#				AND = {
+#					invention = national_fraternity		
+#					nationalism_n_imperialism = 1	
+#				}
+#			}
+#			war_policy = jingoism
+#			war = no
+#		}
+#		
+#		effect = {
+#			prestige = 5
+#			badboy = 9
+#			set_country_flag = claim_provence_byz
+#			FRA_467 = { #Provence
+#				add_core = BYZ
+#			}
+#			SAR_466 = { #Savoy
+#				add_core = BYZ
+#			}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+	
+	restore_pentarchy_constantinople = {
+		picture = pantokrator
+		potential = {
+			NOT = { has_country_flag = restore_pentarchy_constantinople }
+			OR = {
+				tag = BYZ
+				tag = GRE
+			}
+			owns = 860
+		}
+		
+		allow = {
+			NOT = { has_country_flag = restore_pentarchy_constantinople }
+			OR = {
+				tag = BYZ
+				tag = GRE
+			}
+			owns = 860
+		}
+		
+		effect = {
+			prestige = 10
+			set_country_flag = restore_pentarchy_constantinople
+			860 = {
+				add_province_modifier = {
+					name = pentarchy_restored
+					duration = -1
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	restore_pentarchy_antioch = {
+		picture = pantokrator
+		potential = {
+			NOT = { has_country_flag = restore_pentarchy_antioch }
+			OR = {
+				tag = BYZ
+				tag = GRE
+			}
+			owns = 900
+		}
+		
+		allow = {
+			NOT = { has_country_flag = restore_pentarchy_antioch }
+			OR = {
+				tag = BYZ
+				tag = GRE
+			}
+			owns = 900
+		}
+		
+		effect = {
+			prestige = 10
+			set_country_flag = restore_pentarchy_antioch
+			900 = {
+				add_province_modifier = {
+					name = pentarchy_restored
+					duration = -1
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	restore_pentarchy_jerusalem = {
+		picture = pantokrator
+		potential = {
+			NOT = { has_country_flag = restore_pentarchy_jerusalem }
+			OR = {
+				tag = BYZ
+				tag = GRE
+			}
+			owns = 917
+		}
+		
+		allow = {
+			NOT = { has_country_flag = restore_pentarchy_jerusalem }
+			OR = {
+				tag = BYZ
+				tag = GRE
+			}
+			owns = 917
+		}
+		
+		effect = {
+			prestige = 10
+			set_country_flag = restore_pentarchy_jerusalem
+			917 = {
+				add_province_modifier = {
+					name = pentarchy_restored
+					duration = -1
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	restore_pentarchy_alexandria = {
+		picture = pantokrator
+		potential = {
+			NOT = { has_country_flag = restore_pentarchy_alexandria }
+			OR = {
+				tag = BYZ
+				tag = GRE
+			}
+			owns = 1751
+		}
+		
+		allow = {
+			NOT = { has_country_flag = restore_pentarchy_alexandria }
+			OR = {
+				tag = BYZ
+				tag = GRE
+			}
+			owns = 1751
+		}
+		
+		effect = {
+			prestige = 10
+			set_country_flag = restore_pentarchy_alexandria
+			1751 = {
+				add_province_modifier = {
+					name = pentarchy_restored
+					duration = -1
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	restore_pentarchy_rome = {
+		picture = pantokrator
+		potential = {
+			NOT = { has_country_flag = restore_pentarchy_rome }
+			OR = {
+				tag = BYZ
+				tag = GRE
+			}
+			owns = 749
+		}
+		
+		allow = {
+			NOT = { has_country_flag = restore_pentarchy_rome }
+			OR = {
+				tag = BYZ
+				tag = GRE
+			}
+			owns = 749
+		}
+		
+		effect = {
+			prestige = 10
+			set_country_flag = restore_pentarchy_rome
+			749 = {
+				add_province_modifier = {
+					name = pentarchy_restored
+					duration = -1
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	five_pentarchies_restored = {
+		picture = pantokrator
+		potential = {
+			NOT = { has_country_flag = five_pentarchies_restored }
+			has_country_flag = restore_pentarchy_constantinople
+			has_country_flag = restore_pentarchy_antioch
+			has_country_flag = restore_pentarchy_jerusalem
+			has_country_flag = restore_pentarchy_alexandria
+			has_country_flag = restore_pentarchy_rome
+			OR = {
+				tag = BYZ
+				tag = GRE
+			}
+			OR = {
+				owns = 860
+				owns = 900
+				owns = 917
+				owns = 1751
+				owns = 749
+			}
+		}
+		
+		allow = {
+			NOT = { has_country_flag = five_pentarchies_restored }
+			has_country_flag = restore_pentarchy_constantinople
+			has_country_flag = restore_pentarchy_antioch
+			has_country_flag = restore_pentarchy_jerusalem
+			has_country_flag = restore_pentarchy_alexandria
+			has_country_flag = restore_pentarchy_rome
+			OR = {
+				tag = BYZ
+				tag = GRE
+			}
+			owns = 860
+			owns = 900
+			owns = 917
+			owns = 1751
+			owns = 749
+		}
+		
+		effect = {
+			prestige = 30
+			set_country_flag = five_pentarchies_restored
+			any_owned = {
+				remove_province_modifier = pentarchy_restored
+			}
+			add_country_modifier = {
+					name = pentarchy_restored_plus
+					duration = -1	
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+############# rename stuff
+	
+	# greek_rename_aleppo = {
+		# picture = gtfo
+		# potential = {
+			# primary_culture = greek
+			# owns = 900
+			# NOT = { has_global_flag = greek_rename_aleppo }
+		# }
+		
+		# allow = {
+			# war = no
+		# }
+		
+		# effect = {
+			# set_global_flag = greek_rename_aleppo
+			# clr_global_flag = normal_rename_aleppo
+			# #prestige = 2
+			# 897 = { #     
+				# change_province_name = "Berroia" 
+				# state_scope = {
+					# change_region_name = "Syria"
+				# }
+			# }             
+			# 901 = { change_province_name = "Kallinikos" }
+			# 899 = { change_province_name = "Edessa" }
+			# 900 = { change_province_name = "Antiocheia" }
+			# 905 = { change_province_name = "Laodikeia" }
+		# }
+		# ai_will_do = { factor = 1 }
+	# }	
+	
+	# normal_rename_aleppo = {
+		# picture = gtfo
+		# potential = {
+			# NOT = { primary_culture = greek }
+			# owns = 900
+			# NOT = { has_global_flag = normal_rename_aleppo }
+			# has_global_flag = greek_rename_aleppo
+		# }
+		
+		# allow = {
+			# war = no
+		# }
+		
+		# effect = {
+			# set_global_flag = normal_rename_aleppo
+			# clr_global_flag = greek_rename_aleppo
+			# #prestige = 2
+			# 897 = { #       
+				# change_province_name = "Aleppo" 
+				# state_scope = {
+					# change_region_name = "Aleppo"
+				# }
+			# }      
+			# 901 = { change_province_name = "Dayr al-Zour" }
+			# 900 = { change_province_name = "Antakya" }
+			# 899 = { change_province_name = "Urfa" }
+			# 905 = { change_province_name = "Latakia" }
+		# }
+		# ai_will_do = { factor = 1 }
+	# }
+	
+	# greek_rename_tunisia = {
+		# picture = gtfo
+		# potential = {
+			# primary_culture = greek
+			# owns = 1725
+			# NOT = { has_global_flag = greek_rename_tunisia }
+		# }
+		
+		# allow = {
+			# war = no
+		# }
+		
+		# effect = {
+			# set_global_flag = greek_rename_tunisia
+			# clr_global_flag = normal_rename_tunisia
+			# #prestige = 2
+			# 1725 = { #     
+				# change_province_name = "Karchedon" 
+				# state_scope = {
+					# change_region_name = "Tynisía"
+				# }
+			# }             
+			# 1726 = { change_province_name = "Hippón Diárrhytos" }
+			# 1727 = { change_province_name = "Capsa" }
+			# 1728 = { change_province_name = "Kamounia" }
+			# 1729 = { change_province_name = "Thusuros" }
+			# 1730 = { change_province_name = "Tacape" }
+		# }
+		# ai_will_do = { factor = 1 }
+	# }	
+	
+	# normal_rename_tunisia = {
+		# picture = gtfo
+		# potential = {
+			# NOT = { primary_culture = greek }
+			# owns = 1725
+			# NOT = { has_global_flag = normal_rename_tunisia }
+			# has_global_flag = greek_rename_tunisia
+		# }
+		
+		# allow = {
+			# war = no
+		# }
+		
+		# effect = {
+			# set_global_flag = normal_rename_tunisia
+			# clr_global_flag = greek_rename_tunisia
+			# #prestige = 2
+			# 1725 = { #    
+				# change_province_name = "Tunis" 
+				# state_scope = {
+					# change_region_name = "Tunisia"
+				# }
+			# }      
+			# 1726 = { change_province_name = "Bizerte" }
+			# 1727 = { change_province_name = "Gafsa" }
+			# 1728 = { change_province_name = "Kairouan" }
+			# 1729 = { change_province_name = "Tozeur" }
+			# 1730 = { change_province_name = "Gabes" }
+		# }
+		# ai_will_do = { factor = 1 }
+	# }	
+	
+	# greek_rename_tripolitania = {
+		# picture = gtfo
+		# potential = {
+			# primary_culture = greek
+			# owns = 1731
+			# NOT = { has_global_flag = greek_rename_tripolitania }
+		# }
+		
+		# allow = {
+			# war = no
+		# }
+		
+		# effect = {
+			# set_global_flag = greek_rename_tripolitania
+			# clr_global_flag = normal_rename_tripolitania
+			# #prestige = 2
+			# 1731 = { #    
+				# change_province_name = "Oía" 
+				# state_scope = {
+					# change_region_name = "Tripolitánia"
+				# }
+			# }             
+			# 1733 = { change_province_name = "Thubactis" }
+			# 1734 = { change_province_name = "Macomades" }
+			# 1732 = { change_province_name = "Thenteos" }
+			# 1744 = { change_province_name = "Sabae" }
+			# 1740 = { change_province_name = "Gholaia" }
+			# 1741 = { change_province_name = "Garamantia" }
+			# 1742 = { change_province_name = "Ouath" }
+		# }
+		# ai_will_do = { factor = 1 }
+	# }	
+	
+	# normal_rename_tripolitania = {
+		# picture = gtfo
+		# potential = {
+			# NOT = { primary_culture = greek }
+			# owns = 1731
+			# NOT = { has_global_flag = normal_rename_tripolitania }
+			# has_global_flag = greek_rename_tripolitania
+		# }
+		
+		# allow = {
+			# war = no
+		# }
+		
+		# effect = {
+			# set_global_flag = normal_rename_tripolitania
+			# clr_global_flag = greek_rename_tripolitania
+			# #prestige = 2
+			# 1731 = { #    
+				# change_province_name = "Tripoli" 
+				# state_scope = {
+					# change_region_name = "Tripolitania"
+				# }
+			# }      
+			# 1733 = { change_province_name = "Misratah" }
+			# 1734 = { change_province_name = "Sirt" }
+			# 1732 = { change_province_name = "Gharyan" }
+			# 1744 = { change_province_name = "Sabha" }
+			# 1740 = { change_province_name = "Waddan" }
+			# 1741 = { change_province_name = "Murzuk" }
+			# 1742 = { change_province_name = "Wath" }
+		# }
+		# ai_will_do = { factor = 1 }
+	# }	
+	
+	# greek_rename_alexandria = {
+		# picture = gtfo
+		# potential = {
+			# primary_culture = greek
+			# owns = 1751
+			# NOT = { has_global_flag = greek_rename_alexandria }
+		# }
+		
+		# allow = {
+			# war = no
+		# }
+		
+		# effect = {
+			# set_global_flag = greek_rename_alexandria
+			# clr_global_flag = normal_rename_alexandria
+			# #prestige = 2
+			# 1751 = { #    
+				# change_province_name = "Alexandreia" 
+				# state_scope = {
+					# change_region_name = "Aigyptos"
+				# }
+			# }      
+			# 1752 = { change_province_name = "Paraitonion" }
+			# 1753 = { change_province_name = "Zygra" }
+			# 1746 = { change_province_name = "Augustamnike" }
+		# }
+		# ai_will_do = { factor = 1 }
+	# }	
+	
+	# normal_rename_alexandria = {
+		# picture = gtfo
+		# potential = {
+			# NOT = { primary_culture = greek }
+			# owns = 1751
+			# NOT = { has_global_flag = normal_rename_alexandria }
+			# has_global_flag = greek_rename_alexandria
+		# }
+		
+		# allow = {
+			# war = no
+		# }
+		
+		# effect = {
+			# set_global_flag = normal_rename_alexandria
+			# clr_global_flag = greek_rename_alexandria
+			# #prestige = 2
+			# 1751 = { #    
+				# change_province_name = "Alexandria" 
+				# state_scope = {
+					# change_region_name = "Alexandria"
+				# }
+			# }      
+			# 1752 = { change_province_name = "Matruh" }
+			# 1753 = { change_province_name = "Sidi Barrani" }
+			# 1746 = { change_province_name = "Dumyat" }
+		# }
+		# ai_will_do = { factor = 1 }
+	# }	
+	
+	# greek_rename_cairo = {
+		# picture = gtfo
+		# potential = {
+			# primary_culture = greek
+			# owns = 1745
+			# NOT = { has_global_flag = greek_rename_cairo }
+		# }
+		
+		# allow = {
+			# war = no
+		# }
+		
+		# effect = {
+			# set_global_flag = greek_rename_cairo
+			# clr_global_flag = normal_rename_cairo
+			# #prestige = 2
+			# 1745 = { #        
+				# change_province_name = "Arkadia" 
+				# state_scope = {
+					# change_region_name = "Arkadia"
+				# }
+			# }      
+			# 1747 = { change_province_name = "Tanta" }
+			# 1750 = { change_province_name = "Menphis" }
+			# 1748 = { change_province_name = "Paramoni" }
+			# 1749 = { change_province_name = "Boubastos" }
+		# }
+		# ai_will_do = { factor = 1 }
+	# }	
+	
+	# normal_rename_cairo = {
+		# picture = gtfo
+		# potential = {
+			# NOT = { primary_culture = greek }
+			# owns = 1745
+			# NOT = { has_global_flag = normal_rename_cairo }
+			# has_global_flag = greek_rename_cairo
+		# }
+		
+		# allow = {
+			# war = no
+		# }
+		
+		# effect = {
+			# set_global_flag = normal_rename_cairo
+			# clr_global_flag = greek_rename_cairo
+			# #prestige = 2
+			# 1745 = { #        
+				# change_province_name = "Cairo" 
+				# state_scope = {
+					# change_region_name = "Cairo"
+				# }
+			# }      
+			# 1747 = { change_province_name = "Tanta" }
+			# 1750 = { change_province_name = "Giza" }
+			# 1748 = { change_province_name = "Mansura" }
+			# 1749 = { change_province_name = "Ziqaziq" }
+		# }
+		# ai_will_do = { factor = 1 }
+	# }	
+	
+	# greek_rename_midegy = {
+		# picture = gtfo
+		# potential = {
+			# primary_culture = greek
+			# owns = 1763
+			# NOT = { has_global_flag = greek_rename_midegy }
+		# }
+		
+		# allow = {
+			# war = no
+		# }
+		
+		# effect = {
+			# set_global_flag = greek_rename_midegy
+			# clr_global_flag = normal_rename_midegy
+			# #prestige = 2
+			# 1763 = { #
+				# change_province_name = "Panisoph" 
+				# state_scope = {
+					# change_region_name = "Middle Egypt"
+				# }
+			# }      
+			# 1762 = { change_province_name = "Lykopolis" }
+			# 2559 = { change_province_name = "Shmin" }
+			# 1764 = { change_province_name = "Oxyrrhynkhos" }
+			# 1772 = { change_province_name = "Ras Gharib" }
+		# }
+		# ai_will_do = { factor = 1 }
+	# }	
+	
+	# normal_rename_midegy = {
+		# picture = gtfo
+		# potential = {
+			# NOT = { primary_culture = greek }
+			# owns = 1763
+			# NOT = { has_global_flag = normal_rename_midegy }
+			# has_global_flag = greek_rename_midegy
+		# }
+		
+		# allow = {
+			# war = no
+		# }
+		
+		# effect = {
+			# set_global_flag = normal_rename_midegy
+			# clr_global_flag = greek_rename_midegy
+			# #prestige = 2
+			# 1763 = { #    
+				# change_province_name = "Bani Suwayf" 
+				# state_scope = {
+					# change_region_name = "Middle Egypt"
+				# }
+			# }  
+			# 1762 = { change_province_name = "Asyut" }    
+			# 2559 = { change_province_name = "Suhaj" }
+			# 1764 = { change_province_name = "Minya" }
+			# 1772 = { change_province_name = "Ras Gharib" }
+		# }
+		# ai_will_do = { factor = 1 }
+	# }	
+	
+	# greek_rename_egydesert = {
+		# picture = gtfo
+		# potential = {
+			# primary_culture = greek
+			# owns = 1765
+			# NOT = { has_global_flag = greek_rename_egydesert }
+		# }
+		
+		# allow = {
+			# war = no
+		# }
+		
+		# effect = {
+			# set_global_flag = greek_rename_egydesert
+			# clr_global_flag = normal_rename_egydesert
+			# #prestige = 2
+			# 1765 = { #
+				# change_province_name = "Arsinoë" 
+				# state_scope = {
+					# change_region_name = "Egyptian Desert"
+				# }
+			# }  
+			# 1759 = { change_province_name = "Apotheke" }    
+			# 1758 = { change_province_name = "Asproerimo" }
+			# 1761 = { change_province_name = "Minya" }
+			# 1760 = { change_province_name = "Baris" }
+			# 1754 = { change_province_name = "Ammonion" }
+		# }
+		# ai_will_do = { factor = 1 }
+	# }	
+	
+	# normal_rename_egydesert = {
+		# picture = gtfo
+		# potential = {
+			# NOT = { primary_culture = greek }
+			# owns = 1765
+			# NOT = { has_global_flag = normal_rename_egydesert }
+			# has_global_flag = greek_rename_egydesert
+		# }
+		
+		# allow = {
+			# war = no
+		# }
+		
+		# effect = {
+			# set_global_flag = normal_rename_egydesert
+			# clr_global_flag = greek_rename_egydesert
+			# #prestige = 2
+			# 1765 = { #
+				# change_province_name = "Fayyum" 
+				# state_scope = {
+					# change_region_name = "Egyptian Desert"
+				# }
+			# }  
+			# 1759 = { change_province_name = "Bawiti" }    
+			# 1758 = { change_province_name = "Farafra" }
+			# 1761 = { change_province_name = "Baris" }
+			# 1760 = { change_province_name = "Mut" }
+			# 1754 = { change_province_name = "Siwa" }
+		# }
+		# ai_will_do = { factor = 1 }
+	# }	
+	
+	# greek_rename_dalmatia = {
+		# picture = gtfo
+		# potential = {
+			# primary_culture = greek
+			# owns = 780
+			# NOT = { has_global_flag = greek_rename_dalmatia }
+		# }
+		
+		# allow = {
+			# war = no
+		# }
+		
+		# effect = {
+			# set_global_flag = greek_rename_dalmatia
+			# clr_global_flag = normal_rename_dalmatia
+			# #prestige = 2
+			# 780 = { #   
+				# change_province_name = "Spálathos" 
+				# state_scope = {
+					# change_region_name = "Spálathos"
+				# }
+			# }  
+			# 781 = { change_province_name = "Diadora" }   
+			# 774 = { change_province_name = "Attienities" }
+		# }
+		# ai_will_do = { factor = 1 }
+	# }	
+	
+	# normal_rename_dalmatia = {
+		# picture = gtfo
+		# potential = {
+			# NOT = { primary_culture = greek }
+			# NOT = { is_culture_group = germanic }
+			# NOT = { is_culture_group = south_slavic }
+			# owns = 780
+			# NOT = { has_global_flag = normal_rename_dalmatia }
+			# has_global_flag = greek_rename_dalmatia
+		# }
+		
+		# allow = {
+			# war = no
+		# }
+		
+		# effect = {
+			# set_global_flag = normal_rename_dalmatia
+			# clr_global_flag = greek_rename_dalmatia
+			# #prestige = 2
+			# 780 = { #   
+				# change_province_name = "Split" 
+				# state_scope = {
+					# change_region_name = "Dalmatia"
+				# }
+			# }  
+			# 781 = { change_province_name = "Zadar" }    
+			# 774 = { change_province_name = "Senj" }
+		# }
+		# ai_will_do = { factor = 1 }
+	# }	
+	
+	# greek_rename_istria = {
+		# picture = gtfo
+		# potential = {
+			# primary_culture = greek
+			# owns = 769
+			# NOT = { has_global_flag = greek_rename_istria }
+		# }
+		
+		# allow = {
+			# war = no
+		# }
+		
+		# effect = {
+			# set_global_flag = greek_rename_istria
+			# clr_global_flag = normal_rename_istria
+			# #prestige = 2
+			# 770 = { 
+				# change_province_name = "Poula" 
+				# state_scope = {
+					# change_region_name = "Histria"
+				# } 
+			# } 
+			# 778 = { change_province_name = "Vitopolis" }
+			
+			# #769 = { change_province_name = "Histria" }  
+		# }
+		# ai_will_do = { factor = 1 }
+	# }	
+	
+	# normal_rename_istria = {
+		# picture = gtfo
+		# potential = {
+			# NOT = { primary_culture = greek }
+			# owns = 769
+			# NOT = { has_global_flag = normal_rename_istria }
+			# has_global_flag = greek_rename_istria
+		# }
+		
+		# allow = {
+			# war = no
+		# }
+		
+		# effect = {
+			# set_global_flag = normal_rename_istria
+			# clr_global_flag = greek_rename_istria
+			# #prestige = 2
+			# 770 = {
+				# change_province_name = "Pola"
+				# state_scope = {
+					# change_region_name = "Istria"
+				# }
+			# }   
+			# 778 = { change_province_name = "Fiume" }
+			
+			# #769 = {	change_province_name = "Postojna" }  
+		# }
+		# ai_will_do = { factor = 1 }
+	# }	
+	
+	# greek_rename_friuli = {
+		# picture = gtfo
+		# potential = {
+			# primary_culture = greek
+			# owns = 733
+			# NOT = { has_global_flag = greek_rename_friuli }
+		# }
+		
+		# allow = {
+			# war = no
+		# }
+		
+		# effect = {
+			# set_global_flag = greek_rename_friuli
+			# clr_global_flag = normal_rename_friuli
+			# #prestige = 2
+			# 733 = { #       
+				# change_province_name = "Oudine" 
+				# state_scope = {
+					# change_region_name = "Akouileia"
+				# }
+			# }  
+			# 736 = { change_province_name = "Tergeste" }   
+			# 737 = { change_province_name = "Gourikia" }
+		# }
+		# ai_will_do = { factor = 1 }
+	# }	
+	
+	# normal_rename_friuli = {
+		# picture = gtfo
+		# potential = {
+			# NOT = { primary_culture = greek }
+			# NOT = { is_culture_group = germanic }
+			# NOT = { is_culture_group = south_slavic }
+			# owns = 733
+			# NOT = { has_global_flag = normal_rename_friuli }
+			# has_global_flag = greek_rename_friuli
+		# }
+		
+		# allow = {
+			# war = no
+		# }
+		
+		# effect = {
+			# set_global_flag = normal_rename_friuli
+			# clr_global_flag = greek_rename_friuli
+			# #prestige = 2
+			# 733 = { #     
+				# change_province_name = "Udine" 
+				# state_scope = {
+					# change_region_name = "Friuli"
+				# }
+			# }  
+			# 736 = { change_province_name = "Trieste" }   
+			# 737 = { change_province_name = "Gorizia" }
+		# }
+		# ai_will_do = { factor = 1 }
+	# }	
+	
+	# greek_rename_stirol = {
+		# picture = gtfo
+		# potential = {
+			# primary_culture = greek
+			# owns = 734
+			# NOT = { has_global_flag = greek_rename_stirol }
+		# }
+		
+		# allow = {
+			# war = no
+		# }
+		
+		# effect = {
+			# set_global_flag = greek_rename_stirol
+			# clr_global_flag = normal_rename_stirol
+			# #prestige = 2
+			# 734 = { #
+				# change_province_name = "Tridente" 
+				# state_scope = {
+					# change_region_name = "South Tirol"
+				# }
+			# }  
+			# 735 = { change_province_name = "Bozen" }  
+		# }
+		# ai_will_do = { factor = 1 }
+	# }	
+	
+	# normal_rename_stirol = {
+		# picture = gtfo
+		# potential = {
+			# NOT = { primary_culture = greek }
+			# owns = 734
+			# NOT = { has_global_flag = normal_rename_stirol }
+			# has_global_flag = greek_rename_stirol
+		# }
+		
+		# allow = {
+			# war = no
+		# }
+		
+		# effect = {
+			# set_global_flag = normal_rename_stirol
+			# clr_global_flag = greek_rename_stirol
+			# #prestige = 2
+			# 734 = { #     
+				# change_province_name = "Trient" 
+				# state_scope = {
+					# change_region_name = "Südtirol"
+				# }
+			# }  
+			# 735 = { change_province_name = "Bozen" }  
+		# }
+		# ai_will_do = { factor = 1 }
+	# }	
+	
+	# greek_rename_venetia = {
+		# picture = gtfo
+		# potential = {
+			# primary_culture = greek
+			# owns = 729
+			# NOT = { has_global_flag = greek_rename_venetia }
+		# }
+		
+		# allow = {
+			# war = no
+		# }
+		
+		# effect = {
+			# set_global_flag = greek_rename_venetia
+			# clr_global_flag = normal_rename_venetia
+			# #prestige = 2
+			# 729 = { #
+				# change_province_name = "Venetia" 
+				# state_scope = {
+					# change_region_name = "Venetia"
+				# }
+			# }  
+			# 730 = { change_province_name = "Ouerona" }  
+			# 731 = { change_province_name = "Pataouion" }  
+			# 732 = { change_province_name = "Tarbision" }  
+			# 3262 = { change_province_name = "Bellounon" }  
+		# }
+		# ai_will_do = { factor = 1 }
+	# }	
+	
+	# normal_rename_venetia = {
+		# picture = gtfo
+		# potential = {
+			# NOT = { primary_culture = greek }
+			# NOT = { is_culture_group = germanic }
+			# NOT = { is_culture_group = italian }
+			# owns = 729
+			# NOT = { has_global_flag = normal_rename_venetia }
+			# has_global_flag = greek_rename_venetia
+		# }
+		
+		# allow = {
+			# war = no
+		# }
+		
+		# effect = {
+			# set_global_flag = normal_rename_venetia
+			# clr_global_flag = greek_rename_venetia
+			# #prestige = 2
+			# 729 = { #    
+				# change_province_name = "Venice" 
+				# state_scope = {
+					# change_region_name = "Venetia"
+				# }
+			# }  
+			# 730 = { change_province_name = "Verona" }  
+			# 731 = { change_province_name = "Padua" }  
+			# 732 = { change_province_name = "Treviso" }  
+			# 3262 = { change_province_name = "Belluno" }  
+		# }
+		# ai_will_do = { factor = 1 }
+	# }	
+	
+	
+	# greek_rename_lombardia = {
+		# picture = gtfo
+		# potential = {
+			# primary_culture = greek
+			# owns = 726
+			# NOT = { has_global_flag = greek_rename_lombardia }
+		# }
+		
+		# allow = {
+			# war = no
+		# }
+		
+		# effect = {
+			# set_global_flag = greek_rename_lombardia
+			# clr_global_flag = normal_rename_lombardia
+			# #prestige = 2
+			# 726 = { #
+				# change_province_name = "Mediolanion" 
+				# state_scope = {
+					# change_region_name = "Mediolanion"
+				# }
+			# }  
+			# 727 = { change_province_name = "Bergomon" }  
+			# 728 = { change_province_name = "Brixia" }  
+			# 2669 = { change_province_name = "Sondrio" }  
+		# }
+		# ai_will_do = { factor = 1 }
+	# }	
+	
+	# normal_rename_lombardia = {
+		# picture = gtfo
+		# potential = {
+			# NOT = { primary_culture = greek }
+			# NOT = { is_culture_group = germanic }
+			# NOT = { is_culture_group = italian }
+			# owns = 726
+			# NOT = { has_global_flag = normal_rename_lombardia }
+			# has_global_flag = greek_rename_lombardia
+		# }
+		
+		# allow = {
+			# war = no
+		# }
+		
+		# effect = {
+			# set_global_flag = normal_rename_lombardia
+			# clr_global_flag = greek_rename_lombardia
+			# #prestige = 2
+			# 726 = { #
+				# change_province_name = "Milan" 
+				# state_scope = {
+					# change_region_name = "Lombardia"
+				# }
+			# }  
+			# 727 = { change_province_name = "Bergamo" }  
+			# 728 = { change_province_name = "Brescia" }  
+			# 2669 = { change_province_name = "Sondrio" }   
+		# }
+		# ai_will_do = { factor = 1 }
+	# }	
+	
+	
+	# greek_rename_piemonte = {
+		# picture = gtfo
+		# potential = {
+			# primary_culture = greek
+			# owns = 720
+			# NOT = { has_global_flag = greek_rename_piemonte }
+		# }
+		
+		# allow = {
+			# war = no
+		# }
+		
+		# effect = {
+			# set_global_flag = greek_rename_piemonte
+			# clr_global_flag = normal_rename_piemonte
+			# #prestige = 2
+			# 720 = { #     
+				# change_province_name = "Augousta Taurinon" 
+				# state_scope = {
+					# change_region_name = "Taurinon"
+				# }
+			# }  
+			# 721 = { change_province_name = "Augousta Praitopia" }  
+			# 722 = { change_province_name = "Novaria" }  
+			# 723 = { change_province_name = "Alexandreia Taurinon" }  
+			# 724 = { change_province_name = "Genoua" }  
+			# 725 = { change_province_name = "Savo" }  
+		# }
+		# ai_will_do = { factor = 1 }
+	# }	
+	
+	# normal_rename_piemonte = {
+		# picture = gtfo
+		# potential = {
+			# NOT = { primary_culture = greek }
+			# owns = 720
+			# NOT = { has_global_flag = normal_rename_piemonte }
+			# has_global_flag = greek_rename_piemonte
+		# }
+		
+		# allow = {
+			# war = no
+		# }
+		
+		# effect = {
+			# set_global_flag = normal_rename_piemonte
+			# clr_global_flag = greek_rename_piemonte
+			# #prestige = 2
+			# 720 = { #
+				# change_province_name = "Turin" 
+				# state_scope = {
+					# change_region_name = "Piemonte"
+				# }
+			# }  
+			# 721 = { change_province_name = "Aosta" }  
+			# 722 = { change_province_name = "Novara" }  
+			# 723 = { change_province_name = "Alessandria" }   
+			# 724 = { change_province_name = "Genoa" }   
+			# 725 = { change_province_name = "Savona" }   
+		# }
+		# ai_will_do = { factor = 1 }
+	# }	
+
+	
+	# greek_rename_tuscany = {
+		# picture = gtfo
+		# potential = {
+			# primary_culture = greek
+			# owns = 744
+			# NOT = { has_global_flag = greek_rename_tuscany }
+		# }
+		
+		# allow = {
+			# war = no
+		# }
+		
+		# effect = {
+			# set_global_flag = greek_rename_tuscany
+			# clr_global_flag = normal_rename_tuscany
+			# #prestige = 2
+			# 744 = { #    
+				# change_province_name = "Phlorentia" 
+				# state_scope = {
+					# change_region_name = "Tuscia"
+				# }
+			# }  
+			# 745 = { change_province_name = "Leghornos" }  
+			# 746 = { change_province_name = "Louka" }  
+			# 747 = { change_province_name = "Saena" }  
+			# 748 = { change_province_name = "Rhousellai" }  
+		# }
+		# ai_will_do = { factor = 1 }
+	# }	
+	
+	# normal_rename_tuscany = {
+		# picture = gtfo
+		# potential = {
+			# NOT = { primary_culture = greek }
+			# owns = 744
+			# NOT = { has_global_flag = normal_rename_tuscany }
+			# has_global_flag = greek_rename_tuscany
+		# }
+		
+		# allow = {
+			# war = no
+		# }
+		
+		# effect = {
+			# set_global_flag = normal_rename_tuscany
+			# clr_global_flag = greek_rename_tuscany
+			# #prestige = 2
+			# 744 = { #
+				# change_province_name = "Florence" 
+				# state_scope = {
+					# change_region_name = "Tuscany"
+				# }
+			# }  
+			# 745 = { change_province_name = "Leghorn" }  
+			# 746 = { change_province_name = "Lucca" }  
+			# 747 = { change_province_name = "Siena" }   
+			# 748 = { change_province_name = "Grosseto" }    
+		# }
+		# ai_will_do = { factor = 1 }
+	# }	
+	
+	
+	# greek_rename_emiliaromagna = {
+		# picture = gtfo
+		# potential = {
+			# primary_culture = greek
+			# owns = 741
+			# NOT = { has_global_flag = greek_rename_emiliaromagna }
+		# }
+		
+		# allow = {
+			# war = no
+		# }
+		
+		# effect = {
+			# set_global_flag = greek_rename_emiliaromagna
+			# clr_global_flag = normal_rename_emiliaromagna
+			# #prestige = 2
+			# 741 = { #     
+				# change_province_name = "Bononia" 
+				# state_scope = {
+					# change_region_name = "Aemilia-Bononia"
+				# }
+			# }  
+			# 742 = { change_province_name = "Ferraria" }  
+			# 743 = { change_province_name = "Rhaouenna" }  
+			# 739 = { change_province_name = "Moutine" }  
+			# 738 = { change_province_name = "Aemilia" }  
+			# 740 = { change_province_name = "Louna" }  
+			# 3266 = { change_province_name = "Vounoú Titán" }  
+		# }
+		# ai_will_do = { factor = 1 }
+	# }	
+	
+	# normal_rename_emiliaromagna = {
+		# picture = gtfo
+		# potential = {
+			# NOT = { primary_culture = greek }
+			# owns = 741
+			# NOT = { has_global_flag = normal_rename_emiliaromagna }
+			# has_global_flag = greek_rename_emiliaromagna
+		# }
+		
+		# allow = {
+			# war = no
+		# }
+		
+		# effect = {
+			# set_global_flag = normal_rename_emiliaromagna
+			# clr_global_flag = greek_rename_emiliaromagna
+			# #prestige = 2
+			# 741 = { #
+				# change_province_name = "Bologna" 
+				# state_scope = {
+					# change_region_name = "Emilia-Romagna"
+				# }
+			# }  
+			# 742 = { change_province_name = "Ferrara" }  
+			# 743 = { change_province_name = "Ravenna" }  
+			# 739 = { change_province_name = "Modena" }   
+			# 738 = { change_province_name = "Parma" }    
+			# 740 = { change_province_name = "Massa" }    
+			# 3266 = { change_province_name = "San Marino" }    
+		# }
+		# ai_will_do = { factor = 1 }
+	# }	
+	
+	
+	# greek_rename_sardinia = {
+		# picture = gtfo
+		# potential = {
+			# primary_culture = greek
+			# owns = 765
+			# NOT = { has_global_flag = greek_rename_sardinia }
+		# }
+		
+		# allow = {
+			# war = no
+		# }
+		
+		# effect = {
+			# set_global_flag = greek_rename_sardinia
+			# clr_global_flag = normal_rename_sardinia
+			# #prestige = 2
+			# 765 = { #     
+				# change_province_name = "Karalis" 
+				# state_scope = {
+					# change_region_name = "Sardinia & Corscia"
+				# }
+			# }  
+			# 766 = { change_province_name = "Tháthari" }  
+			# 473 = { change_province_name = "Korsís" }  
+		# }
+		# ai_will_do = { factor = 1 }
+	# }	
+	
+	# normal_rename_sardinia = {
+		# picture = gtfo
+		# potential = {
+			# NOT = { primary_culture = greek }
+			# owns = 765
+			# NOT = { has_global_flag = normal_rename_sardinia }
+			# has_global_flag = greek_rename_sardinia
+		# }
+		
+		# allow = {
+			# war = no
+		# }
+		
+		# effect = {
+			# set_global_flag = normal_rename_sardinia
+			# clr_global_flag = greek_rename_sardinia
+			# #prestige = 2
+			# 765 = { #  
+				# change_province_name = "Cagliari" 
+				# state_scope = {
+					# change_region_name = "Sardinia & Corscia"
+				# }
+			# }  
+			# 766 = { change_province_name = "Sassari" }  
+			# 473 = { change_province_name = "Corsica" }     
+		# }
+		# ai_will_do = { factor = 1 }
+	# }	
+	
+	
+	# greek_rename_provence = {
+		# picture = gtfo
+		# potential = {
+			# primary_culture = greek
+			# owns = 467
+			# NOT = { has_global_flag = greek_rename_provence }
+		# }
+		
+		# allow = {
+			# war = no
+		# }
+		
+		# effect = {
+			# set_global_flag = greek_rename_provence
+			# clr_global_flag = normal_rename_provence
+			# #prestige = 2
+			# 467 = { #     
+				# change_province_name = "Massalia" 
+				# state_scope = {
+					# change_region_name = "Provence"
+				# }
+			# }  
+			# 468 = { change_province_name = "Auenion" }  
+			# 469 = { change_province_name = "Digne" }  
+			# 470 = { change_province_name = "Toulon" }  
+			# 471 = { change_province_name = "Forum Iulii" }  
+		# }
+		# ai_will_do = { factor = 1 }
+	# }	
+	
+	# normal_rename_provence = {
+		# picture = gtfo
+		# potential = {
+			# NOT = { primary_culture = greek }
+			# owns = 467
+			# NOT = { has_global_flag = normal_rename_provence }
+			# has_global_flag = greek_rename_provence
+		# }
+		
+		# allow = {
+			# war = no
+		# }
+		
+		# effect = {
+			# set_global_flag = normal_rename_provence
+			# clr_global_flag = greek_rename_provence
+			# #prestige = 2
+			# 467 = { #      
+				# change_province_name = "Marseilles" 
+				# state_scope = {
+					# change_region_name = "Provence"
+				# }
+			# }  
+			# 468 = { change_province_name = "Avignon" }  
+			# 469 = { change_province_name = "Digne" }     
+			# 470 = { change_province_name = "Toulon" }     
+			# 471 = { change_province_name = "Frejus" }     
+		# }
+		# ai_will_do = { factor = 1 }
+	# }	
+	
+	# greek_rename_savoie = {
+		# picture = gtfo
+		# potential = {
+			# primary_culture = greek
+			# owns = 465
+			# NOT = { has_global_flag = greek_rename_savoie }
+		# }
+		
+		# allow = {
+			# war = no
+		# }
+		
+		# effect = {
+			# set_global_flag = greek_rename_savoie
+			# clr_global_flag = normal_rename_savoie
+			# #prestige = 2
+			# 465 = { #     
+				# change_province_name = "Annekion" 
+				# state_scope = {
+					# change_region_name = "Sabaoudia"
+				# }
+			# }  
+			# 466 = { change_province_name = "Kamberiakon" }  
+			# 472 = { change_province_name = "Nikaia" }  
+			# 3251 = { change_province_name = "Monoïkos" }  
+		# }
+		# ai_will_do = { factor = 1 }
+	# }	
+	
+	# normal_rename_savoie = {
+		# picture = gtfo
+		# potential = {
+			# NOT = { primary_culture = greek }
+			# NOT = { is_culture_group = italian }
+			# owns = 465
+			# NOT = { has_global_flag = normal_rename_savoie }
+			# has_global_flag = greek_rename_savoie
+		# }
+		
+		# allow = {
+			# war = no
+		# }
+		
+		# effect = {
+			# set_global_flag = normal_rename_savoie
+			# clr_global_flag = greek_rename_savoie
+			# #prestige = 2
+			# 465 = { #   
+				# change_province_name = "Annecy" 
+				# state_scope = {
+					# change_region_name = "Savoie"
+				# }
+			# }  
+			# 466 = { change_province_name = "Chambery" }  
+			# 472 = { change_province_name = "Nice" }     
+			# 3251 = { change_province_name = "Monaco" }    
+		# }
+		# ai_will_do = { factor = 1 }
+	# }	
+	
+	# greek_rename_cyrenaica = {
+		# picture = gtfo
+		# potential = {
+			# primary_culture = greek
+			# owns = 1735
+			# NOT = { has_global_flag = greek_rename_cyrenaica }
+		# }
+		
+		# allow = {
+			# war = no
+		# }
+		
+		# effect = {
+			# set_global_flag = greek_rename_cyrenaica
+			# clr_global_flag = normal_rename_cyrenaica
+			# #prestige = 2
+			# 1735 = { #     
+				# change_province_name = "Berenike" 
+				# state_scope = {
+					# change_region_name = "Lybia Pentapolis"
+				# }
+			# }  
+			# 1736 = { change_province_name = "Kyrene" }  
+			# 1737 = { change_province_name = "Antipyrgos" }  
+			# 1738 = { change_province_name = "Ammounis" }  
+			# 1739 = { change_province_name = "Kouphra" }  
+			# 2585 = { change_province_name = "Sarra" }  
+		# }
+		# ai_will_do = { factor = 1 }
+	# }	
+	
+	# normal_rename_cyrenaica = {
+		# picture = gtfo
+		# potential = {
+			# NOT = { primary_culture = greek }
+			# owns = 1735
+			# NOT = { has_global_flag = normal_rename_cyrenaica }
+			# has_global_flag = greek_rename_cyrenaica
+		# }
+		
+		# allow = {
+			# war = no
+		# }
+		
+		# effect = {
+			# set_global_flag = normal_rename_cyrenaica
+			# clr_global_flag = greek_rename_cyrenaica
+			# #prestige = 2
+			# 1735 = { #   
+				# change_province_name = "Benghazi" 
+				# state_scope = {
+					# change_region_name = "Cyrenaica"
+				# }
+			# }  
+			# 1736 = { change_province_name = "Darna" }  
+			# 1737 = { change_province_name = "Tobruk" }     
+			# 1738 = { change_province_name = "Jaghbub" }    
+			# 1739 = { change_province_name = "Kufra" }    
+			# 2585 = { change_province_name = "Matan as-Sarah" }    
+		# }
+		# ai_will_do = { factor = 1 }
+	# }	
+}

@@ -1,0 +1,5648 @@
+
+	country_event = {
+		id = 1100001
+		title = "EVTNAME1100001" #From decision form_cascadia, cleanup event that moves back all native_american_minor pops to their respective provinces upon assimilation.
+		desc = "EVTDESC1100001" #As well as giving the player the choice of a new Capital.
+		picture = "cascadia_1"
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		immediate = {
+			any_owned = {
+				limit = {
+					#NOT = { is_culture_group = native_american }
+					is_core = CAS
+				}
+				assimilate = yes
+			}
+			#Oregon
+			1234 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 81 #Oregon City/Portland
+				}
+			}
+			1235 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 82 #Grande Ronde
+				}
+			}
+			1236 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 83 #Fort Umpqua
+				}
+			}
+			#Washington
+			1237 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 78 #Fort Nisqually/Seattle
+				}
+			}
+			1238 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 79 #Fort Vancouver/Olympia
+				}
+			}
+			1239 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 80 #Walla-Walla
+				}
+			}
+			#Idaho
+			1240 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 91 #Boise
+				}
+			}
+			1241 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 92 #Kullyspell
+				}
+			}
+			1242 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 93 #Fort Hall
+				}
+			}
+			#Nevada
+			1243 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 3393 #Carson City
+				}
+			}
+			#California
+			1244 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 3307 #Del Norte
+				}
+			}
+			1245 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 3308 #Trinidad
+				}
+			}
+			#Montana
+			1246 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 114 #Fort Owen
+				}
+			}
+			#Wyoming
+			1247 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 111 #Fort Bonneville
+				}
+			}
+			#Columbia
+			1248 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 13 #New Westminster/Vancouver
+				}
+			}
+			1249 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 14 #Victoria/Vancouver Island
+				}
+			}
+			1250 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 15 #Prince Rupert
+				}
+			}
+			1251 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 16 #Glenora
+				}
+			}
+			1252 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 17 #Stikine
+				}
+			}
+			1253 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 19 #Valemount
+				}
+			}
+			1254 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 20 #Okanagan
+				}
+			}
+			1255 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 21 #Kootenay
+				}
+			}
+			1256 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 3390 #Fort Ross
+				}
+			}
+		}
+		
+		option = {
+			name = "EVTOPTA1100001" #Oregon City/Portland
+			capital = 81
+			81 = { change_province_name = "Portland" }
+			78 = { change_province_name = "Seattle" }
+			13 = { change_province_name = "Vancouver" }
+			14 = { change_province_name = "Victoria" }
+			ai_chance = {
+				factor = 30
+			}
+		}
+		option = {
+			name = "EVTOPTB1100001" #Fort Nisqually/Seattle
+			capital = 78
+			81 = { change_province_name = "Portland" }
+			78 = { change_province_name = "Seattle" }
+			13 = { change_province_name = "Vancouver" }
+			14 = { change_province_name = "Victoria" }
+			ai_chance = {
+				factor = 30
+			}
+		}
+		option = {
+			name = "EVTOPTC1100001" #New Westminster/Vancouver
+			capital = 13
+			81 = { change_province_name = "Portland" }
+			78 = { change_province_name = "Seattle" }
+			13 = { change_province_name = "Vancouver" }
+			14 = { change_province_name = "Victoria" }
+			ai_chance = {
+				factor = 30
+			}
+		}
+		option = {
+			name = "EVTOPTD1100001" #Victoria/Vancouver Island
+			capital = 14
+			81 = { change_province_name = "Portland" }
+			78 = { change_province_name = "Seattle" }
+			13 = { change_province_name = "Vancouver" }
+			14 = { change_province_name = "Victoria" }
+			ai_chance = {
+				factor = 10
+			}
+		}
+	}
+	country_event = {
+		id = 1100002 
+		title = "EVTNAME1100002" #From decision the_alaskan_question, CAS decides whether or not should Alaskans be embraced as an accepted culture
+		desc = "EVTDESC1100002"
+		picture = "cascadia_1"
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPT1100002A" #Yes
+			add_accepted_culture = alaskan
+			LSK = {
+				primary_culture = alaskan
+				add_accepted_culture = cascadian
+				all_core = { add_core = THIS }
+				government = democracy
+			}
+			any_owned = {
+				limit = {
+					province_id = 17
+				}
+				remove_core = CAS
+				remove_core = COL
+				add_core = LSK
+				add_core = THIS
+				add_core = CAS
+			}
+			#Claims on White Horse
+			6 = {
+				limit = {
+					empty = yes
+				}
+				secede_province = THIS
+				add_core = LSK
+				add_core = THIS
+				add_core = CAS
+			}
+			6 = {
+				limit = {
+					empty = no
+				}
+				add_core = LSK
+				add_core = THIS
+				add_core = CAS
+			}
+			#Claims on Tok
+			2630 = {
+				limit = {
+					empty = yes
+				}
+				secede_province = THIS
+				add_core = LSK
+				add_core = THIS
+				add_core = CAS
+			}
+			2630 = {
+				limit = {
+					empty = no
+				}
+				add_core = LSK
+				add_core = THIS
+				add_core = CAS
+			}
+			#Claims on Fairbanks
+			2599 = {
+				limit = {
+					empty = yes
+				}
+				secede_province = THIS
+				add_core = LSK
+				add_core = THIS
+				add_core = CAS
+			}
+			2599 = {
+				limit = {
+					empty = no
+				}
+				add_core = LSK
+				add_core = THIS
+				add_core = CAS
+			}
+			any_pop = {
+				limit = {
+					has_pop_culture = alaskan
+				}
+				militancy = -9
+				consciousness = -9 
+			}
+			set_country_flag = embraced_alaskans
+			ai_chance = {
+				factor = 75
+				modifier = {
+					factor = 100
+					THIS = {
+						OR = {
+							ruling_party_ideology = liberal
+							ruling_party_ideology = anarcho_liberal
+							ruling_party_ideology = socialist
+							ruling_party_ideology = communist
+						}
+					}
+				}
+				
+			}
+		}
+		option = {
+			name = "EVTOPT1100002B" #No
+			LSK = {
+				primary_culture = cascadian
+				remove_accepted_culture = alaskan
+				all_core = { add_core = THIS }
+				government = democracy
+			}
+			any_owned = {
+				limit = {
+					province_id = 17
+				}
+				remove_core = CAS
+				remove_core = COL
+				add_core = LSK
+				add_core = THIS
+				add_core = CAS
+			}
+			6 = {
+				limit = {
+					empty = yes
+				}
+				secede_province = THIS
+				add_core = LSK
+				add_core = THIS
+				add_core = CAS
+			}
+			6 = {
+				limit = {
+					empty = no
+				}
+				add_core = LSK
+				add_core = THIS
+				add_core = CAS
+			}
+			2630 = {
+				limit = {
+					empty = yes
+				}
+				secede_province = THIS
+				add_core = LSK
+				add_core = THIS
+				add_core = CAS
+			}
+			2630 = {
+				limit = {
+					empty = no
+				}
+				add_core = LSK
+				add_core = THIS
+				add_core = CAS
+			}
+			2599 = {
+				limit = {
+					empty = yes
+				}
+				secede_province = THIS
+				add_core = LSK
+				add_core = THIS
+				add_core = CAS
+			}
+			2599 = {
+				limit = {
+					empty = no
+				}
+				add_core = LSK
+				add_core = THIS
+				add_core = CAS
+			}
+			any_pop = {
+				limit = {
+					has_pop_culture = alaskan
+				}
+				militancy = 3
+				consciousness = 6
+			}
+			set_country_flag = rejected_alaskans
+			ai_chance = {
+				factor = 25
+				modifier = {
+					factor = 100
+					THIS = {
+						OR = {
+							ruling_party_ideology = fascist
+							ruling_party_ideology = reactionary
+						}
+					}
+				}
+			}
+		}
+	}
+	country_event = {
+		id = 1100003
+		title = "EVTNAME1100003" #From decision CAS_from_whitehorse_and_down, FROM wants to annex Whitehorse and Atlin upon having acquired Alaska
+		desc = "EVTDESC1100003"
+		picture = "cascadia_1"
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = "EVTOPTA1100003" #Issue the ultimatum to ENG
+			ENG = { country_event = 1100004 }
+			relation = { who = ENG value = -100 }
+			badboy = 3
+			ai_chance = {
+				factor = 90
+			}
+		}
+		option = {
+			name = "EVTOPTB1100003" #Back down
+			relation = { who = ENG value = 50 }
+			prestige = -10
+			ai_chance = {
+				factor = 10
+			}
+		}
+	}
+	country_event = {
+		id = 1100004
+		title = "EVTNAME1100004" #From event 1100003, FROM's ultimatum to ENG: Secede Whitehorse and Atlin
+		desc = "EVTDESC1100004"
+		picture = "cascadia_1"
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = "EVTOPTA1100004"
+			6 = {
+				#add_core = FROM
+				add_core = RUS
+				add_core = LSK
+				remove_core = RPL
+				remove_core = CAN
+				secede_province = FROM
+			}
+			17 = {
+				#add_core = FROM
+				add_core = RUS
+				add_core = LSK
+				remove_core = RPL
+				remove_core = CAN
+				secede_province = FROM
+			}
+			2599 = {
+				#add_core = FROM
+				add_core = RUS
+				add_core = LSK
+				remove_core = RPL
+				remove_core = CAN
+				secede_province = FROM
+			}
+			2630 = {
+				#add_core = FROM
+				add_core = RUS
+				add_core = LSK
+				remove_core = RPL
+				remove_core = CAN
+				secede_province = FROM
+			}
+			7 = {
+				#add_core = FROM
+				add_core = RUS
+				add_core = LSK
+				remove_core = RPL
+				remove_core = CAN
+				secede_province = FROM
+			}
+			8 = {
+				#add_core = FROM
+				add_core = RUS
+				add_core = LSK
+				remove_core = RPL
+				remove_core = CAN
+				secede_province = FROM
+			}
+			2629 = {
+				#add_core = FROM
+				add_core = RUS
+				add_core = LSK
+				remove_core = RPL
+				remove_core = CAN
+				secede_province = FROM
+			}
+			any_owned = {
+				limit = {
+					owner = {
+						tag = RUS
+						is_sphere_leader_of = LSK
+					}
+					is_core = LSK
+				}
+				secede_province = LSK
+			}
+			relation = { who = FROM value = 20 }
+			prestige = -20
+			ai_chance = {
+				factor = 90
+			}
+		}
+		option = {
+			name = "EVTOPTB1100004"
+			relation = { who = FROM value = -200 }
+			FROM = {
+				add_casus_belli = {
+					target = ENG
+					type = place_in_the_sun
+					months = 12
+				}
+			}
+			prestige = 15
+			ai_chance = {
+				factor = 10
+			}
+		}
+	}
+	
+########
+#Oregon#
+########
+	#UOR, the provisional government of Oregon is formed after the Champoeg meetings
+	country_event = {
+		id = 1100005
+		title = "EVTNAME1100005"
+		desc = "EVTDESC1100005"
+		fire_only_once = yes
+		trigger = {
+			owns = 78
+			owns = 79
+			owns = 81
+			NOT = { tag = USA }
+			year = 1843
+			UOR = {
+				exists = no
+			}
+			CAS = {
+				exists = no
+			}
+			has_global_flag = 1843_greatmigration
+			NOT = { has_global_flag = champoeg_meetings }
+		}
+		
+		mean_time_to_happen = { 
+			months = 4
+		}
+		
+		option = {
+			name = "EVTOPTA1100005"
+			set_global_flag = champoeg_meetings
+			any_owned = {
+				limit = {
+					is_core = UOR
+				}
+				secede_province = UOR
+			}
+			UOR = {
+				capital = 81
+				country_event = 1100006
+			}
+		}
+	}
+	#UOR - setup
+	country_event = {
+		id = 1100006
+		title = "EVTNAME1100006"
+		desc = "EVTDESC1100006"
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = "EVTOPTA1100006"
+			80 = { #Walla-Walla
+				life_rating = 15
+				secede_province = THIS
+			}
+			81 = { #Oregon City
+				change_province_name = "Portland"
+				life_rating = 15
+				secede_province = THIS
+			}
+			82 = { #Grande Ronde
+				change_province_name = "Baker City"
+				life_rating = 15
+				secede_province = THIS
+			}
+			83 = { #Fort Umpqua
+				change_province_name = "Elkton"
+				life_rating = 15
+				secede_province = THIS
+			}
+			91 = { #Boise
+				life_rating = 15
+				secede_province = THIS
+			}
+			92 = { #Kullyspell
+				life_rating = 15
+				secede_province = THIS
+			}
+			93 = { #Fort Hall
+				life_rating = 15
+				secede_province = THIS
+			}
+			111 = { #Fort Bonneville
+				life_rating = 15
+				secede_province = THIS
+			}
+			114 = { #Fort Owen
+				life_rating = 15
+				secede_province = THIS
+			}
+			3388 = { #Klamath
+				life_rating = 15
+				secede_province = THIS
+			}
+			3394 = { #Wasco
+				life_rating = 15
+				secede_province = THIS
+			}
+			capital = 81
+			USA = {
+				relation = { who = UOR value = 100 }
+				diplomatic_influence = { who = UOR value = 100 }
+				country_event = 1100007
+			}
+		}
+	}
+	#UOR - setup 2
+	country_event = {
+		id = 1100007
+		title = "EVTNAME1100007"
+		desc = "EVTDESC1100007"
+		is_triggered_only = yes
+		fire_only_once = yes
+		major = yes
+
+		option = {
+			name = "EVTOPTA1100007"
+			ai_chance = {
+				factor = 100
+			}
+		}
+		option = {
+			name = "EVTOPTB1100007"
+			change_tag_no_core_switch = UOR
+			ai_chance = {
+				factor = 0
+			}
+		}
+	}
+	#UOR - join the USA or stay independent?
+	country_event = {
+		id = 1100008
+		title = "EVTNAME1100008"
+		desc = "EVTDESC1100008"
+		fire_only_once = yes
+
+		trigger = {
+			tag = UOR
+			any_owned_province = { is_core = USA }
+			CAS = { exists = no }
+			year = 1847
+			OR = {
+				USA = {
+					has_country_flag = oregon_treaty
+				}
+				ENG = {
+					has_country_flag = oregon_war
+				}
+			}
+			NOT = { has_country_flag = join_the_USA } 
+			NOT = { has_country_flag = refused_join_the_USA } 
+		}
+		
+		mean_time_to_happen = { 
+			months = 27
+			
+			modifier = {
+				factor = 0.5 #increase likelihood to happen
+				year = 1849
+			}
+		}
+		
+		option = {
+			name = "EVTOPTA1100008"
+			any_pop = {
+				limit = {
+					has_pop_culture = yankee
+				}
+				militancy = 2
+				consciousness = 2
+			}
+			any_owned = {
+				limit = {
+					OR = {
+						region = USA_78
+						region = USA_81
+						region = USA_91
+						region = USA_111
+						is_core = USA
+						province_id = 114
+					}
+				}
+				add_core = USA
+				secede_province = USA
+			}
+			set_country_flag = join_the_USA
+			ai_chance = {
+				factor = 75
+			}
+		}
+		option = {
+			name = "EVTOPTB1100008"
+			set_country_flag = refused_join_the_USA
+			add_country_modifier = { name = unrecognized_country duration = 3650 }
+			any_pop = {
+				limit = {
+					has_pop_culture = yankee
+				}
+				militancy = 4
+				consciousness = 4
+			}
+			ai_chance = {
+				factor = 25
+			}
+		}
+	}
+
+########################################################
+#Klondike goldrush
+#
+country_event = {
+	id = 1100009
+	title = "EVTNAME1100009" #Gold is found in the Klondike River
+	desc = "EVTDESC1100009"
+	picture = "klondike_gold_rush"
+	
+	trigger = {
+		year = 1896
+		war = no
+		OR = {
+			owns = 6
+			owns = 7
+			owns = 8
+		}
+		OR = {
+			6 = { produces = precious_metal } #Whitehorse
+			7 = { produces = precious_metal } #Dawson
+			8 = { produces = precious_metal } #Ross River
+		}
+		NOT = { has_global_flag = klondike_gold_rush }
+	}
+	
+	fire_only_once = yes
+
+	option = {
+		name = "EVT1100009OPTA"
+			any_pop = {
+				limit = {
+					location = {
+						OR = {
+							province_id = 6
+							province_id = 7
+							province_id = 8
+						}
+					}
+					is_culture_group = native_american
+				}
+				reduce_pop = 0.05
+			}
+			random_owned = {
+				limit = {
+					owner = {
+						OR = {
+							primary_culture = alaskan
+							is_culture_group = east_slavic
+							primary_culture = cascadian
+						}
+					}
+				}
+				owner = {
+					any_pop = {
+						limit = {
+							location = {
+								OR = {
+									province_id = 6
+									province_id = 7
+									province_id = 8
+								}
+							}
+							has_pop_culture = alaskan
+						}
+						reduce_pop = 2
+					}
+				}
+			}
+			random_owned = {
+				limit = {
+					owner = {
+						OR = {
+							is_culture_group = british
+							primary_culture = anglo_canadian
+						}
+					}
+				}
+				owner = {
+					any_pop = {
+						limit = {
+							location = {
+								OR = {
+									province_id = 6
+									province_id = 7
+									province_id = 8
+								}
+							}
+							has_pop_culture = anglo_canadian
+						}
+						reduce_pop = 2
+					}
+				}
+				owner = {
+					any_pop = {
+						limit = {
+							location = {
+								OR = {
+									province_id = 6
+									province_id = 7
+									province_id = 8
+								}
+							}
+							has_pop_culture = french_canadian
+						}
+						reduce_pop = 2
+					}
+				}
+			}
+			random_owned = {
+				limit = {
+					owner = {
+						OR = {
+							is_culture_group = iberian
+							primary_culture = mexican
+						}
+					}
+				}
+				owner = {
+					any_pop = {
+						limit = {
+							location = {
+								OR = {
+									province_id = 6
+									province_id = 7
+									province_id = 8
+								}
+							}
+							has_pop_culture = spanish
+						}
+						reduce_pop = 2
+					}
+				}
+				owner = {
+					any_pop = {
+						limit = {
+							location = {
+								OR = {
+									province_id = 6
+									province_id = 7
+									province_id = 8
+								}
+							}
+							has_pop_culture = mexican
+						}
+						reduce_pop = 2
+					}
+				}
+			}
+			random_owned = {
+				limit = {
+					owner = {
+						primary_culture = yankee
+					}
+				}
+				owner = {
+					any_pop = {
+						limit = {
+							location = {
+								OR = {
+									province_id = 6
+									province_id = 7
+									province_id = 8
+								}
+							}
+							has_pop_culture = yankee
+						}
+						reduce_pop = 2
+					}
+				}
+			}
+			
+			6 = { 
+				life_rating = 5
+				add_province_modifier = {
+					name = klondike_gold_rush
+					duration = 365
+				}			
+			}
+			7 = { 
+				life_rating = 5
+				add_province_modifier = {
+					name = klondike_gold_rush
+					duration = 365
+				}			
+			}
+			8 = { 
+				life_rating = 5
+				add_province_modifier = {
+					name = klondike_gold_rush
+					duration = 365
+				}			
+			}
+			set_global_flag = klondike_gold_rush
+	}
+}
+
+########################################################
+#Nome goldrush
+#
+country_event = {
+	id = 1100010
+	title = "EVTNAME1100010" #Gold is found in the beaches of Nome, represented in-game as Unalakleet.
+	desc = "EVTDESC1100010"
+	picture = "nome_gold_rush"
+	
+	trigger = {
+		year = 1899
+		war = no
+		owns = 2631
+		2631 = { produces = precious_metal } #Unalakleet
+		NOT = { has_global_flag = nome_gold_rush }
+	}
+	
+	fire_only_once = yes
+
+	option = {
+		name = "EVT1100010OPTA"
+			any_pop = {
+				limit = {
+					location = {
+						province_id = 2631
+					}
+					is_culture_group = native_american
+				}
+				reduce_pop = 0.05
+			}
+			random_owned = {
+				limit = {
+					owner = {
+						OR = {
+							primary_culture = alaskan
+							is_culture_group = east_slavic
+							primary_culture = cascadian
+						}
+					}
+				}
+				owner = {
+					any_pop = {
+						limit = {
+							location = {
+								province_id = 2631
+							}
+							has_pop_culture = alaskan
+						}
+						reduce_pop = 2.5
+					}
+				}
+			}
+			random_owned = {
+				limit = {
+					owner = {
+						OR = {
+							is_culture_group = british
+							primary_culture = anglo_canadian
+						}
+					}
+				}
+				owner = {
+					any_pop = {
+						limit = {
+							location = {
+								province_id = 2631
+							}
+							has_pop_culture = anglo_canadian
+						}
+						reduce_pop = 2.5
+					}
+				}
+				owner = {
+					any_pop = {
+						limit = {
+							location = {
+								province_id = 2631
+							}
+							has_pop_culture = french_canadian
+						}
+						reduce_pop = 2.5
+					}
+				}
+			}
+			random_owned = {
+				limit = {
+					owner = {
+						OR = {
+							is_culture_group = iberian
+							primary_culture = mexican
+						}
+					}
+				}
+				owner = {
+					any_pop = {
+						limit = {
+							location = {
+								province_id = 2631
+							}
+							has_pop_culture = spanish
+						}
+						reduce_pop = 2.5
+					}
+				}
+				owner = {
+					any_pop = {
+						limit = {
+							location = {
+								province_id = 2631
+							}
+							has_pop_culture = mexican
+						}
+						reduce_pop = 2.5
+					}
+				}
+			}
+			random_owned = {
+				limit = {
+					owner = {
+						primary_culture = yankee
+					}
+				}
+				owner = {
+					any_pop = {
+						limit = {
+							location = {
+								province_id = 2631
+							}
+							has_pop_culture = yankee
+						}
+						reduce_pop = 2.5
+					}
+				}
+			}
+			
+			2631 = { 
+				life_rating = 5
+				add_province_modifier = {
+					name = alaska_gold_rush
+					duration = 365
+				}			
+			}
+			
+			set_global_flag = nome_gold_rush
+	}
+}
+
+########################################################
+#Fairbanks goldrush
+#
+country_event = {
+	id = 1100011
+	title = "EVTNAME1100011" #Gold is found in Fairbanks.
+	desc = "EVTDESC1100011"
+	picture = "fairbanks_gold_rush"
+	
+	trigger = {
+		year = 1903
+		war = no
+		owns = 2630
+		2630 = { produces = precious_metal } #Fairbanks
+		NOT = { has_global_flag = fairbanks_gold_rush }
+	}
+	
+	fire_only_once = yes
+
+	option = {
+		name = "EVT1100009OPTA"
+			any_pop = {
+				limit = {
+					location = {
+						province_id = 2630
+					}
+					is_culture_group = native_american
+				}
+				reduce_pop = 0.05
+			}
+			random_owned = {
+				limit = {
+					owner = {
+						OR = {
+							primary_culture = alaskan
+							is_culture_group = east_slavic
+							primary_culture = cascadian
+						}
+					}
+				}
+				owner = {
+					any_pop = {
+						limit = {
+							location = {
+								province_id = 2630
+							}
+							has_pop_culture = alaskan
+						}
+						reduce_pop = 2.5
+					}
+				}
+			}
+			random_owned = {
+				limit = {
+					owner = {
+						OR = {
+							is_culture_group = british
+							primary_culture = anglo_canadian
+						}
+					}
+				}
+				owner = {
+					any_pop = {
+						limit = {
+							location = {
+								province_id = 2630
+							}
+							has_pop_culture = anglo_canadian
+						}
+						reduce_pop = 2.5
+					}
+				}
+				owner = {
+					any_pop = {
+						limit = {
+							location = {
+								province_id = 2630
+							}
+							has_pop_culture = french_canadian
+						}
+						reduce_pop = 2.5
+					}
+				}
+			}
+			random_owned = {
+				limit = {
+					owner = {
+						OR = {
+							is_culture_group = iberian
+							primary_culture = mexican
+						}
+					}
+				}
+				owner = {
+					any_pop = {
+						limit = {
+							location = {
+								province_id = 2630
+							}
+							has_pop_culture = spanish
+						}
+						reduce_pop = 2.5
+					}
+				}
+				owner = {
+					any_pop = {
+						limit = {
+							location = {
+								province_id = 2630
+							}
+							has_pop_culture = mexican
+						}
+						reduce_pop = 2.5
+					}
+				}
+			}
+			random_owned = {
+				limit = {
+					owner = {
+						primary_culture = yankee
+					}
+				}
+				owner = {
+					any_pop = {
+						limit = {
+							location = {
+								province_id = 2630
+							}
+							has_pop_culture = yankee
+						}
+						reduce_pop = 2.5
+					}
+				}
+			}
+			
+			2630 = {
+				life_rating = 5
+				add_province_modifier = {
+					name = alaska_gold_rush
+					duration = 365
+				}			
+			}
+			
+			set_global_flag = fairbanks_gold_rush
+	}
+}
+	
+#############################
+###The sale of Fort Ross
+
+	country_event = {
+		id = 1100012
+		title = "EVTNAME1100012"
+		desc = "EVTDESC1100012"
+		picture = "fort_ross"
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = "EVT1100012OPTA"
+			any_country = {
+				limit = {
+					NOT = {
+						OR = {
+							tag = RUS
+							vassal_of = RUS
+							substate_of = RUS
+						}
+					}
+					OR = {
+						is_greater_power = yes
+						is_secondary_power = yes
+						owns = 104 #SanFran
+						owns = 3253 #Liechtensteinin
+					}
+					OR = {
+						tag = USA
+						tag = CAN
+						tag = ENG
+						tag = MEX
+						tag = ARD
+						tag = JAP
+						tag = CAS
+						tag = CAL
+						tag = C4L
+						tag = LIE
+						has_country_flag = aridoamerica_alliance_leader
+						AND = {
+							OR = {
+								tag = SPA
+								tag = SPC
+								tag = IBR
+							}
+							has_global_flag = reconquista
+						}
+						AND = {
+							alliance_with = RUS
+							NOT = { tag = TUR }
+						}
+					}
+				}
+				set_country_flag = fort_ross_purchase_interest
+				prestige = 0.5
+			}
+			ai_chance = {
+				factor = 75
+			}
+		}
+		option = {
+			name = "EVT1100012OPTB"
+			set_global_flag = fort_ross_sale_refuse
+			prestige = 0.5
+			ai_chance = {
+				factor = 25
+			}
+		}
+	}
+
+	country_event = {
+		id = 1100013
+		title = "EVTNAME1100013" #the Fort Ross Purchase
+		desc = "EVTDESC1100013"
+		picture = "fort_ross"
+		
+		trigger = {
+			OR = {
+				RUS = {
+					owns = 3390
+				}
+				LSK = {
+					owns = 3390
+					OR = {
+						in_sphere = RUS
+						vassal_of = RUS
+						all_core = {
+							OR = {
+								owned_by = RUS
+								owner = {
+									OR = {
+										in_sphere = RUS
+										OR = {
+											is_vassal = no
+											vassal_of = RUS
+										}
+									}
+									is_greater_power = no
+								}
+							}
+						}
+					}
+				}
+			}
+			NOT = {
+				has_global_flag = fort_ross_sale_refuse
+				has_global_flag = fort_ross_purchase_process_global
+				has_global_flag = fort_ross_purchase_completed
+				has_country_flag = refused_fort_ross
+				any_owned_province = { is_core = RUS }
+				truce_with = RUS
+			}
+			relation = { who = RUS value = 0 }
+			#war = no
+			has_country_flag = fort_ross_purchase_interest
+			exists = yes
+		}
+		
+		mean_time_to_happen = {
+			days = 3
+			#months = 5
+			modifier = {
+				factor = 0.1
+				ai = no
+			}
+			modifier = {
+				factor = 0.2
+				OR = {
+					tag = MEX
+					tag = C4L
+					tag = CAL
+					tag = ARD
+				}
+				ai = yes
+			}
+		}
+		
+		immediate = {
+			set_global_flag = fort_ross_purchase_process_global
+		}
+		
+		option = {
+			name = "EVT1100013OPTA"
+			random_owned = { limit = { owner = { ai = no } } owner = { treasury = -30000 } }
+			random_owned = {
+				limit = { owner = { ai = yes NOT = { check_variable = { which = owed_cash_money value = 1 } } } }
+				owner = { set_variable = { which = owed_cash_money value = 100 } }
+			}
+			random_owned = {
+				limit = { owner = { ai = yes check_variable = { which = owed_cash_money value = 9 } } }
+				owner = { change_variable = { which = owed_cash_money value = 100 } }
+			}
+			RUS = { country_event = 1100014 }
+			ai_chance = {
+				factor = 75
+				modifier = {
+					factor = 100
+					OR = {
+						AND = {
+							OR = {
+								tag = MEX
+								tag = CAL
+								tag = C4L
+								tag = ARD
+							}
+							ai = yes
+						}
+						ai = no
+					}
+				}
+			}
+		}
+		
+		option = {
+			name = "EVT1100013OPTB"
+			clr_country_flag = fort_ross_purchase_interest
+			set_country_flag = refused_fort_ross
+			RUS = { country_event = 1100043 }
+			ai_chance = {
+				factor = 25
+				modifier = {
+					factor = 0
+					OR = {
+						AND = {
+							OR = {
+								tag = MEX
+								tag = CAL
+								tag = C4L
+								tag = ARD
+							}
+							ai = yes
+						}
+						ai = no
+					}
+				}
+			}
+		}
+	}
+
+	#the Fort Ross Purchase
+	country_event = {
+		id = 1100014
+		title = "EVTNAME1100014"
+		desc = "EVTDESC1100014"
+		picture = "fort_ross"
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = "EVT1100014OPTA"
+			set_global_flag = fort_ross_purchase_completed
+			prestige = 10
+			treasury = 30000
+			3390 = {
+				remove_core = RUS
+				remove_core = LSK
+			}
+			FROM = { country_event = 1100015 }
+			ai_chance = {
+				factor = 25
+				modifier = {
+					factor = 100
+					OR = {
+						AND = {
+							tag = MEX
+							ai = yes
+						}
+						ai = no
+					}
+				}
+			}
+		}
+		
+		option = {
+			name = "EVT1100014OPTB"
+			clr_global_flag = fort_ross_purchase_process_global
+			FROM = {
+				clr_country_flag = fort_ross_purchase_interest
+				country_event = 1100016
+			}
+			#random_country = { limit = { tag = FROM } treasury = 30000 }
+			any_country = {
+				limit = {
+					NOT = {
+						OR = {
+							tag = RUS
+							vassal_of = RUS
+							substate_of = RUS
+						}
+					}
+					NOT = { has_country_flag = refused_fort_ross }
+					OR = {
+						is_greater_power = yes
+						is_secondary_power = yes
+						owns = 104 #SanFran
+						owns = 3253 #Liechtensteinin
+					}
+					OR = {
+						tag = USA
+						tag = CAN
+						tag = ENG
+						tag = MEX
+						tag = ARD
+						tag = JAP
+						tag = CAS
+						tag = CAL
+						tag = C4L
+						tag = LIE
+						has_country_flag = aridoamerica_alliance_leader
+						AND = {
+							OR = {
+								tag = SPA
+								tag = SPC
+								tag = IBR
+							}
+							has_global_flag = reconquista
+						}
+						AND = {
+							alliance_with = RUS
+							NOT = { tag = TUR }
+						}
+					}
+				}
+				set_country_flag = fort_ross_purchase_interest
+			}
+			ai_chance = {
+				factor = 70
+				modifier = {
+					factor = 0
+					FROM = {
+						OR = {
+							AND = {
+								tag = MEX
+								ai = yes
+							}
+							ai = no
+						}
+					}
+				}
+			}
+		}
+		
+		option = {
+			name = "EVT1100014OPTC"
+			prestige = -2.5
+			set_global_flag = fort_ross_sale_refuse
+			FROM = {
+				clr_country_flag = fort_ross_purchase_interest
+				country_event = 1100016
+			}
+			#random_country = { limit = { tag = FROM } treasury = 30000 }
+			ai_chance = {
+				factor = 5
+			}
+		}
+	}
+
+	country_event = {
+		id = 1100015
+		title = "EVTNAME1100015"
+		desc = "EVTDESC1100015"
+		picture = "fort_ross"
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = "EVT1100015OPTA"
+			prestige = 2.5
+			3390 = {
+				add_core = THIS
+				any_pop = {
+					limit = {
+						NOT = {
+							OR = {
+								has_pop_culture = mexican
+								is_culture_group = native_american
+								has_pop_culture = yankee
+							}
+						}
+					}
+					move_pop = 1
+				}
+			}
+			#FROM = {
+			#	any_owned = {
+			#		limit = { region = MEX_104 } #N. California
+			#		secede_province = THIS
+			#	}
+			#}
+			3390 = { secede_province = THIS }
+			set_country_flag = bought_fort_ross
+		}
+	}
+
+	country_event = {
+		id = 1100016
+		title = "EVTNAME1100016"
+		desc = "EVTDESC1100016"
+		picture = "fort_ross"
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = "EVT1100016OPTA"
+			prestige = -2.5
+			treasury = 25000
+			relation = { who = RUS value = -25 }
+		}
+	}
+	
+	##############
+	#Sale of Alaska
+	#country_event = {
+	#	id = 1100017
+	#	title = "EVTNAME1100017" #From decision sell_alaska
+	#	desc = "EVTDESC1100017"
+	#	picture = "alaska"
+	#	
+	#	is_triggered_only = yes
+	#	
+	#	option = {
+	#		name = "EVT1100017OPTA"
+	#		remove_accepted_culture = alaskan
+	#		prestige = 5
+	#		any_country = {
+	#			limit = {
+	#				NOT = { tag = RUS }
+	#				OR = {
+	#					is_greater_power = yes
+	#					is_secondary_power = yes
+	#					owns = 104
+	#					primary_culture = cascadian
+	#				}
+	#				OR = {
+	#					any_owned_province = {
+	#						OR = {
+	#							region = MEX_85
+	#							region = MEX_104
+	#							region = USA_78
+	#							region = USA_81
+	#							region = CAN_13
+	#							region = JAP_1088
+	#						}
+	#					}
+	#					OR = {
+	#						has_country_flag = aridoamerica_alliance
+	#						has_country_flag = aridoamerica_alliance_transition
+	#						has_country_flag = aridoamerica_alliance_leader
+	#					}
+	#					AND = {
+	#						tag = MEX
+	#						OR = {
+	#							owns = 104
+	#							AND = {
+	#								104 = { owned_by = C4L }
+	#								C4L = { vassal_of = MEX }
+	#							}
+	#						}
+	#					}
+	#					AND = {
+	#						tag = ENG
+	#						OR = {
+	#							RPL = {
+	#								OR = {
+	#									substate_of = ENG
+	#									vassal_of = ENG
+	#								}
+	#								#owns = 78
+	#								#owns = 83
+	#							}
+	#							CAN = {
+	#								OR = {
+	#									substate_of = ENG
+	#									vassal_of = ENG
+	#								}
+	#								#owns = 78
+	#								#owns = 83
+	#							}
+	#						}
+	#					}
+	#					AND = {
+	#						OR = {
+	#							tag = SPA
+	#							tag = SPC
+	#							tag = IBR
+	#						}
+	#						has_global_flag = reconquista
+	#					}
+	#					tag = USA
+	#					AND = {
+	#						alliance_with = RUS
+	#						NOT = { tag = TUR }
+	#					}
+	#				}
+	#			}
+	#			set_country_flag = alaska_purchase_interest
+	#			#annex_to = RUS
+	#			#country_event = 32509
+	#		}
+	#		ai_chance = {
+	#			factor = 90
+	#		}
+	#	}
+	#	option = {
+	#		name = "EVT1100017OPTB"
+	#		set_global_flag = alaska_sale_refuse
+	#		USA_1 = { add_core = RUS }
+	#		any_owned = {
+	#			limit = {
+	#				province_id = 3390
+	#			}
+	#			add_core = RUS
+	#		}
+	#		ai_chance = {
+	#			factor = 10
+	#			modifier = {
+	#				factor = 100
+	#				has_global_flag = fort_ross_sale_refuse
+	#			}
+	#		}
+	#	}
+	#}
+	country_event = {
+		id = 1100018 
+		title = "EVTNAME1100018" #From decision the_hawaiian_question, CAS decides whether or not should Hawaiians be embraced as an accepted culture
+		desc = "EVTDESC1100018"
+		picture = "hawaii_map_cool"
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPT1100018A" #Yes
+			add_accepted_culture = hawaiian
+			HAW = {
+				primary_culture = hawaiian
+				add_accepted_culture = cascadian
+				all_core = { add_core = CAS }
+				government = democracy
+			}
+			#Claims on Midway
+			2623 = {
+				limit = {
+					empty = yes
+				}
+				secede_province = THIS
+				add_core = HAW
+				add_core = THIS
+				add_core = CAS
+			}
+			2623 = {
+				limit = {
+					empty = no
+				}
+				add_core = HAW
+				add_core = THIS
+				add_core = CAS
+			}
+			#Claims on Wake
+			2524 = {
+				limit = {
+					empty = yes
+				}
+				secede_province = THIS
+				add_core = HAW
+				add_core = THIS
+				add_core = CAS
+			}
+			2524 = {
+				limit = {
+					empty = no
+				}
+				add_core = HAW
+				add_core = THIS
+				add_core = CAS
+			}
+			#Claims on Palmyra Island
+			2526 = {
+				limit = {
+					empty = yes
+				}
+				secede_province = THIS
+				add_core = HAW
+				add_core = THIS
+				add_core = CAS
+			}
+			2526 = {
+				limit = {
+					empty = no
+				}
+				add_core = HAW
+				add_core = THIS
+				add_core = CAS
+			}
+			#Claims on Palmyra Island
+			2526 = {
+				limit = {
+					empty = yes
+				}
+				secede_province = THIS
+				add_core = HAW
+				add_core = THIS
+				add_core = CAS
+			}
+			2526 = {
+				limit = {
+					empty = no
+				}
+				add_core = HAW
+				add_core = THIS
+				add_core = CAS
+			}
+			#Claims on Johnston Atoll
+			3352 = {
+				limit = {
+					empty = yes
+				}
+				secede_province = THIS
+				add_core = HAW
+				add_core = THIS
+				add_core = CAS
+			}
+			3352 = {
+				limit = {
+					empty = no
+				}
+				add_core = HAW
+				add_core = THIS
+				add_core = CAS
+			}
+			#Claims on southern line islands
+			3351 = {
+				limit = {
+					empty = yes
+				}
+				secede_province = THIS
+				add_core = HAW
+				add_core = THIS
+				add_core = CAS
+			}
+			3351 = {
+				limit = {
+					empty = no
+				}
+				add_core = HAW
+				add_core = THIS
+				add_core = CAS
+			}
+			any_pop = {
+				limit = {
+					has_pop_culture = hawaiian
+				}
+				militancy = -9
+				consciousness = -9 
+			}
+			set_country_flag = embraced_hawaiians
+			ai_chance = {
+				factor = 75
+				modifier = {
+					factor = 100
+					THIS = {
+						OR = {
+							ruling_party_ideology = liberal
+							ruling_party_ideology = anarcho_liberal
+							ruling_party_ideology = socialist
+							ruling_party_ideology = communist
+						}
+					}
+				}
+				
+			}
+		}
+		option = {
+			name = "EVTOPT1100018B" #No
+			HAW = {
+				primary_culture = cascadian
+				remove_accepted_culture = hawaiian
+				all_core = { add_core = CAS }
+				government = democracy
+			}
+			#Claims on Midway
+			2623 = {
+				limit = {
+					empty = yes
+				}
+				secede_province = THIS
+				add_core = HAW
+				add_core = THIS
+				add_core = CAS
+			}
+			2623 = {
+				limit = {
+					empty = no
+				}
+				add_core = HAW
+				add_core = THIS
+				add_core = CAS
+			}
+			#Claims on Wake
+			2524 = {
+				limit = {
+					empty = yes
+				}
+				secede_province = THIS
+				add_core = HAW
+				add_core = THIS
+				add_core = CAS
+			}
+			2524 = {
+				limit = {
+					empty = no
+				}
+				add_core = HAW
+				add_core = THIS
+				add_core = CAS
+			}
+			#Claims on Palmyra Island
+			2526 = {
+				limit = {
+					empty = yes
+				}
+				secede_province = THIS
+				add_core = HAW
+				add_core = THIS
+				add_core = CAS
+			}
+			2526 = {
+				limit = {
+					empty = no
+				}
+				add_core = HAW
+				add_core = THIS
+				add_core = CAS
+			}
+			#Claims on Palmyra Island
+			2526 = {
+				limit = {
+					empty = yes
+				}
+				secede_province = THIS
+				add_core = HAW
+				add_core = THIS
+				add_core = CAS
+			}
+			2526 = {
+				limit = {
+					empty = no
+				}
+				add_core = HAW
+				add_core = THIS
+				add_core = CAS
+			}
+			#Claims on Johnston Atoll
+			3352 = {
+				limit = {
+					empty = yes
+				}
+				secede_province = THIS
+				add_core = HAW
+				add_core = THIS
+				add_core = CAS
+			}
+			3352 = {
+				limit = {
+					empty = no
+				}
+				add_core = HAW
+				add_core = THIS
+				add_core = CAS
+			}
+			#Claims on southern line islands
+			3351 = {
+				limit = {
+					empty = yes
+				}
+				secede_province = THIS
+				add_core = HAW
+				add_core = THIS
+				add_core = CAS
+			}
+			3351 = {
+				limit = {
+					empty = no
+				}
+				add_core = HAW
+				add_core = THIS
+				add_core = CAS
+			}
+			any_pop = {
+				limit = {
+					has_pop_culture = hawaiian
+				}
+				militancy = 3
+				consciousness = 6
+			}
+			set_country_flag = rejected_hawaiians
+			ai_chance = {
+				factor = 25
+				modifier = {
+					factor = 100
+					THIS = {
+						OR = {
+							ruling_party_ideology = fascist
+							ruling_party_ideology = reactionary
+						}
+					}
+				}
+			}
+		}
+	}
+
+##############################
+# Californian culture formed
+
+	country_event = {
+		id = 1100019
+		title = "EVTNAME1100019"
+		desc = "EVTDESC1100019"
+		picture = "california_gold_rush"
+		
+		is_triggered_only = yes
+		
+		immediate = {
+			set_country_flag = californian_identity
+			
+			#N. California
+			any_pop = {
+				limit = {
+					location = { province_id = 104 } #San Francisco
+					is_culture_group = native_american
+				}
+				move_pop = 1234
+			}
+			any_pop = {
+				limit = {
+					location = { province_id = 85 } #Sonoma
+					is_culture_group = native_american
+				}
+				move_pop = 1235
+			}
+			any_pop = {
+				limit = {
+					location = { province_id = 84 } #Sacramento
+					is_culture_group = native_american
+				}
+				move_pop = 1236
+			}
+			any_pop = {
+				limit = {
+					location = { province_id = 86 } #Mariposa
+					is_culture_group = native_american
+				}
+				move_pop = 1237
+			}
+			#S. California
+			any_pop = {
+				limit = {
+					location = { province_id = 89 } #Los Angeles
+					is_culture_group = native_american
+				}
+				move_pop = 1238
+			}
+			any_pop = {
+				limit = {
+					location = { province_id = 87 } #Monterey
+					is_culture_group = native_american
+				}
+				move_pop = 1239
+			}
+			any_pop = {
+				limit = {
+					location = { province_id = 90 } #San Diego
+					is_culture_group = native_american
+				}
+				move_pop = 1240
+			}
+			any_pop = {
+				limit = {
+					location = { province_id = 88 } #San Bernardino
+					is_culture_group = native_american
+				}
+				move_pop = 1241
+			}
+			any_pop = {
+				limit = {
+					location = { province_id = 3400 } #Tulare
+					is_culture_group = native_american
+				}
+				move_pop = 1242
+			}
+			#Baja California
+			any_pop = {
+				limit = {
+					location = { province_id = 2139 } #Loreto
+					is_culture_group = native_american
+				}
+				move_pop = 1243
+			}
+			any_pop = {
+				limit = {
+					location = { province_id = 2138 } #Rosarito
+					is_culture_group = native_american
+				}
+				move_pop = 1244
+			}
+			
+			release_vassal = CAL
+					
+		}
+		
+		option = {
+			name = "EVTOPT1100019A"
+			country_event = 1100020
+		}
+	}
+	
+	
+	country_event = {
+		id = 1100020
+		title = "EVTNAME1100020"
+		desc = "EVTDESC1100020"
+		picture = "california_gold_rush"
+		
+		is_triggered_only = yes
+		
+		immediate = {
+			CAL = {
+				any_owned = {
+					limit = {
+						is_core = CAL
+					}
+					assimilate = yes
+				}
+			}
+			#N. California
+			1234 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 104 #San Francisco
+				}
+			}
+			1235 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 85 #Sonoma
+				}
+			}
+			1236 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 84 #Sacramento
+				}
+			}
+			1237 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 86 #Mariposa
+				}
+			}
+			#S. California
+			1238 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 89 #Los Angeles
+				}
+			}
+			1239 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 87 #Monterey
+				}
+			}
+			1240 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 90 #San Diego
+				}
+			}
+			1241 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 88 #San Bernardino
+				}
+			}
+			1242 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 3400 #Tulare
+				}
+			}
+			#Baja California
+			1243 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 2139 #Loreto
+				}
+			}
+			1244 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 2138 #Rosarito
+				}
+			}
+			
+		}
+		
+		option = {
+			name = "EVTOPT1100020A"
+			country_event = 1100021
+		}
+	}
+	
+	#Mormon culture formed.
+	country_event = {
+		id = 1100021
+		title = "EVTNAME1100021"
+		desc = "EVTDESC1100021"
+		picture = "mormon_exodus"
+		
+		is_triggered_only = yes
+		
+		immediate = {
+		
+			inherit = CAL
+		
+			#Utah
+			any_pop = {
+				limit = {
+					location = { province_id = 97 } #Salt Lake City
+					OR = {
+						is_culture_group = native_american
+						NOT = {
+							has_pop_religion = mormon
+						}
+					}
+				}
+				move_pop = 1245
+			}
+			any_pop = {
+				limit = {
+					location = { province_id = 98 } #Cedar City
+					OR = {
+						is_culture_group = native_american
+						NOT = {
+							has_pop_religion = mormon
+						}
+					}
+				}
+				move_pop = 1246
+			}
+			any_pop = {
+				limit = {
+					location = { province_id = 99 } #Moab
+					OR = {
+						is_culture_group = native_american
+						NOT = {
+							has_pop_religion = mormon
+						}
+					}
+				}
+				move_pop = 1247
+			}
+			#Nevada
+			any_pop = {
+				limit = {
+					location = { province_id = 96 } #Las Vegas
+					OR = {
+						is_culture_group = native_american
+						NOT = {
+							has_pop_religion = mormon
+						}
+					}
+				}
+				move_pop = 1248
+			}
+			any_pop = {
+				limit = {
+					location = { province_id = 95 } #Elko
+					OR = {
+						is_culture_group = native_american
+						NOT = {
+							has_pop_religion = mormon
+						}
+					}
+				}
+				move_pop = 1249
+			}
+			any_pop = {
+				limit = {
+					location = { province_id = 94 } #Dayton
+					OR = {
+						is_culture_group = native_american
+						NOT = {
+							has_pop_religion = mormon
+						}
+					}
+				}
+				move_pop = 1250
+			}
+			#Wyoming
+			any_pop = {
+				limit = {
+					location = { province_id = 107 } #Riverside
+					OR = {
+						is_culture_group = native_american
+						NOT = {
+							has_pop_religion = mormon
+						}
+					}
+				}
+				move_pop = 1251
+			}
+			any_pop = {
+				limit = {
+					location = { province_id = 110 } #Rock Springs
+					OR = {
+						is_culture_group = native_american
+						NOT = {
+							has_pop_religion = mormon
+						}
+					}
+				}
+				move_pop = 1252
+			}
+			#Colorado
+			any_pop = {
+				limit = {
+					location = { province_id = 3398 } #Warm Springs
+					OR = {
+						is_culture_group = native_american
+						NOT = {
+							has_pop_religion = mormon
+						}
+					}
+				}
+				move_pop = 1253
+			}
+			any_pop = {
+				limit = {
+					location = { province_id = 3399 } #White River
+					OR = {
+						is_culture_group = native_american
+						NOT = {
+							has_pop_religion = mormon
+						}
+					}
+				}
+				move_pop = 1254
+			}
+			any_pop = {
+				limit = {
+					location = { province_id = 108 } #Grand Junction
+					OR = {
+						is_culture_group = native_american
+						NOT = {
+							has_pop_religion = mormon
+						}
+					}
+				}
+				move_pop = 1255
+			}
+			any_pop = {
+				limit = {
+					location = { province_id = 109 } #Aspen
+					OR = {
+						is_culture_group = native_american
+						NOT = {
+							has_pop_religion = mormon
+						}
+					}
+				}
+				move_pop = 1256
+			}
+			#New Mexico
+			any_pop = {
+				limit = {
+					location = { province_id = 3397 } #Taos
+					OR = {
+						is_culture_group = native_american
+						NOT = {
+							has_pop_religion = mormon
+						}
+					}
+				}
+				move_pop = 1257
+			}
+			#Arizona
+			any_pop = {
+				limit = {
+					location = { province_id = 100 } #Phoenix
+					OR = {
+						is_culture_group = native_american
+						NOT = {
+							has_pop_religion = mormon
+						}
+					}
+				}
+				move_pop = 1258
+			}
+			any_pop = {
+				limit = {
+					location = { province_id = 101 } #Flagstaff
+					OR = {
+						is_culture_group = native_american
+						NOT = {
+							has_pop_religion = mormon
+						}
+					}
+				}
+				move_pop = 1259
+			}
+			any_pop = {
+				limit = {
+					location = { province_id = 3396 } #Mohave
+					OR = {
+						is_culture_group = native_american
+						NOT = {
+							has_pop_religion = mormon
+						}
+					}
+				}
+				move_pop = 1260
+			}
+			
+			release_vassal = DES
+		
+		}
+		
+		option = {
+			name = "EVTOPT1100021A"
+			country_event = 1100022
+		}
+	}
+	
+	
+	country_event = {
+		id = 1100022
+		title = "EVTNAME1100022"
+		desc = "EVTDESC1100022"
+		picture = "mormon_exodus"
+		
+		is_triggered_only = yes
+		
+		immediate = {
+			DES = {
+				any_owned = {
+					limit = {
+						is_core = DES
+					}
+					assimilate = yes
+				}
+				government = theocracy
+			}
+			#Utah
+			1245 = {
+				any_pop = {
+					limit = {
+						OR = {
+							is_culture_group = native_american
+							NOT = {
+								OR = {
+									is_culture_group = indo_iranian
+									is_culture_group = south_asian
+									is_culture_group = central_asian
+									is_culture_group = southeast_asian
+									has_pop_religion = sikh
+									has_pop_religion = sunni
+									has_pop_religion = hindu
+									has_pop_religion = gelugpa
+									has_pop_religion = mahayana
+								}
+							}
+						}
+					}
+					move_pop = 97 #Salt Lake City
+				}
+			}
+			1246 = {
+				any_pop = {
+					limit = {
+						OR = {
+							is_culture_group = native_american
+							NOT = {
+								OR = {
+									is_culture_group = indo_iranian
+									is_culture_group = south_asian
+									is_culture_group = central_asian
+									is_culture_group = southeast_asian
+									has_pop_religion = sikh
+									has_pop_religion = sunni
+									has_pop_religion = hindu
+									has_pop_religion = gelugpa
+									has_pop_religion = mahayana
+								}
+							}
+						}
+					}
+					move_pop = 98 #Cedar City
+				}
+			}
+			1247 = {
+				any_pop = {
+					limit = {
+						OR = {
+							is_culture_group = native_american
+							NOT = {
+								OR = {
+									is_culture_group = indo_iranian
+									is_culture_group = south_asian
+									is_culture_group = central_asian
+									is_culture_group = southeast_asian
+									has_pop_religion = sikh
+									has_pop_religion = sunni
+									has_pop_religion = hindu
+									has_pop_religion = gelugpa
+									has_pop_religion = mahayana
+								}
+							}
+						}
+					}
+					move_pop = 99 #Moab
+				}
+			}
+			#Nevada
+			1248 = {
+				any_pop = {
+					limit = {
+						OR = {
+							is_culture_group = native_american
+							NOT = {
+								OR = {
+									is_culture_group = indo_iranian
+									is_culture_group = south_asian
+									is_culture_group = central_asian
+									is_culture_group = southeast_asian
+									has_pop_religion = sikh
+									has_pop_religion = sunni
+									has_pop_religion = hindu
+									has_pop_religion = gelugpa
+									has_pop_religion = mahayana
+								}
+							}
+						}
+					}
+					move_pop = 96 #Las Vegas
+				}
+			}
+			1249 = {
+				any_pop = {
+					limit = {
+						OR = {
+							is_culture_group = native_american
+							NOT = {
+								OR = {
+									is_culture_group = indo_iranian
+									is_culture_group = south_asian
+									is_culture_group = central_asian
+									is_culture_group = southeast_asian
+									has_pop_religion = sikh
+									has_pop_religion = sunni
+									has_pop_religion = hindu
+									has_pop_religion = gelugpa
+									has_pop_religion = mahayana
+								}
+							}
+						}
+					}
+					move_pop = 95 #Elko
+				}
+			}
+			1250 = {
+				any_pop = {
+					limit = {
+						OR = {
+							is_culture_group = native_american
+							NOT = {
+								OR = {
+									is_culture_group = indo_iranian
+									is_culture_group = south_asian
+									is_culture_group = central_asian
+									is_culture_group = southeast_asian
+									has_pop_religion = sikh
+									has_pop_religion = sunni
+									has_pop_religion = hindu
+									has_pop_religion = gelugpa
+									has_pop_religion = mahayana
+								}
+							}
+						}
+					}
+					move_pop = 94 #Dayton
+				}
+			}
+			#Wyoming
+			1251 = {
+				any_pop = {
+					limit = {
+						OR = {
+							is_culture_group = native_american
+							NOT = {
+								OR = {
+									is_culture_group = indo_iranian
+									is_culture_group = south_asian
+									is_culture_group = central_asian
+									is_culture_group = southeast_asian
+									has_pop_religion = sikh
+									has_pop_religion = sunni
+									has_pop_religion = hindu
+									has_pop_religion = gelugpa
+									has_pop_religion = mahayana
+								}
+							}
+						}
+					}
+					move_pop = 107 #Riverside
+				}
+			}
+			1252 = {
+				any_pop = {
+					limit = {
+						OR = {
+							is_culture_group = native_american
+							NOT = {
+								OR = {
+									is_culture_group = indo_iranian
+									is_culture_group = south_asian
+									is_culture_group = central_asian
+									is_culture_group = southeast_asian
+									has_pop_religion = sikh
+									has_pop_religion = sunni
+									has_pop_religion = hindu
+									has_pop_religion = gelugpa
+									has_pop_religion = mahayana
+								}
+							}
+						}
+					}
+					move_pop = 110 #Rock Springs
+				}
+			}
+			#Colorado
+			1253 = {
+				any_pop = {
+					limit = {
+						OR = {
+							is_culture_group = native_american
+							NOT = {
+								OR = {
+									is_culture_group = indo_iranian
+									is_culture_group = south_asian
+									is_culture_group = central_asian
+									is_culture_group = southeast_asian
+									has_pop_religion = sikh
+									has_pop_religion = sunni
+									has_pop_religion = hindu
+									has_pop_religion = gelugpa
+									has_pop_religion = mahayana
+								}
+							}
+						}
+					}
+					move_pop = 3398 #Warm Springs
+				}
+			}
+			1254 = {
+				any_pop = {
+					limit = {
+						OR = {
+							is_culture_group = native_american
+							NOT = {
+								OR = {
+									is_culture_group = indo_iranian
+									is_culture_group = south_asian
+									is_culture_group = central_asian
+									is_culture_group = southeast_asian
+									has_pop_religion = sikh
+									has_pop_religion = sunni
+									has_pop_religion = hindu
+									has_pop_religion = gelugpa
+									has_pop_religion = mahayana
+								}
+							}
+						}
+					}
+					move_pop = 3399 #White River
+				}
+			}
+			1255 = {
+				any_pop = {
+					limit = {
+						OR = {
+							is_culture_group = native_american
+							NOT = {
+								OR = {
+									is_culture_group = indo_iranian
+									is_culture_group = south_asian
+									is_culture_group = central_asian
+									is_culture_group = southeast_asian
+									has_pop_religion = sikh
+									has_pop_religion = sunni
+									has_pop_religion = hindu
+									has_pop_religion = gelugpa
+									has_pop_religion = mahayana
+								}
+							}
+						}
+					}
+					move_pop = 108 #Grand Junction
+				}
+			}
+			1256 = {
+				any_pop = {
+					limit = {
+						OR = {
+							is_culture_group = native_american
+							NOT = {
+								OR = {
+									is_culture_group = indo_iranian
+									is_culture_group = south_asian
+									is_culture_group = central_asian
+									is_culture_group = southeast_asian
+									has_pop_religion = sikh
+									has_pop_religion = sunni
+									has_pop_religion = hindu
+									has_pop_religion = gelugpa
+									has_pop_religion = mahayana
+								}
+							}
+						}
+					}
+					move_pop = 109  #Aspen
+				}
+			}
+			#New Mexico
+			1257 = {
+				any_pop = {
+					limit = {
+						OR = {
+							is_culture_group = native_american
+							NOT = {
+								OR = {
+									is_culture_group = indo_iranian
+									is_culture_group = south_asian
+									is_culture_group = central_asian
+									is_culture_group = southeast_asian
+									has_pop_religion = sikh
+									has_pop_religion = sunni
+									has_pop_religion = hindu
+									has_pop_religion = gelugpa
+									has_pop_religion = mahayana
+								}
+							}
+						}
+					}
+					move_pop = 3397 #Taos
+				}
+			}
+			#Arizona
+			1258 = {
+				any_pop = {
+					limit = {
+						OR = {
+							is_culture_group = native_american
+							NOT = {
+								OR = {
+									is_culture_group = indo_iranian
+									is_culture_group = south_asian
+									is_culture_group = central_asian
+									is_culture_group = southeast_asian
+									has_pop_religion = sikh
+									has_pop_religion = sunni
+									has_pop_religion = hindu
+									has_pop_religion = gelugpa
+									has_pop_religion = mahayana
+								}
+							}
+						}
+					}
+					move_pop = 100 #Phoenix
+				}
+			}
+			1259 = {
+				any_pop = {
+					limit = {
+						OR = {
+							is_culture_group = native_american
+							NOT = {
+								OR = {
+									is_culture_group = indo_iranian
+									is_culture_group = south_asian
+									is_culture_group = central_asian
+									is_culture_group = southeast_asian
+									has_pop_religion = sikh
+									has_pop_religion = sunni
+									has_pop_religion = hindu
+									has_pop_religion = gelugpa
+									has_pop_religion = mahayana
+								}
+							}
+						}
+					}
+					move_pop = 101 #Flagstaff
+				}
+			}
+			1260 = {
+				any_pop = {
+					limit = {
+						OR = {
+							is_culture_group = native_american
+							NOT = {
+								OR = {
+									is_culture_group = indo_iranian
+									is_culture_group = south_asian
+									is_culture_group = central_asian
+									is_culture_group = southeast_asian
+									has_pop_religion = sikh
+									has_pop_religion = sunni
+									has_pop_religion = hindu
+									has_pop_religion = gelugpa
+									has_pop_religion = mahayana
+								}
+							}
+						}
+					}
+					move_pop = 3396 #Mohave
+				}
+			}
+			
+		}
+		
+		option = {
+			name = "EVTOPT1100022A"
+			country_event = 1100023
+		}
+	}
+	
+	country_event = {
+		id = 1100023
+		title = "EVTNAME1100023"
+		desc = "EVTDESC1100023"
+		picture = "News"
+		
+		is_triggered_only = yes
+		
+		immediate = {
+			inherit = DES
+		}
+		
+		option = {
+			name = "EVTOPT1100023A"
+		}
+	}
+	
+#Baja California Purchase
+	# Baja Purchase 1/3
+	country_event = {
+		id = 1100024
+		title = "EVTNAME1100024"
+		desc = "EVTDESC1100024"
+		picture = "administration"
+
+		is_triggered_only = yes
+
+		option = {
+			name = "EVT1100024OPTA"
+			money = 100000
+			2139 = { remove_core = THIS }
+			2138 = { remove_core = THIS }
+			FROM = { country_event = 1100025 }
+			ai_chance = {
+				factor = 60 
+					modifier = {
+						factor = 0.8
+						is_greater_power = no
+					}
+					modifier = {
+						factor = 0.7
+						alliance_with = FROM
+					}
+					modifier = {
+						factor = 0.7
+						relation = { who = FROM value = 150 }
+					}
+				}
+		}
+
+		option = {
+			name = "EVT1100024OPTB"
+			FROM = { country_event = 1100026 }
+			ai_chance = {
+				factor = 40 
+					modifier = {
+						factor = 0.2
+						is_greater_power = no
+					}
+					
+					modifier = {
+						factor = 0.6
+						FROM = { is_greater_power = no }
+					}
+					modifier = {
+						factor = 0.1
+						NOT = { relation = { who = FROM value = 0 } }
+					}
+				}
+		}
+	}
+
+	# Baja Purchase 2/3
+	country_event = {
+		id = 1100025
+		title = "EVTNAME1100025"
+		desc = "EVTDESC1100025"
+		picture = "administration"
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = "EVT1100025OPTA"
+			prestige = 5
+			money = -100000
+			2139 = { secede_province = THIS }
+			2138 = { secede_province = THIS }
+			relation = { who = FROM value = 50 }
+			any_pop = { consciousness = -1 }
+		}
+	}
+
+	# Baja Purchae 3/3
+	country_event = {
+		id = 1100026
+		title = "EVTNAME1100026"
+		desc = "EVTDESC1100026"
+		picture = "administration"
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = "EVT1100026OPTA"
+			relation = { who = FROM value = -100 }
+		}
+	}
+	
+######################################
+#The treaty of Los Angeles
+	country_event = { #Event for USA, CAS seeks to sign a treaty with USA after having occupied Salt Lake City, Los Angeles, San Francisco and Aspen for 150 days. From decision CAS_treaty_of_los_angeles
+		id = 1100027
+		title = "EVTNAME1100027"
+		desc = "EVTDESC1100027"
+		picture = "treaty"
+		major = yes
+		news = yes
+		news_title = "EVTNAME1100027"
+		news_desc_long = "EVTDESC1100027_NEWS_LONG"
+		news_desc_medium = "EVTDESC1100027_NEWS_MEDIUM"
+		news_desc_short = "EVTDESC1100027_NEWS_SHORT"
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = "EVTOPT1100027A"
+			set_global_flag = treaty_of_los_angeles_good
+			prestige = -25
+			FROM = {
+				all_core = {
+					remove_core = THIS
+				}
+			}
+			any_owned = {
+				limit = {
+					OR = {
+						province_id = 102 #Tucson
+						province_id = 100 #Phoenix
+						province_id = 2262 #Animas
+						province_id = 2148 #Albuquerque
+					}
+				}
+				remove_core = THIS
+				add_core = MEX
+			}
+			random_country = {
+				limit = {
+					war_with = THIS
+					controls = 97 #Salt Lake City
+					controls = 89 #Los Angeles
+					controls = 104 #San Francisco
+					controls = 109 #Aspen
+				}
+				end_war = THIS
+				country_event = 1100028
+			}
+			any_country = {
+				limit = {
+					OR = {
+						tag = FROM
+						alliance_with = FROM
+					}
+					war_with = THIS
+				}
+				end_war = THIS
+			}
+			relation = { who = MEX value = -100 }
+			diplomatic_influence = { who = MEX value = -400 }
+			FROM = {
+				relation = { who = MEX value = 400 }
+				diplomatic_influence = { who = MEX value = 400 }
+			}
+			MEX = {
+				relation = { who = THIS value = -100 }
+				diplomatic_influence = { who = THIS value = -400 }
+			}
+			ai_chance = {
+				factor = 75
+			}
+		}
+		option = {
+			name = "EVTOPT1100027B"
+			set_global_flag = treaty_of_los_angeles_bad
+			prestige = -12.5
+			any_owned = {
+				limit = {
+					OR = {
+						province_id = 102 #Tucson
+						province_id = 100 #Phoenix
+						province_id = 2262 #Animas
+						province_id = 2148 #Albuquerque
+					}
+				}
+				add_core = MEX
+			}
+			casus_belli ={
+				target = FROM
+				type = conquest_any
+				months = 60
+			}
+			random_country = {
+				limit = {
+					war_with = THIS
+					controls = 97 #Salt Lake City
+					controls = 89 #Los Angeles
+					controls = 104 #San Francisco
+					controls = 109 #Aspen
+				}
+				end_war = THIS
+				country_event = 1100029
+			}
+			any_country = {
+				limit = {
+					OR = {
+						tag = FROM
+						alliance_with = FROM
+					}
+					war_with = THIS
+				}
+				end_war = THIS
+			}
+			relation = { who = MEX value = -400 }
+			diplomatic_influence = { who = MEX value = -400 }
+			FROM = {
+				relation = { who = MEX value = 400 }
+				diplomatic_influence = { who = MEX value = 400 }
+			}
+			MEX = {
+				relation = { who = THIS value = -400 }
+				diplomatic_influence = { who = THIS value = -400 }
+			}
+			ai_chance = {
+				factor = 25
+			}
+		}
+	}
+	country_event = { #USA secedes all cores, but seeks to keep good relations. From EVTOPT1100027A
+		id = 1100028
+		title = "EVTNAME1100028"
+		desc = "EVTDESC1100028"
+		picture = "guyana_USA_btfo"
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = "EVTOPT1100028A"
+			prestige = 25
+			FROM = {
+				any_owned = {
+					limit = { is_core = THIS }
+					secede_province = THIS
+				}
+				any_owned = {
+					limit = { is_core = MEX }
+					secede_province = MEX
+				}
+				relation = { who = THIS value = 200 }
+				diplomatic_influence = { who = THIS value = 50 }
+			}
+			any_pop = {
+				limit = { has_pop_culture = yankee }
+				consciousness = 2
+			}
+			any_country = {
+				limit = {
+					alliance_with = FROM
+					war_with = THIS
+				}
+				end_war = THIS
+			}
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+	country_event = { #USA secedes all cores, albeit reluctantly. From EVTOPT1100027B
+		id = 1100029
+		title = "EVTNAME1100029"
+		desc = "EVTDESC1100029"
+		picture = "guyana_USA_btfo"
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = "EVTOPT1100029A"
+			prestige = 25
+			FROM = {
+				any_owned = {
+					limit = { is_core = THIS }
+					secede_province = THIS
+				}
+				any_owned = {
+					limit = { is_core = MEX }
+					secede_province = MEX
+				}
+				casus_belli = {
+					target = THIS
+					type = cut_down_to_size
+					months = 240
+				}
+			}
+			any_pop = {
+				limit = { has_pop_culture = yankee }
+				militancy = 8
+				consciousness = 4
+			}
+			any_country = {
+				limit = {
+					alliance_with = FROM
+					war_with = THIS
+				}
+				end_war = THIS
+			}
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+
+###################################
+#Californian Question	
+	country_event = {
+		id = 1100030 
+		title = "EVTNAME1100030" #From decision CAS_the_californian_question, CAS decides whether or not should Californians be embraced as an accepted culture
+		desc = "EVTDESC1100030"
+		picture = "california_gold_rush"
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = "EVT1100030OPTA" #Yes
+			add_accepted_culture = californian
+			CAS = {
+				primary_culture = californian
+				add_accepted_culture = cascadian
+				remove_accepted_culture = yankee
+				remove_accepted_culture = dixie
+				remove_accepted_culture = mexican
+				government = democracy
+			}
+			any_pop = {
+				limit = {
+					has_pop_culture = californian
+				}
+				militancy = -9
+				consciousness = -9 
+			}
+			set_country_flag = embraced_californians
+			ai_chance = {
+				factor = 75
+				modifier = {
+					factor = 100
+					THIS = {
+						OR = {
+							ruling_party_ideology = liberal
+							ruling_party_ideology = anarcho_liberal
+							ruling_party_ideology = socialist
+							ruling_party_ideology = communist
+						}
+					}
+				}
+				
+			}
+		}
+		option = {
+			name = "EVT1100030OPTB" #No
+			CAL = {
+				primary_culture = cascadian
+				remove_accepted_culture = californian
+				remove_accepted_culture = yankee
+				remove_accepted_culture = dixie
+				remove_accepted_culture = mexican
+				government = democracy
+			}
+			any_pop = {
+				limit = {
+					has_pop_culture = californian
+				}
+				militancy = 3
+				consciousness = 6
+			}
+			set_country_flag = rejected_californians
+			ai_chance = {
+				factor = 25
+				modifier = {
+					factor = 100
+					THIS = {
+						OR = {
+							ruling_party_ideology = fascist
+							ruling_party_ideology = reactionary
+						}
+					}
+				}
+			}
+		}
+	}
+
+###################################
+#Mormon Question	
+	country_event = {
+		id = 1100031 
+		title = "EVTNAME1100031" #From decision CAS_the_mormon_question, CAS decides whether or not should Mormons be embraced as an accepted culture
+		desc = "EVTDESC1100031"
+		picture = "mormon_exodus"
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPT1100031A" #Yes
+			add_accepted_culture = mormon_culture
+			DES = {
+				primary_culture = mormon_culture
+				add_accepted_culture = cascadian
+				remove_accepted_culture = yankee
+				remove_accepted_culture = dixie
+				remove_accepted_culture = mexican
+				government = theocracy
+				religion = mormon
+			}
+			any_pop = {
+				limit = {
+					has_pop_culture = mormon_culture
+				}
+				militancy = -9
+				consciousness = -9 
+			}
+			set_country_flag = embraced_mormons
+			ai_chance = {
+				factor = 75
+				modifier = {
+					factor = 100
+					THIS = {
+						OR = {
+							ruling_party_ideology = liberal
+							ruling_party_ideology = anarcho_liberal
+							ruling_party_ideology = socialist
+							ruling_party_ideology = communist
+						}
+					}
+				}
+				
+			}
+		}
+		option = {
+			name = "EVTOPT1100031B" #No
+			DES = {
+				primary_culture = cascadian
+				remove_accepted_culture = mormon_culture
+				remove_accepted_culture = yankee
+				remove_accepted_culture = dixie
+				remove_accepted_culture = mexican
+				government = democracy
+				religion = protestant
+			}
+			any_pop = {
+				limit = {
+					has_pop_culture = mormon_culture
+				}
+				militancy = 3
+				consciousness = 6
+			}
+			set_country_flag = rejected_mormons
+			ai_chance = {
+				factor = 25
+				modifier = {
+					factor = 100
+					THIS = {
+						OR = {
+							ruling_party_ideology = fascist
+							ruling_party_ideology = reactionary
+						}
+					}
+				}
+			}
+		}
+	}
+	
+######################
+#Mormons inquire about the legal status of polygamy
+
+	country_event = { #From decision CAS_mormon_polygamy, Mormons inquire about the legal status of polygamy in Cascadia
+		id = 1100032
+		title = "EVTNAME1100032"
+		desc = "EVTDESC1100032"
+		picture = "mormon_exodus"
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = "EVT1100032OPTA"
+			any_owned = {
+				limit = {
+					has_province_modifier = home_of_the_mormons
+				}
+				remove_province_modifier = home_of_the_mormons
+			}
+			any_owned = {
+				limit = {
+					OR = {
+						province_id = 97 #Salt Lake City
+						province_id = 98 #Cedar City
+						province_id = 99 #Moab
+						
+						province_id = 96 #Las Vegas
+						province_id = 95 #Elko
+						province_id = 94 #Dayton
+						province_id = 3393 #Carson City
+					}
+					has_pop_culture = mormon_culture
+				}
+				add_province_modifier = {
+					name = home_of_the_mormons_2
+					duration = -1
+				}
+			}
+			any_pop = {
+				limit = {
+					has_pop_culture = mormon_culture
+					has_pop_religion = mormon
+				}
+				reduce_pop = 1.5
+			}
+			ai_chance = {
+				factor = 90
+			}
+		}
+		option = {
+			name = "EVT1100032OPTB"
+			any_owned = {
+				limit = {
+					has_province_modifier = home_of_the_mormons
+				}
+				remove_province_modifier = home_of_the_mormons
+			}
+			any_pop = {
+				limit = {
+					has_pop_culture = mormon_culture
+					has_pop_religion = mormon
+				}
+				militancy = 5
+				consciousness = 5
+			}
+			any_owned = {
+				limit = {
+					is_core = DES
+				}
+				add_province_modifier = {
+					name = nationalist_agitation
+					duration = 1825
+				}
+			}
+			ai_chance = {
+				factor = 10
+			}
+		}
+	}
+	
+#From decision californian_identity, cleanup event that moves back all native_american_minor pops to their respective provinces upon assimilation.	
+	country_event = {
+		id = 1100033
+		title = "EVTNAME1100033" 
+		desc = "EVTDESC1100033"
+		picture = "california_gold_rush"
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		immediate = {
+			any_owned = {
+				limit = {
+					is_core = CAL
+				}
+				assimilate = yes
+			}
+			
+			#N. Cali
+			1234 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 104
+				}
+			}
+			1235 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 84
+				}
+			}
+			1236 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 86
+				}
+			}
+			1237 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 85
+				}
+			}
+			1238 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 3307
+				}
+			}
+			1239 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 3308
+				}
+			}
+			1240 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 3389
+				}
+			}
+			1241 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 3390
+				}
+			}
+			#S. Cali
+			1242 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 89
+				}
+			}
+			1243 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 87
+				}
+			}
+			1244 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 88
+				}
+			}
+			1245 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 90
+				}
+			}
+			1246 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 3400
+				}
+			}
+			#Nevada
+			1247 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 3393
+				}
+			}
+			1248 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 94
+				}
+			}
+			1249 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 96
+				}
+			}
+			1250 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 95
+				}
+			}
+			#Utah
+			1251 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 97
+				}
+			}
+			1252 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 98
+				}
+			}
+			1253 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 99
+				}
+			}
+			#Baja California
+			1254 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 2139
+				}
+			}
+			1255 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 2138
+				}
+			}
+			#Arizona 
+			1256 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 100
+				}
+			}
+			1257 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 102
+				}
+			}
+			1258 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 101
+				}
+			}
+			1259 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 3396
+				}
+			}
+			#Wyoming
+			1260 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 107
+				}
+			}
+			1261 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 110
+				}
+			}
+			#Colorado
+			1262 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 109
+				}
+			}
+			1263 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 108
+				}
+			}
+			1264 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 3398
+				}
+			}
+			1265 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 3399
+				}
+			}
+			#New Mexico
+			1266 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 3397
+				}
+			}
+			1267 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 2148
+				}
+			}
+			1268 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 2662
+				}
+			}
+		}
+		
+		option = {
+			name = "EVTOPTA1100033"
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+	
+#From decision mormon_identity, cleanup event that moves back all native_american_minor pops to their respective provinces upon assimilation.
+	country_event = {
+		id = 1100034
+		title = "EVTNAME1100034"
+		desc = "EVTDESC1100034"
+		picture = "mormon_exodus"
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		immediate = {
+			any_owned = {
+				limit = {
+					is_core = DES
+				}
+				assimilate = yes
+			}
+			
+			#S. Cali
+			1242 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 89
+				}
+			}
+			1244 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 88
+				}
+			}
+			1245 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 90
+				}
+			}
+			#Nevada
+			1247 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 3393
+				}
+			}
+			1248 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 94
+				}
+			}
+			1249 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 96
+				}
+			}
+			1250 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 95
+				}
+			}
+			#Utah
+			1251 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 97
+				}
+			}
+			1252 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 98
+				}
+			}
+			1253 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 99
+				}
+			}
+			#Arizona 
+			1256 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 100
+				}
+			}
+			1257 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 102
+				}
+			}
+			1258 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 101
+				}
+			}
+			1259 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 3396
+				}
+			}
+			#Wyoming
+			1260 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 107
+				}
+			}
+			1261 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 110
+				}
+			}
+			#Colorado
+			1262 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 109
+				}
+			}
+			1263 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 108
+				}
+			}
+			1264 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 3398
+				}
+			}
+			1265 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 3399
+				}
+			}
+			#New Mexico
+			1266 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 3397
+				}
+			}
+			1267 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 2148
+				}
+			}
+			1268 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 2662
+				}
+			}
+		}
+		
+		option = {
+			name = "EVTOPTA1100034"
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+	
+#From decision RUS_alaska_assimilation, cleanup event that moves back all native_american_minor pops to their respective provinces upon assimilation.	
+	country_event = {
+		id = 1100035
+		title = "EVTNAME1100035" 
+		desc = "EVTDESC1100035"
+		picture = "alaska"
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		immediate = {
+			random_owned = { limit = { owner = { is_culture_group = east_slavic } }
+				owner = {
+					LSK = {
+						any_owned = {
+							limit = {
+								is_core = LSK
+							}
+							assimilate = yes
+						}
+					}
+					prestige = 1
+				}
+			
+			}
+			
+			#Alaska
+			1234 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 1
+				}
+			}
+			1235 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 2
+				}
+			}
+			1236 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 3
+				}
+			}
+			1237 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 4
+				}
+			}
+			1238 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 5
+				}
+			}
+			1239 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 2630
+				}
+			}
+			1240 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 2631
+				}
+			}
+			1241 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 3391
+				}
+			}
+			#Yukon
+			1242 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 6
+				}
+			}
+			#Columbia
+			1243 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 15
+				}
+			}
+			1244 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 16
+				}
+			}
+			1245 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 19
+				}
+			}
+			1246 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 20
+				}
+			}
+			#Nevada
+			1247 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 13
+				}
+			}
+			1248 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 14
+				}
+			}
+			1249 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 17
+				}
+			}
+			#Washington
+			1250 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 78
+				}
+			}
+			1251 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 79
+				}
+			}
+			#Oregon
+			1252 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 81
+				}
+			}
+			1253 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 83
+				}
+			}
+			#Baja California
+			1254 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 3394
+				}
+			}
+			1255 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 3388
+				}
+			}
+			#N. Cali
+			1256 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 2138
+				}
+			}
+			1257 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 3308
+				}
+			}
+			1258 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 3307
+				}
+			}
+			1259 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 3389
+				}
+			}
+			1260 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 3390
+				}
+			}
+			#Nevada
+			1261 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 3393
+				}
+			}
+			#Hawaii
+			1262 = {
+				any_pop = {
+					limit = {
+						is_culture_group = oceanic
+					}
+					move_pop = 3305
+				}
+			}
+			1263 = {
+				any_pop = {
+					limit = {
+						is_culture_group = oceanic
+					}
+					move_pop = 658
+				}
+			}
+			1264 = {
+				any_pop = {
+					limit = {
+						is_culture_group = oceanic
+					}
+					move_pop = 2524
+				}
+			}
+			1265 = {
+				any_pop = {
+					limit = {
+						is_culture_group = oceanic
+					}
+					move_pop = 2526
+				}
+			}
+			1266 = {
+				any_pop = {
+					limit = {
+						is_culture_group = oceanic
+					}
+					move_pop = 2623
+				}
+			}
+			1267 = {
+				any_pop = {
+					limit = {
+						is_culture_group = oceanic
+					}
+					move_pop = 3306
+				}
+			}
+			1268 = {
+				any_pop = {
+					limit = {
+						is_culture_group = oceanic
+					}
+					move_pop = 3352
+				}
+			}
+			1269 = {
+				any_pop = {
+					limit = {
+						is_culture_group = oceanic
+					}
+					move_pop = 3351
+				}
+			}
+		}
+		
+		option = {
+			name = "EVTOPTA1100035"
+			random_owned = {
+				limit = { owner = { is_culture_group = east_slavic } }
+				owner = {
+					inherit = LSK
+				}
+			
+			}
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+#######################################################
+#Liberate Texas
+	country_event = {
+		id = 1100036
+		title = "EVTNAME1100036"
+		desc = "EVTDESC1100036"
+		picture = "texas_state"
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = "EVTOPTA1100036"
+			relation = { who = FROM value = -200 }
+			FROM = { country_event = 1100037 }
+		}
+	}
+	country_event = {
+		id = 1100037
+		title = "EVTNAME1100037"
+		desc = "EVTDESC1100037"
+		picture = "texas_state"
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = "EVTOPTA1100037"
+			casus_belli = { target = FROM type = liberate_country months = 240 }
+		}
+	}
+	#From decision TEX_assimilation, cleanup event that moves back all native_american_minor pops to their respective provinces upon assimilation.	
+	country_event = {
+		id = 1100038
+		title = "EVTNAME1100038" 
+		desc = "EVTDESC1100038"
+		picture = "texas_state"
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		immediate = {
+			any_owned = {
+				limit = {
+					is_core = TEX
+				}
+				assimilate = yes
+			}
+			
+			#Texas
+			1234 = {
+				any_pop = {
+					limit = {
+						OR = {
+							is_culture_group = native_american
+							is_culture_group = latin_american_cultures
+							is_culture_group = african_diaspora_cultures
+							is_culture_group = neo_european_cultures
+							is_culture_group = iberian
+						}
+					}
+					move_pop = 133
+				}
+			}
+			1235 = {
+				any_pop = {
+					limit = {
+						OR = {
+							is_culture_group = native_american
+							is_culture_group = latin_american_cultures
+							is_culture_group = african_diaspora_cultures
+							is_culture_group = neo_european_cultures
+							is_culture_group = iberian
+						}
+					}
+					move_pop = 43
+				}
+			}
+			1236 = {
+				any_pop = {
+					limit = {
+						OR = {
+							is_culture_group = native_american
+							is_culture_group = latin_american_cultures
+							is_culture_group = african_diaspora_cultures
+							is_culture_group = neo_european_cultures
+							is_culture_group = iberian
+						}
+					}
+					move_pop = 132
+				}
+			}
+			1237 = {
+				any_pop = {
+					limit = {
+						OR = {
+							is_culture_group = native_american
+							is_culture_group = latin_american_cultures
+							is_culture_group = african_diaspora_cultures
+							is_culture_group = neo_european_cultures
+							is_culture_group = iberian
+						}
+					}
+					move_pop = 134
+				}
+			}
+			1238 = {
+				any_pop = {
+					limit = {
+						OR = {
+							is_culture_group = native_american
+							is_culture_group = latin_american_cultures
+							is_culture_group = african_diaspora_cultures
+							is_culture_group = neo_european_cultures
+							is_culture_group = iberian
+						}
+					}
+					move_pop = 135
+				}
+			}
+			1239 = {
+				any_pop = {
+					limit = {
+						OR = {
+							is_culture_group = native_american
+							is_culture_group = latin_american_cultures
+							is_culture_group = african_diaspora_cultures
+							is_culture_group = neo_european_cultures
+							is_culture_group = iberian
+						}
+					}
+					move_pop = 136
+				}
+			}
+			1240 = {
+				any_pop = {
+					limit = {
+						OR = {
+							is_culture_group = native_american
+							is_culture_group = latin_american_cultures
+							is_culture_group = african_diaspora_cultures
+							is_culture_group = neo_european_cultures
+							is_culture_group = iberian
+						}
+					}
+					move_pop = 137
+				}
+			}
+			1241 = {
+				any_pop = {
+					limit = {
+						OR = {
+							is_culture_group = native_american
+							is_culture_group = latin_american_cultures
+							is_culture_group = african_diaspora_cultures
+							is_culture_group = neo_european_cultures
+							is_culture_group = iberian
+						}
+					}
+					move_pop = 138
+				}
+			}
+			#Oklahoma
+			1242 = {
+				any_pop = {
+					limit = {
+						OR = {
+							is_culture_group = native_american
+							is_culture_group = latin_american_cultures
+							is_culture_group = african_diaspora_cultures
+							is_culture_group = neo_european_cultures
+							is_culture_group = iberian
+						}
+					}
+					move_pop = 129
+				}
+			}
+			#Kansas
+			1243 = {
+				any_pop = {
+					limit = {
+						OR = {
+							is_culture_group = native_american
+							is_culture_group = latin_american_cultures
+							is_culture_group = african_diaspora_cultures
+							is_culture_group = neo_european_cultures
+							is_culture_group = iberian
+						}
+					}
+					move_pop = 128
+				}
+			}
+			#Colorado
+			1244 = {
+				any_pop = {
+					limit = {
+						OR = {
+							is_culture_group = native_american
+							is_culture_group = latin_american_cultures
+							is_culture_group = african_diaspora_cultures
+							is_culture_group = neo_european_cultures
+							is_culture_group = iberian
+						}
+					}
+					move_pop = 103
+				}
+			}
+			#New Mexico
+			1245 = {
+				any_pop = {
+					limit = {
+						OR = {
+							is_culture_group = native_american
+							is_culture_group = latin_american_cultures
+							is_culture_group = african_diaspora_cultures
+							is_culture_group = neo_european_cultures
+							is_culture_group = iberian
+						}
+					}
+					move_pop = 105
+				}
+			}
+			#Colorado again lol
+			1246 = {
+				any_pop = {
+					limit = {
+						OR = {
+							is_culture_group = native_american
+							is_culture_group = latin_american_cultures
+							is_culture_group = african_diaspora_cultures
+							is_culture_group = neo_european_cultures
+							is_culture_group = iberian
+						}
+					}
+					move_pop = 109
+				}
+			}
+			1247 = {
+				any_pop = {
+					limit = {
+						OR = {
+							is_culture_group = native_american
+							is_culture_group = latin_american_cultures
+							is_culture_group = african_diaspora_cultures
+							is_culture_group = neo_european_cultures
+							is_culture_group = iberian
+						}
+					}
+					move_pop = 3398
+				}
+			}
+			#Wyoming
+			1248 = {
+				any_pop = {
+					limit = {
+						OR = {
+							is_culture_group = native_american
+							is_culture_group = latin_american_cultures
+							is_culture_group = african_diaspora_cultures
+							is_culture_group = neo_european_cultures
+							is_culture_group = iberian
+						}
+					}
+					move_pop = 107
+				}
+			}
+		}
+		
+		option = {
+			name = "EVTOPTA1100038"
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+########################################################
+#Colorado goldrush
+#
+country_event = {
+	id = 1100039
+	title = "EVTNAME1100039" #Gold is found in the Pike's peak
+	desc = "EVTDESC1100039"
+	picture = "colorado_gold_rush"
+	
+	trigger = {
+		year = 1858
+		war = no
+		OR = {
+			owns = 109
+			owns = 103
+			owns = 106
+		}
+		OR = {
+			106 = { produces = precious_metal } #Denver
+			109 = { produces = precious_metal } #Aspen
+		}
+		NOT = { has_global_flag = colorado_gold_rush }
+	}
+	
+	fire_only_once = yes
+
+	option = {
+		name = "EVT1100039OPTA"
+			any_pop = {
+				limit = {
+					location = {
+						province_id = 109
+					}
+					is_culture_group = native_american
+				}
+				reduce_pop = 0.05
+			}
+			random_owned = {
+				limit = {
+					owner = {
+						primary_culture = cascadian
+					}
+				}
+				owner = {
+					any_pop = {
+						limit = {
+							location = {
+								OR = {
+									province_id = 106
+									province_id = 109
+									province_id = 103
+								}
+							}
+							has_pop_culture = cascadian
+						}
+						reduce_pop = 2
+					}
+				}
+			}
+			random_owned = {
+				limit = {
+					owner = {
+						primary_culture = mormon_culture
+					}
+				}
+				owner = {
+					any_pop = {
+						limit = {
+							location = {
+								OR = {
+									province_id = 106
+									province_id = 109
+									province_id = 103
+								}
+							}
+							has_pop_culture = mormon_culture
+						}
+						reduce_pop = 2
+					}
+				}
+			}
+			random_owned = {
+				limit = {
+					owner = {
+						primary_culture = californian
+					}
+				}
+				owner = {
+					any_pop = {
+						limit = {
+							location = {
+								OR = {
+									province_id = 106
+									province_id = 109
+									province_id = 103
+								}
+							}
+							has_pop_culture = californian
+						}
+						reduce_pop = 2
+					}
+				}
+			}
+			random_owned = {
+				limit = {
+					owner = {
+						OR = {
+							is_culture_group = iberian
+							primary_culture = mexican
+							primary_culture = norteno
+							primary_culture = californio
+							primary_culture = texan
+						}
+					}
+				}
+				owner = {
+					any_pop = {
+						limit = {
+							location = {
+								OR = {
+									province_id = 106
+									province_id = 109
+									province_id = 103
+								}
+							}
+							has_pop_culture = spanish
+						}
+						reduce_pop = 2
+					}
+				}
+				owner = {
+					any_pop = {
+						limit = {
+							location = {
+								OR = {
+									province_id = 106
+									province_id = 109
+									province_id = 103
+								}
+							}
+							has_pop_culture = mexican
+						}
+						reduce_pop = 2
+					}
+				}
+				owner = {
+					any_pop = {
+						limit = {
+							location = {
+								OR = {
+									province_id = 106
+									province_id = 109
+									province_id = 103
+								}
+							}
+							has_pop_culture = norteno
+						}
+						reduce_pop = 2
+					}
+				}
+				owner = {
+					any_pop = {
+						limit = {
+							location = {
+								OR = {
+									province_id = 106
+									province_id = 109
+									province_id = 103
+								}
+							}
+							has_pop_culture = californio
+						}
+						reduce_pop = 2
+					}
+				}
+			}
+			random_owned = {
+				limit = {
+					owner = {
+						primary_culture = yankee
+					}
+				}
+				owner = {
+					any_pop = {
+						limit = {
+							location = {
+								OR = {
+									province_id = 106
+									province_id = 109
+									province_id = 103
+								}
+							}
+							has_pop_culture = yankee
+						}
+						reduce_pop = 2
+					}
+				}
+			}
+			random_owned = {
+				limit = {
+					owner = {
+						primary_culture = dixie
+					}
+				}
+				owner = {
+					any_pop = {
+						limit = {
+							location = {
+								OR = {
+									province_id = 106
+									province_id = 109
+									province_id = 103
+								}
+							}
+							has_pop_culture = dixie
+						}
+						reduce_pop = 2
+					}
+				}
+			}
+			random_owned = {
+				limit = {
+					owner = {
+						OR = {
+							primary_culture = texan
+							primary_culture = norteno
+							primary_culture = californio
+						}
+					}
+				}
+				owner = {
+					any_pop = {
+						limit = {
+							location = {
+								OR = {
+									province_id = 106
+									province_id = 109
+									province_id = 103
+								}
+							}
+							has_pop_culture = texan
+						}
+						reduce_pop = 2
+					}
+				}
+			}
+			
+			106 = {
+				add_province_modifier = {
+					name = colorado_gold_rush
+					duration = 365
+				}			
+			}
+			103 = { 
+				add_province_modifier = {
+					name = colorado_gold_rush
+					duration = 365
+				}			
+			}
+			109 = { 
+				add_province_modifier = {
+					name = colorado_gold_rush
+					duration = 365
+				}			
+			}
+			set_global_flag = colorado_gold_rush
+	}
+}
+########################################################
+#Colorado silver booms
+#
+country_event = {
+	id = 1100040
+	title = "EVTNAME1100040" #Silver is found in Leadville, first boom
+	desc = "EVTDESC1100040"
+	picture = "silver_boom"
+	
+	trigger = {
+		year = 1879
+		war = no
+		owns = 109
+		109 = { produces = precious_metal } #Denver
+		NOT = { has_global_flag = silver_rush_colorado }
+	}
+	
+	fire_only_once = yes
+
+	option = {
+		name = "EVT1100040OPTA"
+			random_owned = {
+				limit = {
+					owner = {
+						primary_culture = cascadian
+					}
+				}
+				owner = {
+					any_pop = {
+						limit = {
+							location = {
+								province_id = 109
+							}
+							has_pop_culture = cascadian
+						}
+						reduce_pop = 1.25
+					}
+				}
+			}
+			random_owned = {
+				limit = {
+					owner = {
+						primary_culture = mormon_culture
+					}
+				}
+				owner = {
+					any_pop = {
+						limit = {
+							location = {
+								province_id = 109
+							}
+							has_pop_culture = mormon_culture
+						}
+						reduce_pop = 1.25
+					}
+				}
+			}
+			random_owned = {
+				limit = {
+					owner = {
+						primary_culture = californian
+					}
+				}
+				owner = {
+					any_pop = {
+						limit = {
+							location = {
+								province_id = 109
+							}
+							has_pop_culture = californian
+						}
+						reduce_pop = 1.25
+					}
+				}
+			}
+			random_owned = {
+				limit = {
+					owner = {
+						OR = {
+							is_culture_group = iberian
+							primary_culture = mexican
+							primary_culture = norteno
+							primary_culture = californio
+							primary_culture = texan
+						}
+					}
+				}
+				owner = {
+					any_pop = {
+						limit = {
+							location = {
+								province_id = 109
+							}
+							has_pop_culture = spanish
+						}
+						reduce_pop = 1.25
+					}
+				}
+				owner = {
+					any_pop = {
+						limit = {
+							location = {
+								province_id = 109
+							}
+							has_pop_culture = mexican
+						}
+						reduce_pop = 1.25
+					}
+				}
+				owner = {
+					any_pop = {
+						limit = {
+							location = {
+								province_id = 109
+							}
+							has_pop_culture = norteno
+						}
+						reduce_pop = 1.25
+					}
+				}
+				owner = {
+					any_pop = {
+						limit = {
+							location = {
+								province_id = 109
+							}
+							has_pop_culture = californio
+						}
+						reduce_pop = 1.25
+					}
+				}
+			}
+			random_owned = {
+				limit = {
+					owner = {
+						primary_culture = yankee
+					}
+				}
+				owner = {
+					any_pop = {
+						limit = {
+							location = {
+								province_id = 109
+							}
+							has_pop_culture = yankee
+						}
+						reduce_pop = 1.25
+					}
+				}
+			}
+			random_owned = {
+				limit = {
+					owner = {
+						primary_culture = dixie
+					}
+				}
+				owner = {
+					any_pop = {
+						limit = {
+							location = {
+								province_id = 109
+							}
+							has_pop_culture = dixie
+						}
+						reduce_pop = 1.25
+					}
+				}
+			}
+			random_owned = {
+				limit = {
+					owner = {
+						OR = {
+							primary_culture = texan
+							primary_culture = norteno
+							primary_culture = californio
+						}
+					}
+				}
+				owner = {
+					any_pop = {
+						limit = {
+							location = {
+								province_id = 109
+							}
+							has_pop_culture = texan
+						}
+						reduce_pop = 1.25
+					}
+				}
+			}
+			
+			
+			random_owned = {
+				limit = {
+					owner = {
+						OR = {
+							is_culture_group = american_cultures
+							primary_culture = cascadian
+						}
+						owns = 109
+					}
+				}
+				109 = {
+					change_province_name = "Leadville"
+				}
+			}
+			random_owned = {
+				limit = {
+					owner = {
+						OR = {
+							is_culture_group = iberian
+							is_culture_group = latin_american_cultures
+						}
+						owns = 109
+					}
+				}
+				109 = {
+					change_province_name = "Villa del Plomo"
+				}
+			}
+			
+			109 = {
+				add_province_modifier = {
+					name = silver_rush_colorado
+					duration = 365
+				}			
+			}
+			106 = { 
+				add_province_modifier = {
+					name = silver_rush_colorado
+					duration = 121
+				}			
+			}
+			103 = { 
+				add_province_modifier = {
+					name = silver_rush_colorado
+					duration = 121
+				}			
+			}
+			set_global_flag = silver_rush_colorado
+	}
+}
+country_event = {
+	id = 1100041
+	title = "EVTNAME1100041" #Silver is found in Leadville, second boom
+	desc = "EVTDESC1100041"
+	picture = "silver_boom"
+	
+	trigger = {
+		year = 1889
+		war = no
+		owns = 108
+		108 = { produces = precious_metal } #Grand Junction
+		has_global_flag = silver_rush_colorado
+		NOT = { has_global_flag = silver_rush_colorado_2 }
+	}
+	
+	fire_only_once = yes
+
+	option = {
+		name = "EVT1100040OPTA"
+			any_pop = {
+				limit = {
+					location = {
+						province_id = 108
+					}
+					is_culture_group = native_american
+				}
+				reduce_pop = 0.05
+			}
+			random_owned = {
+				limit = {
+					owner = {
+						primary_culture = cascadian
+					}
+				}
+				owner = {
+					any_pop = {
+						limit = {
+							location = {
+								province_id = 108
+							}
+							has_pop_culture = cascadian
+						}
+						reduce_pop = 2
+					}
+				}
+			}
+			random_owned = {
+				limit = {
+					owner = {
+						primary_culture = mormon_culture
+					}
+				}
+				owner = {
+					any_pop = {
+						limit = {
+							location = {
+								province_id = 108
+							}
+							has_pop_culture = mormon_culture
+						}
+						reduce_pop = 2
+					}
+				}
+			}
+			random_owned = {
+				limit = {
+					owner = {
+						primary_culture = californian
+					}
+				}
+				owner = {
+					any_pop = {
+						limit = {
+							location = {
+								province_id = 108
+							}
+							has_pop_culture = californian
+						}
+						reduce_pop = 2
+					}
+				}
+			}
+			random_owned = {
+				limit = {
+					owner = {
+						OR = {
+							is_culture_group = iberian
+							primary_culture = mexican
+							primary_culture = norteno
+							primary_culture = californio
+							primary_culture = texan
+						}
+					}
+				}
+				owner = {
+					any_pop = {
+						limit = {
+							location = {
+								province_id = 108
+							}
+							has_pop_culture = spanish
+						}
+						reduce_pop = 2
+					}
+				}
+				owner = {
+					any_pop = {
+						limit = {
+							location = {
+								province_id = 108
+							}
+							has_pop_culture = mexican
+						}
+						reduce_pop = 2
+					}
+				}
+				owner = {
+					any_pop = {
+						limit = {
+							location = {
+								province_id = 108
+							}
+							has_pop_culture = norteno
+						}
+						reduce_pop = 2
+					}
+				}
+				owner = {
+					any_pop = {
+						limit = {
+							location = {
+								province_id = 108
+							}
+							has_pop_culture = californio
+						}
+						reduce_pop = 2
+					}
+				}
+			}
+			random_owned = {
+				limit = {
+					owner = {
+						primary_culture = yankee
+					}
+				}
+				owner = {
+					any_pop = {
+						limit = {
+							location = {
+								province_id = 108
+							}
+							has_pop_culture = yankee
+						}
+						reduce_pop = 2
+					}
+				}
+			}
+			random_owned = {
+				limit = {
+					owner = {
+						primary_culture = dixie
+					}
+				}
+				owner = {
+					any_pop = {
+						limit = {
+							location = {
+								province_id = 108
+							}
+							has_pop_culture = dixie
+						}
+						reduce_pop = 2
+					}
+				}
+			}
+			random_owned = {
+				limit = {
+					owner = {
+						OR = {
+							primary_culture = texan
+							primary_culture = norteno
+							primary_culture = californio
+						}
+					}
+				}
+				owner = {
+					any_pop = {
+						limit = {
+							location = {
+								province_id = 108
+							}
+							has_pop_culture = texan
+						}
+						reduce_pop = 2
+					}
+				}
+			}
+			
+			
+			random_owned = {
+				limit = {
+					owner = {
+						OR = {
+							is_culture_group = american_cultures
+							primary_culture = cascadian
+						}
+						owns = 108
+					}
+				}
+				108 = {
+					change_province_name = "Creede"
+				}
+			}
+			random_owned = {
+				limit = {
+					owner = {
+						OR = {
+							is_culture_group = iberian
+							is_culture_group = latin_american_cultures
+						}
+						owns = 108
+					}
+				}
+				108 = {
+					change_province_name = "El Credo"
+				}
+			}
+			
+			108 = { 
+				add_province_modifier = {
+					name = silver_rush_colorado
+					duration = 365
+				}			
+			}
+			109 = {
+				add_province_modifier = {
+					name = silver_rush_colorado
+					duration = 121
+				}			
+			}
+			106 = { 
+				add_province_modifier = {
+					name = silver_rush_colorado
+					duration = 121
+				}			
+			}
+			set_global_flag = silver_rush_colorado_2
+	}
+}
+########################################################
+#Nevada's silver rush
+#
+country_event = {
+	id = 1100042
+	title = "EVTNAME1100042" #Gold is found in the Pike's peak
+	desc = "EVTDESC1100042"
+	picture = "motherlode_nevada"
+	
+	trigger = {
+		year = 1858
+		war = no
+		owns = 3393
+		3393 = { produces = precious_metal } #Carson City
+		NOT = { has_global_flag = silver_rush_nevada }
+	}
+	
+	fire_only_once = yes
+
+	option = {
+		name = "EVT1100042OPTA"
+			any_pop = {
+				limit = {
+					location = {
+						province_id = 3393
+					}
+					is_culture_group = native_american
+				}
+				reduce_pop = 0.05
+			}
+			any_pop = {
+				limit = {
+					location = {
+						OR = {
+							province_id = 3393
+							province_id = 94
+							province_id = 95
+							province_id = 96
+						}
+					}
+					OR = {
+						has_pop_culture = mormon_culture
+						has_pop_religion = mormon
+					}
+				}
+				reduce_pop = 1.5
+			}
+			random_owned = {
+				limit = {
+					owner = {
+						primary_culture = cascadian
+					}
+				}
+				owner = {
+					any_pop = {
+						limit = {
+							location = {
+								province_id = 3393
+							}
+							has_pop_culture = cascadian
+						}
+						reduce_pop = 2
+					}
+				}
+			}
+			random_owned = {
+				limit = {
+					owner = {
+						primary_culture = mormon_culture
+					}
+				}
+				owner = {
+					any_pop = {
+						limit = {
+							location = {
+								province_id = 3393
+							}
+							has_pop_culture = mormon_culture
+						}
+						reduce_pop = 2
+					}
+				}
+			}
+			random_owned = {
+				limit = {
+					owner = {
+						primary_culture = californian
+					}
+				}
+				owner = {
+					any_pop = {
+						limit = {
+							location = {
+								province_id = 3393
+							}
+							has_pop_culture = californian
+						}
+						reduce_pop = 2
+					}
+				}
+			}
+			random_owned = {
+				limit = {
+					owner = {
+						OR = {
+							is_culture_group = iberian
+							primary_culture = mexican
+							primary_culture = norteno
+							primary_culture = californio
+							primary_culture = texan
+						}
+					}
+				}
+				owner = {
+					any_pop = {
+						limit = {
+							location = {
+								province_id = 3393
+							}
+							has_pop_culture = spanish
+						}
+						reduce_pop = 2
+					}
+				}
+				owner = {
+					any_pop = {
+						limit = {
+							location = {
+								province_id = 3393
+							}
+							has_pop_culture = mexican
+						}
+						reduce_pop = 2
+					}
+				}
+				owner = {
+					any_pop = {
+						limit = {
+							location = {
+								province_id = 3393
+							}
+							has_pop_culture = norteno
+						}
+						reduce_pop = 2
+					}
+				}
+				owner = {
+					any_pop = {
+						limit = {
+							location = {
+								province_id = 3393
+							}
+							has_pop_culture = californio
+						}
+						reduce_pop = 2
+					}
+				}
+			}
+			random_owned = {
+				limit = {
+					owner = {
+						primary_culture = yankee
+					}
+				}
+				owner = {
+					any_pop = {
+						limit = {
+							location = {
+								province_id = 3393
+							}
+							has_pop_culture = yankee
+						}
+						reduce_pop = 2
+					}
+				}
+			}
+			random_owned = {
+				limit = {
+					owner = {
+						primary_culture = dixie
+					}
+				}
+				owner = {
+					any_pop = {
+						limit = {
+							location = {
+								province_id = 3393
+							}
+							has_pop_culture = dixie
+						}
+						reduce_pop = 2
+					}
+				}
+			}
+			random_owned = {
+				limit = {
+					owner = {
+						OR = {
+							primary_culture = texan
+							primary_culture = norteno
+							primary_culture = californio
+						}
+					}
+				}
+				owner = {
+					any_pop = {
+						limit = {
+							location = {
+								province_id = 3393
+							}
+							has_pop_culture = texan
+						}
+						reduce_pop = 2
+					}
+				}
+			}
+			
+			random_owned = {
+				limit = {
+					owner = {
+						OR = {
+							is_culture_group = american_cultures
+							primary_culture = cascadian
+						}
+						owns = 3393
+					}
+				}
+				3393 = {
+					change_province_name = "Virginia City"
+				}
+			}
+			random_owned = {
+				limit = {
+					owner = {
+						OR = {
+							is_culture_group = iberian
+							is_culture_group = latin_american_cultures
+						}
+						owns = 3393
+					}
+				}
+				3393 = {
+					change_province_name = "Ciudad Virginia"
+				}
+			}
+			
+			3393 = {
+				add_province_modifier = {
+					name = silver_rush_nevada
+					duration = 365
+				}			
+			}
+			94 = { 
+				add_province_modifier = {
+					name = silver_rush_nevada
+					duration = 121
+				}			
+			}
+			95 = { 
+				add_province_modifier = {
+					name = silver_rush_nevada
+					duration = 121
+				}			
+			}
+			96 = { 
+				add_province_modifier = {
+					name = silver_rush_nevada
+					duration = 121
+				}			
+			}
+			set_global_flag = silver_rush_nevada
+	}
+} 
+
+	country_event = {
+		id = 1100043
+		title = "EVTNAME1100043"
+		desc = "EVTDESC1100043"
+		picture = "fort_ross"
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = "EVT1100043OPTA"
+			prestige = -2.5
+			treasury = 25000
+			relation = { who = RUS value = -25 }
+		}
+	}

@@ -1,0 +1,101 @@
+political_decisions = {
+		
+	the_steppe_wolfe = {
+		picture = map_balkans
+			potential = {
+				AND = { tag = BUL ai = no }
+				NOT = { has_country_flag = steppe_wolfe }
+			}
+			
+			allow = {
+				war = no
+			}
+			
+			effect = {
+				set_country_flag = steppe_wolfe
+				prestige = 25
+				add_country_modifier = {
+						name = steppe_wolfe
+						duration = -1
+				}
+			}
+			
+			ai_will_do = { factor = 0 }
+	}
+	
+	the_turkish_problem = {
+		picture = genocide_minorities
+			potential = {
+				has_country_flag = steppe_wolfe
+				NOT = { has_country_flag = turkish_problem_solved }
+			}
+			
+			allow = {
+				war = no
+				money = 10000
+				ruling_party_ideology = reactionary
+			}
+			
+			effect = {
+				set_country_flag = turkish_problem_solved
+				badboy = 15
+				any_pop = {
+					limit = { 
+						has_pop_culture = turkish
+					}
+					consciousness = 6
+					militancy = 6
+				}
+				country_event = 30088
+			}
+			ai_will_do = { factor = 0 }
+	}
+	
+	repatriate_bulgarians = {
+		picture = embrace_minority
+			potential = {
+				has_country_flag = turkish_problem_solved
+				NOT = { has_country_flag = repatriated_bulgarians }
+			}
+			
+			allow = {
+				war = no
+			}
+			
+			effect = {
+				set_country_flag = repatriated_bulgarians
+				country_event = 30065
+			}
+	}
+
+	claims_to_thrace = {
+		picture = constantinople
+			potential = {
+				has_country_flag = steppe_wolfe
+				NOT = { has_country_flag = claimed_thrace }
+			}
+			
+			allow = {
+				war = no
+				nationalism_n_imperialism = 1
+				BUL =  {
+						all_core = { owned_by = BUL }
+				}
+			}
+			
+			effect = {
+				set_country_flag = claimed_thrace
+				prestige = 10
+				TUR_860 = { add_core = BUL }
+				badboy = 2
+				any_country = {
+						limit = {
+								any_owned_province = { region = TUR_860 }
+								NOT = { tag = THIS }
+						}
+						relation = { who = THIS value = -50 }
+				}
+			}
+			ai_will_do = { factor = 0 }
+	}
+}

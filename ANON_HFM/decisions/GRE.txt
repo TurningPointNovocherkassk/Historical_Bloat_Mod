@@ -1,0 +1,739 @@
+political_decisions = {
+
+	make_crete_a_state = {
+		picture = hellenic_parliament
+		potential = {
+			owns = 847
+			owns = 848
+			capital_scope = { continent = europe }
+			847 = { is_colonial = yes }
+			civilized = yes
+			NOT = { has_country_flag = make_crete_a_state }
+		}
+	
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			set_country_flag = make_crete_a_state
+			release = CRE
+			inherit = CRE
+		}
+		ai_will_do = { factor = 1 }
+	}
+
+	hellenic_parliament = {
+		picture = hellenic_parliament
+		potential = {
+			tag = GRE
+			government = absolute_monarchy
+			NOT = { has_country_flag = voule_ton_ellinon }
+		}
+	
+		allow = {
+			plurality = 40
+			OR = {
+				prestige = 20
+				state_n_government = 1
+			}
+		}
+		
+		effect = {
+			set_country_flag = voule_ton_ellinon
+			political_reform = wealth_weighted_voting
+			random_owned = {
+				limit = { owner = { political_parties = underground_parties } }
+				owner = { political_reform = harassment }
+			}
+			prestige = 5
+			government = prussian_constitutionalism
+			any_pop = { militancy = -2 }
+		}
+	}
+	
+	megali_idea = {
+		picture = megali_idea
+		potential = {
+			tag = GRE
+			NOT = { has_country_flag = greece_has_got_a_brand_new_bag }
+			NOT = { has_country_flag = population_exchange_with_turkey }
+			NOT = { has_country_flag = turks_expelled }
+			NOT = { has_country_flag = greek_pacifism }
+			GRE = { all_core = { owned_by = THIS } }
+		}
+		
+		allow = {
+			NOT = { has_country_flag = population_exchange_with_turkey }
+			NOT = { has_country_flag = turks_expelled }
+			NOT = { has_country_flag = greek_pacifism }
+			TUR = { is_greater_power = no }
+			OR = {
+				AND = {
+					year = 1844
+					invention = national_fraternity			
+				}
+				TUR = {
+					has_country_flag = ottomans_to_turks
+				}
+			}
+			owns = 832
+			owns = 805
+			owns = 823
+			owns = 844
+			owns = 843
+			owns = 846
+		}
+		
+		effect = {
+			prestige = 10
+			badboy = 5
+			TUR_860 = {
+				add_core = GRE
+				remove_core = ANT
+			}
+			860 = {
+				add_core = GRE
+				remove_core = ANT
+			}
+			TUR_863 = {
+				add_core = GRE
+				remove_core = ANT
+			}
+			TUR_869 = {
+				add_core = GRE
+				remove_core = ANT
+			}
+			881 = {
+				add_core = GRE
+				remove_core = ANT
+			}
+			880 = {
+				add_core = GRE
+				remove_core = ANT
+			}
+			853 = { #Gjirokaster
+				add_core = GRE
+			}
+			set_country_flag = greece_has_got_a_brand_new_bag
+		}
+	}
+	
+	form_byzantine_empire = {
+		potential = {
+			tag = GRE
+			NOT = { exists = BYZ }
+			has_country_flag = greece_has_got_a_brand_new_bag
+			#has_global_flag = fantasy_countries_enabled
+			NOT = { has_country_flag = greek_pacifism }
+			has_country_flag = claim_rumelia
+			has_country_flag = claim_ikonion
+			has_country_flag = claim_nmacedonia
+			has_country_flag = claim_pontus
+			has_country_flag = claim_antioch
+			882 = { owned_by = THIS }
+			815 = { owned_by = THIS }
+			806 = { owned_by = THIS }
+			873 = { owned_by = THIS }
+		}
+		
+		allow = {
+			is_greater_power = yes
+			all_core = { owned_by = THIS }
+			OR = {
+				government = absolute_monarchy
+				government = prussian_constitutionalism
+				government = hms_government
+			}
+		}
+		
+		effect = {
+			change_tag = BYZ
+			capital = 860
+			any_owned = {
+				limit = {
+					is_colonial = no
+					OR = {
+						culture = greek
+						culture = turkish
+					}
+				}
+				add_core = BYZ
+			}
+			prestige = 40
+			badboy = -25
+		}
+	}
+	
+	
+	claim_pontus = {
+	picture = claim_pontus
+	
+		potential = {
+			primary_culture = greek
+			has_country_flag = greece_has_got_a_brand_new_bag
+			NOT = { has_country_flag = claim_pontus }
+			NOT = { has_country_flag = greek_pacifism }
+		}
+
+		allow = {
+			war = no
+			NOT = { has_country_flag = population_exchange_with_turkey }
+			NOT = { has_country_flag = turks_expelled }
+			NOT = { has_country_flag = greek_pacifism }
+			GRE = { all_core = { owned_by = THIS } }
+		}
+
+		effect = {
+			set_country_flag = claim_pontus
+			badboy = 3
+			PNT = {
+				all_core = { add_core = THIS remove_core = PNT }
+			}
+			any_pop = {
+				limit = { has_pop_culture = greek }
+				militancy = -1
+				dominant_issue = { factor = 0.1 value = jingoism }
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	unite_with_greece = {
+	picture = unite_with_greece
+		potential = {
+			primary_culture = greek
+			NOT = { tag = GRE }
+			exists = GRE
+			NOT = { has_country_flag = unite_with_greece }
+			GRE = {
+				NOT = { has_country_flag = greek_pacifism }
+			}
+		}
+
+		allow = {
+			war = no
+			OR = {
+				vassal_of = GRE
+				is_vassal = no
+			}
+			OR = {
+				part_of_sphere = no
+				sphere_owner = { is_sphere_leader_of = GRE }
+				in_sphere = GRE
+			}
+			GRE = {
+				war = no
+				is_vassal = no
+			}
+		}
+
+		effect = {
+			set_country_flag = unite_with_greece
+			random_country = {
+				limit = {
+					tag = GRE
+					ai = yes
+					THIS = { ai = yes }
+				}
+				inherit = THIS
+			}
+			random_country = {
+				limit = {
+					tag = GRE
+					ai = yes
+					THIS = { ai = no }
+				}
+				any_owned = { secede_province = THIS }
+				THIS = {
+					remove_accepted_culture = turkish
+					random_owned = {
+						limit = { province_id = 834 }
+						owner = { capital = 834 }
+					}
+					change_tag = GRE
+				}	
+			}
+			random_country = {
+				limit = {
+					tag = GRE
+					ai = no
+				}
+				country_event = 60130
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				government = fascist_dictatorship
+				GRE = {
+					NOT = { government = fascist_dictatorship }
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = { government = fascist_dictatorship }
+				GRE = { government = fascist_dictatorship }
+			}
+			modifier = {
+				factor = 0
+				NOT = { government = proletarian_dictatorship }
+				GRE = { government = proletarian_dictatorship }
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					government = democracy
+					government = hms_government
+				}
+				GRE = {
+					NOT = {
+						government = democracy
+						government = hms_government
+						government = prussian_constitutionalism
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					government = presidential_dictatorship
+					government = bourgeois_dictatorship
+				}
+			}
+			modifier = {
+				factor = 0
+				GRE = {
+					NOT = {
+						government = prussian_constitutionalism
+						government = hms_government
+						government = absolute_monarchy
+					}
+				}
+				government = absolute_monarchy
+			}
+		}
+	}
+	
+	
+	grecofication = {
+		picture = megali_idea
+		potential = {
+			primary_culture = greek
+			nationalism_n_imperialism = 1
+			OR = {
+				###ANATOLIA###
+				AND = { owns = 861 NOT = { has_country_flag = grecofication_uskudar } }
+				AND = { owns = 862 NOT = { has_country_flag = grecofication_nicomedia } }
+				AND = { owns = 863 NOT = { has_country_flag = grecofication_prusa } }
+				AND = { owns = 864 NOT = { has_country_flag = grecofication_palaeokastron } }
+				AND = { owns = 865 NOT = { has_country_flag = grecofication_dardanelles } }
+				AND = { owns = 867 NOT = { has_country_flag = grecofication_kotyaion } }
+				AND = { owns = 866 NOT = { has_country_flag = grecofication_afyon } }
+				###IONIA###
+				AND = { owns = 869 NOT = { has_country_flag = grecofication_izmir } }
+				AND = { owns = 870 NOT = { has_country_flag = grecofication_magnesia } }
+				AND = { owns = 871 NOT = { has_country_flag = grecofication_hierapolis } }
+				AND = { owns = 872 NOT = { has_country_flag = grecofication_fethiye } }
+				###PAPHLAGONIA###
+				AND = { owns = 880 NOT = { has_country_flag = grecofication_tiuoviov } }
+				AND = { owns = 881 NOT = { has_country_flag = grecofication_bithynium } }
+				AND = { owns = 883 NOT = { has_country_flag = grecofication_sinope  } } 
+				AND = { owns = 3431 NOT = { has_country_flag = grecofication_cankiri  } } 
+				###PONTUS###
+				AND = { owns = 882 NOT = { has_country_flag = grecofication_trabzon } }
+				AND = { owns = 884 NOT = { has_country_flag = grecofication_kerasous } }
+				AND = { owns = 884 NOT = { has_country_flag = grecofication_rizaion } }
+				AND = { owns = 884 NOT = { has_country_flag = grecofication_argyropolis } }
+				###THRACE###
+				AND = { owns = 828 NOT = { has_country_flag = grecofication_edirne } }
+				AND = { owns = 859 NOT = { has_country_flag = grecofication_gelibolu } }
+				AND = { owns = 858 NOT = { has_country_flag = grecofication_kirklareli } }
+				###CONSTANTINOPLE###
+				AND = { owns = 860 NOT = { has_country_flag = grecofication_kirklareli } }
+				AND = { owns = 861 NOT = { has_country_flag = grecofication_uskudar } }
+				###IKONION###
+				AND = { owns = 873 NOT = { has_country_flag = grecofication_konya } }
+				AND = { owns = 874 NOT = { has_country_flag = grecofication_burdur } }
+				AND = { owns = 875 NOT = { has_country_flag = grecofication_antalya } }
+				AND = { owns = 3432 NOT = { has_country_flag = grecofication_karaman } }
+				###ANKYRA###   
+				AND = { owns = 876 NOT = { has_country_flag = grecofication_ankara } }
+				AND = { owns = 878 NOT = { has_country_flag = grecofication_kayseri } }
+				AND = { owns = 868 NOT = { has_country_flag = grecofication_eskishehir } }
+				###SELEUKEIA###     
+				AND = { owns = 894 NOT = { has_country_flag = grecofication_adana } }
+				AND = { owns = 895 NOT = { has_country_flag = grecofication_silifke } }
+				AND = { owns = 3433 NOT = { has_country_flag = grecofication_sis } }
+				###SEBASTEIA###     
+				AND = { owns = 879 NOT = { has_country_flag = grecofication_sivas } }
+				AND = { owns = 877 NOT = { has_country_flag = grecofication_amasya } }
+				###KOLONEIA###      
+				AND = { owns = 3435 NOT = { has_country_flag = grecofication_mezereh } }
+				AND = { owns = 889 NOT = { has_country_flag = grecofication_malatya } }
+				###IBERIA###   
+				AND = { owns = 887 NOT = { has_country_flag = grecofication_erzurum } }
+				AND = { owns = 888 NOT = { has_country_flag = grecofication_erzincan } }
+				AND = { owns = 3437 NOT = { has_country_flag = grecofication_dogubayazit } }
+				###VAASPRAKANIA###    
+				AND = { owns = 890 NOT = { has_country_flag = grecofication_van } }
+				AND = { owns = 892 NOT = { has_country_flag = grecofication_bay } }
+				###BALALES###     
+				AND = { owns = 891 NOT = { has_country_flag = grecofication_bitlis } }
+				AND = { owns = 2414 NOT = { has_country_flag = grecofication_jezira } }
+				###MESOPOTAMIA###
+				AND = { owns = 893 NOT = { has_country_flag = grecofication_diyarbakir } }
+				AND = { owns = 3436 NOT = { has_country_flag = grecofication_mardin } }
+				AND = { owns = 3440 NOT = { has_country_flag = grecofication_ergani } }
+				###ALEPPO###
+				AND = { owns = 897 NOT = { has_country_flag = grecofication_aleppo } }
+				AND = { owns = 900 NOT = { has_country_flag = grecofication_antioch } }
+				AND = { owns = 898 NOT = { has_country_flag = grecofication_antep } }
+				AND = { owns = 899 NOT = { has_country_flag = grecofication_urfa } }
+				AND = { owns = 3434 NOT = { has_country_flag = grecofication_raqqa } }
+				AND = { owns = 896 NOT = { has_country_flag = grecofication_marash } }
+			}
+		}
+		
+		allow = {
+			war = no
+			nationalism_n_imperialism = 1
+		}
+		
+		effect = {
+			###ANATOLIA###
+			random_owned = {
+				limit = { province_id = 862 }
+				862 = { 
+					change_province_name = "Nikomedeia" 
+					state_scope = { change_region_name = "Opsikíou" }	
+				}
+				owner = { set_country_flag = grecofication_nicomedia }
+			}
+			random_owned = {
+				limit = { province_id = 863 }
+				863 = { change_province_name = "Prusa" }
+				owner = { set_country_flag = grecofication_prusa }
+			}
+			random_owned = {
+				limit = { province_id = 864 }
+				864 = { change_province_name = "Palaiókastron" }
+				owner = { set_country_flag = grecofication_palaeokastron }
+			}
+			random_owned = {
+				limit = { province_id = 865 }
+				865 = { change_province_name = "Dardanéllia" }
+				owner = { set_country_flag = grecofication_dardanelles }
+			}
+			random_owned = {
+				limit = { province_id = 867 }
+				867 = { change_province_name = "Kotyáion" }
+				owner = { set_country_flag = grecofication_kotyaion }
+			}
+			random_owned = {
+				limit = { province_id = 866 }
+				866 = { change_province_name = "Nikópolis" }
+				owner = { set_country_flag = grecofication_afyon }
+			}
+			###IONIA###
+			random_owned = {
+				limit = { province_id = 869 }
+				869 = {
+					change_province_name = "Smýrna"
+					state_scope = { change_region_name = "Ionía" }
+				}
+				owner = { set_country_flag = grecofication_izmir }
+			}
+			random_owned = {
+				limit = { province_id = 870 }
+				870 = { change_province_name = "Magnesía" }
+				owner = { set_country_flag = grecofication_magnesia }
+			}
+			random_owned = {
+				limit = { province_id = 871 }
+				871 = { change_province_name = "Hierápolis" }
+				owner = { set_country_flag = grecofication_hierapolis }
+			}
+			random_owned = {
+				limit = { province_id = 872 }
+				872 = { change_province_name = "Telmessos" }
+				owner = { set_country_flag = grecofication_fethiye }
+			}
+			###PAPHLAGONIA###
+			random_owned = {
+				limit = { province_id = 883 }
+				883 = { 
+					change_province_name = "Sinópe" 
+					state_scope = { change_region_name = "Paphlagonía" }	
+				}
+				owner = { set_country_flag = grecofication_sinope }
+			}
+			random_owned = {
+				limit = { province_id = 880 }
+				880 = { change_province_name = "Tiuoviov" }
+				owner = { set_country_flag = grecofication_tiuoviov }
+			}
+			random_owned = {
+				limit = { province_id = 881 }
+				881 = { change_province_name = "Bithynion" }
+				owner = { set_country_flag = grecofication_bithynium }
+			}
+			random_owned = {
+				limit = { province_id = 3431 }
+				3431 = { change_province_name = "Gángra" }
+				owner = { set_country_flag = grecofication_cankiri }
+			}
+			###PONTUS###
+			random_owned = {
+				limit = { province_id = 882 }
+				882 = { 
+					change_province_name = "Trapezoúnta" 
+					state_scope = { change_region_name = "Póntos" }	
+				}
+				owner = { set_country_flag = grecofication_trabzon }
+			}
+			random_owned = {
+				limit = { province_id = 884 }
+				884 = { change_province_name = "Kerasoús" }
+				owner = { set_country_flag = grecofication_kerasous }
+			}
+			random_owned = {
+				limit = { province_id = 3320 }
+				3320 = { change_province_name = "Rizáion" }
+				owner = { set_country_flag = grecofication_rizaion }
+			}
+			random_owned = {
+				limit = { province_id = 3321 }
+				3321 = { change_province_name = "Argyroúpolis " }
+				owner = { set_country_flag = grecofication_argyropolis }
+			}
+			###THRACE###
+			random_owned = {
+				limit = { province_id = 828 }
+				828 = { change_province_name = "Adrianoúpolis" }
+				owner = { set_country_flag = grecofication_edirne }
+			}
+			random_owned = {
+				limit = { province_id = 859 }
+				859 = { change_province_name = "Kallípolis" }
+				owner = { set_country_flag = grecofication_gelibolu }
+			}
+			random_owned = {
+				limit = { province_id = 858 }
+				858 = { change_province_name = "Saranta Ekklisiès" }
+				owner = { set_country_flag = grecofication_kirklareli }
+			}
+			###CONSTANTINOPLE###
+			random_owned = {
+				limit = { province_id = 860 }
+				860 = {
+					change_province_name = "Konstantinoúpolis"
+					state_scope = { change_region_name = "Konstantinoúpolis" }	
+				}
+				owner = { set_country_flag = grecofication_constantinople }
+			}	
+			random_owned = {
+				limit = { province_id = 861 }
+				861 = { change_province_name = "Skoutárion" }
+				owner = { set_country_flag = grecofication_uskudar }
+			}
+			###IKONION###
+			random_owned = {
+				limit = { province_id = 873 }
+				873 = {
+					change_province_name = "Ikónion"
+					state_scope = { change_region_name = "Anatolikón" }	
+				}
+				owner = { set_country_flag = grecofication_konya }
+			}	
+			random_owned = {
+				limit = { province_id = 874 }
+				874 = { change_province_name = "Polydórion" }
+				owner = { set_country_flag = grecofication_burdur }
+			}	
+			random_owned = {
+				limit = { province_id = 875 }
+				875 = { change_province_name = "Attáleia" }
+				owner = { set_country_flag = grecofication_antalya }
+			}	
+			random_owned = {
+				limit = { province_id = 3432  }
+				3432 = { change_province_name = "Láranda" }
+				owner = { set_country_flag = grecofication_karaman }
+			}	
+			###ANKYRA######   
+			random_owned = {
+				limit = { province_id = 876 }
+				876 = {
+					change_province_name = "Ánkyra"
+					state_scope = { change_region_name = "Boukellárion-Charasiánon" }	
+				}
+				owner = { set_country_flag = grecofication_ankara }
+			}	
+			random_owned = {
+				limit = { province_id = 878 }
+				878 = { change_province_name = "Kaisáreia" }
+				owner = { set_country_flag = grecofication_kayseri }
+			}
+			random_owned = {
+				limit = { province_id = 868 }
+				868 = { change_province_name = "Dorýlaion" }
+				owner = { set_country_flag = grecofication_eskishehir }
+			}
+			###SELEUKEIA######   
+			random_owned = {
+				limit = { province_id = 894 }
+				894 = {
+					change_province_name = "Adana"
+					state_scope = { change_region_name = "Kilikía-Seleúkeia" }	
+				}
+				owner = { set_country_flag = grecofication_adana }
+			}	
+			random_owned = {
+				limit = { province_id = 895 }
+				895 = { change_province_name = "Seleúkeia" }
+				owner = { set_country_flag = grecofication_silifke }
+			}
+			random_owned = {
+				limit = { province_id = 3433 }
+				3433 = { change_province_name = "Sísion" }
+				owner = { set_country_flag = grecofication_sis }
+			}
+			###SEBASTEIA######   
+			random_owned = {
+				limit = { province_id = 879 }
+				879 = {
+					change_province_name = "Sebasteías"
+					state_scope = { change_region_name = "Sebasteías" }	
+				}
+				owner = { set_country_flag = grecofication_sivas }
+			}	
+			random_owned = {
+				limit = { province_id = 877 }
+				877 = { change_province_name = "Amáseia" }
+				owner = { set_country_flag = grecofication_amasya }
+			}
+			###KOLONEIA######   
+			random_owned = {
+				limit = { province_id = 3435 }
+				3435 = {
+					change_province_name = "Chárpete"
+					state_scope = { change_region_name = "Koloneías" }	
+				}
+				owner = { set_country_flag = grecofication_mezereh }
+			}	
+			random_owned = {
+				limit = { province_id = 889 }
+				889 = { change_province_name = "Melitiní" }
+				owner = { set_country_flag = grecofication_malatya }
+			}
+			###IBERIA######   
+			random_owned = {
+				limit = { province_id = 887 }
+				887 = {
+					change_province_name = "Theodosíoupolis"
+					state_scope = { change_region_name = "Iberías" }	
+				}
+				owner = { set_country_flag = grecofication_erzurum }
+			}	
+			random_owned = {
+				limit = { province_id = 888 }
+				888 = { change_province_name = "Keltziní" }
+				owner = { set_country_flag = grecofication_erzincan }
+			}
+			random_owned = {
+				limit = { province_id = 3437 }
+				3437 = { change_province_name = "Chaláta" }
+				owner = { set_country_flag = grecofication_dogubayazit }
+			}
+			###VAASPRAKANIA######   
+			random_owned = {
+				limit = { province_id = 890 }
+				890 = {
+					change_province_name = "Vaasprakanía"
+					state_scope = { change_region_name = "Vaasprakania" }	
+				}
+				owner = { set_country_flag = grecofication_van }
+			}
+			random_owned = {
+				limit = { province_id = 892 }
+				892 = { change_province_name = "Corduene" }
+				owner = { set_country_flag = grecofication_bay }
+			}
+			###BALALES######   
+			random_owned = {
+				limit = { province_id = 891 }
+				891 = {
+					change_province_name = "Balales"
+					state_scope = { change_region_name = "Balales" }	
+				}
+				owner = { set_country_flag = grecofication_bitlis }
+			}
+			random_owned = {
+				limit = { province_id = 2414 }
+				2414 = { change_province_name = "Bethzabde" }
+				owner = { set_country_flag = grecofication_jezira }
+			}
+			###MESOPOTAMIA######   
+			random_owned = {
+				limit = { province_id = 893 }
+				893 = {
+					change_province_name = "Amida"
+					state_scope = { change_region_name = "Mesopotamía" }	
+				}
+				owner = { set_country_flag = grecofication_diyarbakir }
+			}
+			random_owned = {
+				limit = { province_id = 3436 }
+				3436 = { change_province_name = "Marida" }
+				owner = { set_country_flag = grecofication_mardin }
+			}
+			random_owned = {
+				limit = { province_id = 3440 }
+				3440 = { change_province_name = "Erkne" }
+				owner = { set_country_flag = grecofication_ergani }
+			}
+			###ALEPPO######   
+			random_owned = {
+				limit = { province_id = 897 }
+				897 = {
+					change_province_name = "Berroías"
+					state_scope = { change_region_name = "Próte Syría" }	
+				}
+				owner = { set_country_flag = grecofication_aleppo }
+			}
+			random_owned = {
+				limit = { province_id = 900 }
+				900 = { change_province_name = "Antiókheia" }
+				owner = { set_country_flag = grecofication_antioch }
+			}
+			random_owned = {
+				limit = { province_id = 898 }
+				898 = { change_province_name = "Antep" }
+				owner = { set_country_flag = grecofication_antep }
+			}
+			random_owned = {
+				limit = { province_id = 899 }
+				899 = { change_province_name = "Edessa" }
+				owner = { set_country_flag = grecofication_urfa }
+			}
+			random_owned = {
+				limit = { province_id = 3434 }
+				3434 = { change_province_name = "Kallínikos" }
+				owner = { set_country_flag = grecofication_raqqa }
+			}
+			random_owned = {
+				limit = { province_id = 896 }
+				896 = { change_province_name = "Germanikeía" }
+				owner = { set_country_flag = grecofication_marash }
+			}
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+}

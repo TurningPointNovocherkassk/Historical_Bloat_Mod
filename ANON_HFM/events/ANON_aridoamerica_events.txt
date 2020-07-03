@@ -1,0 +1,5566 @@
+
+##############################################################
+#															 #
+#    Juan Bautista Alvarado's Declaration of Independence    #
+#															 #
+##############################################################
+
+	country_event = {
+		id = 1110000
+		title = "EVTNAME1110000" #Alta California's former Governor, José Figueroa, has given up the ghost. Santa Anna needs to appoint a new one.
+		desc = "EVTDESC1110000" #A temporary Governor will act in his place until the official appointee arrives in case of appointing a foreign Governor.
+		picture = "alta_california"
+		trigger = {
+			tag = MEX
+			C4L = {	exists = no }
+			government = presidential_dictatorship
+			NOT = {
+				OR = {
+					has_country_flag = appointed_chico
+					has_country_flag = appointed_vallejo
+					has_country_flag = californio_war_aftermath
+					has_country_flag = mexico_1836_set_up
+				}
+				year = 1860
+			}
+		}
+
+		mean_time_to_happen = {
+			days = 1
+		}
+
+		option = {
+			name = "EVTOPTA1110000" #Appoint Mexican-born Mariano Chico, loyal to the government.
+			set_country_flag = appointed_chico
+			ai_chance = {
+				factor = 90
+			}
+		}
+		option = {
+			name = "EVTOPTB1110000" #Appoint Californian Mariano Guadalupe Vallejo Commander of the Fourth Military District and Director of Colonization of the Northern Frontier
+			set_country_flag = appointed_vallejo
+			ai_chance = {
+				factor = 10
+			}
+		}
+	}
+	
+	country_event = {
+		id = 1110001
+		title = "EVTNAME1110001" #News from Alta California, while appointed Governor Mariano Chico was travelling to Mexico City to gather troops against a Californio revolt
+		desc = "EVTDESC1110001" #The Californios rose up in arms and revolted
+		picture = "alta_california"
+		trigger = {
+			tag = MEX
+			C4L = {	exists = no }
+			government = presidential_dictatorship
+			has_country_flag = appointed_chico
+			NOT = {
+				OR = {
+					has_country_flag = californio_revolt
+					has_country_flag = californio_revolt_supported
+				}
+			}
+		}
+
+		mean_time_to_happen = {
+			months = 11
+			modifier = { 
+				factor = 0.1
+				year = 1837
+			}
+		}
+
+		immediate = {
+			MEX_85 = { add_core = C4L }
+			MEX_104 = { add_core = C4L }
+			MEX_2139 = { add_core = C4L }
+			3393 = { add_core = C4L }
+			any_owned = {
+				limit = {
+					is_core = C4L
+				}
+				secede_province = C4L
+			}
+		}
+		
+		option = {
+			name = "EVTOPTA1110001" #Ok retard
+			set_country_flag = californio_revolt
+			country_event = 1110002
+			C4L = {
+				define_general = {
+					name = "Isaac Graham"
+					personality = skilled
+					background = adventurer
+				}
+				leadership = 80
+				treasury = 10000
+				small_arms = 300
+				ammunition = 200
+				canned_food = 200
+				artillery = 100
+				wine = 200
+				liquor = 200
+				capital = 87
+				add_country_modifier = {
+					name = america_new_world
+					duration = 5475
+				}
+			}
+			ai_chance = {
+				factor = 90
+				modifier = {
+					factor = 0.52
+					war = yes
+				}
+			}	
+		}
+		
+		option = {
+			name = "EVTOPTB1110001" #There is nothing we can do right now
+			set_country_flag = californio_revolt_done_shit
+			C4L = {
+				define_general = {
+					name = "Isaac Graham"
+					personality = skilled
+					background = adventurer
+				}
+				leadership = 80
+				treasury = 10000
+				small_arms = 300
+				ammunition = 200
+				canned_food = 200
+				artillery = 100
+				wine = 200
+				liquor = 200
+				capital = 87
+				add_country_modifier = {
+					name = america_new_world
+					duration = 5475
+				}
+			}
+			ai_chance = {
+				factor = 10
+				modifier = {
+					factor = 4.5
+					war = yes
+				}
+			}
+		}
+		
+		option = {
+			name = "EVTOPTC1110001" #We will support them!
+			set_country_flag = californio_revolt_supported
+			random_country = {
+				limit = {
+					capital = 2172
+					primary_culture = mexican
+				}
+				country_event = { id = 1110002 days = 1 }
+			}
+			C4L = {
+				define_general = {
+					name = "Isaac Graham"
+					personality = skilled
+					background = adventurer
+				}
+				leadership = 80
+				treasury = 10000
+				small_arms = 300
+				ammunition = 200
+				canned_food = 200
+				artillery = 100
+				wine = 200
+				liquor = 200
+				capital = 87
+				add_country_modifier = {
+					name = america_new_world
+					duration = 5475
+				}
+			}
+			change_tag_no_core_switch = C4L
+			ai_chance = {
+				factor = 0
+			}
+		}
+	}
+	
+	country_event = {
+		id = 1110002
+		title = "EVTNAME1110002" #News from Alta California, while appointed Governor Mariano Chico was travelling to Mexico City to gather troops against a Californio revolt
+		desc = "EVTDESC1110002" #The Californios rose up in arms and revolted
+		picture = "juan_bautista_alvarado"
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = "EVTOPTA1110002" #Recognize Juan Bautista Alvarado, leader of the revolt, as the Governor (Alta California remains a vassal until the 1824 federal constitution is restored)
+			set_country_flag = recognized_alvarado
+			create_vassal = C4L
+			create_alliance = C4L
+			relation = {
+				who = C4L
+				value = 400
+			}	
+			diplomatic_influence = {
+				who = C4L
+				value = 400
+			}		
+			MEX_94 = { add_core = C4L }
+			MEX_97 = { add_core = C4L }
+			110 = { add_core = C4L }
+			107 = { add_core = C4L }
+			3399 = { add_core = C4L }
+			3398 = { add_core = C4L }
+			101 = { add_core = C4L }
+			100 = { add_core = C4L }
+			3396 = { add_core = C4L }
+			3393 = { add_core = C4L }
+			any_owned = {
+				limit = {
+					is_core = C4L
+				}
+				secede_province = C4L
+			}
+			89 = {
+				any_pop = {
+					militancy = 3
+					consciousness = 3
+				}
+				add_province_modifier = { name = political_tensions duration = 1825 }
+			}
+			ai_chance = {
+				factor = 90
+			}
+		}
+		option = {
+			name = "EVTOPTB1110002" #Mariano Chico is still the Governor, war with Alta California
+			set_country_flag = alvarado_unrecognized
+			C4L = {
+				add_country_modifier = {
+					name = unrecognized_country
+					duration = 3650
+				}
+			}
+			war = {
+				target = C4L
+				attacker_goal = { casus_belli = civil_war }
+				defender_goal = { casus_belli = become_independent }
+				call_ally = no
+			}
+			ai_chance = {
+				factor = 10
+			}
+		}
+	}
+	
+	country_event = {
+		id = 1110003
+		title = "EVTNAME1110003" #Los Angeles' council protests the appointment of Alvarado as the Governor. Player must choose if Alvarado stays or Carlos Antonio Carrillo
+		desc = "EVTDESC1110003" #Takes his place, he's a Californian and loved by the people of Los Angeles
+		picture = "alta_california"
+		trigger = {
+			tag = MEX
+			C4L = {
+				ai = yes
+				vassal_of = THIS
+			}
+			has_country_flag = recognized_alvarado
+			NOT = {
+				OR = {
+					has_country_flag = appoint_carrillo
+					has_country_flag = alvarado_stays
+				}
+			}
+			year = 1837
+		}
+
+		mean_time_to_happen = {
+			months = 12
+		}
+
+		option = {
+			name = "EVTOPTA1110003" #Appoint Californio Carlos Antonio Carrillo, popular among the people of Los Angeles
+			set_country_flag = appoint_carrillo
+			C4L = {
+				any_owned = {
+					limit = {
+						is_core = C4L
+						NOT = {
+							OR = {
+								region = MEX_85 #Southern California
+								region = MEX_2139 #Baja California
+							}
+						}
+					}
+					any_pop = {
+						militancy = 4
+						consciousness = 4
+					}
+					add_province_modifier = { name = political_tensions duration = 1825 }
+				}
+				any_owned = {
+					limit = {
+						OR = {
+							region = MEX_85 #Southern California
+							region = MEX_2139 #Baja California
+						}
+					}
+					remove_province_modifier = political_tensions
+					any_pop = {
+						militancy = -9
+						consciousness = -9
+					}
+				}
+			}
+			ai_chance = {
+				factor = 90
+			}
+		}
+		option = {
+			name = "EVTOPTB1110003" #Alvarado stays, can't risk another revolt
+			set_country_flag = alvarado_stays
+			C4L = {
+				any_owned = {
+					limit = {
+						is_core = C4L
+						NOT = {
+							OR = {
+								region = MEX_85 #Southern California
+								region = MEX_2139 #Baja California
+							}
+						}
+					}
+					any_pop = {
+						militancy = 4
+						consciousness = 4
+					}
+					add_province_modifier = { name = political_tensions duration = 1825 }
+				}
+			}
+			ai_chance = {
+				factor = 10
+			}
+		}
+	}
+	
+	country_event = {
+		id = 1110004
+		title = "EVTNAME1110004" #Juan Bautista Alvarado revolts once again, threatening civil war if he's not recognized as the Governor
+		desc = "EVTDESC1110004"
+		picture = "alta_california"
+		trigger = {
+			tag = MEX
+			C4L = {
+				ai = yes
+				vassal_of = THIS
+			}
+			has_country_flag = appoint_carrillo
+			NOT = {
+				OR = {
+					has_country_flag = appoint_alvarado_again
+					has_country_flag = carrillo_stays
+				}
+			}
+		}
+
+		mean_time_to_happen = {
+			months = 3
+		}
+
+		option = {
+			name = "EVTOPTA1110004" #Relent and recognize Alvarado as the Governor
+			set_country_flag = appoint_alvarado_again
+		#	C4L = {
+		#		any_owned = {
+		#			limit = {
+		#				OR = {
+		#					region = MEX_85 #Southern California
+		#					region = MEX_2139 #Baja California
+		#				}
+		#			}
+		#			any_pop = {
+		#				militancy = 4
+		#				consciousness = 4
+		#			}
+		#			add_province_modifier = { name = political_tensions duration = 1825 }
+		#		}
+		#		any_owned = {
+		#			limit = {
+		#				has_province_modifier = political_tensions
+		#				NOT = {
+		#					OR = {
+		#						region = MEX_85 #Southern California
+		#						region = MEX_2139 #Baja California
+		#					}
+		#				}
+		#			}
+		#			remove_province_modifier = political_tensions
+		#		}
+		#	}
+			##############
+			prestige = -15
+			inherit = C4L
+			any_owned = {
+				limit = {
+					OR = {
+						region = MEX_85 #Southern California
+						region = MEX_2139 #Baja California
+					}
+				}
+				any_pop = {
+					militancy = 4
+					consciousness = 4
+				}
+				add_province_modifier = { name = political_tensions duration = 1825 }
+			}
+			any_owned = {
+				limit = {
+					has_province_modifier = political_tensions
+					NOT = {
+						OR = {
+							region = MEX_85 #Southern California
+							region = MEX_2139 #Baja California
+						}
+					}
+				}
+				remove_province_modifier = political_tensions
+			}
+			ai_chance = {
+				factor = 90
+			}
+		}
+		option = {
+			name = "EVTOPTB1110004" #Carrillo stays, to war it is
+			set_country_flag = carrillo_stays
+			release_vassal = C4L	
+			relation = {
+				who = C4L
+				value = -400
+			}	
+			diplomatic_influence = {
+				who = C4L
+				value = -400
+			}		
+			war = {
+				target = C4L
+				attacker_goal = { casus_belli = civil_war }
+				defender_goal = { casus_belli = become_independent }
+				call_ally = no
+			}
+			C4L = {
+				any_owned = {
+					limit = {
+						is_core = C4L
+						NOT = {
+							OR = {
+								region = MEX_85 #Southern California
+								region = MEX_2139 #Baja California
+							}
+						}
+					}
+					any_pop = {
+						militancy = -9
+						consciousness = -9
+					}
+					remove_province_modifier = political_tensions
+				}
+				any_owned = {
+					limit = {
+						OR = {
+							region = MEX_85 #Southern California
+							region = MEX_2139 #Baja California
+						}
+					}
+					add_province_modifier = { name = political_tensions duration = 1825 }
+					any_pop = {
+						militancy = 5
+						consciousness = 5
+					}
+				}
+			}
+			ai_chance = {
+				factor = 10
+			}
+		}
+	}
+	
+	country_event = {
+		id = 1110005
+		title = "EVTNAME1110005" #The aftermath of the war against Alta California, Carrillo is appointed again and Alvarado is executed.
+		desc = "EVTDESC1110005"
+		picture = "juan_bautista_alvarado"
+		trigger = {
+			tag = MEX
+			C4L = {
+				exists = no
+				all_core = { owned_by = THIS }
+			}
+			has_country_flag = carrillo_stays
+			NOT = { has_country_flag = californio_war_aftermath }
+		}
+
+		option = {
+			name = "EVTOPTA1110005"
+			set_country_flag = californio_war_aftermath
+			any_owned = {
+				limit = {
+					is_core = C4L
+					NOT = {
+						OR = {
+							region = MEX_85 #Southern California
+							region = MEX_2139 #Baja California
+						}
+					}
+				}
+				any_pop = {
+					militancy = 3
+					consciousness = 3
+				}
+				add_province_modifier = { name = political_tensions duration = 1825 }
+			}
+			any_owned = {
+				limit = {
+					OR = {
+						region = MEX_85 #Southern California
+						region = MEX_2139 #Baja California
+					}
+				}
+				remove_province_modifier = political_tensions
+				any_pop = {
+					militancy = -9
+					consciousness = -9
+				}
+			}
+			prestige = 30
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+	
+	
+#############################################################
+#															#
+#         		War of Californio Independence Events		#
+#															#
+#############################################################
+
+	country_event = {
+		id = 1110006
+		title = "EVTNAME1110006" #Santa Anna Captured, again lol
+		desc = "EVTDESC1110006"
+		picture = "surrender_of_santanna"
+		
+		trigger = {
+			tag = C4L
+			war_with = MEX
+			national_provinces_occupied = 0.15
+			any_owned_province = { country_units_in_province = MEX }
+			NOT = {
+				has_country_flag = santa_ana_captured_2
+				has_global_flag = santa_ana_executed
+			}
+			ai = no
+		}
+		
+		mean_time_to_happen = {
+			months = 1
+			modifier = {
+				factor = 0.75
+				C4L = { national_provinces_occupied = 0.05 }
+			}
+			modifier = {
+				factor = 0.5
+				C4L = { national_provinces_occupied = 0.50 }
+			}
+			modifier = {
+				factor = 0.5
+				C4L = { national_provinces_occupied = 0.75 }
+			}
+		}
+		
+		option = {
+			name = "EVTOPTA1110006"
+			set_country_flag = santa_ana_captured_2
+			MEX = { country_event = 1110007 }
+			ai_chance = {
+				factor = 100
+			}
+		}
+		
+		option = {
+			name = "EVTOPTB1110006"
+			set_country_flag = santa_ana_captured_2
+			set_global_flag = santa_ana_executed
+			war_exhaustion = -20
+			MEX = {	war_exhaustion = 40 }
+			ai_chance = {
+				factor = 0
+			}
+		}
+	}
+
+	country_event = {
+		id = 1110007
+		title = "EVTNAME1110006" #Santa Anna Captured! -- to MEX
+		desc = "EVTDESC1110007"
+		news = yes
+		news_title = "EVTNAME1110007_NEWS_TITLE"
+		news_desc_long = "EVTNAME1110007_NEWS_LONG"
+		news_desc_medium = "EVTDESC1110007_NEWS_MEDIUM"
+		news_desc_short = "EVTDESC1110007_NEWS_SHORT"
+		picture = "surrender_of_santanna"
+		major = yes
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = "EVTOPTA1110007"
+			war_exhaustion = 20
+			prestige = -20
+			end_war = C4L
+			C4L = {
+				any_owned = {
+					limit = { is_core = MEX }
+					remove_core = MEX
+				}
+				country_event = 1110008
+			}
+			add_country_modifier = {
+				name = power_vacuum
+				duration = 365
+			}
+			ai_chance = {
+				factor = 5
+			}
+		}
+		
+		option = {
+			name = "EVTOPTB1110007"
+			war_exhaustion = 40
+			prestige = -10
+			end_war = C4L
+			C4L = { country_event = 1110009 }
+			add_country_modifier = {
+				name = power_vacuum
+				duration = 365
+			}
+			ai_chance = {
+				factor = 80
+			}
+		}
+		
+		option = {
+			name = "EVTOPTC1110007"
+			war_exhaustion = 60
+			badboy = 5
+			C4L = { country_event = 1110010 }
+			add_country_modifier = {
+				name = power_vacuum
+				duration = 365
+			}
+			ai_chance = {
+				factor = 15
+			}
+		}
+	}
+
+	country_event = {
+		id = 1110008
+		title = "EVTNAME1110008" #The Treaties of San Diego
+		desc = "EVTDESC1110008"
+		picture = "treaty_of_san_diego"
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = "EVTOPTA1110008"
+			any_country = {
+				limit = {
+					alliance_with = MEX
+					war_with = C4L
+				}
+				end_war = C4L
+			}
+			prestige = 10
+			relation = { who = MEX value = 400 }
+			add_country_modifier = {
+				name = treaties_of_san_diego
+				duration = 1825
+			}
+		}
+	}
+
+	country_event = {
+		id = 1110009
+		title = "EVTNAME1110009" #Ceasefire With Mexico
+		desc = "EVTDESC1110009"
+		picture = "administration"
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = "EVTOPTA1110009"
+			any_country = {
+				limit = {
+					alliance_with = MEX
+					war_with = C4L
+				}
+				end_war = C4L
+			}
+			relation = { who = MEX value = 200 }
+			add_country_modifier = {
+				name = treaties_of_san_diego
+				duration = 1095
+			}
+		}
+	}
+
+
+	country_event = {
+		id = 1110010
+		title = "EVTNAME1110010" #Mexico Ignores the Treaties
+		desc = "EVTDESC1110010"
+		picture = "treaty_of_san_diego"
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = "EVTOPTA1110010"
+			war_exhaustion = -20
+			random_owned = {
+				limit = {
+					is_capital = yes
+					NOT = { controlled_by = THIS }
+				}
+				change_controller = C4L
+			}
+			USA = { country_event = 1110012 }
+			ai_chance = {
+				factor = 100
+			}
+		}
+		
+		option = {
+			name = "EVTOPTB1110010"
+			war_exhaustion = -20
+			random_owned = {
+				limit = {
+					is_capital = yes
+					NOT = { controlled_by = THIS }
+				}
+				change_controller = C4L
+			}
+			ai_chance = {
+				factor = 0
+			}
+		}
+	}
+
+	country_event = {
+		id = 1110011
+		title = "EVTNAME1110011" #War With Mexico!
+		desc = "EVTDESC1110011"
+		picture = "administration"
+		
+		trigger = {
+			tag = C4L
+			has_country_modifier = treaties_of_san_diego
+			part_of_sphere = no
+			MEX = {
+				war_with = C4L
+				NOT = { war_with = USA }
+			}
+		}
+		
+		mean_time_to_happen = {
+			days = 1
+		}
+		
+		option = {
+			name = "EVTOPTA1110011"
+			remove_country_modifier = treaties_of_san_diego
+			USA = { country_event = 1110012 }
+			ai_chance = {
+				factor = 100
+			}
+		}
+		
+		option = {
+			name = "EVTOPTB1110011"
+			remove_country_modifier = treaties_of_san_diego
+			ai_chance = {
+				factor = 0
+			}
+		}
+	}
+
+	country_event = {
+		id = 1110012
+		title = "EVTNAME1110012" #The Californio Diplomat
+		desc = "EVTDESC1110012"
+		picture = "administration"
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = "EVTOPTA1110012"
+			diplomatic_influence = { who = FROM value = 200 }
+			relation = { who = FROM value = 50 }
+			relation = { who = MEX value = -50 }
+			create_alliance = FROM
+			leave_alliance = MEX
+			ai_chance = { factor = 75 }
+		}
+		
+		option = {
+			name = "EVTOPTB1110012"
+			diplomatic_influence = { who = FROM value = -100 }
+			relation = { who = FROM value = -50 }
+			relation = { who = MEX value = 50 }
+			ai_chance = { factor = 25 }
+		}
+	}
+
+#############################################################
+#															#
+#         	War of Riograndese Independence Events		    #
+#															#
+#############################################################
+
+	country_event = {
+		id = 1110013
+		title = "EVTNAME1110013" #Rio Grande war.
+		desc = "EVTDESC1110013"
+		picture = "rio_bravo"
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = "EVTOPTA1110013"
+			diplomatic_influence = { who = RGR value = -400 }
+			relation = { who = RGR value = -400 }
+			release_vassal = RGR
+			leave_alliance = RGR
+			end_military_access = RGR
+			war = {
+				target = RGR
+				attacker_goal = { casus_belli = civil_war }
+				defender_goal = { casus_belli = become_independent }
+			}
+			ai_chance = { factor = 100 }
+		}
+	}
+	
+	country_event = {
+		id = 1110014
+		title = "EVTNAME1110014" #Notification event for player Rio Grande
+		desc = "EVTDESC1110014"
+		picture = "rio_bravo"
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = "EVTOPTA1110014"
+			diplomatic_influence = { who = MEX value = -400 }
+			relation = { who = MEX value = -400 }
+			leave_alliance = MEX
+			end_military_access = MEX
+			ai_chance = { factor = 100 }
+		}
+	}
+	
+	country_event = {
+		id = 1110015
+		title = "EVTNAME1110015" #Santa Anna Captured, again lol
+		desc = "EVTDESC1110015"
+		picture = "surrender_of_santanna"
+		
+		trigger = {
+			tag = RGR
+			war_with = MEX
+			national_provinces_occupied = 0.15
+			any_owned_province = { country_units_in_province = MEX }
+			NOT = {
+				has_country_flag = santa_ana_captured_3
+				has_global_flag = santa_ana_executed
+			}
+			ai = no
+		}
+		
+		mean_time_to_happen = {
+			months = 1
+			modifier = {
+				factor = 0.75
+				RGR = { national_provinces_occupied = 0.05 }
+			}
+			modifier = {
+				factor = 0.5
+				RGR = { national_provinces_occupied = 0.50 }
+			}
+			modifier = {
+				factor = 0.5
+				RGR = { national_provinces_occupied = 0.75 }
+			}
+		}
+		
+		option = {
+			name = "EVTOPTA1110015"
+			set_country_flag = santa_ana_captured_3
+			MEX = { country_event = 1110016 }
+			ai_chance = {
+				factor = 100
+			}
+		}
+		
+		option = {
+			name = "EVTOPTB1110015"
+			set_country_flag = santa_ana_captured_3
+			set_global_flag = santa_ana_executed
+			war_exhaustion = -20
+			MEX = {	war_exhaustion = 40 }
+			ai_chance = {
+				factor = 0
+			}
+		}
+	}
+
+	country_event = {
+		id = 1110016
+		title = "EVTNAME1110015" #Santa Anna Captured! -- to MEX
+		desc = "EVTDESC1110016"
+		news = yes
+		news_title = "EVTNAME1110016_NEWS_TITLE"
+		news_desc_long = "EVTNAME1110016_NEWS_LONG"
+		news_desc_medium = "EVTDESC1110016_NEWS_MEDIUM"
+		news_desc_short = "EVTDESC1110016_NEWS_SHORT"
+		picture = "surrender_of_santanna"
+		major = yes
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = "EVTOPTA1110016"
+			war_exhaustion = 20
+			prestige = -20
+			end_war = RGR
+			RGR = {
+				any_owned = {
+					limit = { is_core = MEX }
+					remove_core = MEX
+				}
+				country_event = 1110017
+			}
+			add_country_modifier = {
+				name = power_vacuum
+				duration = 365
+			}
+			ai_chance = {
+				factor = 5
+			}
+		}
+		
+		option = {
+			name = "EVTOPTB1110016"
+			war_exhaustion = 40
+			prestige = -10
+			end_war = RGR
+			RGR = { country_event = 1110018 }
+			add_country_modifier = {
+				name = power_vacuum
+				duration = 365
+			}
+			ai_chance = {
+				factor = 80
+			}
+		}
+		
+		option = {
+			name = "EVTOPTC1110016"
+			war_exhaustion = 60
+			badboy = 5
+			RGR = { country_event = 1110019 }
+			add_country_modifier = {
+				name = power_vacuum
+				duration = 365
+			}
+			ai_chance = {
+				factor = 15
+			}
+		}
+	}
+
+	country_event = {
+		id = 1110017
+		title = "EVTNAME1110017" #The Treaties of Ciudad Victoria
+		desc = "EVTDESC1110017"
+		picture = "treaty_of_san_diego"
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = "EVTOPTA1110017"
+			any_country = {
+				limit = {
+					alliance_with = MEX
+					war_with = RGR
+				}
+				end_war = RGR
+			}
+			prestige = 10
+			relation = { who = MEX value = 400 }
+			add_country_modifier = {
+				name = treaties_of_ciudad_victoria
+				duration = 1825
+			}
+		}
+	}
+
+	country_event = {
+		id = 1110018
+		title = "EVTNAME1110018" #Ceasefire With Mexico
+		desc = "EVTDESC1110018"
+		picture = "administration"
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = "EVTOPTA1110018"
+			any_country = {
+				limit = {
+					alliance_with = MEX
+					war_with = RGR
+				}
+				end_war = RGR
+			}
+			relation = { who = MEX value = 200 }
+			add_country_modifier = {
+				name = treaties_of_ciudad_victoria
+				duration = 1095
+			}
+		}
+	}
+
+
+	country_event = {
+		id = 1110019
+		title = "EVTNAME1110019" #Mexico Ignores the Treaties
+		desc = "EVTDESC1110019"
+		picture = "treaty_of_san_diego"
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = "EVTOPTA1110019"
+			war_exhaustion = -20
+			random_owned = {
+				limit = {
+					is_capital = yes
+					NOT = { controlled_by = THIS }
+				}
+				change_controller = RGR
+			}
+			USA = { country_event = 1110021 }
+			ai_chance = {
+				factor = 100
+			}
+		}
+		
+		option = {
+			name = "EVTOPTB1110019"
+			war_exhaustion = -20
+			random_owned = {
+				limit = {
+					is_capital = yes
+					NOT = { controlled_by = THIS }
+				}
+				change_controller = RGR
+			}
+			ai_chance = {
+				factor = 0
+			}
+		}
+	}
+
+	country_event = {
+		id = 1110020
+		title = "EVTNAME1110020" #War With Mexico!
+		desc = "EVTDESC1110020"
+		picture = "administration"
+		
+		trigger = {
+			tag = RGR
+			has_country_modifier = treaties_of_ciudad_victoria
+			part_of_sphere = no
+			MEX = {
+				war_with = RGR
+				NOT = { war_with = USA }
+			}
+		}
+		
+		mean_time_to_happen = {
+			days = 1
+		}
+		
+		option = {
+			name = "EVTOPTA1110020"
+			remove_country_modifier = treaties_of_ciudad_victoria
+			USA = { country_event = 1110021 }
+			ai_chance = {
+				factor = 100
+			}
+		}
+		
+		option = {
+			name = "EVTOPTB1110020"
+			remove_country_modifier = treaties_of_ciudad_victoria
+			ai_chance = {
+				factor = 0
+			}
+		}
+	}
+
+	country_event = {
+		id = 1110021
+		title = "EVTNAME1110021" #The Riograndese Diplomat
+		desc = "EVTDESC1110021"
+		picture = "administration"
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = "EVTOPTA1110021"
+			diplomatic_influence = { who = FROM value = 200 }
+			relation = { who = FROM value = 50 }
+			relation = { who = MEX value = -50 }
+			create_alliance = FROM
+			leave_alliance = MEX
+			ai_chance = { factor = 75 }
+		}
+		
+		option = {
+			name = "EVTOPTB1110021"
+			diplomatic_influence = { who = FROM value = -100 }
+			relation = { who = FROM value = -50 }
+			relation = { who = MEX value = 50 }
+			ai_chance = { factor = 25 }
+		}
+	}
+	
+#############################
+#Recognize Texas
+
+	country_event = {
+		id = 1110022
+		title = "EVTNAME1110022" #Recognizing Texas
+		desc = "EVTDESC1110022"
+		picture = "texas_state"
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = "EVTOPTA1110022"
+			prestige = 1
+			set_country_flag = texas_legation
+			TEX = {
+				random_list = {
+					25 = { country_event = { id = 1110023 days = 2 } }
+					25 = { country_event = { id = 1110023 days = 5 } }
+					25 = { country_event = { id = 1110023 days = 7 } }
+					25 = { country_event = { id = 1110023 days = 10 } }
+				}
+			}
+			MEX = {
+				random_list = {
+					25 = { country_event = { id = 1110023 days = 2 } }
+					25 = { country_event = { id = 1110023 days = 5 } }
+					25 = { country_event = { id = 1110023 days = 7 } }
+					25 = { country_event = { id = 1110023 days = 10 } }
+				}
+			}
+			random_owned = {
+				limit = { owner = { ai = no NOT = { tag = USA } } }
+				owner = {
+					relation = {
+						who = TEX
+						value = 125
+					}
+					diplomatic_influence = {
+						who = TEX
+						value = 75
+					}
+				}
+			}
+			random_owned = {
+				limit = { owner = { ai = no tag = USA } }
+				owner = {
+					relation = {
+						who = TEX
+						value = 100
+					}
+					diplomatic_influence = {
+						who = TEX
+						value = 50
+					}
+				}
+			
+			}
+			random_owned = {
+				limit = { owner = { ai = yes } }
+				owner = {
+					relation = {
+						who = TEX
+						value = 100
+					}
+					diplomatic_influence = {
+						who = TEX
+						value = 50
+					}
+				}
+			}
+			ai_chance = {
+				factor = 15
+				modifier = {
+					factor = 100
+					OR = {
+						tag = USA
+						tag = FRA
+						tag = BOR
+						tag = NET
+						tag = BEL
+						tag = RUS
+					}
+				}
+			}
+		}
+		
+		option = {
+			name = "EVTOPTB1110022"
+			prestige = 1
+			set_country_flag = not_texas_legation
+			TEX = {
+				random_list = {
+					25 = { country_event = { id = 1110024 days = 2 } }
+					25 = { country_event = { id = 1110024 days = 5 } }
+					25 = { country_event = { id = 1110024 days = 7 } }
+					25 = { country_event = { id = 1110024 days = 10 } }
+				}
+			}
+			MEX = {
+				random_list = {
+					25 = { country_event = { id = 1110024 days = 2 } }
+					25 = { country_event = { id = 1110024 days = 5 } }
+					25 = { country_event = { id = 1110024 days = 7 } }
+					25 = { country_event = { id = 1110024 days = 10 } }
+				}
+			}
+			random_owned = {
+				limit = { owner = { ai = no } }
+				owner = {
+					relation = {
+						who = MEX
+						value = 125
+					}
+					diplomatic_influence = {
+						who = MEX
+						value = 75
+					}
+				}
+			
+			}
+			random_owned = {
+				limit = { owner = { ai = yes } }
+				owner = {
+					relation = {
+						who = MEX
+						value = 100
+					}
+					diplomatic_influence = {
+						who = MEX
+						value = 50
+					}
+				}
+			}
+			random_owned = {
+				limit = { owner = { tag = ENG } }
+				owner = {
+					relation = {
+						who = MEX
+						value = 50
+					}
+					diplomatic_influence = {
+						who = MEX
+						value = 25
+					}
+				}
+			}
+			ai_chance = {
+				factor = 15
+				modifier = {
+					factor = 100
+					alliance_with = MEX
+				}
+				modifier = {
+					factor = 100
+					relation = { who = MEX value = 100 }
+				}
+				modifier = {
+					factor = 0
+					OR = {
+						tag = USA
+						tag = FRA
+						tag = BOR
+						tag = NET
+						tag = BEL
+						tag = RUS
+					}
+				}
+			}
+		}
+		
+		option = {
+			name = "EVTOPTC1110022" #Stay neutral
+			prestige = 1
+			set_country_flag = texas_legation_neutral
+			TEX = {
+				random_list = {
+					25 = { country_event = { id = 1110025 days = 2 } }
+					25 = { country_event = { id = 1110025 days = 5 } }
+					25 = { country_event = { id = 1110025 days = 7 } }
+					25 = { country_event = { id = 1110025 days = 10 } }
+				}
+			}
+			MEX = {
+				random_list = {
+					25 = { country_event = { id = 1110025 days = 2 } }
+					25 = { country_event = { id = 1110025 days = 5 } }
+					25 = { country_event = { id = 1110025 days = 7 } }
+					25 = { country_event = { id = 1110025 days = 10 } }
+				}
+			}
+			ai_chance = {
+				factor = 70
+				modifier = {
+					factor = 100
+					tag = ENG
+				}
+				modifier = {
+					factor = 0
+					OR = {
+						tag = USA
+						tag = FRA
+						tag = BOR
+						tag = NET
+						tag = BEL
+						tag = RUS
+					}
+				}
+			}
+		}
+	}
+	country_event = {
+		id = 1110023
+		title = "EVTNAME1110023" #Texas recognized
+		desc = "EVTDESC1110023"
+		picture = "administration"
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = "EVTOPTA1110023"
+			random_owned = {
+				limit = { owner = { primary_culture = texan } }
+				owner = {
+					prestige = 0.5
+					relation = {
+						who = FROM
+						value = 50
+					}
+				}
+			}
+			random_owned = {
+				limit = { owner = { primary_culture = mexican } }
+				owner = {
+					prestige = -0.5
+					relation = {
+						who = FROM
+						value = -50
+					}
+				}
+			}
+			ai_chance = { factor = 100 }
+		}
+	}
+	country_event = {
+		id = 1110024
+		title = "EVTNAME1110024" #Texas not recognized
+		desc = "EVTDESC1110024"
+		picture = "administration"
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = "EVTOPTA1110024"
+			random_owned = {
+				limit = { owner = { primary_culture = mexican } }
+				owner = {
+					prestige = 5
+					relation = {
+						who = FROM
+						value = 50
+					}
+				}
+			}
+			random_owned = {
+				limit = { owner = { primary_culture = texan } }
+				owner = {
+					prestige = -5
+					relation = {
+						who = FROM
+						value = -50
+					}
+				}
+			}
+			ai_chance = { factor = 100 }
+		}
+	}
+	country_event = {
+		id = 1110025
+		title = "EVTNAME1110025" #stayed neutral
+		desc = "EVTDESC1110025"
+		picture = "administration"
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = "EVTOPTA1110025"
+			ai_chance = { factor = 100 }
+		}
+	}
+	
+#####################
+#Houston, the temporary Texan capital
+
+	country_event = {
+		id = 1110026
+		title = "EVTNAME1110026"
+		desc = "EVTDESC1110026"
+		picture = "texas_state"
+		
+		trigger = {
+			tag = TEX
+			war = no
+			NOT = {
+				OR = {
+					has_country_flag = houston_capital
+					has_country_flag = not_houston_capital
+				}
+			}
+			year = 1837
+		}
+
+		mean_time_to_happen = {
+			months = 4
+		}
+		
+		option = {
+			name = "EVTOPTA1110026"
+			set_country_flag = houston_capital
+			capital = 132
+			132 = {
+				change_province_name = "Houston"
+				add_province_modifier = { name = recently_built_city duration = 365 }
+			}
+			prestige = 2
+			ai_chance = { factor = 100 }
+		}
+		option = {
+			name = "EVTOPTB1110026"
+			set_country_flag = not_houston_capital
+			ai_chance = { factor = 0 }
+		}
+	}
+	
+#####################
+#Aridoamerica alliances
+
+	country_event = {
+		id = 1110027
+		title = "EVTNAME1110027"
+		desc = "EVTDESC1110027"
+		picture = "aridoamerica_big"
+		is_triggered_only = yes
+		
+		option = {
+			name = "EVTOPTA1110027"
+			set_country_flag = aridoamerica_alliance
+			random_owned = {
+				limit = { owner = { tag = RGR } }
+				owner = {
+					any_owned = {
+						limit = {
+							OR = {
+								province_id = 138
+								is_core = TEX
+							}
+						}
+						remove_core = RGR
+						secede_province = TEX
+					}
+					capital = 2150
+					relation = {
+						who = FROM
+						value = 400
+					}
+					diplomatic_influence = {
+						who = FROM
+						value = 400
+					}
+				}
+			}
+			random_owned = {
+				limit = { owner = { tag = TEX } }
+				owner = {
+					any_owned = {
+						limit = {
+							NOT = {
+								province_id = 138
+							}
+							is_core = RGR
+						}
+						remove_core = TEX
+						secede_province = RGR
+					}
+					relation = {
+						who = FROM
+						value = 400
+					}
+					diplomatic_influence = {
+						who = FROM
+						value = 400
+					}
+				}
+			}
+			random_owned = {
+				limit = { owner = { tag = TRG } }
+				owner = {
+					relation = {
+						who = FROM
+						value = 400
+					}
+					diplomatic_influence = {
+						who = FROM
+						value = 400
+					}
+				}
+			}
+			random_owned = {
+				limit = { owner = { tag = C4L } }
+				owner = {
+					any_owned = {
+						limit = {
+							is_core = TEX
+						}
+						remove_core = C4L
+						secede_province = TEX
+					}
+					any_owned = {
+						limit = {
+							is_core = TRG
+						}
+						remove_core = C4L
+						secede_province = TRG
+					}
+					relation = {
+						who = FROM
+						value = 400
+					}
+					diplomatic_influence = {
+						who = FROM
+						value = 400
+					}
+				}
+			}
+			random_owned = {
+				limit = { owner = { tag = DES } }
+				owner = {
+					any_owned = {
+						limit = {
+							is_core = TEX
+						}
+						remove_core = DES
+						secede_province = TEX
+					}
+					any_owned = {
+						limit = {
+							is_core = TRG
+						}
+						remove_core = DES
+						secede_province = TRG
+					}
+					relation = {
+						who = FROM
+						value = 400
+					}
+					diplomatic_influence = {
+						who = FROM
+						value = 400
+					}
+				}
+			}
+			random_owned = {
+				limit = { owner = { tag = CAL } }
+				owner = {
+					any_owned = {
+						limit = {
+							is_core = TEX
+						}
+						remove_core = CAL
+						secede_province = TEX
+					}
+					any_owned = {
+						limit = {
+							is_core = TRG
+						}
+						remove_core = CAL
+						secede_province = TRG
+					}
+					relation = {
+						who = FROM
+						value = 400
+					}
+					diplomatic_influence = {
+						who = FROM
+						value = 400
+					}
+				}
+			}
+			random_owned = {
+				limit = { owner = { tag = SON } }
+				owner = {
+					any_owned = {
+						limit = {
+							is_core = CAL
+							CAL = {
+								exists = yes
+								has_country_flag = aridoamerica_alliance
+							}
+						}
+						remove_core = SON
+						secede_province = CAL
+					}
+					any_owned = {
+						limit = {
+							is_core = C4L
+							C4L = {
+								exists = yes
+								has_country_flag = aridoamerica_alliance
+							}
+						}
+						remove_core = SON
+						secede_province = C4L
+					}
+					relation = {
+						who = FROM
+						value = 400
+					}
+					diplomatic_influence = {
+						who = FROM
+						value = 400
+					}
+				}
+			}
+			FROM = {
+				country_event = 1110028
+				clr_country_flag = aridoamerica_alliance_transition
+			}
+			ai_chance = { factor = 100 }
+		}
+		option = {
+			name = "EVTOPTB1110027"
+			set_country_flag = aridoamerica_alliance_refuse
+			clr_country_flag = aridoamerica_alliance_transition
+			relation = {
+				who = FROM
+				value = -75
+			}
+			diplomatic_influence = {
+				who = FROM
+				value = -75
+			}
+			FROM = {
+				country_event = 1110029
+			}
+			ai_chance = { factor = 0 }
+		}
+	}
+	
+	country_event = {
+		id = 1110028
+		title = "EVTNAME1110028"
+		desc = "EVTDESC1110028"
+		picture = "aridoamerica_big"
+		is_triggered_only = yes
+		
+		option = {
+			name = "EVTOPTA1110028"
+			relation = {
+				who = FROM
+				value = 400
+			}
+			diplomatic_influence = {
+				who = FROM
+				value = 400
+			}
+			create_alliance = FROM
+			ai_chance = { factor = 100 }
+		}
+	}
+	country_event = {
+		id = 1110029
+		title = "EVTNAME1110029"
+		desc = "EVTDESC1110029"
+		picture = "aridoamerica_big"
+		is_triggered_only = yes
+		
+		option = {
+			name = "EVTOPTA1110029"
+			relation = {
+				who = FROM
+				value = -75
+			}
+			diplomatic_influence = {
+				who = FROM
+				value = -75
+			}
+			ai_chance = { factor = 100 }
+		}
+	}
+
+##############################
+#1842 archive war
+
+	country_event = { #Beginning of the Comanche Raids
+		id = 1110030
+		title = "EVTNAME1110030"
+		desc = "EVTDESC1110030"
+		picture = "comanche_spoils"
+		
+		trigger = {
+			tag = TEX
+			has_global_flag = move_capital_133
+			year = 1840
+			NOT = { has_country_flag = archive_war_pre }
+			133 = { NOT = { has_province_modifier = recently_built_city } }
+		}
+		mean_time_to_happen = {
+			months = 3
+		}
+		
+		option = {
+			name = "EVTOPTA1110030"
+			set_country_flag = archive_war_pre
+			133 = {
+				add_province_modifier = { name = comanche_raiders duration = 730 }
+			}
+			ai_chance = { factor = 100 }
+		}
+	}
+	country_event = { #First Mexican skirmishes
+		id = 1110031
+		title = "EVTNAME1110031"
+		desc = "EVTDESC1110031"
+		picture = "mexico_soldiers"
+		
+		trigger = {
+			tag = TEX
+			has_country_flag = archive_war_pre
+			133 = { NOT = { has_province_modifier = comanche_raiders } }
+			NOT = {
+				OR = {
+					has_country_flag = archive_war_austin
+					has_country_flag = archive_war_houston
+				}
+			}
+			year = 1842
+		}
+		mean_time_to_happen = {
+			months = 3
+		}
+		
+		immediate = {
+			any_owned = {
+				limit = {
+					OR = {
+						province_id = 133
+						province_id = 135
+						province_id = 136
+						province_id = 137
+						province_id = 138
+						province_id = 3401
+					}
+				}
+				random_list = {
+					30 = { add_province_modifier = { name = ANON_skirmishes duration = 46 } }
+					25 = { add_province_modifier = { name = ANON_skirmishes duration = 56 } }
+					20 = { add_province_modifier = { name = ANON_skirmishes duration = 66 } }
+					15 = { add_province_modifier = { name = ANON_skirmishes duration = 76 } }
+					10 = { add_province_modifier = { name = ANON_skirmishes duration = 36 } }
+				}
+			}
+		}
+		
+		option = {
+			name = "EVTOPTA1110031" #leave it in austin
+			set_country_flag = archive_war_austin
+			any_pop = {
+				limit = {
+					NOT = {
+						OR = {
+							is_culture_group = native_american
+							is_culture_group = african_diaspora_cultures
+						}
+					}
+				}
+				scaled_militancy = {
+					ideology = liberal
+					factor = 2
+				}
+				scaled_consciousness = {
+					ideology = liberal
+					factor = 2
+				}
+				scaled_militancy = {
+					ideology = conservative
+					factor = -6
+				}
+				scaled_consciousness = {
+					ideology = conservative
+					factor = -6
+				}
+				dominant_issue = {
+					factor = 0.03
+					value = jingoism
+				}
+			}
+			ai_chance = { factor = 90 }
+		}
+		option = {
+			name = "EVTOPTB1110031"
+			set_country_flag = archive_war_houston
+			capital = 132
+			any_pop = {
+				limit = {
+					NOT = {
+						OR = {
+							is_culture_group = native_american
+							is_culture_group = african_diaspora_cultures
+						}
+					}
+				}
+				scaled_militancy = {
+					ideology = liberal
+					factor = -6
+				}
+				scaled_consciousness = {
+					ideology = liberal
+					factor = -6
+				}
+				scaled_militancy = {
+					ideology = conservative
+					factor = 6
+				}
+				scaled_consciousness = {
+					ideology = conservative
+					factor = 6
+				}
+				dominant_issue = {
+					factor = 0.03
+					value = jingoism
+				}
+			}
+			ai_chance = { factor = 10 }
+		}
+	}
+	country_event = { #Second Mexican skirmishes
+		id = 1110032
+		title = "EVTNAME1110032"
+		desc = "EVTDESC1110032"
+		picture = "cowboy_army"
+		
+		trigger = {
+			tag = TEX
+			has_country_flag = archive_war_austin
+			any_owned_province = {
+				NOT = { has_province_modifier = ANON_skirmishes }
+			}
+			NOT = {
+				OR = {
+					has_country_flag = archive_war_austin_2
+					has_country_flag = archive_war_houston_2
+					has_country_flag = archive_war_WAR
+				}
+			}
+		}
+		mean_time_to_happen = {
+			days = 5
+		}
+		
+		immediate = {
+			any_owned = {
+				limit = {
+					OR = {
+						province_id = 133
+						province_id = 134
+						province_id = 135
+						province_id = 136
+						province_id = 137
+						province_id = 138
+						province_id = 3401
+					}
+				}
+				random_list = {
+					30 = {
+						add_province_modifier = { name = ANON_skirmishes duration = 46 }
+						add_province_modifier = { name = comanche_raiders duration = 46 }
+					}
+					25 = {
+						add_province_modifier = { name = ANON_skirmishes duration = 56 }
+						add_province_modifier = { name = comanche_raiders duration = 56 }
+					}
+					20 = {
+						add_province_modifier = { name = ANON_skirmishes duration = 66 }
+						add_province_modifier = { name = comanche_raiders duration = 66 }
+					}
+					15 = {
+						add_province_modifier = { name = ANON_skirmishes duration = 76 }
+						add_province_modifier = { name = comanche_raiders duration = 76 }
+					}
+					10 = {
+						add_province_modifier = { name = ANON_skirmishes duration = 36 }
+						add_province_modifier = { name = comanche_raiders duration = 36 }
+					}
+				}
+			}
+		}
+		
+		option = {
+			name = "EVTOPTA1110032" #Archives remain in Austin
+			set_country_flag = archive_war_austin_2
+			any_pop = {
+				limit = {
+					NOT = {
+						OR = {
+							is_culture_group = native_american
+							is_culture_group = african_diaspora_cultures
+						}
+					}
+				}
+				scaled_militancy = {
+					ideology = liberal
+					factor = 2
+				}
+				scaled_consciousness = {
+					ideology = liberal
+					factor = 2
+				}
+				scaled_militancy = {
+					ideology = conservative
+					factor = -6
+				}
+				scaled_consciousness = {
+					ideology = conservative
+					factor = -6
+				}
+				dominant_issue = {
+					factor = 0.03
+					value = jingoism
+				}
+			}
+			ai_chance = { factor = 70 }
+		}
+		option = {
+			name = "EVTOPTB1110032" #Alright, move them to Houston
+			set_country_flag = archive_war_houston_2
+			capital = 132
+			any_pop = {
+				limit = {
+					NOT = {
+						OR = {
+							is_culture_group = native_american
+							is_culture_group = african_diaspora_cultures
+						}
+					}
+				}
+				scaled_militancy = {
+					ideology = liberal
+					factor = -6
+				}
+				scaled_consciousness = {
+					ideology = liberal
+					factor = -6
+				}
+				scaled_militancy = {
+					ideology = conservative
+					factor = 6
+				}
+				scaled_consciousness = {
+					ideology = conservative
+					factor = 6
+				}
+				dominant_issue = {
+					factor = 0.03
+					value = jingoism
+				}
+			}
+			ai_chance = { factor = 25 }
+		}
+		option = {
+			name = "EVTOPTC1110032" #ARCHIVES CANNOT BE MOVED AT ALL COSTS, RETALIATE AGAINST MEXICO AND THE COMANCHES
+			set_country_flag = archive_war_WAR
+			badboy = 5
+			any_pop = {
+				limit = {
+					NOT = {
+						OR = {
+							is_culture_group = native_american
+							is_culture_group = african_diaspora_cultures
+						}
+					}
+				}
+				dominant_issue = {
+					factor = 0.04
+					value = jingoism
+				}
+			}
+			MEX = {
+				any_owned = {
+					limit = {
+						OR = {
+							province_id = 105
+							province_id = 129
+							province_id = 128
+							province_id = 103
+							province_id = 109
+							province_id = 3398
+							province_id = 107
+						}
+					}
+					add_core = TEX
+				}
+			}
+			any_owned = {
+				limit = {
+					has_pop_culture = dakota
+					OR = {
+						province_id = 133
+						province_id = 134
+						province_id = 135
+						province_id = 136
+						province_id = 137
+						province_id = 138
+						province_id = 3401
+					}
+				}
+				any_pop = {
+					limit = {
+						has_pop_culture = dakota
+						location = {
+							OR = {
+								province_id = 133
+								province_id = 134
+								province_id = 135
+								province_id = 136
+								province_id = 137
+								province_id = 138
+								province_id = 3401
+							}
+						}
+					}
+					random_list = {
+						30 = { reduce_pop = 0.65 }
+						25 = { reduce_pop = 0.55 }
+						20 = { reduce_pop = 0.45 }
+						15 = { reduce_pop = 0.35 }
+						10 = { reduce_pop = 0.25 }
+					}
+					random_list = {
+						60 = { move_pop = 131 }
+						40 = { reduce_pop = 130 }
+					}
+				}
+			}
+			any_owned = {
+				limit = {
+					OR = {
+						has_province_modifier = ANON_skirmishes
+						has_province_modifier = comanche_raiders
+					}
+				}
+				remove_province_modifier = ANON_skirmishes
+				remove_province_modifier = comanche_raiders
+			}
+			war = {
+				target = MEX
+				attacker_goal = { casus_belli = acquire_all_cores }
+				defender_goal = { casus_belli = annex_core_country }
+				call_ally = no
+			}
+			ai_chance = { factor = 5 }
+		}
+	}
+	country_event = { #Aftermath of the archive war
+		id = 1110033
+		title = "EVTNAME1110033"
+		desc = "EVTDESC1110033"
+		picture = "cowboy_army"
+		
+		trigger = {
+			tag = TEX
+			has_country_flag = archive_war_houston_2
+			year = 1843
+			any_owned_province = {
+				NOT = {
+					OR = {
+						has_province_modifier = ANON_skirmishes
+						has_province_modifier = comanche_raiders
+					}
+				}
+			}
+			NOT = {
+				has_country_flag = archive_war_austin_3
+			}
+		}
+		mean_time_to_happen = {
+			days = 1
+		}
+		
+		option = {
+			name = "EVTOPTA1110033"
+			set_country_flag = archive_war_austin_3
+			133 = {
+				add_province_modifier = { name = comanche_raiders duration = 75 }
+			}
+			ai_chance = { factor = 100 }
+		}
+	}
+	country_event = { #Aftermath of the archive war 2; move capital back to houston when everything's safe.
+		id = 1110034
+		title = "EVTNAME1110034"
+		desc = "EVTDESC1110034"
+		picture = "cowboy_army"
+		
+		trigger = {
+			tag = TEX
+			has_country_flag = archive_war_houston_2
+			year = 1843
+			any_owned_province = {
+				NOT = {
+					OR = {
+						has_province_modifier = ANON_skirmishes
+						has_province_modifier = comanche_raiders
+					}
+				}
+			}
+			NOT = {
+				OR = {
+					has_country_flag = archive_war_austin_2_5
+					has_country_flag = archive_war_houston_3
+				}
+			}
+		}
+		mean_time_to_happen = {
+			days = 1
+		}
+		
+		option = {
+			name = "EVTOPTA1110034"
+			set_country_flag = archive_war_austin_2_5
+			capital = 133
+			133 = {
+				add_province_modifier = { name = recently_built_city duration = 730 }
+			}
+			ai_chance = { factor = 60 }
+		}
+		option = {
+			name = "EVTOPTB1110034"
+			set_country_flag = archive_war_houston_3
+			capital = 132
+			132 = {
+				add_province_modifier = { name = recently_built_city duration = 365 }
+			}
+			ai_chance = { factor = 40 }
+		}
+	}
+#####################################
+#Fort Parker Massacre
+
+	country_event = {
+		id = 1110035
+		title = "EVTNAME1110035"
+		desc = "EVTDESC1110035"
+		picture = "comanche_spoils"
+		
+		trigger = {
+			tag = TEX
+			year = 1836
+			owns = 134
+			NOT = {
+				has_country_flag = ft_parker_massacre
+			}
+		}
+		mean_time_to_happen = {
+			months = 4
+		}
+		
+		option = {
+			name = "EVTOPTA1110035" #Get fucked, paleface
+			set_country_flag = ft_parker_massacre
+			134 = {
+				any_pop = {
+					limit = {
+						has_pop_culture = texan
+					}
+					reduce_pop = 0.98
+				}
+				add_province_modifier = { name = comanche_raids duration = 30 }
+			}
+			ai_chance = { factor = 100 }
+		}
+	}
+#####################################
+#Council House Fight
+
+	country_event = {
+		id = 1110036
+		title = "EVTNAME1110036" #Part 1, Comanches seek recognition of the Comancheria
+		desc = "EVTDESC1110036"
+		picture = "san_antonio_tx"
+		
+		trigger = {
+			tag = TEX
+			year = 1840
+			owns = 137
+			NOT = {
+				OR = {
+					has_country_flag = ft_parker_standoff
+					has_country_flag = ft_parker_massacre
+					has_global_flag = comancheria_recognized
+				}
+			}
+		}
+		mean_time_to_happen = {
+			months = 3
+		}
+		
+		option = {
+			name = "EVTOPTA1110036"
+			set_country_flag = ft_parker_standoff
+			137 = {
+				any_pop = {
+					limit = {
+						has_pop_culture = texan
+					}
+					reduce_pop = 1.01
+				}
+			}
+			country_event = 1110037
+			ai_chance = { factor = 100 }
+		}
+	}
+	country_event = {
+		id = 1110037
+		title = "EVTNAME1110037"
+		desc = "EVTDESC1110037"
+		picture = "san_antonio_tx"
+		is_triggered_only = yes
+		
+		option = {
+			name = "EVTOPTA1110037" #massacre
+			country_event = 1110038
+			ai_chance = { factor = 75 }
+		}
+		option = {
+			name = "EVTOPTB1110037" #temporary peace
+			country_event = 1110039
+			ai_chance = { factor = 25 }
+		}
+	}
+	country_event = {
+		id = 1110038
+		title = "EVTNAME1110038"
+		desc = "EVTDESC1110038"
+		picture = "comanche_spoils"
+		is_triggered_only = yes
+		
+		immediate = {
+			set_country_flag = ft_parker_massacre
+			137 = {
+				any_pop = {
+					limit = {
+						has_pop_culture = dakota
+						OR = {
+							type = aristocrats
+							type = soldiers
+						}
+					}
+					reduce_pop = 0.90
+				}
+				add_province_modifier = { name = comanche_raids duration = 5 }
+			}
+		}
+		
+		option = {
+			name = "EVTOPTA1110038"
+			135 = {
+				any_pop = {
+					limit = {
+						has_pop_culture = texan
+					}
+					reduce_pop = 0.95
+				}
+			}
+			ai_chance = { factor = 100 }
+		}
+	}
+	country_event = {
+		id = 1110039
+		title = "EVTNAME1110039"
+		desc = "EVTDESC1110039"
+		picture = "san_antonio_tx"
+		is_triggered_only = yes
+		
+		option = {
+			name = "EVTOPTA1110039"
+			set_country_flag = comancheria_not_recognized
+			country_event = 1110040
+			ai_chance = { factor = 75 }
+		}
+		option = {
+			name = "EVTOPTB1110039"
+			set_country_flag = comancheria_recognized
+			105 = { add_core = COM }
+			136 = { add_core = COM }
+			3401 = { add_core = COM }
+			135 = { add_core = COM }
+			134 = { add_core = COM }
+			129 = { add_core = COM }
+			128 = { add_core = COM }
+			103 = { add_core = COM }
+			133 = { add_core = COM }
+			106 = { add_core = COM }
+			127 = { add_core = COM }
+			131 = { add_core = COM }
+			country_event = 1110041
+			ai_chance = { factor = 25 }
+		}
+	}
+	country_event = {
+		id = 1110040
+		title = "EVTNAME1110040"
+		desc = "EVTDESC1110040"
+		picture = "san_antonio_tx"
+		is_triggered_only = yes
+		
+		option = {
+			name = "EVTOPTA1110040"
+			prestige = 2
+			ai_chance = { factor = 100 }
+		}
+	}
+	country_event = {
+		id = 1110041
+		title = "EVTNAME1110041"
+		desc = "EVTDESC1110041"
+		picture = "comanche_spoils"
+		is_triggered_only = yes
+		
+		option = {
+			name = "EVTOPTA1110041"
+			set_country_flag = comancheria_recognized
+			137 = {
+				any_pop = {
+					limit = {
+						has_pop_culture = texan
+					}
+					reduce_pop = 1.15
+				}
+			}
+			ai_chance = { factor = 100 }
+		}
+	}
+#############################################
+# Great Raid of 1840
+
+	country_event = {
+		id = 1110042
+		title = "EVTNAME1110042"
+		desc = "EVTDESC1110042"
+		picture = "comanche_spoils"
+		fire_only_once = yes
+		trigger = {
+			tag = TEX
+			year = 1840
+			has_country_flag = ft_parker_massacre
+		}
+		mean_time_to_happen = {
+			months = 5
+		}
+		
+		option = {
+			name = "EVTOPTA1110042"
+			any_owned = {
+				limit = {
+					is_core = TEX
+				}
+				random_list = {
+					30 = { add_province_modifier = { name = comanche_raids duration = 46 } }
+					25 = { add_province_modifier = { name = comanche_raids duration = 56 } }
+					20 = { add_province_modifier = { name = comanche_raids duration = 66 } }
+					15 = { add_province_modifier = { name = comanche_raids duration = 76 } }
+					10 = { add_province_modifier = { name = comanche_raids duration = 36 } }
+				}
+			}
+			ai_chance = { factor = 100 }
+		}
+	}
+#############################################
+# Texan Coup
+
+	country_event = {
+		id = 1110043
+		title = "EVTNAME1110043" #Texan Conservatives stage a coup with aid from Mexico, England and France.
+		desc = "EVTDESC1110043"
+		picture = "cowboy_army"
+		fire_only_once = yes
+		trigger = {
+			tag = TEX
+			has_country_flag = usstatehood_we_have_applied
+			has_country_modifier = USA_statehood
+			NOT = {
+				OR = {
+					has_country_flag = TEX_coup_done
+					has_country_flag = TEX_coup_refuse
+				}
+			}
+		}
+		mean_time_to_happen = {
+			months = 1
+		}
+		
+		option = {
+			name = "EVTOPTA1110043"
+			#
+			clr_country_flag = usstatehood_we_have_applied
+			clr_country_flag = communist_gov
+			clr_country_flag = absolute_monarchy_gov
+			clr_country_flag = semi_constitutional_monarchy_gov
+			clr_country_flag = constitutional_monarchy_gov
+			clr_country_flag = democracy_gov
+			clr_country_flag = fascist_gov
+			clr_country_flag = anarcho_liberal_gov
+			#
+			set_country_flag = presidential_dictatorship_gov
+			set_country_flag = usstatehood_we_have_refused
+			set_country_flag = TEX_coup_done
+			#
+			government = presidential_dictatorship
+			political_reform = none_voting
+			political_reform = party_appointed
+			political_reform = yes_meeting
+			political_reform = censored_press
+			political_reform = state_controlled
+			political_reform = harassment
+			political_reform = first_past_the_post
+			political_reform = yes_slavery
+			ruling_party_ideology = conservative
+			#
+			random_owned = {
+				limit = {
+					owner = {
+						NOT = {
+							OR = {
+								has_country_flag = lone_star_state
+								has_country_flag = archive_war_WAR
+							}
+						}
+					}
+				}
+				owner = {
+					country_event = 1110045 #TEX's claims are mediated by FRA and ENG
+				}
+			}
+			prestige = 5
+			#
+			relation = {
+				who = FRA
+				value = 400
+			}	
+			relation = {
+				who = BOR
+				value = 400
+			}	
+			relation = {
+				who = ENG
+				value = 400
+			}	
+			relation = {
+				who = MEX
+				value = 400
+			}
+			relation = {
+				who = USA
+				value = -400
+			}
+			#
+			random_country = {
+				limit = {
+					OR = {
+						tag = FRA
+						tag = BOR
+					}
+					exists = yes
+				}
+				country_event = 1110044 #Notification about the coup
+				relation = {
+					who = TEX
+					value = 400
+				}
+				diplomatic_influence = {
+					who = TEX
+					value = 400
+				}
+				create_alliance = TEX
+				prestige = 5
+			}
+			random_country = {
+				limit = {
+					OR = {
+						tag = ENG
+						tag = ENL
+					}
+					exists = yes
+				}
+				country_event = 1110044 #Notification about the coup
+				relation = {
+					who = TEX
+					value = 400
+				}
+				diplomatic_influence = {
+					who = TEX
+					value = 50
+				}
+				prestige = 5
+			}
+			MEX = {
+				country_event = 1110044 #Notification about the coup
+				relation = {
+					who = TEX
+					value = 400
+				}
+				create_alliance = TEX
+				prestige = 5
+			}
+			USA = {
+				country_event = 1110044 #Notification about the coup
+				relation = {
+					who = TEX
+					value = -400
+				}
+				diplomatic_influence = {
+					who = TEX
+					value = -400
+				}
+				prestige = -5
+			}
+			#
+			ai_chance = { factor = 60 }
+		}
+		option = {
+			name = "EVTOPTB1110043"
+			set_country_flag = TEX_coup_refuse
+			any_pop = {
+				limit = {
+					has_pop_culture = texan
+					OR = {
+						ideology = conservative
+						ideology = reactionary
+					}
+				}
+				reduce_pop = 0.975
+				scaled_militancy = {
+					ideology = conservative
+					factor = 6
+				}
+				scaled_consciousness = {
+					ideology = conservative
+					factor = 6
+				}
+			}
+			relation = {
+				who = FRA
+				value = -400
+			}	
+			relation = {
+				who = BOR
+				value = -400
+			}	
+			relation = {
+				who = ENG
+				value = -400
+			}	
+			relation = {
+				who = MEX
+				value = -400
+			}
+			random_country = {
+				limit = {
+					OR = {
+						tag = FRA
+						tag = BOR
+					}
+					exists = yes
+				}
+				relation = {
+					who = TEX
+					value = -400
+				}
+				diplomatic_influence = {
+					who = TEX
+					value = -400
+				}
+			}
+			random_country = {
+				limit = {
+					OR = {
+						tag = ENG
+						tag = ENL
+					}
+					exists = yes
+				}
+				relation = {
+					who = TEX
+					value = -400
+				}
+				diplomatic_influence = {
+					who = TEX
+					value = -400
+				}
+			}
+			MEX = {
+				relation = {
+					who = TEX
+					value = -400
+				}
+			}
+			ai_chance = { factor = 40 }
+		}
+	}
+	
+	country_event = {
+		id = 1110044
+		title = "EVTNAME1110044"
+		desc = "EVTDESC1110044"
+		picture = "texas_state"
+		is_triggered_only = yes
+		
+		option = {
+			name = "EVTOPTA1110044"
+			ai_chance = { factor = 100 }
+		}
+	}
+	
+	country_event = {
+		id = 1110045
+		title = "EVTNAME1110045"
+		desc = "EVTDESC1110045"
+		picture = "texas_state"
+		is_triggered_only = yes
+		
+		immediate = {
+			set_country_flag = texas_arbitration
+		}
+		
+		option = {
+			name = "EVTOPTA1110045" #Contesting Texas' claims
+			TEX_132 = { add_core = TEX } #Texas
+			105 = { add_core = TEX } #Santa Fe
+			129 = { add_core = TEX } #Guymon
+			128 = { add_core = TEX } #Hugoton
+			103 = { add_core = TEX } #Pueblo
+			109 = { add_core = TEX } #Aspen
+			3398 = { add_core = TEX } #Warm Springs
+			107 = { add_core = TEX } #Riverside
+			random_list = {
+				70 = {
+					random_country = {
+						limit = {
+							OR = {
+								tag = FRA
+								tag = BOR
+							}
+							exists = yes
+						}
+						country_event = 1110046
+					}
+				}
+				30 = {
+					random_country = {
+						limit = {
+							OR = {
+								tag = ENG
+								tag = ENL
+							}
+							exists = yes
+						}
+						country_event = 1110046
+					}
+				}
+			}
+			ai_chance = { factor = 100 }
+		}
+	}
+	
+	country_event = {
+		id = 1110046
+		title = "EVTNAME1110046"
+		desc = "EVTDESC1110046"
+		picture = "texas_state"
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+			
+		option = {
+			name = "EVTOPTA1110046" #TEX gets all its vanilla cores
+			TEX = {
+				country_event = 1110047
+			}
+			MEX = {
+				country_event = 1110047
+			}
+			ai_chance = {
+				factor = 10
+			}
+		}
+		option = {
+			name = "EVTOPTB1110046" #TEX doesn't get the stuff in Colorado
+			TEX = {
+				country_event = 1110048
+			}
+			MEX = {
+				country_event = 1110048
+			}
+			ai_chance = {
+				factor = 15
+			}
+		}	
+		option = {
+			name = "EVTOPTC1110046" #TEX gets all, colorado included
+			TEX = {
+				country_event = 1110049
+			}
+			MEX = {
+				country_event = 1110049
+			}
+			ai_chance = {
+				factor = 75
+				modifier = {
+					factor = 100
+					TEX = {
+						ai = no
+					}
+				}
+			}
+		}		
+	}
+	country_event = {
+		id = 1110047
+		title = "EVTNAME1110047"
+		desc = "EVTDESC1110047"
+		picture = "texas_state"
+		is_triggered_only = yes
+		
+		option = {
+			name = "EVTOPTA1110047"
+			MEX = {
+				any_owned = {
+					limit = {
+						is_core = TEX
+						OR = {
+							province_id = 135
+							province_id = 136
+							province_id = 138
+							province_id = 3401
+						}
+					}
+					remove_core = MEX
+					secede_province = TEX
+				}
+			}
+			105 = { remove_core = TEX }
+			129 = { remove_core = TEX }
+			128 = { remove_core = TEX }
+			103 = { remove_core = TEX }
+			109 = { remove_core = TEX }
+			3398 = { remove_core = TEX }
+			107 = { remove_core = TEX }
+			TEX = {
+				all_core = { remove_core = MEX }
+			}
+			ai_chance = { factor = 100 }
+		}
+	}
+	country_event = {
+		id = 1110048
+		title = "EVTNAME1110048"
+		desc = "EVTDESC1110048"
+		picture = "texas_state"
+		is_triggered_only = yes
+		
+		option = {
+			name = "EVTOPTA1110048"
+			MEX = {
+				any_owned = {
+					limit = {
+						is_core = TEX
+						OR = {
+							province_id = 135
+							province_id = 136
+							province_id = 138
+							province_id = 3401
+							province_id = 105
+							province_id = 129
+							province_id = 128
+							province_id = 103
+						}
+					}
+					remove_core = MEX
+					secede_province = TEX
+				}
+			}
+			109 = { remove_core = TEX }
+			3398 = { remove_core = TEX }
+			107 = { remove_core = TEX }
+			TEX = {
+				all_core = { remove_core = MEX }
+			}
+			ai_chance = { factor = 100 }
+		}
+	}
+	country_event = {
+		id = 1110049
+		title = "EVTNAME1110049"
+		desc = "EVTDESC1110049"
+		picture = "texas_state"
+		is_triggered_only = yes
+		
+		option = {
+			name = "EVTOPTA1110049"
+			MEX = {
+				any_owned = {
+					limit = {
+						is_core = TEX
+						OR = {
+							province_id = 135
+							province_id = 136
+							province_id = 138
+							province_id = 3401
+							province_id = 105
+							province_id = 129
+							province_id = 128
+							province_id = 103
+							province_id = 109
+							province_id = 3398
+							province_id = 107
+						}
+					}
+					remove_core = MEX
+					secede_province = TEX
+				}
+			}
+			TEX = {
+				all_core = { remove_core = MEX }
+			}
+			ai_chance = { factor = 100 }
+		}
+	}
+
+################################
+#Texas-Rio Grande choose capital, culture & religion
+
+	country_event = {
+		id = 1110050 
+		title = "EVTNAME1110050" #TRG, decides primary culture.
+		desc = "EVTDESC1110050"
+		picture = "aridoamerica_big"
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPT1110050A" #texan
+			primary_culture = texan
+			religion = protestant
+			add_accepted_culture = norteno
+			add_accepted_culture = dixie
+			clr_country_flag = catholic_country
+			set_country_flag = protestant_country
+			set_country_flag = TRG_primary_culture_selected
+			set_country_flag = TRG_primary_culture_texan
+			ai_chance = {
+				factor = 50
+				modifier = {
+					factor = 100
+					THIS = {
+						primary_culture = texan
+					}
+				}
+				
+			}
+		}
+		option = {
+			name = "EVTOPT1110050B" #norteno
+			primary_culture = norteno
+			religion = catholic
+			add_accepted_culture = texan
+			add_accepted_culture = dixie
+			clr_country_flag = protestant_country
+			set_country_flag = catholic_country
+			set_country_flag = TRG_primary_culture_selected
+			set_country_flag = TRG_primary_culture_norteno
+			ai_chance = {
+				factor = 50
+				modifier = {
+					factor = 100
+					THIS = {
+						OR = {
+							primary_culture = mexican
+							primary_culture = norteno
+						}
+					}
+				}
+			}
+		}
+	}
+	country_event = {
+		id = 1110051 
+		title = "EVTNAME1110051" #TRG, decides capital.
+		desc = "EVTDESC1110051"
+		picture = "aridoamerica_big"
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPT1110051A" #Austin
+			capital = 133
+			set_country_flag = TRG_capial_selected
+			ai_chance = {
+				factor = 50
+				modifier = {
+					factor = 2
+					THIS = {
+						primary_culture = texan
+					}
+				}
+				
+			}
+		}
+		option = {
+			name = "EVTOPT1110051B" #Ciudad Victoria
+			capital = 2150
+			set_country_flag = TRG_capial_selected
+			ai_chance = {
+				factor = 50
+				modifier = {
+					factor = 2
+					THIS = {
+						OR = {
+							primary_culture = mexican
+							primary_culture = norteno
+						}
+					}
+				}
+			}
+		}
+		option = {
+			name = "EVTOPT1110051C" #Laredo
+			capital = 138
+			set_country_flag = TRG_capial_selected
+			ai_chance = {
+				factor = 0
+			}
+		}
+		option = {
+			name = "EVTOPT1110051D" #Houston
+			capital = 132
+			set_country_flag = TRG_capial_selected
+			ai_chance = {
+				factor = 0
+			}
+		}
+	}
+######################################
+# Norteno identity
+
+	country_event = {
+		id = 1110052
+		title = "EVTNAME1110052" 
+		desc = "EVTDESC1110052"
+		picture = "aridoamerica_big"
+		fire_only_once = yes
+		#is_triggered_only = yes
+		
+		trigger = {
+			#Disable
+			has_country_flag = disable_this_shit
+			OR = {
+				tag = RGR
+				tag = TRG
+			}
+			NOT = {
+				has_global_flag = norteno_identity
+			}
+			OR = {
+				has_global_flag = riogrande_claims
+				AND = {
+					2142 = { is_core = RGR owned_by = THIS }
+					2143 = { is_core = RGR owned_by = THIS }
+					2144 = { is_core = RGR owned_by = THIS }
+					2145 = { is_core = RGR owned_by = THIS }
+					2153 = { is_core = RGR owned_by = THIS }
+					2158 = { is_core = RGR owned_by = THIS }
+					2154 = { is_core = RGR owned_by = THIS }
+					2662 = { is_core = RGR owned_by = THIS }
+					2148 = { is_core = RGR owned_by = THIS }
+					3397 = { is_core = RGR owned_by = THIS }
+					108 = { is_core = RGR owned_by = THIS }
+				}
+			}
+			RGR = { all_core = { owned_by = THIS } }
+		}
+
+		mean_time_to_happen = {
+			days = 5
+		}
+		
+		immediate = {
+			set_global_flag = norteno_identity
+			primary_culture = norteno
+			religion = catholic
+			add_accepted_culture = texan
+
+			MEX_2157 = { add_core = S0N }
+			
+			2157 = {
+				owner = {
+					set_country_flag = sonora_release
+					release_vassal = S0N
+				}
+			}
+			102 = {
+				owner = {
+					set_country_flag = tucson_sonora_release
+					release_vassal = S0N
+				}
+			}
+			S0N = { primary_culture = norteno }
+			
+			#Texas
+			any_pop = {
+				limit = {
+					location = { province_id = 3403 }
+					OR = {
+						is_culture_group = native_american
+						is_culture_group = american_cultures
+					}
+				}
+				move_pop = 1234
+			}
+			any_pop = {
+				limit = {
+					location = { province_id = 43 }
+					OR = {
+						is_culture_group = native_american
+						is_culture_group = american_cultures
+					}
+				}
+				move_pop = 1235
+			}
+			any_pop = {
+				limit = {
+					location = { province_id = 132 }
+					OR = {
+						is_culture_group = native_american
+						is_culture_group = american_cultures
+					}
+				}
+				move_pop = 1236
+			}
+			any_pop = {
+				limit = {
+					location = { province_id = 134 }
+					OR = {
+						is_culture_group = native_american
+						is_culture_group = american_cultures
+					}
+				}
+				move_pop = 1237
+			}
+			any_pop = {
+				limit = {
+					location = { province_id = 3402 }
+					OR = {
+						is_culture_group = native_american
+						is_culture_group = american_cultures
+					}
+				}
+				move_pop = 1238
+			}
+			any_pop = {
+				limit = {
+					location = { province_id = 133 }
+					OR = {
+						is_culture_group = native_american
+						is_culture_group = american_cultures
+					}
+				}
+				move_pop = 1239
+			}
+			any_pop = {
+				limit = {
+					location = { province_id = 137 }
+					OR = {
+						is_culture_group = native_american
+						is_culture_group = american_cultures
+					}
+				}
+				move_pop = 1240
+			}
+			#Trans-Pecos
+			any_pop = {
+				limit = {
+					location = { province_id = 135 }
+					OR = {
+						is_culture_group = native_american
+						is_culture_group = american_cultures
+					}
+				}
+				move_pop = 1241
+			}
+			any_pop = {
+				limit = {
+					location = { province_id = 3401 }
+					OR = {
+						is_culture_group = native_american
+						is_culture_group = american_cultures
+					}
+				}
+				move_pop = 1242
+			}
+			any_pop = {
+				limit = {
+					location = { province_id = 138 }
+					OR = {
+						is_culture_group = native_american
+						is_culture_group = american_cultures
+					}
+				}
+				move_pop = 1243
+			}
+			any_pop = {
+				limit = {
+					location = { province_id = 136 }
+					OR = {
+						is_culture_group = native_american
+						is_culture_group = american_cultures
+					}
+				}
+				move_pop = 1244
+			}
+			#Tamaulipas
+			any_pop = {
+				limit = {
+					location = { province_id = 2149 }
+					is_culture_group = native_american
+				}
+				move_pop = 1245
+			}
+			any_pop = {
+				limit = {
+					location = { province_id = 2150 }
+					is_culture_group = native_american
+				}
+				move_pop = 1246
+			}
+			any_pop = {
+				limit = {
+					location = { province_id = 2151 }
+					is_culture_group = native_american
+				}
+				move_pop = 1247
+			}
+			#Nuevo Leon & Coahuila
+			any_pop = {
+				limit = {
+					location = { province_id = 2147 }
+					is_culture_group = native_american
+				}
+				move_pop = 1248
+			}
+			any_pop = {
+				limit = {
+					location = { province_id = 2152 }
+					is_culture_group = native_american
+				}
+				move_pop = 1249
+			}
+			any_pop = {
+				limit = {
+					location = { province_id = 2155 }
+					is_culture_group = native_american
+				}
+				move_pop = 1250
+			}
+			#New Mexico
+			any_pop = {
+				limit = {
+					location = { province_id = 105 }
+					is_culture_group = native_american
+				}
+				move_pop = 1251
+			}
+			any_pop = {
+				limit = {
+					location = { province_id = 2148 }
+					is_culture_group = native_american
+				}
+				move_pop = 1252
+			}
+			any_pop = {
+				limit = {
+					location = { province_id = 2662 }
+					is_culture_group = native_american
+				}
+				move_pop = 1253
+			}
+			any_pop = {
+				limit = {
+					location = { province_id = 3397 }
+					is_culture_group = native_american
+				}
+				move_pop = 1254
+			}
+			#Colorado
+			any_pop = {
+				limit = {
+					location = { province_id = 108 }
+					is_culture_group = native_american
+				}
+				move_pop = 1255
+			}
+			any_pop = {
+				limit = {
+					location = { province_id = 109 }
+					is_culture_group = native_american
+				}
+				move_pop = 1256
+			}
+			any_pop = {
+				limit = {
+					location = { province_id = 103 }
+					is_culture_group = native_american
+				}
+				move_pop = 1257
+			}
+			any_pop = {
+				limit = {
+					location = { province_id = 3398 }
+					is_culture_group = native_american
+				}
+				move_pop = 1258
+			}
+			#Wyoming
+			any_pop = {
+				limit = {
+					location = { province_id = 107 }
+					is_culture_group = native_american
+				}
+				move_pop = 1259
+			}
+			#Kansas
+			any_pop = {
+				limit = {
+					location = { province_id = 128 }
+					is_culture_group = native_american
+				}
+				move_pop = 1260
+			}
+			#Oklahoma
+			any_pop = {
+				limit = {
+					location = { province_id = 129 }
+					is_culture_group = native_american
+				}
+				move_pop = 1261
+			}
+			#Chihuahua
+			any_pop = {
+				limit = {
+					location = { province_id = 2143 }
+					is_culture_group = native_american
+				}
+				move_pop = 1262
+			}
+			any_pop = {
+				limit = {
+					location = { province_id = 2142 }
+					is_culture_group = native_american
+				}
+				move_pop = 1263
+			}
+			any_pop = {
+				limit = {
+					location = { province_id = 2144 }
+					is_culture_group = native_american
+				}
+				move_pop = 1264
+			}
+			any_pop = {
+				limit = {
+					location = { province_id = 2145 }
+					is_culture_group = native_american
+				}
+				move_pop = 1265
+			}
+			#Durango
+			any_pop = {
+				limit = {
+					location = { province_id = 2154 }
+					is_culture_group = native_american
+				}
+				move_pop = 1266
+			}
+			any_pop = {
+				limit = {
+					location = { province_id = 2153 }
+					is_culture_group = native_american
+				}
+				move_pop = 1267
+			}
+			any_pop = {
+				limit = {
+					location = { province_id = 2158 }
+					is_culture_group = native_american
+				}
+				move_pop = 1268
+			}
+			S0N = {
+				#Sonora
+				any_pop = {
+					limit = {
+						location = { province_id = 2140 }
+						is_culture_group = native_american
+					}
+					move_pop = 1269
+				}
+				any_pop = {
+					limit = {
+						location = { province_id = 2137 }
+						is_culture_group = native_american
+					}
+					move_pop = 1270
+				}
+				any_pop = {
+					limit = {
+						location = { province_id = 2141 }
+						is_culture_group = native_american
+					}
+					move_pop = 1271
+				}
+				#Sinaloa
+				any_pop = {
+					limit = {
+						location = { province_id = 2157 }
+						is_culture_group = native_american
+					}
+					move_pop = 1272
+				}
+				any_pop = {
+					limit = {
+						location = { province_id = 2156 }
+						is_culture_group = native_american
+					}
+					move_pop = 1273
+				}
+				#Arizona
+				any_pop = {
+					limit = {
+						location = { province_id = 102 }
+						is_culture_group = native_american
+					}
+					move_pop = 1274
+				}
+			}
+		}
+		
+		option = {
+			name = "EVTOPTA1110052"
+			country_event = 1110053
+		}
+		
+		ai_will_do = { factor = 1 }
+	}
+	country_event = {
+		id = 1110053
+		title = "EVTNAME1110053" 
+		desc = "EVTDESC1110053"
+		picture = "aridoamerica_big"
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		immediate = {
+			any_owned = {
+				limit = {
+					is_core = TRG
+				}
+				assimilate = yes
+			}
+			S0N = {
+				any_owned = {
+					limit = {
+						is_core = S0N
+					}
+					assimilate = yes
+				}
+			}
+						
+			#Texas
+			1234 = {
+				any_pop = {
+					limit = {
+						OR = {
+							is_culture_group = native_american
+							is_culture_group = american_cultures
+						}
+					}
+					move_pop = 3403
+				}
+			}
+			1235 = {
+				any_pop = {
+					limit = {
+						OR = {
+							is_culture_group = native_american
+							is_culture_group = american_cultures
+						}
+					}
+					move_pop = 43
+				}
+			}
+			1236 = {
+				any_pop = {
+					limit = {
+						OR = {
+							is_culture_group = native_american
+							is_culture_group = american_cultures
+						}
+					}
+					move_pop = 132
+				}
+			}
+			1237 = {
+				any_pop = {
+					limit = {
+						OR = {
+							is_culture_group = native_american
+							is_culture_group = american_cultures
+						}
+					}
+					move_pop = 134
+				}
+			}
+			1238 = {
+				any_pop = {
+					limit = {
+						OR = {
+							is_culture_group = native_american
+							is_culture_group = american_cultures
+						}
+					}
+					move_pop = 3402
+				}
+			}
+			1239 = {
+				any_pop = {
+					limit = {
+						OR = {
+							is_culture_group = native_american
+							is_culture_group = american_cultures
+						}
+					}
+					move_pop = 133
+				}
+			}
+			1240 = {
+				any_pop = {
+					limit = {
+						OR = {
+							is_culture_group = native_american
+							is_culture_group = american_cultures
+						}
+					}
+					move_pop = 137
+				}
+			}
+			#Trans-Pecos
+			1241 = {
+				any_pop = {
+					limit = {
+						OR = {
+							is_culture_group = native_american
+							is_culture_group = american_cultures
+						}
+					}
+					move_pop = 135
+				}
+			}
+			1242 = {
+				any_pop = {
+					limit = {
+						OR = {
+							is_culture_group = native_american
+							is_culture_group = american_cultures
+						}
+					}
+					move_pop = 3401
+				}
+			}
+			1243 = {
+				any_pop = {
+					limit = {
+						OR = {
+							is_culture_group = native_american
+							is_culture_group = american_cultures
+						}
+					}
+					move_pop = 138
+				}
+			}
+			1244 = {
+				any_pop = {
+					limit = {
+						OR = {
+							is_culture_group = native_american
+							is_culture_group = american_cultures
+						}
+					}
+					move_pop = 136
+				}
+			}
+			#Tamaulipas
+			1245 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 2149
+				}
+			}
+			1246 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 2150
+				}
+			}
+			1247 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 2151
+				}
+			}
+			#Nuevo Leon & Coahuila
+			1248 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 2147
+				}
+			}
+			1249 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 2152
+				}
+			}
+			1250 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 2155
+				}
+			}
+			#New Mexico
+			1251 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 105
+				}
+			}
+			1252 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 2148
+				}
+			}
+			1253 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 2662
+				}
+			}
+			1254 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 3397
+				}
+			}
+			#Colorado
+			1255 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 108
+				}
+			}
+			1256 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 109
+				}
+			}
+			1257 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 103
+				}
+			}
+			1258 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 3398
+				}
+			}
+			#Wyoming
+			1259 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 107
+				}
+			}
+			#Kansas
+			1260 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 128
+				}
+			}
+			#Oklahoma
+			1261 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 129
+				}
+			}
+			#Chihuahua
+			1262 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 2143
+				}
+			}
+			1263 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 2142
+				}
+			}
+			1264 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 2144
+				}
+			}
+			1265 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 2145
+				}
+			}
+			#Durango
+			1266 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 2154
+				}
+			}
+			1267 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 2153
+				}
+			}
+			1268 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 2158
+				}
+			}
+			#Sonora
+			1269 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 2140
+				}
+			}
+			1270 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 2137
+				}
+			}
+			1271 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 2141
+				}
+			}
+			#Sinaloa
+			1272 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 2157
+				}
+			}
+			1273 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 2156
+				}
+			}
+			#Arizona
+			1274 = {
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					move_pop = 102
+				}
+			}
+			
+			any_country = {
+				limit = {
+					has_country_flag = sonora_release
+				}
+				clr_country_flag = sonora_release
+				inherit = S0N
+			}
+			any_country = {
+				limit = {
+					has_country_flag = tucson_sonora_release
+				}
+				clr_country_flag = tucson_sonora_release
+				102 = { secede_province = S0N }
+				inherit = S0N
+			}
+			
+		}
+		
+		option = {
+			name = "EVTOPTA1110053"
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+	
+##########################################################
+#Mormon events
+	country_event = {
+		id = 1110054
+		title = "EVTNAME1110054"
+		desc = "EVTDESC1110054"
+		picture = "mormon_exodus"
+		
+		trigger = {
+			year = 1846
+			NOT = { has_global_flag = mormon_exodus }
+			war = no
+			OR = {
+				owns = 97
+				owns = 98
+				owns = 99
+				owns = 3393
+				owns = 94
+				owns = 96
+				owns = 95
+			}
+		}
+		
+		mean_time_to_happen = {
+			months = 8
+		}
+		
+		immediate = {
+			set_global_flag = mormon_exodus
+			any_country = {
+				any_pop = {
+					limit = {
+						has_pop_religion = mormon
+						NOT = {
+							location = {
+								OR = {
+									province_id = 166
+									province_id = 150
+									province_id = 146
+									
+									province_id = 149
+									province_id = 167
+									province_id = 152
+									province_id = 168
+								}
+							}
+						}
+					}
+					dominant_issue = { value = moralism factor = 0.5 }
+					consciousness = 5
+					move_pop = 97
+				}
+			}
+			any_country = {
+				any_pop = {
+					limit = {
+						has_pop_religion = mormon
+						location = {
+							province_id = 166 #5950
+						}
+					}
+					dominant_issue = { value = moralism factor = 0.5 }
+					consciousness = 5
+					move_pop = 97
+				}
+			}
+			any_country = {
+				any_pop = {
+					limit = {
+						has_pop_religion = mormon
+						location = {
+							province_id = 150 #1750
+						}
+					}
+					dominant_issue = { value = moralism factor = 0.5 }
+					consciousness = 5
+					move_pop = 98
+				}
+			}
+			any_country = {
+				any_pop = {
+					limit = {
+						has_pop_religion = mormon
+						location = {
+							province_id = 146 #1250
+						}
+					}
+					dominant_issue = { value = moralism factor = 0.5 }
+					consciousness = 5
+					move_pop = 99
+				}
+			}
+			any_country = {
+				any_pop = {
+					limit = {
+						has_pop_religion = mormon
+						location = {
+							province_id = 149 #1750
+						}
+					}
+					dominant_issue = { value = moralism factor = 0.5 }
+					consciousness = 5
+					move_pop = 96
+				}
+			}
+			any_country = {
+				any_pop = {
+					limit = {
+						has_pop_religion = mormon
+						location = {
+							province_id = 167 #1275
+						}
+					}
+					dominant_issue = { value = moralism factor = 0.5 }
+					consciousness = 5
+					move_pop = 95
+				}
+			}
+			any_country = {
+				any_pop = {
+					limit = {
+						has_pop_religion = mormon
+						location = {
+							province_id = 152 #1070
+						}
+					}
+					dominant_issue = { value = moralism factor = 0.5 }
+					consciousness = 5
+					move_pop = 94
+				}
+			}
+			any_country = {
+				any_pop = {
+					limit = {
+						has_pop_religion = mormon
+						location = {
+							province_id = 168 #2700
+						}
+					}
+					dominant_issue = { value = moralism factor = 0.5 }
+					consciousness = 5
+					move_pop = 3393
+				}
+			}
+			#############################
+				any_pop = {
+					limit = {
+						has_pop_religion = mormon
+						location = {
+							province_id = 166 #5950
+						}
+					}
+					dominant_issue = { value = moralism factor = 0.5 }
+					consciousness = 5
+					move_pop = 97
+				}
+				any_pop = {
+					limit = {
+						has_pop_religion = mormon
+						location = {
+							province_id = 150 #1750
+						}
+					}
+					dominant_issue = { value = moralism factor = 0.5 }
+					consciousness = 5
+					move_pop = 98
+				}
+				any_pop = {
+					limit = {
+						has_pop_religion = mormon
+						location = {
+							province_id = 146 #1250
+						}
+					}
+					dominant_issue = { value = moralism factor = 0.5 }
+					consciousness = 5
+					move_pop = 99
+				}
+				any_pop = {
+					limit = {
+						has_pop_religion = mormon
+						location = {
+							province_id = 149 #1750
+						}
+					}
+					dominant_issue = { value = moralism factor = 0.5 }
+					consciousness = 5
+					move_pop = 96
+				}
+				any_pop = {
+					limit = {
+						has_pop_religion = mormon
+						location = {
+							province_id = 167 #1275
+						}
+					}
+					dominant_issue = { value = moralism factor = 0.5 }
+					consciousness = 5
+					move_pop = 95
+				}
+				any_pop = {
+					limit = {
+						has_pop_religion = mormon
+						location = {
+							province_id = 152 #1070
+						}
+					}
+					dominant_issue = { value = moralism factor = 0.5 }
+					consciousness = 5
+					move_pop = 94
+				}
+				any_pop = {
+					limit = {
+						has_pop_religion = mormon
+						location = {
+							province_id = 168 #2700
+						}
+					}
+					dominant_issue = { value = moralism factor = 0.5 }
+					consciousness = 5
+					move_pop = 3393
+				}
+		}
+		
+		option = {
+			name = "EVTOPTA1110054"
+			set_global_flag = mormons_welcomed
+			any_country = {
+				any_owned = {
+					limit = {
+						OR = {
+							province_id = 97
+							province_id = 98
+							province_id = 99
+						}
+					}
+					add_province_modifier = { name = home_of_the_mormons duration = 10950 }
+					any_pop = {
+						limit = { is_culture_group = native_american }
+						reduce_pop = 0.25
+					}
+				}
+			}
+			any_country = {
+				any_owned = {
+					limit = {
+						OR = {
+							province_id = 96
+							province_id = 95
+							province_id = 94
+							province_id = 3393
+						}
+					}
+					add_province_modifier = { name = home_of_the_mormons duration = 5475 }
+					any_pop = {
+						limit = { is_culture_group = native_american }
+						reduce_pop = 0.25
+					}
+				}
+			}
+			################################
+				any_owned = {
+					limit = {
+						OR = {
+							province_id = 97
+							province_id = 98
+							province_id = 99
+						}
+					}
+					add_province_modifier = { name = home_of_the_mormons duration = 10950 }
+					any_pop = {
+						limit = { is_culture_group = native_american }
+						reduce_pop = 0.25
+					}
+				}
+				any_owned = {
+					limit = {
+						OR = {
+							province_id = 96
+							province_id = 95
+							province_id = 94
+							province_id = 3393
+						}
+					}
+					add_province_modifier = { name = home_of_the_mormons duration = 5475 }
+					any_pop = {
+						limit = { is_culture_group = native_american }
+						reduce_pop = 0.25
+					}
+				}
+			MEX_94 = { add_core = DES }
+			MEX_97 = { add_core = DES }
+			88 = { add_core = DES }
+			89 = { add_core = DES }
+			90 = { add_core = DES }
+			100 = { add_core = DES }
+			101 = { add_core = DES }
+			3396 = { add_core = DES }
+			ai_chance = { factor = 90 }
+		}
+		option = {
+			name = "EVTOPTB1110054"
+			set_global_flag = mormons_rejected
+			random_list = {
+				50 = {
+					random_country = {
+						limit = {
+							OR = {
+								owns = 2142
+								owns = 2143
+								owns = 2144
+								owns = 2145
+								owns = 2137
+								owns = 2140
+								owns = 2141
+							}
+						}
+						any_owned = {
+							limit = {
+								OR = {
+									province_id = 2142      
+									province_id = 2143
+									province_id = 2144
+									province_id = 2145
+									province_id = 2137
+									province_id = 2140
+									province_id = 2141
+								}
+							}
+							owner = { country_event = { id = 1110055 days = 120 } }  #Mormons flee to Chihuahua and Sonora
+						}
+					}
+				}
+				40 = {
+					random_country = {
+						limit = {
+							OR = {
+								owns = 13
+								owns = 14
+								owns = 20
+								owns = 21
+								owns = 19
+								owns = 16
+								owns = 15
+								owns = 17
+							}
+						}
+						any_owned = {
+							limit = {
+								OR = {
+									province_id = 13      
+									province_id = 14
+									province_id = 20
+									province_id = 21
+									province_id = 19
+									province_id = 16
+									province_id = 15
+									province_id = 17
+								}
+							}
+							owner = { country_event = { id = 1110056 days = 120 } }  #Mormons flee to Columbia
+						}
+					}
+				}
+				10 = {
+					random_country = {
+						limit = {
+							OR = {
+								owns = 658
+								owns = 3305
+								owns = 3306
+							}
+						}
+						any_owned = {
+							limit = {
+								owner = { ai = yes }
+								OR = {
+									province_id = 658      
+									province_id = 3305
+									province_id = 3306
+								}
+							}
+							owner = { country_event = { id = 1110057 days = 420 } }  #Mormons take over Hawaii
+						}
+					}
+				}
+			}
+			ai_chance = { factor = 10 }
+		}
+	}
+	
+	country_event = {
+		id = 1110055
+		title = "EVTNAME1110055"
+		desc = "EVTDESC1110055"
+		picture = "mormon_exodus"
+		is_triggered_only = yes
+		
+		immediate = {
+			set_global_flag = mormon_chihuahua
+			any_country = {
+				any_pop = {
+					limit = {
+						has_pop_religion = mormon
+						NOT = {
+							location = {
+								OR = {
+									province_id = 97
+									province_id = 98
+									province_id = 99
+									province_id = 96
+									province_id = 95
+									province_id = 94
+									province_id = 3393
+								}
+							}
+						}
+					}
+					dominant_issue = { value = moralism factor = 0.5 }
+					consciousness = 5
+					reduce_pop = 0.95
+					move_pop = 2140
+				}
+			}
+			any_country = {
+				any_pop = {
+					limit = {
+						has_pop_religion = mormon
+						location = {
+							province_id = 97 #5950
+						}
+					}
+					dominant_issue = { value = moralism factor = 0.5 }
+					consciousness = 5
+					reduce_pop = 0.95
+					move_pop = 2140
+				}
+			}
+			any_country = {
+				any_pop = {
+					limit = {
+						has_pop_religion = mormon
+						location = {
+							province_id = 98 #1750
+						}
+					}
+					dominant_issue = { value = moralism factor = 0.5 }
+					consciousness = 5
+					reduce_pop = 0.95
+					move_pop = 2141
+				}
+			}
+			any_country = {
+				any_pop = {
+					limit = {
+						has_pop_religion = mormon
+						location = {
+							province_id = 99 #1250
+						}
+					}
+					dominant_issue = { value = moralism factor = 0.5 }
+					consciousness = 5
+					reduce_pop = 0.95
+					move_pop = 2137
+				}
+			}
+			any_country = {
+				any_pop = {
+					limit = {
+						has_pop_religion = mormon
+						location = {
+							province_id = 96 #1750
+						}
+					}
+					dominant_issue = { value = moralism factor = 0.5 }
+					consciousness = 5
+					reduce_pop = 0.95
+					move_pop = 2145
+				}
+			}
+			any_country = {
+				any_pop = {
+					limit = {
+						has_pop_religion = mormon
+						location = {
+							province_id = 95 #1275
+						}
+					}
+					dominant_issue = { value = moralism factor = 0.5 }
+					consciousness = 5
+					reduce_pop = 0.95
+					move_pop = 2144
+				}
+			}
+			any_country = {
+				any_pop = {
+					limit = {
+						has_pop_religion = mormon
+						location = {
+							province_id = 94 #1070
+						}
+					}
+					dominant_issue = { value = moralism factor = 0.5 }
+					consciousness = 5
+					reduce_pop = 0.95
+					move_pop = 2143
+				}
+			}
+			any_country = {
+				any_pop = {
+					limit = {
+						has_pop_religion = mormon
+						location = {
+							province_id = 3393 #2700
+						}
+					}
+					dominant_issue = { value = moralism factor = 0.5 }
+					consciousness = 5
+					reduce_pop = 0.95
+					move_pop = 2142
+				}
+			}
+			
+			any_country = {
+				any_pop = {
+					limit = {
+						has_pop_religion = mormon
+						type = soldiers
+					}
+					reduce_pop = 2
+				}
+			}
+			###############################################
+				any_pop = {
+					limit = {
+						has_pop_religion = mormon
+						location = {
+							province_id = 97 #5950
+						}
+					}
+					dominant_issue = { value = moralism factor = 0.5 }
+					consciousness = 5
+					reduce_pop = 0.95
+					move_pop = 2140
+				}
+				any_pop = {
+					limit = {
+						has_pop_religion = mormon
+						location = {
+							province_id = 98 #1750
+						}
+					}
+					dominant_issue = { value = moralism factor = 0.5 }
+					consciousness = 5
+					reduce_pop = 0.95
+					move_pop = 2141
+				}
+				any_pop = {
+					limit = {
+						has_pop_religion = mormon
+						location = {
+							province_id = 99 #1250
+						}
+					}
+					dominant_issue = { value = moralism factor = 0.5 }
+					consciousness = 5
+					reduce_pop = 0.95
+					move_pop = 2137
+				}
+				any_pop = {
+					limit = {
+						has_pop_religion = mormon
+						location = {
+							province_id = 96 #1750
+						}
+					}
+					dominant_issue = { value = moralism factor = 0.5 }
+					consciousness = 5
+					reduce_pop = 0.95
+					move_pop = 2145
+				}
+				any_pop = {
+					limit = {
+						has_pop_religion = mormon
+						location = {
+							province_id = 95 #1275
+						}
+					}
+					dominant_issue = { value = moralism factor = 0.5 }
+					consciousness = 5
+					reduce_pop = 0.95
+					move_pop = 2144
+				}
+				any_pop = {
+					limit = {
+						has_pop_religion = mormon
+						location = {
+							province_id = 94 #1070
+						}
+					}
+					dominant_issue = { value = moralism factor = 0.5 }
+					consciousness = 5
+					reduce_pop = 0.95
+					move_pop = 2143
+				}
+				any_pop = {
+					limit = {
+						has_pop_religion = mormon
+						location = {
+							province_id = 3393 #2700
+						}
+					}
+					dominant_issue = { value = moralism factor = 0.5 }
+					consciousness = 5
+					reduce_pop = 0.95
+					move_pop = 2142
+				}
+				any_pop = {
+					limit = {
+						has_pop_religion = mormon
+						type = soldiers
+					}
+					reduce_pop = 2
+				}
+			#########################
+			MEX_2138 = { add_core = DES }
+			MEX_2142 = { add_core = DES }
+		}
+		
+		option = {
+			name = "EVTOPTA1110055"
+			set_global_flag = mormons_welcomed_chihuahua
+			any_country = {
+				any_owned = {
+					limit = {
+						OR = {
+							region = MEX_2138
+							region = MEX_2142
+						}
+					}
+					add_province_modifier = { name = home_of_the_mormons duration = 10950 }
+					#add_province_modifier = { name = nationalist_agitation duration = 1095 }
+					any_pop = {
+						limit = { is_culture_group = native_american }
+						reduce_pop = 0.25
+					}
+				}
+			}
+			#############################
+				any_owned = {
+					limit = {
+						OR = {
+							region = MEX_2138
+							region = MEX_2142
+						}
+					}
+					add_province_modifier = { name = home_of_the_mormons duration = 10950 }
+					#add_province_modifier = { name = nationalist_agitation duration = 1095 }
+					any_pop = {
+						limit = { is_culture_group = native_american }
+						reduce_pop = 0.25
+					}
+				}
+			DES = { capital = 2140 government = theocracy }
+			ai_chance = { factor = 90 }
+		}
+		option = {
+			name = "EVTOPTB1110055"
+			set_global_flag = mormons_rejected_chihuahua
+			release_vassal = DES
+			DES = {
+				capital = 2140
+				government = theocracy
+				relation = {
+					who = THIS
+					value = -400
+				}
+				any_owned = {
+					limit = {
+						OR = {
+							region = MEX_2138
+							region = MEX_2142
+						}
+					}
+					add_province_modifier = { name = home_of_the_mormons duration = 10950 }
+					add_province_modifier = { name = nationalist_agitation duration = 1095 }
+					any_pop = {
+						limit = { is_culture_group = native_american }
+						reduce_pop = 0.25
+					}
+				}
+			}
+			relation = {
+				who = DES
+				value = -400
+			}
+			diplomatic_influence = {
+				who = DES
+				value = -400
+			}
+			ai_chance = { factor = 10 }
+		}
+	}
+	
+	country_event = {
+		id = 1110056
+		title = "EVTNAME1110056"
+		desc = "EVTDESC1110056"
+		picture = "mormon_exodus"
+		is_triggered_only = yes
+		
+		immediate = {
+			set_global_flag = mormon_columbia
+			any_country = {
+				any_pop = {
+					limit = {
+						has_pop_religion = mormon
+						NOT = {
+							location = {
+								OR = {
+									province_id = 97
+									province_id = 98
+									province_id = 99
+									province_id = 96
+									province_id = 95
+									province_id = 94
+									province_id = 3393
+								}
+							}
+						}
+					}
+					dominant_issue = { value = moralism factor = 0.5 }
+					consciousness = 5
+					reduce_pop = 0.95
+					move_pop = 17
+				}
+			}
+			any_country = {
+				any_pop = {
+					limit = {
+						has_pop_religion = mormon
+						location = {
+							province_id = 97 #5950
+						}
+					}
+					dominant_issue = { value = moralism factor = 0.5 }
+					consciousness = 5
+					reduce_pop = 0.95
+					move_pop = 13
+				}
+			}
+			any_country = {
+				any_pop = {
+					limit = {
+						has_pop_religion = mormon
+						location = {
+							province_id = 98 #1750
+						}
+					}
+					dominant_issue = { value = moralism factor = 0.5 }
+					consciousness = 5
+					reduce_pop = 0.95
+					move_pop = 21
+				}
+			}
+			any_country = {
+				any_pop = {
+					limit = {
+						has_pop_religion = mormon
+						location = {
+							province_id = 99 #1250
+						}
+					}
+					dominant_issue = { value = moralism factor = 0.5 }
+					consciousness = 5
+					reduce_pop = 0.95
+					move_pop = 19
+				}
+			}
+			any_country = {
+				any_pop = {
+					limit = {
+						has_pop_religion = mormon
+						location = {
+							province_id = 96 #1750
+						}
+					}
+					dominant_issue = { value = moralism factor = 0.5 }
+					consciousness = 5
+					reduce_pop = 0.95
+					move_pop = 20
+				}
+			}
+			any_country = {
+				any_pop = {
+					limit = {
+						has_pop_religion = mormon
+						location = {
+							province_id = 95 #1275
+						}
+					}
+					dominant_issue = { value = moralism factor = 0.5 }
+					consciousness = 5
+					reduce_pop = 0.95
+					move_pop = 16
+				}
+			}
+			any_country = {
+				any_pop = {
+					limit = {
+						has_pop_religion = mormon
+						location = {
+							province_id = 94 #1070
+						}
+					}
+					dominant_issue = { value = moralism factor = 0.5 }
+					consciousness = 5
+					reduce_pop = 0.95
+					move_pop = 15
+				}
+			}
+			any_country = {
+				any_pop = {
+					limit = {
+						has_pop_religion = mormon
+						location = {
+							province_id = 3393 #2700
+						}
+					}
+					dominant_issue = { value = moralism factor = 0.5 }
+					consciousness = 5
+					reduce_pop = 0.95
+					move_pop = 14
+				}
+			}
+			
+			any_country = {
+				any_pop = {
+					limit = {
+						has_pop_religion = mormon
+						type = soldiers
+					}
+					reduce_pop = 2
+				}
+			}
+			#############################
+				any_pop = {
+					limit = {
+						has_pop_religion = mormon
+						location = {
+							province_id = 97 #5950
+						}
+					}
+					dominant_issue = { value = moralism factor = 0.5 }
+					consciousness = 5
+					reduce_pop = 0.95
+					move_pop = 13
+				}
+				any_pop = {
+					limit = {
+						has_pop_religion = mormon
+						location = {
+							province_id = 98 #1750
+						}
+					}
+					dominant_issue = { value = moralism factor = 0.5 }
+					consciousness = 5
+					reduce_pop = 0.95
+					move_pop = 21
+				}
+				any_pop = {
+					limit = {
+						has_pop_religion = mormon
+						location = {
+							province_id = 99 #1250
+						}
+					}
+					dominant_issue = { value = moralism factor = 0.5 }
+					consciousness = 5
+					reduce_pop = 0.95
+					move_pop = 19
+				}
+				any_pop = {
+					limit = {
+						has_pop_religion = mormon
+						location = {
+							province_id = 96 #1750
+						}
+					}
+					dominant_issue = { value = moralism factor = 0.5 }
+					consciousness = 5
+					reduce_pop = 0.95
+					move_pop = 20
+				}
+				any_pop = {
+					limit = {
+						has_pop_religion = mormon
+						location = {
+							province_id = 95 #1275
+						}
+					}
+					dominant_issue = { value = moralism factor = 0.5 }
+					consciousness = 5
+					reduce_pop = 0.95
+					move_pop = 16
+				}
+				any_pop = {
+					limit = {
+						has_pop_religion = mormon
+						location = {
+							province_id = 94 #1070
+						}
+					}
+					dominant_issue = { value = moralism factor = 0.5 }
+					consciousness = 5
+					reduce_pop = 0.95
+					move_pop = 15
+				}
+				any_pop = {
+					limit = {
+						has_pop_religion = mormon
+						location = {
+							province_id = 3393 #2700
+						}
+					}
+					dominant_issue = { value = moralism factor = 0.5 }
+					consciousness = 5
+					reduce_pop = 0.95
+					move_pop = 14
+				}
+				any_pop = {
+					limit = {
+						has_pop_religion = mormon
+						type = soldiers
+					}
+					reduce_pop = 2
+				}
+			#############################
+			CAN_13 = { add_core = DES }
+		}
+		
+		option = {
+			name = "EVTOPTA1110056"
+			set_global_flag = mormons_welcomed_columbia
+			any_country = {
+				any_owned = {
+					limit = {
+						region = CAN_13
+						has_pop_religion = mormon
+					}
+					add_province_modifier = { name = home_of_the_mormons duration = 10950 }
+					#add_province_modifier = { name = nationalist_agitation duration = 1095 }
+					any_pop = {
+						limit = { is_culture_group = native_american }
+						reduce_pop = 0.25
+					}
+				}
+			}
+			#############################
+				any_owned = {
+					limit = {
+						region = CAN_13
+						has_pop_religion = mormon
+					}
+					add_province_modifier = { name = home_of_the_mormons duration = 10950 }
+					#add_province_modifier = { name = nationalist_agitation duration = 1095 }
+					any_pop = {
+						limit = { is_culture_group = native_american }
+						reduce_pop = 0.25
+					}
+				}
+			DES = { capital = 13 government = theocracy }
+			ai_chance = { factor = 90 }
+		}
+		option = {
+			name = "EVTOPTB1110056"
+			set_global_flag = mormons_rejected_columbia
+			release_vassal = DES
+			DES = {
+				capital = 13
+				government = theocracy
+				relation = {
+					who = THIS
+					value = -400
+				}
+				any_owned = {
+					limit = {
+						region = CAN_13
+						has_pop_religion = mormon
+					}
+					add_province_modifier = { name = home_of_the_mormons duration = 10950 }
+					add_province_modifier = { name = nationalist_agitation duration = 1095 }
+					any_pop = {
+						limit = { is_culture_group = native_american }
+						reduce_pop = 0.25
+					}
+				}
+			}
+			relation = {
+				who = DES
+				value = -400
+			}
+			diplomatic_influence = {
+				who = DES
+				value = -400
+			}
+			ai_chance = { factor = 10 }
+		}
+	}
+	
+	country_event = {
+		id = 1110057
+		title = "EVTNAME1110057"
+		desc = "EVTDESC1110057"
+		picture = "mormon_exodus"
+		news = yes
+		news_title = "EVTNAME1110057_NEWS_TITLE"
+		news_desc_long = "EVTNAME1110057_NEWS_LONG"
+		news_desc_medium = "EVTNAME1110057_NEWS_MEDIUM"
+		news_desc_short = "EVTNAME1110057_NEWS_SHORT"
+		is_triggered_only = yes
+		
+		immediate = {
+			set_global_flag = mormon_hawaii
+			any_country = {
+				any_pop = {
+					limit = {
+						has_pop_religion = mormon
+						NOT = {
+							location = {
+								OR = {
+									province_id = 97
+									province_id = 98
+									province_id = 99
+									province_id = 96
+									province_id = 95
+									province_id = 94
+									province_id = 3393
+								}
+							}
+						}
+					}
+					dominant_issue = { value = moralism factor = 0.5 }
+					consciousness = 5
+					reduce_pop = 0.80
+					move_pop = 658
+				}
+			}
+			any_country = {
+				any_pop = {
+					limit = {
+						has_pop_religion = mormon
+						location = {
+							province_id = 97 #5950
+						}
+					}
+					dominant_issue = { value = moralism factor = 0.5 }
+					consciousness = 5
+					reduce_pop = 0.80
+					move_pop = 658
+				}
+			}
+			any_country = {
+				any_pop = {
+					limit = {
+						has_pop_religion = mormon
+						location = {
+							province_id = 98 #1750
+						}
+					}
+					dominant_issue = { value = moralism factor = 0.5 }
+					consciousness = 5
+					reduce_pop = 0.80
+					move_pop = 3305
+				}
+			}
+			any_country = {
+				any_pop = {
+					limit = {
+						has_pop_religion = mormon
+						location = {
+							province_id = 99 #1250
+						}
+					}
+					dominant_issue = { value = moralism factor = 0.5 }
+					consciousness = 5
+					reduce_pop = 0.80
+					move_pop = 3306
+				}
+			}
+			any_country = {
+				any_pop = {
+					limit = {
+						has_pop_religion = mormon
+						location = {
+							province_id = 96 #1750
+						}
+					}
+					dominant_issue = { value = moralism factor = 0.5 }
+					consciousness = 5
+					reduce_pop = 0.80
+					move_pop = 658
+				}
+			}
+			any_country = {
+				any_pop = {
+					limit = {
+						has_pop_religion = mormon
+						location = {
+							province_id = 95 #1275
+						}
+					}
+					dominant_issue = { value = moralism factor = 0.5 }
+					consciousness = 5
+					reduce_pop = 0.80
+					move_pop = 3305
+				}
+			}
+			any_country = {
+				any_pop = {
+					limit = {
+						has_pop_religion = mormon
+						location = {
+							province_id = 94 #1070
+						}
+					}
+					dominant_issue = { value = moralism factor = 0.5 }
+					consciousness = 5
+					reduce_pop = 0.80
+					move_pop = 3305
+				}
+			}
+			any_country = {
+				any_pop = {
+					limit = {
+						has_pop_religion = mormon
+						location = {
+							province_id = 3393 #2700
+						}
+					}
+					dominant_issue = { value = moralism factor = 0.5 }
+					consciousness = 5
+					reduce_pop = 0.80
+					move_pop = 3306
+				}
+			}
+			
+			any_country = {
+				any_pop = {
+					limit = {
+						has_pop_religion = mormon
+						type = soldiers
+					}
+					reduce_pop = 2
+				}
+			}
+			#############################
+				any_pop = {
+					limit = {
+						has_pop_religion = mormon
+						location = {
+							province_id = 97 #5950
+						}
+					}
+					dominant_issue = { value = moralism factor = 0.5 }
+					consciousness = 5
+					reduce_pop = 0.80
+					move_pop = 658
+				}
+				any_pop = {
+					limit = {
+						has_pop_religion = mormon
+						location = {
+							province_id = 98 #1750
+						}
+					}
+					dominant_issue = { value = moralism factor = 0.5 }
+					consciousness = 5
+					reduce_pop = 0.80
+					move_pop = 3305
+				}
+				any_pop = {
+					limit = {
+						has_pop_religion = mormon
+						location = {
+							province_id = 99 #1250
+						}
+					}
+					dominant_issue = { value = moralism factor = 0.5 }
+					consciousness = 5
+					reduce_pop = 0.80
+					move_pop = 3306
+				}
+				any_pop = {
+					limit = {
+						has_pop_religion = mormon
+						location = {
+							province_id = 96 #1750
+						}
+					}
+					dominant_issue = { value = moralism factor = 0.5 }
+					consciousness = 5
+					reduce_pop = 0.80
+					move_pop = 658
+				}
+				any_pop = {
+					limit = {
+						has_pop_religion = mormon
+						location = {
+							province_id = 95 #1275
+						}
+					}
+					dominant_issue = { value = moralism factor = 0.5 }
+					consciousness = 5
+					reduce_pop = 0.80
+					move_pop = 3305
+				}
+				any_pop = {
+					limit = {
+						has_pop_religion = mormon
+						location = {
+							province_id = 94 #1070
+						}
+					}
+					dominant_issue = { value = moralism factor = 0.5 }
+					consciousness = 5
+					reduce_pop = 0.80
+					move_pop = 3305
+				}
+				any_pop = {
+					limit = {
+						has_pop_religion = mormon
+						location = {
+							province_id = 3393 #2700
+						}
+					}
+					dominant_issue = { value = moralism factor = 0.5 }
+					consciousness = 5
+					reduce_pop = 0.80
+					move_pop = 3306
+				}
+				any_pop = {
+					limit = {
+						has_pop_religion = mormon
+						type = soldiers
+					}
+					reduce_pop = 2
+				}
+			#############################
+		}
+			
+		option = {
+			name = "EVTOPTB1110057"
+			set_global_flag = mormons_take_over_hawaii
+			HAW_658 = { add_core = DES add_core = HAW }
+			HAW = { annex_to = DES }
+			3305 = {
+				sub_unit = { type = clipper_transport value = current }
+				sub_unit = { type = clipper_transport value = current }
+			}
+			DES = {
+				capital = 3305
+				civilized = yes
+				government = theocracy
+				remove_accepted_culture = yankee
+				remove_accepted_culture = dixie
+				badboy = 5
+				any_owned = {
+					limit = {
+						region = HAW_658
+						OR = {
+							has_pop_religion = mormon
+							has_pop_culture = polynesian
+							has_pop_culture = hawaiian
+						}
+					}
+					add_province_modifier = { name = home_of_the_mormons duration = 10950 }
+					add_province_modifier = { name = nationalist_agitation duration = 1095 }
+					any_pop = {
+						limit = { is_culture_group = oceanic }
+						random_list = {
+							25 = { reduce_pop = 0.65 }
+							25 = { reduce_pop = 0.7 }
+							25 = { reduce_pop = 0.75 }
+							25 = { reduce_pop = 0.8 }
+						}
+					}
+				}
+			}
+			ai_chance = { factor = 100 }
+		}
+	}
+#################################################
+# Aridoamerica Alliance Vassalization
+	country_event = {
+		id = 1110058
+		title = "EVTNAME1110058"
+		desc = "EVTDESC1110058"
+		picture = "rio_bravo"
+		is_triggered_only = yes
+
+		option = {
+			name = "EVTOPTA1110058"
+			set_country_flag = aridoamerica_alliance_vassal
+			FROM = { create_vassal = THIS }
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+##########################################################
+# Aridoamerica Culture & Capital
+
+	country_event = {
+		id = 1110059 
+		title = "EVTNAME1110059"
+		desc = "EVTDESC1110059"
+		picture = "aridoamerica_big"
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPT1110059A" #texan
+			primary_culture = texan
+			religion = protestant
+			add_accepted_culture = californio
+			add_accepted_culture = norteno
+			clr_country_flag = catholic_country
+			set_country_flag = protestant_country
+			set_country_flag = ARD_primary_culture_selected
+			ai_chance = {
+				factor = 33
+				modifier = {
+					factor = 100
+					OR = {
+						has_country_flag = TRG_primary_culture_texan
+						has_country_flag = lone_star_state
+					}
+				}
+			}
+		}
+		option = {
+			name = "EVTOPT1110059B" #norteno
+			primary_culture = norteno
+			religion = catholic
+			add_accepted_culture = californio
+			add_accepted_culture = texan
+			clr_country_flag = protestant_country
+			set_country_flag = catholic_country
+			set_country_flag = ARD_primary_culture_selected
+			ai_chance = {
+				factor = 33
+				modifier = {
+					factor = 100
+					OR = {
+						has_country_flag = TRG_primary_culture_norteno
+						has_country_flag = riogrande_claims
+					}
+				}
+			}
+		}
+		option = {
+			name = "EVTOPT1110059C" #californio
+			primary_culture = californio
+			religion = catholic
+			add_accepted_culture = norteno
+			add_accepted_culture = texan
+			clr_country_flag = protestant_country
+			set_country_flag = catholic_country
+			set_country_flag = ARD_primary_culture_selected
+			ai_chance = {
+				factor = 33
+				modifier = {
+					factor = 100
+					has_country_flag = californio_claims
+				}
+			}
+		}
+	}
+
+	country_event = {
+		id = 1110060 
+		title = "EVTNAME1110060"
+		desc = "EVTDESC1110060"
+		picture = "aridoamerica_big"
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPT1110060A" #californian
+			primary_culture = californian
+			religion = protestant
+			add_accepted_culture = texan
+			add_accepted_culture = californio
+			add_accepted_culture = norteno
+			clr_country_flag = catholic_country
+			set_country_flag = protestant_country
+			set_country_flag = ARD_primary_culture_selected
+			ai_chance = {
+				factor = 100
+			}
+		}
+		option = {
+			name = "EVTOPT1110060B" #texan
+			primary_culture = texan
+			religion = protestant
+			add_accepted_culture = californian
+			add_accepted_culture = californio
+			add_accepted_culture = norteno
+			clr_country_flag = catholic_country
+			set_country_flag = protestant_country
+			set_country_flag = ARD_primary_culture_selected
+			ai_chance = {
+				factor = 0
+			}
+		}
+		option = {
+			name = "EVTOPT1110060C" #norteno
+			primary_culture = norteno
+			religion = catholic
+			add_accepted_culture = californio
+			add_accepted_culture = texan
+			add_accepted_culture = californian
+			clr_country_flag = protestant_country
+			set_country_flag = catholic_country
+			set_country_flag = ARD_primary_culture_selected
+			ai_chance = {
+				factor = 0
+			}
+		}
+		option = {
+			name = "EVTOPT1110060D" #californio
+			primary_culture = californio
+			religion = catholic
+			add_accepted_culture = norteno
+			add_accepted_culture = texan
+			add_accepted_culture = californian
+			clr_country_flag = protestant_country
+			set_country_flag = catholic_country
+			set_country_flag = ARD_primary_culture_selected
+			ai_chance = {
+				factor = 0
+			}
+		}
+	}
+	country_event = {
+		id = 1110061 
+		title = "EVTNAME1110061"
+		desc = "EVTDESC1110061"
+		picture = "aridoamerica_big"
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPT1110061A" #mormon
+			primary_culture = mormon_culture
+			religion = mormon
+			add_accepted_culture = texan
+			add_accepted_culture = californio
+			add_accepted_culture = norteno
+			clr_country_flag = catholic_country
+			clr_country_flag = protestant_country
+			set_country_flag = mormon_country
+			set_country_flag = ARD_primary_culture_selected
+			ai_chance = {
+				factor = 100
+			}
+		}
+		option = {
+			name = "EVTOPT1110061B" #texan
+			primary_culture = texan
+			religion = protestant
+			add_accepted_culture = mormon_culture
+			add_accepted_culture = californio
+			add_accepted_culture = norteno
+			clr_country_flag = catholic_country
+			clr_country_flag = mormon_country
+			set_country_flag = protestant_country
+			set_country_flag = ARD_primary_culture_selected
+			ai_chance = {
+				factor = 0
+			}
+		}
+		option = {
+			name = "EVTOPT1110061C" #norteno
+			primary_culture = norteno
+			religion = catholic
+			add_accepted_culture = californio
+			add_accepted_culture = texan
+			add_accepted_culture = mormon_culture
+			clr_country_flag = protestant_country
+			clr_country_flag = mormon_country
+			set_country_flag = catholic_country
+			set_country_flag = ARD_primary_culture_selected
+			ai_chance = {
+				factor = 0
+			}
+		}
+		option = {
+			name = "EVTOPT1110061D" #californio
+			primary_culture = californio
+			religion = catholic
+			add_accepted_culture = norteno
+			add_accepted_culture = texan
+			add_accepted_culture = mormon_culture
+			clr_country_flag = protestant_country
+			clr_country_flag = mormon_country
+			set_country_flag = catholic_country
+			set_country_flag = ARD_primary_culture_selected
+			ai_chance = {
+				factor = 0
+			}
+		}
+	}
+	
+	country_event = {
+		id = 1110062 
+		title = "EVTNAME1110062"
+		desc = "EVTDESC1110062"
+		picture = "aridoamerica_big"
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPT1110062A" #Autism
+			capital = 133
+			set_country_flag = ARD_capial_selected
+			ai_chance = {
+				factor = 50
+			}
+		}
+		option = {
+			name = "EVTOPT1110062B" #San Francisco
+			capital = 104
+			set_country_flag = ARD_capial_selected
+			ai_chance = {
+				factor = 50
+			}
+		}
+		option = {
+			name = "EVTOPT1110062C" #Monterrey California
+			capital = 87
+			set_country_flag = ARD_capial_selected
+			ai_chance = {
+				factor = 0
+			}
+		}
+		option = {
+			name = "EVTOPT1110062D" #Los Angeles
+			capital = 89
+			set_country_flag = ARD_capial_selected
+			ai_chance = {
+				factor = 0
+			}
+		}
+		option = {
+			name = "EVTOPT1110062E" #Ciudad Victoria
+			capital = 2150
+			set_country_flag = ARD_capial_selected
+			ai_chance = {
+				factor = 0
+			}
+		}
+		option = {
+			name = "EVTOPT1110062F" #Zacatecas
+			capital = 2158
+			set_country_flag = ARD_capial_selected
+			ai_chance = {
+				factor = 0
+			}
+		}
+		option = {
+			name = "EVTOPT1110062G" #Hermosillo
+			capital = 2140
+			set_country_flag = ARD_capial_selected
+			ai_chance = {
+				factor = 0
+			}
+		}
+		option = {
+			name = "EVTOPT1110062H" #Salt Lake City
+			capital = 97
+			set_country_flag = ARD_capial_selected
+			ai_chance = {
+				factor = 0
+			}
+		}
+	}
+	
+###################################
+#Mormon Question	
+	country_event = {
+		id = 1110063 
+		title = "EVTNAME1110063"
+		desc = "EVTDESC1110063"
+		picture = "mormon_exodus"
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPT1110063A" #Yes
+			add_accepted_culture = mormon_culture
+			DES = {
+				primary_culture = mormon_culture
+				add_accepted_culture = texan
+				add_accepted_culture = norteno
+				add_accepted_culture = californio
+				remove_accepted_culture = yankee
+				remove_accepted_culture = dixie
+				remove_accepted_culture = mexican
+				government = theocracy
+				religion = mormon
+			}
+			any_pop = {
+				limit = {
+					has_pop_culture = mormon_culture
+				}
+				militancy = -9
+				consciousness = 3 
+			}
+			set_country_flag = embraced_mormons
+			ai_chance = {
+				factor = 75
+			}
+		}
+		option = {
+			name = "EVTOPT1110063B" #No
+			random_owned = {
+				limit = { owner = { primary_culture = texan } }
+				owner = {
+					DES = {
+						primary_culture = texan
+						remove_accepted_culture = mormon_culture
+						remove_accepted_culture = yankee
+						remove_accepted_culture = dixie
+						remove_accepted_culture = mexican
+						government = democracy
+						religion = protestant
+					}
+					any_pop = {
+						limit = {
+							has_pop_culture = mormon_culture
+						}
+						militancy = 3
+						consciousness = 6
+					}
+					set_country_flag = rejected_mormons
+				}
+			}
+			random_owned = {
+				limit = { owner = { primary_culture = californian } }
+				owner = {
+					DES = {
+						primary_culture = californian
+						remove_accepted_culture = mormon_culture
+						remove_accepted_culture = yankee
+						remove_accepted_culture = dixie
+						remove_accepted_culture = mexican
+						government = democracy
+						religion = protestant
+					}
+					any_pop = {
+						limit = {
+							has_pop_culture = mormon_culture
+						}
+						militancy = 3
+						consciousness = 6
+					}
+					set_country_flag = rejected_mormons
+				}
+			}
+			random_owned = {
+				limit = { owner = { primary_culture = norteno } }
+				owner = {
+					DES = {
+						primary_culture = norteno
+						remove_accepted_culture = mormon_culture
+						remove_accepted_culture = yankee
+						remove_accepted_culture = dixie
+						remove_accepted_culture = mexican
+						government = democracy
+						religion = catholic
+					}
+					any_pop = {
+						limit = {
+							has_pop_culture = mormon_culture
+						}
+						militancy = 3
+						consciousness = 6
+					}
+					set_country_flag = rejected_mormons
+				}
+			}
+			random_owned = {
+				limit = { owner = { primary_culture = californio } }
+				owner = {
+					DES = {
+						primary_culture = californio
+						remove_accepted_culture = mormon_culture
+						remove_accepted_culture = yankee
+						remove_accepted_culture = dixie
+						remove_accepted_culture = mexican
+						government = democracy
+						religion = catholic
+					}
+					any_pop = {
+						limit = {
+							has_pop_culture = mormon_culture
+						}
+						militancy = 3
+						consciousness = 6
+					}
+					set_country_flag = rejected_mormons
+				}
+			}
+			ai_chance = {
+				factor = 25
+			}
+		}
+	}

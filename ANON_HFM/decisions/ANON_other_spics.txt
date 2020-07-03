@@ -1,0 +1,2001 @@
+political_decisions = {
+
+	spic_rename_oregon = {
+		picture = gtfo
+		potential = {
+			OR = {
+				is_culture_group = latin_american_cultures
+				is_culture_group = iberian
+			}
+			owns = 81
+			NOT = { has_global_flag = spic_rename_oregon }
+			has_global_flag = SPA_claim_nutca
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = spic_rename_oregon
+			clr_global_flag = normal_rename_oregon
+			81 = {
+				change_province_name = "San Roque" 
+				state_scope = {
+					change_region_name = "El Orejón Sur"
+				}
+			}  
+			83 = { change_province_name = "San Eugenio" }
+			3394 = { change_province_name = "Nueva Huesca" }
+			3388 = { change_province_name = "Cascadas del Clamat" }
+			82 = { change_province_name = "San Honorato" }
+		}
+		ai_will_do = { factor = 1 }
+	}
+	normal_rename_oregon = {
+		picture = gtfo
+		potential = {
+			NOT = {
+				OR = {
+					is_culture_group = latin_american_cultures
+					is_culture_group = iberian
+				}
+			}
+			owns = 81
+			NOT = { has_global_flag = normal_rename_oregon }
+			has_global_flag = SPA_claim_nutca
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = normal_rename_oregon
+			clr_global_flag = spic_rename_oregon
+			81 = {
+				change_province_name = "Portland" 
+				state_scope = {
+					change_region_name = "Oregon"
+				}
+			}  
+			83 = { change_province_name = "Eugene" }
+			3394 = { change_province_name = "Wasco" }
+			3388 = { change_province_name = "Klamath Falls" }
+			82 = { change_province_name = "Baker City" }
+		}
+		ai_will_do = { factor = 1 }
+	}
+	spic_rename_washington = {
+		picture = gtfo
+		potential = {
+			OR = {
+				is_culture_group = latin_american_cultures
+				is_culture_group = iberian
+			}
+			owns = 78
+			NOT = { has_global_flag = spic_rename_washington }
+			has_global_flag = SPA_claim_nutca
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = spic_rename_washington
+			clr_global_flag = normal_rename_washington
+			78 = {
+				change_province_name = "Nuestra Señora de los Ángeles" 
+				state_scope = {
+					change_region_name = "El Orejón Norte"
+				}
+			}  
+			79 = { change_province_name = "Núñez Gaona" }
+			80 = { change_province_name = "Huala-Huala" }
+		}
+		ai_will_do = { factor = 1 }
+	}
+	normal_rename_washington = {
+		picture = gtfo
+		potential = {
+			NOT = {
+				OR = {
+					is_culture_group = latin_american_cultures
+					is_culture_group = iberian
+				}
+			}
+			owns = 78
+			NOT = { has_global_flag = normal_rename_washington }
+			has_global_flag = SPA_claim_nutca
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = normal_rename_washington
+			clr_global_flag = spic_rename_washington
+			78 = {
+				change_province_name = "Seattle" 
+				state_scope = {
+					change_region_name = "Washington"
+				}
+			}  
+			79 = { change_province_name = "Olympia" }
+			80 = { change_province_name = "Walla-Walla" }
+		}
+		ai_will_do = { factor = 1 }
+	}
+	spic_rename_columbia = {
+		picture = gtfo
+		potential = {
+			OR = {
+				is_culture_group = latin_american_cultures
+				is_culture_group = iberian
+			}
+			owns = 13
+			NOT = { has_global_flag = spic_rename_columbia }
+			has_global_flag = SPA_claim_nutca
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = spic_rename_columbia
+			clr_global_flag = normal_rename_columbia
+			13 = {
+				change_province_name = "Nueva Madrid" 
+				state_scope = {
+					change_region_name = "San Lorenzo de Nutca"
+				}
+			}  
+			14 = { change_province_name = "San Miguel" }
+			15 = { change_province_name = "Las Zayas" }
+			16 = { change_province_name = "Fuerte Santiago" }
+			17 = { change_province_name = "Estajín" }
+			19 = { change_province_name = "San Jorge" }
+			20 = { change_province_name = "Riada Fría" }
+			21 = { change_province_name = "Los Cutenayos" }
+		}
+		ai_will_do = { factor = 1 }
+	}
+	normal_rename_columbia = {
+		picture = gtfo
+		potential = {
+			NOT = {
+				OR = {
+					is_culture_group = latin_american_cultures
+					is_culture_group = iberian
+				}
+			}
+			owns = 13
+			NOT = { has_global_flag = normal_rename_columbia }
+			has_global_flag = SPA_claim_nutca
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = normal_rename_columbia
+			clr_global_flag = spic_rename_columbia
+			13 = {
+				change_province_name = "Vancouver" 
+				state_scope = {
+					change_region_name = "Columbia"
+				}
+			}  
+			14 = { change_province_name = "Victoria" }
+			15 = { change_province_name = "Prince Rupert" }
+			16 = { change_province_name = "Glenora" }
+			17 = { change_province_name = "Stikine" }
+			19 = { change_province_name = "Valemount" }
+			20 = { change_province_name = "Okanagan" }
+			21 = { change_province_name = "Kootenay" }
+		}
+		ai_will_do = { factor = 1 }
+	}
+	spic_rename_idaho = {
+		picture = gtfo
+		potential = {
+			OR = {
+				is_culture_group = latin_american_cultures
+				is_culture_group = iberian
+			}
+			owns = 91
+			NOT = { has_global_flag = spic_rename_idaho }
+			has_global_flag = SPA_claim_nutca
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = spic_rename_idaho
+			clr_global_flag = normal_rename_idaho
+			91 = {
+				change_province_name = "El Bosque" 
+				state_scope = {
+					change_region_name = "El Orejón Este"
+				}
+			}  
+			92 = { change_province_name = "Corazón de Alene" }
+			93 = { change_province_name = "Pocatelo" }
+		}
+		ai_will_do = { factor = 1 }
+	}
+	normal_rename_idaho = {
+		picture = gtfo
+		potential = {
+			NOT = {
+				OR = {
+					is_culture_group = latin_american_cultures
+					is_culture_group = iberian
+				}
+			}
+			owns = 91
+			NOT = { has_global_flag = normal_rename_idaho }
+			has_global_flag = SPA_claim_nutca
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = normal_rename_idaho
+			clr_global_flag = spic_rename_idaho
+			91 = {
+				change_province_name = "Boise" 
+				state_scope = {
+					change_region_name = "Idaho"
+				}
+			}  
+			92 = { change_province_name = "Coeur D'Alene" }
+			93 = { change_province_name = "Pocatello" }
+		}
+		ai_will_do = { factor = 1 }
+	}
+	spic_rename_montana = {
+		picture = gtfo
+		potential = {
+			OR = {
+				is_culture_group = latin_american_cultures
+				is_culture_group = iberian
+			}
+			owns = 113
+			NOT = { has_global_flag = spic_rename_montana }
+			has_global_flag = SPA_claim_nutca
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = spic_rename_montana
+			clr_global_flag = normal_rename_montana
+			113 = {
+				change_province_name = "Valle de las Flores" 
+				state_scope = {
+					change_region_name = "Montaña"
+				}
+			}  
+			114 = { change_province_name = "San Esteban" }
+		}
+		ai_will_do = { factor = 1 }
+	}
+	normal_rename_montana = {
+		picture = gtfo
+		potential = {
+			NOT = {
+				OR = {
+					is_culture_group = latin_american_cultures
+					is_culture_group = iberian
+				}
+			}
+			owns = 113
+			NOT = { has_global_flag = normal_rename_montana }
+			has_global_flag = SPA_claim_nutca
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = normal_rename_montana
+			clr_global_flag = spic_rename_montana
+			113 = {
+				change_province_name = "Gallatin Valley" 
+				state_scope = {
+					change_region_name = "Montana"
+				}
+			}  
+			114 = { change_province_name = "Fort Owen" }
+		}
+		ai_will_do = { factor = 1 }
+	}
+	spic_rename_wyoming_2 = {
+		picture = gtfo
+		potential = {
+			OR = {
+				is_culture_group = latin_american_cultures
+				is_culture_group = iberian
+			}
+			owns = 111
+			NOT = { has_global_flag = spic_rename_wyoming_2 }
+			has_global_flag = SPA_claim_nutca
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = spic_rename_wyoming_2
+			clr_global_flag = normal_rename_wyoming_2
+			111 = {
+				change_province_name = "Fuerte Buenavilla" 
+				state_scope = {
+					change_region_name = "Las Rocallosas"
+				}
+			}  
+			3395 = { change_province_name = "Paso del Sur" }
+		}
+		ai_will_do = { factor = 1 }
+	}
+	normal_rename_wyoming_2 = {
+		picture = gtfo
+		potential = {
+			NOT = {
+				OR = {
+					is_culture_group = latin_american_cultures
+					is_culture_group = iberian
+				}
+			}
+			owns = 111
+			NOT = { has_global_flag = normal_rename_wyoming_2 }
+			has_global_flag = SPA_claim_nutca
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = normal_rename_wyoming_2
+			clr_global_flag = spic_rename_wyoming_2
+			111 = {
+				change_province_name = "Fort Bonneville" 
+				state_scope = {
+					change_region_name = "Wyoming"
+				}
+			}  
+			3395 = { change_province_name = "South Pass" }
+		}
+		ai_will_do = { factor = 1 }
+	}
+
+	SPA_claim_nutca = {
+		picture = nutca
+		potential = {
+			NOT = { has_global_flag = SPA_claim_nutca }
+			OR = {
+				AND = {
+					is_culture_group = iberian
+					has_global_flag = reconquista
+					USA = {
+						any_core = {
+							OR = {
+								owned_by = THIS
+								is_core = THIS
+								owner = {
+									in_sphere = THIS
+									vassal_of = THIS
+								}
+							}
+						}
+					}
+				}
+				AND = {
+					tag = MEX
+					has_country_flag = manifest_destiny_refuted
+					owns = 3393
+					owns = 104
+					owns = 89
+					owns = 97
+					owns = 100
+					owns = 2148
+					owns = 109
+					owns = 107
+					owns = 133
+					owns = 129
+					owns = 103
+					owns = 128
+				}
+			}
+		}
+		
+		allow = {
+			war = no
+			3393 = {
+				OR = {
+					owned_by = THIS
+					is_core = THIS
+					owner = {
+						in_sphere = THIS
+						vassal_of = THIS
+					}
+				}
+			}
+			104 = {
+				OR = {
+					owned_by = THIS
+					is_core = THIS
+					owner = {
+						in_sphere = THIS
+						vassal_of = THIS
+					}
+				}
+			}
+			89 = {
+				OR = {
+					owned_by = THIS
+					is_core = THIS
+					owner = {
+						in_sphere = THIS
+						vassal_of = THIS
+					}
+				}
+			}
+			97 = {
+				OR = {
+					owned_by = THIS
+					is_core = THIS
+					owner = {
+						in_sphere = THIS
+						vassal_of = THIS
+					}
+				}
+			}
+			100 = {
+				OR = {
+					owned_by = THIS
+					is_core = THIS
+					owner = {
+						in_sphere = THIS
+						vassal_of = THIS
+					}
+				}
+			}
+			2148 = {
+				OR = {
+					owned_by = THIS
+					is_core = THIS
+					owner = {
+						in_sphere = THIS
+						vassal_of = THIS
+					}
+				}
+			}
+			109 = {
+				OR = {
+					owned_by = THIS
+					is_core = THIS
+					owner = {
+						in_sphere = THIS
+						vassal_of = THIS
+					}
+				}
+			}
+			107 = {
+				OR = {
+					owned_by = THIS
+					is_core = THIS
+					owner = {
+						in_sphere = THIS
+						vassal_of = THIS
+					}
+				}
+			}
+			133 = {
+				OR = {
+					owned_by = THIS
+					is_core = THIS
+					owner = {
+						in_sphere = THIS
+						vassal_of = THIS
+					}
+				}
+			}
+			129 = {
+				OR = {
+					owned_by = THIS
+					is_core = THIS
+					owner = {
+						in_sphere = THIS
+						vassal_of = THIS
+					}
+				}
+			}
+			103 = {
+				OR = {
+					owned_by = THIS
+					is_core = THIS
+					owner = {
+						in_sphere = THIS
+						vassal_of = THIS
+					}
+				}
+			}
+			128 = {
+				OR = {
+					owned_by = THIS
+					is_core = THIS
+					owner = {
+						in_sphere = THIS
+						vassal_of = THIS
+					}
+				}
+			}
+		}
+		
+		effect = {
+			set_global_flag = SPA_claim_nutca
+			badboy = 10
+			prestige = 25
+			random_owned = {
+				limit = { owner = { is_culture_group = iberian } }
+				owner = {
+					USA_81 = { #Oregon
+						add_core = VNS
+					}
+					USA_78 = { #Washington
+						add_core = VNS
+					}
+					USA_91 = { #Idaho
+						add_core = VNS
+					}
+					114 = { #Montana
+						add_core = VNS
+						owner = {
+							relation = {
+								who = THIS
+								value = -200
+							}
+						}
+					}
+					113 = { #Montana
+						add_core = VNS
+					}
+					111 = { #Wyoming
+						add_core = VNS
+					}
+					3395 = { #Wyoming
+						add_core = VNS
+					}
+					13 = { #Columbia
+						add_core = VNS
+						owner = {
+							relation = {
+								who = THIS
+								value = -200
+							}
+						}
+					}
+					14 = { #Columbia
+						add_core = VNS
+					}
+					15 = { #Columbia
+						add_core = VNS
+					}
+					16 = { #Columbia
+						add_core = VNS
+					}
+					17 = { #Columbia
+						add_core = VNS
+					}
+					19 = { #Columbia
+						add_core = VNS
+					}
+					20 = { #Columbia
+						add_core = VNS
+					}
+					21 = { #Columbia
+						add_core = VNS
+					}
+					
+					#Florida
+					USA_200 = { add_core = VNS } #Florida
+					194 = { add_core = VNS } #Biloxi
+					197 = { add_core = VNS } #Mobile
+				}
+			}
+			random_owned = {
+				limit = { owner = { tag = MEX } }
+				owner = {
+					USA_81 = { #Oregon
+						add_core = THIS
+					}
+					USA_78 = { #Washington
+						add_core = THIS
+					}
+					USA_91 = { #Idaho
+						add_core = THIS
+					}
+					114 = { #Montana
+						add_core = THIS
+						owner = {
+							relation = {
+								who = THIS
+								value = -200
+							}
+						}
+					}
+					113 = { #Montana
+						add_core = THIS
+					}
+					111 = { #Wyoming
+						add_core = THIS
+					}
+					3395 = { #Wyoming
+						add_core = THIS
+					}
+					13 = { #Columbia
+						add_core = THIS
+						owner = {
+							relation = {
+								who = THIS
+								value = -200
+							}
+						}
+					}
+					14 = { #Columbia
+						add_core = THIS
+					}
+					15 = { #Columbia
+						add_core = THIS
+					}
+					16 = { #Columbia
+						add_core = THIS
+					}
+					17 = { #Columbia
+						add_core = THIS
+					}
+					19 = { #Columbia
+						add_core = THIS
+					}
+					20 = { #Columbia
+						add_core = THIS
+					}
+					21 = { #Columbia
+						add_core = THIS
+					}
+				}
+			}
+		}
+		ai_will_do = { factor = 1 }
+	}			
+			
+	spic_rename_newmexico = {
+		picture = gtfo
+		potential = {
+			OR = {
+				is_culture_group = latin_american_cultures
+				is_culture_group = iberian
+			}
+			owns = 105
+			owns = 3397
+			NOT = { has_global_flag = spic_rename_newmexico }
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = spic_rename_newmexico
+			clr_global_flag = normal_rename_newmexico
+			105 = {
+				change_province_name = "Santa Fé" 
+				state_scope = {
+					change_region_name = "Nuevo México"
+				}
+			}  
+			2148 = { change_province_name = "Albuquerque" }
+			2662 = { change_province_name = "Ánimas" }
+			3397 = { change_province_name = "La Vega de los Vigiles" }
+		}
+		ai_will_do = { factor = 1 }
+	}
+	normal_rename_newmexico = {
+		picture = gtfo
+		potential = {
+			NOT = {
+				OR = {
+					is_culture_group = latin_american_cultures
+					is_culture_group = iberian
+				}
+			}
+			owns = 105
+			owns = 3397
+			NOT = { has_global_flag = normal_rename_newmexico }
+			OR = {
+				has_global_flag = american_frontier
+				has_global_flag = spic_rename_newmexico
+			}
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = normal_rename_newmexico
+			clr_global_flag = spic_rename_newmexico
+			
+			105 = {
+				change_province_name = "Santa Fe" 
+				state_scope = {
+					change_region_name = "New Mexico"
+				}
+			}  
+			2148 = { change_province_name = "Albuquerque" }
+			2662 = { change_province_name = "Animas" }
+			3397 = { change_province_name = "Rio Arriba" }
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	spic_rename_arizona = {
+		picture = gtfo
+		potential = {
+			OR = {
+				is_culture_group = latin_american_cultures
+				is_culture_group = iberian
+			}
+			owns = 100
+			owns = 101
+			owns = 3396
+			NOT = { has_global_flag = spic_rename_arizona }
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = spic_rename_arizona
+			clr_global_flag = normal_rename_arizona
+			100 = {
+				change_province_name = "Fénix" 
+				state_scope = {
+					change_region_name = "Arizona"
+				}
+			}  
+			101 = { change_province_name = "Coconino" }
+			102 = { change_province_name = "Tucsón" }
+			3396 = { change_province_name = "Mojave" }
+		}
+		ai_will_do = { factor = 1 }
+	}
+	normal_rename_arizona = {
+		picture = gtfo
+		potential = {
+			NOT = {
+				OR = {
+					is_culture_group = latin_american_cultures
+					is_culture_group = iberian
+				}
+			}
+			owns = 100
+			owns = 101
+			owns = 3396
+			NOT = { has_global_flag = normal_rename_arizona }
+			OR = {
+				has_global_flag = american_frontier
+				has_global_flag = spic_rename_arizona
+			}
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = normal_rename_arizona
+			clr_global_flag = spic_rename_arizona
+			
+			100 = {
+				change_province_name = "Phoenix" 
+				state_scope = {
+					change_region_name = "Arizona"
+				}
+			}  
+			101 = { change_province_name = "Flagstaff" }
+			102 = { change_province_name = "Tucson" }
+			3396 = { change_province_name = "Mohave" }
+		}
+		ai_will_do = { factor = 1 }
+	}
+		
+	spic_rename_california_south = {
+		picture = gtfo
+		potential = {
+			OR = {
+				is_culture_group = latin_american_cultures
+				is_culture_group = iberian
+			}
+			owns = 89
+			NOT = { has_global_flag = spic_rename_california_south }
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = spic_rename_california_south
+			clr_global_flag = normal_rename_california_south
+			89 = {
+				change_province_name = "Los Ángeles" 
+				state_scope = {
+					change_region_name = "Alta California Sur"
+				}
+			}
+			87 = { change_province_name = "Monterrey" } 
+			88 = { change_province_name = "San Bernardino" } 
+			90 = { change_province_name = "San Diego" } 
+			3400 = { change_province_name = "Los Tulares" } 
+		}
+		ai_will_do = { factor = 1 }
+	}
+	normal_rename_california_south = {
+		picture = gtfo
+		potential = {
+			NOT = {
+				OR = {
+					is_culture_group = latin_american_cultures
+					is_culture_group = iberian
+				}
+			}
+			owns = 89
+			NOT = { has_global_flag = normal_rename_california_south }
+			OR = {
+				has_global_flag = american_frontier
+				has_global_flag = spic_rename_california_south
+			}
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = normal_rename_california_south
+			clr_global_flag = spic_rename_california_south
+			89 = {
+				change_province_name = "Los Angeles" 
+				state_scope = {
+					change_region_name = "South California"
+				}
+			}
+			87 = { change_province_name = "Monterey" }
+			88 = { change_province_name = "San Bernardino" }
+			90 = { change_province_name = "San Diego" } 
+			3400 = { change_province_name = "Tulare" }  
+		}
+		ai_will_do = { factor = 1 }
+	}
+	spic_rename_california_north = {
+		picture = gtfo
+		potential = {
+			OR = {
+				is_culture_group = latin_american_cultures
+				is_culture_group = iberian
+			}
+			owns = 104
+			NOT = { has_global_flag = spic_rename_california_north }
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = spic_rename_california_north
+			clr_global_flag = normal_rename_california_north
+			104 = {
+				change_province_name = "San Francisco" 
+				state_scope = {
+					change_region_name = "Alta California Norte"
+				}
+			}
+			84 = { change_province_name = "Sacramento" } 
+			85 = { change_province_name = "Sonoma" } 
+			86 = { change_province_name = "Mariposa" } 
+			3307 = { change_province_name = "Quebrada Honda" } 
+			3308 = { change_province_name = "Santísima Trinidad" }
+			3389 = { change_province_name = "Tejama" }
+		}
+		ai_will_do = { factor = 1 }
+	}
+	normal_rename_california_north = {
+		picture = gtfo
+		potential = {
+			NOT = {
+				OR = {
+					is_culture_group = latin_american_cultures
+					is_culture_group = iberian
+				}
+			}
+			owns = 104
+			NOT = { has_global_flag = normal_rename_california_north }
+			OR = {
+				has_global_flag = american_frontier
+				has_global_flag = spic_rename_california_north
+			}
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = normal_rename_california_north
+			clr_global_flag = spic_rename_california_north			
+			104 = {
+				change_province_name = "San Francisco" 
+				state_scope = {
+					change_region_name = "Alta California Norte"
+				}
+			}
+			84 = { change_province_name = "Sacramento" } 
+			85 = { change_province_name = "Sonoma" } 
+			86 = { change_province_name = "Mariposa" } 
+			3307 = { change_province_name = "Modoc" } 
+			3308 = { change_province_name = "Trinidad" }
+			3389 = { change_province_name = "Tehama" }
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	spic_rename_nevada = {
+		picture = gtfo
+		potential = {
+			OR = {
+				is_culture_group = latin_american_cultures
+				is_culture_group = iberian
+			}
+			owns = 94
+			NOT = { has_global_flag = spic_rename_nevada }
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = spic_rename_nevada
+			clr_global_flag = normal_rename_nevada
+			94 = {
+				change_province_name = "El Valle" 
+				state_scope = {
+					change_region_name = "Sierra Nevada"
+				}
+			}  
+			96 = { change_province_name = "Las Vegas" }
+			95 = { change_province_name = "Pino Blanco" }
+		}
+		ai_will_do = { factor = 1 }
+	}
+	normal_rename_nevada = {
+		picture = gtfo
+		potential = {
+			NOT = {
+				OR = {
+					is_culture_group = latin_american_cultures
+					is_culture_group = iberian
+				}
+			}
+			owns = 94
+			NOT = { has_global_flag = normal_rename_nevada }
+			OR = {
+				has_global_flag = american_frontier
+				has_global_flag = spic_rename_california_nevada
+			}
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = normal_rename_nevada
+			clr_global_flag = spic_rename_nevada
+			94 = {
+				change_province_name = "Dayton" 
+				state_scope = {
+					change_region_name = "Nevada"
+				}
+			}  
+			96 = { change_province_name = "Las Vegas" }
+			95 = { change_province_name = "Elko" }
+		}
+		ai_will_do = { factor = 1 }
+	}
+		
+	spic_rename_utah = {
+		picture = gtfo
+		potential = {
+			OR = {
+				is_culture_group = latin_american_cultures
+				is_culture_group = iberian
+			}
+			owns = 97
+			NOT = { has_global_flag = spic_rename_utah }
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = spic_rename_utah
+			clr_global_flag = normal_rename_utah
+			97 = {
+				change_province_name = "Buenaventura" 
+				state_scope = {
+					change_region_name = "Yuta"
+				}
+			}  
+			98 = { change_province_name = "El Cedro" }
+			99 = { change_province_name = "San Juan" }
+			3225 = { change_province_name = "Gran Lago Salado" }
+		}
+		ai_will_do = { factor = 1 }
+	}
+	normal_rename_utah = {
+		picture = gtfo
+		potential = {
+			NOT = {
+				OR = {
+					is_culture_group = latin_american_cultures
+					is_culture_group = iberian
+				}
+			}
+			owns = 97
+			NOT = { has_global_flag = normal_rename_utah }
+			OR = {
+				has_global_flag = american_frontier
+				has_global_flag = spic_rename_utah
+			}
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = normal_rename_utah
+			clr_global_flag = spic_rename_utah
+			97 = {
+				change_province_name = "Salt Lake City" 
+				state_scope = {
+					change_region_name = "Utah"
+				}
+			}  
+			98 = { change_province_name = "Cedar City" }
+			99 = { change_province_name = "Moab" }
+			3225 = { change_province_name = "Great Salt Lake" }
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	spic_rename_wyoming = {
+		picture = gtfo
+		potential = {
+			OR = {
+				is_culture_group = latin_american_cultures
+				is_culture_group = iberian
+			}
+			owns = 110
+			owns = 107
+			NOT = { has_global_flag = spic_rename_wyoming }
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = spic_rename_wyoming
+			clr_global_flag = normal_rename_wyoming
+			110 = { change_province_name = "Aguadulce" }
+			107 = { change_province_name = "El Carbón" }
+		}
+		ai_will_do = { factor = 1 }
+	}
+	normal_rename_wyoming = {
+		picture = gtfo
+		potential = {
+			NOT = {
+				OR = {
+					is_culture_group = latin_american_cultures
+					is_culture_group = iberian
+				}
+			}
+			owns = 110
+			owns = 107
+			NOT = { has_global_flag = normal_rename_wyoming }
+			OR = {
+				has_global_flag = american_frontier
+				has_global_flag = spic_rename_wyoming
+			}
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = normal_rename_wyoming
+			clr_global_flag = spic_rename_wyoming
+			110 = { change_province_name = "Rock Springs" }
+			107 = { change_province_name = "Riverside" }
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	spic_rename_colorado = {
+		picture = gtfo
+		potential = {
+			OR = {
+				is_culture_group = latin_american_cultures
+				is_culture_group = iberian
+			}
+			owns = 108
+			owns = 109
+			owns = 103
+			NOT = { has_global_flag = spic_rename_colorado }
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = spic_rename_colorado
+			clr_global_flag = normal_rename_colorado
+			108 = { change_province_name = "La Garita" }
+			109 = { change_province_name = "Gerbidora" }
+			103 = { change_province_name = "Huérfano" }
+			3398 = { change_province_name = "Aguas Calientes" }
+			3399 = { change_province_name = "Rio Blanco" }
+		}
+		ai_will_do = { factor = 1 }
+	}
+	normal_rename_colorado = {
+		picture = gtfo
+		potential = {
+			NOT = {
+				OR = {
+					is_culture_group = latin_american_cultures
+					is_culture_group = iberian
+				}
+			}
+			owns = 108
+			owns = 109
+			owns = 103
+			NOT = { has_global_flag = normal_rename_colorado }
+			OR = {
+				has_global_flag = american_frontier
+				has_global_flag = spic_rename_colorado
+			}
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = normal_rename_colorado
+			clr_global_flag = spic_rename_colorado
+			108 = { change_province_name = "Grand Junction" }
+			109 = { change_province_name = "Aspen" }
+			103 = { change_province_name = "Pueblo" }
+			3398 = { change_province_name = "Warm Springs" }
+			3399 = { change_province_name = "White River" }
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	spic_rename_oklahoma = {
+		picture = gtfo
+		potential = {
+			OR = {
+				is_culture_group = latin_american_cultures
+				is_culture_group = iberian
+			}
+			owns = 129
+			NOT = { has_global_flag = spic_rename_oklahoma }
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = spic_rename_oklahoma
+			clr_global_flag = normal_rename_oklahoma
+			129 = { change_province_name = "Cimarrón" }
+		}
+		ai_will_do = { factor = 1 }
+	}
+	normal_rename_oklahoma = {
+		picture = gtfo
+		potential = {
+			NOT = {
+				OR = {
+					is_culture_group = latin_american_cultures
+					is_culture_group = iberian
+				}
+			}
+			owns = 129
+			NOT = { has_global_flag = normal_rename_oklahoma }
+			OR = {
+				has_global_flag = american_frontier
+				has_global_flag = spic_rename_oklahoma
+			}
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = normal_rename_oklahoma
+			clr_global_flag = spic_rename_oklahoma
+			129 = { change_province_name = "Guymon" }
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	spic_rename_kansas = {
+		picture = gtfo
+		potential = {
+			OR = {
+				is_culture_group = latin_american_cultures
+				is_culture_group = iberian
+			}
+			owns = 128
+			NOT = { has_global_flag = spic_rename_kansas }
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = spic_rename_kansas
+			clr_global_flag = normal_rename_kansas
+			128 = { change_province_name = "La Jornada" }
+		}
+		ai_will_do = { factor = 1 }
+	}
+	normal_rename_kansas = {
+		picture = gtfo
+		potential = {
+			NOT = {
+				OR = {
+					is_culture_group = latin_american_cultures
+					is_culture_group = iberian
+				}
+			}
+			owns = 128
+			NOT = { has_global_flag = normal_rename_kansas }
+			OR = {
+				has_global_flag = american_frontier
+				has_global_flag = spic_rename_kansas
+			}
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = normal_rename_kansas
+			clr_global_flag = spic_rename_kansas
+			128 = { change_province_name = "Hugoton" }
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	spic_rename_misspeepee = {
+		picture = gtfo
+		potential = {
+			OR = {
+				is_culture_group = latin_american_cultures
+				is_culture_group = iberian
+			}
+			owns = 194
+			NOT = { has_global_flag = spic_rename_misspeepee }
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = spic_rename_misspeepee
+			clr_global_flag = normal_rename_misspeepee
+			194 = { change_province_name = "Misisipí" }
+		}
+		ai_will_do = { factor = 1 }
+	}
+	normal_rename_misspeepee = {
+		picture = gtfo
+		potential = {
+			NOT = {
+				OR = {
+					is_culture_group = latin_american_cultures
+					is_culture_group = iberian
+				}
+			}
+			owns = 194
+			NOT = { has_global_flag = normal_rename_misspeepee }
+			OR = {
+				has_global_flag = american_frontier
+				has_global_flag = spic_rename_misspeepee
+			}
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = normal_rename_misspeepee
+			clr_global_flag = spic_rename_misspeepee
+			194 = { change_province_name = "Biloxi" }
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	spic_rename_alabama = {
+		picture = gtfo
+		potential = {
+			OR = {
+				is_culture_group = latin_american_cultures
+				is_culture_group = iberian
+			}
+			owns = 197
+			NOT = { has_global_flag = spic_rename_alabama }
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = spic_rename_alabama
+			clr_global_flag = normal_rename_alabama
+			197 = { change_province_name = "Mauvila" }
+		}
+		ai_will_do = { factor = 1 }
+	}
+	normal_rename_alabama = {
+		picture = gtfo
+		potential = {
+			NOT = {
+				OR = {
+					is_culture_group = latin_american_cultures
+					is_culture_group = iberian
+				}
+			}
+			owns = 197
+			NOT = { has_global_flag = normal_rename_alabama }
+			OR = {
+				has_global_flag = american_frontier
+				has_global_flag = spic_rename_alabama
+			}
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = normal_rename_alabama
+			clr_global_flag = spic_rename_alabama
+			197 = { change_province_name = "Mobile" }
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	spic_rename_florida = {
+		picture = gtfo
+		potential = {
+			OR = {
+				is_culture_group = latin_american_cultures
+				is_culture_group = iberian
+			}
+			owns = 197
+			NOT = { has_global_flag = spic_rename_florida }
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = spic_rename_florida
+			clr_global_flag = normal_rename_florida
+			200 = {
+				change_province_name = "Espíritu Santo" 
+				state_scope = {
+					change_region_name = "La Florida"
+				}
+			}  
+			199 = { change_province_name = "San Agustín" }
+			198 = { change_province_name = "San Marcos" }
+		}
+		ai_will_do = { factor = 1 }
+	}
+	normal_rename_florida = {
+		picture = gtfo
+		potential = {
+			NOT = {
+				OR = {
+					is_culture_group = latin_american_cultures
+					is_culture_group = iberian
+				}
+			}
+			owns = 197
+			NOT = { has_global_flag = normal_rename_florida }
+			OR = {
+				has_global_flag = american_frontier
+				has_global_flag = spic_rename_florida
+			}
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = normal_rename_florida
+			clr_global_flag = spic_rename_florida
+			200 = {
+				change_province_name = "Tampa" 
+				state_scope = {
+					change_region_name = "Florida"
+				}
+			}  
+			199 = { change_province_name = "St Augustine" }
+			198 = { change_province_name = "Tallahassee" }
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	DOM_request_annexation_SPA = {
+		picture = annexation_santo_domingo
+		potential = {
+			tag = DOM
+			year = 1861
+			is_vassal = no
+			NOT = { has_country_flag = DOM_request_annexation_SPA }
+		}
+		
+		allow = {
+			OR = {
+				ruling_party_ideology = conservative
+				ruling_party_ideology = reactionary
+			}
+		}
+		
+		effect = {
+			country_event = 1000014
+			set_country_flag = DOM_request_annexation_SPA
+		}
+		
+		ai_will_do = { factor = 1 }
+	}
+	
+	reform_ATC_outside = {
+		picture = form_antillean_confederation
+		potential = {
+			is_greater_power = yes
+			#is_culture_group = latin_american_cultures
+			NOT = { has_country_flag = post_colonial_country }
+			NOT = {
+				OR = {
+					tag = CUB
+					tag = DOM
+					tag = PRI
+					tag = SPA
+					tag = SPC
+					tag = IBR
+					tag = GCO
+					tag = ANF
+				}
+			}
+			NOT = { exists = ATC }
+			capital_scope = {
+				OR = {
+					continent = south_america
+					continent = north_america
+				}
+			}
+			is_vassal = no
+			ai = no
+			NOT = { has_global_flag = reform_ATC_outside }
+		}
+
+		allow = {
+			CUB = {
+				OR = {
+					in_sphere = THIS
+					vassal_of = THIS
+					ai = no
+					all_core = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								OR = {
+									in_sphere = THIS
+									vassal_of = THIS
+								}
+								war = no
+								is_greater_power = no
+							}
+						}
+					}
+				}
+			}
+			DOM = {
+				OR = {
+					in_sphere = THIS
+					vassal_of = THIS
+					ai = no
+					all_core = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								OR = {
+									in_sphere = THIS
+									vassal_of = THIS
+								}
+								war = no
+								is_greater_power = no
+							}
+						}
+					}
+				}
+			}
+			PRI = {
+				OR = {
+					in_sphere = THIS
+					vassal_of = THIS
+					ai = no
+					all_core = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								OR = {
+									in_sphere = THIS
+									vassal_of = THIS
+								}
+								war = no
+								is_greater_power = no
+							}
+						}
+					}
+				}
+			}
+		}
+
+		effect = {
+			prestige = 10
+			set_global_flag = reform_ATC_outside
+			any_country = {
+				limit = {
+					owns = 2209
+					owns = 3276
+					owns = 2210
+					vassal_of = THIS
+				}
+				2209 = { secede_province = THIS }
+				3276 = { secede_province = THIS }
+				2210 = { secede_province = THIS }
+			}
+			any_country = {
+				limit = {
+					owns = 2211
+					owns = 2212
+					owns = 44
+					vassal_of = THIS
+				}
+				2211 = { secede_province = THIS }
+				2212 = { secede_province = THIS }
+				44 = { secede_province = THIS }
+			}
+			any_country = {
+				limit = {
+					owns = 2222
+					vassal_of = THIS
+				}
+				2222 = { secede_province = THIS }
+			}
+			any_country = {
+				limit = {
+					owns = 2216
+					owns = 2214
+					vassal_of = THIS
+				}
+				2216 = { secede_province = THIS }
+				2214 = { secede_province = THIS }
+			}
+			any_country = {
+				limit = {
+					OR = {
+						tag = CUB
+						tag = DOM
+						tag = PRI
+					}
+					NOT = { tag = THIS }
+					OR = {
+						in_sphere = THIS
+						vassal_of = THIS
+					}
+				}
+				annex_to = THIS
+			}
+			CUB = { all_core = { add_core = ATC } }
+			DOM = { all_core = { add_core = ATC } }
+			PRI = { all_core = { add_core = ATC } }
+			any_owned = {
+				limit = {
+					is_core = ATC
+					is_core = THIS
+				}
+				remove_core = ATC
+			}
+			release_vassal = ATC
+			create_alliance = ATC
+			create_vassal = ATC
+			relation = {
+				who = ATC
+				value = 100
+			}
+			diplomatic_influence = {
+				who = ATC
+				value = 200
+			}
+			ATC = {
+				centralization = federalism
+			}
+		}
+
+		ai_will_do = { factor = 1 }
+	}
+
+	reform_PBC_outside = {
+		picture = peru_bolivia
+		potential = {
+			is_greater_power = yes
+			#is_culture_group = latin_american_cultures
+			NOT = { has_country_flag = post_colonial_country }
+			NOT = {
+				OR = {
+					tag = PEU
+					tag = SPU
+					tag = BOL
+					tag = SPA
+					tag = SPC
+					tag = IBR
+					tag = GCO #PEU would never unite with BOL under GCO
+				}
+			}
+			NOT = { exists = PBC }
+			capital_scope = {
+				OR = {
+					continent = south_america
+					continent = north_america
+				}
+			}
+			is_vassal = no
+			ai = no
+		}
+
+		allow = {
+			OR = {
+				PEU = {
+					OR = {
+						in_sphere = THIS
+						vassal_of = THIS
+						ai = no
+						all_core = {
+							OR = {
+								owned_by = THIS
+								owner = {
+									OR = {
+										in_sphere = THIS
+										vassal_of = THIS
+									}
+									war = no
+									is_greater_power = no
+								}
+							}
+						}
+					}
+				}
+				SPU = {
+					OR = {
+						in_sphere = THIS
+						vassal_of = THIS
+						ai = no
+						all_core = {
+							OR = {
+								owned_by = THIS
+								owner = {
+									OR = {
+										in_sphere = THIS
+										vassal_of = THIS
+									}
+									war = no
+									is_greater_power = no
+								}
+							}
+						}
+					}
+				}
+			}
+			BOL = {
+				OR = {
+					in_sphere = THIS
+					vassal_of = THIS
+					ai = no
+					all_core = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								OR = {
+									in_sphere = THIS
+									vassal_of = THIS
+								}
+								war = no
+								is_greater_power = no
+							}
+						}
+					}
+				}
+			}
+		}
+
+		effect = {
+			prestige = 10
+			any_country = {
+				limit = {
+					OR = {
+						tag = PEU
+						tag = SPU
+						tag = BOL
+					}
+					NOT = { tag = THIS }
+					in_sphere = THIS
+				}
+				annex_to = THIS
+			}
+			PEU = { all_core = { add_core = PBC } }
+			SPU = { all_core = { add_core = PBC } }
+			BOL = { all_core = { add_core = PBC } }
+			#LEBENSRAUM!
+			BRZ_2549 = { add_core = PBC } #Acre
+			BOL_2370 = { add_core = PBC } #Puna de Atacama
+			BOL_2315 = { add_core = PBC } #Tarija
+			BOL_2309 = { add_core = PBC } #Antofagasta
+			PRG_2338 = { add_core = PBC } #Alto Paraguay
+			2367 = { add_core = PBC } #Xolotas
+			2366 = { add_core = PBC } #Formosa
+			3313 = { add_core = PBC } #Corumbá
+			2368 = { add_core = PBC } #Salta
+			2369 = { add_core = PBC } #Jujuy
+			any_owned = {
+				limit = {
+					is_core = PBC
+					is_core = THIS
+				}
+				remove_core = PBC
+			}
+			release_vassal = PBC
+			create_alliance = PBC
+			create_vassal = PBC
+			relation = {
+				who = PBC
+				value = 100
+			}
+			diplomatic_influence = {
+				who = PBC
+				value = 200
+			}
+		}
+
+		ai_will_do = { factor = 1 }
+	}
+	
+	reform_LPL_outside = {
+		picture = unite_la_plata
+		potential = {
+			is_greater_power = yes
+			#is_culture_group = latin_american_cultures
+			NOT = { has_country_flag = post_colonial_country }
+			NOT = {
+				OR = {
+					tag = ARG
+					tag = ARC
+					tag = URU
+					tag = PRG
+					tag = CRT
+					tag = ENT
+					tag = SBA
+					tag = SPA
+					tag = SPC
+					tag = IBR
+				}
+			}
+			NOT = { exists = LPL }
+			capital_scope = {
+				OR = {
+					continent = south_america
+					continent = north_america
+				}
+			}
+			is_vassal = no
+			ai = no
+		}
+
+		allow = {
+			PRG = {
+				OR = {
+					in_sphere = THIS
+					vassal_of = THIS
+					all_core = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								OR = {
+									in_sphere = THIS
+									vassal_of = THIS
+								}
+								war = no
+								is_greater_power = no
+							}
+							province_id = 2420
+						}
+					}
+				}
+			}
+			URU = {
+				OR = {
+					in_sphere = THIS
+					vassal_of = THIS
+					all_core = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								OR = {
+									in_sphere = THIS
+									vassal_of = THIS
+								}
+								war = no
+								is_greater_power = no
+							}
+						}
+					}
+				}
+			}	
+			
+			OR = {
+				ARG = {
+				exists = yes
+					OR = {
+						in_sphere = THIS
+						vassal_of = THIS
+						all_core = {
+							OR = {
+								owned_by = THIS
+								owner = {
+									OR = {
+										in_sphere = THIS
+										vassal_of = THIS
+									}
+									war = no
+									is_greater_power = no
+								}
+								province_id = 2131
+							}
+						}
+					}
+				}
+				
+				ARC = {
+				exists = yes
+					OR = {
+						in_sphere = THIS
+						vassal_of = THIS
+						all_core = {
+							OR = {
+								owned_by = THIS
+								owner = {
+									OR = {
+										in_sphere = THIS
+										vassal_of = THIS
+									}
+									war = no
+									is_greater_power = no
+								}
+								province_id = 2131
+							}
+						}
+					}
+				}
+			}
+		}
+
+		effect = {
+			prestige = 10
+			any_country = {
+				limit = {
+					primary_culture = platinean
+					NOT = { tag = THIS }
+					in_sphere = THIS
+				}
+				annex_to = THIS
+			}
+			ARG = { all_core = { add_core = LPL } }
+			ARC = { all_core = { add_core = LPL } }
+			PRG = { all_core = { add_core = LPL } }
+			URU = { all_core = { add_core = LPL } }
+			BOL = { all_core = { add_core = LPL } }
+			#LEBENSRAUM!
+			BRZ_2549 = { add_core = LPL } #Acre
+			BOL_2370 = { add_core = LPL } #Puna de Atacama
+			2301 = { add_core = LPL } #Madre de Dios, claimed by BOL
+			3378 = { add_core = LPL } #Buena Vista, claimed by BOL
+			2305 = { add_core = LPL } #Antofagasta
+			2309 = { add_core = LPL } #Calama
+			2420 = { add_core = LPL } #Iguatemi
+			3313 = { add_core = LPL } #Corumbá
+			any_owned = {
+				limit = {
+					is_core = LPL
+					is_core = THIS
+				}
+				remove_core = LPL
+			}
+			release_vassal = LPL
+			create_alliance = LPL
+			create_vassal = LPL
+			relation = {
+				who = LPL
+				value = 100
+			}
+			diplomatic_influence = {
+				who = LPL
+				value = 200
+			}
+		}
+
+		ai_will_do = { factor = 1 }
+	}
+	
+}

@@ -1,0 +1,523 @@
+political_decisions = {
+	
+	make_santanna_dictator = {
+		picture = santa_anna
+		potential = {
+			tag = MEX
+			NOT = { year = 1876 }
+			NOT = { has_global_flag = santa_anna_dictatorship }
+			NOT = { has_global_flag = ayutla_revolution }
+			NOT = { has_global_flag = santa_anna_emperor }
+		}
+		
+		allow = {
+			OR = {
+				ruling_party_ideology = conservative
+				ruling_party_ideology = reactionary
+			}
+		}
+		
+		effect = {
+			set_global_flag = santa_anna_dictatorship
+			war_exhaustion = -30
+			government = presidential_dictatorship
+			ruling_party_ideology = reactionary
+			nationalvalue = nv_autocracy
+			political_reform = totalitarianism
+			political_reform = mandatory_service
+			political_reform = party_appointed
+			political_reform = none_voting
+			political_reform = underground_parties
+			political_reform = no_meeting
+			political_reform = state_press
+			political_reform = no_trade_unions
+			political_reform = first_past_the_post
+			define_general = {
+				name = "Antonio López de Santa Anna"
+				personality = au_fait
+				background = natural_born_leader
+				prestige = 0.5
+			}
+			add_country_modifier = {
+				name = global_liberal_agitation
+				duration = -1
+			}
+			any_pop = {
+				limit = {
+					type = soldiers
+				}
+				reduce_pop = 1.75
+			}
+			plurality = 5
+			any_pop = {
+				scaled_militancy = {
+					ideology = liberal
+					factor = 6
+				}
+				scaled_consciousness = {
+					ideology = liberal
+					factor = 6
+				}
+				scaled_militancy = {
+					ideology = anarcho_liberal
+					factor = 6
+				}
+				scaled_consciousness = {
+					ideology = anarcho_liberal
+					factor = 6
+				}
+				scaled_militancy = {
+					ideology = communist
+					factor = 6
+				}
+				scaled_consciousness = {
+					ideology = communist
+					factor = 6
+				}
+				scaled_militancy = {
+					ideology = socialist
+					factor = 6
+				}
+				scaled_consciousness = {
+					ideology = socialist
+					factor = 6
+				}
+				
+				scaled_militancy = {
+					ideology = conservative
+					factor = -6
+				}
+				scaled_consciousness = {
+					ideology = conservative
+					factor = -6
+				}
+				scaled_militancy = {
+					ideology = reactionary
+					factor = -6
+				}
+				scaled_consciousness = {
+					ideology = reactionary
+					factor = -6
+				}
+			}
+		}
+		ai_will_do = { factor = 0 }
+	}
+	
+	make_santanna_emperor = {
+		picture = santa_anna
+		potential = {
+			tag = MEX
+			NOT = { year = 1876 }
+			has_global_flag = santa_anna_dictatorship
+			has_global_flag = ayutla_revolution_continues
+			NOT = { has_global_flag = santa_anna_emperor }
+		}
+		
+		allow = {
+			NOT = { has_country_modifier = global_liberal_agitation }
+			government = presidential_dictatorship
+		}
+		
+		effect = {
+			set_global_flag = santa_anna_emperor
+			country_event = 1220016
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	integrate_USCA = {
+		picture = form_USCA
+		potential = {
+			primary_culture = mexican
+			NOT = { has_global_flag = integrate_USCA }
+			UCA = {
+				vassal_of = THIS
+			}
+		}
+		
+		allow = {
+			is_greater_power = yes
+			UCA = {
+				in_sphere = THIS
+				relation = {
+					who = THIS
+					value = 200
+				}
+				ai = yes
+			}
+			diplomatic_influence = {
+				who = UCA
+				value = 200
+			}
+			prestige = 100
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = integrate_USCA
+			prestige = 30
+			UCA = {
+				all_core = { add_core = THIS }
+			}
+			inherit = UCA
+			add_accepted_culture = central_american
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	yucatecan_question = {
+		potential = {
+			tag = MEX
+			year = 1843
+			has_global_flag = YUC_ceasefire
+			NOT = { has_global_flag = yucatecan_question }
+		}
+		
+		allow = {
+			war = no
+			money = 2600
+		}
+		
+		effect = {
+			set_global_flag = yucatecan_question
+			country_event = 1220033
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	yucatecan_destiny = {
+		potential = {
+			tag = YUC
+			has_global_flag = YUC_ceasefire
+			has_global_flag = yucatecan_question
+			has_country_flag = YUC_has_blockade
+			NOT = { has_global_flag = yucatecan_destiny }
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = yucatecan_question
+			country_event = 1220034
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	MEX_YUC_annexation_1846 = {
+		potential = {
+			tag = MEX
+			has_global_flag = YUC_autonomous
+			NOT = { has_global_flag = constitution_1824 }
+			NOT = { has_global_flag = constitution_1824_no }
+			NOT = { has_global_flag = MEX_YUC_annexation_1846 }
+		}
+		
+		allow = {
+			war = no
+			YUC = {
+				vassal_of = THIS
+			}
+			OR = {
+				ruling_party_ideology = conservative
+				ruling_party_ideology = reactionary
+			}
+		}
+		
+		effect = {
+			set_global_flag = MEX_YUC_annexation_1846
+			country_event = 1220038
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { year = 1845 }
+			}
+		}
+	}
+	
+	USA_blockade_YUC = {
+		potential = {
+			tag = USA
+			has_global_flag = mexican_american_war
+			war_with = MEX
+			YUC = {
+				exists = yes
+				has_country_flag = YUC_2183_2184
+			}
+			NOT = { has_global_flag = 2nd_YUC_annex }
+			NOT = { has_global_flag = USA_blockade_YUC }
+		}
+		
+		allow = {
+			war = yes
+			war_with = MEX
+			exists = YUC
+		}
+		
+		effect = {
+			set_global_flag = USA_blockade_YUC
+			YUC = {
+				country_event = { id = 1220045 days = 5 }
+				add_country_modifier = {
+					name = smol_badboy
+					duration = 1825
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	total_war_in_CSC = {
+		alert = yes
+		picture = begin_line_of_advantage
+		potential = {
+			NOT = { has_country_modifier = small_country_draft }
+			NOT = { has_country_flag = CSC_draft_happened }
+			tag = CSC
+		}
+		
+		allow = {
+			OR = {
+				war_with = MEX
+				war_with = USA
+				war_with = YUC
+			}
+		}
+		
+		effect = {
+			iron = 10
+			wool = 10
+			timber = 25
+			small_arms = 10
+			ammunition = 25
+			leadership = 20
+			add_country_modifier = {
+				name = small_country_draft
+				duration = 365
+			}
+			set_country_flag = CSC_draft_happened 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	YUC_MEX_peaceful_reincorporation = { # THIS IS THE LAST TIME THIS SHIT HAPPENS I PROMISE
+		alert = yes
+		potential = {
+			NOT = { has_global_flag = YUC_MEX_peaceful_reincorporation }
+			tag = YUC
+			year = 1848
+			has_global_flag = YUC_MEX_pls_help
+		}
+		
+		allow = {
+			vassal_of = MEX
+		}
+		
+		effect = {
+			set_global_flag = YUC_MEX_peaceful_reincorporation
+			country_event = 1220062
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	CSC_plea_to_ENG = {
+		alert = yes
+		potential = {
+			NOT = { has_global_flag = CSC_plea_to_ENG }
+			tag = CSC
+			NOT = {
+				OR = {
+					owns = 3635
+					owns = 3360
+				}
+			}
+		}
+		
+		allow = {
+			war = no
+			3446 = {
+				OR = {
+					owned_by = ENG
+					owned_by = ENL
+				}
+			}
+		}
+		
+		effect = {
+			set_global_flag = CSC_plea_to_ENG
+			country_event = 1220065
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	
+	claimed_greater_CSC = {
+		alert = yes
+		potential = {
+			tag = CSC
+			NOT = { has_country_flag = claimed_greater_CSC }
+		}
+		
+		allow = {
+			war = no
+			is_vassal = no
+			is_disarmed = no
+			OR = {
+				government = fascist_dictatorship
+				ruling_party_ideology = reactionary
+				ruling_party_ideology = fascist
+				AND = {
+					war_policy = jingoism
+					military_score = 30
+				}
+			}
+			OR = {
+				is_secondary_power = yes
+				is_greater_power = yes
+			}
+			YUC = {
+				OR = {
+					vassal_of = THIS
+					exists = no
+				}
+			}
+		}
+		
+		effect = {
+			set_country_flag = claimed_greater_CSC
+			prestige = 5
+			badboy = 5
+			MEX_2165 = { add_core = CSC }
+			UCA_2189 = { add_core = CSC }
+			ENG_2190 = { add_core = CSC }
+			MEX_2181 = { add_core = CSC }
+			UCA_2186 = { add_core = CSC }
+			UCA_2191 = { add_core = CSC }
+			2194 = { add_core = CSC }
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	YUC_TEX_RGR_CAL_C4L_T4B_DES_alliance = {
+		alert = yes
+		potential = {
+			tag = YUC
+			OR = {
+				exists = TEX
+				exists = RGR
+				exists = CAL
+				exists = C4L
+				exists = T4B
+				exists = DES
+			}
+			NOT = {
+				OR = {
+					AND = {
+						alliance_with = TEX
+						has_global_flag = YUC_allied_TEX
+					}
+					AND = {
+						alliance_with = RGR
+						has_global_flag = YUC_allied_RGR
+					}
+					AND = {
+						alliance_with = CAL
+						has_global_flag = YUC_allied_CAL
+					}
+					AND = {
+						alliance_with = C4L
+						has_global_flag = YUC_allied_C4L
+					}
+					AND = {
+						alliance_with = T4B
+						OR = {
+							has_global_flag = YUC_allied_T4B_1
+							has_global_flag = YUC_allied_T4B_2
+							has_global_flag = YUC_allied_T4B_3
+						}
+					}
+					AND = {
+						alliance_with = DES
+						has_global_flag = YUC_allied_DES
+					}
+				}
+			}
+		}
+		
+		allow = {
+			war = no
+			is_vassal = no
+		}
+		
+		effect = {
+			any_country = {
+				limit = {
+					exists = yes
+					NOT = { alliance_with = THIS }
+					OR = {
+						tag = TEX
+						tag = RGR
+						tag = CAL
+						tag = C4L
+						tag = T4B
+						tag = DES
+					}
+				}
+				country_event = 1220069
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	spencer_mariscal_treaty = {
+		alert = yes
+		potential = {
+			NOT = { has_global_flag = spencer_mariscal_treaty }
+			CSC = { exists = yes }
+		}
+		
+		allow = {
+			war = no
+			OR = {
+				CSC = { in_sphere = ENG }
+				CSC = { in_sphere = ENL }
+			}
+			OR = {
+				owns = 2183 #Campeche
+				owns = 2184 #Merida
+				owns = 3358 #Valladolid
+			}
+		}
+		
+		effect = {
+			set_global_flag = spencer_mariscal_treaty
+			300 = { owner = { country_event = 1220074 } }
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { year = 1893 }
+			}
+		}
+	
+	}
+	
+}

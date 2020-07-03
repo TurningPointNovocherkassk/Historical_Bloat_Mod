@@ -1,0 +1,1963 @@
+political_decisions = {
+	
+	rename_texas_mexico_2 = {
+		picture = all_texas
+		potential = {
+			OR = {
+				is_culture_group = latin_american_cultures
+				is_culture_group = iberian
+			}
+			TEX = { 
+				all_core = {
+					owned_by = THIS
+				}
+			}
+			NOT = { has_global_flag = rename_texas_mexico_2 }
+			owns = 133
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = rename_texas_mexico_2
+			clr_global_flag = rename_texas_usa_2
+			prestige = 2
+			43 = { change_province_name = "Río Rojo" }
+			132 = { change_province_name = "Punto de Morgan" }
+			133 = {
+				change_province_name = "San Javier"
+				state_scope = {
+					change_region_name = "Tejas del Este"
+				}
+			}
+			134 = { change_province_name = "San Ángelo" }
+			137 = { change_province_name = "San Antonio" }
+			3402 = { change_province_name = "Matagorda" }
+			3403 = { change_province_name = "Orcoquisac" }
+			
+		}
+		ai_will_do = { factor = 1 }
+	}
+	rename_texas_usa_2 = {
+		picture = all_texas
+		potential = {
+			is_culture_group = american_cultures
+			NOT = { has_global_flag = rename_texas_usa_2 }
+			has_global_flag = rename_texas_mexico_2
+			owns = 133
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = rename_texas_usa_2
+			clr_global_flag = rename_texas_mexico_2
+			43 = { change_province_name = "Dallas" }
+			132 = { change_province_name = "Houston" }
+			133 = {
+				change_province_name = "Austin"
+				state_scope = {
+					change_region_name = "Texas"
+				}
+			}
+			134 = { change_province_name = "Abilene" }
+			137 = { change_province_name = "San Antonio" }
+			3402 = { change_province_name = "Matagorda" }
+			3403 = { change_province_name = "Beaumont" }
+			
+			prestige = 2
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	californio_claims = {
+	picture = alta_california
+		potential = {
+			tag = C4L
+			NOT = { has_country_flag = californio_claims }
+			is_vassal = no
+			exists = yes
+		}
+		
+		allow = {
+			war = no
+			OR = {
+				is_secondary_power = yes
+				is_greater_power = yes
+				nationalism_n_imperialism = 1
+			}
+			NOT = { has_country_modifier = unrecognized_country }
+		}
+		
+		effect = {
+			set_country_flag = californio_claims
+			badboy = 1
+			relation = { who = MEX value = -100 }
+			MEX_94 = { add_core = C4L }
+			MEX_97 = { add_core = C4L }
+			110 = { add_core = C4L }
+			107 = { add_core = C4L }
+			3399 = { add_core = C4L }
+			3398 = { add_core = C4L }
+			101 = { add_core = C4L }
+			100 = { add_core = C4L }
+			3396 = { add_core = C4L }
+			3393 = { add_core = C4L }
+		}
+		ai_will_do = { factor = 1 }
+	}
+	riogrande_claims = {
+	picture = rio_grande
+		potential = {
+			tag = TRG
+			NOT = { has_global_flag = riogrande_claims }
+			NOT = { has_global_flag = real_riogrande_claims }
+			is_vassal = no
+			exists = yes
+		}
+		
+		allow = {
+			war = no
+			OR = {
+				is_secondary_power = yes
+				is_greater_power = yes
+				nationalism_n_imperialism = 1
+			}
+			NOT = { has_country_modifier = unrecognized_country }
+		}
+		
+		effect = {
+			set_global_flag = riogrande_claims
+			badboy = 1
+			relation = { who = MEX value = -100 }
+			MEX_2142 = { add_core = TRG }
+			2153 = { add_core = TRG }
+			2158 = { add_core = TRG }
+			2154 = { add_core = TRG }
+			2662 = { add_core = TRG }
+			2148 = { add_core = TRG }
+			3397 = { add_core = TRG }
+			108 = { add_core = TRG }
+		}
+		ai_will_do = { factor = 1 }
+	}
+	real_riogrande_claims = {
+	picture = rio_grande
+		potential = {
+			tag = RGR
+			NOT = { has_global_flag = riogrande_claims }
+			NOT = { has_global_flag = real_riogrande_claims }
+			is_vassal = no
+			exists = yes
+		}
+		
+		allow = {
+			war = no
+			OR = {
+				is_secondary_power = yes
+				is_greater_power = yes
+				nationalism_n_imperialism = 1
+			}
+			NOT = { has_country_modifier = unrecognized_country }
+		}
+		
+		effect = {
+			set_global_flag = real_riogrande_claims
+			badboy = 1
+			relation = { who = MEX value = -100 }
+			MEX_2142 = { add_core = RGR }
+			2153 = { add_core = RGR }
+			2158 = { add_core = RGR }
+			2154 = { add_core = RGR }
+			2662 = { add_core = RGR }
+			2148 = { add_core = RGR }
+			3397 = { add_core = RGR }
+			108 = { add_core = RGR }
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	move_capital_133 = {
+		picture = all_texas
+		potential = {
+			tag = TEX
+			NOT = { has_global_flag = move_capital_133 }
+			owns = 133
+			year = 1839
+			OR = {
+				has_country_flag = houston_capital
+				has_country_flag = not_houston_capital
+			}
+		}
+		
+		allow = {
+			war = no
+			election = no
+			NOT = { capital = 133 }
+		}
+		
+		effect = {
+			set_global_flag = move_capital_133
+			capital = 133
+			133 = {
+				change_province_name = "Austin"
+				add_province_modifier = { name = recently_built_city duration = 365 }
+			}
+			prestige = 2
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	recognize_texas = {
+		picture = all_texas
+		potential = {
+			OR = {
+				tag = FRA
+				tag = BOR
+				is_greater_power = yes
+				tag = BEL
+				tag = NET
+			}
+			exists = TEX
+			TEX = {
+				NOT = { in_sphere = MEX }
+			}
+			exists = MEX
+			NOT = {
+				has_country_flag = recognize_texas
+				tag = TEX
+				tag = MEX
+			}
+		}
+		allow = { 
+			TEX = {
+				OR = {
+					war_with = MEX
+					truce_with = MEX
+					war = no
+				}
+			}
+		}
+		effect = {
+			prestige = 1
+			set_country_flag = recognize_texas
+			country_event = 1110022
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	aridoamerica_alliance = { #formalize alliance, removes border friction
+		picture = aridoamerica
+		potential = {
+			OR = {
+				tag = TEX
+				tag = RGR
+				tag = C4L
+				tag = CAL
+				tag = SON
+				tag = TRG
+				tag = S0N
+				AND = {
+					tag = DES
+					NOT = {
+						OR = {
+							has_global_flag = mormons_take_over_hawaii
+							has_global_flag = mormon_columbia
+						}
+					}
+				}
+			}
+			OR = {
+				exists = TEX
+				exists = RGR
+				exists = C4L
+				exists = CAL
+				exists = SON
+				exists = TRG
+				exists = S0N
+				exists = DES
+			}
+			NOT = {
+				has_country_flag = aridoamerica_alliance_refuse
+				has_country_flag = aridoamerica_alliance_transition
+			}
+		}
+		allow = {
+			OR = {
+				TEX = {
+					exists = yes
+					ai = yes
+					NOT = {
+						vassal_of = MEX
+						OR = {
+							has_country_flag = aridoamerica_alliance
+							has_country_flag = aridoamerica_alliance_refuse
+						}
+						#alliance_with = THIS
+					}
+				}
+				RGR = {
+					exists = yes
+					ai = yes
+					NOT = {
+						vassal_of = MEX
+						OR = {
+							has_country_flag = aridoamerica_alliance
+							has_country_flag = aridoamerica_alliance_refuse
+						}
+						#alliance_with = THIS
+					}
+				}
+				C4L = {
+					exists = yes
+					ai = yes
+					NOT = {
+						vassal_of = MEX
+						OR = {
+							has_country_flag = aridoamerica_alliance
+							has_country_flag = aridoamerica_alliance_refuse
+						}
+						#alliance_with = THIS
+					}
+				}
+				CAL = {
+					exists = yes
+					ai = yes
+					NOT = {
+						vassal_of = MEX
+						OR = {
+							has_country_flag = aridoamerica_alliance
+							has_country_flag = aridoamerica_alliance_refuse
+						}
+						#alliance_with = THIS
+					}
+				}
+				SON = {
+					exists = yes
+					ai = yes
+					NOT = {
+						vassal_of = MEX
+						OR = {
+							has_country_flag = aridoamerica_alliance
+							has_country_flag = aridoamerica_alliance_refuse
+						}
+						#alliance_with = THIS
+					}
+				}
+				TRG = {
+					exists = yes
+					ai = yes
+					NOT = {
+						vassal_of = MEX
+						OR = {
+							has_country_flag = aridoamerica_alliance
+							has_country_flag = aridoamerica_alliance_refuse
+						}
+						#alliance_with = THIS
+					}
+				}
+				S0N = {
+					exists = yes
+					ai = yes
+					NOT = {
+						vassal_of = MEX
+						OR = {
+							has_country_flag = aridoamerica_alliance
+							has_country_flag = aridoamerica_alliance_refuse
+						}
+						#alliance_with = THIS
+					}
+				}
+				DES = {
+					exists = yes
+					ai = yes
+					NOT = {
+						vassal_of = MEX
+						OR = {
+							has_country_flag = aridoamerica_alliance
+							has_country_flag = aridoamerica_alliance_refuse
+						}
+						#alliance_with = THIS
+						OR = {
+							has_global_flag = mormons_take_over_hawaii
+							has_global_flag = mormon_columbia
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			set_country_flag = aridoamerica_alliance
+			set_country_flag = aridoamerica_alliance_transition
+			set_country_flag = aridoamerica_alliance_leader
+			any_country = {
+				limit = {
+					OR = {
+						tag = TEX
+						tag = RGR
+						tag = C4L
+						tag = CAL
+						tag = SON
+						tag = TRG
+						tag = S0N
+					}
+					exists = yes
+					NOT = {
+						vassal_of = MEX
+						has_country_flag = aridoamerica_alliance
+					}
+				}
+				random_list = {
+					25 = { country_event = { id = 1110027 days = 5 } }
+					25 = { country_event = { id = 1110027 days = 6 } }
+					25 = { country_event = { id = 1110027 days = 7 } }
+					25 = { country_event = { id = 1110027 days = 8 } }
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				tag = TEX
+				NOT = { year = 1850 }
+			}
+			modifier = {
+				factor = 0
+				tag = RGR
+				NOT = { year = 1850 }
+			}
+			modifier = {
+				factor = 0
+				tag = C4L
+				NOT = { year = 1850 }
+			}
+			modifier = {
+				factor = 0
+				tag = CAL
+				NOT = { year = 1850 }
+			}
+			modifier = {
+				factor = 0
+				tag = SON
+				NOT = { year = 1860 }
+			}
+		}
+	}
+	
+	TEX_cherokee_removal = {
+		picture = native_removal_act
+		potential = {
+			OR = {
+				tag = TEX
+				tag = TRG
+			}
+			NOT = { has_global_flag = TEX_cherokee_removal }
+		}
+		allow = { 
+			year = 1839
+			OR = {
+				ruling_party_ideology = conservative
+				ruling_party_ideology = reactionary
+				ruling_party_ideology = fascist
+			}
+		}
+		effect = {
+			prestige = 1
+			set_global_flag = TEX_cherokee_removal
+			any_pop = {
+				limit = {
+					has_pop_culture = cherokee
+				}
+				reduce_pop = 0.80
+				random_list = {
+					60 = { move_pop = 130 }
+					30 = { move_pop = 144 }
+					10 = { move_pop = 131 }
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	TEX_injun_removal = {
+		picture = native_removal_act
+		potential = {
+			OR = {
+				tag = TEX
+				tag = TRG
+			}
+			NOT = { has_country_flag = comancheria_recognized }
+			NOT = { has_global_flag = TEX_injun_removal }
+			has_global_flag = marching_on_the_trail_of_tears
+			OR = {
+				has_country_flag = lone_star_state
+				has_country_flag = archive_war_WAR
+				has_country_flag = TEX_coup_done
+			}
+		}
+		allow = {
+			any_owned_province = {
+				NOT = {
+					OR = {
+						has_province_modifier = comanche_raiders
+						has_province_modifier = comanche_raiders
+					}
+				}
+			}
+			OR = {
+				ruling_party_ideology = conservative
+				ruling_party_ideology = reactionary
+				ruling_party_ideology = fascist
+			}
+			invention = machine_gun_armament
+			all_core = { owned_by = THIS }
+		}
+		effect = {
+			prestige = 2.5
+			set_global_flag = TEX_injun_removal
+			any_pop = {
+				limit = {
+					is_culture_group = native_american
+				}
+				reduce_pop = 0.80
+				random_list = {
+					60 = { move_pop = 130 }
+					40 = { move_pop = 131 }
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	TEX_RGR_TRG = {
+		picture = rio_grande
+		potential = {
+			OR = {
+				tag = TEX
+				tag = RGR
+			}
+			TRG = { exists = no }
+			NOT = { has_country_flag = TEX_RGR_TRG }
+			has_country_flag = aridoamerica_alliance
+		}
+		allow = {
+			invention = national_fraternity
+			all_core = { owned_by = THIS }
+			OR = {
+				is_secondary_power = yes
+				is_greater_power = yes
+			}
+			OR = {
+				AND = {
+					OR = {
+						alliance_with = RGR
+						alliance_with = TEX
+					}
+					OR = {
+						relation = {
+							who = TEX
+							value = 175
+						}
+						relation = {
+							who = RGR
+							value = 175
+						}
+					}
+					TEX = {
+						exists = yes
+						war = no
+						has_country_flag = aridoamerica_alliance
+					}
+					RGR = {
+						exists = yes
+						war = no
+						has_country_flag = aridoamerica_alliance
+					}
+				}
+				AND = {
+					OR = {
+						TEX = {
+							exists = no
+							all_core = { owned_by = THIS }
+						}
+						RGR = {
+							exists = no
+							all_core = { owned_by = THIS }
+						}
+					}
+					has_country_flag = claim_TEX_RGR_TRG
+					
+				}
+			}
+		}
+		effect = {
+			set_country_flag = TEX_RGR_TRG
+			prestige = 5
+			TEX = {
+				all_core = { add_core = TRG }
+			}
+			RGR = {
+				all_core = { add_core = TRG }
+			}
+			any_country = {
+				limit = {
+					OR = {
+						tag = TEX
+						tag = RGR
+					}
+					NOT = { tag = THIS }
+					exists = yes
+					ai = yes
+					has_country_flag = aridoamerica_alliance
+				}
+				annex_to = THIS
+			}
+			random_country = {
+				limit = {
+					OR = {
+						tag = TEX
+						tag = RGR
+					}
+					NOT = { tag = THIS }
+					exists = yes
+					ai = no
+					has_country_flag = aridoamerica_alliance
+				}
+				country_event = 11101
+			}
+			change_tag = TRG
+		}
+	}
+	
+	claim_TEX_RGR_TRG = {
+		picture = rio_grande
+		potential = {
+			OR = {
+				tag = TEX
+				tag = RGR
+			}
+			TRG = { exists = no }
+			NOT = { has_country_flag = claim_TEX_RGR_TRG }
+		}
+		allow = {
+			invention = manifest_destiny
+			all_core = { owned_by = THIS }
+			OR = {
+				TEX = {
+					exists = no
+				}
+				RGR = {
+					exists = no
+				}
+			}
+		}
+		effect = {
+			set_country_flag = claim_TEX_RGR_TRG
+			prestige = 5
+			TEX = {
+				all_core = { add_core = TRG }
+			}
+			RGR = {
+				all_core = { add_core = TRG }
+			}
+		}
+	}
+	
+	TRG_primary_culture = {
+		picture = rio_grande
+		potential = {
+			tag = TRG
+			NOT = { has_country_flag = TRG_primary_culture }
+			NOT = { has_country_flag = TRG_primary_culture_selected }
+			any_pop = {
+				has_pop_culture = norteno
+			}
+		}
+				
+		allow = {
+		}
+		
+		effect = {
+			set_country_flag = TRG_primary_culture
+			country_event = 1110050
+		}
+		ai_will_do = { factor = 1 }
+	}
+	TRG_capital = {
+		picture = rio_grande
+		potential = {
+			tag = TRG
+			NOT = { has_country_flag = TRG_capital }
+			NOT = { has_country_flag = TRG_capital_selected }
+		}
+				
+		allow = {
+		}
+		
+		effect = {
+			set_country_flag = TRG_capital
+			country_event = 1110051
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	CAL_C4L_annex_S0N_sinaloa = {
+		picture = aridoamerica
+		potential = {
+			OR = {
+				tag = C4L
+				tag = CAL
+			}
+			NOT = { has_country_flag = CAL_C4L_annex_S0N_sinaloa }
+			OR = {
+				has_country_flag = californio_claims
+				has_country_flag = greater_california
+			}
+			all_core = { owned_by = THIS }
+		}
+				
+		allow = {
+			invention = expansionism
+			OR = {
+				is_secondary_power = yes
+				is_greater_power = yes
+			}
+		}
+		
+		effect = {
+			set_country_flag = CAL_C4L_annex_S0N_sinaloa
+			badboy = 5
+			MEX_2157 = { add_core = S0N }
+			S0N = { all_core = { add_core = THIS } }
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	CAL_C4L_embrace_nortenos = {
+		picture = CAL_greater_california
+		potential = {
+			OR = {
+				AND = {
+					tag = C4L
+					has_country_flag = californio_claims
+				}
+				AND = {
+					tag = CAL
+					has_country_flag = CAL_C4L_annex_S0N_sinaloa
+				}
+			}
+			NOT = { has_country_flag = CAL_C4L_embrace_nortenos }
+		}
+				
+		allow = {
+			invention = national_fraternity
+			all_core = { owned_by = THIS }
+		}
+		
+		effect = {
+			set_country_flag = CAL_C4L_embrace_nortenos
+			add_accepted_culture = norteno
+			any_pop = {
+				limit = {
+					has_pop_culture = norteno
+				}
+				consciousness = 3
+				militancy = -6
+			}
+		}
+		ai_will_do = { factor = 1 }
+	}
+	CAL_embrace_californios = {
+		picture = CAL_greater_california
+		potential = {
+			tag = CAL
+			NOT = { has_country_flag = CAL_embrace_californios_nortenos }
+			has_country_flag = greater_california
+		}
+				
+		allow = {
+			invention = national_fraternity
+			all_core = { owned_by = THIS }
+		}
+		
+		effect = {
+			set_country_flag = CAL_embrace_californios_nortenos
+			add_accepted_culture = californio
+			any_pop = {
+				limit = {
+					has_pop_culture = californio
+				}
+				consciousness = 3
+				militancy = -6
+			}
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	vassalize_aridoamerica_alliance = {
+		picture = aridoamerica
+		potential = {
+			NOT = { has_global_flag = vassalize_aridoamerica_alliance }
+			has_country_flag = aridoamerica_alliance_leader
+		}
+				
+		allow = {
+				OR = {
+					TEX = {
+						exists = yes
+						relation = { who = THIS value = 175}
+						has_country_flag = aridoamerica_alliance
+						alliance_with = THIS
+					}
+					TRG = {
+						exists = yes
+						relation = { who = THIS value = 175}
+						has_country_flag = aridoamerica_alliance
+						alliance_with = THIS
+					}
+				}
+				OR = {
+					RGR = {
+						exists = yes
+						relation = { who = THIS value = 175}
+						has_country_flag = aridoamerica_alliance
+						alliance_with = THIS
+					}
+					TRG = {
+						exists = yes
+						relation = { who = THIS value = 175}
+						has_country_flag = aridoamerica_alliance
+						alliance_with = THIS
+					}
+				}
+				OR = {
+					C4L = {
+						exists = yes
+						relation = { who = THIS value = 175}
+						has_country_flag = aridoamerica_alliance
+						alliance_with = THIS
+					}
+					CAL = {
+						exists = yes
+						relation = { who = THIS value = 175}
+						has_country_flag = aridoamerica_alliance
+						alliance_with = THIS
+					}
+				}
+				OR = {
+					SON = {
+						OR = {
+							AND = {
+								exists = yes
+								relation = { who = THIS value = 175}
+								has_country_flag = aridoamerica_alliance
+								alliance_with = THIS
+								NOT = {
+									OR = {
+										has_global_flag = mormons_take_over_hawaii
+										has_global_flag = mormon_columbia
+									}
+								}
+							}
+							AND = {
+								exists = no
+								#all_core = {
+								#	OR = {
+								#		owned_by = THIS
+								#		owner = {
+								#			has_country_flag = aridoamerica_alliance
+								#			OR = {
+								#				alliance_with = THIS
+								#				in_sphere = THIS
+								#				vassal_of = THIS
+								#			}
+								#		}
+								#	}
+								#}
+							}
+						}
+					}
+					S0N = {
+						OR = {
+							AND = {
+								exists = yes
+								relation = { who = THIS value = 175}
+								has_country_flag = aridoamerica_alliance
+								alliance_with = THIS
+								NOT = {
+									OR = {
+										has_global_flag = mormons_take_over_hawaii
+										has_global_flag = mormon_columbia
+									}
+								}
+							}
+							AND = {
+								exists = no
+								#all_core = {
+								#	OR = {
+								#		owned_by = THIS
+								#		owner = {
+								#			has_country_flag = aridoamerica_alliance
+								#			OR = {
+								#				alliance_with = THIS
+								#				in_sphere = THIS
+								#				vassal_of = THIS
+								#			}
+								#		}
+								#	}
+								#}
+							}
+						}
+					}
+				}
+				DES = {
+					OR = {
+						AND = {
+							exists = yes
+							relation = { who = THIS value = 175}
+							has_country_flag = aridoamerica_alliance
+							alliance_with = THIS
+							NOT = {
+								OR = {
+									has_global_flag = mormons_take_over_hawaii
+									has_global_flag = mormon_columbia
+								}
+							}
+						}
+						AND = {
+							exists = no
+							#all_core = {
+							#	OR = {
+							#		owned_by = THIS
+							#		owner = {
+							#			has_country_flag = aridoamerica_alliance
+							#			OR = {
+							#				alliance_with = THIS
+							#				in_sphere = THIS
+							#				vassal_of = THIS
+							#			}
+							#		}
+							#	}
+							#}
+						}
+					}
+				}
+			is_greater_power = yes
+			prestige = 75
+		}
+		
+		effect = {
+			set_global_flag = vassalize_aridoamerica_alliance
+			prestige = 10
+			any_country = {
+				limit = {
+					has_country_flag = aridoamerica_alliance
+					NOT = { has_country_flag = aridoamerica_alliance_leader tag = THIS }
+					OR = {
+						tag = TEX
+						tag = RGR
+						tag = C4L
+						tag = CAL
+						tag = SON
+						tag = TRG
+						tag = S0N
+						AND = {
+							tag = DES
+							NOT = {
+								OR = {
+									has_global_flag = mormons_take_over_hawaii
+									has_global_flag = mormon_columbia
+								}
+							}
+						}
+					}
+					exists = yes
+				}
+				country_event = 1110058
+			}
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	claim_aridoamerica = {
+		picture = aridoamerica
+		potential = {
+			OR = {
+				AND = {
+					tag = C4L
+					has_country_flag = californio_claims
+					has_country_flag = CAL_C4L_annex_S0N_sinaloa
+				}	
+				AND = {
+					tag = CAL
+					has_country_flag = greater_california
+					has_country_flag = CAL_C4L_annex_S0N_sinaloa
+				}
+				AND = {
+					tag = TRG
+					has_country_flag = TRG_claim_alta_california
+				}
+				tag = S0N
+				tag = SON
+				AND = {
+					tag = DES
+					NOT = {
+						OR = {
+							has_global_flag = mormons_take_over_hawaii
+							has_global_flag = mormon_columbia
+						}
+					}
+				}
+			}
+			NOT = { has_country_flag = form_aridoamerica_sword }
+		}
+				
+		allow = {
+			is_vassal = no
+			invention = national_fraternity
+			invention = manifest_destiny
+			romanticism = 1
+			all_core = { owned_by = THIS }
+			OR = {
+				is_secondary_power = yes
+				is_greater_power = yes
+			}
+		}
+		
+		effect = {
+			set_country_flag = form_aridoamerica_sword
+			MEX_85 = { add_core = THIS }
+			MEX_104 = { add_core = THIS }
+			MEX_2139 = { add_core = THIS }
+			MEX_94 = { add_core = THIS }
+			MEX_97 = { add_core = THIS }
+			MEX_100 = { add_core = THIS }
+			MEX_103 = { add_core = THIS }
+			TEX_132 = { add_core = THIS }
+			TEX_133 = { add_core = THIS }
+			MEX_2149 = { add_core = THIS }
+			MEX_2142 = { add_core = THIS }
+			MEX_2138 = { add_core = THIS }
+			MEX_2147 = { add_core = THIS }
+			MEX_2157 = { add_core = THIS }
+			110 = { add_core = THIS }
+			107 = { add_core = THIS }
+			3398 = { add_core = THIS }
+			3399 = { add_core = THIS }
+			108 = { add_core = THIS }
+			109 = { add_core = THIS }
+			103 = { add_core = THIS }
+			128 = { add_core = THIS }
+			129 = { add_core = THIS }
+			2154 = { add_core = THIS }
+			2153 = { add_core = THIS }
+			2158 = { add_core = THIS }
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	form_aridoamerica = {
+		picture = aridoamerica
+		potential = {
+			OR = {
+				AND = {
+					has_global_flag = vassalize_aridoamerica_alliance
+					has_country_flag = aridoamerica_alliance_leader
+				}
+				has_country_flag = form_aridoamerica_sword
+			}
+			NOT = { has_global_flag = form_aridoamerica }
+		}
+				
+		allow = {
+			is_greater_power = yes
+			prestige = 100
+			all_core = { owned_by = THIS }
+			nationalism_n_imperialism = 1
+			invention = national_fraternity
+			TEX = {
+				OR = {
+					in_sphere = THIS
+					vassal_of = THIS
+					ai = no
+					all_core = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								OR = {
+									in_sphere = THIS
+									OR = {
+										is_vassal = no
+										vassal_of = THIS
+									}
+								}
+								war = no
+								is_greater_power = no
+							}
+						}
+					}
+				}
+			}
+			RGR = {
+				OR = {
+					in_sphere = THIS
+					vassal_of = THIS
+					ai = no
+					all_core = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								OR = {
+									in_sphere = THIS
+									OR = {
+										is_vassal = no
+										vassal_of = THIS
+									}
+								}
+								war = no
+								is_greater_power = no
+							}
+						}
+					}
+				}
+			}
+			C4L = {
+				OR = {
+					in_sphere = THIS
+					vassal_of = THIS
+					ai = no
+					all_core = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								OR = {
+									in_sphere = THIS
+									OR = {
+										is_vassal = no
+										vassal_of = THIS
+									}
+								}
+								war = no
+								is_greater_power = no
+							}
+						}
+					}
+				}
+			}
+			CAL = {
+				OR = {
+					in_sphere = THIS
+					vassal_of = THIS
+					ai = no
+					all_core = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								OR = {
+									in_sphere = THIS
+									OR = {
+										is_vassal = no
+										vassal_of = THIS
+									}
+								}
+								war = no
+								is_greater_power = no
+							}
+						}
+					}
+				}
+			}
+			#add sonora later on
+		}
+		
+		effect = {
+			prestige = 10
+			set_global_flag = form_aridoamerica
+			any_country = {
+				limit = {
+					vassal_of = THIS
+					has_country_flag = aridoamerica_alliance_vassal
+					NOT = { has_country_flag = aridoamerica_alliance_leader }
+				}
+				annex_to = THIS
+			}
+			any_country = {
+				limit = {
+					vassal_of = THIS
+					has_country_flag = aridoamerica_alliance_vassal
+					exists = yes
+					ai = no
+					NOT = { has_country_flag = aridoamerica_alliance_leader }
+				}
+				country_event = 11101
+			}
+			MEX_85 = { add_core = ARD }
+			MEX_104 = { add_core = ARD }
+			MEX_2139 = { add_core = ARD }
+			MEX_94 = { add_core = ARD }
+			MEX_97 = { add_core = ARD }
+			MEX_100 = { add_core = ARD }
+			MEX_103 = { add_core = ARD }
+			TEX_132 = { add_core = ARD }
+			TEX_133 = { add_core = ARD }
+			MEX_2149 = { add_core = ARD }
+			MEX_2142 = { add_core = ARD }
+			MEX_2138 = { add_core = ARD }
+			MEX_2147 = { add_core = ARD }
+			MEX_2157 = { add_core = ARD }
+			110 = { add_core = ARD }
+			107 = { add_core = ARD }
+			3398 = { add_core = ARD }
+			3399 = { add_core = ARD }
+			108 = { add_core = ARD }
+			109 = { add_core = ARD }
+			103 = { add_core = ARD }
+			128 = { add_core = ARD }
+			129 = { add_core = ARD }
+			2154 = { add_core = ARD }
+			2153 = { add_core = ARD }
+			2158 = { add_core = ARD }
+			change_tag = ARD
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	ARD_primary_culture = {
+		picture = aridoamerica
+		potential = {
+			tag = ARD
+			NOT = {
+				has_country_flag = ARD_primary_culture
+				has_country_flag = ARD_primary_culture_selected
+				OR = {
+					has_country_flag = californian_identity
+					has_country_flag = mormon_identity
+				}
+			}
+		}
+				
+		allow = {
+		}
+		
+		effect = {
+			set_country_flag = ARD_primary_culture
+			country_event = 1110059
+		}
+		ai_will_do = { factor = 1 }
+	}
+	ARD_CAL_primary_culture = {
+		picture = aridoamerica
+		potential = {
+			tag = ARD
+			NOT = {
+				has_country_flag = ARD_primary_culture
+				has_country_flag = ARD_primary_culture_selected
+			}
+			has_country_flag = californian_identity
+		}
+				
+		allow = {
+		}
+		
+		effect = {
+			set_country_flag = ARD_CAL_primary_culture
+			country_event = 1110060
+		}
+		ai_will_do = { factor = 1 }
+	}
+	ARD_DES_primary_culture = {
+		picture = aridoamerica
+		potential = {
+			tag = ARD
+			NOT = {
+				has_country_flag = ARD_primary_culture
+				has_country_flag = ARD_primary_culture_selected
+			}
+			has_country_flag = mormon_identity
+		}
+				
+		allow = {
+		}
+		
+		effect = {
+			set_country_flag = ARD_DES_primary_culture
+			country_event = 1110061
+		}
+		ai_will_do = { factor = 1 }
+	}
+	ARD_capital = {
+		picture = aridoamerica
+		potential = {
+			tag = TRG
+			NOT = {
+				has_country_flag = ARD_capital
+				has_country_flag = ARD_capital_selected
+			}
+		}
+				
+		allow = {
+		}
+		
+		effect = {
+			set_country_flag = ARD_capital
+			country_event = 1110062
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	reorganize_aridoamerican_territories = {
+		picture = aridoamerica
+		potential = {
+			tag = ARD
+			NOT = { has_country_flag = reorganize_aridoamerican_territories }
+		}
+		
+		allow = {
+			war = no
+			all_core = { owned_by = THIS }
+		}
+		
+		effect = {
+			set_country_flag = reorganize_aridoamerican_territories
+			political_reform = federalism
+			any_owned = {
+				limit = {
+					OR = {
+						is_core = MEX
+						is_core = USA
+					}
+				}
+				remove_core = MEX
+				remove_core = USA
+			}
+			any_owned = { #Texas State
+				limit = {
+					OR = {
+						region = TEX_132
+						province_id = 105
+						province_id = 129
+						province_id = 128
+						province_id = 103
+						province_id = 109
+						province_id = 3398
+						province_id = 107
+					}
+				}
+				remove_core = TRG
+				remove_core = RGR
+				remove_core = TEX
+				remove_core = ARD
+				add_core = TEX
+				add_core = ARD
+			}
+			any_owned = { #Rio Grande State
+				limit = {
+					OR = {
+						region = MEX_2142
+						province_id = 2153
+						province_id = 2158
+						province_id = 2154
+						province_id = 2662
+						province_id = 2148
+						province_id = 3397
+						province_id = 108
+					}
+				}
+				remove_core = TRG
+				remove_core = RGR
+				remove_core = TEX
+				remove_core = ARD
+				add_core = RGR
+				add_core = ARD
+			}
+			any_owned = { #Sonora State
+				limit = {
+					OR = {
+						region = MEX_2138
+						region = MEX_2157
+						province_id = 102
+					}
+				}
+				remove_core = TRG
+				remove_core = RGR
+				remove_core = TEX
+				remove_core = ARD
+				remove_core = CAL
+				remove_core = C4L
+				add_core = SON
+				add_core = ARD
+			}
+			random_owned = {
+				limit = {
+					owner = {
+						NOT = {
+							OR = {
+								primary_culture = californian
+								has_country_flag = californian_identity
+							}
+						}
+					}
+				}
+				owner = {
+					any_owned = { #Las Californias State (spic)
+						limit = {
+							OR = {
+								region = MEX_94
+								region = MEX_97
+								region = MEX_85
+								region = MEX_104
+								region = MEX_2139
+								province_id = 3399
+								province_id = 110
+								province_id = 100
+								province_id = 101
+								province_id = 3396
+							}
+						}
+						remove_core = TRG
+						remove_core = RGR
+						remove_core = TEX
+						remove_core = ARD
+						remove_core = C4L
+						add_core = C4L
+						add_core = ARD
+					}
+				}
+			}
+			random_owned = {
+				limit = {
+					owner = {
+						OR = {
+							primary_culture = californian
+							has_country_flag = californian_identity
+						}
+					}
+				}
+				owner = {
+					any_owned = { #Las Californias State (anglo)
+						limit = {
+							OR = {
+								region = MEX_94
+								region = MEX_97
+								region = MEX_85
+								region = MEX_104
+								region = MEX_2139
+								province_id = 3399
+								province_id = 110
+								province_id = 100
+								province_id = 101
+								province_id = 3396
+							}
+						}
+						remove_core = TRG
+						remove_core = RGR
+						remove_core = TEX
+						remove_core = ARD
+						remove_core = CAL
+						add_core = CAL
+						add_core = ARD
+					}
+				}
+			}
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	ARD_the_mormon_question = {
+		picture = deseret_complete_cores
+		potential = {
+			tag = ARD
+			NOT = { has_country_flag = ARD_the_mormon_question }
+			has_country_flag = reorganize_aridoamerican_territories
+			has_global_flag = mormon_exodus
+			NOT = {
+				has_global_flag = mormon_columbia
+				has_global_flag = mormon_hawaii
+			}
+			DES = { all_core = { owned_by = THIS } }
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			set_country_flag = ARD_the_mormon_question
+			country_event = 1110063
+		}
+		ai_will_do = { factor = 1 }
+	}
+	ARD_embrace_californians = {
+		picture = USA_annex_california
+		potential = {
+			tag = ARD
+			NOT = { has_country_flag = ARD_embrace_californians }
+			has_country_flag = reorganize_aridoamerican_territories
+			has_global_flag = californian_identity_formed
+			CAL = { all_core = { owned_by = THIS } }
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			set_country_flag = ARD_embrace_californians
+			add_accepted_culture = californian
+			any_pop = {
+				limit = {
+					has_pop_culture = californian
+				}
+				militancy = -9
+				consciousness = 3
+			}
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	TRG_claim_alta_california = {
+		picture = USA_annex_california
+		potential = {
+			tag = TRG
+			CAL = { exists = no }
+			C4L = { exists = no }
+			NOT = { has_country_flag = TRG_claim_alta_california }
+		}
+		
+		allow = {
+			war = no
+			OR = {
+				is_greater_power = yes
+				is_secondary_power = yes
+			}
+			invention = manifest_destiny
+			OR = {
+				ruling_party_ideology = fascist
+				ruling_party_ideology = reactionary
+				war_policy = jingoism
+			}
+			military_score = 30
+			all_core = { owned_by = THIS }
+		}
+		
+		effect = {
+			set_country_flag = TRG_claim_alta_california
+			MEX_85 = { add_core = THIS }
+			MEX_104 = { add_core = THIS }
+			MEX_2139 = { add_core = THIS }
+			MEX_94 = { add_core = THIS }
+			MEX_97 = { add_core = THIS }
+			110 = { add_core = THIS }
+			3399 = { add_core = THIS }
+			101 = { add_core = THIS }
+			100 = { add_core = THIS }
+			3396 = { add_core = THIS }
+		}
+		ai_will_do = { factor = 1 }
+	}
+	TRG_annex_alta_california = {
+		picture = USA_annex_california
+		potential = {
+			tag = TRG
+			OR = {
+				CAL = { exists = yes }
+				C4L = { exists = yes }
+			}
+			NOT = { has_country_flag = TRG_annex_alta_california }
+		}
+		
+		allow = {
+			war = no
+			is_greater_power = yes
+			invention = manifest_destiny
+			OR = {
+				ruling_party_ideology = fascist
+				ruling_party_ideology = reactionary
+				war_policy = jingoism
+			}
+			military_score = 30
+			all_core = { owned_by = THIS }
+			OR = {
+				C4L = { in_sphere = THIS }
+				CAL = { in_sphere = THIS }
+			}
+		}
+		
+		effect = {
+			set_country_flag = TRG_annex_alta_california
+			MEX_85 = { add_core = THIS }
+			MEX_104 = { add_core = THIS }
+			MEX_2139 = { add_core = THIS }
+			MEX_94 = { add_core = THIS }
+			MEX_97 = { add_core = THIS }
+			110 = { add_core = THIS }
+			3399 = { add_core = THIS }
+			101 = { add_core = THIS }
+			100 = { add_core = THIS }
+			3396 = { add_core = THIS }
+			any_country = {
+				limit = {
+					or = {
+						tag = C4L
+						tag = CAL
+					}
+				}
+				annex_to = THIS
+			}
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	TRG_trans_continental_railway = {
+		picture = aridoamerica
+		potential = {
+			OR = {
+				AND = {
+					tag = TRG
+					has_country_flag = TRG_claim_alta_california
+					all_core = { owned_by = THIS }
+				}
+				tag = ARD
+			}
+			NOT = { has_country_flag = TRG_trans_continental_railway }
+			OR = {
+				owns = 132
+				owns = 3402
+				owns = 133
+				owns = 3401
+				owns = 136
+				owns = 105
+				owns = 2148
+				owns = 100
+				owns = 88
+				owns = 90
+				owns = 89
+				owns = 87
+				owns = 84
+				owns = 104
+			}
+		}
+		
+		allow = {
+			war = no
+			OR = {
+				is_greater_power = yes
+				is_secondary_power = yes
+			}
+			owns = 132
+			owns = 3402
+			owns = 133
+			owns = 3401
+			owns = 136
+			owns = 105
+			owns = 2148
+			owns = 100
+			owns = 88
+			owns = 90
+			owns = 89
+			owns = 87
+			owns = 84
+			owns = 104
+			early_railroad = 1
+			money = 10001
+		}
+		
+		effect = {
+			set_country_flag = TRG_trans_continental_railway
+			prestige = 5
+			treasury = -10000
+			any_owned = {
+				limit = {
+					OR = {
+						province_id = 132
+						province_id = 3402
+						province_id = 133
+						province_id = 3401
+						province_id = 136
+						province_id = 105
+						province_id = 2148
+						province_id = 100
+						province_id = 88
+						province_id = 90
+						province_id = 89
+						province_id = 87
+						province_id = 84
+						province_id = 104
+					}
+				}
+				infrastructure = 1
+			}
+		}
+		ai_will_do = { factor = 1 }
+	}
+		
+	california_trade_agreement_RUS = {
+		picture = USA_annex_california
+		potential = {
+			OR = {
+				tag = MEX
+				tag = C4L
+				tag = CAL
+				tag = RUS
+				tag = LSK
+				tag = ARD
+				tag = TRG
+			}
+			NOT = {
+				has_global_flag = fort_ross_purchase_completed
+				has_country_flag = california_trade_agreement_RUS
+			}
+		}
+		
+		allow = {
+			war = no
+			OR = {
+				AND = {
+					OR = {
+						tag = MEX
+						tag = C4L
+						tag = CAL
+					}
+					OR = {
+						owns = 104
+						owns = 87
+						owns = 89
+					}
+				}
+				AND = {
+					OR = {
+						tag = RUS
+						tag = LSK
+						tag = CAL
+					}
+					OR = {
+						owns = 3390
+						owns = 1
+					}
+				}
+			}
+			year = 1836
+		}
+		
+		effect = {
+			set_country_flag = california_trade_agreement_RUS
+			#Coastal Californias
+			3308 = { add_province_modifier = { name = california_trade_RUS duration = 1825 } }
+			85 = { add_province_modifier = { name = california_trade_RUS duration = 1825 } }
+			84 = { add_province_modifier = { name = california_trade_RUS duration = 1825 } }
+			104 = { add_province_modifier = { name = california_trade_RUS duration = 1825 } }
+			87 = { add_province_modifier = { name = california_trade_RUS duration = 1825 } }
+			89 = { add_province_modifier = { name = california_trade_RUS duration = 1825 } }
+			90 = { add_province_modifier = { name = california_trade_RUS duration = 1825 } }
+			2139 = { add_province_modifier = { name = california_trade_RUS duration = 1825 } }
+			2138 = { add_province_modifier = { name = california_trade_RUS duration = 1825 } }
+			#Coastal Alaska
+			3390 = { add_province_modifier = { name = california_trade_RUS duration = 1825 } }
+			1 = { add_province_modifier = { name = california_trade_RUS duration = 1825 } }
+			2 = { add_province_modifier = { name = california_trade_RUS duration = 1825 } }
+			4 = { add_province_modifier = { name = california_trade_RUS duration = 1825 } }
+			3 = { add_province_modifier = { name = california_trade_RUS duration = 1825 } }
+			3391 = { add_province_modifier = { name = california_trade_RUS duration = 1825 } }
+			5 = { add_province_modifier = { name = california_trade_RUS duration = 1825 } }
+			2631 = { add_province_modifier = { name = california_trade_RUS duration = 1825 } }
+		}
+		ai_will_do = {
+			factor = 1 
+		}	
+	}
+	
+	california_trade_agreement_RPL = {
+		picture = USA_annex_california
+		potential = {
+			OR = {
+				tag = MEX
+				tag = C4L
+				tag = CAL
+				tag = RPL
+				tag = CAN
+				tag = COL
+				tag = ENG
+				tag = UOR
+				tag = JEF
+				tag = CAS
+				tag = TRG
+				tag = ARD
+			}
+			NOT = { has_country_flag = california_trade_agreement_RPL }
+		}
+		
+		allow = {
+			war = no
+			OR = {
+				AND = {
+					OR = {
+						tag = MEX
+						tag = C4L
+						tag = CAL
+					}
+					OR = {
+						owns = 104
+						owns = 87
+						owns = 89
+					}
+				}
+				AND = {
+					OR = {
+						tag = RPL
+						tag = CAN
+						tag = COL
+						tag = ENG
+					}
+					OR = {
+						owns = 81
+						owns = 78
+						owns = 13
+						owns = 14
+					}
+				}
+				AND = {
+					OR = {
+						tag = UOR
+						tag = JEF
+						tag = COL
+						tag = CAS
+					}
+					OR = {
+						owns = 81
+						owns = 78
+						owns = 13
+						owns = 14
+					}
+				}
+			}
+			year = 1836
+		}
+		
+		effect = {
+			set_country_flag = california_trade_agreement_RPL
+			#Coastal Californias
+			3308 = { add_province_modifier = { name = california_trade_RPL duration = 1825 } }
+			85 = { add_province_modifier = { name = california_trade_RPL duration = 1825 } }
+			84 = { add_province_modifier = { name = california_trade_RPL duration = 1825 } }
+			104 = { add_province_modifier = { name = california_trade_RPL duration = 1825 } }
+			87 = { add_province_modifier = { name = california_trade_RPL duration = 1825 } }
+			89 = { add_province_modifier = { name = california_trade_RPL duration = 1825 } }
+			90 = { add_province_modifier = { name = california_trade_RPL duration = 1825 } }
+			2139 = { add_province_modifier = { name = california_trade_RPL duration = 1825 } }
+			2138 = { add_province_modifier = { name = california_trade_RPL duration = 1825 } }
+			#Coastal columbia
+			83 = { add_province_modifier = { name = california_trade_RPL duration = 1825 } }
+			81 = { add_province_modifier = { name = california_trade_RPL duration = 1825 } }
+			79 = { add_province_modifier = { name = california_trade_RPL duration = 1825 } }
+			78 = { add_province_modifier = { name = california_trade_RPL duration = 1825 } }
+			13 = { add_province_modifier = { name = california_trade_RPL duration = 1825 } }
+			14 = { add_province_modifier = { name = california_trade_RPL duration = 1825 } }
+			15 = { add_province_modifier = { name = california_trade_RPL duration = 1825 } }
+			17 = { add_province_modifier = { name = california_trade_RPL duration = 1825 } }
+		}
+		ai_will_do = {
+			factor = 1 
+		}	
+	}
+	
+	alaska_columbia_trade_agreement = {
+		picture = cascadia_bioregion
+		potential = {
+			OR = {
+				tag = RUS
+				tag = LSK
+				tag = RPL
+				tag = CAN
+				tag = COL
+				tag = ENG
+				tag = UOR
+				tag = JEF
+				tag = CAS
+			}
+			NOT = { has_country_flag = alaska_columbia_trade_agreement }
+		}
+		
+		allow = {
+			war = no
+			OR = {
+				AND = {
+					OR = {
+						tag = RUS
+						tag = LSK
+						tag = CAL
+					}
+					OR = {
+						owns = 3390
+						owns = 1
+					}
+				}
+				AND = {
+					OR = {
+						tag = RPL
+						tag = CAN
+						tag = COL
+						tag = ENG
+					}
+					OR = {
+						owns = 81
+						owns = 78
+						owns = 13
+						owns = 14
+					}
+				}
+				AND = {
+					OR = {
+						tag = UOR
+						tag = JEF
+						tag = COL
+						tag = CAS
+					}
+					OR = {
+						owns = 81
+						owns = 78
+						owns = 13
+						owns = 14
+					}
+				}
+			}
+			year = 1836
+		}
+		
+		effect = {
+			set_country_flag = alaska_columbia_trade_agreement
+			#Coastal Alaska
+			3390 = { add_province_modifier = { name = alaska_cloumbia_trade duration = 1825 } }
+			1 = { add_province_modifier = { name = alaska_cloumbia_trade duration = 1825 } }
+			2 = { add_province_modifier = { name = alaska_cloumbia_trade duration = 1825 } }
+			4 = { add_province_modifier = { name = alaska_cloumbia_trade duration = 1825 } }
+			3 = { add_province_modifier = { name = alaska_cloumbia_trade duration = 1825 } }
+			3391 = { add_province_modifier = { name = alaska_cloumbia_trade duration = 1825 } }
+			5 = { add_province_modifier = { name = alaska_cloumbia_trade duration = 1825 } }
+			2631 = { add_province_modifier = { name = alaska_cloumbia_trade duration = 1825 } }
+			#Coastal columbia
+			83 = { add_province_modifier = { name = alaska_cloumbia_trade duration = 1825 } }
+			81 = { add_province_modifier = { name = alaska_cloumbia_trade duration = 1825 } }
+			79 = { add_province_modifier = { name = alaska_cloumbia_trade duration = 1825 } }
+			78 = { add_province_modifier = { name = alaska_cloumbia_trade duration = 1825 } }
+			13 = { add_province_modifier = { name = alaska_cloumbia_trade duration = 1825 } }
+			14 = { add_province_modifier = { name = alaska_cloumbia_trade duration = 1825 } }
+			15 = { add_province_modifier = { name = alaska_cloumbia_trade duration = 1825 } }
+			17 = { add_province_modifier = { name = alaska_cloumbia_trade duration = 1825 } }
+		}
+		ai_will_do = {
+			factor = 1 
+		}	
+	}
+	
+}

@@ -1,0 +1,490 @@
+political_decisions = {
+
+	JLA_RGS_substates = {
+		picture = claim_santa_catarina
+		potential = {
+			OR = {
+				tag = RGS
+				AND = {
+					tag = JLA
+					ai = no
+				}
+			}
+			NOT = { has_country_flag = JLA_RGS_substates }
+			has_global_flag = JLA_seceded
+		}
+		
+		allow = {
+			war = no
+			invention = national_fraternity
+			OR = {
+				alliance_with = JLA
+				alliance_with = RGS
+			}
+		}
+		
+		effect = {
+			prestige = 10
+			set_country_flag = JLA_RGS_substates
+			random_country = {
+				limit = {
+					primary_culture = gaucho
+					OR = {
+						owns = 2461 #Laguna
+						owns = 2463 #Porto Alegre
+					}
+					NOT = {
+						OR = {
+							tag = BRZ
+							tag = THIS
+						}
+					}
+				}
+				country_event = 1000064
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	RGS_JLA_puppet_URU = {
+		picture = claim_santa_catarina
+		potential = {
+			OR = {
+				tag = RGS
+				AND = {
+					tag = JLA
+					ai = no
+				}
+			}
+			URU = {
+				exists = yes
+				ai = yes
+			}
+			NOT = { has_country_flag = RGS_JLA_puppet_URU }
+			has_global_flag = JLA_seceded
+		}
+		
+		allow = {
+			war = no
+			war_policy = jingoism
+		}
+		
+		effect = {
+			set_country_flag = RGS_JLA_puppet_URU
+			URU = {
+				add_casus_belli = {
+					target = THIS
+					type = make_puppet
+					months = 240
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	integrate_puppets_RGS_JLA = {
+		picture = claim_santa_catarina
+		potential = {
+			OR = {
+				AND = {
+					tag = RGS
+					URU = {
+						OR = {
+							in_sphere = THIS
+							vassal_of = THIS
+							all_core = { owned_by = THIS }
+						}
+					}
+					JLA = {
+						OR = {
+							in_sphere = THIS
+							vassal_of = THIS
+							all_core = { owned_by = THIS }
+						}
+					}
+				}
+				AND = {
+					tag = JLA
+					ai = no
+					URU = {
+						OR = {
+							in_sphere = THIS
+							vassal_of = THIS
+							all_core = { owned_by = THIS }
+						}
+					}
+					RGS = {
+						OR = {
+							in_sphere = THIS
+							vassal_of = THIS
+							all_core = { owned_by = THIS }
+						}
+					}
+				}
+			}
+			NOT = { has_country_flag = integrate_puppets_RGS_JLA }
+		}
+		
+		allow = {
+			has_country_flag = full_independence_achieved
+			invention = expansionism
+			war = no
+		}
+		
+		effect = {
+			set_country_flag = integrate_puppets_RGS_JLA
+			URU = {
+				all_core = { add_core = THIS }
+			}
+			JLA = {
+				all_core = { add_core = THIS }
+			}
+			RGS = {
+				all_core = { add_core = THIS }
+			}
+			inherit = URU
+			random_country = {
+				limit = {
+					primary_culture = gaucho
+					OR = {
+						owns = 2461 #Laguna
+						owns = 2463 #Porto Alegre
+					}
+					NOT = {
+						OR = {
+							tag = BRZ
+							tag = THIS
+						}
+					}
+				}
+				country_event = 1000065
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	claim_banda_oriental = {
+		picture = banda_oriental
+		potential = {
+			tag = URU
+			NOT = { has_country_flag = claim_banda_oriental }
+		}
+		
+		allow = {
+			nationalism_n_imperialism = 1
+			OR = {
+				government = fascist_dictatorship
+				war_policy = jingoism
+			}
+			invention = expansionism
+			war = no
+		}
+		
+		effect = {
+			set_country_flag = claim_banda_oriental
+			badboy = 5
+			RGS = {
+				all_core = { add_core = URU }
+			}
+			JLA = {
+				all_core = { add_core = URU }
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	become_banda_oriental = {
+		picture = banda_oriental
+		potential = {
+			OR = {
+				AND = {
+					tag = URU
+					has_country_flag = claim_banda_oriental
+				}
+				AND = {
+					primary_culture = gaucho
+					has_country_flag = integrate_puppets_RGS_JLA
+				}
+			}
+			NOT = { has_country_flag = become_banda_oriental }
+		}
+		allow = {
+			invention = manifest_destiny
+			URU = {
+				all_core = { owned_by = THIS }
+			}
+			RGS = {
+				all_core = { owned_by = THIS }
+			}
+			JLA = {
+				all_core = { owned_by = THIS }
+			}
+			war = no
+			prestige = 25
+		}
+		effect = {
+			set_country_flag = become_banda_oriental
+			URU = {
+				all_core = { add_core = BND }
+			}
+			RGS = {
+				all_core = { add_core = BND }
+			}
+			JLA = {
+				all_core = { add_core = BND }
+			}
+			change_tag = BND
+			political_reform = federalism
+		}
+	}
+	
+	BND_primary_culture = {
+		picture = banda_oriental
+		potential = {
+			tag = BND
+			NOT = { has_country_flag = BND_primary_culture }
+			NOT = { has_country_flag = BND_primary_culture_selected }
+		}
+				
+		allow = {
+		}
+		
+		effect = {
+			set_country_flag = BND_primary_culture
+			country_event = 1000066
+		}
+		ai_will_do = { factor = 1 }
+	}
+	BND_capital = {
+		picture = banda_oriental
+		potential = {
+			tag = BND
+			NOT = { has_country_flag = BND_capital_culture }
+			NOT = { has_country_flag = BND_capital_culture_selected }
+		}
+				
+		allow = {
+		}
+		
+		effect = {
+			set_country_flag = BND_primary_culture
+			country_event = 1000067
+		}
+		ai_will_do = { factor = 1 }
+	}
+	rename_RGS_gaucho = {
+		picture = gtfo
+		potential = {
+			OR = {
+				primary_culture = platinean
+				tag = BND
+			}
+			owns = 2463
+			NOT = { has_global_flag = rename_RGS_gaucho }
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = rename_RGS_gaucho
+			clr_global_flag = rename_RGS_normal
+			2463 = {
+				change_province_name = "Puerto Alegre" 
+				state_scope = {
+					change_region_name = "Rio Grande del Sur"
+				}
+			}
+			2464 = { change_province_name = "Piratini" }
+			2465 = { change_province_name = "Paso Hondo" }
+		}
+		ai_will_do = { factor = 1 }
+	}
+	rename_RGS_normal = {
+		picture = gtfo
+		potential = {
+			NOT = {
+				OR = {
+					primary_culture = platinean
+					tag = BND
+				}
+			}
+			owns = 2463
+			NOT = { has_global_flag = rename_RGS_normal }
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = rename_RGS_normal
+			clr_global_flag = rename_RGS_gaucho
+			2463 = {
+				change_province_name = "Porto Alegre" 
+				state_scope = {
+					change_region_name = "Rio Grande do Sul"
+				}
+			}
+			2464 = { change_province_name = "Pelotas" }
+			2465 = { change_province_name = "Passo Fundo" }
+		}
+		ai_will_do = { factor = 1 }
+	}
+	rename_JLA_gaucho = {
+		picture = gtfo
+		potential = {
+			OR = {
+				primary_culture = platinean
+				tag = BND
+			}
+			owns = 2461
+			NOT = { has_global_flag = rename_RGS_gaucho }
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = rename_RGS_gaucho
+			clr_global_flag = rename_RGS_normal
+			2461 = {
+				change_province_name = "Laguna"
+				state_scope = {
+					change_region_name = "Santa Catalina"
+				}
+			}
+			2459 = { change_province_name = "Lajas" }
+			3284 = { change_province_name = "Destierro" }
+		}
+		ai_will_do = { factor = 1 }
+	}
+	rename_JLA_normal = {
+		picture = gtfo
+		potential = {
+			OR = {
+				primary_culture = platinean
+				tag = BND
+			}
+			owns = 2461
+			NOT = { has_global_flag = rename_RGS_gaucho }
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = rename_RGS_gaucho
+			clr_global_flag = rename_RGS_normal
+			2461 = {
+				change_province_name = "Laguna"
+				state_scope = {
+					change_region_name = "Santa Catarina"
+				}
+			}
+			2459 = { change_province_name = "Lajes" }
+			3284 = { change_province_name = "Desterro" }
+		}
+		ai_will_do = { factor = 1 }
+	}
+	rename_pelotas_gaucho = {
+		picture = gtfo
+		potential = {
+			OR = {
+				tag = RGS
+				tag = JLA
+			}
+			owns = 2464
+			NOT = { has_global_flag = rename_pelotas_gaucho }
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = rename_pelotas_gaucho
+			clr_global_flag = rename_pelotas_normal
+			2464 = { change_province_name = "Piratini" }
+		}
+		ai_will_do = { factor = 1 }
+	}
+	rename_pelotas_normal = {
+		picture = gtfo
+		potential = {
+			NOT = {
+				OR = {
+					tag = RGS
+					tag = JLA
+				}
+			}
+			owns = 2464
+			NOT = { has_global_flag = rename_pelotas_normal }
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = rename_pelotas_normal
+			clr_global_flag = rename_pelotas_gaucho
+			2464 = { change_province_name = "Pelotas" }
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	#claim_entrerios = {
+	#	picture = banda_oriental
+	#	potential = {
+	#		OR = {
+	#			tag = URU
+	#			tag = RGS
+	#			tag = JLA
+	#		}
+	#		NOT = { has_country_flag = claim_entrerios }
+	#		OR = {
+	#			has_country_flag = integrate_puppets_RGS_JLA
+	#			has_country_flag = claim_banda_oriental
+	#		}
+	#	}
+	#	
+	#	allow = {
+	#		nationalism_n_imperialism = 1
+	#		OR = {
+	#			government = fascist_dictatorship
+	#			war_policy = jingoism
+	#		}
+	#		war = no
+	#	}
+	#	
+	#	effect = {
+	#		badboy = 3
+	#		ARG_2360 = { #Entrerios
+	#			add_core = THIS
+	#		}
+	#		ARG_2254 = { #Misiones
+	#			add_core = THIS
+	#		}
+	#	}
+	#
+	#	ai_will_do = {
+	#		factor = 1
+	#	}
+	#}
+}

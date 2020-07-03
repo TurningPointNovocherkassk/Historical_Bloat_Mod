@@ -1,0 +1,192 @@
+
+ANON_untotal_war = {
+	limit = {
+		has_country_flag = ANON_untotal_war_prepare
+		NOT = { has_country_modifier = ANON_total_war_mod }
+	}
+	chance = {
+		base = 100
+	}
+	effect = {
+		artillery = {
+			build_time = 119
+		}
+		cavalry = {
+			build_time = 119
+		}
+		cuirassier = {
+			build_time = 119
+		}
+		dragoon = {
+			build_time = 119
+		}
+		engineer = {
+			build_time = 119
+		}
+		guard = {
+			build_time = 89
+		}
+		hussar = {
+			build_time = 119
+		}
+		infantry = {
+			build_time = 89
+		}
+		irregular = {
+			build_time = 44
+		}
+	}
+}
+
+ANON_total_war = {
+	limit = {
+		OR = {
+			has_country_flag = ANON_total_war_flag
+			tag = HUN
+			AND = {
+				tag = TPG
+				ai = no
+			}
+			tag = CSA
+			tag = FVZ
+			tag = VEN
+			tag = LOM
+			tag = CAL
+			tag = C4L
+			tag = JLA
+			tag = IRE
+			tag = PNC
+			#tag = POL
+			#tag = CPL
+			#tag = SDB
+			tag = FSA
+			tag = UYG
+			tag = RGR
+			tag = YUC
+			tag = CSC
+			tag = T4B
+			tag = VOJ
+			AND = {
+				tag = YNN
+				has_global_flag = panthay_rebellion
+			}
+		}
+	}
+	chance = {
+		base = 100
+		#modifier = {
+		#	factor = -100
+		#	NOT = { has_country_modifier = ANON_total_war }
+		#}
+	}
+	effect = {
+		artillery = {
+			build_time = -119
+		}
+		cavalry = {
+			build_time = -119
+		}
+		cuirassier = {
+			build_time = -119
+		}
+		dragoon = {
+			build_time = -119
+		}
+		engineer = {
+			build_time = -119
+		}
+		guard = {
+			build_time = -89
+		}
+		hussar = {
+			build_time = -119
+		}
+		infantry = {
+			build_time = -89
+		}
+		irregular = {
+			build_time = -44
+		}
+	}
+}
+
+harpoon_cannon_muzzle = {
+	limit = { muzzle_loaded_rifles = 1 }
+	news = no
+	chance = {
+		base = 5
+	}
+	effect = {
+		rgo_goods_output = {
+			fish = 0.5
+		}
+	}
+}
+
+harpoon_cannon_breech = {
+	limit = { breech_loaded_rifles = 1 }
+	news = no
+	chance = {
+		base = 5
+	}
+	effect = {
+		rgo_goods_output = {
+			fish = 0.5
+		}
+	}
+}
+
+harpoon_rifle = {
+	limit = { bolt_action_rifles = 1 }
+	news = no
+	chance = {
+		base = 5
+	}
+	effect = {
+		rgo_goods_output = {
+			fish = 0.25
+		}
+	}
+}
+
+factory_ships = {
+	limit = { steamers = 1 }
+	news = no
+	chance = {
+		base = 5
+	}
+	effect = {
+		rgo_goods_output = {
+			fish = 1
+		}
+	}
+}
+
+offshore_tryworks = {
+	limit = { clipper_design = 1 }
+	news = no
+	chance = {
+		base = 5
+	}
+	effect = {
+		rgo_goods_output = {
+			fish = 1
+		}
+	}
+}
+
+kerosene = {
+	limit = {
+		basic_chemistry = 1
+		invention = cracking
+	}
+	news = no
+	chance = {
+		base = 5
+	}
+	effect = {
+		factory_throughput = 0.05
+		factory_goods_output = { fuel = 0.2 }
+	}
+}
+

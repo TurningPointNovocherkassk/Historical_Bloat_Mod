@@ -1,0 +1,266 @@
+political_decisions = {
+	
+	gran_colombia_by_sword = {
+		picture = unite_gran_colombia
+		potential = {
+			OR = {
+				tag = CLM
+				tag = ECU
+				tag = VNZ
+				tag = ZLA
+				tag = FVZ
+				tag = USV
+				tag = B4R
+				tag = AR1
+			}
+			NOT = {
+				exists = GCO
+				has_country_flag = we_shall_unite_by_sword
+			}
+		}
+		
+		allow = {
+			nationalism_n_imperialism = 1
+			invention = manifest_destiny
+			war_policy = jingoism
+			war = no
+		}
+		
+		effect = {
+			set_country_flag = we_shall_unite_by_sword
+			CLM = { all_core = { add_core = THIS } }
+			ECU = { all_core = { add_core = THIS } }
+			VNZ = { all_core = { add_core = THIS } }
+			#Guyana
+			2243 = { add_core = GCO } 
+			2242 = { add_core = GCO } 
+			#Marabitanas Amazon
+			2401 = { add_core = GCO } 
+			#Mosquitos coast
+			2203 = { add_core = GCO } 
+			2200 = { add_core = GCO } 
+			3319 = { add_core = GCO } 
+			#political_reform = federalism
+			#country_event = {id=100005 days = 25}
+			#country_event = {id=100006 days = 50}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	form_gran_colombia = {
+		picture = form_gran_colombia
+		potential = {
+			OR = {
+				tag = CLM
+				tag = ECU
+				tag = VNZ
+				tag = ZLA
+				tag = FVZ
+				tag = USV
+				tag = B4R
+				tag = AR1
+			}
+			NOT = { exists = GCO }
+			#ai = no #Why not?
+		}
+		
+		allow = {
+			war = no
+			prestige = 75
+			OR = {
+				is_secondary_power = yes
+				is_greater_power = yes
+			}
+			nationalism_n_imperialism = 1
+			invention = national_fraternity
+			CLM = {
+				OR = {
+					in_sphere = THIS
+					vassal_of = THIS
+					ai = no
+					all_core = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								OR = {
+									in_sphere = THIS
+									vassal_of = THIS
+								}
+								war = no
+								is_greater_power = no
+							}
+						}
+					}
+				}
+			}
+			ECU = {
+				OR = {
+					in_sphere = THIS
+					vassal_of = THIS
+					ai = no
+					all_core = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								OR = {
+									in_sphere = THIS
+									vassal_of = THIS
+								}
+								war = no
+								is_greater_power = no
+							}
+						}
+					}
+				}
+			}
+			OR = {
+				VNZ = {
+					OR = {
+						in_sphere = THIS
+						vassal_of = THIS
+						ai = no
+						all_core = {
+							OR = {
+								owned_by = THIS
+								owner = {
+									OR = {
+										in_sphere = THIS
+										vassal_of = THIS
+									}
+									war = no
+									is_greater_power = no
+								}
+								province_id = 2243
+								province_id = 2242
+							}
+						}
+					}
+				}
+				FVZ = {
+					OR = {
+						in_sphere = THIS
+						vassal_of = THIS
+						ai = no
+						all_core = {
+							OR = {
+								owned_by = THIS
+								owner = {
+									OR = {
+										in_sphere = THIS
+										vassal_of = THIS
+									}
+									war = no
+									is_greater_power = no
+								}
+								province_id = 2243
+								province_id = 2242
+							}
+						}
+					}
+				}
+				USV = {
+					OR = {
+						in_sphere = THIS
+						vassal_of = THIS
+						ai = no
+						all_core = {
+							OR = {
+								owned_by = THIS
+								owner = {
+									OR = {
+										in_sphere = THIS
+										vassal_of = THIS
+									}
+									war = no
+									is_greater_power = no
+								}
+								province_id = 2243
+								province_id = 2242
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		effect = {
+			prestige = 10
+			CLM = {
+				all_core = { add_core = GCO }
+			}
+			ECU = {
+				all_core = { add_core = GCO }
+			}
+			VNZ = {
+				all_core = { add_core = GCO }
+			}
+			PNM = {
+				all_core = { add_core = GCO }
+			}
+			#Guyana
+			2243 = { add_core = GCO }
+			2242 = { add_core = GCO }
+			3373 = { add_core = GCO }
+			3379 = { add_core = GCO }
+			3380 = { add_core = GCO }
+			2532 = { add_core = GCO }
+			#Marabitanas Amazon
+			2401 = { add_core = GCO }
+			3371 = { add_core = GCO }
+			#Mosquitos coast
+			2203 = { add_core = GCO }
+			2200 = { add_core = GCO }
+			3319 = { add_core = GCO }
+			any_country = {
+				limit = {
+					ai = yes
+					OR = {
+						in_sphere = THIS
+						vassal_of = THIS
+					}
+					OR = {
+						tag = CLM
+						tag = ECU
+						tag = VNZ
+						tag = ZLA
+						tag = FVZ
+						tag = USV
+						tag = B4R
+						tag = AR1
+						tag = PNM
+					}
+				}
+				annex_to = THIS
+			}
+			random_country = {
+				limit = {
+					OR = {
+						tag = CLM
+						tag = ECU
+						tag = VNZ
+						tag = ZLA
+						tag = FVZ
+						tag = USV
+						tag = B4R
+						tag = AR1
+						tag = PNM
+					}
+					exists = yes
+					ai = no
+				}
+				country_event = 11101
+			}
+			political_reform = federalism
+			change_tag = GCO
+			#country_event = {id=100005 days = 1}
+			#country_event = {id=100006 days = 2}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

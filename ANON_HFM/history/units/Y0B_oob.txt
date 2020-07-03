@@ -1,0 +1,24 @@
+
+
+leader = {
+	name = "Yang Yon Gen"
+	type = land
+	date = 1795.12.12
+	background = aristocrat
+	personality = aggressive
+}
+	
+army = {
+	name = "Army of the Heng of Kokang"
+	location = 3515
+	regiment = {
+		name= "1. Brigade"
+		type = infantry
+		home = 3515
+	}
+	regiment = {
+		name= "2. Brigade"
+		type = irregular
+		home = 3515
+	}
+}

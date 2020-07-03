@@ -1,0 +1,50 @@
+CRL = { value = 400 }
+NAR = { value = 400 }
+AFG = { value = 400 }
+
+PNJ = { value = -200 }
+
+
+leader = {
+	name = "Ghazzan Khan"
+	type = land
+	date = 1836.1.1
+	personality = skilled
+	background = expert_raider
+	prestige = 0.2
+}
+
+army = {
+	name = "Army of Ghazzan Khan"
+	location = 3539
+	regiment = {
+		name= "1. Ghazzanzi"
+		type = irregular
+		home = 3539
+	}
+
+	regiment = {
+		name= "2. Ghazzanzi"
+		type = irregular
+		home = 3539
+	}
+
+	regiment = {
+		name= "1. Yusafzai"
+		type = cavalry
+		home = 3539
+	}
+
+	regiment = {
+		name= "2. Yusafzai"
+		type = cavalry
+		home = 3539
+	}
+
+	regiment = {
+		name= "3. Yusafzai"
+		type = cavalry
+		home = 3539
+	}
+
+}

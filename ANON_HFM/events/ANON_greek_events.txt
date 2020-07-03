@@ -1,0 +1,123 @@
+###################################
+#Greek destiny
+
+country_event = {
+	id = 6666660
+	title = "EVTNAME6666660"
+	desc = "EVTDESC6666660"
+	picture = "greatpowers"
+	is_triggered_only = yes
+	
+		option = { #Irredentism
+			name = "EVTOPTA6666660"
+			any_pop = {
+				dominant_issue = {
+					factor = 0.05
+					value = jingoism
+				}
+			}
+			any_pop = {
+				dominant_issue = {
+					factor = 0.05
+					value = pro_military
+				}
+			}
+			any_pop = {
+				scaled_consciousness = {
+					issue = pacifism
+					factor = 3
+				}
+			}
+			any_pop = {
+				scaled_consciousness = {
+					issue = anti_military
+					factor = 3
+				}
+			}
+			set_country_flag = greek_irredentism
+			ai_chance = {
+				factor = 60
+				modifier = {
+					factor = 0
+					war_policy = pacifism 
+				}
+				modifier = {
+					factor = 0.25
+					war_policy = anti_military
+				}
+				modifier = {
+					factor = 1
+					war_policy = pro_military
+				}
+				modifier = {
+					factor = 1.25
+					war_policy = jingoism
+				}
+			}
+		}
+		option = { #Keep current borders
+			name = "EVTOPTB6666660"
+			any_pop = {
+				dominant_issue = {
+					factor = 0.05
+					value = pacifism
+				}
+			}
+			any_pop = {
+				dominant_issue = {
+					factor = 0.05
+					value = anti_military
+				}
+			}
+			any_pop = {
+				scaled_militancy = {
+					issue = jingoism
+					factor = 3
+				}
+			}
+			any_pop = {
+				scaled_consciousness = {
+					issue = jingoism
+					factor = 3
+				}
+			}
+			set_country_flag = greek_pacifism
+			ai_chance = {
+				factor = 40
+				modifier = {
+					factor = 0
+					war_policy = jingoism
+				}
+				modifier = {
+					factor = 0.25
+					war_policy = pro_military
+				}
+				modifier = {
+					factor = 1
+					war_policy = anti_military
+				}
+				modifier = {
+					factor = 1.25
+					war_policy = pacifism
+				}
+			}
+		}
+}
+
+#GRE inherits Chios & Samos
+country_event = {
+	id = 6666661
+	title = "EVTNAME6666661"
+	desc = "EVTDESC6666661"
+	picture = "Celebration"
+	is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPTA6666661"
+			prestige = 5
+			set_country_flag = greek_irredentism
+			ai_chance = {
+				factor = 100
+			}
+		}
+}

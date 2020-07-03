@@ -1,0 +1,1517 @@
+political_decisions = {
+
+	#nigga_2_soldier
+	#second wave of immigrants to tovar
+	
+	dump_niggas_haiti = {
+		picture = map_caribbean
+		potential = {
+			OR = {
+				tag = GCO
+				tag = ANF
+			}
+			NOT = { has_country_flag = dump_niggas_haiti }
+			HAI = { exists = yes }
+			has_country_flag = liberate_spanish_caribbean
+		}
+				
+		allow = {
+			is_greater_power = yes
+			OR = {
+				ruling_party_ideology = conservative
+				ruling_party_ideology = reactionary
+				ruling_party_ideology = fascist
+				ruling_party_ideology = anarcho_liberal
+			}
+			HAI = {
+				OR = {
+					in_sphere = THIS
+					vassal_of = THIS
+				}
+			}
+		}
+		
+		effect = {
+			set_country_flag = dump_niggas_haiti
+			HAI = {
+				country_event = 1000080
+			}
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	liberate_spanish_caribbean = {
+		picture = map_caribbean
+		potential = {
+			OR = {
+				tag = GCO
+				tag = ANF
+			}
+			NOT = { has_country_flag = liberate_spanish_caribbean }
+			OR = {
+				has_country_flag = coerce_HAI_into_joining
+				has_country_flag = HAI_wants_to_join_again
+			}
+		}
+				
+		allow = {
+			is_greater_power = yes
+			invention = manifest_destiny
+			invention = national_fraternity
+			prestige = 100
+			CUB = {
+				OR = {
+					exists = no
+					AND = {
+						exists = yes
+						OR = {
+							vassal_of = SPA
+							vassal_of = SPC
+							vassal_of = IBR
+						}
+					}
+				}
+			}
+			PRI = {
+				OR = {
+					exists = no
+					AND = {
+						exists = yes
+						OR = {
+							vassal_of = SPA
+							vassal_of = SPC
+							vassal_of = IBR
+						}
+					}
+				}
+			}
+		}
+		
+		effect = {
+			set_country_flag = liberate_spanish_caribbean
+			SPA_2209 = { add_core = THIS }
+			SPA_2211 = { add_core = THIS }
+			2222 = { add_core = THIS }
+			any_country = {
+				limit = {
+					OR = {
+						tag = SPA
+						tag = SPC
+						tag = IBR
+					}
+					exists = yes
+					OR = {
+						is_our_vassal = CUB
+						is_our_vassal = PRI
+					}
+				}
+				country_event = 1000079
+			}
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	GCO_capital = {
+		picture = unite_gran_colombia
+		potential = {
+			tag = GCO
+			NOT = { has_country_flag = GCO_capital }
+			NOT = { has_country_flag = GCO_capital_selected }
+		}
+				
+		allow = {
+		}
+		
+		effect = {
+			set_country_flag = GCO_capital
+			country_event = 100005
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	reform_GCO_outside = {
+		picture = unite_gran_colombia
+		potential = {
+			is_greater_power = yes
+			#is_culture_group = latin_american_cultures
+			NOT = { has_country_flag = post_colonial_country }
+			NOT = {
+				OR = {
+					tag = CLM
+					tag = ECU
+					tag = VNZ
+					tag = ZLA
+					tag = FVZ
+					tag = USV
+					tag = B4R
+					tag = AR1
+					tag = VNG
+					tag = SPA
+					tag = SPC
+					tag = IBR
+				}
+			}
+			NOT = { exists = GCO }
+			capital_scope = {
+				OR = {
+					continent = south_america
+					continent = north_america
+				}
+			}
+			is_vassal = no
+			ai = no
+		}
+
+		allow = {
+			CLM = {
+				OR = {
+					in_sphere = THIS
+					vassal_of = THIS
+					ai = no
+					all_core = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								OR = {
+									in_sphere = THIS
+									vassal_of = THIS
+								}
+								war = no
+								is_greater_power = no
+							}
+						}
+					}
+				}
+			}
+			ECU = {
+				OR = {
+					in_sphere = THIS
+					vassal_of = THIS
+					ai = no
+					all_core = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								OR = {
+									in_sphere = THIS
+									vassal_of = THIS
+								}
+								war = no
+								is_greater_power = no
+							}
+						}
+					}
+				}
+			}
+			OR = {
+				VNZ = {
+					OR = {
+						in_sphere = THIS
+						vassal_of = THIS
+						ai = no
+						all_core = {
+							OR = {
+								owned_by = THIS
+								owner = {
+									OR = {
+										in_sphere = THIS
+										vassal_of = THIS
+									}
+									war = no
+									is_greater_power = no
+								}
+							}
+						}
+					}
+				}
+				FVZ = {
+					OR = {
+						in_sphere = THIS
+						vassal_of = THIS
+						ai = no
+						all_core = {
+							OR = {
+								owned_by = THIS
+								owner = {
+									OR = {
+										in_sphere = THIS
+										vassal_of = THIS
+									}
+									war = no
+									is_greater_power = no
+								}
+							}
+						}
+					}
+				}
+				USV = {
+					OR = {
+						in_sphere = THIS
+						vassal_of = THIS
+						ai = no
+						all_core = {
+							OR = {
+								owned_by = THIS
+								owner = {
+									OR = {
+										in_sphere = THIS
+										vassal_of = THIS
+									}
+									war = no
+									is_greater_power = no
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+		effect = {
+			prestige = 10
+			any_country = {
+				limit = {
+					OR = {
+						primary_culture = north_andean
+						primary_culture = llanero
+						AND = {
+							tag = PNM
+							primary_culture = central_american
+						}
+					}
+					NOT = { tag = THIS }
+					OR = {
+						in_sphere = THIS
+						vassal_of = THIS
+					}
+				}
+				annex_to = THIS
+			}
+			any_country = {
+				limit = {
+					OR = {
+						tag = VNZ
+						tag = FVZ
+						tag = USV
+						tag = CLM
+						tag = ECU
+						tag = PNM
+					}
+				}
+				all_core = { add_core = GCO }
+			}
+			#Guyana
+			2243 = { add_core = GCO }
+			2242 = { add_core = GCO }
+			3373 = { add_core = GCO }
+			3379 = { add_core = GCO }
+			3380 = { add_core = GCO }
+			2532 = { add_core = GCO }
+			#Marabitanas Amazon
+			2401 = { add_core = GCO }
+			3371 = { add_core = GCO }
+			#Mosquitos coast
+			UCA_2200 = { add_core = GCO }
+			any_owned = {
+				limit = {
+					is_core = GCO
+					is_core = THIS
+				}
+				remove_core = GCO
+			}
+			release_vassal = GCO
+			create_alliance = GCO
+			create_vassal = GCO
+			relation = {
+				who = GCO
+				value = 100
+			}
+			diplomatic_influence = {
+				who = GCO
+				value = 200
+			}
+		}
+
+		ai_will_do = { factor = 1 }
+	}
+
+	claim_aruba_curacao = {
+		picture = gtfo
+		potential = {
+			OR = {
+				tag = VNZ
+				tag = FVZ
+				tag = USV
+				tag = ZLA
+				tag = GCO
+			}
+			NOT = { has_country_flag = claim_aruba_curacao }
+		}
+		allow = {
+			nationalism_n_imperialism = 1
+			invention = manifest_destiny
+			war_policy = jingoism
+		}
+		effect = {
+			prestige = 10
+			badboy = 5
+			2235 = { add_core = THIS }
+			2234 = { add_core = THIS }
+			3353 = { add_core = THIS }
+			set_country_flag = claim_aruba_curacao
+		}
+	}
+	
+	claim_trinidad_tobago = {
+		picture = gtfo
+		potential = {
+			OR = {
+				tag = VNZ
+				tag = FVZ
+				tag = USV
+				tag = GCO
+			}
+			NOT = { has_country_flag = claim_trinidad_tobago }
+		}
+		allow = {
+			nationalism_n_imperialism = 1
+			invention = manifest_destiny
+			war_policy = jingoism
+		}
+		effect = {
+			prestige = 10
+			badboy = 5
+			2237 = { add_core = THIS }
+			2238 = { add_core = THIS }
+			set_country_flag = claim_trinidad_tobago
+		}
+		
+	}
+
+	mallarino_bidlack_treatise = {
+		picture = gtfo
+		potential = {
+			NOT = { has_global_flag = mallarino_bidlack }
+			is_vassal = no
+			USA = {
+				exists = yes
+				is_greater_power = yes
+			}
+			is_culture_group = latin_american_cultures
+			owns = 1723
+			is_greater_power = no
+			war = no
+		}
+		allow = {
+			year = 1846
+		}
+		effect = {
+			set_global_flag = mallarino_bidlack
+			1723 = { infrastructure = 1 }
+			2204 = { infrastructure = 1 }
+			USA = {
+				relation = {
+					who = THIS
+					value = 200
+				}
+				diplomatic_influence = {
+					who = THIS
+					value = 400
+				}
+			}
+			relation = {
+				who = USA
+				value = 200
+			}
+			military_access = USA
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	GCO_vassalize_BOL = {
+		picture = form_gran_colombia
+		potential = {
+			tag = GCO
+			NOT = { has_country_flag = GCO_vassalize_BOL }
+			BOL = { exists = yes }
+			PBC = { exists = no }
+		}
+	
+		allow = {
+			war = no
+			is_vassal = no
+			is_greater_power = yes
+			relation = {
+				who = BOL
+				value = 200
+			}
+			BOL = {
+				in_sphere = THIS
+				relation = {
+					who = THIS
+					value = 200
+				}
+				is_greater_power = no
+			}
+			prestige = 100
+			invention = nostalgic_romanticism
+		}
+	
+		effect = {
+			set_country_flag = GCO_vassalize_BOL
+			prestige = 5
+			create_vassal = BOL
+			diplomatic_influence = {
+				who = PEU
+				value = -400
+			}
+			diplomatic_influence = {
+				who = SPU
+				value = -400
+			}
+			any_country = {
+				limit = {
+					OR = {
+						tag = PEU
+						tag = SPU
+					}
+				}
+				relation = {
+					who = THIS
+					value = -400
+				}
+			}
+		}
+
+		ai_will_do = { factor = 1 }
+	}
+	
+	GCO_subjugation_peru = {
+		picture = form_gran_colombia
+		potential = {
+			tag = GCO
+			has_country_flag = GCO_vassalize_BOL
+			PEU = { exists = yes }
+			NOT = { has_country_flag = GCO_subjugation_peru }
+		}
+	
+		allow = {
+			war = no
+			BOL = {
+				vassal_of = THIS
+			}
+			prestige = 150
+			invention = manifest_destiny
+			NOT = { truce_with = PEU }
+			war_policy = jingoism
+		}
+	
+		effect = {
+		set_country_flag = GCO_subjugation_peru
+			badboy = 5
+			casus_belli = { target = PEU type = make_puppet months = 60 }
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	GCO_integrate_BOL_PEU = {
+		picture = form_gran_colombia
+		potential = {
+			tag = GCO
+			has_country_flag = GCO_vassalize_BOL
+			has_country_flag = GCO_subjugation_peru
+			NOT = { has_global_flag = GCO_integrate_BOL_PEU }
+			PBC = { exists = no }
+		}
+	
+		allow = {
+			war = no
+			BOL = {
+				vassal_of = THIS
+				in_sphere = THIS
+				relation = {
+					who = THIS
+					value = 200
+				}
+				is_greater_power = no
+			}
+			PEU = {
+				vassal_of = THIS
+				in_sphere = THIS
+				relation = {
+					who = THIS
+					value = 150
+				}
+				is_greater_power = no
+			}
+			relation = {
+				who = BOL
+				value = 200
+			}
+			relation = {
+				who = PEU
+				value = 150
+			}
+			prestige = 200
+			invention = manifest_destiny
+			invention = national_fraternity
+			NOT = { truce_with = PEU }
+		}
+	
+		effect = {
+			set_global_flag = GCO_integrate_BOL_PEU
+			prestige = 10
+			any_country = {
+				limit = {
+					OR = {
+						tag = PEU
+						tag = SPU
+						tag = BOL
+					}
+					NOT = { tag = THIS }
+					in_sphere = THIS
+					vassal_of = THIS
+				}
+				annex_to = THIS
+			}
+			PEU = { all_core = { add_core = PBC } }
+			SPU = { all_core = { add_core = PBC } }
+			BOL = { all_core = { add_core = PBC } }
+			#LEBENSRAUM!
+			BRZ_2549 = { add_core = PBC } #Acre
+			BOL_2370 = { add_core = PBC } #Puna de Atacama
+			BOL_2315 = { add_core = PBC } #Tarija
+			BOL_2309 = { add_core = PBC } #Antofagasta
+			PRG_2338 = { add_core = PBC } #Alto Paraguay
+			2367 = { add_core = PBC } #Xolotas
+			2366 = { add_core = PBC } #Formosa
+			3313 = { add_core = PBC } #Corumbá
+			2368 = { add_core = PBC } #Salta
+			2369 = { add_core = PBC } #Jujuy
+			any_owned = {
+				limit = {
+					is_core = PBC
+					is_core = THIS
+				}
+				remove_core = PBC
+			}
+			release_vassal = PBC
+			create_alliance = PBC
+			create_vassal = PBC
+			relation = {
+				who = PBC
+				value = 400
+			}
+			diplomatic_influence = {
+				who = PBC
+				value = 400
+			}
+			PBC = {
+				political_reform = confederalism
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	PBC_subjugation_ecuador = {
+		picture = form_gran_colombia
+		potential = {
+			tag = PBC
+			OR = {
+				has_country_flag = BOL_reunited_PBC
+				AND = {
+					has_country_flag = the_confederation_is_legitime
+					has_country_flag = pbc_united
+				}
+			}
+			ECU = { exists = yes }
+			NOT = { has_country_flag = PBC_subjugation_ecuador }
+		}
+	
+		allow = {
+			war = no
+			prestige = 150
+			invention = manifest_destiny
+			NOT = {
+				OR = {
+					truce_with = CLM
+					truce_with = ECU
+					truce_with = VNZ
+					truce_with = FVZ
+					truce_with = USV
+				}
+			}
+			war_policy = jingoism
+		}
+	
+		effect = {
+		set_country_flag = PBC_subjugation_ecuador
+			badboy = 2.5
+			casus_belli = { target = ECU type = make_puppet months = 60 }
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	PBC_subjugation_colombia = {
+		picture = form_gran_colombia
+		potential = {
+			tag = PBC
+			OR = {
+				has_country_flag = BOL_reunited_PBC
+				AND = {
+					has_country_flag = the_confederation_is_legitime
+					has_country_flag = pbc_united
+				}
+			}
+			CLM = { exists = yes }
+			NOT = { has_country_flag = PBC_subjugation_colombia }
+		}
+	
+		allow = {
+			war = no
+			prestige = 150
+			invention = manifest_destiny
+			NOT = {
+				OR = {
+					truce_with = CLM
+					truce_with = ECU
+					truce_with = VNZ
+					truce_with = FVZ
+					truce_with = USV
+				}
+			}
+			war_policy = jingoism
+		}
+	
+		effect = {
+		set_country_flag = PBC_subjugation_colombia
+			badboy = 2.5
+			casus_belli = { target = CLM type = make_puppet months = 60 }
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	PBC_subjugation_venezuela = {
+		picture = form_gran_colombia
+		potential = {
+			tag = PBC
+			OR = {
+				has_country_flag = BOL_reunited_PBC
+				AND = {
+					has_country_flag = the_confederation_is_legitime
+					has_country_flag = pbc_united
+				}
+			}
+			OR = {
+				VNZ = { exists = yes }
+				FVZ = { exists = yes }
+				USV = { exists = yes }
+			}
+			NOT = { has_country_flag = PBC_subjugation_venezuela }
+		}
+	
+		allow = {
+			war = no
+			prestige = 150
+			invention = manifest_destiny
+			NOT = {
+				OR = {
+					truce_with = CLM
+					truce_with = ECU
+					truce_with = VNZ
+					truce_with = FVZ
+					truce_with = USV
+				}
+			}
+			war_policy = jingoism
+		}
+	
+		effect = {
+		set_country_flag = PBC_subjugation_venezuela
+			badboy = 2.5
+			casus_belli = { target = VNZ type = make_puppet months = 60 }
+			casus_belli = { target = FVZ type = make_puppet months = 60 }
+			casus_belli = { target = USV type = make_puppet months = 60 }
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	PBC_integrate_GCO = {
+		picture = form_gran_colombia
+		potential = {
+			tag = PBC
+			has_country_flag = PBC_vassalize_GCO
+			has_country_flag = PBC_subjugation_venezuela
+			has_country_flag = PBC_subjugation_colombia
+			has_country_flag = PBC_subjugation_ecuador
+			NOT = { has_global_flag = PBC_integrate_GCO }
+			GCO = { exists = no }
+		}
+	
+		allow = {
+			war = no
+			OR = {
+				VNZ = {
+					vassal_of = THIS
+					in_sphere = THIS
+					relation = {
+						who = THIS
+						value = 200
+					}
+					is_greater_power = no
+				}
+				FVZ = {
+					vassal_of = THIS
+					in_sphere = THIS
+					relation = {
+						who = THIS
+						value = 200
+					}
+					is_greater_power = no
+				}
+				USV = {
+					vassal_of = THIS
+					in_sphere = THIS
+					relation = {
+						who = THIS
+						value = 200
+					}
+					is_greater_power = no
+				}
+			}
+			CLM = {
+				vassal_of = THIS
+				in_sphere = THIS
+				relation = {
+					who = THIS
+					value = 200
+				}
+				is_greater_power = no
+			}
+			ECU = {
+				vassal_of = THIS
+				in_sphere = THIS
+				relation = {
+					who = THIS
+					value = 200
+				}
+				is_greater_power = no
+			}
+			relation = {
+				who = BOL
+				value = 200
+			}
+			relation = {
+				who = PEU
+				value = 150
+			}
+			prestige = 200
+			invention = manifest_destiny
+			invention = national_fraternity
+			NOT = { truce_with = PEU }
+		}
+	
+		effect = {
+			set_global_flag = PBC_integrate_GCO
+			prestige = 10
+			any_country = {
+				limit = {
+					OR = {
+						primary_culture = north_andean
+						primary_culture = llanero
+						AND = {
+							tag = PNM
+							primary_culture = central_american
+						}
+					}
+					NOT = { tag = THIS }
+					in_sphere = THIS
+					vassal_of = THIS
+				}
+				annex_to = THIS
+			}
+			any_country = {
+				limit = {
+					OR = {
+						tag = VNZ
+						tag = FVZ
+						tag = USV
+						tag = CLM
+						tag = ECU
+						tag = PNM
+					}
+				}
+				all_core = { add_core = GCO }
+			}
+			#Guyana
+			2243 = { add_core = GCO }
+			2242 = { add_core = GCO }
+			3373 = { add_core = GCO }
+			3379 = { add_core = GCO }
+			3380 = { add_core = GCO }
+			2532 = { add_core = GCO }
+			#Marabitanas Amazon
+			2401 = { add_core = GCO }
+			3371 = { add_core = GCO }
+			#Mosquitos coast
+			UCA_2200 = { add_core = GCO }
+			any_owned = {
+				limit = {
+					is_core = GCO
+					is_core = THIS
+				}
+				remove_core = GCO
+			}
+			release_vassal = GCO
+			create_alliance = GCO
+			create_vassal = GCO
+			relation = {
+				who = GCO
+				value = 400
+			}
+			diplomatic_influence = {
+				who = GCO
+				value = 400
+			}
+			GCO = {
+				political_reform = federalism
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	GCO_PBC_bolivars_dream = {
+		picture = form_gran_colombia
+		potential = {
+			OR = {
+				tag = GCO
+				AND = {
+					tag = PBC
+					OR = {
+						has_country_flag = BOL_reunited_PBC
+						AND = {
+							has_country_flag = the_confederation_is_legitime
+							has_country_flag = pbc_united
+						}
+					}
+				}
+			}
+			has_country_flag = constitucion_vitalicia
+			OR = {
+				has_global_flag = GCO_integrate_BOL_PEU
+				has_global_flag = PBC_integrate_GCO
+			}
+			NOT = { has_country_flag = GCO_PBC_bolivars_dream }
+		}
+		
+		allow = {
+			war = no
+			is_vassal = no
+			is_greater_power = yes
+			PBC = { vassal_of = THIS }
+			OR = {
+				government = hms_government
+				government = absolute_monarchy
+				government = prussian_constitutionalism
+			}
+			prestige = 300
+		}
+		
+		effect = {
+			set_country_flag = GCO_PBC_bolivars_dream
+			all_core = { add_core = ANF }
+			PBC = {
+				all_core = { add_core = ANF }
+				annex_to = THIS
+			}
+			change_tag = ANF
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	bolivar_claims_GCO = {
+		picture = unite_gran_colombia
+		potential = {
+			tag = GCO
+			NOT = {	has_country_flag = bolivar_claims_GCO	}
+			has_global_flag = ANONS_MAGICAL_DISABLE
+		}
+		
+		allow = {
+			is_greater_power = yes
+			war_policy = jingoism
+			invention = expansionism
+			prestige = 300
+			war = no
+			is_vassal = no
+		}
+		
+		effect = {
+			badboy = 24.5
+			set_country_flag = bolivar_claims_GCO
+			any_country = {
+				limit = {
+					OR = {
+						tag = BOL
+						tag = SPU
+						tag = PEU
+						tag = VOP
+						tag = PBC
+					}
+				}
+				all_core = { add_core = GCO }
+			}
+			# Lost to Chile
+			BOL_2309 = { add_core = GCO } #Antofagasta
+			# Lost to Paraguay
+			PRG_2338 = { add_core = GCO } #Alto Paraguay
+			# Lost to Brazil
+			BRZ_2549 = { add_core = GCO } #Acre
+			3313 = { add_core = GCO } #Vila Bela/Corumbá
+			# Lost to Argentina
+			BOL_2315 = { add_core = GCO } #Tarija
+			BOL_2370 = { add_core = GCO } #Puna de Atacama
+			2367 = { add_core = GCO } #Xolotas
+			2366 = { add_core = GCO } #Formosa
+			#Dubious claims by local Caudillos, but Lebensraum nonetheless
+			2369 = { add_core = GCO } #Jujuy
+			2368 = { add_core = GCO } #Salta
+			
+			add_accepted_culture = south_andean
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	bolivar_claims_PBC = {
+		picture = unite_gran_colombia
+		potential = {
+			tag = PBC
+			OR = {
+				has_country_flag = BOL_reunited_PBC
+				AND = {
+					has_country_flag = the_confederation_is_legitime
+					has_country_flag = pbc_united
+				}
+			}
+			NOT = {	has_country_flag = bolivar_claims_PBC	}
+			has_global_flag = ANONS_MAGICAL_DISABLE
+		}
+		
+		allow = {
+			is_greater_power = yes
+			war_policy = jingoism
+			invention = expansionism
+			prestige = 300
+			war = no
+			is_vassal = no
+		}
+		
+		effect = {
+			badboy = 24.5
+			set_country_flag = bolivar_claims_sword
+			any_country = {
+				limit = {
+					OR = {
+						tag = VNZ
+						tag = FVZ
+						tag = USV
+						tag = CLM
+						tag = ECU
+					}
+				}
+				all_core = { add_core = PBC }
+			}
+			2275 = { add_core = PBC } #
+			3381 = { add_core = PBC } #
+			2243 = { add_core = PBC } #
+			2242 = { add_core = PBC } #
+			3373 = { add_core = PBC } #
+			3379 = { add_core = PBC } #
+			3380 = { add_core = PBC } #
+			2532 = { add_core = PBC } #
+			2401 = { add_core = PBC } #Marabitanas
+			3371 = { add_core = PBC } #Macapiri
+			UCA_2200 = { add_core = PBC } #Moskito Coast
+			CLM_1723 = { add_core = PBC } #Panama
+			# Lost to Chile
+			BOL_2309 = { add_core = GCO } #Antofagasta
+			# Lost to Paraguay
+			PRG_2338 = { add_core = GCO } #Alto Paraguay
+			# Lost to Brazil
+			BRZ_2549 = { add_core = GCO } #Acre
+			3313 = { add_core = GCO } #Vila Bela/Corumbá
+			# Lost to Argentina
+			BOL_2315 = { add_core = GCO } #Tarija
+			BOL_2370 = { add_core = GCO } #Puna de Atacama
+			2367 = { add_core = GCO } #Xolotas
+			2366 = { add_core = GCO } #Formosa
+			#Dubious claims by local Caudillos, but Lebensraum nonetheless
+			2369 = { add_core = GCO } #Jujuy
+			2368 = { add_core = GCO } #Salta
+			
+			add_accepted_culture = north_andean
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	coerce_HAI_into_joining = {
+		picture = unite_gran_colombia
+		potential = {
+			tag = GCO
+			NOT = {	has_country_flag = coerce_HAI_into_joining	}
+			NOT = {	has_country_flag = HAI_wants_to_join_again	}
+		}
+		
+		allow = {
+			OR = {
+				is_secondary_power = yes
+				is_greater_power = yes
+			}
+			war_policy = jingoism
+			invention = expansionism
+			war = no
+			is_vassal = no
+		}
+		
+		effect = {
+			set_country_flag = coerce_HAI_into_joining
+			DOM = { all_core = { add_core = GCO } }
+			add_accepted_culture = caribeno
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	HAI_wants_to_join_again = {
+		picture = form_gran_colombia
+		potential = {
+			tag = GCO
+			NOT = {	has_country_flag = HAI_wants_to_join_again	}
+			NOT = {	has_country_flag = coerce_HAI_into_joining	}
+		}
+		
+		allow = {
+			war = no
+			is_vassal = no
+			prestige = 75
+			OR = {
+				is_secondary_power = yes
+				is_greater_power = yes
+			}
+			invention = national_fraternity	
+			DOM = {
+				OR = {
+					in_sphere = THIS
+					vassal_of = THIS
+					ai = no
+					all_core = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								OR = {
+									in_sphere = THIS
+									vassal_of = THIS
+								}
+								war = no
+								is_greater_power = no
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		effect = {
+			prestige = 10
+			DOM = {
+				all_core = { add_core = GCO }
+			}
+			any_country = {
+				limit = {
+					ai = yes
+					OR = {
+						in_sphere = THIS
+						vassal_of = THIS
+					}
+					tag = DOM
+				}
+				annex_to = THIS
+			}
+			random_country = {
+				limit = {
+					tag = DOM
+					exists = yes
+					ai = no
+				}
+				country_event = 11101
+			}
+			set_country_flag = HAI_wants_to_join_again
+			add_accepted_culture = caribeno
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	colonia_tovar = {
+		picture = colonia_tovar
+		potential = {
+			OR = {
+				primary_culture = north_andean
+				primary_culture = llanero
+			}
+			owns = 3361
+			NOT = {	has_country_flag = colonia_tovar_founded	}
+		}
+		
+		allow = {
+			war = no
+			year = 1843
+		}
+		
+		effect = {
+			set_country_flag = colonia_tovar_founded
+			415 = { #Rouen, where they parted from.
+				any_pop = {
+					limit = {
+						has_pop_culture = south_german
+					}
+					move_pop = 3361
+				}
+				remove_core = T0B
+			}
+			3361 = { #Maracay
+				add_province_modifier = {
+					name = colonia_tovar_founded
+					duration = -1
+				}
+				add_core = T0V
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	welcome_european_immigrants = {
+		picture = colonia_tovar
+		potential = {
+			OR = {
+				primary_culture = north_andean
+				primary_culture = llanero
+			}
+			owns = 3361
+			has_country_flag = colonia_tovar_founded
+			NOT = { has_global_flag = actually_useful_immigrants }
+		}
+		
+		allow = {
+			war = no
+			money = 30000
+			invention = biased_multiculturalism
+		}
+		
+		effect = {
+			set_global_flag = actually_useful_immigrants
+			add_country_modifier = {
+				name = good_immigrants
+				duration = -1
+			}
+			treasury = -30000
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	constitucion_vitalicia = {
+		picture = form_gran_colombia
+		potential = {
+			OR = {
+				primary_culture = north_andean
+				primary_culture = llanero
+				tag = BOL
+				AND = {
+					tag = PBC
+					OR = {
+						has_country_flag = BOL_reunited_PBC
+						AND = {
+							has_country_flag = the_confederation_is_legitime
+							has_country_flag = pbc_united
+						}
+					}
+				}
+			}
+			OR = {
+				is_secondary_power = yes
+				is_greater_power = yes
+			}
+			NOT = { has_country_flag = constitucion_vitalicia }
+		}
+		
+		allow = {
+			war = no
+			ruling_party_ideology = reactionary
+			invention = authoritarianism
+			invention = meritocracy_vs._aristocracy
+			invention = nostalgic_romanticism
+			prestige = 250
+		}
+		
+		effect = {
+			set_country_flag = constitucion_vitalicia
+			government = hms_government
+			ruling_party_ideology = reactionary
+			political_reform = wealth_weighted_voting
+			political_reform = appointed
+			any_pop = {
+				dominant_issue = {
+					value = universal_weighted_voting 
+					factor = 0.175
+				}
+				militancy = 7
+				consciousness = 7
+			}
+			any_pop = {
+				dominant_issue = {
+					value = universal_voting 
+					factor = 0.35
+				}
+				militancy = 7
+				consciousness = 7
+			}
+			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	
+#	bolivar_claims_diplomacy = {
+#		picture = form_gran_colombia
+#		potential = {
+#			tag = GCO
+#		}
+#		
+#		allow = {
+#			war = no
+#			prestige = 75
+#			OR = {
+#				is_secondary_power = yes
+#				is_greater_power = yes
+#			}
+#			invention = national_fraternity	
+#			OR = {
+#				BOL = {
+#					OR = {
+#						in_sphere = GCO
+#						vassal_of = GCO
+#						exists = yes
+#						all_core = {
+#							OR = {
+#								owned_by = GCO
+#								province_id = 2243
+#								province_id = 2242
+#							}
+#						}
+#					}
+#				}
+#				SPU = {
+#					OR = {
+#						in_sphere = GCO
+#						vassal_of = GCO
+#						all_core = {
+#							OR = {
+#								owned_by = GCO
+#								province_id = 2243
+#								province_id = 2242
+#							}
+#						}
+#					}
+#				}
+#				PEU = {
+#					OR = {
+#						in_sphere = GCO
+#						vassal_of = GCO
+#						all_core = {
+#							OR = {
+#								owned_by = GCO
+#								province_id = 2243
+#								province_id = 2242
+#							}
+#						}
+#					}
+#				}
+#				VOP = {
+#					OR = {
+#						in_sphere = GCO
+#						vassal_of = GCO
+#						all_core = {
+#							OR = {
+#								owned_by = GCO
+#								province_id = 2243
+#								province_id = 2242
+#							}
+#						}
+#					}
+#				}
+#				PBC = {
+#					OR = {
+#						in_sphere = GCO
+#						vassal_of = GCO
+#						all_core = {
+#							OR = {
+#								owned_by = GCO
+#								province_id = 2243
+#								province_id = 2242
+#							}
+#						}
+#					}
+#				}
+#			}
+#		}
+#		
+#		effect = {
+#			prestige = 10
+#			BOL = {
+#				all_core = { add_core = GCO }
+#			}
+#			SPU = {
+#				all_core = { add_core = GCO }
+#			}
+#			PEU = {
+#				all_core = { add_core = GCO }
+#			}
+#			VOP = {
+#				all_core = { add_core = GCO }
+#			}
+#			PBC = {
+#				all_core = { add_core = GCO }
+#			}
+#			any_country = {
+#				limit = {
+#					ai = yes
+#					OR = {
+#						in_sphere = GCO
+#						vassal_of = GCO
+#					}
+#				}
+#				any_owned = {
+#					limit = { is_core = GCO }
+#					secede_province = GCO
+#				}
+#			}			
+#			random_country = {
+#				limit = {
+#					tag = BOL
+#					exists = yes
+#					ai = no
+#				}
+#				country_event = 11101
+#			}
+#			random_country = {
+#				limit = {
+#					tag = SPU
+#					exists = yes
+#					ai = no
+#				}
+#				country_event = 11101
+#			}
+#			random_country = {
+#				limit = {
+#					tag = PEU
+#					exists = yes
+#					ai = no
+#				}
+#				country_event = 11101
+#			}
+#			random_country = {
+#				limit = {
+#					tag = VOP
+#					exists = yes
+#					ai = no
+#				}
+#				country_event = 11101
+#			}
+#			random_country = {
+#				limit = {
+#					tag = PBC
+#					exists = yes
+#					ai = no
+#				}
+#				country_event = 11101
+#			}
+#			add_accepted_culture = south_andean
+#		}
+#		
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+
+	
+	ANF_primary_culture = {
+		picture = form_gran_colombia
+		potential = {
+			tag = ANF
+			NOT = { has_country_flag = ANF_primary_culture }
+			NOT = { has_country_flag = ANF_primary_culture_selected }
+		}
+				
+		allow = {
+		}
+		
+		effect = {
+			set_country_flag = ANF_primary_culture
+			country_event = 1000077
+		}
+		ai_will_do = { factor = 1 }
+	}
+	ANF_capital = {
+		picture = form_gran_colombia
+		potential = {
+			tag = ANF
+			NOT = { has_country_flag = ANF_capital }
+			NOT = { has_country_flag = ANF_capital_selected }
+		}
+				
+		allow = {
+		}
+		
+		effect = {
+			set_country_flag = ANF_capital
+			country_event = 1000078
+		}
+		ai_will_do = { factor = 1 }
+	}
+
+}

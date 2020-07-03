@@ -1,0 +1,39 @@
+
+RUS = {
+	value = -100
+}
+
+leader = {
+	name = "Kauikeaouli Kamehameha"
+	date = 1836.1.1
+	type = land
+	personality = diplomatic
+	background = natural_born_leader	
+	prestige = 0.0
+}
+
+army = {
+	name = "Army of the King of Hawaii"
+	location = 3305
+	regiment = {
+		name= "1.Hawaiian Royal Guard"
+		type = irregular
+		home = 3305
+	}
+}
+
+
+navy = {
+	name = "Navy of the King of Hawaii"
+	location = 3305
+	ship = {
+		name= "'Ae'ae-a-hiwa"
+		type = frigate
+	}
+
+	ship = {
+		name = "Naholoholo"
+		type = clipper_transport
+	}
+	
+}

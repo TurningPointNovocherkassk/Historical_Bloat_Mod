@@ -1,0 +1,79 @@
+#Super cool Ancap events.
+
+	country_event = {
+		id = 7979000
+		title = "A Plea from the East India Company"
+		desc = "EVTDESC7979000"
+		picture = "deliberation"
+	
+		is_triggered_only = yes
+	
+		option = {
+			name = "We must help them! Think of the possibilities!"
+			EIC = { country_event = 7979001 }
+			create_alliance = EIC
+			relation = { who = EIC value = 400 }
+			diplomatic_influence = { who = EIC value = 400 }
+			treasury = -50000
+			ai_chance = {
+				factor = 99
+				modifier = {
+					factor = 0
+					NOT = { money = 50000 }
+				}
+			}
+		}
+		option = {
+			name = "It is too costly..."
+			EIC = { country_event = 7979002 }
+			ai_chance = {
+				factor = 1
+				modifier = {
+					factor = 100
+					NOT = { money = 50000 }
+				}
+			}
+		}
+	}
+	country_event = {
+		id = 7979001
+		title = "A Plea from the East India Company - The Russian Response"
+		desc = "The Russian Envoy has responded, they shall help us in our war against the British!"
+		picture = "deliberation"
+	
+		is_triggered_only = yes
+	
+		option = {
+			name = "Three Hurrays!"
+			create_alliance = RUS
+			relation = { who = RUS value = 400 }
+			treasury = 50000
+			iron = 100
+			wool = 100
+			timber = 250
+			small_arms = 100
+			artillery = 50
+			leadership = 20
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+	country_event = {
+		id = 7979002
+		title = "A Plea from the East India Company - The Russian Response"
+		desc = "The Russian Envoy has responded, they won't be helping us in our war against the British..."
+		picture = "deliberation"
+	
+		is_triggered_only = yes
+	
+		option = {
+			name = "Damn them!"
+			EIC = { country_event = 7979001 }
+			relation = { who = RUS value = -100 }
+			RUS = { diplomatic_influence = { who = EIC value = -400 } }
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}

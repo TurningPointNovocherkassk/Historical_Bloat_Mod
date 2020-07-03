@@ -1,0 +1,3985 @@
+political_decisions = {
+	
+##########################
+#~~~~~~~~~~~~~~~~~~~~~~~~#
+#~~~~Random decisions~~~~#
+#~~~~~~~~~~~~~~~~~~~~~~~~#
+##########################
+	
+	VNZ_expel_indians_GUY = {
+		picture = guyanas_2
+		potential = {
+			NOT = {	has_country_flag = VNZ_expel_indians_GUY }
+			has_global_flag = indentured_indians_british
+			owns = 2242 #Esequibo
+			owns = 2243 #Pomaron
+			owns = 3373 #Rupununi
+			OR = {
+				primary_culture = north_andean
+				primary_culture = llanero
+			}
+		}
+		allow = {
+			OR = {
+				ruling_party_ideology = reactionary
+				ruling_party_ideology = fascist
+				ruling_party_ideology = anarcho_liberal
+			}
+			invention = biased_multiculturalism
+			invention = social_darwinism
+		}
+		effect = {
+			set_country_flag = VNZ_expel_indians_GUY
+			any_pop = {
+				limit = {
+					has_pop_culture = indo_caribbean
+				}
+				move_pop = 2239 #Georgetown
+			}
+			2239 = {
+				owner = {
+					country_event = 1999998112
+				}
+			}
+		}
+		ai_will_do = { factor = 1 }
+	}
+	VNZ_expel_indians_TTB = {
+		picture = map_caribbean
+		potential = {
+			NOT = {	has_country_flag = VNZ_expel_indians_TTB }
+			has_global_flag = indentured_indians_british
+			has_country_flag = claim_trinidad_tobago
+			owns = 2237 #Trinidad
+			owns = 2238 #Tobago
+			OR = {
+				primary_culture = north_andean
+				primary_culture = llanero
+			}
+		}
+		allow = {
+			OR = {
+				ruling_party_ideology = reactionary
+				ruling_party_ideology = fascist
+				ruling_party_ideology = anarcho_liberal
+			}
+			invention = biased_multiculturalism
+			invention = social_darwinism
+		}
+		effect = {
+			set_country_flag = VNZ_expel_indians_TTB
+			any_pop = {
+				limit = {
+					has_pop_culture = indo_caribbean
+				}
+				move_pop = 2239 #Georgetown
+			}
+			2239 = {
+				owner = {
+					country_event = 1999998112
+				}
+			}
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	lawa_railway = {
+		picture = whistlestop_tour
+		potential = {
+			NOT = {	has_country_flag = lawa_railway }
+			3384 = { produces = precious_metal } #Tapahoni
+			OR = {
+				owns = 2240 #Paramaribo
+				owns = 2245 #Apetina
+			}
+		}
+		allow = {
+			early_railroad = 1
+			money = 2500
+		}
+		effect = {
+			set_country_flag = lawa_railway
+			treasury = -2500
+			2240 = { infrastructure = 1 }
+			2245 = { infrastructure = 1 }
+		}
+		ai_will_do = { factor = 1 }
+	}
+	extend_lawa_railway = {
+		picture = whistlestop_tour
+		potential = {
+			NOT = {	has_country_flag = extend_lawa_railway }
+			has_country_flag = lawa_railway
+			3384 = { produces = precious_metal } #Tapahoni
+			OR = {
+				owns = 2240 #Paramaribo
+				owns = 2245 #Apetina
+			}
+		}
+		allow = {
+			early_railroad = 1
+			money = 1250
+			owns = 3384 #Tapahoni
+		}
+		effect = {
+			set_country_flag = extend_lawa_railway
+			treasury = -1250
+			3384 = { infrastructure = 1 }
+		}
+		ai_will_do = { factor = 0 }
+	}
+	extend_lawa_railway_even_further = {
+		picture = whistlestop_tour
+		potential = {
+			NOT = {	has_country_flag = extend_lawa_railway_even_further }
+			has_country_flag = extend_lawa_railway
+			3383 = { #Marouini
+				produces = precious_metal
+				owned_by = THIS
+			}
+			OR = {
+				owns = 2240 #Paramaribo
+				owns = 2245 #Apetina
+			}
+		}
+		allow = {
+			early_railroad = 1
+			money = 1250
+		}
+		effect = {
+			set_country_flag = extend_lawa_railway_even_further
+			treasury = -1250
+			3383 = { infrastructure = 1 }
+		}
+		ai_will_do = { factor = 0 }
+	}
+		
+	remove_ENG_cores_GUY = {
+		picture = guyanas_2
+		potential = {
+			NOT = {	has_global_flag = remove_ENG_cores_GUY }
+			300 = {
+				owner = {
+					has_country_flag = VNZ_BRZ_NET_war
+				}
+			}
+			has_country_flag = VNZ_BRZ_NET_leader
+			OR = {
+				is_greater_power = yes
+				is_secondary_power = yes
+			}
+		}
+		allow = {
+			war = no
+			300 = {
+				owner = {
+					NOT = {
+						OR = {
+							owns = 2243 #Pomaron
+							owns = 3373 #Rupununi
+							owns = 3382 #Tigri
+						}
+						OR = {
+							owns = 2242 #Esequibo
+							owns = 3381 #Barima
+							owns = 2275 #Guasipati/El Callao
+							owns = 3596 #Gran Sabana
+							owns = 3379 #Mau
+							owns = 3380 #Pirara
+						}
+					}
+				}
+			}
+			300 = {
+				owner = {
+					has_recently_lost_war = yes
+					OR = {
+						truce_with = THIS
+						
+						truce_with = NET
+						truce_with = BRZ
+						truce_with = USA
+						
+						truce_with = VNZ
+						truce_with = FVZ
+						truce_with = USV
+						truce_with = ZLA
+						truce_with = B4R
+						truce_with = GCO
+					}
+				}
+			}
+		}
+		effect = {
+			set_global_flag = remove_ENG_cores_GUY
+			2242 = {
+				remove_core = ENG
+				remove_core = ENL
+				remove_core = GUY
+			}
+			3381 = {
+				remove_core = ENG
+				remove_core = ENL
+				remove_core = GUY
+			}
+			2275 = {
+				remove_core = ENG
+				remove_core = ENL
+				remove_core = GUY
+			}
+			3596 = {
+				remove_core = ENG
+				remove_core = ENL
+				remove_core = GUY
+			}
+			2243 = {
+				remove_core = ENG
+				remove_core = ENL
+				remove_core = GUY
+			}
+			3373 = {
+				remove_core = ENG
+				remove_core = ENL
+				remove_core = GUY
+			}
+			3379 = {
+				remove_core = ENG
+				remove_core = ENL
+				remove_core = GUY
+			}
+			3380 = {
+				remove_core = ENG
+				remove_core = ENL
+				remove_core = GUY
+			}
+			3382 = {
+				remove_core = ENG
+				remove_core = ENL
+				remove_core = GUY
+				remove_core = NET
+			}
+			2264 = { #Caracas
+				owner = {
+					country_event = 1999998113
+				}
+			}
+			375 = { #Amsterdam
+				owner = {
+					country_event = 1999998114
+				}
+			}
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	FRA_vassalize_counani = {
+		picture = french_guyane
+		potential = {
+			NOT = {	has_country_flag = FRA_vassalize_counani }
+			has_global_flag = independent_counani
+			has_global_flag = CUN_recognized_FRA
+			OR = {
+				tag = FRA
+				tag = BOR
+			}
+			is_greater_power = yes
+			CUN = {
+				exists = yes
+				in_sphere = THIS
+				ai = yes
+			}
+			BRZ = { ai = yes }
+		}
+		allow = {
+			war = no
+			2415 = { is_core = BRZ }
+		}
+		effect = {
+			create_vassal = CUN
+			set_country_flag = FRA_vassalize_counani
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	FRA_integrate_counani = {
+		picture = french_guyane
+		potential = {
+			NOT = {	has_country_flag = FRA_integrate_counani }
+			has_country_flag = FRA_vassalize_counani
+			OR = {
+				tag = FRA
+				tag = BOR
+			}
+			is_greater_power = yes
+			CUN = {
+				exists = yes
+				vassal_of = THIS
+				in_sphere = THIS
+			}
+		}
+		allow = {
+			invention = the_dark_continent
+			war = no
+			2241 = { is_core = THIS } #Cayenne
+			2246 = { is_core = THIS } #Maripasoula
+			3383 = { #Marouini
+				OR = {
+					is_core = THIS
+					owned_by = THIS
+				}
+			}
+		}
+		effect = {
+			CUN = {
+				all_core = { add_core = THIS }
+				annex_to = THIS
+			}
+			set_country_flag = FRA_integrate_counani
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	INO_claims_guyanese_javans = {
+		picture = guyanas_2
+		potential = {
+			NOT = {	has_country_flag = INO_claims_guyanese_javans }
+			has_country_flag = indonesia_raya
+			has_global_flag = indentured_javans_dutch
+			tag = INO
+			OR = {
+				is_greater_power = yes
+				is_secondary_power = yes
+			}
+			prestige = 70
+			military_score = 30
+		}
+		allow = {
+			war = no
+			is_vassal = no
+			nationalism_n_imperialism = 1
+			OR = {			
+				war_policy = jingoism
+				war_policy = pro_military
+			}
+		}
+		effect = {
+			set_country_flag = INO_claims_guyanese_javans
+			prestige = 10
+			badboy = 5
+			2240 = { add_core = INO } #Paramaribo
+			2245 = { add_core = INO } #Apetina
+			3382 = { add_core = INO } #Tigri
+			3383 = { add_core = INO } #Marouini
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	HND_claims_guyanese_indians = {
+		picture = map_india
+		potential = {
+			NOT = {	has_country_flag = HND_claims_guyanese_indians }
+			OR = {
+				AND = {
+					has_global_flag = indentured_indians_british
+					has_global_flag = indentured_indians_french
+					has_global_flag = indentured_indians_dutch
+				}
+				has_global_flag = indentured_indians_SA
+				has_global_flag = indentured_indians_fiji
+			}
+			
+			OR = {
+				AND = {
+					tag = MUG
+					has_country_flag = mughal_reborn
+				}
+				tag = DRA
+				tag = HND
+			}
+			
+			OR = {
+				is_greater_power = yes
+				is_secondary_power = yes
+			}
+			
+			prestige = 70
+			military_score = 30
+		}
+		allow = {
+			war = no
+			is_vassal = no
+			nationalism_n_imperialism = 1
+			OR = {			
+				war_policy = jingoism
+				war_policy = pro_military
+			}
+		}
+		effect = {
+			set_country_flag = HND_claims_guyanese_indians
+			add_accepted_culture = indo_caribbean
+			prestige = 25
+			badboy = 10
+			ENG_1979 = { add_core = THIS } #Guyana region
+			2237 = { add_core = THIS } #Trinidad
+			2238 = { add_core = THIS } #Tobago
+			2229 = { add_core = THIS } #Barbados
+			2217 = { add_core = THIS } #Jamaica
+			2125 = { add_core = THIS } #Mauritius
+			2126 = { add_core = THIS } #Bourbon
+			2230 = { add_core = THIS } #Guadeloupe
+			2228 = { add_core = THIS } #Martinique
+			2111 = { add_core = THIS } #Durban
+			2454 = { add_core = THIS } #Fiji	
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	OTHER_guyana_purchase = { #Not as a North Andean of Llanero country, this decision is only for Spain (Nueva Granada Viceroyalty) or any country that has puppeted GCO/VNZ
+		picture = guyanas_2
+		potential = {
+			OR = {
+				2243 = { #Pomaron
+					NOT = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								in_sphere = THIS
+								vassal_of = THIS
+							}
+						}
+					}
+					owner = {
+						NOT = {
+							capital_scope = { continent = north_america }
+						}
+					}
+				}
+				3373 = { #Rupununi
+					NOT = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								in_sphere = THIS
+								vassal_of = THIS
+							}
+						}
+					}
+					owner = {
+						NOT = {
+							capital_scope = { continent = north_america }
+						}
+					}
+				}
+			}
+			OR = {
+				2242 = { #Esequibo
+					owner = {
+						in_sphere = THIS
+						vassal_of = THIS
+						war = no
+					}
+				}
+				2264 = { #Caracas
+					owner = {
+						in_sphere = THIS
+						vassal_of = THIS
+						war = no
+					}
+				}
+			}
+			GUY = { exists = no }
+			UGU = { exists = no }
+			NOT = {
+				OR = {
+					primary_culture = north_andean
+					primary_culture = llanero
+				}
+			}
+			NOT = { has_country_flag = OTHER_guyana_purchase }
+		}
+		
+		allow = {
+			war = no
+			money = 250001
+			is_greater_power = yes
+			2243 = {
+				owner = {
+					war = no
+					relation = { who = THIS value = 100 }
+				}
+			}
+		}
+		
+		effect = {
+			set_country_flag = OTHER_guyana_purchase
+			2243 = { owner = { country_event = 1999998083 } }
+		}
+		
+		ai_will_do = { factor = 1 }
+	}
+	
+	VNZ_found_el_callao = {
+		picture = venezuelan_guyana
+		potential = {
+			OR = {
+				primary_culture = north_andean
+				primary_culture = llanero
+			}
+			NOT = { has_country_flag = VNZ_el_callao_founded }
+			2275 = {
+				owned_by = THIS
+				produces = precious_metal
+			}
+		}
+				
+		allow = {
+			money = 5001
+			war = no
+		}
+		
+		effect = {
+			treasury = -5000
+			set_country_flag = VNZ_el_callao_founded
+			2275 = {
+				add_province_modifier = { name = recently_built_city duration = 1095 }
+				change_province_name = "El Callao"
+			}
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	VNZ_found_santa_elena_uairen = {
+		picture = venezuelan_guyana
+		potential = {
+			OR = {
+				primary_culture = north_andean
+				primary_culture = llanero
+			}
+			NOT = { has_country_flag = VNZ_santa_elena_uairen_founded }
+			3596 = {
+				owned_by = THIS
+				produces = precious_goods
+			}
+		}
+				
+		allow = {
+			money = 5001
+			war = no
+		}
+		
+		effect = {
+			treasury = -5000
+			set_country_flag = VNZ_santa_elena_uairen_founded
+			2275 = {
+				add_province_modifier = { name = recently_built_city duration = 1095 }
+				change_province_name = "Santa Elena de Uairén"
+			}
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+################################
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+#~~~Border conflicts between~~~#
+#~~~~~NET & FRA in Guyana~~~~~~#
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+################################
+
+	lawa_tapahoni_question = {
+		picture = french_guyane
+		potential = {
+			OR = {
+				tag = NET
+				tag = FRA
+				tag = BOR
+				tag = SUR
+				tag = FGU
+			}
+			OR = {
+				AND = {
+					owns = 2240 #Paramaribo
+					owns = 2245 #Apetina
+				}
+				AND = {
+					owns = 2241 #Cayenne
+					owns = 2246 #Maripasoula
+				}
+			}
+			OR = {
+				3383 = { produces = precious_metal } #Marouini
+				3384 = { produces = precious_metal } #Tapahoni
+			}
+			NOT = { has_global_flag = lawa_tapahoni_question }
+		}
+				
+		allow = {
+			OR = {
+				NET = { exists = yes war = no }
+				FRA = { exists = yes war = no }
+				BOR = { exists = yes war = no }
+				SUR = { exists = yes war = no is_vassal = no }
+				FGU = { exists = yes war = no is_vassal = no }
+			}
+		}
+		
+		effect = {
+			set_global_flag = lawa_tapahoni_question
+			random_country = {
+				limit = {
+					OR = {
+						tag = NET
+						tag = FRA
+						tag = BOR
+						tag = SUR
+						tag = FGU
+					}
+					NOT = {
+						tag = THIS
+						OR = {
+							vassal_of = FRA
+							vassal_of = BOR
+							vassal_of = NET
+						}
+					}
+					exists = yes
+				}
+				country_event = 1999998094
+			}
+		}
+		ai_will_do = { factor = 1 }
+	}
+
+	marouini_question = {
+		picture = french_guyane
+		potential = {
+			OR = {
+				tag = NET
+				tag = FRA
+				tag = BOR
+				tag = SUR
+				tag = FGU
+			}
+			OR = {
+				AND = {
+					owns = 2240 #Paramaribo
+					owns = 2245 #Apetina
+				}
+				AND = {
+					owns = 2241 #Cayenne
+					owns = 2246 #Maripasoula
+				}
+			}
+			3383 = { produces = precious_metal } #Marouini
+			NOT = { has_global_flag = marouini_question }
+			has_global_flag = lawa_tapahoni_question
+			has_global_flag = FRA_NET_lawa
+		}
+				
+		allow = {
+			OR = {
+				NET = { exists = yes war = no }
+				FRA = { exists = yes war = no }
+				BOR = { exists = yes war = no }
+				SUR = { exists = yes war = no is_vassal = no }
+				FGU = { exists = yes war = no is_vassal = no }
+			}
+		}
+		
+		effect = {
+			set_global_flag = marouini_question
+			random_country = {
+				limit = {
+					OR = {
+						tag = NET
+						tag = FRA
+						tag = BOR
+						tag = SUR
+						tag = FGU
+					}
+					NOT = {
+						tag = THIS
+						OR = {
+							vassal_of = FRA
+							vassal_of = BOR
+							vassal_of = NET
+						}
+					}
+					exists = yes
+				}
+				country_event = 1999998104
+			}
+		}
+		ai_will_do = { factor = 0 }
+	}
+	
+####################################
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+#~~~~'Historical' Guyana crises~~~~#
+#~~~Possibly historical outcomes~~~#
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+####################################
+	
+	VNZ_declare_border_essequibo = {
+		picture = venezuelan_guyana
+		potential = {
+			OR = {
+				primary_culture = north_andean
+				primary_culture = llanero
+			}
+			owns = 2242
+			owns = 2264
+			has_global_flag = schomburgks_line
+			NOT = { has_global_flag = VNZ_declare_border_essequibo }
+		}
+				
+		allow = {
+			war = no
+			year = 1840
+			NOT = {
+				OR = {
+					vassal_of = ENG
+					vassal_of = ENL
+				}
+			}
+		}
+		
+		effect = {
+			set_global_flag = VNZ_declare_border_essequibo
+			clr_global_flag = VNZ_ask_USA_mediation
+			any_pop = {
+				limit = {
+					location = {
+						OR = {
+							province_id = 2242
+							province_id = 3381
+						}
+					}
+					OR = {
+						culture = north_andean 
+						culture = llanero 
+					}
+				}
+				reduce_pop = 1.5 
+			}
+			random_country = {
+				limit = {
+					OR = {
+						tag = ENG
+						tag = ENL
+					}
+					exists = yes
+				}
+				country_event = 1999998005
+			}
+		}
+		ai_will_do = { factor = 1 }
+	}
+	1850_VNZ_ENG_treaty = {
+		picture = guyanas_2
+		potential = {
+			OR = {
+				primary_culture = north_andean
+				primary_culture = llanero
+			}
+			owns = 2242
+			owns = 2264
+			has_global_flag = VNZ_declare_border_essequibo
+			NOT = { has_global_flag = VNZ_pain_in_the_ass }
+			NOT = { has_country_flag = 1850_VNZ_ENG_treaty }
+		}
+				
+		allow = {
+			war = no
+			year = 1850
+			NOT = {
+				OR = {
+					vassal_of = ENG
+					vassal_of = ENL
+				}
+			}
+		}
+		
+		effect = {
+			set_country_flag = 1850_VNZ_ENG_treaty
+			clr_global_flag = VNZ_ask_USA_mediation
+			random_country = {
+				limit = {
+					OR = {
+						tag = ENG
+						tag = ENL
+					}
+					exists = yes
+				}
+				country_event = 1999998010
+			}
+		}
+		ai_will_do = { factor = 1 }
+	}
+	ENG_extend_schomburgk = {
+		picture = orinoco_delta
+		potential = {
+			OR = {
+				tag = ENG
+				tag = ENL
+			}
+			owns = 2243
+			owns = 3373
+			#has_global_flag = 1850_VNZ_ENG_treaty_accept
+			NOT = { has_global_flag = ENG_extend_schomburgk }
+		}
+				
+		allow = {
+			is_greater_power = yes
+			war = no
+			2275 = { produces = precious_metal }
+		}
+		
+		effect = {
+			set_global_flag = ENG_extend_schomburgk
+			clr_global_flag = VNZ_ask_USA_mediation
+			2275 = { add_core = GUY }
+			3596 = { add_core = GUY }
+			random_country = {
+				limit = {
+					OR = {
+						owns = 2242
+						owns = 3381
+						owns = 2275
+						owns = 2264
+					}
+					exists = yes
+				}
+				country_event = 1999998013
+			}
+		}
+		ai_will_do = { factor = 1 }
+	}
+	ENG_declare_schomburgk_frontier = {
+		picture = guyanas_2
+		potential = {
+			OR = {
+				tag = ENG
+				tag = ENL
+			}
+			owns = 2243
+			owns = 3373
+			has_global_flag = ENG_extend_schomburgk
+			NOT = { has_global_flag = ENG_declare_schomburgk_frontier }
+		}
+				
+		allow = {
+			is_greater_power = yes
+			war = no
+			year = 1887
+		}
+		
+		effect = {
+			set_global_flag = ENG_declare_schomburgk_frontier
+			clr_global_flag = VNZ_ask_USA_mediation
+			clr_global_flag = BRZ_ENG_pirara_question
+			prestige = 10
+			GUY = {
+				all_core = {
+					add_core = THIS
+				}
+			}
+			random_country = {
+				limit = {
+					OR = {
+						owns = 2242
+						owns = 3381
+						owns = 2275
+						owns = 3596
+						owns = 2264
+					}
+					exists = yes
+				}
+				country_event = 1999998014
+			}
+		}
+		ai_will_do = { factor = 1 }
+	}
+	VNZ_ENG_cease_incursion = {
+		picture = venezuelan_guyana
+		potential = {
+			OR = {
+				primary_culture = north_andean
+				primary_culture = llanero
+			}
+			OR = {
+				owns = 2242
+				owns = 3381
+				owns = 2275
+				owns = 3596
+				owns = 2264
+			}
+			has_global_flag = ENG_declare_schomburgk_frontier
+			NOT = { has_global_flag = VNZ_ENG_cease_incursion }
+		}
+				
+		allow = {
+			OR = {
+				2242 = {
+					OR = {
+						is_core = GUY
+						is_core = ENG
+						is_core = ENL
+					}
+				}
+				3381 = {
+					OR = {
+						is_core = GUY
+						is_core = ENG
+						is_core = ENL
+					}
+				}
+				2275 = {
+					OR = {
+						is_core = GUY
+						is_core = ENG
+						is_core = ENL
+					}
+				}
+				3596 = {
+					OR = {
+						is_core = GUY
+						is_core = ENG
+						is_core = ENL
+					}
+				}
+			}
+			war = no
+			NOT = {
+				OR = {
+					vassal_of = ENG
+					vassal_of = ENL
+				}
+			}
+		}
+		
+		effect = {
+			set_global_flag = VNZ_ENG_cease_incursion
+			clr_global_flag = VNZ_ask_USA_mediation
+			random_country = {
+				limit = {
+					OR = {
+						owns = 2243
+						owns = 3373
+					}
+					exists = yes
+				}
+				country_event = 1999998015
+			}
+		}
+		ai_will_do = { factor = 1 }
+	}
+	ENG_guasipati_incursion = {
+		picture = guyanas_2
+		potential = {
+			OR = {
+				tag = ENG
+				tag = ENL
+			}
+			owns = 2243
+			owns = 3373
+			has_global_flag = ENG_extend_schomburgk
+			has_global_flag = ENG_declare_schomburgk_frontier
+			NOT = { has_global_flag = ENG_guasipati_incursion }
+		}
+				
+		allow = {
+			OR = {
+				2242 = {
+					OR = {
+						is_core = GUY
+						is_core = ENG
+						is_core = ENL
+					}
+				}
+				3381 = {
+					OR = {
+						is_core = GUY
+						is_core = ENG
+						is_core = ENL
+					}
+				}
+				2275 = {
+					OR = {
+						is_core = GUY
+						is_core = ENG
+						is_core = ENL
+					}
+				}
+				3596 = {
+					OR = {
+						is_core = GUY
+						is_core = ENG
+						is_core = ENL
+					}
+				}
+			}
+			is_greater_power = yes
+			war = no
+			money = 5001
+		}
+		
+		effect = {
+			set_global_flag = ENG_guasipati_incursion
+			clr_global_flag = VNZ_ask_USA_mediation
+			treasury = -5000
+			any_pop = {
+				limit = {
+					culture = british
+					location = { province_id = 1979 } # Biloka
+				} 
+				move_pop = 2275 #Guasipati
+			}
+			any_country = {
+				limit = {
+					OR = {
+						owns = 2242
+						owns = 3381
+						owns = 2275
+						owns = 2264
+					}
+					exists = yes
+				}
+				country_event = 1999998020
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { year = 1894 }
+			}
+		}
+	}
+	VNZ_expel_brits_guyana = {
+		picture = venezuelan_guyana
+		potential = {
+			OR = {
+				primary_culture = north_andean
+				primary_culture = llanero
+			}
+			OR = {
+				owns = 2242
+				owns = 3381
+				owns = 2275
+				owns = 3596
+				owns = 2264
+			}
+			OR = {
+				has_global_flag = ENG_extend_schomburgk
+				has_global_flag = ENG_guasipati_incursion
+				has_global_flag = ENG_declare_schomburgk_frontier
+				OR = {
+					has_global_flag = ENG_VNZ_problem_settlers
+					has_global_flag = ENG_VNZ_problem_deport
+					has_global_flag = ENG_VNZ_problem_genocide
+				}
+			}
+			NOT = { has_global_flag = VNZ_expel_brits_guyana }
+		}
+				
+		allow = {
+			OR = {
+				2242 = {
+					OR = {
+						is_core = GUY
+						is_core = ENG
+						is_core = ENL
+					}
+				}
+				3381 = {
+					OR = {
+						is_core = GUY
+						is_core = ENG
+						is_core = ENL
+					}
+				}
+				2275 = {
+					OR = {
+						is_core = GUY
+						is_core = ENG
+						is_core = ENL
+					}
+				}
+				3596 = {
+					OR = {
+						is_core = GUY
+						is_core = ENG
+						is_core = ENL
+					}
+				}
+			}
+			war = no
+			NOT = {
+				OR = {
+					vassal_of = ENG
+					vassal_of = ENL
+				}
+			}
+		}
+		
+		effect = {
+			set_global_flag = VNZ_expel_brits_guyana
+			clr_global_flag = VNZ_ask_USA_mediation
+			country_event = 1999998021
+		}
+		ai_will_do = { factor = 1 }
+	}
+	VNZ_ask_USA_mediation = {
+		picture = venezuelan_guyana
+		potential = {
+			OR = {
+				primary_culture = north_andean
+				primary_culture = llanero
+			}
+			ai = no
+			OR = {
+				owns = 2242
+				owns = 3381
+				owns = 2275
+				owns = 2264
+				owns = 3596
+			}
+			OR = {
+				has_global_flag = schomburgks_line
+				has_global_flag = VNZ_declare_border_essequibo
+				has_global_flag = 1850_VNZ_ENG_treaty
+				has_global_flag = ENG_extend_schomburgk
+				has_global_flag = ENG_declare_schomburgk_frontier
+				has_global_flag = VNZ_ENG_cease_incursion
+				has_global_flag = ENG_guasipati_incursion
+				has_global_flag = VNZ_expel_brits_guyana
+			}
+			USA = {
+				NOT = { has_country_flag = aid_VNZ }
+				ai = yes
+			}
+			NOT = { has_global_flag = VNZ_ask_USA_mediation }
+			NOT = { has_global_flag = tripartite_alliance_schomburgk }
+		}
+				
+		allow = {
+			OR = {
+				2242 = {
+					OR = {
+						is_core = GUY
+						is_core = ENG
+						is_core = ENL
+					}
+				}
+				3381 = {
+					OR = {
+						is_core = GUY
+						is_core = ENG
+						is_core = ENL
+					}
+				}
+				2275 = {
+					OR = {
+						is_core = GUY
+						is_core = ENG
+						is_core = ENL
+					}
+				}
+				3596 = {
+					OR = {
+						is_core = GUY
+						is_core = ENG
+						is_core = ENL
+					}
+				}
+			}
+			is_greater_power = no
+			war = no
+			USA = {
+				is_greater_power = yes
+				war = no
+			}
+			NOT = {
+				OR = {
+					vassal_of = ENG
+					vassal_of = ENL
+				}
+			}
+		}
+		
+		effect = {
+			set_global_flag = VNZ_ask_USA_mediation
+			random_country = {
+				limit = {
+					tag = USA
+					ai = yes
+				}
+				country_event = { id = 1999998025 days = 2 }
+			}
+		}
+		ai_will_do = { factor = 1 }
+	}
+	VNZ_ask_USA_mediation_2 = {
+		picture = venezuelan_guyana
+		potential = {
+			OR = {
+				primary_culture = north_andean
+				primary_culture = llanero
+			}
+			ai = yes
+			OR = {
+				owns = 2242
+				owns = 3381
+				owns = 2275
+				owns = 2264
+				owns = 3596
+			}
+			OR = {
+				has_global_flag = schomburgks_line
+				has_global_flag = VNZ_declare_border_essequibo
+				has_global_flag = 1850_VNZ_ENG_treaty
+				has_global_flag = ENG_extend_schomburgk
+				has_global_flag = ENG_declare_schomburgk_frontier
+				has_global_flag = VNZ_ENG_cease_incursion
+				has_global_flag = ENG_guasipati_incursion
+				has_global_flag = VNZ_expel_brits_guyana
+			}
+			USA = {
+				NOT = { has_country_flag = aid_VNZ }
+				ai = no
+			}
+			NOT = { has_global_flag = VNZ_ask_USA_mediation }
+			NOT = { has_global_flag = tripartite_alliance_schomburgk }
+		}
+				
+		allow = {
+			OR = {
+				2242 = {
+					OR = {
+						is_core = GUY
+						is_core = ENG
+						is_core = ENL
+					}
+				}
+				3381 = {
+					OR = {
+						is_core = GUY
+						is_core = ENG
+						is_core = ENL
+					}
+				}
+				2275 = {
+					OR = {
+						is_core = GUY
+						is_core = ENG
+						is_core = ENL
+					}
+				}
+				3596 = {
+					OR = {
+						is_core = GUY
+						is_core = ENG
+						is_core = ENL
+					}
+				}
+			}
+			is_greater_power = no
+			war = no
+			USA = {
+				is_greater_power = yes
+				war = no
+			}
+			NOT = {
+				OR = {
+					vassal_of = ENG
+					vassal_of = ENL
+				}
+			}
+			year = 1893
+			has_global_flag = VNZ_William_L_Scruggs
+		}
+		
+		effect = {
+			set_global_flag = VNZ_ask_USA_mediation
+			random_country = {
+				limit = {
+					OR = {
+						is_greater_power = yes
+						is_secondary_power = yes
+					}
+					NOT = {
+						OR = {
+							AND = {
+								OR = {
+									alliance_with = THIS
+									in_sphere = THIS
+									vassal_of = THIS
+								}
+								relation = { who = THIS value = -25 }
+							}
+							AND = {
+								OR = {
+									alliance_with = USA
+									in_sphere = USA
+									vassal_of = USA
+								}
+								relation = { who = USA value = -25 }
+							}
+							AND = {
+								OR = {
+									alliance_with = VNZ
+									in_sphere = VNZ
+									vassal_of = VNZ
+								}
+								relation = { who = VNZ value = -25 }
+								VNZ = { exists = yes }
+							}
+							AND = {
+								OR = {
+									alliance_with = USV
+									in_sphere = USV
+									vassal_of = USV
+								}
+								relation = { who = USV value = -25 }
+								USV = { exists = yes }
+							}
+							AND = {
+								OR = {
+									alliance_with = ZLA
+									in_sphere = ZLA
+									vassal_of = ZLA
+								}
+								relation = { who = ZLA value = -25 }
+								ZLA = { exists = yes }
+							}
+							AND = {
+								OR = {
+									alliance_with = B4R
+									in_sphere = B4R
+									vassal_of = B4R
+								}
+								relation = { who = B4R value = -25 }
+								B4R = { exists = yes }
+							}
+							AND = {
+								OR = {
+									alliance_with = GCO
+									in_sphere = GCO
+									vassal_of = GCO
+								}
+								relation = { who = GCO value = -25 }
+								GCO = { exists = yes }
+							}
+						}
+						OR = {
+							tag = USA
+							tag = THIS
+							tag = VNZ
+							tag = USV
+							tag = ZLA
+							tag = B4R
+							tag = GCO
+							owns = 2242
+							owns = 3381
+							owns = 2275
+							owns = 3596
+							owns = 2264 #Caracas
+						}
+					}
+				}
+				country_event = { id = 1999998034 days = 5 }
+			}
+		}
+		ai_will_do = { factor = 1 }
+	}
+	VNZ_William_L_Scruggs = {
+		picture = william_l_scruggs
+		potential = {
+			OR = {
+				primary_culture = north_andean
+				primary_culture = llanero
+			}
+			OR = {
+				owns = 2242
+				owns = 3381
+				owns = 2275
+				owns = 3596
+				owns = 2264
+			}
+			OR = {
+				has_global_flag = schomburgks_line
+				has_global_flag = VNZ_declare_border_essequibo
+				has_global_flag = 1850_VNZ_ENG_treaty
+				has_global_flag = ENG_extend_schomburgk
+				has_global_flag = ENG_declare_schomburgk_frontier
+				has_global_flag = VNZ_ENG_cease_incursion
+				has_global_flag = ENG_guasipati_incursion
+				has_global_flag = VNZ_expel_brits_guyana
+			}
+			NOT = { has_global_flag = VNZ_William_L_Scruggs }
+		}
+				
+		allow = {
+			year = 1893
+			is_greater_power = no
+			war = no
+			USA = {
+				is_greater_power = yes
+				war = no
+			}
+			NOT = {
+				OR = {
+					vassal_of = ENG
+					vassal_of = ENL
+				}
+			}
+			money = 1001
+		}
+		
+		effect = {
+			set_global_flag = VNZ_William_L_Scruggs
+			treasury = -1000
+			USA = {
+				relation = {
+					who = THIS
+					value = 400
+				}
+				diplomatic_influence = {
+					who = THIS
+					value = 400
+				}
+			}
+		}
+		ai_will_do = { factor = 1 }
+	}
+	BRZ_ENG_pirara_question = {
+		picture = guyanas_2
+		potential = {
+			OR = {
+				primary_culture = north_andean
+				primary_culture = llanero
+				primary_culture = brazilian
+			}
+			OR = {
+				AND = {
+					owns = 3379
+					OR = {
+						owns = 2264 #Caracas
+						owns = 2447 #Rio de Janeiro
+					}
+				}
+				AND = {
+					owns = 3380
+					OR = {
+						owns = 2264
+						owns = 2447
+					}
+				}
+			}
+			OR = {
+				has_global_flag = schomburgks_line
+				has_global_flag = ENG_declare_schomburgk_frontier
+				OR = {
+					has_global_flag = ENG_schomburgk_historical
+					has_global_flag = ENG_schomburgk_barima
+					has_global_flag = ENG_schomburgk_extended
+					has_global_flag = ENG_schomburgk_pre
+				}
+			}
+			NOT = { has_global_flag = ENG_schomburgk_denied }
+			NOT = { has_global_flag = BRZ_ENG_pirara_question }
+		}
+				
+		allow = {
+			OR = {
+				3379 = {
+					OR = {
+						is_core = GUY
+						is_core = ENG
+						is_core = ENL
+					}
+				}
+				3380 = {
+					OR = {
+						is_core = GUY
+						is_core = ENG
+						is_core = ENL
+					}
+				}
+			}
+			is_greater_power = no
+			war = no
+			OR = {
+				ENG = {
+					is_greater_power = yes
+					war = no
+				}
+				ENL = {
+					is_greater_power = yes
+					war = no
+				}
+			}
+			NOT = {
+				OR = {
+					vassal_of = ENG
+					vassal_of = ENL
+				}
+			}
+		}
+		
+		effect = {
+			set_global_flag = BRZ_ENG_pirara_question
+			any_country = {
+				limit = {
+					OR = {
+						owns = 3373 #Rupununi
+						owns = 2243 #Pomaron
+					}
+					is_greater_power = yes
+					primary_culture = british
+				}
+				country_event = 1999998042
+			}
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+#####################################
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+#~~Timeline where NET, BRZ and VNZ~~#
+#~unite forces against ENG's kikery~#
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+#####################################
+
+	tripartite_alliance_schomburgk = {
+		picture = guyanas_2
+		potential = {
+			OR = {
+				primary_culture = north_andean
+				primary_culture = llanero
+				primary_culture = brazilian
+				primary_culture = dutch
+			}
+			OR = {
+				AND = {
+					OR = {
+						owns = 2242 #Esequibo
+						owns = 3381 #Barima
+						owns = 2275 #Guasipati
+						owns = 3596 #Gran Sabana
+						owns = 2276 #Curiapo/Tucupita
+					}
+					AND = {
+						owns = 2264 #Caracas
+					}
+				}
+				AND = {
+					OR = {
+						owns = 2240 #Paramaribo
+						owns = 2245 #Apetina
+					}
+					owns = 375 #Amsterdam
+				}
+				AND = {
+					OR = {
+						owns = 3379 #Mau
+						owns = 3380 #Pirara
+						owns = 2532 #Roraima
+					}
+					owns = 2447 #Rio de Janeiro
+				}
+			}
+			OR = {
+				has_global_flag = schomburgks_line
+				has_global_flag = VNZ_declare_border_essequibo
+				has_global_flag = 1850_VNZ_ENG_treaty
+				has_global_flag = ENG_extend_schomburgk
+				has_global_flag = ENG_declare_schomburgk_frontier
+				has_global_flag = VNZ_ENG_cease_incursion
+				has_global_flag = ENG_guasipati_incursion
+				has_global_flag = VNZ_expel_brits_guyana
+			}
+			NOT = { USA = { has_country_flag = aid_VNZ } }
+			NOT = { has_global_flag = tripartite_alliance_schomburgk }
+			NOT = { has_country_flag = VNZ_BRZ_NET_leader }
+			NOT = { has_country_flag = VNZ_BRZ_NET_member }
+		}
+		allow = {
+			war = no
+			USA = {
+				is_greater_power = yes
+				war = no
+			}
+			NOT = {
+				OR = {
+					vassal_of = ENG
+					vassal_of = ENL
+				}
+			}
+			OR = {
+				OR = {
+					2242 = {
+						OR = {
+							is_core = GUY
+							is_core = ENG
+							is_core = ENL
+						}
+					}
+					3381 = {
+						OR = {
+							is_core = GUY
+							is_core = ENG
+							is_core = ENL
+						}
+					}
+					2275 = {
+						OR = {
+							is_core = GUY
+							is_core = ENG
+							is_core = ENL
+						}
+					}
+					3596 = {
+						OR = {
+							is_core = GUY
+							is_core = ENG
+							is_core = ENL
+						}
+					}
+				}
+				OR = {
+					3379 = {
+						OR = {
+							is_core = GUY
+							is_core = ENG
+							is_core = ENL
+						}
+					}
+					3380 = {
+						OR = {
+							is_core = GUY
+							is_core = ENG
+							is_core = ENL
+						}
+					}
+				}
+				3382 = {
+					OR = {
+						is_core = GUY
+						is_core = ENG
+						is_core = ENL
+					}
+				}
+			}
+			OR = {
+				AND = {
+					OR = {
+						primary_culture = north_andean
+						primary_culture = llanero
+					}
+					OR = {
+						is_secondary_power = yes
+						is_greater_power = yes
+					}
+					2447 = {
+						owner = {
+							primary_culture = brazilian
+							OR = {
+								relation = { who = THIS value = 100 }
+								in_sphere = THIS
+								vassal_of = THIS
+							}
+							OR = {
+								owns = 3379
+								owns = 3380
+								owns = 2532 #Roraima
+							}
+							NOT = {
+								OR = {
+									vassal_of = ENG
+									vassal_of = ENL
+								}
+							}
+						}
+					}
+					375 = {
+						owner = {
+							primary_culture = dutch
+							OR = {
+								relation = { who = THIS value = 100 }
+								in_sphere = THIS
+								vassal_of = THIS
+							}
+							OR = {
+								owns = 2240 #Paramaribo
+								owns = 2245 #Apetina
+							}
+							NOT = {
+								OR = {
+									vassal_of = ENG
+									vassal_of = ENL
+								}
+							}
+						}
+					}
+				}
+				AND = {
+					primary_culture = brazilian
+					OR = {
+						is_secondary_power = yes
+						is_greater_power = yes
+					}
+					2264 = {
+						owner = {
+							OR = {
+								primary_culture = north_andean
+								primary_culture = llanero
+							}
+							OR = {
+								relation = { who = THIS value = 100 }
+								in_sphere = THIS
+								vassal_of = THIS
+							}
+							OR = {
+								owns = 2242
+								owns = 3381
+								owns = 2275
+								owns = 3596
+								owns = 2276 #Curiapo/Tucupita
+							}
+							NOT = {
+								OR = {
+									vassal_of = ENG
+									vassal_of = ENL
+								}
+							}
+						}
+					}
+					375 = {
+						owner = {
+							primary_culture = dutch
+							OR = {
+								relation = { who = THIS value = 100 }
+								in_sphere = THIS
+								vassal_of = THIS
+							}
+							OR = {
+								owns = 2240 #Paramaribo
+								owns = 2245 #Apetina
+							}
+							NOT = {
+								OR = {
+									vassal_of = ENG
+									vassal_of = ENL
+								}
+							}
+						}
+					}
+				}
+				AND = {
+					primary_culture = dutch
+					ai = no
+					is_greater_power = yes
+					2447 = {
+						owner = {
+							primary_culture = brazilian
+							OR = {
+								relation = { who = THIS value = 100 }
+								in_sphere = THIS
+								vassal_of = THIS
+							}
+							OR = {
+								owns = 3379
+								owns = 3380
+								owns = 2532 #Roraima
+							}
+							NOT = {
+								OR = {
+									vassal_of = ENG
+									vassal_of = ENL
+								}
+							}
+						}
+					}
+					2264 = {
+						owner = {
+							OR = {
+								primary_culture = north_andean
+								primary_culture = llanero
+							}
+							OR = {
+								relation = { who = THIS value = 100 }
+								in_sphere = THIS
+								vassal_of = THIS
+							}
+							OR = {
+								owns = 2242
+								owns = 3381
+								owns = 2275
+								owns = 3596
+								owns = 2276 #Curiapo/Tucupita
+							}
+							NOT = {
+								OR = {
+									vassal_of = ENG
+									vassal_of = ENL
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			set_global_flag = tripartite_alliance_schomburgk
+			set_country_flag = VNZ_BRZ_NET_leader
+			any_country = {
+				limit = {
+					OR = {
+						owns = 2264
+						owns = 2447
+						owns = 375
+					}
+					NOT = { tag = THIS }
+				}
+				country_event = 1999998049
+			}
+		}
+		ai_will_do = { factor = 1 }
+	}
+	tripartite_alliance_schomburgk_2 = {
+		picture = guyanas_2
+		potential = {
+			has_global_flag = tripartite_alliance_schomburgk
+			NOT = { has_global_flag = tripartite_alliance_schomburgk_2 }
+			has_country_flag = VNZ_BRZ_NET_leader
+			2264 = { #Caracas
+				owner = {
+					OR = {
+						tag = THIS
+						AND = {
+							alliance_with = THIS
+							has_country_flag = VNZ_BRZ_NET_member
+						}
+					}
+				}
+			}
+			2447 = { #Rio de Janeiro
+				owner = {
+					OR = {
+						tag = THIS
+						AND = {
+							alliance_with = THIS
+							has_country_flag = VNZ_BRZ_NET_member
+						}
+					}
+				}
+			}
+			375 = { #Amsterdam
+				owner = {
+					OR = {
+						tag = THIS
+						AND = {
+							alliance_with = THIS
+							has_country_flag = VNZ_BRZ_NET_member
+						}
+					}
+				}
+			}
+		}
+		allow = {
+			2264 = {
+				owner = {
+					war = no
+				}
+			}
+			2447 = {
+				owner = {
+					war = no
+				}
+			}
+			375 = {
+				owner = {
+					war = no
+				}
+			}
+			USA = {
+				war = no
+			}
+			OR = {
+				OR = {
+					2242 = {
+						OR = {
+							is_core = GUY
+							is_core = ENG
+							is_core = ENL
+						}
+					}
+					3381 = {
+						OR = {
+							is_core = GUY
+							is_core = ENG
+							is_core = ENL
+						}
+					}
+					2275 = {
+						OR = {
+							is_core = GUY
+							is_core = ENG
+							is_core = ENL
+						}
+					}
+					3596 = {
+						OR = {
+							is_core = GUY
+							is_core = ENG
+							is_core = ENL
+						}
+					}
+				}
+				OR = {
+					3379 = {
+						OR = {
+							is_core = GUY
+							is_core = ENG
+							is_core = ENL
+						}
+					}
+					3380 = {
+						OR = {
+							is_core = GUY
+							is_core = ENG
+							is_core = ENL
+						}
+					}
+				}
+				3382 = {
+					OR = {
+						is_core = GUY
+						is_core = ENG
+						is_core = ENL
+					}
+				}
+			}
+		}
+		effect = {
+			set_global_flag = tripartite_alliance_schomburgk_2
+			USA = {
+				country_event = 1999998052
+			}
+		}
+		ai_will_do = { factor = 1 }
+	}
+	tripartite_alliance_schomburgk_3 = {
+		picture = guyanas_2
+		potential = {
+			has_global_flag = tripartite_alliance_schomburgk_2
+			NOT = { has_global_flag = tripartite_alliance_schomburgk_3 }
+			USA = { has_country_flag = VNZ_BRZ_NET_USA }
+			has_country_flag = VNZ_BRZ_NET_leader
+			has_global_flag = ENG_extend_schomburgk
+		}
+		allow = {
+			2264 = { # Caracas
+				owner = {
+					war = no
+				}
+			}
+			2447 = { #Rio de Janeiro
+				owner = {
+					war = no
+				}
+			}
+			375 = { #Amsterdam
+				owner = {
+					war = no
+				}
+			}
+			USA = {
+				war = no
+			}
+			OR = {
+				OR = {
+					2242 = {
+						OR = {
+							is_core = GUY
+							is_core = ENG
+							is_core = ENL
+						}
+					}
+					3381 = {
+						OR = {
+							is_core = GUY
+							is_core = ENG
+							is_core = ENL
+						}
+					}
+					2275 = {
+						OR = {
+							is_core = GUY
+							is_core = ENG
+							is_core = ENL
+						}
+					}
+					3596 = {
+						OR = {
+							is_core = GUY
+							is_core = ENG
+							is_core = ENL
+						}
+					}
+				}
+				OR = {
+					3379 = {
+						OR = {
+							is_core = GUY
+							is_core = ENG
+							is_core = ENL
+						}
+					}
+					3380 = {
+						OR = {
+							is_core = GUY
+							is_core = ENG
+							is_core = ENL
+						}
+					}
+				}
+				3382 = {
+					OR = {
+						is_core = GUY
+						is_core = ENG
+						is_core = ENL
+					}
+				}
+			}
+		}
+		effect = {
+			set_global_flag = tripartite_alliance_schomburgk_3
+			300 = { #London
+				owner = {
+					country_event = 1999998055
+				}
+			}
+		}
+		ai_will_do = { factor = 1 }
+	}
+		
+#########################################
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+#~~~~~Timeline where VNZ decides to~~~~~#
+#~~take their Guyanese claims by force~~#
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+#########################################
+		
+	VNZ_pain_in_the_ass = {
+		picture = venezuelan_guyana
+		potential = {
+			OR = {
+				primary_culture = north_andean
+				primary_culture = llanero
+			}
+			owns = 2242 #Esequibo
+			owns = 2264 #Caracas
+			OR = {
+				has_global_flag = VNZ_declare_border_essequibo
+				AND = {
+					has_global_flag = 1850_VNZ_ENG_treaty_refuse
+					NOT = { has_global_flag = 1850_VNZ_ENG_treaty_accept }
+				}
+				AND = {
+					has_global_flag = 1850_VNZ_ENG_treaty_accept
+					has_global_flag = ENG_extend_schomburgk
+				}
+				AND = {
+					has_global_flag = 1850_VNZ_ENG_treaty_accept
+					has_global_flag = ENG_declare_schomburgk_frontier
+				}
+				AND = {
+					has_global_flag = 1850_VNZ_ENG_treaty_accept
+					has_global_flag = ENG_guasipati_incursion
+				}
+			}
+			NOT = { has_global_flag = VNZ_pain_in_the_ass }
+		}
+				
+		allow = {
+			war = no
+			year = 1850
+			money = 7001
+			nationalism_n_imperialism = 1
+			OR = {
+				2242 = {
+					OR = {
+						is_core = GUY
+						is_core = ENG
+						is_core = ENL
+					}
+				}
+				3381 = {
+					OR = {
+						is_core = GUY
+						is_core = ENG
+						is_core = ENL
+					}
+				}
+				2275 = {
+					OR = {
+						is_core = GUY
+						is_core = ENG
+						is_core = ENL
+					}
+				}
+				3596 = {
+					OR = {
+						is_core = GUY
+						is_core = ENG
+						is_core = ENL
+					}
+				}
+			}
+		}
+		
+		effect = {
+			set_global_flag = VNZ_pain_in_the_ass
+			treasury = -7000
+			any_owned = {
+				limit = {
+					OR = {
+						province_id = 2242 #Esequibo
+						province_id = 3381 #Barima
+						OR = {
+							is_core = GUY
+							is_core = ENG
+							is_core = ENL
+						}
+					}
+				}
+				add_province_modifier = { name = colonial_recruitment duration = 1825 }
+				any_pop = {
+					limit = {
+						OR = {
+							culture = north_andean 
+							culture = llanero 
+						}
+					}
+					reduce_pop = 1.75 
+				}
+			}
+			random_country = {
+				limit = {
+					OR = {
+						owns = 2243 #Pomaron
+						owns = 3373 #Rupununi
+					}
+					exists = yes
+				}
+				country_event = 1999998071
+				any_owned = {
+					limit = {
+						OR = {
+							province_id = 2243 #Pomaron
+							province_id = 3373 #Rupununi
+						}
+					}
+					add_province_modifier = { name = nationalist_agitation duration = 1825 }
+					any_pop = {
+						limit = {
+							OR = {
+								culture = north_andean 
+								culture = llanero 
+							}
+						}
+						reduce_pop = 1.5
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				THIS = {
+					NOT = {
+						OR = {
+							war_policy = jingoism
+							OR = {
+								ruling_party_ideology = reactionary
+								ruling_party_ideology = fascist
+								ruling_party_ideology = anarcho_liberal
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	ENG_VNZ_problem = {
+		picture = guyanas_2
+		potential = {
+			OR = {
+				tag = ENG
+				tag = ENL
+			}
+			owns = 2243 #Pomaron
+			owns = 3373 #Rupununi
+			has_global_flag = VNZ_pain_in_the_ass
+			NOT = { has_global_flag = ENG_VNZ_problem }
+			#NOT = { has_global_flag = 1850_VNZ_ENG_treaty }
+		}
+				
+		allow = {
+			war = no
+			money = 15001
+			OR = {
+				2242 = {
+					OR = {
+						is_core = GUY
+						is_core = ENG
+						is_core = ENL
+					}
+				}
+				3381 = {
+					OR = {
+						is_core = GUY
+						is_core = ENG
+						is_core = ENL
+					}
+				}
+				2275 = {
+					OR = {
+						is_core = GUY
+						is_core = ENG
+						is_core = ENL
+					}
+				}
+				3596 = {
+					OR = {
+						is_core = GUY
+						is_core = ENG
+						is_core = ENL
+					}
+				}
+			}
+		}
+		
+		effect = {
+			set_global_flag = ENG_VNZ_problem
+			country_event = 1999998072
+		}
+		ai_will_do = { factor = 1 }
+	}
+	USA_VNZ_treaty = { #USA recognizes VNZ as a rising power. Willing to help against ENG's encroachment
+		picture = venezuelan_guyana
+		potential = {
+			OR = {
+				primary_culture = north_andean
+				primary_culture = llanero
+			}
+			owns = 2242 #Esequibo
+			owns = 2264 #Caracas
+			OR = {
+				is_secondary_power = yes
+				is_greater_power = yes
+			}
+			has_global_flag = ENG_VNZ_problem
+			NOT = { has_country_flag = USA_VNZ_treaty }
+		}
+		allow = {
+			war = no
+			USA = { is_greater_power = yes }
+			OR = {
+				in_sphere = USA
+				relation = {
+					who = USA
+					value = 125
+				}
+				alliance_with = USA
+			}
+			NOT = {
+				OR = {
+					vassal_of = ENG
+					vassal_of = ENL
+				}
+			}
+			OR = {
+				2242 = {
+					OR = {
+						is_core = GUY
+						is_core = ENG
+						is_core = ENL
+					}
+				}
+				3381 = {
+					OR = {
+						is_core = GUY
+						is_core = ENG
+						is_core = ENL
+					}
+				}
+				2275 = {
+					OR = {
+						is_core = GUY
+						is_core = ENG
+						is_core = ENL
+					}
+				}
+				3596 = {
+					OR = {
+						is_core = GUY
+						is_core = ENG
+						is_core = ENL
+					}
+				}
+			}
+		}
+		effect = {
+			set_country_flag = USA_VNZ_treaty
+			create_alliance = USA
+			relation = {
+				who = USA
+				value = 400
+			}
+			USA = {
+				diplomatic_influence = {
+					who = THIS
+					value = 400
+				}
+			}
+		}
+		ai_will_do = { factor = 1 }
+	}
+	VNZ_ENG_war = {
+		picture = venezuelan_guyana
+		potential = {
+			tag = USA
+			2264 = { #Caracas
+				owner = {
+					OR = {
+						primary_culture = north_andean
+						primary_culture = llanero
+					}
+					owns = 2242 #Esequibo
+					owns = 2264 #Caracas
+					OR = {
+						is_secondary_power = yes
+						is_greater_power = yes
+					}
+					has_country_flag = USA_VNZ_treaty
+					NOT = { has_country_flag = requested_military_aid }
+				}
+			}
+			NOT = { has_global_flag = VNZ_ENG_war }
+		}
+		allow = {
+			is_greater_power = yes
+			OR = {
+				war = no
+				OR = {
+					war_with = ENG
+					war_with = ENL
+				}
+				NOT = { war_with = CSA }
+			}
+			2264 = { #Caracas
+				owner = {
+					OR = {
+						primary_culture = north_andean
+						primary_culture = llanero
+					}
+					owns = 2242 #Esequibo
+					owns = 2264 #Caracas
+					OR = {
+						is_secondary_power = yes
+						is_greater_power = yes
+					}
+					OR = {
+						war_with = ENG
+						war_with = ENL
+					}
+				}
+			}
+			money = 10001
+			OR = {
+				2242 = {
+					OR = {
+						is_core = GUY
+						is_core = ENG
+						is_core = ENL
+					}
+				}
+				3381 = {
+					OR = {
+						is_core = GUY
+						is_core = ENG
+						is_core = ENL
+					}
+				}
+				2275 = {
+					OR = {
+						is_core = GUY
+						is_core = ENG
+						is_core = ENL
+					}
+				}
+				3596 = {
+					OR = {
+						is_core = GUY
+						is_core = ENG
+						is_core = ENL
+					}
+				}
+			}
+		}
+		effect = {
+			set_global_flag = VNZ_ENG_war
+			treasury = -10000
+			random_country = {
+				limit = {
+					OR = {
+						primary_culture = north_andean
+						primary_culture = llanero
+					}
+					owns = 2242 #Esequibo
+					owns = 2264 #Caracas
+					OR = {
+						is_secondary_power = yes
+						is_greater_power = yes
+					}
+					OR = {
+						war_with = ENG
+						war_with = ENL
+					}
+				}
+				set_country_flag = requested_military_aid
+				country_event = { id = 1999998078 days = 25 }
+			}
+		}
+		ai_will_do = { factor = 1 }
+	}
+	VNZ_treaty_of_caracas = {
+		picture = treaty_signing
+		potential = {
+			has_global_flag = ENG_extend_schomburgk
+			has_global_flag = ENG_VNZ_problem
+			#is_greater_power = no
+			OR = {
+				primary_culture = north_andean
+				primary_culture = llanero
+			}
+			OR = {
+				2243 = { #Pomaron
+					owner = {
+						NOT = {
+							OR = {
+								primary_culture = north_andean
+								primary_culture = llanero
+							}
+						}
+						war_with = THIS
+					}
+				}
+				3373 = { #Rupununi
+					owner = {
+						NOT = {
+							OR = {
+								primary_culture = north_andean
+								primary_culture = llanero
+							}
+						}
+						war_with = THIS
+					}
+				}
+			}
+		}
+		allow = {
+			war = yes
+			2243 = { #Pomaron
+				OR = {
+					controlled_by = THIS
+					controller = { alliance_with = THIS }
+				}
+				province_control_days = 185
+			}
+			3373 = { #Rupununi
+				OR = {
+					controlled_by = THIS
+					controller = { alliance_with = THIS }
+				}
+				province_control_days = 185
+			}
+			
+			2239 = { #Georgetown
+				OR = {
+					controlled_by = THIS
+					controller = { alliance_with = THIS }
+				}
+				province_control_days = 185
+			}
+			1979 = { #Biloka
+				OR = {
+					controlled_by = THIS
+					controller = { alliance_with = THIS }
+				}
+				province_control_days = 185
+			}
+			
+			2264 = { #Caracas
+				owner = {
+					OR = {
+						primary_culture = north_andean
+						primary_culture = llanero
+					}
+					any_core = {
+						OR = {
+							region = ENG_1979 #Guyana
+							region = VNZ_2278 #Guayana
+						}
+						NOT = {
+							owned_by = BRZ
+							owned_by = CLM
+						}
+						OR = {
+							controlled_by = THIS
+							controller = { alliance_with = THIS }
+							owner = {
+								NOT = { war_with = THIS }
+							}
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			set_global_flag = VNZ_treaty_of_caracas
+			random_country = {
+				limit = {
+					OR = {
+						owns = 2243
+						owns = 3373
+					}
+					war_with = THIS
+				}
+				country_event = 1999998079
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+#####################################
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+#~~~Timeline where ENG vassalizes~~~#
+#~~countries with claims on Guyana~~#
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+#####################################
+	
+	VNZ_vassal_of_ENG_resolution = {
+		picture = guyanas_2
+		potential = {
+			OR = {
+				tag = ENG
+				tag = ENL
+			}
+			owns = 2243 #Pomaron
+			owns = 3373 #Rupununi
+			has_global_flag = ENG_extend_schomburgk
+			NOT = { has_global_flag = VNZ_vassal_of_ENG_resolution }
+		}
+				
+		allow = {
+			war = no
+			2264 = { #caracas
+				owner = {
+					OR = {
+						primary_culture = north_andean
+						primary_culture = llanero
+					}
+					owns = 2242 #Esequibo
+					owns = 3381 #Barima
+					owns = 2275 #Guasipati
+					owns = 3596 #Gran Sabana
+					vassal_of = THIS
+					in_sphere = THIS
+				}
+			}
+			OR = {
+				2242 = {
+					OR = {
+						is_core = GUY
+						is_core = ENG
+						is_core = ENL
+					}
+				}
+				3381 = {
+					OR = {
+						is_core = GUY
+						is_core = ENG
+						is_core = ENL
+					}
+				}
+				2275 = {
+					OR = {
+						is_core = GUY
+						is_core = ENG
+						is_core = ENL
+					}
+				}
+				3596 = {
+					OR = {
+						is_core = GUY
+						is_core = ENG
+						is_core = ENL
+					}
+				}
+			}
+		}
+		
+		effect = {
+			set_global_flag = VNZ_vassal_of_ENG_resolution
+			set_country_flag = ENG_perfidious_albion
+			random_country = {
+				limit = {
+					OR = {
+						primary_culture = north_andean
+						primary_culture = llanero
+					}
+					owns = 2242 #Esequibo
+					owns = 3381 #Barima
+					owns = 2275 #Guasipati
+					owns = 3596 #Gran Sabana
+					vassal_of = THIS
+					in_sphere = THIS
+				}
+				any_owned = {
+					limit = {
+						OR = {
+							is_core = THIS
+							is_core = GUY
+						}
+					}
+					remove_core = VNZ
+					remove_core = FVZ
+					remove_core = USV
+					remove_core = ZLA
+					remove_core = B4R
+					remove_core = GCO
+					secede_province = THIS
+				}
+			}
+		}
+		ai_will_do = { factor = 1 }
+	}
+	BRZ_vassal_of_ENG_resolution = {
+		picture = guyanas_2
+		potential = {
+			OR = {
+				tag = ENG
+				tag = ENL
+			}
+			owns = 2243 #Pomaron
+			owns = 3373 #Rupununi
+			has_global_flag = ENG_extend_schomburgk
+			NOT = { has_global_flag = BRZ_vassal_of_ENG_resolution }
+		}
+				
+		allow = {
+			war = no
+			2402 = { #Manaus
+				owner = {
+					primary_culture = brazilian
+					owns = 3379 #Mau
+					owns = 3380 #Pirara
+					vassal_of = THIS
+					in_sphere = THIS
+				}
+			}
+			OR = {
+				3379 = {
+					OR = {
+						is_core = GUY
+						is_core = ENG
+						is_core = ENL
+					}
+				}
+				3380 = {
+					OR = {
+						is_core = GUY
+						is_core = ENG
+						is_core = ENL
+					}
+				}
+			}
+		}
+		
+		effect = {
+			set_global_flag = BRZ_vassal_of_ENG_resolution
+			set_country_flag = ENG_perfidious_albion
+			random_country = {
+				limit = {
+					primary_culture = brazilian
+					owns = 3379 #Mau
+					owns = 3380 #Pirara
+					vassal_of = THIS
+					in_sphere = THIS
+				}
+				any_owned = {
+					limit = {
+						OR = {
+							is_core = THIS
+							is_core = GUY
+						}
+					}
+					remove_core = BRZ
+					secede_province = THIS
+				}
+			}
+		}
+		ai_will_do = { factor = 1 }
+	}
+		
+######################
+#~~~~~~~~~~~~~~~~~~~~#
+#~Guyanese Decisions~#
+#~~~~~~~~~~~~~~~~~~~~#
+######################
+	
+	UGU_primary_culture = {
+		picture = guyanas_1
+		potential = {
+			tag = UGU
+			NOT = { has_country_flag = UGU_primary_culture }
+			NOT = { has_country_flag = UGU_primary_culture_selected }
+		}
+				
+		allow = {
+		}
+		
+		effect = {
+			set_country_flag = UGU_primary_culture
+			country_event = 1999998000
+		}
+		ai_will_do = { factor = 1 }
+	}
+	UGU_religion = {
+		picture = guyanas_1
+		potential = {
+			tag = UGU
+			NOT = { has_country_flag = UGU_religion }
+			has_country_flag = UGU_primary_culture_selected
+		}
+				
+		allow = {
+		}
+		
+		effect = {
+			set_country_flag = UGU_religion
+			country_event = 1999998001
+		}
+		ai_will_do = { factor = 1 }
+	}
+
+	reform_UGU_outside = {
+		picture = guyanas_1
+		potential = {
+			is_greater_power = yes
+			#is_culture_group = latin_american_cultures
+			NOT = { has_country_flag = post_colonial_country }
+			NOT = {
+				OR = {
+					tag = GUY
+					tag = SUR
+					tag = FGU
+					tag = CUN
+				}
+			}
+			NOT = { exists = UGU }
+			any_owned_province = {
+				OR = {
+					continent = south_america
+					continent = north_america
+				}
+			}
+			is_vassal = no
+			ai = no
+		}
+
+		allow = {
+			GUY = {
+				OR = {
+					in_sphere = THIS
+					vassal_of = THIS
+					ai = no
+					all_core = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								OR = {
+									in_sphere = THIS
+									vassal_of = THIS
+								}
+								war = no
+								is_greater_power = no
+							}
+							province_id = 2243
+							province_id = 2242
+						}
+					}
+				}
+			}
+			SUR = {
+				OR = {
+					in_sphere = THIS
+					vassal_of = THIS
+					ai = no
+					all_core = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								OR = {
+									in_sphere = THIS
+									vassal_of = THIS
+								}
+								war = no
+								is_greater_power = no
+							}
+							province_id = 2243
+							province_id = 2242
+						}
+					}
+				}
+			}
+			FGU = {
+				OR = {
+					in_sphere = THIS
+					vassal_of = THIS
+					ai = no
+					all_core = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								OR = {
+									in_sphere = THIS
+									vassal_of = THIS
+								}
+								war = no
+								is_greater_power = no
+							}
+							province_id = 2243
+							province_id = 2242
+						}
+					}
+				}
+			}
+			CUN = {
+				OR = {
+					in_sphere = THIS
+					vassal_of = THIS
+					ai = no
+					all_core = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								OR = {
+									in_sphere = THIS
+									vassal_of = THIS
+								}
+								war = no
+								is_greater_power = no
+							}
+							province_id = 2243
+							province_id = 2242
+						}
+					}
+				}
+			}
+		}
+
+		effect = {
+			prestige = 10
+			any_country = {
+				limit = {
+					owns = 2242
+					vassal_of = THIS
+				}
+				2242 = { secede_province = THIS }
+			}
+			any_country = {
+				limit = {
+					owns = 3379
+					vassal_of = THIS
+				}
+				3379 = { secede_province = THIS }
+			}
+			any_country = {
+				limit = {
+					owns = 3373
+					vassal_of = THIS
+				}
+				3373 = { secede_province = THIS }
+			}
+			any_country = {
+				limit = {
+					owns = 3382
+					vassal_of = THIS
+				}
+				3382 = { secede_province = THIS }
+			}
+			any_country = {
+				limit = {
+					owns = 2243
+					owns = 2239
+					owns = 1979
+					vassal_of = THIS
+				}
+				2243 = { secede_province = THIS }
+				2239 = { secede_province = THIS }
+				1979 = { secede_province = THIS }
+			}
+			any_country = {
+				limit = {
+					owns = 2240
+					owns = 2245
+					vassal_of = THIS
+				}
+				2240 = { secede_province = THIS }
+				2245 = { secede_province = THIS }
+			}
+			any_country = {
+				limit = {
+					owns = 3384
+					vassal_of = THIS
+				}
+				3384 = { secede_province = THIS }
+			}
+			any_country = {
+				limit = {
+					owns = 3383
+					vassal_of = THIS
+				}
+				3383 = { secede_province = THIS }
+			}
+			any_country = {
+				limit = {
+					owns = 2241
+					owns = 2246
+					vassal_of = THIS
+				}
+				2241 = { secede_province = THIS }
+				2246 = { secede_province = THIS }
+			}
+			any_country = {
+				limit = {
+					owns = 2245
+					vassal_of = THIS
+				}
+				2245 = { secede_province = THIS }
+			}
+			any_country = {
+				limit = {
+					OR = {
+						tag = GUY
+						tag = SUR
+						tag = FGU
+						tag = CUN
+					}
+					NOT = { tag = THIS }
+					in_sphere = THIS
+				}
+				annex_to = THIS
+			}
+			ENG_1979 = { add_core = UGU } #Guyana
+			any_owned = {
+				limit = {
+					is_core = UGU
+					is_core = THIS
+				}
+				remove_core = UGU
+			}
+			release_vassal = UGU
+			create_alliance = UGU
+			create_vassal = UGU
+			relation = {
+				who = UGU
+				value = 100
+			}
+			diplomatic_influence = {
+				who = UGU
+				value = 200
+			}
+		}
+
+		ai_will_do = { factor = 1 }
+	}
+
+	UGU_by_sword = {
+		picture = guyanas_1
+		potential = {
+			OR = {
+				tag = GUY
+				tag = SUR
+				tag = FGU
+				tag = CUN
+			}
+			NOT = {
+				exists = UGU
+				has_country_flag = UGU_by_sword
+			}
+		}
+		
+		allow = {
+			nationalism_n_imperialism = 1
+			OR = {
+				is_secondary_power = yes
+				is_greater_power = yes
+			}
+			war_policy = jingoism
+			war = no
+			is_vassal = no
+		}
+		
+		effect = {
+			set_country_flag = UGU_by_sword
+			GUY = { all_core = { add_core = THIS } }
+			SUR = { all_core = { add_core = THIS } }
+			FGU = { all_core = { add_core = THIS } }
+			CUN = { all_core = { add_core = THIS } }
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	form_UGU = {
+		picture = guyanas_1
+		potential = {
+			OR = {
+				tag = GUY
+				tag = SUR
+				tag = FGU
+				tag = CUN
+			}
+			NOT = { exists = UGU }
+		}
+		
+		allow = {
+			war = no
+			is_vassal = no
+			nationalism_n_imperialism = 1
+			invention = national_fraternity
+			OR = {
+				is_secondary_power = yes
+				is_greater_power = yes
+			}
+			GUY = {
+				OR = {
+					in_sphere = THIS
+					vassal_of = THIS
+					ai = no
+					all_core = {
+						owned_by = THIS
+					}
+				}
+			}
+			SUR = {
+				OR = {
+					in_sphere = THIS
+					vassal_of = THIS
+					ai = no
+					all_core = {
+						owned_by = THIS
+					}
+				}
+			}
+			FGU = {
+				OR = {
+					in_sphere = THIS
+					vassal_of = THIS
+					ai = no
+					all_core = {
+						owned_by = THIS
+					}
+				}
+			}
+		}
+		
+		effect = {
+			prestige = 10
+			GUY = {
+				all_core = { add_core = THIS }
+			}
+			SUR = {
+				all_core = { add_core = THIS }
+			}
+			FGU = {
+				all_core = { add_core = THIS }
+			}
+			CUN = {
+				all_core = { add_core = THIS }
+			}
+			any_country = {
+				limit = {
+					ai = yes
+					exists = yes
+					OR = {
+						in_sphere = THIS
+						vassal_of = THIS
+					}
+					OR = {
+						tag = GUY
+						tag = SUR
+						tag = FGU
+						tag = CUN
+					}
+				}
+				annex_to = THIS
+			}	
+			random_country = {
+				limit = {
+					exists = yes
+					ai = no
+					OR = {
+						tag = GUY
+						tag = SUR
+						tag = FGU
+						tag = CUN
+					}
+				}
+				country_event = 11101
+			}
+			add_accepted_culture = afro_caribbean
+			add_accepted_culture = afro_antillean
+			add_accepted_culture = afro_dutch
+			add_accepted_culture = afro_caribeno
+			add_accepted_culture = indo_caribbean
+			add_accepted_culture = javan
+			add_accepted_culture = kreol
+			centralization = federalism
+			change_tag = UGU
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	UGU_claim_guayana = {
+		picture = guyanas_1
+		potential = {
+			tag = UGU
+			NOT = {	has_country_flag = UGU_claim_guayana }
+		}
+		
+		allow = {
+			nationalism_n_imperialism = 1
+			romanticism = 1
+			invention = manifest_destiny
+			OR = {
+				is_secondary_power = yes
+				is_greater_power = yes
+			}
+			OR = {
+				government = fascist_dictatorship
+				AND = {
+					war_policy = jingoism
+					military_score = 30
+				}
+			}
+			war = no
+			is_vassal = no
+		}
+		
+		effect = {
+			set_country_flag = UGU_claim_guayana
+			VNZ_2278 = { add_core = THIS }
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+#######################
+#~~~~~~~~~~~~~~~~~~~~~#
+#~Indenture Decisions~#
+#~~~~~~~~~~~~~~~~~~~~~#
+#######################
+	
+	indentured_indians_british = {
+		picture = map_india
+		potential = {
+			NOT = { has_global_flag = indentured_indians_british }
+			OR = {
+				tag = ENG
+				tag = ENL
+				tag = GUY
+				tag = UGU
+				tag = TTB
+				tag = C4R
+				tag = CRB
+				tag = JAM
+				tag = BRB
+				tag = MAU
+			}
+			OR = {
+				2239 = {
+					OR = {
+						owned_by = THIS
+						owner = {
+							OR = {
+								in_sphere = THIS
+								vassal_of = THIS
+							}
+						}
+					}
+				}
+				2125 = {
+					OR = {
+						owned_by = THIS
+						owner = {
+							OR = {
+								in_sphere = THIS
+								vassal_of = THIS
+							}
+						}
+					}
+				}
+				2217 = {
+					OR = {
+						owned_by = THIS
+						owner = {
+							OR = {
+								in_sphere = THIS
+								vassal_of = THIS
+							}
+						}
+					}
+				}
+				2237 = {
+					OR = {
+						owned_by = THIS
+						owner = {
+							OR = {
+								in_sphere = THIS
+								vassal_of = THIS
+							}
+						}
+					}
+				}
+				2229 = {
+					OR = {
+						owned_by = THIS
+						owner = {
+							OR = {
+								in_sphere = THIS
+								vassal_of = THIS
+							}
+						}
+					}
+				}
+			}
+			year = 1844
+		}
+				
+		allow = {
+			slavery = no_slavery
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = indentured_indians_british
+			
+			random_owned = {
+				limit = {
+					province_id = 2237 #Trinidad
+				}
+				add_province_modifier = {
+					name = indentured_workers
+					duration = 7300
+				}
+				any_pop = {
+					limit = {
+						has_pop_culture = indo_caribbean
+						has_pop_religion = hindu
+					}
+					reduce_pop = 50
+				}
+				any_pop = {
+					limit = {
+						has_pop_culture = indo_caribbean
+						has_pop_religion = sunni
+					}
+					reduce_pop = 15
+				}
+				any_pop = {
+					limit = {
+						has_pop_culture = indo_caribbean
+						has_pop_religion = protestant
+					}
+					reduce_pop = 25
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 2238 #Tobago
+				}
+				add_province_modifier = {
+					name = indentured_workers
+					duration = 7300
+				}
+				any_pop = {
+					limit = {
+						has_pop_culture = indo_caribbean
+						has_pop_religion = hindu
+					}
+					reduce_pop = 25
+				}
+				any_pop = {
+					limit = {
+						has_pop_culture = indo_caribbean
+						has_pop_religion = sunni
+					}
+					reduce_pop = 5
+				}
+				any_pop = {
+					limit = {
+						has_pop_culture = indo_caribbean
+						has_pop_religion = protestant
+					}
+					reduce_pop = 10
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 2229 #Barbados
+				}
+				add_province_modifier = {
+					name = indentured_workers
+					duration = 7300
+				}
+				any_pop = {
+					limit = {
+						has_pop_culture = indo_caribbean
+						has_pop_religion = hindu
+					}
+					reduce_pop = 50
+				}
+				any_pop = {
+					limit = {
+						has_pop_culture = indo_caribbean
+						has_pop_religion = sunni
+					}
+					reduce_pop = 15
+				}
+				any_pop = {
+					limit = {
+						has_pop_culture = indo_caribbean
+						has_pop_religion = protestant
+					}
+					reduce_pop = 25
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 2217 #Jamaica
+				}
+				add_province_modifier = {
+					name = indentured_workers
+					duration = 7300
+				}
+				any_pop = {
+					limit = {
+						has_pop_culture = indo_caribbean
+						has_pop_religion = hindu
+					}
+					reduce_pop = 75
+				}
+				any_pop = {
+					limit = {
+						has_pop_culture = indo_caribbean
+						has_pop_religion = sunni
+					}
+					reduce_pop = 20
+				}
+				any_pop = {
+					limit = {
+						has_pop_culture = indo_caribbean
+						has_pop_religion = protestant
+					}
+					reduce_pop = 35
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 2239 #Georgetown
+				}
+				add_province_modifier = {
+					name = indentured_workers
+					duration = 7300
+				}
+				any_pop = {
+					limit = {
+						has_pop_culture = indo_caribbean
+						has_pop_religion = hindu
+					}
+					reduce_pop = 50
+				}
+				any_pop = {
+					limit = {
+						has_pop_culture = indo_caribbean
+						has_pop_religion = sunni
+					}
+					reduce_pop = 15
+				}
+				any_pop = {
+					limit = {
+						has_pop_culture = indo_caribbean
+						has_pop_religion = protestant
+					}
+					reduce_pop = 25
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 2243 #Pomaron
+				}
+				add_province_modifier = {
+					name = indentured_workers
+					duration = 7300
+				}
+				any_pop = {
+					limit = {
+						has_pop_culture = indo_caribbean
+						has_pop_religion = hindu
+					}
+					reduce_pop = 50
+				}
+				any_pop = {
+					limit = {
+						has_pop_culture = indo_caribbean
+						has_pop_religion = sunni
+					}
+					reduce_pop = 15
+				}
+				any_pop = {
+					limit = {
+						has_pop_culture = indo_caribbean
+						has_pop_religion = protestant
+					}
+					reduce_pop = 25
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 2125 #Mauritius
+				}
+				add_province_modifier = {
+					name = indentured_workers
+					duration = 7300
+				}
+				any_pop = {
+					limit = {
+						has_pop_culture = indo_caribbean
+						has_pop_religion = hindu
+					}
+					reduce_pop = 50
+				}
+				any_pop = {
+					limit = {
+						has_pop_culture = indo_caribbean
+						has_pop_religion = sunni
+					}
+					reduce_pop = 15
+				}
+				any_pop = {
+					limit = {
+						has_pop_culture = indo_caribbean
+						has_pop_religion = catholic
+					}
+					reduce_pop = 25
+				}
+			}
+			
+			
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	indentured_indians_dutch = {
+		picture = map_india
+		potential = {
+			has_global_flag = indentured_indians_british
+			NOT = { has_global_flag = indentured_indians_dutch }
+			OR = {
+				tag = NET
+				tag = SUR
+				tag = UGU
+			}
+			2240 = {
+				OR = {
+					owned_by = NET
+					owner = {
+						OR = {
+							in_sphere = NET
+							vassal_of = NET
+						}
+					}
+				}
+			}
+			year = 1850
+		}
+				
+		allow = {
+			money = 10001
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = indentured_indians_dutch
+			treasury = 10000
+			
+			random_owned = {
+				limit = {
+					province_id = 2240 #Paramaribo
+				}
+				add_province_modifier = {
+					name = indentured_workers
+					duration = 7300
+				}
+				any_pop = {
+					limit = {
+						has_pop_culture = indo_caribbean
+						has_pop_religion = hindu
+					}
+					reduce_pop = 50
+				}
+				any_pop = {
+					limit = {
+						has_pop_culture = indo_caribbean
+						has_pop_religion = sunni
+					}
+					reduce_pop = 15
+				}
+				any_pop = {
+					limit = {
+						has_pop_culture = indo_caribbean
+						has_pop_religion = protestant
+					}
+					reduce_pop = 25
+				}
+			}			
+			
+		}
+		ai_will_do = { factor = 1 }
+	}
+	indentured_javans_dutch = {
+		picture = java_map
+		potential = {
+			has_global_flag = indentured_indians_dutch
+			NOT = { has_global_flag = indentured_javans_dutch }
+			tag = NET
+			2240 = {
+				OR = {
+					owned_by = NET
+					owner = {
+						OR = {
+							in_sphere = NET
+							vassal_of = NET
+						}
+					}
+				}
+			}
+			any_owned_province = {
+				OR = {
+					region = NET_1413
+					region = NET_1418
+				}
+			}
+		}
+				
+		allow = {
+			money = 5001
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = indentured_javans_dutch
+			treasury = -5000
+			
+			random_owned = {
+				limit = {
+					province_id = 2240 #Paramaribo
+				}
+				any_pop = {
+					limit = {
+						has_pop_culture = javan
+					}
+					reduce_pop = 7
+				}
+			}
+			
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	indentured_indians_french = {
+		picture = map_india
+		potential = {
+			has_global_flag = indentured_indians_british
+			NOT = { has_global_flag = indentured_indians_french }
+			OR = {
+				primary_culture = french
+				tag = FGU
+				tag = GLP
+				tag = MTQ
+				tag = C4R
+			}
+			OR = {
+				2241 = {
+					OR = {
+						owned_by = THIS
+						owner = {
+							OR = {
+								in_sphere = THIS
+								vassal_of = THIS
+							}
+						}
+					}
+				}
+				2126 = {
+					OR = {
+						owned_by = THIS
+						owner = {
+							OR = {
+								in_sphere = THIS
+								vassal_of = THIS
+							}
+						}
+					}
+				}
+				2230 = {
+					OR = {
+						owned_by = THIS
+						owner = {
+							OR = {
+								in_sphere = THIS
+								vassal_of = THIS
+							}
+						}
+					}
+				}
+				2228 = {
+					OR = {
+						owned_by = THIS
+						owner = {
+							OR = {
+								in_sphere = THIS
+								vassal_of = THIS
+							}
+						}
+					}
+				}
+			}
+			year = 1856
+		}
+				
+		allow = {
+			money = 15001
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = indentured_indians_french
+			treasury = -15000
+			
+			random_owned = {
+				limit = {
+					province_id = 2241 #Cayenne
+				}
+				add_province_modifier = {
+					name = indentured_workers
+					duration = 7300
+				}
+				any_pop = {
+					limit = {
+						has_pop_culture = indo_caribbean
+						has_pop_religion = hindu
+					}
+					reduce_pop = 25
+				}
+				any_pop = {
+					limit = {
+						has_pop_culture = indo_caribbean
+						has_pop_religion = sunni
+					}
+					reduce_pop = 7.5
+				}
+				any_pop = {
+					limit = {
+						has_pop_culture = indo_caribbean
+						has_pop_religion = catholic
+					}
+					reduce_pop = 12.5
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 2126 #Bourbon
+				}
+				add_province_modifier = {
+					name = indentured_workers
+					duration = 7300
+				}
+				any_pop = {
+					limit = {
+						has_pop_culture = indo_caribbean
+						has_pop_religion = hindu
+					}
+					reduce_pop = 50
+				}
+				any_pop = {
+					limit = {
+						has_pop_culture = indo_caribbean
+						has_pop_religion = sunni
+					}
+					reduce_pop = 15
+				}
+				any_pop = {
+					limit = {
+						has_pop_culture = indo_caribbean
+						has_pop_religion = catholic
+					}
+					reduce_pop = 25
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 2230 #Guadeloupe
+				}
+				add_province_modifier = {
+					name = indentured_workers
+					duration = 7300
+				}
+				any_pop = {
+					limit = {
+						has_pop_culture = indo_caribbean
+						has_pop_religion = hindu
+					}
+					reduce_pop = 50
+				}
+				any_pop = {
+					limit = {
+						has_pop_culture = indo_caribbean
+						has_pop_religion = sunni
+					}
+					reduce_pop = 15
+				}
+				any_pop = {
+					limit = {
+						has_pop_culture = indo_caribbean
+						has_pop_religion = catholic
+					}
+					reduce_pop = 25
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 2228 #Martinique
+				}
+				add_province_modifier = {
+					name = indentured_workers
+					duration = 7300
+				}
+				any_pop = {
+					limit = {
+						has_pop_culture = indo_caribbean
+						has_pop_religion = hindu
+					}
+					reduce_pop = 50
+				}
+				any_pop = {
+					limit = {
+						has_pop_culture = indo_caribbean
+						has_pop_religion = sunni
+					}
+					reduce_pop = 15
+				}
+				any_pop = {
+					limit = {
+						has_pop_culture = indo_caribbean
+						has_pop_religion = catholic
+					}
+					reduce_pop = 25
+				}
+			}
+			
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	#1860 to durban (2111) south africa
+	indentured_indians_SA = {
+		picture = map_india
+		potential = {
+			has_global_flag = indentured_indians_british
+			NOT = { has_global_flag = indentured_indians_SA }
+			OR = {
+				tag = ENG
+				tag = ENL
+				tag = SAF
+			}
+			OR = {
+				2111 = {
+					OR = {
+						owned_by = THIS
+						owner = {
+							OR = {
+								in_sphere = THIS
+								vassal_of = THIS
+							}
+						}
+					}
+				}
+				2087 = {
+					OR = {
+						owned_by = THIS
+						owner = {
+							OR = {
+								in_sphere = THIS
+								vassal_of = THIS
+							}
+						}
+					}
+				}
+			}
+			year = 1860
+		}
+				
+		allow = {
+			money = 10001
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = indentured_indians_SA
+			treasury = -10000
+			
+			random_owned = {
+				limit = {
+					province_id = 2111 #Durban
+				}
+				add_province_modifier = {
+					name = indentured_workers
+					duration = 3650
+				}
+				any_pop = {
+					limit = {
+						has_pop_culture = indo_caribbean
+						has_pop_religion = hindu
+					}
+					reduce_pop = 9
+				}
+				any_pop = {
+					limit = {
+						has_pop_culture = indo_caribbean
+						has_pop_religion = sunni
+					}
+					reduce_pop = 3
+				}
+				any_pop = {
+					limit = {
+						has_pop_culture = indo_caribbean
+						has_pop_religion = protestant
+					}
+					reduce_pop = 6
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 2087 #Capetown
+				}
+				add_province_modifier = {
+					name = indentured_workers
+					duration = 7300
+				}
+				any_pop = {
+					limit = {
+						has_pop_culture = malay
+					}
+					reduce_pop = 5
+				}
+			}
+			
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	#Indians in Fiji
+	indentured_indians_fiji = {
+		picture = map_india
+		potential = {
+			has_global_flag = indentured_indians_british
+			NOT = { has_global_flag = indentured_indians_fiji }
+			OR = {
+				tag = ENG
+				tag = ENL
+				tag = FIJ
+			}
+			2454 = {
+				OR = {
+					owned_by = THIS
+					owner = {
+						OR = {
+							in_sphere = THIS
+							vassal_of = THIS
+						}
+					}
+				}
+			}
+			#1251 = {
+			#	OR = {
+			#		owned_by = THIS
+			#		owner = {
+			#			OR = {
+			#				in_sphere = THIS
+			#				vassal_of = THIS
+			#			}
+			#		}
+			#	}
+			#}
+			year = 1879
+		}
+				
+		allow = {
+			money = 5001
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = indentured_indians_fiji
+			treasury = -5000
+			
+			1251 = { #Calcutta
+				any_pop = {
+					limit = {
+						has_pop_culture = indo_caribbean
+					}
+					move_pop = 2454
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 2454 #Fiji
+				}
+				add_province_modifier = {
+					name = indentured_workers
+					duration = 7300
+				}
+			}
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+}

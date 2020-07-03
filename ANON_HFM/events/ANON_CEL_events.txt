@@ -1,0 +1,392 @@
+	country_event = {
+		id = 1999999000
+		title = "EVTNAME1999999000" #Welshmen in Patagonia, Y Wladfa
+		desc = "EVTDESC1999999000"
+		picture = "y_wladfa"
+		
+		fire_only_once = yes
+		
+		trigger = {
+			OR = {
+				tag = ARG
+				tag = ARC
+				tag = LPL
+				tag = CHL
+				tag = VLP
+				tag = CGC
+				AND = {
+					tag = SBA
+					is_vassal = no
+					is_greater_power = yes
+				}
+			}
+			has_country_flag = conquest_of_the_desert
+			NOT = { has_global_flag = y_wladfa_beginning }
+			NOT = { has_global_flag = y_wladfa_denied }
+		}
+	
+		mean_time_to_happen = {
+			months = 24
+			modifier = {
+				factor = 0.1
+				year = 1865
+			}
+		}
+	
+		option = {
+			name = "EVTOPT1999999000A" #Excellent!
+			set_global_flag = y_wladfa_beginning
+			277 = {
+				any_pop = {
+					limit = {
+						has_pop_culture = welsh
+					}
+					move_pop = 2396
+				}
+				remove_core = PWL
+			}
+			2396 = {
+				add_core = YWL
+				#trade_goods = grain
+			}
+			ai_chance = {
+				factor = 95
+			}
+		}
+		option = {
+			name = "EVTOPT1999999000B" #Turn them away.
+			set_global_flag = y_wladfa_denied
+			prestige = -5
+			ai_chance = {
+				factor = 5
+			}
+		}
+		
+	}
+	
+	country_event = {
+		id = 1999999001 
+		title = "EVTNAME1999999001" #Welshmen in Patagonia, Y Wladfa, settling Esquel.
+		desc = "EVTDESC1999999001"
+		picture = "y_wladfa"
+		
+		fire_only_once = yes
+		
+		trigger = {
+			has_country_flag = conquest_of_the_desert
+			has_global_flag = y_wladfa_beginning
+			NOT = { has_global_flag = y_wladfa_esquel_settled }
+			NOT = { has_global_flag = y_wladfa_denied }
+			owns = 2396
+			owns = 2397
+		}
+	
+		mean_time_to_happen = {
+			months = 24
+			modifier = {
+				factor = 0.1
+				year = 1884
+			}
+		}
+	
+		option = {
+			name = "EVTOPT1999999001A" #Excellent!
+			set_global_flag = y_wladfa_esquel_settled
+			2396 = {
+				any_pop = {
+					limit = {
+						has_pop_culture = welsh
+						type = farmers
+					}
+					reduce_pop = 5
+				}
+				any_pop = {
+					limit = {
+						has_pop_culture = welsh
+						type = artisans
+					}
+					reduce_pop = 2.5
+				}
+			}
+			296 = {
+				any_pop = {
+					limit = {
+						has_pop_culture = welsh
+					}
+					move_pop = 2397
+				}
+				remove_core = PWL
+			}
+			2397 = {
+				add_core = YWL
+				trade_goods = timber
+			}
+			ai_chance = {
+				factor = 98
+			}
+		}
+		option = {
+			name = "EVTOPT1999999001B" #Turn them away.
+			set_global_flag = y_wladfa_esquel_denied
+			prestige = -5
+			ai_chance = {
+				factor = 2
+			}
+		}
+		
+	}
+	
+	country_event = {
+		id = 1999999002 
+		title = "EVTNAME1999999002" #CEL, decides primary culture. Changes capital to cultural capital.
+		desc = "EVTDESC1999999002"
+		#picture = ""
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPT1999999002A" #Irish
+			primary_culture = irish
+			add_accepted_culture = scottish
+			add_accepted_culture = welsh
+			add_accepted_culture = manx
+			add_accepted_culture = cornish
+			add_accepted_culture = breton
+			add_accepted_culture = ulster_scot
+			capital = 263
+			set_country_flag = CEL_primary_culture_selected
+			ai_chance = {
+				factor = 20
+			}
+		}
+		option = {
+			name = "EVTOPT1999999002B" #Scottish
+			primary_culture = scottish
+			add_accepted_culture = irish
+			add_accepted_culture = welsh
+			add_accepted_culture = manx
+			add_accepted_culture = cornish
+			add_accepted_culture = breton
+			add_accepted_culture = ulster_scot
+			capital = 269
+			set_country_flag = CEL_primary_culture_selected
+			ai_chance = {
+				factor = 20
+			}
+		}
+		option = {
+			name = "EVTOPT1999999002C" #Welsh
+			primary_culture = welsh
+			add_accepted_culture = scottish
+			add_accepted_culture = irish
+			add_accepted_culture = manx
+			add_accepted_culture = cornish
+			add_accepted_culture = breton
+			add_accepted_culture = ulster_scot
+			capital = 273
+			set_country_flag = CEL_primary_culture_selected
+			ai_chance = {
+				factor = 15
+			}
+		}
+		option = {
+			name = "EVTOPT1999999002D" #Manx
+			primary_culture = manx
+			add_accepted_culture = irish
+			add_accepted_culture = welsh
+			add_accepted_culture = scottish
+			add_accepted_culture = cornish
+			add_accepted_culture = breton
+			add_accepted_culture = ulster_scot
+			capital = 304
+			set_country_flag = CEL_primary_culture_selected
+			ai_chance = {
+				factor = 5
+			}
+		}
+		option = {
+			name = "EVTOPT1999999002E" #Cornish
+			primary_culture = cornish
+			add_accepted_culture = scottish
+			add_accepted_culture = welsh
+			add_accepted_culture = manx
+			add_accepted_culture = irish
+			add_accepted_culture = breton
+			add_accepted_culture = ulster_scot
+			capital = 299
+			set_country_flag = CEL_primary_culture_selected
+			ai_chance = {
+				factor = 15
+			}
+		}
+		option = {
+			name = "EVTOPT1999999002F" #Breton
+			primary_culture = breton
+			add_accepted_culture = scottish
+			add_accepted_culture = welsh
+			add_accepted_culture = manx
+			add_accepted_culture = cornish
+			add_accepted_culture = irish
+			add_accepted_culture = ulster_scot
+			capital = 424
+			set_country_flag = CEL_primary_culture_selected
+			ai_chance = {
+				factor = 20
+			}
+		}
+		option = {
+			name = "EVTOPT1999999002G" #Ulster Scot
+			primary_culture = ulster_scot
+			add_accepted_culture = scottish
+			add_accepted_culture = welsh
+			add_accepted_culture = manx
+			add_accepted_culture = cornish
+			add_accepted_culture = breton
+			add_accepted_culture = irish
+			capital = 254
+			set_country_flag = CEL_primary_culture_selected
+			ai_chance = {
+				factor = 5
+			}
+		}
+		
+	}
+	
+	country_event = {
+		id = 1999999003 
+		title = "EVTNAME1999999003" #CEL, decides religion.
+		desc = "EVTDESC1999999003"
+		#picture = ""
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPT1999999003A" #Protestant
+			religion = protestant
+			set_country_flag = CEL_religion_selected
+			ai_chance = {
+				factor = 50
+				modifier = {
+					factor = 100
+					OR = {
+						primary_culture = scottish
+						primary_culture = manx
+						primary_culture = cornish
+						primary_culture = welsh
+						primary_culture = ulster_scot
+					}
+				}
+				modifier = {
+					factor = 0
+					OR = {
+						primary_culture = irish
+						primary_culture = breton
+					}
+				}
+			}
+		}
+		option = {
+			name = "EVTOPT1999999003B" #Catholic
+			religion = catholic
+			set_country_flag = CEL_religion_selected
+			ai_chance = {
+				factor = 50
+				modifier = {
+					factor = 0
+					OR = {
+						primary_culture = scottish
+						primary_culture = manx
+						primary_culture = cornish
+						primary_culture = welsh
+						primary_culture = ulster_scot
+					}
+				}
+				modifier = {
+					factor = 100
+					OR = {
+						primary_culture = irish
+						primary_culture = breton
+					}
+				}
+			}
+		}		
+	}
+	
+	country_event = {
+		id = 1999999004 
+		title = "EVTNAME1999999004" #CEL, decides government type.
+		desc = "EVTDESC1999999004"
+		#picture = ""
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPT1999999004A" #Federal Republic
+			set_country_flag = CEL_government_selected
+			
+				government = democracy
+				upper_house_composition = population_equal_weight
+				vote_franschise = wealth_voting
+				voting_system = proportional_representation
+				political_parties = non_secret_ballots
+				citizens_rights = culture_voting_only
+				centralization = federalism
+				
+			ai_chance = {
+				factor = 50
+				modifier = {
+					factor = 100
+					OR = {
+						primary_culture = irish
+						primary_culture = manx
+						primary_culture = welsh
+					}
+				}
+				modifier = {
+					factor = 0
+					OR = {
+						primary_culture = scottish
+						primary_culture = breton
+						primary_culture = cornish
+						primary_culture = ulster_scot
+					}
+				}
+			}
+		}
+		option = {
+			name = "EVTOPT1999999004B" #Constitutional Monarchy
+			set_country_flag = CEL_government_selected
+				
+				government = hms_government
+				upper_house_composition = appointed
+				vote_franschise = wealth_weighted_voting
+				voting_system = jefferson_method
+				political_parties = non_secret_ballots
+				citizens_rights = culture_voting_only
+				centralization = federalism
+			
+			ai_chance = {
+				factor = 50
+				modifier = {
+					factor = 0
+					OR = {
+						primary_culture = irish
+						primary_culture = manx
+						primary_culture = welsh
+					}
+				}
+				modifier = {
+					factor = 100
+					OR = {
+						primary_culture = scottish
+						primary_culture = breton
+						primary_culture = cornish
+						primary_culture = ulster_scot
+					}
+				}
+			}
+		}		
+	}

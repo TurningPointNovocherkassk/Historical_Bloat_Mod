@@ -1,0 +1,2695 @@
+##############################################
+#666666000
+
+country_event = {
+	id = 666666000
+	title = "EVTNAME666666000" #FROMCOUNTRY helps COUNTRY
+	desc = "EVTDESC666666000"
+	picture = "january_uprising"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPT666666000A"
+	}
+}
+
+country_event = {
+	id = 666666001
+	title = "EVTNAME666666001" #FROMCOUNTRY condemns Russia
+	desc = "EVTDESC666666001"
+	picture = "january_uprising"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPT666666001A"
+	}
+}
+country_event = {
+	id = 666666002
+	title = "EVTNAME666666002" #FROMCOUNTRY stays neutral
+	desc = "EVTDESC666666002"
+	picture = "january_uprising"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPT666666002A"
+	}
+}
+
+country_event = {
+	id = 666666003
+	title = "EVTNAME666666003" #FROMCOUNTRY supports Russia
+	desc = "EVTDESC666666003"
+	picture = "january_uprising"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPT666666003A"
+	}
+}
+
+###################################################
+# Greater Poland uprising of $YEAR$
+country_event = {
+	id = 666666004
+	title = "EVTNAME666666004"
+	desc = "EVTDESC666666004a"
+	picture = "greater_poland_uprising"
+
+	trigger = {
+		tag = PZN
+		OR = {
+			AND = {
+				year = 1846
+				month = 2
+			}
+			AND = {
+				year = 1848
+				month = 3
+				has_global_flag = liberal_revolution_somewhere
+				has_global_flag = greater_poland_uprising_suppressed
+			}
+			KRA = {
+				has_global_flag = krakow_uprising
+				OR = {
+					war_with = GER
+					war_with = GCF
+					war_with = AUS
+					war_with = KUK
+					war_with = SGF
+					has_global_flag = krakow_succeeded
+				}
+			}
+			CPL = {
+				OR = {
+					has_global_flag = january_uprising_decision
+					has_global_flag = january_uprising_happened
+				}
+				OR = {
+					war_with = RUS
+					has_global_flag = greater_poland_succeeded
+				}
+			}
+		}
+		NOT = { has_global_flag = greater_poland_uprising }
+	}
+	
+	option = {
+		name = "Let the Poles be free! Let's Unite Poland and restore its glory!"
+		set_global_flag = greater_poland_uprising
+		set_country_flag = ANON_total_war_flag
+		prestige = 25
+		government = provisional_government
+		political_reform = none_voting
+		political_reform = party_appointed
+		political_reform = state_controlled
+		political_reform = harassment
+		political_reform = peonage
+		ruling_party_ideology = liberal
+		
+		primary_culture = polish
+		remove_accepted_culture = north_german
+				
+		define_general = {
+			name = "Ludwik Mieroslawski"
+			personality = audacious
+			background = nationalist
+		}
+		
+		any_pop = { limit = { is_culture_group = polish_culture_group } militancy = -4 consciousness = -4 }
+			
+		add_country_modifier = { name = polish_uprising_mobilization duration = 2920 }
+		add_country_modifier = { name = unrecognized_country duration = 1095 }
+		
+		AUS = {
+			relation = { who = THIS value = -300 }
+			diplomatic_influence = { who = THIS value = -300 }
+		}
+		RUS = {
+			relation = { who = THIS value = -300 }
+			diplomatic_influence = { who = THIS value = -300 }
+			any_pop = { limit = { has_pop_culture = polish } militancy = 3 consciousness = 5 }
+		}
+		random_country = {
+			limit = {
+			exists = yes
+				OR = {
+					tag = PRU
+					tag = NGF
+					tag = GER
+					tag = GCF
+				}
+				owns = 549
+			}
+			release_vassal = THIS
+			relation = { who = THIS value = -400 }
+			diplomatic_influence = { who = THIS value = -400 }
+			any_pop = { limit = { has_pop_culture = polish } militancy = 2 consciousness = 4 } 
+		}
+		ai_chance = {
+			factor = 5
+			modifier = {
+				factor = 100
+				year = 1848
+				has_global_flag = liberal_revolution_somewhere
+				has_global_flag = greater_poland_uprising_suppressed
+			}
+		}
+	}
+		
+	option = {
+		name = "Suppress the revolutionaries. It will not end well for Posen." 
+		set_global_flag = greater_poland_uprising_suppressed
+		prestige = -25
+		any_pop = { limit = { is_primary_culture = yes } militancy = 7 consciousness = 8 }
+		random_owned = { limit = { owner = { ai = yes } } owner = { THIS = { all_core = { add_core = AUS } } } }
+		ai_chance = {
+			factor = 95
+		}
+	}
+}
+
+country_event = {
+
+	news = yes
+	id = 666666005
+	title = "EVTNAME666666004"
+	desc = "EVTDESC666666004"
+	news_desc_long = "EVTDESC666666004_NEWS_LONG"
+	news_desc_medium = "EVTDESC666666004_NEWS_MEDIUM"
+	news_desc_short = "EVTDESC666666004_NEWS_SHORT"
+	picture = "greater_poland_uprising"
+
+	trigger = {
+		OR = {
+			tag = PRU
+			tag = NGF
+			tag = GER
+			tag = GCF
+		}
+		has_global_flag = greater_poland_uprising
+	}
+	
+	mean_time_to_happen = { days = 1 } 
+	
+	fire_only_once = yes
+	
+	option = {
+		name = "Suppress the Poles! Occupy Posen!" 
+		set_country_flag = through_greater_poland_uprising
+		any_pop = { limit = { has_pop_culture = polish } militancy = 3 consciousness = 5 }
+		war = {
+			target = PZN
+			attacker_goal = {
+				casus_belli = acquire_all_cores
+				country = PRU
+			}
+			attacker_goal = {
+				casus_belli = acquire_all_cores
+				country = NGF
+			}
+			attacker_goal = {
+				casus_belli = acquire_all_cores
+				country = GER
+			}
+			attacker_goal = {
+				casus_belli = acquire_all_cores
+				country = GCF
+			}
+			defender_goal = { casus_belli = status_quo }
+		}
+		PZN = { country_event = 666666006 }
+		ai_chance = {
+			factor = 95
+		}
+	}
+	
+	option = {
+		name = "Ignore the Poles. They are harmless."
+		prestige = -40
+		any_pop = { limit = { has_pop_culture = polish } militancy = 4 consciousness = 6 }
+		set_global_flag = greater_poland_succeeded
+		PZN = { country_event = 666666007 }
+		ai_chance = {
+			factor = 5
+		}
+	}
+}
+country_event = {
+	id = 666666006
+	title = "EVTNAME666666004" #FROMCOUNTRY attacks COUNTRY
+	desc = "EVTDESC666666006"
+	picture = "greater_poland_uprising"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "To arms! To arms!"
+	}
+}
+
+country_event = {
+	id = 666666007
+	title = "EVTNAME666666004" #FROMCOUNTRY has decided to ignore COUNTRY
+	desc = "EVTDESC666666007"
+	picture = "greater_poland_uprising"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Great!"
+	}
+}
+
+#Polish Uprising - Foreign Intervention
+country_event = {
+	id = 666666008
+	title = "EVTNAME500002"
+	desc = "EVTDESC666666008"
+	picture = "january_uprising"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPT500002A"		#Help the poles
+		set_country_flag = polish_chimpout_voted_support_POL
+		random_owned = {
+			limit = { owner = { NOT = { check_variable = { which = owed_cash_money value = 1 } } } }
+			owner = { set_variable = { which = owed_cash_money value = 20 } }
+		}
+		random_owned = {
+			limit = { owner = { check_variable = { which = owed_cash_money value = 9 } } }
+			owner = { change_variable = { which = owed_cash_money value = 20 } }
+		}
+		random_owned = {
+			limit = { owner = { NOT = { check_variable = { which = owed_artillery value = 1 } } } }
+			owner = { set_variable = { which = owed_artillery value = 10 } }
+		}
+		random_owned = {
+			limit = { owner = { check_variable = { which = owed_artillery value = 1 } } }
+			owner = { change_variable = { which = owed_artillery value = 10 } }
+		}
+		random_owned = {
+			limit = { owner = { NOT = { check_variable = { which = owed_canned_food value = 1 } } } }
+			owner = { set_variable = { which = owed_canned_food value = 10 } }
+		}
+		random_owned = {
+			limit = { owner = { check_variable = { which = owed_canned_food value = 1 } } }
+			owner = { change_variable = { which = owed_canned_food value = 10 } }
+		}
+		random_owned = {
+			limit = { owner = { NOT = { check_variable = { which = owed_small_arms value = 1 } } } }
+			owner = { set_variable = { which = owed_small_arms value = 10 } }
+		}
+		random_owned = {
+			limit = { owner = { check_variable = { which = owed_small_arms value = 1 } } }
+			owner = { change_variable = { which = owed_small_arms value = 10 } }
+		}
+		random_owned = {
+			limit = { owner = { NOT = { check_variable = { which = owed_ammunition value = 1 } } } }
+			owner = { set_variable = { which = owed_ammunition value = 10 } }
+		}
+		random_owned = {
+			limit = { owner = { check_variable = { which = owed_ammunition value = 1 } } }
+			owner = { change_variable = { which = owed_ammunition value = 10 } }
+		}
+		FROM = {
+			treasury = 20000
+			small_arms = 10
+			ammunition = 10
+			canned_food = 10
+			artillery = 10
+		}
+		create_alliance = FROM
+		leave_alliance = PRU
+		leave_alliance = NGF
+		leave_alliance = GER
+		leave_alliance = GCF
+		leave_alliance = AUS
+		leave_alliance = KUK
+		leave_alliance = SGF
+		leave_alliance = RUS
+		relation = { who = PRU value = -50 }
+		relation = { who = NGF value = -50 }
+		relation = { who = GER value = -50 }
+		relation = { who = GCF value = -50 }
+		relation = { who = AUS value = -50 }
+		relation = { who = KUK value = -50 }
+		relation = { who = SGF value = -50 }
+		relation = { who = RUS value = -50 }
+		relation = { who = FROM value = 200 }
+		diplomatic_influence = { who = FROM value = 100 }
+		any_pop = {
+			limit = { has_pop_culture = polish }
+			consciousness = 4
+			militancy = -6
+		}
+		
+		#ANON
+		any_country = {
+			limit = {
+				OR = {
+					tag = PRU
+					tag = NGF
+					tag = GER
+					tag = GCF
+					tag = AUS
+					tag = KUK
+					tag = SGF
+					tag = RUS
+				}
+				exists = yes
+			}
+			country_event = 666666000
+		}
+		FROM = {
+			country_event = 666666000
+		}
+		
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 0
+				OR = {
+					tag = PRU
+					tag = NGF
+					tag = GER
+					tag = GCF
+					tag = AUS
+					tag = KUK
+					tag = SGF
+					tag = RUS
+				}
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					alliance_with = PRU
+					alliance_with = NGF
+					alliance_with = GER
+					alliance_with = GCF
+					alliance_with = AUS
+					alliance_with = KUK
+					alliance_with = SGF
+					alliance_with = RUS
+				}
+			}
+			modifier = {
+				factor = 10
+				OR = {
+					war_with = PRU
+					war_with = NGF
+					war_with = GER
+					war_with = GCF
+					war_with = AUS
+					war_with = KUK
+					war_with = SGF
+					war_with = RUS
+				}
+			}
+			modifier = {
+				factor = 2
+				OR = {
+					truce_with = PRU
+					truce_with = NGF
+					truce_with = GER
+					truce_with = GCF
+					truce_with = AUS
+					truce_with = KUK
+					truce_with = SGF
+					truce_with = RUS
+				}
+			}
+			modifier = {
+				factor = 2
+				NOT = {
+					OR = {
+						relation = { who = PRU value = -150 }
+						relation = { who = NGF value = -150 }
+						relation = { who = GER value = -150 }
+						relation = { who = GCF value = -150 }
+						relation = { who = AUS value = -150 }
+						relation = { who = KUK value = -150 }
+						relation = { who = SGF value = -150 }
+						relation = { who = RUS value = -150 }
+					}
+				}
+			}
+			modifier = {
+				factor = 1.5
+				NOT = {
+					OR = {
+						relation = { who = PRU value = -100 }
+						relation = { who = NGF value = -100 }
+						relation = { who = GER value = -100 }
+						relation = { who = GCF value = -100 }
+						relation = { who = AUS value = -100 }
+						relation = { who = KUK value = -100 }
+						relation = { who = SGF value = -100 }
+						relation = { who = RUS value = -100 }
+					}
+				}
+			}
+			modifier = {
+				factor = 1.25
+				NOT = {
+					OR = {
+						relation = { who = PRU value = -50 }
+						relation = { who = NGF value = -50 }
+						relation = { who = GER value = -50 }
+						relation = { who = GCF value = -50 }
+						relation = { who = AUS value = -50 }
+						relation = { who = KUK value = -50 }
+						relation = { who = SGF value = -50 }
+						relation = { who = RUS value = -50 }
+					}
+				}
+			}
+			#ANON
+			modifier = {
+				factor = 3.5
+				OR = {
+					tag = FRA
+					tag = BOR
+					tag = ITA
+				}
+				NOT = {
+					OR = {
+						alliance_with = PRU
+						alliance_with = NGF
+						alliance_with = GER
+						alliance_with = GCF
+						alliance_with = AUS
+						alliance_with = KUK
+						alliance_with = SGF
+						alliance_with = RUS
+					}
+				}
+				FROM = { ai = no }
+			}
+		}
+	}
+		
+	option = {
+		name = "EVTOPT666666008B" 		#condemn GPs
+		set_country_flag = polish_chimpout_voted_condemn_GP
+		relation = { who = PRU value = -25 }
+		relation = { who = NGF value = -25 }
+		relation = { who = GER value = -25 }
+		relation = { who = GCF value = -25 }
+		relation = { who = AUS value = -25 }
+		relation = { who = KUK value = -25 }
+		relation = { who = SGF value = -25 }
+		relation = { who = RUS value = -25 }
+		relation = { who = FROM value = 50 }
+		any_pop = {
+			limit = { has_pop_culture = polish }
+			consciousness = 7
+			militancy = -1
+		}
+		
+		#ANON
+		any_country = {
+			limit = {
+				OR = {
+					tag = PRU
+					tag = NGF
+					tag = GER
+					tag = GCF
+					tag = AUS
+					tag = KUK
+					tag = SGF
+					tag = RUS
+				}
+			}
+			country_event = 666666001
+		}
+		FROM = {
+			country_event = 666666001
+		}
+		
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 0
+				OR = {
+					tag = PRU
+					tag = NGF
+					tag = GER
+					tag = GCF
+					tag = AUS
+					tag = KUK
+					tag = SGF
+					tag = RUS
+				}
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					alliance_with = PRU
+					alliance_with = NGF
+					alliance_with = GER
+					alliance_with = GCF
+					alliance_with = AUS
+					alliance_with = KUK
+					alliance_with = SGF
+					alliance_with = RUS
+				}
+			}
+			modifier = {
+				factor = 1.25
+				OR = {
+					AND = {
+						relation = { who = PRU value = -50 }
+						NOT = { relation = { who = PRU value = 0 } }
+					}
+					AND = {
+						relation = { who = NGF value = -50 }
+						NOT = { relation = { who = NGF value = 0 } }
+					}
+					AND = {
+						relation = { who = GER value = -50 }
+						NOT = { relation = { who = GER value = 0 } }
+					}
+					AND = {
+						relation = { who = GCF value = -50 }
+						NOT = { relation = { who = GCF value = 0 } }
+					}
+					AND = {
+						relation = { who = AUS value = -50 }
+						NOT = { relation = { who = AUS value = 0 } }
+					}
+					AND = {
+						relation = { who = KUK value = -50 }
+						NOT = { relation = { who = KUK value = 0 } }
+					}
+					AND = {
+						relation = { who = SGF value = -50 }
+						NOT = { relation = { who = SGF value = 0 } }
+					}
+					AND = {
+						relation = { who = RUS value = -50 }
+						NOT = { relation = { who = RUS value = 0 } }
+					}
+				}
+			}
+			modifier = {
+				factor = 1.25
+				OR = {
+					AND = {
+						relation = { who = PRU value = 0 }
+						NOT = { relation = { who = PRU value = 50 } }
+					}
+					AND = {
+						relation = { who = NGF value = 0 }
+						NOT = { relation = { who = NGF value = 50 } }
+					}
+					AND = {
+						relation = { who = GER value = 0 }
+						NOT = { relation = { who = GER value = 50 } }
+					}
+					AND = {
+						relation = { who = GCF value = 0 }
+						NOT = { relation = { who = GCF value = 50 } }
+					}
+					AND = {
+						relation = { who = AUS value = 0 }
+						NOT = { relation = { who = AUS value = 50 } }
+					}
+					AND = {
+						relation = { who = KUK value = 0 }
+						NOT = { relation = { who = KUK value = 50 } }
+					}
+					AND = {
+						relation = { who = SGF value = 0 }
+						NOT = { relation = { who = SGF value = 50 } }
+					}
+					AND = {
+						relation = { who = RUS value = 0 }
+						NOT = { relation = { who = RUS value = 50 } }
+					}
+				}
+			}
+		}
+	}
+		
+	option = {
+		name = "EVTOPT500002C"		#stay neutral
+		set_country_flag = polish_chimpout_voted_neutral
+		relation = { who = FROM value = -25 }
+		any_pop = {
+			limit = { has_pop_culture = polish }
+			consciousness = 4
+			militancy = 1
+		}
+		
+		#ANON
+		any_country = {
+			limit = {
+				OR = {
+					tag = PRU
+					tag = NGF
+					tag = GER
+					tag = GCF
+					tag = AUS
+					tag = KUK
+					tag = SGF
+					tag = RUS
+				}
+			}
+			country_event = 666666002
+		}
+		FROM = {
+			country_event = 666666002
+		}
+		
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 0
+				OR = {
+					tag = PRU
+					tag = NGF
+					tag = GER
+					tag = GCF
+					tag = AUS
+					tag = KUK
+					tag = SGF
+					tag = RUS
+				}
+			}
+			modifier = {
+				factor = 5
+				any_owned_province = { pop_majority_culture = polish }
+			}
+			modifier = {
+				factor = 2
+				OR = {
+					AND = {
+						relation = { who = PRU value = 50 }
+						NOT = { relation = { who = PRU value = 100 } }
+					}
+					AND = {
+						relation = { who = NGF value = 50 }
+						NOT = { relation = { who = NGF value = 100 } }
+					}
+					AND = {
+						relation = { who = GER value = 50 }
+						NOT = { relation = { who = GER value = 100 } }
+					}
+					AND = {
+						relation = { who = GCF value = 50 }
+						NOT = { relation = { who = GCF value = 100 } }
+					}
+					AND = {
+						relation = { who = AUS value = 50 }
+						NOT = { relation = { who = AUS value = 100 } }
+					}
+					AND = {
+						relation = { who = KUK value = 50 }
+						NOT = { relation = { who = KUK value = 100 } }
+					}
+					AND = {
+						relation = { who = SGF value = 50 }
+						NOT = { relation = { who = SGF value = 100 } }
+					}
+					AND = {
+						relation = { who = RUS value = 50 }
+						NOT = { relation = { who = RUS value = 100 } }
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = "EVTOPT666666008D"		#support GPs
+		set_country_flag = polish_chimpout_voted_support_GP
+		relation = { who = PRU value = 25 }
+		relation = { who = NGF value = 25 }
+		relation = { who = GER value = 25 }
+		relation = { who = GCF value = 25 }
+		relation = { who = AUS value = 25 }
+		relation = { who = KUK value = 25 }
+		relation = { who = SGF value = 25 }
+		relation = { who = RUS value = 25 }
+		relation = { who = FROM value = -150 }
+		any_pop = {
+			limit = { has_pop_culture = polish }
+			militancy = 4
+			consciousness = 7 
+		}
+		
+		#ANON
+		any_country = {
+			limit = {
+				OR = {
+					tag = PRU
+					tag = NGF
+					tag = GER
+					tag = GCF
+					tag = AUS
+					tag = KUK
+					tag = SGF
+					tag = RUS
+				}
+			}
+			country_event = 666666003
+		}
+		FROM = {
+			country_event = 666666003
+		}
+		
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 4
+				OR = {
+					tag = PRU
+					tag = NGF
+					tag = GER
+					tag = GCF
+					tag = AUS
+					tag = KUK
+					tag = SGF
+					tag = RUS
+				}
+			}
+			modifier = {
+				factor = 5
+				OR = {
+					alliance_with = PRU
+					alliance_with = NGF
+					alliance_with = GER
+					alliance_with = GCF
+					alliance_with = AUS
+					alliance_with = KUK
+					alliance_with = SGF
+					alliance_with = RUS
+				}
+			}
+			modifier = {
+				factor = 2
+				OR = {
+					relation = { who = PRU value = 190 }
+					relation = { who = NGF value = 190 }
+					relation = { who = GER value = 190 }
+					relation = { who = GCF value = 190 }
+					relation = { who = AUS value = 190 }
+					relation = { who = KUK value = 190 }
+					relation = { who = SGF value = 190 }
+					relation = { who = RUS value = 190 }
+				}
+			}
+			modifier = {
+				factor = 2
+				OR = {
+					relation = { who = PRU value = 150 }
+					relation = { who = NGF value = 150 }
+					relation = { who = GER value = 150 }
+					relation = { who = GCF value = 150 }
+					relation = { who = AUS value = 150 }
+					relation = { who = KUK value = 150 }
+					relation = { who = SGF value = 150 }
+					relation = { who = RUS value = 150 }
+				}
+			}
+			modifier = {
+				factor = 2
+				OR = {
+					relation = { who = PRU value = 100 }
+					relation = { who = NGF value = 100 }
+					relation = { who = GER value = 100 }
+					relation = { who = GCF value = 100 }
+					relation = { who = AUS value = 100 }
+					relation = { who = KUK value = 100 }
+					relation = { who = SGF value = 100 }
+					relation = { who = RUS value = 100 }
+				}
+			}
+			modifier = {
+				factor = 3
+				OR = {
+					tag = PRU
+					tag = NGF
+					tag = GER
+					tag = GCF
+					tag = AUS
+					tag = KUK
+					tag = SGF
+					tag = RUS
+				}
+			}
+		}
+	}
+}
+#form_PNC notification for GPs
+country_event = {
+	id = 666666009
+	title = "EVTNAME666666004" 
+	desc = "EVTDESC666666007"
+	picture = "greater_poland_uprising"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "We shall see... To arms!"
+		war = {
+			target = PNC
+			attacker_goal = {
+				casus_belli = acquire_all_cores
+				country = PRU
+			}
+			attacker_goal = {
+				casus_belli = acquire_all_cores
+				country = NGF
+			}
+			attacker_goal = {
+				casus_belli = acquire_all_cores
+				country = GER
+			}
+			attacker_goal = {
+				casus_belli = acquire_all_cores
+				country = GCF
+			}
+			defender_goal = { casus_belli = status_quo }
+		}
+		ai_chance = {
+			factor = 95
+			modifier = {
+				factor = 100
+				THIS = {
+					any_core = {
+						owned_by = PNC
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				has_global_flag = greater_poland_succeeded
+			}
+			modifier = { factor = 0.5 is_disarmed = yes }
+			modifier = {
+				factor = 0.5
+				war = yes
+				NOT = {
+					OR = {
+						war_with = PZN
+						war_with = CPL
+						war_with = KRA
+						war_with = PNC
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = "Sadly, there is nothing we can do at the moment..."
+		ai_chance = {
+			factor = 5
+			modifier = {
+				factor = 100
+				has_global_flag = greater_poland_succeeded
+			}
+			modifier = { factor = 20 is_disarmed = yes }
+			modifier = {
+				factor = 10
+				war = yes
+				NOT = {
+					OR = {
+						war_with = PZN
+						war_with = CPL
+						war_with = KRA
+						war_with = PNC
+					}
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = 666666010
+	title = "EVTNAME666666004" 
+	desc = "EVTDESC666666007"
+	picture = "greater_poland_uprising"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "We shall see... To arms!"
+		war = {
+			target = PNC
+			attacker_goal = {
+				casus_belli = acquire_all_cores
+				country = AUS
+			}
+			attacker_goal = {
+				casus_belli = acquire_all_cores
+				country = KUK
+			}
+			attacker_goal = {
+				casus_belli = acquire_all_cores
+				country = SGF
+			}
+			defender_goal = { casus_belli = status_quo }
+		}
+		ai_chance = {
+			factor = 95
+			modifier = {
+				factor = 100
+				THIS = {
+					any_core = {
+						owned_by = PNC
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				has_global_flag = krakow_succeeded
+			}
+			modifier = { factor = 0.5 is_disarmed = yes }
+			modifier = {
+				factor = 0.5
+				war = yes
+				NOT = {
+					OR = {
+						war_with = PZN
+						war_with = CPL
+						war_with = KRA
+						war_with = PNC
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = "Sadly, there is nothing we can do at the moment..."
+		ai_chance = {
+			factor = 5
+			modifier = {
+				factor = 100
+				has_global_flag = krakow_succeeded
+			}
+			modifier = { factor = 20 is_disarmed = yes }
+			modifier = {
+				factor = 10
+				war = yes
+				NOT = {
+					OR = {
+						war_with = PZN
+						war_with = CPL
+						war_with = KRA
+						war_with = PNC
+					}
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = 666666011
+	title = "EVTNAME666666004" 
+	desc = "EVTDESC666666007"
+	picture = "greater_poland_uprising"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "We shall see... To arms!"
+		war = {
+			target = PNC
+			attacker_goal = {
+				casus_belli = acquire_all_cores
+				country = RUS
+			}
+			defender_goal = { casus_belli = status_quo }
+		}
+		ai_chance = {
+			factor = 95
+			modifier = {
+				factor = 100
+				THIS = {
+					any_core = {
+						owned_by = PNC
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				has_global_flag = january_uprising_succeeded
+			}
+			modifier = { factor = 0.5 is_disarmed = yes }
+			# modifier = {
+				# factor = 0.5
+				# war = yes
+				# NOT = {
+					# OR = {
+						# war_with = PZN
+						# war_with = CPL
+						# war_with = KRA
+						# war_with = PNC
+					# }
+				# }
+			# }
+		}
+	}
+	option = {
+		name = "Sadly, there is nothing we can do at the moment..."
+		ai_chance = {
+			factor = 5
+			modifier = {
+				factor = 100
+				has_global_flag = january_uprising_succeeded
+			}
+			modifier = { factor = 20 is_disarmed = yes }
+			# modifier = {
+				# factor = 10
+				# war = yes
+				# NOT = {
+					# OR = {
+						# war_with = PZN
+						# war_with = CPL
+						# war_with = KRA
+						# war_with = PNC
+					# }
+				# }
+			# }
+		}
+	}
+}
+##########
+# Posen uprising response
+country_event = {
+	id = 666666012
+	title = "EVTNAME666666012" #Polish defeated
+	desc = "EVTDESC666666012"
+	picture = "greater_poland_uprising"
+	
+	fire_only_once = yes
+	
+	trigger = {
+		war = no
+		PZN = { exists = no }
+		owns = 699
+		owns = 701
+		owns = 700
+		has_global_flag = greater_poland_uprising
+		has_country_flag = through_greater_poland_uprising
+	}
+	
+	mean_time_to_happen = { days = 5 }
+	
+	option = {
+		name = "EVTOPT666666012A"  #punish them
+		any_country = {
+			limit = { is_greater_power = yes capital_scope = { continent = europe } NOT = { alliance_with = THIS } }
+			relation = { who = THIS value = -25 }
+		}
+			
+		random_owned = {
+			limit = { owner = { tag = THIS } }
+			owner = {
+				PRU_701 = { add_core = THIS }
+				PZN = { all_core = { add_core = THIS } }
+			}
+		}
+		
+		add_tax_relative_income = 0.05
+		
+		any_owned = {
+			limit = { is_core = PZN }
+			any_pop = {
+				limit = {
+					has_pop_culture = polish
+					OR = {
+						pop_type = officers
+						pop_type = soldiers
+						pop_type = aristocrats
+					}
+				}
+				reduce_pop = 0.7
+			}
+		}
+		
+		any_owned = {
+			limit = { is_core = PZN }
+			any_pop = {
+				limit = {
+					has_pop_culture = polish
+					NOT = {
+						OR = {
+							pop_type = officers
+							pop_type = soldiers
+							pop_type = aristocrats
+						}
+					}
+				}
+				random_list = {
+					25 = { reduce_pop = 0.99 }
+					25 = { reduce_pop = 0.985 }
+					25 = { reduce_pop = 0.98 }
+					25 = { reduce_pop = 0.975 }
+				}
+			}
+		}
+		
+		ai_chance = { factor = 95 }
+	}
+			
+	option = {
+		name = "EVTOPT666666012B"	#be lenient
+		prestige = -30
+		any_pop = { 
+			limit = { is_accepted_culture = no }
+			consciousness = 6
+		}
+		ai_chance = { factor = 5 }
+	}
+}
+#############################################################################
+#																			#
+#   				Congress of Paris: Lead-Up Events						#
+#																			#
+#############################################################################
+country_event = {
+
+	id = 666666013
+
+	title = "EVTNAME666666013" # The Polish Question (Initiate Congress of Paris)
+	desc = "EVTDESC666666013"
+	picture = "krakow_uprising"
+
+	trigger = {
+		PNC = {
+			exists = yes
+			OR = {
+				war_with = PRU
+				war_with = NGF
+				war_with = GER
+				war_with = GCF
+				war_with = AUS
+				war_with = KUK
+				war_with = SGF
+				war_with = RUS
+			}
+			OR = {
+				706 = { controlled_by = PNC }
+				703 = { controlled_by = PNC }
+				capital_scope = { controlled_by = PNC }
+			}
+		}
+		NOT = {
+			has_global_flag = paris_congress_held
+			has_global_flag = paris_congress_to_be_held
+			has_country_flag = will_not_hold_congress
+			has_country_flag = hosting_paris_congress
+			has_country_modifier = neutrality
+			OR = {
+				tag = PRU
+				tag = NGF
+				tag = GER
+				tag = GCF
+				tag = AUS
+				tag = KUK
+				tag = SGF
+				tag = RUS
+			}
+		}
+		is_greater_power = yes
+		capital_scope = { continent = europe }
+		OR = {
+			has_country_flag = polish_chimpout_voted_support_POL
+			has_country_flag = polish_chimpout_voted_condemn_GP
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 6
+		modifier = {
+			factor = 0.5
+			OR = {
+				PRU = { num_of_revolts = 5 }
+				NGF = { num_of_revolts = 5 }
+				GER = { num_of_revolts = 5 }
+				GCF = { num_of_revolts = 5 }
+				AUS = { num_of_revolts = 5 }
+				KUK = { num_of_revolts = 5 }
+				SGF = { num_of_revolts = 5 }
+				RUS = { num_of_revolts = 5 }
+			}
+		}
+		modifier = {
+			factor = 0.1
+			OR = {
+				PRU = { is_greater_power = no }
+				NGF = { is_greater_power = no }
+				GER = { is_greater_power = no }
+				GCF = { is_greater_power = no }
+				AUS = { is_greater_power = no }
+				KUK = { is_greater_power = no }
+				SGF = { is_greater_power = no }
+				RUS = { is_greater_power = no }
+			}
+		}
+		modifier = {
+			factor = 0.5
+			OR = {
+				tag = FRA
+				tag = BOR
+			}
+		}
+		modifier = {
+			factor = 0.5
+			has_country_flag = polish_chimpout_voted_support_POL
+		}
+	}
+
+	option = {
+		name = "EVT666666013OPTA"
+		prestige = 20
+		set_global_flag = paris_congress_to_be_held
+		set_country_flag = hosting_paris_congress
+		PNC = {
+			set_variable = {
+				which = paris_congress_support_GPs
+				value = 0
+			}
+			set_variable = {
+				which = paris_congress_support_poland
+				value = 0
+			}
+			country_event = 666666016
+			add_country_modifier = { name = no_more_war duration = 1095 }
+		}
+		any_country = {
+			limit = {
+				NOT = {
+					OR = {
+						tag = PRU
+						tag = NGF
+						tag = GER
+						tag = GCF
+						tag = AUS
+						tag = KUK
+						tag = SGF
+						tag = RUS
+					}
+				}
+				war_with = PNC
+			}
+			end_war = PNC
+		}
+		any_country = {
+			limit = {
+				OR = {
+					tag = PRU
+					tag = NGF
+					tag = GER
+					tag = GCF
+					tag = AUS
+					tag = KUK
+					tag = SGF
+					tag = RUS
+				}
+				war_with = PNC
+			}
+			country_event = 666666015
+			add_country_modifier = { name = no_more_war duration = 1095 }
+			set_country_flag = for_congress_paris
+			end_war = PNC
+		}
+		any_country = {
+			limit = {
+				is_greater_power = yes
+				capital_scope = { continent = europe }
+				NOT = {
+					tag = THIS
+					tag = PNC
+					tag = PRU
+					tag = NGF
+					tag = GER
+					tag = GCF
+					tag = AUS
+					tag = KUK
+					tag = SGF
+					tag = RUS
+				}
+			}
+			country_event = 666666017
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+
+	option = {
+		name = "EVT666666013OPTB"
+		set_country_flag = will_not_hold_paris_congress
+		prestige = -5
+		ai_chance = {
+			factor = 0			
+		}
+	}
+}
+
+country_event = {
+
+	id = 666666014
+
+	title = "EVTNAME666666014" # Planning for the Congress
+	desc = "EVTDESC666666014"
+	picture = "berlin_congress_htm"
+
+	trigger = {
+		has_country_flag = hosting_paris_congress
+		NOT = { has_country_flag = attending_paris_congress }
+	}
+
+	mean_time_to_happen = {
+		months = 1
+	}
+
+	option = {
+		name = "EVT666666014OPTA"
+		set_country_flag = attending_paris_congress
+		PNC = {
+			change_variable = {
+				which = paris_congress_support_GPs
+				value = 1
+			}
+		}
+		ai_chance = {
+			factor = 45
+			modifier = {
+				factor = 2
+				has_country_flag = polish_chimpout_voted_support_GP
+			}
+			modifier = {
+				factor = 0.5
+				tag = ENG
+			}
+			modifier = {
+				factor = 1.5
+				OR = {
+					alliance_with = PRU
+					alliance_with = NGF
+					alliance_with = GER
+					alliance_with = GCF
+					alliance_with = AUS
+					alliance_with = KUK
+					alliance_with = SGF
+					alliance_with = RUS
+				}
+			}
+			modifier = {
+				factor = 0.5
+				OR = {
+					truce_with = PRU
+					truce_with = NGF
+					truce_with = GER
+					truce_with = GCF
+					truce_with = AUS
+					truce_with = KUK
+					truce_with = SGF
+					truce_with = RUS
+				}
+			}
+			modifier = {
+				factor = 1.8
+				OR = {
+					relation = { who = PRU value = 150 }
+					relation = { who = NGF value = 150 }
+					relation = { who = GER value = 150 }
+					relation = { who = GCF value = 150 }
+					relation = { who = AUS value = 150 }
+					relation = { who = KUK value = 150 }
+					relation = { who = SGF value = 150 }
+					relation = { who = RUS value = 150 }
+				}
+			}
+			modifier = {
+				factor = 1.6
+				OR = {
+					relation = { who = PRU value = 100 }
+					relation = { who = NGF value = 100 }
+					relation = { who = GER value = 100 }
+					relation = { who = GCF value = 100 }
+					relation = { who = AUS value = 100 }
+					relation = { who = KUK value = 100 }
+					relation = { who = SGF value = 100 }
+					relation = { who = RUS value = 100 }
+				}
+			}
+			modifier = {
+				factor = 1.4
+				OR = {
+					relation = { who = PRU value = 50 }
+					relation = { who = NGF value = 50 }
+					relation = { who = GER value = 50 }
+					relation = { who = GCF value = 50 }
+					relation = { who = AUS value = 50 }
+					relation = { who = KUK value = 50 }
+					relation = { who = SGF value = 50 }
+					relation = { who = RUS value = 50 }
+				}
+			}
+			modifier = {
+				factor = 1.2
+				OR = {
+					relation = { who = PRU value = 0 }
+					relation = { who = NGF value = 0 }
+					relation = { who = GER value = 0 }
+					relation = { who = GCF value = 0 }
+					relation = { who = AUS value = 0 }
+					relation = { who = KUK value = 0 }
+					relation = { who = SGF value = 0 }
+					relation = { who = RUS value = 0 }
+				}
+			}
+		}
+	}
+
+	option = {
+		name = "EVT666666014OPTB"
+		set_country_flag = attending_paris_congress
+		PNC = {
+			change_variable = {
+				which = paris_congress_support_poland
+				value = 1
+			}
+		}
+		ai_chance = {
+			factor = 55
+			modifier = {
+				factor = 2
+				has_country_flag = polish_chimpout_voted_condemn_GP
+			}
+			modifier = {
+				factor = 1.75
+				OR = {
+					truce_with = PRU
+					truce_with = NGF
+					truce_with = GER
+					truce_with = GCF
+					truce_with = AUS
+					truce_with = KUK
+					truce_with = SGF
+					truce_with = RUS
+				}
+			}
+			modifier = {
+				factor = 1.8
+				NOT = {
+					OR = {
+						relation = { who = PRU value = -150 }
+						relation = { who = NGF value = -150 }
+						relation = { who = GER value = -150 }
+						relation = { who = GCF value = -150 }
+						relation = { who = AUS value = -150 }
+						relation = { who = KUK value = -150 }
+						relation = { who = SGF value = -150 }
+						relation = { who = RUS value = -150 }
+					}
+				}
+			}
+			modifier = {
+				factor = 1.6
+				NOT = {
+					OR = {
+						relation = { who = PRU value = -100 }
+						relation = { who = NGF value = -100 }
+						relation = { who = GER value = -100 }
+						relation = { who = GCF value = -100 }
+						relation = { who = AUS value = -100 }
+						relation = { who = KUK value = -100 }
+						relation = { who = SGF value = -100 }
+						relation = { who = RUS value = -100 }
+					}
+				}
+			}
+			modifier = {
+				factor = 1.4
+				NOT = {
+					OR = {
+						relation = { who = PRU value = -50 }
+						relation = { who = NGF value = -50 }
+						relation = { who = GER value = -50 }
+						relation = { who = GCF value = -50 }
+						relation = { who = AUS value = -50 }
+						relation = { who = KUK value = -50 }
+						relation = { who = SGF value = -50 }
+						relation = { who = RUS value = -50 }
+					}
+				}
+			}
+			modifier = {
+				factor = 1.2
+				NOT = {
+					OR = {
+						relation = { who = PRU value = 0 }
+						relation = { who = NGF value = 0 }
+						relation = { who = GER value = 0 }
+						relation = { who = GCF value = 0 }
+						relation = { who = AUS value = 0 }
+						relation = { who = KUK value = 0 }
+						relation = { who = SGF value = 0 }
+						relation = { who = RUS value = 0 }
+					}
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+
+	id = 666666015
+
+	title = "EVTNAME666666015" # Call for Congress - GPs
+	desc = "EVTDESC666666015"
+	picture = "krakow_uprising"
+
+	is_triggered_only = yes
+
+	option = {
+		name = "EVT666666015OPTA"
+	}
+}
+
+country_event = {
+
+	id = 666666016
+
+	title = "EVTNAME666666016" # Call for Congress - PNC
+	desc = "EVTDESC666666016"
+	picture = "krakow_uprising"
+
+	is_triggered_only = yes
+
+	option = {
+		name = "EVT666666015OPTA"
+		prestige = 10
+		set_country_flag = attending_paris_congress
+	}
+}
+
+country_event = {
+
+	id = 666666017
+
+	title = "EVTNAME666666017" # Call for Congress
+	desc = "EVTDESC666666017"
+	picture = "berlin_congress_htm"
+
+	is_triggered_only = yes
+
+	option = {
+		name = "EVT666666014OPTA"
+		prestige = 10
+		set_country_flag = attending_paris_congress
+		PNC = {
+			change_variable = {
+				which = paris_congress_support_GPs
+				value = 1
+			}
+		}
+		ai_chance = {
+			factor = 45
+			modifier = {
+				factor = 2
+				has_country_flag = polish_chimpout_voted_support_GP
+			}
+			modifier = {
+				factor = 0.5
+				tag = ENG
+			}
+			modifier = {
+				factor = 1.5
+				OR = {
+					alliance_with = PRU
+					alliance_with = NGF
+					alliance_with = GER
+					alliance_with = GCF
+					alliance_with = AUS
+					alliance_with = KUK
+					alliance_with = SGF
+					alliance_with = RUS
+				}
+			}
+			modifier = {
+				factor = 0.5
+				OR = {
+					truce_with = PRU
+					truce_with = NGF
+					truce_with = GER
+					truce_with = GCF
+					truce_with = AUS
+					truce_with = KUK
+					truce_with = SGF
+					truce_with = RUS
+				}
+			}
+			modifier = {
+				factor = 1.8
+				OR = {
+					relation = { who = PRU value = 150 }
+					relation = { who = NGF value = 150 }
+					relation = { who = GER value = 150 }
+					relation = { who = GCF value = 150 }
+					relation = { who = AUS value = 150 }
+					relation = { who = KUK value = 150 }
+					relation = { who = SGF value = 150 }
+					relation = { who = RUS value = 150 }
+				}
+			}
+			modifier = {
+				factor = 1.6
+				OR = {
+					relation = { who = PRU value = 100 }
+					relation = { who = NGF value = 100 }
+					relation = { who = GER value = 100 }
+					relation = { who = GCF value = 100 }
+					relation = { who = AUS value = 100 }
+					relation = { who = KUK value = 100 }
+					relation = { who = SGF value = 100 }
+					relation = { who = RUS value = 100 }
+				}
+			}
+			modifier = {
+				factor = 1.4
+				OR = {
+					relation = { who = PRU value = 50 }
+					relation = { who = NGF value = 50 }
+					relation = { who = GER value = 50 }
+					relation = { who = GCF value = 50 }
+					relation = { who = AUS value = 50 }
+					relation = { who = KUK value = 50 }
+					relation = { who = SGF value = 50 }
+					relation = { who = RUS value = 50 }
+				}
+			}
+			modifier = {
+				factor = 1.2
+				OR = {
+					relation = { who = PRU value = 0 }
+					relation = { who = NGF value = 0 }
+					relation = { who = GER value = 0 }
+					relation = { who = GCF value = 0 }
+					relation = { who = AUS value = 0 }
+					relation = { who = KUK value = 0 }
+					relation = { who = SGF value = 0 }
+					relation = { who = RUS value = 0 }
+				}
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					has_country_modifier = neutrality
+					has_country_flag = polish_chimpout_voted_neutral
+				}
+			}
+		}
+	}
+
+	option = {
+		name = "EVT666666014OPTB"
+		prestige = 10
+		set_country_flag = attending_paris_congress
+		PNC = {
+			change_variable = {
+				which = paris_congress_support_poland
+				value = 1
+			}
+		}
+		ai_chance = {
+			factor = 45
+			modifier = {
+				factor = 2
+				has_country_flag = polish_chimpout_voted_condemn_GP
+			}
+			modifier = {
+				factor = 1.75
+				OR = {
+					truce_with = PRU
+					truce_with = NGF
+					truce_with = GER
+					truce_with = GCF
+					truce_with = AUS
+					truce_with = KUK
+					truce_with = SGF
+					truce_with = RUS
+				}
+			}
+			modifier = {
+				factor = 1.8
+				NOT = {
+					OR = {
+						relation = { who = PRU value = -150 }
+						relation = { who = NGF value = -150 }
+						relation = { who = GER value = -150 }
+						relation = { who = GCF value = -150 }
+						relation = { who = AUS value = -150 }
+						relation = { who = KUK value = -150 }
+						relation = { who = SGF value = -150 }
+						relation = { who = RUS value = -150 }
+					}
+				}
+			}
+			modifier = {
+				factor = 1.6
+				NOT = {
+					OR = {
+						relation = { who = PRU value = -100 }
+						relation = { who = NGF value = -100 }
+						relation = { who = GER value = -100 }
+						relation = { who = GCF value = -100 }
+						relation = { who = AUS value = -100 }
+						relation = { who = KUK value = -100 }
+						relation = { who = SGF value = -100 }
+						relation = { who = RUS value = -100 }
+					}
+				}
+			}
+			modifier = {
+				factor = 1.4
+				NOT = {
+					OR = {
+						relation = { who = PRU value = -50 }
+						relation = { who = NGF value = -50 }
+						relation = { who = GER value = -50 }
+						relation = { who = GCF value = -50 }
+						relation = { who = AUS value = -50 }
+						relation = { who = KUK value = -50 }
+						relation = { who = SGF value = -50 }
+						relation = { who = RUS value = -50 }
+					}
+				}
+			}
+			modifier = {
+				factor = 1.2
+				NOT = {
+					OR = {
+						relation = { who = PRU value = 0 }
+						relation = { who = NGF value = 0 }
+						relation = { who = GER value = 0 }
+						relation = { who = GCF value = 0 }
+						relation = { who = AUS value = 0 }
+						relation = { who = KUK value = 0 }
+						relation = { who = SGF value = 0 }
+						relation = { who = RUS value = 0 }
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					has_country_modifier = neutrality
+					has_country_flag = polish_chimpout_voted_neutral
+				}
+			}
+		}
+	}
+
+	option = {
+		name = "EVT666666017OPTA"
+		prestige = -10
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 10
+				OR = {
+					has_country_modifier = neutrality
+					has_country_flag = polish_chimpout_voted_neutral
+				}
+			}
+		}
+	}
+}
+
+
+#############################################################################
+#																			#
+#   					Congress of Paris: Resolution						#
+#																			#
+#############################################################################
+
+country_event = {
+	
+	id = 666666018
+
+	title = "EVTNAME666666018" # The Congress (GPs Supported)
+	desc = "EVTDESC666666018"
+	news = yes
+	news_title = "EVTNAME666666018_NEWS_TITLE"
+	news_desc_long = "EVTDESC666666018_NEWS_LONG"
+	news_desc_medium = "EVTDESC666666018_NEWS_MEDIUM"
+	news_desc_short = "EVTDESC666666018_NEWS_SHORT"	
+	picture = "berlin_congress_htm"
+	major = yes
+	
+	trigger = {
+		PNC = {
+			exists = yes
+			war = no
+			check_variable = {
+				which = paris_congress_support_GPs
+				value = 1
+			}
+		}
+		NOT = { has_global_flag = paris_congress_held }
+		has_country_flag = hosting_paris_congress
+		has_country_flag = attending_paris_congress
+	}
+	
+	mean_time_to_happen = {
+		months = 6
+		modifier = {
+			factor = 0.5
+			PNC = {
+				check_variable = {
+					which = paris_congress_support_GPs
+					value = 2
+				}
+			}
+		}
+		modifier = {
+			factor = 0.5
+			PNC = {
+				check_variable = {
+					which = paris_congress_support_GPs
+					value = 3
+				}
+			}
+		}
+		modifier = {
+			factor = 0.5
+			PNC = {
+				check_variable = {
+					which = paris_congress_support_GPs
+					value = 4
+				}
+			}
+		}
+		modifier = {
+			factor = 0.5
+			PNC = {
+				check_variable = {
+					which = paris_congress_support_GPs
+					value = 5
+				}
+			}
+		}
+	}
+
+	option = {
+		name = "EVT666666018OPTA"
+		set_global_flag = paris_congress_held
+		prestige = 20
+		any_country = {
+			limit = {
+				has_country_flag = for_congress_paris
+			}
+			country_event = 666666020
+		}
+	}
+
+}
+
+country_event = {
+	
+	id = 666666019
+
+	title = "EVTNAME666666019" # The Congress (Poland Supported)
+	desc = "EVTDESC666666019"
+	news = yes
+	news_title = "EVTNAME666666018_NEWS_TITLE"
+	news_desc_long = "EVTDESC666666019_NEWS_LONG"
+	news_desc_medium = "EVTDESC666666019_NEWS_MEDIUM"
+	news_desc_short = "EVTDESC666666019_NEWS_SHORT"	
+	picture = "berlin_congress_htm"
+	major = yes
+	
+	trigger = {
+		PNC = {
+			exists = yes
+			war = no
+			check_variable = {
+				which = paris_congress_support_poland
+				value = 1
+			}
+		}
+		NOT = { has_global_flag = paris_congress_held }
+		has_country_flag = hosting_paris_congress
+		has_country_flag = attending_paris_congress		
+	}
+	
+	mean_time_to_happen = {
+		months = 6
+		modifier = {
+			factor = 0.5
+			PNC = {
+				check_variable = {
+					which = paris_congress_support_poland
+					value = 2
+				}
+			}
+		}
+		modifier = {
+			factor = 0.5
+			PNC = {
+				check_variable = {
+					which = paris_congress_support_poland
+					value = 3
+				}
+			}
+		}
+		modifier = {
+			factor = 0.5
+			PNC = {
+				check_variable = {
+					which = paris_congress_support_poland
+					value = 4
+				}
+			}
+		}
+		modifier = {
+			factor = 0.5
+			PNC = {
+				check_variable = {
+					which = paris_congress_support_poland
+					value = 5
+				}
+			}
+		}
+	}
+
+	option = {
+		name = "EVT666666018OPTA"
+		set_global_flag = paris_congress_held
+		prestige = -20
+		any_country = {
+			limit = {
+				has_country_flag = for_congress_paris
+			}
+			country_event = 666666021
+		}
+	}
+}
+
+country_event = {
+
+	id = 666666020
+
+	title = "EVTNAME666666020" # Demands of the Congress (GPs Supported)
+	desc = "EVTDESC666666020"
+	picture = "berlin_congress_htm"
+
+	is_triggered_only = yes
+
+	option = {
+		name = "EVT666666020OPTA"
+		prestige_factor = 0.1
+		set_global_flag = GP_paris_supported
+		any_owned = {
+			limit = {
+				OR = {
+					is_core = PZN
+					is_core = CPL
+					is_core = KRA
+					is_core = PML
+					region = AUS_702 #Galicia-Lodomeria
+					province_id = 719 #Bialystok
+				}
+				NOT = { province_id = 690 } #Danzig
+			}
+			remove_core = PRU
+			remove_core = NGF
+			remove_core = GER
+			remove_core = GCF
+			remove_core = AUS
+			remove_core = KUK
+			remove_core = SGF
+			remove_core = RUS
+			remove_core = PZN
+			remove_core = CPL
+			remove_core = KRA
+			remove_core = GLM
+			add_core = PNC
+			secede_province = PNC
+		}
+		soldiers = {
+			limit = { is_primary_culture = yes }
+			ideology = {
+				value = reactionary
+				factor = 0.20
+			}
+			militancy = 3
+		}
+		officers = {
+			limit = { is_primary_culture = yes }
+			ideology = {
+				value = reactionary
+				factor = 0.40
+			}
+			militancy = 3
+		}
+		relation = {
+			who = PNC
+			value = -100
+		}
+		diplomatic_influence = {
+			who = PNC
+			value = -200
+		}
+		PNC = {
+			remove_country_modifier = unrecognized_country
+			add_country_modifier = {
+				name = nationalist_poland
+				duration = -1
+			}
+			any_owned = {
+				limit = {
+					OR = {
+						is_core = PZN
+						is_core = CPL
+						is_core = KRA
+						is_core = PML
+						is_core = GLM
+						province_id = 719 #Bialystok
+						province_id = 693 #Elbing
+						province_id = 3649 #Chelm
+					}
+				}
+				remove_core = PRU
+				remove_core = NGF
+				remove_core = GER
+				remove_core = GCF
+				remove_core = AUS
+				remove_core = KUK
+				remove_core = SGF
+				remove_core = RUS
+				remove_core = PZN
+				remove_core = CPL
+				remove_core = KRA
+				remove_core = GLM
+				add_core = PNC
+			}
+			#change_tag = POL
+		}
+
+		# Send acknowledgment to attending countries
+		any_greater_power = {
+			limit = { has_country_flag = attending_paris_congress }
+			country_event = 666666022
+		}
+		ai_chance = {
+			factor = 90
+		}
+	}
+
+	option = {
+		name = "EVT666666020OPTB"
+		prestige_factor = -0.2
+		# Poles Upset
+		any_pop = {
+			limit = {
+				has_pop_culture = polish
+			}
+			militancy = 6
+			consciousness = 4
+		}
+		any_owned = {
+			limit = {
+				culture = polish
+			}
+			add_province_modifier = {
+				name = nationalist_agitation
+				duration = 1825
+			}
+		}
+
+		relation = {
+			who = PNC
+			value = -150
+		}
+		diplomatic_influence = {
+			who = PNC
+			value = -300
+		}
+		# Military Pleased
+		soldiers = {
+			limit = { is_primary_culture = yes }
+			consciousness = -3
+			militancy = -3
+		}
+		officers = {
+			limit = { is_primary_culture = yes }
+			consciousness = -3
+			militancy = -3
+		}
+		# Send refusal to attending countries
+		any_greater_power = {
+			limit = { has_country_flag = attending_paris_congress }
+			country_event = 666666024
+		}
+		
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+
+country_event = {
+
+	id = 666666021
+
+	title = "EVTNAME666666021" # Demands of the Congress (Poland Supported)
+	desc = "EVTDESC666666021"
+	picture = "berlin_congress_htm"
+
+	is_triggered_only = yes
+
+	option = {
+		name = "EVT666666020OPTA"
+		set_global_flag = poland_paris_supported
+		prestige_factor = 0.1
+		any_owned = {
+			limit = {
+				OR = {
+					is_core = PZN
+					is_core = CPL
+					is_core = KRA
+					is_core = PML
+					is_core = GLM
+					province_id = 719 #Bialystok
+					province_id = 693 #Elbing
+					province_id = 3649 #Chelm
+				}
+			}
+			remove_core = PRU
+			remove_core = NGF
+			remove_core = GER
+			remove_core = GCF
+			remove_core = AUS
+			remove_core = KUK
+			remove_core = SGF
+			remove_core = RUS
+			remove_core = PZN
+			remove_core = CPL
+			remove_core = KRA
+			remove_core = GLM
+			add_core = PNC
+			secede_province = PNC
+		}
+		soldiers = {
+			limit = { is_primary_culture = yes }
+			ideology = {
+				value = reactionary
+				factor = 0.20
+			}
+			militancy = 3
+		}
+		officers = {
+			limit = { is_primary_culture = yes }
+			ideology = {
+				value = reactionary
+				factor = 0.40
+			}
+			militancy = 3
+		}
+		relation = {
+			who = PNC
+			value = -100
+		}
+		diplomatic_influence = {
+			who = PNC
+			value = -200
+		}
+		PNC = {
+			remove_country_modifier = unrecognized_country
+			add_country_modifier = {
+				name = nationalist_poland
+				duration = -1
+			}
+			any_owned = {
+				limit = {
+					OR = {
+						is_core = PZN
+						is_core = CPL
+						is_core = KRA
+						is_core = PML
+						is_core = GLM
+						province_id = 719 #Bialystok
+						province_id = 693 #Elbing
+						province_id = 3649 #Chelm
+					}
+				}
+				remove_core = PRU
+				remove_core = NGF
+				remove_core = GER
+				remove_core = GCF
+				remove_core = AUS
+				remove_core = KUK
+				remove_core = SGF
+				remove_core = RUS
+				remove_core = PZN
+				remove_core = CPL
+				remove_core = KRA
+				remove_core = GLM
+				add_core = PNC
+			}
+			#change_tag = POL
+		}
+
+		# Send acknowledgment to attending countries
+		any_greater_power = {
+			limit = { has_country_flag = attending_paris_congress }
+			country_event = 666666022
+		}
+		
+		ai_chance = {
+			factor = 70
+		}
+	}
+
+	option = {
+		name = "EVT666666020OPTB"
+		prestige = -20
+		# Poles Upset
+		any_pop = {
+			limit = {
+				has_pop_culture = polish
+			}
+			militancy = 6
+			consciousness = 4
+		}
+		any_owned = {
+			limit = {
+				culture = polish
+			}
+			add_province_modifier = {
+				name = nationalist_agitation
+				duration = 1825
+			}
+		}
+
+		relation = {
+			who = PNC
+			value = -150
+		}
+		diplomatic_influence = {
+			who = PNC
+			value = -300
+		}
+		# Military Pleased
+		soldiers = {
+			limit = { is_primary_culture = yes }
+			consciousness = -3
+			militancy = -3
+		}
+		officers = {
+			limit = { is_primary_culture = yes }
+			consciousness = -3
+			militancy = -3
+		}
+		# Send refusal to attending countries
+		any_greater_power = {
+			limit = { has_country_flag = attending_paris_congress }
+			country_event = 666666024
+		}
+		
+		ai_chance = {
+			factor = 30
+		}
+	}
+}
+
+country_event = {
+
+	id = 666666022
+
+	title = "EVTNAME666666022" # The GPs Agrees (GPs Supported)
+	desc = "EVTDESC666666022"
+	picture = "berlin_congress_htm"
+
+	is_triggered_only = yes
+
+	option = {
+		name = "EVT666666022OPTA"
+		
+		#Hosting country gains prestige, loses relations with GPs and gains relations with polans
+		random_owned = {
+			limit = {
+				owner = { has_country_flag = hosting_paris_congress }
+			}
+			owner = {
+				prestige_factor = 0.2
+				relation = {
+					who = PRU
+					value = -50
+				}
+				relation = {
+					who = NGF
+					value = -50
+				}
+				relation = {
+					who = GER
+					value = -50
+				}
+				relation = {
+					who = GCF
+					value = -50
+				}
+				relation = {
+					who = AUS
+					value = -50
+				}
+				relation = {
+					who = KUK
+					value = -50
+				}
+				relation = {
+					who = SGF
+					value = -50
+				}
+				relation = {
+					who = RUS
+					value = -50
+				}
+				relation = {
+					who = POL
+					value = 100
+				}
+			}
+		}
+		
+		#Other countries gain some prestige
+		random_owned = {
+			limit = {
+				owner = { NOT = { has_country_flag = hosting_paris_congress } }
+			}
+			owner = { prestige = 10 }
+		}
+		
+		#Every GPs loses relations & influence with the attendants
+		random_owned = {
+			limit = {
+				owner = {
+					NOT = {
+						has_country_flag = for_congress_paris
+					}
+				}
+			}
+			owner = {
+				leave_alliance = PRU
+				leave_alliance = NGF
+				leave_alliance = GER
+				leave_alliance = GCF
+				leave_alliance = AUS
+				leave_alliance = KUK
+				leave_alliance = SGF
+				leave_alliance = RUS
+				relation = {
+					who = PRU
+					value = -50
+				}
+				relation = {
+					who = NGF
+					value = -50
+				}
+				relation = {
+					who = GER
+					value = -50
+				}
+				relation = {
+					who = GCF
+					value = -50
+				}
+				relation = {
+					who = AUS
+					value = -50
+				}
+				relation = {
+					who = KUK
+					value = -50
+				}
+				relation = {
+					who = SGF
+					value = -50
+				}
+				relation = {
+					who = RUS
+					value = -50
+				}
+				diplomatic_influence = {
+					who = PRU
+					value = -100
+				}
+				diplomatic_influence = {
+					who = NGF
+					value = -100
+				}
+				diplomatic_influence = {
+					who = GER
+					value = -100
+				}
+				diplomatic_influence = {
+					who = GCF
+					value = -100
+				}
+				diplomatic_influence = {
+					who = AUS
+					value = -100
+				}
+				diplomatic_influence = {
+					who = KUK
+					value = -100
+				}
+				diplomatic_influence = {
+					who = SGF
+					value = -100
+				}
+				diplomatic_influence = {
+					who = RUS
+					value = -100
+				}
+			}
+		}
+		
+		clr_global_flag = paris_congress_to_be_held
+		clr_country_flag = for_congress_paris
+		clr_country_flag = hosting_paris_congress
+	}
+
+}
+
+country_event = {
+
+	id = 666666023
+
+	title = "EVTNAME666666023" # The GPs Agrees (Poland Supported)
+	desc = "EVTDESC666666023"
+	picture = "berlin_congress_htm"
+
+	is_triggered_only = yes
+
+	option = {
+		name = "EVT666666022OPTA"
+		
+		#Hosting country gains prestige, loses relations with GPs and gains relations with polans
+		random_owned = {
+			limit = {
+				owner = { has_country_flag = hosting_paris_congress }
+			}
+			owner = {
+				prestige_factor = 0.2
+				relation = {
+					who = PRU
+					value = -50
+				}
+				relation = {
+					who = NGF
+					value = -50
+				}
+				relation = {
+					who = GER
+					value = -50
+				}
+				relation = {
+					who = GCF
+					value = -50
+				}
+				relation = {
+					who = AUS
+					value = -50
+				}
+				relation = {
+					who = KUK
+					value = -50
+				}
+				relation = {
+					who = SGF
+					value = -50
+				}
+				relation = {
+					who = RUS
+					value = -50
+				}
+				relation = {
+					who = POL
+					value = 100
+				}
+			}
+		}
+		
+		#Other countries gain some prestige
+		random_owned = {
+			limit = {
+				owner = { NOT = { has_country_flag = hosting_paris_congress } }
+			}
+			owner = { prestige = 10 }
+		}
+		
+		#Every GPs loses relations & influence with the attendants
+		random_owned = {
+			limit = {
+				owner = {
+					NOT = {
+						has_country_flag = for_congress_paris
+					}
+				}
+			}
+			owner = {
+				leave_alliance = PRU
+				leave_alliance = NGF
+				leave_alliance = GER
+				leave_alliance = GCF
+				leave_alliance = AUS
+				leave_alliance = KUK
+				leave_alliance = SGF
+				leave_alliance = RUS
+				relation = {
+					who = PRU
+					value = -50
+				}
+				relation = {
+					who = NGF
+					value = -50
+				}
+				relation = {
+					who = GER
+					value = -50
+				}
+				relation = {
+					who = GCF
+					value = -50
+				}
+				relation = {
+					who = AUS
+					value = -50
+				}
+				relation = {
+					who = KUK
+					value = -50
+				}
+				relation = {
+					who = SGF
+					value = -50
+				}
+				relation = {
+					who = RUS
+					value = -50
+				}
+				diplomatic_influence = {
+					who = PRU
+					value = -100
+				}
+				diplomatic_influence = {
+					who = NGF
+					value = -100
+				}
+				diplomatic_influence = {
+					who = GER
+					value = -100
+				}
+				diplomatic_influence = {
+					who = GCF
+					value = -100
+				}
+				diplomatic_influence = {
+					who = AUS
+					value = -100
+				}
+				diplomatic_influence = {
+					who = KUK
+					value = -100
+				}
+				diplomatic_influence = {
+					who = SGF
+					value = -100
+				}
+				diplomatic_influence = {
+					who = RUS
+					value = -100
+				}
+			}
+		}
+		
+		clr_global_flag = paris_congress_to_be_held
+		clr_country_flag = for_congress_paris
+		clr_country_flag = hosting_paris_congress
+	}
+}
+
+country_event = {
+
+	id = 666666024
+
+	title = "EVTNAME666666024" # GPs Defies the Congress
+	desc = "EVTDESC666666024"
+	picture = "greatpowers"
+
+	is_triggered_only = yes
+
+	option = {
+		name = "EVT666666024OPTA"
+		set_country_flag = GPs_refused_congress
+		relation = {
+			who = FROM
+			value = -200
+		}
+		diplomatic_influence = {
+			who = FROM
+			value = -200
+		}
+		leave_alliance = FROM
+		casus_belli = {
+			target = FROM
+			type = humiliate
+			months = 60
+		}
+		casus_belli = {
+			target = FROM
+			type = cut_down_to_size
+			months = 60
+		}
+		clr_global_flag = paris_congress_to_be_held
+		clr_country_flag = for_congress_paris
+		clr_country_flag = attending_paris_congress
+		clr_country_flag = hosting_paris_congress
+		ai_chance = { factor = 100 }
+	}
+	
+	option = {
+		name = "EVT666666024OPTB"
+		clr_global_flag = paris_congress_to_be_held
+		clr_country_flag = for_congress_paris
+		clr_country_flag = attending_paris_congress
+		clr_country_flag = hosting_paris_congress
+		prestige_factor = -0.1
+		ai_chance = { factor = 0 }
+	}
+}

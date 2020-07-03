@@ -1,0 +1,414 @@
+political_decisions = {
+	
+	turkish_integration_status_on = {
+	picture = gtfo
+		alert = no
+		potential = {
+			NOT = { has_country_flag = turkish_integration_status_on }
+			NOT = { has_country_flag = turkish_protection_act_enacted }
+			NOT = { has_country_flag = turkish_assimilation_enacted }
+			NOT = { has_country_modifier = turkish_removal_act_policy }
+			OR = {
+				capital_scope = { continent = europe }
+				capital_scope = { continent = asia }
+				capital_scope = { continent = oceania }
+			}
+			OR = {
+				is_culture_group = levantine
+				is_culture_group = south_slavic
+				is_culture_group = pan_romanian
+			}
+			any_owned_province = {
+				is_core = THIS
+				is_colonial = no
+				OR = {
+					continent = europe
+					continent = asia
+					continent = oceania
+				}
+				any_pop = {
+					is_culture_group = turko_semitic
+				}
+			}
+		}
+	
+		allow = {
+			
+		}
+		
+		effect = {
+			set_country_flag = turkish_integration_status_on
+		}
+		
+		ai_will_do = { factor = 1 }
+	}
+
+	turkish_integration_status_off = {
+		picture = gtfo
+		alert = no
+		potential = {
+			has_country_flag = turkish_integration_status_on
+		}
+	
+		allow = {
+			
+		}
+		
+		effect = {
+			clr_country_flag = turkish_integration_status_on
+		}
+		
+		ai_will_do = { factor = 0 }
+	}
+	
+	turkish_protection_act = {
+		potential = {
+			has_country_flag = turkish_integration_status_on
+			NOT = { has_country_flag = turkish_protection_act_enacted }
+		}
+	
+		allow = {
+			war = no
+			NOT = { ruling_party_ideology = reactionary }
+			NOT = { ruling_party_ideology = fascist }
+			NOT = { citizens_rights = primary_culture_only }
+			OR = {
+				all_core = {
+					owned_by = THIS
+					is_colonial = no
+					any_pop = { is_primary_culture = yes }
+				}
+				nationalvalue = nv_equality
+				OR = {
+					citizenship_policy = full_citizenship
+					government = proletarian_dictatorship
+				}
+			}
+			OR = {
+				citizenship_policy = full_citizenship
+				government = proletarian_dictatorship
+			}
+			OR = {
+				invention = sociology
+				AND = {
+					nationalvalue = nv_equality
+					biologism = 1
+				}
+			}
+			money = 10000
+			OR = {
+				government = proletarian_dictatorship
+				upper_house = { ideology = socialist value = 0.3 }
+				upper_house = { ideology = liberal value = 0.3 }
+				AND = {
+					upper_house = { ideology = socialist value = 0.15 }
+					upper_house = { ideology = liberal value = 0.15 }
+				}
+			}
+		}
+		
+		effect = {
+			treasury = -10000
+			badboy = -5
+			set_country_flag = turkish_protection_act_enacted
+			clr_country_flag = turkish_integration_status_on
+			random_owned = {
+				limit = { OR = { continent = asia continent = europe continent = oceania } }
+				owner = {
+					any_pop = { limit = { NOT = { is_culture_group = turko_semitic } }
+						scaled_militancy = { factor = 3 ideology = reactionary }
+						scaled_consciousness = { factor = 3 ideology = conservative }
+					}
+					
+					any_pop = { limit = { is_culture_group = turko_semitic }
+						consciousness = 4
+						militancy = -2
+						dominant_issue = { factor = 0.5 value = full_citizenship }
+					}
+				}
+			}
+			
+			random_owned = {
+				limit = { OR = { continent = europe continent = oceania continent = asia } }
+				owner = {
+					any_pop = { limit = { NOT = { is_culture_group = turko_semitic } }
+						scaled_militancy = { factor = 3 ideology = reactionary }
+						scaled_consciousness = { factor = 3 ideology = conservative }
+					}
+					
+					any_pop = { limit = { is_culture_group = turko_semitic }
+						consciousness = 4
+						militancy = -2
+						dominant_issue = { factor = 0.5 value = full_citizenship }
+					}
+				}
+			}
+				
+			random_owned = {
+				limit = { is_core = THIS any_pop = { has_pop_culture = turkish } NOT = { owner = { accepted_culture = turkish } } }
+				owner = { add_accepted_culture = turkish }
+			}
+			random_owned = {
+				limit = { is_core = THIS any_pop = { has_pop_culture = kurdish } NOT = { owner = { accepted_culture = kurdish } } }
+				owner = { add_accepted_culture = kurdish } 
+			}
+			random_owned = {
+				limit = { is_core = THIS any_pop = { has_pop_culture = azerbaijani } NOT = { owner = { accepted_culture = azerbaijani } } }
+				owner = { add_accepted_culture = azerbaijani } 
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+		
+	turkish_assimilation_act = {
+		potential = {
+			has_country_flag = turkish_integration_status_on
+			NOT = { has_country_flag = turkish_assimilation_enacted }
+		}
+	
+		allow = {
+			war = no
+			NOT = { citizens_rights = all_voting_pops }
+			citizenship_policy = limited_citizenship
+			experimental_psychology = 1
+			money = 100000
+			all_core = {
+				owned_by = THIS
+				is_colonial = no
+				any_pop = { is_primary_culture = yes }
+			}
+			OR = {
+				upper_house = { ideology = reactionary value = 0.4 }
+				upper_house = { ideology = conservative value = 0.51 }
+				AND = {
+					upper_house = { ideology = conservative value = 0.25 }
+					upper_house = { ideology = reactionary value = 0.25 }
+				}
+			}
+			OR = {
+				school_reforms = acceptable_schools
+				school_reforms = good_schools
+			}
+			OR = {
+				AND	= {
+					pop_majority_culture = greek
+					primary_culture = greek
+				}
+				AND	= {
+					pop_majority_culture = armenian
+					primary_culture = armenian
+				}
+				AND	= {
+					pop_majority_culture = georgian
+					primary_culture = georgian
+				}
+				AND	= {
+					pop_majority_culture = assyrian
+					primary_culture = assyrian
+				}
+				AND	= {
+					pop_majority_culture = serb
+					primary_culture = serb
+				}
+				AND	= {
+					pop_majority_culture = croat
+					primary_culture = croat
+				}
+				AND	= {
+					pop_majority_culture = bulgarian
+					primary_culture = bulgarian
+				}
+				AND	= {
+					pop_majority_culture = montenegrin
+					primary_culture = montenegrin
+				}
+				AND	= {
+					pop_majority_culture = slovene
+					primary_culture = slovene
+				}
+				AND	= {
+					pop_majority_culture = romanian
+					primary_culture = romanian
+				}
+			}
+		}
+		
+		effect = {
+			treasury = -100000
+			badboy = 2
+			set_country_flag = turkish_assimilation_enacted
+			clr_country_flag = turkish_integration_status_on
+			add_country_modifier = { name = turkish_assimilation_act_policy duration = 7300 }
+			any_pop = {
+				limit = {
+					OR = {
+						is_culture_group = turko_semitic
+						is_culture_group = turko_semitic
+					}
+				}
+				consciousness = 9
+				militancy = 3
+			}
+		}
+		
+		ai_will_do = { factor = 1 }
+		
+	}
+	
+	turkish_removal_act = {
+		potential = {
+			has_country_flag = turkish_integration_status_on
+			NOT = { has_country_modifier = turkish_removal_act_policy }
+		}
+	
+		allow = {
+			war = no
+			OR = {
+				citizens_rights = primary_culture_only
+				citizens_rights = culture_voting_only
+			}
+			NOT = { government = democracy }
+			#NOT = { government = hms_government }
+			war_policy = jingoism
+			citizenship_policy = residency
+			experimental_psychology = 1
+			money = 50000
+			#average_militancy = 5
+			all_core = {
+				owned_by = THIS
+				is_colonial = no
+				any_pop = { is_primary_culture = yes }
+			}
+			#OR = {
+			#	upper_house = { ideology = reactionary value = 0.51 }
+			#	upper_house = { ideology = fascist value = 0.51 }
+			#}
+			OR = {
+				ruling_party_ideology = reactionary
+				ruling_party_ideology = fascist
+			}
+			OR = {
+				AND	= {
+					pop_majority_culture = greek
+					primary_culture = greek
+				}
+				AND	= {
+					pop_majority_culture = armenian
+					primary_culture = armenian
+				}
+				AND	= {
+					pop_majority_culture = georgian
+					primary_culture = georgian
+				}
+				AND	= {
+					pop_majority_culture = assyrian
+					primary_culture = assyrian
+				}
+				AND	= {
+					pop_majority_culture = serb
+					primary_culture = serb
+				}
+				AND	= {
+					pop_majority_culture = croat
+					primary_culture = croat
+				}
+				AND	= {
+					pop_majority_culture = bulgarian
+					primary_culture = bulgarian
+				}
+				AND	= {
+					pop_majority_culture = montenegrin
+					primary_culture = montenegrin
+				}
+				AND	= {
+					pop_majority_culture = slovene
+					primary_culture = slovene
+				}
+				AND	= {
+					pop_majority_culture = romanian
+					primary_culture = romanian
+				}
+			}
+		}
+		
+		effect = {
+			treasury = -50000
+			badboy = 6
+			add_country_modifier = { name = turkish_removal_act_policy duration = 7300 }
+			clr_country_flag = turkish_integration_status_on
+			any_pop = {
+				limit = {
+					is_culture_group = turko_semitic
+				}
+				consciousness = 9
+				militancy = 9
+			}
+			any_pop = {
+				limit = {
+					is_culture_group = turko_semitic
+				}
+				random_list = {
+					20 = { reduce_pop = 0.3 }
+					20 = { reduce_pop = 0.25 }
+					20 = { reduce_pop = 0.2 }
+					20 = { reduce_pop = 0.15 }
+					20 = { reduce_pop = 0.1 }
+				}
+			}
+		}
+		
+		ai_will_do = { factor = 1 }
+		
+	}
+
+	
+	turkish_assimilation_act_ended = {
+		potential = {
+			ai = yes
+			exists = yes
+			OR = {
+				AND = {
+					has_country_flag = turkish_assimilation_enacted
+					NOT = { has_country_modifier = turkish_assimilation_act_policy }
+				}
+				any_neighbor_country = {
+					ai = no
+					has_country_flag = turkish_assimilation_enacted
+					NOT = { has_country_modifier = turkish_assimilation_act_policy }
+				}
+				any_greater_power = {
+					ai = no
+					has_country_flag = turkish_assimilation_enacted
+					NOT = { has_country_modifier = turkish_assimilation_act_policy }
+				}
+			}
+		}
+	
+		allow = {
+		}
+		
+		effect = {
+			random_owned = {
+				limit = {
+					owner = {
+						has_country_flag = turkish_assimilation_enacted
+						NOT = { has_country_modifier = turkish_assimilation_act_policy }
+					}
+				}
+				owner = { clr_country_flag = turkish_assimilation_enacted }
+			}
+			any_country = {
+				limit = {
+					has_country_flag = turkish_assimilation_enacted
+					NOT = { has_country_modifier = turkish_assimilation_act_policy }
+				}
+				clr_country_flag = turkish_assimilation_enacted
+			}
+		}
+		
+		ai_will_do = { factor = 1 }
+	}
+	
+}

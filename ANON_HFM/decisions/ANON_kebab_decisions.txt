@@ -1,0 +1,2143 @@
+political_decisions = {
+
+	abolish_anizzah = {
+		picture = treaty_of_turkmanchay
+		potential = {
+			OR = {
+				government = absolute_monarchy
+				government = prussian_constitutionalism
+				government = hms_government
+			}
+			tag = TUR
+			exists = ANZ
+			ANZ = {
+				#civilized = no
+				ai = yes
+			}
+			#has_recently_lost_war = no
+			has_country_flag = abolish_anizzah
+		}
+		
+		allow = {
+			ANZ = {
+				OR = {
+					in_sphere = TUR
+					vassal_of = TUR
+				}
+			}
+			owns = 1151
+		}
+		
+		effect = {
+			inherit = ANZ
+			any_owned = {
+				limit = {
+					is_core = ANZ
+				}
+				add_province_modifier = {
+					name = nationalist_agitation
+					duration = 3650
+				}
+			}
+			set_country_flag = abolish_anizzah
+		}
+	}
+
+	abolish_arabistan = {
+		picture = treaty_of_turkmanchay
+		potential = {
+			OR = {
+				government = absolute_monarchy
+				government = prussian_constitutionalism
+				government = hms_government
+			}
+			tag = PER
+			exists = AHW
+			AHW = {
+				civilized = no
+				ai = yes
+			}
+			has_recently_lost_war = no
+			has_country_flag = abolish_arabistan
+		}
+		
+		allow = {
+			AHW = {
+				OR = {
+					in_sphere = PER
+					vassal_of = PER
+				}
+			}
+			OR = {
+				year = 1925
+				post_napoleonic_thought = 1
+				civilization_progress = 0.75
+			}
+		}
+		
+		effect = {
+			inherit = AHW
+			prestige = 15
+			any_owned = {
+				limit = {
+					is_core = AHW
+				}
+				add_province_modifier = {
+					name = nationalist_agitation
+					duration = 3650
+				}
+			}
+			set_country_flag = abolish_arabistan
+		}
+	}
+
+	rename_khuzestan = {
+		picture = gtfo
+		potential = {
+			OR = {
+				AND = {
+					is_culture_group = iranian
+					OR = {
+						AND = {
+							owns = 1132 NOT = { has_global_flag = iranian_rename_mohammerah }
+						}
+						AND = {
+							owns = 3530 NOT = { has_global_flag = iranian_rename_mashur }
+						}
+						AND = {
+							owns = 1131 NOT = { has_global_flag = iranian_rename_ahwaz }
+						}
+						AND = {
+							owns = 1133 NOT = { has_global_flag = iranian_rename_dezful }
+						}
+					}
+				}
+				AND = {
+					OR = {
+						is_culture_group = turko_semitic
+						is_culture_group = arab
+					}
+					OR = {
+						AND = {
+							owns = 1132 NOT = { has_global_flag = turko_semitic_rename_mohammerah }
+						}
+						AND = {
+							owns = 3530 NOT = { has_global_flag = turko_semitic_rename_mashur }
+						}
+						AND = {
+							owns = 1131 NOT = { has_global_flag = turko_semitic_rename_ahwaz }
+						}
+						AND = {
+							owns = 1133 NOT = { has_global_flag = turko_semitic_rename_dezful }
+						}
+					}
+				}
+			}
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			###iranian###
+			random_owned = {
+				limit = {
+					province_id = 1132
+					owner = {
+						is_culture_group = iranian
+					}
+				}
+				1132 = { change_province_name = "Khorramshahr"
+					state_scope = {
+						change_region_name = "Khuzestan"
+					}
+				}
+				owner = { 
+					set_global_flag = iranian_rename_mohammerah
+					clr_global_flag = turko_semitic_rename_mohammerah
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 3530
+					owner = {
+						is_culture_group = iranian
+					}
+				}
+				3530 = { change_province_name = "Bandar Ma'shur" }
+				owner = { 
+					set_global_flag = iranian_rename_mashur
+					clr_global_flag = turko_semitic_rename_mashur
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 1131
+					owner = {
+						is_culture_group = iranian
+					}
+				}
+				1131 = { change_province_name = "Ahvaz" }
+				owner = { 
+					set_global_flag = iranian_rename_ahwaz
+					clr_global_flag = turko_semitic_rename_ahwaz
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 1133
+					owner = {
+						is_culture_group = iranian
+					}
+				}
+				1133 = { change_province_name = "Dizpul" }
+				owner = { 
+					set_global_flag = iranian_rename_dezful
+					clr_global_flag = turko_semitic_rename_dezful
+				}
+			}
+			
+			###turko_semitic###
+			random_owned = {
+				limit = {
+					province_id = 1132
+					owner = {
+						OR = {
+							is_culture_group = turko_semitic
+							is_culture_group = arab
+						}
+					}
+				}
+				1132 = { change_province_name = "Muhammarah"
+					state_scope = {
+						change_region_name = "Arabistan"
+					}
+				}
+				owner = { 
+					set_global_flag = turko_semitic_rename_mohammerah
+					clr_global_flag = iranian_rename_mohammerah
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 3530
+					owner = {
+						OR = {
+							is_culture_group = turko_semitic
+							is_culture_group = arab
+						}
+					}
+				}
+				3530 = { change_province_name = "Mashour" }
+				owner = { 
+					set_global_flag = turko_semitic_rename_mashur
+					clr_global_flag = iranian_rename_mashur
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 1131
+					owner = {
+						OR = {
+							is_culture_group = turko_semitic
+							is_culture_group = arab
+						}
+					}
+				}
+				1131 = { change_province_name = "Ahwaz" }
+				owner = { 
+					set_global_flag = turko_semitic_rename_ahwaz
+					clr_global_flag = iranian_rename_ahwaz
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 1133
+					owner = {
+						OR = {
+							is_culture_group = turko_semitic
+							is_culture_group = arab
+						}
+					}
+				}
+				1133 = { change_province_name = "Dezful" }
+				owner = { 
+					set_global_flag = turko_semitic_rename_dezful
+					clr_global_flag = iranian_rename_dezful
+				}
+			}
+		}
+		ai_will_do = { factor = 1 }
+	}
+
+	claim_rub_al_khali = {
+		potential = {
+			primary_culture = peninsular
+			NOT = { has_country_flag = claim_rub_al_khali }
+			OR = {
+				1161 = { empty = yes }
+				3483 = { empty = yes }
+				3554 = { empty = yes }
+				3553 = { empty = yes }
+				3555 = { empty = yes }
+			}
+		}
+		
+		allow = {
+			OR = {
+				owns = 1157
+				owns = 1160
+				owns = 1151
+				owns = 1178
+				owns = 1167
+				owns = 1166
+			}
+			OR = {
+				1161 = { empty = yes }
+				3483 = { empty = yes }
+				3554 = { empty = yes }
+				3553 = { empty = yes }
+				3555 = { empty = yes }
+			}
+			OR = {
+				post_napoleonic_thought = 1
+				civilization_progress = 0.4
+				YEM = { exists = yes }
+				year = 1870
+			}
+		}
+		
+		effect = {
+			random_owned = {
+				limit = {
+					1161 = { empty = yes }
+					OR = {
+						province_id = 1157
+						province_id = 1160
+						province_id = 1151
+						province_id = 1178
+						province_id = 1167
+						province_id = 1166
+					}
+					owner = { ai = no }
+				}
+				1161 = { secede_province = THIS add_core = THIS }
+			}
+			random_owned = {
+				limit = {
+					3483 = { empty = yes }
+					OR = {
+						province_id = 1157
+						province_id = 1160
+						province_id = 1151
+						province_id = 1178
+						province_id = 1167
+						province_id = 1166
+					}
+					owner = { ai = no }
+				}
+				3483 = { secede_province = THIS add_core = THIS }
+			}
+			random_owned = {
+				limit = {
+					3554 = { empty = yes }
+					OR = {
+						province_id = 1157
+						province_id = 1160
+						province_id = 1151
+						province_id = 1178
+						province_id = 1167
+						province_id = 1166
+					}
+					owner = { ai = no }
+				}
+				3554 = { secede_province = THIS add_core = THIS }
+			}
+			random_owned = {
+				limit = {
+					3553 = { empty = yes }
+					OR = {
+						province_id = 1157
+						province_id = 1160
+						province_id = 1151
+						province_id = 1178
+						province_id = 1167
+						province_id = 1166
+					}
+					owner = { ai = no }
+				}
+				3553 = { secede_province = THIS add_core = THIS }
+			}
+			random_owned = {
+				limit = {
+					3555 = { empty = yes }
+					OR = {
+						province_id = 1157
+						province_id = 1160
+						province_id = 1151
+						province_id = 1178
+						province_id = 1167
+						province_id = 1166
+					}
+					owner = { ai = no }
+				}
+				3555 = { secede_province = THIS add_core = THIS }
+			}
+			random_owned = {
+				limit = {
+					1172 = { empty = yes }
+					OR = {
+						province_id = 1157
+						province_id = 1160
+						province_id = 1151
+						province_id = 1178
+						province_id = 1167
+						province_id = 1166
+					}
+					owner = { ai = no }
+				}
+				1172 = { secede_province = THIS add_core = THIS }
+			}
+			random_owned = {
+				limit = {
+					OR = {
+						1161 = { empty = yes }
+						3483 = { empty = yes }
+					}
+					OR = {
+						province_id = 1157
+						province_id = 1160
+						province_id = 1151
+					}
+					owner = { ai = yes }
+				}
+				1161 = { secede_province = THIS add_core = THIS }
+				3483 = { secede_province = THIS add_core = THIS }
+			}
+			random_owned = {
+				limit = {
+					3555 = { empty = yes }
+					province_id = 1167
+					owner = { ai = yes }
+				}
+				3555 = { secede_province = THIS add_core = THIS }
+			}
+			random_owned = {
+				limit = {
+					OR = {
+						3554 = { empty = yes }
+						1172 = { empty = yes }
+					}
+					province_id = 1166
+					owner = { ai = yes }
+				}
+				3554 = { secede_province = THIS add_core = THIS }
+				1172 = { secede_province = THIS add_core = THIS }
+			}
+			random_owned = {
+				limit = {
+					3553 = { empty = yes }
+					province_id = 1179
+					owner = { ai = yes }
+				}
+				3553 = { secede_province = THIS add_core = THIS }
+			}
+			set_country_flag = claim_rub_al_khali
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = {
+					OR = {
+						tag = NEJ
+						tag = HAL
+						tag = ARA
+						tag = ABU
+						tag = OMA
+						tag = NYE
+						tag = YEM
+					}
+				}
+			}
+		}
+	}
+	
+	expel_albanians_kosovo = {
+		potential = {
+			OR = {
+				primary_culture = serb
+				primary_culture = bulgarian
+				primary_culture = montenegrin
+				primary_culture = greek
+				primary_culture = vlach
+				primary_culture = romanian
+			}
+			OR = {
+				owns = 802
+				owns = 803
+				owns = 3621
+			}
+			NOT = { has_global_flag = expel_albanians_kosovo }
+		}
+		
+		allow = {
+			ALB = {
+				exists = no
+			}
+			is_vassal = no
+			OR = {
+				ruling_party_ideology = reactionary
+				ruling_party_ideology = fascist
+				ruling_party_ideology = anarcho_liberal
+			}
+		}
+		
+		effect = {
+			set_global_flag = expel_albanians_kosovo
+			badboy = 0.5
+			prestige = 2
+			802 = {
+				any_pop = {
+					limit = {
+						has_pop_culture = albanian
+					}
+					move_pop = 850
+				}
+				remove_core = ALB
+			}
+			803 = {
+				any_pop = {
+					limit = {
+						has_pop_culture = albanian
+					}
+					move_pop = 850
+				}
+				remove_core = ALB
+			}
+			3621 = {
+				any_pop = {
+					limit = {
+						has_pop_culture = albanian
+					}
+					move_pop = 850
+				}
+				remove_core = ALB
+			}
+			any_pop = {
+				limit = {
+					has_pop_culture = albanian
+					location = TUR_803 #S. Serbia
+				}
+				move_pop = 850
+			}
+			any_owned = {
+				limit = {
+					is_core = ALB
+				}
+				remove_core = ALB
+			}
+		}
+		
+		ai_will_do = { factor = 1 }
+	}
+	expel_albanians_macedonia = {
+		potential = {
+			OR = {
+				primary_culture = serb
+				primary_culture = bulgarian
+				primary_culture = montenegrin
+				primary_culture = greek
+				primary_culture = vlach
+				primary_culture = romanian
+			}
+			owns = 1780 #Debre - Debar - Tishit
+			NOT = { has_global_flag = expel_albanians_macedonia }
+		}
+		
+		allow = {
+			ALB = {
+				exists = no
+			}
+			is_vassal = no
+			OR = {
+				ruling_party_ideology = reactionary
+				ruling_party_ideology = fascist
+				ruling_party_ideology = anarcho_liberal
+			}
+		}
+		
+		effect = {
+			set_global_flag = expel_albanians_macedonia
+			badboy = 0.5
+			prestige = 2
+			1780 = {
+				any_pop = {
+					limit = {
+						has_pop_culture = albanian
+					}
+					move_pop = 849
+				}
+				remove_core = ALB
+			}
+			any_pop = {
+				limit = {
+					has_pop_culture = albanian
+					location = TUR_806 #N. Macedonia
+				}
+				move_pop = 849
+			}
+			any_owned = {
+				limit = {
+					is_core = ALB
+				}
+				remove_core = ALB
+			}
+		}
+		
+		ai_will_do = { factor = 1 }
+	}
+	expel_albanians_greece = {
+		potential = {
+			OR = {
+				primary_culture = serb
+				primary_culture = bulgarian
+				primary_culture = montenegrin
+				primary_culture = greek
+				primary_culture = vlach
+				primary_culture = romanian
+			}
+			owns = 824 #Yanya - Ioannina
+			NOT = { has_global_flag = expel_albanians_greece }
+		}
+		
+		allow = {
+			ALB = {
+				exists = no
+			}
+			is_vassal = no
+			OR = {
+				ruling_party_ideology = reactionary
+				ruling_party_ideology = fascist
+				ruling_party_ideology = anarcho_liberal
+			}
+		}
+		
+		effect = {
+			set_global_flag = expel_albanians_greece
+			badboy = 0.5
+			prestige = 2
+			824 = {
+				any_pop = {
+					limit = {
+						has_pop_culture = albanian
+					}
+					move_pop = 853 #Ergiri - Gjirokaster - Argyrokastron
+				}
+				remove_core = ALB
+			}
+			any_pop = {
+				limit = {
+					has_pop_culture = albanian
+					location = TUR_832 #Thessalia
+				}
+				move_pop = 853
+			}
+			any_owned = {
+				limit = {
+					is_core = ALB
+				}
+				remove_core = ALB
+			}
+		}
+		
+		ai_will_do = { factor = 1 }
+	}
+	expel_albanians_n_epirus = {
+		potential = {
+			OR = {
+				primary_culture = serb
+				primary_culture = bulgarian
+				primary_culture = montenegrin
+				primary_culture = greek
+				primary_culture = vlach
+				primary_culture = romanian
+			}
+			owns = 824 #Yanya - Ioannina
+			owns = 853 #Ergiri - Gjirokaster - Argyrokastron
+			NOT = { has_global_flag = expel_albanians_n_epirus }
+		}
+		
+		allow = {
+			ALB = {
+				exists = no
+			}
+			is_vassal = no
+			OR = {
+				ruling_party_ideology = reactionary
+				ruling_party_ideology = fascist
+				ruling_party_ideology = anarcho_liberal
+			}
+		}
+		
+		effect = {
+			set_global_flag = expel_albanians_n_epirus
+			badboy = 0.5
+			prestige = 2
+			853 = {
+				any_pop = {
+					limit = {
+						has_pop_culture = albanian
+					}
+					move_pop = 849 #Tirana
+				}
+				remove_core = ALB
+			}
+			any_pop = {
+				limit = {
+					has_pop_culture = albanian
+					location = TUR_832 #Thessalia
+				}
+				move_pop = 849
+			}
+			any_owned = {
+				limit = {
+					is_core = ALB
+				}
+				remove_core = ALB
+			}
+		}
+		
+		ai_will_do = { factor = 1 }
+	}
+	expel_albanians_montenegro = {
+		potential = {
+			OR = {
+				primary_culture = serb
+				primary_culture = bulgarian
+				AND = {
+					primary_culture = montenegrin
+					has_global_flag = montenegro_organized
+				}
+				primary_culture = greek
+				primary_culture = vlach
+				primary_culture = romanian
+			}
+			owns = 800 #Podgorica - Ulcinj
+			NOT = { has_global_flag = expel_albanians_montenegro }
+		}
+		
+		allow = {
+			ALB = {
+				exists = no
+			}
+			is_vassal = no
+			OR = {
+				ruling_party_ideology = reactionary
+				ruling_party_ideology = fascist
+				ruling_party_ideology = anarcho_liberal
+			}
+		}
+		
+		effect = {
+			set_global_flag = expel_albanians_montenegro
+			badboy = 0.5
+			prestige = 2
+			800 = {
+				any_pop = {
+					limit = {
+						has_pop_culture = albanian
+					}
+					move_pop = 850 #Shkoder
+				}
+				remove_core = ALB
+			}
+			any_pop = {
+				limit = {
+					has_pop_culture = albanian
+					location = MON_2582 #Montenegro
+				}
+				move_pop = 850
+			}
+			any_owned = {
+				limit = {
+					is_core = ALB
+				}
+				remove_core = ALB
+			}
+		}
+		
+		ai_will_do = { factor = 1 }
+	}
+	expel_bosniaks_montenegro = {
+		potential = {
+			OR = {
+				primary_culture = serb
+				primary_culture = bulgarian
+				AND = {
+					primary_culture = montenegrin
+					has_global_flag = montenegro_organized
+				}
+				primary_culture = greek
+				primary_culture = vlach
+				primary_culture = romanian
+			}
+			owns = 2577 #Pljevlja
+			owns = 2569 #Niskic - Niksic
+			NOT = { has_global_flag = expel_bosniaks_montenegro }
+		}
+		
+		allow = {
+			BOS = {
+				exists = no
+			}
+			is_vassal = no
+			OR = {
+				ruling_party_ideology = reactionary
+				ruling_party_ideology = fascist
+				ruling_party_ideology = anarcho_liberal
+			}
+		}
+		
+		effect = {
+			set_global_flag = expel_bosniaks_montenegro
+			badboy = 0.5
+			prestige = 2
+			2577 = {
+				any_pop = {
+					limit = {
+						has_pop_culture = bosniak
+					}
+					move_pop = 787 #Foca
+				}
+				remove_core = BOS
+			}
+			2569 = {
+				any_pop = {
+					limit = {
+						has_pop_culture = bosniak
+					}
+					move_pop = 787 #Foca
+				}
+				remove_core = BOS
+			}
+			any_pop = {
+				limit = {
+					has_pop_culture = bosniak
+					location = MON_2582 #Montenegro
+				}
+				move_pop = 787
+			}
+			any_owned = {
+				limit = {
+					is_core = ALB
+				}
+				remove_core = ALB
+			}
+		}
+		
+		ai_will_do = { factor = 1 }
+	}
+	expel_bosniaks_serbia = {
+		potential = {
+			OR = {
+				primary_culture = serb
+				primary_culture = bulgarian
+				primary_culture = montenegrin
+				primary_culture = greek
+				primary_culture = vlach
+				primary_culture = romanian
+			}
+			owns = 804 # Novi Pazar
+			NOT = { has_global_flag = expel_bosniaks_serbia }
+		}
+		
+		allow = {
+			BOS = {
+				exists = no
+			}
+			is_vassal = no
+			OR = {
+				ruling_party_ideology = reactionary
+				ruling_party_ideology = fascist
+				ruling_party_ideology = anarcho_liberal
+			}
+		}
+		
+		effect = {
+			set_global_flag = expel_bosniaks_serbia
+			badboy = 0.5
+			prestige = 2
+			804 = {
+				any_pop = {
+					limit = {
+						has_pop_culture = bosniak
+					}
+					move_pop = 787 #Foca
+				}
+				remove_core = BOS
+			}
+			any_pop = {
+				limit = {
+					has_pop_culture = bosniak
+					location = TUR_803 #S. Serbia
+				}
+				move_pop = 787 #Foca
+			}
+			any_owned = {
+				limit = {
+					is_core = BOS
+				}
+				remove_core = BOS
+			}
+		}
+		
+		ai_will_do = { factor = 1 }
+	}
+
+	OMA_khuriya_muriya_grant = {
+		potential = {
+			tag = OMA
+			civilized = no
+			year = 1854
+			owns = 3335
+			NOT = { has_global_flag = khuriya_muriya_treaty_port }
+		}
+		
+		allow = {
+			part_of_sphere = yes
+			owns = 3335
+		}
+		
+		effect = {
+			any_country = {
+				limit = {
+					exists = yes
+					is_sphere_leader_of = OMA
+				}
+				country_event = 999999019
+			}
+		}
+		
+		ai_will_do = { factor = 1 }
+	}
+
+	khuriya_muriya_treaty_port = {
+		picture = socotra_yemen
+		potential = {
+			NOT = { has_global_flag = khuriya_muriya_treaty_port }
+			has_country_modifier = negotiating_treaty
+			3335 = { owner = { has_country_modifier = negotiating_unequal_treaty civilized = no truce_with = THIS } }
+		}
+		
+		allow = {
+		}
+		
+		effect = {
+			remove_country_modifier = negotiating_treaty
+			3335 = { secede_province = THIS change_controller = THIS }
+			set_global_flag = khuriya_muriya_treaty_port
+		}
+		
+		ai_will_do = { factor = 1 }
+	}
+	
+	
+	djerba_treaty_port = {
+		picture = laghouat_algiers
+		potential = {
+			has_country_modifier = negotiating_treaty
+			3346 = { owner = { has_country_modifier = negotiating_unequal_treaty civilized = no truce_with = THIS } }
+		}
+		
+		allow = {
+		}
+		
+		effect = {
+			remove_country_modifier = negotiating_treaty
+			3346 = { secede_province = THIS change_controller = THIS }
+		}
+		
+		ai_will_do = { factor = 1 }
+	}
+
+	the_great_churka_cleansing_bulgaria = {
+		picture = circassia_flag
+		potential = {
+			NOT = { has_global_flag = the_great_churka_cleansing_bulgaria }
+			OR = {
+				has_country_flag = orthodox_country
+				has_country_flag = coptic_country
+				has_country_flag = coptic_country
+				has_country_flag = catholic_country
+			}
+			has_global_flag = crimea_has_happened
+			TUR = {
+				has_country_flag = anticircassian_sentiment
+			}
+			OR = {
+				809 = {
+					OR = {
+						controlled_by = THIS 
+						owned_by = THIS
+					}
+				}
+				814 = {
+					OR = {
+						controlled_by = THIS 
+						owned_by = THIS
+					}
+				}
+			}
+		}
+		allow = {
+			809 = {
+				OR = {
+					AND = {
+						controlled_by = THIS 
+						province_control_days = 60
+					}
+					owned_by = THIS
+				}
+			}
+			814 = {
+				OR = {
+					AND = {
+						controlled_by = THIS 
+						province_control_days = 60
+					}
+					owned_by = THIS
+				}
+			}
+		}
+		effect = {
+			TUR = {
+				any_pop = {
+					limit = {
+						culture = circassian
+						location = {
+							OR = {
+								AND = {
+									is_core = BUL
+									NOT = { region = TUR_806 }
+								}
+								province_id = 858
+							}
+						}
+					}
+					random_list = {
+						25 = { reduce_pop = 0.015 }
+						25 = { reduce_pop = 0.025 }
+						25 = { reduce_pop = 0.035 }
+						25 = { reduce_pop = 0.045 }
+					}
+				}
+				any_pop = {
+					limit = {
+						has_pop_religion = sunni
+						culture = circassian
+						location = {
+							is_core = TUR
+							NOT = { continent = europe }
+						}
+					}
+					random_list = {
+						25 = { reduce_pop = 1.050 }
+						25 = { reduce_pop = 1.075 }
+						25 = { reduce_pop = 1.100 }
+						25 = { reduce_pop = 1.125 }
+					}
+				}
+				any_owned = {
+					limit = {
+						has_province_modifier = anti_circassian_sentiment
+						OR = {
+							AND = {
+								is_core = BUL
+								NOT = { region = TUR_806 }
+							}
+							province_id = 858
+						}
+					}
+					remove_province_modifier = anti_circassian_sentiment
+				}
+				country_event = { id = 999999018 days = 1 } #notification for TUR
+			}
+			
+			any_pop = {
+				limit = {
+					culture = circassian
+					location = {
+						OR = {
+							AND = {
+								is_core = BUL
+								NOT = { region = TUR_806 }
+							}
+							province_id = 858
+						}
+					}
+				}
+				random_list = {
+					25 = { reduce_pop = 0.015 }
+					25 = { reduce_pop = 0.025 }
+					25 = { reduce_pop = 0.035 }
+					25 = { reduce_pop = 0.045 }
+				}
+			}
+			any_owned = {
+				limit = {
+					has_province_modifier = anti_circassian_sentiment
+					OR = {
+						AND = {
+							is_core = BUL
+							NOT = { region = TUR_806 }
+						}
+						province_id = 858
+					}
+				}
+				remove_province_modifier = anti_circassian_sentiment
+			}
+				
+			badboy = 0.25
+			prestige = 1
+			set_global_flag = the_great_churka_cleansing_bulgaria
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	the_great_churka_cleansing_serbia = {
+		picture = circassia_flag
+		potential = {
+			NOT = { has_global_flag = the_great_churka_cleansing_serbia }
+			OR = {
+				has_country_flag = orthodox_country
+				has_country_flag = coptic_country
+				has_country_flag = coptic_country
+				has_country_flag = catholic_country
+			}
+			has_global_flag = crimea_has_happened
+			TUR = {
+				has_country_flag = anticircassian_sentiment
+			}
+			OR = {
+				798 = {
+					OR = {
+						controlled_by = THIS 
+						owned_by = THIS
+					}
+				}
+				803 = {
+					OR = {
+						controlled_by = THIS 
+						owned_by = THIS
+					}
+				}
+			}
+		}
+		allow = {
+			798 = {
+				OR = {
+					AND = {
+						controlled_by = THIS 
+						province_control_days = 60
+					}
+					owned_by = THIS
+				}
+			}
+			803 = {
+				OR = {
+					AND = {
+						controlled_by = THIS 
+						province_control_days = 60
+					}
+					owned_by = THIS
+				}
+			}
+		}
+		effect = {
+			TUR = {
+				any_pop = {
+					limit = {
+						culture = circassian
+						location = {
+							is_core = SER
+							region = TUR_803
+						}
+					}
+					random_list = {
+						25 = { reduce_pop = 0.015 }
+						25 = { reduce_pop = 0.025 }
+						25 = { reduce_pop = 0.035 }
+						25 = { reduce_pop = 0.045 }
+					}
+				}
+				any_pop = {
+					limit = {
+						has_pop_religion = sunni
+						culture = circassian
+						location = {
+							is_core = TUR
+							NOT = { continent = europe }
+						}
+					}
+					random_list = {
+						25 = { reduce_pop = 1.050 }
+						25 = { reduce_pop = 1.075 }
+						25 = { reduce_pop = 1.100 }
+						25 = { reduce_pop = 1.125 }
+					}
+				}
+				any_owned = {
+					limit = {
+						has_province_modifier = anti_circassian_sentiment
+						is_core = SER
+						region = TUR_803
+					}
+					remove_province_modifier = anti_circassian_sentiment
+				}
+				country_event = { id = 999999018 days = 1 } #notification for TUR
+			}
+			
+			any_pop = {
+				limit = {
+					culture = circassian
+					location = {
+						is_core = SER
+						region = TUR_803
+					}
+				}
+				random_list = {
+					25 = { reduce_pop = 0.015 }
+					25 = { reduce_pop = 0.025 }
+					25 = { reduce_pop = 0.035 }
+					25 = { reduce_pop = 0.045 }
+				}
+			}
+			any_owned = {
+				limit = {
+					has_province_modifier = anti_circassian_sentiment
+					is_core = SER
+					region = TUR_803
+				}
+				remove_province_modifier = anti_circassian_sentiment
+			}
+				
+			badboy = 0.25
+			prestige = 1
+			set_global_flag = the_great_churka_cleansing_serbia
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	the_great_churka_cleansing_macedonia = {
+		picture = circassia_flag
+		potential = {
+			NOT = { has_global_flag = the_great_churka_cleansing_macedonia }
+			OR = {
+				has_country_flag = orthodox_country
+				has_country_flag = coptic_country
+				has_country_flag = coptic_country
+				has_country_flag = catholic_country
+			}
+			has_global_flag = crimea_has_happened
+			TUR = {
+				has_country_flag = anticircassian_sentiment
+			}
+			806 = {
+				OR = {
+					controlled_by = THIS 
+					owned_by = THIS
+				}
+			}
+		}
+		allow = {
+			806 = {
+				OR = {
+					AND = {
+						controlled_by = THIS 
+						province_control_days = 60
+					}
+					owned_by = THIS
+				}
+			}
+		}
+		effect = {
+			TUR = {
+				any_pop = {
+					limit = {
+						culture = circassian
+						location = {
+							is_core = MCD
+							region = TUR_806
+						}
+					}
+					random_list = {
+						25 = { reduce_pop = 0.015 }
+						25 = { reduce_pop = 0.025 }
+						25 = { reduce_pop = 0.035 }
+						25 = { reduce_pop = 0.045 }
+					}
+				}
+				any_pop = {
+					limit = {
+						has_pop_religion = sunni
+						culture = circassian
+						location = {
+							is_core = TUR
+							NOT = { continent = europe }
+						}
+					}
+					random_list = {
+						25 = { reduce_pop = 1.050 }
+						25 = { reduce_pop = 1.075 }
+						25 = { reduce_pop = 1.100 }
+						25 = { reduce_pop = 1.125 }
+					}
+				}
+				any_owned = {
+					limit = {
+						has_province_modifier = anti_circassian_sentiment
+						is_core = MCD
+						region = TUR_806
+					}
+					remove_province_modifier = anti_circassian_sentiment
+				}
+				country_event = { id = 999999018 days = 1 } #notification for TUR
+			}
+			
+			any_pop = {
+				limit = {
+					culture = circassian
+					location = {
+						is_core = MCD
+						region = TUR_806
+					}
+				}
+				random_list = {
+					25 = { reduce_pop = 0.015 }
+					25 = { reduce_pop = 0.025 }
+					25 = { reduce_pop = 0.035 }
+					25 = { reduce_pop = 0.045 }
+				}
+			}
+			any_owned = {
+				limit = {
+					has_province_modifier = anti_circassian_sentiment
+					is_core = MCD
+					region = TUR_806
+				}
+				remove_province_modifier = anti_circassian_sentiment
+			}
+			
+			badboy = 0.25
+			prestige = 1
+			set_global_flag = the_great_churka_cleansing_macedonia
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	the_great_churka_cleansing_epirus = {
+		picture = circassia_flag
+		potential = {
+			NOT = { has_global_flag = the_great_churka_cleansing_epirus }
+			OR = {
+				has_country_flag = orthodox_country
+				has_country_flag = coptic_country
+				has_country_flag = coptic_country
+				has_country_flag = catholic_country
+			}
+			has_global_flag = crimea_has_happened
+			TUR = {
+				has_country_flag = anticircassian_sentiment
+			}
+			OR = {
+				824 = {
+					OR = {
+						controlled_by = THIS 
+						owned_by = THIS
+					}
+				}
+				825 = {
+					OR = {
+						controlled_by = THIS 
+						owned_by = THIS
+					}
+				}
+			}
+		}
+		allow = {
+			824 = {
+				OR = {
+					AND = {
+						controlled_by = THIS 
+						province_control_days = 60
+					}
+					owned_by = THIS
+				}
+			}
+			825 = {
+				OR = {
+					AND = {
+						controlled_by = THIS 
+						province_control_days = 60
+					}
+					owned_by = THIS
+				}
+			}
+		}
+		effect = {
+			TUR = {
+				any_pop = {
+					limit = {
+						culture = circassian
+						location = {
+							is_core = GRE
+							OR = {
+								region = TUR_805
+								region = TUR_832
+								region = TUR_853
+							}
+							NOT = { province_id = 858 }
+						}
+					}
+					random_list = {
+						25 = { reduce_pop = 0.015 }
+						25 = { reduce_pop = 0.025 }
+						25 = { reduce_pop = 0.035 }
+						25 = { reduce_pop = 0.045 }
+					}
+				}
+				any_pop = {
+					limit = {
+						has_pop_religion = sunni
+						culture = circassian
+						location = {
+							is_core = TUR
+							NOT = { continent = europe }
+						}
+					}
+					random_list = {
+						25 = { reduce_pop = 1.050 }
+						25 = { reduce_pop = 1.075 }
+						25 = { reduce_pop = 1.100 }
+						25 = { reduce_pop = 1.125 }
+					}
+				}
+				any_owned = {
+					limit = {
+						has_province_modifier = anti_circassian_sentiment
+						is_core = GRE
+						OR = {
+							region = TUR_805
+							region = TUR_832
+							region = TUR_853
+						}
+						NOT = { province_id = 858 }
+					}
+					remove_province_modifier = anti_circassian_sentiment
+				}
+				country_event = { id = 999999018 days = 1 } #notification for TUR
+			}
+			
+			any_pop = {
+				limit = {
+					culture = circassian
+					location = {
+						is_core = GRE
+						OR = {
+							region = TUR_805
+							region = TUR_832
+							region = TUR_853
+						}
+						NOT = { province_id = 858 }
+					}
+				}
+				random_list = {
+					25 = { reduce_pop = 0.015 }
+					25 = { reduce_pop = 0.025 }
+					25 = { reduce_pop = 0.035 }
+					25 = { reduce_pop = 0.045 }
+				}
+			}
+			any_owned = {
+				limit = {
+					has_province_modifier = anti_circassian_sentiment
+					is_core = GRE
+					OR = {
+						region = TUR_805
+						region = TUR_832
+						region = TUR_853
+					}
+					NOT = { province_id = 858 }
+				}
+				remove_province_modifier = anti_circassian_sentiment
+			}
+				
+			badboy = 0.25
+			prestige = 1
+			set_global_flag = the_great_churka_cleansing_epirus
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	the_great_churka_cleansing_cyprus = {
+		picture = circassia_flag
+		potential = {
+			NOT = { has_global_flag = the_great_churka_cleansing_cyprus }
+			OR = {
+				has_country_flag = orthodox_country
+				has_country_flag = coptic_country
+				has_country_flag = coptic_country
+				has_country_flag = catholic_country
+			}
+			has_global_flag = crimea_has_happened
+			TUR = {
+				has_country_flag = anticircassian_sentiment
+			}
+			855 = {
+				OR = {
+					controlled_by = THIS 
+					owned_by = THIS
+				}
+			}
+		}
+		allow = {
+			855 = {
+				OR = {
+					AND = {
+						controlled_by = THIS 
+						province_control_days = 60
+					}
+					owned_by = THIS
+				}
+			}
+		}
+		effect = {
+			TUR = {
+				any_pop = {
+					limit = {
+						culture = circassian
+						location = {
+							is_core = CYP
+							region = TUR_855
+						}
+					}
+					random_list = {
+						25 = { reduce_pop = 0.015 }
+						25 = { reduce_pop = 0.025 }
+						25 = { reduce_pop = 0.035 }
+						25 = { reduce_pop = 0.045 }
+					}
+				}
+				any_pop = {
+					limit = {
+						has_pop_religion = sunni
+						culture = circassian
+						location = {
+							is_core = TUR
+							NOT = { continent = europe }
+						}
+					}
+					random_list = {
+						25 = { reduce_pop = 1.050 }
+						25 = { reduce_pop = 1.075 }
+						25 = { reduce_pop = 1.100 }
+						25 = { reduce_pop = 1.125 }
+					}
+				}
+				any_owned = {
+					limit = {
+						has_province_modifier = anti_circassian_sentiment
+						is_core = CYP
+						region = TUR_855
+					}
+					remove_province_modifier = anti_circassian_sentiment
+				}
+				country_event = { id = 999999018 days = 1 } #notification for TUR
+			}
+			
+			any_pop = {
+				limit = {
+					culture = circassian
+					location = {
+						is_core = MCD
+						region = TUR_806
+					}
+				}
+				random_list = {
+					25 = { reduce_pop = 0.015 }
+					25 = { reduce_pop = 0.025 }
+					25 = { reduce_pop = 0.035 }
+					25 = { reduce_pop = 0.045 }
+				}
+			}
+			any_owned = {
+				limit = {
+					has_province_modifier = anti_circassian_sentiment
+					is_core = CYP
+					region = TUR_855
+				}
+				remove_province_modifier = anti_circassian_sentiment
+			}
+			
+			badboy = 0.25
+			prestige = 1
+			set_global_flag = the_great_churka_cleansing_cyprus
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	the_great_churka_cleansing_pontus = {
+		picture = circassia_flag
+		potential = {
+			NOT = { has_global_flag = the_great_churka_cleansing_pontus }
+			OR = {
+				has_country_flag = orthodox_country
+				has_country_flag = coptic_country
+				has_country_flag = coptic_country
+				has_country_flag = catholic_country
+			}
+			has_global_flag = crimea_has_happened
+			TUR = {
+				has_country_flag = anticircassian_sentiment
+			}
+			882 = {
+				OR = {
+					controlled_by = THIS 
+					owned_by = THIS
+				}
+			}
+			883 = {
+				OR = {
+					controlled_by = THIS 
+					owned_by = THIS
+				}
+			}
+		}
+		allow = {
+			882 = {
+				OR = {
+					AND = {
+						controlled_by = THIS 
+						province_control_days = 60
+					}
+					owned_by = THIS
+				}
+			}
+			883 = {
+				OR = {
+					AND = {
+						controlled_by = THIS 
+						province_control_days = 60
+					}
+					owned_by = THIS
+				}
+			}
+		}
+		effect = {
+			TUR = {
+				any_pop = {
+					limit = {
+						culture = circassian
+						location = {
+							is_core = PNT
+							OR = {
+								region = TUR_882
+								region = TUR_880
+							}
+						}
+					}
+					random_list = {
+						25 = { reduce_pop = 0.015 }
+						25 = { reduce_pop = 0.025 }
+						25 = { reduce_pop = 0.035 }
+						25 = { reduce_pop = 0.045 }
+					}
+				}
+				any_pop = {
+					limit = {
+						has_pop_religion = sunni
+						culture = circassian
+						location = {
+							is_core = TUR
+							NOT = { continent = europe }
+						}
+					}
+					random_list = {
+						25 = { reduce_pop = 1.050 }
+						25 = { reduce_pop = 1.075 }
+						25 = { reduce_pop = 1.100 }
+						25 = { reduce_pop = 1.125 }
+					}
+				}
+				any_owned = {
+					limit = {
+						has_province_modifier = anti_circassian_sentiment
+						is_core = PNT
+						OR = {
+							region = TUR_882
+							region = TUR_880
+						}
+					}
+					remove_province_modifier = anti_circassian_sentiment
+				}
+				country_event = { id = 999999018 days = 1 } #notification for TUR
+			}
+			
+			any_pop = {
+				limit = {
+					culture = circassian
+					location = {
+						is_core = PNT
+						OR = {
+							region = TUR_882
+							region = TUR_880
+						}
+					}
+				}
+				random_list = {
+					25 = { reduce_pop = 0.015 }
+					25 = { reduce_pop = 0.025 }
+					25 = { reduce_pop = 0.035 }
+					25 = { reduce_pop = 0.045 }
+				}
+			}
+			any_owned = {
+				limit = {
+					has_province_modifier = anti_circassian_sentiment
+					is_core = PNT
+					OR = {
+						region = TUR_882
+						region = TUR_880
+					}
+				}
+				remove_province_modifier = anti_circassian_sentiment
+			}
+			
+			badboy = 0.25
+			prestige = 1
+			set_global_flag = the_great_churka_cleansing_pontus
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	the_great_churka_cleansing_anatolia = {
+		picture = circassia_flag
+		potential = {
+			NOT = { has_global_flag = the_great_churka_cleansing_anatolia }
+			OR = {
+				has_country_flag = orthodox_country
+				has_country_flag = coptic_country
+				has_country_flag = coptic_country
+				has_country_flag = catholic_country
+			}
+			has_global_flag = crimea_has_happened
+			TUR = {
+				has_country_flag = anticircassian_sentiment
+			}
+			863 = {
+				OR = {
+					controlled_by = THIS 
+					owned_by = THIS
+				}
+			}
+			869 = {
+				OR = {
+					controlled_by = THIS 
+					owned_by = THIS
+				}
+			}
+		}
+		allow = {
+			863 = {
+				OR = {
+					AND = {
+						controlled_by = THIS 
+						province_control_days = 60
+					}
+					owned_by = THIS
+				}
+			}
+			869 = {
+				OR = {
+					AND = {
+						controlled_by = THIS 
+						province_control_days = 60
+					}
+					owned_by = THIS
+				}
+			}
+		}
+		effect = {
+			TUR = {
+				any_pop = {
+					limit = {
+						culture = circassian
+						location = {
+							is_core = ANT
+							OR = {
+								region = TUR_869
+								region = TUR_863
+
+							region = TUR_891 #Bitlis
+							region = TUR_3435 #Harput
+							region = TUR_879 #Sivas
+							}
+						}
+					}
+					random_list = {
+						25 = { reduce_pop = 0.015 }
+						25 = { reduce_pop = 0.025 }
+						25 = { reduce_pop = 0.035 }
+						25 = { reduce_pop = 0.045 }
+					}
+				}
+				any_pop = {
+					limit = {
+						has_pop_religion = sunni
+						culture = circassian
+						location = {
+							is_core = TUR
+							NOT = { continent = europe }
+						}
+					}
+					random_list = {
+						25 = { reduce_pop = 1.050 }
+						25 = { reduce_pop = 1.075 }
+						25 = { reduce_pop = 1.100 }
+						25 = { reduce_pop = 1.125 }
+					}
+				}
+				any_owned = {
+					limit = {
+						has_province_modifier = anti_circassian_sentiment
+						is_core = ANT
+						OR = {
+							region = TUR_869
+							region = TUR_863
+
+							region = TUR_891 #Bitlis
+							region = TUR_3435 #Harput
+							region = TUR_879 #Sivas
+						}
+					}
+					remove_province_modifier = anti_circassian_sentiment
+				}
+				country_event = { id = 999999018 days = 1 } #notification for TUR
+			}
+			
+			any_pop = {
+				limit = {
+					culture = circassian
+					location = {
+						is_core = ANT
+						OR = {
+							region = TUR_869
+							region = TUR_863
+
+							region = TUR_891 #Bitlis
+							region = TUR_3435 #Harput
+							region = TUR_879 #Sivas
+						}
+					}
+				}
+				random_list = {
+					25 = { reduce_pop = 0.015 }
+					25 = { reduce_pop = 0.025 }
+					25 = { reduce_pop = 0.035 }
+					25 = { reduce_pop = 0.045 }
+				}
+			}
+			any_owned = {
+				limit = {
+					has_province_modifier = anti_circassian_sentiment
+					is_core = ANT
+					OR = {
+						region = TUR_869
+						region = TUR_863
+
+							region = TUR_891 #Bitlis
+							region = TUR_3435 #Harput
+							region = TUR_879 #Sivas
+					}
+				}
+				remove_province_modifier = anti_circassian_sentiment
+			}
+			
+			badboy = 0.25
+			prestige = 1
+			set_global_flag = the_great_churka_cleansing_anatolia
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	the_great_churka_cleansing_ikonion = {
+		picture = circassia_flag
+		potential = {
+			NOT = { has_global_flag = the_great_churka_cleansing_ikonion }
+			OR = {
+				has_country_flag = orthodox_country
+				has_country_flag = coptic_country
+				has_country_flag = coptic_country
+				has_country_flag = catholic_country
+			}
+			has_global_flag = crimea_has_happened
+			TUR = {
+				has_country_flag = anticircassian_sentiment
+			}
+			873 = {
+				OR = {
+					controlled_by = THIS 
+					owned_by = THIS
+				}
+			}
+		}
+		allow = {
+			873 = {
+				OR = {
+					AND = {
+						controlled_by = THIS 
+						province_control_days = 60
+					}
+					owned_by = THIS
+				}
+			}
+		}
+		effect = {
+			TUR = {
+				any_pop = {
+					limit = {
+						culture = circassian
+						location = {
+							is_core = IKO
+							OR = {
+								region = TUR_873
+								region = TUR_876
+							}
+						}
+					}
+					random_list = {
+						25 = { reduce_pop = 0.015 }
+						25 = { reduce_pop = 0.025 }
+						25 = { reduce_pop = 0.035 }
+						25 = { reduce_pop = 0.045 }
+					}
+				}
+				any_pop = {
+					limit = {
+						has_pop_religion = sunni
+						culture = circassian
+						location = {
+							is_core = TUR
+							NOT = { continent = europe }
+						}
+					}
+					random_list = {
+						25 = { reduce_pop = 1.050 }
+						25 = { reduce_pop = 1.075 }
+						25 = { reduce_pop = 1.100 }
+						25 = { reduce_pop = 1.125 }
+					}
+				}
+				any_owned = {
+					limit = {
+						has_province_modifier = anti_circassian_sentiment
+						is_core = IKO
+						OR = {
+							region = TUR_873
+							region = TUR_876
+						}
+					}
+					remove_province_modifier = anti_circassian_sentiment
+				}
+				country_event = { id = 999999018 days = 1 } #notification for TUR
+			}
+			
+			any_pop = {
+				limit = {
+					culture = circassian
+					location = {
+						is_core = IKO
+						OR = {
+							region = TUR_873
+							region = TUR_876
+						}
+					}
+				}
+				random_list = {
+					25 = { reduce_pop = 0.015 }
+					25 = { reduce_pop = 0.025 }
+					25 = { reduce_pop = 0.035 }
+					25 = { reduce_pop = 0.045 }
+				}
+			}
+			any_owned = {
+				limit = {
+					has_province_modifier = anti_circassian_sentiment
+					is_core = IKO
+					OR = {
+						region = TUR_873
+						region = TUR_876
+					}
+				}
+				remove_province_modifier = anti_circassian_sentiment
+			}
+			
+			badboy = 0.25
+			prestige = 1
+			set_global_flag = the_great_churka_cleansing_ikonion
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	the_great_churka_cleansing_cilicia = {
+		picture = circassia_flag
+		potential = {
+			NOT = { has_global_flag = the_great_churka_cleansing_cilicia }
+			OR = {
+				has_country_flag = orthodox_country
+				has_country_flag = coptic_country
+				has_country_flag = coptic_country
+				has_country_flag = catholic_country
+			}
+			has_global_flag = crimea_has_happened
+			TUR = {
+				has_country_flag = anticircassian_sentiment
+			}
+			894 = {
+				OR = {
+					controlled_by = THIS 
+					owned_by = THIS
+				}
+			}
+			900 = {
+				OR = {
+					controlled_by = THIS 
+					owned_by = THIS
+				}
+			}
+		}
+		allow = {
+			894 = {
+				OR = {
+					AND = {
+						controlled_by = THIS 
+						province_control_days = 60
+					}
+					owned_by = THIS
+				}
+			}
+			900 = {
+				OR = {
+					AND = {
+						controlled_by = THIS 
+						province_control_days = 60
+					}
+					owned_by = THIS
+				}
+			}
+		}
+		effect = {
+			TUR = {
+				any_pop = {
+					limit = {
+						culture = circassian
+						location = {
+							OR = {
+								is_core = CLC
+								is_core = ACH
+							}
+						}
+					}
+					random_list = {
+						25 = { reduce_pop = 0.015 }
+						25 = { reduce_pop = 0.025 }
+						25 = { reduce_pop = 0.035 }
+						25 = { reduce_pop = 0.045 }
+					}
+				}
+				any_pop = {
+					limit = {
+						has_pop_religion = sunni
+						culture = circassian
+						location = {
+							is_core = TUR
+							NOT = { continent = europe }
+						}
+					}
+					random_list = {
+						25 = { reduce_pop = 1.050 }
+						25 = { reduce_pop = 1.075 }
+						25 = { reduce_pop = 1.100 }
+						25 = { reduce_pop = 1.125 }
+					}
+				}
+				any_owned = {
+					limit = {
+						has_province_modifier = anti_circassian_sentiment
+						OR = {
+							is_core = CLC
+							is_core = ACH
+						}
+					}
+					remove_province_modifier = anti_circassian_sentiment
+				}
+				country_event = { id = 999999018 days = 1 } #notification for TUR
+			}
+			
+			any_pop = {
+				limit = {
+					culture = circassian
+					location = {
+						OR = {
+							is_core = CLC
+							is_core = ACH
+						}
+					}
+				}
+				random_list = {
+					25 = { reduce_pop = 0.015 }
+					25 = { reduce_pop = 0.025 }
+					25 = { reduce_pop = 0.035 }
+					25 = { reduce_pop = 0.045 }
+				}
+			}
+			any_owned = {
+				limit = {
+					has_province_modifier = anti_circassian_sentiment
+					OR = {
+						is_core = CLC
+						is_core = ACH
+					}
+				}
+				remove_province_modifier = anti_circassian_sentiment
+			}
+			
+			badboy = 0.25
+			prestige = 1
+			set_global_flag = the_great_churka_cleansing_cilicia
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+}

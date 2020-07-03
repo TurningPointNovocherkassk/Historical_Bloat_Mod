@@ -1,0 +1,184 @@
+political_decisions = {
+
+	lateran_pacts = {
+		
+		potential = {
+			tag = ITA
+			PAP = {
+				OR = {
+					exists = no
+					owns = 749
+				}
+			}
+			3275 = {
+				is_core = PAP
+			}
+			749 = {
+				owned_by = ITA
+			}
+			NOT = { has_country_flag = released_PAP }
+		}
+		
+		allow = {
+			tag = ITA
+			PAP = {
+				exists = no
+			}
+			3275 = {
+				is_core = PAP
+			}
+			749 = {
+				owned_by = ITA
+			}
+			NOT = { has_country_flag = released_PAP }
+			war = no
+		}
+		
+		effect = {
+			set_country_flag = released_PAP
+			any_owned = {
+				limit = {
+					is_core = PAP
+					NOT = { province_id = 3275 }
+				}
+				remove_core = PAP
+			}
+			release_vassal = PAP
+			ITA = {	country_event = {id=100011 days = 1} }
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	claim_provence_ITALIA = {
+		picture = form_italy
+		potential = {
+			tag = ITA
+			is_greater_power = yes
+			NOT = {	has_country_flag = claimed_provence	}
+			has_global_flag = plombieres_refused
+		}
+		
+		allow = {
+			OR = {
+				war_policy = jingoism
+				war_policy = pro_military
+			}
+			ITA = {
+				exists = yes
+				NOT = { in_sphere = FRA }
+			}
+			NOT = {
+				has_country_modifier = punitive_effects
+				has_country_modifier = no_more_war
+			}
+		}
+		
+		effect = {
+			set_country_flag = claimed_provence
+			badboy = 3
+			FRA_467 = { add_core = ITA }
+		}
+	}
+	
+	reverse_treaty_of_milan = {
+	picture = form_italy
+		potential = {
+			tag = ITA
+			is_greater_power = yes
+			has_country_flag = claimed_provence
+			NOT = { has_country_flag = reverse_treaty_of_milan }
+		}
+		
+		allow = {
+			war = no		
+			owns = 720
+			owns = 744
+			owns = 465
+			owns = 721
+		}
+		
+		effect = {
+			set_country_flag = reverse_treaty_of_milan
+			prestige = 10
+			721 = { remove_core = FRA add_core = ITA }
+			465 = { remove_core = FRA add_core = ITA }
+			466 = { remove_core = FRA add_core = ITA }
+			472 = { remove_core = FRA add_core = ITA }
+		}
+		
+		ai_will_do = { factor = 1 }
+	}
+	
+	
+	italian_renamed_provence = {
+		picture = gtfo
+		potential = {
+		is_culture_group = italian
+		owns = 467
+		NOT = { has_global_flag = italian_renamed_provence }
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			random_owned = {
+				limit = {
+					province_id = 467
+				}
+				467 = { 
+					change_province_name = "Marsiglia"  
+					state_scope = { change_region_name = "Provenza" }
+				}
+				468 = { change_province_name = "Avignone" }
+				469 = { change_province_name = "Digno" }
+				470 = { change_province_name = "Tolone" }
+				471 = { change_province_name = "Foro di Giulio" }
+				owner = { 
+					set_global_flag = italian_renamed_provence
+					clr_global_flag = french_renamed_provence
+				}
+			}
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	french_renamed_provence = {
+		picture = gtfo
+		potential = {
+			primary_culture = french
+			owns = 467
+			has_global_flag = french_renamed_provence
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			random_owned = {
+				limit = {
+					province_id = 467
+				}
+				467 = { 
+					change_province_name = "Marseille"  
+					state_scope = { change_region_name = "Provence" }
+				}
+				468 = { change_province_name = "Avignon" }
+				469 = { change_province_name = "Digne" }
+				470 = { change_province_name = "Toulon" }
+				471 = { change_province_name = "Frejus" }
+				owner = { 
+					set_global_flag = french_renamed_provence
+					clr_global_flag = italian_renamed_provence
+				}
+			}
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+}

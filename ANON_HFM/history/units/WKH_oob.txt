@@ -1,0 +1,22 @@
+army = {
+	name = "Army of the Wakhi Mir"
+	location = 3475
+	regiment = {
+		name = "Wakhi Warriors"
+		type = cavalry
+		home = 3475
+	}
+	#regiment = {
+	#	name = "Kirgiz Raiders"
+	#	type = cavalry
+	#	home = 3475
+	#}
+}
+
+leader = {
+	name = "Mir Amin Shah Wakhi"
+	type = land
+	date = 1825.8.20
+	background = expert_raider
+	personality = resourceful
+}

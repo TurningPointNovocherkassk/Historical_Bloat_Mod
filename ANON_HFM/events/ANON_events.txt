@@ -1,0 +1,4447 @@
+###################################
+#Grant land to soldiers in exchange for their services during the war of independence.
+country_event = {
+	id = 100000
+	title = "EVTNAME100000"
+	desc = "EVTDESC100000"
+	picture = "federal_3"
+	fire_only_once = yes
+	
+	trigger = {
+		OR = {
+			tag = VNZ
+			tag = FVZ
+			tag = ZLA
+			tag = USV
+			tag = B4R
+		}
+		exists = yes
+		NOT = { has_country_flag = encouraged_caudillos }
+		NOT = { has_country_flag = discouraged_caudillos }
+		war = no
+		year = 1837
+	}
+	
+	mean_time_to_happen = {
+		months = 24
+	}
+	
+	option = {
+		name = "EVTOPTA100000"
+		set_country_flag = encouraged_caudillos
+		any_pop = { limit = { pop_type = soldiers OR = { has_pop_culture = north_andean has_pop_culture = llanero } }
+			militancy = -3
+			consciousness = -3
+			reduce_pop = 0.85
+			ideology = {
+				value = conservative
+				factor = 0.4
+			}
+			ideology = {
+				value = reactionary
+				factor = 0.2
+			}
+		}
+		any_pop = { limit = { pop_type = officers OR = { has_pop_culture = north_andean has_pop_culture = llanero } }
+			militancy = -3
+			consciousness = -3
+			reduce_pop = 0.75
+			ideology = {
+				value = conservative
+				factor = 0.4
+			}
+			ideology = {
+				value = reactionary
+				factor = 0.2
+			}
+		}
+		any_pop = { limit = { pop_type = aristocrats OR = { has_pop_culture = north_andean has_pop_culture = llanero } }
+			militancy = -3
+			consciousness = -3
+			reduce_pop = 1.5
+			ideology = {
+				value = conservative
+				factor = 0.4
+			}
+			ideology = {
+				value = reactionary
+				factor = 0.2
+			}
+		}
+		any_pop = { limit = { pop_type = capitalists OR = { has_pop_culture = north_andean has_pop_culture = llanero } }
+			militancy = -3
+			consciousness = -3
+			reduce_pop = 1.5
+			ideology = {
+				value = conservative
+				factor = 0.4
+			}
+			ideology = {
+				value = reactionary
+				factor = 0.2
+			}
+		}
+		any_pop = { limit = { pop_type = bureaucrats OR = { has_pop_culture = north_andean has_pop_culture = llanero } }
+			militancy = -3
+			consciousness = -3
+			reduce_pop = 1.5
+			ideology = {
+				value = conservative
+				factor = 0.4
+			}
+			ideology = {
+				value = reactionary
+				factor = 0.2
+			}
+		}
+		any_pop = { limit = { pop_type = slaves }
+			reduce_pop = 1.25
+			ideology = {
+				value = liberal
+				factor = 0.4
+			}
+			ideology = {
+				value = anarcho_liberal
+				factor = 0.2
+			}
+		}
+		add_country_modifier = {
+			name = caudillo_encouragement
+			duration = 18250
+		}
+		add_country_modifier = {
+			name = caudillo_leaders
+			duration = 3650
+		}
+		ai_chance = {
+			factor = 65
+			modifier = {
+				factor = 0
+				NOT = { money = 10001 }
+			}
+		}
+	}
+	
+	option = {
+		name = "EVTOPTB100000"
+		set_country_flag = discouraged_caudillos
+		any_pop = { limit = { pop_type = soldiers }
+			militancy = 3
+			consciousness = 3
+			ideology = {
+				value = liberal
+				factor = 0.5
+			}
+			ideology = {
+				value = anarcho_liberal
+				factor = 0.25
+			}
+		}
+		any_pop = { limit = { pop_type = officers }
+			militancy = 3
+			consciousness = 3
+			ideology = {
+				value = liberal
+				factor = 0.5
+			}
+			ideology = {
+				value = anarcho_liberal
+				factor = 0.25
+			}
+		}
+		add_country_modifier = {
+			name = cash_4_faggots
+			duration = 18250
+		}
+		treasury = -10000
+		ai_chance = {
+			factor = 35
+			modifier = {
+				factor = 2
+				money = 10001
+			}
+		}
+	}
+	
+	option = {
+		name = "EVTOPTC100000"
+		any_pop = { limit = { pop_type = soldiers }
+			militancy = 2
+			consciousness = 2
+			ideology = {
+				value = liberal
+				factor = 0.2
+			}
+			ideology = {
+				value = anarcho_liberal
+				factor = 0.1
+			}
+		}
+		any_pop = { limit = { pop_type = officers }
+			militancy = 2
+			consciousness = 2
+			ideology = {
+				value = liberal
+				factor = 0.2
+			}
+			ideology = {
+				value = anarcho_liberal
+				factor = 0.1
+			}
+		}
+		country_event = {id=100000 days = 365}
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+#Liberal Sentiments - Set Up
+country_event = {
+	id = 100001
+	title = "EVTNAME100001"
+	desc = "EVTDESC100001"
+	picture = "federal_3"
+	fire_only_once = yes
+	
+	trigger = {
+		OR = {
+			tag = VNZ
+			tag = GCO
+		}
+		OR = {
+			ruling_party_ideology = conservative
+			ruling_party_ideology = reactionary
+		}
+		NOT = { centralization = federalism }
+		year = 1854
+		NOT = { has_global_flag = venezuelan_federal_war_prep }
+		has_global_flag = liberal_revolutions_should_now_fire
+	}
+	
+	mean_time_to_happen = {
+		months = 36
+		modifier = {
+			factor = 0.67
+			has_country_flag = encouraged_caudillos
+		}
+		modifier = {
+			factor = 1.5
+			has_country_flag = abolish_veneslavery
+		}
+	}
+	
+	option = {
+		name = "EVTOPTA100001"
+		set_global_flag = venezuelan_federal_war_prep
+		any_pop = {
+			dominant_issue = {
+				value = federalism 
+				factor = 0.40
+			}
+			militancy = 3
+			consciousness = 3
+		}
+		any_pop = {
+			dominant_issue = {
+				value = no_slavery 
+				factor = 0.40
+			}
+			militancy = 3
+			consciousness = 3
+		}
+		any_pop = {
+			dominant_issue = {
+				value = wealth_weighted_voting 
+				factor = 0.40
+			}
+			militancy = 3
+			consciousness = 3
+		}
+		any_pop = {
+			dominant_issue = {
+				value = free_press 
+				factor = 0.40
+			}
+			militancy = 3
+			consciousness = 3
+		}
+		any_pop = {
+			dominant_issue = {
+				value = colonial_transportation 
+				factor = 0.40
+			}
+			militancy = 3
+			consciousness = 3
+		}
+		any_pop = {
+			dominant_issue = {
+				value = all_voting_pops 
+				factor = 0.40
+			}
+			militancy = 3
+			consciousness = 3
+		}
+		any_owned = {
+			limit = {
+				OR = {
+					province_id = 2272
+					province_id = 2273
+					province_id = 2274
+					province_id = 2265
+					province_id = 2266
+					province_id = 2269
+					province_id = 3283
+					AND = {
+						province_id = 3362
+						owned_by = THIS
+					}
+				}
+			}
+			add_core = FVZ
+			any_pop = {
+				ideology = {
+					value = liberal
+					factor = 0.70
+				}
+				militancy = 3
+				consciousness = 3
+			}
+			any_pop = {
+				ideology = {
+					value = anarcho_liberal
+					factor = 0.30
+				}
+				militancy = 3
+				consciousness = 3
+			}
+		}
+		any_owned = {
+			limit = {
+				OR = {
+					region = VNZ_2234 #Zulia
+					region = VNZ_2271 #Andes
+					region = VNZ_3605 #Perija
+					region = CLM_3297 #Guajira
+					region = CLM_3372 #Santander
+				}
+			}
+			add_core = ZLA
+			any_pop = {
+				ideology = {
+					value = liberal
+					factor = 0.70
+				}
+				militancy = 3
+				consciousness = 3
+			}
+			any_pop = {
+				ideology = {
+					value = anarcho_liberal
+					factor = 0.30
+				}
+				militancy = 3
+				consciousness = 3
+			}
+		}
+	}
+}
+
+
+country_event = {
+	id = 100002
+	title = "EVTNAME100002"
+	desc = "EVTDESC100002"
+	picture = "federal_2"
+	major = yes
+	fire_only_once = yes
+	trigger = {
+		tag = VNZ
+		has_global_flag = venezuelan_federal_war_prep
+		
+		NOT = { centralization = federalism }
+		NOT = { has_global_flag = venezuelan_federal_war_has_happened }
+		NOT = { has_global_flag = venezuelan_federal_war_has_happened2 }
+		NOT = { has_global_flag = venezuelan_federal_war_has_happened3 }
+		NOT = { has_global_flag = venezuelan_federal_war_averted }
+		NOT = {
+			OR = {
+				ruling_party_ideology = liberal
+				ruling_party_ideology = anarcho_liberal
+			}
+		}
+		
+		year = 1858
+		NOT = { year = 1863 }
+	}
+	
+	mean_time_to_happen = {
+		months = 12
+		modifier = {
+			factor = 0.5
+			average_militancy = 3
+		}
+		modifier = {
+			factor = 0.6
+			average_militancy = 2
+		}
+		modifier = {
+			factor = 0.7
+			average_militancy = 1
+		}
+		modifier = {
+			factor = 0.25
+			year = 1862
+		}
+		modifier = {
+			factor = 0.1
+			year = 1863
+		}
+	}
+		
+	option = {
+		name = "EVTOPTA100002"
+		set_global_flag = venezuelan_federal_war_averted
+		political_reform = federalism
+		political_reform = free_press
+		political_reform = bankruptcy
+		political_reform = colonial_transportation
+		political_reform = all_voting_pops
+		political_reform = universal_weighted_voting
+		political_reform = no_slavery
+		nationalvalue = nv_equality
+		ruling_party_ideology = liberal
+		consciousness = -15
+		militancy = -15
+		set_country_flag = become_USV
+		define_general = {
+			name = "Ezequiel Zamora"
+			personality = implacable
+			background = sycophant
+		}
+		VNZ = {
+			all_core = {
+				add_core = USV
+				remove_core = VNZ
+				remove_core = FVZ
+			}
+		}
+		FVZ = {
+			all_core = { remove_core = FVZ }
+		}
+		change_tag = USV
+		capital = 2264
+		prestige = -10
+		ai_chance = {
+			factor = 40
+			modifier = { factor = 100 war = yes }
+			modifier = { factor = 100 money = 0 }
+		}
+	}
+	
+	option = {
+		name = "EVTOPTB100002"
+		set_global_flag = venezuelan_federal_war_has_happened
+		any_owned = {
+			limit = { is_core = FVZ	}
+			secede_province = FVZ
+		}
+		
+		relation = {
+			who = FVZ
+			value = 200
+		}
+		diplomatic_influence = {
+			who = FVZ
+			value = 400
+		}			
+		military_access = FVZ
+		create_alliance = FVZ
+		badboy = -5
+		
+		VNZ = {
+			all_core = { add_core = FVZ }
+		}
+		FVZ = {
+			ruling_party_ideology = liberal
+			political_reform = federalism
+			political_reform = free_press
+			political_reform = bankruptcy
+			political_reform = colonial_transportation
+			political_reform = all_voting_pops
+			political_reform = universal_weighted_voting
+			political_reform = no_slavery
+			nationalvalue = nv_equality
+			capital = 2272
+			leadership = 80
+			treasury = 10000
+			regular_clothes = 300
+			small_arms = 300
+			ammunition = 200
+			canned_food = 200
+			artillery = 100
+			wine = 200
+			liquor = 200
+			political_reform = mandatory_service
+			any_pop = { limit = { has_pop_culture = llanero } militancy = -9 }
+			any_pop = { limit = { has_pop_culture = north_andean } militancy = -9 }
+			any_pop = { limit = { has_pop_culture = afro_caribeno } militancy = -9 }
+			define_general = {
+				name = "Ezequiel Zamora"
+				personality = implacable
+				background = sycophant
+			}
+			random_pop = {
+				limit = {
+					OR = {
+						pop_type = farmers
+						pop_type = labourers
+					}
+					has_pop_culture = llanero
+				}
+				pop_type = soldiers
+			}
+			random_pop = {
+				limit = {
+					OR = {
+						pop_type = farmers
+						pop_type = labourers
+					}
+					has_pop_culture = north_andean
+				}
+				pop_type = soldiers
+			}
+			random_pop = {
+				limit = {
+					OR = {
+						pop_type = farmers
+						pop_type = labourers
+					}
+					has_pop_culture = afro_caribeno
+				}
+				pop_type = soldiers
+			}
+			any_pop = {
+				limit = {
+					culture = llanero
+					type = soldiers
+				}
+				reduce_pop = 1.010
+			}
+			any_pop = {
+				limit = {
+					culture = north_andean
+					type = soldiers
+				}
+				reduce_pop = 1.010
+			}
+			any_pop = {
+				limit = {
+					culture = afro_caribeno
+					type = soldiers
+				}
+				reduce_pop = 1.010
+			}
+		}
+			
+		country_event = {id=100003 days = 200}
+		country_event = {id=100004 days = 400}
+		ai_chance = {
+			factor = 60
+			modifier = { factor = 100 war = no }
+			modifier = { factor = 100 NOT = { money = 0 } }
+		}
+	}
+	
+	option = {
+		name = "EVTOPTC100002"
+		set_global_flag = venezuelan_federal_war_has_happened
+		any_owned = {
+			limit = { is_core = FVZ	}
+			secede_province = FVZ
+		}
+		
+		relation = {
+			who = FVZ
+			value = 200
+		}
+		diplomatic_influence = {
+			who = FVZ
+			value = 400
+		}			
+		military_access = FVZ
+		create_alliance = FVZ
+		badboy = -1
+		
+		VNZ = {
+			all_core = { add_core = FVZ }
+		}
+		FVZ = {
+			ruling_party_ideology = liberal
+			political_reform = federalism
+			political_reform = free_press
+			political_reform = bankruptcy
+			political_reform = colonial_transportation
+			political_reform = all_voting_pops
+			political_reform = universal_weighted_voting
+			political_reform = no_slavery
+			nationalvalue = nv_equality
+			capital = 2272
+			leadership = 80
+			treasury = 10000
+			regular_clothes = 300
+			small_arms = 300
+			ammunition = 200
+			canned_food = 200
+			artillery = 100
+			wine = 200
+			liquor = 200
+			political_reform = mandatory_service
+			any_pop = { limit = { has_pop_culture = llanero } militancy = -9 }
+			any_pop = { limit = { has_pop_culture = north_andean } militancy = -9 }
+			any_pop = { limit = { has_pop_culture = afro_caribeno } militancy = -9 }
+			define_general = {
+				name = "Ezequiel Zamora"
+				personality = implacable
+				background = sycophant
+			}
+			random_pop = {
+				limit = {
+					OR = {
+						pop_type = farmers
+						pop_type = labourers
+					}
+					has_pop_culture = llanero
+				}
+				pop_type = soldiers
+			}
+			random_pop = {
+				limit = {
+					OR = {
+						pop_type = farmers
+						pop_type = labourers
+					}
+					has_pop_culture = north_andean
+				}
+				pop_type = soldiers
+			}
+			random_pop = {
+				limit = {
+					OR = {
+						pop_type = farmers
+						pop_type = labourers
+					}
+					has_pop_culture = afro_caribeno
+				}
+				pop_type = soldiers
+			}
+			any_pop = {
+				limit = {
+					culture = llanero
+					type = soldiers
+				}
+				reduce_pop = 1.010
+			}
+			any_pop = {
+				limit = {
+					culture = north_andean
+					type = soldiers
+				}
+				reduce_pop = 1.010
+			}
+			any_pop = {
+				limit = {
+					culture = afro_caribeno
+					type = soldiers
+				}
+				reduce_pop = 1.010
+			}
+		}
+		
+		country_event = {id=100003 days = 200}
+		country_event = {id=100004 days = 400}
+		change_tag_no_core_switch = FVZ
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+#A House Divided, Spic Version - Set Up
+country_event = {
+	id = 100003
+	title = "EVTNAME100003"
+	desc = "EVTDESC100003"
+	picture = "federal_1"
+	major = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	immediate = {
+		clr_country_flag = venezuelan_federal_war_prep
+		set_global_flag = venezuelan_federal_war_has_happened2
+	}
+		
+	option = {
+		name = "EVTOPTA100003"
+		any_pop = {
+			consciousness = -7
+			militancy = -3
+		}
+		diplomatic_influence = {
+			who = FVZ
+			value = -400
+		}			
+		
+		war = {
+			target = FVZ
+			attacker_goal = { casus_belli = civil_war }
+			defender_goal = { casus_belli = civil_war }
+			call_ally = yes
+		}
+		
+		any_owned = {
+			limit = {
+				is_core = ZLA
+			}
+			secede_province = ZLA
+		}
+		ZLA = {	
+			military_access = FVZ
+			create_alliance = FVZ
+			ruling_party_ideology = liberal
+			political_reform = federalism
+			political_reform = free_press
+			political_reform = no_slavery
+			political_reform = bankruptcy
+			political_reform = colonial_transportation
+			political_reform = all_voting_pops
+			political_reform = universal_weighted_voting
+			nationalvalue = nv_liberty
+			capital = 2270
+			leadership = 80
+			treasury = 10000
+			regular_clothes = 300
+			small_arms = 300
+			ammunition = 200
+			canned_food = 200
+			artillery = 100
+			wine = 200
+			liquor = 200
+			political_reform = mandatory_service
+			any_pop = { limit = { has_pop_culture = guajiro } militancy = -9 }
+			any_pop = { limit = { has_pop_culture = north_andean } militancy = -9 }
+			any_pop = { limit = { has_pop_culture = afro_caribeno } militancy = -9 }
+			define_general = {
+				name = "Jorge Sutherland"
+				personality = audacious
+				background = natural_born_leader
+			}
+			random_pop = {
+				limit = {
+					OR = {
+						pop_type = farmers
+						pop_type = labourers
+					}
+					has_pop_culture = guajiro
+				}
+				pop_type = soldiers
+			}
+			random_pop = {
+				limit = {
+					OR = {
+						pop_type = farmers
+						pop_type = labourers
+					}
+					has_pop_culture = native_american_minor
+				}
+				pop_type = soldiers
+			}
+			random_pop = {
+				limit = {
+					OR = {
+						pop_type = farmers
+						pop_type = labourers
+					}
+					has_pop_culture = north_andean
+				}
+				pop_type = soldiers
+			}
+			random_pop = {
+				limit = {
+					OR = {
+						pop_type = farmers
+						pop_type = labourers
+					}
+					has_pop_culture = afro_caribeno
+				}
+				pop_type = soldiers
+			}
+			any_pop = {
+				limit = {
+					culture = guajiro
+					type = soldiers
+				}
+				reduce_pop = 1.010
+			}
+			any_pop = {
+				limit = {
+					culture = native_american_minor
+					type = soldiers
+				}
+				reduce_pop = 1.010
+			}
+			any_pop = {
+				limit = {
+					culture = north_andean
+					type = soldiers
+				}
+				reduce_pop = 1.010
+			}
+			any_pop = {
+				limit = {
+					culture = afro_caribeno
+					type = soldiers
+				}
+				reduce_pop = 1.010
+			}
+		}
+		relation = {
+			who = ZLA
+			value = 200
+		}
+		diplomatic_influence = {
+			who = ZLA
+			value = 400
+		}
+		
+		military_access = ZLA
+		create_alliance = ZLA
+		badboy = -5
+		ai_chance = {
+			factor = 1
+		}
+	}
+	
+	option = {
+		name = "EVTOPTB100003"
+		any_pop = {
+			consciousness = -7
+			militancy = -3
+		}
+		diplomatic_influence = {
+			who = FVZ
+			value = -400
+		}			
+		release_vassal = FVZ		
+		VNZ = {
+			war = {
+				target = FVZ
+				attacker_goal = { casus_belli = civil_war }
+				defender_goal = { casus_belli = civil_war }
+				call_ally = yes
+			}
+		}
+		any_owned = {
+			limit = {
+				is_core = ZLA
+			}
+			secede_province = ZLA
+		}
+		ZLA = {	
+			relation = {
+				who = FVZ
+				value = 200
+			}
+			diplomatic_influence = {
+				who = FVZ
+				value = 400
+			}			
+			military_access = FVZ
+			create_alliance = FVZ
+			ruling_party_ideology = liberal
+			political_reform = federalism
+			political_reform = free_press
+			political_reform = no_slavery
+			political_reform = bankruptcy
+			political_reform = colonial_transportation
+			political_reform = all_voting_pops
+			political_reform = universal_weighted_voting
+			nationalvalue = nv_liberty
+			capital = 2270
+			leadership = 80
+			treasury = 10000
+			regular_clothes = 300
+			small_arms = 300
+			ammunition = 200
+			canned_food = 200
+			artillery = 100
+			wine = 200
+			liquor = 200
+			political_reform = mandatory_service
+			any_pop = { limit = { has_pop_culture = guajiro } militancy = -9 }
+			any_pop = { limit = { has_pop_culture = north_andean } militancy = -9 }
+			any_pop = { limit = { has_pop_culture = afro_caribeno } militancy = -9 }
+			define_general = {
+				name = "Jorge Sutherland"
+				personality = audacious
+				background = natural_born_leader
+			}
+			random_pop = {
+				limit = {
+					OR = {
+						pop_type = farmers
+						pop_type = labourers
+					}
+					has_pop_culture = guajiro
+				}
+				pop_type = soldiers
+			}
+			random_pop = {
+				limit = {
+					OR = {
+						pop_type = farmers
+						pop_type = labourers
+					}
+					has_pop_culture = north_andean
+				}
+				pop_type = soldiers
+			}
+			random_pop = {
+				limit = {
+					OR = {
+						pop_type = farmers
+						pop_type = labourers
+					}
+					has_pop_culture = afro_caribeno
+				}
+				pop_type = soldiers
+			}
+			random_pop = {
+				limit = {
+					OR = {
+						pop_type = farmers
+						pop_type = labourers
+					}
+					has_pop_culture = native_american_minor
+				}
+				pop_type = soldiers
+			}
+			any_pop = {
+				limit = {
+					culture = guajiro
+					type = soldiers
+				}
+				reduce_pop = 1.010
+			}
+			any_pop = {
+				limit = {
+					culture = north_andean
+					type = soldiers
+				}
+				reduce_pop = 1.010
+			}
+			any_pop = {
+				limit = {
+					culture = afro_caribeno
+					type = soldiers
+				}
+				reduce_pop = 1.010
+			}
+			any_pop = {
+				limit = {
+					culture = native_american_minor
+					type = soldiers
+				}
+				reduce_pop = 1.010
+			}
+		}
+		relation = {
+			who = ZLA
+			value = 200
+		}
+		diplomatic_influence = {
+			who = ZLA
+			value = 400
+		}			
+		military_access = ZLA
+		create_alliance = ZLA
+		badboy = -1
+				
+		change_tag_no_core_switch = ZLA
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+#A House Divided, Spic Version - Set Up2 - For Zulia
+country_event = {
+	id = 100004
+	title = "EVTNAME100004"
+	desc = "EVTDESC100004"
+	picture = "federal_1"
+	major = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	immediate = {
+		set_global_flag = venezuelan_federal_war_has_happened3
+	}
+		
+	option = {
+		name = "EVTOPTA100004"
+		any_pop = {
+			consciousness = -7
+			militancy = -3
+		}
+		diplomatic_influence = {
+			who = ZLA
+			value = -400
+		}			
+
+		war = {
+			target = ZLA
+			attacker_goal = { casus_belli = civil_war }
+			defender_goal = { casus_belli = status_quo }
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+#######################################################
+#GCO - Change capital to where?
+country_event = {
+	id = 100005
+	title = "EVTNAME100005"
+	desc = "EVTDESC100005"
+	picture = "granco_lombia"
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	immediate = {
+		set_country_flag = GCO_capital_selected
+	}
+		
+	option = { # Caracas
+		name = "EVTOPTA100005"
+		capital = 2264
+		add_accepted_culture = central_american
+		add_accepted_culture = llanero
+		political_reform = federalism
+		ai_chance = {
+			factor = 40
+		}
+	}	
+	option = { # Bogota
+		name = "EVTOPTB100005"
+		capital = 2247
+		add_accepted_culture = central_american
+		add_accepted_culture = llanero
+		political_reform = federalism
+		ai_chance = {
+			factor = 55
+		}
+	}	
+	option = { # Quito
+		name = "EVTOPTC100005"
+		capital = 2279
+		add_accepted_culture = central_american
+		add_accepted_culture = llanero
+		political_reform = federalism
+		ai_chance = {
+			factor = 5
+		}
+	}	
+	option = { # Leave as is
+		name = "EVTOPTD100005"
+		add_accepted_culture = central_american
+		add_accepted_culture = llanero
+		political_reform = federalism
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+#GCO - Federal or Unitary republic?
+#country_event = {
+#	id = 100006
+#	title = "EVTNAME100006"
+#	desc = "EVTDESC100006"
+#	picture = "granco_lombia"
+#	is_triggered_only = yes
+#	fire_only_once = yes
+#
+#	immediate = {
+#		set_global_flag = GCO_change_centralization
+#	}
+#		
+#	option = {
+#		name = "EVTOPTA100006"
+#		political_reform = federalism
+#	}	
+#	option = {
+#		name = "EVTOPTB100006"
+#		political_reform = unitary
+#	}	
+#	option = {
+#		name = "EVTOPTC100006"
+#	}
+#}
+
+#Jews in Coro 1
+country_event = {
+	id = 100007
+	title = "EVTNAME100007"
+	desc = "EVTDES100007"
+	fire_only_once = yes
+	major = yes
+	trigger = {
+		primary_culture = north_andean
+		year = 1840
+		owns = 2272
+		2272 = {
+			any_pop = {
+				has_pop_culture = sephardic
+			}
+		}
+		NOT = {
+			year = 1845
+			has_country_flag = jews_of_coro_expelled
+			has_country_flag = jews_of_coro_reparations
+			has_country_flag = jews_of_coro_harassed
+			has_country_flag = jews_of_coro_supported
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 6
+	}
+	
+	option = {
+		name = "EVTOPTA100007"
+		2272 = {
+			any_pop = {
+				limit = {
+					has_pop_culture = sephardic
+				}
+				militancy = 7
+				consciousness = 7
+			}
+			any_pop = {
+				limit = {
+					pop_type = officers
+				}
+				reduce_pop = 1.15
+			}
+			any_pop = {
+				limit = {
+					pop_type = soldiers
+				}
+				reduce_pop = 1.25
+			}
+			add_province_modifier = { name = jews_taxes_in_advance duration = -1 }
+		}
+		set_country_flag = jews_of_coro_harassed
+	}
+	option = {
+		name = "EVTOPTB100007"
+		2272 = {
+			any_pop = {
+				limit = {
+					pop_type = soldiers
+				}
+				reduce_pop = 0.75
+				consciousness = 6
+				militancy = 6
+			}
+			any_pop = {
+				limit = {
+					pop_type = officers
+				}
+				reduce_pop = 0.75
+				consciousness = 6
+				militancy = 6
+			}
+		}
+		set_country_flag = jews_of_coro_supported
+	}	
+}
+
+#Jews in Coro 2 - Jews Harassed by discharged soldiers
+country_event = {
+	id = 100008
+	title = "EVTNAME100008"
+	desc = "EVTDES100008"
+	picture = "jewish_persecution"
+	major = yes
+	fire_only_once = yes
+	
+	trigger = {
+		has_country_flag = jews_of_coro_supported
+		primary_culture = north_andean
+		owns = 2272
+		NOT = {
+			has_country_flag = jews_of_coro_harassed
+			has_country_flag = jews_of_coro_expelled
+			has_country_flag = jews_of_coro_reparations
+		}
+		year = 1858
+		NOT = { year = 1859 }
+	}
+	
+	mean_time_to_happen = {
+		months = 5
+		modifier = {
+			factor = 0.25
+			month = 3
+		}
+		modifier = {
+			factor = 0.1
+			month = 4
+		}
+	}
+	
+	immediate = {
+		2272 = {
+			any_pop = {
+				limit = {
+					has_pop_religion = jewish
+				}
+				move_pop = 2234
+			}
+		}
+		any_owned = {
+			remove_province_modifier = jews_taxes_in_advance
+		}
+		any_country = {
+			limit = {
+				tag = NET
+			}
+			relation = { who = THIS value = -150 }
+		}
+		relation = {
+			who = NET
+			value = -150
+		}
+	}
+		
+	option = {
+		name = "EVTOPTA100008"
+		end_military_access = NET
+		leave_alliance = NET
+		clr_country_flag = jews_of_coro_supported
+		set_country_flag = jews_of_coro_expelled
+		any_country = {
+			limit = {
+				tag = NET
+			}
+			add_core = 3304
+		}
+		treasury = 10000
+		country_event = {id=100009 days = 5}
+
+	}	
+	option = {
+		name = "EVTOPTB100008"
+		set_country_flag = jews_of_coro_reparations
+		relation = {
+			who = NET
+			value = -200
+		}
+		relation = {
+			who = ENG
+			value = 200
+		}
+		treasury = -15000
+		country_event = {id=100010 days = 5}
+	}	
+}
+
+
+#Jews in Coro 3 - (((bad ending)))
+country_event = {
+	id = 100009
+	title = "EVTNAME100009"
+	desc = "EVTDES100009"
+	picture = "jewish_persecution"
+	is_triggered_only = yes
+		
+	option = {
+		name = "EVTOPTA100009"
+		NET = {
+			war = {
+				target = VNZ
+				attacker_goal = {
+					casus_belli = acquire_core_state
+					state_province_id  = 3304
+				}
+				defender_goal = {
+					casus_belli = humiliate
+				}
+				call_ally = yes
+			}
+		}
+	}
+	
+}
+
+#Jews in Coro 4 - Extreme hand rubbing
+country_event = {
+	id = 100010
+	title = "EVTNAME100010"
+	desc = "EVTDES100010"
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTA100010"
+		prestige = -10
+	}
+	
+}
+
+###########################
+#For the Papal states
+country_event = {
+	id = 100011
+	title = "EVTNAME100011"
+	desc = "EVTDES100011"
+	is_triggered_only = yes
+	
+	immediate = {
+		PAP = {
+			government = theocracy
+			vote_franschise = none_voting
+			political_parties = underground_parties
+			leave_alliance = FRA
+			capital = 3275
+		}
+	}
+	
+	option = {
+		name = "EVTOPTA100011"
+		badboy = -5
+	}
+	
+}
+
+#Cerro Bolivar's Iron boom in Venezuela
+province_event = {
+	id = 100012
+	title = "EVTNAME100012"
+	desc = "EVTDESC100012"
+
+	trigger = {
+		year = 1926
+		province_id = 2277		# Angostura
+		#not = { trade_goods = iron }
+		#NOT = { has_province_modifier = switched_production }
+	}
+
+	mean_time_to_happen = {
+		months = 5
+	}
+
+	option = {
+		name = "EVTOPTA100012"
+		2277 = { 
+			#trade_goods = iron
+			add_province_modifier = { name = angostura_iron duration = -1 }
+		}
+	}
+}
+
+#offer truce between RGS and BRZ, some important general dude (originally Bento Goncalvez) is captured
+country_event = {
+	id = 100013
+	title = "EVTNAME100013"
+	desc = "EVTDESC100013"
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = RGS
+		year = 1836
+		NOT = { year = 1840 }
+		BRZ = { war_with = RGS }
+	}
+
+	mean_time_to_happen = {
+		months = 4
+	}
+
+	immediate = {
+		BRZ = {
+			relation = { who = RGS value = -200 }
+			war_exhaustion = 40
+		}
+	}
+	
+	option = {
+		name = "EVTOPTA100013"
+		BRZ = {
+			end_war = RGS
+			prestige = 20
+			any_pop = { militancy = 3 }
+		}
+		prestige = -20
+		ai_chance = {
+			factor = 0.9
+		}
+	}
+	option = {
+		name = "EVTOPTB100013"
+		ai_chance = {
+			factor = 0.1
+		}
+	}
+}
+
+#Juliana republic declares independence
+country_event = {
+	id = 100014
+	title = "EVTNAME100014"
+	desc = "EVTDESC100014"
+
+	trigger = {
+		tag = BRZ
+		year = 1839
+		NOT = { year = 1840 }
+		RGS = {
+			exists = yes
+		}
+		NOT = { has_global_flag = JLA_seceded }
+	}
+
+	mean_time_to_happen = {
+		months = 4
+	}
+
+	immediate = {
+		set_global_flag = JLA_seceded
+	}
+	
+	option = {
+		name = "EVTOPTA100014"
+		any_owned = {
+			limit = {
+				is_core = JLA
+				NOT = { province_id = 3284 }
+			}
+			secede_province = JLA
+		}
+		JLA = {
+			military_access = RGS
+			create_alliance = RGS
+			ruling_party_ideology = liberal
+			capital = 2461
+			leadership = 80
+			treasury = 10000
+			regular_clothes = 300
+			small_arms = 300
+			ammunition = 200
+			canned_food = 200
+			artillery = 100
+			wine = 200
+			liquor = 200
+			political_reform = mandatory_service
+			any_pop = { limit = { has_pop_culture = guarani } militancy = -9 }
+			any_pop = { limit = { has_pop_culture = gaucho } militancy = -9 }
+			any_pop = { limit = { has_pop_culture = brazilian } militancy = -9 }
+			any_pop = { limit = { has_pop_culture = afro_brazilian } militancy = -9 }
+			add_country_modifier = { name = unrecognized_country duration = 3650 }
+			define_general = {
+				name = "David Canabarro"
+				personality = clever
+				background = school_of_firepower
+			}
+			random_pop = {
+				limit = {
+					OR = {
+						pop_type = farmers
+						pop_type = labourers
+					}
+					has_pop_culture = guarani
+				}
+				pop_type = soldiers
+			}
+			random_pop = {
+				limit = {
+					OR = {
+						pop_type = farmers
+						pop_type = labourers
+					}
+					has_pop_culture = gaucho
+				}
+				pop_type = soldiers
+			}
+			random_pop = {
+				limit = {
+					OR = {
+						pop_type = farmers
+						pop_type = labourers
+					}
+					has_pop_culture = brazilian
+				}
+				pop_type = soldiers
+			}
+			random_pop = {
+				limit = {
+					OR = {
+						pop_type = farmers
+						pop_type = labourers
+					}
+					has_pop_culture = afro_brazilian
+				}
+				pop_type = soldiers
+			}
+			any_pop = {
+				limit = {
+					culture = guarani
+					type = soldiers
+				}
+				reduce_pop = 1.15
+			}
+			any_pop = {
+				limit = {
+					culture = gaucho
+					type = soldiers
+				}
+				reduce_pop = 1.15
+			}
+			any_pop = {
+				limit = {
+					culture = brazilian
+					type = soldiers
+				}
+				reduce_pop = 1.15
+			}
+			any_pop = {
+				limit = {
+					culture = afro_brazilian
+					type = soldiers
+				}
+				reduce_pop = 1.15
+			}
+			any_pop = {
+				limit = {
+					culture = afro_brazilian
+					type = soldiers
+				}
+				reduce_pop = 1.010
+			}
+			political_reform = federalism
+			political_reform = free_press
+			political_reform = no_slavery
+			political_reform = bankruptcy
+			political_reform = colonial_transportation
+			political_reform = all_voting_pops
+			political_reform = universal_weighted_voting
+		}
+		RGS = {
+			military_access = JLA
+			create_alliance = JLA
+			country_event = {id=100015 days = 1}
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+	option = {
+		name = "EVTOPTB100014"
+		any_owned = {
+			limit = {
+				is_core = JLA
+				NOT = { province_id = 3284 }
+			}
+			secede_province = JLA
+		}
+		JLA = {	
+			military_access = RGS
+			create_alliance = RGS
+			ruling_party_ideology = liberal
+			capital = 2461
+			leadership = 80
+			treasury = 10000
+			regular_clothes = 300
+			small_arms = 300
+			ammunition = 200
+			canned_food = 200
+			artillery = 100
+			wine = 200
+			liquor = 200
+			political_reform = mandatory_service
+			any_pop = { limit = { has_pop_culture = guarani } militancy = -9 }
+			any_pop = { limit = { has_pop_culture = gaucho } militancy = -9 }
+			any_pop = { limit = { has_pop_culture = brazilian } militancy = -9 }
+			any_pop = { limit = { has_pop_culture = afro_brazilian } militancy = -9 }
+			add_country_modifier = { name = unrecognized_country duration = 3650 }
+			define_general = {
+				name = "David Canabarro"
+				personality = clever
+				background = school_of_firepower
+			}
+			random_pop = {
+				limit = {
+					OR = {
+						pop_type = farmers
+						pop_type = labourers
+					}
+					has_pop_culture = guarani
+				}
+				pop_type = soldiers
+			}
+			random_pop = {
+				limit = {
+					OR = {
+						pop_type = farmers
+						pop_type = labourers
+					}
+					has_pop_culture = gaucho
+				}
+				pop_type = soldiers
+			}
+			random_pop = {
+				limit = {
+					OR = {
+						pop_type = farmers
+						pop_type = labourers
+					}
+					has_pop_culture = brazilian
+				}
+				pop_type = soldiers
+			}
+			random_pop = {
+				limit = {
+					OR = {
+						pop_type = farmers
+						pop_type = labourers
+					}
+					has_pop_culture = afro_brazilian
+				}
+				pop_type = soldiers
+			}
+			any_pop = {
+				limit = {
+					culture = guarani
+					type = soldiers
+				}
+				reduce_pop = 1.15
+			}
+			any_pop = {
+				limit = {
+					culture = gaucho
+					type = soldiers
+				}
+				reduce_pop = 1.15
+			}
+			any_pop = {
+				limit = {
+					culture = brazilian
+					type = soldiers
+				}
+				reduce_pop = 1.15
+			}
+			any_pop = {
+				limit = {
+					culture = afro_brazilian
+					type = soldiers
+				}
+				reduce_pop = 1.15
+			}
+			political_reform = federalism
+			political_reform = free_press
+			political_reform = no_slavery
+			political_reform = bankruptcy
+			political_reform = colonial_transportation
+			political_reform = all_voting_pops
+			political_reform = universal_weighted_voting
+		}
+		RGS = {
+			military_access = JLA
+			create_alliance = JLA
+			country_event = {id=100015 days = 1}
+		}
+		change_tag_no_core_switch = JLA
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+#RGS - Event informing of JLA's secesion
+country_event = {
+	id = 100015
+	title = "EVTNAME100015"
+	desc = "EVTDESC100015"
+	is_triggered_only = yes
+	fire_only_once = yes
+		
+	option = {
+		name = "EVTOPTA100015"
+		military_access = JLA
+		create_alliance = JLA
+		ai_chance = {
+			factor = 1
+		}
+	}	
+	option = {
+		name = "EVTOPTB100015"
+		military_access = JLA
+		create_alliance = JLA
+		change_tag_no_core_switch = JLA
+		ai_chance = {
+			factor = 0
+		}
+	}	
+}
+
+#TCA - Event informing of TCA breakup
+country_event = {
+	id = 100016
+	title = "EVTNAME100016"
+	desc = "EVTDESC100016"
+	is_triggered_only = yes
+	picture = caucasus_range2
+		
+	option = {
+		name = "EVTOPTA100016"
+		prestige = -20
+	}	
+}
+
+#Event to decide which TCA country to play as
+country_event = {
+	id = 100017
+	title = "EVTNAME100017"
+	desc = "EVTDESC100017"
+	is_triggered_only = yes
+	picture = caucasus_range2
+		
+	option = {
+		name = "EVTOPTA100017"
+		any_owned = {
+			limit = {
+				is_core = ME5
+			}
+			secede_province = ME5
+		}
+		change_tag_no_core_switch = ME5
+		relation = { who = RUS value = -200 }
+		RUS = {
+			#GEORGIA#
+			relation = { who = SVA value = -200 }
+			diplomatic_influence = { who = SVA value = -100 }
+			relation = { who = MIG value = -200 }
+			diplomatic_influence = { who = MIG value = -100 }
+			relation = { who = GUR value = -200 }
+			diplomatic_influence = { who = GUR value = -100 }
+			relation = { who = ABK value = -200 }
+			diplomatic_influence = { who = ABK value = -100 }
+			relation = { who = IME value = -200 }
+			diplomatic_influence = { who = IME value = -100 }
+			relation = { who = KKH value = -200 }
+			diplomatic_influence = { who = KKH value = -100 }
+			relation = { who = KRT value = -200 }
+			diplomatic_influence = { who = KRT value = -100 }
+			relation = { who = SMA value = -200 }
+			diplomatic_influence = { who = SMA value = -100 }
+			relation = { who = IME value = -200 }
+			#AZERBAIJAN#
+			diplomatic_influence = { who = AZ1 value = -100 }
+			relation = { who = AZ1 value = -200 }
+			diplomatic_influence = { who = AZ2 value = -100 }
+			relation = { who = AZ2 value = -200 }
+			diplomatic_influence = { who = AZ3 value = -100 }
+			relation = { who = AZ3 value = -200 }
+			diplomatic_influence = { who = AZ4 value = -100 }
+			relation = { who = AZ4 value = -200 }
+			diplomatic_influence = { who = AZ5 value = -100 }
+			relation = { who = AZ5 value = -200 }
+			diplomatic_influence = { who = AZ6 value = -100 }
+			relation = { who = AZ6 value = -200 }
+			diplomatic_influence = { who = AZ7 value = -100 }
+			relation = { who = AZ8 value = -200 }
+			diplomatic_influence = { who = AZ8 value = -100 }
+			relation = { who = AZ9 value = -200 }
+			diplomatic_influence = { who = AZ9 value = -100 }
+			relation = { who = AZZ value = -200 }
+			diplomatic_influence = { who = AZZ value = -100 }
+			#ARMENIA#
+			relation = { who = ME5 value = -200 }
+			diplomatic_influence = { who = ME5 value = -100 }
+		}
+		TCA = { country_event = 100018 } #TCA breaks up
+	}	
+	option = {
+		name = "EVTOPTB100017"
+		any_owned = {
+			limit = {
+				is_core = KRT
+				NOT = {
+					province_id = 3288
+					province_id = 1095
+				}
+			}
+			secede_province = KRT
+		}
+		change_tag_no_core_switch = KRT
+		relation = { who = RUS value = -200 }
+		RUS = {
+			#GEORGIA#
+			relation = { who = SVA value = -200 }
+			diplomatic_influence = { who = SVA value = -100 }
+			relation = { who = MIG value = -200 }
+			diplomatic_influence = { who = MIG value = -100 }
+			relation = { who = GUR value = -200 }
+			diplomatic_influence = { who = GUR value = -100 }
+			relation = { who = ABK value = -200 }
+			diplomatic_influence = { who = ABK value = -100 }
+			relation = { who = IME value = -200 }
+			diplomatic_influence = { who = IME value = -100 }
+			relation = { who = KKH value = -200 }
+			diplomatic_influence = { who = KKH value = -100 }
+			relation = { who = KRT value = -200 }
+			diplomatic_influence = { who = KRT value = -100 }
+			relation = { who = SMA value = -200 }
+			diplomatic_influence = { who = SMA value = -100 }
+			relation = { who = IME value = -200 }
+			#AZERBAIJAN#
+			diplomatic_influence = { who = AZ1 value = -100 }
+			relation = { who = AZ1 value = -200 }
+			diplomatic_influence = { who = AZ2 value = -100 }
+			relation = { who = AZ2 value = -200 }
+			diplomatic_influence = { who = AZ3 value = -100 }
+			relation = { who = AZ3 value = -200 }
+			diplomatic_influence = { who = AZ4 value = -100 }
+			relation = { who = AZ4 value = -200 }
+			diplomatic_influence = { who = AZ5 value = -100 }
+			relation = { who = AZ5 value = -200 }
+			diplomatic_influence = { who = AZ6 value = -100 }
+			relation = { who = AZ6 value = -200 }
+			diplomatic_influence = { who = AZ7 value = -100 }
+			relation = { who = AZ8 value = -200 }
+			diplomatic_influence = { who = AZ8 value = -100 }
+			relation = { who = AZ9 value = -200 }
+			diplomatic_influence = { who = AZ9 value = -100 }
+			relation = { who = AZZ value = -200 }
+			diplomatic_influence = { who = AZZ value = -100 }
+			#ARMENIA#
+			relation = { who = ME5 value = -200 }
+			diplomatic_influence = { who = ME5 value = -100 }
+		}
+		TCA = { country_event = 100018 } #TCA breaks up
+	}
+	option = {
+		name = "EVTOPTC100017"
+		any_owned = {
+			limit = {
+				is_core = ABK
+			}
+			secede_province = ABK
+		}
+		change_tag_no_core_switch = ABK
+		relation = { who = RUS value = -200 }
+		RUS = {
+			#GEORGIA#
+			relation = { who = SVA value = -200 }
+			diplomatic_influence = { who = SVA value = -100 }
+			relation = { who = MIG value = -200 }
+			diplomatic_influence = { who = MIG value = -100 }
+			relation = { who = GUR value = -200 }
+			diplomatic_influence = { who = GUR value = -100 }
+			relation = { who = ABK value = -200 }
+			diplomatic_influence = { who = ABK value = -100 }
+			relation = { who = IME value = -200 }
+			diplomatic_influence = { who = IME value = -100 }
+			relation = { who = KKH value = -200 }
+			diplomatic_influence = { who = KKH value = -100 }
+			relation = { who = KRT value = -200 }
+			diplomatic_influence = { who = KRT value = -100 }
+			relation = { who = SMA value = -200 }
+			diplomatic_influence = { who = SMA value = -100 }
+			relation = { who = IME value = -200 }
+			#AZERBAIJAN#
+			diplomatic_influence = { who = AZ1 value = -100 }
+			relation = { who = AZ1 value = -200 }
+			diplomatic_influence = { who = AZ2 value = -100 }
+			relation = { who = AZ2 value = -200 }
+			diplomatic_influence = { who = AZ3 value = -100 }
+			relation = { who = AZ3 value = -200 }
+			diplomatic_influence = { who = AZ4 value = -100 }
+			relation = { who = AZ4 value = -200 }
+			diplomatic_influence = { who = AZ5 value = -100 }
+			relation = { who = AZ5 value = -200 }
+			diplomatic_influence = { who = AZ6 value = -100 }
+			relation = { who = AZ6 value = -200 }
+			diplomatic_influence = { who = AZ7 value = -100 }
+			relation = { who = AZ8 value = -200 }
+			diplomatic_influence = { who = AZ8 value = -100 }
+			relation = { who = AZ9 value = -200 }
+			diplomatic_influence = { who = AZ9 value = -100 }
+			relation = { who = AZZ value = -200 }
+			diplomatic_influence = { who = AZZ value = -100 }
+			#ARMENIA#
+			relation = { who = ME5 value = -200 }
+			diplomatic_influence = { who = ME5 value = -100 }
+		}
+		TCA = { country_event = 100018 } #TCA breaks up
+	}	
+	option = {
+		name = "EVTOPTD100017"
+		any_owned = {
+			limit = {
+				is_core = AZ5
+			}
+			secede_province = AZ5
+		}
+		change_tag_no_core_switch = AZ5
+		relation = { who = RUS value = -200 }
+		RUS = {
+			#GEORGIA#
+			relation = { who = SVA value = -200 }
+			diplomatic_influence = { who = SVA value = -100 }
+			relation = { who = MIG value = -200 }
+			diplomatic_influence = { who = MIG value = -100 }
+			relation = { who = GUR value = -200 }
+			diplomatic_influence = { who = GUR value = -100 }
+			relation = { who = ABK value = -200 }
+			diplomatic_influence = { who = ABK value = -100 }
+			relation = { who = IME value = -200 }
+			diplomatic_influence = { who = IME value = -100 }
+			relation = { who = KKH value = -200 }
+			diplomatic_influence = { who = KKH value = -100 }
+			relation = { who = KRT value = -200 }
+			diplomatic_influence = { who = KRT value = -100 }
+			relation = { who = SMA value = -200 }
+			diplomatic_influence = { who = SMA value = -100 }
+			relation = { who = IME value = -200 }
+			#AZERBAIJAN#
+			diplomatic_influence = { who = AZ1 value = -100 }
+			relation = { who = AZ1 value = -200 }
+			diplomatic_influence = { who = AZ2 value = -100 }
+			relation = { who = AZ2 value = -200 }
+			diplomatic_influence = { who = AZ3 value = -100 }
+			relation = { who = AZ3 value = -200 }
+			diplomatic_influence = { who = AZ4 value = -100 }
+			relation = { who = AZ4 value = -200 }
+			diplomatic_influence = { who = AZ5 value = -100 }
+			relation = { who = AZ5 value = -200 }
+			diplomatic_influence = { who = AZ6 value = -100 }
+			relation = { who = AZ6 value = -200 }
+			diplomatic_influence = { who = AZ7 value = -100 }
+			relation = { who = AZ8 value = -200 }
+			diplomatic_influence = { who = AZ8 value = -100 }
+			relation = { who = AZ9 value = -200 }
+			diplomatic_influence = { who = AZ9 value = -100 }
+			relation = { who = AZZ value = -200 }
+			diplomatic_influence = { who = AZZ value = -100 }
+			#ARMENIA#
+			relation = { who = ME5 value = -200 }
+			diplomatic_influence = { who = ME5 value = -100 }
+		}
+		TCA = { country_event = 100018 } #TCA breaks up
+	}	
+	option = {
+		name = "EVTOPTE100017"
+		any_owned = {
+			limit = {
+				is_core = IME
+			}
+			secede_province = IME
+		}
+		change_tag_no_core_switch = IME
+		relation = { who = RUS value = -200 }
+		RUS = {
+			#GEORGIA#
+			relation = { who = SVA value = -200 }
+			diplomatic_influence = { who = SVA value = -100 }
+			relation = { who = MIG value = -200 }
+			diplomatic_influence = { who = MIG value = -100 }
+			relation = { who = GUR value = -200 }
+			diplomatic_influence = { who = GUR value = -100 }
+			relation = { who = ABK value = -200 }
+			diplomatic_influence = { who = ABK value = -100 }
+			relation = { who = IME value = -200 }
+			diplomatic_influence = { who = IME value = -100 }
+			relation = { who = KKH value = -200 }
+			diplomatic_influence = { who = KKH value = -100 }
+			relation = { who = KRT value = -200 }
+			diplomatic_influence = { who = KRT value = -100 }
+			relation = { who = SMA value = -200 }
+			diplomatic_influence = { who = SMA value = -100 }
+			relation = { who = IME value = -200 }
+			#AZERBAIJAN#
+			diplomatic_influence = { who = AZ1 value = -100 }
+			relation = { who = AZ1 value = -200 }
+			diplomatic_influence = { who = AZ2 value = -100 }
+			relation = { who = AZ2 value = -200 }
+			diplomatic_influence = { who = AZ3 value = -100 }
+			relation = { who = AZ3 value = -200 }
+			diplomatic_influence = { who = AZ4 value = -100 }
+			relation = { who = AZ4 value = -200 }
+			diplomatic_influence = { who = AZ5 value = -100 }
+			relation = { who = AZ5 value = -200 }
+			diplomatic_influence = { who = AZ6 value = -100 }
+			relation = { who = AZ6 value = -200 }
+			diplomatic_influence = { who = AZ7 value = -100 }
+			relation = { who = AZ8 value = -200 }
+			diplomatic_influence = { who = AZ8 value = -100 }
+			relation = { who = AZ9 value = -200 }
+			diplomatic_influence = { who = AZ9 value = -100 }
+			relation = { who = AZZ value = -200 }
+			diplomatic_influence = { who = AZZ value = -100 }
+			#ARMENIA#
+			relation = { who = ME5 value = -200 }
+			diplomatic_influence = { who = ME5 value = -100 }
+		}
+		TCA = { country_event = 100018 } #TCA breaks up
+	}	
+}
+
+#TCA's actual breakup
+country_event = {
+	id = 100018
+	title = "EVTNAMENIGGERSNIGGERS"
+	desc = "EVTDESCNIGGERSNIGGERS"
+	is_triggered_only = yes
+	picture = caucasus_range2
+		
+	option = {
+		name = "EVTOPT100018"
+		###################################
+		#Georgia
+		###################################
+		any_owned = {
+			limit = {
+				is_core = SVA
+			}
+			secede_province = SVA
+		}
+		any_owned = {
+			limit = {
+				is_core = MIG
+			}
+			secede_province = MIG
+		}
+		any_owned = {
+			limit = {
+				is_core = GUR
+			}
+			secede_province = GUR
+		}
+		any_owned = {
+			limit = {
+				is_core = IME
+			}
+			secede_province = IME
+		}
+		any_owned = {
+			limit = {
+				is_core = KKH
+			}
+			secede_province = KKH
+		}
+		any_owned = {
+			limit = {
+				is_core = KRT
+			}
+			secede_province = KRT
+		}
+		any_owned = {
+			limit = {
+				is_core = SMA
+			}
+			secede_province = SMA
+		}
+		any_owned = {
+			limit = {
+				is_core = ABK
+			}
+			secede_province = ABK
+		}
+		###################################
+		#Armenia
+		###################################
+		any_owned = {
+			limit = {
+				is_core = ME5
+			}
+			secede_province = ME5
+		}
+		###################################
+		#Azerbaijan
+		###################################
+		any_owned = {
+			limit = {
+				is_core = AZZ
+			}
+			secede_province = AZZ
+		}
+		any_owned = {
+			limit = {
+				is_core = AZ1
+			}
+			secede_province = AZ1
+		}
+		any_owned = {
+			limit = {
+				is_core = AZ2
+			}
+			secede_province = AZ2
+		}
+		any_owned = {
+			limit = {
+				is_core = AZ3
+			}
+			secede_province = AZ3
+		}
+		any_owned = {
+			limit = {
+				is_core = AZ4
+			}
+			secede_province = AZ4
+		}
+		any_owned = {
+			limit = {
+				is_core = AZ5
+			}
+			secede_province = AZ5
+		}
+		any_owned = {
+			limit = {
+				is_core = AZ6
+			}
+			secede_province = AZ6
+		}
+		any_owned = {
+			limit = {
+				is_core = AZ8
+			}
+			secede_province = AZ8
+		}
+		any_owned = {
+			limit = {
+				is_core = AZ9
+			}
+			secede_province = AZ9
+		}
+		any_owned = {
+			limit = {
+				is_core = A3Z
+			}
+			secede_province = A3Z
+		}
+		any_owned = {
+			limit = {
+				is_core = TUR
+			}
+			secede_province = TUR
+		}
+		###################################
+		any_country = {
+			any_owned = {
+				limit = {
+					is_core = TCA
+				}
+				remove_core = TCA
+			}
+		}
+	}	
+}
+
+##############################
+#Country recognition events.
+#100018
+
+	country_event = {
+		id = 10000018
+		title = "EVTNAME10000018" #Recognizing CSA
+		desc = "EVTDESC10000018"
+		picture = "administration"
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = "EVTOPTA10000018"
+			prestige = 1
+			set_country_flag = recognized_CSA
+			CSA = {
+				random_list = {
+					25 = { country_event = { id = 10000019 days = 2 } }
+					25 = { country_event = { id = 10000019 days = 5 } }
+					25 = { country_event = { id = 10000019 days = 7 } }
+					25 = { country_event = { id = 10000019 days = 10 } }
+				}
+			}
+			USA = {
+				random_list = {
+					25 = { country_event = { id = 10000019 days = 2 } }
+					25 = { country_event = { id = 10000019 days = 5 } }
+					25 = { country_event = { id = 10000019 days = 7 } }
+					25 = { country_event = { id = 10000019 days = 10 } }
+				}
+			}
+			random_owned = {
+				limit = { owner = { ai = no } }
+				owner = {
+					relation = {
+						who = CSA
+						value = 150
+					}
+					diplomatic_influence = {
+						who = CSA
+						value = 100
+					}
+				}
+			
+			}
+			random_owned = {
+				limit = { owner = { ai = yes } }
+				owner = {
+					relation = {
+						who = CSA
+						value = 100
+					}
+					diplomatic_influence = {
+						who = CSA
+						value = 50
+					}
+				}
+			}
+			ai_chance = {
+				factor = 5
+				modifier = {
+					factor = 0
+					alliance_with = USA
+				}
+				modifier = {
+					factor = 0
+					relation = { who = USA value = 100 }
+				}
+			}
+		}
+		
+		option = {
+			name = "EVTOPTB10000018"
+			prestige = 1
+			set_country_flag = not_recognized_CSA
+			CSA = {
+				prestige = -5
+				country_event = { id = 100020 days = 5 }
+			}
+			USA = {
+				prestige = 5
+				country_event = { id = 100020 days = 5 }
+			}
+			random_owned = {
+				limit = { owner = { ai = no } }
+				owner = {
+					relation = {
+						who = USA
+						value = 125
+					}
+					diplomatic_influence = {
+						who = USA
+						value = 75
+					}
+				}
+			
+			}
+			random_owned = {
+				limit = { owner = { ai = yes } }
+				owner = {
+					relation = {
+						who = USA
+						value = 100
+					}
+					diplomatic_influence = {
+						who = USA
+						value = 50
+					}
+				}
+			}
+			ai_chance = {
+				factor = 5
+				modifier = {
+					factor = 100
+					alliance_with = USA
+				}
+				modifier = {
+					factor = 100
+					relation = { who = USA value = 100 }
+				}
+			}
+		}
+		
+		option = {
+			name = "EVTOPTC10000018" #Stay neutral
+			prestige = 1
+			set_country_flag = recognized_CSA_neutral
+			CSA = {
+				random_list = {
+					25 = { country_event = { id = 100021 days = 2 } }
+					25 = { country_event = { id = 100021 days = 5 } }
+					25 = { country_event = { id = 100021 days = 7 } }
+					25 = { country_event = { id = 100021 days = 10 } }
+				}
+			}
+			USA = {
+				random_list = {
+					25 = { country_event = { id = 100021 days = 2 } }
+					25 = { country_event = { id = 100021 days = 5 } }
+					25 = { country_event = { id = 100021 days = 7 } }
+					25 = { country_event = { id = 100021 days = 10 } }
+				}
+			}
+			ai_chance = {
+				factor = 90
+			}
+		}
+	}
+	country_event = {
+		id = 10000019
+		title = "EVTNAME10000019" #CSA recognized
+		desc = "EVTDESC10000019"
+		picture = "administration"
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = "EVTOPTA10000019"
+			random_owned = {
+				limit = { owner = { primary_culture = dixie } }
+				owner = {
+					prestige = 5
+					relation = {
+						who = FROM
+						value = 50
+					}
+				}
+			}
+			random_owned = {
+				limit = { owner = { primary_culture = yankee } }
+				owner = {
+					prestige = -5
+					relation = {
+						who = FROM
+						value = -50
+					}
+				}
+			}
+			ai_chance = { factor = 100 }
+		}
+	}
+	country_event = {
+		id = 100020
+		title = "EVTNAME100020" #CSA not recognized
+		desc = "EVTDESC100020"
+		picture = "administration"
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = "EVTOPTA100020"
+			random_owned = {
+				limit = { owner = { primary_culture = yankee } }
+				owner = {
+					prestige = 5
+					relation = {
+						who = FROM
+						value = 50
+					}
+				}
+			}
+			random_owned = {
+				limit = { owner = { primary_culture = dixie } }
+				owner = {
+					prestige = -5
+					relation = {
+						who = FROM
+						value = -50
+					}
+				}
+			}
+			ai_chance = { factor = 100 }
+		}
+	}
+	country_event = {
+		id = 100021
+		title = "EVTNAME100021" #stayed neutral
+		desc = "EVTDESC100021"
+		picture = "administration"
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = "EVTOPTA100021"
+			ai_chance = { factor = 100 }
+		}
+	}
+
+	country_event = {
+		id = 100022
+		title = "EVTNAME100022" #Recognizing Dagestan
+		desc = "EVTDESC100022"
+		picture = "administration"
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = "EVTOPTA100022"
+			prestige = 1
+			set_country_flag = recognized_DAG
+			DAG = {
+				random_list = {
+					25 = { country_event = { id = 100023 days = 2 } }
+					25 = { country_event = { id = 100023 days = 5 } }
+					25 = { country_event = { id = 100023 days = 7 } }
+					25 = { country_event = { id = 100023 days = 10 } }
+				}
+			}
+			RUS = {
+				random_list = {
+					25 = { country_event = { id = 100023 days = 2 } }
+					25 = { country_event = { id = 100023 days = 5 } }
+					25 = { country_event = { id = 100023 days = 7 } }
+					25 = { country_event = { id = 100023 days = 10 } }
+				}
+			}
+			random_owned = {
+				limit = { owner = { ai = no } }
+				owner = {
+					relation = {
+						who = DAG
+						value = 125
+					}
+					diplomatic_influence = {
+						who = DAG
+						value = 75
+					}
+				}
+			
+			}
+			random_owned = {
+				limit = { owner = { ai = yes } }
+				owner = {
+					relation = {
+						who = DAG
+						value = 100
+					}
+					diplomatic_influence = {
+						who = DAG
+						value = 50
+					}
+				}
+			}
+			ai_chance = {
+				factor = 5
+				modifier = {
+					factor = 0
+					alliance_with = RUS
+				}
+				modifier = {
+					factor = 0
+					relation = { who = RUS value = 100 }
+				}
+			}
+		}
+		
+		option = {
+			name = "EVTOPTB100022"
+			prestige = 1
+			set_country_flag = not_recognized_DAG
+			DAG = {
+				prestige = -5
+				country_event = { id = 100024 days = 5 }
+			}
+			RUS = {
+				prestige = 5
+				country_event = { id = 100024 days = 5 }
+			}
+			random_owned = {
+				limit = { owner = { ai = no } }
+				owner = {
+					relation = {
+						who = RUS
+						value = 125
+					}
+					diplomatic_influence = {
+						who = RUS
+						value = 75
+					}
+				}
+			
+			}
+			random_owned = {
+				limit = { owner = { ai = yes } }
+				owner = {
+					relation = {
+						who = RUS
+						value = 100
+					}
+					diplomatic_influence = {
+						who = RUS
+						value = 50
+					}
+				}
+			}
+			ai_chance = {
+				factor = 5
+				modifier = {
+					factor = 100
+					alliance_with = RUS
+				}
+				modifier = {
+					factor = 100
+					relation = { who = RUS value = 100 }
+				}
+			}
+		}
+		
+		option = {
+			name = "EVTOPTC100022" #Stay neutral
+			prestige = 1
+			set_country_flag = recognized_DAG_neutral
+			DAG = {
+				random_list = {
+					25 = { country_event = { id = 100025 days = 2 } }
+					25 = { country_event = { id = 100025 days = 5 } }
+					25 = { country_event = { id = 100025 days = 7 } }
+					25 = { country_event = { id = 100025 days = 10 } }
+				}
+			}
+			RUS = {
+				random_list = {
+					25 = { country_event = { id = 100025 days = 2 } }
+					25 = { country_event = { id = 100025 days = 5 } }
+					25 = { country_event = { id = 100025 days = 7 } }
+					25 = { country_event = { id = 100025 days = 10 } }
+				}
+			}
+			ai_chance = {
+				factor = 90
+			}
+		}
+	}
+	country_event = {
+		id = 100023
+		title = "EVTNAME100023" #DAG recognized
+		desc = "EVTDESC100023"
+		picture = "administration"
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = "EVTOPTA100023"
+			random_owned = {
+				limit = { owner = { primary_culture = dagestani } }
+				owner = {
+					prestige = 5
+					relation = {
+						who = FROM
+						value = 50
+					}
+				}
+			}
+			random_owned = {
+				limit = { owner = { primary_culture = russian } }
+				owner = {
+					prestige = -5
+					relation = {
+						who = FROM
+						value = -50
+					}
+				}
+			}
+			ai_chance = { factor = 100 }
+		}
+	}
+	country_event = {
+		id = 100024
+		title = "EVTNAME100024" #DAG not recognized
+		desc = "EVTDESC100024"
+		picture = "administration"
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = "EVTOPTA100024"
+			random_owned = {
+				limit = { owner = { primary_culture = russian } }
+				owner = {
+					prestige = 5
+					relation = {
+						who = FROM
+						value = 50
+					}
+				}
+			}
+			random_owned = {
+				limit = { owner = { primary_culture = dagestani } }
+				owner = {
+					prestige = -5
+					relation = {
+						who = FROM
+						value = -50
+					}
+				}
+			}
+			ai_chance = { factor = 100 }
+		}
+	}
+	country_event = {
+		id = 100025
+		title = "EVTNAME100025" #stayed neutral
+		desc = "EVTDESC100025"
+		picture = "administration"
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = "EVTOPTA100025"
+			ai_chance = { factor = 100 }
+		}
+	}
+	
+	country_event = {
+		id = 100026
+		title = "EVTNAME100026" #Recognizing Circassia
+		desc = "EVTDESC100026"
+		picture = "administration"
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = "EVTOPTA100026"
+			prestige = 1
+			set_country_flag = recognized_CIR
+			CIR = {
+				random_list = {
+					25 = { country_event = { id = 100027 days = 2 } }
+					25 = { country_event = { id = 100027 days = 5 } }
+					25 = { country_event = { id = 100027 days = 7 } }
+					25 = { country_event = { id = 100027 days = 10 } }
+				}
+			}
+			RUS = {
+				random_list = {
+					25 = { country_event = { id = 100027 days = 2 } }
+					25 = { country_event = { id = 100027 days = 5 } }
+					25 = { country_event = { id = 100027 days = 7 } }
+					25 = { country_event = { id = 100027 days = 10 } }
+				}
+			}
+			random_owned = {
+				limit = { owner = { ai = no } }
+				owner = {
+					relation = {
+						who = CIR
+						value = 125
+					}
+					diplomatic_influence = {
+						who = CIR
+						value = 75
+					}
+				}
+			
+			}
+			random_owned = {
+				limit = { owner = { ai = yes } }
+				owner = {
+					relation = {
+						who = CIR
+						value = 100
+					}
+					diplomatic_influence = {
+						who = CIR
+						value = 50
+					}
+				}
+			}
+			ai_chance = {
+				factor = 5
+				modifier = {
+					factor = 0
+					alliance_with = RUS
+				}
+				modifier = {
+					factor = 0
+					relation = { who = RUS value = 100 }
+				}
+			}
+		}
+		
+		option = {
+			name = "EVTOPTB100026"
+			prestige = 1
+			set_country_flag = not_recognized_CIR
+			CIR = {
+				random_list = {
+					25 = { country_event = { id = 100028 days = 2 } }
+					25 = { country_event = { id = 100028 days = 5 } }
+					25 = { country_event = { id = 100028 days = 7 } }
+					25 = { country_event = { id = 100028 days = 10 } }
+				}
+			}
+			RUS = {
+				random_list = {
+					25 = { country_event = { id = 100028 days = 2 } }
+					25 = { country_event = { id = 100028 days = 5 } }
+					25 = { country_event = { id = 100028 days = 7 } }
+					25 = { country_event = { id = 100028 days = 10 } }
+				}
+			}
+			random_owned = {
+				limit = { owner = { ai = no } }
+				owner = {
+					relation = {
+						who = RUS
+						value = 125
+					}
+					diplomatic_influence = {
+						who = RUS
+						value = 75
+					}
+				}
+			
+			}
+			random_owned = {
+				limit = { owner = { ai = yes } }
+				owner = {
+					relation = {
+						who = RUS
+						value = 100
+					}
+					diplomatic_influence = {
+						who = RUS
+						value = 50
+					}
+				}
+			}
+			ai_chance = {
+				factor = 5
+				modifier = {
+					factor = 100
+					alliance_with = RUS
+				}
+				modifier = {
+					factor = 100
+					relation = { who = RUS value = 100 }
+				}
+			}
+		}
+		
+		option = {
+			name = "EVTOPTC100026" #Stay neutral
+			prestige = 1
+			set_country_flag = recognized_CIR_neutral
+			CIR = {
+				random_list = {
+					25 = { country_event = { id = 100029 days = 2 } }
+					25 = { country_event = { id = 100029 days = 5 } }
+					25 = { country_event = { id = 100029 days = 7 } }
+					25 = { country_event = { id = 100029 days = 10 } }
+				}
+			}
+			RUS = {
+				random_list = {
+					25 = { country_event = { id = 100029 days = 2 } }
+					25 = { country_event = { id = 100029 days = 5 } }
+					25 = { country_event = { id = 100029 days = 7 } }
+					25 = { country_event = { id = 100029 days = 10 } }
+				}
+			}
+			ai_chance = {
+				factor = 90
+			}
+		}
+	}
+	country_event = {
+		id = 100027
+		title = "EVTNAME100027" #CIR recognized
+		desc = "EVTDESC100027"
+		picture = "administration"
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = "EVTOPTA100027"
+			random_owned = {
+				limit = { owner = { primary_culture = circassian } }
+				owner = {
+					prestige = 5
+					relation = {
+						who = FROM
+						value = 50
+					}
+				}
+			}
+			random_owned = {
+				limit = { owner = { primary_culture = russian } }
+				owner = {
+					prestige = -5
+					relation = {
+						who = FROM
+						value = -50
+					}
+				}
+			}
+			ai_chance = { factor = 100 }
+		}
+	}
+	country_event = {
+		id = 100028
+		title = "EVTNAME100028" #CIR not recognized
+		desc = "EVTDESC100028"
+		picture = "administration"
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = "EVTOPTA100028"
+			random_owned = {
+				limit = { owner = { primary_culture = russian } }
+				owner = {
+					prestige = 5
+					relation = {
+						who = FROM
+						value = 50
+					}
+				}
+			}
+			random_owned = {
+				limit = { owner = { primary_culture = circassian } }
+				owner = {
+					prestige = -5
+					relation = {
+						who = FROM
+						value = -50
+					}
+				}
+			}
+			ai_chance = { factor = 100 }
+		}
+	}
+	country_event = {
+		id = 100029
+		title = "EVTNAME100029" #stayed neutral
+		desc = "EVTDESC100029"
+		picture = "administration"
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = "EVTOPTA100029"
+			ai_chance = { factor = 100 }
+		}
+	}
+	
+	
+	country_event = {
+		id = 100030
+		title = "EVTNAME100030" #Recognizing Chechnya
+		desc = "EVTDESC100030"
+		picture = "administration"
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = "EVTOPTA100030"
+			prestige = 1
+			set_country_flag = recognized_CHY
+			CHY = {
+				random_list = {
+					25 = { country_event = { id = 100031 days = 2 } }
+					25 = { country_event = { id = 100031 days = 5 } }
+					25 = { country_event = { id = 100031 days = 7 } }
+					25 = { country_event = { id = 100031 days = 10 } }
+				}
+			}
+			RUS = {
+				random_list = {
+					25 = { country_event = { id = 100031 days = 2 } }
+					25 = { country_event = { id = 100031 days = 5 } }
+					25 = { country_event = { id = 100031 days = 7 } }
+					25 = { country_event = { id = 100031 days = 10 } }
+				}			}
+			random_owned = {
+				limit = { owner = { ai = no } }
+				owner = {
+					relation = {
+						who = CHY
+						value = 125
+					}
+					diplomatic_influence = {
+						who = CHY
+						value = 75
+					}
+				}
+			
+			}
+			random_owned = {
+				limit = { owner = { ai = yes } }
+				owner = {
+					relation = {
+						who = CHY
+						value = 100
+					}
+					diplomatic_influence = {
+						who = CHY
+						value = 50
+					}
+				}
+			}
+			ai_chance = {
+				factor = 5
+				modifier = {
+					factor = 0
+					alliance_with = RUS
+				}
+				modifier = {
+					factor = 0
+					relation = { who = RUS value = 100 }
+				}
+			}
+		}
+		
+		option = {
+			name = "EVTOPTB100030"
+			prestige = 1
+			set_country_flag = not_recognized_CHY
+			CHY = {
+				random_list = {
+					25 = { country_event = { id = 100032 days = 2 } }
+					25 = { country_event = { id = 100032 days = 5 } }
+					25 = { country_event = { id = 100032 days = 7 } }
+					25 = { country_event = { id = 100032 days = 10 } }
+				}
+			}
+			RUS = {
+				random_list = {
+					25 = { country_event = { id = 100032 days = 2 } }
+					25 = { country_event = { id = 100032 days = 5 } }
+					25 = { country_event = { id = 100032 days = 7 } }
+					25 = { country_event = { id = 100032 days = 10 } }
+				}
+			}
+			random_owned = {
+				limit = { owner = { ai = no } }
+				owner = {
+					relation = {
+						who = RUS
+						value = 125
+					}
+					diplomatic_influence = {
+						who = RUS
+						value = 75
+					}
+				}
+			
+			}
+			random_owned = {
+				limit = { owner = { ai = yes } }
+				owner = {
+					relation = {
+						who = RUS
+						value = 100
+					}
+					diplomatic_influence = {
+						who = RUS
+						value = 50
+					}
+				}
+			}
+			ai_chance = {
+				factor = 5
+				modifier = {
+					factor = 100
+					alliance_with = RUS
+				}
+				modifier = {
+					factor = 100
+					relation = { who = RUS value = 100 }
+				}
+			}
+		}
+		
+		option = {
+			name = "EVTOPTC100030" #Stay neutral
+			prestige = 1
+			set_country_flag = recognized_CHY_neutral
+			CHY = {
+				random_list = {
+					25 = { country_event = { id = 100033 days = 2 } }
+					25 = { country_event = { id = 100033 days = 5 } }
+					25 = { country_event = { id = 100033 days = 7 } }
+					25 = { country_event = { id = 100033 days = 10 } }
+				}
+			}
+			RUS = {
+				random_list = {
+					25 = { country_event = { id = 100033 days = 2 } }
+					25 = { country_event = { id = 100033 days = 5 } }
+					25 = { country_event = { id = 100033 days = 7 } }
+					25 = { country_event = { id = 100033 days = 10 } }
+				}
+			}
+			ai_chance = {
+				factor = 90
+			}
+		}
+	}
+	country_event = {
+		id = 100031
+		title = "EVTNAME100031" #CHY recognized
+		desc = "EVTDESC100031"
+		picture = "administration"
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = "EVTOPTA100031"
+			random_owned = {
+				limit = { owner = { primary_culture = chechen } }
+				owner = {
+					prestige = 5
+					relation = {
+						who = FROM
+						value = 50
+					}
+				}
+			}
+			random_owned = {
+				limit = { owner = { primary_culture = russian } }
+				owner = {
+					prestige = -5
+					relation = {
+						who = FROM
+						value = -50
+					}
+				}
+			}
+			ai_chance = { factor = 100 }
+		}
+	}
+	country_event = {
+		id = 100032
+		title = "EVTNAME100032" #CHY not recognized
+		desc = "EVTDESC100032"
+		picture = "administration"
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = "EVTOPTA100032"
+			random_owned = {
+				limit = { owner = { primary_culture = russian } }
+				owner = {
+					prestige = 5
+					relation = {
+						who = FROM
+						value = 50
+					}
+				}
+			}
+			random_owned = {
+				limit = { owner = { primary_culture = chechen } }
+				owner = {
+					prestige = -5
+					relation = {
+						who = FROM
+						value = -50
+					}
+				}
+			}
+			ai_chance = { factor = 100 }
+		}
+	}
+	country_event = {
+		id = 100033
+		title = "EVTNAME100033" #stayed neutral
+		desc = "EVTDESC100033"
+		picture = "administration"
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = "EVTOPTA100033"
+			ai_chance = { factor = 100 }
+		}
+	}
+	
+	country_event = {
+		id = 100034
+		title = "EVTNAME100034" #Recognizing Ossetia
+		desc = "EVTDESC100034"
+		picture = "administration"
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = "EVTOPTA100034"
+			prestige = 1
+			set_country_flag = recognized_OSS
+			OSS = {
+				random_list = {
+					25 = { country_event = { id = 100035 days = 2 } }
+					25 = { country_event = { id = 100035 days = 5 } }
+					25 = { country_event = { id = 100035 days = 7 } }
+					25 = { country_event = { id = 100035 days = 10 } }
+				}
+			}
+			RUS = {
+				random_list = {
+					25 = { country_event = { id = 100035 days = 2 } }
+					25 = { country_event = { id = 100035 days = 5 } }
+					25 = { country_event = { id = 100035 days = 7 } }
+					25 = { country_event = { id = 100035 days = 10 } }
+				}
+			}
+			random_owned = {
+				limit = { owner = { ai = no } }
+				owner = {
+					relation = {
+						who = OSS
+						value = 125
+					}
+					diplomatic_influence = {
+						who = OSS
+						value = 75
+					}
+				}
+			
+			}
+			random_owned = {
+				limit = { owner = { ai = yes } }
+				owner = {
+					relation = {
+						who = OSS
+						value = 100
+					}
+					diplomatic_influence = {
+						who = OSS
+						value = 50
+					}
+				}
+			}
+			ai_chance = {
+				factor = 5
+				modifier = {
+					factor = 0
+					alliance_with = RUS
+				}
+				modifier = {
+					factor = 0
+					relation = { who = RUS value = 100 }
+				}
+			}
+		}
+		
+		option = {
+			name = "EVTOPTB100034"
+			prestige = 1
+			set_country_flag = not_recognized_OSS
+			OSS = {
+				random_list = {
+					25 = { country_event = { id = 100036 days = 2 } }
+					25 = { country_event = { id = 100036 days = 5 } }
+					25 = { country_event = { id = 100036 days = 7 } }
+					25 = { country_event = { id = 100036 days = 10 } }
+				}
+			}
+			RUS = {
+				random_list = {
+					25 = { country_event = { id = 100036 days = 2 } }
+					25 = { country_event = { id = 100036 days = 5 } }
+					25 = { country_event = { id = 100036 days = 7 } }
+					25 = { country_event = { id = 100036 days = 10 } }
+				}
+			}
+			random_owned = {
+				limit = { owner = { ai = no } }
+				owner = {
+					relation = {
+						who = RUS
+						value = 125
+					}
+					diplomatic_influence = {
+						who = RUS
+						value = 75
+					}
+				}
+			
+			}
+			random_owned = {
+				limit = { owner = { ai = yes } }
+				owner = {
+					relation = {
+						who = RUS
+						value = 100
+					}
+					diplomatic_influence = {
+						who = RUS
+						value = 50
+					}
+				}
+			}
+			ai_chance = {
+				factor = 5
+				modifier = {
+					factor = 100
+					alliance_with = RUS
+				}
+				modifier = {
+					factor = 100
+					relation = { who = RUS value = 100 }
+				}
+			}
+		}
+		
+		option = {
+			name = "EVTOPTC100034" #Stay neutral
+			prestige = 1
+			set_country_flag = recognized_OSS_neutral
+			OSS = {
+				random_list = {
+					25 = { country_event = { id = 100037 days = 2 } }
+					25 = { country_event = { id = 100037 days = 5 } }
+					25 = { country_event = { id = 100037 days = 7 } }
+					25 = { country_event = { id = 100037 days = 10 } }
+				}
+			}
+			RUS = {
+				random_list = {
+					25 = { country_event = { id = 100037 days = 2 } }
+					25 = { country_event = { id = 100037 days = 5 } }
+					25 = { country_event = { id = 100037 days = 7 } }
+					25 = { country_event = { id = 100037 days = 10 } }
+				}
+			}
+			ai_chance = {
+				factor = 90
+			}
+		}
+	}
+	country_event = {
+		id = 100035
+		title = "EVTNAME100035" #OSS recognized
+		desc = "EVTDESC100035"
+		picture = "administration"
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = "EVTOPTA100035"
+			random_owned = {
+				limit = { owner = { primary_culture = ossetian } }
+				owner = {
+					prestige = 5
+					relation = {
+						who = FROM
+						value = 50
+					}
+				}
+			}
+			random_owned = {
+				limit = { owner = { primary_culture = russian } }
+				owner = {
+					prestige = -5
+					relation = {
+						who = FROM
+						value = -50
+					}
+				}
+			}
+			ai_chance = { factor = 100 }
+		}
+	}
+	country_event = {
+		id = 100036
+		title = "EVTNAME100036" #OSS not recognized
+		desc = "EVTDESC100036"
+		picture = "administration"
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = "EVTOPTA100036"
+			random_owned = {
+				limit = { owner = { primary_culture = russian } }
+				owner = {
+					prestige = 5
+					relation = {
+						who = FROM
+						value = 50
+					}
+				}
+			}
+			random_owned = {
+				limit = { owner = { primary_culture = ossetian } }
+				owner = {
+					prestige = -5
+					relation = {
+						who = FROM
+						value = -50
+					}
+				}
+			}
+			ai_chance = { factor = 100 }
+		}
+	}
+	country_event = {
+		id = 100037
+		title = "EVTNAME100037" #stayed neutral
+		desc = "EVTDESC100037"
+		picture = "administration"
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = "EVTOPTA100037"
+			ai_chance = { factor = 100 }
+		}
+	}
+###########################################
+# USA statehood event
+
+	country_event = {
+		id = 100038
+		title = "EVTNAME100038"
+		desc = "EVTDESC100038"
+		picture = "administration"
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = "EVTOPTA100038"
+			set_country_flag = usstatehood_we_have_applied
+			add_country_modifier = { name = USA_statehood duration = 60 }
+			USA = {
+				country_event = { id = 16400 days = 60 }
+				war_exhaustion = -20
+			}
+			ai_chance = { factor = 70 }
+		}
+		option = {
+			name = "EVTOPTB100038"
+			set_country_flag = usstatehood_we_have_refused
+			ai_chance = { factor = 30 }
+		}
+	}
+##################################################
+#The Kosovo Population Exchange
+country_event = {
+	id = 100039
+	title = "The Kosovo Population Exchange"
+	desc = "EVTDESC986508"
+	picture = "population_exchange"
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVT986508OPTA"
+		relation = { who = FROM value = 15 }
+		random_country = {
+			limit = { tag = FROM NOT = { has_country_flag = population_exchange_with_turkey } }
+			set_country_flag = population_exchange_with_turkey
+		}
+		
+		FROM = {
+			any_owned = {
+				limit = {
+					OR = {
+						province_id = 802
+						province_id = 803
+						province_id = 3621
+					}
+				}
+			any_pop = { limit = { has_pop_culture = turkish } move_pop = 860 }
+			}
+		}
+		
+		FROM = {
+			any_owned = {
+				limit = { is_core = SER }
+					any_pop = {
+						limit = {
+							OR = {
+								has_pop_religion = sunni
+								has_pop_religion = shiite
+								has_pop_religion = ibadi
+								has_pop_religion = druze
+								has_pop_religion = bahai
+								has_pop_religion = alawite
+								has_pop_religion = alevi
+							}
+							NOT = { is_culture_group = south_slavic }
+							NOT = { is_culture_group = pan_albanian }
+							NOT = { is_culture_group = pan_romanian }
+							NOT = { has_pop_culture = tatar }
+							NOT = { has_pop_culture = turkish }
+						}
+					move_pop = 860
+				}
+			}
+		}
+		
+		any_owned = {
+			limit = { is_core = TUR NOT = { is_core = SER is_core = MON } }
+			any_pop = { limit = { has_pop_culture = serb NOT = { has_pop_religion = sunni } } move_pop = 798 }
+		}
+				
+		random_owned = { limit = { province_id = 860 NOT = { has_province_modifier = repatriation } }
+			add_province_modifier = { name = repatriation duration = -1 }
+		}
+		
+		random_owned = { limit = { province_id = 861 NOT = { has_province_modifier = repatriation } }
+			add_province_modifier = { name = repatriation duration = -1 }
+		}
+		
+		FROM = {
+			any_owned = {
+				limit = {
+					OR = {
+						province_id = 802
+						province_id = 803
+						province_id = 3621
+					}
+				}
+				remove_core = TUR
+			}
+		}
+		
+		ai_chance = {
+			factor = 0.9
+			modifier = { factor = 0.25 is_greater_power = yes is_disarmed = no military_score = 50 FROM = { is_greater_power = no } }
+		}
+	}
+	
+	option = {
+		name = "EVT986508OPTB"
+		relation = { who = FROM value = -150 }
+		badboy = 1
+		ai_chance = {
+			factor = 0.1
+			modifier = { factor = 1.25 is_greater_power = yes is_disarmed = no military_score = 50 FROM = { is_greater_power = no } }
+		}
+	}
+}
+##################################################
+#The Herzegovina Population Exchange
+country_event = {
+	id = 100040
+	title = "The Herzegovina Population Exchange"
+	desc = "EVTDESC986508"
+	picture = "population_exchange"
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVT986508OPTA"
+		relation = { who = FROM value = 15 }
+		random_country = {
+			limit = { tag = FROM NOT = { has_country_flag = population_exchange_with_turkey } }
+			set_country_flag = population_exchange_with_turkey
+		}
+		
+		FROM = {
+			any_owned = {
+				limit = {
+					OR = {
+						province_id = 788
+						province_id = 3636
+						province_id = 3637
+						province_id = 2569
+					}
+				}
+			any_pop = { limit = { has_pop_culture = turkish } move_pop = 860 }
+			}
+		}
+		
+		FROM = {
+			any_owned = {
+				limit = { is_core = SER }
+					any_pop = {
+						limit = {
+							OR = {
+								has_pop_religion = sunni
+								has_pop_religion = shiite
+								has_pop_religion = ibadi
+								has_pop_religion = druze
+								has_pop_religion = bahai
+								has_pop_religion = alawite
+								has_pop_religion = alevi
+							}
+							NOT = { is_culture_group = south_slavic }
+							NOT = { is_culture_group = pan_albanian }
+							NOT = { is_culture_group = pan_romanian }
+							NOT = { has_pop_culture = tatar }
+							NOT = { has_pop_culture = turkish }
+						}
+					move_pop = 860
+				}
+			}
+		}
+		
+		any_owned = {
+			limit = { is_core = TUR NOT = { is_core = SER is_core = MON } }
+			any_pop = { limit = { has_pop_culture = serb NOT = { has_pop_religion = sunni } } move_pop = 798 }
+		}
+				
+		random_owned = { limit = { province_id = 860 NOT = { has_province_modifier = repatriation } }
+			add_province_modifier = { name = repatriation duration = -1 }
+		}
+		
+		random_owned = { limit = { province_id = 861 NOT = { has_province_modifier = repatriation } }
+			add_province_modifier = { name = repatriation duration = -1 }
+		}
+		
+		FROM = {
+			any_owned = {
+				limit = {
+					OR = {
+						province_id = 788
+						province_id = 3636
+						province_id = 3637
+						province_id = 2569
+					}
+				}
+				remove_core = TUR
+			}
+		}
+		
+		ai_chance = {
+			factor = 0.9
+			modifier = { factor = 0.25 is_greater_power = yes is_disarmed = no military_score = 50 FROM = { is_greater_power = no } }
+		}
+	}
+	
+	option = {
+		name = "EVT986508OPTB"
+		relation = { who = FROM value = -150 }
+		badboy = 1
+		ai_chance = {
+			factor = 0.1
+			modifier = { factor = 1.25 is_greater_power = yes is_disarmed = no military_score = 50 FROM = { is_greater_power = no } }
+		}
+	}
+}
+###########################################
+# Serb uprising of 1848–49
+
+	country_event = {
+		id = 100041
+		title = "EVTNAME100041"
+		desc = "EVTDESC100041"
+		picture = "The_May_Assembly"
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = "..."
+			set_global_flag = serbian_vojvodina
+			any_owned = {
+				limit = {
+					OR = {
+						province_id = 2538
+						province_id = 792
+						province_id = 3624
+						province_id = 3295
+						province_id = 3627
+						province_id = 3651
+						province_id = 3620
+						#
+						province_id = 791
+						province_id = 793
+					}
+					is_core = VOJ
+				}
+				secede_province = VOJ
+			}
+			VOJ = {
+				capital = 2538
+				political_reform = mandatory_service 
+				government = hms_government
+				
+				political_reform = state_equal_weight
+				political_reform = culture_voting_only
+				political_reform = landed_voting
+				political_reform = yes_meeting
+				political_reform = state_press
+				political_reform = no_trade_unions
+				political_reform = jefferson_method
+				political_reform = harassment
+				
+				clr_country_flag = communist_gov
+				clr_country_flag = absolute_monarchy_gov
+				clr_country_flag = semi_constitutional_monarchy_gov
+				set_country_flag = constitutional_monarchy_gov
+				clr_country_flag = democracy_gov
+				clr_country_flag = presidential_dictatorship_gov
+				clr_country_flag = fascist_gov
+				clr_country_flag = anarcho_liberal_gov
+				
+				any_pop = {
+					limit = { has_pop_culture = serb }
+					militancy = -4
+				}
+				any_pop = {
+					limit = { NOT = { has_pop_culture = serb } }
+					militancy = 3
+				}
+			}
+			619 = { owner = { country_event = 100042 } }
+			641 = { owner = { country_event = { id = 100043 days = 1 } } }
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+	country_event = {
+		id = 100042
+		title = "EVTNAME100041"
+		desc = "EVTDESC100041"
+		picture = "The_May_Assembly"
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = "EVTOPTA100041"
+			create_alliance = VOJ
+			create_vassal = VOJ
+			relation = {
+				who = VOJ
+				value = 200
+			}
+			diplomatic_influence = {
+				who = VOJ
+				value = 400
+			}
+			VOJ = {
+				relation = {
+					who = THIS
+					value = 200
+				}
+				small_arms = 100
+				regular_clothes = 100
+				leadership = 40
+			}
+			ai_chance = {
+				factor = 100
+			}
+		}
+		option = {
+			name = "EVTOPTB100041"
+			war = {
+				target = VOJ
+				attacker_goal = {
+					casus_belli = annex_core_country
+				}
+				defender_goal = {
+					casus_belli = status_quo
+				}
+			}
+			VOJ = {
+				small_arms = 100
+				regular_clothes = 100
+				leadership = 40
+			}
+			ai_chance = {
+				factor = 0
+			}
+		}
+		option = {
+			name = "EVTOPTC100041"
+			war = {
+				target = VOJ
+				attacker_goal = {
+					casus_belli = annex_core_country
+				}
+				defender_goal = {
+					casus_belli = status_quo
+				}
+			}
+			VOJ = {
+				small_arms = 100
+				regular_clothes = 100
+				leadership = 40
+			}
+			change_tag_no_core_switch = VOJ
+			ai_chance = { factor = 0 }
+		}
+	}
+	country_event = {
+		id = 100043
+		title = "EVTNAME100041"
+		desc = "EVTDESC100041"
+		picture = "The_May_Assembly"
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = "EVTOPTB100041"
+			# war = {
+				# target = VOJ
+				# attacker_goal = {
+					# casus_belli = annex_core_country
+				# }
+				# defender_goal = {
+					# casus_belli = status_quo
+				# }
+			# }
+			AUS = {
+				war = {
+					attacker_goal = {
+						casus_belli = call_allies_cb
+					}
+					call_ally = yes
+				}
+			}
+			ai_chance = {
+				factor = 100
+			}
+		}
+		option = {
+			name = "EVTOPTC100041"
+			# war = {
+				# target = VOJ
+				# attacker_goal = {
+					# casus_belli = annex_core_country
+				# }
+				# defender_goal = {
+					# casus_belli = status_quo
+				# }
+			# }
+			AUS = {
+				war = {
+					attacker_goal = {
+						casus_belli = call_allies_cb
+					}
+					call_ally = yes
+				}
+			}
+			change_tag_no_core_switch = VOJ
+			ai_chance = { factor = 0 }
+		}
+	}
+	country_event = {
+		id = 100044
+		title = "EVTNAME100041"
+		desc = "EVTDESC100041"
+		picture = "The_May_Assembly"
+		
+		is_triggered_only = yes
+		
+		immediate = {
+			VOJ = {
+				define_general = {
+					name = "Stevan Šupljikac"
+					personality = intuitive
+					background = school_of_the_bayonet
+				}
+				add_country_modifier = { name = begin_revolution duration = 365 }
+			}
+		}
+		
+		option = {
+			name = "We must help our brothers!"		#Help the Serbs
+			set_country_flag = serbian_uprising_help
+			random_owned = {
+				limit = { owner = { NOT = { check_variable = { which = owed_cash_money value = 1 } } } }
+				owner = { set_variable = { which = owed_cash_money value = 5 } }
+			}
+			random_owned = {
+				limit = { owner = { check_variable = { which = owed_cash_money value = 9 } } }
+				owner = { change_variable = { which = owed_cash_money value = 5 } }
+			}
+			random_owned = {
+				limit = { owner = { NOT = { check_variable = { which = owed_artillery value = 1 } } } }
+				owner = { set_variable = { which = owed_artillery value = 10 } }
+			}
+			random_owned = {
+				limit = { owner = { check_variable = { which = owed_artillery value = 1 } } }
+				owner = { change_variable = { which = owed_artillery value = 10 } }
+			}
+			random_owned = {
+				limit = { owner = { NOT = { check_variable = { which = owed_canned_food value = 1 } } } }
+				owner = { set_variable = { which = owed_canned_food value = 10 } }
+			}
+			random_owned = {
+				limit = { owner = { check_variable = { which = owed_canned_food value = 1 } } }
+				owner = { change_variable = { which = owed_canned_food value = 10 } }
+			}
+			random_owned = {
+				limit = { owner = { NOT = { check_variable = { which = owed_small_arms value = 1 } } } }
+				owner = { set_variable = { which = owed_small_arms value = 10 } }
+			}
+			random_owned = {
+				limit = { owner = { check_variable = { which = owed_small_arms value = 1 } } }
+				owner = { change_variable = { which = owed_small_arms value = 10 } }
+			}
+			random_owned = {
+				limit = { owner = { NOT = { check_variable = { which = owed_ammunition value = 1 } } } }
+				owner = { set_variable = { which = owed_ammunition value = 10 } }
+			}
+			random_owned = {
+				limit = { owner = { check_variable = { which = owed_ammunition value = 1 } } }
+				owner = { change_variable = { which = owed_ammunition value = 10 } }
+			}
+			create_alliance = VOJ
+			relation = { who = HUN value = -150 }
+			relation = { who = VOJ value = 200 }
+			diplomatic_influence = { who = VOJ value = 100 }
+			VOJ = {
+				treasury = 5000
+				small_arms = 10
+				ammunition = 10
+				canned_food = 10
+				artillery = 10
+				war = {
+					attacker_goal = {
+						casus_belli = call_allies_cb
+					}
+					call_ally = yes
+				}
+			}
+			any_pop = {
+				limit = { has_pop_culture = serb }
+				consciousness = -4
+				militancy = -6
+			}
+			ai_chance = {
+				factor = 100
+			}
+		}
+		option = {
+			name = "Sadly, we cannot help them at the moment..."
+			set_country_flag = serbian_uprising_no_help
+			prestige = -2.5
+			ai_chance = { factor = 0 }
+		}
+	}
+	
+################################################
+	# fate of serbian vojvodina, after hungarian revolution ends (HUN truce_with AUS OR exists = no), autonomous dependency until KUK is declared or war to fully annex
+	# if war to fully annex, SER will help
+	
+	#decision to abolish VOJ while waiting for KUK to be declared
+	
+	country_event = {
+		id = 100045
+		title = "EVTNAME100045"
+		desc = "EVTDESC100045"
+		picture = "Patrijarh_Rajacic_blagosilja_vojsku"
+		
+		trigger = {
+			has_global_flag = end_of_hungarian_revolution_I
+			HUN = { exists = no }
+			VOJ = {
+				OR = {
+					vassal_of = THIS
+					substante_of = THIS
+				}
+			}
+			OR = {
+				tag = AUS
+				tag = KUK
+			}
+		}
+		
+		option = {
+			name = "We shall respect their autonomy."
+			set_global_flag = VOJ_respected_autonomy
+			VOJ = { country_event = 100046 }
+			ai_chance = {
+				factor = 95
+			}
+		}
+		option = {
+			name = "Annex and partition."
+			VOJ = { country_event = 100047 }
+			ai_chance = {
+				factor = 5
+				modifier = {
+					factor = 100
+					SER = { ai = no }
+				}
+			}
+		}
+	}
+	country_event = {
+		id = 100046
+		title = "EVTNAME100046"
+		desc = "EVTDESC100046"
+		picture = "Patrijarh_Rajacic_blagosilja_vojsku"
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = "Great!"
+			FROM = {
+				any_owned = {
+					limit = {
+						is_core = VOJ
+					}
+					secede_province = VOJ
+				}			
+			}
+			government = colonial_company
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+	country_event = {
+		id = 100047
+		title = "EVTNAME100047"
+		desc = "EVTDESC100047"
+		picture = "Patrijarh_Rajacic_blagosilja_vojsku"
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = "There is no point on spilling more blood..."
+			set_global_flag = VOJ_disrupted_autonomy_join
+			FROM = {
+				country_event = 100048
+				inherit = THIS
+			}
+			SER = { country_event = 100048 }
+			ai_chance = {
+				factor = 5
+				modifier = {
+					factor = 100
+					year = 1860
+					KUK = { exists = yes }
+					vassal_of = KUK
+				}
+			}
+		}
+		option = {
+			name = "Never! We shall fight for out freedom!" #fight
+			FROM = { country_event = 100049 }
+			ai_chance = {
+				factor = 95
+			}
+		}
+	}
+	country_event = {
+		id = 100048
+		title = "EVTNAME100048"
+		desc = "EVTDESC100048"
+		picture = "Patrijarh_Rajacic_blagosilja_vojsku"
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = "EVTOPTA100048"
+			ai_chance = {
+				factor = 0
+			}
+		}
+	}
+	country_event = {
+		id = 100049
+		title = "EVTNAME100049"
+		desc = "EVTDESC100049"
+		picture = "Patrijarh_Rajacic_blagosilja_vojsku"
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = "Their destiny shall be decided on the battlefield."
+			set_global_flag = VOJ_disrupted_autonomy_fight
+			release_vassal = VOJ
+			relation = {
+				who = VOJ
+				value = -200
+			}
+			diplomatic_influence = {
+				who = VOJ
+				value = -400
+			}	
+			VOJ = {
+				add_country_modifier = { name = polish_uprising_mobilization duration = 2920 }
+				add_country_modifier = { name = unrecognized_country duration = 1095 }
+			}
+			random_country = {
+				limit = {
+					tag = SER
+					OR = {
+						is_vassal = no
+						is_substate = no
+					}
+				}
+				country_event = 100050
+			}
+			random_country = {
+				limit = {
+					tag = SER
+					OR = {
+						vassal_of = TUR
+						substante_of = TUR
+					}
+				}
+				country_event = 100053
+			}
+			ai_chance = {
+				factor = 100
+			}
+		}
+		option = {
+			name = "We don't have time for this..."
+			set_global_flag = VOJ_disrupted_autonomy_free
+			prestige = -50
+			release_vassal = VOJ
+			relation = {
+				who = VOJ
+				value = -200
+			}
+			diplomatic_influence = {
+				who = VOJ
+				value = -400
+			}	
+			FROM = { country_event = 100051 }
+			SER = { country_event = 100051 }
+			ai_chance = {
+				factor = 0
+			}
+		}
+	}
+	country_event = {
+		id = 100050
+		title = "EVTNAME100050"
+		desc = "EVTDESC100050"
+		picture = "Patrijarh_Rajacic_blagosilja_vojsku"
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = "We will help our brothers in need!"
+			create_alliance = VOJ
+			create_vassal = VOJ
+			relation = {
+				who = VOJ
+				value = 200
+			}
+			diplomatic_influence = {
+				who = VOJ
+				value = 400
+			}	
+			FROM = { country_event = 100052 }
+			ai_chance = {
+				factor = 95
+			}
+		}
+		option = {
+			name = "Sadly, there is nothing we can do to help them..."
+			prestige = -5
+			relation = {
+				who = VOJ
+				value = -200
+			}
+			diplomatic_influence = {
+				who = VOJ
+				value = -400
+			}
+			casus_belli = {
+				target = FROM
+				type = free_peoples
+				months = 120
+			}	
+			FROM = { #AUS/KUK
+				war = {
+					target = VOJ
+					attacker_goal = {
+						casus_belli = annex_core_country
+					}
+					defender_goal = {
+						casus_belli = status_quo
+					}
+				}
+				war = {
+					attacker_goal = {
+						casus_belli = call_allies_cb
+					}
+					call_ally = yes
+				}
+			}
+			ai_chance = {
+				factor = 5
+				modifier = {
+					factor = 100
+					SER = {
+						OR = { 
+							government = colonial_company
+							government = dominion
+						}
+					}
+				}
+			}
+		}
+	}
+	country_event = {
+		id = 100051
+		title = "EVTNAME100051"
+		desc = "EVTDESC100051"
+		picture = "Patrijarh_Rajacic_blagosilja_vojsku"
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = "..." # AUS has let VOJ free!
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+	country_event = {
+		id = 100052
+		title = "EVTNAME100052"
+		desc = "EVTDESC100052"
+		picture = "Patrijarh_Rajacic_blagosilja_vojsku"
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = "We shall strike them down!" # 
+			war = {
+				target = VOJ
+				attacker_goal = {
+					casus_belli = annex_core_country
+				}
+				defender_goal = {
+					casus_belli = status_quo
+				}
+			}
+			VOJ = {
+				war = {
+					attacker_goal = {
+						casus_belli = call_allies_cb
+					}
+					call_ally = yes
+				}
+			}
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+	country_event = {
+		id = 100053
+		title = "EVTNAME100053"
+		desc = "EVTDESC100053"
+		picture = "Patrijarh_Rajacic_blagosilja_vojsku"
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = "We must help our brothers!"		#Help the Serbs
+			set_country_flag = serbian_uprising2_help
+			random_owned = {
+				limit = { owner = { NOT = { check_variable = { which = owed_cash_money value = 1 } } } }
+				owner = { set_variable = { which = owed_cash_money value = 5 } }
+			}
+			random_owned = {
+				limit = { owner = { check_variable = { which = owed_cash_money value = 9 } } }
+				owner = { change_variable = { which = owed_cash_money value = 5 } }
+			}
+			random_owned = {
+				limit = { owner = { NOT = { check_variable = { which = owed_artillery value = 1 } } } }
+				owner = { set_variable = { which = owed_artillery value = 10 } }
+			}
+			random_owned = {
+				limit = { owner = { check_variable = { which = owed_artillery value = 1 } } }
+				owner = { change_variable = { which = owed_artillery value = 10 } }
+			}
+			random_owned = {
+				limit = { owner = { NOT = { check_variable = { which = owed_canned_food value = 1 } } } }
+				owner = { set_variable = { which = owed_canned_food value = 10 } }
+			}
+			random_owned = {
+				limit = { owner = { check_variable = { which = owed_canned_food value = 1 } } }
+				owner = { change_variable = { which = owed_canned_food value = 10 } }
+			}
+			random_owned = {
+				limit = { owner = { NOT = { check_variable = { which = owed_small_arms value = 1 } } } }
+				owner = { set_variable = { which = owed_small_arms value = 10 } }
+			}
+			random_owned = {
+				limit = { owner = { check_variable = { which = owed_small_arms value = 1 } } }
+				owner = { change_variable = { which = owed_small_arms value = 10 } }
+			}
+			random_owned = {
+				limit = { owner = { NOT = { check_variable = { which = owed_ammunition value = 1 } } } }
+				owner = { set_variable = { which = owed_ammunition value = 10 } }
+			}
+			random_owned = {
+				limit = { owner = { check_variable = { which = owed_ammunition value = 1 } } }
+				owner = { change_variable = { which = owed_ammunition value = 10 } }
+			}
+			create_alliance = VOJ
+			relation = { who = VOJ value = 200 }
+			VOJ = {
+				treasury = 5000
+				small_arms = 10
+				ammunition = 10
+				canned_food = 10
+				artillery = 10
+				war = {
+					attacker_goal = {
+						casus_belli = call_allies_cb
+					}
+					call_ally = yes
+				}
+			}
+			any_pop = {
+				limit = { has_pop_culture = serb }
+				consciousness = -4
+				militancy = -6
+			}
+			ai_chance = {
+				factor = 100
+			}
+		}
+		option = {
+			name = "Sadly, we cannot help them at the moment..."
+			set_country_flag = serbian_uprising2_no_help
+			ai_chance = { factor = 0 }
+		}
+	}
+
+	country_event = {
+		id = 100054
+		title = "Normalize Serbia-Hungary Banat-Vojvodina-Baranya borders"
+		desc = "This is AI-exclusive, contact Benisman if you're getting this event."
+		picture = "Patrijarh_Rajacic_blagosilja_vojsku"
+		
+		trigger = {
+			ai = yes
+			OR = {
+				tag = YUG
+				tag = SER
+			}
+			HUN = { exists = yes }
+			OR = { 
+				YUG = { exists = yes }
+				SER = { exists = yes }
+			}
+			any_owned_province = {
+				OR = {
+					region = AUS_652
+					region = AUS_640
+					region = AUS_2538
+				}
+				NOT = {
+					OR = {
+						province_id = 3628
+						province_id = 653
+						province_id = 652
+					}
+				}
+				NOT = { is_core = THIS }
+			}
+			NOT = { has_global_flag = SER_HUN_BVB }
+		}
+		
+		option = {
+			name = "Very well..."
+			set_global_flag = SER_HUN_BVB
+			any_owned = {
+				limit = {
+					OR = {
+						owner = { tag = SER }
+						owner = { tag = YUG }
+					}
+					OR = {
+						province_id = 640
+						province_id = 3651
+						province_id = 3627
+						province_id = 3623
+					}
+				}
+				secede_province = HUN
+			}
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+	
+	country_event = {
+		id = 100055
+		title = "Normalize Serbia-Austria Banat-Vojvodina-Baranya borders"
+		desc = "This is AI-exclusive, contact Benisman if you're getting this event."
+		picture = "Patrijarh_Rajacic_blagosilja_vojsku"
+		
+		trigger = {
+			ai = yes
+			OR = {
+				tag = YUG
+				tag = SER
+			}
+			AUS = { exists = yes }
+			OR = { 
+				YUG = { exists = yes }
+				SER = { exists = yes }
+			}
+			any_owned_province = {
+				OR = {
+					region = AUS_652
+					region = AUS_640
+					region = AUS_2538
+				}
+				NOT = {
+					OR = {
+						province_id = 3628
+						province_id = 653
+						province_id = 652
+					}
+				}
+				NOT = { is_core = THIS }
+			}
+			NOT = { has_global_flag = SER_AUS_BVB }
+		}
+		
+		option = {
+			name = "Very well..."
+			set_global_flag = SER_AUS_BVB
+			any_owned = {
+				limit = {
+					OR = {
+						owner = { tag = SER }
+						owner = { tag = YUG }
+					}
+					OR = {
+						province_id = 640
+						province_id = 3651
+						province_id = 3627
+						province_id = 3623
+					}
+				}
+				secede_province = AUS
+			}
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+	
+	country_event = {
+		id = 100056
+		title = "Normalize Serbia-Austria-Hungary Banat-Vojvodina-Baranya borders"
+		desc = "This is AI-exclusive, contact Benisman if you're getting this event."
+		picture = "Patrijarh_Rajacic_blagosilja_vojsku"
+		
+		trigger = {
+			ai = yes
+			OR = {
+				tag = YUG
+				tag = SER
+			}
+			KUK = { exists = yes }
+			OR = { 
+				YUG = { exists = yes }
+				SER = { exists = yes }
+			}
+			any_owned_province = {
+				OR = {
+					region = AUS_652
+					region = AUS_640
+					region = AUS_2538
+				}
+				NOT = {
+					OR = {
+						province_id = 3628
+						province_id = 653
+						province_id = 652
+					}
+				}
+				NOT = { is_core = THIS }
+			}
+			NOT = { has_global_flag = SER_KUK_BVB }
+		}
+		
+		option = {
+			name = "Very well..."
+			set_global_flag = SER_KUK_BVB
+			any_owned = {
+				limit = {
+					OR = {
+						owner = { tag = SER }
+						owner = { tag = YUG }
+					}
+					OR = {
+						province_id = 640
+						province_id = 3651
+						province_id = 3627
+						province_id = 3623
+					}
+				}
+				secede_province = KUK
+			}
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+	
+	country_event = {
+		id = 100057
+		title = "Normalize Romania-Serbia Banat borders"
+		desc = "This is AI-exclusive, contact Benisman if you're getting this event."
+		picture = "Patrijarh_Rajacic_blagosilja_vojsku"
+		
+		trigger = {
+			ai = yes
+			OR = {
+				tag = YUG
+				tag = SER
+			}
+			ROM = {
+				exists = yes
+				owns = 647
+			}
+			OR = { 
+				YUG = { exists = yes }
+				SER = { exists = yes }
+			}
+			any_owned_province = {
+				region = AUS_652
+				NOT = {
+					OR = {
+						province_id = 3623
+						province_id = 3624
+						province_id = 792
+					}
+				}
+				NOT = { is_core = THIS }
+			}
+			NOT = { has_global_flag = SER_ROM_banat }
+		}
+		
+		option = {
+			name = "Very well..."
+			set_global_flag = SER_ROM_banat
+			any_owned = {
+				limit = {
+					OR = {
+						owner = { tag = SER }
+						owner = { tag = YUG }
+					}
+					OR = {
+						province_id = 652
+						province_id = 653
+						province_id = 3628
+					}
+				}
+				secede_province = ROM
+			}
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}

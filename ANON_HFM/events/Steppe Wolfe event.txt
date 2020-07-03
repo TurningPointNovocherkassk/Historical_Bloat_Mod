@@ -1,0 +1,78 @@
+##Steppe Wolfe Events
+country_event = {
+		id = 30088
+		title = "EVTNAME30088"
+		desc = "EVTDESC30088"
+		picture = ""
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = "EVT30088OPTA"
+				random_owned = {
+					limit = {
+						owner = { has_country_flag = turkish_problem_solved }
+					}
+					owner = {
+						any_owned = {
+							limit = { any_pop = { has_pop_culture = turkish } }
+							add_province_modifier = { name = turkish_women duration = 10950}
+						}
+						any_pop = {
+							limit = { has_pop_culture = turkish }
+							reduce_pop = 0.5
+							move_pop = 876
+						}
+					}
+				}
+		}
+}
+
+country_event = {
+		id = 30065
+		title = "EVTNAME30065"
+		desc = "EVTDESC30065"
+		picture = ""
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = "EVT30065OPTA"
+			798 = { 
+				any_pop = { 
+					limit = { has_pop_culture = bulgarian } 
+					move_pop = 1780
+				}
+			}
+			799 = {
+				any_pop = { 
+					limit = { has_pop_culture = bulgarian } 
+					move_pop = 1780
+				}
+			}
+			805 = {
+				any_pop = { 
+					limit = { has_pop_culture = bulgarian } 
+					move_pop = 1780
+				}
+			}
+			819 = {
+				any_pop = { 
+					limit = { has_pop_culture = bulgarian } 
+					move_pop = 1780
+				}
+			}
+			821 = {
+				any_pop = { 
+					limit = { has_pop_culture = bulgarian } 
+					move_pop = 1780
+				}
+			}
+			822 = {
+				any_pop = { 
+					limit = { has_pop_culture = bulgarian } 
+					move_pop = 1780
+				}
+			}
+		}
+}

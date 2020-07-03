@@ -1,0 +1,1021 @@
+# starting 1999000000
+
+#OIL
+
+province_event = {
+
+	id = 1999000000
+
+	trigger = {
+		year = 1902
+		OR = {
+			province_id = 2272		# Coro - Venezuela
+			province_id = 3372		# Bucaramanga - Colombia
+			province_id = 2270		# Maracaibo - Venezuela
+			province_id = 3385		# Aguaray - Bolivia/Argentina
+			province_id = 3386		# Yacundo - Bolivia/Argentina
+			province_id = 4		# Valdez - Alaska
+		}
+		NOT = { trade_goods = oil }
+		NOT = { has_province_modifier = switched_production }
+		OR = {
+			owner = { part_of_sphere = yes sphere_owner = { invention = cracking } }
+			owner = { part_of_sphere = yes sphere_owner = { any_owned_province = { has_building = fuel_refinery } } }
+			owner = { invention = cracking }
+			owner = { any_owned_province = { has_building = fuel_refinery } }
+			year = 1905
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 8
+	}
+
+	title = "EVTNAME1109"
+	desc = "EVTDESC1109"
+
+	option = {
+		name = "EVTOPTA1109"
+		trade_goods = oil
+	}
+}
+
+province_event = {
+
+	id = 1999000001
+
+	trigger = {
+		year = 1875
+		province_id = 3282		# San Cristobal - Venezuela
+		NOT = { trade_goods = oil }
+		NOT = { has_province_modifier = switched_production }
+		OR = {
+			owner = { part_of_sphere = yes sphere_owner = { invention = cracking } }
+			owner = { part_of_sphere = yes sphere_owner = { any_owned_province = { has_building = fuel_refinery } } }
+			owner = { invention = cracking }
+			owner = { any_owned_province = { has_building = fuel_refinery } }
+			year = 1880
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 8
+	}
+
+	title = "EVTNAME1109"
+	desc = "EVTDESC1109"
+
+	option = {
+		name = "EVTOPTA1109"
+		trade_goods = oil
+	}
+}
+
+province_event = {
+
+	id = 1999000002
+
+	trigger = {
+		year = 1925
+		province_id = 3283		# Maturin - Venezuela
+		NOT = { trade_goods = oil }
+		NOT = { has_province_modifier = switched_production }
+		OR = {
+			owner = { part_of_sphere = yes sphere_owner = { invention = cracking } }
+			owner = { part_of_sphere = yes sphere_owner = { any_owned_province = { has_building = fuel_refinery } } }
+			owner = { invention = cracking }
+			owner = { any_owned_province = { has_building = fuel_refinery } }
+			year = 1930
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 12
+	}
+
+	title = "EVTNAME1109"
+	desc = "EVTDESC1109"
+
+	option = {
+		name = "EVTOPTA1109"
+		trade_goods = oil
+	}
+}
+
+province_event = {
+
+	id = 1999000003
+
+	trigger = {
+		year = 1853
+		OR = {
+			province_id = 705		# Przemysl - Austria/Poland
+			province_id = 704		# Nowy Sacz - Austria/Poland
+			province_id = 1102		# Baku
+			province_id = 3654		# Krynica - Austria/Poland
+			province_id = 951		# Stryi - Austria/Ukraine
+			province_id = 3653		# Skole - Austria/Ukraine
+		}
+		NOT = { trade_goods = oil }
+		NOT = { has_province_modifier = switched_production }
+		OR = {
+			owner = { part_of_sphere = yes sphere_owner = { invention = cracking } }
+			owner = { part_of_sphere = yes sphere_owner = { any_owned_province = { has_building = fuel_refinery } } }
+			owner = { invention = cracking }
+			owner = { any_owned_province = { has_building = fuel_refinery } }
+			year = 1880
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 8
+	}
+
+	title = "EVTNAME1109"
+	desc = "EVTDESC1109"
+
+	option = {
+		name = "EVTOPTA1109"
+		trade_goods = oil
+	}
+}
+
+#GOLD
+
+province_event = {
+	
+	id = 1999000004
+
+	trigger = {
+		year = 1880
+		OR = {
+			province_id = 2242		# Mahdia/Esequibo - Guyana
+			province_id = 2301		# Puerto Maldonado/Madre de Dios - Peru
+			province_id = 2288		# Yuncos - Peru/Ecuador
+			province_id = 3380		# Pirara - Brazil
+			province_id = 3383		# Upper Maroni - French/Dutch Guyana
+			province_id = 3384		# Tapahoni - French/Dutch Guyana
+		}
+		NOT = { trade_goods = precious_metal }
+	}
+
+	mean_time_to_happen =  {
+		months = 80
+	}
+
+	title = "EVTNAME1100"
+	desc = "EVTDESC1100"
+
+	option = {
+		name = "EVTOPTA1100"
+		trade_goods = precious_metal
+		add_province_modifier = { name = gold_rush duration = 1095 }
+		owner = { random_owned = { limit = { province_id = 2242 NOT = { life_rating = 39 } } life_rating = 15 } }
+		owner = { random_owned = { limit = { province_id = 2301 NOT = { life_rating = 39 } } life_rating = 10 } }
+		owner = { random_owned = { limit = { province_id = 2288 NOT = { life_rating = 39 } } life_rating = 10 } }
+		owner = { random_owned = { limit = { province_id = 3380 NOT = { life_rating = 39 } } life_rating = 15 } }
+		owner = { random_owned = { limit = { province_id = 3383 NOT = { life_rating = 39 } } life_rating = 15 } }
+		owner = {
+			random_owned = {
+				limit = {
+					owner = {
+						NOT = { has_country_modifier = gold_rush_country }
+						OR = { 
+							capital_scope = { continent = north_america } 
+							capital_scope = { continent = south_america }
+							primary_culture = australian
+						}
+					}
+				}
+				owner = { add_country_modifier = { name = gold_rush_country duration = 1095 } }
+			}
+		}
+	}
+}
+
+province_event = {
+	
+	id = 1999000005
+
+	trigger = {
+		year = 1836
+		OR = {
+			province_id = 2441		# Ouro Preto - Brazil
+			province_id = 2444		# Paracatu - Brazil
+			province_id = 2446		# Sao Joao del Rey - Brazil
+		}
+		NOT = { trade_goods = precious_metal }
+		NOT = { has_global_flag = ouro_preto }
+	}
+
+	mean_time_to_happen =  {
+		months = 6
+	}
+
+	title = "EVTNAME1100"
+	desc = "EVTDESC1100"
+
+	option = {
+		name = "EVTOPTA1100"
+		trade_goods = precious_metal
+		add_province_modifier = { name = gold_rush duration = 1095 }
+		owner = { random_owned = { limit = { province_id = 2444 NOT = { life_rating = 39 } } life_rating = 10 } }
+		owner = {
+			set_global_flag = ouro_preto
+			random_owned = {
+				limit = {
+					owner = {
+						NOT = { has_country_modifier = gold_rush_country }
+						OR = { 
+							capital_scope = { continent = north_america } 
+							capital_scope = { continent = south_america }
+							primary_culture = australian
+						}
+					}
+				}
+				owner = { add_country_modifier = { name = gold_rush_country duration = 1095 } }
+			}
+		}
+	}
+}
+
+province_event = {
+	
+	id = 1999000006
+
+	trigger = {
+		year = 1880
+		province_id = 2443			# Januaria/Diamantina Brazil
+		NOT = { trade_goods = precious_metal }
+		NOT = { trade_goods = precious_goods }
+	}
+
+	mean_time_to_happen =  {
+		months = 36
+	}
+
+	title = "EVTNAME1999000006"
+	desc = "EVTDESC1999000006"
+
+	option = {
+		name = "EVTOPTA1999000006"
+		trade_goods = precious_metal
+		add_province_modifier = { name = gold_rush duration = 365 }
+		#add_province_modifier = {
+		#	name = switched_production
+		#	duration = 365
+		#}
+		owner = {
+			random_owned = {
+				limit = {
+					owner = {
+						NOT = { has_country_modifier = gold_rush_country }
+						OR = { 
+							capital_scope = { continent = north_america } 
+							capital_scope = { continent = south_america }
+							primary_culture = australian
+						}
+					}
+				}
+				owner = { add_country_modifier = { name = gold_rush_country duration = 365 } }
+			}
+		}
+	}
+}
+
+#DIAMONDS
+
+province_event = {
+	
+	id = 1999000007
+
+	trigger = {
+		year = 1880
+		OR = {
+			province_id = 3373			# Rupununi - Guyana
+			province_id = 3379			# Mau - Guyana
+			province_id = 2532			# Roraima - Brazil
+			province_id = 2410			# Belem - Brazil
+			province_id = 2413			# Maraba - Brazil
+			province_id = 2417			# Vila Bela - Brazil
+		}
+		NOT = { trade_goods = precious_goods }
+	}
+
+	mean_time_to_happen =  {
+		months = 80
+	}
+
+	title = "EVTNAME1105"
+	desc = "EVTDESC1105"
+
+	option = {
+		name = "EVTOPTA1105"
+		trade_goods = precious_goods
+		add_province_modifier = {
+			name = anon_diamond_rush
+			duration = 1825
+		}
+		owner = { random_owned = { limit = { province_id = 3373 NOT = { life_rating = 39 } } life_rating = 15 } }
+		owner = { random_owned = { limit = { province_id = 3379 NOT = { life_rating = 39 } } life_rating = 15 } }
+		owner = { random_owned = { limit = { province_id = 2532 NOT = { life_rating = 39 } } life_rating = 15 } }
+		owner = { random_owned = { limit = { province_id = 2410 NOT = { life_rating = 39 } } life_rating = 10 } }
+		owner = { random_owned = { limit = { province_id = 2413 NOT = { life_rating = 39 } } life_rating = 10 } }
+		owner = { random_owned = { limit = { province_id = 2417 NOT = { life_rating = 39 } } life_rating = 10 } }
+		random_owned = {
+			limit = {
+				owner = {
+					NOT = { has_country_modifier = diamond_rush_country }
+				}
+			}
+			owner = { add_country_modifier = { name = diamond_rush_country duration = 1095 } }
+		}
+	}
+}
+
+province_event = {
+	
+	id = 1999000008
+
+	trigger = {
+		year = 1836
+		province_id = 2443			# Januaria/Diamantina Brazil
+		NOT = { trade_goods = precious_goods }
+		NOT = { trade_goods = precious_metal }
+	}
+
+	mean_time_to_happen =  {
+		months = 6
+	}
+
+	title = "EVTNAME1999000008"
+	desc = "EVTDESC1999000008"
+
+	option = {
+		name = "EVTOPTA1999000008"
+		trade_goods = precious_goods
+		add_province_modifier = {
+			name = anon_diamond_rush
+			duration = 1825
+		}
+		random_owned = {
+			limit = {
+				owner = {
+					NOT = { has_country_modifier = diamond_rush_country }
+				}
+			}
+			owner = { add_country_modifier = { name = diamond_rush_country duration = 1095 } }
+		}
+	}
+}
+
+#RUBBER
+
+province_event = {
+	
+	id = 1999000009
+
+	trigger = {
+		year = 1880
+		NOT = { has_province_modifier = switched_production }
+		OR = {
+			province_id = 3311			# Pacatuba - Bolivia
+			province_id = 3312			# Boca de Abuna - Bolivia
+			province_id = 2278			# San Fernando de Atabapo - Venezuela
+			province_id = 2287			# Yurimaguas - Peru
+			province_id = 2294			# Moyobamba - Peru
+			province_id = 2300			# Pucallpa - Peru
+			province_id = 2263			# El Encanto - Colombia
+			province_id = 3367			# Apolobamba - Peru
+			province_id = 2320			# Riberalta - Bolivia
+			province_id = 3378			# Purus - Peru
+			province_id = 3368			# Magdalena - Bolivia
+			province_id = 2401			# Marabitanas - Colombia
+			province_id = 3371			# Macapiri - Colombia
+			province_id = 2260			# San Jose del Guaviare - Colombia
+			province_id = 2261			# Obando - Colombia
+			province_id = 2289			# Puca Urco - Colombia
+			province_id = 3374			# Maroa - Venezuela
+		}
+		NOT = { trade_goods = rubber }
+		OR = {
+			owner = { part_of_sphere = yes sphere_owner = { invention = edison_light_bulb } }
+			owner = { part_of_sphere = yes sphere_owner = { invention = daimlers_automobile } }
+			owner = { part_of_sphere = yes sphere_owner = { invention = wright_n_langleys_aeroplanes } }
+			owner = { part_of_sphere = yes sphere_owner = { any_owned_province = { has_building = aeroplane_factory } } }
+			owner = { part_of_sphere = yes sphere_owner = { any_owned_province = { has_building = automobile_factory } } }
+			owner = { part_of_sphere = yes sphere_owner = { any_owned_province = { has_building = electric_gear_factory } } }
+			owner = { invention = edison_light_bulb }
+			owner = { invention = daimlers_automobile }
+			owner = { invention = wright_n_langleys_aeroplanes }
+			owner = { any_owned_province = { has_building = aeroplane_factory } }
+			owner = { any_owned_province = { has_building = automobile_factory } }
+			owner = { any_owned_province = { has_building = electric_gear_factory } }
+			year = 1900
+		}
+	}
+
+	mean_time_to_happen =  {
+		months = 36
+
+	}
+
+	title = "EVTNAME1107"
+	desc = "EVTDESC1107"
+	picture = ""
+
+	option = {
+		name = "EVTOPTA1107"
+		trade_goods = rubber
+		add_province_modifier = {
+			name = anon_rubber_boom
+			duration = 1095
+		}
+		random_owned = {
+			limit = {
+				owner = {
+					NOT = { has_country_modifier = rubber_boom_country }
+				}
+			}
+			owner = { add_country_modifier = { name = rubber_boom_country duration = 1095 } }
+		}
+	}
+}
+
+# IRON
+
+province_event = {
+	
+	id = 1999000010
+
+	trigger = {
+		year = 1854
+		province_id = 2441		# Ouro Preto - Brazil
+		trade_goods = precious_metal
+	}
+
+	mean_time_to_happen =  {
+		months = 24
+	}
+
+	title = "EVTNAME1999000010"
+	desc = "EVTDESC1999000010"
+
+	option = {
+		name = "EVTOPTA1999000010"
+		trade_goods = iron
+		add_province_modifier = {
+			name = switched_production
+			duration = 1825
+		}
+		add_province_modifier = {
+			name = end_mineral_boom
+			duration = 365
+		}
+	}
+}
+
+# COFFEE (lol)
+
+province_event = {
+	
+	id = 1999000011
+
+	trigger = {
+		year = 1906
+		province_id = 2446		# Sao Joao del Rey - Brazil
+		trade_goods = precious_metal
+	}
+
+	mean_time_to_happen =  {
+		months = 24
+	}
+
+	title = "EVTNAME1999000011"
+	desc = "EVTDESC1999000011"
+
+	option = {
+		name = "EVTOPTA1999000011"
+		trade_goods = coffee
+		add_province_modifier = {
+			name = switched_production
+			duration = 1825
+		}
+		add_province_modifier = {
+			name = end_mineral_boom
+			duration = 365
+		}
+	}
+}
+
+#GOLD AGAIN
+
+province_event = {
+	
+	id = 1999000012
+
+	trigger = {
+		year = 1879
+		province_id = 2			# Juneau - Alaska
+		NOT = { trade_goods = precious_metal }
+	}
+
+	mean_time_to_happen =  {
+		months = 16
+	}
+
+	title = "EVTNAME1100"
+	desc = "EVTDESC1100"
+
+	option = {
+		name = "EVTOPTA1100"
+		trade_goods = precious_metal
+		add_province_modifier = { name = gold_rush duration = 1095 }
+		owner = {
+			random_owned = {
+				limit = {
+					owner = {
+						NOT = { has_country_modifier = gold_rush_country }
+						OR = { 
+							capital_scope = { continent = north_america } 
+							capital_scope = { continent = south_america }
+							primary_culture = australian
+						}
+					}
+				}
+				owner = { add_country_modifier = { name = gold_rush_country duration = 1095 } }
+			}
+		}
+	}
+}
+
+province_event = {
+	
+	id = 1999000013
+
+	trigger = {
+		year = 1871
+		province_id = 1			# Sitka - Alaska
+		NOT = { trade_goods = precious_metal }
+	}
+
+	mean_time_to_happen =  {
+		months = 16
+	}
+
+	title = "EVTNAME1100"
+	desc = "EVTDESC1100"
+
+	option = {
+		name = "EVTOPTA1100"
+		trade_goods = precious_metal
+		add_province_modifier = { name = gold_rush duration = 1095 }
+		owner = {
+			random_owned = {
+				limit = {
+					owner = {
+						NOT = { has_country_modifier = gold_rush_country }
+						OR = { 
+							capital_scope = { continent = north_america } 
+							capital_scope = { continent = south_america }
+							primary_culture = australian
+						}
+					}
+				}
+				owner = { add_country_modifier = { name = gold_rush_country duration = 1095 } }
+			}
+		}
+	}
+}
+province_event = {
+	
+	id = 1999000014
+
+	trigger = {
+		year = 1898
+		province_id = 2631			# Unalakleet/Nome - Alaska
+		NOT = { trade_goods = precious_metal }
+	}
+
+	mean_time_to_happen =  {
+		months = 16
+	}
+
+	title = "EVTNAME1100"
+	desc = "EVTDESC1100"
+
+	option = {
+		name = "EVTOPTA1100"
+		trade_goods = precious_metal
+		add_province_modifier = { name = gold_rush duration = 1095 }
+		owner = {
+			random_owned = {
+				limit = {
+					owner = {
+						NOT = { has_country_modifier = gold_rush_country }
+						OR = { 
+							capital_scope = { continent = north_america } 
+							capital_scope = { continent = south_america }
+							primary_culture = australian
+						}
+					}
+				}
+				owner = { add_country_modifier = { name = gold_rush_country duration = 1095 } }
+			}
+		}
+	}
+}
+province_event = {
+	
+	id = 1999000015
+
+	trigger = {
+		year = 1902
+		province_id = 2630			# Fairbanks - Alaska
+		NOT = { trade_goods = precious_metal }
+	}
+
+	mean_time_to_happen =  {
+		months = 16
+	}
+
+	title = "EVTNAME1100"
+	desc = "EVTDESC1100"
+
+	option = {
+		name = "EVTOPTA1100"
+		trade_goods = precious_metal
+		add_province_modifier = { name = gold_rush duration = 1095 }
+		owner = {
+			random_owned = {
+				limit = {
+					owner = {
+						NOT = { has_country_modifier = gold_rush_country }
+						OR = { 
+							capital_scope = { continent = north_america } 
+							capital_scope = { continent = south_america }
+							primary_culture = australian
+						}
+					}
+				}
+				owner = { add_country_modifier = { name = gold_rush_country duration = 1095 } }
+			}
+		}
+		owner = {
+			random_owned = {
+				limit = {
+					owner = {
+						OR = {
+							primary_culture = cascadian
+							is_culture_group = american_cultures
+							is_culture_group = british
+							primary_culture = anglo_canadian
+						}
+						owns = 6
+						life_rating = 15
+					}
+				}
+				6 = {
+					change_province_name = "Fairbanks"
+					life_rating = 5
+				}
+			}
+		}
+		owner = {
+			random_owned = {
+				limit = {
+					owner = {
+						OR = {
+							primary_culture = alaskan
+							is_culture_group = east_slavic
+						}
+						owns = 6
+						life_rating = 15
+					}
+				}
+				6 = {
+					change_province_name = "Beregodar"
+					life_rating = 5
+				}
+			}
+		}
+		owner = {
+			random_owned = {
+				limit = {
+					owner = {
+						OR = {
+							is_culture_group = iberian
+							is_culture_group = latin_american_cultures
+						}
+						owns = 6
+						life_rating = 15
+					}
+				}
+				6 = {
+					change_province_name = "Banco Hermoso"
+					life_rating = 5
+				}
+			}
+		}
+		owner = {
+			random_owned = {
+				limit = {
+					owner = {
+						primary_culture = japanese
+						owns = 6
+						life_rating = 15
+					}
+				}
+				6 = {
+					change_province_name = "Seirou Kawagishi"
+					life_rating = 5
+				}
+			}
+		}
+	}
+}
+
+#SILVER RUSHES
+
+province_event = {
+	
+	id = 1999000016
+
+	trigger = {
+		OR = {
+			AND = {
+				year = 1858
+				province_id = 3383 #Tahoe/Carson City, Comstock lode
+			}
+			AND = {
+				year = 1899
+				province_id = 94 #Dayton
+			}
+			AND = {
+				year = 1878
+				province_id = 109 #Aspen
+			}
+			AND = {
+				year = 1888
+				province_id = 108 #Grand Junction
+			}
+		}
+		NOT = { trade_goods = precious_metal }
+	}
+
+	mean_time_to_happen =  {
+		months = 16
+	}
+
+	title = "EVTNAME1999000016"
+	desc = "EVTDESC1999000016"
+
+	option = {
+		name = "EVTOPTA1999000016"
+		trade_goods = precious_metal
+		add_province_modifier = { name = silver_rush duration = 1095 }
+		add_province_modifier = { name = silver_mine duration = -1 }
+		random_owned = {
+			limit = {
+				owner = {
+					NOT = { has_country_modifier = silver_rush_country }
+					OR = { 
+						capital_scope = { continent = north_america } 
+						capital_scope = { continent = south_america }
+						primary_culture = australian
+					}
+				}
+			}
+			owner = { add_country_modifier = { name = silver_rush_country duration = 1095 } }
+		}
+	}
+}
+
+# IRON AGAIN
+
+province_event = {
+	
+	id = 1999000017
+
+	trigger = {
+		year = 1848
+		province_id = 3307		#Modoc
+		NOT = { trade_goods = iron }
+	}
+
+	mean_time_to_happen =  {
+		months = 12
+	}
+
+	title = "EVTNAME1999000017"
+	desc = "EVTDESC1999000017"
+
+	option = {
+		name = "EVTOPTA1999000017"
+		trade_goods = iron
+	}
+}
+
+# Pike Peak's gold rush
+
+province_event = {
+	
+	id = 1999000018
+
+	trigger = {
+		OR = {
+			province_id = 106		#Denver
+			province_id = 109		#Aspen
+		}
+		year = 1857
+		NOT = { trade_goods = precious_metal }
+	}
+
+	mean_time_to_happen =  {
+		months = 12
+	}
+
+	title = "EVTNAME1100"
+	desc = "EVTNAME1100"
+
+	option = {
+		name = "EVTOPTA1100"
+		trade_goods = precious_metal
+		random_owned = {
+			limit = {
+				owner = {
+					NOT = { has_country_modifier = gold_rush_country }
+					OR = { 
+						capital_scope = { continent = north_america } 
+						capital_scope = { continent = south_america }
+						primary_culture = australian
+					}
+				}
+			}
+			owner = { add_country_modifier = { name = gold_rush_country duration = 1095 } }
+		}
+		owner = {
+			random_owned = {
+				limit = {
+					owner = {
+						OR = {
+							is_culture_group = american_cultures
+							primary_culture = cascadian
+						}
+						owns = 109
+					}
+				}
+				109 = {
+					change_province_name = "Oro City"
+					add_province_modifier = { name = recently_built_city duration = 180 }
+				}
+			}
+		}
+		owner = {
+			random_owned = {
+				limit = {
+					owner = {
+						OR = {
+							is_culture_group = iberian
+							is_culture_group = latin_american_cultures
+						}
+						owns = 109
+					}
+				}
+				109 = {
+					change_province_name = "Ciudad del Oro"
+					add_province_modifier = { name = recently_built_city duration = 180 }
+				}
+			}
+		}
+	}
+}
+#back to grain
+
+province_event = {
+	
+	id = 1999000019
+
+	trigger = {
+		year = 1884
+		province_id = 98 #Silver Reef, Cedar City.
+		trade_goods = precious_metal
+		NOT = { has_global_flag = cedar_city_end }
+	}
+
+	mean_time_to_happen =  {
+		months = 16
+	}
+
+	title = "EVTNAME1999000019"
+	desc = "EVTDESC1999000019"
+
+	option = {
+		name = "EVTOPTA1999000019"
+		set_global_flag = cedar_city_end
+		trade_goods = grain
+		remove_province_modifier = silver_mine
+		add_province_modifier = {
+			name = end_mineral_boom
+			duration = 365
+		}
+		add_province_modifier = {
+			name = switched_production
+			duration = 1825
+		}
+	}
+}
+
+#Oil again
+
+province_event = {
+
+	id = 1999000020
+
+	trigger = {
+		year = 1900
+		OR = {
+			province_id = 3401 #Menardville Texas
+			province_id = 3403  #Beaumont Texas
+		}
+		NOT = { trade_goods = oil }
+		NOT = { has_province_modifier = switched_production }
+		OR = {
+			owner = { part_of_sphere = yes sphere_owner = { invention = cracking } }
+			owner = { part_of_sphere = yes sphere_owner = { any_owned_province = { has_building = fuel_refinery } } }
+			owner = { invention = cracking }
+			owner = { any_owned_province = { has_building = fuel_refinery } }
+			year = 1905
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 16
+	}
+
+	title = "EVTNAME1109"
+	desc = "EVTDESC1109"
+
+	option = {
+		name = "EVTOPTA1109"
+		trade_goods = oil
+	}
+}
+
+#speshul silver rush
+
+province_event = {
+	
+	id = 1999000021
+
+	trigger = {
+		year = 1864
+		province_id = 98 #Silver Reef, Cedar City.
+		NOT = { trade_goods = precious_metal }
+		NOT = { has_global_flag = cedar_city_end }
+	}
+
+	mean_time_to_happen =  {
+		months = 16
+	}
+
+	title = "EVTNAME1999000016"
+	desc = "EVTDESC1999000016"
+
+	option = {
+		name = "EVTOPTA1999000016"
+		trade_goods = precious_metal
+		add_province_modifier = { name = silver_rush duration = 1095 }
+		add_province_modifier = { name = silver_mine duration = -1 }
+		random_owned = {
+			limit = {
+				owner = {
+					NOT = { has_country_modifier = silver_rush_country }
+					OR = { 
+						capital_scope = { continent = north_america } 
+						capital_scope = { continent = south_america }
+						primary_culture = australian
+					}
+				}
+			}
+			owner = { add_country_modifier = { name = silver_rush_country duration = 1095 } }
+		}
+		any_pop = {
+			limit = {
+				location = {
+					province_id = 98
+				}
+				OR = {
+					has_pop_culture = mormon_culture
+					has_pop_religion = mormon
+				}
+			}
+			random_list = {
+				25 = { reduce_pop = 1.30 }
+				25 = { reduce_pop = 1.45 }
+				25 = { reduce_pop = 1.60 }
+				25 = { reduce_pop = 1.75 }
+			}
+		}
+	}
+}

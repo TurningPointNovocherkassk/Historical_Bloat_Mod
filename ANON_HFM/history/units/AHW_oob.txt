@@ -1,0 +1,33 @@
+army = {
+	name = "Kaab Warriors"
+	location = 1131
+	regiment = {
+		name = "Sheikh's Warriors"
+		type = irregular
+		home = 1132
+	}
+	regiment = {
+		name = "Sheikh's Warriors"
+		type = irregular
+		home = 1133
+	}
+	regiment = {
+		name = "Sheikh's Warriors"
+		type = irregular
+		home = 1131
+	}
+	regiment = {
+		name = "Horse Raiders"
+		type = cavalry
+		home = 3530
+	}
+}
+
+leader = {
+	name = "Jabir Khan Al-Kaabi"
+	type = land
+	date = 1825.8.20
+	background = natural_born_leader
+	personality = cautious
+}
+

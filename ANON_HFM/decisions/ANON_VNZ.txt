@@ -1,0 +1,420 @@
+political_decisions = {
+	
+	abolish_veneslavery = {
+		picture = abolish_slavery_romania
+		potential = {
+			OR = {
+				OR = {
+					AND = {
+						primary_culture = north_andean
+						NOT = {
+							OR = {
+								tag = ECU
+								tag = CLM
+								tag = VNZ
+							}
+						}
+					}
+					primary_culture = llanero
+				}
+				AND = {
+					tag = ECU
+					year = 1851
+				}
+				AND = {
+					tag = CLM
+					year = 1851
+				}
+				AND = {
+					tag = VNZ
+					year = 1854
+				}
+			}
+			OR = {
+				slavery = yes_slavery
+				slavery = freedom_of_womb
+			}
+			NOT = {	has_country_flag = abolish_veneslavery	}
+		}
+		allow = {
+			money = 25001
+			war = no
+		}
+		effect = {
+			treasury = -25000
+			political_reform = no_slavery
+			any_pop = {
+				limit = {
+					OR = {
+						has_pop_culture = north_andean
+						has_pop_culture = llanero
+					}
+				}
+				scaled_consciousness = {
+					factor = -8
+					issue = no_slavery
+				}
+				scaled_militancy = {
+					factor = -8
+					issue = no_slavery
+				}
+				scaled_consciousness = {
+					factor = 8
+					issue = freedom_of_womb
+				}
+				scaled_militancy = {
+					factor = 8
+					issue = freedom_of_womb
+				}
+				scaled_consciousness = {
+					factor = 8
+					issue = yes_slavery
+				}
+				scaled_militancy = {
+					factor = 8
+					issue = yes_slavery
+				}
+			}
+			any_pop = {
+				limit = {
+					has_pop_culture = afro_caribeno
+				}
+				consciousness = 5
+				militancy = -5
+			}
+		}	
+		ai_will_do = {
+			factor = 1
+			#modifier = {
+			#	factor = 0
+			#	NOT = { ruling_party_ideology = liberal }
+			#}
+			modifier = {
+				factor = 0
+				NOT = { upper_house = { ideology = liberal value = 0.3 } }
+			}
+			modifier = {
+				factor = 0
+				NOT = { money = 25001 }
+			}
+		}
+	}
+	
+	modernize_venenavy = {
+		picture = imperial_japanese_navy
+		potential = {
+			OR = {
+				tag = VNZ
+				tag = FVZ
+				tag = USV
+				tag = GCO
+				tag = ZLA
+			}
+			NOT = {	has_country_flag = modernize_venenavy	}
+			NOT = {
+				invention = steamer_transports
+				invention = commerce_raiders
+			}
+		}
+		
+		allow = {
+			year = 1860
+			money = 15001
+		}
+		
+		effect = {
+			set_country_flag = modernize_venenavy
+			treasury = -15000
+			activate_technology = steamers
+			activate_technology = iron_steamers
+			activate_technology = battleship_column_doctrine
+			activate_technology = raider_group_doctrine 
+			any_owned = {
+				limit = {
+					owned_by = THIS
+					is_capital = yes
+				}
+				sub_unit = { type = steam_transport value = current }
+				sub_unit = { type = steam_transport value = current }
+				sub_unit = { type = steam_transport value = current }
+				sub_unit = { type = steam_transport value = current }
+				sub_unit = { type = steam_transport value = current }
+				sub_unit = { type = commerce_raider value = current }
+				sub_unit = { type = commerce_raider value = current }
+				sub_unit = { type = commerce_raider value = current }
+			}
+			#steamer_transports = yes
+			#commerce_raiders = yes
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	claim_zulia_region = {
+		picture = gtfo
+		potential = {
+			tag = ZLA
+			NOT = {	has_country_flag = claim_zulia_region	}
+		}
+		
+		allow = {
+			nationalism_n_imperialism = 1
+			war = no
+		}
+		
+		effect = {
+			set_country_flag = claim_zulia_region
+			VNZ_2234 = { #Zulia
+				add_core = ZLA
+			}
+			VNZ_2271 = { #Andes
+				add_core = ZLA
+			}
+			VNZ_3605 = { #Perija
+				add_core = ZLA
+			}
+			CLM_3297 = { #Guajira
+				add_core = ZLA
+			}
+			2251 = { #Cucuta
+				add_core = ZLA
+			}
+			3607 = { #El Carmen
+				add_core = ZLA
+			}
+			
+			prestige = 5
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	claim_la_guajira = {
+		picture = gtfo
+		potential = {
+			tag = ZLA
+			NOT = {	has_country_flag = claim_la_guajira	}
+			has_country_flag = claim_zulia_region
+		}
+		
+		allow = {
+			nationalism_n_imperialism = 1
+			war = no
+		}
+		
+		effect = {
+			set_country_flag = claim_la_guajira
+			3297 = { #Riohacha
+				add_core = ZLA
+			}
+			3281 = { #La Guajira
+				add_core = ZLA
+			}
+			prestige = 5
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	change_capital_FVZ = {
+		picture = gtfo
+		potential = {
+			tag = FVZ
+			NOT = {	has_country_flag = change_capital_FVZ	}
+		}
+		
+		allow = {
+			NOT = { capital = 2264 }
+			owns = 2264
+		}
+		
+		effect = {
+			set_country_flag = change_capital_FVZ
+			capital = 2264
+			prestige = 2
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	kraut_military_academy = {
+		picture = marching_soldiers
+		potential = {
+			OR = {
+				tag = FVZ
+				tag = USV
+				tag = ZLA
+				tag = VNZ
+				tag = GCO
+				tag = CHL
+			}
+			NOT = {	has_country_flag = kraut_military_academy	}
+			year = 1895
+			war = no
+		}
+		
+		allow = {
+			OR = {
+				war_policy = jingoism	
+				war_policy = pro_military
+			}
+			war = no
+			OR = {
+				PRU = {
+					relation = {
+						who = THIS
+						value = 150
+					}
+				}
+				NGF = {
+					relation = {
+						who = THIS
+						value = 150
+					}
+				}
+				SGF = {
+					relation = {
+						who = THIS
+						value = 150
+					}
+				}
+				GER = {
+					relation = {
+						who = THIS
+						value = 150
+					}
+				}
+			}
+		}
+		
+		effect = {
+			set_country_flag = kraut_military_academy
+			add_country_modifier = {
+				name = encouraging_kraut_military_traditions
+				duration = -1
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	remove_FVZ_cores = {
+		picture = gtfo
+		potential = {
+			tag = VNZ
+			has_global_flag = venezuelan_federal_war_has_happened
+			has_global_flag = venezuelan_federal_war_has_happened2
+			has_global_flag = venezuelan_federal_war_has_happened3
+			NOT = {	has_country_flag = remove_FVZ_cores	}
+		}
+		
+		allow = {
+			FVZ = { exists = no }
+			war = no
+		}
+		
+		effect = {
+			set_country_flag = remove_FVZ_cores
+			VNZ = {
+				all_core = {
+					remove_core = FVZ
+				}
+			}
+			prestige = 15
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	remove_ZLA_cores = {
+		picture = gtfo
+		potential = {
+			tag = VNZ
+			has_global_flag = venezuelan_federal_war_has_happened
+			has_global_flag = venezuelan_federal_war_has_happened2
+			has_global_flag = venezuelan_federal_war_has_happened3
+			NOT = {	has_country_flag = remove_ZLA_cores	}
+			has_country_flag = remove_FVZ_cores
+		}
+		
+		allow = {
+			ZLA = { exists = no }
+			war = no
+		}
+		
+		effect = {
+			set_country_flag = remove_ZLA_cores
+			any_owned = {
+				limit = {
+					is_core = ZLA
+					NOT = { province_id = 2270 }
+				}
+				remove_core = ZLA
+			}
+			prestige = 5
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	become_USV = {
+		picture = gtfo
+		potential = {
+			tag = FVZ
+			has_global_flag = venezuelan_federal_war_has_happened
+			has_global_flag = venezuelan_federal_war_has_happened2
+			has_global_flag = venezuelan_federal_war_has_happened3
+			NOT = {	has_country_flag = become_USV }
+		}
+		
+		allow = {
+			owns = 2264
+			VNZ = { exists = no }
+			war = no
+		}
+		
+		effect = {
+			set_country_flag = become_USV
+			VNZ = {
+				all_core = {
+					add_core = USV
+				}
+			}
+			random_country = {
+				limit = {
+					exists = yes
+					tag = FVZ
+				}
+				all_core = {
+					remove_core = FVZ
+					remove_core = VNZ
+				}
+			}
+			ZLA = {
+				limit = {
+					exists = yes
+					ai = yes
+				}
+				all_core = { secede_province = USV }
+			}
+			change_tag = USV
+			capital = 2264
+			prestige = 15
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+}

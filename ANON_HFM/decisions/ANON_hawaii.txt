@@ -1,0 +1,542 @@
+political_decisions = {
+
+#Hawaii claims midway (1854 Pearl and Hermes Atoll) and Johnston Atoll (1858).
+
+	RUS_hawaiians_2_kamchatka = {
+		picture = hawaii_map
+		potential = {
+			is_culture_group = east_slavic
+			has_country_flag = RUS_colony_russoification
+			has_country_flag = RUS_alaska_assimilation
+			is_vassal = no
+			NOT = { has_country_flag = RUS_hawaiians_2_kamchatka }
+		}
+		allow = {
+			war = no
+			any_owned_province = {
+				is_core = LSK
+				NOT = { has_province_modifier = russoification }
+			}
+			money = 50001
+		}
+		effect = {
+			set_country_flag = RUS_hawaiians_2_kamchatka
+			treasury = -50000
+			any_pop = {
+				limit = {
+					location = { province_id = 658 } #Hawaii
+					is_culture_group = oceanic
+				}
+				reduce_pop = 0.75
+				move_pop = 1075 #Petropavlovsk
+			}
+			any_pop = {
+				limit = {
+					location = { province_id = 3305 } #Maui
+					is_culture_group = oceanic
+				}
+				reduce_pop = 0.75
+				move_pop = 2633 #Ossora
+			}
+			any_pop = {
+				limit = {
+					location = { province_id = 3306 } #Maui
+					is_culture_group = oceanic
+				}
+				reduce_pop = 0.75
+				move_pop = 2663 #Kamenskoye
+			}
+			any_pop = {
+				limit = {
+					location = {
+						OR = {
+							region = HAW_658
+							region = HAW_2524
+							province_id = 3351
+						}
+						NOT = {
+							OR = {
+								province_id = 1075
+								province_id = 2633
+								province_id = 2663
+							}
+						}
+					}
+					is_culture_group = oceanic
+				}
+				reduce_pop = 0.75
+				move_pop = 2616 #Tilichiki
+			}
+			any_pop = {
+				limit = {
+					is_culture_group = oceanic
+				}
+				militancy = 5
+				consciousness = 5
+			}
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	# Missionary schools for Hawaii
+	missionary_schools = {
+			picture = hawaii_map
+			potential = {
+				tag = HAW
+				civilized = no
+				NOT = {	has_country_flag = missionary_schools }
+			}
+			allow = {
+				year = 1840
+			}
+			effect = {
+				set_country_flag = missionary_schools
+				years_of_research = 1
+				any_pop = { consciousness = 1 }
+				economic_reform = yes_education_reform
+				#economic_reform = yes_research_reform
+							
+				any_pop = { limit = { pop_type = clergymen }
+					militancy = -3
+					consciousness = -3
+					reduce_pop = 1.75
+				}
+				
+				add_country_modifier = {
+					name = hawaii_missionary_schools
+					duration = -1
+				}
+			}
+		ai_will_do = { factor = 1 }
+	}
+
+	# A constitution for Hawaii
+	hawaii_constitution = {
+			picture = hawaii_map
+			potential = {
+				tag = HAW
+				civilized = no
+				NOT = {	has_country_flag = hawaii_constitution }
+			}
+			allow = {
+				year = 1839
+			}
+			effect = {
+				set_country_flag = hawaii_constitution
+				economic_reform = yes_admin_reform
+				government = hms_government
+			}
+		ai_will_do = { factor = 1 }
+	}
+
+	# Alien land ownership act
+	hawaii_alien_ownership_act = {
+			picture = hawaii_map
+			potential = {
+				tag = HAW
+				civilized = no
+				NOT = {	has_country_flag = hawaii_alien_ownership_act }
+			}
+			allow = {
+				year = 1850
+			}
+			effect = {
+				set_country_flag = hawaii_alien_ownership_act
+				economic_reform = yes_land_reform
+				3301 = { trade_goods = coffee }
+						
+				any_pop = { limit = { pop_type = aristocrats }
+					militancy = -3
+					consciousness = -3
+					reduce_pop = 1.5
+				}
+				
+				add_country_modifier = {
+					name = hawaii_land_ownership
+					duration = -1
+				}
+			}
+		ai_will_do = { factor = 1 }
+	}
+
+	# Paniolos
+	hawaii_cowboys = {
+			picture = hawaii_map
+			potential = {
+				tag = HAW
+				NOT = {	has_country_flag = hawaii_cowboys }
+			}
+			allow = {
+				year = 1837
+				OR = {
+					ai = yes
+					AND = {
+						ai = no
+						relation = {
+							who = MEX
+							value = 75
+						}
+					}
+				}
+			}
+			effect = {
+				set_country_flag = hawaii_cowboys
+				658 = {
+					trade_goods = cattle
+					add_province_modifier = {
+						name = hawaii_paniolos
+						duration = -1
+					}
+				}
+			}
+		ai_will_do = { factor = 1 }
+	}
+	
+	
+	RUS_rename_hawaii = {
+		picture = gtfo
+		potential = {
+			OR = {
+				is_culture_group = east_slavic
+				primary_culture = alaskan
+			}
+			owns = 658
+			NOT = { has_global_flag = RUS_rename_hawaii }
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = RUS_rename_hawaii
+			clr_global_flag = normal_rename_hawaii
+			clr_global_flag = HAW_rename_hawaii
+			658 = {
+				change_province_name = "Gavayi" 
+				state_scope = {
+					change_region_name = "Gavayskiye Ostrova"
+				}
+			}  
+			3306 = { change_province_name = "Atuvayi" }
+			3305 = { change_province_name = "Oakhu" }
+			2623 = { change_province_name = "Polputi" }
+		}
+		ai_will_do = { factor = 1 }
+	}
+	normal_rename_hawaii = {
+		picture = gtfo
+		potential = {
+			NOT = {
+				OR = {
+					is_culture_group = east_slavic
+					primary_culture = alaskan
+					is_culture_group = oceanic
+				}
+			}
+			owns = 658
+			NOT = { has_global_flag = normal_rename_hawaii }
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = normal_rename_hawaii
+			clr_global_flag = RUS_rename_hawaii
+			clr_global_flag = HAW_rename_hawaii
+			658 = {
+				change_province_name = "Hawaii" 
+				state_scope = {
+					change_region_name = "Hawaiian Islands"
+				}
+			}  
+			3306 = { change_province_name = "Kauai" }
+			3305 = { change_province_name = "Oahu" }
+			2623 = { change_province_name = "Midway Atoll" }
+		}
+		ai_will_do = { factor = 1 }
+	}
+	HAW_rename_hawaii = {
+		picture = gtfo
+		potential = {
+			is_culture_group = oceanic
+			owns = 658
+			NOT = { has_global_flag = HAW_rename_hawaii }
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = HAW_rename_hawaii
+			clr_global_flag = RUS_rename_hawaii
+			clr_global_flag = normal_rename_hawaii
+			658 = {
+				change_province_name = "Hawai'i" 
+				state_scope = {
+					change_region_name = "Mokupuni o Hawai'i"
+				}
+			}
+			3306 = { change_province_name = "Kaua'i" }
+			3305 = { change_province_name = "O'ahu" }
+			2623 = { change_province_name = "Pihemanu Kuaihelani" }
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	RUS_rename_south_line = {
+		picture = gtfo
+		potential = {
+			OR = {
+				is_culture_group = east_slavic
+				primary_culture = alaskan
+			}
+			owns = 3351
+			NOT = { has_global_flag = RUS_rename_south_line }
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = RUS_rename_south_line
+			clr_global_flag = normal_rename_south_line
+			clr_global_flag = HAW_rename_south_line
+			3351 = { change_province_name = "Yuzh'nyye Laynskiye Ostrova" }
+		}
+		ai_will_do = { factor = 1 }
+	}
+	normal_rename_south_line = {
+		picture = gtfo
+		potential = {
+			NOT = {
+				OR = {
+					is_culture_group = east_slavic
+					primary_culture = alaskan
+					is_culture_group = oceanic
+				}
+			}
+			owns = 3351
+			NOT = { has_global_flag = normal_rename_south_line }
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = normal_rename_south_line
+			clr_global_flag = RUS_rename_south_line
+			clr_global_flag = HAW_rename_south_line
+			3351 = { change_province_name = "Southern Line Islands" }
+		}
+		ai_will_do = { factor = 1 }
+	}
+	HAW_rename_south_line = {
+		picture = gtfo
+		potential = {
+			is_culture_group = oceanic
+			owns = 3351
+			NOT = { has_global_flag = HAW_rename_south_line }
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = HAW_rename_south_line
+			clr_global_flag = RUS_rename_south_line
+			clr_global_flag = HAW_rename_south_line
+			3351 = { change_province_name = "Hema Pae Moku Laina" }
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	#These don't work for some reason
+#	RUS_rename_central_pacific = {
+#		picture = gtfo
+#		potential = {
+#			OR = {
+#				is_culture_group = east_slavic
+#				primary_culture = alaskan
+#			}
+#			owns = 2526
+#			NOT = { has_global_flag = RUS_rename_central_pacific }
+#		}
+#		
+#		allow = {
+#			war = no
+#		}
+#		
+#		effect = {
+#			set_global_flag = RUS_rename_central_pacific
+#			clr_global_flag = normal_rename_central_pacific
+#			clr_global_flag = HAW_rename_central_pacific
+#			2526 = {
+#				change_province_name = "Sever'nyye Laynskiye Ostrova" 
+#				state_scope = {
+#					change_region_name = "Tsentral'nyye Polineziyskiye Sporady"
+#				}
+#			}
+#			2524 = { change_province_name = "Ueyk" }
+#			3352 = { change_province_name = "Sheffer Atol" }
+#		}
+#		ai_will_do = { factor = 1 }
+#	}
+#	normal_rename_central_pacific = {
+#		picture = gtfo
+#		potential = {
+#			NOT = {
+#				OR = {
+#					is_culture_group = east_slavic
+#					primary_culture = alaskan
+#					is_culture_group = oceanic
+#				}
+#			}
+#			owns = 2526
+#			NOT = { has_global_flag = normal_rename_central_pacific }
+#		}
+#		
+#		allow = {
+#			war = no
+#		}
+#		
+#		effect = {
+#			set_global_flag = normal_rename_central_pacific
+#			clr_global_flag = RUS_rename_central_pacific
+#			clr_global_flag = HAW_rename_central_pacific
+#			2526 = {
+#				change_province_name = "Palmyra & Line Islands" 
+#				state_scope = {
+#					change_region_name = "Central Polynesian Islands"
+#				}
+#			}
+#			2524 = { change_province_name = "Wake" }
+#			3352 = { change_province_name = "Johnston Atoll" }
+#		}
+#		ai_will_do = { factor = 1 }
+#	}
+#	HAW_rename_central_pacific = {
+#		picture = gtfo
+#		potential = {
+#			is_culture_group = oceanic
+#			owns = 2526
+#			NOT = { has_global_flag = HAW_rename_central_pacific }
+#		}
+#		
+#		allow = {
+#			war = no
+#		}
+#		
+#		effect = {
+#			set_global_flag = HAW_rename_central_pacific
+#			clr_global_flag = RUS_rename_central_pacific
+#			clr_global_flag = normal_rename_central_pacific
+#			2526 = {
+#				change_province_name = "Palamila a me Pae Moku Laina" 
+#				state_scope = {
+#					change_region_name = "Waena Pae Polenekia Laina"
+#				}
+#			}
+#			2524 = { change_province_name = "Hia'a" }
+#			3352 = { change_province_name = "Kalama" }
+#		}
+#		ai_will_do = { factor = 1 }
+#	}
+		
+	RUS_rename_central_pacific = {
+		picture = gtfo
+		potential = {
+			OR = {
+				is_culture_group = east_slavic
+				primary_culture = alaskan
+			}
+			owns = 2526
+			NOT = { has_global_flag = RUS_rename_central_pacific }
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = RUS_rename_central_pacific
+			clr_global_flag = normal_rename_central_pacific
+			clr_global_flag = HAW_rename_central_pacific
+			2526 = {
+				change_province_name = "Sever'nyye Laynskiye Ostrova" 
+				state_scope = {
+					change_region_name = "Tsentral'nyye Polineziyskiye Sporady"
+				}
+			}
+			2524 = { change_province_name = "Ueyk" }
+			3352 = { change_province_name = "Sheffer Atol" }
+		}
+		ai_will_do = { factor = 1 }
+	}
+	normal_rename_central_pacific = {
+		picture = gtfo
+		potential = {
+			NOT = {
+				OR = {
+					is_culture_group = east_slavic
+					primary_culture = alaskan
+					is_culture_group = oceanic
+				}
+			}
+			owns = 2526
+			NOT = { has_global_flag = normal_rename_central_pacific }
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = normal_rename_central_pacific
+			clr_global_flag = RUS_rename_central_pacific
+			clr_global_flag = HAW_rename_central_pacific
+			2526 = {
+				change_province_name = "Palmyra & Line Islands" 
+				state_scope = {
+					change_region_name = "Central Polynesian Islands"
+				}
+			}
+			2524 = { change_province_name = "Wake" }
+			3352 = { change_province_name = "Johnston Atoll" }
+		}
+		ai_will_do = { factor = 1 }
+	}
+	HAW_rename_central_pacific = {
+		picture = gtfo
+		potential = {
+			is_culture_group = oceanic
+			owns = 2526
+			NOT = { has_global_flag = HAW_rename_central_pacific }
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = HAW_rename_central_pacific
+			clr_global_flag = RUS_rename_central_pacific
+			clr_global_flag = normal_rename_central_pacific
+			2526 = {
+				change_province_name = "Palamila a me Pae Moku Laina" 
+				state_scope = {
+					change_region_name = "Waena Pae Polenekia Laina"
+				}
+			}
+			2524 = { change_province_name = "Hia'a" }
+			3352 = { change_province_name = "Kalama" }
+		}
+		ai_will_do = { factor = 1 }
+	}
+}

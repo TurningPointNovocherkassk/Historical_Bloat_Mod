@@ -1,0 +1,30 @@
+PNJ = { truce_until = 1840.1.1 }
+PNJ = { value = 200 }
+leader = {
+	name = "Rahim Khan II"
+	date = 1836.1.1
+	type = land
+	personality = relentless
+	background = expert_raider
+	prestige = 0.2
+}
+
+army = {
+	name = "Army of the Mir of Nagar"
+	location = 3536
+	regiment = {
+		name= "1. Burushaski Warriors"
+		type = irregular
+		home = 3536
+	}
+	regiment = {
+		name= "2. Burushaski Warriors"
+		type = irregular
+		home = 3536
+	}
+	regiment = {
+		name= "1. Cavalry"
+		type = cavalry
+		home = 3536
+	}
+}

@@ -1,0 +1,3124 @@
+##############################################
+
+#1000000 ~ 1000006 FREE, moved to ANON_guyana_events
+#1100006 ~ 1100008 FREE, moved to ANON_Cascadia_n_Alaska
+
+country_event = {
+	
+	id = 6000015
+	title = "EVTNAME6000015"
+	desc = "EVTDESC6000015"
+	picture = "roach_exodus"
+	
+	is_triggered_only = yes
+	major = yes
+		
+	option = {
+		name = "EVT6000015OPTA"
+		TUR = {
+			all_core = { remove_core = TUR }
+		}
+		add_country_modifier = {
+			name = turkish_slaughter
+			duration = 1095
+		}
+		remove_country_modifier = turkish_reintegration
+		any_owned = {
+			limit = {
+				OR = {
+					continent = europe
+					continent = asia
+				}
+				any_pop = { is_culture_group = turko_semitic }
+			}
+			add_province_modifier = {
+				name = turkish_extermination
+				duration = 3650
+			}
+		}
+		set_country_flag = turkish_slaughter
+		any_pop = {
+			limit = {
+				AND = {
+					is_accepted_culture = yes
+					OR = {
+						pop_majority_ideology = reactionary
+						pop_majority_ideology = fascist
+						pop_majority_ideology = conservative
+					}
+				}
+			}
+			militancy = -1
+		}
+		any_pop = {
+			limit = {
+				OR = {
+					pop_majority_ideology = liberal
+					pop_majority_ideology = anarcho_liberal
+					pop_majority_ideology = communist
+					pop_majority_ideology = socialist
+				}
+			}
+			militancy = 2
+			consciousness = 3
+		}
+		badboy = 5
+	}
+	
+	option = {
+		name = "EVT6000015OPTB"
+		TUR = {
+			all_core = {
+				limit = {
+					NOT = { province_id = 876 }
+				}
+				remove_core = TUR
+			}
+		}
+		876 = { add_core = ANK }
+		868 = { add_core = ANK }
+		add_country_modifier = {
+			name = turkish_displacement
+			duration = 1095
+		}
+		remove_country_modifier = turkish_reintegration
+		any_owned = {
+			limit = {
+				OR = {
+					continent = europe
+					continent = asia
+				}
+				any_pop = { is_culture_group = turko_semitic }
+			}
+			add_province_modifier = {
+				name = turkish_exodus
+				duration = 3650
+			}
+		}
+		set_country_flag = turkish_displacement
+		any_pop = {
+			limit = {
+				AND = {
+					is_accepted_culture = yes
+					OR = {
+						pop_majority_ideology = reactionary
+						pop_majority_ideology = fascist
+						pop_majority_ideology = conservative
+					}
+				}
+			}
+			militancy = -1
+		}
+		any_pop = {
+			limit = {
+				OR = {
+					pop_majority_ideology = liberal
+					pop_majority_ideology = anarcho_liberal
+					pop_majority_ideology = communist
+					pop_majority_ideology = socialist
+				}
+			}
+			militancy = 2
+			consciousness = 3
+		}
+		badboy = 3
+	}
+	
+	option = {
+		name = "EVT6000015OPTC"
+		set_country_flag = turkish_no_slaughter
+		any_pop = {
+			limit = {
+				AND = {
+					is_accepted_culture = yes
+					OR = {
+						pop_majority_ideology = conservative
+						pop_majority_ideology = reactionary
+						pop_majority_ideology = fascist
+					}
+				}
+			}
+			militancy = 2
+			consciousness = 3
+		}
+	}
+}
+
+province_event = {
+	id = 6000016
+	title = "EVTNAME6000016" #The Turkish Exodus, AKA the roach trail of tears
+	desc = "EVTDESC6000016"
+
+	trigger = {
+		NOT = { has_country_flag = turkish_no_slaughter }
+		has_province_modifier = turkish_exodus
+	}
+
+	mean_time_to_happen = {
+		months = 12
+	}
+
+	allow_multiple_instances = no
+
+	option = {
+		name = "EVT6000016OPTA"
+		state_scope = {
+			any_owned = {
+				limit = { has_province_modifier = turkish_exodus }
+				remove_province_modifier = turkish_exodus
+				add_province_modifier = {
+					name = depopulation_turk
+					duration = 1825
+				}
+				any_pop = {
+					limit = { is_culture_group = turko_semitic }
+					money = 50
+					random = {
+						chance = 80
+						random_list = {
+							60 = { move_pop = 876 }
+							40 = { move_pop = 868 }
+						}
+					}
+				}		
+			}		
+		}		
+	}
+}
+
+province_event = {
+	id = 6000017
+	title = "EVTNAME6000017" #The Turkish Extermination
+	desc = "EVTDESC6000017"
+
+	trigger = {
+		NOT = { has_country_flag = turkish_no_slaughter }
+		has_province_modifier = turkish_extermination
+	}
+
+	mean_time_to_happen = {	months = 12	}
+
+	option = {
+		name = "EVT6000016OPTA"
+		state_scope = {
+			any_owned = {
+				limit = { has_province_modifier = turkish_extermination }
+				remove_province_modifier = turkish_extermination
+				add_province_modifier = {
+					name = depopulation_turk
+					duration = 1825
+				}
+				any_pop = {
+					limit = { is_culture_group = turko_semitic }
+					money = 50
+					random = {
+						chance = 80
+						random_list = {
+							60 = { reduce_pop = 0.05 }
+							40 = { reduce_pop = 0.01 }
+						}
+					}
+				}		
+			}		
+		}	
+	}
+}
+
+######
+#Acre#
+######
+#Republic of Acre's secession
+country_event = {
+	id = 1000007
+	title = "EVTNAME1000007"
+	desc = "EVTDESC1000007"
+	fire_only_once = yes
+	trigger = {
+		owns = 2549
+		year = 1899
+		2549 = {
+			trade_goods = rubber
+			NOT = { owned_by = BRZ }
+		}
+		ACE = {
+			exists = no
+		}
+		NOT = { has_global_flag = independent_acre }
+		has_global_flag = signed_treaty_of_ayacucho
+	}
+	
+	mean_time_to_happen = {
+		months = 6
+	}
+	
+	option = {
+		name = "EVTOPTA1000007"
+		set_global_flag = independent_acre
+		any_owned = {
+			limit = {
+				is_core = ACE
+				NOT = {	owned_by = BRZ }
+			}
+			secede_province = ACE
+		}
+		BRZ = {
+			country_event = {id=1000008 days = 1}
+		}
+		relation = { who = ACE value = -200 }
+		2549 = { change_province_name = "Porto Acre" }
+		ACE = {
+			political_reform = mandatory_service
+			any_pop = { limit = { has_pop_culture = amazonian } militancy = -9 }
+			any_pop = { limit = { has_pop_culture = south_andean } militancy = -9 }
+			any_pop = { limit = { has_pop_culture = brazilian } militancy = -9 }
+			any_pop = { limit = { has_pop_culture = afro_brazilian } militancy = -9 }
+			add_country_modifier = { name = unrecognized_country duration = 3650 }
+			leadership = 80
+			treasury = 10000
+			small_arms = 300
+			ammunition = 200
+			canned_food = 200
+			artillery = 100
+			wine = 200
+			liquor = 200
+			define_general = {
+				name = "José Plácido de Castro"
+				personality = clever
+				background = school_of_firepower
+			}
+			random_pop = {
+				limit = {
+					pop_type = labourers
+					has_pop_culture = south_andean
+				}
+				pop_type = soldiers
+			}
+			random_pop = {
+				limit = {
+					pop_type = labourers
+					has_pop_culture = brazilian
+				}
+				pop_type = soldiers
+			}
+			random_pop = {
+				limit = {
+					pop_type = labourers
+					has_pop_culture = afro_brazilian
+				}
+				pop_type = soldiers
+			}
+			any_pop = {
+				limit = {
+					culture = south_andean
+					type = soldiers
+				}
+				reduce_pop = 1.25
+			}
+			any_pop = {
+				limit = {
+					culture = brazilian
+					type = soldiers
+				}
+				reduce_pop = 1.50
+			}
+			any_pop = {
+				limit = {
+					culture = afro_brazilian
+					type = soldiers
+				}
+				reduce_pop = 1.25
+			}
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}	
+	option = {
+		name = "EVTOPTB1000007"
+		set_global_flag = independent_acre
+		any_owned = {
+			limit = { 
+				is_core = ACE
+				NOT = {	owned_by = BRZ }
+			}
+			secede_province = ACE
+		}
+		BRZ = {
+			country_event = {id=1000008 days = 1}
+		}
+		relation = { who = ACE value = -200 }
+		2549 = { change_province_name = "Porto Acre" add_core = BRZ }
+		ACE = {
+			political_reform = mandatory_service
+			any_pop = { limit = { has_pop_culture = amazonian } militancy = -9 }
+			any_pop = { limit = { has_pop_culture = south_andean } militancy = -9 }
+			any_pop = { limit = { has_pop_culture = brazilian } militancy = -9 }
+			any_pop = { limit = { has_pop_culture = afro_brazilian } militancy = -9 }
+			add_country_modifier = { name = unrecognized_country duration = 3650 }
+			leadership = 80
+			treasury = 10000
+			small_arms = 300
+			ammunition = 200
+			canned_food = 200
+			artillery = 100
+			wine = 200
+			liquor = 200
+			define_general = {
+				name = "José Plácido de Castro"
+				personality = clever
+				background = school_of_firepower
+			}
+			random_pop = {
+				limit = {
+					pop_type = labourers
+					has_pop_culture = south_andean
+				}
+				pop_type = soldiers
+			}
+			random_pop = {
+				limit = {
+					pop_type = labourers
+					has_pop_culture = brazilian
+				}
+				pop_type = soldiers
+			}
+			random_pop = {
+				limit = {
+					pop_type = labourers
+					has_pop_culture = afro_brazilian
+				}
+				pop_type = soldiers
+			}
+			any_pop = {
+				limit = {
+					culture = south_andean
+					type = soldiers
+				}
+				reduce_pop = 1.25
+			}
+			any_pop = {
+				limit = {
+					culture = brazilian
+					type = soldiers
+				}
+				reduce_pop = 1.50
+			}
+			any_pop = {
+				limit = {
+					culture = afro_brazilian
+					type = soldiers
+				}
+				reduce_pop = 1.25
+			}
+		}
+		change_tag_no_core_switch = ACE
+		ai_chance = {
+			factor = 0
+		}
+	}	
+}
+#ACE - Event informing BRZ of ACE's secession
+country_event = {
+	id = 1000008
+	title = "EVTNAME1000008"
+	desc = "EVTDESC1000008"
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = "EVTOPTA1000008" #Disapprove of their bullshit
+		relation = { who = ACE value = -200 }
+		ACE = {
+			relation = { who = THIS value = -200 }
+		}
+		ai_chance = {
+			factor = 90
+		}
+	}
+	option = {
+		name = "EVTOPTB1000008" #We will support them
+		set_country_flag = ACE_supported
+		relation = { who = ACE value = 400 }
+		diplomatic_influence = { who = ACE value = 400 }
+		create_alliance = ACE
+		ACE = {
+			relation = { who = THIS value = 400 }
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
+	option = {
+		name = "EVTOPTC1000008" #Play as Acre
+		relation = { who = ACE value = 400 }
+		diplomatic_influence = { who = ACE value = 400 }
+		create_alliance = ACE
+		ACE = {
+			relation = { who = THIS value = 400 }
+		}
+		change_tag_no_core_switch = ACE
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+##############################################
+#################################################
+#Araucania to Kingdom of Araucania and Patagonia#
+#################################################
+#Mapucheboo Frenchman tries to convince the local Lonkos to elect him as their king
+country_event = {
+	id = 1000013
+	title = "EVTNAME1000013"
+	desc = "EVTDESC1000013"
+	picture = "crazy_frogman"
+	fire_only_once = yes
+
+	trigger = {
+		tag = MPC
+		year = 1860
+		NOT = { has_country_flag = lonkos_accept } 
+		NOT = { has_country_flag = robbed_blind_by_the_cono_sur_gypsies } 
+	}
+	
+	mean_time_to_happen = { 
+		months = 8
+	}
+	
+	option = {
+		name = "EVTOPTA1000013"
+		set_country_flag = lonkos_accept
+		change_tag = PTG
+		PTG = {
+			add_country_modifier = { name = unrecognized_country duration = 3650 }
+			foreign_officers = yes_foreign_officers
+			treasury = 15000
+		}
+		ai_chance = {
+			factor = 75
+		}
+	}
+	option = {
+		name = "EVTOPTB1000013"
+		set_country_flag = robbed_blind_by_the_cono_sur_gypsies
+		treasury = 30000
+		ai_chance = {
+			factor = 25
+		}
+	}
+}
+
+####################
+#Dominican Republic#
+####################
+	country_event = {
+		id = 1000014
+		title = "EVTNAME1000014"
+		desc = "EVTDESC1000014"
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+				
+		option = {
+			name = "EVTOPTA1000014"
+			#set_global_flag = spain_annexation_DOM
+			any_pop = {
+				ideology = {
+					value = liberal
+					factor = 0.3
+				}
+				militancy = 4.5
+				consciousness = 4.5
+			}
+			any_pop = {
+				ideology = {
+					value = anarcho_liberal
+					factor = 0.15
+				}
+				militancy = 4.5
+				consciousness = 4.5
+			}
+			any_country = {
+				limit = {
+					owns = 487
+					is_culture_group = iberian
+				}
+				country_event = {id=1000015 days = 1}
+			}
+			ai_chance = {
+				factor = 75
+			}
+		}
+		
+		option = {
+			name = "EVTOPTB1000014"
+			set_global_flag = spain_annexation_refuse_DOM
+			any_pop = {
+				ideology = {
+					value = conservative
+					factor = 0.3
+				}
+				militancy = 4.5
+				consciousness = 4.5
+			}
+			any_pop = {
+				ideology = {
+					value = reactionary
+					factor = 0.15
+				}
+				militancy = 4.5
+				consciousness = 4.5
+			}
+			ai_chance = {
+				factor = 25
+			}
+		}
+	}
+	
+	country_event = {
+		id = 1000015
+		title = "EVTNAME1000015"
+		desc = "EVTDESC1000015"
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = "EVTOPTA1000015"
+			#set_country_flag = vassalized_DOM	
+			set_global_flag = spain_annexation_DOM		
+			any_country = {
+				limit = {
+					tag = DOM
+					NOT = { tag = THIS }
+				}
+				annex_to = THIS
+			}
+			USA = {
+				leave_alliance = THIS
+				relation = { who = THIS value = -100 }
+				USA = {	country_event = {id=10000151 days = 1} }
+			}
+			#any_country = {
+			#	limit = {
+			#		owns = 487 # Madrid
+			#		is_culture_group = iberian
+			#	}
+			#	random_owned = {
+			#		limit = {
+			#			province_id = 2214
+			#			is_colonial = yes
+			#		}
+			#		owner = {
+			#			add_casus_belli = {
+			#				target = USA
+			#				type = place_in_the_sun
+			#				months = 24
+			#			}
+			#		}
+			#	}
+			#	random_owned = {
+			#		limit = {
+			#			province_id = 2214
+			#			is_colonial = no
+			#		}
+			#		owner = {
+			#			add_casus_belli = {
+			#				target = USA
+			#				type = acquire_state
+			#				months = 24
+			#			}
+			#		}
+			#	}
+			#}
+			any_owned = {
+				limit = { is_core = DOM }
+				add_province_modifier = {
+					name = nationalist_agitation
+					duration = 3650
+				}
+			}
+			any_pop = {
+				limit = {
+					has_pop_culture = caribeno
+					location = {
+						is_core = DOM
+					}
+				}
+				scaled_militancy = {
+					ideology = liberal
+					factor = 9
+				}
+				scaled_militancy = {
+					ideology = anarcho_liberal
+					factor = 9
+				}
+			}
+			#DOM = { country_event = {id=1000016 days = 1} }
+			ai_chance = {
+				factor = 55
+				modifier = {
+					factor = 100
+					OR = {
+						tag = SPC
+						tag = IBR
+					}
+				}
+				modifier = {
+					factor = 1.125
+					is_greater_power = yes
+				}
+				modifier = {
+					factor = 1.125
+					has_global_flag = csa_released
+					CSA = { exists = yes }
+				}
+				modifier = {
+					factor = 1.25
+					has_global_flag = american_civil_war_has_happened
+					USA = {
+						war_with = CSA
+					}
+				}
+			}
+		}
+		
+		option = {
+			name = "EVTOPTB1000015"
+			DOM = {	country_event = {id=1000017 days = 1} }
+			ai_chance = {
+				factor = 45
+				modifier = {
+					factor = 0.875
+					is_greater_power = no
+				}
+				modifier = {
+					factor = 0.75
+					has_global_flag = american_civil_war_has_happened
+					CSA = { exists = no }
+				}
+			}
+		}
+	}
+	country_event = {
+		id = 10000151
+		title = "EVTNAME10000151"
+		desc = "EVTDESC10000151"
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = "EVTOPTA10000151"
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+#	country_event = {
+#		id = 1000016
+#		title = "EVTNAME1000016"
+#		desc = "EVTDESC1000016"
+#		is_triggered_only = yes
+#		fire_only_once = yes
+#
+#		option = {
+#			name = "EVTOPTA1000016"
+#			any_pop = {
+#				scaled_militancy = {
+#					ideology = liberal
+#					factor = 6
+#				}
+#			}
+#			any_pop = {
+#				scaled_militancy = {
+#					ideology = anarcho_liberal
+#					factor = 6
+#				}
+#			}
+#			
+#			ai_chance = {
+#				factor = 100
+#			}
+#		}
+#	}
+
+	country_event = {
+		id = 1000017
+		title = "EVTNAME1000017"
+		desc = "EVTDESC1000017"
+		is_triggered_only = yes
+		fire_only_once = yes
+		
+		option = {
+			name = "EVTOPTA1000017"
+			any_pop = {
+				scaled_militancy ={
+					ideology = conservative
+					factor = 6
+				}
+			}
+			any_pop = {
+				scaled_militancy ={
+					ideology = reactionary
+					factor = 6
+				}
+			}
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+
+#######################################
+#Chincha islands war
+#######################################
+	#1/X, Talambo incident
+	country_event = {
+		id = 1000018
+		title = "EVTNAME1000018"
+		desc = "EVTDESC1000018"
+		fire_only_once = yes
+
+		trigger = {
+			is_culture_group = latin_american_cultures
+			#owns = 3315
+			#is_vassal = no
+			3315 = {
+				OR = {
+					owned_by = THIS
+					owner = {
+						OR = {
+							in_sphere = THIS
+							OR = {
+								is_vassal = no
+								vassal_of = THIS
+							}
+						}
+					}
+				}
+			}
+			year = 1863
+			NOT = { has_global_flag = chincha_islands_war }
+			war = no
+		}
+		
+		mean_time_to_happen = { 
+			months = 8
+		}
+		
+		option = { #issue an apology and reparations
+			name = "EVTOPTA1000018"
+			treasury = -5000
+			any_country = {
+				limit = {
+					owns = 487 # Madrid
+					is_culture_group = iberian
+				}
+				country_event = {id=1000019 days = 1}
+			}
+			ai_chance = {
+				factor = 25
+				modifier = {
+					factor = 2
+					money = 5001
+				}
+				modifier = {
+					factor = 3
+					relation = { who = SPA value = 100 }
+				}
+				modifier = {
+					factor = 3
+					relation = { who = SPC value = 100 }
+				}
+				modifier = {
+					factor = 3
+					relation = { who = IBR value = 100 }
+				}
+				modifier = {
+					factor = 2.1
+					relation = { who = SPA value = 50 }
+				}
+				modifier = {
+					factor = 2.1
+					relation = { who = SPC value = 50 }
+				}
+				modifier = {
+					factor = 2.1
+					relation = { who = IBR value = 50 }
+				}
+			}
+		}
+		option = { #refuse
+			name = "EVTOPTB1000018"
+			any_country = {
+				limit = {
+					owns = 487 # Madrid
+					is_culture_group = iberian
+				}
+				country_event = {id=1000020 days = 1}
+				relation = {
+					who = THIS
+					value = -100
+				}
+			}
+			ai_chance = {
+				factor = 75
+			}
+		}
+	}
+	#2/X, Talambo incident, money and reparations for spain
+	country_event = {
+		id = 1000019
+		title = "EVTNAME1000019"
+		desc = "EVTDESC1000019"
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = "EVTOPTA1000019"
+			treasury = 10000
+			prestige = 25
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+	#3/X, Talambo incident, tensions escalate when peru won't pay
+	country_event = {
+		id = 1000020
+		title = "EVTNAME1000020"
+		desc = "EVTDESC1000020"
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		immediate = {
+			any_country = {
+				limit = {
+					exists = yes
+					tag = PBC
+				}
+				add_core = 3315
+			}
+		}
+		
+		option = { #to war it is
+			name = "EVTOPTA1000020"
+			3315 = {
+				secede_province = THIS
+				sub_unit = { type = commerce_raider value = current }
+				sub_unit = { type = commerce_raider value = current }
+				sub_unit = { type = commerce_raider value = current }
+				sub_unit = { type = steam_transport value = current }
+				#sub_unit = { type = infantry value = current } #100k units the fuck
+			}
+			war = {
+				target = FROM
+				attacker_goal = {
+					casus_belli = war_reparations
+				}
+				defender_goal = {
+					casus_belli = acquire_core_state
+					state_province_id  = 3315
+				}
+				defender_goal = {
+					casus_belli = free_allied_cores
+					state_province_id  = 3315
+				}
+				call_ally = yes
+			}
+			
+			any_country = {
+				limit = {
+					exists = yes
+					OR = {
+						AND = {
+							ai = no
+							OR = {
+								is_sphere_leader_of = SPU
+								is_sphere_leader_of = PEU
+								is_sphere_leader_of = PBC
+								neighbour = SPU
+								owns = 2297
+							}
+						}
+						AND = {
+							ai = yes
+							owns = 2297
+						}
+					}
+				}
+				country_event = {id=1000021 days = 1}
+			}
+						
+			ai_chance = {
+				factor = 75
+				modifier = {
+					factor = 0.666
+					war = yes
+				}
+				modifier = {
+					factor = 0.1
+					relation = { who = PEU value = 100 }
+				}
+				modifier = {
+					factor = 0.1
+					relation = { who = PBC value = 100 }
+				}
+				modifier = {
+					factor = 0.1
+					relation = { who = SPU value = 100 }
+				}
+			}
+		}
+		option = { #don't go to war
+			name = "EVTOPTB1000020"
+			prestige = -10
+			
+			any_country = {
+				limit = {
+					exists = yes
+					OR = {
+						AND = {
+							ai = no
+							OR = {
+								is_sphere_leader_of = SPU
+								is_sphere_leader_of = PEU
+								is_sphere_leader_of = PBC
+								neighbour = SPU
+								owns = 2297
+							}
+						}
+						AND = {
+							ai = yes
+							owns = 2297
+						}
+					}
+				}
+				country_event = {id=1000022 days = 1}
+			}
+			
+			ai_chance = {
+				factor = 25
+				modifier = {
+					factor = 2
+					war = yes
+				}
+			}
+		}
+	}
+	#4/X, Talambo incident, spain declares war
+	country_event = {
+		id = 1000021
+		title = "EVTNAME1000021"
+		desc = "EVTDESC1000021"
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = "EVTOPTA1000021"
+			ai_chance = {
+			factor = 100
+			}
+		}
+	}
+	#5/X, Talambo incident, spain backs down
+	country_event = {
+		id = 1000022
+		title = "EVTNAME1000022"
+		desc = "EVTDESC1000022"
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = "EVTOPTA1000022"
+			prestige = 25
+			ai_chance = {
+			factor = 100
+			}
+		}
+	}
+	
+	country_event = {
+		id = 1000023
+		title = "EVTNAME1000023" #From event 46610100, Colombia agrees
+		desc = "EVTDESC1000023"
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = "EVTOPTA1000023"
+			relation = { who = FROM value = 300 }
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+	country_event = {
+		id = 1000024
+		title = "EVTNAME1000024" #From event 46610100, Colombia refuses
+		desc = "EVTDESC1000024"
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = "EVTOPTA1000024"
+			relation = { who = FROM value = -400 }
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+	
+	country_event = {
+		id = 1000025
+		title = "EVTNAME1000025" #Treaty of Ayacucho
+		desc = "EVTDESC1000025"
+		picture = "treaty_of_petropolis"
+
+		is_triggered_only = yes
+		
+		option = {
+			name = "EVT1000025OPTA" #We agree
+			set_global_flag = signed_treaty_of_ayacucho
+			badboy = -5
+			
+			any_owned = {
+				limit = {
+					is_core = BRZ
+					NOT = { province_id = 2549 } #Tarauaca/Acre
+				}
+				secede_province = BRZ
+				remove_core = THIS
+				remove_core = BOL
+				remove_core = PBC
+			}
+			random_owned = {
+				limit = {
+					is_core = BRZ
+					province_id = 2549
+					owned_by = THIS
+				}
+				remove_core = BRZ
+				add_core = ACE
+			}
+			BRZ = {
+				random_owned = {
+					limit = {
+						OR = {
+							is_core = BOL
+							is_core = PBC
+						}
+						province_id = 2549
+					}
+					secede_province = THIS
+					remove_core = BRZ
+					add_core = ACE
+				}
+			}
+			
+			relation = { who = FROM value = 300 }
+			FROM = {
+				country_event = 1000026
+			}
+			ai_chance = { factor = 80 }
+		}
+		
+		option = {
+			name = "EVT1000025OPTB" #No
+			badboy = 1
+			relation = { who = BRZ value = -200 }
+			FROM = {
+				country_event = 1000027
+			}
+			ai_chance = {
+				factor = 20
+				modifier = { factor = 1.5 is_greater_power = yes }
+				modifier = { factor = 1.8 tag = BRZ }
+				modifier = { factor = 0 OR = { in_sphere = FROM vassal_of = FROM } }
+				modifier = { factor = 0 badboy = 0.95 }
+			}
+		}
+	}
+	country_event = {
+		id = 1000026
+		title = "EVTNAME1000026" #From event 1000025, Bolivia agrees
+		desc = "EVTDESC1000026"
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = "EVTOPTA1000026"
+			relation = { who = FROM value = 300 }
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+	country_event = {
+		id = 1000027
+		title = "EVTNAME1000027" #From event 1000025, Bolivia refuses
+		desc = "EVTDESC1000027"
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = "EVTOPTA1000027"
+			relation = { who = FROM value = -200 }
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+	
+	country_event = {
+		id = 1000028
+		title = "EVTNAME1000028" #Treaty of Velarde-Rio Branco
+		desc = "EVTDESC1000028"
+		picture = "treaty_of_petropolis"
+
+		is_triggered_only = yes
+		
+		option = {
+			name = "EVT1000028OPTA" #We agree
+			set_global_flag = signed_treaty_of_velarde_rio_branco
+			badboy = -5
+			2321 = { #Cobija
+				remove_core = THIS
+				remove_core = PEU
+				remove_core = SPU
+			}
+			2549 = { #Tarauaca/Acre
+				remove_core = THIS
+				remove_core = PEU
+				remove_core = SPU
+				remove_core = PBC
+			}
+			3311 = { #Pacatuba
+				remove_core = THIS
+				remove_core = PEU
+				remove_core = SPU
+				remove_core = PBC
+			}
+			3312 = { #Boca de Abuná
+				remove_core = THIS
+				remove_core = PEU
+				remove_core = SPU
+			}
+			3371 = { #Macapiri
+				remove_core = THIS
+				remove_core = PEU
+				remove_core = SPU
+				remove_core = PBC
+			}
+			relation = { who = FROM value = 300 }
+			FROM = {
+				country_event = 1000029
+			}
+			ai_chance = { factor = 80 }
+		}
+		
+		option = {
+			name = "EVT1000028OPTB" #No
+			badboy = 1
+			relation = { who = BRZ value = -200 }
+			FROM = {
+				country_event = 1000030
+			}
+			ai_chance = {
+				factor = 20
+				modifier = { factor = 1.5 is_greater_power = yes }
+				modifier = { factor = 1.8 tag = BRZ }
+				modifier = { factor = 0 OR = { in_sphere = FROM vassal_of = FROM } }
+				modifier = { factor = 0 badboy = 0.95 }
+			}
+		}
+	}
+	country_event = {
+		id = 1000029
+		title = "EVTNAME1000029" #From event 1000028, Peru agrees
+		desc = "EVTDESC1000029"
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = "EVTOPTA1000029"
+			relation = { who = FROM value = 300 }
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+	country_event = {
+		id = 1000030
+		title = "EVTNAME1000030" #From event 1000028, Peru refuses
+		desc = "EVTDESC1000030"
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = "EVTOPTA1000030"
+			relation = { who = FROM value = -200 }
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+	
+	
+	country_event = {
+		id = 1000031
+		title = "EVTNAME1000031" #Notification event for whoever owns Tarauaca/Acre, Boca de Abuna and Pacatuba, BRZ decides to send settlers to their territory.
+		desc = "EVTDESC1000031"
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = "EVTOPTA1000031"
+			relation = { who = FROM value = -200 }
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+	
+	country_event = {
+		id = 1000032
+		title = "EVTNAME1000032" #From event 46610101, BOL agrees; Treaty of Petropolis
+		desc = "EVTDESC1000032"
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = "EVTOPTA1000032"
+			relation = { who = FROM value = 300 }
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+	country_event = {
+		id = 1000033
+		title = "EVTNAME1000033" #From event 1000028, BOL refuses; Treaty of Petropolis
+		desc = "EVTDESC1000033"
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = "EVTOPTA1000033"
+			relation = { who = FROM value = -200 }
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+	
+	country_event = {
+		id = 1000034
+		title = "EVTNAME1000034" #From decision ARG_claims_tarija, notification for BOL about ARG relinquishing its claims over tarija.
+		desc = "EVTDESC1000034"
+		picture = "pbc_argentina_border_treaty"
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = "EVTOPTA1000034"
+			relation = { who = FROM value = -100 }
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+	country_event = {
+		id = 1000035
+		title = "EVTNAME1000035" #From decision costa_guzman_secret_treaty, BOL accepts ARG claims over puna de atacama if they secede/abandon claims over tarija but keep yavi.
+		desc = "EVTDESC1000035"
+		picture = "pbc_argentina_border_treaty"
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = "EVTOPTA1000035"
+			set_country_flag = costa_guzman_accept
+			BOL_2370 = { add_core = THIS } #Puna de Atacama
+			2371 = { #Tarija
+				secede_province = THIS
+				remove_core = FROM
+				remove_core = ARG
+				remove_core = ARC
+			}
+			2315 = { #Yavi
+				secede_province = FROM
+				remove_core = THIS
+				remove_core = BOL
+				remove_core = PBC
+			}
+			FROM = { country_event = 1000036 }
+			ai_chance = {
+				factor = 90
+			}
+		}
+		option = {
+			name = "EVTOPTB1000035"
+			set_country_flag = costa_guzman_refuse
+			FROM = { country_event = 1000037 }
+			ai_chance = {
+				factor = 10
+			}
+		}
+	}
+	country_event = {
+		id = 1000036
+		title = "EVTNAME1000036" #From event 1000035, notification for ARG, BOL refuses
+		desc = "EVTDESC1000036"
+		picture = "pbc_argentina_border_treaty"
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = "EVTOPTA1000036"
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+	country_event = {
+		id = 1000037
+		title = "EVTNAME1000037" #From event 1000035, notification for ARG, BOL refuses
+		desc = "EVTDESC1000037"
+		picture = "pbc_argentina_border_treaty"
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = "EVTOPTA1000037"
+			relation = { who = FROM value = -100 }
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+	country_event = {
+		id = 1000038
+		title = "EVTNAME1000038" #From decision barros_gutierrez_treaty, CHL seeks recognition of their claims on Puna de Atacama. If BOL ratifies, CHL will cede Tacna and Arica if BOL abandons Puna
+		desc = "EVTDESC1000038"
+		picture = "chile_bolivia_peru_borders"
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = "EVTOPTA1000038"
+			set_country_flag = barros_gutierrez_accept
+			BOL_2370 = { #Puna de Atacama
+				add_core = CHL
+				remove_core = THIS
+				remove_core = BOL
+			}
+			2308 = { #Arica
+				add_core = FROM
+				add_core = BOL
+				remove_core = THIS
+				secede_province = FROM
+			}
+			2578 = { #Tacna
+				add_core = FROM
+				add_core = BOL
+				remove_core = THIS
+				secede_province = FROM
+			}
+			FROM = { country_event = 1000039 }
+			ai_chance = {
+				factor = 10
+			}
+		}
+		option = {
+			name = "EVTOPTB1000038"
+			set_country_flag = barros_gutierrez_refuse
+			FROM = { country_event = 1000040 }
+			ai_chance = {
+				factor = 90
+			}
+		}
+	}
+	country_event = {
+		id = 1000039
+		title = "EVTNAME1000039" #From event 1000038, notification for CHL, BOL recognizes CHL ownership and abandons all claims on Puna
+		desc = "EVTDESC1000039"
+		picture = "chile_bolivia_peru_borders"
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = "EVTOPTA1000039"
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+	country_event = {
+		id = 1000040
+		title = "EVTNAME1000040" #From event 1000038, notification for CHL, BOL arefuses to abandon claims on Puna
+		desc = "EVTDESC1000040"
+		picture = "chile_bolivia_peru_borders"
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = "EVTOPTA1000040"
+			relation = { who = FROM value = -50 }
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+	country_event = {
+		id = 1000041
+		title = "EVTNAME1000041" #From decision rocha_cano_protocol, ARG reaffirms its claims on Puna and exhorts Bolivia to abandon theirs.
+		desc = "EVTDESC1000041"
+		picture = "chile_bolivia_peru_borders"
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = "EVTOPTA1000041"
+			set_country_flag = rocha_cano_accept
+			BOL_2370 = { #Puna de Atacama
+				add_core = THIS
+				remove_core = FROM
+				remove_core = BOL
+			}
+			FROM = { country_event = 1000042 }
+			ai_chance = {
+				factor = 99
+			}
+		}
+		option = {
+			name = "EVTOPTB1000041"
+			set_country_flag = rocha_cano_refuse
+			relation = { who = FROM value = -50 }
+			FROM = { country_event = 1000043 }
+			ai_chance = {
+				factor = 1
+				modifier = {
+					factor = 100
+					THIS = {
+						OR = {
+							war_policy = jingoism
+							OR = {
+								ruling_party_ideology = reactionary
+								ruling_party_ideology = fascist
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	country_event = {
+		id = 1000042
+		title = "EVTNAME1000042" #From event 1000041, notification for ARG, BOL recognizes ARG claims and abandons all claims on Puna
+		desc = "EVTDESC1000042"
+		picture = "chile_bolivia_peru_borders"
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = "EVTOPTA1000042"
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+	country_event = {
+		id = 1000043
+		title = "EVTNAME1000043" #From event 1000041, notification for ARG, BOL refuses to abandon claims on Puna
+		desc = "EVTDESC1000043"
+		picture = "chile_bolivia_peru_borders"
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = "EVTOPTA1000043"
+			relation = { who = FROM value = -50 }
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+	country_event = {
+		id = 1000044
+		title = "EVTNAME1000044" #From decision buchanan_arbitration, FROM wishes to subject the puna claims to arbitration (historically USA was the arbiter)
+		desc = "EVTDESC1000044"
+		picture = "chile_bolivia_peru_borders"
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = "EVTOPTA1000044"
+			set_global_flag = buchanan_arbitration_accept
+			FROM = { country_event = 1000045 }
+			ai_chance = {
+				factor = 100
+			}
+		}
+		option = {
+			name = "EVTOPTB1000044"
+			set_global_flag = buchanan_arbitration_refuse
+			relation = { who = FROM value = -50 }
+			FROM = { country_event = 1000046 }
+			ai_chance = {
+				factor = 0
+			}
+		}
+	}
+	country_event = {
+		id = 1000045
+		title = "EVTNAME1000045" #From event 1000044, FROM accepts to subject Puna to arbitration
+		desc = "EVTDESC1000045"
+		picture = "chile_bolivia_peru_borders"
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = "EVTOPTA1000045"
+			random_country = { #Any American GP
+				limit = { is_greater_power = yes has_country_flag = new_world_nation NOT = { tag = THIS } }
+				country_event = 1000047
+			}
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+	country_event = {
+		id = 1000046
+		title = "EVTNAME1000046" #From event 1000044, FROM refuses to subject Puna to arbitration
+		desc = "EVTDESC1000046"
+		picture = "chile_bolivia_peru_borders"
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = "EVTOPTA1000046"
+			relation = { who = FROM value = -50 }
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+	country_event = {
+		id = 1000047
+		title = "EVTNAME1000047" #From event 1000045, THIS will settle the Puna dispute between Chile and Argentina.
+		desc = "EVTDESC1000047"
+		picture = "chile_bolivia_peru_borders"
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = "EVTOPTA1000047" #[Historical Outcome], grant CHL Rincon and the rest goes to ARG.
+			2324 = { #Santiago de Chile
+				owner = {
+					country_event = 1000048
+				}
+			}
+			2368 = { #Salta
+				owner = {
+					country_event = 1000049
+				}
+			}
+			ai_chance = {
+				factor = 90
+			}
+		}
+		option = {
+			name = "EVTOPTB1000047" #Favor Chile, grant all territories.
+			2324 = { #Santiago de Chile
+				owner = {
+					country_event = 1000050
+				}
+			}
+			2368 = { #Salta
+				owner = {
+					country_event = 1000051
+				}
+			}
+			ai_chance = {
+				factor = 5
+				modifier = {
+					factor = 100
+					2324 = { owner = { ai = no } }
+				}
+			}
+		}
+		option = {
+			name = "EVTOPTC1000047" #Favor Argentina, grant all territories.
+			2324 = { #Santiago de Chile
+				owner = {
+					country_event = 1000052
+				}
+			}
+			2368 = { #Salta
+				owner = {
+					country_event = 1000053
+				}
+			}
+			ai_chance = {
+				factor = 5
+				modifier = {
+					factor = 100
+					2368 = { owner = { ai = no } }
+				}
+			}
+		}
+	}
+	country_event = {
+		id = 1000048
+		title = "EVTNAME1000048" #From event 1000047, for CHL, FROM grants CHL with Rincon, the rest goes to ARG
+		desc = "EVTDESC1000048"
+		picture = "chile_bolivia_peru_borders"
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = "EVTOPTA1000048"
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+	country_event = {
+		id = 1000049
+		title = "EVTNAME1000049" #From event 1000047, for ARG, FROM grants CHL with Rincon, the rest goes to ARG
+		desc = "EVTDESC1000049"
+		picture = "chile_bolivia_peru_borders"
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = "EVTOPTA1000048"
+			3387 = { #Rincon
+				remove_core = THIS
+				remove_core = ARG
+				remove_core = ARC
+				remove_core = LPL
+				add_core = CHL
+				secede_province = CHL
+			}
+			2370 = { #Cochinoca
+				remove_core = CHL
+				add_core = THIS
+				secede_province = THIS
+			}
+			1714 = { #Santa Rosa
+				remove_core = CHL
+				add_core = THIS
+				secede_province = THIS
+			}
+			2375 = { #Antofagasta de la Sierra
+				remove_core = CHL
+				add_core = THIS
+				secede_province = THIS
+			}
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+	country_event = {
+		id = 1000050
+		title = "EVTNAME1000050" #From event 1000047, for CHL, FROM favors CHL and grants them the whole Puna
+		desc = "EVTDESC1000050"
+		picture = "chile_bolivia_peru_borders"
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = "EVTOPTA1000048"
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+	country_event = {
+		id = 1000051
+		title = "EVTNAME1000051" #From event 1000047, for ARG, FROM favors CHL and grants them the whole Puna
+		desc = "EVTDESC1000051"
+		picture = "chile_bolivia_peru_borders"
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = "EVTOPTA1000048"
+			3387 = { #Rincon
+				remove_core = THIS
+				remove_core = ARG
+				remove_core = ARC
+				remove_core = LPL
+				add_core = CHL
+				secede_province = CHL
+			}
+			2370 = { #Cochinoca
+				remove_core = THIS
+				remove_core = ARG
+				remove_core = ARC
+				remove_core = LPL
+				add_core = CHL
+				secede_province = CHL
+			}
+			1714 = { #Santa Rosa
+				remove_core = THIS
+				remove_core = ARG
+				remove_core = ARC
+				remove_core = LPL
+				add_core = CHL
+				secede_province = CHL
+			}
+			2375 = { #Antofagasta de la Sierra
+				remove_core = THIS
+				remove_core = ARG
+				remove_core = ARC
+				remove_core = LPL
+				add_core = CHL
+				secede_province = CHL
+			}
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+	country_event = {
+		id = 1000052
+		title = "EVTNAME1000052" #From event 1000047, for CHL, FROM favors ARG and grants them the whole Puna
+		desc = "EVTDESC1000052"
+		picture = "chile_bolivia_peru_borders"
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = "EVTOPTA1000048"
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+	country_event = {
+		id = 1000053
+		title = "EVTNAME1000053" #From event 1000047, for ARG, FROM favors ARG and grants them the whole Puna
+		desc = "EVTDESC1000053"
+		picture = "chile_bolivia_peru_borders"
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = "EVTOPTA1000048"
+			3387 = { #Rincon
+				remove_core = CHL
+				add_core = THIS
+				secede_province = THIS
+			}
+			2370 = { #Cochinoca
+				remove_core = CHL
+				add_core = THIS
+				secede_province = THIS
+			}
+			1714 = { #Santa Rosa
+				remove_core = CHL
+				add_core = THIS
+				secede_province = THIS
+			}
+			2375 = { #Antofagasta de la Sierra
+				remove_core = CHL
+				add_core = THIS
+				secede_province = THIS
+			}
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+	country_event = {
+		id = 1000054
+		title = "EVTNAME1000054" #From decision altbuchanan_arbitration, FROM wishes to subject the puna claims to arbitration (historically USA was the arbiter)
+		desc = "EVTDESC1000054"
+		picture = "chile_bolivia_peru_borders"
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = "EVTOPTA1000054"
+			set_global_flag = altbuchanan_arbitration_accept
+			FROM = { country_event = 1000055 }
+			ai_chance = {
+				factor = 100
+			}
+		}
+		option = {
+			name = "EVTOPTB1000054"
+			set_global_flag = altbuchanan_arbitration_refuse
+			relation = { who = FROM value = -50 }
+			FROM = { country_event = 1000056 }
+			ai_chance = {
+				factor = 0
+			}
+		}
+	}
+	country_event = {
+		id = 1000055
+		title = "EVTNAME1000055" #From event 1000054, FROM accepts to subject Puna to arbitration
+		desc = "EVTDESC1000055"
+		picture = "chile_bolivia_peru_borders"
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = "EVTOPTA1000055"
+			random_country = { #Any American GP
+				limit = { is_greater_power = yes has_country_flag = new_world_nation NOT = { tag = THIS } }
+				country_event = 1000057
+			}
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+	country_event = {
+		id = 1000056
+		title = "EVTNAME1000056" #From event 1000054, FROM refuses to subject Puna to arbitration
+		desc = "EVTDESC1000056"
+		picture = "chile_bolivia_peru_borders"
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = "EVTOPTA1000056"
+			relation = { who = FROM value = -50 }
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+	country_event = {
+		id = 1000057
+		title = "EVTNAME1000057" #From event 1000055, THIS will settle the Puna dispute between Chile and Bolivia.
+		desc = "EVTDESC1000057"
+		picture = "chile_bolivia_peru_borders"
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = "EVTOPTA1000057" #Grant Rincon to CHL and the rest goes to BOL.
+			2324 = { #Santiago de Chile
+				owner = {
+					country_event = 1000058
+				}
+			}
+			2368 = { #Salta
+				owner = {
+					country_event = 1000059
+				}
+			}
+			ai_chance = {
+				factor = 90
+			}
+		}
+		option = {
+			name = "EVTOPTB1000057" #Favor Chile, grant all territories.
+			2324 = { #Santiago de Chile
+				owner = {
+					country_event = 1000060
+				}
+			}
+			2368 = { #Salta
+				owner = {
+					country_event = 1000061
+				}
+			}
+			ai_chance = {
+				factor = 5
+				modifier = {
+					factor = 100
+					2324 = { owner = { ai = no } }
+				}
+			}
+		}
+		option = {
+			name = "EVTOPTC1000057" #Favor Bolivia, grant all territories.
+			2324 = { #Santiago de Chile
+				owner = {
+					country_event = 1000062
+				}
+			}
+			2368 = { #Salta
+				owner = {
+					country_event = 1000063
+				}
+			}
+			ai_chance = {
+				factor = 5
+				modifier = {
+					factor = 100
+					2368 = { owner = { ai = no primary_culture = south_andean } }
+				}
+			}
+		}
+	}
+	country_event = {
+		id = 1000058
+		title = "EVTNAME1000058" #From event 1000057, for CHL, FROM grants CHL with Rincon, the rest goes to BOL
+		desc = "EVTDESC1000058"
+		picture = "chile_bolivia_peru_borders"
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = "EVTOPTA1000048"
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+	country_event = {
+		id = 1000059
+		title = "EVTNAME1000059" #From event 1000057, for BOL, FROM grants CHL with Rincon, the rest goes to BOL
+		desc = "EVTDESC1000059"
+		picture = "chile_bolivia_peru_borders"
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = "EVTOPTA1000048"
+			3387 = { #Rincon
+				remove_core = THIS
+				remove_core = BOL
+				remove_core = PBC
+				remove_core = LPL
+				add_core = CHL
+				secede_province = CHL
+			}
+			2370 = { #Cochinoca
+				remove_core = CHL
+				add_core = THIS
+				secede_province = THIS
+			}
+			1714 = { #Santa Rosa
+				remove_core = CHL
+				add_core = THIS
+				secede_province = THIS
+			}
+			2375 = { #Antofagasta de la Sierra
+				remove_core = CHL
+				add_core = THIS
+				secede_province = THIS
+			}
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+	country_event = {
+		id = 1000060
+		title = "EVTNAME1000060" #From event 1000057, for CHL, FROM favors CHL and grants them the whole Puna
+		desc = "EVTDESC1000060"
+		picture = "chile_bolivia_peru_borders"
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = "EVTOPTA1000048"
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+	country_event = {
+		id = 1000061
+		title = "EVTNAME1000061" #From event 1000057, for BOL, FROM favors CHL and grants them the whole Puna
+		desc = "EVTDESC1000061"
+		picture = "chile_bolivia_peru_borders"
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = "EVTOPTA1000048"
+			3387 = { #Rincon
+				remove_core = THIS
+				remove_core = BOL
+				remove_core = PBC
+				remove_core = LPL
+				add_core = CHL
+				secede_province = CHL
+			}
+			2370 = { #Cochinoca
+				remove_core = THIS
+				remove_core = BOL
+				remove_core = PBC
+				remove_core = LPL
+				add_core = CHL
+				secede_province = CHL
+			}
+			1714 = { #Santa Rosa
+				remove_core = THIS
+				remove_core = BOL
+				remove_core = PBC
+				remove_core = LPL
+				add_core = CHL
+				secede_province = CHL
+			}
+			2375 = { #Antofagasta de la Sierra
+				remove_core = THIS
+				remove_core = BOL
+				remove_core = PBC
+				remove_core = LPL
+				add_core = CHL
+				secede_province = CHL
+			}
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+	country_event = {
+		id = 1000062
+		title = "EVTNAME1000062" #From event 1000057, for CHL, FROM favors BOL and grants them the whole Puna
+		desc = "EVTDESC1000062"
+		picture = "chile_bolivia_peru_borders"
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = "EVTOPTA1000048"
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+	country_event = {
+		id = 1000063
+		title = "EVTNAME1000063" #From event 1000057, for BOL, FROM favors BOL and grants them the whole Puna
+		desc = "EVTDESC1000063"
+		picture = "chile_bolivia_peru_borders"
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = "EVTOPTA1000048"
+			3387 = { #Rincon
+				remove_core = CHL
+				add_core = THIS
+				secede_province = THIS
+			}
+			2370 = { #Cochinoca
+				remove_core = CHL
+				add_core = THIS
+				secede_province = THIS
+			}
+			1714 = { #Santa Rosa
+				remove_core = CHL
+				add_core = THIS
+				secede_province = THIS
+			}
+			2375 = { #Antofagasta de la Sierra
+				remove_core = CHL
+				add_core = THIS
+				secede_province = THIS
+			}
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+	
+	country_event = {
+		id = 1000064
+		title = "EVTNAME1000064" #From decision JLA_RGS_substates, FROM vasalizes THIS as a substate
+		desc = "EVTDESC1000064"
+		picture = "montevideo_uruguay"
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = "EVTOPTA1000064"
+			FROM = {
+				create_alliance = THIS
+				create_vassal = THIS
+				diplomatic_influence = {
+					who = THIS
+					value = 400
+				}
+				relation = {
+					who = THIS
+					value = 400
+				}
+			}
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+	country_event = {
+		id = 1000065
+		title = "EVTNAME1000065" #From decision integrate_puppets_RGS_JLA, FROM integrates THIS
+		desc = "EVTDESC1000065"
+		picture = "montevideo_uruguay"
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = "EVTOPTA1000065"
+			all_core = { add_core = FROM }
+			FROM = {
+				inherit = THIS
+			}
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+	country_event = {
+		id = 1000066 
+		title = "EVTNAME1000066" #BND, decides primary culture.
+		desc = "EVTDESC1000066"
+		picture = "montevideo_uruguay"
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPT1000066A" #Platinean
+			primary_culture = platinean
+			add_accepted_culture = gaucho
+			add_accepted_culture = brazilian
+			set_country_flag = BND_primary_culture_selected
+			ai_chance = {
+				factor = 50
+				modifier = {
+					factor = 100
+					THIS = {
+						has_country_flag = claim_banda_oriental
+					}
+				}
+				
+			}
+		}
+		option = {
+			name = "EVTOPT1000066B" #Gaucho
+			primary_culture = gaucho
+			add_accepted_culture = platinean
+			add_accepted_culture = brazilian
+			set_country_flag = BND_primary_culture_selected
+			ai_chance = {
+				factor = 50
+				modifier = {
+					factor = 100
+					THIS = {
+						has_country_flag = integrate_puppets_RGS_JLA
+					}
+				}
+			}
+		}
+	}
+	country_event = {
+		id = 1000067 
+		title = "EVTNAME1000067" #BND, decides capital.
+		desc = "EVTDESC1000067"
+		picture = "montevideo_uruguay"
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPT1000067A" #Montevideo
+			capital = 2344
+			set_country_flag = BND_capial_selected
+			ai_chance = {
+				factor = 50
+				modifier = {
+					factor = 100
+					THIS = {
+						has_country_flag = claim_banda_oriental
+					}
+				}
+				
+			}
+		}
+		option = {
+			name = "EVTOPT1000067B" #Porto Alegre
+			capital = 2463
+			set_country_flag = BND_capial_selected
+			ai_chance = {
+				factor = 50
+				modifier = {
+					factor = 2
+					THIS = {
+						has_country_flag = integrate_puppets_RGS_JLA
+					}
+				}
+			}
+		}
+		option = {
+			name = "EVTOPT1000067C" #Pelotas/Piratini
+			capital = 2464
+			set_country_flag = BND_capial_selected
+			ai_chance = {
+				factor = 0
+			}
+		}
+		option = {
+			name = "EVTOPT1000067D" #Laguna
+			capital = 2461
+			set_country_flag = BND_capial_selected
+			ai_chance = {
+				factor = 0
+			}
+		}
+	}
+	
+#Tavolara
+country_event = {
+	id = 1000068
+	title = "EVTNAME1000068"
+	desc = "EVTDESC1000068"
+	picture = "Administration"
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVT1000068OPTA"
+		badboy = -2
+		prestige = 5
+		diplomatic_influence = {
+			who = T4V
+			value = 400
+		}
+		relation = {
+			who = T4V
+			value = 400
+		}
+		create_vassal = T4V
+		create_alliance = T4V
+		ai_chance = { factor = 100 }
+	}	
+	
+	option = {
+		name = "EVT1000068OPTB"
+		badboy = 1
+		3366 = { add_core = ITA }
+		war = {
+			target = T4V
+			attacker_goal = {
+				casus_belli = annex_core_country
+			}
+			defender_goal = {
+				casus_belli = status_quo
+			}
+			call_ally = no
+		}
+		ai_chance = { factor = 0 }
+	}	
+}	
+
+###############################################
+#Canals construction
+
+#Suez
+country_event = {
+	id = 1000069
+	title = "EVTNAME1000069"
+	desc = "EVTDESC1000069"
+	picture = "Suez3"
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVT1000069OPTA"
+		set_global_flag = suez_canal_built
+		treasury = 75000
+		1755 = { secede_province = FROM add_core = FROM }
+		FROM = {
+			diplomatic_influence = { who = THIS value = 25 }
+			country_event = 36970
+		}
+		ai_chance = { factor = 100 }
+	}	
+	
+	option = {
+		name = "EVT1000069OPTB"
+		FROM = {
+			country_event = 1000070
+		}
+		ai_chance = { factor = 0 }
+	}	
+}
+country_event = {
+	id = 1000070 #rejected
+	title = "EVTNAME1000070"
+	desc = "EVTDESC1000070"
+	picture = "Suez3"
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVT1000070OPTA"
+		set_country_flag = build_suez_canal_rejected
+		diplomatic_influence = { who = THIS value = -25 }
+		relation = { who = THIS value = -25 }
+		ai_chance = { factor = 100 }
+	}	
+}
+
+#Panama
+country_event = {
+	id = 1000071
+	title = "EVTNAME1000071"
+	desc = "EVTDESC1000071"
+	picture = "panama_canal_construction"
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVT1000071OPTA"
+		set_global_flag = panama_under_construction
+		treasury = 50000
+		1723 = { secede_province = FROM add_core = FROM }
+		FROM = {
+			diplomatic_influence = { who = THIS value = 25 }
+			country_event = 36978
+		}
+		ai_chance = { factor = 100 }
+	}	
+	
+	option = {
+		name = "EVT1000071OPTB"
+		FROM = {
+			country_event = 1000072
+		}
+		ai_chance = { factor = 0 }
+	}	
+}
+country_event = {
+	id = 1000072 #rejected
+	title = "EVTNAME1000072"
+	desc = "EVTDESC1000072"
+	picture = "panama_canal_construction"
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVT1000072OPTA"
+		set_country_flag = build_panama_canal_rejected
+		diplomatic_influence = { who = THIS value = -25 }
+		relation = { who = THIS value = -25 }
+		ai_chance = { factor = 100 }
+	}	
+}
+	
+#volga_don Canal Construction
+country_event = {
+	id = 1000073
+	title = "EVTNAME1000073"
+	desc = "EVTDESC1000073"
+	picture = "kiel_canal_construction"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVT1000073PTA"
+		treasury = -125000
+		set_global_flag = volga_don_canal_construction
+		random_list = {
+			60 = { 1039 = { add_province_modifier = { name = volga_don_canal_construction duration = 2555 } } }
+			30 = { 1039 = { add_province_modifier = { name = volga_don_canal_construction duration = 2920 } } }
+			10 = { 1039 = { add_province_modifier = { name = volga_don_canal_construction duration = 3285 } } }
+		}
+		ai_chance = {
+			factor = 0.33
+			modifier = { factor = 0 NOT = { money = 125000 } }
+			modifier = { factor = 100 money = 125000 }
+		}
+	}
+	
+	option = {
+		name = "EVT1000073PTB"
+		treasury = -95000
+		set_global_flag = volga_don_canal_construction
+		random_list = {
+			40 = { 1039 = { add_province_modifier = { name = volga_don_canal_construction duration = 2920 } } }
+			30 = { 1039 = { add_province_modifier = { name = volga_don_canal_construction duration = 2555 } } }
+			30 = { 1039 = { add_province_modifier = { name = volga_don_canal_construction duration = 3285 } } }
+		}
+		ai_chance = {
+			factor = 0.33
+			modifier = { factor = 0 NOT = { money = 95000 } }
+			modifier = { factor = 100 money = 95000 NOT = { money = 125000 } }
+		}
+	}
+	
+	option = {
+		name = "EVT1000073PTC"
+		treasury = -75000
+		set_global_flag = volga_don_canal_construction
+		random_list = {
+			55 = { 1039 = { add_province_modifier = { name = volga_don_canal_construction duration = 3285 } } }
+			30 = { 1039 = { add_province_modifier = { name = volga_don_canal_construction duration = 2920 } } }
+			15 = { 1039 = { add_province_modifier = { name = volga_don_canal_construction duration = 2555 } } }
+		}
+		ai_chance = {
+			factor = 0.34
+			modifier = { factor = 0 money = 75000 }
+		}
+	}
+}
+
+#volga_don Canal is Finished
+country_event = {
+	id = 1000074
+	title = "EVTNAME1000074"
+	desc = "EVTDESC1000074"
+	picture = "kiel_canal_finished"
+	
+	fire_only_once = yes
+	
+	trigger = {
+		has_global_flag = volga_don_canal_construction
+		owns = 1039
+		NOT = {
+			is_canal_enabled = 7
+			1039 = { has_province_modifier = volga_don_canal_construction }
+		}
+	}
+	
+		mean_time_to_happen = { days = 5 }
+			
+	option = {
+		name = "EVT1000074OPTA"
+		clr_global_flag = volga_don_canal_construction
+		enable_canal = 7
+		1039 = { set_province_flag = volga_don_canal }
+		prestige = 5
+	}
+}
+
+# #Volga-Don Alternate
+# country_event = {
+	# id = 1000075
+	# title = "EVTNAME1000075"
+	# desc = "EVTDESC1000075"
+	# picture = "kiel_canal_construction"
+
+	# is_triggered_only = yes
+	
+	# option = {
+		# name = "EVT1000075OPTA"
+		# set_global_flag = volga_don_under_construction
+		# treasury = 50000
+		# 1039 = { secede_province = FROM add_core = FROM }
+		# FROM = {
+			# diplomatic_influence = { who = THIS value = 25 }
+			# country_event = 1000073
+		# }
+		# ai_chance = { factor = 100 }
+	# }	
+	
+	# option = {
+		# name = "EVT1000075OPTB"
+		# FROM = {
+			# country_event = 1000076
+		# }
+		# ai_chance = { factor = 0 }
+	# }	
+# }
+# country_event = {
+	# id = 1000076 #rejected
+	# title = "EVTNAME1000076"
+	# desc = "EVTDESC1000076"
+	# picture = "kiel_canal_construction"
+
+	# is_triggered_only = yes
+	
+	# option = {
+		# name = "EVT1000076OPTA"
+		# set_country_flag = build_volga_don_canal_rejected
+		# diplomatic_influence = { who = THIS value = -25 }
+		# relation = { who = THIS value = -25 }
+		# ai_chance = { factor = 100 }
+	# }	
+# }
+
+################################
+#Andean Federation Grande choose capital & culture
+
+	country_event = {
+		id = 1000077 
+		title = "EVTNAME1000077" #ANF, decides primary culture.
+		desc = "EVTDESC1000077"
+		picture = "granco_lombia"
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPT1000077A" #north_andean
+			primary_culture = north_andean
+			religion = catholic
+			add_accepted_culture = south_andean
+			add_accepted_culture = llanero
+			add_accepted_culture = central_american
+			add_accepted_culture = caribeno
+			clr_country_flag = catholic_country
+			set_country_flag = protestant_country
+			set_country_flag = ANF_primary_culture_selected
+			set_country_flag = ANF_primary_culture_north_andean
+			ai_chance = {
+				factor = 95
+				modifier = {
+					factor = 100
+					has_global_flag = GCO_integrate_BOL_PEU
+				}
+				
+			}
+		}
+		option = {
+			name = "EVTOPT1000077B" #south_andean
+			primary_culture = south_andean
+			religion = catholic
+			add_accepted_culture = north_andean
+			add_accepted_culture = llanero
+			add_accepted_culture = central_american
+			add_accepted_culture = caribeno
+			clr_country_flag = protestant_country
+			set_country_flag = catholic_country
+			set_country_flag = ANF_primary_culture_selected
+			set_country_flag = ANF_primary_culture_south_andean
+			ai_chance = {
+				factor = 5
+				modifier = {
+					factor = 100
+					has_global_flag = PBC_integrate_GCO
+				}
+			}
+		}
+		option = {
+			name = "EVTOPT1000077C" #llanero
+			primary_culture = llanero
+			religion = catholic
+			add_accepted_culture = north_andean
+			add_accepted_culture = south_andean
+			add_accepted_culture = llanero
+			add_accepted_culture = central_american
+			add_accepted_culture = caribeno
+			clr_country_flag = protestant_country
+			set_country_flag = catholic_country
+			set_country_flag = ANF_primary_culture_selected
+			set_country_flag = ANF_primary_culture_south_andean
+			ai_chance = {
+				factor = 0
+			}
+		}
+	}
+	country_event = {
+		id = 1000078 
+		title = "EVTNAME1000078" #ANF, decides capital.
+		desc = "EVTDESC1000078"
+		picture = "granco_lombia"
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPT1000078A" #Caracas
+			capital = 2264
+			any_pop = {
+				limit = {
+					OR = {
+						has_pop_culture = south_andean
+						has_pop_culture = quechua
+					}
+					location = {
+						is_core = PEU #Butthurt Peruvians
+					}
+				}
+				militancy = 4
+				consciousness = 4
+			}
+			set_country_flag = ANF_capial_selected
+			ai_chance = {
+				factor = 25
+				modifier = {
+					factor = 3.7
+					THIS = {
+						primary_culture = north_andean
+					}
+				}
+			}
+		}
+		option = {
+			name = "EVTOPT1000078B" #Bogota
+			capital = 2247
+			any_pop = {
+				limit = {
+					OR = {
+						has_pop_culture = south_andean
+						has_pop_culture = quechua
+					}
+					location = {
+						is_core = PEU
+					}
+				}
+				militancy = 4
+				consciousness = 4
+			}
+			set_country_flag = ANF_capial_selected
+			ai_chance = {
+				factor = 50
+				modifier = {
+					factor = 1.9
+					THIS = {
+						primary_culture = north_andean
+					}
+				}
+			}
+		}
+		option = {
+			name = "EVTOPT1000078C" #Quito
+			capital = 2279
+			any_pop = {
+				limit = {
+					OR = {
+						has_pop_culture = south_andean
+						has_pop_culture = quechua
+					}
+					location = {
+						is_core = PEU
+					}
+				}
+				militancy = 4
+				consciousness = 4
+			}
+			set_country_flag = ANF_capial_selected
+			ai_chance = {
+				factor = 15
+				modifier = {
+					factor = 6
+					THIS = {
+						primary_culture = north_andean
+					}
+				}
+			}
+		}
+		option = {
+			name = "EVTOPT1000078D" #Lima
+			capital = 2295
+			any_pop = {
+				limit = {
+					OR = {
+						has_pop_culture = north_andean
+						has_pop_culture = llanero
+					}
+					location = {
+						is_core = GCO
+					}
+				}
+				consciousness = 5
+			}
+			set_country_flag = ANF_capial_selected
+			ai_chance = {
+				factor = 5
+				modifier = {
+					factor = 19
+					THIS = {
+						primary_culture = south_andean
+					}
+				}
+			}
+		}
+		option = {
+			name = "EVTOPT1000078E" #La Paz
+			capital = 2310
+			set_country_flag = ANF_capial_selected
+			ai_chance = {
+				factor = 5
+				modifier = {
+					factor = 18
+					THIS = {
+						primary_culture = south_andean
+					}
+				}
+			}
+		}
+	}
+	
+###############################################
+# Notification event for SPA about GCO/ANF claiming the Caribbean
+
+country_event = {
+	id = 1000079
+	title = "EVTNAME1000079"
+	desc = "EVTDESC1000079"
+	picture = "Administration"
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVT1000079OPTA"
+		relation = {
+			who = FROM
+			value = -150
+		}
+		FROM = {
+			diplomatic_influence = {
+				who = THIS
+				value = -400
+			}
+		}
+		ai_chance = { factor = 100 }
+	}	
+}
+###############################################
+# GCO wants to dumps its nigs in HAI.
+
+country_event = {
+	id = 1000080
+	title = "EVTNAME1000080"
+	desc = "EVTDESC1000080"
+	picture = "Administration"
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVT1000080OPTA"
+		FROM = {
+			country_event = 1000081
+		}
+		ai_chance = { factor = 100 }
+	}	
+	option = {
+		name = "EVT1000080OPTB"
+		FROM = {
+			country_event = 1000082
+		}
+		ai_chance = { factor = 0 }
+	}	
+}
+country_event = {
+	id = 1000081
+	title = "EVTNAME1000081"
+	desc = "EVTDESC1000081"
+	picture = "Administration"
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVT1000081OPTA"
+		create_alliance = HAI
+		create_vassal = HAI
+		HAI = {
+			add_accepted_culture = afro_caribeno
+			add_accepted_culture = afro_caribbean
+		}
+		add_country_modifier = {
+			name = nigga_displacement
+			duration = 1095
+		}
+		any_owned = {
+			limit = {
+				OR = {
+					continent = south_america
+					continent = north_america
+				}
+				any_pop = { is_culture_group = african_diaspora_cultures }
+			}
+			add_province_modifier = {
+				name = nigga_exodus
+				duration = 3650
+			}
+		}
+		set_country_flag = nigga_displacement
+		any_pop = {
+			limit = {
+				AND = {
+					is_accepted_culture = yes
+					OR = {
+						pop_majority_ideology = reactionary
+						pop_majority_ideology = fascist
+						pop_majority_ideology = conservative
+						pop_majority_ideology = anarcho_liberal
+					}
+				}
+			}
+			militancy = -1
+		}
+		any_pop = {
+			limit = {
+				OR = {
+					pop_majority_ideology = liberal
+					pop_majority_ideology = communist
+					pop_majority_ideology = socialist
+				}
+			}
+			militancy = 2
+			consciousness = 3
+		}
+		badboy = 3
+		ai_chance = { factor = 100 }
+	}		
+}
+country_event = {
+	id = 1000082
+	title = "EVTNAME1000082"
+	desc = "EVTDESC1000082"
+	picture = "Administration"
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVT1000082OPTA"
+		prestige = -5
+		ai_chance = { factor = 100 }
+	}		
+}
+
+province_event = {
+	id = 1000083
+	title = "EVTNAME1000083" #The Nigga Exodus
+	desc = "EVTDESC1000083"
+
+	trigger = {
+		has_province_modifier = nigga_exodus
+	}
+
+	mean_time_to_happen = {
+		months = 6
+	}
+
+	allow_multiple_instances = no
+	
+	option = {
+		name = "EVT1000083OPTA"
+		treasury = -100
+		state_scope = {
+			any_owned = {
+				limit = { has_province_modifier = nigga_exodus }
+				remove_province_modifier = nigga_exodus
+				add_province_modifier = {
+					name = depopulation_nigga
+					duration = 1825
+				}
+				any_pop = {
+					limit = { is_culture_group = african_diaspora_cultures }
+					money = 50
+					random = {
+						chance = 100
+						random_list = {
+							60 = { move_pop = 2213 }
+							40 = { move_pop = 2215 }
+						}
+					}
+				}		
+			}		
+		}		
+	}
+}
+
+##############################
+# Baltic-White Sea Canal
+	
+#baltic_white Canal Construction
+country_event = {
+	id = 1000084
+	title = "EVTNAME1000084"
+	desc = "EVTDESC1000084"
+	picture = "kiel_canal_construction"
+	
+	is_triggered_only = yes
+		
+	option = {
+		name = "EVT1000084PTA"
+		treasury = -500000
+		set_global_flag = baltic_white_canal_construction
+		random_list = {
+			60 = {
+				994 = { add_province_modifier = { name = baltic_white_canal_construction duration = 2555 } }
+				995 = { add_province_modifier = { name = baltic_white_canal_construction duration = 2555 } }
+				988 = { add_province_modifier = { name = baltic_white_canal_construction duration = 2555 } }
+				984 = { add_province_modifier = { name = baltic_white_canal_construction duration = 2555 } }
+			}
+			30 = {
+				994 = { add_province_modifier = { name = baltic_white_canal_construction duration = 2920 } }
+				995 = { add_province_modifier = { name = baltic_white_canal_construction duration = 2920 } }
+				988 = { add_province_modifier = { name = baltic_white_canal_construction duration = 2920 } }
+				984 = { add_province_modifier = { name = baltic_white_canal_construction duration = 2920 } }
+			}
+			10 = {
+				994 = { add_province_modifier = { name = baltic_white_canal_construction duration = 3285 } }
+				995 = { add_province_modifier = { name = baltic_white_canal_construction duration = 3285 } }
+				988 = { add_province_modifier = { name = baltic_white_canal_construction duration = 3285 } }
+				984 = { add_province_modifier = { name = baltic_white_canal_construction duration = 3285 } }
+			}
+		}
+		ai_chance = {
+			factor = 0.30
+			modifier = { factor = 0 NOT = { money = 500000 } }
+			modifier = { factor = 100 money = 500000 }
+		}
+	}
+	
+	option = {
+		name = "EVT1000084PTB"
+		treasury = -400000
+		set_global_flag = baltic_white_canal_construction
+		random_list = {
+			40 = {
+				994 = { add_province_modifier = { name = baltic_white_canal_construction duration = 2920 } }
+				995 = { add_province_modifier = { name = baltic_white_canal_construction duration = 2920 } }
+				988 = { add_province_modifier = { name = baltic_white_canal_construction duration = 2920 } }
+				984 = { add_province_modifier = { name = baltic_white_canal_construction duration = 2920 } }
+			}
+			30 = {
+				994 = { add_province_modifier = { name = baltic_white_canal_construction duration = 2555 } }
+				995 = { add_province_modifier = { name = baltic_white_canal_construction duration = 2555 } }
+				988 = { add_province_modifier = { name = baltic_white_canal_construction duration = 2555 } }
+				984 = { add_province_modifier = { name = baltic_white_canal_construction duration = 2555 } }
+			}
+			30 = {
+				994 = { add_province_modifier = { name = baltic_white_canal_construction duration = 3285 } }
+				995 = { add_province_modifier = { name = baltic_white_canal_construction duration = 3285 } }
+				988 = { add_province_modifier = { name = baltic_white_canal_construction duration = 3285 } }
+				984 = { add_province_modifier = { name = baltic_white_canal_construction duration = 3285 } }
+			}
+		}
+		ai_chance = {
+			factor = 0.30
+			modifier = { factor = 0 NOT = { money = 400000 } }
+			modifier = { factor = 100 money = 400000 NOT = { money = 500000 } }
+		}
+	}
+	
+	option = {
+		name = "EVT1000084PTC"
+		treasury = -300000
+		set_global_flag = baltic_white_canal_construction
+		random_list = {
+			55 = {
+				994 = { add_province_modifier = { name = baltic_white_canal_construction duration = 3285 } }
+				995 = { add_province_modifier = { name = baltic_white_canal_construction duration = 3285 } }
+				988 = { add_province_modifier = { name = baltic_white_canal_construction duration = 3285 } }
+				984 = { add_province_modifier = { name = baltic_white_canal_construction duration = 3285 } }
+			}
+			30 = {
+				994 = { add_province_modifier = { name = baltic_white_canal_construction duration = 2920 } }
+				995 = { add_province_modifier = { name = baltic_white_canal_construction duration = 2920 } }
+				988 = { add_province_modifier = { name = baltic_white_canal_construction duration = 2920 } }
+				984 = { add_province_modifier = { name = baltic_white_canal_construction duration = 2920 } }
+			}
+			15 = {
+				994 = { add_province_modifier = { name = baltic_white_canal_construction duration = 2555 } }
+				995 = { add_province_modifier = { name = baltic_white_canal_construction duration = 2555 } }
+				988 = { add_province_modifier = { name = baltic_white_canal_construction duration = 2555 } }
+				984 = { add_province_modifier = { name = baltic_white_canal_construction duration = 2555 } }
+			}
+		}
+		ai_chance = {
+			factor = 0.30
+			modifier = { factor = 0 money = 300000 }
+		}
+	}
+	
+	option = {
+		name = "EVT1000084PTSPC" #We shall use manual labor
+		treasury = -75000
+		penal_system = colonial_transportation
+		add_country_modifier = { name = penal_colonies duration = -1 }
+		badboy = 5
+		set_global_flag = baltic_white_canal_construction
+		random_list = {
+			60 = {
+				994 = { add_province_modifier = { name = baltic_white_canal_construction duration = 600 } add_province_modifier = { name = penal_colony duration = 600 } }
+				995 = { add_province_modifier = { name = baltic_white_canal_construction duration = 600 } add_province_modifier = { name = penal_colony duration = 600 } }
+				988 = { add_province_modifier = { name = baltic_white_canal_construction duration = 600 } add_province_modifier = { name = penal_colony duration = 600 } }
+				984 = { add_province_modifier = { name = baltic_white_canal_construction duration = 600 } add_province_modifier = { name = penal_colony duration = 600 } }
+			}
+			30 = {
+				994 = { add_province_modifier = { name = baltic_white_canal_construction duration = 900 } add_province_modifier = { name = penal_colony duration = 900 } }
+				995 = { add_province_modifier = { name = baltic_white_canal_construction duration = 900 } add_province_modifier = { name = penal_colony duration = 900 } }
+				988 = { add_province_modifier = { name = baltic_white_canal_construction duration = 900 } add_province_modifier = { name = penal_colony duration = 900 } }
+				984 = { add_province_modifier = { name = baltic_white_canal_construction duration = 900 } add_province_modifier = { name = penal_colony duration = 900 } }
+			}
+			10 = {
+				994 = { add_province_modifier = { name = baltic_white_canal_construction duration = 1095 } add_province_modifier = { name = penal_colony duration = 1095 } }
+				995 = { add_province_modifier = { name = baltic_white_canal_construction duration = 1095 } add_province_modifier = { name = penal_colony duration = 1095 } }
+				988 = { add_province_modifier = { name = baltic_white_canal_construction duration = 1095 } add_province_modifier = { name = penal_colony duration = 1095 } }
+				984 = { add_province_modifier = { name = baltic_white_canal_construction duration = 1095 } add_province_modifier = { name = penal_colony duration = 1095 } }
+			}
+		}
+		ai_chance = {
+			factor = 0.10
+			modifier = {
+				factor = 0
+				NOT = {
+					money = 75000
+					OR = {
+						government = fascist_dictatorship
+						government = absolute_monarchy
+						government = proletarian_dictatorship
+						government = bourgeois_dictatorship
+						government = presidential_dictatorship
+					}
+				}
+			}
+			modifier = {
+				factor = 100
+				money = 75000
+				OR = {
+					government = fascist_dictatorship
+					government = absolute_monarchy
+					government = proletarian_dictatorship
+					government = bourgeois_dictatorship
+					government = presidential_dictatorship
+				}
+			}
+		}
+	}
+}
+
+#baltic_white Canal is Finished
+country_event = {
+	id = 1000085
+	title = "EVTNAME1000085"
+	desc = "EVTDESC1000085"
+	picture = "kiel_canal_finished"
+	
+	fire_only_once = yes
+	
+	trigger = {
+		has_global_flag = baltic_white_canal_construction
+		owns = 994
+		owns = 995
+		owns = 988
+		owns = 984
+		NOT = {
+			is_canal_enabled = 8
+			is_canal_enabled = 9
+			is_canal_enabled = 10
+			is_canal_enabled = 11
+			994 = { has_province_modifier = baltic_white_canal_construction }
+			995 = { has_province_modifier = baltic_white_canal_construction }
+			988 = { has_province_modifier = baltic_white_canal_construction }
+			984 = { has_province_modifier = baltic_white_canal_construction }
+		}
+	}
+	
+	mean_time_to_happen = { days = 5 }
+			
+	option = {
+		name = "EVT1000085OPTA"
+		clr_global_flag = baltic_white_canal_construction
+		enable_canal = 8
+		enable_canal = 9
+		enable_canal = 10
+		enable_canal = 11
+		994 = { set_province_flag = baltic_white_canal }
+		995 = { set_province_flag = baltic_white_canal }
+		988 = { set_province_flag = baltic_white_canal }
+		984 = { set_province_flag = baltic_white_canal }
+		prestige = 5
+	}
+}

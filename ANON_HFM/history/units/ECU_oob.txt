@@ -1,0 +1,60 @@
+CLM = {
+	truce_until = 1837.1.1
+	value = -50
+}
+USA = {
+	value = -25
+}
+
+PEU = {
+	value = -100
+}
+
+PBC = {
+	value = -25
+}
+
+
+navy = {
+	name = "Armada del Ecuador"
+	location = 2280
+	ship = {
+		name= "Guayaquil"
+		type = frigate
+	}
+	
+	ship = {
+		name= "Esmeraldas"
+		type = frigate
+	}
+
+	ship = {
+		name = "1. Buque de transporte"
+		type = clipper_transport
+	}
+	
+}
+
+army = {
+	name = "Ejército de Ecuador"
+	location = 2279
+	regiment = {
+		name= "1. Brigada de Infantería"
+		type = infantry
+		home = 2279
+	}
+
+	regiment = {
+		name= "2. Brigada de Infantería"
+		type = infantry
+		home = 2279
+	}
+
+	regiment = {
+		name= "3. Brigada de Infantería"
+		type = infantry
+		home = 2283
+	}
+
+}
+

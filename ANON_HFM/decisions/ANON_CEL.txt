@@ -1,0 +1,1851 @@
+political_decisions = {
+
+	invest_in_irish_alternate = {
+		picture = ireland
+		potential = {
+			OR = {
+				primary_culture = irish
+				primary_culture = scottish
+				primary_culture = welsh
+				primary_culture = manx
+				primary_culture = cornish
+				primary_culture = breton
+				primary_culture = ulster_scot
+			}
+			NOT = {
+				has_country_flag = invest_in_irish_alternate
+			}
+			#ENG = {
+			#	OR = {
+			#		has_country_flag = help_for_the_irish
+			#		has_country_flag = irish_republican_brotherhood
+			#	}
+			#}
+			any_owned_province = {
+				is_core = IRE
+				has_province_modifier = irish_oppression
+				has_province_modifier = enclosures
+				has_province_modifier = royal_irish_constabulary
+			}
+		}
+		
+		allow = {
+			money = 225001
+			NOT = { citizenship_policy = residency }
+		}
+		
+		effect = {
+			set_country_flag = invest_in_irish_alternate
+			random_country = {
+				limit = { has_country_flag = irish_republican_brotherhood }
+				clr_country_flag = irish_republican_brotherhood
+			}
+			random_country = {
+				limit = { has_country_flag = help_for_the_irish }
+				clr_country_flag = help_for_the_irish
+			}
+			prestige = 25
+			treasury = -225000
+			any_owned = {
+				remove_province_modifier = irish_oppression
+				remove_province_modifier = enclosures
+				remove_province_modifier = royal_irish_constabulary
+			}
+			any_pop = {
+				limit = {
+					has_pop_culture = irish
+					has_pop_religion = catholic
+				}
+				militancy = -9
+			}
+			add_accepted_culture = irish
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	establish_pan_celticism = {
+		picture = celtic
+		potential = {
+			OR = {
+				primary_culture = irish
+				primary_culture = scottish
+				primary_culture = welsh
+				primary_culture = manx
+				primary_culture = cornish
+				primary_culture = breton
+				primary_culture = ulster_scot
+			}
+			NOT = { has_global_flag = pan_celticism_established }
+			is_vassal = no
+		}
+				
+		allow = {
+			prestige = 50
+			nationalism_n_imperialism = 1
+			romanticism = 1
+			OR = {
+				is_secondary_power = yes
+				is_greater_power = yes
+			}
+		}
+		
+		effect = {
+			set_global_flag = pan_celticism_established
+			prestige = 25
+			any_country = {
+				limit = {
+					exists = yes
+					NOT = {
+						primary_culture = irish
+						primary_culture = scottish
+						primary_culture = welsh
+						primary_culture = manx
+						primary_culture = cornish
+						primary_culture = breton
+						primary_culture = ulster_scot
+					}
+				}
+				any_owned = {
+					limit = {
+						OR = {
+							is_core = IRE
+							is_core = SCO
+							is_core = WHA
+							is_core = M4N
+							is_core = KER
+							is_core = BRT
+							is_core = ULS
+							#New World#
+							is_core = YWL
+							is_core = PEI
+							is_core = NSC
+							is_core = INF
+						}
+					}
+					any_pop = {
+						limit = {
+							OR = {
+								has_pop_culture = irish
+								has_pop_culture = scottish
+								has_pop_culture = welsh
+								has_pop_culture = manx
+								has_pop_culture = cornish
+								has_pop_culture = breton
+								has_pop_culture = ulster_scot
+							}
+						}
+						militancy = 6
+					}
+					add_province_modifier = {
+						name = nationalist_agitation
+						duration = 3650
+					}
+				}
+			}
+			remove_accepted_culture = british
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	CEL_by_sword = {
+		picture = celtic
+		potential = {
+			OR = {
+				primary_culture = irish
+				primary_culture = scottish
+				primary_culture = welsh
+				primary_culture = manx
+				primary_culture = cornish
+				primary_culture = breton
+				primary_culture = ulster_scot
+			}
+			NOT = {
+				exists = CEL
+				has_country_flag = CEL_by_sword
+			}
+			has_global_flag = pan_celticism_established
+		}
+		
+		allow = {
+			nationalism_n_imperialism = 1
+			romanticism = 1
+			OR = {
+				is_secondary_power = yes
+				is_greater_power = yes
+			}
+			war_policy = jingoism
+			war = no
+		}
+		
+		effect = {
+			set_country_flag = CEL_by_sword
+			IRE = { all_core = { add_core = THIS } }
+			SCO = { all_core = { add_core = THIS } }
+			WHA = { all_core = { add_core = THIS } }
+			M4N = { all_core = { add_core = THIS } }
+			KER = { all_core = { add_core = THIS } }
+			BRT = { all_core = { add_core = THIS } }
+			ULS = { all_core = { add_core = THIS } }
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	
+	form_CEL = {
+		picture = celtic
+		potential = {
+			OR = {
+				primary_culture = irish
+				primary_culture = scottish
+				primary_culture = welsh
+				primary_culture = manx
+				primary_culture = cornish
+				primary_culture = breton
+				primary_culture = ulster_scot
+			}
+			NOT = { exists = CEL }
+			has_global_flag = pan_celticism_established
+		}
+		
+		allow = {
+			war = no
+			nationalism_n_imperialism = 1
+			romanticism = 1
+			invention = national_fraternity
+			OR = {
+				is_secondary_power = yes
+				is_greater_power = yes
+			}
+			IRE = {
+				OR = {
+					in_sphere = THIS
+					vassal_of = THIS
+					ai = no
+					all_core = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								OR = {
+									in_sphere = THIS
+									vassal_of = THIS
+								}
+								war = no
+								is_greater_power = no
+							}
+						}
+					}
+				}
+			}
+			SCO = {
+				OR = {
+					in_sphere = THIS
+					vassal_of = THIS
+					ai = no
+					all_core = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								OR = {
+									in_sphere = THIS
+									vassal_of = THIS
+								}
+								war = no
+								is_greater_power = no
+							}
+						}
+					}
+				}
+			}
+			WHA = {
+				OR = {
+					in_sphere = THIS
+					vassal_of = THIS
+					ai = no
+					all_core = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								OR = {
+									in_sphere = THIS
+									vassal_of = THIS
+								}
+								war = no
+								is_greater_power = no
+							}
+						}
+					}
+				}
+			}
+			M4N = {
+				OR = {
+					in_sphere = THIS
+					vassal_of = THIS
+					ai = no
+					all_core = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								OR = {
+									in_sphere = THIS
+									vassal_of = THIS
+								}
+								war = no
+								is_greater_power = no
+							}
+						}
+					}
+				}
+			}
+			KER = {
+				OR = {
+					in_sphere = THIS
+					vassal_of = THIS
+					ai = no
+					all_core = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								OR = {
+									in_sphere = THIS
+									vassal_of = THIS
+								}
+								war = no
+								is_greater_power = no
+							}
+						}
+					}
+				}
+			}
+			BRT = {
+				OR = {
+					in_sphere = THIS
+					vassal_of = THIS
+					ai = no
+					all_core = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								OR = {
+									in_sphere = THIS
+									vassal_of = THIS
+								}
+								war = no
+								is_greater_power = no
+							}
+						}
+					}
+				}
+			}
+			ULS = {
+				OR = {
+					in_sphere = THIS
+					vassal_of = THIS
+					ai = no
+					all_core = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								OR = {
+									in_sphere = THIS
+									vassal_of = THIS
+								}
+								war = no
+								is_greater_power = no
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		effect = {
+			prestige = 10
+			IRE = {
+				all_core = { add_core = THIS }
+			}
+			SCO = {
+				all_core = { add_core = THIS }
+			}
+			WHA = {
+				all_core = { add_core = THIS }
+			}
+			M4N = {
+				all_core = { add_core = THIS }
+			}
+			KER = {
+				all_core = { add_core = THIS }
+			}
+			BRT = {
+				all_core = { add_core = THIS }
+			}
+			ULS = {
+				all_core = { add_core = THIS }
+			}
+			any_country = {
+				limit = {
+					ai = yes
+					exists = yes
+					OR = {
+						in_sphere = THIS
+						vassal_of = THIS
+					}
+					OR = {
+						tag = IRE
+						tag = SCO
+						tag = WHA
+						tag = M4N
+						tag = KER
+						tag = BRT
+						tag = ULS
+					}
+				}
+				annex_to = THIS
+			}	
+			random_country = {
+				limit = {
+					exists = yes
+					ai = no
+					OR = {
+						tag = IRE
+						tag = SCO
+						tag = WHA
+						tag = M4N
+						tag = KER
+						tag = BRT
+						tag = ULS
+					}
+				}
+				country_event = 11101
+			}
+			add_accepted_culture = irish
+			add_accepted_culture = scottish
+			add_accepted_culture = welsh
+			add_accepted_culture = manx
+			add_accepted_culture = cornish
+			add_accepted_culture = breton
+			add_accepted_culture = ulster_scot
+			change_tag = CEL
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	
+	claim_galicia_spain = {
+		picture = galicia
+		potential = {
+			tag = CEL
+			NOT = { has_country_flag = claim_galicia_spain }				
+		}
+				
+		allow = {
+			war = no
+			is_vassal = no
+			nationalism_n_imperialism = 1
+			is_greater_power = yes
+			OR = {
+				government = fascist_dictatorship
+				AND = {
+					war_policy = jingoism
+					military_score = 50
+					invention = manifest_destiny
+				}
+			}
+		}
+		
+		effect = {
+			set_country_flag = claim_galicia_spain
+			474 = { add_core = THIS }
+			476 = { add_core = THIS }
+			add_accepted_culture = galician
+		}
+		ai_will_do = { factor = 1 }
+	}
+	annex_galicia_spain = {
+		picture = galicia
+		potential = {
+			tag = CEL
+			NOT = { has_country_flag = annex_galicia_spain }		
+		}
+				
+		allow = {
+			war = no
+			is_vassal = no
+			nationalism_n_imperialism = 1
+			invention = national_fraternity
+			is_greater_power = yes
+			GLC = {
+				OR = {
+					in_sphere = THIS
+					vassal_of = THIS
+					ai = no
+					all_core = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								OR = {
+									in_sphere = THIS
+									OR = {
+										is_vassal = no
+										vassal_of = THIS
+									}
+								}
+								war = no
+								is_greater_power = no
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		effect = {
+			set_country_flag = annex_galicia_spain
+			GLC = {
+				all_core = { add_core = THIS }
+			}
+			any_country = {
+				limit = {
+					tag = GLC
+					ai = yes
+					exists = yes
+					OR = {
+						in_sphere = THIS
+						vassal_of = THIS
+					}
+				}
+				annex_to = THIS
+			}
+			random_country = {
+				limit = {
+					tag = GLC
+					exists = yes
+					ai = no
+				}
+				country_event = 11101
+			}
+			add_accepted_culture = galician
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	claim_newfoundland = {
+		picture = INF_NSC
+		potential = {
+			OR = {
+				tag = CEL
+				tag = IRE
+			}
+			NOT = { has_country_flag = claim_newfoundland }		
+		}
+				
+		allow = {
+			war = no
+			is_vassal = no
+			nationalism_n_imperialism = 1
+			is_greater_power = yes
+			OR = {
+				government = fascist_dictatorship
+				AND = {
+					war_policy = jingoism
+					military_score = 50
+					invention = manifest_destiny
+				}
+			}
+		}
+		
+		effect = {
+			set_country_flag = claim_newfoundland
+			74 = { add_core = THIS }
+			75 = { add_core = THIS }
+			77 = { add_core = THIS }
+		}
+		ai_will_do = { factor = 1 }
+	}
+	annex_newfoundland = {
+		picture = INF_NSC
+		potential = {
+			OR = {
+				tag = CEL
+				tag = IRE
+			}
+			NOT = { has_country_flag = annex_newfoundland }	
+		}
+				
+		allow = {
+			war = no
+			is_vassal = no
+			nationalism_n_imperialism = 1
+			invention = national_fraternity
+			is_greater_power = yes
+			INF = {
+				OR = {
+					in_sphere = THIS
+					vassal_of = THIS
+					ai = no
+					all_core = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								OR = {
+									in_sphere = THIS
+									OR = {
+										is_vassal = no
+										vassal_of = THIS
+									}
+								}
+								war = no
+								is_greater_power = no
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		effect = {
+			set_country_flag = annex_newfoundland
+			INF = {
+				all_core = { add_core = THIS }
+			}
+			any_country = {
+				limit = {
+					tag = INF
+					ai = yes
+					exists = yes
+					OR = {
+						in_sphere = THIS
+						vassal_of = THIS
+					}
+				}
+				annex_to = THIS
+			}
+			random_country = {
+				limit = {
+					tag = INF
+					exists = yes
+					ai = no
+				}
+				country_event = 11101
+			}
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	claim_nova_scotia_prince_edward = {
+		picture = INF_NSC
+		potential = {
+			OR = {
+				tag = CEL
+				tag = SCO
+				tag = ULS
+			}
+			NOT = { has_country_flag = claim_nova_scotia_prince_edward }
+		}
+				
+		allow = {
+			war = no
+			is_vassal = no
+			nationalism_n_imperialism = 1
+			is_greater_power = yes
+			OR = {
+				government = fascist_dictatorship
+				AND = {
+					war_policy = jingoism
+					military_score = 50
+					invention = manifest_destiny
+				}
+			}
+		}
+		
+		effect = {
+			set_country_flag = claim_nova_scotia_prince_edward
+			73 = { add_core = THIS }
+			70 = { add_core = THIS }
+			72 = { add_core = THIS }
+			71 = { add_core = THIS }
+		}
+		ai_will_do = { factor = 1 }
+	}
+	annex_nova_scotia = {
+		picture = INF_NSC
+		potential = {
+			OR = {
+				tag = CEL
+				tag = SCO
+				tag = ULS
+			}	
+			NOT = { has_country_flag = annex_nova_scotia }
+		}
+				
+		allow = {
+			war = no
+			is_vassal = no
+			nationalism_n_imperialism = 1
+			invention = national_fraternity
+			is_greater_power = yes
+			NSC = {
+				OR = {
+					in_sphere = THIS
+					vassal_of = THIS
+					ai = no
+					all_core = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								OR = {
+									in_sphere = THIS
+									OR = {
+										is_vassal = no
+										vassal_of = THIS
+									}
+								}
+								war = no
+								is_greater_power = no
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		effect = {
+			set_country_flag = annex_nova_scotia
+			NSC = {
+				all_core = { add_core = THIS }
+			}
+			any_country = {
+				limit = {
+					tag = NSC
+					ai = yes
+					exists = yes
+					OR = {
+						in_sphere = THIS
+						vassal_of = THIS
+					}
+				}
+				annex_to = THIS
+			}
+			random_country = {
+				limit = {
+					tag = NSC
+					exists = yes
+					ai = no
+				}
+				country_event = 11101
+			}
+		}
+		ai_will_do = { factor = 1 }
+	}
+	annex_prince_edward = {
+		picture = INF_NSC
+		potential = {
+			OR = {
+				tag = CEL
+				tag = SCO
+				tag = ULS
+			}	
+			NOT = { has_country_flag = annex_prince_edward }
+		}
+				
+		allow = {
+			war = no
+			is_vassal = no
+			nationalism_n_imperialism = 1
+			invention = national_fraternity
+			is_greater_power = yes
+			PEI = {
+				OR = {
+					in_sphere = THIS
+					vassal_of = THIS
+					ai = no
+					all_core = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								OR = {
+									in_sphere = THIS
+									OR = {
+										is_vassal = no
+										vassal_of = THIS
+									}
+								}
+								war = no
+								is_greater_power = no
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		effect = {
+			set_country_flag = annex_prince_edward
+			PEI = {
+				all_core = { add_core = THIS }
+			}
+			any_country = {
+				limit = {
+					tag = PEI
+					ai = yes
+					exists = yes
+					OR = {
+						in_sphere = THIS
+						vassal_of = THIS
+					}
+				}
+				annex_to = THIS
+			}
+			random_country = {
+				limit = {
+					tag = PEI
+					exists = yes
+					ai = no
+				}
+				country_event = 11101
+			}
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	claim_ywladfa = {
+		picture = chubut
+		potential = {
+			OR = {
+				tag = CEL
+				tag = WHA
+			}
+			2396 = { is_core = YWL }
+			2397 = { is_core = YWL }
+			NOT = { has_country_flag = claim_ywladfa }		
+		}
+				
+		allow = {
+			war = no
+			is_vassal = no
+			nationalism_n_imperialism = 1
+			is_greater_power = yes
+			OR = {
+				government = fascist_dictatorship
+				AND = {
+					war_policy = jingoism
+					military_score = 50
+					invention = manifest_destiny
+				}
+			}
+		}
+		
+		effect = {
+			set_country_flag = claim_ywladfa
+			2396 = { add_core = THIS }
+			2397 = { add_core = THIS }
+		}
+		ai_will_do = { factor = 1 }
+	}
+	annex_ywladfa = {
+		picture = chubut
+		potential = {
+			OR = {
+				tag = CEL
+				tag = WHA
+			}
+			2396 = { is_core = YWL }
+			2397 = { is_core = YWL }
+			NOT = { has_country_flag = annex_ywladfa }	
+		}
+				
+		allow = {
+			war = no
+			is_vassal = no
+			nationalism_n_imperialism = 1
+			invention = national_fraternity
+			is_greater_power = yes
+			YWL = {
+				OR = {
+					in_sphere = THIS
+					vassal_of = THIS
+					ai = no
+					all_core = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								OR = {
+									in_sphere = THIS
+									OR = {
+										is_vassal = no
+										vassal_of = THIS
+									}
+								}
+								war = no
+								is_greater_power = no
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		effect = {
+			set_country_flag = annex_ywladfa
+			YWL = {
+				all_core = { add_core = THIS }
+			}
+			any_country = {
+				limit = {
+					tag = YWL
+					ai = yes
+					exists = yes
+					OR = {
+						in_sphere = THIS
+						vassal_of = THIS
+					}
+				}
+				annex_to = THIS
+			}
+			random_country = {
+				limit = {
+					tag = YWL
+					exists = yes
+					ai = no
+				}
+				country_event = 11101
+			}
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	central_chubut_railway = {
+		picture = chubut
+		potential = {
+			NOT = {
+				has_country_modifier = in_bankrupcy
+				has_country_modifier = generalised_debt_default
+			}
+			has_country_flag = conquest_of_the_desert
+			has_global_flag = y_wladfa_beginning
+			2396 = { is_core = YWL }
+			owns = 2396
+			NOT = { has_country_flag = central_chubut_railway }
+			year = 1880
+		}
+				
+		allow = {
+			money = 2100
+		}
+		
+		effect = {
+			set_country_flag = central_chubut_railway
+			any_owned = {
+				limit = {
+					province_id = 2396
+				}
+				infrastructure = 2 owner = { treasury = -2000 }
+			}
+			2396 = {
+				any_pop = {
+					limit = {
+						has_pop_culture = welsh
+						type = farmers
+					}
+					reduce_pop = 2
+				}
+				any_pop = {
+					limit = {
+						has_pop_culture = welsh
+						type = artisans
+					}
+					reduce_pop = 1.5
+				}
+				sub_unit = { type = steam_transport value = current }
+			}
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	CEL_primary_culture = {
+		picture = celtic
+		potential = {
+			tag = CEL
+			NOT = { has_country_flag = CEL_primary_culture }
+			NOT = { has_country_flag = CEL_primary_culture_selected }
+		}
+				
+		allow = {
+		}
+		
+		effect = {
+			set_country_flag = CEL_primary_culture
+			random_country = {
+				limit = {
+					tag = CEL
+					exists = yes
+				}
+				country_event = 1999999002
+			}
+		}
+		ai_will_do = { factor = 1 }
+	}
+	CEL_religion = {
+		picture = celtic
+		potential = {
+			tag = CEL
+			NOT = { has_country_flag = CEL_religion }
+			has_country_flag = CEL_primary_culture_selected
+		}
+				
+		allow = {
+		}
+		
+		effect = {
+			set_country_flag = CEL_religion
+			random_country = {
+				limit = {
+					tag = CEL
+					exists = yes
+				}
+				country_event = 1999999003
+			}
+		}
+		ai_will_do = { factor = 1 }
+	}
+	CEL_government = {
+		picture = celtic
+		potential = {
+			tag = CEL
+			NOT = { has_country_flag = CEL_government }
+			has_country_flag = CEL_religion_selected
+		}
+				
+		allow = {
+		}
+		
+		effect = {
+			set_country_flag = CEL_government
+			random_country = {
+				limit = {
+					tag = CEL
+					exists = yes
+				}
+				country_event = 1999999004
+			}
+		}
+		ai_will_do = { factor = 1 }
+	}
+		
+	irish_rename_connacht = {
+		picture = celtic
+		potential = {
+			OR = {
+				primary_culture = irish
+				tag = CEL
+			}
+			owns = 258
+			NOT = { has_global_flag = irish_rename_connacht }
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = irish_rename_connacht
+			clr_global_flag = normal_rename_connacht
+			258 = { #    
+				change_province_name = "Gaillimh" 
+				state_scope = {
+					change_region_name = "Cúige Chonnacht"
+				}
+			}  
+			259 = { change_province_name = "Sligeach" }
+			3356 = { change_province_name = "Ros Comáin" }
+		}
+		ai_will_do = { factor = 1 }
+	}	
+	normal_rename_connacht = {
+		picture = celtic
+		potential = {
+			NOT = { 
+				OR = {
+					primary_culture = irish
+					tag = CEL
+				}
+			}
+			owns = 258
+			NOT = { has_global_flag = normal_rename_connacht }
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = normal_rename_connacht
+			clr_global_flag = irish_rename_connacht
+			258 = { #    
+				change_province_name = "Galway" 
+				state_scope = {
+					change_region_name = "Connacht"
+				}
+			}  
+			259 = { change_province_name = "Sligo" }
+			3356 = { change_province_name = "Roscommon" }
+		}
+		ai_will_do = { factor = 1 }
+	}	
+	
+	irish_rename_munster = {
+		picture = celtic
+		potential = {
+			OR = {
+				primary_culture = irish
+				tag = CEL
+			}
+			owns = 260
+			NOT = { has_global_flag = irish_rename_munster }
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = irish_rename_munster
+			clr_global_flag = normal_rename_munster
+			260 = { #    
+				change_province_name = "Corcaigh" 
+				state_scope = {
+					change_region_name = "Cúige Mumhan"
+				}
+			}  
+			261 = { change_province_name = "Luimneach" }
+			262 = { change_province_name = "Port Láirge" }
+		}
+		ai_will_do = { factor = 1 }
+	}	
+	normal_rename_munster = {
+		picture = celtic
+		potential = {
+			NOT = { 
+				OR = {
+					primary_culture = irish
+					tag = CEL
+				}
+			}
+			owns = 260
+			NOT = { has_global_flag = normal_rename_munster }
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = normal_rename_munster
+			clr_global_flag = irish_rename_munster
+			260 = { #    
+				change_province_name = "Cork" 
+				state_scope = {
+					change_region_name = "Munster"
+				}
+			}  
+			261 = { change_province_name = "Limerick" }
+			262 = { change_province_name = "Waterford" }
+		}
+		ai_will_do = { factor = 1 }
+	}	
+	
+	irish_rename_leinster = {
+		picture = celtic
+		potential = {
+			OR = {
+				primary_culture = irish
+				tag = CEL
+			}
+			owns = 263
+			NOT = { has_global_flag = irish_rename_leinster }
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = irish_rename_leinster
+			clr_global_flag = normal_rename_leinster
+			263 = { #    
+				change_province_name = "Duibhlinn" 
+				state_scope = {
+					change_region_name = "Cúige Laighean"
+				}
+			}  
+			264 = { change_province_name = "Cill Dara" }
+			265 = { change_province_name = "Loch Garman" }
+		}
+		ai_will_do = { factor = 1 }
+	}
+	normal_rename_leinster = {
+		picture = celtic
+		potential = {
+			NOT = { 
+				OR = {
+					primary_culture = irish
+					tag = CEL
+				}
+			}
+			owns = 263
+			NOT = { has_global_flag = normal_rename_leinster }
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = normal_rename_leinster
+			clr_global_flag = irish_rename_leinster
+			263 = { #    
+				change_province_name = "Dublin" 
+				state_scope = {
+					change_region_name = "Leinster"
+				}
+			}  
+			264 = { change_province_name = "Kildare" }
+			265 = { change_province_name = "Wexford" }
+		}
+		ai_will_do = { factor = 1 }
+	}	
+	
+	irish_rename_ulster = {
+		picture = celtic
+		potential = {
+			OR = {
+				primary_culture = irish
+				tag = CEL
+			}
+			owns = 254
+			NOT = { has_global_flag = irish_rename_ulster }
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = irish_rename_ulster
+			clr_global_flag = normal_rename_ulster
+			clr_global_flag = scot_rename_ulster
+			254 = { #    
+				change_province_name = "Béal Feirste" 
+				state_scope = {
+					change_region_name = "Cúige Uladh"
+				}
+			}  
+			255 = { change_province_name = "Doire Cholmcille" }
+			256 = { change_province_name = "Ard Mhacha" }
+			257 = { change_province_name = "Dún na nGall" }
+			3355 = { change_province_name = "An Cabhán" }
+		}
+		ai_will_do = { factor = 1 }
+	}
+	scot_rename_ulster = {
+		picture = celtic
+		potential = {
+			primary_culture = ulster_scot
+			owns = 254
+			NOT = { has_global_flag = scot_rename_ulster }
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = scot_rename_ulster
+			clr_global_flag = irish_rename_ulster
+			clr_global_flag = normal_rename_ulster
+			254 = { #    
+				change_province_name = "Baelfawst" 
+				state_scope = {
+					change_region_name = "Ulstèr"
+				}
+			}  
+			255 = { change_province_name = "Lunnonderrie" }
+			256 = { change_province_name = "Airmagh" }
+			257 = { change_province_name = "Dunnagall" }
+			3355 = { change_province_name = "Cavan" }
+		}
+		ai_will_do = { factor = 1 }
+	}	
+	normal_rename_ulster = {
+		picture = celtic
+		potential = {
+			NOT = { 
+				OR = {
+					primary_culture = irish
+					primary_culture = ulster_scot
+					tag = CEL
+				}
+			}
+			owns = 254
+			NOT = { has_global_flag = normal_rename_ulster }
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = normal_rename_ulster
+			clr_global_flag = irish_rename_ulster
+			clr_global_flag = scot_rename_ulster
+			254 = { #    
+				change_province_name = "Belfast" 
+				state_scope = {
+					change_region_name = "Ulster"
+				}
+			}  
+			255 = { change_province_name = "Londonderry" }
+			256 = { change_province_name = "Armagh" }
+			257 = { change_province_name = "Donegal" }
+			3355 = { change_province_name = "Cavan" }
+		}
+		ai_will_do = { factor = 1 }
+	}	
+	
+	scot_rename_highlands = {
+		picture = celtic
+		potential = {
+			OR = {
+				primary_culture = scottish
+				tag = CEL
+			}
+			owns = 266
+			NOT = { has_global_flag = scot_rename_highlands }
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = scot_rename_highlands
+			clr_global_flag = normal_rename_highlands
+			266 = { #    
+				change_province_name = "Obar Dheathain" 
+				state_scope = {
+					change_region_name = "A' Ghàidhealtachd"
+				}
+			}  
+			267 = { change_province_name = "Inbhir Nis" }
+			268 = { change_province_name = "Dùn Dè" }
+			1724 = { change_province_name = "Arcaibh agus Sealtainn" }
+		}
+		ai_will_do = { factor = 1 }
+	}
+	normal_rename_highlands = {
+		picture = celtic
+		potential = {
+			NOT = { 
+				OR = {
+					primary_culture = scottish
+					tag = CEL
+				}
+			}
+			owns = 266
+			NOT = { has_global_flag = normal_rename_highlands }
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = normal_rename_highlands
+			clr_global_flag = scot_rename_highlands
+			266 = { #    
+				change_province_name = "Aberdeen" 
+				state_scope = {
+					change_region_name = "Highlands"
+				}
+			}  
+			267 = { change_province_name = "Inverness" }
+			268 = { change_province_name = "Dundee" }
+			1724 = { change_province_name = "Orkney & Shetland" }
+		}
+		ai_will_do = { factor = 1 }
+	}	
+	
+	scot_rename_lowlands = {
+		picture = celtic
+		potential = {
+			OR = {
+				primary_culture = scottish
+				tag = CEL
+			}
+			owns = 271
+			NOT = { has_global_flag = scot_rename_lowlands }
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = scot_rename_lowlands
+			clr_global_flag = normal_rename_lowlands
+			271 = { #    
+				change_province_name = "Glaschu" 
+				state_scope = {
+					change_region_name = "A' Ghalldachd"
+				}
+			}  
+			269 = { change_province_name = "Dùn Èideann" }
+			270 = { change_province_name = "Sruighlea" }
+			272 = { change_province_name = "Dùn Phris" }
+		}
+		ai_will_do = { factor = 1 }
+	}
+	normal_rename_lowlands = {
+		picture = celtic
+		potential = {
+			NOT = { 
+				OR = {
+					primary_culture = scottish
+					tag = CEL
+				}
+			}
+			owns = 271
+			NOT = { has_global_flag = normal_rename_lowlands }
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = normal_rename_lowlands
+			clr_global_flag = scot_rename_lowlands
+			271 = { #    
+				change_province_name = "Glasgow" 
+				state_scope = {
+					change_region_name = "Lowlands"
+				}
+			}  
+			269 = { change_province_name = "Edinburgh" }
+			270 = { change_province_name = "Stirling" }
+			272 = { change_province_name = "Dumfries" }
+		}
+		ai_will_do = { factor = 1 }
+	}	
+	
+	manx_rename_mann = {
+		picture = celtic
+		potential = {
+			OR = {
+				primary_culture = manx
+				tag = CEL
+			}
+			owns = 304
+			NOT = { has_global_flag = manx_rename_mann }
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = manx_rename_mann
+			clr_global_flag = normal_rename_mann
+			304 = { change_province_name = "Ellan Vannin" }
+		}
+		ai_will_do = { factor = 1 }
+	}
+	normal_rename_mann = {
+		picture = celtic
+		potential = {
+			NOT = { 
+				OR = {
+					primary_culture = manx
+					tag = CEL
+				}
+			}
+			owns = 304
+			NOT = { has_global_flag = normal_rename_mann }
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = normal_rename_mann
+			clr_global_flag = manx_rename_mann
+			304 = { change_province_name = "Isle of Man" }
+		}
+		ai_will_do = { factor = 1 }
+	}	
+	
+	welsh_rename_wales = {
+		picture = celtic
+		potential = {
+			OR = {
+				primary_culture = welsh
+				tag = CEL
+			}
+			owns = 273
+			NOT = { has_global_flag = welsh_rename_wales }
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = welsh_rename_wales
+			clr_global_flag = normal_rename_wales
+			273 = { #    
+				change_province_name = "Caerdydd" 
+				state_scope = {
+					change_region_name = "Cymru"
+				}
+			}  
+			274 = { change_province_name = "Aberteifi" }
+			275 = { change_province_name = "Llandrindod" }
+			276 = { change_province_name = "Bangor" }
+			3365 = { change_province_name = "Ynys Môn" }
+		}
+		ai_will_do = { factor = 1 }
+	}
+	normal_rename_wales = {
+		picture = celtic
+		potential = {
+			NOT = { 
+				OR = {
+					primary_culture = welsh
+					tag = CEL
+				}
+			}
+			owns = 273
+			NOT = { has_global_flag = normal_rename_wales }
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = normal_rename_wales
+			clr_global_flag = welsh_rename_wales
+			273 = { #    
+				change_province_name = "Cardiff" 
+				state_scope = {
+					change_region_name = "Wales"
+				}
+			}  
+			274 = { change_province_name = "Cardigan" }
+			275 = { change_province_name = "Llandrindod" }
+			276 = { change_province_name = "Bangor" }
+			3365 = { change_province_name = "Isle of Anglesey" }
+		}
+		ai_will_do = { factor = 1 }
+	}	
+	
+	cornish_rename_cornwall = {
+		picture = celtic
+		potential = {
+			OR = {
+				primary_culture = welsh
+				tag = CEL
+			}
+			owns = 299
+			owns = 3268
+			NOT = { has_global_flag = cornish_rename_cornwall }
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = cornish_rename_cornwall
+			clr_global_flag = normal_rename_cornwall
+			299 = { change_province_name = "Aberplymm" }
+			3268 = { change_province_name = "Karesk" }
+		}
+		ai_will_do = { factor = 1 }
+	}
+	normal_rename_cornwall = {
+		picture = celtic
+		potential = {
+			NOT = { 
+				OR = {
+					primary_culture = welsh
+					tag = CEL
+				}
+			}
+			owns = 299
+			owns = 3268
+			NOT = { has_global_flag = normal_rename_cornwall }
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = normal_rename_cornwall
+			clr_global_flag = cornish_rename_cornwall
+			299 = { change_province_name = "Plymouth" }
+			3268 = { change_province_name = "Exeter" }
+		}
+		ai_will_do = { factor = 1 }
+	}	
+	
+	breton_rename_brittany = {
+		picture = celtic
+		potential = {
+			OR = {
+				primary_culture = welsh
+				tag = CEL
+			}
+			owns = 420
+			NOT = { has_global_flag = breton_rename_brittany }
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = breton_rename_brittany
+			clr_global_flag = normal_rename_brittany
+			420 = { #    
+				change_province_name = "Brest" 
+				state_scope = {
+					change_region_name = "Breizh"
+				}
+			}  
+			421 = { change_province_name = "Sant-Brieg" }
+			422 = { change_province_name = "Gwened" }
+			424 = { change_province_name = "Roazhon" }
+			423 = { change_province_name = "Naoned" }
+		}
+		ai_will_do = { factor = 1 }
+	}
+	normal_rename_brittany = {
+		picture = celtic
+		potential = {
+			NOT = { 
+				OR = {
+					primary_culture = welsh
+					tag = CEL
+				}
+			}
+			owns = 420
+			NOT = { has_global_flag = normal_rename_brittany }
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = normal_rename_brittany
+			clr_global_flag = breton_rename_brittany
+			420 = { #    
+				change_province_name = "Brest" 
+				state_scope = {
+					change_region_name = "Bretagne"
+				}
+			}  
+			421 = { change_province_name = "Saint-Brieuc" }
+			422 = { change_province_name = "Vannes" }
+			424 = { change_province_name = "Rennes" }
+			423 = { change_province_name = "Nantes" }
+		}
+		ai_will_do = { factor = 1 }
+	}	
+	
+	irish_rename_newfoundland = {
+		picture = INF_NSC
+		potential = {
+			OR = {
+				primary_culture = irish
+				tag = CEL
+			}
+			owns = 74
+			NOT = { has_global_flag = irish_rename_newfoundland }
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = irish_rename_newfoundland
+			clr_global_flag = normal_rename_newfoundland
+			74 = { #    
+				change_province_name = "Baile Sheáin" 
+				state_scope = {
+					change_region_name = "Talamh an Éisc"
+				}
+			}  
+			75 = { change_province_name = "Port Bascach" }
+			77 = { change_province_name = "Naomh Peadar & Mícheálon" }
+		}
+		ai_will_do = { factor = 1 }
+	}	
+	normal_rename_newfoundland = {
+		picture = INF_NSC
+		potential = {
+			NOT = { 
+				OR = {
+					primary_culture = irish
+					tag = CEL
+				}
+			}
+			owns = 74
+			NOT = { has_global_flag = normal_rename_newfoundland }
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = normal_rename_newfoundland
+			clr_global_flag = irish_rename_newfoundland
+			74 = { #    
+				change_province_name = "St. John's" 
+				state_scope = {
+					change_region_name = "Newfoundland"
+				}
+			}  
+			75 = { change_province_name = "Port aux Basques" }
+			77 = { change_province_name = "St. Pierre & Miquelon" }
+		}
+		ai_will_do = { factor = 1 }
+	}	
+		
+	scot_rename_nova_scotia = {
+		picture = INF_NSC
+		potential = {
+			OR = {
+				primary_culture = scottish
+				primary_culture = ulster_scot
+				tag = CEL
+			}
+			owns = 71
+			NOT = { has_global_flag = scot_rename_nova_scotia }
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = scot_rename_nova_scotia
+			clr_global_flag = normal_rename_nova_scotia
+			71 = { #    
+				change_province_name = "Halafacs" 
+				state_scope = {
+					change_region_name = "Alba Nuadh"
+				}
+			}  
+			72 = { change_province_name = "Truro" }
+			73 = { change_province_name = "Eilean Cheap Breatainn" }
+			70 = { change_province_name = "Eilean a' Phrionnsa Eideard" }
+		}
+		ai_will_do = { factor = 1 }
+	}
+	normal_rename_nova_scotia = {
+		picture = INF_NSC
+		potential = {
+			NOT = { 
+				OR = {
+					primary_culture = scottish
+					primary_culture = ulster_scot
+					tag = CEL
+				}
+			}
+			owns = 71
+			NOT = { has_global_flag = normal_rename_nova_scotia }
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = normal_rename_nova_scotia
+			clr_global_flag = scot_rename_nova_scotia
+			71 = { #    
+				change_province_name = "Halifax" 
+				state_scope = {
+					change_region_name = "Maritimes"
+				}
+			}  
+			72 = { change_province_name = "Truro" }
+			73 = { change_province_name = "Cape Breton Island" }
+			70 = { change_province_name = "Prince Edward Island" }
+		}
+		ai_will_do = { factor = 1 }
+	}	
+	
+	welsh_rename_patagonia = {
+		picture = chubut
+		potential = {
+			OR = {
+				primary_culture = welsh
+				tag = CEL
+			}
+			owns = 2396
+			NOT = { has_global_flag = welsh_rename_patagonia }
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = welsh_rename_patagonia
+			clr_global_flag = normal_rename_patagonia
+			2396 = { change_province_name = "Porth Madryn" }
+			2397 = { change_province_name = "Cwm Hyfryd" }
+		}
+		ai_will_do = { factor = 1 }
+	}
+	normal_rename_patagonia = {
+		picture = chubut
+		potential = {
+			NOT = { 
+				OR = {
+					primary_culture = welsh
+					tag = CEL
+				}
+			}
+			owns = 2396
+			NOT = { has_global_flag = normal_rename_patagonia }
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = normal_rename_patagonia
+			clr_global_flag = welsh_rename_patagonia
+			2396 = { change_province_name = "Rawson" }
+			2397 = { change_province_name = "Esquel" }
+		}
+		ai_will_do = { factor = 1 }
+	}	
+}

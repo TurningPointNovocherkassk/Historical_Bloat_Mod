@@ -1,0 +1,732 @@
+##############################################
+#888888000
+
+###############RUSSIAN TAKEOVER OF QULJA###############
+country_event = {
+	id = 888888000
+	title = "EVTNAME888888000" #Russia takes over Kuldzha (Yining) during the dungan revolt 80125
+	desc = "EVTDESC888888000"
+	picture = "asian_administration"
+	is_triggered_only = yes
+
+	option = {
+		name = "EVT888888000OPTA"
+		relation = { who = RUS value = -50 }
+		RUS = { diplomatic_influence = { who = THIS value = -50 } }
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+###############TREATY OF LIVADIA###############
+country_event = {
+	id = 888888001
+	title = "EVTNAME888888001" #Treaty of Livadia, for RUS
+	desc = "EVTDESC888888001"
+	picture = "asian_administration"
+	is_triggered_only = yes
+
+	option = {
+		name = "EVT888888001OPTA" #Russia proposes to keep Ili/Yining (1595), diplomatic influence in XIN and MGL, and 60k shekels indemnity
+		FROM = { country_event = 888888002 }
+		prestige = 5
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = {
+		name = "EVT888888001OPTB" #Russia cucks out and hands everything back
+		FROM = { country_event = 888888003 }
+		badboy = -5
+		set_global_flag = livadia_back
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+country_event = {
+	id = 888888002
+	title = "EVTNAME888888002" #Treaty of Livadia, for QNG. Russia proposes to keep Ili/Yining (1595), diplomatic influence in XIN and MGL, and 40k shekels indemnity
+	desc = "EVTDESC888888002"
+	picture = "asian_administration"
+	is_triggered_only = yes
+
+	option = {
+		name = "EVT888888002OPTA" #QNG kills the envoy who suggested this shit lol, shit goes nowhere
+		FROM = {
+			country_event = 888888004
+			relation = { who = THIS value = -100 }
+		}
+		set_global_flag = livadia_fail
+		ai_chance = {
+			factor = 85
+			modifier = {
+				factor = 1.1
+				NOT = { war_exhaustion = 25 }
+			}
+			modifier = {
+				factor = 0.5
+				any_greater_power = { war_with = THIS }
+			}
+			modifier = {
+				factor = 0.25
+				national_provinces_occupied = 0.35
+			}
+			modifier = {
+				factor = 0.5
+				war_exhaustion = 25
+			}
+		}
+	}
+	option = {
+		name = "EVT888888002OPTB" #QNG accepts
+		FROM = { country_event = 888888005 }
+		set_global_flag = livadia_success
+		ai_chance = {
+			factor = 20
+			modifier = {
+				factor = 0.5
+				NOT = { war_exhaustion = 10 }
+			}
+			modifier = {
+				factor = 0.75
+				NOT = { war_exhaustion = 5 }
+			}
+			modifier = {
+				factor = 5
+				RUS = { ai = no }
+			}
+		}
+	}
+}
+country_event = {
+	id = 888888003
+	title = "EVTNAME888888003" #Treaty of Livadia, for QNG
+	desc = "EVTDESC888888003"
+	picture = "asian_administration"
+	is_triggered_only = yes
+
+	option = {
+		name = "EVT888888003OPTA" #Russia cucks out and hands everything back
+		1595 = { secede_province = XIN }
+		3580 = { secede_province = XIN }
+		3581 = { secede_province = XIN }
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+country_event = {
+	id = 888888004
+	title = "EVTNAME888888004" #Treaty of Livadia, for QNG. Russia proposes to keep Ili/Yining (1595), diplomatic influence in XIN and MGL, and 40k shekels indemnity
+	desc = "EVTDESC888888004" #QNG kills the envoy who suggested this shit lol, shit goes nowhere
+	picture = "asian_administration"
+	is_triggered_only = yes
+
+	option = {
+		name = "EVT888888004OPTA" 
+		FROM = {
+			relation = { who = THIS value = -100 }
+		}
+		diplomatic_influence = { who = QNG value = -100 }
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+country_event = {
+	id = 888888005
+	title = "EVTNAME888888005" #Treaty of Livadia, for QNG. Russia proposes to keep Ili/Yining (1595), diplomatic influence in XIN and MGL, and 40k shekels indemnity
+	desc = "EVTDESC888888005" #QNG accepts
+	picture = "asian_administration"
+	is_triggered_only = yes
+
+	option = {
+		name = "EVT888888005OPTA"
+		badboy = 3
+		3580 = {
+			secede_province = XIN
+			any_pop = {
+				limit = {
+					is_culture_group = east_slavic
+				}
+				move_pop = 1595
+			}
+			any_pop = {
+				limit = {
+					OR = {
+						has_pop_culture = hanhui
+						has_pop_culture = uighur
+						has_pop_culture = kazak
+					}
+				}
+				reduce_pop = 0.50
+			}
+		}
+		3581 = {
+			secede_province = XIN
+			any_pop = {
+				limit = {
+					is_culture_group = east_slavic
+				}
+				move_pop = 1595
+			}
+			any_pop = {
+				limit = {
+					OR = {
+						has_pop_culture = hanhui
+						has_pop_culture = uighur
+						has_pop_culture = kazak
+					}
+				}
+				reduce_pop = 0.50
+			}
+		}
+		1595 = {
+			secede_province = RUS
+			add_core = RUS
+			remove_core = XIN
+			remove_core = CHI
+			remove_core = UYG
+			any_pop = {
+				limit = {
+					OR = {
+						has_pop_culture = hanhui
+						has_pop_culture = uighur
+					}
+				}
+				reduce_pop = 1.50
+			}
+		}
+		QNG = { treasury = -40000 }
+		treasury = 40000
+		diplomatic_influence = { who = XIN value = 200 }
+		diplomatic_influence = { who = MGL value = 200 }
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+
+###############TREATY OF TARBAGATAY###############
+country_event = {
+	id = 888888006
+	title = "EVTNAME888888006" #The Treaty of Tarbagatay
+	desc = "EVTDESC888888006"
+	picture = "asian_administration"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVT888888006OPTA"
+		RUS = { country_event = 888888007 }
+		any_country = {
+			limit = {
+				OR = {
+					vassal_of = THIS
+					substate_of = THIS
+				}
+				any_owned_province = { is_core = RUS }
+			}
+			country_event = 888888009
+		}
+		any_owned = {
+			limit = { is_core = RUS }
+			secede_province = RUS
+		}
+		ai_chance = {
+			factor = 85
+			modifier = {
+				factor = 0.5
+				NOT = { war_exhaustion = 10 }
+				1596 = { owner = { part_of_sphere = no } }
+			}
+			modifier = {
+				factor = 0.75
+				NOT = { war_exhaustion = 5 }
+			}
+		}
+	}
+	
+	option = {
+		name = "EVT888888006OPTB"
+		prestige = 10
+		RUS = { country_event = 888888008 }
+		relation = { who = FROM value = -300 }
+		random_country = {
+			limit = {
+				OR = {
+					vassal_of = THIS
+					substate_of = THIS
+				}
+				OR = {
+					primary_culture = hanhui
+					primary_culture = turkic_minor
+				}
+				OR = {
+					capital = 1600
+					capital = 1596
+					capital = 1068
+				}
+			}
+			annex_to = THIS
+		}
+		
+		any_owned = { limit = { is_core = XIN } add_province_modifier = { name = nationalist_agitation duration = 365 } }
+		any_owned = { limit = { is_core = XIN } add_core = QNG }
+		
+		ai_chance = {
+			factor = 20
+			modifier = {
+				factor = 1.1
+				NOT = { war_exhaustion = 25 }
+				1596 = { owner = { part_of_sphere = no } }
+			}
+			modifier = {
+				factor = 0.5
+				any_greater_power = { war_with = THIS }
+			}
+			modifier = {
+				factor = 0
+				national_provinces_occupied = 0.25
+			}
+			modifier = {
+				factor = 0.5
+				war_exhaustion = 25
+			}
+		}
+	}
+}
+
+country_event = {
+	id = 888888007
+	title = "EVTNAME888888007"
+	desc = "EVTDESC888888007"
+	picture = "asian_administration"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVT888888007OPTA"
+		prestige = 10
+		relation = { who = FROM value = 50 }
+	}
+}
+
+country_event = {
+	id = 888888008
+	title = "EVTNAME888888008"
+	desc = "EVTDESC888888008"
+	picture = "asian_administration"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVT888888008OPTA"
+		prestige = -10
+		relation = { who = FROM value = -100 }
+		diplomatic_influence = { who = FROM value = -100 }
+		casus_belli = {
+			target = FROM
+			type = cut_down_to_size
+			months = 30
+		}
+	}
+}
+
+country_event = {
+	id = 888888009
+	title = "EVTNAME888888009" #The Amban's Demand - Qing vassals to hand over territory to Russia
+	desc = "EVTDESC888888009"
+	picture = "asian_administration"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVT888888009OPTA"
+		prestige = -5
+		any_pop = { militancy = 3 }
+		any_owned = {
+			limit = { is_core = RUS }
+			secede_province = RUS
+		}
+		FROM = { any_owned = { limit = { is_core = XIN } add_province_modifier = { name = nationalist_agitation duration = 365 } } }
+		FROM = { any_owned = { limit = { is_core = XIN NOT = { is_core = RUS } } add_core = QNG } }
+		ai_chance = {
+			factor = 95
+			modifier = {
+				factor = 0.25
+				NOT = { in_sphere = RUS }
+				part_of_sphere = yes
+			}
+		}
+	}
+	
+	option = {
+		name = "EVT888888009OPTB"
+		prestige = 5
+		any_pop = { militancy = -6 }
+		leave_alliance = FROM
+		relation = { who = RUS value = -100 }
+		FROM = { country_event = 888888010 }
+		ai_chance = {
+			factor = 5
+			modifier = {
+				factor = 2
+				FROM = { war = yes }
+			}
+			modifier = {
+				factor = 2
+				any_greater_power = { war_with = FROM }
+			}
+			modifier = {
+				factor = 0
+				in_sphere = RUS
+			}
+			modifier = {
+				factor = 0.05
+				NOT = { in_sphere = RUS }
+				part_of_sphere = yes
+			}
+		}
+	}
+}
+
+country_event = {
+	id = 888888010
+	title = "EVTNAME888888010"
+	desc = "EVTDESC888888010"
+	picture = "rebellion"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVT888888010OPTA"
+		prestige = -10
+		release_vassal = FROM
+		relation = { who = FROM value = -100 }
+	}
+}
+
+###############TREATY OF ILI###############
+country_event = {
+	id = 888888011
+	title = "EVTNAME888888011" #Treaty of Ili, for RUS
+	desc = "EVTDESC888888011"
+	picture = "asian_administration"
+	is_triggered_only = yes
+
+	option = {
+		name = "EVT888888011OPTA" #Russia returns all occupied provinces, diplomatic influence in XIN, KML and MGL, and 70 shekels indemnity. hanhui, uighur move to the RUS borderlands
+		FROM = { country_event = 888888012 }
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = {
+		name = "EVT888888011OPTB" #Russia says no
+		FROM = { country_event = 888888013 }
+		badboy = 5
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+country_event = {
+	id = 888888012
+	title = "EVTNAME888888012" #Treaty of Ili, for QNG. #Russia returns all occupied provinces, diplomatic influence in XIN, KML and MGL, and 70 shekels indemnity. hanhui, uighur move to the RUS borderlands
+	desc = "EVTDESC888888012"
+	picture = "asian_administration"
+	is_triggered_only = yes
+
+	option = {
+		name = "EVT888888012OPTA" #QNG accepts
+		FROM = { country_event = 888888014 }
+		set_global_flag = ili_success
+		ai_chance = {
+			factor = 85
+			modifier = {
+				factor = 1.1
+				NOT = { war_exhaustion = 25 }
+			}
+			modifier = {
+				factor = 0.5
+				any_greater_power = { war_with = THIS }
+			}
+			modifier = {
+				factor = 0.25
+				national_provinces_occupied = 0.35
+			}
+			modifier = {
+				factor = 0.5
+				war_exhaustion = 25
+			}
+		}
+	}
+	option = {
+		name = "EVT888888012OPTB" #QNG incarcerates the envoy who suggested this lol, shit goes nowhere
+		FROM = {
+			country_event = 888888015
+			relation = { who = THIS value = -100 }
+		}
+		set_global_flag = ili_fail
+		ai_chance = {
+			factor = 20
+			modifier = {
+				factor = 0.5
+				NOT = { war_exhaustion = 10 }
+			}
+			modifier = {
+				factor = 0.75
+				NOT = { war_exhaustion = 5 }
+			}
+		}
+	}
+}
+country_event = {
+	id = 888888013
+	title = "EVTNAME888888013" #Treaty of Ili, for QNG
+	desc = "EVTDESC888888013"
+	picture = "asian_administration"
+	is_triggered_only = yes
+
+	option = {
+		name = "EVT888888013OPTA" #Russia says no
+		FROM = {
+			relation = { who = THIS value = -100 }
+			diplomatic_influence = { who = QNG value = -100 }
+			diplomatic_influence = { who = XIN value = -100 }
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+country_event = {
+	id = 888888014
+	title = "EVTNAME888888014" #Treaty of Ili, for RUS. Russia returns all occupied provinces, diplomatic influence in XIN, KML and MGL, and 70 shekels indemnity. hanhui, uighur move to the RUS borderlands
+	desc = "EVTDESC888888014" #QNG accepts
+	picture = "asian_administration"
+	is_triggered_only = yes
+
+	option = {
+		name = "EVT888888014OPTA" 
+		badboy = -5
+		any_owned = {
+			limit = {
+				is_core = XIN
+				OR = {
+					province_id = 1595
+					province_id = 3580
+					province_id = 3581
+				}
+				XIN = {
+					exists = yes
+					OR = {
+						vassal_of = QNG
+						substate_of = QNG
+					}
+				}
+			}
+			any_pop = {
+				limit = {
+					is_culture_group = east_slavic
+				}
+				random_list = {
+					35 = { move_pop = 1188 }
+					45 = { move_pop = 1186 }
+					20 = { move_pop = 3461 }
+				}
+			}
+			any_pop = {
+				limit = {
+					OR = {
+						has_pop_culture = hanhui
+						has_pop_culture = uighur
+					}
+				}
+				reduce_pop = 0.35
+			}
+			secede_province = XIN
+		}
+		any_owned = {
+			limit = {
+				is_core = UYG
+				OR = {
+					province_id = 1595
+					province_id = 3580
+					province_id = 3581
+				}
+				UYG = {
+					exists = yes
+					OR = {
+						vassal_of = QNG
+						substate_of = QNG
+					}
+				}
+			}
+			any_pop = {
+				limit = {
+					is_culture_group = east_slavic
+				}
+				random_list = {
+					35 = { move_pop = 1188 }
+					45 = { move_pop = 1186 }
+					20 = { move_pop = 3461 }
+				}
+			}
+			any_pop = {
+				limit = {
+					OR = {
+						has_pop_culture = hanhui
+						has_pop_culture = uighur
+					}
+				}
+				reduce_pop = 0.35
+			}
+			secede_province = UYG
+		}
+		any_pop = {
+			limit = {
+				location = {
+					OR = {
+						province_id = 1188
+						province_id = 1186
+						province_id = 3461
+					}
+				}
+				OR = {
+					has_pop_culture = hanhui
+					has_pop_culture = uighur
+				}
+			}
+			reduce_pop = 1.35
+		}
+		QNG = { treasury = -70000 }
+		treasury = 70000
+		diplomatic_influence = { who = XIN value = 200 }
+		XIN = { relation = { who = THIS value = 200 } }
+		diplomatic_influence = { who = KML value = 200 }
+		KML = { relation = { who = THIS value = 200 } }
+		diplomatic_influence = { who = MGL value = 200 }
+		MGL = { relation = { who = THIS value = 200 } }
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+country_event = {
+	id = 888888015
+	title = "EVTNAME888888015" #Treaty of Ili, for RUS. Russia returns all occupied provinces, diplomatic influence in XIN, KML and MGL, and 70 shekels indemnity. hanhui, uighur move to the RUS borderlands
+	desc = "EVTDESC888888015" #QNG incarcerates the envoy who suggested this lol, shit goes nowhere
+	picture = "asian_administration"
+	is_triggered_only = yes
+
+	option = {
+		name = "EVT888888015OPTA"
+		FROM = {
+			relation = { who = THIS value = -100 }
+			diplomatic_influence = { who = QNG value = -100 }
+			diplomatic_influence = { who = KML value = -100 }
+			diplomatic_influence = { who = XIN value = -100 }
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+###############HOOKING UP 1ST DUNGAN REVOLT###############
+country_event = {
+	id = 888888016
+	title = "EVTNAME80125" #Dungan Revolt
+	desc = "EVTDESC80125"
+	picture = "dungan_revolt_xinhai"
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = XIN
+		substate_of = QNG
+		NOT = { num_of_revolts = 1 }
+		1594 = {
+			owned_by = XIN
+			controlled_by = XIN
+			OR = {
+				has_province_modifier = anti_manchu_sentiment
+				average_militancy = 4
+			}
+		}
+		OR = {
+			has_global_flag = tpg_war_started
+			year = 1860
+		}
+		NOT = { has_global_flag = dungan_rebellion }
+	}
+	
+	mean_time_to_happen = {
+		months = 6
+		modifier = {
+			factor = 4
+			war = no
+		}
+		modifier = {
+			factor = 0.1
+			has_global_flag = ever_victorious_army
+		}
+	}
+	
+	immediate = {
+		set_global_flag = dungan_rebellion
+		XIN = {
+			any_owned = {
+				limit = {
+					OR = {
+						province_id = 1594
+						province_id = 3465
+						province_id = 3453
+						province_id = 1597
+						province_id = 3494
+						province_id = 1600
+						province_id = 1598
+						province_id = 3544
+						province_id = 3582
+					}
+				}
+				secede_province = UYG
+			}
+			capital = 1596
+		}
+		UYG = {
+			government = absolute_monarchy
+			primary_culture = uighur
+			remove_accepted_culture = beifaren
+			add_accepted_culture = tajik
+			add_accepted_culture = iranian_minor
+			add_accepted_culture = kazak
+			add_accepted_culture = kirgiz
+			capital = 1594
+			any_pop = {
+				consciousness = -5
+				militancy = -5
+			}
+		}
+	}
+	
+	option = {
+		name = "EVT80125OPTA"
+		QNG = { country_event = 80125 }
+		ai_chance = {
+			factor = 100
+		}
+	}
+	
+	option = {
+		name = "EVT80125OPTB"
+		QNG = { country_event = 80125 }
+		change_tag_no_core_switch = UYG
+		ai_chance = { factor = 0 }
+	}
+}

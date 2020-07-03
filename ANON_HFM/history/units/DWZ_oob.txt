@@ -1,0 +1,27 @@
+army = {
+	name = "Army of the Darwazi Mir"
+	location = 3520
+	regiment = {
+		name = "Tajik Warriors"
+		type = irregular
+		home = 3520
+	}
+	regiment = {
+		name = "Tajik Warriors"
+		type = irregular
+		home = 3519
+	}
+	regiment = {
+		name = "Horse Raiders"
+		type = cavalry
+		home = 3519
+	}
+}
+
+leader = {
+	name = "Ghazi Esma'il Tajik Darwazi"
+	type = land
+	date = 1825.8.20
+	background = natural_born_leader
+	personality = deeply_religious
+}

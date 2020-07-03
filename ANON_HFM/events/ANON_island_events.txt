@@ -1,0 +1,334 @@
+
+###############
+#~~C4R stuff~~#
+###############
+
+	country_event = {
+		id = 1999997000 
+		title = "EVTNAME1999997000" #C4R, decides primary culture. Changes capital to cultural capital.
+		desc = "EVTDESC1999997000"
+		#picture = ""
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPT1999997000A" #afro_caribbean
+			primary_culture = afro_caribbean
+			add_accepted_culture = afro_antillean
+			add_accepted_culture = british
+			add_accepted_culture = french
+			capital = 2217
+			set_country_flag = C4R_primary_culture_selected
+			ai_chance = {
+				factor = 45
+			}
+		}
+		option = {
+			name = "EVTOPT1999997000B" #afro_antillean
+			primary_culture = afro_antillean
+			add_accepted_culture = afro_caribbean
+			add_accepted_culture = british
+			add_accepted_culture = french
+			capital = 2228
+			set_country_flag = C4R_primary_culture_selected
+			ai_chance = {
+				factor = 30
+			}
+		}
+		option = {
+			name = "EVTOPT1999997000C" #british
+			primary_culture = british
+			add_accepted_culture = afro_caribbean
+			add_accepted_culture = afro_antillean
+			add_accepted_culture = french
+			capital = 2217
+			set_country_flag = C4R_primary_culture_selected
+			ai_chance = {
+				factor = 15
+			}
+		}
+		option = {
+			name = "EVTOPT1999997000D" #french
+			primary_culture = french
+			add_accepted_culture = afro_caribbean
+			add_accepted_culture = afro_antillean
+			add_accepted_culture = british
+			capital = 2228
+			set_country_flag = C4R_primary_culture_selected
+			ai_chance = {
+				factor = 10
+			}
+		}		
+	}
+	
+	country_event = {
+		id = 1999997001 
+		title = "EVTNAME1999997001" #C4R, decides religion.
+		desc = "EVTDESC1999997001"
+		#picture = ""
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPT1999997001A" #Protestant
+			religion = protestant
+			set_country_flag = protestant_country
+			set_country_flag = C4R_religion_selected
+			ai_chance = {
+				factor = 50
+				modifier = {
+					factor = 100
+					OR = {
+						primary_culture = afro_caribbean
+						primary_culture = british
+					}
+				}
+				modifier = {
+					factor = 0
+					OR = {
+						primary_culture = afro_antillean
+						primary_culture = french
+					}
+				}
+			}
+		}
+		option = {
+			name = "EVTOPT1999997001B" #Catholic
+			religion = catholic
+			clr_country_flag = protestant_country
+			set_country_flag = catholic_country
+			set_country_flag = C4R_religion_selected
+			ai_chance = {
+				factor = 50
+				modifier = {
+					factor = 100
+					OR = {
+						primary_culture = afro_antillean
+						primary_culture = french
+					}
+				}
+				modifier = {
+					factor = 0
+					OR = {
+						primary_culture = afro_caribbean
+						primary_culture = british
+					}
+				}
+			}
+		}	
+	}
+	
+	country_event = {
+		id = 1999997002 
+		title = "EVTNAME1999997002" #D4N, decides primary culture. Changes capital to cultural capital.
+		desc = "EVTDESC1999997002"
+		#picture = ""
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPT1999997002A" #afro_dutch
+			primary_culture = afro_dutch
+			add_accepted_culture = dutch
+			set_country_flag = D4N_primary_culture_selected
+			ai_chance = {
+				factor = 75
+			}
+		}
+		option = {
+			name = "EVTOPT1999997002B" #dutch
+			primary_culture = dutch
+			add_accepted_culture = afro_dutch
+			set_country_flag = D4N_primary_culture_selected
+			ai_chance = {
+				factor = 25
+			}
+		}
+	}
+	
+	country_event = {
+		id = 1999997003 
+		title = "EVTNAME1999997003" #D4N, decides religion.
+		desc = "EVTDESC1999997003"
+		#picture = ""
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPT1999997003A" #Protestant
+			religion = protestant
+			clr_country_flag = catholic_country
+			set_country_flag = protestant_country
+			set_country_flag = D4N_religion_selected
+			ai_chance = {
+				factor = 50
+				modifier = {
+					factor = 100
+					primary_culture = dutch
+				}
+				modifier = {
+					factor = 0
+					primary_culture = afro_dutch
+				}
+			}
+		}
+		option = {
+			name = "EVTOPT1999997003B" #Catholic
+			religion = catholic
+			set_country_flag = catholic_country
+			set_country_flag = D4N_religion_selected
+			ai_chance = {
+				factor = 50
+				modifier = {
+					factor = 100
+					primary_culture = dutch
+				}
+				modifier = {
+					factor = 0
+					primary_culture = afro_dutch
+				}
+			}
+		}	
+	}
+	
+	country_event = {
+		id = 1999997004 
+		title = "EVTNAME1999997004" #ENG is informed that FROM annexed the Bouvet island, which was 'claimed' by britain in 1825
+		desc = "EVTDESC1999997004"
+		#picture = ""
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPT1999997004A"
+			set_country_flag = bouvet_island_claim
+			3338 = {
+				add_core = THIS
+			}
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+	country_event = {
+		id = 1999997005 
+		title = "EVTNAME1999997005" #Owner of Bouvet is informed that FROM protests THIS's claims on the island. Wishes to subject the matter to arbitration.
+		desc = "EVTDESC1999997005"
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPT1999997005A" #Accept, but state that George Norris sighted two islands in his 1825 expedition, invalidating their claims
+			set_country_flag = bouvet_island_accept
+			FROM = {
+				country_event = 1999997006
+			}
+			ai_chance = {
+				factor = 100
+			}
+		}
+		option = {
+			name = "EVTOPT1999997005B" #Refuse
+			set_country_flag = bouvet_island_refuse
+			relation = { who = FROM value = -75 }
+			diplomatic_influence = { who = FROM value = -75 }
+			FROM = {
+				country_event = 1999997007
+			}
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+	country_event = {
+		id = 1999997006 
+		title = "EVTNAME1999997006" #FROM smugly responds that George Norris sighted two islands in his 1825 expedition, invalidating their claims
+		desc = "EVTDESC1999997006"
+		#picture = ""
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPT1999997006A" #O-Okay, forfeit claims
+			3338 = {
+				remove_core = THIS
+				owner = {
+					country_event = 1999997008
+				}
+			}
+			ai_chance = {
+				factor = 75
+			}
+		}
+		option = {
+			name = "EVTOPT1999997006B" #Perfidious Albion
+			relation = { who = FROM value = -75 }
+			diplomatic_influence = { who = FROM value = -75 }
+			FROM = {
+				country_event = 1999997009
+			}
+			ai_chance = {
+				factor = 25
+			}
+		}
+	}
+	country_event = {
+		id = 1999997007 
+		title = "EVTNAME1999997007" #FROM refuses to acknowledge THIS's claims
+		desc = "EVTDESC1999997007"
+		#picture = ""
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPT1999997007A"
+			relation = { who = FROM value = -75 }
+			diplomatic_influence = { who = FROM value = -75 }
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+	country_event = {
+		id = 1999997008 
+		title = "EVTNAME1999997008" #FROM abandoned all claims on Bouvet
+		desc = "EVTDESC1999997008"
+		#picture = ""
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPT1999997008A"
+			prestige = 10
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+	country_event = {
+		id = 1999997009 
+		title = "EVTNAME1999997009" #FROM keeps claiming Bouvet
+		desc = "EVTDESC1999997009"
+		#picture = ""
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPT1999997009A"
+			relation = { who = FROM value = -75 }
+			diplomatic_influence = { who = FROM value = -75 }
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}

@@ -1,0 +1,5541 @@
+
+############################################
+#~~~~~~~~~Events for Guyana (Union)~~~~~~~~#
+#~~Mostly for selecting faith and culture~~#
+############################################
+	
+	country_event = {
+		id = 1999998000 
+		title = "EVTNAME1999998000" #UGU, decides primary culture. Changes capital to cultural capital.
+		desc = "EVTDESC1999998000"
+		picture = "guyanas_3"
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPT1999998000A" #afro_caribbean
+			primary_culture = afro_caribbean
+			add_accepted_culture = afro_antillean
+			add_accepted_culture = afro_dutch
+			add_accepted_culture = afro_caribeno
+			add_accepted_culture = indo_caribbean
+			add_accepted_culture = javan
+			add_accepted_culture = kreol
+			capital = 2239
+			set_country_flag = UGU_primary_culture_selected
+			ai_chance = {
+				factor = 20
+			}
+		}
+		option = {
+			name = "EVTOPT1999998000B" #afro_antillean
+			primary_culture = afro_antillean
+			add_accepted_culture = afro_caribbean
+			add_accepted_culture = afro_dutch
+			add_accepted_culture = afro_caribeno
+			add_accepted_culture = indo_caribbean
+			add_accepted_culture = javan
+			add_accepted_culture = kreol
+			capital = 2241
+			set_country_flag = UGU_primary_culture_selected
+			ai_chance = {
+				factor = 20
+			}
+		}
+		option = {
+			name = "EVTOPT1999998000C" #afro_dutch
+			primary_culture = afro_dutch
+			add_accepted_culture = afro_caribbean
+			add_accepted_culture = afro_antillean
+			add_accepted_culture = afro_caribeno
+			add_accepted_culture = indo_caribbean
+			add_accepted_culture = javan
+			add_accepted_culture = kreol
+			capital = 2240
+			set_country_flag = UGU_primary_culture_selected
+			ai_chance = {
+				factor = 20
+			}
+		}
+		option = {
+			name = "EVTOPT1999998000D" #afro_caribeno
+			primary_culture = afro_caribeno
+			add_accepted_culture = afro_caribbean
+			add_accepted_culture = afro_antillean
+			add_accepted_culture = afro_dutch
+			add_accepted_culture = indo_caribbean
+			add_accepted_culture = javan
+			add_accepted_culture = kreol
+			capital = 2240
+			set_country_flag = UGU_primary_culture_selected
+			ai_chance = {
+				factor = 10
+			}
+		}
+		option = {
+			name = "EVTOPT1999998000E" #indo_caribbean
+			primary_culture = indo_caribbean
+			add_accepted_culture = afro_caribbean
+			add_accepted_culture = afro_antillean
+			add_accepted_culture = afro_dutch
+			add_accepted_culture = afro_caribeno
+			add_accepted_culture = javan
+			add_accepted_culture = kreol
+			capital = 2239
+			set_country_flag = UGU_primary_culture_selected
+			ai_chance = {
+				factor = 15
+			}
+		}
+		option = {
+			name = "EVTOPT1999998000F" #javan
+			primary_culture = javan
+			add_accepted_culture = afro_caribbean
+			add_accepted_culture = afro_antillean
+			add_accepted_culture = afro_dutch
+			add_accepted_culture = afro_caribeno
+			add_accepted_culture = indo_caribbean
+			add_accepted_culture = javan
+			add_accepted_culture = kreol
+			capital = 2240
+			set_country_flag = UGU_primary_culture_selected
+			ai_chance = {
+				factor = 2.5
+			}
+		}
+		option = {
+			name = "EVTOPT1999998000G" #kreol
+			primary_culture = kreol
+			add_accepted_culture = afro_caribbean
+			add_accepted_culture = afro_antillean
+			add_accepted_culture = afro_dutch
+			add_accepted_culture = afro_caribeno
+			add_accepted_culture = indo_caribbean
+			add_accepted_culture = javan
+			capital = 2241
+			set_country_flag = UGU_primary_culture_selected
+			ai_chance = {
+				factor = 12.5
+			}
+		}
+		
+	}
+	
+	country_event = {
+		id = 1999998001 
+		title = "EVTNAME1999998001" #UGU, decides religion.
+		desc = "EVTDESC1999998001"
+		picture = "guyanas_3"
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPT1999998001A" #Protestant
+			religion = protestant
+			set_country_flag = protestant_country
+			set_country_flag = UGU_religion_selected
+			ai_chance = {
+				factor = 25
+				modifier = {
+					factor = 100
+					OR = {
+						primary_culture = afro_caribbean
+						primary_culture = afro_dutch
+					}
+				}
+				modifier = {
+					factor = 0
+					OR = {
+						primary_culture = afro_antillean
+						primary_culture = afro_caribeno
+						primary_culture = javan
+						primary_culture = kreol
+						primary_culture = indo_caribbean
+					}
+				}
+			}
+		}
+		option = {
+			name = "EVTOPT1999998001B" #Catholic
+			religion = catholic
+			clr_country_flag = protestant_country
+			set_country_flag = catholic_country
+			set_country_flag = UGU_religion_selected
+			ai_chance = {
+				factor = 25
+				modifier = {
+					factor = 100
+					OR = {
+						primary_culture = afro_antillean
+						primary_culture = afro_caribeno
+						primary_culture = kreol
+					}
+				}
+				modifier = {
+					factor = 0
+					OR = {
+						primary_culture = afro_caribbean
+						primary_culture = afro_dutch
+						primary_culture = javan
+						primary_culture = indo_caribbean
+					}
+				}
+			}
+		}	
+		option = {
+			name = "EVTOPT1999998001C" #Hindu
+			religion = hindu
+			clr_country_flag = protestant_country
+			set_country_flag = hindu_country
+			set_country_flag = UGU_religion_selected
+			ai_chance = {
+				factor = 25
+				modifier = {
+					factor = 100
+					primary_culture = indo_caribbean
+				}
+				modifier = {
+					factor = 0
+					OR = {
+						primary_culture = afro_caribbean
+						primary_culture = afro_dutch
+						primary_culture = afro_antillean
+						primary_culture = afro_caribeno
+						primary_culture = kreol
+						primary_culture = javan
+					}
+				}
+			}
+		}
+		option = {
+			name = "EVTOPT1999998001D" #Sunni
+			religion = sunni
+			clr_country_flag = protestant_country
+			set_country_flag = sunni_country
+			set_country_flag = UGU_religion_selected
+			ai_chance = {
+				factor = 25
+				modifier = {
+					factor = 100
+					primary_culture = javan
+				}
+				modifier = {
+					factor = 0
+					OR = {
+						primary_culture = afro_caribbean
+						primary_culture = afro_dutch
+						primary_culture = afro_antillean
+						primary_culture = afro_caribeno
+						primary_culture = kreol
+						primary_culture = indo_caribbean
+					}
+				}
+			}
+		}		
+	}
+
+	country_event = {
+		id = 1999998002 
+		title = "EVTNAME1999998002" #GUY, decides primary culture.
+		desc = "EVTDESC1999998002"
+		picture = "guyanas_3"
+		
+		fire_only_once = yes
+		
+		trigger = {
+			tag = GUY
+			exists = yes
+			NOT = { has_country_flag = GUY_primary_culture_selected }
+		}
+
+		mean_time_to_happen =  {
+			days = 1
+		}
+	
+		option = {
+			name = "EVTOPT1999998002A" #afro_caribbean
+			primary_culture = afro_caribbean
+			add_accepted_culture = british
+			add_accepted_culture = afro_caribeno
+			add_accepted_culture = kreol
+			add_accepted_culture = indo_caribbean
+			set_country_flag = GUY_primary_culture_selected
+			ai_chance = {
+				factor = 90
+			}
+		}
+		option = {
+			name = "EVTOPT1999998002B" #british
+			primary_culture = british
+			government = colonial_company
+			set_country_flag = GUY_primary_culture_selected
+			ai_chance = {
+				factor = 10
+				modifier = {
+					factor = 100
+					OR = {
+						government = hms_government
+						government = absolute_monarchy
+						government = colonial_company
+					}
+					OR = {
+						vassal_of = ENG
+						vassal_of = ENL
+					}
+				}
+			}
+		}
+	}
+	
+#######################################
+#~~~~~~Schomburgk's line dispute~~~~~~#
+#~~~~AKA Venezuelan Crisis of 1895~~~~#
+#######################################
+	
+	#LOCALIZE EVERYTHING BELOW
+	
+	country_event = {
+		id = 1999998003 
+		title = "EVTNAME1999998003" #ENG, Schomburgk's line, set up.
+		desc = "EVTDESC1999998003"
+		picture = "guyana_lion"
+		
+		fire_only_once = yes
+	
+		trigger = {
+			year = 1838
+			OR = {
+				tag = ENG
+				tag = ENL
+			}
+			OR = {
+				owns = 2243
+				2243 = {
+					owner = {
+						OR = {
+							in_sphere = THIS
+							vassal_of = THIS
+						}
+					}
+				}
+				owns = 3373
+				3373 = {
+					owner = {
+						OR = {
+							in_sphere = THIS
+							vassal_of = THIS
+						}
+					}
+				}
+			}
+			NOT = { has_global_flag = schomburgks_line }
+		}
+
+		mean_time_to_happen =  {
+			months = 22
+		}
+	
+		option = {
+			name = "EVTOPT1999998003A"
+			set_global_flag = schomburgks_line
+			2242 = { add_core = GUY }
+			3381 = { add_core = GUY }
+			3379 = { add_core = GUY }
+			3380 = { add_core = GUY }
+			3382 = { add_core = GUY }
+			any_country = {
+				limit = {
+					OR = {
+						owns = 2242
+						owns = 3381
+						owns = 3379
+						owns = 3380
+						owns = 3382
+					}
+				}
+				country_event = 1999998004
+			}
+			ai_chance = {
+				factor = 100
+			}
+		}		
+	}
+	country_event = {
+		id = 1999998004 
+		title = "EVTNAME1999998004" #Notification event for VNZ, NET and BRZ about Schomburgk's line
+		desc = "EVTDESC1999998004"
+		picture = "guyana_lion"
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPT1999998004A"
+			relation = {
+				who = FROM
+				value = -25
+			}
+			diplomatic_influence = {
+				who = FROM
+				value = -25
+			}
+			ai_chance = {
+				factor = 100
+			}
+		}		
+	}
+	
+	##########ENG's early encroachment
+	country_event = {
+		id = 1999998005 
+		title = "EVTNAME1999998005" #Notification event for ENG about Venezuela's encroachment. From Decision VNZ_declare_border_essequibo
+		desc = "EVTDESC1999998005"
+		picture = "guyanas_2"
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPT1999998005A" #ENG encroaches as well.
+			any_pop = {
+				limit = {
+					location = {
+						OR = {
+							province_id = 2242
+							province_id = 3381
+						}
+					}
+					culture = british 
+				}
+				reduce_pop = 1.3 
+			}
+			relation = {
+				who = FROM
+				value = -50
+			}
+			ai_chance = {
+				factor = 95
+				modifier = {
+					factor = 0
+					is_disarmed = yes
+				}
+			}
+		}
+		option = {
+			name = "EVTOPT1999998005B" #ENG abandons all claims for whatever reason.
+			random_country = {
+				limit = {
+					OR = {
+						owns = 2242 #Esequibo
+						owns = 3381 #Barima
+					}
+				}
+				country_event = 1999998006
+			}
+			random_country = {
+				limit = {
+					OR = {
+						owns = 2240 #Paramaribo
+						owns = 2245 #Apetina
+					}
+				}
+				country_event = 1999998007
+			}
+			random_country = {
+				limit = {
+					owns = 3379 #Mau
+				}
+				country_event = 1999998008
+			}
+			random_country = {
+				limit = {
+					owns = 3380 #Pirara
+				}
+				country_event = 1999998009
+			}
+			ai_chance = {
+				factor = 5
+				modifier = {
+					factor = 2
+					war = yes
+				}
+				modifier = {
+					factor = 20
+					is_disarmed = yes
+				}
+			}
+		}
+	}
+	country_event = {
+		id = 1999998006 
+		title = "EVTNAME1999998006" #Notification event for VNZ, ENG abandons all claims on Venezuelan Esequibo
+		desc = "EVTDESC1999998006"
+		picture = "guyanas_2"
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPT1999998006A"
+			2242 = { remove_core = GUY } #Esequibo
+			3381 = { remove_core = GUY } #Barima
+			FROM = {
+				any_owned = {
+					limit = {
+						OR = {
+							province_id = 2243 #Pomaron
+							province_id = 3373 #Rupununi
+						}
+					}
+					secede_province = THIS
+					remove_core = GUY
+				}
+			}
+			relation = {
+				who = FROM
+				value = 100
+			}
+			ai_chance = {
+				factor = 100
+			}
+		}		
+	}
+	country_event = {
+		id = 1999998007 
+		title = "EVTNAME1999998007" #Notification event for NET, ENG abandons all claims on Suriname
+		desc = "EVTDESC1999998007"
+		picture = "guyanas_2"
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPT1999998007A"
+			FROM = {
+				any_owned = {
+					limit = {
+						province_id = 3382 #Tigri
+					}
+					secede_province = THIS
+					remove_core = GUY
+				}
+			}
+			relation = {
+				who = FROM
+				value = 100
+			}
+			ai_chance = {
+				factor = 100
+			}
+		}	
+	}
+	country_event = {
+		id = 1999998008 
+		title = "EVTNAME1999998008" #Notification event for BRZ, ENG abandons all claims on Mau
+		desc = "EVTDESC1999998008"
+		picture = "guyanas_2"
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPT1999998008A"
+			3379 = { remove_core = GUY } #Mau
+			FROM = {
+				any_owned = {
+					limit = {
+						province_id = 3382
+					}
+					secede_province = THIS
+				}
+			}
+			relation = {
+				who = FROM
+				value = 100
+			}
+			ai_chance = {
+				factor = 100
+			}
+		}		
+	}
+	country_event = {
+		id = 1999998009 
+		title = "EVTNAME1999998009" #Notification event for BRZ or VNZ, ENG abandons all claims on Pirara
+		desc = "EVTDESC1999998009"
+		picture = "guyanas_2"
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPT1999998009A"
+			3380 = { remove_core = GUY } #Pirara
+			FROM = {
+				any_owned = {
+					limit = {
+						province_id = 3382
+					}
+					secede_province = THIS
+				}
+			}
+			relation = {
+				who = FROM
+				value = 100
+			}
+			ai_chance = {
+				factor = 100
+			}
+		}		
+	}
+
+#############################
+#~~~~~~Halfway through~~~~~~#
+#~~~the Schomburgk events~~~#
+#############################
+
+	country_event = {
+		id = 1999998010 
+		title = "EVTNAME1999998010" #Notification event for ENG about VNZ's proposition, both sides cease enroachment. From Decision 1850_VNZ_ENG_treaty
+		desc = "EVTDESC1999998010"
+		picture = "guyanas_3"
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPT1999998010A" # Accept
+			set_global_flag = 1850_VNZ_ENG_treaty_accept
+			random_country = {
+				limit = {
+					OR = {
+						owns = 2242
+						owns = 3381
+						owns = 2264 #Caracas
+					}
+				}
+				country_event = 1999998011 #notify VNZ
+			}
+			ai_chance = {
+				factor = 80
+			}
+		}
+		option = {
+			name = "EVTOPT1999998010B" # Refuse
+			set_global_flag = 1850_VNZ_ENG_treaty_refuse
+			random_country = {
+				limit = {
+					OR = {
+						owns = 2242
+						owns = 3381
+						owns = 2264 #Caracas
+					}
+				}
+				any_pop = {
+					limit = {
+						location = {
+							OR = {
+								province_id = 2242
+								province_id = 3381
+							}
+						}
+						culture = british 
+					}
+					reduce_pop = 1.25 
+				}
+				country_event = 1999998012 #notify VNZ
+			}
+			ai_chance = {
+				factor = 20
+				modifier = {
+					factor = 5
+					THIS = {
+						OR = {
+							war_policy = jingoism
+							OR = {
+								ruling_party_ideology = reactionary
+								ruling_party_ideology = fascist
+							}
+						}
+					}
+				}
+			}
+		}		
+	}
+	country_event = {
+		id = 1999998011 
+		title = "EVTNAME1999998011" #For VNZ, Brits accept. From event 1999998010.
+		desc = "EVTDESC1999998011"
+		picture = "guyanas_3"
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPT1999998011A"
+			relation = {
+				who = FROM
+				value = 50
+			}
+			ai_chance = {
+				factor = 100
+			}
+		}		
+	}
+	country_event = {
+		id = 1999998012 
+		title = "EVTNAME1999998012" #For VNZ, Brits refuse. From event 1999998010.
+		desc = "EVTDESC1999998012"
+		picture = "guyana_lion"
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPT1999998012A"
+			relation = {
+				who = FROM
+				value = -100
+			}
+			diplomatic_influence = {
+				who = FROM
+				value = -100
+			}
+			ai_chance = {
+				factor = 100
+			}
+		}		
+	}
+	country_event = {
+		id = 1999998013 
+		title = "EVTNAME1999998013" #Notification event for VNZ about ENG's mysterious extension of the Schomburgk line. From Decision ENG_extend_schomburgk
+		desc = "EVTDESC1999998013"
+		picture = "guyana_lion"
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPT1999998013A"
+			relation = {
+				who = FROM
+				value = -25
+			}
+			diplomatic_influence = {
+				who = FROM
+				value = -25
+			}
+			ai_chance = {
+				factor = 100
+			}
+		}		
+	}
+	country_event = {
+		id = 1999998014 
+		title = "EVTNAME1999998014" #Notification event for VNZ about ENG's declaring the Schomburgk line as the provisional frontier of their colony. From Decision ENG_declare_schomburgk_frontier
+		desc = "EVTDESC1999998014"
+		picture = "guyana_lion"
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPT1999998014A"
+			relation = {
+				who = FROM
+				value = -25
+			}
+			diplomatic_influence = {
+				who = FROM
+				value = -25
+			}
+			ai_chance = {
+				factor = 100
+			}
+		}		
+	}
+	
+#######################################
+#~~VNZ's request to cease incursions~~#
+#######################################
+
+	country_event = {
+		id = 1999998015 
+		title = "EVTNAME1999998015" #Notification event for ENG about VNZ's request to cease any incursions into their territory. From Decision VNZ_ENG_cease_incursion
+		desc = "EVTDESC1999998015"
+		picture = "guyanas_2"
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPT1999998015A" #Refuse
+			FROM = {
+				relation = {
+					who = THIS
+					value = -50
+				}
+				diplomatic_influence = {
+					who = THIS
+					value = -50
+				}
+				country_event = 1999998016
+			}
+			ai_chance = {
+				factor = 95
+			}
+		}
+		option = {
+			name = "EVTOPT1999998015B" #Accept
+			random_country = {
+				limit = {
+					OR = {
+						owns = 2242 #Esequibo
+						owns = 3381 #Barima
+						owns = 2264 #Caracas
+					}
+				}
+				country_event = 1999998006
+			}
+			random_country = {
+				limit = {
+					OR = {
+						owns = 2240 #Paramaribo
+						owns = 2245 #Apetina
+					}
+				}
+				country_event = 1999998007
+			}
+			random_country = {
+				limit = {
+					owns = 3379 #Mau
+				}
+				country_event = 1999998008
+			}
+			random_country = {
+				limit = {
+					owns = 3380 #Pirara
+				}
+				country_event = 1999998009
+			}
+			ai_chance = {
+				factor = 5
+				modifier = {
+					factor = 2
+					war = yes
+				}
+				modifier = {
+					factor = 20
+					is_disarmed = yes
+				}
+			}
+		}
+	}
+	country_event = {
+		id = 1999998016
+		title = "EVTNAME1999998016" #Notification event for VNZ about ENG's rejecting their request to cease all incursions. From event 1999998015
+		desc = "EVTDESC1999998016"
+		picture = "guyana_lion"
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPT1999998016A" #Break diplomatic relations
+			FROM = {
+				set_country_flag = VNZ_broke_relations
+				country_event = 1999998017
+			}
+			relation = {
+				who = FROM
+				value = -400
+			}
+			diplomatic_influence = {
+				who = FROM
+				value = -400
+			}
+			ai_chance = {
+				factor = 95
+			}
+		}	
+		option = {
+			name = "EVTOPT1999998016B" #Be a fag and do nothing
+			prestige = -15
+			FROM = {
+				country_event = 1999998018
+			}
+			relation = {
+				who = FROM
+				value = -50
+			}
+			diplomatic_influence = {
+				who = FROM
+				value = -50
+			}
+			ai_chance = {
+				factor = 3
+				modifier = {
+					factor = 100
+					OR = {
+						war_policy = anti_military
+						war_policy = pacifism
+					}
+				}
+			}
+		}
+		option = {
+			name = "EVTOPT1999998016C" #Abandon all your claims and territories like a good goy (if you're sphered by ENG or someshit)
+			FROM = {
+				set_country_flag = ENG_perfidious_albion
+				country_event = 1999998019
+			}
+			random_owned = {
+				limit = {
+					is_core = FROM
+				}
+				secede_province = FROM
+				remove_core = THIS
+			}
+			ai_chance = {
+				factor = 2
+				modifier = {
+					factor = 50
+					vassal_of = FROM
+				}
+			}
+		}	
+	}
+	country_event = {
+		id = 1999998017 
+		title = "EVTNAME1999998017" #Notification event for ENG about VNZ's severing all diplomatic relations. From EVTOPT1999998016A
+		desc = "EVTDESC1999998017"
+		picture = "guyanas_3"
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPT1999998017A"
+			relation = {
+				who = FROM
+				value = -400
+			}
+			diplomatic_influence = {
+				who = FROM
+				value = -400
+			}
+			ai_chance = {
+				factor = 100
+			}
+		}		
+	}
+	country_event = {
+		id = 1999998018 
+		title = "EVTNAME1999998018" #Notification event for ENG about VNZ's being a fag and doing nothing. From EVTOPT1999998016B
+		desc = "EVTDESC1999998018"
+		picture = "guyanas_3"
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPT1999998018A"
+			prestige = 10
+			ai_chance = {
+				factor = 100
+			}
+		}		
+	}
+	country_event = {
+		id = 1999998019 
+		title = "EVTNAME1999998019" #Notification event for ENG about VNZ seceding all of ENG's claimed territories. From EVTOPT1999998016C
+		desc = "EVTDESC1999998019"
+		picture = "guyana_lion"
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPT1999998019A"
+			prestige = 25
+			any_owned = {
+				limit = {
+					is_core = GUY
+				}
+				remove_core = THIS
+			}
+			ai_chance = {
+				factor = 100
+			}
+		}		
+	}
+
+##########################
+#~~~British Incursions~~~#
+##########################
+
+	country_event = {
+		id = 1999998020 
+		title = "EVTNAME1999998020" #Notification event for VNZ about ENG's incursion of settlers to Guasipati. From decision ENG_guasipati_incursion
+		desc = "EVTDESC1999998020"
+		picture = "guyana_lion"
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPT1999998020A"
+			relation = {
+				who = FROM
+				value = -200
+			}
+			diplomatic_influence = {
+				who = FROM
+				value = -200
+			}
+			ai_chance = {
+				factor = 100
+			}
+		}		
+	}
+	country_event = {
+		id = 1999998021 
+		title = "EVTNAME1999998021" #Expellling Brits from VNZ's territories. From decision VNZ_expel_brits_guyana
+		desc = "EVTDESC1999998021"
+		picture = "guyanas_2"
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPT1999998021A" #Expel from Guasipati
+			any_pop = {
+				limit = {
+					culture = british
+					location = {
+						province_id = 2275
+					}
+				}
+				move_pop = 2239 # Georgetown
+			}
+			random_country = {
+				limit = {
+					owns = 2239
+					exists = yes
+				}
+				country_event = 1999998022
+			}
+			ai_chance = {
+				factor = 50
+			}
+		}
+		option = {
+			name = "EVTOPT1999998021B" #Expel from the whole Guyanas
+			any_pop = {
+				limit = {
+					culture = british
+					location = {
+						OR = {
+							is_core = ENG
+							is_core = ENL
+							is_core = GUY
+						}
+					}
+				}
+				move_pop = 2239 # Georgetown
+			}
+			random_country = {
+				limit = {
+					owns = 2239
+					exists = yes
+				}
+				country_event = 1999998023
+			}
+			ai_chance = {
+				factor = 30
+				modifier = {
+					factor = 100
+					OR = {
+						ruling_party_ideology = reactionary
+						ruling_party_ideology = conservative
+					}
+				}
+			}
+		}
+		option = {
+			name = "EVTOPT1999998021C" #Do nothing
+			prestige = -5
+			ai_chance = {
+				factor = 15
+				modifier = {
+					factor = 100
+					OR = {
+						war_policy = anti_military
+						war_policy = pacifism
+					}
+				}
+			}
+		}
+		option = {
+			name = "EVTOPT1999998021D" #Dehumanize yourself and face to bloodshed (Gives humiliate cb to ENG)
+			badboy = 10
+			any_pop = {
+				limit = {
+					culture = british
+					location = {
+						OR = {
+							is_core = ENG
+							is_core = ENL
+							is_core = GUY
+						}
+					}
+				}
+				reduce_pop = 0.01
+				move_pop = 2239 # Georgetown
+			}
+			any_pop = {
+				limit = {
+					OR = {
+						culture = north_andean
+						culture = llanero
+					}
+					location = {
+						OR = {
+							is_core = ENG
+							is_core = ENL
+							is_core = GUY
+						}
+					}
+				}
+				reduce_pop = 1.25
+			}
+			random_country = {
+				limit = {
+					owns = 2239
+					exists = yes
+				}
+				country_event = 1999998024
+			}
+			add_country_modifier = {
+				name = smol_badboy
+				duration = 912
+			}
+			ai_chance = {
+				factor = 5
+				modifier = {
+					factor = 100
+					OR = {
+						ruling_party_ideology = fascist
+						ruling_party_ideology = anarcho_liberal #ENFORCING THE NAP
+					}
+				}
+			}
+		}		
+	}
+	country_event = {
+		id = 1999998022 
+		title = "EVTNAME1999998022" #Notification event for ENG about VNZ's decision to expel brits from Guasipati. From event option EVTOPT1999998021A
+		desc = "EVTDESC1999998022"
+		picture = "guyanas_2"
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPT1999998022A"
+			relation = {
+				who = FROM
+				value = -100
+			}
+			diplomatic_influence = {
+				who = FROM
+				value = -100
+			}
+			ai_chance = {
+				factor = 100
+			}
+		}		
+	}
+	country_event = {
+		id = 1999998023 
+		title = "EVTNAME1999998023" #Notification event for ENG about VNZ's decision to expel brits from the whole Guyana. From event option EVTOPT1999998021B
+		desc = "EVTDESC1999998023"
+		picture = "guyanas_2"
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPT1999998023A"
+			relation = {
+				who = FROM
+				value = -100
+			}
+			diplomatic_influence = {
+				who = FROM
+				value = -100
+			}
+			ai_chance = {
+				factor = 100
+			}
+		}		
+	}
+	country_event = {
+		id = 1999998024 
+		title = "EVTNAME1999998024" #Notification event for ENG about VNZ's decision to genocide brits in Guyana. From event option EVTOPT1999998021D
+		desc = "EVTDESC1999998024"
+		picture = "guyanas_3"
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPT1999998024A"
+			add_casus_belli = {
+				target = FROM
+				type = humiliate
+				months = 36
+			}
+			casus_belli = {
+				target = FROM
+				type = cut_down_to_size
+				months = 60
+			}
+			relation = {
+				who = FROM
+				value = -400
+			}
+			diplomatic_influence = {
+				who = FROM
+				value = -400
+			}
+			ai_chance = {
+				factor = 100
+			}
+		}		
+	}
+	
+#######################
+#~~~USA's Mediation~~~#
+#######################
+
+	country_event = {
+		id = 1999998025 
+		title = "EVTNAME1999998025" #Event for USA, VNZ asks for mediation in Guyana issue. From decision VNZ_ask_USA_mediation
+		desc = "EVTDESC1999998025"
+		picture = "guyana_lion"
+		
+		is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPT1999998025A" # [WE'RE DEEPLY CONCERNED]
+			FROM = {
+				country_event = 1999998026
+			}
+			ai_chance = {
+				factor = 45
+			}
+		}
+		option = {
+			name = "EVTOPT1999998025B" # Ignore.
+			FROM = {
+				country_event = 1999998027
+			}
+			ai_chance = {
+				factor = 45
+			}
+		}
+		option = {
+			name = "EVTOPT1999998025C" # Actually do something about it.
+			set_country_flag = aid_VNZ
+			FROM = {
+				country_event = { id = 1999998028 days = 1 }
+			}
+			create_alliance = FROM
+			random_country = {
+				limit = {
+					primary_culture = british
+					OR = {
+						owns = 2239 # Georgetown
+						owns = 1979 # Biloka
+					}
+				}
+				country_event = { id = 1999998029 days = 2 }
+			}
+			ai_chance = {
+				factor = 10
+				modifier = {
+					factor = 100
+					has_global_flag = VNZ_William_L_Scruggs
+				}
+				modifier = {
+					factor = 100
+					OR = {
+						2243 = {
+							owner = {
+								NOT = { primary_culture = british }
+								OR = {
+									primary_culture = north_andean
+									primary_culture = llanero
+								}
+							}
+						}
+						3373 = {
+							owner = {
+								NOT = { primary_culture = british }
+								OR = {
+									primary_culture = north_andean
+									primary_culture = llanero
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	country_event = {
+		id = 1999998026 
+		title = "EVTNAME1999998026" #Notification event for VNZ about USA 'showing some concern'. From event option EVTOPT1999998025A
+		desc = "EVTDESC1999998026"
+		picture = "guyanas_2"
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPT1999998026A"
+			relation = {
+				who = FROM
+				value = 10
+			}
+			FROM = {
+				diplomatic_influence = {
+					who = THIS
+					value = 10
+				}
+			}
+			ai_chance = {
+				factor = 100
+			}
+		}		
+	}
+	country_event = {
+		id = 1999998027 
+		title = "EVTNAME1999998027" #Notification event for VNZ about USA ignoring VNZ's request for mediation. From event option EVTOPT1999998025B
+		desc = "EVTDESC1999998027"
+		picture = "guyanas_2"
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPT1999998027A"
+			relation = {
+				who = FROM
+				value = -10
+			}
+			FROM = {
+				diplomatic_influence = {
+					who = THIS
+					value = -10
+				}
+			}
+			ai_chance = {
+				factor = 100
+			}
+		}		
+	}
+	country_event = {
+		id = 1999998028 
+		title = "EVTNAME1999998028" #Notification event for VNZ about USA accepting VNZ's request for mediation. From event option EVTOPT1999998025C
+		desc = "EVTDESC1999998028"
+		picture = "treaty"
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPT1999998028A"
+			create_alliance = FROM
+			ai_chance = {
+				factor = 100
+			}
+		}		
+	}
+	country_event = {
+		id = 1999998029 
+		title = "EVTNAME1999998029" #Notification event for ENG about USA accepting VNZ's request for mediation, now ENG has to decide if they subject the crisis to arbitration. From event option EVTOPT1999998025C
+		desc = "EVTDESC1999998029"
+		picture = "treaty"
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPT1999998029A" #Accept
+			set_country_flag = VNZ_arbitration_accepted
+			USA = { country_event = { id = 1999998030 days = 2 } }
+			2264 = { owner = { country_event = { id = 1999998031 days = 2 } } }
+			random_country = {
+				limit = {
+					OR = {
+						is_greater_power = yes
+						is_secondary_power = yes
+					}
+					NOT = {
+						OR = {
+							AND = {
+								OR = {
+									alliance_with = THIS
+									in_sphere = THIS
+									vassal_of = THIS
+								}
+								relation = { who = THIS value = -25 }
+							}
+							AND = {
+								OR = {
+									alliance_with = USA
+									in_sphere = USA
+									vassal_of = USA
+								}
+								relation = { who = USA value = -25 }
+							}
+							AND = {
+								OR = {
+									alliance_with = VNZ
+									in_sphere = VNZ
+									vassal_of = VNZ
+								}
+								relation = { who = VNZ value = -25 }
+								VNZ = { exists = yes }
+							}
+							AND = {
+								OR = {
+									alliance_with = USV
+									in_sphere = USV
+									vassal_of = USV
+								}
+								relation = { who = USV value = -25 }
+								USV = { exists = yes }
+							}
+							AND = {
+								OR = {
+									alliance_with = ZLA
+									in_sphere = ZLA
+									vassal_of = ZLA
+								}
+								relation = { who = ZLA value = -25 }
+								ZLA = { exists = yes }
+							}
+							AND = {
+								OR = {
+									alliance_with = B4R
+									in_sphere = B4R
+									vassal_of = B4R
+								}
+								relation = { who = B4R value = -25 }
+								B4R = { exists = yes }
+							}
+							AND = {
+								OR = {
+									alliance_with = GCO
+									in_sphere = GCO
+									vassal_of = GCO
+								}
+								relation = { who = GCO value = -25 }
+								GCO = { exists = yes }
+							}
+						}
+						OR = {
+							tag = USA
+							tag = THIS
+							tag = VNZ
+							tag = USV
+							tag = ZLA
+							tag = B4R
+							tag = GCO
+							owns = 2242
+							owns = 3381
+							owns = 2275
+							owns = 2264 #Caracas
+						}
+					}
+				}
+				country_event = { id = 1999998034 days = 5 }
+			}
+			ai_chance = {
+				factor = 90
+				modifier = {
+					factor = 100
+					2264 = { owner = { ai = no } }
+				}
+				modifier = {
+					factor = 100
+					OR = {
+						2243 = {
+							owner = {
+								NOT = { primary_culture = british }
+								OR = {
+									primary_culture = north_andean
+									primary_culture = llanero
+								}
+							}
+						}
+						3373 = {
+							owner = {
+								NOT = { primary_culture = british }
+								OR = {
+									primary_culture = north_andean
+									primary_culture = llanero
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		option = {
+			name = "EVTOPT1999998029B" #Refuse
+			set_country_flag = VNZ_arbitration_denied
+			USA = { country_event = { id = 1999998032 days = 2 } }
+			2264 = { owner = { country_event = { id = 1999998033 days = 2 } } }
+			ai_chance = {
+				factor = 10
+				modifier = {
+					factor = 10
+					THIS = {
+						OR = {
+							war_policy = jingoism
+							OR = {
+								ruling_party_ideology = reactionary
+								ruling_party_ideology = fascist
+							}
+						}
+					}
+				}
+			}
+		}		
+	}
+	country_event = {
+		id = 1999998030 
+		title = "EVTNAME1999998030" #Notification event for USA about ENG accepting USA's request for mediation. From event option EVTOPT1999998029A
+		desc = "EVTDESC1999998030"
+		picture = "treaty"
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPT1999998030A"
+			ai_chance = {
+				factor = 100
+			}
+		}		
+	}
+	country_event = {
+		id = 1999998031 
+		title = "EVTNAME1999998031" #Notification event for VNZ about ENG accepting USA's request for mediation. From event option EVTOPT1999998029A
+		desc = "EVTDESC1999998031"
+		picture = "treaty"
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPT1999998031A"
+			ai_chance = {
+				factor = 100
+			}
+		}		
+	}
+	country_event = {
+		id = 1999998032 
+		title = "EVTNAME1999998032" #Notification event for USA about ENG rejecting USA's request for mediation. From event option EVTOPT1999998029B
+		desc = "EVTDESC1999998032"
+		picture = "guyana_lion"
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPT1999998032A" #Will use Monroe Doctrine
+			ai_chance = {
+				factor = 100
+			}
+		}		
+	}
+	country_event = {
+		id = 1999998033 
+		title = "EVTNAME1999998033" #Notification event for VNZ about ENG rejecting USA's request for mediation. From event option EVTOPT1999998029A
+		desc = "EVTDESC1999998033"
+		picture = "guyana_lion"
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPT1999998033A"
+			ai_chance = {
+				factor = 100
+			}
+		}		
+	}
+
+#########################
+#~~~Final Arbitration~~~#
+#########################
+
+	country_event = {
+		id = 1999998034
+		title = "EVTNAME1999998034" #ENG accepts USA's request for mediation, a random GP or Secondary Power is randomly picked to host the negotiations.
+		desc = "EVTDESC1999998034"
+		picture = "guyana_ENG_btfo"
+		major = yes
+		news = yes
+		news_title = "EVTNAME1999998034"
+		news_desc_long = "EVTDESC1999998034_NEWS_LONG"
+		news_desc_medium = "EVTDESC1999998034_NEWS_MEDIUM"
+		news_desc_short = "EVTDESC1999998034_NEWS_SHORT"
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+			
+		option = {
+			name = "EVTOPT1999998034A" #ENG keeps Schomburgk line sans Barima and Guasipati (Tigri counts as kept also) [Historical outcome]
+			set_global_flag = ENG_schomburgk_historical
+			clr_global_flag = BRZ_ENG_pirara_question
+			random_country = {
+				limit = {
+					OR = {
+						owns = 2242
+						owns = 3381
+						owns = 2275
+						owns = 2264 #Caracas
+					}
+					exists = yes
+					NOT = { tag = FROM }
+				}
+				any_owned = {
+					limit = {
+						province_id = 2242
+						OR = {
+							is_core = GUY
+							is_core = FROM
+						}
+					}
+					secede_province = FROM
+				}
+				any_owned = {
+					limit = {
+						NOT = { province_id = 2242 }
+						OR = {
+							is_core = GUY
+							is_core = FROM
+						}
+					}
+					remove_core = ENG
+					remove_core = ENL
+					remove_core = GUY
+				}
+				country_event = { id = 1999998035 days = 1 }
+			}
+			random_country = {
+				limit = {
+					OR = {
+						owns = 2240 #Paramaribo
+						owns = 2245 #Apetina
+					}
+					exists = yes
+					NOT = { tag = FROM }
+				}
+				country_event = { id = 1999998035 days = 1 }
+			}
+			FROM = {
+				any_owned = {
+					limit = {
+						OR = {
+							province_id = 2242
+							province_id = 2243
+							province_id = 3373
+						}
+						any_core = {
+							OR = {
+								primary_culture = north_andean
+								primary_culture = llanero
+							}
+						}
+					}
+					remove_core = VNZ
+					remove_core = FVZ
+					remove_core = USV
+					remove_core = ZLA
+					remove_core = B4R
+					remove_core = CLM
+					remove_core = ANQ
+					remove_core = AR1
+					remove_core = ECU
+					remove_core = GAY
+					remove_core = GCO
+				}
+				any_owned = {
+					limit = {
+						OR = {
+							region = ENG_1979
+							region = VNZ_2278
+						}
+					}
+					remove_core = ENG
+					remove_core = ENL
+					remove_core = GUY
+				}
+				country_event = { id = 1999998035 days = 1 }
+			}
+			USA = {
+				country_event = { id = 1999998035 days = 1 }
+			}
+			3382 = { #Tigri
+				remove_core = SUR
+			}
+			3379 = {
+				remove_core = VNZ
+				remove_core = FVZ
+				remove_core = USV
+				remove_core = ZLA
+				remove_core = B4R
+				remove_core = CLM
+				remove_core = ANQ
+				remove_core = AR1
+				remove_core = ECU
+				remove_core = GAY
+				remove_core = GCO
+			}
+			ai_chance = {
+				factor = 30
+			}
+		}
+		option = {
+			name = "EVTOPT1999998034B" #ENG keeps Schomburgk line sans Guasipati (Tigri counts as kept also)
+			set_global_flag = ENG_schomburgk_barima
+			clr_global_flag = BRZ_ENG_pirara_question
+			random_country = {
+				limit = {
+					OR = {
+						owns = 2242
+						owns = 3381
+						owns = 2275
+						owns = 2264 #Caracas
+					}
+					exists = yes
+					NOT = { tag = FROM }
+				}
+				any_owned = {
+					limit = {
+						OR = {
+							is_core = GUY
+							is_core = FROM
+						}
+						NOT = { province_id = 2275 }
+					}
+					secede_province = FROM
+				}
+				any_owned = {
+					limit = {
+						OR = {
+							is_core = GUY
+							is_core = FROM
+						}
+						province_id = 2275
+					}
+					remove_core = GUY
+					remove_core = ENG
+					remove_core = ENL
+				}
+				country_event = { id = 1999998036 days = 1 }
+			}
+			random_country = {
+				limit = {
+					OR = {
+						owns = 2240 #Paramaribo
+						owns = 2245 #Apetina
+					}
+					exists = yes
+					NOT = { tag = FROM }
+				}
+				country_event = { id = 1999998036 days = 1 }
+			}
+			FROM = {
+				any_owned = {
+					limit = {
+						OR = {
+							region = ENG_1979
+							region = VNZ_2278
+						}
+						any_core = {
+							OR = {
+								primary_culture = north_andean
+								primary_culture = llanero
+								AND = {
+									primary_culture = british
+									NOT = { tag = GUY }
+								}
+							}
+						}
+					}
+					remove_core = VNZ
+					remove_core = FVZ
+					remove_core = USV
+					remove_core = ZLA
+					remove_core = B4R
+					remove_core = CLM
+					remove_core = ANQ
+					remove_core = AR1
+					remove_core = ECU
+					remove_core = GAY
+					remove_core = GCO
+				}
+				country_event = { id = 1999998036 days = 1 }
+			}
+			USA = {
+				country_event = { id = 1999998036 days = 1 }
+			}
+			3382 = { #Tigri
+				remove_core = SUR
+			}
+			3379 = {
+				remove_core = VNZ
+				remove_core = FVZ
+				remove_core = USV
+				remove_core = ZLA
+				remove_core = B4R
+				remove_core = CLM
+				remove_core = ANQ
+				remove_core = AR1
+				remove_core = ECU
+				remove_core = GAY
+				remove_core = GCO
+			}
+			ai_chance = {
+				factor = 15
+			}
+		}	
+		option = {
+			name = "EVTOPT1999998034C" #ENG keeps whole extended Schomburgk line (Tigri counts as kept also)
+			set_global_flag = ENG_schomburgk_extended
+			clr_global_flag = BRZ_ENG_pirara_question
+			random_country = {
+				limit = {
+					OR = {
+						owns = 2242
+						owns = 3381
+						owns = 2275
+						owns = 2264 #Caracas
+					}
+					exists = yes
+					NOT = { tag = FROM }
+				}
+				any_owned = {
+					limit = {
+						OR = {
+							is_core = GUY
+							is_core = FROM
+						}
+					}
+					secede_province = FROM
+				}
+				country_event = { id = 1999998037 days = 1 }
+			}
+			random_country = {
+				limit = {
+					OR = {
+						owns = 2240 #Paramaribo
+						owns = 2245 #Apetina
+					}
+					exists = yes
+					NOT = { tag = FROM }
+				}
+				country_event = { id = 1999998037 days = 1 }
+			}
+			FROM = {
+				any_owned = {
+					limit = {
+						OR = {
+							region = ENG_1979
+							region = VNZ_2278
+						}
+						any_core = {
+							OR = {
+								primary_culture = north_andean
+								primary_culture = llanero
+								AND = {
+									primary_culture = british
+									NOT = { tag = GUY }
+								}
+							}
+						}
+					}
+					remove_core = VNZ
+					remove_core = FVZ
+					remove_core = USV
+					remove_core = ZLA
+					remove_core = B4R
+					remove_core = CLM
+					remove_core = ANQ
+					remove_core = AR1
+					remove_core = ECU
+					remove_core = GAY
+					remove_core = GCO
+				}
+				country_event = { id = 1999998037 days = 1 }
+			}
+			USA = {
+				country_event = { id = 1999998037 days = 1 }
+			}
+			3382 = { #Tigri
+				remove_core = SUR
+			}
+			3379 = {
+				remove_core = VNZ
+				remove_core = FVZ
+				remove_core = USV
+				remove_core = ZLA
+				remove_core = B4R
+				remove_core = CLM
+				remove_core = ANQ
+				remove_core = AR1
+				remove_core = ECU
+				remove_core = GAY
+				remove_core = GCO
+			}
+			ai_chance = {
+				factor = 10
+			}
+		}	
+		option = {
+			name = "EVTOPT1999998034D" #ENG claims are denied, VNZ keeps all the claimed territory, Tigri is given to NET
+			set_global_flag = ENG_schomburgk_denied
+			clr_global_flag = BRZ_ENG_pirara_question
+			random_country = {
+				limit = {
+					OR = {
+						owns = 2242
+						owns = 3381
+						owns = 2275
+						owns = 2264 #Caracas
+					}
+					exists = yes
+					NOT = { tag = FROM }
+				}
+				any_owned = {
+					limit = {
+						OR = {
+							is_core = GUY
+							is_core = FROM
+						}
+					}
+					remove_core = GUY
+					remove_core = ENG
+					remove_core = ENL
+				}
+				country_event = { id = 1999998038 days = 1 } #special event
+			}
+			random_country = {
+				limit = {
+					OR = {
+						owns = 2240 #Paramaribo
+						owns = 2245 #Apetina
+					}
+					exists = yes
+					NOT = { tag = FROM }
+				}
+				country_event = { id = 1999998039 days = 1 } #special event
+			}
+			FROM = {
+				any_owned = {
+					limit = {
+						OR = {
+							region = ENG_1979
+							region = VNZ_2278
+						}
+						any_core = {
+							OR = {
+								primary_culture = north_andean
+								primary_culture = llanero
+							}
+						}
+					}
+					remove_core = GUY
+					remove_core = ENG
+					remove_core = ENL
+				}
+				country_event = { id = 1999998040 days = 1 }
+			}
+			USA = {
+				country_event = { id = 1999998040 days = 1 }
+			}
+			3382 = { #Tigri
+				remove_core = ENG
+				remove_core = ENL
+				remove_core = GUY
+			}
+			3379 = { #Mau
+				remove_core = ENG
+				remove_core = ENL
+				remove_core = GUY
+			}
+			3380 = { #Pirara
+				remove_core = ENG
+				remove_core = ENL
+				remove_core = GUY
+			}
+			ai_chance = {
+				factor = 20
+				modifier = {
+					factor = 1.75
+					OR = {
+						2264 = { #Caracas
+							owner = {
+								OR = {
+									primary_culture = llanero
+									primary_culture = north_andean
+								}
+								OR = {
+									is_secondary_power = yes
+									is_greater_power = yes
+								}
+							}
+						}
+						2242 = {
+							owner = {
+								OR = {
+									primary_culture = llanero
+									primary_culture = north_andean
+								}
+								OR = {
+									is_secondary_power = yes
+									is_greater_power = yes
+								}
+							}
+						}
+						3381 = {
+							owner = {
+								OR = {
+									primary_culture = llanero
+									primary_culture = north_andean
+								}
+								OR = {
+									is_secondary_power = yes
+									is_greater_power = yes
+								}
+							}
+						}
+						2275 = {
+							owner = {
+								OR = {
+									primary_culture = llanero
+									primary_culture = north_andean
+								}
+								OR = {
+									is_secondary_power = yes
+									is_greater_power = yes
+								}
+							}
+						}
+					}
+				}
+				modifier = {
+					factor = 100
+					OR = {
+						2243 = {
+							owner = {
+								NOT = { primary_culture = british }
+								OR = {
+									primary_culture = north_andean
+									primary_culture = llanero
+								}
+							}
+						}
+						3373 = {
+							owner = {
+								NOT = { primary_culture = british }
+								OR = {
+									primary_culture = north_andean
+									primary_culture = llanero
+								}
+							}
+						}
+					}
+				}
+			}
+		}	
+		option = {
+			name = "EVTOPT1999998034E" #Original pre-Schomburgk borders stand
+			set_global_flag = ENG_schomburgk_pre
+			clr_global_flag = BRZ_ENG_pirara_question
+			random_country = {
+				limit = {
+					OR = {
+						owns = 2242
+						owns = 3381
+						owns = 2275
+						owns = 2264 #Caracas
+					}
+					exists = yes
+					NOT = { tag = FROM }
+				}
+				any_owned = {
+					limit = {
+						OR = {
+							is_core = GUY
+							is_core = FROM
+						}
+					}
+					remove_core = GUY
+					remove_core = ENG
+					remove_core = ENL
+				}
+				country_event = { id = 1999998041 days = 1 }
+			}
+			FROM = {
+				any_owned = {
+					limit = {
+						OR = {
+							region = ENG_1979
+							region = VNZ_2278
+						}
+						any_core = {
+							OR = {
+								primary_culture = north_andean
+								primary_culture = llanero
+								AND = {
+									primary_culture = british
+									NOT = { tag = GUY }
+								}
+							}
+						}
+					}
+					remove_core = VNZ
+					remove_core = FVZ
+					remove_core = USV
+					remove_core = ZLA
+					remove_core = B4R
+					remove_core = CLM
+					remove_core = ANQ
+					remove_core = AR1
+					remove_core = ECU
+					remove_core = GAY
+					remove_core = GCO
+				}
+				country_event = { id = 1999998041 days = 1 }
+			}
+			USA = {
+				country_event = { id = 1999998041 days = 1 }
+			}
+			ai_chance = {
+				factor = 25
+			}
+		}		
+	}
+	country_event = {
+		id = 1999998035 
+		title = "EVTNAME1999998035" #Notification event for VNZ, USA and ENG, ENG keeps Schomburgk line sans Barima and Guasipati [Historical outcome]. From EVTOPT1999998034A
+		desc = "EVTDESC1999998035"
+		picture = "guyana_ENG_btfo"
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPT1999998035A"
+			ai_chance = {
+				factor = 100
+			}
+		}		
+	}
+	country_event = {
+		id = 1999998036 
+		title = "EVTNAME1999998036" #Notification event for VNZ, USA and ENG, ENG keeps Schomburgk line sans Guasipati. From EVTOPT1999998034B
+		desc = "EVTDESC1999998036"
+		picture = "guyana_ENG_btfo"
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPT1999998036A"
+			ai_chance = {
+				factor = 100
+			}
+		}		
+	}
+	country_event = {
+		id = 1999998037 
+		title = "EVTNAME1999998037" #Notification event for VNZ, USA and ENG, ENG keeps whole extended Schomburgk line. From EVTOPT1999998034C
+		desc = "EVTDESC1999998037"
+		picture = "guyana_lion"
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPT1999998037A"
+			ai_chance = {
+				factor = 100
+			}
+		}		
+	}
+	country_event = {
+		id = 1999998038 
+		title = "EVTNAME1999998038" #Notification event for VNZ, all of its claimed territories are transfered. From EVTOPT1999998034D
+		desc = "EVTDESC1999998038"
+		picture = "guyana_ENG_btfo"
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPT1999998038A"
+			random_country = {
+				limit = {
+					OR = {
+						owns = 2243
+						owns = 3373
+					}
+				}
+				any_owned = {
+					limit = {
+						is_core = THIS
+					}
+					secede_province = THIS
+				}
+			}
+			ai_chance = {
+				factor = 100
+			}
+		}		
+	}
+	country_event = {
+		id = 1999998039 
+		title = "EVTNAME1999998039" #Notification event for NET, Tigri is transfered. From EVTOPT1999998034D
+		desc = "EVTDESC1999998039"
+		picture = "guyana_ENG_btfo"
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPT1999998039A"
+			random_country = {
+				limit = {
+					owns = 3382
+				}
+				any_owned = {
+					limit = {
+						is_core = SUR
+					}
+					secede_province = THIS
+				}
+			}
+			ai_chance = {
+				factor = 100
+			}
+		}		
+	}
+	country_event = {
+		id = 1999998040 
+		title = "EVTNAME1999998040" #Notification event for USA and ENG, ENG claims are denied, VNZ keeps all the claimed territory, Tigri is given to NET. From EVTOPT1999998034D
+		desc = "EVTDESC1999998040"
+		picture = "guyana_ENG_btfo"
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPT1999998040A"
+			ai_chance = {
+				factor = 100
+			}
+		}		
+	}
+	country_event = {
+		id = 1999998041 
+		title = "EVTNAME1999998041" #Notification event for VNZ, USA and ENG, Original pre-Schomburgk borders stand. From EVTOPT1999998034E
+		desc = "EVTDESC1999998041"
+		picture = "guyana_ENG_btfo"
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPT1999998041A"
+			ai_chance = {
+				factor = 100
+			}
+		}		
+	}
+
+#######################
+#~~~Pirara Question~~~#
+#######################
+	
+	country_event = {
+		id = 1999998042 
+		title = "EVTNAME1999998042" #BRZ is concerned about ENG's claims on their territories (Pirara and Mau) after the Schomburgk delimitation. From decision BRZ_ENG_pirara_question
+		desc = "EVTDESC1999998042"
+		picture = "guyana_lion"
+		
+		is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPT1999998042A" #Ignore
+			FROM = {
+				country_event = { id = 1999998043 days = 1 }
+			}
+			ai_chance = {
+				factor = 95
+			}
+		}	
+		option = {
+			name = "EVTOPT1999998042B" #Go to arbitration
+			FROM = {
+				country_event = { id = 1999998044 days = 1 }
+			}
+			random_country = {
+				limit = {
+					OR = {
+						is_greater_power = yes
+						is_secondary_power = yes
+					}
+					NOT = {
+						OR = {
+							AND = {
+								OR = {
+									alliance_with = THIS
+									in_sphere = THIS
+									vassal_of = THIS
+								}
+								relation = { who = THIS value = -25 }
+							}
+							AND = {
+								OR = {
+									alliance_with = FROM
+									in_sphere = FROM
+									vassal_of = FROM
+								}
+								relation = { who = FROM value = -25 }
+							}
+						}
+						OR = {
+							tag = THIS
+							tag = FROM
+							owns = 3379
+							owns = 3380
+						}
+					}
+				}
+				country_event = { id = 1999998045 days = 5 }
+			}
+			ai_chance = {
+				factor = 5
+				modifier = {
+					factor = 100
+					OR = {
+						has_global_flag = ENG_schomburgk_historical
+						has_global_flag = ENG_schomburgk_barima
+						has_global_flag = ENG_schomburgk_extended
+						has_global_flag = ENG_schomburgk_pre
+					}
+					NOT = { has_global_flag = ENG_schomburgk_denied }
+				}
+			}
+		}	
+	}
+	country_event = {
+		id = 1999998043 
+		title = "EVTNAME1999998043" #Notification event for BRZ, ENG ignores BRZ's request for arbitration. From EVTOPT1999998041A
+		desc = "EVTDESC1999998043"
+		picture = "guyana_lion"
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPT1999998043A"
+			relation = {
+				who = FROM
+				value = -25
+			}
+			FROM = {
+				diplomatic_influence = {
+					who = THIS
+					value = -25
+				}
+			}
+			ai_chance = {
+				factor = 100
+			}
+		}		
+	}
+	country_event = {
+		id = 1999998044 
+		title = "EVTNAME1999998044" #Notification event for BRZ, ENG accepts BRZ's request for arbitration. From EVTOPT1999998041B
+		desc = "EVTDESC1999998044"
+		picture = "guyanas_2"
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPT1999998044A"
+			ai_chance = {
+				factor = 100
+			}
+		}		
+	}
+	country_event = {
+		id = 1999998045 
+		title = "EVTNAME1999998045" #ENG accepts BRZ's request for arbitration, a random GP or Secondary Power is randomly picked to host the negotiations. From EVTOPT1999998041B
+		desc = "EVTDESC1999998045"
+		picture = "guyana_ENG_btfo"
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPT1999998045A" #ENG keeps Mau [Historical outcome].
+			random_country = {
+				limit = {
+					owns = 3379 #Mau
+					exists = yes
+				}
+				any_owned = {
+					limit = {
+						province_id = 3379
+					}
+					secede_province = FROM
+				}
+				country_event = { id = 1999998046 days = 1 }
+			}
+			FROM = {
+				any_owned = {
+					limit = {
+						OR = {
+							region = ENG_1979
+							region = VNZ_2278
+						}
+						any_core = {
+							OR = {
+								primary_culture = north_andean
+								primary_culture = llanero
+								primary_culture = brazilian
+								AND = {
+									primary_culture = british
+									NOT = { tag = GUY }
+								}
+							}
+						}
+					}
+					remove_core = BRZ
+					remove_core = VNZ
+					remove_core = FVZ
+					remove_core = USV
+					remove_core = ZLA
+					remove_core = B4R
+					remove_core = CLM
+					remove_core = ANQ
+					remove_core = AR1
+					remove_core = ECU
+					remove_core = GAY
+					remove_core = GCO
+				}
+				country_event = { id = 1999998046 days = 1 }
+			}
+			ai_chance = {
+				factor = 40
+				modifier = {
+					factor = 100
+					has_global_flag = ENG_schomburgk_historical
+				}
+			}
+		}	
+		option = {
+			name = "EVTOPT1999998045B" #ENG keeps all.
+			random_country = {
+				limit = {
+					OR = {
+						owns = 3379 #Mau
+						owns = 3380 #Pirara
+					}
+					exists = yes
+				}
+				any_owned = {
+					limit = {
+						OR = {
+							province_id = 3379
+							province_id = 3380
+						}
+					}
+					secede_province = FROM
+				}
+				country_event = { id = 1999998047 days = 1 }
+			}
+			FROM = {
+				any_owned = {
+					limit = {
+						OR = {
+							region = ENG_1979
+							region = VNZ_2278
+						}
+						any_core = {
+							OR = {
+								primary_culture = north_andean
+								primary_culture = llanero
+								primary_culture = brazilian
+								AND = {
+									primary_culture = british
+									NOT = { tag = GUY }
+								}
+							}
+						}
+					}
+					remove_core = BRZ
+					remove_core = VNZ
+					remove_core = FVZ
+					remove_core = USV
+					remove_core = ZLA
+					remove_core = B4R
+					remove_core = CLM
+					remove_core = ANQ
+					remove_core = AR1
+					remove_core = ECU
+					remove_core = GAY
+					remove_core = GCO
+				}
+				country_event = { id = 1999998047 days = 1 }
+			}
+			ai_chance = {
+				factor = 30
+				modifier = {
+					factor = 100
+					has_global_flag = ENG_schomburgk_extended
+				}
+			}
+		}	
+		option = {
+			name = "EVTOPT1999998045C" #BRZ keeps all.
+			any_country = {
+				limit = {
+					OR = {
+						owns = 3379 #Mau
+						owns = 3380 #Pirara
+					}
+					exists = yes
+				}
+				any_owned = {
+					limit = {
+						OR = {
+							province_id = 3379
+							province_id = 3380
+						}
+					}
+					remove_core = ENG
+					remove_core = ENL
+					remove_core = GUY
+				}
+				country_event = { id = 1999998048 days = 1 }
+			}
+			FROM = {
+				country_event = { id = 1999998048 days = 1 }
+			}
+			ai_chance = {
+				factor = 30
+				modifier = {
+					factor = 1.5
+					OR = {
+						3379 = {
+							owner = {
+								OR = {
+									primary_culture = brazilian
+									primary_culture = llanero
+									primary_culture = north_andean
+								}
+								is_secondary_power = yes
+							}
+						}
+						3380 = {
+							owner = {
+								OR = {
+									primary_culture = brazilian
+									primary_culture = llanero
+									primary_culture = north_andean
+								}
+								is_secondary_power = yes
+							}
+						}
+					}
+				}
+				modifier = {
+					factor = 100
+					has_global_flag = ENG_schomburgk_denied
+				}
+			}
+		}
+	}
+	country_event = {
+		id = 1999998046 
+		title = "EVTNAME1999998046" #Notification event for BRZ and ENG, ENG keeps Mau, BRZ keeps Pirara [Historical outcome]. From EVTOPT1999998045A. 
+		desc = "EVTDESC1999998046"
+		picture = "guyanas_3"
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPT1999998046A"
+			ai_chance = {
+				factor = 100
+			}
+		}		
+	}
+	country_event = {
+		id = 1999998047 
+		title = "EVTNAME1999998047" #Notification event for BRZ and ENG, ENG keeps Mau & Pirara. From EVTOPT1999998045B. 
+		desc = "EVTDESC1999998047"
+		picture = "guyana_lion"
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPT1999998047A"
+			ai_chance = {
+				factor = 100
+			}
+		}		
+	}
+	country_event = {
+		id = 1999998048 
+		title = "EVTNAME1999998048" #Notification event for BRZ and ENG, ENG's claims are denied, BRZ keeps all. From EVTOPT1999998045C
+		desc = "EVTDESC1999998048"
+		picture = "guyana_ENG_btfo"
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPT1999998048A"
+			ai_chance = {
+				factor = 100
+			}
+		}		
+	}
+
+################################
+#~~~~~~Tripartie alliance~~~~~~#
+#~against the Schomburgks line~#
+################################
+
+	country_event = {
+		id = 1999998049 
+		title = "EVTNAME1999998049" #Event for VNZ, BRZ & NET to form an alliance against ENG's incursions in Guyana. From decision tripartite_alliance_schomburgk
+		desc = "EVTDESC1999998049"
+		picture = "treaty"
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPT1999998049A" #Accept
+			set_country_flag = VNZ_BRZ_NET_member
+			FROM = {
+				country_event = 1999998050
+				relation = {
+					who = THIS
+					value = 200
+				}
+				diplomatic_influence = {
+					who = THIS
+					value = 200
+				}
+			}
+			relation = {
+				who = FROM
+				value = 200
+			}
+			diplomatic_influence = {
+				who = FROM
+				value = 200
+			}
+			ai_chance = {
+				factor = 100
+			}
+		}
+		option = {
+			name = "EVTOPT1999998049B" #Reject
+			FROM = {
+				country_event = 1999998051
+				relation = {
+					who = THIS
+					value = -50
+				}
+				diplomatic_influence = {
+					who = THIS
+					value = -50
+				}
+			}
+			relation = {
+				who = FROM
+				value = -50
+			}
+			diplomatic_influence = {
+				who = FROM
+				value = -50
+			}
+			ai_chance = {
+				factor = 0
+			}
+		}		
+	}
+	country_event = {
+		id = 1999998050 
+		title = "EVTNAME1999998050" #Notification event for VNZ, BRZ or NET, FROM accepts the proposition. From EVTOPT1999998049A
+		desc = "EVTDESC1999998050"
+		picture = "treaty"
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPT1999998050A"
+			create_alliance = FROM
+			ai_chance = {
+				factor = 100
+			}
+		}		
+	}
+	country_event = {
+		id = 1999998051 
+		title = "EVTNAME1999998051" #Notification event for VNZ, BRZ or NET, FROM rejects the proposition. From EVTOPT1999998049B
+		desc = "EVTDESC1999998051"
+		picture = "treaty"
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPT1999998051A"
+			ai_chance = {
+				factor = 100
+			}
+		}		
+	}
+	country_event = {
+		id = 1999998052 
+		title = "EVTNAME1999998052" #VNZ, BRZ & NET assemble a triple alliance against ENG's claims on Guyana, alliance asks USA for mediation. From decision tripartite_alliance_schomburgk_2 
+		desc = "EVTDESC1999998052"
+		picture = "treaty"
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPT1999998052A" #Accept
+			set_country_flag = VNZ_BRZ_NET_USA
+			FROM = {
+				country_event = 1999998053
+			}
+			ai_chance = {
+				factor = 100
+			}
+		}
+		option = {
+			name = "EVTOPT1999998052B" #Refuse
+			FROM = {
+				country_event = 1999998054
+			}
+			ai_chance = {
+				factor = 0
+			}
+		}
+	}
+	country_event = {
+		id = 1999998053 
+		title = "EVTNAME1999998053" #Notification event for tag VNZ_BRZ_NET_leader, USA accepts mediation. From EVTOPT1999998052A
+		desc = "EVTDESC1999998053"
+		picture = "treaty"
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPT1999998053A"
+			relation = {
+				who = FROM
+				value = 150
+			}
+			FROM = {
+				relation = {
+					who = THIS
+					value = 150
+				}
+				#create_alliance = THIS
+			}
+			ai_chance = {
+				factor = 100
+			}
+		}		
+	}
+	country_event = {
+		id = 1999998054 
+		title = "EVTNAME1999998054" #Notification event for tag VNZ_BRZ_NET_leader, USA rejects mediation. From EVTOPT1999998052B
+		desc = "EVTDESC1999998054"
+		picture = "treaty"
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPT1999998054A"
+			relation = {
+				who = FROM
+				value = -50
+			}
+			FROM = {
+				relation = {
+					who = THIS
+					value = -50
+				}
+			}
+			ai_chance = {
+				factor = 100
+			}
+		}		
+	}
+	country_event = {
+		id = 1999998055 
+		title = "EVTNAME1999998055" #Event for ENG about about the Tripartite Alliance (plus USA's) ultimatum: subject the crisis to arbitration. From decision tripartite_alliance_schomburgk_3
+		desc = "EVTDESC1999998055"
+		picture = "guyanas_3"
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPT1999998055A" #Accept
+			set_country_flag = VNZ_BRZ_NET_arbitration_accepted
+			any_country = {
+				limit = {
+					OR = {
+						has_country_flag = VNZ_BRZ_NET_member
+						has_country_flag = VNZ_BRZ_NET_USA
+					}
+				}
+				country_event = 1999998056 #Notification event
+			}
+			random_country = {
+				limit = {
+					has_country_flag = VNZ_BRZ_NET_leader
+				}
+				country_event = 1999998057 #Notification event + random country to arbitrate
+			}
+			ai_chance = {
+				factor = 90
+			}
+		}
+		option = {
+			name = "EVTOPT1999998055B" #Refuse
+			set_country_flag = VNZ_BRZ_NET_arbitration_rejected
+			any_country = {
+				limit = {
+					OR = {
+						has_country_flag = VNZ_BRZ_NET_member
+						has_country_flag = VNZ_BRZ_NET_USA
+					}
+				}
+				country_event = 1999998058 #Notification event
+			}
+			random_country = {
+				limit = {
+					has_country_flag = VNZ_BRZ_NET_leader
+				}
+				country_event = 1999998059 #Notification event + DoW
+			}
+			ai_chance = {
+				factor = 10
+				modifier = {
+					factor = 9.2
+					THIS = {
+						OR = {
+							war_policy = jingoism
+							OR = {
+								ruling_party_ideology = reactionary
+								ruling_party_ideology = fascist
+							}
+						}
+					}
+				}
+			}
+		}		
+	}
+	country_event = {
+		id = 1999998056 
+		title = "EVTNAME1999998056" #Notification event for VNZ_BRZ_NET_member and USA, ENG accepts the ultimatum. From EVTOPT1999998055A
+		desc = "EVTDESC1999998056"
+		picture = "treaty"
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPT1999998056A"
+			ai_chance = {
+				factor = 100
+			}
+		}		
+	}
+	country_event = {
+		id = 1999998057 
+		title = "EVTNAME1999998057" #Notification event for VNZ_BRZ_NET_leader, ENG accepts the ultimatum; goes to arbitration. From EVTOPT1999998055A
+		desc = "EVTDESC1999998057"
+		picture = "guyana_ENG_btfo"
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPT1999998057A"
+			random_country = {
+				limit = {
+					OR = {
+						is_greater_power = yes
+						is_secondary_power = yes
+					}
+					NOT = {
+						OR = {
+							AND = {
+								OR = {
+									alliance_with = THIS
+									in_sphere = THIS
+									vassal_of = THIS
+								}
+								relation = { who = THIS value = -25 }
+							}
+							AND = {
+								OR = {
+									alliance_with = USA
+									in_sphere = USA
+									vassal_of = USA
+								}
+								relation = { who = USA value = -25 }
+							}
+							AND = {
+								OR = {
+									alliance_with = FROM
+									in_sphere = FROM
+									vassal_of = FROM
+								}
+								relation = { who = FROM value = -25 }
+							}
+							AND = {
+								OR = {
+									alliance_with = VNZ
+									in_sphere = VNZ
+									vassal_of = VNZ
+								}
+								relation = { who = VNZ value = -25 }
+							}
+							AND = {
+								OR = {
+									alliance_with = FVZ
+									in_sphere = FVZ
+									vassal_of = FVZ
+								}
+								relation = { who = FVZ value = -25 }
+							}
+							AND = {
+								OR = {
+									alliance_with = USV
+									in_sphere = USV
+									vassal_of = USV
+								}
+								relation = { who = USV value = -25 }
+							}
+							AND = {
+								OR = {
+									alliance_with = ZLA
+									in_sphere = ZLA
+									vassal_of = ZLA
+								}
+								relation = { who = ZLA value = -25 }
+							}
+							AND = {
+								OR = {
+									alliance_with = B4R
+									in_sphere = B4R
+									vassal_of = B4R
+								}
+								relation = { who = B4R value = -25 }
+							}
+							AND = {
+								OR = {
+									alliance_with = GCO
+									in_sphere = GCO
+									vassal_of = GCO
+								}
+								relation = { who = GCO value = -25 }
+							}
+							AND = {
+								OR = {
+									alliance_with = BRZ
+									in_sphere = BRZ
+									vassal_of = BRZ
+								}
+								relation = { who = BRZ value = -25 }
+							}
+							AND = {
+								OR = {
+									alliance_with = NET
+									in_sphere = NET
+									vassal_of = NET
+								}
+								relation = { who = NET value = -25 }
+							}
+						}
+						OR = {
+							tag = USA
+							tag = THIS
+							tag = FROM
+							tag = VNZ
+							tag = FVZ
+							tag = USV
+							tag = ZLA
+							tag = B4R
+							tag = GCO
+							tag = BRZ
+							tag = NET
+							owns = 2242
+							owns = 3381
+							owns = 2275
+							owns = 2264 #Caracas
+							owns = 2447 #Rio
+							owns = 375 #Amsterdam
+						}
+					}
+				}
+				country_event = { id = 1999998060 days = 5 }
+			}
+			ai_chance = {
+				factor = 100
+			}
+		}		
+	}
+	country_event = {
+		id = 1999998058 
+		title = "EVTNAME1999998058" #Notification event for VNZ_BRZ_NET_member and USA, ENG rejects the ultimatum. From EVTOPT1999998055B
+		desc = "EVTDESC1999998058"
+		picture = "guyanas_2"
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPT1999998058A"
+			ai_chance = {
+				factor = 100
+			}
+		}		
+	}
+	country_event = {
+		id = 1999998059 
+		title = "EVTNAME1999998059" #Notification event for VNZ_BRZ_NET_leader, ENG rejects the ultimatum; war ensues. From EVTOPT1999998055B
+		desc = "EVTDESC1999998059"
+		picture = "guyana_lion"
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		immediate = {
+			300 = {
+				owner = {
+					set_country_flag = VNZ_BRZ_NET_war
+				}
+			}
+		}
+	
+		option = {
+			name = "EVTOPT1999998059A"
+			3382 = { add_core = NET } #Tigri
+			any_country = {
+				limit = {
+					OR = {
+						has_country_flag = VNZ_BRZ_NET_leader
+						has_country_flag = VNZ_BRZ_NET_member
+						has_country_flag = VNZ_BRZ_NET_USA
+					}
+				}
+				add_casus_belli = {
+					target = FROM
+					type = free_allied_cores
+					months = 120
+				}
+				add_casus_belli = {
+					target = FROM
+					type = free_peoples
+					months = 120
+				}
+			}
+			ai_chance = {
+				factor = 100
+			}
+		}		
+	}
+	country_event = {
+		id = 1999998060
+		title = "EVTNAME1999998060" #Random GP/SP is picked and the Guyana issue is subject to arbitration. From EVTOPT1999998057A
+		desc = "EVTDESC1999998060"
+		picture = "guyanas_2"
+		
+		news = yes
+		news_title = "EVTNAME1999998060"
+		news_desc_long = "EVTDESC1999998060_NEWS_LONG"
+		news_desc_medium = "EVTDESC1999998060_NEWS_MEDIUM"
+		news_desc_short = "EVTDESC1999998060_NEWS_SHORT"
+		major = yes
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPT1999998060A" #ENG keeps Schomburgk line sans Barima & Guasipati, Tigri is kept and they also obtain Mau; BRZ keeps Pirara and Roraima [Historical outcome]
+			set_global_flag = VNZ_BRZ_NET_historical
+			random_country = {
+				limit = {
+					OR = {
+						owns = 2242 #Esequibo
+						owns = 3381 #Barima
+						owns = 2275 #Guasipati/El Callao
+					}
+					exists = yes
+					NOT = {
+						OR = {
+							tag = ENG
+							tag = GUY
+						}
+					}
+				}
+				random_owned = {
+					limit = {
+						province_id = 2242
+						OR = {
+							is_core = GUY
+							is_core = ENG
+						}
+					}
+					secede_province = ENG
+				}
+				any_owned = {
+					limit = {
+						NOT = { province_id = 2242 }
+						OR = {
+							is_core = GUY
+							is_core = ENG
+						}
+					}
+					remove_core = GUY
+					remove_core = ENG
+				}
+				country_event = { id = 1999998061 days = 1 }
+			}
+			random_country = {
+				limit = {
+					OR = {
+						owns = 2240 #Paramaribo
+						owns = 2245 #Apetina
+					}
+					exists = yes
+					NOT = {
+						OR = {
+							tag = ENG
+							tag = GUY
+						}
+					}
+				}
+				country_event = { id = 1999998061 days = 1 }
+			}
+			random_country = {
+				limit = {
+					OR = {
+						owns = 3379 #Mau
+						owns = 3380 #Pirara
+					}
+					exists = yes
+					NOT = {
+						OR = {
+							tag = ENG
+							tag = GUY
+						}
+					}
+				}
+				any_owned = {
+					limit = {
+						province_id = 3379
+						OR = {
+							is_core = GUY
+							is_core = ENG
+						}
+					}
+					secede_province = ENG
+				}
+				any_owned = {
+					limit = {
+						NOT = { province_id = 3379 }
+						OR = {
+							is_core = GUY
+							is_core = ENG
+						}
+					}
+					remove_core = GUY
+					remove_core = ENG
+				}
+				country_event = { id = 1999998061 days = 1 }
+			}
+			random_country = {
+				limit = {
+					owns = 300 #London
+					primary_culture = british
+				}
+				any_owned = {
+					limit = {
+						OR = {
+							province_id = 2242 #Esequibo
+							province_id = 2243 #Pomaron
+							province_id = 3373 #Rupununi
+							province_id = 3379 #Mau
+							province_id = 3382 #Tigri
+						}
+						any_core = {
+							OR = {
+								primary_culture = north_andean
+								primary_culture = llanero
+								primary_culture = brazilian
+								primary_culture = dutch
+								primary_culture = afro_dutch
+							}
+						}
+					}
+					remove_core = VNZ
+					remove_core = FVZ
+					remove_core = USV
+					remove_core = ZLA
+					remove_core = B4R
+					remove_core = CLM
+					remove_core = ANQ
+					remove_core = AR1
+					remove_core = ECU
+					remove_core = GAY
+					remove_core = GCO
+					remove_core = BRZ
+					remove_core = NET
+					remove_core = SUR
+				}
+				country_event = { id = 1999998061 days = 1 }
+			}
+			2532 = { #Roraima
+				secede_province = BRZ
+				remove_core = VNZ
+				remove_core = FVZ
+				remove_core = USV
+				remove_core = ZLA
+				remove_core = B4R
+				remove_core = CLM
+				remove_core = ANQ
+				remove_core = AR1
+				remove_core = ECU
+				remove_core = GAY
+				remove_core = GCO
+			}
+			3380 = { #Pirara
+				secede_province = BRZ
+				remove_core = VNZ
+				remove_core = FVZ
+				remove_core = USV
+				remove_core = ZLA
+				remove_core = B4R
+				remove_core = CLM
+				remove_core = ANQ
+				remove_core = AR1
+				remove_core = ECU
+				remove_core = GAY
+				remove_core = GCO
+			}
+			ai_chance = {
+				factor = 10
+			}
+		}
+		option = {
+			name = "EVTOPT1999998060B" #ENG keeps EVERYTHING, BRZ keeps Roraima
+			set_global_flag = VNZ_BRZ_NET_ENGVERYTHING
+			random_country = {
+				limit = {
+					OR = {
+						owns = 2242 #Esequibo
+						owns = 3381 #Barima
+						owns = 2275 #Guasipati/El Callao
+					}
+					exists = yes
+					NOT = {
+						OR = {
+							tag = ENG
+							tag = GUY
+						}
+					}
+				}
+				any_owned = {
+					limit = {
+						OR = {
+							is_core = GUY
+							is_core = ENG
+						}
+					}
+					secede_province = ENG
+				}
+				country_event = { id = 1999998062 days = 1 }
+			}
+			random_country = {
+				limit = {
+					OR = {
+						owns = 2240 #Paramaribo
+						owns = 2245 #Apetina
+					}
+					exists = yes
+					NOT = {
+						OR = {
+							tag = ENG
+							tag = GUY
+						}
+					}
+				}
+				country_event = { id = 1999998062 days = 1 }
+			}
+			random_country = {
+				limit = {
+					OR = {
+						owns = 3379 #Mau
+						owns = 3380 #Pirara
+					}
+					exists = yes
+					NOT = {
+						OR = {
+							tag = ENG
+							tag = GUY
+						}
+					}
+				}
+				any_owned = {
+					limit = {
+						OR = {
+							is_core = GUY
+							is_core = ENG
+						}
+					}
+					secede_province = ENG
+				}
+				country_event = { id = 1999998062 days = 1 }
+			}
+			random_country = {
+				limit = {
+					owns = 300 #London
+					primary_culture = british
+				}
+				any_owned = {
+					limit = {
+						OR = {
+							province_id = 2242 #Esequibo
+							province_id = 3381 #Barima
+							province_id = 2275 #Guasipati/El Callao
+							province_id = 2243 #Pomaron
+							province_id = 3373 #Rupununi
+							province_id = 3379 #Mau
+							province_id = 3380 #Pirara
+							province_id = 3382 #Tigri
+						}
+						any_core = {
+							OR = {
+								primary_culture = north_andean
+								primary_culture = llanero
+								primary_culture = brazilian
+								primary_culture = dutch
+								primary_culture = afro_dutch
+							}
+						}
+					}
+					remove_core = VNZ
+					remove_core = FVZ
+					remove_core = USV
+					remove_core = ZLA
+					remove_core = B4R
+					remove_core = CLM
+					remove_core = ANQ
+					remove_core = AR1
+					remove_core = ECU
+					remove_core = GAY
+					remove_core = GCO
+					remove_core = BRZ
+					remove_core = NET
+					remove_core = SUR
+				}
+				country_event = { id = 1999998062 days = 1 }
+			}
+			2532 = { #Roraima
+				secede_province = BRZ
+				remove_core = VNZ
+				remove_core = FVZ
+				remove_core = USV
+				remove_core = ZLA
+				remove_core = B4R
+				remove_core = CLM
+				remove_core = ANQ
+				remove_core = AR1
+				remove_core = ECU
+				remove_core = GAY
+				remove_core = GCO
+			}
+			ai_chance = {
+				factor = 5
+				modifier = {
+					factor = 100
+					300 = { owner = { ai = no } }
+				}
+			}
+		}
+		option = {
+			name = "EVTOPT1999998060C" #ENG's claims are denied, VNZ favoured by keeping Mau, Pirara and Roraima as well
+			set_global_flag = VNZ_BRZ_NET_venefavoured
+			2264 = { # Caracas
+				owner = {
+					country_event = { id = 1999998063 days = 1 } #special event
+				}
+			}
+			2447 = { #Rio de Janeiro
+				owner = {
+					country_event = { id = 1999998064 days = 1 } #special event
+				}
+			}
+			375 = { #Amsterdam
+				owner = {
+					country_event = { id = 1999998065 days = 1 } #special event
+				}
+			}
+			300 = { #London
+				owner = {
+					country_event = { id = 1999998066 days = 1 } #special event
+				}
+			}
+			ai_chance = {
+				factor = 25
+				modifier = {
+					factor = 100
+					2264 = { owner = { ai = no } }
+				}
+			}
+		}
+		option = {
+			name = "EVTOPT1999998060D" #ENG's claims are denied, BRZ favoured by keeping Pirara and Roraima, as well as Mau.
+			set_global_flag = VNZ_BRZ_NET_huehuehue
+			2264 = { # Caracas
+				owner = {
+					country_event = { id = 1999998067 days = 1 } #special event
+				}
+			}
+			2447 = { #Rio de Janeiro
+				owner = {
+					country_event = { id = 1999998068 days = 1 } #special event
+				}
+			}
+			375 = { #Amsterdam
+				owner = {
+					country_event = { id = 1999998065 days = 1 } #special event
+				}
+			}
+			300 = { #London
+				owner = {
+					country_event = { id = 1999998066 days = 1 } #special event
+				}
+			}
+			ai_chance = {
+				factor = 25
+				modifier = {
+					factor = 100
+					BRZ = { ai = no }
+				}
+			}
+		}
+		option = {
+			name = "EVTOPT1999998060E" #ENG's claims are denied, BRZ keeps Pirara and Roraima, VNZ keeps Mau.
+			set_global_flag = VNZ_BRZ_NET_huehuehue
+			2264 = { # Caracas
+				owner = {
+					country_event = { id = 1999998069 days = 1 } #special event
+				}
+			}
+			2447 = { #Rio de Janeiro
+				owner = {
+					country_event = { id = 1999998070 days = 1 } #special event
+				}
+			}
+			375 = { #Amsterdam
+				owner = {
+					country_event = { id = 1999998065 days = 1 } #special event
+				}
+			}
+			300 = { #London
+				owner = {
+					country_event = { id = 1999998066 days = 1 } #special event
+				}
+			}
+			USA = {
+				country_event = { id = 1999998066 days = 1 } #special event
+			}
+			ai_chance = {
+				factor = 35
+				modifier = {
+					factor = 100
+					NET = { ai = no }
+				}
+			}
+		}
+	}
+	country_event = {
+		id = 1999998061 
+		title = "EVTNAME1999998061" #Notification event for VNZ_BRZ_NET_member/leader/USA and ENG. Arbitrator gives historial outcome. From EVTOPT1999998060A
+		desc = "EVTDESC1999998061"
+		picture = "guyanas_2"
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPT1999998061A"
+			ai_chance = {
+				factor = 100
+			}
+		}		
+	}
+	country_event = {
+		id = 1999998062 
+		title = "EVTNAME1999998062" #Notification event for VNZ_BRZ_NET_member/leader/USA and ENG. Arbitrator gives ENG all the clay, BRZ keeps Roraima. From EVTOPT1999998060B
+		desc = "EVTDESC1999998062"
+		picture = "guyana_lion"
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPT1999998062A"
+			ai_chance = {
+				factor = 100
+			}
+		}		
+	}
+	country_event = {
+		id = 1999998063 
+		title = "EVTNAME1999998063" #Notification event for VNZ. ENG's claims are rejected (VNZ favoured by keeping Mau, Pirara and Roraima.) From EVTOPT1999998060C
+		desc = "EVTDESC1999998063"
+		picture = "guyana_ENG_btfo"
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPT1999998063A"
+			any_country = {
+				limit = {
+					OR = {
+						owns = 2243 #Pomaron
+						owns = 3373 #Rupununi
+						owns = 3379 #Mau
+						owns = 3380 #Pirara
+						owns = 2532 #Roraima
+					}
+				}
+				any_owned = {
+					limit = {
+						is_core = THIS
+						OR = {
+							region = ENG_1979
+							region = VNZ_2278
+						}
+					}
+					secede_province = THIS
+				}
+			}
+			any_owned = {
+				limit = {
+					OR = {
+						is_core = BRZ
+						is_core = ENG
+						is_core = GUY
+					}
+					OR = {
+						region = ENG_1979
+						region = VNZ_2278
+					}
+				}
+				remove_core = BRZ
+				remove_core = ENG
+				remove_core = GUY
+			}
+			ai_chance = {
+				factor = 100
+			}
+		}		
+	}
+	country_event = {
+		id = 1999998064 
+		title = "EVTNAME1999998064" #Notification event for BRZ. ENG's claims are rejected (VNZ favoured by keeping Mau, Pirara and Roraima.) From EVTOPT1999998060C
+		desc = "EVTDESC1999998064"
+		picture = "guyana_ENG_btfo"
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPT1999998064A"
+			ai_chance = {
+				factor = 100
+			}
+		}		
+	}
+	country_event = {
+		id = 1999998065 
+		title = "EVTNAME1999998065" #Notification event for NET. ENG's claims are denied. From EVTOPT1999998060C, EVTOPT1999998060D & EVTOPT1999998060E
+		desc = "EVTDESC1999998065"
+		picture = "guyana_ENG_btfo"
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPT1999998065A"
+			any_country = {
+				limit = {
+					owns = 3382 #Tigri
+				}
+				any_owned = {
+					limit = {
+						OR = {
+							is_core = THIS
+							is_core = SUR
+						}
+						OR = {
+							region = ENG_1979
+							region = VNZ_2278
+						}
+					}
+					secede_province = THIS
+				}
+			}
+			any_owned = {
+				limit = {
+					OR = {
+						is_core = ENG
+						is_core = GUY
+					}
+					OR = {
+						region = ENG_1979
+						region = VNZ_2278
+					}
+				}
+				remove_core = ENG
+				remove_core = GUY
+			}
+			ai_chance = {
+				factor = 100
+			}
+		}		
+	}
+	country_event = {
+		id = 1999998066 
+		title = "EVTNAME1999998066" #Notification event for ENG. ENG's claims are denied. From EVTOPT1999998060C, EVTOPT1999998060D & EVTOPT1999998060E
+		desc = "EVTDESC1999998066"
+		picture = "guyana_ENG_btfo"
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPT1999998066A"
+			ai_chance = {
+				factor = 100
+			}
+		}		
+	}
+	country_event = {
+		id = 1999998067
+		title = "EVTNAME1999998067" #Notification event for VNZ. ENG's claims are rejected (BRZ favoured by keeping Mau, Pirara and Roraima.) From EVTOPT1999998060D
+		desc = "EVTDESC1999998067"
+		picture = "guyana_ENG_btfo"
+				
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPT1999998067A"
+			ai_chance = {
+				factor = 100
+			}
+		}		
+	}
+	country_event = {
+		id = 1999998068 
+		title = "EVTNAME1999998068" #Notification event for BRZ. ENG's claims are rejected (BRZ favoured by keeping Mau, Pirara and Roraima.) From EVTOPT1999998060D
+		desc = "EVTDESC1999998068"
+		picture = "guyana_ENG_btfo"
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPT1999998068A"
+			any_country = {
+				limit = {
+					OR = {
+						owns = 3379 #Mau
+						owns = 3380 #Pirara
+						owns = 2532 #Roraima
+					}
+				}
+				any_owned = {
+					limit = {
+						is_core = THIS
+						OR = {
+							region = ENG_1979
+							region = VNZ_2278
+						}
+					}
+					secede_province = THIS
+				}
+			}
+			any_owned = {
+				limit = {
+					OR = {
+						is_core = ENG
+						is_core = GUY	
+						is_core = VNZ
+						is_core = FVZ
+						is_core = USV
+						is_core = ZLA
+						is_core = B4R
+						is_core = CLM
+						is_core = ANQ
+						is_core = AR1
+						is_core = ECU
+						is_core = GAY
+						is_core = GCO
+					}
+					OR = {
+						region = ENG_1979
+						region = VNZ_2278
+					}
+				}
+				remove_core = ENG
+				remove_core = GUY
+				remove_core = VNZ
+				remove_core = FVZ
+				remove_core = USV
+				remove_core = ZLA
+				remove_core = B4R
+				remove_core = CLM
+				remove_core = ANQ
+				remove_core = AR1
+				remove_core = ECU
+				remove_core = GAY
+				remove_core = GCO
+			}
+			ai_chance = {
+				factor = 100
+			}
+		}		
+	}
+	country_event = {
+		id = 1999998069
+		title = "EVTNAME1999998069" #Notification event for VNZ. ENG's claims are rejected (BRZ keeps Pirara and Roraima, VNZ keeps Mau.) From EVTOPT1999998060E
+		desc = "EVTDESC1999998069"
+		picture = "guyana_ENG_btfo"
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPT1999998069A"
+			any_country = {
+				limit = {
+					OR = {
+						owns = 2243 #Pomaron
+						owns = 3373 #Rupununi
+						owns = 3379 #Mau
+					}
+				}
+				any_owned = {
+					limit = {
+						is_core = THIS
+						OR = {
+							region = ENG_1979
+							region = VNZ_2278
+						}
+						OR = {
+							province_id = 2243 #Pomaron
+							province_id = 3373 #Rupununi
+							province_id = 3379 #Mau
+						}
+					}
+					secede_province = THIS
+				}
+			}
+			any_owned = {
+				limit = {
+					OR = {
+						is_core = BRZ
+						is_core = ENG
+						is_core = GUY
+					}
+					OR = {
+						region = ENG_1979
+						region = VNZ_2278
+					}
+				}
+				remove_core = BRZ
+				remove_core = ENG
+				remove_core = GUY
+			}
+			ai_chance = {
+				factor = 100
+			}
+		}		
+	}
+	country_event = {
+		id = 1999998070
+		title = "EVTNAME1999998070" #Notification event for BRZ. ENG's claims are rejected (BRZ keeps Pirara and Roraima, VNZ keeps Mau.) From EVTOPT1999998060E
+		desc = "EVTDESC1999998070"
+		picture = "guyana_ENG_btfo"
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPT1999998070A"
+			any_country = {
+				limit = {
+					OR = {
+						owns = 3380 #Pirara
+						owns = 2532 #Roraima
+					}
+				}
+				any_owned = {
+					limit = {
+						is_core = THIS
+						OR = {
+							region = ENG_1979
+							region = VNZ_2278
+						}
+						OR = {
+							province_id = 3380 #Pirara
+							province_id = 2532 #Roraima
+						}
+					}
+					secede_province = THIS
+				}
+			}
+			any_owned = {
+				limit = {
+					OR = {
+						is_core = ENG
+						is_core = GUY	
+						is_core = VNZ
+						is_core = FVZ
+						is_core = USV
+						is_core = ZLA
+						is_core = B4R
+						is_core = CLM
+						is_core = ANQ
+						is_core = AR1
+						is_core = ECU
+						is_core = GAY
+						is_core = GCO
+					}
+					OR = {
+						region = ENG_1979
+						region = VNZ_2278
+					}
+				}
+				remove_core = ENG
+				remove_core = GUY
+				remove_core = VNZ
+				remove_core = FVZ
+				remove_core = USV
+				remove_core = ZLA
+				remove_core = B4R
+				remove_core = CLM
+				remove_core = ANQ
+				remove_core = AR1
+				remove_core = ECU
+				remove_core = GAY
+				remove_core = GCO
+			}
+			ai_chance = {
+				factor = 100
+			}
+		}		
+	}
+		
+##############################
+#~~~VNZ takes their claims~~~#
+#~~~~~~~~~~by force~~~~~~~~~~#
+##############################
+
+	country_event = {
+		id = 1999998071 
+		title = "EVTNAME1999998071" #Notification event for ENG about VNZ's being a pain in the ass. From Decision VNZ_pain_in_the_ass
+		desc = "EVTDESC1999998071"
+		picture = "guyanas_2"
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPT1999998071A"
+			relation = {
+				who = FROM
+				value = -100
+			}
+			diplomatic_influence = {
+				who = FROM
+				value = -100
+			}
+			ai_chance = {
+				factor = 100
+			}
+		}		
+	}
+	country_event = {
+		id = 1999998072 
+		title = "EVTNAME1999998072" #ENG's response to VNZ's encroachment after they take the VNZ_pain_in_the_ass decision. From Decision ENG_VNZ_problem
+		desc = "EVTDESC1999998072"
+		picture = "guyanas_2"
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPT1999998072A" #Do nothing.
+			set_global_flag = ENG_VNZ_problem_nothing
+			prestige = -15
+			random_country = {
+				limit = {
+					OR = {
+						owns = 2242 #Esequibo
+						owns = 3381 #Barima
+					}
+					exists = yes
+				}
+				country_event = 1999998073
+			}
+			ai_chance = {
+				factor = 15
+			}
+		}
+		option = {
+			name = "EVTOPT1999998072B" #Send British Settlers to their lands
+			set_global_flag = ENG_VNZ_problem_settlers
+			treasury = -15001
+			any_owned = {
+				limit = {
+					OR = {
+						province_id = 2243 #Pomaron
+						province_id = 3373 #Rupununi
+					}
+				}
+				any_pop = {
+					limit = {
+						culture = british 
+					}
+					reduce_pop = 1.3 
+				}
+			}
+			random_country = {
+				limit = {
+					OR = {
+						owns = 2242 #Esequibo
+						owns = 3381 #Barima
+					}
+					exists = yes
+				}
+				country_event = 1999998074
+				any_owned = {
+					limit = {
+						OR = {
+							province_id = 2242 #Esequibo
+							province_id = 3381 #Barima
+							province_id = 2275 #Guasipati
+						}
+					}
+					any_pop = {
+						limit = {
+							culture = british 
+						}
+						reduce_pop = 1.3 
+					}
+				}
+			}
+			USA = {
+				relation = {
+					who = THIS
+					value = -75
+				}
+			}
+			ai_chance = {
+				factor = 50
+			}
+		}
+		option = {
+			name = "EVTOPT1999998072C" #Deport Venezuelans
+			set_global_flag = ENG_VNZ_problem_deport
+			random_country = {
+				limit = {
+					OR = {
+						owns = 2242 #Esequibo
+						owns = 3381 #Barima
+					}
+					exists = yes
+				}
+				country_event = 1999998075
+			}
+			any_owned = {
+				limit = {
+					OR = {
+						province_id = 2243 #Pomaron
+						province_id = 3373 #Rupununi
+					}
+				}
+				remove_province_modifier = nationalist_agitation
+				any_pop = {
+					limit = {
+						OR = {
+							culture = north_andean 
+							culture = llanero 
+						}
+					}
+					move_pop = 2242 #Esequibo
+				}
+			}
+			USA = {
+				relation = {
+					who = THIS
+					value = -150
+				}
+			}
+			ai_chance = {
+				factor = 25
+				modifier = {
+					factor = 4
+					THIS = {
+						OR = {
+							war_policy = jingoism
+							ruling_party_ideology = anarcho_liberal
+						}
+					}
+				}
+			}
+		}	
+		option = {
+			name = "EVTOPT1999998072D" #Deport them from this world by firing squad
+			set_global_flag = ENG_VNZ_problem_genocide
+			random_country = {
+				limit = {
+					OR = {
+						owns = 2242 #Esequibo
+						owns = 3381 #Barima
+					}
+					exists = yes
+				}
+				country_event = 1999998076
+			}
+			any_owned = {
+				limit = {
+					OR = {
+						province_id = 2243 #Pomaron
+						province_id = 3373 #Rupununi
+					}
+				}
+				remove_province_modifier = nationalist_agitation
+				any_pop = {
+					limit = {
+						OR = {
+							culture = north_andean 
+							culture = llanero 
+						}
+					}
+					reduce_pop = 0.01
+					move_pop = 2242 #Esequibo
+				}
+			}
+			USA = {
+				relation = {
+					who = THIS
+					value = -400
+				}
+				country_event = 1999998077
+			}
+			ai_chance = {
+				factor = 10
+				modifier = {
+					factor = 10
+					THIS = {
+						OR = {
+							ruling_party_ideology = reactionary
+							ruling_party_ideology = fascist
+						}
+					}
+				}
+			}
+		}		
+	}
+	country_event = {
+		id = 1999998073
+		title = "EVTNAME1999998073" #Notification event for VNZ about ENG doing nothing in response to their actions. From Decision EVTOPT1999998072A
+		desc = "EVTDESC1999998073"
+		picture = "guyana_ENG_btfo"
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPT1999998073A"
+			prestige = 10
+			ai_chance = {
+				factor = 100
+			}
+		}		
+	}
+	country_event = {
+		id = 1999998074
+		title = "EVTNAME1999998074" #Notification event for VNZ about ENG sending more settlers to their lands. From Decision EVTOPT1999998072B
+		desc = "EVTDESC1999998074"
+		picture = "guyana_lion"
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPT1999998074A"
+			FROM = {
+				relation = {
+					who = THIS
+					value = -50
+				}
+				diplomatic_influence = {
+					who = THIS
+					value = -50
+				}
+			}
+			relation = {
+				who = FROM
+				value = -50
+			}
+			any_pop = {
+				limit = {
+					has_pop_culture = british
+					location = {
+						OR = {
+							is_core = GUY
+							is_core = ENG
+						}
+					}
+				}
+				militancy = 4
+				consciousness = 4
+			}
+			ai_chance = {
+				factor = 100
+			}
+		}		
+	}
+	country_event = {
+		id = 1999998075
+		title = "EVTNAME1999998075" #Notification event for VNZ about ENG deporting Venezuelans from Guyana. From Decision EVTOPT1999998072C
+		desc = "EVTDESC1999998075"
+		picture = "guyana_lion"
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPT1999998075A"
+			FROM = {
+				relation = {
+					who = THIS
+					value = -150
+				}
+				diplomatic_influence = {
+					who = THIS
+					value = -150
+				}
+			}
+			relation = {
+				who = FROM
+				value = -150
+			}
+			any_pop = {
+				limit = {
+					has_pop_culture = british
+					location = {
+						OR = {
+							is_core = GUY
+							is_core = ENG
+						}
+					}
+				}
+				militancy = 4
+				consciousness = 4
+			}
+			ai_chance = {
+				factor = 100
+			}
+		}		
+	}
+	country_event = {
+		id = 1999998076
+		title = "EVTNAME1999998076" #Notification event for VNZ about ENG genociding Venezuelans in Guyana. From Decision EVTOPT1999998072D
+		desc = "EVTDESC1999998076"
+		picture = "guyana_lion"
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPT1999998076A"
+			FROM = {
+				relation = {
+					who = THIS
+					value = -400
+				}
+				diplomatic_influence = {
+					who = THIS
+					value = -400
+				}
+			}
+			relation = {
+				who = FROM
+				value = -400
+			}
+			any_pop = {
+				limit = {
+					has_pop_culture = british
+					location = {
+						OR = {
+							is_core = GUY
+							is_core = ENG
+						}
+					}
+				}
+				militancy = 4
+				consciousness = 4
+			}
+			ai_chance = {
+				factor = 100
+			}
+		}		
+	}
+	country_event = {
+		id = 1999998077
+		title = "EVTNAME1999998077" #Notification event for USA about ENG genociding Venezuelans in Guyana (Monroe cb activated). From Decision EVTOPT1999998072D
+		desc = "EVTDESC1999998077"
+		picture = "guyana_lion"
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPT1999998077A"
+			relation = {
+				who = FROM
+				value = -400
+			}
+			add_casus_belli = {
+				target = FROM
+				type = cut_down_to_size
+				months = 60
+			}
+			ai_chance = {
+				factor = 100
+			}
+		}		
+	}
+	
+###################################
+#~~~Taking Pomaron and Rupununi~~~#
+#~~~~~~~~~~~~by force~~~~~~~~~~~~~#
+###################################
+
+	country_event = {
+		id = 1999998078
+		title = "EVTNAME1999998078" #Event for VNZ, USA sends military aid in exchange of weakening ENG's hold on South America. From decision VNZ_ENG_war
+		desc = "EVTDESC1999998078" #VNZ has to pay 15k pounds after the was is over though.
+		picture = "treaty"
+		
+		is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPT1999998078A"
+			create_alliance = USA
+			set_country_flag = received_military_aid
+			add_country_modifier = {
+				name = military_aid
+				duration = 730
+			}
+			canned_food = 150
+			small_arms = 100
+			regular_clothes = 100
+			timber = 100
+			iron = 50
+			wool = 50
+			leadership = 20
+			ai_chance = {
+				factor = 100
+			}
+		}		
+	}
+	country_event = { #Event for ENG, VNZ seeks to sign a treaty with ENG after having occupied Pomaron and Rupununi for 185 days. From decision VNZ_treaty_of_caracas
+		id = 1999998079
+		title = "EVTNAME1999998079"
+		desc = "EVTDESC1999998079"
+		news = yes
+		news_title = "EVTNAME1999998079"
+		news_desc_long = "EVTDESC1999998079_NEWS_LONG"
+		news_desc_medium = "EVTDESC1999998079_NEWS_MEDIUM"
+		news_desc_short = "EVTDESC1999998079_NEWS_SHORT"
+		picture = "treaty"
+		major = yes
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = "EVTOPT1999998079A"
+			set_global_flag = treaty_of_caracas_good
+			prestige = -25
+			FROM = {
+				all_core = {
+					remove_core = THIS
+					remove_core = GUY
+				}
+			}
+			random_country = {
+				limit = {
+					war_with = THIS
+					controls = 2243 #Pomaron
+					controls = 3373 #Rupununi
+				}
+				end_war = THIS
+				country_event = 1999998080
+			}
+			any_country = {
+				limit = {
+					OR = {
+						OR = {
+							primary_culture = north_andean
+							primary_culture = llanero
+						}
+						alliance_with = FROM
+					}
+					war_with = THIS
+				}
+				end_war = THIS
+			}
+			ai_chance = {
+				factor = 80
+			}
+		}
+		option = {
+			name = "EVTOPT1999998079B"
+			set_global_flag = treaty_of_caracas_bad
+			prestige = -12.5
+			casus_belli ={
+				target = FROM
+				type = conquest_any
+				months = 60
+			}
+			random_country = {
+				limit = {
+					war_with = THIS
+					controls = 2243 #Pomaron
+					controls = 3373 #Rupununi
+				}
+				end_war = THIS
+				country_event = 1999998081
+			}
+			any_country = {
+				limit = {
+					OR = {
+						OR = {
+							primary_culture = north_andean
+							primary_culture = llanero
+						}
+						alliance_with = FROM
+					}
+					war_with = THIS
+				}
+				end_war = THIS
+
+			}
+			ai_chance = {
+				factor = 20
+				modifier = {
+					factor = 5
+					THIS = {
+						OR = {
+							war_policy = jingoism
+							OR = {
+								ruling_party_ideology = reactionary
+								ruling_party_ideology = fascist
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	country_event = { #ENG secedes all cores, but seeks to keep good relations. From EVTOPT1999998079A
+		id = 1999998080
+		title = "EVTNAME1999998080"
+		desc = "EVTDESC1999998080"
+		picture = "guyana_ENG_btfo"
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = "EVTOPT1999998080A"
+			prestige = 25
+			FROM = {
+				any_owned = {
+					limit = { is_core = THIS }
+					secede_province = THIS
+				}
+				any_owned = {
+					limit = {
+						OR = {
+							is_core = NET
+							is_core = SUR
+						}
+						OR = {
+							region = ENG_1979
+							region = VNZ_2278
+						}
+					}
+					secede_province = NET
+				}
+				relation = { who = THIS value = 200 }
+				diplomatic_influence = { who = THIS value = 50 }
+			}
+			any_pop = {
+				limit = { has_pop_culture = british }
+				consciousness = 2
+			}
+			any_country = {
+				limit = {
+					alliance_with = FROM
+					war_with = THIS
+				}
+				end_war = THIS
+			}
+			any_country = {
+				limit = {
+					OR = {
+						primary_culture = brazilian
+						primary_culture = north_andean
+						primary_culture = llanero
+						primary_culture = dutch
+					}
+				}
+				any_owned = {
+					limit = {
+						OR = {
+							is_core = GUY
+							is_core = FROM
+						}
+						OR = {
+							region = ENG_1979
+							region = VNZ_2278
+						}
+					}
+					remove_core = GUY
+					remove_core = ENG
+					remove_core = ENL
+				}
+			}
+			any_country = {
+				limit = {
+					OR = {
+						primary_culture = brazilian
+						primary_culture = dutch
+					}
+					NOT = { tag = THIS }
+				}
+				country_event = 1999998082 #Notification event.
+			}
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+	country_event = { #ENG secedes all cores, albeit reluctantly. From EVTOPT1999998079B
+		id = 1999998081
+		title = "EVTNAME1999998081"
+		desc = "EVTDESC1999998081"
+		picture = "guyana_ENG_btfo"
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = "EVTOPT1999998081A"
+			prestige = 25
+			FROM = {
+				any_owned = {
+					limit = { is_core = THIS }
+					secede_province = THIS
+				}
+				casus_belli = {
+					target = THIS
+					type = cut_down_to_size
+					months = 240
+				}
+			}
+			any_pop = {
+				limit = { has_pop_culture = british }
+				militancy = 8
+				consciousness = 4
+			}
+			any_country = {
+				limit = {
+					alliance_with = FROM
+					war_with = THIS
+				}
+				end_war = THIS
+			}
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+	country_event = {
+		id = 1999998082 
+		title = "EVTNAME1999998082" #Notification event for BRZ & NET about ENG withdrawing all their claims on the Guyanas. From event 1999998080
+		desc = "EVTDESC1999998082"
+		picture = "guyana_ENG_btfo"
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = "EVTOPT1999998082A"
+			ai_chance = {
+				factor = 100
+			}
+		}		
+	}
+	
+#################################################
+#~~~~~~~~~~~~~~~~Guyana Purchase~~~~~~~~~~~~~~~~#
+#~(Not applicable to North Andeans or Llaneros)~#
+#################################################
+	
+	country_event = { #From decision OTHER_guyana_purchase
+		id = 1999998083
+		title = "EVTNAME1999998083"
+		desc = "EVTDESC1999998083"
+		picture = "administration"
+
+		is_triggered_only = yes
+
+		option = {
+			name = "EVTOPT1999998083A"
+			money = 250000
+			any_owned = {
+				limit = {
+					OR = {
+						province_id = 2243 #Pomaron
+						province_id = 3373 #Rupununi
+					}
+				}
+				remove_core = THIS
+				remove_core = GUY
+			}
+			random_country = {
+				limit = {
+					OR = {
+						owns = 2242
+						owns = 2264
+					}
+					vassal_of = FROM
+				}
+				country_event = 1999998084
+			}
+			FROM = { country_event = 1999998085 }
+			ai_chance = {
+				factor = 60 
+				modifier = {
+					factor = 0.8
+					is_greater_power = no
+				}
+				modifier = {
+					factor = 0.7
+					alliance_with = FROM
+				}
+				modifier = {
+					factor = 0.7
+					relation = { who = FROM value = 150 }
+				}
+			}
+		}
+
+		option = {
+			name = "EVTOPT1999998083B"
+			FROM = { country_event = 1999998086 }
+			ai_chance = {
+				factor = 40 
+				modifier = {
+					factor = 0.2
+					is_greater_power = no
+				}
+				modifier = {
+					factor = 0.6
+					FROM = { is_greater_power = no }
+				}
+				modifier = {
+					factor = 0.1
+					NOT = { relation = { who = FROM value = 0 } }
+				}
+			}
+		}
+	}
+	country_event = { #Event for vassal, ENG accepts. From EVTOPT1999998083A
+		id = 1999998084
+		title = "EVTNAME1999998084"
+		desc = "EVTDESC1999998084"
+		picture = "administration"
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = "EVTOPT1999998084A"
+			2243 = { secede_province = THIS }
+			3373 = { secede_province = THIS }
+			2242 = { secede_province = THIS }
+			3381 = { secede_province = THIS }
+			2275 = { secede_province = THIS }
+			any_owned = {
+				limit = {
+					OR = {
+						is_core = ENG
+						is_core = ENL
+						is_core = GUY
+					}
+				}
+				remove_core = ENG
+				remove_core = ENL
+				remove_core = GUY
+			}
+			any_pop = { consciousness = -1 }
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+	country_event = { #Event for overlord, ENG accepts. From EVTOPT1999998083A
+		id = 1999998085
+		title = "EVTNAME1999998085"
+		desc = "EVTDESC1999998085"
+		picture = "administration"
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = "EVTOPT1999998085B"
+			relation = { who = FROM value = 50 }
+			prestige = 5
+			money = -250000
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+	country_event = { #ENG rejects proposition. From EVTOPT1999998083B
+		id = 1999998086
+		title = "EVTNAME1999998086"
+		desc = "EVTDESC1999998086"
+		picture = "administration"
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = "EVTOPT1999998086B"
+			relation = { who = FROM value = -100 }
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+
+	
+######################
+#~~~Counani events~~~#
+######################
+
+	country_event = {
+		id = 1999998087
+		title = "EVTNAME1999998087"
+		desc = "EVTDESC1999998087"
+		fire_only_once = yes
+		trigger = {
+			tag = BRZ
+			year = 1885
+			2415 = {
+				NOT = {
+					OR = {
+						owned_by = GUY
+						owned_by = SUR
+						owned_by = FGU
+						owned_by = UGU
+						owned_by = CUN
+						owned_by = FRA
+					}
+				}
+			}
+			CUN = {
+				exists = no
+			}
+			NOT = { has_global_flag = independent_counani }
+		}
+		
+		mean_time_to_happen = {
+			months = 18
+		}
+		
+		option = {
+			name = "EVTOPTA1999998087"
+			set_global_flag = independent_counani
+			any_owned = {
+				limit = { 
+					is_core = CUN
+					NOT = {	owned_by = FRA }
+				}
+				secede_province = CUN
+			}
+			CUN = {
+				ruling_party_ideology = liberal
+				political_reform = none_voting
+				political_reform = underground_parties
+			}
+			FRA = {	country_event = {id=1999998088 days = 1} }
+			BRZ = {	country_event = {id=1999998091 days = 1} }
+			ai_chance = {
+				factor = 100
+			}
+		}	
+	}
+	#CUN - Event informing FRA of CUN's secession
+	country_event = {
+		id = 1999998088
+		title = "EVTNAME1999998088"
+		desc = "EVTDESC1999998088"
+		is_triggered_only = yes
+		fire_only_once = yes
+		
+		option = {
+			name = "EVTOPTA1999998088"
+			relation = { who = CUN value = 200 }
+			military_access = CUN
+			create_alliance = CUN
+			diplomatic_influence = { who = CUN value = 200 }
+			set_global_flag = CUN_recognized_FRA
+			CUN = { country_event = {id=1999998089 days = 1} }
+			ai_chance = {
+				factor = 30
+			}
+		}	
+		option = {
+			name = "EVTOPTB1999998088"
+			relation = { who = CUN value = 200 }
+			military_access = CUN
+			create_alliance = CUN
+			diplomatic_influence = { who = CUN value = 200 }
+			change_tag_no_core_switch = CUN
+			ai_chance = {
+				factor = 0
+			}
+		}	
+		option = {
+			name = "EVTOPTC1999998088"
+			diplomatic_influence = { who = CUN value = -100 }
+			set_global_flag = CUN_unrecognized_FRA
+			CUN = {
+				add_country_modifier = { name = unrecognized_country duration = 3650 }
+				country_event = {id=1999998090 days = 1}
+			}
+			ai_chance = {
+				factor = 70
+			}
+		}	
+	}
+	#CUN - Event informing CUN of FRA's decision: Recognize as a free colony
+	country_event = {
+		id = 1999998089
+		title = "EVTNAME1999998089"
+		desc = "EVTDESC1999998089"
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = "EVTOPTA1999998089"
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+	#CUN - Event informing CUN of FRA's decision: Not recognize as a free colony
+	country_event = {
+		id = 1999998090
+		title = "EVTNAME1999998090"
+		desc = "EVTDESC1999998090"
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = "EVTOPTA1999998090"
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+	#CUN - Event informing BRZ of CUN's secession
+	country_event = {
+		id = 1999998091
+		title = "EVTNAME1999998091"
+		desc = "EVTDESC1999998091"
+		is_triggered_only = yes
+		fire_only_once = yes
+		
+		option = {
+			name = "EVTOPTA1999998091"
+			relation = { who = CUN value = 200 }
+			military_access = CUN
+			create_alliance = CUN
+			diplomatic_influence = { who = CUN value = 200 }
+			set_global_flag = CUN_recognized_BRZ
+			CUN = { country_event = {id=1999998092 days = 1} }
+			ai_chance = {
+				factor = 5
+			}
+		}	
+		option = {
+			name = "EVTOPTB1999998091"
+			relation = { who = CUN value = 200 }
+			military_access = CUN
+			create_alliance = CUN
+			diplomatic_influence = { who = CUN value = 200 }
+			change_tag_no_core_switch = CUN
+			ai_chance = {
+				factor = 0
+			}
+		}	
+		option = {
+			name = "EVTOPTC1999998091"
+			relation = { who = CUN value = -200 }
+			diplomatic_influence = { who = CUN value = -100 }
+			set_global_flag = CUN_unrecognized_BRZ
+			CUN = {
+				add_country_modifier = { name = unrecognized_country duration = 3650 }
+				country_event = {id=1999998093 days = 1}
+			}
+			ai_chance = {
+				factor = 95
+			}
+		}	
+	}
+	#CUN - Event informing CUN of BRZ's decision: Recognize as a free colony
+	country_event = {
+		id = 1999998092
+		title = "EVTNAME1999998092"
+		desc = "EVTDESC1999998092"
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = "EVTOPTA1999998092"
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+	#CUN - Event informing CUN of BRZ's decision: Not recognize as a free colony
+	country_event = {
+		id = 1999998093
+		title = "EVTNAME1999998093"
+		desc = "EVTDESC1999998093"
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = "EVTOPTA1999998093"
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+
+################################
+#~~~Border conflicts between~~~#
+#~~~~~~~~~~NET & FRA~~~~~~~~~~~#
+################################
+	
+	country_event = { #Event for whoever owns French or Dutch Guyana, settling the Maroni river border dispute. From decision lawa_tapahoni_question
+		id = 1999998094
+		title = "EVTNAME1999998094"
+		desc = "EVTDESC1999998094"
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = "EVTOPTA1999998094" #Accept proposition
+			set_global_flag = FRA_NET_maroni_accept
+			relation = { who = FROM value = 50 }
+			FROM = {
+				country_event = 1999998095
+			}
+			random_country = {
+				limit = {
+					OR = {
+						is_greater_power = yes
+						is_secondary_power = yes
+					}
+					NOT = {
+						OR = {
+							AND = {
+								OR = {
+									alliance_with = THIS
+									in_sphere = THIS
+									vassal_of = THIS
+								}
+								relation = { who = THIS value = -25 }
+							}
+							AND = {
+								OR = {
+									alliance_with = FROM
+									in_sphere = FROM
+									vassal_of = FROM
+								}
+								relation = { who = FROM value = -25 }
+							}
+						}
+						OR = {
+							tag = THIS
+							tag = FROM
+							tag = ENG
+							tag = ENL
+							tag = GUY
+							tag = SUR
+							tag = FGU
+							tag = UGU
+							OR = {
+								owns = 2240 #Paramaribo
+								owns = 2245 #Apetina
+								owns = 2241 #Cayenne
+								owns = 2246 #Maripasoula
+							}
+							OR = {
+								primary_culture = north_andean
+								primary_culture = llanero
+								primary_culture = brazilian
+							}
+						}
+					}
+				}
+				country_event = { id = 1999998096 days = 5 }
+			}
+			ai_chance = {
+				factor = 90
+			}
+		}
+		option = {
+			name = "EVTOPTB1999998094" #Reject proposition.
+			set_global_flag = FRA_NET_maroni_reject
+			add_casus_belli = {
+				target = FROM
+				type = place_in_the_sun
+				months = 120
+			}
+			relation = { who = FROM value = -50 }
+			FROM = {
+				country_event = 1999998097
+			}
+			ai_chance = {
+				factor = 10
+			}
+		}
+	}
+	country_event = { #Notification event for FROM, THIS accepted the proposition. From EVTOPTA1999998094
+		id = 1999998095
+		title = "EVTNAME1999998095"
+		desc = "EVTDESC1999998095"
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = "EVTOPTA1999998095"
+			relation = { who = FROM value = 50 }
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+	country_event = { #Random GP/SP is selected to host the arbitration. From EVTOPTA1999998094
+		id = 1999998096
+		title = "EVTNAME1999998096"
+		desc = "EVTDESC1999998096"
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = "EVTOPTA1999998096" #Lawa, continuation of Maroni, is the border (Tapahoni province given to Dutch Guyana, Marouini on dispute) [Historical outcome]
+			set_global_flag = FRA_NET_lawa
+			
+			2240 = { #Paramaribo
+				owner = {
+					country_event = 1999998098
+				}
+			}
+			2241 = { #Cayenne
+				owner = {
+					country_event = 1999998099
+				}
+			}
+			
+			ai_chance = {
+				factor = 70
+			}
+		}
+		option = {
+			name = "EVTOPTB1999998096" #Tapahoni, tributary of Maroni, is the border (Tapahoni and Marouini given to French Guyana)
+			set_global_flag = FRA_NET_tapahoni
+			
+			2240 = { #Paramaribo
+				owner = {
+					country_event = 1999998100
+				}
+			}
+			2241 = { #Cayenne
+				owner = {
+					country_event = 1999998101
+				}
+			}
+			
+			ai_chance = {
+				factor = 20
+				modifier = {
+					factor = 100
+					2241 = { #Cayenne
+						owner = {
+							ai = no
+						}
+					}
+				}
+				modifier = {
+					factor = 0
+					2240 = { #Paramaribo
+						owner = {
+							ai = no
+						}
+					}
+				}
+			}
+		}
+		option = {
+			name = "EVTOPTC1999998096" #Marouini is the border (Tapahoni and Marouini given to Dutch Guyana)
+			set_global_flag = FRA_NET_marouini
+			
+			2240 = { #Paramaribo
+				owner = {
+					country_event = 1999998102
+				}
+			}
+			2241 = { #Cayenne
+				owner = {
+					country_event = 1999998103
+				}
+			}
+			
+			ai_chance = {
+				factor = 10
+				modifier = {
+					factor = 7
+					2240 = { #Paramaribo
+						owner = {
+							ai = no
+						}
+					}
+				}
+			}
+		}
+	}
+	country_event = { #Notification event for FROM, THIS rejected the proposition. From EVTOPTB1999998094
+		id = 1999998097
+		title = "EVTNAME1999998097"
+		desc = "EVTDESC1999998097"
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = "EVTOPTA1999998097"
+			add_casus_belli = {
+				target = FROM
+				type = place_in_the_sun
+				months = 120
+			}
+			relation = { who = FROM value = -50 }
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+	country_event = { #Notification event for NET, Tapahoni province given to Dutch Guyana, Marouini on dispute. From EVTOPTA1999998096
+		id = 1999998098
+		title = "EVTNAME1999998098"
+		desc = "EVTDESC1999998098"
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = "EVTOPTA1999998098"
+			
+			3384 = { # Tapahoni
+				secede_province = THIS
+				remove_core = FRA
+				remove_core = BOR
+				remove_core = FGU
+			}
+			
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+	country_event = { #Notification event for FRA, Tapahoni province given to Dutch Guyana, Marouini on dispute. From EVTOPTA1999998096
+		id = 1999998099
+		title = "EVTNAME1999998099"
+		desc = "EVTDESC1999998099"
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = "EVTOPTA1999998099"
+			
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+	country_event = { #Notification event for NET, Tapahoni and Marouini given to French Guyana. From EVTOPTB1999998096
+		id = 1999998100
+		title = "EVTNAME1999998100"
+		desc = "EVTDESC1999998100"
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = "EVTOPTA1999998100"
+			
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+	country_event = { #Notification event for FRA, Tapahoni and Marouini given to French Guyana. From EVTOPTB1999998096
+		id = 1999998101
+		title = "EVTNAME1999998101"
+		desc = "EVTDESC1999998101"
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = "EVTOPTA1999998101"
+			
+			3384 = { # Tapahoni
+				secede_province = THIS
+				remove_core = NET
+				remove_core = SUR
+			}
+			3383 = { # Marouini
+				secede_province = THIS
+				remove_core = NET
+				remove_core = SUR
+			}
+			
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+	country_event = { #Notification event for NET, Tapahoni and Marouini given to Dutch Guyana. From EVTOPTC1999998096
+		id = 1999998102
+		title = "EVTNAME1999998102"
+		desc = "EVTDESC1999998102"
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = "EVTOPTA1999998102"
+			
+			3384 = { # Tapahoni
+				secede_province = THIS
+				remove_core = FRA
+				remove_core = BOR
+				remove_core = FGU
+			}
+			3383 = { # Marouini
+				secede_province = THIS
+				remove_core = FRA
+				remove_core = BOR
+				remove_core = FGU
+			}
+			
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+	country_event = { #Notification event for FRA, Tapahoni and Marouini given to Dutch Guyana. From EVTOPTC1999998096
+		id = 1999998103
+		title = "EVTNAME1999998103"
+		desc = "EVTDESC1999998103"
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = "EVTOPTA1999998103"
+			
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+	country_event = { #Event for whoever owns French or Dutch Guyana, settling the Marouini river border dispute. From decision marouini_question
+		id = 1999998104
+		title = "EVTNAME1999998104"
+		desc = "EVTDESC1999998104"
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = "EVTOPTA1999998104" #Accept proposition
+			set_global_flag = FRA_NET_marouini_accept
+			relation = { who = FROM value = 50 }
+			FROM = {
+				country_event = 1999998105
+			}
+			random_country = {
+				limit = {
+					OR = {
+						is_greater_power = yes
+						is_secondary_power = yes
+					}
+					NOT = {
+						OR = {
+							AND = {
+								OR = {
+									alliance_with = THIS
+									in_sphere = THIS
+									vassal_of = THIS
+								}
+								relation = { who = THIS value = -25 }
+							}
+							AND = {
+								OR = {
+									alliance_with = FROM
+									in_sphere = FROM
+									vassal_of = FROM
+								}
+								relation = { who = FROM value = -25 }
+							}
+						}
+						OR = {
+							tag = THIS
+							tag = FROM
+							tag = ENG
+							tag = ENL
+							tag = GUY
+							tag = SUR
+							tag = FGU
+							tag = UGU
+							OR = {
+								owns = 2240 #Paramaribo
+								owns = 2245 #Apetina
+								owns = 2241 #Cayenne
+								owns = 2246 #Maripasoula
+							}
+							OR = {
+								primary_culture = north_andean
+								primary_culture = llanero
+								primary_culture = brazilian
+							}
+						}
+					}
+				}
+				country_event = { id = 1999998106 days = 5 }
+			}
+			ai_chance = {
+				factor = 90
+			}
+		}
+		option = {
+			name = "EVTOPTB1999998104" #Reject proposition.
+			set_global_flag = FRA_NET_marouini_reject
+			add_casus_belli = {
+				target = FROM
+				type = place_in_the_sun
+				months = 120
+			}
+			relation = { who = FROM value = -50 }
+			FROM = {
+				country_event = 1999998107
+			}
+			ai_chance = {
+				factor = 10
+			}
+		}
+	}
+	country_event = { #Notification event for FROM, THIS accepted the proposition. From EVTOPTA1999998104
+		id = 1999998105
+		title = "EVTNAME1999998105"
+		desc = "EVTDESC1999998105"
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = "EVTOPTA1999998105"
+			relation = { who = FROM value = 50 }
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+	country_event = { #Random GP/SP is selected to host the arbitration. From EVTOPTA1999998104
+		id = 1999998106
+		title = "EVTNAME1999998106"
+		desc = "EVTDESC1999998106"
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = "EVTOPTA1999998106" #Litani, is the border (Marouini province given to French Guyana)
+			set_global_flag = FRA_NET_lawa
+			
+			2240 = { #Paramaribo
+				owner = {
+					country_event = 1999998108
+				}
+			}
+			2241 = { #Cayenne
+				owner = {
+					country_event = 1999998109
+				}
+			}
+			
+			ai_chance = {
+				factor = 70
+				modifier = {
+					factor = 100
+					2241 = { #Cayenne
+						owner = {
+							ai = no
+						}
+					}
+				}
+			}
+		}
+		option = {
+			name = "EVTOPTB1999998106" #Marouini, tributary of Maroni, is the border (Marouini province given to Dutch Guyana)
+			set_global_flag = FRA_NET_tapahoni
+			
+			2240 = { #Paramaribo
+				owner = {
+					country_event = 1999998110
+				}
+			}
+			2241 = { #Cayenne
+				owner = {
+					country_event = 1999998111
+				}
+			}
+			
+			ai_chance = {
+				factor = 20
+				modifier = {
+					factor = 100
+					2240 = { #Paramaribo
+						owner = {
+							ai = no
+						}
+					}
+				}
+			}
+		}
+	}
+	country_event = { #Notification event for FROM, THIS rejected the proposition. From EVTOPTB1999998104
+		id = 1999998107
+		title = "EVTNAME1999998107"
+		desc = "EVTDESC1999998107"
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = "EVTOPTA1999998107"
+			add_casus_belli = {
+				target = FROM
+				type = place_in_the_sun
+				months = 120
+			}
+			relation = { who = FROM value = -50 }
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+	country_event = { #Notification event for NET, Marouini given to French Guyana. From EVTOPTA1999998106
+		id = 1999998108
+		title = "EVTNAME1999998108"
+		desc = "EVTDESC1999998108"
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = "EVTOPTA1999998108"
+			
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+	country_event = { #Notification event for FRA, Marouini given to French Guyana. From EVTOPTA1999998106
+		id = 1999998109
+		title = "EVTNAME1999998109"
+		desc = "EVTDESC1999998109"
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = "EVTOPTA1999998109"
+			
+			3383 = { # Marouini
+				secede_province = THIS
+				remove_core = NET
+				remove_core = SUR
+			}
+			
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+	country_event = { #Notification event for NET, Marouini given to Dutch Guyana. From EVTOPTB1999998106
+		id = 1999998110
+		title = "EVTNAME1999998110"
+		desc = "EVTDESC1999998110"
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = "EVTOPTA1999998110"
+			
+			3383 = { # Marouini
+				secede_province = THIS
+				remove_core = FRA
+				remove_core = BOR
+				remove_core = FGU
+			}
+			
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+	country_event = { #Notification event for FRA, Marouini given to Dutch Guyana. From EVTOPTB1999998106
+		id = 1999998111
+		title = "EVTNAME1999998111"
+		desc = "EVTDESC1999998111"
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = "EVTOPTA1999998111"
+			
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+	
+###################
+#~~Random events~~#
+###################
+
+	country_event = { #Notification event for ENG, VNZ decided to expel indo_caribbean pops from their territories. From decisions VNZ_expel_indians_GUY & VNZ_expel_indians_TTB
+		id = 1999998112
+		title = "EVTNAME1999998112"
+		desc = "EVTDESC1999998112"
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = "EVTOPTA1999998112"
+			
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+	
+	country_event = { #Notification event for VNZ, Guyanese territories are awarded to VNZ. From decision remove_ENG_cores_GUY
+		id = 1999998113
+		title = "EVTNAME1999998113"
+		desc = "EVTDESC1999998113"
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = "EVTOPTA1999998113"
+			2243 = { secede_province = THIS } #Pomaron
+			3373 = { secede_province = THIS } #Rupununi
+			2242 = { secede_province = THIS } #Esequibo
+			3381 = { secede_province = THIS } #Barima
+			2275 = { secede_province = THIS } #Guasipati/El Callao
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+	
+	country_event = { #Notification event for NET, Tigri is awarded to NET. From decision remove_ENG_cores_GUY
+		id = 1999998114
+		title = "EVTNAME1999998114"
+		desc = "EVTDESC1999998114"
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = "EVTOPTA1999998114"
+			3382 = { secede_province = THIS } #Tigri
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
