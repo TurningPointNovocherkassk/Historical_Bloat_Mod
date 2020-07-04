@@ -3505,3 +3505,140 @@ country_event = {
 		AUS_662 = { remove_core = AUS remove_core = KUK remove_core = SGF } # East Galicia
 	}
 }
+#####################################################################################
+# PNC Formation
+#####################################################################################
+country_event = {
+	id = 666666036
+	title = "EVTNAME666666036"
+	desc = "EVTDESC666666036"
+	picture = "january_uprising"
+	
+	fire_only_once = yes
+
+	trigger = {
+		OR = {
+			tag = CPL
+			tag = KRA
+			tag = PZN
+		}
+		ai = no
+		NOT = { tag = PNC }
+		NOT = { has_global_flag = form_PNC }
+		OR = {
+			has_global_flag = krakow_war
+			has_global_flag = krakow_succeeded
+		}
+		OR = {
+			war_with = PRU
+			war_with = NGF
+			war_with = GER
+			war_with = GCF
+			war_with = AUS
+			war_with = KUK
+			war_with = SGF
+			war_with = RUS
+			AND = {
+				war = no
+				has_global_flag = january_uprising_succeeded
+			}
+			AND = {
+				war = no
+				has_global_flag = krakow_succeeded
+			}
+			AND = {
+				war = no
+				has_global_flag = greater_poland_succeeded
+			}
+		}
+	}
+	
+	mean_time_to_happen = { days = 15 } 
+	
+	option = {
+		name = "EVTOPT666666035A"
+		set_global_flag = form_PNC
+		random_owned = { limit = { owner = { ai = no tag = CPL } } owner = { inherit = KRA inherit = PZN } }
+		random_owned = { limit = { owner = { ai = no tag = KRA } } owner = { inherit = CPL inherit = PZN } }
+		random_owned = { limit = { owner = { ai = no tag = PZN } } owner = { inherit = KRA inherit = CPL } }
+		change_tag = PNC
+		CPL = { all_core = { add_core = PNC } }
+		KRA = { all_core = { add_core = PNC } }
+		PZN = { all_core = { add_core = PNC } }
+		all_core = { add_core = PNC }
+		capital = 706
+		government = provisional_government
+		political_reform = none_voting
+		political_reform = party_appointed
+		political_reform = state_controlled
+		political_reform = harassment
+		political_reform = party_appointed
+		ruling_party_ideology = liberal
+		political_reform = peonage
+		nationalvalue = nv_liberty
+		
+		add_country_modifier = { name = polish_uprising_mobilization duration = 2920 }
+		add_country_modifier = { name = unrecognized_country duration = 1095 }
+		
+		any_country = {
+			limit = {
+				OR = {
+					alliance_with = PRU
+					alliance_with = NGF
+					alliance_with = GER
+					alliance_with = GCF
+					alliance_with = AUS
+					alliance_with = KUK
+					alliance_with = SGF
+					alliance_with = RUS
+				}
+				OR ={
+					war_with = PZN
+					war_with = KRA
+					war_with = CPL
+					war_with = THIS
+				}
+			}
+			end_war = PZN
+			end_war = KRA
+			end_war = CPL
+			end_war = THIS
+		}
+		any_country = {
+			limit = {
+				OR = {
+					tag = PRU
+					tag = NGF
+					tag = GER
+					tag = GCF
+				}
+				exists = yes
+			}
+			end_war = PZN
+			end_war = THIS
+			country_event = 666666009
+		}
+		any_country = {
+			limit = {
+				OR = {
+					tag = AUS
+					tag = KUK
+					tag = SGF
+				}
+				exists = yes
+			}
+			end_war = KRA
+			end_war = THIS
+			country_event = 666666010
+		}
+		any_country = {
+			limit = {
+				tag = RUS
+				exists = yes
+			}
+			end_war = CPL
+			end_war = THIS
+			country_event = 666666011
+		}
+	}
+}
