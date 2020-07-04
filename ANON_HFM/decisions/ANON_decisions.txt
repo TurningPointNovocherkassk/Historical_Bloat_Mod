@@ -1,5 +1,357 @@
 political_decisions = {
 
+	rename_bessarabia = { 
+		picture = gtfo
+		potential = {       
+			OR = {
+				AND = {      
+					is_culture_group = germanic
+					OR = {
+						AND = { owns = 677 owns = 676 NOT = { has_global_flag = german_renamed_bessarabia } }
+						AND = { owns = 3622 NOT = { has_global_flag = german_renamed_khotyn } }
+						AND = { owns = 3347 NOT = { has_global_flag = german_renamed_cahul } }
+					}
+				}
+				AND = {
+					OR = {
+						primary_culture = turkish
+						is_culture_group = turanian
+					}
+					OR = {
+						AND = { owns = 677 owns = 676 NOT = { has_global_flag = turanian_renamed_bessarabia } }
+						AND = { owns = 3622 NOT = { has_global_flag = turanian_renamed_khotyn } }
+						AND = { owns = 3347 NOT = { has_global_flag = turanian_renamed_cahul } }
+					}
+				}
+				AND = {
+					is_culture_group = east_slavic
+					OR = {
+						AND = { owns = 677 owns = 676 NOT = { has_global_flag = russian_renamed_bessarabia } }
+						AND = { owns = 3622 NOT = { has_global_flag = russian_renamed_khotyn } }
+						AND = { owns = 3347 NOT = { has_global_flag = russian_renamed_cahul } }
+					}
+				}
+				AND = {
+					OR = {
+						is_culture_group = polish_culture_group
+						tag = PLC
+					}
+					OR = {
+						AND = { owns = 677 owns = 676 NOT = { has_global_flag = polish_renamed_bessarabia } }
+						AND = { owns = 3622 NOT = { has_global_flag = polish_renamed_khotyn } }
+						AND = { owns = 3347 NOT = { has_global_flag = polish_renamed_cahul } }
+					}
+				}
+				AND = {
+					is_culture_group = pan_romanian
+					OR = {
+						AND = { owns = 677 owns = 676 NOT = { has_global_flag = romanian_renamed_bessarabia } }
+						AND = { owns = 3622 NOT = { has_global_flag = romanian_renamed_khotyn } }
+						AND = { owns = 3347 NOT = { has_global_flag = romanian_renamed_cahul } }
+					}
+				}
+			}
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			
+			###German - bessarabia###
+			random_owned = {
+				limit = {
+					province_id = 677
+					owner = {
+						is_culture_group = germanic
+					}
+				}		
+				677 = {
+					change_province_name = "Belz"
+					state_scope = { change_region_name = "Beßarabien" }
+				}						
+				676 = { change_province_name = "Kischinau" }			
+				owner = { 
+					set_global_flag = german_renamed_bessarabia
+					clr_global_flag = turanian_renamed_bessarabia
+					clr_global_flag = russian_renamed_bessarabia
+					clr_global_flag = polish_renamed_bessarabia
+					clr_global_flag = romanian_renamed_bessarabia
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 3622
+					owner = {
+						is_culture_group = germanic
+					}
+				}			
+				3622 = { change_province_name = "Chotyn" }			
+				owner = { 
+					set_global_flag = german_renamed_khotyn
+					clr_global_flag = turanian_renamed_khotyn
+					clr_global_flag = russian_renamed_khotyn
+					clr_global_flag = polish_renamed_khotyn
+					clr_global_flag = romanian_renamed_khotyn
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 3347
+					owner = {
+						is_culture_group = germanic
+					}
+				}			
+				3347 = { change_province_name = "Kachul" }			
+				owner = { 
+					set_global_flag = german_renamed_cahul
+					clr_global_flag = turanian_renamed_cahul
+					clr_global_flag = russian_renamed_cahul
+					clr_global_flag = polish_renamed_cahul
+					clr_global_flag = romanian_renamed_cahul
+				}
+			}
+			
+			###turanian - bessarabia###
+			random_owned = {
+				limit = {
+					province_id = 677
+					owner = {
+						OR = { 
+							primary_culture = turkish
+							is_culture_group = turanian
+						}
+					}
+				}				
+				677 = {
+					change_province_name = "Bêltsi"
+					state_scope = { change_region_name = "Besarabiya" }
+				}				
+				676 = { change_province_name = "Kishinöv" }	
+				owner = { 
+					set_global_flag = turanian_renamed_bessarabia
+					clr_global_flag = german_renamed_bessarabia
+					clr_global_flag = russian_renamed_bessarabia
+					clr_global_flag = polish_renamed_bessarabia
+					clr_global_flag = romanian_renamed_bessarabia
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 3622
+					owner = {
+						OR = { 
+							primary_culture = turkish
+							is_culture_group = turanian
+						}
+					}
+				}			
+				3622 = { change_province_name = "Hotin" }			
+				owner = { 
+					set_global_flag = turanian_renamed_khotyn
+					clr_global_flag = german_renamed_khotyn
+					clr_global_flag = russian_renamed_khotyn
+					clr_global_flag = polish_renamed_khotyn
+					clr_global_flag = romanian_renamed_khotyn
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 3347
+					owner = {
+						OR = { 
+							primary_culture = turkish
+							is_culture_group = turanian
+						}
+					}
+				}			
+				3347 = { change_province_name = "Kahul" }			
+				owner = { 
+					set_global_flag = turanian_renamed_cahul
+					clr_global_flag = german_renamed_cahul
+					clr_global_flag = russian_renamed_cahul
+					clr_global_flag = polish_renamed_cahul
+					clr_global_flag = romanian_renamed_cahul
+				}
+			}
+			
+			###Russian - bessarabia###
+			random_owned = {
+				limit = {
+					province_id = 677
+					owner = {
+						is_culture_group = east_slavic
+					}
+				}			
+				677 = {
+					change_province_name = "Beltsy"
+					state_scope = { change_region_name = "Bessarabiya" }
+				}					
+				676 = { change_province_name = "Kishinev" }	
+				owner = { 
+					set_global_flag = russian_renamed_bessarabia
+					clr_global_flag = german_renamed_bessarabia
+					clr_global_flag = turanian_renamed_bessarabia
+					clr_global_flag = polish_renamed_bessarabia
+					clr_global_flag = romanian_renamed_bessarabia
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 3622
+					owner = {
+						is_culture_group = east_slavic
+					}
+				}			
+				3622 = { change_province_name = "Khotyn" }			
+				owner = { 
+					set_global_flag = russian_renamed_khotyn
+					clr_global_flag = german_renamed_khotyn
+					clr_global_flag = turanian_renamed_khotyn
+					clr_global_flag = polish_renamed_khotyn
+					clr_global_flag = romanian_renamed_khotyn
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 3347
+					owner = {
+						is_culture_group = east_slavic
+					}
+				}			
+				3347 = { change_province_name = "Kagul" }			
+				owner = { 
+					set_global_flag = russian_renamed_cahul
+					clr_global_flag = german_renamed_cahul
+					clr_global_flag = polish_renamed_cahul
+					clr_global_flag = turanian_renamed_cahul
+					clr_global_flag = romanian_renamed_cahul
+				}
+			}
+			
+			###Polish - bessarabia###
+			random_owned = {
+				limit = {
+					province_id = 677
+					owner = {
+						OR = {
+							is_culture_group = polish_culture_group
+							tag = PLC
+						}
+					}
+				}			
+				677 = {
+					change_province_name = "Bielce"
+					state_scope = { change_region_name = "Besarabia" }
+				}				
+				676 = { change_province_name = "Kiszyniów" }	
+				owner = { 
+					set_global_flag = polish_renamed_bessarabia
+					clr_global_flag = german_renamed_bessarabia
+					clr_global_flag = turanian_renamed_bessarabia
+					clr_global_flag = russian_renamed_bessarabia
+					clr_global_flag = romanian_renamed_bessarabia
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 3622
+					owner = {
+						OR = {
+							is_culture_group = polish_culture_group
+							tag = PLC
+						}
+					}
+				}			
+				3622 = { change_province_name = "Chocim" }			
+				owner = { 
+					set_global_flag = polish_renamed_khotyn
+					clr_global_flag = german_renamed_khotyn
+					clr_global_flag = turanian_renamed_khotyn
+					clr_global_flag = russian_renamed_khotyn
+					clr_global_flag = romanian_renamed_khotyn
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 3347
+					owner = {
+						OR = {
+							is_culture_group = polish_culture_group
+							tag = PLC
+						}
+					}
+				}			
+				3347 = { change_province_name = "Kagul" }			
+				owner = { 
+					set_global_flag = polish_renamed_cahul
+					clr_global_flag = german_renamed_cahul
+					clr_global_flag = russian_renamed_cahul
+					clr_global_flag = turanian_renamed_cahul
+					clr_global_flag = romanian_renamed_cahul
+				}
+			}
+			
+			###romanian - bessarabia###
+			random_owned = {
+				limit = {
+					province_id = 677
+					owner = {
+						is_culture_group = pan_romanian
+					}
+				}			
+				677 = {
+					change_province_name = "Bal?si"
+					state_scope = { change_region_name = "Basarabia" }
+				}				
+				676 = { change_province_name = "Chi?hinau" }	
+				owner = { 
+					set_global_flag = romanian_renamed_bessarabia
+					clr_global_flag = german_renamed_bessarabia
+					clr_global_flag = turanian_renamed_bessarabia
+					clr_global_flag = russian_renamed_bessarabia
+					clr_global_flag = polish_renamed_bessarabia
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 3622
+					owner = {
+						is_culture_group = pan_romanian
+					}
+				}			
+				3622 = { change_province_name = "Hotin" }			
+				owner = { 
+					set_global_flag = romanian_renamed_khotyn
+					clr_global_flag = german_renamed_khotyn
+					clr_global_flag = turanian_renamed_khotyn
+					clr_global_flag = russian_renamed_khotyn
+					clr_global_flag = polish_renamed_khotyn
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 3347
+					owner = {
+						is_culture_group = pan_romanian
+					}
+				}			
+				3347 = { change_province_name = "Cahul" }			
+				owner = { 
+					set_global_flag = romanian_renamed_cahul
+					clr_global_flag = german_renamed_cahul
+					clr_global_flag = polish_renamed_cahul
+					clr_global_flag = turanian_renamed_cahul
+					clr_global_flag = russian_renamed_cahul
+				}
+			}
+		}
+		
+		ai_will_do = { factor = 1 }
+		
+	}	
+	
 	claim_podolia = {
 		picture = gtfo
 		potential = {
@@ -7526,18 +7878,34 @@ political_decisions = {
 			OR = {
 				AND = {
 					is_culture_group = east_slavic
-					AND = { owns = 678 NOT = { has_global_flag = slav_renamed_budjak } }
+					OR = {
+						AND = { owns = 678 NOT = { has_global_flag = slav_renamed_budjak } }
+						AND = { owns = 3417 NOT = { has_global_flag = slav_renamed_reni } }
+					}
 				}
 				AND = {
 					is_culture_group = pan_romanian
-					AND = { owns = 678 NOT = { has_global_flag = romanian_renamed_budjak } }
+					OR = {
+						AND = { owns = 678 NOT = { has_global_flag = romanian_renamed_budjak } }
+						AND = { owns = 3417 NOT = { has_global_flag = romanian_renamed_reni } }
+					}
 				}
 				AND = {
 					OR = {
 						is_culture_group = turko_semitic
 						is_culture_group = turanian
 					}
-					AND = { owns = 678 NOT = { has_global_flag = roach_renamed_budjak } }
+					OR = {
+						AND = { owns = 678 NOT = { has_global_flag = roach_renamed_budjak } }
+						AND = { owns = 3417 NOT = { has_global_flag = roach_renamed_reni } }
+					}
+				}
+				AND = {
+					primary_culture = hungarian
+					OR = {
+						AND = { owns = 678 NOT = { has_global_flag = hungarian_renamed_budjak } }
+						AND = { owns = 3417 NOT = { has_global_flag = hungarian_renamed_reni } }
+					}
 				}
 			}
 		}
@@ -7563,11 +7931,26 @@ political_decisions = {
 					}
 				}
 				3280 = { change_province_name = "Bilhorod-Dnistrovskyi" }
-				3417 = { change_province_name = "Reni" }		
 				owner = { 
 					set_global_flag = slav_renamed_budjak
 					clr_global_flag = romanian_renamed_budjak
 					clr_global_flag = roach_renamed_budjak
+					clr_global_flag = hungarian_renamed_budjak
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 3417
+					owner = {
+						is_culture_group = east_slavic
+					}
+				}
+				3417 = { change_province_name = "Reni" }	
+				owner = { 
+					set_global_flag = slav_renamed_reni
+					clr_global_flag = roach_renamed_reni
+					clr_global_flag = romanian_renamed_reni
+					clr_global_flag = hungarian_renamed_reni
 				}
 			}
 			
@@ -7586,11 +7969,26 @@ political_decisions = {
 					}
 				}
 				3280 = { change_province_name = "Cetatea Alba" }
-				3417 = { change_province_name = "Reni" }	
 				owner = { 
 					set_global_flag = romanian_renamed_budjak
 					clr_global_flag = slav_renamed_budjak
 					clr_global_flag = roach_renamed_budjak
+					clr_global_flag = hungarian_renamed_budjak
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 3417
+					owner = {
+						is_culture_group = pan_romanian
+					}
+				}
+				3417 = { change_province_name = "Reni" }	
+				owner = { 
+					set_global_flag = romanian_renamed_reni
+					clr_global_flag = roach_renamed_reni
+					clr_global_flag = slav_renamed_reni
+					clr_global_flag = hungarian_renamed_reni
 				}
 			}
 			
@@ -7612,11 +8010,67 @@ political_decisions = {
 					}
 				}
 				3280 = { change_province_name = "Akkerman" }
-				3417 = { change_province_name = "Reni" }	
 				owner = { 
 					set_global_flag = roach_renamed_budjak
 					clr_global_flag = romanian_renamed_budjak
 					clr_global_flag = slav_renamed_budjak
+					clr_global_flag = hungarian_renamed_budjak
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 3417
+					owner = {
+						OR = {
+							is_culture_group = turko_semitic
+							is_culture_group = turanian
+						}
+					}
+				}
+				3417 = { change_province_name = "Reni" }	
+				owner = { 
+					set_global_flag = roach_renamed_reni
+					clr_global_flag = romanian_renamed_reni
+					clr_global_flag = slav_renamed_reni
+					clr_global_flag = hungarian_renamed_reni
+				}
+			}
+			
+			###hungarian - budjak###
+			random_owned = {
+				limit = {
+					province_id = 678
+					owner = {
+						primary_culture = hungarian
+					}
+				}
+				678 = {
+					change_province_name = "Izmail"
+					state_scope = {
+						change_region_name = "Bucak"
+					}
+				}
+				3280 = { change_province_name = "Akkerman" }
+				owner = { 
+					set_global_flag = hungarian_renamed_budjak
+					clr_global_flag = romanian_renamed_budjak
+					clr_global_flag = slav_renamed_budjak
+					clr_global_flag = roach_renamed_budjak
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 3417
+					owner = {
+						primary_culture = hungarian
+					}
+				}
+				3417 = { change_province_name = "Reni" }	
+				owner = { 
+					set_global_flag = hungarian_renamed_reni
+					clr_global_flag = romanian_renamed_reni
+					clr_global_flag = slav_renamed_reni
+					clr_global_flag = roach_renamed_reni
 				}
 			}
 		}
