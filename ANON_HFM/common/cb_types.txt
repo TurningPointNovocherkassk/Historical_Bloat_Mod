@@ -406,7 +406,25 @@ acquire_core_state = {
 		is_vassal = no
 		any_owned_province = { is_core = THIS }
 		NOT = { has_country_modifier = neutrality }
-		THIS = { NOT = { has_country_modifier = neutrality } }
+		THIS = {
+			OR = {
+				NOT = {	has_country_modifier = neutrality }
+				NOT = {
+					OR = {
+						tag = PRU
+						tag = NGF
+						tag = GER
+						tag = GCF
+						tag = AUS
+						tag = KUK
+						tag = SGF
+						tag = RUS
+					}
+					has_country_modifier = no_more_war
+					has_global_flag = paris_congress_to_be_held
+				}
+			}
+		}
 		OR = {
 			war_with = THIS
 			THIS = { NOT = { has_country_modifier = punitive_effects } }
@@ -484,11 +502,27 @@ acquire_all_cores = {
 		any_owned_province = { NOT = { is_core = THIS } }
 		NOT = { has_country_modifier = neutrality }
 		THIS = {
-			NOT = {
-				has_country_modifier = neutrality
-				AND = {
-					war_policy = pacifism
-					war = no
+			OR = {
+				NOT = {
+					has_country_modifier = neutrality
+					AND = {
+						war_policy = pacifism
+						war = no
+					}
+				}
+				NOT = {
+					OR = {
+						tag = PRU
+						tag = NGF
+						tag = GER
+						tag = GCF
+						tag = AUS
+						tag = KUK
+						tag = SGF
+						tag = RUS
+					}
+					has_country_modifier = no_more_war
+					has_global_flag = paris_congress_to_be_held
 				}
 			}
 		}
@@ -597,7 +631,15 @@ restore_austrian_empire = {
 		}
 		NOT = { has_country_modifier = neutrality }
 		NOT = { in_sphere = THIS }
-		THIS = { NOT = { has_country_modifier = neutrality } }
+		THIS = {
+			OR = {
+				NOT = {	has_country_modifier = neutrality }
+				NOT = {
+					has_country_modifier = no_more_war
+					has_global_flag = paris_congress_to_be_held
+				}
+			}
+		}
 		OR = {
 			war_with = THIS
 			THIS = { NOT = { has_country_modifier = punitive_effects } }
@@ -619,6 +661,15 @@ restore_austrian_empire = {
 				region = AUS_654
 				region = AUS_652
 				region = AUS_657
+				#ANON
+				region = AUS_636
+				region = AUS_736
+				region = AUS_770
+				region = AUS_778
+				region = AUS_640
+				region = AUS_631
+				region = AUS_950
+				region = AUS_663
 			}
 		}
 	}
