@@ -7,6 +7,7 @@ political_decisions = {
 			NOT = { exists = POL }
 			NOT = { has_country_flag = post_colonial_country }
 			NOT = { has_global_flag = paris_congress_to_be_held }
+			NOT = { has_country_flag = GLM_convention }
 			NOT = { tag = PLC }
 		}
 

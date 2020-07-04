@@ -1227,7 +1227,7 @@ country_event = {
 	}
 
 	mean_time_to_happen = {
-		months = 1
+		days = 5
 		modifier = {
 			factor = 0.5
 			OR = {
@@ -1375,7 +1375,7 @@ country_event = {
 	}
 
 	mean_time_to_happen = {
-		months = 1
+		days = 5
 	}
 
 	option = {
@@ -1907,7 +1907,7 @@ country_event = {
 	}
 	
 	mean_time_to_happen = {
-		months = 1
+		days = 5
 		modifier = {
 			factor = 0.5
 			PNC = {
@@ -1989,7 +1989,7 @@ country_event = {
 	}
 	
 	mean_time_to_happen = {
-		months = 1
+		days = 5
 		modifier = {
 			factor = 0.5
 			PNC = {
@@ -2772,8 +2772,10 @@ country_event = {
 			tag = KUK
 			tag = SGF
 		}
-		owns = 714
-		owns = 702
+		OR = {
+			owns = 714
+			owns = 702
+		}
 		has_country_flag = attending_paris_congress
 		NOT = {
 			has_country_flag = GLM_convention
@@ -2831,9 +2833,9 @@ country_event = {
 	
 	option = {
 		name = "EVT666666027OPTA"
-		set_country_flag = receiving_GLM
 		relation = { who = PNC value = 50 }
 		PNC = {
+			set_country_flag = receiving_GLM
 			change_variable = {
 				which = paris_congress_support_poland
 				value = -1
@@ -2895,8 +2897,10 @@ country_event = {
 		PNC = { has_country_flag = a_habsburg_on_the_throne }
 		has_global_flag = paris_congress_held
 		war = no
-		owns = 714
-		owns = 702
+		OR = {
+			owns = 714
+			owns = 702
+		}
 	}
 	
 	mean_time_to_happen = {
@@ -2906,10 +2910,8 @@ country_event = {
 	option = {
 		name = "EVT666666029OPTA"
 		#PNC = { clr_country_flag = a_habsburg_on_the_throne }
-		GLM = { all_core = { remove_core = GLM remove_core = THIS add_core = PNC } } # Galicia-Lodomeria
 		random_country = {
 			limit = { has_country_flag = receiving_GLM }
-			clr_country_flag = receiving_GLM
 			country_event = 666666030
 		}
 		ai_chance = {
@@ -2924,7 +2926,6 @@ country_event = {
 		prestige = -10
 		random_country = {
 			limit = { has_country_flag = receiving_GLM }
-			clr_country_flag = receiving_GLM
 			country_event = 666666031
 		}
 		ai_chance = {
@@ -2953,10 +2954,13 @@ country_event = {
 	
 	option = {
 		name = "EVT666666030OPTA"
+		clr_country_flag = receiving_GLM
+		clr_country_flag = GLM_convention
 		government = absolute_monarchy
 		ruling_party_ideology = conservative
 		relation = { who = FROM value = 200 }
 		diplomatic_influence = { who = FROM value = 400 }
+		GLM = { all_core = { remove_core = GLM remove_core = FROM add_core = PNC } } # Galicia-Lodomeria
 		any_pop = {
 			scaled_militancy = {
 				ideology = liberal
@@ -3012,6 +3016,8 @@ country_event = {
 	
 	option = {
 		name = "EVT666666030OPTB"
+		clr_country_flag = receiving_GLM
+		clr_country_flag = GLM_convention
 		AUS_702 = { add_core = GLM add_core = FROM }
 		AUS_662 = { add_core = GLM add_core = FROM }
 		relation = { who = FROM value = -400 }
@@ -3132,7 +3138,7 @@ country_event = {
 	}
 	
 	mean_time_to_happen = {
-		months = 1
+		days = 5
 		modifier = {
 			factor = 0.5
 			PNC = {
