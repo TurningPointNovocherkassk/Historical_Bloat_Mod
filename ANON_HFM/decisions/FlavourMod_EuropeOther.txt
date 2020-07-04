@@ -1149,7 +1149,8 @@ political_decisions = {
 			clr_global_flag = east_galicia_rename_rus
 			702 = { 
 				change_province_name = "Lwów" 
-				state_scope = { change_region_name = "Galicja Wschodnia" }
+				#state_scope = { change_region_name = "Galicja Wschodnia" }
+				state_scope = { change_region_name = "Galicja-Wlodzimierz" }
 			}
 			951 = { change_province_name = "Stryj" }
 			952 = { change_province_name = "Tarnopol" }
@@ -1288,7 +1289,7 @@ political_decisions = {
 				}
 				714 = { 
 					change_province_name = "Tarnów" 
-					state_scope = { change_region_name = "Galicja-Lodomeria" }
+					state_scope = { change_region_name = "Galicja Krakovijska" }
 				}
 				704 = { change_province_name = "Nowy Sacz"  }
 				705 = { change_province_name = "Przemysl"  }
@@ -1529,7 +1530,7 @@ political_decisions = {
 			prestige = 2
 			711 = {
 				change_province_name = "Siedlce"
-				state_scope = { change_region_name = "West Galicja" }
+				state_scope = { change_region_name = "Galicja Zachodnia" }
 			}
 			715 = { change_province_name = "Lublin" }
 			716 = { change_province_name = "Kielce" }

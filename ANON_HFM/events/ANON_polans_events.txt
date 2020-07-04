@@ -1304,8 +1304,7 @@ country_event = {
 				war_with = PNC
 			}
 			end_war = PNC
-			relation = { who = PNC value = 400 }
-			diplomatic_influence = { who = PNC value = 300 }
+			#relation = { who = PNC value = 400 }
 		}
 		any_country = {
 			limit = {
@@ -1322,7 +1321,8 @@ country_event = {
 				war_with = PNC
 			}
 			country_event = 666666015
-			relation = { who = PNC value = 400 }
+			#relation = { who = PNC value = 400 }
+			#diplomatic_influence = { who = PNC value = 300 }
 			add_country_modifier = { name = no_more_war duration = 1095 }
 			set_country_flag = for_congress_paris
 			end_war = PNC
@@ -2901,6 +2901,11 @@ country_event = {
 			owns = 714
 			owns = 702
 		}
+		OR = {
+			tag = AUS
+			tag = KUK
+			tag = SGF
+		}
 	}
 	
 	mean_time_to_happen = {
@@ -2954,10 +2959,11 @@ country_event = {
 	
 	option = {
 		name = "EVT666666030OPTA"
+		set_country_flag = receiving_GLM_cleanup
 		clr_country_flag = receiving_GLM
 		clr_country_flag = GLM_convention
 		government = absolute_monarchy
-		ruling_party_ideology = conservative
+		ruling_party_ideology = reactionary
 		relation = { who = FROM value = 200 }
 		diplomatic_influence = { who = FROM value = 400 }
 		GLM = { all_core = { remove_core = GLM remove_core = FROM add_core = PNC } } # Galicia-Lodomeria
@@ -3138,7 +3144,7 @@ country_event = {
 	}
 	
 	mean_time_to_happen = {
-		months = 3
+		months = 5
 		modifier = {
 			factor = 0.5
 			PNC = {
@@ -3476,4 +3482,26 @@ country_event = {
 		clr_country_flag = hosting_paris_congress
 	}
 
+}
+country_event = {
+	id = 666666035
+	title = "EVTNAME666666035" #cleanup GLM
+	desc = "EVTDESC666666035"
+	picture = "GLM_convention"
+	
+	fire_only_once = yes
+
+	trigger = {
+		has_country_flag = receiving_GLM_cleanup
+	}
+	
+	mean_time_to_happen = { months = 1 } 
+	
+	option = {
+		name = "EVTOPT666666035A"
+		clr_country_flag = receiving_GLM_cleanup
+		GLM = { all_core = { remove_core = GLM remove_core = FROM add_core = PNC } }
+		AUS_702 = { remove_core = AUS remove_core = KUK remove_core = SGF } # Galicia-Lodomeria
+		AUS_662 = { remove_core = AUS remove_core = KUK remove_core = SGF } # East Galicia
+	}
 }
