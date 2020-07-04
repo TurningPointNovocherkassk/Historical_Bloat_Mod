@@ -636,23 +636,46 @@ political_decisions = {
 			set_country_flag = claimed_greater_ukraine
 			prestige = 10
 			add_accepted_culture = cossack
+			# DON = { all_core = { add_core = UKR } }
+			# D0N = { all_core = { add_core = UKR } }
+			# ZAZ = { all_core = { add_core = UKR } }
+			# RUT = { all_core = { add_core = UKR } }
+			# 676 = { add_core = UKR }
+			# 677 = { add_core = UKR }
+			# 663 = { add_core = UKR }
+			# 715 = { add_core = UKR }
+			# 705 = { add_core = UKR }
+			# 3322 = { add_core = UKR }
+			# 977 = { add_core = UKR }
+			# 1018 = { add_core = UKR }
+			# 1019 = { add_core = UKR }
+			# 3622 = { add_core = UKR }
+			# 3280 = { add_core = UKR }
+			# 679 = { add_core = UKR }
+			# 3417 = { add_core = UKR }
+
 			DON = { all_core = { add_core = UKR } }
 			D0N = { all_core = { add_core = UKR } }
 			ZAZ = { all_core = { add_core = UKR } }
 			RUT = { all_core = { add_core = UKR } }
-			676 = { add_core = UKR }
-			677 = { add_core = UKR }
-			663 = { add_core = UKR }
-			715 = { add_core = UKR }
-			705 = { add_core = UKR }
-			3322 = { add_core = UKR }
-			977 = { add_core = UKR }
-			1018 = { add_core = UKR }
-			1019 = { add_core = UKR }
-			3622 = { add_core = UKR }
+			RUS_977 = { add_core = UKR }
+			RUS_678 = { add_core = UKR }
+			MOL_676 = { add_core = UKR }
+			1016 = { add_core = UKR }
+			3650 = { add_core = UKR }
+			949 = { add_core = UKR }
+			942 = { add_core = UKR }
+			940 = { add_core = UKR }
+			937 = { add_core = UKR }
+			3649 = { add_core = UKR }
 			3280 = { add_core = UKR }
-			679 = { add_core = UKR }
+			678 = { add_core = UKR }
 			3417 = { add_core = UKR }
+			1048 = { add_core = UKR }
+			1049 = { add_core = UKR }
+			1015 = { add_core = UKR }
+			3657 = { add_core = UKR }
+			662 = { add_core = UKR }
 			any_country = {
 				limit = {
 					NOT = { tag = THIS }

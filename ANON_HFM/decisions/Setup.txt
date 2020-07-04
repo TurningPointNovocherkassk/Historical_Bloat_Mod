@@ -1447,6 +1447,28 @@ political_decisions = {
 				literacy = -0.02
 			}
 
+			any_owned = {
+				limit = {
+					OR = {
+						province_id = 1016
+						province_id = 3650
+						province_id = 949
+						province_id = 942
+						province_id = 940
+						province_id = 937
+						province_id = 3649
+						province_id = 3280
+						province_id = 678
+						province_id = 3417
+						province_id = 1019
+						province_id = 977
+						province_id = 1017
+						province_id = 3657
+					}
+				}
+				remove_core = UKR
+			}
+
 			serfs = {
 				militancy = -9
 				consciousness = -9
