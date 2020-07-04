@@ -377,33 +377,33 @@
 # }
 
 #Pastry war - Notification event for the frogs
-country_event = {
-	id = 1220009
-	title = "EVTNAME1220009"
-	desc = "EVTDESC1220009"
-	fire_only_once = yes	
-	picture = "treaty"
-	is_triggered_only = yes
-	
-	immediate = {
-		2162 = {
-			secede_province = THIS
-			sub_unit = { type = frigate value = current }
-			sub_unit = { type = frigate value = current }
-			sub_unit = { type = frigate value = current }
-			sub_unit = { type = frigate value = current }
-			sub_unit = { type = frigate value = current }
-			sub_unit = { type = frigate value = current }
-			sub_unit = { type = manowar value = current }
-			sub_unit = { type = manowar value = current }
-			sub_unit = { type = manowar value = current }
-		}
-	}
-	
-	option = {
-		name = "EVT1220009OPTA"
-	}
-}
+#country_event = {
+#	id = 1220009
+#	title = "EVTNAME1220009"
+#	desc = "EVTDESC1220009"
+#	fire_only_once = yes	
+#	picture = "treaty"
+#	is_triggered_only = yes
+#	
+#	immediate = {
+#		2162 = {
+#			secede_province = THIS
+#			sub_unit = { type = frigate value = current }
+#			sub_unit = { type = frigate value = current }
+#			sub_unit = { type = frigate value = current }
+#			sub_unit = { type = frigate value = current }
+#			sub_unit = { type = frigate value = current }
+#			sub_unit = { type = frigate value = current }
+#			sub_unit = { type = manowar value = current }
+#			sub_unit = { type = manowar value = current }
+#			sub_unit = { type = manowar value = current }
+#		}
+#	}
+#	
+#	option = {
+#		name = "EVT1220009OPTA"
+#	}
+#}
 #####################################################
 #Reinstitution of the constitution of 1824
 country_event = {

@@ -929,60 +929,60 @@ country_event = {
 	}
 }
 
-country_event = {
-
-	id = 44830
-	title = "EVTNAME44830" #Execution of Emperor Maximilian
-	desc = "EVTDESC44830"
-	news = yes
-	news_desc_long = "EVTDESC44830"
-	news_desc_medium = "EVTDESC44830_NEWS_MEDIUM"
-	news_desc_short = "EVTDESC44830_NEWS_SHORT"
-	picture = "execution_of_emperor_maximillian"
-
-	trigger = {
-		tag = MEX
-		government = hms_government
-		has_country_flag = we_have_tried_this_once
-		2172 = { controlled_by_rebels = yes }
-		NOT = { year = 1880 }
-	}
-
-	mean_time_to_happen = {
-		days = 10
-	}
-
-	option = {
-		name = "EVT44830OPTA"
-		government = democracy
-		ruling_party_ideology = liberal
-		clr_country_flag = election_started
-		clr_country_flag = conservative_party_in_power
-		clr_country_flag = liberal_party_in_power
-		clr_country_flag = reactionary_party_in_power
-		clr_country_flag = socialist_party_in_power
-		clr_country_flag = communist_party_in_power
-		clr_country_flag = fascist_party_in_power
-		clr_country_flag = anarcho_liberal_party_in_power
-		
-		add_country_modifier = {
-			name = national_confusion
-			duration = 365
-		}
-		any_pop = { militancy = -6 }
-		2172 = { change_controller = MEX }
-		FRA = {
-			relation = {
-				who = THIS
-				value = -50
-			}
-			diplomatic_influence = {
-				who = THIS
-				value = -100
-			}
-		}
-	}
-}
+#country_event = {
+#
+#	id = 44830
+#	title = "EVTNAME44830" #Execution of Emperor Maximilian
+#	desc = "EVTDESC44830"
+#	news = yes
+#	news_desc_long = "EVTDESC44830"
+#	news_desc_medium = "EVTDESC44830_NEWS_MEDIUM"
+#	news_desc_short = "EVTDESC44830_NEWS_SHORT"
+#	picture = "execution_of_emperor_maximillian"
+#
+#	trigger = {
+#		tag = MEX
+#		government = hms_government
+#		has_country_flag = we_have_tried_this_once
+#		2172 = { controlled_by_rebels = yes }
+#		NOT = { year = 1880 }
+#	}
+#
+#	mean_time_to_happen = {
+#		days = 10
+#	}
+#
+#	option = {
+#		name = "EVT44830OPTA"
+#		government = democracy
+#		ruling_party_ideology = liberal
+#		clr_country_flag = election_started
+#		clr_country_flag = conservative_party_in_power
+#		clr_country_flag = liberal_party_in_power
+#		clr_country_flag = reactionary_party_in_power
+#		clr_country_flag = socialist_party_in_power
+#		clr_country_flag = communist_party_in_power
+#		clr_country_flag = fascist_party_in_power
+#		clr_country_flag = anarcho_liberal_party_in_power
+#		
+#		add_country_modifier = {
+#			name = national_confusion
+#			duration = 365
+#		}
+#		any_pop = { militancy = -6 }
+#		2172 = { change_controller = MEX }
+#		FRA = {
+#			relation = {
+#				who = THIS
+#				value = -50
+#			}
+#			diplomatic_influence = {
+#				who = THIS
+#				value = -100
+#			}
+#		}
+#	}
+#}
 
 country_event = {
 
@@ -1583,17 +1583,17 @@ country_event = {
 		war = {
 			target = FROM
 			attacker_goal = { casus_belli = war_reparations }
-			defender_goal = {
-				casus_belli = acquire_all_cores
-			}
+			#defender_goal = {
+			#	casus_belli = acquire_all_cores
+			#}
 			defender_goal = {
 				casus_belli = status_quo
 			}
 		}
-		FROM = { country_event = 1220009 }
-		ai_chance = {
-			factor = 95
-		}
+		#FROM = { country_event = 1220009 }
+		#ai_chance = {
+		#	factor = 95
+		#}
 	}
 	
 	option = {
@@ -1605,6 +1605,103 @@ country_event = {
 				factor = 0
 				is_greater_power = yes
 			}
+		}
+	}
+}
+
+#2nd French Intervention of Mexico
+country_event = {
+	id = 1100060
+	title = "EVTNAME1100060"
+	desc = "EVTDESC1100060"
+	picture = "MEX_revolution"
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		year = 1864
+		tag = MEX
+		has_country_flag = pastry_war
+		has_global_flag = acw_war_started
+	}
+	
+	immediate = {
+		set_global_flag = second_french_intervetion
+		MEX = { capital = 2147 }
+	}
+	
+	option = {
+		name = "EVTOPTA1100060"
+		any_pop = {
+			consciousness = -4
+			militancy = -2
+		}
+		2172 = { add_core = MXM secede_province = MXM }
+		2165 = { add_core = MXM secede_province = MXM }
+		3449 = { add_core = MXM secede_province = MXM }
+		2164 = { add_core = MXM secede_province = MXM }
+		3441 = { add_core = MXM secede_province = MXM }
+		2162 = { add_core = MXM secede_province = MXM }
+		2163 = { add_core = MXM secede_province = MXM }
+		2177 = { add_core = MXM secede_province = MXM }
+		2178 = { add_core = MXM secede_province = MXM }
+		2176 = { add_core = MXM secede_province = MXM }
+		2175 = { add_core = MXM secede_province = MXM }
+		2173 = { add_core = MXM secede_province = MXM }
+		2174 = { add_core = MXM secede_province = MXM }
+		2180 = { add_core = MXM secede_province = MXM }
+		2179 = { add_core = MXM secede_province = MXM }
+		2171 = { add_core = MXM secede_province = MXM }
+		2170 = { add_core = MXM secede_province = MXM }
+		2167 = { add_core = MXM secede_province = MXM }
+		2166 = { add_core = MXM secede_province = MXM }
+		2161 = { add_core = MXM secede_province = MXM }
+		2168 = { add_core = MXM secede_province = MXM }
+		2169 = { add_core = MXM secede_province = MXM }
+		3425 = { add_core = MXM secede_province = MXM }
+		war = {
+			target = MXM
+			attacker_goal = { casus_belli = civil_war }
+			defender_goal = { casus_belli = civil_war }
+		}
+	}
+	
+	option = {
+		name = "EVTOPTB1100060"
+		any_pop = {
+			conciousness = -2
+			militancy = -1
+		}
+		2172 = { add_core = MXM secede_province = MXM }
+		2165 = { add_core = MXM secede_province = MXM }
+		3449 = { add_core = MXM secede_province = MXM }
+		2164 = { add_core = MXM secede_province = MXM }
+		3441 = { add_core = MXM secede_province = MXM }
+		2162 = { add_core = MXM secede_province = MXM }
+		2163 = { add_core = MXM secede_province = MXM }
+		2177 = { add_core = MXM secede_province = MXM }
+		2178 = { add_core = MXM secede_province = MXM }
+		2176 = { add_core = MXM secede_province = MXM }
+		2175 = { add_core = MXM secede_province = MXM }
+		2173 = { add_core = MXM secede_province = MXM }
+		2174 = { add_core = MXM secede_province = MXM }
+		2180 = { add_core = MXM secede_province = MXM }
+		2179 = { add_core = MXM secede_province = MXM }
+		2171 = { add_core = MXM secede_province = MXM }
+		2170 = { add_core = MXM secede_province = MXM }
+		2167 = { add_core = MXM secede_province = MXM }
+		2166 = { add_core = MXM secede_province = MXM }
+		2161 = { add_core = MXM secede_province = MXM }
+		2168 = { add_core = MXM secede_province = MXM }
+		2169 = { add_core = MXM secede_province = MXM }
+		3425 = { add_core = MXM secede_province = MXM }
+		
+		change_tag_no_core_switch = MXM
+		
+		war = {
+			target = MXM
+			attacker_goal = { casus_belli = civil_war }
+			defender_goal = { casus_belli = civil_war }
 		}
 	}
 }
