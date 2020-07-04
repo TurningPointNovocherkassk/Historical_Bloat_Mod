@@ -1099,7 +1099,7 @@ country_event = {
 		has_country_flag = through_greater_poland_uprising
 	}
 	
-	mean_time_to_happen = { days = 5 }
+	mean_time_to_happen = { months = 1 }
 	
 	option = {
 		name = "EVTOPT666666012A"  #punish them
@@ -1226,7 +1226,7 @@ country_event = {
 	}
 
 	mean_time_to_happen = {
-		days = 5
+		months = 3
 		modifier = {
 			factor = 0.5
 			OR = {
@@ -1305,6 +1305,7 @@ country_event = {
 			}
 			end_war = PNC
 			relation = { who = PNC value = 400 }
+			diplomatic_influence = { who = PNC value = 300 }
 		}
 		any_country = {
 			limit = {
@@ -1374,7 +1375,7 @@ country_event = {
 	}
 
 	mean_time_to_happen = {
-		days = 5
+		months = 2
 	}
 
 	option = {
@@ -1906,7 +1907,7 @@ country_event = {
 	}
 	
 	mean_time_to_happen = {
-		days = 5
+		months = 6
 		modifier = {
 			factor = 0.5
 			PNC = {
@@ -1988,7 +1989,7 @@ country_event = {
 	}
 	
 	mean_time_to_happen = {
-		days = 5
+		months = 6
 		modifier = {
 			factor = 0.5
 			PNC = {
@@ -3137,7 +3138,7 @@ country_event = {
 	}
 	
 	mean_time_to_happen = {
-		days = 5
+		months = 3
 		modifier = {
 			factor = 0.5
 			PNC = {

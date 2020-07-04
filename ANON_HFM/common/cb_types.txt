@@ -407,9 +407,9 @@ acquire_core_state = {
 		any_owned_province = { is_core = THIS }
 		NOT = { has_country_modifier = neutrality }
 		THIS = {
-			OR = {
-				NOT = {	has_country_modifier = neutrality }
-				NOT = {
+			NOT = {
+				has_country_modifier = neutrality
+				AND = {
 					OR = {
 						tag = PRU
 						tag = NGF
@@ -502,15 +502,13 @@ acquire_all_cores = {
 		any_owned_province = { NOT = { is_core = THIS } }
 		NOT = { has_country_modifier = neutrality }
 		THIS = {
-			OR = {
-				NOT = {
-					has_country_modifier = neutrality
-					AND = {
-						war_policy = pacifism
-						war = no
-					}
+			NOT = {
+				has_country_modifier = neutrality
+				AND = {
+					war_policy = pacifism
+					war = no
 				}
-				NOT = {
+				AND = {
 					OR = {
 						tag = PRU
 						tag = NGF
@@ -623,6 +621,15 @@ restore_austrian_empire = {
 				region = AUS_654
 				region = AUS_652
 				region = AUS_657
+				#ANON
+				region = AUS_636
+				region = AUS_736
+				region = AUS_770
+				region = AUS_778
+				region = AUS_640
+				region = AUS_631
+				region = AUS_950
+				region = AUS_663
 			}
 		}
 		OR = {
@@ -632,9 +639,9 @@ restore_austrian_empire = {
 		NOT = { has_country_modifier = neutrality }
 		NOT = { in_sphere = THIS }
 		THIS = {
-			OR = {
-				NOT = {	has_country_modifier = neutrality }
-				NOT = {
+			NOT = {
+				has_country_modifier = neutrality
+				AND = {
 					has_country_modifier = no_more_war
 					has_global_flag = paris_congress_to_be_held
 				}
