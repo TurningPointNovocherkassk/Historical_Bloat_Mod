@@ -85,6 +85,9 @@ country_event = {
 				war = no
 				NOT = { tag = THIS }
 				NOT = { tag = UBD }
+				NOT = { tag = LVN }
+				NOT = { tag = KSM }
+				NOT = { tag = ESG }
 				NOT = { tag = SMR }
 				NOT = { tag = T4V }
 				NOT = { has_country_flag = post_colonial_country }
@@ -736,6 +739,9 @@ country_event = {
 	trigger = {
 		war = no
 		NOT = { tag = UBD }
+		NOT = { tag = LVN }
+		NOT = { tag = KSM }
+		NOT = { tag = ESG }
 		NOT = { tag = LIE }
 		has_country_flag = crown_from_the_gutter
 		is_culture_group = germanic
@@ -858,6 +864,9 @@ country_event = {
 				NOT = { tag = DNB }
 				NOT = { tag = PRU }
 				NOT = { tag = UBD }
+				NOT = { tag = LVN }
+				NOT = { tag = KSM }
+				NOT = { tag = ESG }
 				NOT = { tag = BAN }
 				NOT = { has_country_flag = post_colonial_country }
 				OR = {
@@ -910,6 +919,9 @@ country_event = {
 					tag = AUS
 					tag = DNB
 					tag = UBD
+					tag = LVN
+					tag = KSM
+					tag = ESG
 				}
 				NOT = { has_country_flag = post_colonial_country }
 			}
@@ -1100,6 +1112,9 @@ country_event = {
 				exists = yes
 				NOT = { tag = THIS }
 				NOT = { tag = UBD }
+				NOT = { tag = LVN }
+				NOT = { tag = KSM }
+				NOT = { tag = ESG }
 				NOT = { tag = BAN }
 			}
 			country_event = 11106

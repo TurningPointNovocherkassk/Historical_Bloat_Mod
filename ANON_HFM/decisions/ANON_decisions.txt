@@ -10631,23 +10631,27 @@ political_decisions = {
 		picture = turkish_coffee_house
 		potential = {
 			NOT = { tag = TUR }
-			owns = 884
-			owns = 882
-			owns = 879
-			owns = 877
-			owns = 878
-			owns = 3320
+			OR = {
+				owns = 884
+				owns = 882
+				owns = 879
+				owns = 877
+				owns = 878
+				owns = 3320
+			}
 			NOT = { has_country_flag = pontic_tea_in_pontus }
 		}
 		
 		allow = {
 			war = no
-			owns = 884
-			owns = 882
-			owns = 879
-			owns = 877
-			owns = 878
-			owns = 3320
+			OR = {
+				owns = 884
+				owns = 882
+				owns = 879
+				owns = 877
+				owns = 878
+				owns = 3320
+			}
 			OR = {
 				year = 1915
 				organizational_development = 1

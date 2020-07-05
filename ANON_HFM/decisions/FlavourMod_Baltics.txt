@@ -92,8 +92,28 @@ political_decisions = {
 				tag = GER
 				tag = GCF
 			}
-			exists = UBD
-			UBD = {
+			exists = LVN
+			exists = KSM
+			exists = ESG
+			LVN = {
+				OR = { 
+					is_vassal = no
+					is_substate = no
+					vassal_of = THIS
+				}
+				primary_culture = volga_german
+				in_sphere = THIS
+			}
+			KSM = {
+				OR = { 
+					is_vassal = no
+					is_substate = no
+					vassal_of = THIS
+				}
+				primary_culture = volga_german
+				in_sphere = THIS
+			}
+			ESG = {
 				OR = { 
 					is_vassal = no
 					is_substate = no
@@ -113,8 +133,13 @@ political_decisions = {
 		effect = {
 			badboy = 2
 			prestige = 10
-			create_vassal = UBD
 			UBD = {
+				inherit = LVN
+				inherit = KSM
+				inherit = ESG
+				any_owned = { 
+					add_core = UBD remove_core = LVN remove_core = KSM remove_core = ESG
+				}
 				any_pop = {
 					limit = { NOT = { is_culture_group = germanic } }
 					militancy = 3
@@ -124,6 +149,8 @@ political_decisions = {
 					duration = 1825
 				}
 			}
+			create_vassal = UBD
+			diplomatic_influence = { who = UBD value = 400 }
 			random_owned = { limit = { owner = { vote_franschise = none_voting } }
 				UBD = { 
 					government = colonial_company 

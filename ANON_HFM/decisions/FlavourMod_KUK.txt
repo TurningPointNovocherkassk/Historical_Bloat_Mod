@@ -251,6 +251,9 @@ political_decisions = {
 					NOT = { tag = PRU }
 					NOT = { tag = BAN }
 					NOT = { tag = UBD }
+					NOT = { tag = LVN }
+					NOT = { tag = KSM }
+					NOT = { tag = ESG }
 					NOT = { has_country_flag = post_colonial_country }
 					OR = {
 						all_core = { owned_by = THIS }
@@ -286,6 +289,9 @@ political_decisions = {
 						tag = DNB
 						tag = BAN
 						tag = UBD
+						tag = LVN
+						tag = KSM
+						tag = ESG
 						tag = VLG
 						tag = LIE
 						tag = SIE

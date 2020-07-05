@@ -590,15 +590,17 @@ political_decisions = {
 				AND = {
 					NOT = { owns = 350 } # Narva
 					OR = {
-						UBD = { exists = yes owns = 350 NOT = { vassal_of = THIS } }
+						#UBD = { exists = yes owns = 350 NOT = { vassal_of = THIS } }
 						EST = { exists = yes owns = 350 NOT = { vassal_of = THIS } }
+						ESG = { exists = yes owns = 350 NOT = { vassal_of = THIS } }
 					}
 				}
 				AND = {
 					NOT = { owns = 355 } # Valmiera
 					OR = {
-						UBD = { exists = yes owns = 355 NOT = { vassal_of = THIS } }
+						#UBD = { exists = yes owns = 355 NOT = { vassal_of = THIS } }
 						LAT = { exists = yes owns = 355 NOT = { vassal_of = THIS } }
+						ESG = { exists = yes owns = 355 NOT = { vassal_of = THIS } }
 					}
 				}
 				NOT = { owns = 946 } # Polotsk
@@ -1254,8 +1256,22 @@ political_decisions = {
 		potential = {
 			tag = RUS
 			NOT = { has_country_flag = russification_of_the_baltic_states }
-			is_our_vassal = UBD
-			UBD = { ai = yes }
+			OR = {
+				is_our_vassal = UBD
+				AND = {
+					is_our_vassal = LVN
+					is_our_vassal = KSM
+					is_our_vassal = ESG
+				}
+			}
+			OR = {
+				UBD = { ai = yes }
+				AND = {
+					LVN = { ai = yes }
+					KSM = { ai = yes }
+					ESG = { ai = yes }
+				}
+			}
 		}
 		
 		allow = {
@@ -1272,18 +1288,64 @@ political_decisions = {
 		effect = {
 			set_country_flag = russification_of_the_baltic_states
 			remove_accepted_culture = volga_german
-			release = UBD
-			UBD = { 
-				remove_accepted_culture = russian
-				clr_country_flag = ubd_substate
-				#all_core = { remove_core = UBD }
-				government = absolute_monarchy
-			}		
+			random_owned = {
+				limit = {
+					owner = {
+						is_phere_leader = UBD
+						primary_culture = russian
+					}
+				}
+				UBD = { 
+					remove_accepted_culture = russian
+					clr_country_flag = ubd_substate
+					#all_core = { remove_core = UBD }
+					government = absolute_monarchy
+				}	
+				owner = {
+					release = UBD
+					inherit = UBD
+				}	
+			}	
+			random_owned = {
+				limit = {
+					owner = {
+						is_phere_leader = LVN
+						is_phere_leader = KSM
+						is_phere_leader = ESG
+						primary_culture = russian
+					}
+				}
+				LVN = { 
+					remove_accepted_culture = russian
+					clr_country_flag = ubd_substate
+					#all_core = { remove_core = LVN }
+					government = absolute_monarchy
+				}	
+				KSM = { 
+					remove_accepted_culture = russian
+					clr_country_flag = ubd_substate
+					#all_core = { remove_core = KSM }
+					government = absolute_monarchy
+				}	
+				ESG = { 
+					remove_accepted_culture = russian
+					clr_country_flag = ubd_substate
+					#all_core = { remove_core = ESG }
+					government = absolute_monarchy
+				}	
+				owner = {
+					release = LVN
+					release = KSM
+					release = ESG
+					inherit = LVN
+					inherit = KSM
+					inherit = ESG
+				}	
+			}	
 			1037 = { 
 				add_core = VLG
 				add_province_modifier = { name = russoification duration = -1 }
 			}
-			inherit = UBD
 			political_reform = unitary
 			any_pop = {
 				limit = {

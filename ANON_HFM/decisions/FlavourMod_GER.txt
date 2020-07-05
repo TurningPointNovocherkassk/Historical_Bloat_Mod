@@ -628,6 +628,9 @@ political_decisions = {
 			is_greater_power = yes
 			NOT = { tag = KUK }
 			NOT = { tag = UBD }
+			NOT = { tag = LVN }
+			NOT = { tag = KSM }
+			NOT = { tag = ESG }
 			RHI = {
 				exists = yes
 				has_country_flag = rhine_vassal

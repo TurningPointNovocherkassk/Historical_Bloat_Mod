@@ -20,6 +20,42 @@ political_decisions = {
 						in_sphere = PRU
 					}
 				}
+				AND = {
+					tag = LVN
+					NOT = { vassal_of = RUS }
+					OR = {
+						in_sphere = GER
+						in_sphere = NGF
+						in_sphere = GCF
+						in_sphere = AUS
+						in_sphere = SGF
+						in_sphere = PRU
+					}
+				}
+				AND = {
+					tag = KSM
+					NOT = { vassal_of = RUS }
+					OR = {
+						in_sphere = GER
+						in_sphere = NGF
+						in_sphere = GCF
+						in_sphere = AUS
+						in_sphere = SGF
+						in_sphere = PRU
+					}
+				}
+				AND = {
+					tag = ESG
+					NOT = { vassal_of = RUS }
+					OR = {
+						in_sphere = GER
+						in_sphere = NGF
+						in_sphere = GCF
+						in_sphere = AUS
+						in_sphere = SGF
+						in_sphere = PRU
+					}
+				}
 				tag = ARA
 			}
 			OR = {
@@ -288,6 +324,9 @@ political_decisions = {
 					OR = { 
 						tag = LSK
 						tag = UBD
+						tag = LVN
+						tag = KSM
+						tag = ESG
 					}
 					vassal_of = RUS
 				}
