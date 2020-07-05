@@ -549,10 +549,28 @@ substate = {
 	end_date = 1881.1.1
 }
 
-#Russia - Baltic Governorate
+#Russia - Baltic Governorates
+# substate = {
+	# first = RUS
+	# second = UBD
+	# start_date = 1801.1.1
+	# end_date = 1881.1.1
+# }
 substate = {
 	first = RUS
-	second = UBD
+	second = LVN
+	start_date = 1801.1.1
+	end_date = 1881.1.1
+}
+substate = {
+	first = LVN
+	second = KSM
+	start_date = 1801.1.1
+	end_date = 1881.1.1
+}
+substate = {
+	first = LVN
+	second = ESG
 	start_date = 1801.1.1
 	end_date = 1881.1.1
 }
