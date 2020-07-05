@@ -590,7 +590,7 @@ political_decisions = {
 				AND = {
 					NOT = { owns = 350 } # Narva
 					OR = {
-						#UBD = { exists = yes owns = 350 NOT = { vassal_of = THIS } }
+						UBD = { exists = yes owns = 350 NOT = { vassal_of = THIS } }
 						EST = { exists = yes owns = 350 NOT = { vassal_of = THIS } }
 						ESG = { exists = yes owns = 350 NOT = { vassal_of = THIS } }
 					}
@@ -598,7 +598,7 @@ political_decisions = {
 				AND = {
 					NOT = { owns = 355 } # Valmiera
 					OR = {
-						#UBD = { exists = yes owns = 355 NOT = { vassal_of = THIS } }
+						UBD = { exists = yes owns = 355 NOT = { vassal_of = THIS } }
 						LAT = { exists = yes owns = 355 NOT = { vassal_of = THIS } }
 						ESG = { exists = yes owns = 355 NOT = { vassal_of = THIS } }
 					}
