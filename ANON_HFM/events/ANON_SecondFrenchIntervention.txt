@@ -5,10 +5,10 @@ country_event = {
 	desc = "EVTDESC1100060"
 	picture = "MEX_revolution"
 	
-	is_triggered_only = yes
+	fire_only_once = yes
 	
 	trigger = {
-		year = 1864
+		year = 1863
 		tag = MEX
 		has_country_flag = pastry_war
 		has_global_flag = acw_war_started
@@ -17,13 +17,24 @@ country_event = {
 	immediate = {
 		set_global_flag = second_french_intervetion
 		MEX = { capital = 2147 }
+		#MXM = { create_alliance = FRA }
+		FRA = { create_alliance = MXM 
+				relation = {
+					who = MXM
+					value = 400
+				}
+				diplomatic_influence = {
+					who = MXM
+					value = 400
+				}
+			}
 	}
 	
 	option = {
 		name = "EVTOPTA1100060"
 		any_pop = {
-			consciousness = -4
-			militancy = -2
+			consciousness = -2
+			militancy = -1
 		}
 		2172 = { add_core = MXM secede_province = MXM }
 		2165 = { add_core = MXM secede_province = MXM }
@@ -50,8 +61,9 @@ country_event = {
 		3425 = { add_core = MXM secede_province = MXM }
 		war = {
 			target = MXM
-			attacker_goal = { casus_belli = civil_war }
-			defender_goal = { casus_belli = civil_war }
+			attacker_goal = { casus_belli = civil_war  }
+			defender_goal = { casus_belli = civil_war  }
+			call_ally = yes
 		}
 	}
 	
@@ -87,10 +99,166 @@ country_event = {
 		
 		change_tag_no_core_switch = MXM
 		
-		war = {
-			target = MXM
-			attacker_goal = { casus_belli = civil_war }
-			defender_goal = { casus_belli = civil_war }
+		MEX = {
+			war = {
+				target = MXM
+				attacker_goal = { casus_belli = civil_war }
+				defender_goal = { casus_belli = civil_war }
+				call_ally = yes
+			}
 		}
 	}
 }
+
+#Execution of Emperor Maximillian / End of the 2nd French Intervention
+country_event = {
+	id = 1100061
+	title = "EVTNAME44830" #Execution of Emperor Maximilian
+	desc = "EVTDESC44830"
+	news = yes
+	news_desc_long = "EVTDESC44830"
+	news_desc_medium = "EVTDESC44830_NEWS_MEDIUM"
+	news_desc_short = "EVTDESC44830_NEWS_SHORT"
+	picture = "execution_of_emperor_maximillian"
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = MEX
+		has_global_flag = second_french_intervetion
+		2172 = { controlled_by = MEX }
+		}
+		
+	option = {
+		name = "EVTOPTA1100061" #Executing Maximilian
+		MEX = {
+			inherit = MXM
+			MXM = { all_core = { remove_core = MXM } }
+			MEX = {	badboy = 5
+					capital = 2172
+					war_exhaustion = -20
+					prestige = 10
+					}
+			end_war = FRA
+		
+			FRA = {
+			relation = {
+				who = THIS
+				value = -100
+				}
+			diplomatic_influence = {
+				who = THIS
+				value = -200
+				}
+			}
+		
+			any_country = {
+				limit = {
+					is_greater_power = yes
+					NOT = {
+						OR = {
+							tag = USA
+							tag = FRA
+							#tag = BOR
+							}
+						}
+					}
+				relation = {
+					who = THIS
+					value = -50
+					}
+				diplomatic_influence = {
+					who = THIS
+					value = -100
+					}
+				}
+			}
+			ai_chance = { factor = .9 }
+		}
+	
+	option {
+		name = "EVTOPTB1100061" #Sparing Maximilian
+		MEX = {
+			any_pop = {
+				consciousness = 3
+				militancy = 1
+				}
+			prestige = -10
+			war_exhaustion = 5
+			}
+		ai_chance = { factor = .1 }
+		}
+	}
+	
+#French Intervention is a success
+country_event = {
+	id = 1100062
+	title = "EVTNAME1100062"
+	desc = "EVTDESC1100062"
+	picture = "MEX_revolution"
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = MXM
+		has_global_flag = second_french_intervetion
+		owns = 2147
+		NOT = { war_with = MEX }
+		NOT = { war_with = USA }
+		}
+
+	option = {
+		name = "EVTOPTA1100062"
+		MXM = {
+			any_pop = {
+				conciousness = 3
+				militancy = -1
+				}
+			prestige = 5
+			war_exhaustion = -10
+			USA = {
+				relation = {
+					who = THIS
+					value = -50
+					}
+				diplomatic_influence = {
+					who = THIS
+					value = -25
+					}
+				}
+			MEX = { all_core = { remove_core = MEX add_core = MXM } }
+			}
+		}
+	}
+	
+#French Intervention is a failure. Maximilian is not executed however Republican Mexico still wins
+country_event = {
+	id = 1100063
+	title = "EVTNAME1100063"
+	desc = "EVTDESC1100063"
+	picture = "MEX_revolution"
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = MEX
+		has_global_flag = second_french_intervetion
+		owns = 2172
+		NOT = { war_with = MXM }
+		NOT = { war_with = FRA }
+		}
+	
+	option = {
+		name = "EVTOPTA1100063"
+		MEX = {
+			any_pop = {
+				consciousness = -1
+				militancy = -2
+				}
+			prestige = 5
+			MXM = { all_core = { remove_core = MXM } }
+			MEX = { capital = 2172 }
+			}
+		}
+	}
+	
