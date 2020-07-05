@@ -1,0 +1,96 @@
+#2nd French Intervention of Mexico
+country_event = {
+	id = 1100060
+	title = "EVTNAME1100060"
+	desc = "EVTDESC1100060"
+	picture = "MEX_revolution"
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		year = 1864
+		tag = MEX
+		has_country_flag = pastry_war
+		has_global_flag = acw_war_started
+	}
+	
+	immediate = {
+		set_global_flag = second_french_intervetion
+		MEX = { capital = 2147 }
+	}
+	
+	option = {
+		name = "EVTOPTA1100060"
+		any_pop = {
+			consciousness = -4
+			militancy = -2
+		}
+		2172 = { add_core = MXM secede_province = MXM }
+		2165 = { add_core = MXM secede_province = MXM }
+		3449 = { add_core = MXM secede_province = MXM }
+		2164 = { add_core = MXM secede_province = MXM }
+		3441 = { add_core = MXM secede_province = MXM }
+		2162 = { add_core = MXM secede_province = MXM }
+		2163 = { add_core = MXM secede_province = MXM }
+		2177 = { add_core = MXM secede_province = MXM }
+		2178 = { add_core = MXM secede_province = MXM }
+		2176 = { add_core = MXM secede_province = MXM }
+		2175 = { add_core = MXM secede_province = MXM }
+		2173 = { add_core = MXM secede_province = MXM }
+		2174 = { add_core = MXM secede_province = MXM }
+		2180 = { add_core = MXM secede_province = MXM }
+		2179 = { add_core = MXM secede_province = MXM }
+		2171 = { add_core = MXM secede_province = MXM }
+		2170 = { add_core = MXM secede_province = MXM }
+		2167 = { add_core = MXM secede_province = MXM }
+		2166 = { add_core = MXM secede_province = MXM }
+		2161 = { add_core = MXM secede_province = MXM }
+		2168 = { add_core = MXM secede_province = MXM }
+		2169 = { add_core = MXM secede_province = MXM }
+		3425 = { add_core = MXM secede_province = MXM }
+		war = {
+			target = MXM
+			attacker_goal = { casus_belli = civil_war }
+			defender_goal = { casus_belli = civil_war }
+		}
+	}
+	
+	option = {
+		name = "EVTOPTB1100060"
+		any_pop = {
+			conciousness = -2
+			militancy = -1
+		}
+		2172 = { add_core = MXM secede_province = MXM }
+		2165 = { add_core = MXM secede_province = MXM }
+		3449 = { add_core = MXM secede_province = MXM }
+		2164 = { add_core = MXM secede_province = MXM }
+		3441 = { add_core = MXM secede_province = MXM }
+		2162 = { add_core = MXM secede_province = MXM }
+		2163 = { add_core = MXM secede_province = MXM }
+		2177 = { add_core = MXM secede_province = MXM }
+		2178 = { add_core = MXM secede_province = MXM }
+		2176 = { add_core = MXM secede_province = MXM }
+		2175 = { add_core = MXM secede_province = MXM }
+		2173 = { add_core = MXM secede_province = MXM }
+		2174 = { add_core = MXM secede_province = MXM }
+		2180 = { add_core = MXM secede_province = MXM }
+		2179 = { add_core = MXM secede_province = MXM }
+		2171 = { add_core = MXM secede_province = MXM }
+		2170 = { add_core = MXM secede_province = MXM }
+		2167 = { add_core = MXM secede_province = MXM }
+		2166 = { add_core = MXM secede_province = MXM }
+		2161 = { add_core = MXM secede_province = MXM }
+		2168 = { add_core = MXM secede_province = MXM }
+		2169 = { add_core = MXM secede_province = MXM }
+		3425 = { add_core = MXM secede_province = MXM }
+		
+		change_tag_no_core_switch = MXM
+		
+		war = {
+			target = MXM
+			attacker_goal = { casus_belli = civil_war }
+			defender_goal = { casus_belli = civil_war }
+		}
+	}
+}
