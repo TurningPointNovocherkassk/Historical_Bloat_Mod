@@ -2801,7 +2801,6 @@ political_decisions = {
 							is_culture_group = baltic
 							tag = PLC
 						}
-						NOT = { has_country_flag = PLC_organization_2 }
 					}
 				}	
 				945 = {
@@ -2824,7 +2823,6 @@ political_decisions = {
 							is_culture_group = baltic
 							tag = PLC
 						}
-						NOT = { has_country_flag = PLC_organization_2 }
 					}
 				}	
 				946 = { change_province_name = "Polockas" }	
@@ -2914,10 +2912,8 @@ political_decisions = {
 				limit = {
 					province_id = 945
 					owner = {
-						OR = {
-							is_culture_group = polish_culture_group
-							has_country_flag = PLC_organization_2
-						}
+						is_culture_group = polish_culture_group
+						NOT = { tag = PLC }
 					}
 				}	
 				945 = {
@@ -2935,10 +2931,8 @@ political_decisions = {
 				limit = {
 					province_id = 946
 					owner = {
-						OR = {
-							is_culture_group = polish_culture_group
-							has_country_flag = PLC_organization_2
-						}
+						is_culture_group = polish_culture_group
+						NOT = { tag = PLC }
 					}
 				}		
 				946 = { change_province_name = "Polock" }	
@@ -2954,6 +2948,7 @@ political_decisions = {
 					province_id = 356
 					owner = {
 						is_culture_group = polish_culture_group
+						NOT = { tag = PLC }
 					}
 				}
 				356 = { change_province_name = "Dzwinów"  }
@@ -3543,7 +3538,7 @@ political_decisions = {
 						is_culture_group = baltic
 						tag = PLC
 					}
-					NOT = { has_country_flag = PLC_organization_2 }
+					NOT = { has_country_flag = organize_PLC_1st }
 					OR = {
 						AND = { owns = 956 owns = 957 NOT = { has_global_flag = lithuanian_renamed_volynn } }
 						AND = { owns = 959 owns = 960 owns = 957 NOT = { has_global_flag = lithuanian_renamed_volyns } }
@@ -3559,7 +3554,7 @@ political_decisions = {
 				AND = {
 					OR = {
 						is_culture_group = polish_culture_group
-						has_country_flag = PLC_organization_2
+						has_country_flag = organize_PLC_1st
 					}
 					OR = {
 						AND = { owns = 956 owns = 957 NOT = { has_global_flag = polish_renamed_volynn } }
@@ -3622,7 +3617,7 @@ political_decisions = {
 							is_culture_group = baltic
 							tag = PLC
 						}
-						NOT = { has_country_flag = PLC_organization_2 }
+						NOT = { has_country_flag = organize_PLC_1st }
 					}
 				}					
 				956 = { change_province_name = "Rovnas" }		
@@ -3646,7 +3641,7 @@ political_decisions = {
 							is_culture_group = baltic
 							tag = PLC
 						}
-						NOT = { has_country_flag = PLC_organization_2 }
+						NOT = { has_country_flag = organize_PLC_1st }
 					}
 				}
 				960 = { change_province_name = "Žitomyras" }
@@ -3703,7 +3698,7 @@ political_decisions = {
 					owner = {
 						OR = {
 							is_culture_group = polish_culture_group
-							has_country_flag = PLC_organization_2
+							has_country_flag = organize_PLC_1st
 						}
 					}
 				}			
@@ -3725,7 +3720,7 @@ political_decisions = {
 					owner = {
 						OR = {
 							is_culture_group = polish_culture_group
-							has_country_flag = PLC_organization_2
+							has_country_flag = organize_PLC_1st
 						}
 					}
 				}

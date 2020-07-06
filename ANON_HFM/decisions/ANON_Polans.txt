@@ -780,4 +780,79 @@ political_decisions = {
 		}
 	}
 	
+	organize_PLC_1st = {
+		picture = become_poland_lithuania
+		potential = {
+			OR = {
+				tag = PLC
+				tag = PLH
+			}
+			NOT = { has_country_flag = organize_PLC_1st }
+			NOT = { has_country_flag = organize_PLC_2nd }
+			NOT = { has_country_flag = organize_PLR }
+		}
+		allow = {
+			war = no
+			OR = {
+				PLC = { all_core = { owned_by = THIS } }
+				PLH = { all_core = { owned_by = THIS } }
+			}
+		}
+		effect = {
+			set_country_flag = organize_PLC_1st
+			prestige = 5
+			any_owned = {
+				limit = {
+					owner = { NOT = { has_country_flag = a_habsburg_on_the_throne_POL } }
+					OR = {
+						province_id = 719 #Bialystock
+						province_id = 3649 #Chelm
+						province_id = 957 #Lutsk
+						province_id = 956 #Rivne
+						province_id = 702 #Lwow
+						province_id = 951 #Stryi
+						province_id = 3653 #Skole
+						province_id = 953 #Stanislavov
+						province_id = 3655 #Kolomiya
+						province_id = 952 #Ternopil
+						province_id = 3661 #Chortkiv
+					}
+				}
+				add_core = POL
+			}
+			any_owned = {
+				limit = {
+					owner = { has_country_flag = a_habsburg_on_the_throne_POL }
+					OR = {
+						province_id = 719 #Bialystock
+						province_id = 3649 #Chelm
+						province_id = 957 #Lutsk
+						province_id = 956 #Rivne
+						province_id = 702 #Lwow
+						province_id = 951 #Stryi
+						province_id = 3653 #Skole
+						province_id = 953 #Stanislavov
+						province_id = 3655 #Kolomiya
+						province_id = 952 #Ternopil
+						province_id = 3661 #Chortkiv
+					}
+				}
+				add_core = HPL
+			}
+			any_owned = {
+				limit = {
+					OR = {
+						province_id = 3575 #Vawkawysk
+						province_id = 937 #Brest
+						province_id = 3657 #Kobryn
+						province_id = 940 #Pinsk
+						province_id = 3656 #Nyasvizh
+						province_id = 939 #Slonim/Baranovichi
+					}
+				}
+				add_core = LIT
+			}
+		}
+	}
+	
 }
