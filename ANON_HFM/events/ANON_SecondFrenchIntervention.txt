@@ -8,16 +8,17 @@ country_event = {
 	fire_only_once = yes
 	
 	trigger = {
-		year = 1863
+		##year = 1863
 		tag = MEX
 		has_country_flag = pastry_war
 		has_global_flag = acw_war_started
+		USA = { war_with = CSA }
 	}
 	
 	immediate = {
 		set_global_flag = second_french_intervetion
 		MEX = { capital = 2147 }
-		#MXM = { create_alliance = FRA }
+		MEX = { all_core = { add_core = MXM } }
 		FRA = { create_alliance = MXM 
 				relation = {
 					who = MXM
@@ -36,66 +37,66 @@ country_event = {
 			consciousness = -2
 			militancy = -1
 		}
-		2172 = { add_core = MXM secede_province = MXM }
-		2165 = { add_core = MXM secede_province = MXM }
-		3449 = { add_core = MXM secede_province = MXM }
-		2164 = { add_core = MXM secede_province = MXM }
-		3441 = { add_core = MXM secede_province = MXM }
-		2162 = { add_core = MXM secede_province = MXM }
-		2163 = { add_core = MXM secede_province = MXM }
-		2177 = { add_core = MXM secede_province = MXM }
-		2178 = { add_core = MXM secede_province = MXM }
-		2176 = { add_core = MXM secede_province = MXM }
-		2175 = { add_core = MXM secede_province = MXM }
-		2173 = { add_core = MXM secede_province = MXM }
-		2174 = { add_core = MXM secede_province = MXM }
-		2180 = { add_core = MXM secede_province = MXM }
-		2179 = { add_core = MXM secede_province = MXM }
-		2171 = { add_core = MXM secede_province = MXM }
-		2170 = { add_core = MXM secede_province = MXM }
-		2167 = { add_core = MXM secede_province = MXM }
-		2166 = { add_core = MXM secede_province = MXM }
-		2161 = { add_core = MXM secede_province = MXM }
-		2168 = { add_core = MXM secede_province = MXM }
-		2169 = { add_core = MXM secede_province = MXM }
-		3425 = { add_core = MXM secede_province = MXM }
+		2172 = { secede_province = MXM }
+		2165 = { secede_province = MXM }
+		3449 = { secede_province = MXM }
+		2164 = { secede_province = MXM }
+		3441 = { secede_province = MXM }
+		2162 = { secede_province = MXM }
+		2163 = { secede_province = MXM }
+		2177 = { secede_province = MXM }
+		2178 = { secede_province = MXM }
+		2176 = { secede_province = MXM }
+		2175 = { secede_province = MXM }
+		2173 = { secede_province = MXM }
+		2174 = { secede_province = MXM }
+		2180 = { secede_province = MXM }
+		2179 = { secede_province = MXM }
+		2171 = { secede_province = MXM }
+		2170 = { secede_province = MXM }
+		2167 = { secede_province = MXM }
+		2166 = { secede_province = MXM }
+		2161 = { secede_province = MXM }
+		2168 = { secede_province = MXM }
+		2169 = { secede_province = MXM }
+		3425 = { secede_province = MXM }
 		war = {
 			target = MXM
 			attacker_goal = { casus_belli = civil_war  }
 			defender_goal = { casus_belli = civil_war  }
-			call_ally = yes
+			call_ally = no
 		}
 	}
 	
 	option = {
 		name = "EVTOPTB1100060"
 		any_pop = {
-			conciousness = -2
+			consciousness = -2
 			militancy = -1
 		}
-		2172 = { add_core = MXM secede_province = MXM }
-		2165 = { add_core = MXM secede_province = MXM }
-		3449 = { add_core = MXM secede_province = MXM }
-		2164 = { add_core = MXM secede_province = MXM }
-		3441 = { add_core = MXM secede_province = MXM }
-		2162 = { add_core = MXM secede_province = MXM }
-		2163 = { add_core = MXM secede_province = MXM }
-		2177 = { add_core = MXM secede_province = MXM }
-		2178 = { add_core = MXM secede_province = MXM }
-		2176 = { add_core = MXM secede_province = MXM }
-		2175 = { add_core = MXM secede_province = MXM }
-		2173 = { add_core = MXM secede_province = MXM }
-		2174 = { add_core = MXM secede_province = MXM }
-		2180 = { add_core = MXM secede_province = MXM }
-		2179 = { add_core = MXM secede_province = MXM }
-		2171 = { add_core = MXM secede_province = MXM }
-		2170 = { add_core = MXM secede_province = MXM }
-		2167 = { add_core = MXM secede_province = MXM }
-		2166 = { add_core = MXM secede_province = MXM }
-		2161 = { add_core = MXM secede_province = MXM }
-		2168 = { add_core = MXM secede_province = MXM }
-		2169 = { add_core = MXM secede_province = MXM }
-		3425 = { add_core = MXM secede_province = MXM }
+		2172 = { secede_province = MXM }
+		2165 = { secede_province = MXM }
+		3449 = { secede_province = MXM }
+		2164 = { secede_province = MXM }
+		3441 = { secede_province = MXM }
+		2162 = { secede_province = MXM }
+		2163 = { secede_province = MXM }
+		2177 = { secede_province = MXM }
+		2178 = { secede_province = MXM }
+		2176 = { secede_province = MXM }
+		2175 = { secede_province = MXM }
+		2173 = { secede_province = MXM }
+		2174 = { secede_province = MXM }
+		2180 = { secede_province = MXM }
+		2179 = { secede_province = MXM }
+		2171 = { secede_province = MXM }
+		2170 = { secede_province = MXM }
+		2167 = { secede_province = MXM }
+		2166 = { secede_province = MXM }
+		2161 = { secede_province = MXM }
+		2168 = { secede_province = MXM }
+		2169 = { secede_province = MXM }
+		3425 = { secede_province = MXM }
 		
 		change_tag_no_core_switch = MXM
 		
@@ -104,21 +105,21 @@ country_event = {
 				target = MXM
 				attacker_goal = { casus_belli = civil_war }
 				defender_goal = { casus_belli = civil_war }
-				call_ally = yes
+				call_ally = no
 			}
 		}
 	}
 }
 
-#Execution of Emperor Maximillian / End of the 2nd French Intervention
+#The Capture and Trial of Emperor Maximillian / End of the 2nd French Intervention
 country_event = {
 	id = 1100061
-	title = "EVTNAME44830" #Execution of Emperor Maximilian
-	desc = "EVTDESC44830"
+	title = "EVTNAME1100061" #Execution of Emperor Maximilian
+	desc = "EVTDESC1100061"
 	news = yes
-	news_desc_long = "EVTDESC44830"
-	news_desc_medium = "EVTDESC44830_NEWS_MEDIUM"
-	news_desc_short = "EVTDESC44830_NEWS_SHORT"
+	news_desc_long = "EVTDESC1100061"
+	news_desc_medium = "EVTDESC1100061_NEWS_MEDIUM"
+	news_desc_short = "EVTDESC1100061_NEWS_SHORT"
 	picture = "execution_of_emperor_maximillian"
 	
 	fire_only_once = yes
@@ -211,10 +212,10 @@ country_event = {
 		name = "EVTOPTA1100062"
 		MXM = {
 			any_pop = {
-				conciousness = 3
+				consciousness = 3
 				militancy = -1
 				}
-			prestige = 5
+			prestige = 10
 			war_exhaustion = -10
 			USA = {
 				relation = {
@@ -226,7 +227,7 @@ country_event = {
 					value = -25
 					}
 				}
-			MEX = { all_core = { remove_core = MEX add_core = MXM } }
+			MEX = { all_core = { remove_core = MEX } }
 			}
 		}
 	}
@@ -255,10 +256,231 @@ country_event = {
 				consciousness = -1
 				militancy = -2
 				}
-			prestige = 5
+			prestige = 20
 			MXM = { all_core = { remove_core = MXM } }
 			MEX = { capital = 2172 }
 			}
 		}
 	}
 	
+#USA invokes the Monroe Doctrine, CSA defeated
+country_event = {
+	id = 1100064
+	title = "EVTNAME1100064"
+	desc = "EVTDESC1100064"
+	picture = "yankee"
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = USA
+		NOT = { exists = CSA }
+		#year = 1860
+		has_global_flag = second_french_intervetion
+		has_global_flag = american_civil_war_has_happened 
+		MEX = { war_with = MXM }
+		}
+		
+	option = {
+		name = "EVTOPTA1100064" ## Actual declaration of War against France and Habsburg Mexico ##
+		USA = {
+			war = {
+					target = MXM
+					attacker_goal = { casus_belli = cut_down_to_size }
+					defender_goal = { casus_belli = status_quo }
+					call_ally = yes
+					}
+			}
+		USA = {
+			create_alliance = MEX 
+				relation = {
+					who = MEX
+					value = 400
+					}
+				diplomatic_influence = {
+					who = MEX
+					value = 400
+					}
+			}
+		USA = {
+			any_pop = {
+				limit = {
+				OR = {
+					has_pop_culture = dixie
+					has_pop_culture = texan
+					}
+				}
+				consciousness = 3
+				militancy = 1.5
+				}
+			any_pop = {
+				limit = {
+					NOT = { 
+						OR = {
+							has_pop_culture = dixie
+							has_pop_culture = texan
+							}
+						}
+					}
+				consciousness = 1.5
+				militancy = 1
+				}
+			war_exhaustion = 10
+			}
+		MEX = {
+			military_access = USA
+			}
+		ai_chance = { factor = .3 }
+		}
+	option = {
+		name = "EVTOPTB1100064" ## Sending of supplies to Mexico 
+		USA = {
+			ammunition = -500
+			small_arms = -250
+			artillery = -100
+			canned_food = -300
+			}
+		MEX = {
+			ammunition = 500
+			small_arms = 250
+			artillery = 100
+			canned_food = 300
+			}
+		USA = {
+			relation = {
+				who = MEX
+				value = 100
+				}
+			diplomatic_influence = {
+				who = MEX 
+				value = 50
+				}
+			}
+		USA = {
+			relation = {
+				who = FRA
+				value = -50
+				}
+			relation = {
+				who = MXM
+				value = -100
+				}
+			}
+		ai_chance = { factor = .6 }
+		}
+	option = {
+		name = "EVTOPTC1100064" ## No aid rendered to Mexico
+		USA = {
+			any_pop = {
+				consciousness = -2
+				militancy = -1
+				}
+			war_exhaustion = -10
+			}
+		ai_chance = { factor = .1 }
+		}
+	
+	}
+
+#CSA Intervention
+country_event = {
+	id = 1100065
+	title - "EVTNAME1100065"
+	desc = "EVTDESC1100065"
+	picture = "dixie_mansion"
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = CSA
+		#year = 1863
+		has_global_flag = second_french_intervetion
+		has_global_flag = american_civil_war_has_happened
+		MXM = { war_with = MEX }
+		NOT = { war_with = USA }
+		truce_with = USA
+		}
+	option = {
+		name = "EVTOPTA1100065" ## Actual declaration of War against  Mexico ##
+		CSA = {
+			war = {
+					target = MEX
+					attacker_goal = { casus_belli = cut_down_to_size }
+					defender_goal = { casus_belli = status_quo }
+					call_ally = yes
+					}
+			}
+		CSA = {
+			create_alliance = MXM 
+				relation = {
+					who = MXM
+					value = 400
+					}
+				diplomatic_influence = {
+					who = MXM
+					value = 400
+					}
+			create_alliance = FRA
+				relation = {
+					who = FRA
+					value = 400
+					}
+			}
+		prestige = 50
+		war_exhaustion = 10
+		MXM = { military_access = CSA }
+		set_global_flag = CSA_intervenes
+		ai_chance = { factor = .4 }
+		}
+	option = {
+		name = "EVTOPTB1100065" ## Sending of supplies to Habsburg Mexico 
+		CSA = {
+			ammunition = -100
+			small_arms = -50
+			artillery = -20
+			canned_food = -60
+			}
+		MXM = {
+			ammunition = 100
+			small_arms = 50
+			artillery = 20
+			canned_food = 60
+			}
+		CSA = {
+			relation = {
+				who = MXM
+				value = 100
+				}
+			diplomatic_influence = {
+				who = MXM 
+				value = 50
+				}
+			}
+		CSA = {
+			relation = {
+				who = FRA
+				value = 50
+				}
+			relation = {
+				who = MEX
+				value = -50
+				}
+			}
+		prestige = 25
+		set_global_flag = CSA_intervenes
+		ai_chance = { factor = .3 }
+		} 
+	option = {
+		name = "EVTOPTC1100065" ## No aid rendered to Habsburg Mexico
+		CSA = {
+			any_pop = {
+				consciousness = -2
+				militancy = -1
+				}
+			war_exhaustion = -10
+			}
+		ai_chance = { factor = .3 }
+		}	
+	}
+
+#
