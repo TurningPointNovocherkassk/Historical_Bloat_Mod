@@ -249,7 +249,7 @@ political_decisions = {
 				exists = GCF
 				exists = NGF
 				OR = {
-					tag = UBD
+					#tag = UBD
 					tag = LVN
 					tag = KSM
 					tag = ESG
@@ -326,7 +326,7 @@ political_decisions = {
 				limit = {
 					NOT = {
 						OR = {
-							tag = UBD
+							#tag = UBD
 							tag = LVN
 							tag = KSM
 							tag = ESG
@@ -659,7 +659,7 @@ political_decisions = {
 					NOT = { tag = DNB }
 					NOT = { tag = PRU }
 					NOT = { tag = BAN }
-					NOT = { tag = UBD }
+					#NOT = { tag = UBD }
 					NOT = { tag = LVN }
 					NOT = { tag = KSM }
 					NOT = { tag = ESG }
@@ -737,7 +737,7 @@ political_decisions = {
 						tag = AUS
 						tag = DNB
 						tag = BAN
-						tag = UBD
+						#tag = UBD
 						tag = LVN
 						tag = KSM
 						tag = ESG
@@ -852,6 +852,9 @@ political_decisions = {
 			#
 			add_accepted_culture = volga_german
 			remove_accepted_culture = hungarian
+			remove_accepted_culture = estonian
+			remove_accepted_culture = latvian
+			remove_accepted_culture = lithuanian
 			set_global_flag = 3hurrahs
 			any_country = {
 				limit = {
@@ -862,7 +865,7 @@ political_decisions = {
 						tag = AUS
 						tag = DNB
 						tag = BAN
-						tag = UBD
+						#tag = UBD
 						tag = LVN
 						tag = KSM
 						tag = ESG
@@ -873,7 +876,7 @@ political_decisions = {
 					}
 					NOT = { tag = PRU }
 					NOT = { tag = BAN }
-					NOT = { tag = UBD }
+					#NOT = { tag = UBD }
 					NOT = { tag = LVN }
 					NOT = { tag = KSM }
 					NOT = { tag = ESG }
@@ -910,7 +913,7 @@ political_decisions = {
 						tag = AUS
 						tag = DNB
 						tag = BAN
-						tag = UBD
+						#tag = UBD
 						tag = LVN
 						tag = KSM
 						tag = ESG
@@ -1309,7 +1312,7 @@ political_decisions = {
 				exists = GCF
 				exists = NGF
 				OR = {
-					tag = UBD
+					#tag = UBD
 					tag = LVN
 					tag = KSM
 					tag = ESG
@@ -1377,7 +1380,7 @@ political_decisions = {
 					NOT = { tag = THIS }
 					NOT = { 
 						OR = {
-							tag = UBD
+							#tag = UBD
 							tag = LVN
 							tag = KSM
 							tag = ESG

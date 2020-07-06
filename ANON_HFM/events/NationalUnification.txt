@@ -84,7 +84,7 @@ country_event = {
 			limit = {
 				war = no
 				NOT = { tag = THIS }
-				NOT = { tag = UBD }
+				#NOT = { tag = UBD }
 				NOT = { tag = LVN }
 				NOT = { tag = KSM }
 				NOT = { tag = ESG }
@@ -738,7 +738,7 @@ country_event = {
 	
 	trigger = {
 		war = no
-		NOT = { tag = UBD }
+		#NOT = { tag = UBD }
 		NOT = { tag = LVN }
 		NOT = { tag = KSM }
 		NOT = { tag = ESG }
@@ -863,7 +863,7 @@ country_event = {
 				NOT = { tag = KUK }
 				NOT = { tag = DNB }
 				NOT = { tag = PRU }
-				NOT = { tag = UBD }
+				#NOT = { tag = UBD }
 				NOT = { tag = LVN }
 				NOT = { tag = KSM }
 				NOT = { tag = ESG }
@@ -918,7 +918,7 @@ country_event = {
 					tag = KUK
 					tag = AUS
 					tag = DNB
-					tag = UBD
+					#tag = UBD
 					tag = LVN
 					tag = KSM
 					tag = ESG
@@ -1111,7 +1111,7 @@ country_event = {
 				primary_culture = north_german 
 				exists = yes
 				NOT = { tag = THIS }
-				NOT = { tag = UBD }
+				#NOT = { tag = UBD }
 				NOT = { tag = LVN }
 				NOT = { tag = KSM }
 				NOT = { tag = ESG }

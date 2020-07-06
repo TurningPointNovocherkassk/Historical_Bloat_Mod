@@ -250,7 +250,7 @@ political_decisions = {
 					exists = no
 					NOT = { tag = PRU }
 					NOT = { tag = BAN }
-					NOT = { tag = UBD }
+					#NOT = { tag = UBD }
 					NOT = { tag = LVN }
 					NOT = { tag = KSM }
 					NOT = { tag = ESG }
@@ -288,7 +288,7 @@ political_decisions = {
 						tag = AUS
 						tag = DNB
 						tag = BAN
-						tag = UBD
+						#tag = UBD
 						tag = LVN
 						tag = KSM
 						tag = ESG
