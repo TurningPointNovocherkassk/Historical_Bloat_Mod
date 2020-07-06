@@ -972,6 +972,11 @@ HPL_colonial_company;Kingdom of Poland;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 LIT_colonial_company;Grand Duchy of Lithuania;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,,,,,
 UKR_colonial_company;Grand Duchy of Ruthenia;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,,,,,
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
+become_HABSBURG_poland_title;Jeszcze Polska nie Zginela;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,,,,,
+become_HABSBURG_poland_desc;Poland must be reborn! With Warsaw in our hands, we must take the first step towards uniting all Polish people under a common flag... and a common house, the Habsburgs!;;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+become_HABSBURG_poland_lithuania_title;The Commonwealth Reborn;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,,,,,
+become_HABSBURG_poland_lithuania_desc;Our ancient empire has been reborn. Let Poland-Lithuania exist once again, and let our ancient enemies tremble! All under Habsburg rule!;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,,,,,
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
@@ -1678,11 +1683,11 @@ EVT666666024OPTA;They will pay for this.;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,
 EVT666666024OPTB;We have no desire to push this further.;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 EVTNAME666666025;The Galicia-Lodomeria Convention;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,
-EVTDESC666666025;An idea has arisen within the $COUNTRY_ADJ$ government: could we perhaps offer our support to the Poles in the upcoming Congress, in exchange for placing a Habsburg on their throne? Our support could make a great deal of difference for them... and having a Habsburg on their throne could help us diplomatically when dealing with the Poles, after all, they could use all the support they can get.;;;;;;;;;;;;x,,,,,,,,,,,
+EVTDESC666666025;An idea has arisen within the $COUNTRY_ADJ$ government: could we perhaps offer our support to the Poles in the upcoming Congress, in exchange for placing a Habsburg on their throne? Our support could make a great deal of difference for them... and having a Habsburg on their throne could help us diplomatically when dealing with the Poles, after all, they could use all the support they can get. Archduke Karl Ferdinand Habsburg-Lorraine of Austria the second son of Archduke Charles, Duke of Teschen and Princess Henrietta of Nassau-Weilburg is the best option we have. He is unmarried and has shown sympathy for the Poles in several occasions!;;;;;;;;;;;;x,,,,,,,,,,,
 EVT666666025OPTA;Make the offer.;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,
 EVT666666025OPTB;We have no interest in this.;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
-EVTDESC666666026;The $FROMCOUNTRY_ADJ$ government has approached us with a proposal: they will lend their support to us in the upcoming Congress, in exchange for placing one of their own nobles, a Habsburg, as the absolute ruler of Poland. While some might consider the offer an insult there are others who suggest that without this offer it's just as likely our country will not be supported in the congress and we could use all the allies in the Congress we can get.;;;;;;;;;;;;x,,,,,,,,,,
+EVTDESC666666026;The $FROMCOUNTRY_ADJ$ government has approached us with a proposal: they will lend their support to us in the upcoming Congress, in exchange of placing one of their own nobles, a Habsburg, as the absolute ruler of Poland. While some might consider the offer an insult there are others who suggest that without this offer it's just as likely our country will not be supported in the congress and we could use all the allies in the Congress we can get. In any case, the candidate for the Polish Throne is Archduke Karl Ferdinand Habsburg-Lorraine of Austria, an upstanding man who is unmarried and has shown sympathy for the Polish Cause on several occasions... He is currently studying to become a Field Marshal of the Austrian Army and... Just between us... He has no physical deformities or disabilities that are quite characteristic of some Habsburgs.;;;;;;;;;;;;x,,,,,,,,,,
 EVT666666026OPTA;Agree to the deal.;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,
 EVT666666026OPTB;No. Poland is not a bargaining chip.;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,
 #;;;;;;;;;;;;;;;;;;;;;;;;;x

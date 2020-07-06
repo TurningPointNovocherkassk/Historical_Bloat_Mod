@@ -5,9 +5,11 @@ political_decisions = {
 		potential = {
 			primary_culture = polish
 			NOT = { exists = POL }
+			NOT = { exists = HPL }
 			NOT = { has_country_flag = post_colonial_country }
 			NOT = { has_global_flag = paris_congress_to_be_held }
 			NOT = { has_country_flag = GLM_convention }
+			NOT = { has_country_flag = a_habsburg_on_the_throne_POL }
 			NOT = { tag = PLC }
 		}
 
@@ -85,6 +87,7 @@ political_decisions = {
 			}
 			NOT = { exists = PLC }
 			NOT = { has_country_flag = post_colonial_country }
+			NOT = { has_country_flag = a_habsburg_on_the_throne_POL }
 		}
 
 		allow = {
@@ -315,6 +318,7 @@ political_decisions = {
 					tag = POL
 					tag = CPL
 					tag = PNC
+					tag = HPL
 				}
 			}
 			NOT = { has_country_flag = unite_with_poland }
@@ -367,6 +371,19 @@ political_decisions = {
 						is_vassal = no
 					}
 				}
+				AND = {
+					OR = {
+						sphere_owner = { is_sphere_leader_of = HPL }
+						NOT = { part_of_sphere = yes }
+					}
+					HPL = {
+						exists = yes
+						owns = 706
+						neighbour = THIS
+						war = no
+						is_vassal = no
+					}
+				}
 			}
 		}
 
@@ -387,6 +404,7 @@ political_decisions = {
 						tag = POL
 						tag = CPL
 						tag = PNC
+						tag = HPL
 					}
 					exists = yes
 					owns = 706
@@ -448,10 +466,28 @@ political_decisions = {
 			}
 			random_country = {
 				limit = {
+					tag = HPL
+					exists = yes
+					owns = 706
+					ai = yes
+					THIS = { ai = no }
+				}
+				THIS = {
+					inherit = HPL
+					random_owned = {
+						limit = { province_id = 706 }
+						owner = { capital = 706 }
+					}
+					change_tag = HPL
+				}	
+			}
+			random_country = {
+				limit = {
 					OR = {
 						tag = POL
 						tag = CPL
 						tag = PNC
+						tag = HPL
 					}
 					exists = yes
 					owns = 706

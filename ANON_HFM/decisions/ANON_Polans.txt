@@ -535,4 +535,249 @@ political_decisions = {
 			}
 		}
 	}
+	
+	become_HABSBURG_poland = {
+
+		potential = {
+			primary_culture = polish
+			NOT = { exists = POL }
+			NOT = { exists = HPL }
+			NOT = { has_country_flag = post_colonial_country }
+			NOT = { has_global_flag = paris_congress_to_be_held }
+			NOT = { has_country_flag = GLM_convention }
+			has_country_flag = a_habsburg_on_the_throne_POL
+			NOT = { tag = PLC }
+		}
+
+		allow = {
+			OR = {
+				prestige = 45
+				is_secondary_power = yes
+				AND = {
+					tag = PNC
+					KRA = { exists = no }
+					PZN = { exists = no }
+					PML = { exists = no }
+				}
+				AND = {
+					tag = CPL
+					exists = KRA KRA = { is_vassal = no }
+					exists = PZN PZN = { is_vassal = no }
+					exists = PML PML = { is_vassal = no }
+				}
+				AND = { 
+					tag = CPL 
+					year = 1900
+				}
+			}
+			war = no
+			is_vassal = no
+			owns = 706
+		}
+
+		effect = {
+			prestige = 20
+			random_owned = { 
+				limit = { owner = { accepted_culture = south_german } } owner = { remove_accepted_culture = south_german }
+			}
+			random_owned = { 
+				limit = { owner = { accepted_culture = north_german } } owner = { remove_accepted_culture = north_german }
+			}
+			random_owned = { 
+				limit = { owner = { accepted_culture = czech } } owner = { remove_accepted_culture = czech }
+			}
+			any_country = {
+				limit = {
+					OR = {
+						tag = PZN
+						tag = CPL
+						tag = KRA
+						tag = GLM
+						tag = PML
+						tag = PNC
+						#tag = SLS
+					}
+				}
+				all_core = { add_core = HPL }
+			}
+			719 = { add_core = HPL } #Bialystock
+			3649 = { add_core = HPL } #Chelm
+			change_tag = HPL
+			capital = 706
+			all_core = { remove_core = PNC }
+			remove_country_modifier = unrecognized_country
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	become_HABSBURG_poland_lithuania = {
+		picture = become_poland_lithuania
+
+		potential = {
+			OR = {
+				primary_culture = polish
+				primary_culture = lithuanian
+			}
+			NOT = { exists = PLC }
+			NOT = { has_country_flag = post_colonial_country }
+			has_country_flag = a_habsburg_on_the_throne_POL
+		}
+
+		allow = {
+			war = no
+			is_greater_power = yes
+			706 = { #Warsaw
+				OR = {
+					owned_by = THIS
+					owner = { in_sphere = THIS }
+					owner = { vassal_of = THIS }
+				}
+			}
+			703 = { #Krakow
+				OR = {
+					owned_by = THIS
+					owner = { in_sphere = THIS }
+					owner = { vassal_of = THIS }
+				}
+			}
+			360 = { #Vilnius
+				OR = {
+					owned_by = THIS
+					owner = { in_sphere = THIS }
+					owner = { vassal_of = THIS }
+				}
+			}
+			361 = { #Kaunas
+				OR = {
+					owned_by = THIS
+					owner = { in_sphere = THIS }
+					owner = { vassal_of = THIS }
+				}
+			}
+			# 718 = { #Minsk
+				# OR = {
+					# owned_by = THIS
+					# owner = { in_sphere = THIS }
+					# owner = { vassal_of = THIS }
+				# }
+			# }
+			# 958 = { #Kiev
+				# OR = {
+					# owned_by = THIS
+					# owner = { in_sphere = THIS }
+					# owner = { vassal_of = THIS }
+				# }
+			# }
+			# 695 = { #Königsberg
+				# OR = {
+					# owned_by = THIS
+					# owner = { in_sphere = THIS }
+					# owner = { vassal_of = THIS }
+				# }
+			# }
+		}
+
+		effect = {
+			prestige = 30
+			random_owned = { 
+				limit = { owner = { accepted_culture = south_german } } owner = { remove_accepted_culture = south_german }
+			}
+			random_owned = { 
+				limit = { owner = { accepted_culture = north_german } } owner = { remove_accepted_culture = north_german }
+			}
+			random_owned = { 
+				limit = { owner = { accepted_culture = czech } } owner = { remove_accepted_culture = czech }
+			}
+			any_country = {
+				limit = {
+					OR = {
+						tag = PZN
+						tag = CPL
+						tag = KRA
+						tag = GLM
+						tag = PML
+						tag = PNC
+					}
+				}
+				all_core = { add_core = PLH remove_core = PNC }
+			}
+			random_owned = {
+				limit = { owner = { primary_culture = polish } }
+				owner = {
+					add_accepted_culture = lithuanian
+					all_core = {
+						add_core = PLH
+						#remove_core = POL
+					}
+				}
+				LIT = {
+					all_core = { add_core = PLH }
+				}
+			}
+			random_owned = {
+				limit = {
+					owner = { primary_culture = lithuanian }
+				}
+				owner = {
+					add_accepted_culture = polish
+					all_core = {
+						add_core = PLH
+						#remove_core = LIT
+					}
+				}
+				POL = {
+					all_core = { add_core = PLH }
+				}
+			}
+			RUS_707 = { add_core = PLH } #Grodno
+			3649 = { add_core = PLH } #Chelm
+			957 = { add_core = PLH } #Lutsk
+			956 = { add_core = PLH } #Rovne
+			940 = { add_core = PLH } #Pinsk
+			3656 = { add_core = PLH } #Nyasvyzh
+			any_country = {
+				limit = {
+					OR = {
+						in_sphere = THIS
+						vassal_of = THIS
+					}
+				}
+				any_owned = {
+					limit = { is_core = PLH }
+					secede_province = THIS
+				}
+			}
+			change_tag = PLH
+			capital = 703
+			any_greater_power = {
+				limit = {
+					OR = {
+						primary_culture = russian
+						AND = {
+							is_culture_group = germanic
+							NOT = {
+								OR = {
+									tag = SGF
+									tag = AUS
+									tag = KUK
+									tag = DNB
+								}
+							}
+						}
+					}
+					neighbour = THIS
+				}
+				relation = { who = THIS value = -200 }
+				leave_alliance = THIS
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
 }

@@ -1845,7 +1845,7 @@ country_event = {
 					tag = SGF
 					tag = RUS
 				}
-				NOT = { has_country_flag = a_habsburg_on_the_throne }
+				NOT = { has_country_flag = a_habsburg_on_the_throne_POL }
 			}
 			modifier = {
 				factor = 100
@@ -1860,11 +1860,11 @@ country_event = {
 					alliance_with = RUS
 				}
 				OR = {
-					AUS = { NOT = { has_country_flag = a_habsburg_on_the_throne } }
-					KUK = { NOT = { has_country_flag = a_habsburg_on_the_throne } }
-					SGF = { NOT = { has_country_flag = a_habsburg_on_the_throne } }
-					GER = { NOT = { has_country_flag = a_habsburg_on_the_throne } }
-					GCF = { NOT = { has_country_flag = a_habsburg_on_the_throne } }
+					AUS = { NOT = { has_country_flag = a_habsburg_on_the_throne_POL } }
+					KUK = { NOT = { has_country_flag = a_habsburg_on_the_throne_POL } }
+					SGF = { NOT = { has_country_flag = a_habsburg_on_the_throne_POL } }
+					GER = { NOT = { has_country_flag = a_habsburg_on_the_throne_POL } }
+					GCF = { NOT = { has_country_flag = a_habsburg_on_the_throne_POL } }
 				}
 			}
 		}
@@ -2154,7 +2154,7 @@ country_event = {
 
 	option = {
 		name = "EVT666666020OPTB"
-		clr_country_flag = a_habsburg_on_the_throne
+		clr_country_flag = a_habsburg_on_the_throne_POL
 		prestige_factor = -0.2
 		# Poles Upset
 		any_pop = {
@@ -2320,7 +2320,7 @@ country_event = {
 
 	option = {
 		name = "EVT666666020OPTB"
-		clr_country_flag = a_habsburg_on_the_throne
+		clr_country_flag = a_habsburg_on_the_throne_POL
 		prestige = -20
 		# Poles Upset
 		any_pop = {
@@ -2805,14 +2805,17 @@ country_event = {
 	id = 666666026
 	title = "EVTNAME666666025" #The Galicia-Lodomeria Convention - to Poland
 	desc = "EVTDESC666666026"
-	picture = "GLM_convention"
+	picture = "karl_ferdinand_habsburg"
 	
 	is_triggered_only = yes
 	
 	option = {
 		name = "EVT666666026OPTA"
-		set_country_flag = a_habsburg_on_the_throne
-		FROM = { country_event = 666666027 }
+		set_country_flag = a_habsburg_on_the_throne_POL
+		FROM = {
+			country_event = 666666027
+			set_country_flag = a_habsburg_on_the_throne_POL
+		}
 		ai_chance = { factor = 95 }
 	}
 	
@@ -2894,7 +2897,7 @@ country_event = {
 	picture = "GLM_convention"
 	
 	trigger = {
-		PNC = { has_country_flag = a_habsburg_on_the_throne }
+		PNC = { has_country_flag = a_habsburg_on_the_throne_POL }
 		has_global_flag = paris_congress_held
 		war = no
 		OR = {
@@ -2914,7 +2917,7 @@ country_event = {
 	
 	option = {
 		name = "EVT666666029OPTA"
-		#PNC = { clr_country_flag = a_habsburg_on_the_throne }
+		#PNC = { clr_country_flag = a_habsburg_on_the_throne_POL }
 		random_country = {
 			limit = { has_country_flag = receiving_GLM }
 			country_event = 666666030
@@ -2926,7 +2929,7 @@ country_event = {
 	
 	option = {
 		name = "EVT666666029OPTB"
-		clr_country_flag = a_habsburg_on_the_throne
+		clr_country_flag = a_habsburg_on_the_throne_POL
 		GLM = { all_core = { add_core = PNC } } # Galicia-Lodomeria
 		prestige = -10
 		random_country = {
@@ -3209,7 +3212,7 @@ country_event = {
 
 	option = {
 		name = "EVT666666033OPTA"
-		clr_country_flag = a_habsburg_on_the_throne
+		clr_country_flag = a_habsburg_on_the_throne_POL
 		prestige_factor = 0.05
 		set_global_flag = GP_paris_vetoed
 		soldiers = {
