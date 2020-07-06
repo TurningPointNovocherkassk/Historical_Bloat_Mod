@@ -2242,6 +2242,7 @@ country_event = {
 	title = "EVTNAME1220042"
 	desc = "EVTDESC1220042"
 	picture = "treaty"
+	fire_only_once = yes
 	
 	trigger = {
 		tag = YUC
@@ -2293,6 +2294,7 @@ country_event = {
 	}
 	option = {
 		name = "EVT1220042OPTB"
+		set_country_flag = 2nd_YUC_annex
 		any_owned = {
 			limit = {
 				OR = {

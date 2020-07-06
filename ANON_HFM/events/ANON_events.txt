@@ -2336,14 +2336,14 @@ country_event = {
 	}
 	country_event = {
 		id = 100020
-		title = "EVTNAME100020" #CSA not recognized
-		desc = "EVTDESC100020"
+		title = "EVTNAME10000020" #CSA not recognized
+		desc = "EVTDESC10000020"
 		picture = "administration"
 		
 		is_triggered_only = yes
 		
 		option = {
-			name = "EVTOPTA100020"
+			name = "EVTOPTA10000020"
 			random_owned = {
 				limit = { owner = { primary_culture = yankee } }
 				owner = {
@@ -2369,14 +2369,14 @@ country_event = {
 	}
 	country_event = {
 		id = 100021
-		title = "EVTNAME100021" #stayed neutral
-		desc = "EVTDESC100021"
+		title = "EVTNAME10000021" #stayed neutral
+		desc = "EVTDESC10000021"
 		picture = "administration"
 		
 		is_triggered_only = yes
 		
 		option = {
-			name = "EVTOPTA100021"
+			name = "EVTOPTA10000021"
 			ai_chance = { factor = 100 }
 		}
 	}
