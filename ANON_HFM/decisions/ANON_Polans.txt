@@ -788,8 +788,7 @@ political_decisions = {
 				tag = PLH
 			}
 			NOT = { has_country_flag = organize_PLC_1st }
-			NOT = { has_country_flag = organize_PLC_2nd }
-			NOT = { has_country_flag = organize_PLR }
+			NOT = { has_country_flag = organize_PLR_C3N }
 		}
 		allow = {
 			war = no
@@ -852,7 +851,222 @@ political_decisions = {
 				}
 				add_core = LIT
 			}
+			POL = { government = colonial_company  }
+			HPL = { government = colonial_company  }
+			LIT = { government = colonial_company  }
 		}
 	}
 	
+	the_PLC_claims_1st = {
+		picture = become_poland_lithuania
+		potential = {
+			tag = PLC
+			has_country_flag = organize_PLC_1st
+			NOT = { has_country_flag = the_PLC_claims_1st }
+		}
+		allow = {
+			war = no
+			prestige = 100
+			PLC = { all_core = { owned_by = THIS } }
+		}
+		effect = {
+			set_country_flag = the_PLC_claims_1st
+			badboy = 12.5
+			prestige = 12.5
+			696 = { add_core = PLC add_core = POL } #Allenstein
+			693 = { add_core = PLC add_core = POL } #Elbing
+			3658 = { add_core = PLC add_core = POL } #Nowe Miasto
+			RUS_968 = { add_core = PLC add_core = POL } #Podolia
+			969 = { add_core = PLC add_core = POL } #Pervomaisk
+			968 = { add_core = PLC add_core = POL } #Odessa
+			RUS_718 = { add_core = PLC add_core = LIT } #Minsk
+			959 = { add_core = PLC add_core = LIT } #Korosten
+			960 = { add_core = PLC add_core = LIT } #Zhitomir
+			RUS_945 = { add_core = PLC add_core = LIT } #Vitebsk
+			RUS_947 = { add_core = PLC add_core = LIT } #Orsha
+			RUS_962 = { add_core = PLC add_core = LIT } #Chernigov
+			RUS_958 = { add_core = PLC add_core = LIT } #Kiev
+			RUS_963 = { add_core = PLC add_core = LIT } #Poltava
+			974 = { add_core = PLC add_core = LIT } #Kramatorsk
+			972 = { add_core = PLC add_core = LIT } #Ekaterinoslav
+			971 = { add_core = PLC add_core = LIT } #Krivoy Rog
+			970 = { add_core = PLC add_core = LIT } #Mykolaev
+			965 = { add_core = PLC add_core = LIT } #Cherson
+		}
+	}
+	
+	the_PLC_claims_1st_HABSBURG = {
+		picture = become_poland_lithuania
+		potential = {
+			tag = PLH
+			has_country_flag = organize_PLC_1st
+			NOT = { has_country_flag = the_PLC_claims_1st_HABSBURG }
+		}
+		allow = {
+			war = no
+			prestige = 100
+			PLH = { all_core = { owned_by = THIS } }
+		}
+		effect = {
+			set_country_flag = the_PLC_claims_1st_HABSBURG
+			badboy = 12.5
+			prestige = 12.5
+			696 = { add_core = PLH add_core = HPL } #Allenstein
+			693 = { add_core = PLH add_core = HPL } #Elbing
+			3658 = { add_core = PLH add_core = HPL } #Nowe Miasto
+			RUS_968 = { add_core = PLH add_core = HPL } #Podolia
+			969 = { add_core = PLH add_core = HPL } #Pervomaisk
+			968 = { add_core = PLH add_core = HPL } #Odessa
+			RUS_718 = { add_core = PLH add_core = LIT } #Minsk
+			959 = { add_core = PLH add_core = LIT } #Korosten
+			960 = { add_core = PLH add_core = LIT } #Zhitomir
+			RUS_945 = { add_core = PLH add_core = LIT } #Vitebsk
+			RUS_947 = { add_core = PLH add_core = LIT } #Orsha
+			RUS_962 = { add_core = PLH add_core = LIT } #Chernigov
+			RUS_958 = { add_core = PLH add_core = LIT } #Kiev
+			RUS_963 = { add_core = PLH add_core = LIT } #Poltava
+			974 = { add_core = PLH add_core = LIT } #Kramatorsk
+			972 = { add_core = PLH add_core = LIT } #Ekaterinoslav
+			971 = { add_core = PLH add_core = LIT } #Krivoy Rog
+			970 = { add_core = PLH add_core = LIT } #Mykolaev
+			965 = { add_core = PLH add_core = LIT } #Cherson
+		}
+	}
+	
+	the_commonwealth_3_nations = {
+		picture = become_PLR
+		potential = {
+			tag = PLC
+			has_country_flag = organize_PLC_1st
+			has_country_flag = the_PLC_claims_1st
+			any_owned = { is_core = UKR }
+			NOT = { has_country_flag = the_commonwealth_3_nations }
+		}
+		allow = {
+			war = no
+			PLC = { all_core = { owned_by = THIS } }
+			NOT = { accepted_culture = ukrainian }
+			is_greater_power = yes
+			mass_politics = 1
+			any_owned_province = {
+				is_core = UKR
+				#average_militancy = 4
+			}
+		}
+		effect = {
+			set_country_flag = the_commonwealth_3_nations
+			badboy = 12.5
+			prestige = 12.5
+			all_core = { add_core = PLR remove_core = PLC }
+			change_tag = PLR
+			RUS_977 = { add_core = PLR } #Kursk
+			RUS_978 = { add_core = PLR } #Kharkov
+			980 = { add_core = PLR } #Lugansk
+			3648 = { add_core = PLR } #Sedovo
+			975 = { add_core = PLR } #Yuzovka
+			976 = { add_core = PLR } #Mariupol
+			RUS_964 = { add_core = PLR } #Crimea
+			1016 = { add_core = PLR } #Bryansk
+			943 = { add_core = PLR } #Smolensk
+		}
+	}
+	
+	the_commonwealth_3_nations_HABSBURG = {
+		picture = become_PLR
+		potential = {
+			tag = PLH
+			has_country_flag = organize_PLC_1st
+			has_country_flag = the_PLC_claims_1st_HABSBURG
+			any_owned = { is_core = UKR }
+			NOT = { has_country_flag = the_commonwealth_3_nations }
+		}
+		allow = {
+			war = no
+			PLH = { all_core = { owned_by = THIS } }
+			NOT = { accepted_culture = ukrainian }
+			is_greater_power = yes
+			mass_politics = 1
+			any_owned_province = {
+				is_core = UKR
+				#average_militancy = 4
+			}
+		}
+		effect = {
+			set_country_flag = the_commonwealth_3_nations
+			badboy = 12.5
+			prestige = 12.5
+			all_core = { add_core = C3N remove_core = PLH }
+			change_tag = C3N
+			RUS_977 = { add_core = C3N } #Kursk
+			RUS_978 = { add_core = C3N } #Kharkov
+			980 = { add_core = C3N } #Lugansk
+			3648 = { add_core = C3N } #Sedovo
+			975 = { add_core = C3N } #Yuzovka
+			976 = { add_core = C3N } #Mariupol
+			RUS_964 = { add_core = C3N } #Crimea
+			1016 = { add_core = C3N } #Bryansk
+			943 = { add_core = C3N } #Smolensk
+		}
+	}
+	
+	organize_PLR_C3N = {
+		picture = become_PLR
+		potential = {
+			OR = {
+				tag = PLR
+				tag = C3N
+			}
+			has_country_flag = organize_PLC_1st
+			NOT = { has_country_flag = organize_PLR_C3N }
+		}
+		allow = {
+			war = no
+			OR = {
+				PLR = { all_core = { owned_by = THIS } }
+				C3N = { all_core = { owned_by = THIS } }
+			}
+		}
+		effect = {
+			set_country_flag = organize_PLR_C3N
+			prestige = 5
+			UKR = {
+				all_core = { remove_core = UKR }
+				government = colonial_company 
+			}
+			any_owned = {
+				limit = {
+					#owner = { NOT = { has_country_flag = a_habsburg_on_the_throne_POL } }
+					OR = {    
+						province_id = 3662 #Kamianets-Podilskyi
+						province_id = 955 #Proskorov
+						province_id = 954 #Vinnitsa
+						province_id = 3279 #Tiraspol
+						province_id = 959 #Korosten
+						province_id = 960 #Zhitomir
+						province_id = 962 #Chernigov
+						region = RUS_973 #Kherson
+						region = RUS_958 #Kiev
+						region = RUS_963 #Poltava
+						region = RUS_977 #Kursk
+						region = RUS_978 #Kharkov
+						region = RUS_955 #Yekaterinoslav
+						region = RUS_964 #Crimea
+					}
+				}
+				add_core = UKR
+				remove_core = POL
+				remove_core = HPL
+				remove_core = LIT
+			}
+			any_owned = {
+				limit = {
+					OR = {
+						province_id = 943 #Smolensk
+						province_id = 1016 #Bryansk
+					}
+				}
+				add_core = LIT
+			}
+		}
+	}
 }
