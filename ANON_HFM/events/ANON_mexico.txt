@@ -1429,7 +1429,6 @@ country_event = {
 	
 	option = {
 		name = "EVT1220020OPTA"
-		MEX = { inherit = YUC }
 		#add economically positive modifiers to coastal YUC provinces but gives more autonomy (does not avert caste war)
 		#3443 2184 2183 3357 3358 2185
 		any_owned = {
@@ -1446,6 +1445,7 @@ country_event = {
 			add_province_modifier = { name = YUC_autonomy_modifier duration = 3650 }
 		}
 		change_tag_no_core_switch = MEX
+		MEX = { inherit = YUC }
 		ai_chance = {
 			factor = 100
 		}	

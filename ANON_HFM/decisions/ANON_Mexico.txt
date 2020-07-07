@@ -190,7 +190,6 @@ political_decisions = {
 		potential = {
 			tag = YUC
 			has_global_flag = YUC_ceasefire
-			has_global_flag = yucatecan_question
 			has_country_flag = YUC_has_blockade
 			NOT = { has_global_flag = yucatecan_destiny }
 		}
@@ -200,7 +199,7 @@ political_decisions = {
 		}
 		
 		effect = {
-			set_global_flag = yucatecan_question
+			set_global_flag = yucatecan_destiny
 			country_event = 1220034
 		}
 		ai_will_do = { factor = 1 }
