@@ -389,7 +389,7 @@ country_event = {
 #CSA Intervention
 country_event = {
 	id = 1100065
-	title - "EVTNAME1100065"
+	title = "EVTNAME1100065"
 	desc = "EVTDESC1100065"
 	picture = "dixie_mansion"
 	
@@ -635,7 +635,7 @@ country_event = {
 #Moving of the capital to El Paso de Norte
 country_event = {
 	id = 1100067
-	name = "EVTNAME1100067"
+	title = "EVTNAME1100067"
 	desc = "EVTDESC1100067"
 	picture = "MEX_revolution"
 	
@@ -682,7 +682,7 @@ country_event = {
 #Maximilian offers Juarez to join the Empire and to give him a seat.
 country_event = {
 	id = 1100068
-	name = "EVTNAME1100068"
+	title = "EVTNAME1100068"
 	desc = "EVTDESC1100068"
 	picture = "confederation"
 	
@@ -708,6 +708,7 @@ country_event = {
 		
 	option = {
 		name = "EVTOPTB1100068" #Juarez accepts
+		change_tag_no_core_switch = MXM
 		MXM = {
 			government = hms_government
 			election = yes
@@ -718,7 +719,6 @@ country_event = {
 			}
 		MEX = { all_core = { remove_core = MEX } }
 		set_global_flag = juarez_accepts
-		change_tag_no_core_switch = MXM
 		ai_chance = { factor = .1 }
 		}
 	
