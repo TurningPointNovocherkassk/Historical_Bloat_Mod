@@ -1,10 +1,11 @@
 capital = 2172
+#primary_culture = criollo
 primary_culture = spanish
 culture = mexican
 culture = norteno
 culture = yucateco
 religion = catholic
-government = hms_government
+government = absolute_monarchy
 plurality = 25.0
 nationalvalue = nv_order
 literacy = 0.03
@@ -15,8 +16,8 @@ prestige = 3
 
 # Political reforms
 slavery = no_slavery
-upper_house_composition = state_equal_weight
-vote_franschise = wealth_voting
+upper_house_composition = appointed
+vote_franschise = no_voting
 public_meetings = yes_meeting
 press_rights = free_press
 trade_unions = non_socialist
@@ -45,7 +46,7 @@ colonial_policy = no_colonies
 set_country_flag = catholic_country
 
 ruling_party = MEX_conservative_2
-last_election = 1864.4.10
+last_election = 1860.4.10
 upper_house = {
 	fascist = 0
 	liberal = 5

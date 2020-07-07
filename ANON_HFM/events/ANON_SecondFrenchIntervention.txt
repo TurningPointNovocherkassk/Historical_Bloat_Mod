@@ -111,6 +111,7 @@ country_event = {
 	}
 }
 
+
 #The Capture and Trial of Emperor Maximillian / End of the 2nd French Intervention
 country_event = {
 	id = 1100061
@@ -128,6 +129,7 @@ country_event = {
 		tag = MEX
 		has_global_flag = second_french_intervetion
 		2172 = { controlled_by = MEX }
+		2143 = { controlled_by = MEX }
 		}
 		
 	option = {
@@ -177,7 +179,7 @@ country_event = {
 			ai_chance = { factor = .9 }
 		}
 	
-	option {
+	option = {
 		name = "EVTOPTB1100061" #Sparing Maximilian
 		MEX = {
 			any_pop = {
@@ -204,8 +206,10 @@ country_event = {
 		tag = MXM
 		has_global_flag = second_french_intervetion
 		owns = 2147
+		owns = 2143
 		NOT = { war_with = MEX }
 		NOT = { war_with = USA }
+		NOT = { has_global_flag = juarez_accepts }
 		}
 
 	option = {
@@ -311,7 +315,7 @@ country_event = {
 					}
 				}
 				consciousness = 3
-				militancy = 1.5
+				militancy = 2
 				}
 			any_pop = {
 				limit = {
@@ -375,7 +379,7 @@ country_event = {
 				consciousness = -2
 				militancy = -1
 				}
-			war_exhaustion = -10
+			war_exhaustion = -5
 			}
 		ai_chance = { factor = .1 }
 		}
@@ -430,7 +434,7 @@ country_event = {
 		war_exhaustion = 10
 		MXM = { military_access = CSA }
 		set_global_flag = CSA_intervenes
-		ai_chance = { factor = .4 }
+		ai_chance = { factor = .3 }
 		}
 	option = {
 		name = "EVTOPTB1100065" ## Sending of supplies to Habsburg Mexico 
@@ -468,7 +472,7 @@ country_event = {
 			}
 		prestige = 25
 		set_global_flag = CSA_intervenes
-		ai_chance = { factor = .3 }
+		ai_chance = { factor = .4 }
 		} 
 	option = {
 		name = "EVTOPTC1100065" ## No aid rendered to Habsburg Mexico
@@ -477,10 +481,259 @@ country_event = {
 				consciousness = -2
 				militancy = -1
 				}
-			war_exhaustion = -10
+			war_exhaustion = -5
 			}
 		ai_chance = { factor = .3 }
 		}	
 	}
 
-#
+#USA aid options to Mexico in the event the CSA intervenes
+country_event = {
+	id = 1100066
+	title = "EVTNAME1100066"
+	desc = "EVTDESC1100066"
+	picture = "yankee"
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = USA
+		truce_with = CSA
+		MEX = { war_with = MXM }
+		has_global_flag = CSA_intervenes
+		has_global_flag = second_french_intervetion
+		}
+		
+	option = {
+		name = "EVTOPTA1100066" #Supplies sent to Mexico
+		USA = {
+			ammunition = -250
+			small_arms = -125
+			artillery = -50
+			canned_food = -150
+			}
+		MEX = {
+			ammunition = 250
+			small_arms = 125
+			artillery = 50
+			canned_food = 150
+			}
+		USA = {
+			relation = {
+				who = MEX
+				value = 100 
+				}
+			diplomatic_influence = {
+				who = MEX
+				value = 100
+				}
+			relation = {
+				who = MXM
+				value = -50
+				}
+			diplomatic_influence = {
+				who = MXM
+				value = -50
+				}
+			relation = {
+				who = FRA
+				value = -50
+				}
+			relation = {
+				who = CSA
+				value = -50
+				}
+			}
+		ai_chance = { factor = .6 }
+		}
+	option = {
+		name = "EVTOPTB1100066" #Declaration of war against Habsburg Mexico with casus bellis against France and the CSA
+		USA = {
+			war = {
+					target = MXM
+					attacker_goal = { casus_belli = cut_down_to_size }
+					defender_goal = { casus_belli = status_quo }
+					call_ally = yes
+					}
+			}
+		USA = {
+			create_alliance = MEX 
+				relation = {
+					who = MEX
+					value = 400
+					}
+				diplomatic_influence = {
+					who = MEX
+					value = 400
+					}
+			}
+		USA = {
+			relation = {
+				who = MEX
+				value = 400 
+				}
+			diplomatic_influence = {
+				who = MEX
+				value = 400
+				}
+			relation = {
+				who = MXM
+				value = -200
+				}
+			diplomatic_influence = {
+				who = MXM
+				value = -200
+				}
+			relation = {
+				who = FRA
+				value = -150
+				}
+			relation = {
+				who = CSA
+				value = -150
+				}
+			}
+		USA = {
+			casus_belli = {
+				target = CSA
+				type = humiliate
+				months = 12
+				}
+			casus_belli = {
+				target = FRA
+				type = humiliate
+				months = 12
+				}
+			}
+		war_exhaustion = 15
+		prestige = 25
+		ai_chance = { factor = .1 }
+		}
+	option = {
+		name = "EVTOPTC1100066" #No aid is rendered, USA declares neutrality
+		USA = {
+			any_pop = {
+				consciousness = -2
+				militancy = -1
+				}
+			war_exhaustion = -10
+			}
+		USA = {
+			relation = {
+				who = CSA
+				relation = 50
+				}
+			relation = {
+				who = MEX
+				relation = -50
+				}
+			}	
+		ai_chance = { factor = .3 }
+		}	
+	}
+	
+#Moving of the capital to El Paso de Norte
+country_event = {
+	id = 1100067
+	name = "EVTNAME1100067"
+	desc = "EVTDESC1100067"
+	picture = "MEX_revolution"
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = MEX
+		OR = {
+			2147 = { controlled_by = FRA }
+			2147 = { controlled_by = MXM }
+			}
+		has_global_flag = second_french_intervetion
+		war_with = MXM
+		}
+		
+	option = { 
+		name = "EVTOPTA1100067" #Move capital to El Paso de Norte
+		MEX = {
+			capital = 2143
+			war_exhaustion = -20
+			prestige = -10
+		}
+		USA = {
+			military_access = MEX
+			}
+		ai_chance = { factor = .9 }
+		}
+	
+	option = {
+		name = "EVTOPTB1100067" #Don't Move Capital
+		MEX = {
+			prestige = 20
+			war_exhaustion = 5
+			}
+		ai_chance = { factor = .1 }
+		}
+		
+	}
+
+##################################################################
+###                Dos Mexicos Event Chain                     ###        
+##################################################################
+
+#Maximilian offers Juarez to join the Empire and to give him a seat.
+country_event = {
+	id = 1100068
+	name = "EVTNAME1100068"
+	desc = "EVTDESC1100068"
+	picture = "confederation"
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = MEX
+		has_global_flag = second_french_intervetion
+		NOT = { war_with = MXM }
+		}
+	
+	option = {
+		name = "EVTOPTA1100068" #Juarez refuses, but doesn't instigate war
+		MEX = {
+			prestige = 15
+			relation = {
+				who = MXM
+				value = -50
+				}
+			}
+		ai_chance = { factor = .2 }
+		}
+		
+	option = {
+		name = "EVTOPTB1100068" #Juarez accepts
+		MXM = {
+			government = hms_government
+			election = yes
+			ruling_party_ideology = liberal
+			inherit = MEX
+			prestige = 5
+			war_exhaustion = -20
+			}
+		MEX = { all_core = { remove_core = MEX } }
+		set_global_flag = juarez_accepts
+		change_tag_no_core_switch = MXM
+		ai_chance = { factor = .1 }
+		}
+	
+	option = {
+		name = "EVTOPTC1100068" #Juarez refuses, instigates war
+		MEX = {
+			prestige = 25
+			war = {
+				target = MXM
+				attacker_goal = { casus_belli = civil_war }
+				defender_goal = { casus_belli = civil_war }
+				call_ally = yes
+			}
+		}
+		FRA = { leave_alliance = MXM }
+		ai_chance = { factor = .7 }
+		}
+	}	
