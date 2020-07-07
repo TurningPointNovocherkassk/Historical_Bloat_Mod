@@ -2970,7 +2970,7 @@ country_event = {
 		ruling_party_ideology = reactionary
 		relation = { who = FROM value = 200 }
 		diplomatic_influence = { who = FROM value = 400 }
-		GLM = { all_core = { remove_core = GLM remove_core = FROM add_core = PNC } } # Galicia-Lodomeria
+		GLM = { all_core = { remove_core = GLM remove_core = AUS remove_core = KUK remove_core = SGF add_core = PNC } } # Galicia-Lodomeria
 		any_pop = {
 			scaled_militancy = {
 				ideology = liberal
@@ -3504,7 +3504,7 @@ country_event = {
 	option = {
 		name = "EVTOPT666666035A"
 		clr_country_flag = receiving_GLM_cleanup
-		GLM = { all_core = { remove_core = GLM remove_core = FROM add_core = PNC } }
+		GLM = { all_core = { remove_core = GLM remove_core = AUS remove_core = KUK remove_core = SGF add_core = PNC } }
 		AUS_702 = { remove_core = AUS remove_core = KUK remove_core = SGF } # Galicia-Lodomeria
 		AUS_662 = { remove_core = AUS remove_core = KUK remove_core = SGF } # East Galicia
 	}
@@ -3576,7 +3576,6 @@ country_event = {
 		political_reform = party_appointed
 		political_reform = state_controlled
 		political_reform = harassment
-		political_reform = party_appointed
 		ruling_party_ideology = liberal
 		political_reform = peonage
 		nationalvalue = nv_liberty

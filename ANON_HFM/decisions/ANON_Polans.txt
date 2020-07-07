@@ -939,7 +939,7 @@ political_decisions = {
 			tag = PLC
 			has_country_flag = organize_PLC_1st
 			has_country_flag = the_PLC_claims_1st
-			any_owned = { is_core = UKR }
+			any_owned_province = { is_core = UKR }
 			NOT = { has_country_flag = the_commonwealth_3_nations }
 		}
 		allow = {
@@ -948,10 +948,10 @@ political_decisions = {
 			NOT = { accepted_culture = ukrainian }
 			is_greater_power = yes
 			mass_politics = 1
-			any_owned_province = {
-				is_core = UKR
-				#average_militancy = 4
-			}
+			# any_owned_province = {
+				# is_core = UKR
+				# average_militancy = 4
+			# }
 		}
 		effect = {
 			set_country_flag = the_commonwealth_3_nations
@@ -977,7 +977,7 @@ political_decisions = {
 			tag = PLH
 			has_country_flag = organize_PLC_1st
 			has_country_flag = the_PLC_claims_1st_HABSBURG
-			any_owned = { is_core = UKR }
+			any_owned_province = { is_core = UKR }
 			NOT = { has_country_flag = the_commonwealth_3_nations }
 		}
 		allow = {
@@ -986,10 +986,10 @@ political_decisions = {
 			NOT = { accepted_culture = ukrainian }
 			is_greater_power = yes
 			mass_politics = 1
-			any_owned_province = {
-				is_core = UKR
-				#average_militancy = 4
-			}
+			# any_owned_province = {
+				# is_core = UKR
+				# average_militancy = 4
+			# }
 		}
 		effect = {
 			set_country_flag = the_commonwealth_3_nations
