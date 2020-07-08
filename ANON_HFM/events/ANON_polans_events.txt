@@ -1956,6 +1956,13 @@ country_event = {
 			}
 			country_event = 666666020
 		}
+		any_country = {
+			limit = {
+				has_country_flag = for_congress_paris
+				has_country_modifier = no_more_war
+			}
+			remove_country_modifier = no_more_war
+		}
 	}
 
 }
@@ -2037,6 +2044,13 @@ country_event = {
 				has_country_flag = for_congress_paris
 			}
 			country_event = 666666021
+		}
+		any_country = {
+			limit = {
+				has_country_flag = for_congress_paris
+				has_country_modifier = no_more_war
+			}
+			remove_country_modifier = no_more_war
 		}
 	}
 }
@@ -3118,7 +3132,9 @@ country_event = {
 		}
 	}
 }
-
+######################################
+#PNC congress vetoed
+######################################
 country_event = {
 	
 	id = 666666032
@@ -3196,6 +3212,13 @@ country_event = {
 				has_country_flag = for_congress_paris
 			}
 			country_event = 666666033
+		}
+		any_country = {
+			limit = {
+				has_country_flag = for_congress_paris
+				has_country_modifier = no_more_war
+			}
+			remove_country_modifier = no_more_war
 		}
 	}
 }
@@ -3645,3 +3668,6 @@ country_event = {
 		}
 	}
 }
+#####################################################################################
+# PNC interim government - choose a government type after the congress
+#####################################################################################
