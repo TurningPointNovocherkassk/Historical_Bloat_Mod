@@ -2733,6 +2733,11 @@ monroe_doctrine = {
 						tag = DOM
 						has_global_flag = spain_annexation_DOM
 					}
+					# AND = {
+						# tag = MXM
+						# has_global_flag = second_french_intervetion
+						# NOT = { has_global_flag = juarez_accepts }
+					# }
 				}
 			}
 			NOT = {
@@ -2846,6 +2851,11 @@ monroe_doctrine = {
 					tag = DOM
 					has_global_flag = spain_annexation_DOM
 				}
+				# AND = {
+					# tag = MXM
+					# has_global_flag = second_french_intervetion
+					# NOT = { has_global_flag = juarez_accepts }
+				# }
 			}
 			OR = {
 				exists = yes
