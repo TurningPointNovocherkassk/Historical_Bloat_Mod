@@ -1309,6 +1309,8 @@ country_event = {
 						tag = CAN
 						tag = ENG
 						tag = MEX
+						tag = MXM
+						tag = M3X
 						tag = ARD
 						tag = JAP
 						tag = CAS
@@ -1363,6 +1365,7 @@ country_event = {
 					OR = {
 						in_sphere = RUS
 						vassal_of = RUS
+						substate_of = RUS
 						all_core = {
 							OR = {
 								owned_by = RUS
@@ -1372,6 +1375,7 @@ country_event = {
 										OR = {
 											is_vassal = no
 											vassal_of = RUS
+											substate_of = RUS
 										}
 									}
 									is_greater_power = no
@@ -1406,11 +1410,16 @@ country_event = {
 				factor = 0.2
 				OR = {
 					tag = MEX
+					tag = MXM
+					tag = M3X
 					tag = C4L
 					tag = CAL
 					tag = ARD
 				}
-				ai = yes
+			}
+			modifier = {
+				factor = 3
+				tag = LIE
 			}
 		}
 		
@@ -1438,11 +1447,12 @@ country_event = {
 						AND = {
 							OR = {
 								tag = MEX
+								tag = MXM
+								tag = M3X
 								tag = CAL
 								tag = C4L
 								tag = ARD
 							}
-							ai = yes
 						}
 						ai = no
 					}
@@ -1463,6 +1473,8 @@ country_event = {
 						AND = {
 							OR = {
 								tag = MEX
+								tag = MXM
+								tag = M3X
 								tag = CAL
 								tag = C4L
 								tag = ARD
@@ -1501,7 +1513,11 @@ country_event = {
 					factor = 100
 					OR = {
 						AND = {
-							tag = MEX
+							OR = {
+								tag = MEX
+								tag = MXM
+								tag = M3X
+							}
 							ai = yes
 						}
 						ai = no
@@ -1539,6 +1555,8 @@ country_event = {
 						tag = CAN
 						tag = ENG
 						tag = MEX
+						tag = MXM
+						tag = M3X
 						tag = ARD
 						tag = JAP
 						tag = CAS
@@ -1569,7 +1587,11 @@ country_event = {
 					FROM = {
 						OR = {
 							AND = {
-								tag = MEX
+								OR = {
+									tag = MEX
+									tag = MXM
+									tag = M3X
+								}
 								ai = yes
 							}
 							ai = no
@@ -1612,6 +1634,7 @@ country_event = {
 						NOT = {
 							OR = {
 								has_pop_culture = mexican
+								has_pop_culture = californio
 								is_culture_group = native_american
 								has_pop_culture = yankee
 							}
