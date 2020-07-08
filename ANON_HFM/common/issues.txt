@@ -728,6 +728,10 @@ political_reforms = {
 							has_country_flag = theocratic_government
 						}
 					}
+					AND = { 
+						ruling_party_ideology = socialist
+						has_country_flag = presidential_dictatorship_gov
+					}
 				}
 			}
 		}

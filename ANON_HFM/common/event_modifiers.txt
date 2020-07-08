@@ -4149,6 +4149,20 @@ YUC_autonomy_modifier = {
 }
 
 
+global_federalist_agitation = {
+	global_pop_consciousness_modifier = 0.2
+	global_pop_militancy_modifier = 0.01
+	prestige = -0.03
+	icon = 4
+}
+
+federalist_sympathies = {
+	pop_militancy_modifier  = 0.3
+	pop_consciousness_modifier  = 0.3
+	local_ruling_party_support = -0.7
+	icon = 18
+}
+
 #########################
 
 religious_insurrection = {
