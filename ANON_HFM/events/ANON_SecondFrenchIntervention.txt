@@ -301,7 +301,7 @@ country_event = {
 				}
 			set_country_flag = mexican_payday_war
 			}
-		ai_chance = { factor = 1 }
+		#ai_chance = { factor = 1 }
 		}
 	option = {
 		name = "EVTOPTB1100053" #No War
@@ -348,6 +348,7 @@ country_event = {
 				who = FRA
 				value = -20
 				}
+			}
 		ai_chance = { factor = 1 }
 		}
 	option = {
@@ -358,10 +359,11 @@ country_event = {
 				who = FRA
 				value = 50
 				}
-			relation = 
+			relation = {  
 				who = USA
 				value = -25
-				}
+				}	
+			}
 		}
 	}
 
@@ -500,10 +502,8 @@ country_event = {
 		ai_chance = { factor = .5 }
 		}
 	}
-
-##################################################################################################################	
-#########                              2nd French Intervention of Mexico                                 #########
-##################################################################################################################
+	
+#2nd French Intervention of Mexico                                 
 
 country_event = {
 	id = 1100060
