@@ -2571,6 +2571,7 @@ country_event = {
 		OR = {
 			owns = 1147
 			is_our_vassal = KHR
+			KHR = { substate_of = THIS }
 		}
 		OR = {
 			1147 = {
@@ -3780,7 +3781,10 @@ country_event = {
 		#admin_reform = no_admin_reform		
 		1147 = {
 			owner = {
-				vassal_of = PER
+				OR = {
+					vassal_of = PER
+					substate_of = PER
+				}
 			}
 		}
 		has_country_flag = naser_al_din
@@ -3793,7 +3797,7 @@ country_event = {
 	}
 	
 	immediate = {
-		release_vassal = KHR
+		release = KHR
 	}
 	
 	option = {
