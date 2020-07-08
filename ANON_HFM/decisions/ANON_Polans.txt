@@ -242,15 +242,17 @@ political_decisions = {
 			set_global_flag = krakow_uprising
 			set_country_flag = ANON_total_war_flag
 			prestige = 25
-			government = presidential_dictatorship
-			political_reform = none_voting
-			political_reform = party_appointed
-			political_reform = state_controlled
-			political_reform = harassment
-			political_reform = peonage
-			nationalvalue = nv_liberty
+		
+			government = provisional_government
 			ruling_party_ideology = liberal
-					
+			nationalvalue = nv_liberty
+			political_reform = none_voting
+			political_reform = harassment
+			political_reform = appointed
+			political_reform = state_controlled
+			political_reform = free_press
+			political_reform = yes_meeting
+			
 			define_general = {
 				name = "Edward Dembowski"
 				personality = resolute

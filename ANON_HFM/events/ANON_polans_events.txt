@@ -103,14 +103,17 @@ country_event = {
 		set_global_flag = greater_poland_uprising
 		set_country_flag = ANON_total_war_flag
 		prestige = 25
-		government = provisional_government
-		political_reform = none_voting
-		political_reform = party_appointed
-		political_reform = state_controlled
-		political_reform = harassment
-		political_reform = peonage
-		ruling_party_ideology = liberal
 		
+		government = provisional_government
+		ruling_party_ideology = liberal
+		nationalvalue = nv_liberty
+		political_reform = none_voting
+		political_reform = harassment
+		political_reform = appointed
+		political_reform = state_controlled
+		political_reform = free_press
+		political_reform = yes_meeting
+			
 		primary_culture = polish
 		remove_accepted_culture = north_german
 				
@@ -3036,6 +3039,9 @@ country_event = {
 				factor = -4
 			}
 		}
+		ai_chance = {
+			factor = 95
+		}
 	}
 	
 	option = {
@@ -3047,6 +3053,9 @@ country_event = {
 		relation = { who = FROM value = -400 }
 		diplomatic_influence = { who = FROM value = -400 }
 		FROM = { country_event = 666666031 }
+		ai_chance = {
+			factor = 5
+		}
 	}
 }
 
@@ -3594,15 +3603,17 @@ country_event = {
 		PZN = { all_core = { add_core = PNC } }
 		all_core = { add_core = PNC }
 		capital = 706
-		government = provisional_government
-		political_reform = none_voting
-		political_reform = party_appointed
-		political_reform = state_controlled
-		political_reform = harassment
-		ruling_party_ideology = liberal
-		political_reform = peonage
-		nationalvalue = nv_liberty
 		
+		government = provisional_government
+		ruling_party_ideology = liberal
+		nationalvalue = nv_liberty
+		political_reform = none_voting
+		political_reform = harassment
+		political_reform = appointed
+		political_reform = state_controlled
+		political_reform = free_press
+		political_reform = yes_meeting
+			
 		add_country_modifier = { name = polish_uprising_mobilization duration = 2920 }
 		add_country_modifier = { name = unrecognized_country duration = 1095 }
 		
@@ -3671,3 +3682,445 @@ country_event = {
 #####################################################################################
 # PNC interim government - choose a government type after the congress
 #####################################################################################
+country_event = {
+	id = 666666037
+	title = "EVTNAME666666037"
+	desc = "EVTDESC666666037"
+	picture = "january_uprising"
+	
+	fire_only_once = yes
+
+	trigger = {
+		tag = CPL
+		government = provisional_government
+		NOT = {
+			OR = {
+				war_with = PRU
+				war_with = NGF
+				war_with = GER
+				war_with = GCF
+				war_with = AUS
+				war_with = KUK
+				war_with = SGF
+				war_with = RUS
+			}
+			has_country_flag = a_habsburg_on_the_throne_POL
+			OR = {
+				has_country_flag = polans_republic
+				has_country_flag = polans_noble_republic
+				has_country_flag = polans_socialist_autocracy
+				has_country_flag = polans_ancap_autocracy
+				has_country_flag = polans_absolutist
+			}
+		}
+		has_global_flag = paris_congress_held
+	}
+	
+	mean_time_to_happen = { days = 5 } 
+	
+	option = {
+		name = "EVTOPT666666037A"
+		set_country_flag = polans_republic
+		government = democracy
+		ruling_party_ideology = conservative
+		nationalvalue = nv_liberty
+		political_reform = two_year_draft
+		political_reform = state_equal_weight
+		political_reform = universal_weighted_voting
+		political_reform = gerrymandering
+		political_reform = yes_meeting
+		political_reform = free_press
+		political_reform = non_socialist
+		political_reform = first_past_the_post
+		political_reform = culture_voting_only
+		political_reform = peonage
+		social_reform = no_minimum_wage
+		social_reform = no_work_hour_limit
+		social_reform = no_safety
+		social_reform = no_subsidies
+		social_reform = no_pensions
+		social_reform = no_health_care
+		social_reform = no_schools
+		social_reform = capital_punishment
+		social_reform = child_labor_legal
+		election = yes
+		any_pop = {
+			scaled_militancy = {
+				ideology = liberal
+				factor = -4
+			}
+			scaled_consciousness = {
+				ideology = liberal
+				factor = -4
+			}
+			scaled_militancy = {
+				ideology = communist
+				factor = 2
+			}
+			scaled_consciousness = {
+				ideology = communist
+				factor = 2
+			}
+			scaled_militancy = {
+				ideology = socialist
+				factor = -2
+			}
+			scaled_consciousness = {
+				ideology = socialist
+				factor = -2
+			}
+			
+			scaled_militancy = {
+				ideology = anarcho_liberal
+				factor = 2
+			}
+			scaled_consciousness = {
+				ideology = anarcho_liberal
+				factor = 2
+			}
+			scaled_militancy = {
+				ideology = reactionary
+				factor = 4
+			}
+			scaled_consciousness = {
+				ideology = reactionary
+				factor = 4
+			}
+			scaled_militancy = {
+				ideology = conservative
+				factor = -2
+			}
+			scaled_consciousness = {
+				ideology = conservative
+				factor = -2
+			}
+		}
+		ai_chance = {
+			factor = 40
+		}
+	}
+	option = {
+		name = "EVTOPT666666037B"
+		set_country_flag = polans_noble_republic
+		government = prussian_constitutionalism
+		ruling_party_ideology = conservative
+		nationalvalue = nv_order
+		political_reform = four_year_draft
+		political_reform = party_appointed
+		political_reform = landed_voting
+		political_reform = harassment
+		political_reform = yes_meeting
+		political_reform = state_press
+		political_reform = state_controlled
+		political_reform = first_past_the_post
+		political_reform = culture_voting_only
+		political_reform = serfdom
+		social_reform = no_minimum_wage
+		social_reform = no_work_hour_limit
+		social_reform = no_safety
+		social_reform = no_subsidies
+		social_reform = no_pensions
+		social_reform = no_health_care
+		social_reform = no_schools
+		social_reform = capital_punishment
+		social_reform = child_labor_legal
+		election = yes
+		any_pop = {
+			scaled_militancy = {
+				ideology = liberal
+				factor = 2
+			}
+			scaled_consciousness = {
+				ideology = liberal
+				factor = 2
+			}
+			scaled_militancy = {
+				ideology = communist
+				factor = 4
+			}
+			scaled_consciousness = {
+				ideology = communist
+				factor = 4
+			}
+			scaled_militancy = {
+				ideology = socialist
+				factor = 4
+			}
+			scaled_consciousness = {
+				ideology = socialist
+				factor = 4
+			}
+			
+			scaled_militancy = {
+				ideology = anarcho_liberal
+				factor = -2
+			}
+			scaled_consciousness = {
+				ideology = anarcho_liberal
+				factor = -2
+			}
+			scaled_militancy = {
+				ideology = reactionary
+				factor = -4
+			}
+			scaled_consciousness = {
+				ideology = reactionary
+				factor = -4
+			}
+			scaled_militancy = {
+				ideology = conservative
+				factor = -4
+			}
+			scaled_consciousness = {
+				ideology = conservative
+				factor = -4
+			}
+		}
+		ai_chance = {
+			factor = 35
+		}
+	}
+	option = {
+		name = "EVTOPT666666037C"
+		set_country_flag = polans_socialist_autocracy
+		ruling_party_ideology = socialist
+		government = presidential_dictatorship
+		nationalvalue = nv_equality
+		political_reform = none_voting
+		political_reform = party_appointed
+		political_reform = no_meeting
+		political_reform = state_press
+		political_reform = state_controlled
+		political_reform = underground_parties
+		political_reform = no_draft
+		political_reform = debtors_prisons
+		social_reform = good_minimum_wage
+		social_reform = eight_hours
+		social_reform = no_safety
+		social_reform = acceptable_subsidies
+		social_reform = acceptable_pensions
+		social_reform = acceptable_health_care
+		social_reform = acceptable_schools
+		social_reform = rehabilitation
+		social_reform = child_labor_illegal
+		nationalize = yes
+		any_pop = {
+			scaled_militancy = {
+				ideology = liberal
+				factor = 2
+			}
+			scaled_consciousness = {
+				ideology = liberal
+				factor = 2
+			}
+			scaled_militancy = {
+				ideology = communist
+				factor = -4
+			}
+			scaled_consciousness = {
+				ideology = communist
+				factor = -4
+			}
+			scaled_militancy = {
+				ideology = socialist
+				factor = -4
+			}
+			scaled_consciousness = {
+				ideology = socialist
+				factor = -4
+			}
+			
+			scaled_militancy = {
+				ideology = anarcho_liberal
+				factor = 4
+			}
+			scaled_consciousness = {
+				ideology = anarcho_liberal
+				factor = 4
+			}
+			scaled_militancy = {
+				ideology = reactionary
+				factor = 4
+			}
+			scaled_consciousness = {
+				ideology = reactionary
+				factor = 4
+			}
+			scaled_militancy = {
+				ideology = conservative
+				factor = 4
+			}
+			scaled_consciousness = {
+				ideology = conservative
+				factor = 4
+			}
+		}
+		ai_chance = {
+			factor = 2.5
+		}
+	}
+	option = {
+		name = "EVTOPT666666037D"
+		set_country_flag = polans_ancap_autocracy
+		ruling_party_ideology = anarcho_liberal
+		government = bourgeois_dictatorship
+		nationalvalue = nv_liberty
+		political_reform = yes_slavery
+		political_reform = none_voting
+		political_reform = party_appointed
+		political_reform = yes_meeting
+		political_reform = free_press
+		political_reform = no_trade_unions
+		political_reform = underground_parties
+		political_reform = no_draft
+		political_reform = primary_culture_only
+		political_reform = serfdom
+		political_reform = quota_immigration
+		social_reform = no_minimum_wage
+		social_reform = no_work_hour_limit
+		social_reform = no_safety
+		social_reform = no_subsidies
+		social_reform = no_pensions
+		social_reform = no_health_care
+		social_reform = no_schools
+		social_reform = capital_punishment
+		social_reform = child_labor_legal
+		any_pop = {
+			scaled_militancy = {
+				ideology = liberal
+				factor = 2
+			}
+			scaled_consciousness = {
+				ideology = liberal
+				factor = 2
+			}
+			scaled_militancy = {
+				ideology = communist
+				factor = 4
+			}
+			scaled_consciousness = {
+				ideology = communist
+				factor = 4
+			}
+			scaled_militancy = {
+				ideology = socialist
+				factor = 4
+			}
+			scaled_consciousness = {
+				ideology = socialist
+				factor = 4
+			}
+			
+			scaled_militancy = {
+				ideology = anarcho_liberal
+				factor = -4
+			}
+			scaled_consciousness = {
+				ideology = anarcho_liberal
+				factor = -4
+			}
+			scaled_militancy = {
+				ideology = reactionary
+				factor = -4
+			}
+			scaled_consciousness = {
+				ideology = reactionary
+				factor = -4
+			}
+			scaled_militancy = {
+				ideology = conservative
+				factor = -2
+			}
+			scaled_consciousness = {
+				ideology = conservative
+				factor = -2
+			}
+		}
+		ai_chance = {
+			factor = 2.5
+		}
+	}
+	option = {
+		name = "EVTOPT666666037E"
+		set_country_flag = polans_absolutist
+		ruling_party_ideology = reactionary
+		government = absolute_monarchy
+		nationalvalue = nv_autocracy
+		political_reform = no_slavery
+		political_reform = none_voting
+		political_reform = party_appointed
+		political_reform = first_past_the_post
+		political_reform = no_meeting
+		political_reform = state_press
+		political_reform = no_trade_unions
+		political_reform = underground_parties
+		political_reform = mandatory_service
+		political_reform = primary_culture_only
+		political_reform = serfdom
+		political_reform = open_borders
+		social_reform = no_minimum_wage
+		social_reform = no_work_hour_limit
+		social_reform = no_safety
+		social_reform = no_subsidies
+		social_reform = no_pensions
+		social_reform = no_health_care
+		social_reform = no_schools
+		social_reform = capital_punishment
+		social_reform = child_labor_legal
+		nationalize = yes
+		any_pop = {
+			scaled_militancy = {
+				ideology = liberal
+				factor = 4
+			}
+			scaled_consciousness = {
+				ideology = liberal
+				factor = 4
+			}
+			scaled_militancy = {
+				ideology = communist
+				factor = 4
+			}
+			scaled_consciousness = {
+				ideology = communist
+				factor = 4
+			}
+			scaled_militancy = {
+				ideology = socialist
+				factor = 4
+			}
+			scaled_consciousness = {
+				ideology = socialist
+				factor = 4
+			}
+			
+			scaled_militancy = {
+				ideology = anarcho_liberal
+				factor = 4
+			}
+			scaled_consciousness = {
+				ideology = anarcho_liberal
+				factor = 4
+			}
+			scaled_militancy = {
+				ideology = reactionary
+				factor = -4
+			}
+			scaled_consciousness = {
+				ideology = reactionary
+				factor = -4
+			}
+			scaled_militancy = {
+				ideology = conservative
+				factor = -2
+			}
+			scaled_consciousness = {
+				ideology = conservative
+				factor = -2
+			}
+		}
+	}
+		ai_chance = {
+			factor = 10
+		}
+}

@@ -3,7 +3,19 @@ political_decisions = {
 	become_poland = {
 
 		potential = {
-			primary_culture = polish
+			OR = {
+				primary_culture = polish
+				AND = {
+					tag = PNC
+					OR = {
+						has_country_flag = polans_republic
+						has_country_flag = polans_noble_republic
+						has_country_flag = polans_socialist_autocracy
+						has_country_flag = polans_ancap_autocracy
+						has_country_flag = polans_absolutist
+					}
+				}
+			}
 			NOT = { exists = POL }
 			NOT = { exists = HPL }
 			NOT = { has_country_flag = post_colonial_country }

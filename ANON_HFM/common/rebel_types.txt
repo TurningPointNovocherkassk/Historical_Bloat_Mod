@@ -3867,11 +3867,11 @@ liberal_rebels = {
 			owner = { political_reform = no_slavery }
 		}
 		random_owned = {
-			limit = { owner = { NOT = { voting_system = proportional_representation tag = USA tag = ENG } } }
+			limit = { owner = { NOT = { voting_system = proportional_representation tag = USA tag = ENG tag = MEX } } }
 			owner = { political_reform = proportional_representation }
 		}
 		random_owned = {
-			limit = { owner = { NOT = { upper_house_composition = population_equal_weight tag = USA } } }
+			limit = { owner = { NOT = { upper_house_composition = population_equal_weight tag = USA tag = MEX } } }
 			owner = { political_reform = population_equal_weight }
 		}
 		random_owned = {
@@ -3912,6 +3912,54 @@ liberal_rebels = {
 		random_owned = {
 			limit = { owner = { tag = URU } }
 			owner = { set_country_flag = colorado_rule clr_country_flag = blanco_rule }
+		}
+		random_owned = {
+			limit = { owner = { tag = MEX has_global_flag = ayutla_revolution } }
+			owner = {
+				set_global_flag = ayutla_revolution_end
+				clr_global_flag = ayutla_revolution
+				remove_country_modifier = global_liberal_agitation
+				any_owned = {
+					limit = { has_province_modifier = ayutla_sympathies }
+					remove_province_modifier = ayutla_sympathies
+				}
+				government = provisional_government
+				ruling_party_ideology = liberal
+				nationalvalue = nv_order
+				political_reform = none_voting
+				political_reform = harassment
+				political_reform = appointed
+				political_reform = free_press
+				political_reform = yes_meeting
+				any_pop = {
+					scaled_militancy = {
+						ideology = liberal
+						factor = -4
+					}
+					scaled_militancy = {
+						ideology = anarcho_liberal
+						factor = -4
+					}
+					scaled_militancy = {
+						ideology = communist
+						factor = -3
+					}
+					scaled_militancy = {
+						ideology = socialist
+						factor = -3
+					}
+					
+					scaled_militancy = {
+						ideology = conservative
+						factor = 4
+					}
+					scaled_militancy = {
+						ideology = reactionary
+						factor = 4
+					}
+				}
+				country_event = 1220015
+			}
 		}
 	}
 }
