@@ -1,3 +1,4 @@
+
 #############################################
 #########       Reform War          #########
 #############################################
@@ -220,7 +221,7 @@ country_event = {
 	trigger = {
 		NOT = { tag = FRA }
 		NOT = { tag = USA }
-		OR = {
+		OR =  {
 			is_greater_power = yes
 			tag = SPA
 			tag = SPC
@@ -239,18 +240,19 @@ country_event = {
 		THIS = {
 			war = {
 				target = MEX
-				attacker_goal = war_reparations
-				defender_goal = status_quo
+				attacker_goal = { casus_belli = war_reparations }
+				defender_goal = { casus_belli = status_quo }
 				call_ally = no
 				}
-			set_country_flag = mexican_payday_war
 			}
+		
 		ai_chance = { factor = 1 }
 		}
+	
 	option = {
 		name = "EVTOPTB1100053" #No War
 		THIS = {
-			prestige = -20
+			prestige = -10
 			relation = {
 				who = MEX
 				value = 100
@@ -261,6 +263,7 @@ country_event = {
 				}
 			}
 		}
+	
 	}
 	
 #Convetion of London for France
@@ -282,7 +285,7 @@ country_event = {
 		}
 	
 	option = {
-		name = "EVTOPTA1100070" 
+		name = "EVTOPTA1100070" #Create the Maximilian Empire of Mexico
 		FRA = {
 			prestige = 20
 			set_global_flag = french_begins_intervention
@@ -291,21 +294,21 @@ country_event = {
 		}
 	
 	option = {
-		name = "EVTOPTA1100053" #Declare war for Money back
-		THIS = {
+		name = "EVTOPTB1100070" #Declare war for Money back
+		FRA = {
 			war = {
 				target = MEX
-				attacker_goal = war_reparations
-				defender_goal = status_quo
+				attacker_goal = { casus_belli = war_reparations }
+				defender_goal = { casus_belli = status_quo }
 				call_ally = no
 				}
 			set_country_flag = mexican_payday_war
 			}
-		#ai_chance = { factor = 1 }
 		}
+		
 	option = {
-		name = "EVTOPTB1100053" #No War
-		THIS = {
+		name = "EVTOPTC1100070" #No War
+		FRA = {
 			prestige = -20
 			relation = {
 				who = MEX
@@ -367,7 +370,7 @@ country_event = {
 		}
 	}
 
-#Liberals win in Mexico
+#Liberals win in Mexico or Conservatives win but change back to MEX tag
 country_event = {
 	id = 1100072
 	title = "EVTNAME1100072"
@@ -388,10 +391,16 @@ country_event = {
 		ai_chance = { factor = 1 }
 		}
 	
-	#option = {
-	#	name = "EVTOPTB1100072" #Pay back the money
-	#	
-	#	}
+	option = {
+		name = "EVTOPTB1100072" #Pay back the money
+		any_country = {
+			limit = {
+				OR = { has_country_flag = gave_mexico_aid has_country_flag = gave_mexico_money }
+				}
+			treasury = 200000
+			MEX = { treasury = -200000 }
+			}
+		}
 	
 	}
 
@@ -1129,11 +1138,11 @@ country_event = {
 		USA = {
 			relation = {
 				who = CSA
-				relation = 50
+				value = 50
 				}
 			relation = {
 				who = MEX
-				relation = -50
+				value = -50
 				}
 			}	
 		ai_chance = { factor = .3 }
