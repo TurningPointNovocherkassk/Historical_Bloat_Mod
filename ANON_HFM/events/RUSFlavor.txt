@@ -360,8 +360,8 @@ country_event = {
 	}
 	
 	mean_time_to_happen = {
-		#months = 5
-		days = 5
+		months = 5
+		#days = 5
 		modifier = {
 			factor = 0.05
 			ai = no
@@ -404,6 +404,10 @@ country_event = {
 		modifier = {
 			factor = 0.1
 			year = 1870
+		}
+		modifier = {
+			factor = 2
+			tag = LIE
 		}
 	}
 	
