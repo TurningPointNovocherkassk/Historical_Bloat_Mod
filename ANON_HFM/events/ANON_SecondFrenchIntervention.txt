@@ -132,6 +132,8 @@ country_event = {
 	desc = "EVTDESC1100051"
 	picture = "treaty_of_san_diego"
 	
+	fire_only_once = yes
+	
 	trigger = {
 		tag = MEX 
 		has_global_flag = mexican_reform_war
@@ -162,6 +164,7 @@ country_event = {
 		picture = "treaty_of_san_diego"
 		
 	trigger = {
+		NOT = { tag = MEX }
 		OR = {
 			is_greater_power = yes
 			tag = SPA
