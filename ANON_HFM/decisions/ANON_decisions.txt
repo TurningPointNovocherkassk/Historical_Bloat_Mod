@@ -10828,51 +10828,171 @@ political_decisions = {
 		}
 	}	
 	
-	poland_pomerania = {
-		potential = {
-			OR = {
-				tag = POL
-				tag = PLC
-			}
-			NOT = { has_country_flag = poland_pomerania }			
-		}
+	# poland_pomerania = {
+		# potential = {
+			# OR = {
+				# tag = POL
+				# tag = PLC
+			# }
+			# NOT = { has_country_flag = poland_pomerania }			
+		# }
 				
-		allow = {
-			war = no
-			is_vassal = no
-			nationalism_n_imperialism = 1
-			is_greater_power = yes
+		# allow = {
+			# war = no
+			# is_vassal = no
+			# nationalism_n_imperialism = 1
+			# is_greater_power = yes
+			# OR = {
+				# government = fascist_dictatorship
+				# AND = {
+					# war_policy = jingoism
+					# military_score = 100
+				# }
+			# }
+		# }
+		
+		# effect = {
+			# set_country_flag = poland_pomerania
+			# prestige = 10
+			# badboy = 10
+			# 546 = { add_core = THIS }
+			# 679 = { add_core = THIS }
+			# #692 = { add_core = THIS }
+			# 680 = { add_core = THIS }
+			# 681 = { add_core = THIS }
+		# }
+		# ai_will_do = { factor = 1 }
+	# }
+	
+	rename_lusatia = {
+		picture = gtfo
+		potential = {
 			OR = {
-				government = fascist_dictatorship
 				AND = {
-					war_policy = jingoism
-					military_score = 100
+					is_culture_group = germanic
+					OR = {
+						AND = { owns = 552 NOT = { has_global_flag = german_renamed_lowerlusatia } }
+						AND = { owns = 687 NOT = { has_global_flag = german_renamed_upperlusatia } }
+						AND = { owns = 558 NOT = { has_global_flag = german_renamed_dresden } }
+					}
+				}
+				AND = {
+					is_culture_group = polish_culture_group
+					OR = {
+						AND = { owns = 552 NOT = { has_global_flag = polish_renamed_lowerlusatia } }
+						AND = { owns = 687 NOT = { has_global_flag = polish_renamed_upperlusatia } }
+						AND = { owns = 558 NOT = { has_global_flag = polish_renamed_dresden } }
+					}
 				}
 			}
 		}
 		
-		effect = {
-			set_country_flag = poland_pomerania
-			prestige = 10
-			badboy = 10
-			546 = { add_core = THIS }
-			679 = { add_core = THIS }
-			#692 = { add_core = THIS }
-			680 = { add_core = THIS }
-			681 = { add_core = THIS }
+		allow = {
+			war = no
 		}
+		
+		effect = {
+		
+			###German - lusatia###
+			random_owned = {
+				limit = {
+					province_id = 552
+					owner = {
+						is_culture_group = germanic
+					}
+				}
+				552 = { change_province_name = "Cottbus" }    	
+				owner = { 
+					set_global_flag = german_renamed_lowerlusatia
+					clr_global_flag = polish_renamed_lowerlusatia
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 687
+					owner = {
+						is_culture_group = germanic
+					}
+				}
+				687 = { change_province_name = "Görlitz" }    
+				owner = { 
+					set_global_flag = german_renamed_upperlusatia
+					clr_global_flag = polish_renamed_upperlusatia
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 558
+					owner = {
+						is_culture_group = germanic
+					}
+				}
+				558 = { change_province_name = "Dresden" }    
+				owner = { 
+					set_global_flag = german_renamed_dresden
+					clr_global_flag = polish_renamed_dresden
+				}
+			}
+			
+			###Polish - lusatia###
+			random_owned = {
+				limit = {
+					province_id = 552
+					owner = {
+						is_culture_group = polish_culture_group
+					}
+				}
+				552 = { change_province_name = "Chósebuz" }    	
+				owner = { 
+					set_global_flag = polish_renamed_lowerlusatia
+					clr_global_flag = german_renamed_lowerlusatia
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 687
+					owner = {
+						is_culture_group = polish_culture_group
+					}
+				}
+				687 = { change_province_name = "Zhorjelc" }    
+				owner = { 
+					set_global_flag = polish_renamed_upperlusatia
+					clr_global_flag = german_renamed_upperlusatia
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 558
+					owner = {
+						is_culture_group = polish_culture_group
+					}
+				}
+				558 = { change_province_name = "Drježdzany" }    
+				owner = { 
+					set_global_flag = polish_renamed_dresden
+					clr_global_flag = german_renamed_dresden
+				}
+			}
+		}
+		
 		ai_will_do = { factor = 1 }
+		
 	}
 	
-	german_rename_uppersilesia = {
+	rename_kustrin = {
 		picture = gtfo
 		potential = {
-			is_culture_group = germanic
 			OR = {
-				owns = 687
-				owns = 558
+				AND = {
+					is_culture_group = germanic
+					AND = { owns = 681 NOT = { has_global_flag = german_renamed_kustrin } }
+				}
+				AND = {
+					is_culture_group = polish_culture_group
+					AND = { owns = 681 NOT = { has_global_flag = german_renamed_kustrin } }
+				}
 			}
-			NOT = { has_global_flag = german_rename_uppersilesia }
 		}
 		
 		allow = {
@@ -10880,23 +11000,61 @@ political_decisions = {
 		}
 		
 		effect = {
-			set_global_flag = german_rename_uppersilesia
-			clr_global_flag = polish_culture_group_rename_uppersilesia
-			#prestige = 2
-			687  = { change_province_name = "Görlitz" }
-			558  = { change_province_name = "Dresden" }
+		
+			###German - kustrin###
+			random_owned = {
+				limit = {
+					province_id = 681
+					owner = {
+						is_culture_group = germanic
+					}
+				}
+				681 = { change_province_name = "Küstrin" }    	
+				owner = { 
+					set_global_flag = german_renamed_kustrin
+					clr_global_flag = polish_renamed_kustrin
+				}
+			}
+			
+			###Polish - kustrin###
+			random_owned = {
+				limit = {
+					province_id = 681
+					owner = {
+						is_culture_group = polish_culture_group
+					}
+				}
+				681 = { change_province_name = "Kostrzyn" }    	
+				owner = { 
+					set_global_flag = polish_renamed_kustrin
+					clr_global_flag = german_renamed_lkustrin
+				}
+			}
 		}
+		
 		ai_will_do = { factor = 1 }
+		
 	}
-	polish_culture_group_rename_uppersilesia = {
+	
+	rename_pomerania = {
 		picture = gtfo
 		potential = {
-			is_culture_group = polish_culture_group
 			OR = {
-				owns = 687
-				owns = 558
+				AND = {
+					is_culture_group = germanic
+					OR = {
+						AND = { owns = 546 owns = 679 owns = 680 NOT = { has_global_flag = german_renamed_westpomerania } }
+						AND = { owns = 547 owns = 548 NOT = { has_global_flag = german_renamed_eastpomerania } }
+					}
+				}
+				AND = {
+					is_culture_group = polish_culture_group
+					OR = {
+						AND = { owns = 546 owns = 679 owns = 680 NOT = { has_global_flag = polish_renamed_westpomerania } }
+						AND = { owns = 547 owns = 548 NOT = { has_global_flag = polish_renamed_eastpomerania } }
+					}
+				}
 			}
-			NOT = { has_global_flag = polish_culture_group_rename_uppersilesia }
 		}
 		
 		allow = {
@@ -10904,150 +11062,82 @@ political_decisions = {
 		}
 		
 		effect = {
-			set_global_flag = polish_culture_group_rename_uppersilesia
-			clr_global_flag = lithuanian_rename_uppersilesia
-			#prestige = 2
-			687 = { change_province_name = "Zhorjelc" }
-			558 = { change_province_name = "Drježdzany" }
-		}
-		ai_will_do = { factor = 1 }
-	}
-	
-	german_rename_lowersilesia = {
-		picture = gtfo
-		potential = {
-			is_culture_group = germanic
-			owns = 552
-			NOT = { has_global_flag = german_rename_lowersilesia }
-		}
 		
-		allow = {
-			war = no
-		}
-		
-		effect = {
-			set_global_flag = german_rename_lowersilesia
-			clr_global_flag = polish_culture_group_rename_lowersilesia
-			#prestige = 2
-			552  = { change_province_name = "Cottbus" }
-		}
-		ai_will_do = { factor = 1 }
-	}
-	polish_culture_group_rename_lowersilesia = {
-		picture = gtfo
-		potential = {
-			is_culture_group = polish_culture_group
-			owns = 552
-			NOT = { has_global_flag = polish_culture_group_rename_lowersilesia }
-		}
-		
-		allow = {
-			war = no
-		}
-		
-		effect = {
-			set_global_flag = polish_culture_group_rename_lowersilesia
-			clr_global_flag = lithuanian_rename_lowersilesia
-			#prestige = 2
-			552 = { change_province_name = "Chósebuz" }
-		}
-		ai_will_do = { factor = 1 }
-	}
-	
-	german_rename_kustrin = {
-		picture = gtfo
-		potential = {
-			is_culture_group = germanic
-			owns = 681
-			NOT = { has_global_flag = german_rename_kustrin }
-		}
-		
-		allow = {
-			war = no
-		}
-		
-		effect = {
-			set_global_flag = german_rename_kustrin
-			clr_global_flag = polish_rename_kustrin
-			#prestige = 2
-			681  = { change_province_name = "Küstrin" }
-		}
-		ai_will_do = { factor = 1 }
-	}
-	polish_rename_kustrin = {
-		picture = gtfo
-		potential = {
-			primary_culture = polish
-			owns = 681
-			NOT = { has_global_flag = polish_rename_kustrin }
-		}
-		
-		allow = {
-			war = no
-		}
-		
-		effect = {
-			set_global_flag = polish_rename_kustrin
-			clr_global_flag = lithuanian_rename_kustrin
-			#prestige = 2
-			681 = { change_province_name = "Kostrzyn" }
-		}
-		ai_will_do = { factor = 1 }
-	}
-	
-	german_rename_pomerania = {
-		picture = gtfo
-		potential = {
-			is_culture_group = germanic
-			owns = 546
-			NOT = { has_global_flag = german_rename_pomerania }
-		}
-		
-		allow = {
-			war = no
-		}
-		
-		effect = {
-			set_global_flag = german_rename_pomerania
-			clr_global_flag = polish_rename_pomerania
-			#prestige = 2
-			546 = {
-				change_province_name = "Stettin" 
-				state_scope = {
-					change_region_name = "Pommern"
+			###German - pomerania###
+			random_owned = {
+				limit = {
+					province_id = 546
+					owner = {
+						is_culture_group = germanic
+					}
 				}
-			}      
-			679 = { change_province_name = "Kolberg" }
-			680 = { change_province_name = "Köslin" }
-		}
-		ai_will_do = { factor = 1 }
-	}
-	polish_rename_pomerania = {
-		picture = gtfo
-		potential = {
-			primary_culture = polish
-			owns = 546
-			NOT = { has_global_flag = polish_rename_pomerania }
-		}
-		
-		allow = {
-			war = no
-		}
-		
-		effect = {
-			set_global_flag = polish_rename_pomerania
-			clr_global_flag = lithuanian_rename_pomerania
-			#prestige = 2
-			546 = {
-				change_province_name = "Szczecin" 
-				state_scope = {
-					change_region_name = "Pomorze Zachodnie"
+				546 = {
+					change_province_name = "Stettin" 
+					state_scope = {
+						change_region_name = "Pommern"
+					}
+				}      	
+				679 = { change_province_name = "Kolberg" }    	
+				680 = { change_province_name = "Köslin" }    	
+				owner = { 
+					set_global_flag = german_renamed_westpomerania
+					clr_global_flag = polish_renamed_westpomerania
 				}
-			}      
-			679 = { change_province_name = "Kolobrzeg" }
-			680 = { change_province_name = "Koszalin" }
+			}
+			random_owned = {
+				limit = {
+					province_id = 547
+					owner = {
+						is_culture_group = germanic
+					}
+				}
+				547 = { change_province_name = "Greifswald" }    
+				548 = { change_province_name = "Stralsund" }    
+				owner = { 
+					set_global_flag = german_renamed_eastpomerania
+					clr_global_flag = polish_renamed_eastpomerania
+				}
+			}
+			
+			###Polish - pomerania###
+			random_owned = {
+				limit = {
+					province_id = 546
+					owner = {
+						is_culture_group = polish_culture_group
+					}
+				}
+				546 = {
+					change_province_name = "Szczecin" 
+					state_scope = {
+						change_region_name = "Pomorze Zachodnie"
+					}
+				}       	
+				679 = { change_province_name = "Kolobrzeg" }    	
+				680 = { change_province_name = "Koszalin" }   	
+				owner = { 
+					set_global_flag = polish_renamed_westpomerania
+					clr_global_flag = german_renamed_westpomerania
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 547
+					owner = {
+						is_culture_group = polish_culture_group
+					}
+				}
+				547 = { change_province_name = "Gryfia" }    
+				548 = { change_province_name = "Strzalów" }   
+				owner = { 
+					set_global_flag = polish_renamed_eastpomerania
+					clr_global_flag = german_renamed_eastpomerania
+				}
+			}
 		}
+		
 		ai_will_do = { factor = 1 }
+		
 	}
 	
 	rename_prussiaduchy = {

@@ -1608,6 +1608,10 @@ political_decisions = {
 			any_pop = { limit = { OR = { has_pop_culture = ashkenazi has_pop_culture = sephardic has_pop_culture = mizrahi } } literacy = 0.65 }
 			GLM = { all_core = { add_core = AUS } }
 			BKV = { all_core = { add_core = AUS } }
+			any_owned = {
+				limit = { region = PRU_682 }
+				remove_core = GLM
+			}
 			#
 			
 			any_pop = {

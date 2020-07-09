@@ -1071,4 +1071,122 @@ political_decisions = {
 			}
 		}
 	}
+	
+	claim_silesia = {
+		picture = silesia_recclaim
+		potential = {
+			OR = {
+				tag = POL
+				tag = HPL
+				tag = PLC
+				tag = PLH
+				tag = PLR
+				tag = C3N
+			}
+			NOT = { has_country_flag = claimed_claim_silesia }
+		}
+		
+		allow = {
+			war = no
+			is_vassal = no
+			is_disarmed = no
+			OR = {
+				is_secondary_power = yes
+				is_greater_power = yes
+			}
+			OR = {
+				government = fascist_dictatorship
+				AND = {
+					war_policy = jingoism
+					military_score = 30
+				}
+				citizens_rights = culture_voting_only
+				citizens_rights = all_voting_pops
+			}
+		}
+		
+		effect = {
+			set_country_flag = claimed_claim_silesia
+			badboy = 5
+			prestige = 10
+			add_accepted_culture = western_slavic
+
+			SLS = { all_core = { add_core = THIS } }
+			any_country = {
+				limit = {
+					NOT = { tag = THIS }
+					any_owned_province = { is_core = THIS }
+				}
+				relation = { who = THIS value = -200 }
+				leave_alliance = THIS
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	claim_pomerania = {
+		picture = pomerania_recclaim
+		potential = {
+			OR = {
+				tag = POL
+				tag = HPL
+				tag = PLC
+				tag = PLH
+				tag = PLR
+				tag = C3N
+			}
+			NOT = { has_country_flag = claim_pomerania }			
+		}
+				
+		allow = {
+			war = no
+			is_vassal = no
+			is_disarmed = no
+			OR = {
+				is_secondary_power = yes
+				is_greater_power = yes
+			}
+			OR = {
+				government = fascist_dictatorship
+				AND = {
+					war_policy = jingoism
+					military_score = 30
+				}
+				citizens_rights = culture_voting_only
+				citizens_rights = all_voting_pops
+			}
+		}
+		
+		effect = {
+			set_country_flag = claim_pomerania
+			add_accepted_culture = kashubian
+			prestige = 10
+			badboy = 10
+			680 = { add_core = THIS }
+			679 = { add_core = THIS }
+			546 = { add_core = THIS }
+			681 = { add_core = THIS }
+			any_country = {
+				limit = {
+					NOT = { tag = THIS }
+					any_owned_province = { is_core = THIS }
+				}
+				relation = { who = THIS value = -200 }
+				leave_alliance = THIS
+			}
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

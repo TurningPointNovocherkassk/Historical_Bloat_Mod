@@ -367,10 +367,20 @@ country_event = {
 				}
 				exists = yes
 			}
-			country_event = 666666000
+			random_list = {
+				25 = { country_event = { id = 666666000 days = 2 } }
+				25 = { country_event = { id = 666666000 days = 5 } }
+				25 = { country_event = { id = 666666000 days = 7 } }
+				25 = { country_event = { id = 666666000 days = 10 } }
+			}
 		}
 		FROM = {
-			country_event = 666666000
+			random_list = {
+				25 = { country_event = { id = 666666000 days = 2 } }
+				25 = { country_event = { id = 666666000 days = 5 } }
+				25 = { country_event = { id = 666666000 days = 7 } }
+				25 = { country_event = { id = 666666000 days = 10 } }
+			}
 		}
 		
 		ai_chance = {
@@ -528,10 +538,20 @@ country_event = {
 					tag = RUS
 				}
 			}
-			country_event = 666666001
+			random_list = {
+				25 = { country_event = { id = 666666001 days = 2 } }
+				25 = { country_event = { id = 666666001 days = 5 } }
+				25 = { country_event = { id = 666666001 days = 7 } }
+				25 = { country_event = { id = 666666001 days = 10 } }
+			}
 		}
 		FROM = {
-			country_event = 666666001
+			random_list = {
+				25 = { country_event = { id = 666666001 days = 2 } }
+				25 = { country_event = { id = 666666001 days = 5 } }
+				25 = { country_event = { id = 666666001 days = 7 } }
+				25 = { country_event = { id = 666666001 days = 10 } }
+			}
 		}
 		
 		ai_chance = {
@@ -663,10 +683,20 @@ country_event = {
 					tag = RUS
 				}
 			}
-			country_event = 666666002
+			random_list = {
+				25 = { country_event = { id = 666666002 days = 2 } }
+				25 = { country_event = { id = 666666002 days = 5 } }
+				25 = { country_event = { id = 666666002 days = 7 } }
+				25 = { country_event = { id = 666666002 days = 10 } }
+			}
 		}
 		FROM = {
-			country_event = 666666002
+			random_list = {
+				25 = { country_event = { id = 666666002 days = 2 } }
+				25 = { country_event = { id = 666666002 days = 5 } }
+				25 = { country_event = { id = 666666002 days = 7 } }
+				25 = { country_event = { id = 666666002 days = 10 } }
+			}
 		}
 		
 		ai_chance = {
@@ -759,10 +789,20 @@ country_event = {
 					tag = RUS
 				}
 			}
-			country_event = 666666003
+			random_list = {
+				25 = { country_event = { id = 666666003 days = 2 } }
+				25 = { country_event = { id = 666666003 days = 5 } }
+				25 = { country_event = { id = 666666003 days = 7 } }
+				25 = { country_event = { id = 666666003 days = 10 } }
+			}
 		}
 		FROM = {
-			country_event = 666666003
+			random_list = {
+				25 = { country_event = { id = 666666003 days = 2 } }
+				25 = { country_event = { id = 666666003 days = 5 } }
+				25 = { country_event = { id = 666666003 days = 7 } }
+				25 = { country_event = { id = 666666003 days = 10 } }
+			}
 		}
 		
 		ai_chance = {
@@ -4262,6 +4302,13 @@ province_event = {
 				tag = C3N
 			}
 			has_country_flag = federalist_revolution
+			NOT = {
+				OR = {
+					centralization = confederalism
+					centralization = regionalism
+					centralization = federalism
+				}
+			}
 		}
 		OR = {
 			average_militancy = 3
@@ -4332,6 +4379,13 @@ country_event = {
 		has_country_modifier = global_federalist_agitation
 		NOT = { has_country_flag = federalist_revolution_end }
 		NOT = { has_country_flag = federalist_revolution_continues }
+		NOT = {
+			OR = {
+				centralization = confederalism
+				centralization = regionalism
+				centralization = federalism
+			}
+		}
 	}
 
 	mean_time_to_happen = {
@@ -4449,5 +4503,69 @@ country_event = {
 			}
 		}
 		ai_chance = { factor = 0.25 }
+	}
+}
+#Federalist revolution dies down
+country_event = {
+	id = 666666041
+	title = "EVTNAME666666041"
+	desc = "EVTDESC666666041"
+	fire_only_once = yes	
+	picture = "treaty"
+	
+	trigger = {
+		OR = {
+			tag = PLC
+			tag = PLH
+			tag = PLR
+			tag = C3N
+		}
+		has_country_flag = federalist_revolution
+		has_country_modifier = global_federalist_agitation
+		NOT = { has_country_flag = federalist_revolution_end }
+		NOT = { has_country_flag = federalist_revolution_continues }
+		OR = {
+			centralization = confederalism
+			centralization = regionalism
+			centralization = federalism
+		}
+	}
+	
+	option = {
+		name = "EVT666666041OPTA" #ok retard
+		set_country_flag = federalist_revolution_end
+		remove_country_modifier = global_federalist_agitation
+		any_owned = {
+			limit = { has_province_modifier = federalist_sympathies }
+			remove_province_modifier = federalist_sympathies
+		}
+		any_pop = {
+			scaled_militancy = {
+				ideology = liberal
+				factor = -4
+			}
+			scaled_militancy = {
+				ideology = anarcho_liberal
+				factor = -4
+			}
+			scaled_militancy = {
+				ideology = communist
+				factor = 2
+			}
+			scaled_militancy = {
+				ideology = socialist
+				factor = -2
+			}
+			
+			scaled_militancy = {
+				ideology = conservative
+				factor = -4
+			}
+			scaled_militancy = {
+				ideology = reactionary
+				factor = 2
+			}
+		}
+		ai_chance = { factor = 100 }
 	}
 }
