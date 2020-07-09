@@ -367,7 +367,7 @@ country_event = {
 				value = -20
 				}
 			}
-		ai_chance = { factor = 1 }
+		ai_chance = { factor = 100 }
 		}
 	option = {
 		name = "EVTOPTB1100071" #We WILL have our shekels back
@@ -382,6 +382,7 @@ country_event = {
 				value = -25
 				}	
 			}
+		ai_chance = { factor = 0 }
 		}
 	}
 
@@ -519,7 +520,7 @@ country_event = {
 			}
 		M3X = { all_core = { remove_core = M3X } }
 		MEX = { all_core = { remove_core = MEX } }
-		ai_chance = { factor = .5 } 
+		ai_chance = { factor = 50 } 
 		}
 	
 	option = {
@@ -529,7 +530,7 @@ country_event = {
 		M3X = { all_core = { remove_core = M3X } }
 		government = presidential_dictatorship
 		ruling_party_ideology = conservative
-		ai_chance = { factor = .5 }
+		ai_chance = { factor = 50 }
 		}
 	}
 	
@@ -717,7 +718,7 @@ country_event = {
 					}
 				}
 			}
-			ai_chance = { factor = .9 }
+			ai_chance = { factor = 90 }
 		}
 	
 	option = {
@@ -730,7 +731,7 @@ country_event = {
 			prestige = -10
 			war_exhaustion = 5
 			}
-		ai_chance = { factor = .1 }
+		ai_chance = { factor = 10 }
 		}
 	}
 	
@@ -808,7 +809,7 @@ country_event = {
 		}
 	}
 	
-#USA invokes the Monroe Doctrine, CSA defeated
+#USA invokes the Monroe Doctrine, CSA/FSA defeated
 country_event = {
 	id = 1100064
 	title = "EVTNAME1100064"
@@ -820,6 +821,7 @@ country_event = {
 	trigger = {
 		tag = USA
 		NOT = { exists = CSA }
+		NOT = { exists = FSA }
 		#year = 1860
 		has_global_flag = second_french_intervetion
 		has_global_flag = american_civil_war_has_happened 
@@ -875,7 +877,7 @@ country_event = {
 		MEX = {
 			military_access = USA
 			}
-		ai_chance = { factor = .3 }
+		ai_chance = { factor = 30 }
 		}
 	option = {
 		name = "EVTOPTB1100064" ## Sending of supplies to Mexico 
@@ -911,7 +913,7 @@ country_event = {
 				value = -100
 				}
 			}
-		ai_chance = { factor = .6 }
+		ai_chance = { factor = 60 }
 		}
 	option = {
 		name = "EVTOPTC1100064" ## No aid rendered to Mexico
@@ -922,7 +924,7 @@ country_event = {
 				}
 			war_exhaustion = -5
 			}
-		ai_chance = { factor = .1 }
+		ai_chance = { factor = 10 }
 		}
 	
 	}
@@ -975,7 +977,7 @@ country_event = {
 		war_exhaustion = 10
 		MXM = { military_access = CSA }
 		set_global_flag = CSA_intervenes
-		ai_chance = { factor = .3 }
+		ai_chance = { factor = 30 }
 		}
 	option = {
 		name = "EVTOPTB1100065" ## Sending of supplies to Habsburg Mexico 
@@ -1013,7 +1015,7 @@ country_event = {
 			}
 		prestige = 25
 		set_global_flag = CSA_intervenes
-		ai_chance = { factor = .4 }
+		ai_chance = { factor = 40 }
 		} 
 	option = {
 		name = "EVTOPTC1100065" ## No aid rendered to Habsburg Mexico
@@ -1024,7 +1026,7 @@ country_event = {
 				}
 			war_exhaustion = -5
 			}
-		ai_chance = { factor = .3 }
+		ai_chance = { factor = 30 }
 		}	
 	}
 
@@ -1085,7 +1087,7 @@ country_event = {
 				value = -50
 				}
 			}
-		ai_chance = { factor = .6 }
+		ai_chance = { factor = 60 }
 		}
 	option = {
 		name = "EVTOPTB1100066" #Declaration of war against Habsburg Mexico with casus bellis against France and the CSA
@@ -1148,7 +1150,7 @@ country_event = {
 			}
 		war_exhaustion = 15
 		prestige = 25
-		ai_chance = { factor = .1 }
+		ai_chance = { factor = 10 }
 		}
 	option = {
 		name = "EVTOPTC1100066" #No aid is rendered, USA declares neutrality
@@ -1169,7 +1171,7 @@ country_event = {
 				value = -50
 				}
 			}	
-		ai_chance = { factor = .3 }
+		ai_chance = { factor = 30 }
 		}	
 	}
 	
@@ -1202,7 +1204,7 @@ country_event = {
 		USA = {
 			military_access = MEX
 			}
-		ai_chance = { factor = .9 }
+		ai_chance = { factor = 90 }
 		}
 	
 	option = {
@@ -1211,7 +1213,7 @@ country_event = {
 			prestige = 20
 			war_exhaustion = 5
 			}
-		ai_chance = { factor = .1 }
+		ai_chance = { factor = 10 }
 		}
 		
 	}
@@ -1233,6 +1235,7 @@ country_event = {
 		tag = MEX
 		has_global_flag = second_french_intervetion
 		NOT = { war_with = MXM }
+		exists = MXM
 		}
 	
 	option = {
@@ -1244,7 +1247,7 @@ country_event = {
 				value = -50
 				}
 			}
-		ai_chance = { factor = .2 }
+		ai_chance = { factor = 0 }
 		}
 		
 	option = {
@@ -1260,7 +1263,7 @@ country_event = {
 			}
 		MEX = { all_core = { remove_core = MEX } }
 		set_global_flag = juarez_accepts
-		ai_chance = { factor = .1 }
+		ai_chance = { factor = 10 }
 		}
 	
 	option = {
@@ -1275,6 +1278,6 @@ country_event = {
 			}
 		}
 		FRA = { leave_alliance = MXM }
-		ai_chance = { factor = .7 }
+		ai_chance = { factor = 90 }
 		}
 	}	
