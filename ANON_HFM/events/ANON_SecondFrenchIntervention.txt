@@ -137,6 +137,7 @@ country_event = {
 	trigger = {
 		tag = MEX 
 		has_global_flag = mexican_reform_war
+		NOT = { has_global_flag = conservatives_win }
 		}
 
 	option = {
@@ -289,6 +290,7 @@ country_event = {
 		tag = FRA
 		has_global_flag = mexico_didnt_pay
 		has_global_flag = american_civil_war_has_happened
+		NOT = { has_global_flag = conservatives_win }
 		#OR = {
 		#	has_country_flag = gave_mexico_aid
 		#	has_country_flag = gave_mexico_money
@@ -397,6 +399,7 @@ country_event = {
 	
 	trigger = {
 		tag = MEX
+		NOT = { exists = MXM }
 		NOT = { exists = M3X }
 		has_global_flag = mexican_reform_war
 		NOT = { has_global_flag = reform_war_stalemate }
@@ -437,6 +440,8 @@ country_event = {
 	trigger = {
 		tag = M3X
 		NOT = { war_with = MEX }
+		NOT = { has_global_flag = conservatives_win }
+		exists = MEX
 		has_global_flag = mexican_reform_war
 		#FRA = {
 		#	OR = {
@@ -497,19 +502,22 @@ country_event = {
 	trigger = {
 		tag = M3X
 		NOT = { war_with = MEX }
-		FRA = {
-			OR = {
-				has_country_flag = gave_mexico_aid
-				has_country_flag = gave_mexico_money
-				}
-			}
+		#FRA = {
+		#	OR = {
+		#		has_country_flag = gave_mexico_aid
+		#		has_country_flag = gave_mexico_money
+		#		}
+		#	}
 		NOT = { exists = MEX }
 		has_global_flag = mexican_reform_war
 		}
 	
+	immediate = { M3X = { all_core = { remove_core = M3X } } }
+	
 	option = {
 		name = "EVTOPTA1100074" #Become the Monarchy
 		MEX = { all_core = { add_core = MXM } }
+		2172 = { secede_province = MXM }
 		FRA = { create_alliance = MXM 
 				relation = {
 					who = MXM
@@ -521,22 +529,26 @@ country_event = {
 				}
 			}
 		set_global_flag = second_french_intervetion
+		#change_tag = MXM
 		change_tag_no_core_switch = MXM
-		MXM = {
-			inherit = M3X
-			}
-		M3X = { all_core = { remove_core = M3X } }
+		MXM = { inherit = M3X }
+		3333 = { secede_province = M3X }
+		#MXM = { inherit = M3X }
 		MEX = { all_core = { remove_core = MEX } }
 		ai_chance = { factor = 50 } 
 		}
 	
 	option = {
 		name = "EVTOPTB1100074" #Stay as Mexico
+		#change_tag = MEX
 		change_tag_no_core_switch = MEX
 		MEX = { inherit = M3X }
-		M3X = { all_core = { remove_core = M3X } }
+		capital = 2172
+		3333 = { secede_province = M3X }
+		#MEX = { inherit = M3X }
 		government = presidential_dictatorship
 		ruling_party_ideology = conservative
+		set_global_flag = conservatives_win
 		ai_chance = { factor = 50 }
 		}
 	}
@@ -562,6 +574,7 @@ country_event = {
 			USA = { war_with = FSA }
 			}
 		#NOT = { has_global_flag = liberal_mexico_wins }
+		NOT = { has_global_flag = conservatives_win }
 	}
 	
 	immediate = {
@@ -1259,7 +1272,7 @@ country_event = {
 		
 	option = {
 		name = "EVTOPTB1100068" #Juarez accepts
-		change_tag = MXM
+		#change_tag = MXM
 		change_tag_no_core_switch = MXM
 		#change_tag = MXM
 		MXM = {
@@ -1267,10 +1280,14 @@ country_event = {
 			election = yes
 			ruling_party_ideology = liberal
 			inherit = MEX
-			prestige = 5
+			prestige = 10
 			war_exhaustion = -20
+			political_reform = wealth_voting
+			political_reform = non_secret_ballots
+			political_reform = state_equal_weight
 			}
 		MEX = { all_core = { remove_core = MEX } }
+		3333 = { secede_province = MEX }
 		set_global_flag = juarez_accepts
 		ai_chance = { factor = 10 }
 		}
@@ -1289,4 +1306,70 @@ country_event = {
 		FRA = { leave_alliance = MXM }
 		ai_chance = { factor = 90 }
 		}
-	}	
+	}
+
+#Clean Up Events because Victoria II is a fucking piece of shit
+country_event = {
+		id = 1100069
+		title = "EVTNAME1100069"
+		desc = "EVTDESC1100069"
+		
+		#trigger
+		
+		trigger = {
+			ai = yes
+			tag = M3X
+			capital = 3333
+			exists = MEX
+			has_global_flag = conservatives_win
+			}
+			
+		option = { 
+			name = "EVTOPTA1100069"
+			MEX = { inherit = M3X }
+			ai_chance = { factor = 100 }			
+			}
+		
+	}
+	
+country_event = {
+		id = 1100075
+		title = "EVTNAME1100069"
+		desc = "EVTDESC1100069"
+		
+		
+		trigger = {
+			ai = yes
+			tag = MEX
+			capital = 3333
+			exists = MXM
+			has_global_flag = juarez_accepts
+			}
+			
+		option = { 
+			name = "EVTOPTA1100069"
+			MXM= { inherit = MEX }
+			ai_chance = { factor = 100 }
+			}
+	}
+	
+country_event = {
+		id = 1100076
+		title = "EVTNAME1100069"
+		desc = "EVTDESC1100069"
+		
+		
+		trigger = {
+			ai = yes
+			tag = M3X
+			capital = 3333
+			exists = MXM
+			}
+			
+		option = { 
+			name = "EVTOPTA1100069"
+			MXM = { inherit = M3X }
+			ai_chance = { factor = 100 }
+			}
+			
+	}
