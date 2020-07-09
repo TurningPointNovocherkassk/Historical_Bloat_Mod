@@ -399,6 +399,7 @@ country_event = {
 		tag = MEX
 		NOT = { exists = M3X }
 		has_global_flag = mexican_reform_war
+		NOT = { has_global_flag = reform_war_stalemate }
 		}
 	
 	option = {
@@ -437,12 +438,12 @@ country_event = {
 		tag = M3X
 		NOT = { war_with = MEX }
 		has_global_flag = mexican_reform_war
-		FRA = {
-			OR = {
-				has_country_flag = gave_mexico_aid
-				has_country_flag = gave_mexico_money
-				}
-			}
+		#FRA = {
+		#	OR = {
+		#		has_country_flag = gave_mexico_aid
+		#		has_country_flag = gave_mexico_money
+		#		}
+		#	}
 		}
 		
 	immediate = {
@@ -458,15 +459,21 @@ country_event = {
 				}
 			}
 		set_global_flag = second_french_intervetion
+		set_global_flag = reform_war_stalemate
+		M3X = { all_core = { remove_core = M3X } }
+		2172 = { secede_province = MXM }
+		change_tag_no_core_switch = MXM
+		#MXM = { inherit = M3X }
 		}
 		
 	option = {
 		name = "EVTOPTA1100073"
 		change_tag_no_core_switch = MXM
+		#change_tag = MXM
+		#change_tag_no_core_switch = MXM
 		MXM = {
 			inherit = M3X
 			}
-		M3X = { all_core = { remove_core = M3X } }
 		MEX = {
 			war = {
 				target = MXM
@@ -1252,7 +1259,9 @@ country_event = {
 		
 	option = {
 		name = "EVTOPTB1100068" #Juarez accepts
+		change_tag = MXM
 		change_tag_no_core_switch = MXM
+		#change_tag = MXM
 		MXM = {
 			government = hms_government
 			election = yes
