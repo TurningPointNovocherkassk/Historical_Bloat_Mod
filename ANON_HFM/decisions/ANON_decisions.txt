@@ -2895,8 +2895,8 @@ political_decisions = {
 				949 = { change_province_name = "Gomelis" }	
 				3650 = { change_province_name = "Starodubas" }		
 				owner = { 
-					set_global_flag = german_renamed_orshas
-					clr_global_flag = lithuanian_renamed_orshas
+					set_global_flag = lithuanian_renamed_orshas
+					clr_global_flag = german_renamed_orshas
 					clr_global_flag = russian_renamed_orshas
 					clr_global_flag = polish_renamed_orshas
 				}
@@ -2932,9 +2932,9 @@ political_decisions = {
 				949 = { change_province_name = "Homyel" }	
 				3650 = { change_province_name = "Starodub" }		
 				owner = { 
-					set_global_flag = german_renamed_orshas
+					set_global_flag = russian_renamed_orshas
 					clr_global_flag = lithuanian_renamed_orshas
-					clr_global_flag = russian_renamed_orshas
+					clr_global_flag = german_renamed_orshas
 					clr_global_flag = polish_renamed_orshas
 				}
 			}
@@ -2975,10 +2975,10 @@ political_decisions = {
 				949 = { change_province_name = "Homel" }	
 				3650 = { change_province_name = "Starodub" }	
 				owner = { 
-					set_global_flag = german_renamed_orshas
+					set_global_flag = polish_renamed_orshas
 					clr_global_flag = lithuanian_renamed_orshas
 					clr_global_flag = russian_renamed_orshas
-					clr_global_flag = polish_renamed_orshas
+					clr_global_flag = german_renamed_orshas
 				}
 			}
 		}
@@ -3110,10 +3110,10 @@ political_decisions = {
 					state_scope = { change_region_name = "Vitebskas" }
 				}		
 				owner = { 
-					set_global_flag = lithuanian_renamed_vitebsk
-					clr_global_flag = german_renamed_vitebsk
-					clr_global_flag = russian_renamed_vitebsk
-					clr_global_flag = polish_renamed_vitebsk
+					set_global_flag = lithuanian_renamed_vitebsks
+					clr_global_flag = german_renamed_vitebsks
+					clr_global_flag = russian_renamed_vitebsks
+					clr_global_flag = polish_renamed_vitebsks
 				}
 			}
 			random_owned = {
@@ -3131,10 +3131,10 @@ political_decisions = {
 				}	
 				946 = { change_province_name = "Polockas" }	
 				owner = { 
-					set_global_flag = lithuanian_renamed_vitebsk
-					clr_global_flag = german_renamed_vitebsk
-					clr_global_flag = russian_renamed_vitebsk
-					clr_global_flag = polish_renamed_vitebsk
+					set_global_flag = lithuanian_renamed_vitebskn
+					clr_global_flag = german_renamed_vitebskn
+					clr_global_flag = russian_renamed_vitebskn
+					clr_global_flag = polish_renamed_vitebskn
 				}
 			}
 			random_owned = {
@@ -3176,10 +3176,10 @@ political_decisions = {
 					state_scope = { change_region_name = "Vitebsk" }
 				}		
 				owner = { 
-					set_global_flag = russian_renamed_vitebsk
-					clr_global_flag = german_renamed_vitebsk
-					clr_global_flag = lithuanian_renamed_vitebsk
-					clr_global_flag = polish_renamed_vitebsk
+					set_global_flag = russian_renamed_vitebsks
+					clr_global_flag = german_renamed_vitebsks
+					clr_global_flag = lithuanian_renamed_vitebsks
+					clr_global_flag = polish_renamed_vitebsks
 				}
 			}
 			random_owned = {
@@ -3191,10 +3191,10 @@ political_decisions = {
 				}		
 				946 = { change_province_name = "Polotsk" }
 				owner = { 
-					set_global_flag = russian_renamed_vitebsk
-					clr_global_flag = german_renamed_vitebsk
-					clr_global_flag = lithuanian_renamed_vitebsk
-					clr_global_flag = polish_renamed_vitebsk
+					set_global_flag = russian_renamed_vitebskn
+					clr_global_flag = german_renamed_vitebskn
+					clr_global_flag = lithuanian_renamed_vitebskn
+					clr_global_flag = polish_renamed_vitebskn
 				}
 			}
 			random_owned = {
@@ -3229,10 +3229,10 @@ political_decisions = {
 					state_scope = { change_region_name = "Vitebsk" }
 				}		
 				owner = { 
-					set_global_flag = polish_renamed_vitebsk
-					clr_global_flag = german_renamed_vitebsk
-					clr_global_flag = lithuanian_renamed_vitebsk
-					clr_global_flag = russian_renamed_vitebsk
+					set_global_flag = polish_renamed_vitebsks
+					clr_global_flag = german_renamed_vitebsks
+					clr_global_flag = lithuanian_renamed_vitebsks
+					clr_global_flag = russian_renamed_vitebsks
 				}
 			}
 			random_owned = {
@@ -3247,10 +3247,10 @@ political_decisions = {
 				}		
 				946 = { change_province_name = "Polock" }	
 				owner = { 
-					set_global_flag = polish_renamed_vitebsk
-					clr_global_flag = german_renamed_vitebsk
-					clr_global_flag = lithuanian_renamed_vitebsk
-					clr_global_flag = russian_renamed_vitebsk
+					set_global_flag = polish_renamed_vitebskn
+					clr_global_flag = german_renamed_vitebskn
+					clr_global_flag = lithuanian_renamed_vitebskn
+					clr_global_flag = russian_renamed_vitebskn
 				}
 			}
 			random_owned = {
