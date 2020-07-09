@@ -1346,6 +1346,11 @@
 		religion = catholic
 		size = 10750
 	}
+	farmers = {
+		culture = kashubian
+		religion = catholic
+		size = 10750
+	}
 
 	clergymen = {
 		culture = ashkenazi
@@ -1468,18 +1473,6 @@
 	}
 
 	clergymen = {
-		culture = kashubian
-		religion = catholic
-		size = 50  
-	}
-
-	farmers = {
-		culture = kashubian
-		religion = catholic
-		size = 13425
-	}
-
-	clergymen = {
 		culture = north_german
 		religion = catholic
 		size = 15  
@@ -1504,27 +1497,45 @@
 	}
 
 	clergymen = {
+		culture = kashubian
+		religion = catholic
+		size = 100 
+	}
+	artisans = {
+		culture = kashubian
+		religion = catholic
+		size = 2500
+	}
+	soldiers = {
+		culture = kashubian
+		religion = catholic
+		size = 175 
+	}
+	farmers = {
+		culture = kashubian
+		religion = catholic
+		size = 16425
+	}
+	
+	clergymen = {
 		culture = polish
 		religion = catholic
 		size = 100 
 	}
-
 	artisans = {
 		culture = polish
 		religion = catholic
 		size = 2200
 	}
-
 	soldiers = {
 		culture = polish
 		religion = catholic
 		size = 75 
 	}
-
 	farmers = {
 		culture = polish
 		religion = catholic
-		size = 16400
+		size = 10400
 	}
 }
 #Deutsche Krone (128000/32000 POPS) 
@@ -1556,7 +1567,7 @@
 	farmers = {
 		culture = north_german
 		religion = protestant
-		size = 16950
+		size = 18950
 	}
 
 	clergymen = {
@@ -1577,7 +1588,7 @@
 	farmers = {
 		culture = kashubian
 		religion = catholic
-		size = 15250
+		size = 20250
 	}
 	
 	clergymen = {
@@ -1598,7 +1609,7 @@
 	farmers = {
 		culture = polish
 		religion = catholic
-		size = 19625
+		size = 10625
 	}
 }
 #Elbing (148000/37000 POPS) 
@@ -1624,7 +1635,7 @@
 	soldiers = {
 		culture = north_german
 		religion = protestant
-		size = 1000
+		size = 750
 	}
 
 	farmers = {
@@ -1633,28 +1644,68 @@
 		size = 20425 
 	}
 
+
+	clergymen = {
+		culture = masurian
+		religion = protestant
+		size = 200 
+	}
+	artisans = {
+		culture = masurian
+		religion = protestant
+		size = 800
+	}
+	soldiers = {
+		culture = masurian
+		religion = protestant
+		size = 500
+	}
+	farmers = {
+		culture = masurian
+		religion = protestant
+		size = 7475  
+	}
+	
+	clergymen = {
+		culture = kashubian
+		religion = catholic
+		size = 100 
+	}
+	artisans = {
+		culture = kashubian
+		religion = catholic
+		size = 1450
+	}
+	soldiers = {
+		culture = kashubian
+		religion = catholic
+		size = 250
+	}
+	farmers = {
+		culture = kashubian
+		religion = catholic
+		size = 5000
+	}
+	
 	clergymen = {
 		culture = polish
 		religion = catholic
 		size = 75 
 	}
-
 	artisans = {
 		culture = polish
 		religion = catholic
 		size = 450
 	}
-
 	soldiers = {
 		culture = polish
 		religion = catholic
-		size = 1000
+		size = 500
 	}
-
 	farmers = {
 		culture = polish
 		religion = catholic
-		size = 17475
+		size = 3500
 	}
 }
 #Torun (156000/44000 POPS) 
@@ -1784,25 +1835,25 @@
 	}
 
 	clergymen = {
-		culture = polish
+		culture = masurian
 		religion = protestant
 		size = 325 
 	}
 
 	artisans = {
-		culture = polish
+		culture = masurian
 		religion = protestant
 		size = 1800
 	}
 
 	soldiers = {
-		culture = polish
+		culture = masurian
 		religion = protestant
 		size = 1000
 	}
 
 	farmers = {
-		culture = polish
+		culture = masurian
 		religion = protestant
 		size = 32875  
 	}
@@ -1864,25 +1915,25 @@
 	}
 
 	clergymen = {
-		culture = polish
+		culture = masurian
 		religion = protestant
 		size = 325 
 	}
 
 	artisans = {
-		culture = polish
+		culture = masurian
 		religion = protestant
 		size = 1800
 	}
 
 	soldiers = {
-		culture = polish
+		culture = masurian
 		religion = protestant
 		size = 1000
 	}
 
 	farmers = {
-		culture = polish
+		culture = masurian
 		religion = protestant
 		size = 32875  
 	}
@@ -1944,25 +1995,25 @@
 	}
 
 	clergymen = {
-		culture = polish
+		culture = masurian
 		religion = protestant
 		size = 325 
 	}
 
 	artisans = {
-		culture = polish
+		culture = masurian
 		religion = protestant
 		size = 1800
 	}
 
 	soldiers = {
-		culture = polish
+		culture = masurian
 		religion = protestant
 		size = 1000
 	}
 
 	farmers = {
-		culture = polish
+		culture = masurian
 		religion = protestant
 		size = 22875  
 	}
@@ -2024,25 +2075,25 @@
 	}
 
 	clergymen = {
-		culture = polish
+		culture = masurian
 		religion = protestant
 		size = 325 
 	}
 
 	artisans = {
-		culture = polish
+		culture = masurian
 		religion = protestant
 		size = 1800
 	}
 
 	soldiers = {
-		culture = polish
+		culture = masurian
 		religion = protestant
 		size = 1000
 	}
 
 	farmers = {
-		culture = polish
+		culture = masurian
 		religion = protestant
 		size = 15875  
 	}
