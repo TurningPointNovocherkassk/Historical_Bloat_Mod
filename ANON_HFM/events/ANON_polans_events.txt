@@ -2118,11 +2118,14 @@ country_event = {
 					is_core = PZN
 					is_core = CPL
 					is_core = KRA
-					is_core = PML
-					region = AUS_702 #Galicia-Lodomeria
+					province_id = 691 #Tuchel
+					province_id = 714 #Tarnow
+					province_id = 3322 #Dzikow
 					province_id = 719 #Bialystok
+					#is_core = PML
+					#region = AUS_702 #Galicia-Lodomeria
 				}
-				NOT = { province_id = 690 } #Danzig
+				#NOT = { province_id = 690 } #Danzig
 			}
 			remove_core = PRU
 			remove_core = NGF
@@ -2170,18 +2173,18 @@ country_event = {
 				duration = -1
 			}
 			any_owned = {
-				limit = {
-					OR = {
-						is_core = PZN
-						is_core = CPL
-						is_core = KRA
-						is_core = PML
-						is_core = GLM
-						province_id = 719 #Bialystok
-						province_id = 693 #Elbing
-						province_id = 3649 #Chelm
-					}
-				}
+				# limit = {
+					# OR = {
+						# is_core = PZN
+						# is_core = CPL
+						# is_core = KRA
+						# is_core = PML
+						# is_core = GLM
+						# province_id = 719 #Bialystok
+						# province_id = 693 #Elbing
+						# province_id = 3649 #Chelm
+					# }
+				# }
 				remove_core = PRU
 				remove_core = NGF
 				remove_core = GER
@@ -2335,18 +2338,18 @@ country_event = {
 				duration = -1
 			}
 			any_owned = {
-				limit = {
-					OR = {
-						is_core = PZN
-						is_core = CPL
-						is_core = KRA
-						is_core = PML
-						is_core = GLM
-						province_id = 719 #Bialystok
-						province_id = 693 #Elbing
-						province_id = 3649 #Chelm
-					}
-				}
+				# limit = {
+					# OR = {
+						# is_core = PZN
+						# is_core = CPL
+						# is_core = KRA
+						# is_core = PML
+						# is_core = GLM
+						# province_id = 719 #Bialystok
+						# province_id = 693 #Elbing
+						# province_id = 3649 #Chelm
+					# }
+				# }
 				remove_core = PRU
 				remove_core = NGF
 				remove_core = GER

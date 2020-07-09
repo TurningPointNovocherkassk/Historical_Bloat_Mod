@@ -1572,6 +1572,11 @@ assimilation_chance = {
 			has_pop_culture = east_tibetan
 			has_pop_culture = west_tibetan
 			has_pop_culture = south_tibetan
+			has_pop_culture = polish
+			has_pop_culture = silesian
+			has_pop_culture = sorbian
+			has_pop_culture = kashubian
+			has_pop_culture = lithuanian
 		}
 		NOT = {
 			OR = {
@@ -1580,6 +1585,11 @@ assimilation_chance = {
 				country = { primary_culture = east_tibetan }
 				country = { primary_culture = west_tibetan }
 				country = { primary_culture = south_tibetan }
+				country = { primary_culture = polish }
+				country = { primary_culture = silesian }
+				country = { primary_culture = sorbian }
+				country = { primary_culture = kashubian }
+				country = { primary_culture = lithuanian }
 			}
 		}
 	}
@@ -1598,6 +1608,17 @@ assimilation_chance = {
 			has_pop_religion = mandaean
 			has_pop_religion = coptic
 			has_pop_religion = zoroastrian
+		}
+		NOT = {
+			OR = {
+				has_pop_culture = ukrainian
+				has_pop_culture = byelorussian
+			}
+		}
+	}
+	modifier = {
+		factor = -1
+		OR = {
 			has_pop_culture = asian_minor
 			has_pop_culture = mandaic
 			has_pop_culture = copt

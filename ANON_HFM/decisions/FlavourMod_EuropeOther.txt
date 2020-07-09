@@ -1208,8 +1208,8 @@ political_decisions = {
 			}
 			OR = {
 				AND = { owns = 703 NOT = { has_global_flag = german_renamed_krakow } }
-				AND = { owns = 714 NOT = { has_global_flag = german_renamed_galicia } }
-				
+				AND = { owns = 704 NOT = { has_global_flag = german_renamed_galicia } }
+				AND = { owns = 714 NOT = { has_global_flag = german_renamed_galician } }
 			}
 		}
 		
@@ -1231,19 +1231,29 @@ political_decisions = {
 			}
 			random_owned = {
 				limit = {
-					province_id = 714
+					province_id = 704
 				}
-				714 = { 
-					change_province_name = "Tarnau" 
+				704 = { 
+					change_province_name = "Neu Sandez" 
 					state_scope = { change_region_name = "Galizien-Lodomerien" }
 				}
-				704 = { change_province_name = "Neu Sandez"  }
 				705 = { change_province_name = "Premißel"  }
+				owner = { 
+					set_global_flag = german_renamed_galicia
+					clr_global_flag = polish_renamed_galicia
+					clr_global_flag = russian_renamed_galicia
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 714
+				}
+				714 = { change_province_name = "Tarnau"  }
 				3322 = { change_province_name = "Dzikovia"  }
 				owner = { 
-					set_global_flag = german_renamed_galicia 
-					clr_global_flag = polish_renamed_galicia 
-					clr_global_flag = russian_renamed_galicia 
+					set_global_flag = german_renamed_galician
+					clr_global_flag = polish_renamed_galician
+					clr_global_flag = russian_renamed_galician 
 				}
 			}
 		}
@@ -1263,7 +1273,8 @@ political_decisions = {
 			}
 			OR = {
 				AND = { owns = 703 NOT = { has_global_flag = polish_renamed_krakow } }
-				AND = { owns = 714 NOT = { has_global_flag = polish_renamed_galicia } }
+				AND = { owns = 704 NOT = { has_global_flag = polish_renamed_galicia } }
+				AND = { owns = 714 NOT = { has_global_flag = polish_renamed_galician } }
 			}
 		}
 		
@@ -1285,19 +1296,29 @@ political_decisions = {
 			}
 			random_owned = {
 				limit = {
-					province_id = 714
+					province_id = 704
 				}
-				714 = { 
-					change_province_name = "Tarnów" 
+				704 = { 
+					change_province_name = "Nowy Sacz" 
 					state_scope = { change_region_name = "Galicja Krakovijska" }
 				}
-				704 = { change_province_name = "Nowy Sacz"  }
 				705 = { change_province_name = "Przemysl"  }
-				3322 = { change_province_name = "Dzików"  }
 				owner = { 
 					set_global_flag = polish_renamed_galicia 
 					clr_global_flag = german_renamed_galicia 
 					clr_global_flag = russian_renamed_galicia 
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 714
+				}
+				714 = { change_province_name = "Tarnów"  }
+				3322 = { change_province_name = "Dzików"  }
+				owner = { 
+					set_global_flag = polish_renamed_galician
+					clr_global_flag = german_renamed_galician
+					clr_global_flag = russian_renamed_galician
 				}
 			}
 		}
@@ -1313,7 +1334,8 @@ political_decisions = {
 			}
 			OR = {
 				AND = { owns = 703 NOT = { has_global_flag = russian_renamed_krakow } }
-				AND = { owns = 714 NOT = { has_global_flag = russian_renamed_galicia } }
+				AND = { owns = 704 NOT = { has_global_flag = russian_renamed_galicia } }
+				AND = { owns = 714 NOT = { has_global_flag = russian_renamed_galician } }
 			}
 		}
 		
@@ -1335,18 +1357,29 @@ political_decisions = {
 			}
 			random_owned = {
 				limit = {
-					province_id = 714
+					province_id = 704
 				}
-				714 = { 
-					change_province_name = "Tarniv" 
+				704 = { 
+					change_province_name = "Novy-Sonch" 
 					state_scope = { change_region_name = "Galisiya-Lodomeriya" }
 				}
-				704 = { change_province_name = "Novy-Sonch"  }
 				705 = { change_province_name = "Peremyshl'"  }
 				owner = { 
 					set_global_flag = russian_renamed_galicia
 					clr_global_flag = german_renamed_galicia 
 					clr_global_flag = polish_renamed_galicia
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 714
+				}
+				714 = { change_province_name = "Tarniv"  }
+				3322 = { change_province_name = "Dzhikov"  }
+				owner = { 
+					set_global_flag = russian_renamed_galician
+					clr_global_flag = german_renamed_galician
+					clr_global_flag = polish_renamed_galician
 				}
 			}
 		}
@@ -1710,9 +1743,9 @@ political_decisions = {
 		potential = {
 			is_culture_group = germanic
 			OR = {
-				AND = { owns = 691 NOT = { has_global_flag = west_prussia_rename_german } }
+				AND = { owns = 694 NOT = { has_global_flag = west_prussia_rename_german } }
 				AND = { owns = 690 NOT = { has_global_flag = danzig_rename_german } }
-				
+				AND = { owns = 691 NOT = { has_global_flag = tuchel_rename_german } }
 			}
 		}
 		
@@ -1733,17 +1766,26 @@ political_decisions = {
 			}
 			random_owned = {
 				limit = {
-					province_id = 691
+					province_id = 694
 				}
-				691 = { 
-					change_province_name = "Tuchel" 
+				694 = { 
+					change_province_name = "Thorn" 
 					state_scope = { change_region_name = "Westpreußen" }
 				}
-				694 = { change_province_name = "Thorn"  }
 				692 = { change_province_name = "Deutsch Krone" }
 				owner = { 
 					set_global_flag = west_prussia_rename_german 
 					clr_global_flag = west_prussia_rename_polish
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 691
+				}
+				691 = { change_province_name = "Tuchel"  }
+				owner = { 
+					set_global_flag = tuchel_rename_german 
+					clr_global_flag = tuchel_rename_polish
 				}
 			}
 		}
@@ -1763,8 +1805,9 @@ political_decisions = {
 				tag = WSF
 			}
 			OR = {
-				AND = { owns = 691 NOT = { has_global_flag = west_prussia_rename_polish } }
+				AND = { owns = 694 NOT = { has_global_flag = west_prussia_rename_polish } }
 				AND = { owns = 690 NOT = { has_global_flag = danzig_rename_polish } }
+				AND = { owns = 691 NOT = { has_global_flag = tuchel_rename_polish } }
 			}
 		}
 		
@@ -1782,13 +1825,20 @@ political_decisions = {
 				}
 			}
 			random_owned = {
-				limit = { province_id = 691 }
-				691 = { 
-					change_province_name = "Tuchola" 
+				limit = { province_id = 694 }
+				694 = { 
+					change_province_name = "Torun" 
 					state_scope = { change_region_name = "Pomorskie" }
 				}
-				694 = { change_province_name = "Torun"  }
 				692 = { change_province_name = "Walcz" }
+				owner = { 
+					set_global_flag = west_prussia_rename_polish
+					clr_global_flag = west_prussia_rename_german
+				}
+			}
+			random_owned = {
+				limit = { province_id = 691 }
+				691 = { change_province_name = "Tuchola"  }
 				owner = { 
 					set_global_flag = west_prussia_rename_polish
 					clr_global_flag = west_prussia_rename_german
