@@ -6,7 +6,7 @@ country_event = {
 	id = 1100050
 	title = "EVTNAME1100050"
 	desc = "EVTDESC1100050"
-	picture = "MEX_revolution"
+	picture = "reform_war"
 	
 	fire_only_once = yes
 	
@@ -142,17 +142,19 @@ country_event = {
 	option = {
 		name = "EVTOPTA1100051" #Asking European Powers for some money
 		set_global_flag = mexico_asks_for_loans
-		ai_chance = { factor = 1 }
+		ai_chance = { factor = 100 }
 		}
 	
 	option = {
 		name = "EVTOPTB1100051"
 		set_global_flag = mexico_requests_US_aid
+		ai_chance = { factor = 0 }
 		}
 	
 	option = {
 		name = "EVTOPTC1100051" #No Money
 		prestige = 20
+		ai_chance = { factor = 0 }
 		}
 	}
 
@@ -174,6 +176,8 @@ country_event = {
 		money = 150000
 		}
 	
+	fire_only_once = yes
+	
 	option = {
 		name = "EVTOPTA1100052" #Send Money and Supplies
 		THIS = {
@@ -191,7 +195,7 @@ country_event = {
 			canned_food = 30
 			}
 		THIS = { set_country_flag = gave_mexico_aid }
-		ai_chance = { factor = .2 } 
+		ai_chance = { factor = 20 } 
 		}
 	
 	option = {
@@ -203,12 +207,12 @@ country_event = {
 			treasury = 150000
 			}
 		THIS = { set_country_flag = gave_mexico_money }
-		ai_chance = { factor = .7 }
+		ai_chance = { factor = 70 }
 		}
 	option = {
 		name = "EVTOPTC1100052" #No Aid
 		THIS = { set_country_flag = no_aid_money_to_mexico }
-		ai_chance = { factor = .1 }
+		ai_chance = { factor = 10 }
 		}
 	}
 	
@@ -234,7 +238,9 @@ country_event = {
 			has_country_flag = gave_mexico_money
 			}
 		has_global_flag = mexico_didnt_pay
+		has_global_flag = convention_of_london
 		#has_global_flag = liberal_mexico_wins
+		has_global_flag = american_civil_war_has_happened
 		NOT = { exists = M3X }
 		}
 	
@@ -249,7 +255,7 @@ country_event = {
 				}
 			}
 		
-		ai_chance = { factor = 1 }
+		ai_chance = { factor = 100 }
 		}
 	
 	option = {
@@ -265,6 +271,7 @@ country_event = {
 				value = 50
 				}
 			}
+		ai_chance = { factor = 0 }
 		}
 	
 	}
@@ -281,10 +288,11 @@ country_event = {
 	trigger = {
 		tag = FRA
 		has_global_flag = mexico_didnt_pay
-		OR = {
-			has_country_flag = gave_mexico_aid
-			has_country_flag = gave_mexico_money
-			}
+		has_global_flag = american_civil_war_has_happened
+		#OR = {
+		#	has_country_flag = gave_mexico_aid
+		#	has_country_flag = gave_mexico_money
+		#	}
 		}
 	
 	option = {
@@ -292,8 +300,9 @@ country_event = {
 		FRA = {
 			prestige = 20
 			set_global_flag = french_begins_intervention
+			set_global_flag = convention_of_london
 			}
-		ai_chance = { factor = 1 }
+		ai_chance = { factor = 100 }
 		}
 	
 	option = {
@@ -306,7 +315,9 @@ country_event = {
 				call_ally = no
 				}
 			set_country_flag = mexican_payday_war
+			set_global_flag = convention_of_london
 			}
+		ai_chance = { factor = 0 }
 		}
 		
 	option = {
@@ -322,6 +333,7 @@ country_event = {
 				value = 50
 				}
 			}
+		ai_chance = { factor = 0 }
 		}
 	}
 
@@ -378,18 +390,20 @@ country_event = {
 	id = 1100072
 	title = "EVTNAME1100072"
 	desc = "EVTDESC1100072"
-	picture = "MEX_revolution"
+	picture = "reform_war"
 	
 	fire_only_once = yes
 	
 	trigger = {
 		tag = MEX
 		NOT = { exists = M3X }
+		has_global_flag = mexican_reform_war
 		}
 	
 	option = {
 		name = "EVTOPTA1100072" #Don't Pay back the Money
 		M3X = { all_core = { remove_core = M3X } }
+		MEX = { capital = 2172 }
 		set_global_flag = mexico_didnt_pay
 		ai_chance = { factor = 1 }
 		}
@@ -402,6 +416,8 @@ country_event = {
 				}
 			treasury = 200000
 			MEX = { treasury = -200000 }
+			MEX = { capital = 2172 }
+			M3X = { all_core = { remove_core = M3X } }
 			}
 		}
 	
@@ -419,6 +435,7 @@ country_event = {
 	trigger = {
 		tag = M3X
 		NOT = { war_with = MEX }
+		has_global_flag = mexican_reform_war
 		FRA = {
 			OR = {
 				has_country_flag = gave_mexico_aid
@@ -479,6 +496,7 @@ country_event = {
 				}
 			}
 		NOT = { exists = MEX }
+		has_global_flag = mexican_reform_war
 		}
 	
 	option = {
@@ -521,7 +539,7 @@ country_event = {
 	id = 1100060
 	title = "EVTNAME1100060"
 	desc = "EVTDESC1100060"
-	picture = "MEX_revolution"
+	picture = "second_french_intervention"
 	
 	fire_only_once = yes
 	
@@ -529,9 +547,12 @@ country_event = {
 		##year = 1863
 		tag = MEX
 		has_country_flag = pastry_war
-		has_global_flag = acw_war_started
+		has_global_flag = american_civil_war_has_happened
 		has_global_flag = french_begins_intervention
-		USA = { war_with = CSA }
+		OR = {
+			USA = { war_with = CSA }
+			USA = { war_with = FSA }
+			}
 		#NOT = { has_global_flag = liberal_mexico_wins }
 	}
 	
@@ -637,10 +658,10 @@ country_event = {
 	id = 1100061
 	title = "EVTNAME1100061" #Execution of Emperor Maximilian
 	desc = "EVTDESC1100061"
-	news = yes
-	news_desc_long = "EVTDESC1100061"
-	news_desc_medium = "EVTDESC1100061_NEWS_MEDIUM"
-	news_desc_short = "EVTDESC1100061_NEWS_SHORT"
+	#news = yes
+	#news_desc_long = "EVTDESC1100061"
+	#news_desc_medium = "EVTDESC1100061_NEWS_MEDIUM"
+	#news_desc_short = "EVTDESC1100061_NEWS_SHORT"
 	picture = "execution_of_emperor_maximillian"
 	
 	fire_only_once = yes
