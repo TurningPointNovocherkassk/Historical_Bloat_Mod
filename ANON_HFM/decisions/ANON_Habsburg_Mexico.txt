@@ -1,6 +1,7 @@
 political_decisions = {
 
 create_the_golden_circle = {
+		#picture = the_golden_circle
 		potential = {
 			tag = CSA
 			exists = MXM
@@ -14,7 +15,7 @@ create_the_golden_circle = {
 			prestige = 75
 			has_unclaimed_cores = no 
 			invention = national_fraternity
-			treasury = 500000
+			treasury = 1000000
 			MXM = {
 				all_core = {
 					OR = {
@@ -49,8 +50,223 @@ create_the_golden_circle = {
 				}
 			}
 		
+		ai_will_do = { factor = 1 }
+		
+	}
+	
+claim_central_america_golden_circle = {
+	
+		potential = {
+			tag = KGC
+			slavery = yes_slavery
+			NOT = { has_global_flag = golden_circle_claims_central_america }
+			}
+		
+		allow = {
+			war = no
+			is_greater_power = yes
+			prestige = 100
+			has_unclaimed_cores = no
+			}
+			
+		effect = {
+			GUA = { all_core = { add_core = KGC } }
+			ELS = { all_core = { add_core = KGC } }
+			HON = { all_core = { add_core = KGC } }
+			NIC = { all_core = { add_core = KGC } }
+			COS = { all_core = { add_core = KGC } }
+			PNM = { all_core = { add_core = KGC } }
+			UCA = { all_core = { add_core = KGC } }
+			badboy = 10
+			prestige = 10
+			relation = {
+					who = USA
+					value = -100
+					}
+			}
+		set_global_flag = golden_circle_claims_central_america
+		ai_will_do = { factor = 1 }
+	}
+	
+claim_north_colombia_golden_circle = {
+		potential = {
+			tag = KGC
+			slavery = yes_slavery
+			NOT = { has_global_flag = golden_circle_claims_north_colombia }
+			}
+		
+		allow = {
+			war = no
+			is_greater_power = yes
+			prestige = 150
+			has_unclaimed_cores = no
+			}
+		
+		effect = {
+			badboy = 10
+			2253 = { add_core = KGC }
+			CLM_2251 = { add_core = KGC }
+			CLM_3372 = { add_core = KGC }
+			CLM_2255 = { add_core = KGC }
+			VNZ_3605 = { add_core = KGC }
+			VNZ_2234 = { add_core = KGC }
+			VNZ_2271 = { add_core = KGC }
+			VNZ_3302 = { add_core = KGC }
+			VNZ_2272 = { add_core = KGC }
+			NET_2235 = { add_core = KGC }
+			VNZ_2267 = { add_core = KGC }
+			VNZ_2265 = { add_core = KGC }
+			CLM_3297 = { add_core = KGC }
+			set_global_flag = golden_circle_claims_north_colombia
+			relation = {
+					who = USA
+					value = -100
+					}
+			prestige = 10
+			ai_will_do = { factor = 1 }
+			}
 	}
 
+claim_the_antilles_golden_circle = {
+	
+	potential = {
+		tag = KGC
+		slavery = yes_slavery
+		NOT = { has_global_flag = golden_circle_claims_the_antilles }
+		}
+		
+	allow = {
+		war = no
+		is_greater_power = yes
+		prestige = 100
+		has_unclaimed_cores = no
+		}
+	
+	effect = {
+		badboy = 5
+		ENG_2224 = { add_core = KGC }
+		ENG_2228 = { add_core = KGC }
+		set_global_flag = golden_circle_claims_the_antilles
+		relation = {
+			who = ENG
+			value = -50
+			}
+		relation = {
+			who = NET
+			value = -50
+			}
+		relation = {
+			who = USA
+			value = -100
+			}
+		relation = {
+			who = FRA
+			value = -50
+			}
+		relation = {
+			who = SPA
+			value = -50
+			}
+		relation = {
+			who = SPC
+			value = -50
+			}
+		}	
+	ai_will_do = { factor = 1 }
+	}
+	
+claim_the_caribbeans_golden_circle = {
+	
+	potential = {
+		tag = KGC
+		slavery = yes_slavery
+		NOT = { has_global_flag = golden_circle_claims_caribbeans }
+		}
+		
+	allow = {
+		war = no
+		is_greater_power = yes
+		prestige = 100
+		has_unclaimed_cores = no
+		}
+	
+	effect = {
+		ENG_2219 = { add_core = KGC }
+		ENG_203 = { add_core = KGC }
+		badboy = 5
+		set_global_flag = golden_circle_claims_caribbeans
+		relation = {
+			who = ENG
+			value = -100
+			}
+		relation = {
+			who = USA
+			value = -100
+			}
+		}
+	ai_will_do = { factor = 1 }
+	}
+
+claim_cuba_golden_circle = {
+	
+	potential = {
+		tag = KGC
+		slavery = yes_slavery
+		NOT = { has_global_flag = golden_circle_claims_cuba }
+		NOT = { have_core_in = CUB }
+		}
+	
+	allow = {
+		war = no
+		is_greater_power = yes
+		has_unclaimed_cores = no
+		prestige = 50
+		}
+		
+	effect = {
+		SPA_2209 = { add_core = KGC }
+		SPA_2211 = { add_core = KGC }
+		badboy = 2.5
+		set_global_flag = golden_circle_claims_cuba
+		relation = {
+			who = SPA
+			value = -100
+			}
+		relation = {
+			who = SPC
+			value = -100
+			}
+		}
+	ai_will_do = { factor = 1 }
+	}
+
+claim_hispaniola_golden_circle = {
+	
+	potential = {
+		tag = KGC
+		slavery = yes_slavery
+		NOT = { has_global_flag = golden_circle_claims_hispaniola }
+		}
+	
+	allow = {
+		war = no
+		is_greater_power = yes
+		has_unclaimed_cores = no
+		prestige = 50
+		}
+	
+	effect = {
+		HAI_2213 = { add_core = KGC }
+		badboy = 2.5
+		set_global_flag = golden_circle_claims_hispaniola
+		relation = {
+			who = USA
+			value = -50
+			}
+		}	
+	ai_will_do = { factor = 1 }
+	}
+	
 gain_conservative_mexico_generals = {
 	potential = {
 		OR = { 
