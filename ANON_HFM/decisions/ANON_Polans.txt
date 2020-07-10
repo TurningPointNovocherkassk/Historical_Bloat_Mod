@@ -24,7 +24,12 @@ political_decisions = {
 	
 	negate_partition = {
 		potential = {
-			tag = PLC
+			OR = {
+				tag = PLC
+				tag = PLH
+				tag = PLR
+				tag = C3N
+			}
 			OR = {
 				any_owned_province = { is_core = RUS }
 				any_owned_province = { is_core = KUK }
@@ -34,9 +39,14 @@ political_decisions = {
 				any_owned_province = { is_core = PRU }
 				any_owned_province = { is_core = SGF }
 				any_owned_province = { is_core = GCF }
+				any_owned_province = { is_core = BDB }
 			}
-			PLC = { all_core = { owned_by = THIS } }
-			has_country_flag = poland_pomerania
+			THIS = { all_core = { owned_by = THIS } }
+			has_country_flag = konigsberg_edict
+			has_country_flag = masurian_plan
+			has_country_flag = tilsit_act
+			has_country_flag = claim_pomerania
+			has_country_flag = claimed_claim_silesia
 			NOT = { has_country_flag = negate_partition }
 		}
 		allow = {
@@ -46,18 +56,35 @@ political_decisions = {
 		effect = {
 			set_country_flag = negate_partition
 			prestige = 25
-			badboy = 5
-			all_core = {
-				remove_core = RUS
-				remove_core = KUK
-				remove_core = AUS
-				remove_core = GER
-				remove_core = NGF
-				remove_core = PRU
-				remove_core = SGF
-				remove_core = GCF
+			badboy = 10
+			THIS = {
+				all_core = {
+					remove_core = RUS
+					remove_core = KUK
+					remove_core = AUS
+					remove_core = GER
+					remove_core = NGF
+					remove_core = PRU
+					remove_core = SGF
+					remove_core = GCF
+					remove_core = BDB
+				}
 			}
-			all_core = { remove_core = PZN remove_core = PML remove_core = GLM remove_core = CPL remove_core = KRA remove_core = PNC }
+			PRD = {
+				all_core = {
+					remove_core = RUS
+					remove_core = KUK
+					remove_core = AUS
+					remove_core = GER
+					remove_core = NGF
+					remove_core = PRU
+					remove_core = SGF
+					remove_core = GCF
+					remove_core = BDB
+					add_core = THIS
+				}
+			}
+			THIS = { all_core = { remove_core = PZN remove_core = PML remove_core = GLM remove_core = CPL remove_core = KRA remove_core = PNC } }
 			any_country = {
 				limit = {
 					OR = {
@@ -69,6 +96,7 @@ political_decisions = {
 						tag = PRU
 						tag = SGF
 						tag = GCF
+						tag = BDB
 					}
 				}
 				relation = { who = THIS value = -400 }
@@ -1103,12 +1131,12 @@ political_decisions = {
 				citizens_rights = culture_voting_only
 				citizens_rights = all_voting_pops
 			}
+			invention = manifest_destiny
 		}
 		
 		effect = {
 			set_country_flag = claimed_claim_silesia
 			badboy = 5
-			prestige = 10
 			#add_accepted_culture = western_slavic
 
 			SLS = { all_core = { add_core = THIS } }
@@ -1119,6 +1147,19 @@ political_decisions = {
 				}
 				relation = { who = THIS value = -200 }
 				leave_alliance = THIS
+			}
+			random_owned = {
+				limit = {
+					owner = {
+						OR = {
+							is_sphere_leader_of = SLS
+							is_our_vassal = SLS
+						}
+					}
+				}
+				owner = {
+					inherit = SLS
+				}
 			}
 		}
 		
@@ -1158,6 +1199,7 @@ political_decisions = {
 				citizens_rights = culture_voting_only
 				citizens_rights = all_voting_pops
 			}
+			invention = manifest_destiny
 		}
 		
 		effect = {
@@ -1177,12 +1219,239 @@ political_decisions = {
 				relation = { who = THIS value = -200 }
 				leave_alliance = THIS
 			}
+			random_owned = {
+				limit = {
+					owner = {
+						OR = {
+							is_sphere_leader_of = KSH
+							is_our_vassal = KSH
+						}
+					}
+				}
+				owner = {
+					inherit = KSH
+				}
+			}
 		}
 		ai_will_do = { factor = 1 }
 	}
 	
+	tilsit_act = {
+		picture = tilsit_act
+		potential = {
+			OR = {
+				primary_culture = lithuanian
+				accepted_culture = lithuanian
+			}
+			NOT = { has_country_flag = tilsit_act }			
+		}
+				
+		allow = {
+			war = no
+			is_vassal = no
+			is_disarmed = no
+			OR = {
+				is_secondary_power = yes
+				is_greater_power = yes
+			}
+			OR = {
+				government = fascist_dictatorship
+				AND = {
+					war_policy = jingoism
+					military_score = 30
+				}
+				citizens_rights = culture_voting_only
+				citizens_rights = all_voting_pops
+			}
+			invention = manifest_destiny
+		}
+		
+		effect = {
+			set_country_flag = tilsit_act
+			prestige = 10
+			badboy = 2.5
+			MML = { all_core = { add_core = LIT add_core = THIS } }
+			any_country = {
+				limit = {
+					NOT = { tag = THIS }
+					any_owned_province = { is_core = THIS }
+				}
+				relation = { who = THIS value = -200 }
+				leave_alliance = THIS
+			}
+			random_owned = {
+				limit = {
+					owner = {
+						OR = {
+							is_sphere_leader_of = MML
+							is_our_vassal = MML
+						}
+					}
+				}
+				owner = {
+					inherit = MML
+				}
+			}
+		}
+		ai_will_do = { factor = 1 }
+	}
 	
+	masurian_plan = {
+		picture = masurian_plan
+		potential = {
+			OR = {
+				primary_culture = polish
+				accepted_culture = polish
+			}
+			NOT = { has_country_flag = masurian_plan }			
+		}
+				
+		allow = {
+			war = no
+			is_vassal = no
+			is_disarmed = no
+			OR = {
+				is_secondary_power = yes
+				is_greater_power = yes
+			}
+			OR = {
+				government = fascist_dictatorship
+				AND = {
+					war_policy = jingoism
+					military_score = 30
+				}
+				citizens_rights = culture_voting_only
+				citizens_rights = all_voting_pops
+			}
+			invention = manifest_destiny
+		}
+		
+		effect = {
+			set_country_flag = masurian_plan
+			prestige = 10
+			badboy = 2.5
+			MSR = { all_core = { add_core = THIS } }
+			any_country = {
+				limit = {
+					NOT = { tag = THIS }
+					any_owned_province = { is_core = THIS }
+				}
+				relation = { who = THIS value = -200 }
+				leave_alliance = THIS
+			}
+			random_owned = {
+				limit = {
+					owner = {
+						OR = {
+							is_sphere_leader_of = MSR
+							is_our_vassal = MSR
+						}
+					}
+				}
+				owner = {
+					inherit = MSR
+				}
+			}
+		}
+		ai_will_do = { factor = 1 }
+	}
 	
+	konigsberg_edict = {
+		picture = konigsberg_edict
+		potential = {
+			OR = {
+				tag = PLC
+				tag = PLH
+				tag = PLR
+				tag = C3N
+			}
+			NOT = { has_country_flag = konigsberg_edict }
+			has_country_flag = tilsit_act
+			has_country_flag = masurian_plan
+			OR = {
+				PRU = {
+					exists = yes
+					NOT = {
+						OR = {
+							has_country_flag = konigsberg_edict_accept
+							has_country_flag = konigsberg_edict_decline
+						}
+					}
+				}
+				GCF = {
+					exists = yes
+					NOT = {
+						OR = {
+							has_country_flag = konigsberg_edict_accept
+							has_country_flag = konigsberg_edict_decline
+						}
+					}
+				}
+				NGF = {
+					exists = yes
+					NOT = {
+						OR = {
+							has_country_flag = konigsberg_edict_accept
+							has_country_flag = konigsberg_edict_decline
+						}
+					}
+				}
+				GER = {
+					exists = yes
+					NOT = {
+						OR = {
+							has_country_flag = konigsberg_edict_accept
+							has_country_flag = konigsberg_edict_decline
+						}
+					}
+				}
+			}
+		}
+				
+		allow = {
+			war = no
+			is_vassal = no
+			is_disarmed = no
+			is_greater_power = yes
+			OR = {
+				government = fascist_dictatorship
+				AND = {
+					war_policy = jingoism
+					military_score = 30
+				}
+			}
+			invention = manifest_destiny
+			695 = {
+				owner = {
+					is_greater_power = no
+					OR = {
+						tag = PRU
+						tag = GCF
+						tag = NGF
+						tag = GER
+					}
+					NOT = { truce_with = THIS }
+				}
+			}
+			THIS = { all_core = { owned_by = THIS } }
+		}
+		
+		effect = {
+			set_country_flag = konigsberg_edict
+			3659 = { add_core = PRD }
+			3660 = { add_core = PRD }
+			release_vassal = PRD
+			PRD = {
+				government = colonial_company
+				primary_culture = volga_german
+				add_accepted_culture = polish
+				add_accepted_culture = masurian
+				create_alliance = THIS
+			}
+			695 = { owner = { country_event = { id = 666666042 days = 5 } } }
+		}
+		ai_will_do = { factor = 1 }
+	}
 	
 	
 	

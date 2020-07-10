@@ -182,6 +182,7 @@ country_event = {
 	id = 666666005
 	title = "EVTNAME666666004"
 	desc = "EVTDESC666666004"
+	news_title = "EVTNAMEEVTNAME666666004_NEWS_TITLE"
 	news_desc_long = "EVTDESC666666004_NEWS_LONG"
 	news_desc_medium = "EVTDESC666666004_NEWS_MEDIUM"
 	news_desc_short = "EVTDESC666666004_NEWS_SHORT"
@@ -3592,6 +3593,11 @@ country_event = {
 	title = "EVTNAME666666036"
 	desc = "EVTDESC666666036"
 	picture = "january_uprising"
+	news = yes
+	news_title = "EVTNAME666666036_NEWS_TITLE"
+	news_desc_long = "EVTDESC666666036_NEWS_LONG"
+	news_desc_medium = "EVTDESC666666036_NEWS_MEDIUM"
+	news_desc_short = "EVTDESC666666036_NEWS_SHORT"
 	
 	fire_only_once = yes
 
@@ -3635,7 +3641,7 @@ country_event = {
 	mean_time_to_happen = { days = 15 } 
 	
 	option = {
-		name = "EVTOPT666666035A"
+		name = "EVTOPT666666036A"
 		set_global_flag = form_PNC
 		random_owned = { limit = { owner = { ai = no tag = CPL } } owner = { inherit = KRA inherit = PZN } }
 		random_owned = { limit = { owner = { ai = no tag = KRA } } owner = { inherit = CPL inherit = PZN } }
@@ -4570,5 +4576,186 @@ country_event = {
 			}
 		}
 		ai_chance = { factor = 100 }
+	}
+}
+
+#####################################
+#     Konigsberg Edict
+#####################################
+country_event = {
+	id = 666666042
+	title = "EVTNAME666666042"
+	desc = "EVTDESC666666042"
+	news = yes
+	news_title = "EVTNAME666666042_NEWS_TITLE"
+	news_desc_long = "EVTDESC666666042_NEWS_LONG"
+	news_desc_medium = "EVTDESC666666042_NEWS_MEDIUM"
+	news_desc_short = "EVTDESC666666042_NEWS_SHORT"
+	picture = "konigsberg_edict_big"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVT666666042OPTA" #ok retard
+		set_country_flag = konigsberg_edict_accept
+		prestige = -10
+		695 = {
+			add_core = PRD
+			remove_core = THIS
+			remove_core = PRU
+			remove_core = NGF
+			remove_core = GCF
+			remove_core = GER
+			secede_province = PRD
+		}
+		PRD = { capital = 695 }
+		FROM = { country_event = 666666043 }
+		ai_chance = {
+			factor = 30
+			modifier = {
+				factor = 2.34
+				war = yes
+			}
+			modifier = {
+				factor = 3.3
+				FROM = {
+					OR = {
+						is_sphere_leader_of = THIS
+						is_our_vassal = THIS
+					}
+				}
+			}
+			modifier = {
+				factor = 3.33
+				war_policy = pacifism
+			}
+			modifier = {
+				factor = 2.34
+				war_policy = anti_military
+			}
+			modifier = {
+				factor = 3.33
+				FROM = { brigades_compare = 1.5 }
+			}
+		}
+	}
+	option = {
+		name = "EVT666666042OPTB" #nope
+		set_country_flag = konigsberg_edict_decline
+		relation = { who = FROM value = -400 }
+		695 = { add_core = PRD }
+		casus_belli = {
+			target = FROM
+			type = humiliate
+			months = 36
+		}
+		FROM = {
+			diplomatic_influence = { who = THIS value = -400 }
+			country_event = 666666044
+		}
+		ai_chance = {
+			factor = 70
+		}
+	}
+}
+country_event = {
+	id = 666666043
+	title = "EVTNAME666666043"
+	desc = "EVTDESC666666043"
+	picture = "konigsberg_edict_big"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVT666666043OPTA" #lmao get fucked retard
+		prestige = 25
+		casus_belli = {
+			target = FROM
+			type = humiliate
+			months = 36
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+country_event = {
+	id = 666666044
+	title = "EVTNAME666666044"
+	desc = "EVTDESC666666044"
+	picture = "konigsberg_edict_big"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVT666666044OPTA"
+		prestige = 25
+		war = {
+			target = FROM
+			attacker_goal = {
+				casus_belli = free_allied_cores
+				state_province_id = 695
+			}
+			defender_goal = {
+				casus_belli = status_quo
+			}
+		}
+		ai_chance = {
+			factor = 95
+			modifier = {
+				factor = 100
+				war = no
+			}
+		}
+	}
+	option = {
+		name = "EVT666666044OPTA"
+		prestige = 12.5
+		add_casus_belli = {
+			target = FROM
+			type = free_allied_cores
+			months = 75
+		}
+		ai_chance = {
+			factor = 5
+			modifier = {
+				factor = 100
+				war = yes
+			}
+		}
+	}
+}
+# Prussia becomes Brandenburg
+country_event = {
+	id = 666666045
+	title = "EVTNAME666666045"
+	desc = "EVTDESC666666045"
+	news = yes
+	news_title = "EVTNAME666666045_NEWS_TITLE"
+	news_desc_long = "EVTDESC666666045_NEWS_LONG"
+	news_desc_medium = "EVTDESC666666045_NEWS_MEDIUM"
+	news_desc_short = "EVTDESC666666045_NEWS_SHORT"
+	picture = "brandenburg"
+	fire_only_once = yes 
+	
+	trigger = {
+		tag = PRU
+		NOT = { owns = 695 }
+		war = no
+		OR = {
+			has_country_flag = konigsberg_edict_accept
+			has_country_flag = konigsberg_edict_decline
+		}
+		PRD = { exists = yes owns = 695 }
+	}
+	
+	option = {
+		name = "EVT666666045OPTA" #lmao get fucked retard
+		prestige = -25
+		PRU = { all_core = { add_core = BDB remove_core = PRU } }
+		change_tag = BDB
+		ai_chance = {
+			factor = 100
+		}
 	}
 }
