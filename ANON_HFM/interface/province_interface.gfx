@@ -2426,6 +2426,16 @@ spriteTypes = {
 	}	
 	
 	spriteType = {
+		name = "GFX_terrainimg_jungle_farmland"
+		texturefile = "gfx\\interface\\terrain_junglefarmland.tga"
+		norefcount = yes
+	}
+	spriteType = {
+		name = "GFX_terrainimg_forest_farmland"
+		texturefile = "gfx\\interface\\terrain_forestfarmland.tga"
+		norefcount = yes
+	}
+	spriteType = {
 		name = "GFX_terrainimg_floodplain_farmland"
 		texturefile = "gfx\\interface\\terrain_floodplain_farmland.tga"
 		norefcount = yes
