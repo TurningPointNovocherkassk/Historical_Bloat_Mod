@@ -2691,6 +2691,9 @@ monroe_doctrine = {
 					#ANON
 					primary_culture = llanero
 					primary_culture = gaucho
+					primary_culture = yucateco
+					primary_culture = californio
+					primary_culture = norteno
 					AND = {
 						tag = CUB
 						USA = { has_country_flag = maine_incident }
@@ -2717,15 +2720,15 @@ monroe_doctrine = {
 								OR = {
 									has_country_flag = VNZ_arbitration_denied
 									has_country_flag = VNZ_BRZ_NET_war
-									NOT = { has_country_flag = ENG_perfidious_albion }
 								}
+								NOT = { has_country_flag = ENG_perfidious_albion }
 							}
 							ENL = {
 								OR = {
 									has_country_flag = VNZ_arbitration_denied
 									has_country_flag = VNZ_BRZ_NET_war
-									NOT = { has_country_flag = ENG_perfidious_albion }
 								}
+								NOT = { has_country_flag = ENG_perfidious_albion }
 							}
 						}
 					}
@@ -2762,15 +2765,15 @@ monroe_doctrine = {
 							OR = {
 								has_country_flag = VNZ_arbitration_denied
 								has_country_flag = VNZ_BRZ_NET_war
-								NOT = { has_country_flag = ENG_perfidious_albion }
 							}
+							NOT = { has_country_flag = ENG_perfidious_albion }
 						}
 						ENL = {
 							OR = {
 								has_country_flag = VNZ_arbitration_denied
 								has_country_flag = VNZ_BRZ_NET_war
-								NOT = { has_country_flag = ENG_perfidious_albion }
 							}
+							NOT = { has_country_flag = ENG_perfidious_albion }
 						}
 					}
 				}
@@ -2809,6 +2812,9 @@ monroe_doctrine = {
 				#ANON
 				primary_culture = llanero
 				primary_culture = gaucho
+				primary_culture = yucateco
+				primary_culture = californio
+				primary_culture = norteno
 				AND = {
 					tag = CUB
 					USA = { has_country_flag = maine_incident }
