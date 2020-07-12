@@ -1453,6 +1453,80 @@ political_decisions = {
 		ai_will_do = { factor = 1 }
 	}
 	
+	german_question = {
+		picture = konigsberg_edict
+		potential = {
+			OR = {
+				tag = PLC
+				tag = PLR
+			}
+			NOT = { has_country_flag = german_question }
+			has_country_flag = konigsberg_edict
+			has_country_flag = negate_partition
+		}
+				
+		allow = {
+			money = 100000
+			war = no
+			is_vassal = no
+			is_disarmed = no
+			is_greater_power = yes
+			OR = {
+				ruling_party_ideology = fascist
+				ruling_party_ideology = reactionary
+				ruling_party_ideology = communist
+				ruling_party_ideology = anarcho_liberal
+			}
+			mass_politics = 1
+			#experimental_psychology = 1
+			revolution_n_counterrevolution = 1
+			NOT = {
+				citizens_rights = all_voting_pops
+				vote_franschise = universal_weighted_voting
+				vote_franschise = universal_voting
+			}
+			OR = {
+				school_reforms = acceptable_schools
+				school_reforms = good_schools
+			}
+			OR = {
+				owns = 695
+				PRD = {
+					owns = 695
+					OR = {
+						in_sphere = THIS
+						vassal_of = THIS
+						substate_of = THIS
+						ai = no
+						all_core = {
+							OR = {
+								owned_by = THIS
+								owner = {
+									OR = {
+										in_sphere = THIS
+										OR = {
+											is_vassal = no
+											vassal_of = THIS
+											substate_of = THIS
+										}
+									}
+									is_greater_power = no
+								}
+							}
+						}
+					}
+				}
+			}
+			THIS = { all_core = { owned_by = THIS } }
+		}
+		
+		effect = {
+			set_country_flag = german_question
+			country_event = 666666046
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
 	
 	
 	

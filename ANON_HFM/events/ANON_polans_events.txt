@@ -4759,3 +4759,1148 @@ country_event = {
 		}
 	}
 }
+##################################################
+#              German Question Events
+##################################################
+country_event = {
+	id = 666666046
+	title = "EVTNAME666666046"
+	desc = "EVTDESC666666046"
+	picture = "konigsberg_edict_big"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVT666666046OPTA" #dump them in PRD
+		set_country_flag = german_question_dumping_PRD
+		add_country_modifier = { name = kraut_displacement_policy duration = 3600 }
+		treasury = -100000
+		badboy = 7.5
+		any_pop = {
+			limit = {
+				is_culture_group = germanic
+			}
+			militancy = 9
+			consciousness = 9
+		}
+		ai_chance = {
+			factor = 33
+		}
+	}
+	option = {
+		name = "EVT666666046OPTB" #dump them in the nearest german country
+		set_country_flag = german_question_dumping_GER
+		add_country_modifier = { name = kraut_displacement_policy duration = 3600 }
+		treasury = -100000
+		badboy = 5
+		any_pop = {
+			limit = {
+				is_culture_group = germanic
+			}
+			militancy = 9
+			consciousness = 9
+		}
+		ai_chance = {
+			factor = 33
+		}
+	}
+	option = {
+		name = "EVT666666046OPTC" #assimilate them instead
+		set_country_flag = german_question_assimilate
+		add_country_modifier = { name = kraut_assimilation_policy duration = 3600 }
+		treasury = -100000
+		badboy = 2.5
+		any_pop = {
+			limit = {
+				location = { is_core = THIS }
+				OR = {
+					has_pop_culture = north_german
+					has_pop_culture = volga_german
+					has_pop_culture = carpathian_german
+				}
+			}
+			location = {
+				add_province_modifier = { name = polonization_modifier duration = -1 }
+				add_province_modifier = { name = minority_building_restrictions duration = 3650	}	
+			}
+
+		}
+		any_pop = {
+			limit = {
+				is_culture_group = germanic
+			}
+			militancy = 4.5
+			consciousness = 9
+		}
+		ai_chance = {
+			factor = 33
+		}
+	}
+	option = {
+		name = "EVT666666046OPTD" #veto the proposition 
+		set_country_flag = german_question_veto
+		badboy = -5
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+#Dumping Germans in PRD
+province_event = {
+	id = 666666046
+	title = "EVTNAME666666046"
+	desc = "EVTDESC666666046"
+	
+	trigger = {
+		owner = { has_country_flag = german_question_dumping_PRD }
+		owned_by = THIS
+		controlled_by = THIS
+		any_pop = {
+			is_culture_group = germanic
+			NOT = {
+				is_primary_culture = yes
+				is_accepted_culture = yes
+			}
+		}
+		#State Requirements
+		OR = {
+			#High - Level 1 - State primary/accepted majority
+			state_scope = {
+				OR = {
+					is_accepted_culture = yes
+					is_primary_culture = yes
+				}
+				has_national_minority = yes
+			}
+			#Medium - Level 2 - State NOT primary/accepted majority, any province in the state HAS primary/accepted majority
+			state_scope = {
+				is_primary_culture = no
+				is_accepted_culture = no
+				any_owned_province = {
+					OR = {
+						is_primary_culture = yes
+						is_accepted_culture = yes
+					}
+				}
+			}
+			#Low - Level 3 - State NOT primary/accepted majority, NO province in state HAS primary/accepted majority (if no pops present at all, need soldiers to be eligible)
+			state_scope = {
+				is_primary_culture = no
+				is_accepted_culture = no
+				NOT = {
+					any_owned_province = {
+						OR = {
+							is_primary_culture = yes
+							is_accepted_culture = yes
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 400
+		modifier = {
+			factor = 0.8
+			is_core = THIS
+		}
+		modifier = {
+			factor = 0.8
+			state_scope = {
+				OR = {
+					is_accepted_culture = yes
+					is_primary_culture = yes
+				}
+			}
+		}
+		modifier = {
+			factor = 0.8
+			OR = {
+				AND = {
+					owner = { ruling_party_ideology = anarcho_liberal }
+					state_scope = { pop_majority_ideology = anarcho_liberal }
+				}
+				AND = {
+					owner = { ruling_party_ideology = reactionary }
+					state_scope = { pop_majority_ideology = reactionary }
+				}
+				AND = {
+					owner = { ruling_party_ideology = fascist }
+					state_scope = { pop_majority_ideology = fascist }
+				}
+				AND = {
+					owner = { ruling_party_ideology = communist }
+					state_scope = { pop_majority_ideology = communist }
+				}
+			}
+		}
+		modifier = {
+			factor = 0.9
+			owner = { military_spending = 0.95 }
+		}
+		modifier = {
+			factor = 0.9
+			owner = { administration_spending = 0.95 }
+		}
+		modifier = {
+			factor = 0.9
+			owner = { electricity = 1 }
+		}
+		modifier = {
+			factor = 0.9
+			owner = { psychoanalysis = 1 }
+		}
+		modifier = {
+			factor = 0.8
+			owner = { invention = the_police_state }
+		}
+		modifier = {
+			factor = 0.7
+			owner = { great_war_experience = 1 }
+		}
+		modifier = {
+			factor = 0.9
+			country_units_in_province = THIS
+		}
+		#300%
+		modifier = {
+			factor = 0.5
+			owner = { has_country_modifier = totalitarian_system }
+		}
+		#350%
+		###Special
+		modifier = {
+			factor = 0.9
+			has_building = railroad
+			owner = { steel_railroad = 1 }
+		}
+		#-360%
+		modifier = {
+			factor = 0.8
+			owner = { NOT = { military_spending = 0.5 } }
+		}
+		modifier = {
+			factor = 0.8
+			owner = { NOT = { administration_spending = 0.5 } }
+		}
+		modifier = {
+			factor = 1.2
+			state_scope = {
+				NOT = {
+					any_owned_province = {
+						OR = {
+							is_primary_culture = yes
+							is_accepted_culture = yes
+						}
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 1.4
+			state_scope = {
+				is_primary_culture = no
+				is_accepted_culture = no
+				NOT = {
+					any_owned_province = {
+						any_pop = {
+							OR = {
+								is_accepted_culture = yes
+								is_primary_culture = yes
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	option = {
+		name = "EVT666666046OPTA"
+		state_scope = {
+			any_owned = {
+				add_province_modifier = { name = depopulation_kraut duration = 1095 }
+			}
+		}
+		
+		#Moving in a majority state
+		random_pop = {
+			limit = {
+				is_culture_group = germanic
+				location = {
+					owner = { has_country_flag = german_question_dumping_PRD }
+					state_scope = {
+						OR = {
+							is_accepted_culture = yes
+							is_primary_culture = yes
+						}
+						has_national_minority = yes
+					}
+				}
+			}
+			location = {
+				state_scope = {
+					any_pop = {
+						limit = {
+							is_primary_culture = no
+							is_accepted_culture = no
+							is_culture_group = germanic
+						}
+						reduce_pop = 0.95
+						random = {
+							chance = 50
+							move_pop = 695
+						}
+						random = {
+							chance = 30
+							move_pop = 3660
+						}
+						random = {
+							chance = 20
+							move_pop = 3659
+						}
+					}
+				}
+			}
+		}
+		
+		#Moving in a minority state
+		random_pop = {
+			limit = {
+				is_culture_group = germanic
+				location = {
+					owner = { has_country_flag = german_question_dumping_PRD }
+					state_scope = {
+						is_primary_culture = no
+						is_accepted_culture = no
+						any_owned_province = {
+							OR = {
+								is_primary_culture = yes
+								is_accepted_culture = yes
+							}
+						}
+					}
+				}
+			}
+			location = {
+				state_scope = {
+					any_pop = {
+						limit = {
+							is_primary_culture = no
+							is_accepted_culture = no
+							is_culture_group = germanic
+						}
+						reduce_pop = 0.95
+						random = {
+							chance = 50
+							move_pop = 695
+						}
+						random = {
+							chance = 30
+							move_pop = 3660
+						}
+						random = {
+							chance = 20
+							move_pop = 3659
+						}
+					}
+				}
+			}
+		}
+		
+		#Moving in a no-presence state
+		random_pop = {
+			limit = {
+				is_culture_group = germanic
+				location = {
+					owner = { has_country_flag = german_question_dumping_PRD }
+					state_scope = {
+						is_primary_culture = no
+						is_accepted_culture = no
+						NOT = {
+							any_owned_province = {
+								OR = {
+									is_primary_culture = yes
+									is_accepted_culture = yes
+								}
+							}
+						}
+					}
+				}
+			}
+			location = {
+				state_scope = {
+					any_pop = {
+						limit = {
+							is_primary_culture = no
+							is_accepted_culture = no
+							is_culture_group = germanic
+						}
+						reduce_pop = 0.95
+						random = {
+							chance = 50
+							move_pop = 695
+						}
+						random = {
+							chance = 30
+							move_pop = 3660
+						}
+						random = {
+							chance = 20
+							move_pop = 3659
+						}
+					}
+				}
+			}
+		}
+	}
+}
+#Dumping Germans in Germany
+province_event = {
+	id = 666666047
+	title = "EVTNAME666666047"
+	desc = "EVTDESC666666047"
+	
+	trigger = {
+		owner = { has_country_flag = german_question_dumping_GER }
+		owned_by = THIS
+		controlled_by = THIS
+		any_pop = {
+			is_culture_group = germanic
+			NOT = {
+				is_primary_culture = yes
+				is_accepted_culture = yes
+			}
+		}
+		#State Requirements
+		OR = {
+			#High - Level 1 - State primary/accepted majority
+			state_scope = {
+				OR = {
+					is_accepted_culture = yes
+					is_primary_culture = yes
+				}
+				has_national_minority = yes
+			}
+			#Medium - Level 2 - State NOT primary/accepted majority, any province in the state HAS primary/accepted majority
+			state_scope = {
+				is_primary_culture = no
+				is_accepted_culture = no
+				any_owned_province = {
+					OR = {
+						is_primary_culture = yes
+						is_accepted_culture = yes
+					}
+				}
+			}
+			#Low - Level 3 - State NOT primary/accepted majority, NO province in state HAS primary/accepted majority (if no pops present at all, need soldiers to be eligible)
+			state_scope = {
+				is_primary_culture = no
+				is_accepted_culture = no
+				NOT = {
+					any_owned_province = {
+						OR = {
+							is_primary_culture = yes
+							is_accepted_culture = yes
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 400
+		modifier = {
+			factor = 0.8
+			is_core = THIS
+		}
+		modifier = {
+			factor = 0.8
+			state_scope = {
+				OR = {
+					is_accepted_culture = yes
+					is_primary_culture = yes
+				}
+			}
+		}
+		modifier = {
+			factor = 0.8
+			OR = {
+				AND = {
+					owner = { ruling_party_ideology = anarcho_liberal }
+					state_scope = { pop_majority_ideology = anarcho_liberal }
+				}
+				AND = {
+					owner = { ruling_party_ideology = reactionary }
+					state_scope = { pop_majority_ideology = reactionary }
+				}
+				AND = {
+					owner = { ruling_party_ideology = fascist }
+					state_scope = { pop_majority_ideology = fascist }
+				}
+				AND = {
+					owner = { ruling_party_ideology = communist }
+					state_scope = { pop_majority_ideology = communist }
+				}
+			}
+		}
+		modifier = {
+			factor = 0.9
+			owner = { military_spending = 0.95 }
+		}
+		modifier = {
+			factor = 0.9
+			owner = { administration_spending = 0.95 }
+		}
+		modifier = {
+			factor = 0.9
+			owner = { electricity = 1 }
+		}
+		modifier = {
+			factor = 0.9
+			owner = { psychoanalysis = 1 }
+		}
+		modifier = {
+			factor = 0.8
+			owner = { invention = the_police_state }
+		}
+		modifier = {
+			factor = 0.7
+			owner = { great_war_experience = 1 }
+		}
+		modifier = {
+			factor = 0.9
+			country_units_in_province = THIS
+		}
+		#300%
+		modifier = {
+			factor = 0.5
+			owner = { has_country_modifier = totalitarian_system }
+		}
+		#350%
+		###Special
+		modifier = {
+			factor = 0.9
+			has_building = railroad
+			owner = { steel_railroad = 1 }
+		}
+		#-360%
+		modifier = {
+			factor = 0.8
+			owner = { NOT = { military_spending = 0.5 } }
+		}
+		modifier = {
+			factor = 0.8
+			owner = { NOT = { administration_spending = 0.5 } }
+		}
+		modifier = {
+			factor = 1.2
+			state_scope = {
+				NOT = {
+					any_owned_province = {
+						OR = {
+							is_primary_culture = yes
+							is_accepted_culture = yes
+						}
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 1.4
+			state_scope = {
+				is_primary_culture = no
+				is_accepted_culture = no
+				NOT = {
+					any_owned_province = {
+						any_pop = {
+							OR = {
+								is_accepted_culture = yes
+								is_primary_culture = yes
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	option = {
+		name = "EVT666666047OPTA"
+		state_scope = {
+			any_owned = {
+				add_province_modifier = { name = depopulation_kraut duration = 1095 }
+			}
+		}
+		
+		#North German
+		#Moving in a majority state
+		random_pop = {
+			limit = {
+				has_pop_culture = north_german
+				location = {
+					owner = { has_country_flag = german_question_dumping_GER }
+					state_scope = {
+						OR = {
+							is_accepted_culture = yes
+							is_primary_culture = yes
+						}
+						has_national_minority = yes
+					}
+				}
+			}
+			location = {
+				state_scope = {
+					any_pop = {
+						limit = {
+							is_primary_culture = no
+							is_accepted_culture = no
+							has_pop_culture = north_german
+						}
+						reduce_pop = 0.95
+						random = {
+							chance = 40
+							move_pop = 549 #Berlin
+						}
+						random = {
+							chance = 20
+							move_pop = 551 #Pritzwalk
+						}
+						random = {
+							chance = 20
+							move_pop = 544 #Schwerin
+						}
+						random = {
+							chance = 10
+							move_pop = 556 #Halle
+						}
+						random = {
+							chance = 10
+							move_pop = 559 #Leipzig
+						}
+					}
+				}
+			}
+		}
+		#Moving in a minority state
+		random_pop = {
+			limit = {
+				has_pop_culture = north_german
+				location = {
+					owner = { has_country_flag = german_question_dumping_GER }
+					state_scope = {
+						is_primary_culture = no
+						is_accepted_culture = no
+						any_owned_province = {
+							OR = {
+								is_primary_culture = yes
+								is_accepted_culture = yes
+							}
+						}
+					}
+				}
+			}
+			location = {
+				state_scope = {
+					any_pop = {
+						limit = {
+							is_primary_culture = no
+							is_accepted_culture = no
+							has_pop_culture = north_german
+						}
+						reduce_pop = 0.95
+						random = {
+							chance = 40
+							move_pop = 549 #Berlin
+						}
+						random = {
+							chance = 20
+							move_pop = 551 #Pritzwalk
+						}
+						random = {
+							chance = 20
+							move_pop = 544 #Schwerin
+						}
+						random = {
+							chance = 10
+							move_pop = 556 #Halle
+						}
+						random = {
+							chance = 10
+							move_pop = 559 #Leipzig
+						}
+					}
+				}
+			}
+		}
+		#Moving in a no-presence state
+		random_pop = {
+			limit = {
+				has_pop_culture = north_german
+				location = {
+					owner = { has_country_flag = german_question_dumping_GER }
+					state_scope = {
+						is_primary_culture = no
+						is_accepted_culture = no
+						NOT = {
+							any_owned_province = {
+								OR = {
+									is_primary_culture = yes
+									is_accepted_culture = yes
+								}
+							}
+						}
+					}
+				}
+			}
+			location = {
+				state_scope = {
+					any_pop = {
+						limit = {
+							is_primary_culture = no
+							is_accepted_culture = no
+							has_pop_culture = north_german
+						}
+						reduce_pop = 0.95
+						random = {
+							chance = 40
+							move_pop = 549 #Berlin
+						}
+						random = {
+							chance = 20
+							move_pop = 551 #Pritzwalk
+						}
+						random = {
+							chance = 20
+							move_pop = 544 #Schwerin
+						}
+						random = {
+							chance = 10
+							move_pop = 556 #Halle
+						}
+						random = {
+							chance = 10
+							move_pop = 559 #Leipzig
+						}
+					}
+				}
+			}
+		}
+		
+		#South German
+		#Moving in a majority state
+		random_pop = {
+			limit = {
+				has_pop_culture = south_german
+				location = {
+					owner = { has_country_flag = german_question_dumping_GER }
+					state_scope = {
+						OR = {
+							is_accepted_culture = yes
+							is_primary_culture = yes
+						}
+						has_national_minority = yes
+					}
+				}
+			}
+			location = {
+				state_scope = {
+					any_pop = {
+						limit = {
+							is_primary_culture = no
+							is_accepted_culture = no
+							has_pop_culture = south_german
+						}
+						reduce_pop = 0.95
+						random = {
+							chance = 50
+							move_pop = 619 #Vienna
+						}
+						random = {
+							chance = 25
+							move_pop = 621 #Krems
+						}
+						random = {
+							chance = 25
+							move_pop = 620 #Sankt Polten
+						}
+					}
+				}
+			}
+		}
+		#Moving in a minority state
+		random_pop = {
+			limit = {
+				has_pop_culture = south_german
+				location = {
+					owner = { has_country_flag = german_question_dumping_GER }
+					state_scope = {
+						is_primary_culture = no
+						is_accepted_culture = no
+						any_owned_province = {
+							OR = {
+								is_primary_culture = yes
+								is_accepted_culture = yes
+							}
+						}
+					}
+				}
+			}
+			location = {
+				state_scope = {
+					any_pop = {
+						limit = {
+							is_primary_culture = no
+							is_accepted_culture = no
+							has_pop_culture = south_german
+						}
+						reduce_pop = 0.95
+						random = {
+							chance = 50
+							move_pop = 619 #Vienna
+						}
+						random = {
+							chance = 25
+							move_pop = 621 #Krems
+						}
+						random = {
+							chance = 25
+							move_pop = 620 #Sankt Polten
+						}
+					}
+				}
+			}
+		}
+		#Moving in a no-presence state
+		random_pop = {
+			limit = {
+				has_pop_culture = south_german
+				location = {
+					owner = { has_country_flag = german_question_dumping_GER }
+					state_scope = {
+						is_primary_culture = no
+						is_accepted_culture = no
+						NOT = {
+							any_owned_province = {
+								OR = {
+									is_primary_culture = yes
+									is_accepted_culture = yes
+								}
+							}
+						}
+					}
+				}
+			}
+			location = {
+				state_scope = {
+					any_pop = {
+						limit = {
+							is_primary_culture = no
+							is_accepted_culture = no
+							has_pop_culture = south_german
+						}
+						reduce_pop = 0.95
+						random = {
+							chance = 50
+							move_pop = 619 #Vienna
+						}
+						random = {
+							chance = 25
+							move_pop = 621 #Krems
+						}
+						random = {
+							chance = 25
+							move_pop = 620 #Sankt Polten
+						}
+					}
+				}
+			}
+		}
+		
+		#East German
+		#Moving in a majority state
+		random_pop = {
+			limit = {
+				has_pop_culture = volga_german
+				location = {
+					owner = { has_country_flag = german_question_dumping_GER }
+					state_scope = {
+						OR = {
+							is_accepted_culture = yes
+							is_primary_culture = yes
+						}
+						has_national_minority = yes
+					}
+				}
+			}
+			location = {
+				state_scope = {
+					any_pop = {
+						limit = {
+							is_primary_culture = no
+							is_accepted_culture = no
+							has_pop_culture = volga_german
+						}
+						reduce_pop = 0.95
+						random = {
+							chance = 40
+							move_pop = 549 #Berlin
+						}
+						random = {
+							chance = 20
+							move_pop = 551 #Pritzwalk
+						}
+						random = {
+							chance = 20
+							move_pop = 544 #Schwerin
+						}
+						random = {
+							chance = 10
+							move_pop = 556 #Halle
+						}
+						random = {
+							chance = 10
+							move_pop = 559 #Leipzig
+						}
+					}
+				}
+			}
+		}
+		#Moving in a minority state
+		random_pop = {
+			limit = {
+				has_pop_culture = volga_german
+				location = {
+					owner = { has_country_flag = german_question_dumping_GER }
+					state_scope = {
+						is_primary_culture = no
+						is_accepted_culture = no
+						any_owned_province = {
+							OR = {
+								is_primary_culture = yes
+								is_accepted_culture = yes
+							}
+						}
+					}
+				}
+			}
+			location = {
+				state_scope = {
+					any_pop = {
+						limit = {
+							is_primary_culture = no
+							is_accepted_culture = no
+							has_pop_culture = volga_german
+						}
+						reduce_pop = 0.95
+						random = {
+							chance = 40
+							move_pop = 549 #Berlin
+						}
+						random = {
+							chance = 20
+							move_pop = 551 #Pritzwalk
+						}
+						random = {
+							chance = 20
+							move_pop = 544 #Schwerin
+						}
+						random = {
+							chance = 10
+							move_pop = 556 #Halle
+						}
+						random = {
+							chance = 10
+							move_pop = 559 #Leipzig
+						}
+					}
+				}
+			}
+		}
+		#Moving in a no-presence state
+		random_pop = {
+			limit = {
+				has_pop_culture = volga_german
+				location = {
+					owner = { has_country_flag = german_question_dumping_GER }
+					state_scope = {
+						is_primary_culture = no
+						is_accepted_culture = no
+						NOT = {
+							any_owned_province = {
+								OR = {
+									is_primary_culture = yes
+									is_accepted_culture = yes
+								}
+							}
+						}
+					}
+				}
+			}
+			location = {
+				state_scope = {
+					any_pop = {
+						limit = {
+							is_primary_culture = no
+							is_accepted_culture = no
+							has_pop_culture = volga_german
+						}
+						reduce_pop = 0.95
+						random = {
+							chance = 40
+							move_pop = 549 #Berlin
+						}
+						random = {
+							chance = 20
+							move_pop = 551 #Pritzwalk
+						}
+						random = {
+							chance = 20
+							move_pop = 544 #Schwerin
+						}
+						random = {
+							chance = 10
+							move_pop = 556 #Halle
+						}
+						random = {
+							chance = 10
+							move_pop = 559 #Leipzig
+						}
+					}
+				}
+			}
+		}
+		
+		#Carpathian German
+		#Moving in a majority state
+		random_pop = {
+			limit = {
+				has_pop_culture = carpathian_german
+				location = {
+					owner = { has_country_flag = german_question_dumping_GER }
+					state_scope = {
+						OR = {
+							is_accepted_culture = yes
+							is_primary_culture = yes
+						}
+						has_national_minority = yes
+					}
+				}
+			}
+			location = {
+				state_scope = {
+					any_pop = {
+						limit = {
+							is_primary_culture = no
+							is_accepted_culture = no
+							has_pop_culture = carpathian_german
+						}
+						reduce_pop = 0.95
+						random = {
+							chance = 33
+							move_pop = 633 #Bratislava
+						}
+						random = {
+							chance = 33
+							move_pop = 3619 #Uherske Hradiste
+						}
+						random = {
+							chance = 33
+							move_pop = 634 #Trencin
+						}
+					}
+				}
+			}
+		}
+		#Moving in a minority state
+		random_pop = {
+			limit = {
+				has_pop_culture = carpathian_german
+				location = {
+					owner = { has_country_flag = german_question_dumping_GER }
+					state_scope = {
+						is_primary_culture = no
+						is_accepted_culture = no
+						any_owned_province = {
+							OR = {
+								is_primary_culture = yes
+								is_accepted_culture = yes
+							}
+						}
+					}
+				}
+			}
+			location = {
+				state_scope = {
+					any_pop = {
+						limit = {
+							is_primary_culture = no
+							is_accepted_culture = no
+							has_pop_culture = carpathian_german
+						}
+						reduce_pop = 0.95
+						random = {
+							chance = 33
+							move_pop = 633 #Bratislava
+						}
+						random = {
+							chance = 33
+							move_pop = 3619 #Uherske Hradiste
+						}
+						random = {
+							chance = 33
+							move_pop = 634 #Trencin
+						}
+					}
+				}
+			}
+		}
+		#Moving in a no-presence state
+		random_pop = {
+			limit = {
+				has_pop_culture = carpathian_german
+				location = {
+					owner = { has_country_flag = german_question_dumping_GER }
+					state_scope = {
+						is_primary_culture = no
+						is_accepted_culture = no
+						NOT = {
+							any_owned_province = {
+								OR = {
+									is_primary_culture = yes
+									is_accepted_culture = yes
+								}
+							}
+						}
+					}
+				}
+			}
+			location = {
+				state_scope = {
+					any_pop = {
+						limit = {
+							is_primary_culture = no
+							is_accepted_culture = no
+							has_pop_culture = carpathian_german
+						}
+						reduce_pop = 0.95
+						random = {
+							chance = 33
+							move_pop = 633 #Bratislava
+						}
+						random = {
+							chance = 33
+							move_pop = 3619 #Uherske Hradiste
+						}
+						random = {
+							chance = 33
+							move_pop = 634 #Trencin
+						}
+					}
+				}
+			}
+		}
+	}
+}
