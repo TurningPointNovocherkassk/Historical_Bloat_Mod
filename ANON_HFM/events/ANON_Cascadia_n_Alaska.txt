@@ -488,70 +488,68 @@
 		option = {
 			name = "EVTOPTA1100004"
 			6 = {
-				#add_core = FROM
-				add_core = RUS
+				add_core = FROM
 				add_core = LSK
 				remove_core = RPL
 				remove_core = CAN
 				secede_province = FROM
 			}
 			17 = {
-				#add_core = FROM
-				add_core = RUS
+				add_core = FROM
 				add_core = LSK
 				remove_core = RPL
 				remove_core = CAN
 				secede_province = FROM
 			}
 			2599 = {
-				#add_core = FROM
-				add_core = RUS
+				add_core = FROM
 				add_core = LSK
 				remove_core = RPL
 				remove_core = CAN
 				secede_province = FROM
 			}
 			2630 = {
-				#add_core = FROM
-				add_core = RUS
+				add_core = FROM
 				add_core = LSK
 				remove_core = RPL
 				remove_core = CAN
 				secede_province = FROM
 			}
 			7 = {
-				#add_core = FROM
-				add_core = RUS
+				add_core = FROM
 				add_core = LSK
 				remove_core = RPL
 				remove_core = CAN
 				secede_province = FROM
 			}
 			8 = {
-				#add_core = FROM
-				add_core = RUS
+				add_core = FROM
 				add_core = LSK
 				remove_core = RPL
 				remove_core = CAN
 				secede_province = FROM
 			}
 			2629 = {
-				#add_core = FROM
-				add_core = RUS
+				add_core = FROM
 				add_core = LSK
 				remove_core = RPL
 				remove_core = CAN
 				secede_province = FROM
 			}
-			any_owned = {
-				limit = {
-					owner = {
-						tag = RUS
-						is_sphere_leader_of = LSK
+			FROM = {
+				any_owned = {
+					limit = {
+						owner = {
+							OR ={
+								is_sphere_leader_of = LSK
+								is_our_vassal = LSK
+								LSK = { substate_of = FROM }
+							}
+						}
+						is_core = LSK
 					}
-					is_core = LSK
+					secede_province = LSK
 				}
-				secede_province = LSK
 			}
 			relation = { who = FROM value = 20 }
 			prestige = -20

@@ -3919,14 +3919,18 @@ categories =  {
 	}
 	
 	pozan = {
-		movement_cost = 1.0
-		color = { 241 221 184 }
-		farm_rgo_size = 0.2
+		movement_cost = 1.2
+		defence = 0.75
+		color = { 86 71 146 }
+		farm_rgo_size = 0.1
 		farm_rgo_eff = 0.2
 		mine_rgo_size = 0.0
 		mine_rgo_eff = 0.0
-		immigrant_attract = 0.05
 		supply_limit = 10
+		min_build_railroad = 2
+		combat_width = -0.20
+		
+		immigrant_attract = 0.1
 	}	
 	
 	rouen = {

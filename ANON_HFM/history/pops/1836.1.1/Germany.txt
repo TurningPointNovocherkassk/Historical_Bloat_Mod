@@ -1460,7 +1460,7 @@
 	artisans = {
 		culture = north_german
 		religion = protestant
-		size = 1000
+		size = 4000
 	}
 	soldiers = {
 		culture = north_german
@@ -1470,7 +1470,7 @@
 	farmers = {
 		culture = north_german
 		religion = protestant
-		size = 25000
+		size = 26000
 	}
 	
 	aristocrats = {
@@ -1496,7 +1496,7 @@
 	farmers = {
 		culture = sorbian
 		religion = protestant
-		size = 22500
+		size = 17500
 	}
 
 	aristocrats = {
@@ -1522,7 +1522,29 @@
 	farmers = {
 		culture = sorbian
 		religion = catholic
-		size = 21000     
+		size = 13000     
+	}
+	
+
+	clergymen = {
+		culture = south_german
+		religion = catholic
+		size = 70 
+	}
+	artisans = {
+		culture = south_german
+		religion = catholic
+		size = 200
+	}
+	soldiers = {
+		culture = south_german
+		religion = catholic
+		size = 50  
+	}
+	farmers = {
+		culture = south_german
+		religion = catholic
+		size = 3680  
 	}
 }
 #Guben
@@ -1550,7 +1572,7 @@
 	farmers = {
 		culture = north_german
 		religion = protestant
-		size = 5000
+		size = 15000
 	}
 	
 	aristocrats = {
@@ -1576,7 +1598,7 @@
 	farmers = {
 		culture = sorbian
 		religion = protestant
-		size = 12500
+		size = 7500
 	}
 
 	aristocrats = {
@@ -1602,7 +1624,7 @@
 	farmers = {
 		culture = sorbian
 		religion = catholic
-		size = 11000     
+		size = 8000     
 	}
 	
 	clergymen = {
@@ -5178,30 +5200,6 @@
 		culture = north_german
 		religion = protestant
 		size = 36450
-	}
-
-	clergymen = {
-		culture = south_german
-		religion = catholic
-		size = 70 
-	}
-
-	artisans = {
-		culture = south_german
-		religion = catholic
-		size = 200
-	}
-
-	soldiers = {
-		culture = south_german
-		religion = catholic
-		size = 50  
-	}
-
-	farmers = {
-		culture = south_german
-		religion = catholic
-		size = 3680  
 	}
 	
 	aristocrats = {

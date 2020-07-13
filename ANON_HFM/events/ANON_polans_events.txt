@@ -1136,6 +1136,12 @@ country_event = {
 	trigger = {
 		war = no
 		PZN = { exists = no }
+		OR = {
+			tag = PRU
+			tag = NGF
+			tag = GER
+			tag = GCF
+		}
 		owns = 699
 		owns = 701
 		owns = 700
@@ -1153,7 +1159,16 @@ country_event = {
 		}
 			
 		random_owned = {
-			limit = { owner = { tag = THIS } }
+			limit = {
+				owner = {
+					OR = {
+						tag = PRU
+						tag = NGF
+						tag = GER
+						tag = GCF
+					}
+				}
+			}
 			owner = {
 				PRU_701 = { add_core = THIS }
 				PZN = { all_core = { add_core = THIS } }

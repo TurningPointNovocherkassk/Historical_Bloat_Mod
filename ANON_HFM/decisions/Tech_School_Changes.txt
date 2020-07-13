@@ -1,10 +1,11 @@
-#ANON; MODIFIED unciv_tech_school FOR LANDLOCKED NATIONS.
+########## developing into unciv_tech_school
 
 political_decisions = {
 	switch_to_army_tech = {
 		potential = {
 			civilized = yes
 			tech_school = traditional_academic
+			NOT = { has_country_modifier = interment_camps }
 			OR = {
 				ai = yes
 				has_country_flag = picking_up_a_tech_school
@@ -13,9 +14,17 @@ political_decisions = {
 		allow = {
 			NOT = { has_country_modifier = academic_confusion }
 			OR = {
-				ruling_party_ideology = conservative
-				ruling_party_ideology = reactionary
-				ruling_party_ideology = fascist
+				AND = {
+					war_policy = jingoism
+					NOT = { economic_policy = laissez_faire }
+				}
+				AND = {
+					war_policy = pro_military
+					OR = {
+						economic_policy = state_capitalism
+						economic_policy = planned_economy
+					}
+				}
 			}
 			OR = {
 				jingoism = 3
@@ -39,6 +48,7 @@ political_decisions = {
 		potential = {
 			civilized = yes
 			tech_school = traditional_academic
+			NOT = { has_country_modifier = interment_camps }
 			OR = {
 				ai = yes
 				has_country_flag = picking_up_a_tech_school
@@ -46,11 +56,19 @@ political_decisions = {
 		}
 		allow = {
 			NOT = { has_country_modifier = academic_confusion }
-			colonial_nation = yes
+			any_owned_province = { is_colonial = yes }
 			OR = {
-				ruling_party_ideology = conservative
-				ruling_party_ideology = liberal
-				ruling_party_ideology = anarcho_liberal
+				AND = {
+					war_policy = pro_military
+					NOT = {
+						economic_policy = state_capitalism
+						economic_policy = planned_economy
+					}
+				}
+				AND = {
+					economic_policy = laissez_faire
+					NOT = { war_policy = pacifism }
+				}
 			}
 			OR = {
 				pro_military = 3
@@ -69,12 +87,20 @@ political_decisions = {
 			}
 			tech_school = naval_tech_school
 		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				government = proletarian_dictatorship
+			}
+		}
 	}
 	
 	switch_to_culture_tech = {
 		potential = {
 			civilized = yes
 			tech_school = traditional_academic
+			NOT = { has_country_modifier = interment_camps }
 			OR = {
 				ai = yes
 				has_country_flag = picking_up_a_tech_school
@@ -83,16 +109,12 @@ political_decisions = {
 		allow = {
 			NOT = { has_country_modifier = academic_confusion }
 			OR = {
-				ruling_party_ideology = liberal
-				ruling_party_ideology = fascist
-				ruling_party_ideology = communist
-			}
-			OR = {
 				pacifism = 3
 				secularized = 3
 			}
-			prestige = 45
-			average_consciousness = 4
+			prestige = 100
+			literacy = 0.7
+			average_consciousness = 7
 		}
 		effect = {
 			clr_country_flag = picking_up_a_tech_school
@@ -103,12 +125,20 @@ political_decisions = {
 			}
 			tech_school = culture_tech_school
 		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { revanchism = 0 }
+			}
+		}
 	}
 	
 	switch_to_trade_tech = {
 		potential = {
 			civilized = yes
 			tech_school = traditional_academic
+			NOT = { has_country_modifier = interment_camps }
 			OR = {
 				ai = yes
 				has_country_flag = picking_up_a_tech_school
@@ -116,9 +146,19 @@ political_decisions = {
 		}
 		allow = {
 			NOT = { has_country_modifier = academic_confusion }
+			NOT = { economic_policy = planned_economy }
 			OR = {
-				ruling_party_ideology = liberal
-				ruling_party_ideology = anarcho_liberal
+				AND = {
+					trade_policy = free_trade
+					OR = {
+						economic_policy = laissez_faire
+						economic_policy = interventionism
+					}
+				}
+				AND = {
+					economic_policy = laissez_faire
+					trade_policy = protectionism
+				}
 			}
 			OR = {
 				laissez_faire = 3
@@ -136,12 +176,21 @@ political_decisions = {
 			}
 			tech_school = commerce_tech_school
 		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { revanchism = 0 }
+			}
+		}
 	}
 	
 	switch_to_industry_tech = {
 		potential = {
 			civilized = yes
 			tech_school = traditional_academic
+			NOT = { has_country_modifier = interment_camps }
 			OR = {
 				ai = yes
 				has_country_flag = picking_up_a_tech_school
@@ -150,9 +199,17 @@ political_decisions = {
 		allow = {
 			NOT = { has_country_modifier = academic_confusion }
 			OR = {
-				ruling_party_ideology = conservative
-				ruling_party_ideology = socialist
-				ruling_party_ideology = communist
+				AND = {
+					trade_policy = protectionism
+					OR = {
+						economic_policy = interventionism
+						economic_policy = state_capitalism
+					}
+				}
+				AND = {
+					economic_policy = interventionism
+					trade_policy = free_trade
+				}
 			}
 			OR = {
 				interventionism = 3
@@ -170,12 +227,25 @@ political_decisions = {
 			}
 			tech_school = industrial_tech_school
 		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { revanchism = 0 }
+			}
+		}
 	}
 	
 	switch_to_traditional_academic = {
 		alert = no
 		potential = {
+			OR = {
+				has_country_flag = government_decisions_on
+				ai = yes
+			}
 			NOT = { tech_school = traditional_academic }
+			NOT = { has_country_modifier = interment_camps }
 			OR = {
 				ai = no
 				tech_school = unciv_tech_school
@@ -189,7 +259,6 @@ political_decisions = {
 					NOT = {
 						tech_school = unciv_tech_school
 						has_country_modifier = academic_confusion
-						tag = TUR
 					}
 					prestige = 45
 				}
@@ -239,6 +308,7 @@ political_decisions = {
 		picture = skoda_works
 		potential = {
 			NOT = { tech_school = czech_tech_school }
+			NOT = { has_country_modifier = interment_camps }
 			is_culture_group = czecho_slovak_culture_group
 		}
 		
@@ -261,6 +331,7 @@ political_decisions = {
 		picture = yamagata_aritomo
 		potential = {
 			NOT = { tech_school = japanese_tech_school }
+			NOT = { has_country_modifier = interment_camps }
 			OR = {
 				tag = JAP
 				tag = TKG
@@ -283,45 +354,5 @@ political_decisions = {
 			tech_school = japanese_tech_school
 			prestige = 5
 		}
-	}
-	
-	pick_up_a_tech_school = {
-		alert = no
-		picture = switch_to_order
-		potential = {
-			tech_school = traditional_academic
-			ai = no
-			civilized = yes
-			NOT = { has_country_flag = picking_up_a_tech_school }
-		}
-		
-		allow = {
-		}
-		
-		effect = {
-			set_country_flag = picking_up_a_tech_school
-		}
-		
-		ai_will_do = { factor = 0 }
-	}
-	
-	close_pick_up_a_tech_school = {
-		picture = switch_to_productivity
-		alert = no
-		potential = {
-			tech_school = traditional_academic
-			ai = no
-			civilized = yes
-			has_country_flag = picking_up_a_tech_school
-		}
-		
-		allow = {
-		}
-		
-		effect = {
-			clr_country_flag = picking_up_a_tech_school
-		}
-		
-		ai_will_do = { factor = 0 }
 	}
 }

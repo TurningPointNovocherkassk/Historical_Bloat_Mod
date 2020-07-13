@@ -749,6 +749,7 @@ country_event = {
 	trigger = {
 		tag = MEX
 		NOT = { has_global_flag = ayutla_revolution }
+		NOT = { has_global_flag = ayutla_revolution_end }
 		OR = {
 			has_global_flag = santa_anna_dictatorship
 			ruling_party_ideology = conservative
@@ -836,6 +837,7 @@ province_event = {
 		}
 		NOT = { has_province_modifier = ayutla_sympathies }
 		NOT = { year = 1858 }
+		NOT = { has_global_flag = ayutla_revolution_end }
 	}
 	
 	mean_time_to_happen = {

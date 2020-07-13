@@ -222,6 +222,7 @@ political_decisions = {
 			}
 			has_global_flag = the_usca_has_failed
 			NOT = { exists = UCA }
+			NOT = { has_country_flag = reform_the_USCA_outside }
 			capital_scope = {
 				OR = {
 					continent = south_america
@@ -233,6 +234,13 @@ political_decisions = {
 		}
 
 		allow = {
+			OR = {
+				GUA = { exists = yes }
+				NIC = { exists = yes }
+				ELS = { exists = yes }
+				COS = { exists = yes }
+				HON = { exists = yes }
+			}
 			GUA = {
 				OR = {
 					in_sphere = THIS
@@ -343,6 +351,7 @@ political_decisions = {
 
 		effect = {
 			prestige = 10
+			set_country_flag = reform_the_USCA_outside
 			any_country = {
 				limit = {
 					primary_culture = central_american

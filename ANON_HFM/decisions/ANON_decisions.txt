@@ -1,8 +1,8 @@
 political_decisions = {
 			
-	rename_silesia = { 
+	rename_silesia = {
 		picture = gtfo
-		potential = {       
+		potential = {
 			OR = {
 				AND = {      
 					is_culture_group = germanic
@@ -342,9 +342,8 @@ political_decisions = {
 					clr_global_flag = silesian_renamed_upper_uppersilesia
 				}
 			}
-		}
 			
-		###silesian - silesia###
+			###silesian - silesia###
 			random_owned = {
 				limit = {
 					province_id = 682
@@ -9435,6 +9434,7 @@ political_decisions = {
 			OR = {
 				AND = {
 					is_culture_group = germanic
+					NOT = { accepted_culture = czech }
 					AND = { owns = 631 NOT = { has_global_flag = german_renamed_moravia } }
 				}
 				AND = {
@@ -9461,6 +9461,7 @@ political_decisions = {
 					province_id = 631
 					owner = {
 						is_culture_group = germanic
+						NOT = { accepted_culture = czech }
 					}
 				}
 				631 = {
