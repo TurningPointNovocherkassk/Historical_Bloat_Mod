@@ -2293,10 +2293,11 @@ country_event = {
 		set_global_flag = danubian_federation_ended
 		prestige = -30
 		primary_culture = south_german
-		add_accepted_culture = siebenburger
-		#ANON
-		add_accepted_culture = danube_german
-		add_accepted_culture = carpathian_german
+		add_accepted_culture = volga_german
+		# add_accepted_culture = siebenburger
+		# #ANON
+		# add_accepted_culture = danube_german
+		# add_accepted_culture = carpathian_german
 		#
 		remove_accepted_culture = hungarian
 		remove_accepted_culture = slovak

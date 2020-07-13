@@ -1640,13 +1640,18 @@ categories =  {
 	}
 
 	leipzig = {
-		movement_cost = 1.0
-		color = { 22 44 66 }
-		farm_rgo_size = 0.0
-		farm_rgo_eff = 0.0
+		movement_cost = 1.2
+		defence = 0.75
+		color = { 86 71 146 }
+		farm_rgo_size = 0.1
+		farm_rgo_eff = 0.2
 		mine_rgo_size = 0.0
 		mine_rgo_eff = 0.0
 		supply_limit = 10
+		min_build_railroad = 2
+		combat_width = -0.20
+		
+		immigrant_attract = 0.1
 	}
 
 	breslau = {
@@ -3823,16 +3828,18 @@ categories =  {
 	}	
 	
 	chemnitz = {
-		movement_cost = 1.4
-		defence = 1.5
-		color = { 119 35 11 }
-		farm_rgo_size = -0.1
-		farm_rgo_eff = 0.0
-		mine_rgo_size = 0.05
+		movement_cost = 1.2
+		defence = 0.75
+		color = { 86 71 146 }
+		farm_rgo_size = 0.1
+		farm_rgo_eff = 0.2
+		mine_rgo_size = 0.0
 		mine_rgo_eff = 0.0
-		supply_limit = 6
+		supply_limit = 10
 		min_build_railroad = 2
-		combat_width = -0.50
+		combat_width = -0.20
+		
+		immigrant_attract = 0.1
 	}
 	
 	stjohn = {

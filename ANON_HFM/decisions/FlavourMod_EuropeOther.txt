@@ -1386,154 +1386,154 @@ political_decisions = {
 		ai_will_do = { factor = 1 }
 	}
 	
-	silesia_rename_german = {
-		picture = gtfo
-		potential = {
-			is_culture_group = germanic
-			NOT = {
-				AND = {
-					tag = DNB
-					accepted_culture = polish
-				}
-			}
-			OR = {
-				AND = { owns = 682 NOT = { has_global_flag = prussian_silesia_rename_german } }
-				AND = { owns = 689 NOT = { has_global_flag = austrian_silesia_rename_german } }
+	# silesia_rename_german = {
+		# picture = gtfo
+		# potential = {
+			# is_culture_group = germanic
+			# NOT = {
+				# AND = {
+					# tag = DNB
+					# accepted_culture = polish
+				# }
+			# }
+			# OR = {
+				# AND = { owns = 682 NOT = { has_global_flag = prussian_silesia_rename_german } }
+				# AND = { owns = 689 NOT = { has_global_flag = austrian_silesia_rename_german } }
 				
-			}
-		}
+			# }
+		# }
 		
-		allow = {
-			war = no
-		}
+		# allow = {
+			# war = no
+		# }
 		
-		effect = {
-			random_owned = {
-				limit = {
-					province_id = 682
-				}
-				682 = { 
-					change_province_name = "Breslau" 
-					state_scope = { change_region_name = "Schlesien" }
-				}
-				683 = { change_province_name = "Waldenburg"  }
-				684 = { change_province_name = "Oppeln"  }
-				685 = { change_province_name = "Kattowitz"  }
-				owner = { 
-					set_global_flag = prussian_silesia_rename_german 
-					clr_global_flag = prussian_silesia_rename_polish 
-				}
-			}
-			random_owned = {
-				limit = {
-					province_id = 689
-				}
-				689 = { 
-					change_province_name = "Teschen" 
-					state_scope = { change_region_name = "Schlesien" }
-				}
-				#2584 = { change_province_name = "Bielitz"  }
-				688 = { change_province_name = "Troppau" }
-				owner = { 
-					set_global_flag = austrian_silesia_rename_german 
-					clr_global_flag = austrian_silesia_rename_polish
-					clr_global_flag = austrian_silesia_rename_czech
-				}
-			}
-		}
-		ai_will_do = { factor = 1 }
-	}
+		# effect = {
+			# random_owned = {
+				# limit = {
+					# province_id = 682
+				# }
+				# 682 = { 
+					# change_province_name = "Breslau" 
+					# state_scope = { change_region_name = "Schlesien" }
+				# }
+				# 683 = { change_province_name = "Waldenburg"  }
+				# 684 = { change_province_name = "Oppeln"  }
+				# 685 = { change_province_name = "Kattowitz"  }
+				# owner = { 
+					# set_global_flag = prussian_silesia_rename_german 
+					# clr_global_flag = prussian_silesia_rename_polish 
+				# }
+			# }
+			# random_owned = {
+				# limit = {
+					# province_id = 689
+				# }
+				# 689 = { 
+					# change_province_name = "Teschen" 
+					# state_scope = { change_region_name = "Schlesien" }
+				# }
+				# #2584 = { change_province_name = "Bielitz"  }
+				# 688 = { change_province_name = "Troppau" }
+				# owner = { 
+					# set_global_flag = austrian_silesia_rename_german 
+					# clr_global_flag = austrian_silesia_rename_polish
+					# clr_global_flag = austrian_silesia_rename_czech
+				# }
+			# }
+		# }
+		# ai_will_do = { factor = 1 }
+	# }
 	
-	silesia_rename_polish = {
-		picture = gtfo
-		potential = {
-			OR = {
-				primary_culture = polish
-				AND = {
-					tag = DNB
-					accepted_culture = polish
-				}
-				tag = WSF
-			}
-			OR = {
-				AND = { owns = 682 NOT = { has_global_flag = prussian_silesia_rename_polish } }
-				AND = { owns = 689 NOT = { has_global_flag = austrian_silesia_rename_polish } }
-			}
-		}
+	# silesia_rename_polish = {
+		# picture = gtfo
+		# potential = {
+			# OR = {
+				# primary_culture = polish
+				# AND = {
+					# tag = DNB
+					# accepted_culture = polish
+				# }
+				# tag = WSF
+			# }
+			# OR = {
+				# AND = { owns = 682 NOT = { has_global_flag = prussian_silesia_rename_polish } }
+				# AND = { owns = 689 NOT = { has_global_flag = austrian_silesia_rename_polish } }
+			# }
+		# }
 		
-		allow = {
-			war = no
-		}
+		# allow = {
+			# war = no
+		# }
 		
-		effect = {
-			random_owned = {
-				limit = {
-					province_id = 682
-				}
-				682 = { 
-					change_province_name = "Wroclaw" 
-					state_scope = { change_region_name = "Slask" }
-				}
-				683 = { change_province_name = "Walbrzych"  }
-				684 = { change_province_name = "Opole"  }
-				685 = { change_province_name = "Katowice"  }
-				owner = { 
-					set_global_flag = prussian_silesia_rename_polish
-					clr_global_flag = prussian_silesia_rename_german 
-				}
-			}
-			random_owned = {
-				limit = {
-					province_id = 689
-				}
-				689 = { 
-					change_province_name = "Cieszyn" 
-				}
-				#2584 = { change_province_name = "Bielsko"  }
-				688 = { change_province_name = "Opawa" }
-				owner = { 
-					set_global_flag = austrian_silesia_rename_polish
-					clr_global_flag = austrian_silesia_rename_german
-					clr_global_flag = austrian_silesia_rename_czech
+		# effect = {
+			# random_owned = {
+				# limit = {
+					# province_id = 682
+				# }
+				# 682 = { 
+					# change_province_name = "Wroclaw" 
+					# state_scope = { change_region_name = "Slask" }
+				# }
+				# 683 = { change_province_name = "Walbrzych"  }
+				# 684 = { change_province_name = "Opole"  }
+				# 685 = { change_province_name = "Katowice"  }
+				# owner = { 
+					# set_global_flag = prussian_silesia_rename_polish
+					# clr_global_flag = prussian_silesia_rename_german 
+				# }
+			# }
+			# random_owned = {
+				# limit = {
+					# province_id = 689
+				# }
+				# 689 = { 
+					# change_province_name = "Cieszyn" 
+				# }
+				# #2584 = { change_province_name = "Bielsko"  }
+				# 688 = { change_province_name = "Opawa" }
+				# owner = { 
+					# set_global_flag = austrian_silesia_rename_polish
+					# clr_global_flag = austrian_silesia_rename_german
+					# clr_global_flag = austrian_silesia_rename_czech
 					
-				}
-			}
-		}
-		ai_will_do = { factor = 1 }
-	}
+				# }
+			# }
+		# }
+		# ai_will_do = { factor = 1 }
+	# }
 	
-	silesia_rename_czech = {
-		picture = gtfo
-		potential = {
-			is_culture_group = czecho_slovak_culture_group
-			owns = 689 
-			NOT = { has_global_flag = austrian_silesia_rename_czech }
-		}
+	# silesia_rename_czech = {
+		# picture = gtfo
+		# potential = {
+			# is_culture_group = czecho_slovak_culture_group
+			# owns = 689 
+			# NOT = { has_global_flag = austrian_silesia_rename_czech }
+		# }
 		
-		allow = {
-			war = no
-		}
+		# allow = {
+			# war = no
+		# }
 		
-		effect = {
-			random_owned = {
-				limit = {
-					province_id = 689
-				}
-				689 = { 
-					change_province_name = "Tesin" 
-				}
-				#2584 = { change_province_name = "Bílsko"  }
-				688 = { change_province_name = "Opava" }
-				owner = { 
-					set_global_flag = austrian_silesia_rename_czech
-					clr_global_flag = austrian_silesia_rename_polish 
-					clr_global_flag = austrian_silesia_rename_german 
+		# effect = {
+			# random_owned = {
+				# limit = {
+					# province_id = 689
+				# }
+				# 689 = { 
+					# change_province_name = "Tesin" 
+				# }
+				# #2584 = { change_province_name = "Bílsko"  }
+				# 688 = { change_province_name = "Opava" }
+				# owner = { 
+					# set_global_flag = austrian_silesia_rename_czech
+					# clr_global_flag = austrian_silesia_rename_polish 
+					# clr_global_flag = austrian_silesia_rename_german 
 					
-				}
-			}
-		}
-		ai_will_do = { factor = 1 }
-	}
+				# }
+			# }
+		# }
+		# ai_will_do = { factor = 1 }
+	# }
 	
 	west_galicia_rename_polish = {
 		picture = gtfo

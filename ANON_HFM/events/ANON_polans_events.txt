@@ -4783,6 +4783,17 @@ country_event = {
 			militancy = 9
 			consciousness = 9
 		}
+		any_country = {
+			limit = {
+				is_culture_group = germanic
+			}
+			relation = { who = FROM value = -300 }
+			add_casus_belli = {
+				target = THIS
+				type = humiliate
+				months = 36
+			}
+		}
 		ai_chance = {
 			factor = 33
 		}
@@ -4800,6 +4811,17 @@ country_event = {
 			militancy = 9
 			consciousness = 9
 		}
+		any_country = {
+			limit = {
+				is_culture_group = germanic
+			}
+			relation = { who = FROM value = -200 }
+			add_casus_belli = {
+				target = THIS
+				type = humiliate
+				months = 36
+			}
+		}
 		ai_chance = {
 			factor = 33
 		}
@@ -4816,12 +4838,13 @@ country_event = {
 				OR = {
 					has_pop_culture = north_german
 					has_pop_culture = volga_german
-					has_pop_culture = carpathian_german
+					# has_pop_culture = carpathian_german
 				}
 			}
 			location = {
 				add_province_modifier = { name = polonization_modifier duration = -1 }
-				add_province_modifier = { name = minority_building_restrictions duration = 3650	}	
+				add_province_modifier = { name = minority_building_restrictions duration = 7300	}
+				add_province_modifier = { name = discriminatory_school_system duration = 7300 }	
 			}
 
 		}
@@ -4831,6 +4854,17 @@ country_event = {
 			}
 			militancy = 4.5
 			consciousness = 9
+		}
+		any_country = {
+			limit = {
+				is_culture_group = germanic
+			}
+			relation = { who = FROM value = -100 }
+			add_casus_belli = {
+				target = THIS
+				type = humiliate
+				months = 36
+			}
 		}
 		ai_chance = {
 			factor = 33
@@ -5775,132 +5809,132 @@ province_event = {
 		
 		#Carpathian German
 		#Moving in a majority state
-		random_pop = {
-			limit = {
-				has_pop_culture = carpathian_german
-				location = {
-					owner = { has_country_flag = german_question_dumping_GER }
-					state_scope = {
-						OR = {
-							is_accepted_culture = yes
-							is_primary_culture = yes
-						}
-						has_national_minority = yes
-					}
-				}
-			}
-			location = {
-				state_scope = {
-					any_pop = {
-						limit = {
-							is_primary_culture = no
-							is_accepted_culture = no
-							has_pop_culture = carpathian_german
-						}
-						reduce_pop = 0.95
-						random = {
-							chance = 33
-							move_pop = 633 #Bratislava
-						}
-						random = {
-							chance = 33
-							move_pop = 3619 #Uherske Hradiste
-						}
-						random = {
-							chance = 33
-							move_pop = 634 #Trencin
-						}
-					}
-				}
-			}
-		}
-		#Moving in a minority state
-		random_pop = {
-			limit = {
-				has_pop_culture = carpathian_german
-				location = {
-					owner = { has_country_flag = german_question_dumping_GER }
-					state_scope = {
-						is_primary_culture = no
-						is_accepted_culture = no
-						any_owned_province = {
-							OR = {
-								is_primary_culture = yes
-								is_accepted_culture = yes
-							}
-						}
-					}
-				}
-			}
-			location = {
-				state_scope = {
-					any_pop = {
-						limit = {
-							is_primary_culture = no
-							is_accepted_culture = no
-							has_pop_culture = carpathian_german
-						}
-						reduce_pop = 0.95
-						random = {
-							chance = 33
-							move_pop = 633 #Bratislava
-						}
-						random = {
-							chance = 33
-							move_pop = 3619 #Uherske Hradiste
-						}
-						random = {
-							chance = 33
-							move_pop = 634 #Trencin
-						}
-					}
-				}
-			}
-		}
-		#Moving in a no-presence state
-		random_pop = {
-			limit = {
-				has_pop_culture = carpathian_german
-				location = {
-					owner = { has_country_flag = german_question_dumping_GER }
-					state_scope = {
-						is_primary_culture = no
-						is_accepted_culture = no
-						NOT = {
-							any_owned_province = {
-								OR = {
-									is_primary_culture = yes
-									is_accepted_culture = yes
-								}
-							}
-						}
-					}
-				}
-			}
-			location = {
-				state_scope = {
-					any_pop = {
-						limit = {
-							is_primary_culture = no
-							is_accepted_culture = no
-							has_pop_culture = carpathian_german
-						}
-						reduce_pop = 0.95
-						random = {
-							chance = 33
-							move_pop = 633 #Bratislava
-						}
-						random = {
-							chance = 33
-							move_pop = 3619 #Uherske Hradiste
-						}
-						random = {
-							chance = 33
-							move_pop = 634 #Trencin
-						}
-					}
-				}
-			}
-		}
+		# random_pop = {
+			# limit = {
+				# has_pop_culture = carpathian_german
+				# location = {
+					# owner = { has_country_flag = german_question_dumping_GER }
+					# state_scope = {
+						# OR = {
+							# is_accepted_culture = yes
+							# is_primary_culture = yes
+						# }
+						# has_national_minority = yes
+					# }
+				# }
+			# }
+			# location = {
+				# state_scope = {
+					# any_pop = {
+						# limit = {
+							# is_primary_culture = no
+							# is_accepted_culture = no
+							# has_pop_culture = carpathian_german
+						# }
+						# reduce_pop = 0.95
+						# random = {
+							# chance = 33
+							# move_pop = 633 #Bratislava
+						# }
+						# random = {
+							# chance = 33
+							# move_pop = 3619 #Uherske Hradiste
+						# }
+						# random = {
+							# chance = 33
+							# move_pop = 634 #Trencin
+						# }
+					# }
+				# }
+			# }
+		# }
+		# #Moving in a minority state
+		# random_pop = {
+			# limit = {
+				# has_pop_culture = carpathian_german
+				# location = {
+					# owner = { has_country_flag = german_question_dumping_GER }
+					# state_scope = {
+						# is_primary_culture = no
+						# is_accepted_culture = no
+						# any_owned_province = {
+							# OR = {
+								# is_primary_culture = yes
+								# is_accepted_culture = yes
+							# }
+						# }
+					# }
+				# }
+			# }
+			# location = {
+				# state_scope = {
+					# any_pop = {
+						# limit = {
+							# is_primary_culture = no
+							# is_accepted_culture = no
+							# has_pop_culture = carpathian_german
+						# }
+						# reduce_pop = 0.95
+						# random = {
+							# chance = 33
+							# move_pop = 633 #Bratislava
+						# }
+						# random = {
+							# chance = 33
+							# move_pop = 3619 #Uherske Hradiste
+						# }
+						# random = {
+							# chance = 33
+							# move_pop = 634 #Trencin
+						# }
+					# }
+				# }
+			# }
+		# }
+		# #Moving in a no-presence state
+		# random_pop = {
+			# limit = {
+				# has_pop_culture = carpathian_german
+				# location = {
+					# owner = { has_country_flag = german_question_dumping_GER }
+					# state_scope = {
+						# is_primary_culture = no
+						# is_accepted_culture = no
+						# NOT = {
+							# any_owned_province = {
+								# OR = {
+									# is_primary_culture = yes
+									# is_accepted_culture = yes
+								# }
+							# }
+						# }
+					# }
+				# }
+			# }
+			# location = {
+				# state_scope = {
+					# any_pop = {
+						# limit = {
+							# is_primary_culture = no
+							# is_accepted_culture = no
+							# has_pop_culture = carpathian_german
+						# }
+						# reduce_pop = 0.95
+						# random = {
+							# chance = 33
+							# move_pop = 633 #Bratislava
+						# }
+						# random = {
+							# chance = 33
+							# move_pop = 3619 #Uherske Hradiste
+						# }
+						# random = {
+							# chance = 33
+							# move_pop = 634 #Trencin
+						# }
+					# }
+				# }
+			# }
+		# }
 	}
 }

@@ -243,9 +243,9 @@ PROV3542;Koch Bihar;x
 PROV3543;Qilian;x
 PROV3544;Nuer;x
 PROV3545;Novocherkassk;x
-PROV3546; ;x
+PROV3546;Gulf of Danzig;x
 PROV3547;Paro;x
-PROV3548; ;x
+PROV3548;Eastern Baltic Sea;x
 PROV3549;Minsar;x
 PROV3550;Darchen;x
 PROV3551;Rangpur;x
@@ -361,7 +361,12 @@ PROV3659;Ostroda;x
 PROV3660;Jansbork;x
 PROV3661;Chortkiv;x
 PROV3662;Kamianets-Podilskyi;x
+PROV3663;Bautzen;x
+PROV3664;Sagan;x
+PROV3665;Guben;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
+PRU_682;Lower Silesia;x
+PRU_684;Upper Silesia;x
 RUS_962;Chernigov;x
 RUS_963;Poltava;x
 RUS_968;Podolia;x
@@ -815,10 +820,12 @@ brahui;Brahui;;;;;;;;;;;;;;;;;;;;;;;;x
 peninsular;Khaleeji;;;;;;;;;;;;;;;;;;;;;;;;x
 asturleonese;Astur-Leonese;;;;;;;;;;;;;;;;;;;;;;;;x
 andalusian;Andalusian;;;;;;;;;;;;;;;;;;;;;;;;x
+ugrian;Finno-Ugric Minor;;;;;;;;;;;;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 iranian;Iranian;;;;;;;;;;;;;;;;;;;;;;;;x
 turanian;Turanian;;;;;;;;;;;;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
+volga_german;Auslands German;;;;;;;;;;;;;;;;;;;;;;;;x
 carpathian_german;Carpatian German;;;;;;;;;;;;;;;;;;;;;;;;x
 danube_german;Danube Swabian;;;;;;;;;;;;;;;;;;;;;;;;x
 romansh;Rhaetian;;;;;;;;;;;;;;;;;;;;;;;;x
@@ -1039,7 +1046,7 @@ EVTDESC666666038;Federalists sentiments have rose in $COUNTRY$, demanding for mo
 EVT666666038OPTA;Curses!;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 EVTNAME666666039;Federalist Sentiments spread!;x
-EVTDESC666666039;The Federalist revolutionaries have spread to $PROVINCE$ like wildfire!;x
+EVTDESC666666039;The Federalist revolutionaries have spread to $PROVINCENAME$ like wildfire!;x
 EVT666666039OPTA;Curses!;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 EVTNAME666666040;The Federalist Revolution doubles down!;x
@@ -1124,12 +1131,12 @@ EVT666666046OPTB;Simply throw them back where they belong.;x
 EVT666666046OPTC;Re-education seems more humane.;x
 EVT666666046OPTD;Veto these propositions, may they never see the light of day.;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
-EVTNAME666666046;German displacement in $PROVINCE$;x
-EVTDESC666666046;After a long and arduous process, we can safely assure that this province has been rid from its German population, which has been safely displaced over the border.;x
+EVTNAME666666046;German displacement in $PROVINCENAME$;x
+EVTDESC666666046;After a long and arduous process, we can safely assure that $PROVINCENAME$, along with its core region, has been rid from its German population, which has been safely displaced across the border.;x
 EVT666666046OPTA;Great!;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
-EVTNAME666666047;German displacement in $PROVINCE$;x
-EVTDESC666666047;After a long and arduous process, we can safely assure that this province has been rid from its German population, which has been safely displaced over the border.;x
+EVTNAME666666047;German displacement in $PROVINCENAME$;x
+EVTDESC666666047;After a long and arduous process, we can safely assure that $PROVINCENAME$, along with its core region, has been rid from its German population, which has been safely displaced across the border.;x
 EVT666666047OPTA;Great!;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
@@ -4571,29 +4578,29 @@ normal_rename_florida_desc;Florida is rightfully $COUNTRY_ADJ$, and should use $
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 anon_diamond_rush;Diamonds Recently Discovered;;;;;;;;;;;;;X,,,,,,,,,,,,,,
 anon_diamond_rush_desc;Diamonds have been discovered in this province, drawing prospectors and miners from near and far.;;;;;;;;;;;;;X,,,,,,,,,,,,,,
-anon_rubber_boom;Rubber Boom in $PROVINCE$;;;;;;;;;;;;;X,,,,,,,,,,,,,,
-anon_rubber_boom_desc;The Rubber Boom has reached $PROVINCE$!;;;;;;;;;;;;;X,,,,,,,,,,,,,,
+anon_rubber_boom;Rubber Boom in $PROVINCENAME$;;;;;;;;;;;;;X,,,,,,,,,,,,,,
+anon_rubber_boom_desc;The Rubber Boom has reached $PROVINCENAME$!;;;;;;;;;;;;;X,,,,,,,,,,,,,,
 anon_rubber_boom;Rubber Boom Country;;;;;;;;;;;;;X,,,,,,,,,,,,,,
 diamond_rush_country;Diamond Rush Country;;;;;;;;;;;;;X,,,,,,,,,,,,,,
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
-EVTNAME1999000022;Diamonds Discovered in $PROVINCE$!;;;;;;;;;;;;;X,,,,,,,,,,,,,,
-EVTDESC1999000022;Prospectors have discovered many diamond fields in $PROVINCE$!;;;;;;;;;;;;;X,,,,,,,,,,,,,,
+EVTNAME1999000022;Diamonds Discovered in $PROVINCENAME$!;;;;;;;;;;;;;X,,,,,,,,,,,,,,
+EVTDESC1999000022;Prospectors have discovered many diamond fields in $PROVINCENAME$!;;;;;;;;;;;;;X,,,,,,,,,,,,,,
 EVTOPTA1999000022;Hurray!;;;;;;;;;;;;;X,,,,,,,,,,,,,,
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
-EVTNAME1999000008;Diamonds Recently Rediscovered in $PROVINCE$!;;;;;;;;;;;;;X,,,,,,,,,,,,,,
-EVTDESC1999000008;$PROVINCE$'s diamond fields were thought to have been exhausted earlier this century, but several prospectors have discovered many new diamond fields there!;;;;;;;;;;;;;X,,,,,,,,,,,,,,
+EVTNAME1999000008;Diamonds Recently Rediscovered in $PROVINCENAME$!;;;;;;;;;;;;;X,,,,,,,,,,,,,,
+EVTDESC1999000008;$PROVINCENAME$'s diamond fields were thought to have been exhausted earlier this century, but several prospectors have discovered many new diamond fields there!;;;;;;;;;;;;;X,,,,,,,,,,,,,,
 EVTOPTA1999000008;Hurray!;;;;;;;;;;;;;X,,,,,,,,,,,,,,
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
-EVTNAME1999000006;$PROVINCE$'s Diamond Fields Dry Up!;;;;;;;;;;;;;X,,,,,,,,,,,,,,
-EVTDESC1999000006;$PROVINCE$'s diamond fields have been extensively exploited since the early colonial times, but up until recently, our prospectors have been unable to find any new sources of diamonds. With the depletion of most diamond fields, we must now turn to our secondary exports: Gold.;;;;;;;;;;;;;X,,,,,,,,,,,,,,
+EVTNAME1999000006;$PROVINCENAME$'s Diamond Fields Dry Up!;;;;;;;;;;;;;X,,,,,,,,,,,,,,
+EVTDESC1999000006;$PROVINCENAME$'s diamond fields have been extensively exploited since the early colonial times, but up until recently, our prospectors have been unable to find any new sources of diamonds. With the depletion of most diamond fields, we must now turn to our secondary exports: Gold.;;;;;;;;;;;;;X,,,,,,,,,,,,,,
 EVTOPTA1999000006;Excellent!;;;;;;;;;;;;;X,,,,,,,,,,,,,,
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
-EVTNAME1999000010;$PROVINCE$'s Gold Mines Dry Up!;;;;;;;;;;;;;X,,,,,,,,,,,,,,
-EVTDESC1999000010;$PROVINCE$'s gold has been extensively exploited since the early colonial times, but up until recently, our prospectors have been unable to find new sources of gold. With the depletion of most veins, we must now turn to our secondary exports: Iron.;;;;;;;;;;;;;X,,,,,,,,,,,,,,
+EVTNAME1999000010;$PROVINCENAME$'s Gold Mines Dry Up!;;;;;;;;;;;;;X,,,,,,,,,,,,,,
+EVTDESC1999000010;$PROVINCENAME$'s gold has been extensively exploited since the early colonial times, but up until recently, our prospectors have been unable to find new sources of gold. With the depletion of most veins, we must now turn to our secondary exports: Iron.;;;;;;;;;;;;;X,,,,,,,,,,,,,,
 EVTOPTA1999000010;Quite turn of events!;;;;;;;;;;;;;X,,,,,,,,,,,,,,
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
-EVTNAME1999000011;$PROVINCE$'s Gold Mines Dry Up!;;;;;;;;;;;;;X,,,,,,,,,,,,,,
-EVTDESC1999000011;$PROVINCE$'s gold has been extensively exploited since the early colonial times, but up until recently, our prospectors have been unable to find new sources of gold. With the depletion of most veins, we must now turn to our secondary exports: Coffee.;;;;;;;;;;;;;X,,,,,,,,,,,,,,
+EVTNAME1999000011;$PROVINCENAME$'s Gold Mines Dry Up!;;;;;;;;;;;;;X,,,,,,,,,,,,,,
+EVTDESC1999000011;$PROVINCENAME$'s gold has been extensively exploited since the early colonial times, but up until recently, our prospectors have been unable to find new sources of gold. With the depletion of most veins, we must now turn to our secondary exports: Coffee.;;;;;;;;;;;;;X,,,,,,,,,,,,,,
 EVTOPTA1999000011;What a shame!;;;;;;;;;;;;;X,,,,,,,,,,,,,,
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 annex_prince_edward_islands_title;Assume ownership of the Southern Prince Edward Islands ;;;;;;;;;;;;;x
@@ -5003,8 +5010,8 @@ colorado_gold_rush;Colorado Gold Rush;;;;;;;;;;;;x
 silver_rush_country;Silver Rush Country;;;;;;;;;;;;x
 end_mineral_boom;End of a mineral boom;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
-EVTNAME1999000019;The mines of $PROVINCE$ dry up!;;;;;;;;;;;;x
-EVTDESC1999000019;The previously rich mines of $PROVINCE$ have all dried up and the people there have begun to migrate elsewhere.;;;;;;;;;;;;x
+EVTNAME1999000019;The mines of $PROVINCENAME$ dry up!;;;;;;;;;;;;x
+EVTDESC1999000019;The previously rich mines of $PROVINCENAME$ have all dried up and the people there have begun to migrate elsewhere.;;;;;;;;;;;;x
 EVTOPTA1999000019;Curses! ;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 EVTNAME1100009;The Klondike Gold Rush;;;;;;;;;;;;x
@@ -6509,6 +6516,9 @@ rename_istria_desc;Sudküstenland is rightfully $COUNTRY_ADJ$, and should use $CO
 rename_fiume_title;Rename Carnaro ;;;;;;;;;;;;;x
 rename_fiume_desc;Carnaro is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
+rename_silesia_title;Rename Silesia ;;;;;;;;;;;;;x
+rename_silesia_desc;Silesia is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
 rename_krynica_title;Rename Krynica ;;;;;;;;;;;;;x
 rename_krynica_desc;Krynica is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
@@ -7769,8 +7779,8 @@ EVTNAME1220071;Secessionist Alliance - The $FROMCOUNTRY$ response ;;;;;;;;;;;;x
 EVTDESC1220071;$FROMCOUNTRY$ has refused to forge an alliance.;;;;;;;;;;;;x
 EVT1220071OPTA;Curses!;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
-EVTNAME1220072;The occupation of $PROVINCE$ ;;;;;;;;;;;;x
-EVTDESC1220072;Soldiers occupying $PROVINCE$ have begun looting and performing morally questionable acts upon the non-Mayan populace as an act of vengeance, going as far as committing rape and murder. Shall we stop them?;;;;;;;;;;;;x
+EVTNAME1220072;The occupation of $PROVINCENAME$ ;;;;;;;;;;;;x
+EVTDESC1220072;Soldiers occupying $PROVINCENAME$ have begun looting and performing morally questionable acts upon the non-Mayan populace as an act of vengeance, going as far as committing rape and murder. Shall we stop them?;;;;;;;;;;;;x
 EVT1220072OPTA;Our thirst for vengeance must be quenched!;;;;;;;;;;;;x
 EVT1220072OPTB;We cannot lose our minds over this!;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x

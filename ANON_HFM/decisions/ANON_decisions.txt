@@ -1,5 +1,438 @@
 political_decisions = {
 			
+	rename_silesia = { 
+		picture = gtfo
+		potential = {       
+			OR = {
+				AND = {      
+					is_culture_group = germanic
+					NOT = {
+						AND = {
+							tag = DNB
+							accepted_culture = polish
+						}
+					}
+					OR = {
+						AND = { owns = 682 NOT = { has_global_flag = german_renamed_lowersilesia } }
+						AND = { owns = 684 NOT = { has_global_flag = german_renamed_uppersilesia } }
+						AND = { owns = 688 NOT = { has_global_flag = german_renamed_troppau } }
+						AND = { owns = 689 owns = 2584 owns = 3652 NOT = { has_global_flag = german_renamed_upper_uppersilesia } }
+					}
+				}
+				AND = {
+					is_culture_group = czecho_slovak_culture_group
+					NOT = { accepted_culture = western_slavic }
+					OR = {
+						AND = { owns = 682 NOT = { has_global_flag = czecho_renamed_lowersilesia } }
+						AND = { owns = 684 NOT = { has_global_flag = czecho_renamed_uppersilesia } }
+						AND = { owns = 688 NOT = { has_global_flag = czecho_renamed_troppau } }
+						AND = { owns = 689 owns = 2584 owns = 3652 NOT = { has_global_flag = czecho_renamed_upper_uppersilesia } }
+					}
+				}
+				AND = {
+					OR = {
+						is_culture_group = polish_culture_group
+						tag = PLC
+						AND = {
+							tag = DNB
+							accepted_culture = polish
+						}
+					}
+					NOT = { accepted_culture = western_slavic }
+					OR = {
+						AND = { owns = 682 NOT = { has_global_flag = polish_renamed_lowersilesia } }
+						AND = { owns = 684 NOT = { has_global_flag = polish_renamed_uppersilesia } }
+						AND = { owns = 688 NOT = { has_global_flag = polish_renamed_troppau } }
+						AND = { owns = 689 owns = 2584 owns = 3652 NOT = { has_global_flag = polish_renamed_upper_uppersilesia } }
+					}
+				}
+				AND = {
+					OR = {
+						primary_culture = western_slavic
+						accepted_culture = western_slavic
+					}
+					OR = {
+						AND = { owns = 682 NOT = { has_global_flag = silesian_renamed_lowersilesia } }
+						AND = { owns = 684 NOT = { has_global_flag = silesian_renamed_uppersilesia } }
+						AND = { owns = 688 NOT = { has_global_flag = silesian_renamed_troppau } }
+						AND = { owns = 689 owns = 2584 owns = 3652 NOT = { has_global_flag = silesian_renamed_upper_uppersilesia } }
+					}
+				}
+			}
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+
+			###germanic - silesia###
+			random_owned = {
+				limit = {
+					province_id = 682
+					owner = {
+						is_culture_group = germanic
+						NOT = {
+							AND = {
+								tag = DNB
+								accepted_culture = polish
+							}
+						}
+					}
+				}		
+				682 = {
+					change_province_name = "Breslau"
+					state_scope = { change_region_name = "Niederschlesien" }
+				}						
+				683 = { change_province_name = "Waldenburg" }				
+				owner = { 
+					set_global_flag = german_renamed_lowersilesia
+					clr_global_flag = czecho_renamed_lowersilesia
+					clr_global_flag = polish_renamed_lowersilesia
+					clr_global_flag = silesian_renamed_lowersilesia
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 684
+					owner = {
+						is_culture_group = germanic
+						NOT = {
+							AND = {
+								tag = DNB
+								accepted_culture = polish
+							}
+						}
+					}
+				}				
+				684 = {
+					change_province_name = "Oppeln"
+					state_scope = { change_region_name = "Oberschlesien" }
+				}				
+				685 = { change_province_name = "Kattowitz" }			
+				owner = { 
+					set_global_flag = german_renamed_uppersilesia
+					clr_global_flag = czecho_renamed_uppersilesia
+					clr_global_flag = polish_renamed_uppersilesia
+					clr_global_flag = silesian_renamed_uppersilesia
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 688
+					owner = {
+						is_culture_group = germanic
+						NOT = {
+							AND = {
+								tag = DNB
+								accepted_culture = polish
+							}
+						}
+					}
+				}	
+				688 = { change_province_name = "Troppau" }				
+				owner = { 
+					set_global_flag = german_renamed_troppau
+					clr_global_flag = czecho_renamed_troppau
+					clr_global_flag = polish_renamed_troppau
+					clr_global_flag = silesian_renamed_troppau
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 689
+					owner = {
+						is_culture_group = germanic
+						NOT = {
+							AND = {
+								tag = DNB
+								accepted_culture = polish
+							}
+						}
+					}
+				}							
+				3652 = { change_province_name = "Auschwitz" }			
+				2584 = { change_province_name = "Bielitz" }			
+				689 = { change_province_name = "Teschen" }			
+				owner = { 
+					set_global_flag = german_renamed_upper_uppersilesia
+					clr_global_flag = czecho_renamed_upper_uppersilesia
+					clr_global_flag = polish_renamed_upper_uppersilesia
+					clr_global_flag = silesian_renamed_upper_uppersilesia
+				}
+			}
+			
+			###czecho_slovak_culture_group - silesia###
+			random_owned = {
+				limit = {
+					province_id = 682
+					owner = {
+						is_culture_group = czecho_slovak_culture_group
+						NOT = { accepted_culture = western_slavic }
+					}
+				}			
+				682 = {
+					change_province_name = "Vratislav"
+					state_scope = { change_region_name = "Dolní Slezsko" }
+				}						
+				683 = { change_province_name = "Valbrich" }		
+				owner = { 
+					set_global_flag = czecho_renamed_lowersilesia
+					clr_global_flag = german_renamed_lowersilesia
+					clr_global_flag = polish_renamed_lowersilesia
+					clr_global_flag = silesian_renamed_lowersilesia
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 684
+					owner = {
+						is_culture_group = czecho_slovak_culture_group
+						NOT = { accepted_culture = western_slavic }
+					}
+				}			
+				684 = {
+					change_province_name = "Opolí"
+					state_scope = { change_region_name = "Horní Slezsko" }
+				}				
+				685 = { change_province_name = "Katovice" }					
+				owner = { 
+					set_global_flag = czecho_renamed_uppersilesia
+					clr_global_flag = german_renamed_uppersilesia
+					clr_global_flag = polish_renamed_uppersilesia
+					clr_global_flag = silesian_renamed_uppersilesia
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 688
+					owner = {
+						is_culture_group = czecho_slovak_culture_group
+						NOT = { accepted_culture = western_slavic }
+					}
+				}	
+				688 = { change_province_name = "Opava" }				
+				owner = { 
+					set_global_flag = czecho_renamed_troppau
+					clr_global_flag = german_renamed_troppau
+					clr_global_flag = polish_renamed_troppau
+					clr_global_flag = silesian_renamed_troppau
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 689
+					owner = {
+						is_culture_group = czecho_slovak_culture_group
+						NOT = { accepted_culture = western_slavic }
+					}
+				}							
+				3652 = { change_province_name = "Osvetim" }			
+				2584 = { change_province_name = "Bílsko" }			
+				689 = { change_province_name = "Tešín" }			
+				owner = { 
+					set_global_flag = czecho_renamed_upper_uppersilesia
+					clr_global_flag = german_renamed_upper_uppersilesia
+					clr_global_flag = polish_renamed_upper_uppersilesia
+					clr_global_flag = silesian_renamed_upper_uppersilesia
+				}
+			}
+			
+			###polish_culture_group - silesia###
+			random_owned = {
+				limit = {
+					province_id = 682
+					owner = {
+						OR = {
+							is_culture_group = polish_culture_group
+							tag = PLC
+							AND = {
+								tag = DNB
+								accepted_culture = polish
+							}
+						}
+						NOT = { accepted_culture = western_slavic }
+					}
+				}			
+				682 = {
+					change_province_name = "Wroclaw"
+					state_scope = { change_region_name = "Dolny Slask" }
+				}						
+				683 = { change_province_name = "Walbrzych" }		
+				owner = { 
+					set_global_flag = polish_renamed_lowersilesia
+					clr_global_flag = german_renamed_lowersilesia
+					clr_global_flag = czecho_renamed_lowersilesia
+					clr_global_flag = silesian_renamed_lowersilesia
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 684
+					owner = {
+						OR = {
+							is_culture_group = polish_culture_group
+							tag = PLC
+							AND = {
+								tag = DNB
+								accepted_culture = polish
+							}
+						}
+						NOT = { accepted_culture = western_slavic }
+					}
+				}			
+				684 = {
+					change_province_name = "Opole"
+					state_scope = { change_region_name = "Górny Slask" }
+				}				
+				685 = { change_province_name = "Katowice" }			
+				owner = { 
+					set_global_flag = polish_renamed_uppersilesia
+					clr_global_flag = german_renamed_uppersilesia
+					clr_global_flag = czecho_renamed_uppersilesia
+					clr_global_flag = silesian_renamed_uppersilesia
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 688
+					owner = {
+						OR = {
+							is_culture_group = polish_culture_group
+							tag = PLC
+							AND = {
+								tag = DNB
+								accepted_culture = polish
+							}
+						}
+						NOT = { accepted_culture = western_slavic }
+					}
+				}	
+				688 = { change_province_name = "Opawa" }				
+				owner = { 
+					set_global_flag = polish_renamed_troppau
+					clr_global_flag = german_renamed_troppau
+					clr_global_flag = czecho_renamed_troppau
+					clr_global_flag = silesian_renamed_troppau
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 689
+					owner = {
+						OR = {
+							is_culture_group = polish_culture_group
+							tag = PLC
+							AND = {
+								tag = DNB
+								accepted_culture = polish
+							}
+						}
+						NOT = { accepted_culture = western_slavic }
+					}
+				}							
+				3652 = { change_province_name = "Oswiecim" }			
+				2584 = { change_province_name = "Bielsko" }			
+				689 = { change_province_name = "Cieszyn" }			
+				owner = { 
+					set_global_flag = polish_renamed_upper_uppersilesia
+					clr_global_flag = german_renamed_upper_uppersilesia
+					clr_global_flag = czecho_renamed_upper_uppersilesia
+					clr_global_flag = silesian_renamed_upper_uppersilesia
+				}
+			}
+		}
+			
+		###silesian - silesia###
+			random_owned = {
+				limit = {
+					province_id = 682
+					owner = {
+						OR = {
+							primary_culture = western_slavic
+							accepted_culture = western_slavic
+						}
+					}
+				}			
+				682 = {
+					change_province_name = "Wroclaw"
+					state_scope = { change_region_name = "Dolny Slunsk" }
+				}						
+				683 = { change_province_name = "Walmbrig" }			
+				owner = { 
+					set_global_flag = silesian_renamed_lowersilesia
+					clr_global_flag = german_renamed_lowersilesia
+					clr_global_flag = czecho_renamed_lowersilesia
+					clr_global_flag = polish_renamed_lowersilesia
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 684
+					owner = {
+						OR = {
+							primary_culture = western_slavic
+							accepted_culture = western_slavic
+						}
+					}
+				}			
+				684 = {
+					change_province_name = "Ôpole"
+					state_scope = { change_region_name = "Gurny Slunsk" }
+				}				
+				685 = { change_province_name = "Katowicy" }			
+				owner = { 
+					set_global_flag = silesian_renamed_uppersilesia
+					clr_global_flag = german_renamed_uppersilesia
+					clr_global_flag = czecho_renamed_uppersilesia
+					clr_global_flag = polish_renamed_uppersilesia
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 688
+					owner = {
+						OR = {
+							primary_culture = western_slavic
+							accepted_culture = western_slavic
+						}
+					}
+				}	
+				688 = { change_province_name = "Tropp" }				
+				owner = { 
+					set_global_flag = silesian_renamed_troppau
+					clr_global_flag = german_renamed_troppau
+					clr_global_flag = czecho_renamed_troppau
+					clr_global_flag = polish_renamed_troppau
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 689
+					owner = {
+						OR = {
+							primary_culture = western_slavic
+							accepted_culture = western_slavic
+						}
+					}
+				}							
+				3652 = { change_province_name = "Uoswjyncim" }			
+				2584 = { change_province_name = "Bjylsko" }			
+				689 = { change_province_name = "Ceszyn" }			
+				owner = { 
+					set_global_flag = silesian_renamed_upper_uppersilesia
+					clr_global_flag = german_renamed_upper_uppersilesia
+					clr_global_flag = czecho_renamed_upper_uppersilesia
+					clr_global_flag = polish_renamed_upper_uppersilesia
+				}
+			}
+		}
+		
+		ai_will_do = { factor = 1 }
+		
+	}	
+			
 	germanization_baltics = {
 		picture = annex_united_baltic_duchy
 		
@@ -10863,7 +11296,6 @@ political_decisions = {
 		# }
 		# ai_will_do = { factor = 1 }
 	# }
-	
 	rename_lusatia = {
 		picture = gtfo
 		potential = {
@@ -10871,17 +11303,39 @@ political_decisions = {
 				AND = {
 					is_culture_group = germanic
 					OR = {
-						AND = { owns = 552 NOT = { has_global_flag = german_renamed_lowerlusatia } }
-						AND = { owns = 687 NOT = { has_global_flag = german_renamed_upperlusatia } }
+						AND = { owns = 552 NOT = { has_global_flag = german_renamed_cottbus } }
+						AND = { owns = 687 NOT = { has_global_flag = german_renamed_gotlitz } }
 						AND = { owns = 558 NOT = { has_global_flag = german_renamed_dresden } }
+						AND = { owns = 3663 NOT = { has_global_flag = german_renamed_bautzen } }
+						AND = { owns = 3664 NOT = { has_global_flag = german_renamed_sagan } }
+						AND = { owns = 3665 NOT = { has_global_flag = german_renamed_guben } }
 					}
 				}
 				AND = {
 					is_culture_group = polish_culture_group
+					NOT = { primary_culture = sorbian }
+					NOT = { accepted_culture = sorbian }
 					OR = {
-						AND = { owns = 552 NOT = { has_global_flag = polish_renamed_lowerlusatia } }
-						AND = { owns = 687 NOT = { has_global_flag = polish_renamed_upperlusatia } }
+						AND = { owns = 552 NOT = { has_global_flag = polish_renamed_cottbus } }
+						AND = { owns = 687 NOT = { has_global_flag = polish_renamed_gotlitz } }
 						AND = { owns = 558 NOT = { has_global_flag = polish_renamed_dresden } }
+						AND = { owns = 3663 NOT = { has_global_flag = polish_renamed_bautzen } }
+						AND = { owns = 3664 NOT = { has_global_flag = polish_renamed_sagan } }
+						AND = { owns = 3665 NOT = { has_global_flag = polish_renamed_guben } }
+					}
+				}
+				AND = {
+					OR = {
+						primary_culture = sorbian
+						accepted_culture = sorbian
+					}
+					OR = {
+						AND = { owns = 552 NOT = { has_global_flag = sorbian_renamed_cottbus } }
+						AND = { owns = 687 NOT = { has_global_flag = sorbian_renamed_gotlitz } }
+						AND = { owns = 558 NOT = { has_global_flag = sorbian_renamed_dresden } }
+						AND = { owns = 3663 NOT = { has_global_flag = sorbian_renamed_bautzen } }
+						AND = { owns = 3664 NOT = { has_global_flag = sorbian_renamed_sagan } }
+						AND = { owns = 3665 NOT = { has_global_flag = sorbian_renamed_guben } }
 					}
 				}
 			}
@@ -10903,8 +11357,9 @@ political_decisions = {
 				}
 				552 = { change_province_name = "Cottbus" }    	
 				owner = { 
-					set_global_flag = german_renamed_lowerlusatia
-					clr_global_flag = polish_renamed_lowerlusatia
+					set_global_flag = german_renamed_cottbus
+					clr_global_flag = polish_renamed_cottbus
+					clr_global_flag = sorbian_renamed_cottbus
 				}
 			}
 			random_owned = {
@@ -10916,8 +11371,9 @@ political_decisions = {
 				}
 				687 = { change_province_name = "Görlitz" }    
 				owner = { 
-					set_global_flag = german_renamed_upperlusatia
-					clr_global_flag = polish_renamed_upperlusatia
+					set_global_flag = german_renamed_gotlitz
+					clr_global_flag = polish_renamed_gotlitz
+					clr_global_flag = sorbian_renamed_gotlitz
 				}
 			}
 			random_owned = {
@@ -10931,6 +11387,49 @@ political_decisions = {
 				owner = { 
 					set_global_flag = german_renamed_dresden
 					clr_global_flag = polish_renamed_dresden
+					clr_global_flag = sorbian_renamed_dresden
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 3663
+					owner = {
+						is_culture_group = germanic
+					}
+				}
+				3663 = { change_province_name = "Bautzen" }    
+				owner = { 
+					set_global_flag = german_renamed_bautzen
+					clr_global_flag = polish_renamed_bautzen
+					clr_global_flag = sorbian_renamed_bautzen
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 3664
+					owner = {
+						is_culture_group = germanic
+					}
+				}
+				3664 = { change_province_name = "Sagan" }    
+				owner = { 
+					set_global_flag = german_renamed_sagan
+					clr_global_flag = polish_renamed_sagan
+					clr_global_flag = sorbian_renamed_sagan
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 3665
+					owner = {
+						is_culture_group = germanic
+					}
+				}
+				3665 = { change_province_name = "Guben" }    
+				owner = { 
+					set_global_flag = german_renamed_guben
+					clr_global_flag = polish_renamed_guben
+					clr_global_flag = sorbian_renamed_guben
 				}
 			}
 			
@@ -10940,12 +11439,14 @@ political_decisions = {
 					province_id = 552
 					owner = {
 						is_culture_group = polish_culture_group
+						NOT = { primary_culture = sorbian }
+						NOT = { accepted_culture = sorbian }
 					}
 				}
-				552 = { change_province_name = "Chósebuz" }    	
+				552 = { change_province_name = "Chociebuz" }    	
 				owner = { 
-					set_global_flag = polish_renamed_lowerlusatia
-					clr_global_flag = german_renamed_lowerlusatia
+					set_global_flag = polish_renamed_cottbus
+					clr_global_flag = german_renamed_cottbus
 				}
 			}
 			random_owned = {
@@ -10953,12 +11454,14 @@ political_decisions = {
 					province_id = 687
 					owner = {
 						is_culture_group = polish_culture_group
+						NOT = { primary_culture = sorbian }
+						NOT = { accepted_culture = sorbian }
 					}
 				}
-				687 = { change_province_name = "Zhorjelc" }    
+				687 = { change_province_name = "Zgorzelec" }    
 				owner = { 
-					set_global_flag = polish_renamed_upperlusatia
-					clr_global_flag = german_renamed_upperlusatia
+					set_global_flag = polish_renamed_gotlitz
+					clr_global_flag = german_renamed_gotlitz
 				}
 			}
 			random_owned = {
@@ -10966,12 +11469,166 @@ political_decisions = {
 					province_id = 558
 					owner = {
 						is_culture_group = polish_culture_group
+						NOT = { primary_culture = sorbian }
+						NOT = { accepted_culture = sorbian }
+					}
+				}
+				558 = { change_province_name = "Drezno" }    
+				owner = { 
+					set_global_flag = polish_renamed_dresden
+					clr_global_flag = german_renamed_dresden
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 3663
+					owner = {
+						is_culture_group = polish_culture_group
+						NOT = { primary_culture = sorbian }
+						NOT = { accepted_culture = sorbian }
+					}
+				}
+				3663 = { change_province_name = "Budziszyn" }    
+				owner = { 
+					set_global_flag = polish_renamed_bautzen
+					clr_global_flag = german_renamed_bautzen
+					clr_global_flag = sorbian_renamed_bautzen
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 3664
+					owner = {
+						is_culture_group = polish_culture_group
+						NOT = { primary_culture = sorbian }
+						NOT = { accepted_culture = sorbian }
+					}
+				}
+				3664 = { change_province_name = "Zagan" }    
+				owner = { 
+					set_global_flag = polish_renamed_sagan
+					clr_global_flag = german_renamed_sagan
+					clr_global_flag = sorbian_renamed_sagan
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 3665
+					owner = {
+						is_culture_group = polish_culture_group
+						NOT = { primary_culture = sorbian }
+						NOT = { accepted_culture = sorbian }
+					}
+				}
+				3665 = { change_province_name = "Gubin" }    
+				owner = { 
+					set_global_flag = polish_renamed_guben
+					clr_global_flag = german_renamed_guben
+					clr_global_flag = sorbian_renamed_guben
+				}
+			}
+			
+			###Sorbian - lusatia###
+			random_owned = {
+				limit = {
+					province_id = 552
+					owner = {
+						OR = {
+							primary_culture = sorbian
+							accepted_culture = sorbian
+						}
+					}
+				}
+				552 = { change_province_name = "Chósebuz" }    	
+				owner = { 
+					set_global_flag = sorbian_renamed_cottbus
+					clr_global_flag = polish_renamed_cottbus
+					clr_global_flag = german_renamed_cottbus
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 687
+					owner = {
+						OR = {
+							primary_culture = sorbian
+							accepted_culture = sorbian
+						}
+					}
+				}
+				687 = { change_province_name = "Zhorjelc" }    
+				owner = { 
+					set_global_flag = sorbian_renamed_gotlitz
+					clr_global_flag = polish_renamed_gotlitz
+					clr_global_flag = german_renamed_gotlitz
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 558
+					owner = {
+						OR = {
+							primary_culture = sorbian
+							accepted_culture = sorbian
+						}
 					}
 				}
 				558 = { change_province_name = "Drježdzany" }    
 				owner = { 
-					set_global_flag = polish_renamed_dresden
+					set_global_flag = sorbian_renamed_dresden
+					clr_global_flag = polish_renamed_dresden
 					clr_global_flag = german_renamed_dresden
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 3663
+					owner = {
+						OR = {
+							primary_culture = sorbian
+							accepted_culture = sorbian
+						}
+					}
+				}
+				3663 = { change_province_name = "Budyšin" }    
+				owner = { 
+					set_global_flag = sorbian_renamed_bautzen
+					clr_global_flag = german_renamed_bautzen
+					clr_global_flag = polish_renamed_bautzen
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 3664
+					owner = {
+						OR = {
+							primary_culture = sorbian
+							accepted_culture = sorbian
+						}
+					}
+				}
+				3664 = { change_province_name = "Zahan" }    
+				owner = { 
+					set_global_flag = sorbian_renamed_sagan
+					clr_global_flag = german_renamed_sagan
+					clr_global_flag = polish_renamed_sagan
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 3665
+					owner = {
+						OR = {
+							primary_culture = sorbian
+							accepted_culture = sorbian
+						}
+					}
+				}
+				3665 = { change_province_name = "Gubin" }    
+				owner = { 
+					set_global_flag = sorbian_renamed_guben
+					clr_global_flag = german_renamed_guben
+					clr_global_flag = polish_renamed_guben
 				}
 			}
 		}
