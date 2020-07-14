@@ -1506,15 +1506,16 @@ categories =  {
 	}
 
 	karlsruhe = {
-		movement_cost = 1.2
-		defence = 1
-		color = { 22 44 66 }
-		farm_rgo_size = 0.0
+		movement_cost = 1.4
+		defence = 2.5
+		color = { 119 35 11 }
+		farm_rgo_size = -0.1
 		farm_rgo_eff = 0.0
-		mine_rgo_size = 0.0
+		mine_rgo_size = 0.05
 		mine_rgo_eff = 0.0
 		supply_limit = 6
-		combat_width = -0.20
+		min_build_railroad = 2
+		combat_width = -0.50
 	}
 
 	stuttgart = {
@@ -1625,10 +1626,10 @@ categories =  {
 		supply_limit = 10
 	}
 
-	nuremberg = { #Farmland Hills
+	nuremberg = {
 		movement_cost = 1.2
 		defence = 1
-		color = { 22 44 66 }
+		color = { 135 70 0 }
 		farm_rgo_size = 0.15
 		farm_rgo_eff = 0.15
 		mine_rgo_size = 0.05
@@ -1781,14 +1782,17 @@ categories =  {
 
 	strasburg = {
 		movement_cost = 1.2
-		defence = 1
-		color = { 22 44 66 }
-		farm_rgo_size = 0.0
-		farm_rgo_eff = 0.0
+		defence = 0.75
+		color = { 86 71 146 }
+		farm_rgo_size = 0.1
+		farm_rgo_eff = 0.2
 		mine_rgo_size = 0.0
 		mine_rgo_eff = 0.0
-		supply_limit = 6
+		supply_limit = 10
+		min_build_railroad = 2
 		combat_width = -0.20
+		
+		immigrant_attract = 0.1
 	}
 
 	liverpool = {
