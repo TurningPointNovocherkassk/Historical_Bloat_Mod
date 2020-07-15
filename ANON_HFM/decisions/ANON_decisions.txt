@@ -11309,7 +11309,7 @@ political_decisions = {
 						AND = { owns = 558 NOT = { has_global_flag = german_renamed_dresden } }
 						AND = { owns = 3663 NOT = { has_global_flag = german_renamed_bautzen } }
 						AND = { owns = 3664 NOT = { has_global_flag = german_renamed_sagan } }
-						AND = { owns = 3665 NOT = { has_global_flag = german_renamed_guben } }
+						AND = { owns = 3665 NOT = { has_global_flag = german_renamed_zary } }
 					}
 				}
 				AND = {
@@ -11322,7 +11322,7 @@ political_decisions = {
 						AND = { owns = 558 NOT = { has_global_flag = polish_renamed_dresden } }
 						AND = { owns = 3663 NOT = { has_global_flag = polish_renamed_bautzen } }
 						AND = { owns = 3664 NOT = { has_global_flag = polish_renamed_sagan } }
-						AND = { owns = 3665 NOT = { has_global_flag = polish_renamed_guben } }
+						AND = { owns = 3665 NOT = { has_global_flag = polish_renamed_zary } }
 					}
 				}
 				AND = {
@@ -11336,7 +11336,7 @@ political_decisions = {
 						AND = { owns = 558 NOT = { has_global_flag = sorbian_renamed_dresden } }
 						AND = { owns = 3663 NOT = { has_global_flag = sorbian_renamed_bautzen } }
 						AND = { owns = 3664 NOT = { has_global_flag = sorbian_renamed_sagan } }
-						AND = { owns = 3665 NOT = { has_global_flag = sorbian_renamed_guben } }
+						AND = { owns = 3665 NOT = { has_global_flag = sorbian_renamed_zary } }
 					}
 				}
 			}
@@ -11426,11 +11426,11 @@ political_decisions = {
 						is_culture_group = germanic
 					}
 				}
-				3665 = { change_province_name = "Guben" }    
+				3665 = { change_province_name = "Sorau" }    
 				owner = { 
-					set_global_flag = german_renamed_guben
-					clr_global_flag = polish_renamed_guben
-					clr_global_flag = sorbian_renamed_guben
+					set_global_flag = german_renamed_zary
+					clr_global_flag = polish_renamed_zary
+					clr_global_flag = sorbian_renamed_zary
 				}
 			}
 			
@@ -11521,11 +11521,11 @@ political_decisions = {
 						NOT = { accepted_culture = sorbian }
 					}
 				}
-				3665 = { change_province_name = "Gubin" }    
+				3665 = { change_province_name = "Zary" }    
 				owner = { 
-					set_global_flag = polish_renamed_guben
-					clr_global_flag = german_renamed_guben
-					clr_global_flag = sorbian_renamed_guben
+					set_global_flag = polish_renamed_zary
+					clr_global_flag = german_renamed_zary
+					clr_global_flag = sorbian_renamed_zary
 				}
 			}
 			
@@ -11625,11 +11625,11 @@ political_decisions = {
 						}
 					}
 				}
-				3665 = { change_province_name = "Gubin" }    
+				3665 = { change_province_name = "Žarow" }    
 				owner = { 
-					set_global_flag = sorbian_renamed_guben
-					clr_global_flag = german_renamed_guben
-					clr_global_flag = polish_renamed_guben
+					set_global_flag = sorbian_renamed_zary
+					clr_global_flag = german_renamed_zary
+					clr_global_flag = polish_renamed_zary
 				}
 			}
 		}
