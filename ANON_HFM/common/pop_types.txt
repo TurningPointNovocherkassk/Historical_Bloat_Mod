@@ -468,6 +468,13 @@ demotion_chance = {
 migration_chance = {
 	factor = 1
 	
+	#ANON
+	modifier = {
+		factor = 2
+		has_pop_religion = jewish
+		country = { has_country_flag = jewish_country }
+	}
+	
 	group = {
 		modifier = {
 			factor = -0.1
@@ -1572,11 +1579,10 @@ assimilation_chance = {
 			has_pop_culture = east_tibetan
 			has_pop_culture = west_tibetan
 			has_pop_culture = south_tibetan
-			has_pop_culture = polish
-			has_pop_culture = silesian
+			has_pop_culture = western_slavic
 			has_pop_culture = sorbian
 			has_pop_culture = kashubian
-			has_pop_culture = lithuanian
+			has_pop_culture = masurian
 		}
 		NOT = {
 			OR = {
@@ -1585,13 +1591,80 @@ assimilation_chance = {
 				country = { primary_culture = east_tibetan }
 				country = { primary_culture = west_tibetan }
 				country = { primary_culture = south_tibetan }
-				country = { primary_culture = polish }
-				country = { primary_culture = silesian }
+				country = { primary_culture = western_slavic }
 				country = { primary_culture = sorbian }
 				country = { primary_culture = kashubian }
-				country = { primary_culture = lithuanian }
+				country = { primary_culture = masurian }
 			}
 		}
+	}
+	#ANON
+	modifier = {
+		factor = -0.75
+		OR = {
+			AND = {
+				has_pop_culture = ukrainian
+				NOT = {
+					OR = {
+						country = { primary_culture = ukrainian }
+						country = { primary_culture = realukrainian }
+					}
+				}
+			}
+			AND = {
+				has_pop_culture = lithuanian
+				NOT = { country = { primary_culture = lithuanian } }
+			}
+			AND = {
+				has_pop_culture = polish
+				NOT = { country = { primary_culture = polish } }
+			}
+			AND = {
+				has_pop_culture = byelorussian
+				NOT = { country = { primary_culture = byelorussian } }
+			}
+			AND = {
+				has_pop_culture = rusyn
+				NOT = {
+					AND = {
+						OR = {
+							country = { primary_culture = rusyn }
+							country = { primary_culture = russian }
+						}
+					}
+				}
+			}
+		}
+	}
+	#ANON
+	modifier = {
+		factor = 1.0
+		OR = {
+			AND = {
+				has_pop_culture = russophile
+				country = { primary_culture = russian }
+			}
+			AND = {
+				has_pop_culture = rusyn
+				country = { primary_culture = russian }
+			}
+			AND = {
+				has_pop_culture = russophile
+				country = { primary_culture = rusyn }
+			}
+		}
+	}
+	#ANON
+	modifier = {
+		factor = -0.25
+		has_pop_culture = russophile
+		country = { primary_culture = realukrainian }
+	}
+	#ANON
+	modifier = {
+		factor = 0.25
+		has_pop_culture = russian
+		country = { primary_culture = realukrainian }
 	}
 	
 	modifier = {
@@ -1612,6 +1685,8 @@ assimilation_chance = {
 		NOT = {
 			OR = {
 				has_pop_culture = ukrainian
+				has_pop_culture = realukrainian
+				has_pop_culture = rusyn
 				has_pop_culture = byelorussian
 			}
 		}
@@ -1792,8 +1867,7 @@ conversion_chance = {
 					has_pop_religion = syriac
 					has_pop_religion = zoroastrian
 					has_pop_religion = mandaean
-					has_pop_culture = copt
-					has_pop_culture = mandaic
+					has_pop_religion = coptic
 				}
 				location = { continent = oceania }
 			}
@@ -1834,6 +1908,17 @@ conversion_chance = {
 		}
 	}
 	
+	#ANON
+	modifier = {
+		factor = 100
+		has_pop_religion = maronite
+		OR = {
+			has_pop_culture = russophile
+			has_pop_culture = rusyn
+		}
+		country = { primary_culture = russian }
+	}
+	
 	modifier = {
 		factor = 0.15
 		country = { colonial_policy = civilizing }
@@ -1854,6 +1939,7 @@ conversion_chance = {
 			has_pop_religion = protestant
 			has_pop_religion = apostolic
 			has_pop_religion = coptic
+			has_pop_religion = maronite
 		}
 		has_culture_core = yes
 	}
@@ -1871,6 +1957,8 @@ conversion_chance = {
 			has_pop_religion = protestant
 			has_pop_religion = orthodox
 			has_pop_religion = apostolic
+			has_pop_religion = coptic
+			has_pop_religion = maronite
 		}
 	}
 			

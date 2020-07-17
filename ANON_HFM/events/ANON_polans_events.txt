@@ -4203,9 +4203,7 @@ country_event = {
 	trigger = {
 		OR = {
 			tag = PLC
-			tag = PLH
 			tag = PLR
-			tag = C3N
 		}
 		NOT = {
 			has_country_flag = federalist_revolution
@@ -4321,9 +4319,7 @@ province_event = {
 		owner = {
 			OR = {
 				tag = PLC
-				tag = PLH
 				tag = PLR
-				tag = C3N
 			}
 			has_country_flag = federalist_revolution
 			NOT = {
@@ -4332,6 +4328,7 @@ province_event = {
 					centralization = regionalism
 					centralization = federalism
 				}
+				has_country_flag = federalist_revolution_end
 			}
 		}
 		OR = {
@@ -4339,6 +4336,7 @@ province_event = {
 			average_consciousness = 3
 		}
 		NOT = { has_province_modifier = federalist_sympathies }
+		
 	}
 	
 	mean_time_to_happen = {
@@ -4395,9 +4393,7 @@ country_event = {
 	trigger = {
 		OR = {
 			tag = PLC
-			tag = PLH
 			tag = PLR
-			tag = C3N
 		}
 		has_country_flag = federalist_revolution
 		has_country_modifier = global_federalist_agitation
@@ -4540,9 +4536,7 @@ country_event = {
 	trigger = {
 		OR = {
 			tag = PLC
-			tag = PLH
 			tag = PLR
-			tag = C3N
 		}
 		has_country_flag = federalist_revolution
 		has_country_modifier = global_federalist_agitation
@@ -5951,5 +5945,262 @@ province_event = {
 				# }
 			# }
 		# }
+	}
+}
+####################################################
+# The First Polish-Lithuanian War
+####################################################
+country_event = {
+	id = 666666048
+	title = "EVTNAME666666048"
+	desc = "EVTDESC666666048"
+	news = yes
+	news_title = "EVTDESC666666048_NEWS_TITLE"
+	news_desc_long = "EVTDESC666666048_NEWS_LONG"
+	news_desc_medium = "EVTDESC666666048_NEWS_MEDIUM"
+	news_desc_short = "EVTDESC666666048_NEWS_SHORT"
+	picture = "greater_poland_uprising"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVT666666048OPTA" #To Arms! To Arms!
+		set_country_flag = lithuania_refuses
+		any_owned = {
+			limit = {
+				is_core = LIT
+			}
+			remove_core = THIS
+			secede_province = LIT
+		}
+		LIT = {
+			capital = 360 #Vilnius
+			set_country_flag = ANON_total_war_flag
+			government = absolute_monarchy
+			ruling_party_ideology = reactionary
+			any_owned = {
+				limit = {
+					is_core = THIS
+				}
+				remove_core = THIS
+			}
+		}
+		release = LIT
+		war = {
+			target = LIT
+			attacker_goal = { casus_belli = make_puppet }
+			attacker_goal = { casus_belli = add_to_sphere }
+			defender_goal = { casus_belli = become_independent }
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+	
+	option = {
+		name = "EVT666666048OPTB" #Let them go
+		set_country_flag = lithuania_released
+		any_owned = {
+			limit = {
+				is_core = LIT
+			}
+			remove_core = THIS
+			secede_province = LIT
+		}
+		LIT = {
+			capital = 360 #Vilnius
+			set_country_flag = ANON_total_war_flag
+			government = absolute_monarchy
+			ruling_party_ideology = reactionary
+			any_owned = {
+				limit = {
+					is_core = THIS
+				}
+				remove_core = THIS
+			}
+		}
+		release = LIT
+		prestige = -25
+		badboy = -10
+		ai_chance = {
+			factor = 0
+		}
+	}
+	
+	option = {
+		name = "EVT666666048OPTC" #We will support them! Down with the Habsburgs!
+		set_country_flag = lithuania_refuses
+		any_owned = {
+			limit = {
+				is_core = LIT
+			}
+			remove_core = THIS
+			secede_province = LIT
+		}
+		LIT = {
+			capital = 360 #Vilnius
+			set_country_flag = ANON_total_war_flag
+			government = absolute_monarchy
+			ruling_party_ideology = reactionary
+		}
+		release = LIT
+		war = {
+			target = LIT
+			attacker_goal = { casus_belli = make_puppet }
+			attacker_goal = { casus_belli = add_to_sphere }
+			defender_goal = { casus_belli = become_independent }
+		}
+		change_tag_no_core_switch = LIT
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+############################################################
+#	Ruthenian Compromise
+############################################################
+country_event = {
+	id = 666666049
+	title = "EVTNAME666666049"
+	desc = "EVTDESC666666049"
+	picture = "autocracy"
+	news = yes
+	news_title = "EVTDESC666666049_NEWS_TITLE"
+	news_desc_long = "EVTDESC666666049_NEWS_LONG"
+	news_desc_medium = "EVTDESC666666049_NEWS_MEDIUM"
+	news_desc_short = "EVTDESC666666049_NEWS_SHORT"
+	trigger = {
+		tag = HPL
+		war = no
+		has_recently_lost_war = no
+		OR = {
+			LIT = { exists = no }
+			AND = {
+				is_our_vassal = LIT
+				has_country_flag = lithuania_refuses
+			}
+			has_country_flag = lithuania_released
+		}
+		any_owned_province = {
+			is_core = RUT
+		}
+		OR = {
+			NOT = { exists = RUT }
+			RUT = { vassal_of = THIS }
+		}
+		nationalism_n_imperialism = 1
+	}
+	
+	mean_time_to_happen = { months = 1 } 
+	
+	fire_only_once = yes
+	
+	option = {
+		name = "EVT666666049OPTA" #Accept the Polish-Ukrainian compromise
+		set_country_flag = HPL_accepts
+		any_pop = {
+			limit = { has_pop_culture = ukrainian }
+			militancy = -5
+			consciousness = -5
+		}
+		any_pop = {
+			limit = {
+				NOT = {
+					OR = {
+						has_pop_culture = ukrainian
+						has_pop_culture = polish
+					}
+				}
+			}
+			consciousness = 5
+		}
+		add_accepted_culture = ukrainian
+		change_tag = PRC
+		PRC = {
+			political_reform = regionalism
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = {
+		name = "EVT666666049OPTB" #To Arms! To Arms!
+		set_country_flag = HPL_refuses
+		any_owned = {
+			limit = {
+				is_core = RUT
+			}
+			secede_province = RUT
+		}
+		RUT = {
+			capital = 702 #Lwów
+			set_country_flag = ANON_total_war_flag
+			government = absolute_monarchy
+			ruling_party_ideology = reactionary
+		}
+		release = RUT
+		war = {
+			target = RUT
+			attacker_goal = { casus_belli = civil_war }
+			defender_goal = { casus_belli = civil_war }
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+	option = {
+		name = "EVT666666049OPTC" #Let them go
+		set_country_flag = HPL_releases
+		any_owned = {
+			limit = {
+				is_core = RUT
+			}
+			remove_core = THIS
+			secede_province = RUT
+		}
+		RUT = {
+			capital = 702 #Lwów
+			set_country_flag = ANON_total_war_flag
+			government = absolute_monarchy
+			ruling_party_ideology = reactionary
+			any_owned = {
+				limit = {
+					is_core = THIS
+				}
+				remove_core = THIS
+			}
+		}
+		release = RUT
+		prestige = -25
+		badboy = -10
+		ai_chance = {
+			factor = 0
+		}
+	}
+	option = {
+		name = "EVT666666049OPTD" #We will support them! Down with the Habsburgs!
+		set_country_flag = HPL_refuses
+		any_owned = {
+			limit = {
+				is_core = RUT
+			}
+			secede_province = RUT
+		}
+		RUT = {
+			capital = 702 #Lwów
+			set_country_flag = ANON_total_war_flag
+			government = absolute_monarchy
+			ruling_party_ideology = reactionary
+		}
+		release = RUT
+		war = {
+			target = RUT
+			attacker_goal = { casus_belli = civil_war }
+			defender_goal = { casus_belli = civil_war }
+		}
+		change_tag_no_core_switch = RUT
+		ai_chance = {
+			factor = 0
+		}
 	}
 }

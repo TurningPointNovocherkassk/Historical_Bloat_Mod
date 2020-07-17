@@ -203,6 +203,27 @@
 		religion = sunni
 		size = 4400
 	}
+	
+	aristocrats = {
+		culture = russophile
+		religion = orthodox
+		size = 675
+	}
+	clergymen = {
+		culture = russophile
+		religion = orthodox
+		size = 650
+	}
+	bureaucrats = {
+		culture = russophile
+		religion = orthodox
+		size = 50
+	}
+	farmers = {
+		culture = russophile
+		religion = orthodox
+		size = 1000
+	}
 }
 #Brest-Litovsk (324000/81000 POPS)
 937 = {
@@ -385,6 +406,27 @@
 	serfs = {
 		culture = lithuanian
 		religion = catholic
+		size = 1000
+	}
+	
+	aristocrats = {
+		culture = russophile
+		religion = orthodox
+		size = 675
+	}
+	clergymen = {
+		culture = russophile
+		religion = orthodox
+		size = 650
+	}
+	bureaucrats = {
+		culture = russophile
+		religion = orthodox
+		size = 50
+	}
+	farmers = {
+		culture = russophile
+		religion = orthodox
 		size = 1000
 	}
 }
@@ -571,6 +613,27 @@
 		religion = catholic
 		size = 500
 	}
+	
+	aristocrats = {
+		culture = russophile
+		religion = orthodox
+		size = 675
+	}
+	clergymen = {
+		culture = russophile
+		religion = orthodox
+		size = 650
+	}
+	bureaucrats = {
+		culture = russophile
+		religion = orthodox
+		size = 50
+	}
+	farmers = {
+		culture = russophile
+		religion = orthodox
+		size = 1000
+	}
 }
 #Pinsk (276000/69000 POPS)
 940 = {
@@ -619,7 +682,7 @@
 	serfs = {
 		culture = byelorussian
 		religion = orthodox
-		size = 130000
+		size = 13000
 	}
 
 
@@ -809,6 +872,26 @@
 		size = 8000
 	}
 
+	aristocrats = {
+		culture = russophile
+		religion = orthodox
+		size = 675
+	}
+	clergymen = {
+		culture = russophile
+		religion = orthodox
+		size = 650
+	}
+	bureaucrats = {
+		culture = russophile
+		religion = orthodox
+		size = 50
+	}
+	farmers = {
+		culture = russophile
+		religion = orthodox
+		size = 1000
+	}
 }
 #Byelorussia Region (1364000)
 #under the rule of Russia in 1836
@@ -962,37 +1045,37 @@
 	}
 
 	aristocrats = {
-		culture = russian
+		culture = russophile
 		religion = orthodox
 		size = 500
 	}
 
 	officers = {
-		culture = russian
+		culture = russophile
 		religion = orthodox
 		size = 175
 	}
 
 	clergymen = {
-		culture = russian
+		culture = russophile
 		religion = orthodox
 		size = 100
 	}
 
 	artisans = {
-		culture = russian
+		culture = russophile
 		religion = orthodox
 		size = 100
 	}
 
 	soldiers = {
-		culture = russian
+		culture = russophile
 		religion = orthodox
 		size = 100
 	}
 
 	farmers = {
-		culture = russian
+		culture = russophile
 		religion = orthodox
 		size = 975
 	}
@@ -1083,7 +1166,7 @@
 	farmers = {
 		culture = lithuanian
 		religion = catholic
-		size = 15875
+		size = 10875
 	}
 
 	aristocrats = {
@@ -1113,7 +1196,7 @@
 	farmers = {
 		culture = polish
 		religion = catholic
-		size = 5250
+		size = 12250
 	}
 
 	clergymen = {
@@ -1121,29 +1204,51 @@
 		religion = maronite
 		size = 100
 	}
-
 	artisans = {
 		culture = byelorussian
 		religion = maronite
 		size = 450
 	}
-
 	soldiers = {
 		culture = byelorussian
 		religion = maronite
-		size = 2100
+		size = 1100
 	}
-
 	farmers = {
 		culture = byelorussian
 		religion = maronite
-		size = 4250
+		size = 3000
 	}
-
 	serfs = {
 		culture = byelorussian
 		religion = maronite
-		size = 10000
+		size = 5250
+	}
+
+	clergymen = {
+		culture = byelorussian
+		religion = orthodox
+		size = 100
+	}
+	artisans = {
+		culture = byelorussian
+		religion = orthodox
+		size = 450
+	}
+	soldiers = {
+		culture = byelorussian
+		religion = orthodox
+		size = 1100
+	}
+	farmers = {
+		culture = byelorussian
+		religion = orthodox
+		size = 3000
+	}
+	serfs = {
+		culture = byelorussian
+		religion = orthodox
+		size = 5250
 	}
 
 	clergymen = {
@@ -1201,6 +1306,27 @@
 		religion = sunni
 		size = 3000
 	}
+	
+	aristocrats = {
+		culture = russophile
+		religion = orthodox
+		size = 675
+	}
+	clergymen = {
+		culture = russophile
+		religion = orthodox
+		size = 650
+	}
+	bureaucrats = {
+		culture = russophile
+		religion = orthodox
+		size = 50
+	}
+	farmers = {
+		culture = russophile
+		religion = orthodox
+		size = 1000
+	}
 }
 #Vileyka
 3569 = {
@@ -1225,7 +1351,7 @@
 	farmers = {
 		culture = lithuanian
 		religion = catholic
-		size = 15875
+		size = 10875
 	}
 
 	aristocrats = {
@@ -1255,7 +1381,34 @@
 	farmers = {
 		culture = polish
 		religion = catholic
-		size = 2250
+		size = 7250
+	}
+
+
+	clergymen = {
+		culture = byelorussian
+		religion = orthodox
+		size = 125
+	}
+	artisans = {
+		culture = byelorussian
+		religion = orthodox
+		size = 600
+	}
+	soldiers = {
+		culture = byelorussian
+		religion = orthodox
+		size = 1100
+	}
+	farmers = {
+		culture = byelorussian
+		religion = orthodox
+		size = 2125
+	}
+	serfs = {
+		culture = byelorussian
+		religion = orthodox
+		size = 5125
 	}
 
 	clergymen = {
@@ -1263,29 +1416,25 @@
 		religion = maronite
 		size = 100
 	}
-
 	artisans = {
 		culture = byelorussian
 		religion = maronite
 		size = 450
 	}
-
 	soldiers = {
 		culture = byelorussian
 		religion = maronite
-		size = 2100
+		size = 1100
 	}
-
 	farmers = {
 		culture = byelorussian
 		religion = maronite
-		size = 4250
+		size = 2125
 	}
-
 	serfs = {
 		culture = byelorussian
 		religion = maronite
-		size = 10250
+		size = 5125
 	}
 
 	clergymen = {
@@ -1310,6 +1459,27 @@
 		culture = ashkenazi
 		religion = jewish
 		size = 6125
+	}
+	
+	aristocrats = {
+		culture = russophile
+		religion = orthodox
+		size = 675
+	}
+	clergymen = {
+		culture = russophile
+		religion = orthodox
+		size = 650
+	}
+	bureaucrats = {
+		culture = russophile
+		religion = orthodox
+		size = 50
+	}
+	farmers = {
+		culture = russophile
+		religion = orthodox
+		size = 1000
 	}
 }
 #Nyasvizh
@@ -1440,12 +1610,33 @@
 	farmers = {
 		culture = lithuanian
 		religion = catholic
-		size = 7000
+		size = 3500
 	}
 	serfs = {
 		culture = lithuanian
 		religion = catholic
-		size = 3000
+		size = 2000
+	}
+	
+	aristocrats = {
+		culture = russophile
+		religion = orthodox
+		size = 500
+	}
+	clergymen = {
+		culture = russophile
+		religion = orthodox
+		size = 500
+	}
+	bureaucrats = {
+		culture = russophile
+		religion = orthodox
+		size = 50
+	}
+	farmers = {
+		culture = russophile
+		religion = orthodox
+		size = 1000
 	}
 }
 #Baranovichi/slonim (196000/49000 POPS)
@@ -1611,6 +1802,27 @@
 		religion = sunni
 		size = 3000
 	}
+	
+	aristocrats = {
+		culture = russophile
+		religion = orthodox
+		size = 500
+	}
+	clergymen = {
+		culture = russophile
+		religion = orthodox
+		size = 500
+	}
+	bureaucrats = {
+		culture = russophile
+		religion = orthodox
+		size = 50
+	}
+	farmers = {
+		culture = russophile
+		religion = orthodox
+		size = 1000
+	}
 }
 #Slutsk (204000/51000 POPS)
 941 = {
@@ -1749,6 +1961,28 @@
 		culture = byelorussian
 		religion = maronite
 		size = 6000
+	}
+	
+	
+	aristocrats = {
+		culture = russophile
+		religion = orthodox
+		size = 500
+	}
+	clergymen = {
+		culture = russophile
+		religion = orthodox
+		size = 500
+	}
+	bureaucrats = {
+		culture = russophile
+		religion = orthodox
+		size = 50
+	}
+	farmers = {
+		culture = russophile
+		religion = orthodox
+		size = 1000
 	}
 }
 #Mozyr (308000/77000 POPS)
@@ -1923,49 +2157,71 @@
 		religion = maronite
 		size = 6000
 	}
+	
+	
+	aristocrats = {
+		culture = russophile
+		religion = orthodox
+		size = 500
+	}
+	clergymen = {
+		culture = russophile
+		religion = orthodox
+		size = 500
+	}
+	bureaucrats = {
+		culture = russophile
+		religion = orthodox
+		size = 50
+	}
+	farmers = {
+		culture = russophile
+		religion = orthodox
+		size = 1000
+	}
 }
 #Smolensk Region (392000) #see Russia.txt for balance of region 
 #under the rule of Russia in 1836
 #Orsha (392000/98000 POPS) #now part of Belarus 
 944 = {
 	aristocrats = {
-		culture = russian
+		culture = russophile
 		religion = orthodox
 		size = 2000
 	}
 	
 	officers = {
-		culture = russian
+		culture = russophile
 		religion = orthodox
 		size = 100
 	}
 	
 	clergymen = {
-		culture = russian
+		culture = russophile
 		religion = orthodox
 		size = 100
 	}
 
 	artisans = {
-		culture = russian
+		culture = russophile
 		religion = orthodox
 		size = 500
 	}
 
 	soldiers = {
-		culture = russian
+		culture = russophile
 		religion = orthodox
 		size = 100
 	}
 	
 	farmers = {
-		culture = russian
+		culture = russophile
 		religion = orthodox
 		size = 1000
 	}
 
 	serfs = {
-		culture = russian
+		culture = russophile
 		religion = orthodox
 		size = 3450
 	}
@@ -2130,43 +2386,43 @@
 	}
 
 	aristocrats = {
-		culture = russian
+		culture = russophile
 		religion = orthodox
 		size = 900
 	}
 
 	bureaucrats = {
-		culture = russian
+		culture = russophile
 		religion = orthodox
 		size = 200
 	}
 
 	officers = {
-		culture = russian
+		culture = russophile
 		religion = orthodox
 		size = 350
 	}
 
 	clergymen = {
-		culture = russian
+		culture = russophile
 		religion = orthodox
 		size = 50
 	}
 
 	artisans = {
-		culture = russian
+		culture = russophile
 		religion = orthodox
 		size = 250
 	}
 
 	soldiers = {
-		culture = russian
+		culture = russophile
 		religion = orthodox
 		size = 50
 	}
 
 	farmers = {
-		culture = russian
+		culture = russophile
 		religion = orthodox
 		size = 3200
 	}
@@ -2354,31 +2610,31 @@
 	}
 
 	aristocrats = {
-		culture = russian
+		culture = russophile
 		religion = orthodox
 		size = 1800
 	}
 
 	clergymen = {
-		culture = russian
+		culture = russophile
 		religion = orthodox
 		size = 100
 	}
 
 	artisans = {
-		culture = russian
+		culture = russophile
 		religion = orthodox
 		size = 250
 	}
 
 	soldiers = {
-		culture = russian
+		culture = russophile
 		religion = orthodox
 		size = 100
 	}
 
 	farmers = {
-		culture = russian
+		culture = russophile
 		religion = orthodox
 		size = 2850
 	}
@@ -2418,7 +2674,7 @@
 	artisans = {
 		culture = lithuanian
 		religion = catholic
-		size = 2000
+		size = 1000
 	}
 
 	soldiers = {
@@ -2430,7 +2686,7 @@
 	serfs = {
 		culture = lithuanian
 		religion = catholic
-		size = 55850
+		size = 13850
 	}
 
 	clergymen = {
@@ -2438,23 +2694,20 @@
 		religion = orthodox
 		size = 125
 	}
-
 	artisans = {
 		culture = byelorussian
 		religion = orthodox
 		size = 600
 	}
-
 	soldiers = {
 		culture = byelorussian
 		religion = orthodox
 		size = 2150
 	}
-
 	farmers = {
 		culture = byelorussian
 		religion = orthodox
-		size = 50125
+		size = 9125
 	}
 
 	clergymen = {
@@ -2475,7 +2728,7 @@
 	serfs = {
 		culture = byelorussian
 		religion = maronite
-		size = 5000
+		size = 4000
 	}
 
 
@@ -2484,29 +2737,25 @@
 		religion = catholic
 		size = 1800
 	}
-
 	clergymen = {
 		culture = polish
 		religion = catholic
 		size = 100
 	}
-
 	artisans = {
 		culture = polish
 		religion = catholic
-		size = 250
+		size = 750
 	}
-
 	soldiers = {
 		culture = polish
 		religion = catholic
 		size = 100
 	}
-
 	farmers = {
 		culture = polish
 		religion = catholic
-		size = 850
+		size = 5850
 	}
 
 	clergymen = {
@@ -2532,6 +2781,28 @@
 		religion = jewish
 		size = 8325
 	}
+	
+	
+	aristocrats = {
+		culture = russophile
+		religion = orthodox
+		size = 500
+	}
+	clergymen = {
+		culture = russophile
+		religion = orthodox
+		size = 500
+	}
+	bureaucrats = {
+		culture = russophile
+		religion = orthodox
+		size = 50
+	}
+	farmers = {
+		culture = russophile
+		religion = orthodox
+		size = 1000
+	}
 }
 #Oszmiana
 3565 = {
@@ -2550,13 +2821,13 @@
 	soldiers = {
 		culture = lithuanian
 		religion = catholic
-		size = 300
+		size = 1100
 	}
 
 	serfs = {
 		culture = lithuanian
 		religion = catholic
-		size = 25925
+		size = 12925
 	}
 
 	clergymen = {
@@ -2580,7 +2851,7 @@
 	farmers = {
 		culture = byelorussian
 		religion = orthodox
-		size = 5125
+		size = 7125
 	}
 	
 	clergymen = {
@@ -2601,7 +2872,7 @@
 	serfs = {
 		culture = byelorussian
 		religion = maronite
-		size = 2000
+		size = 4750
 	}
 
 	aristocrats = {
@@ -2619,19 +2890,19 @@
 	artisans = {
 		culture = polish
 		religion = catholic
-		size = 250
+		size = 1250
 	}
 
 	soldiers = {
 		culture = polish
 		religion = catholic
-		size = 100
+		size = 1100
 	}
 
 	farmers = {
 		culture = polish
 		religion = catholic
-		size = 6050
+		size = 12800
 	}
 
 	clergymen = {
@@ -2682,6 +2953,28 @@
 	farmers = {
 		culture = tatar
 		religion = sunni
+		size = 1000
+	}
+	
+	
+	aristocrats = {
+		culture = russophile
+		religion = orthodox
+		size = 500
+	}
+	clergymen = {
+		culture = russophile
+		religion = orthodox
+		size = 500
+	}
+	bureaucrats = {
+		culture = russophile
+		religion = orthodox
+		size = 50
+	}
+	farmers = {
+		culture = russophile
+		religion = orthodox
 		size = 1000
 	}
 }
@@ -2767,31 +3060,31 @@
 	}
 
 	aristocrats = {
-		culture = russian
+		culture = russophile
 		religion = orthodox
 		size = 1400
 	}
 
 	clergymen = {
-		culture = russian
+		culture = russophile
 		religion = orthodox
 		size = 75
 	}
 
 	artisans = {
-		culture = russian
+		culture = russophile
 		religion = orthodox
 		size = 300
 	}
 
 	soldiers = {
-		culture = russian
+		culture = russophile
 		religion = orthodox
 		size = 50
 	}
 
 	serfs = {
-		culture = russian
+		culture = russophile
 		religion = orthodox
 		size = 3175
 	}
@@ -2968,6 +3261,27 @@
 		size = 13325
 	}
 
+	
+	aristocrats = {
+		culture = russophile
+		religion = orthodox
+		size = 500
+	}
+	clergymen = {
+		culture = russophile
+		religion = orthodox
+		size = 500
+	}
+	bureaucrats = {
+		culture = russophile
+		religion = orthodox
+		size = 50
+	}
+	farmers = {
+		culture = russophile
+		religion = orthodox
+		size = 1000
+	}
 }
 #Starodub
 3650 = {
@@ -3118,4 +3432,25 @@
 		size = 10000
 	}
 
+	
+	aristocrats = {
+		culture = russophile
+		religion = orthodox
+		size = 500
+	}
+	clergymen = {
+		culture = russophile
+		religion = orthodox
+		size = 500
+	}
+	bureaucrats = {
+		culture = russophile
+		religion = orthodox
+		size = 50
+	}
+	farmers = {
+		culture = russophile
+		religion = orthodox
+		size = 1000
+	}
 }

@@ -821,7 +821,7 @@
 	clergymen = {
 		culture = rusyn
 		religion = maronite
-		size = 30  
+		size = 75  
 	}
 
 	artisans = {
@@ -833,13 +833,39 @@
 	soldiers = {
 		culture = rusyn
 		religion = maronite
-		size = 30  
+		size = 75  
 	}
 
 	serfs = {
 		culture = rusyn
 		religion = maronite
 		size = 10000
+	}
+	
+	aristocrats = {
+		culture = russophile
+		religion = maronite
+		size = 100
+	}
+	clergymen = {
+		culture = russophile
+		religion = maronite
+		size = 100
+	}
+	artisans = {
+		culture = russophile
+		religion = maronite
+		size = 450
+	}
+	soldiers = {
+		culture = russophile
+		religion = maronite
+		size = 175
+	}
+	farmers = {
+		culture = russophile
+		religion = maronite
+		size = 750
 	}
 	
 	clergymen = {

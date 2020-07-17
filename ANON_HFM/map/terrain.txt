@@ -1149,14 +1149,18 @@ categories =  {
 		immigrant_attract = 0.1
 	}
 	minsk = {
-		movement_cost = 1.0
-		color = { 22 44 66 }
-		farm_rgo_size = 0.2
-		farm_rgo_eff = 0.2
-		mine_rgo_size = 0.0
-		mine_rgo_eff = 0.0
-		immigrant_attract = 0.05
+		movement_cost = 1.25
+		defence = 0.625
+		attrition = 0.5
+		color = { 0 255 0 }
+		farm_rgo_size = 0.33
+		farm_rgo_eff = 0.33
+		mine_rgo_size = -0.25
+		mine_rgo_eff = -0.5
 		supply_limit = 10
+		min_build_railroad = 2
+		immigrant_attract = 0.1
+		combat_width = -0.25
 	}
 	lyon = {
 		movement_cost = 1.2
