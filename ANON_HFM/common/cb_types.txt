@@ -7896,6 +7896,17 @@ war_reparations = {
 				country_event = 45108
 			}
 		}
+		random_owned = {
+			limit = {
+				owner = {
+					tag = BOH
+					has_country_flag = pay_1st_AUS_reparations
+				}
+			}
+			owner = {
+				country_event = 45108
+			}
+		}
 	}
 }
 

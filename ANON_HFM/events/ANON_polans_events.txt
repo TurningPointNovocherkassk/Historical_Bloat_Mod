@@ -8165,3 +8165,452 @@ country_event = {
 		any_country = { limit = { military_access = BOH NOT = { vassal_of = BOH } } end_military_access = BOH }
 	}
 }
+###############################################################
+#The Reparations War - Austria Decides what to do
+###############################################################
+country_event = {
+	id = 666666071
+	title = "EVTNAME666666071"
+	desc = "EVTDESC666666071"
+	picture = "bohemia_event"
+
+	trigger = {
+		owns = 619
+		year = 1837
+		exists = BOH
+		war = no
+		NOT = {
+			is_our_vassal = BOH
+			alliance_with = BOH
+			truce_with = BOH
+			year = 1856
+		}
+	}
+
+	mean_time_to_happen = { months = 24 }
+	fire_only_once = yes
+
+	option = {
+		name = "EVT666666071OPTA" # Demand Reparations for confiscated properties
+		set_country_flag = AUS_demanding_reparations
+		BOH = { country_event = { id = 666666072 days = 3 } }
+		diplomatic_influence = { who = BOH value = -100 }
+		ai_chance = {
+			factor = 90
+		}
+	}
+	
+	option = {
+		name = "EVT666666071OPTB" #Forget about it
+		prestige = -30
+		any_pop = {
+			limit = {
+				OR = {
+					is_primary_culture = yes
+					is_accepted_culture = yes
+				}
+			}
+			militancy = 3
+			consciousness = 7
+		}
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 0.5
+				is_greater_power = yes
+			}
+			modifier = {
+				factor = 1.5
+				NOT = { is_greater_power = yes }
+			}
+			modifier = {
+				factor = 2
+				has_recently_lost_war = yes
+			}
+			modifier = {
+				factor = 2
+				is_disarmed = yes
+			}
+		}
+	}
+}
+
+#The Reparations War - To Bohemia - Austria Demands Reparations
+country_event = {
+	id = 666666072
+	title = "EVTNAME666666072"
+	desc = "EVTDESC666666072"
+	picture = "bohemia_event"
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVT666666072OPTA" #Agree to their demands
+		prestige = -30
+		any_pop = {
+			limit = {
+				OR = {
+					is_primary_culture = yes
+					is_accepted_culture = yes
+				}
+			}
+			militancy = 3
+			consciousness = 7
+		}
+		FROM = {
+			country_event = { id = 666666073 days = 3 }
+		}
+		
+		random_owned = {
+			limit = {
+				owner = {
+					NOT = { money = 1200000 }
+					check_variable = { which = owed_cash_money value = 9 }
+				} 
+			}
+			owner = { change_variable = { which = owed_cash_money value = 1200 } }
+		}
+		random_owned = {
+			limit = {
+				owner = {
+					NOT = { money = 1200000 }
+					NOT = { check_variable = { which = owed_cash_money value = 1 } }
+				} 
+			}
+			owner = { set_variable = { which = owed_cash_money value = 1200 } }
+		}
+		random_owned = {
+			limit = { owner = { money = 1200000 } }
+			owner = { treasury = -1200000 }
+		}
+		
+		ai_chance = {
+			factor = 15
+			modifier = {
+				factor = 0.5
+				is_secondary_power = yes
+			}
+			modifier = {
+				factor = 0
+				is_greater_power = yes
+			}
+		}
+	}
+	
+	option = {
+		name = "EVT666666072OPTB" #We are not paying
+		set_country_flag = AUS_reparations
+		prestige = 5
+		FROM = {
+			country_event = { id = 666666074 days = 3 }
+		}
+		ai_chance = {
+			factor = 80
+		}
+	}
+	
+	option = {
+		name = "EVT666666072OPTC"
+		PRC = { country_event = 666666075 }
+		ai_chance = {
+			factor = 5
+		}
+	}
+}
+
+#The Reparations War - To Austria - Bohemia Pays Reparations
+country_event = {
+	id = 666666073
+	title = "EVTNAME666666073"
+	desc = "EVTDESC666666073"
+	picture = "bohemia_event"
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVT666666073OPTA"
+		prestige = 10
+		treasury = 1200000
+		relation = { who = FROM value = 25 }
+		diplomatic_influence = { who = BOH value = 100 }
+		set_country_flag = AUS_reparations
+	}
+}
+
+#The Reparations War - To Austria - Bohemia refuses to pay Reparations
+country_event = {
+	id = 666666074
+	title = "EVTNAME666666074"
+	desc = "EVTDESC666666074"
+	picture = "bohemia_event"
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVT666666074OPTA"
+		PRC = { country_event = 666666075 }
+		ai_chance = {
+			factor = 95
+		}
+	}
+	
+	option = {
+		name = "EVT666666074OPTB"
+		prestige = -50
+		ai_chance = {
+			factor = 5
+			modifier = {
+				factor = 0
+				is_greater_power = yes
+			}
+		}
+	}
+}
+#The Reparations War - To PRC - Bohemia refuses to pay Reparations
+country_event = {
+	id = 666666075
+	title = "EVTNAME666666075"
+	desc = "EVTDESC666666075"
+	picture = "bohemia_event"
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVT666666075OPTA"
+		BOH = { set_country_flag = pay_1st_AUS_reparations }
+		FROM = {
+			badboy = 12.5
+			set_country_flag = BOH_neutrality_violator
+			casus_belli = {
+				target = BOH
+				type = war_reparations
+				months = 12
+			}
+			war = {
+				target = BOH
+				attacker_goal = { casus_belli = war_reparations }
+				defender_goal = { casus_belli = status_quo }
+				defender_goal = { casus_belli = call_allies_cb }
+				call_ally = yes
+			}
+		}
+		ai_chance = {
+			factor = 90
+		}
+	}
+	
+	option = {
+		name = "EVT666666075OPTB"
+		prestige = 15
+		
+		random_owned = {
+			limit = {
+				owner = {
+					NOT = { money = 1200000 }
+					check_variable = { which = owed_cash_money value = 9 }
+				} 
+			}
+			owner = { change_variable = { which = owed_cash_money value = 1200 } }
+		}
+		random_owned = {
+			limit = {
+				owner = {
+					NOT = { money = 1200000 }
+					NOT = { check_variable = { which = owed_cash_money value = 1 } }
+				} 
+			}
+			owner = { set_variable = { which = owed_cash_money value = 1200 } }
+		}
+		random_owned = {
+			limit = { owner = { money = 1200000 } }
+			owner = { treasury = -1200000 }
+		}
+		FROM = {
+			country_event = { id = 666666076 days = 3 }
+		}
+		BOH = {
+			country_event = { id = 666666077 days = 3 }
+		}
+		
+		ai_chance = {
+			factor = 5
+			modifier = {
+				factor = 0
+				is_greater_power = yes
+			}
+		}
+	}
+	
+	option = {
+		name = "EVT666666075OPTC" #Leave them to their fates, they're a sovereign nation after all.
+		prestige = -15
+		BOH = { country_event = { id = 666666079 days = 3 } }				
+		ai_chance = {
+			factor = 5
+			modifier = {
+				factor = 0
+				is_greater_power = yes
+			}
+		}
+	}
+}
+#The Reparations War - To Austria - PRC Pays Bohemia's Reparations
+country_event = {
+	id = 666666076
+	title = "EVTNAME666666076"
+	desc = "EVTDESC666666076"
+	picture = "bohemia_event"
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVT666666076OPTA"
+		prestige = 20
+		treasury = 1200000
+		relation = { who = FROM value = 50 }
+		set_country_flag = AUS_reparations
+	}
+}
+#The Reparations War - To Bohemia - PRC Pays Bohemia's Reparations
+country_event = {
+	id = 666666077
+	title = "EVTNAME666666077"
+	desc = "EVTDESC666666077"
+	picture = "bohemia_event"
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVT666666077OPTA" #debt slavery, become their vassals.
+		PRC = { country_event = 666666078 }
+		remove_country_modifier = neutrality
+		prestige = -50
+		ai_chance = {
+			factor = 95
+		}
+	}
+	option = {
+		name = "EVT666666077OPTB" #we will pay them eventually.
+		random_owned = {
+			limit = {
+				owner = {
+					NOT = { money = 1200000 }
+					check_variable = { which = owed_cash_money value = 9 }
+				} 
+			}
+			owner = { change_variable = { which = owed_cash_money value = 1200 } }
+		}
+		random_owned = {
+			limit = {
+				owner = {
+					NOT = { money = 1200000 }
+					NOT = { check_variable = { which = owed_cash_money value = 1 } }
+				} 
+			}
+			owner = { set_variable = { which = owed_cash_money value = 1200 } }
+		}
+		random_owned = {
+			limit = { owner = { money = 1200000 } }
+			owner = { treasury = -1200000 }
+		}
+		PRC = { country_event = { id = 666666081 days = 365 } }
+		ai_chance = {
+			factor = 5
+		}
+	}
+}
+#The Reparations War - To PRC - Bohemia becomes PRC's vassal as reparation
+country_event = {
+	id = 666666078
+	title = "EVTNAME666666078"
+	desc = "EVTDESC666666078"
+	picture = "bohemia_event"
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVT666666078OPTA"
+		set_country_flag = PRC_vassalized_BOH
+		prestige = 20
+		relation = { who = FROM value = 400 }
+		diplomatic_influence = { who = FROM value = 400 }
+		create_vassal = FROM
+		random_country = {
+			limit = { owns = 619 }
+			relation = {
+				who = THIS
+				value = -150
+			}
+		}
+	}
+}
+#The Reparations War - To BOH - PRC won't pay reparations
+country_event = {
+	id = 666666079
+	title = "EVTNAME666666079"
+	desc = "EVTDESC666666079"
+	picture = "bohemia_event"
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVT666666079OPTA"
+		set_country_flag = pay_1st_AUS_reparations
+		leave_alliance = FROM
+		relation = {
+			who = FROM
+			value = -400
+		}
+		FROM = {
+			diplomatic_influence = {
+				who = BOH
+				value = -400
+			}
+		}
+		random_country = {
+			limit = { has_country_flag = AUS_demanding_reparations }
+			country_event = { id = 666666080 days = 3 }
+		}
+	}
+}
+country_event = {
+	id = 666666080
+	title = "EVTNAME666666080"
+	desc = "EVTDESC666666080"
+	picture = "bohemia_event"
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVT666666080OPTA"
+		BOH = { set_country_flag = pay_1st_AUS_reparations }
+		badboy = 12.5
+		set_country_flag = BOH_neutrality_violator
+		casus_belli = {
+			target = BOH
+			type = war_reparations
+			months = 12
+		}
+		war = {
+			target = BOH
+			attacker_goal = { casus_belli = war_reparations }
+			defender_goal = { casus_belli = status_quo }
+			call_ally = yes
+		}
+	}
+}
+country_event = {
+	id = 666666081
+	title = "EVTNAME666666081"
+	desc = "EVTDESC666666081"
+	picture = "bohemia_event"
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVT666666081OPTA"
+		prestige = 20
+		treasury = 1200000
+		relation = { who = FROM value = 50 }
+	}
+}

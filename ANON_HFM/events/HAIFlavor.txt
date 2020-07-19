@@ -499,7 +499,7 @@ country_event = {
 				owner = {
 					tag = MEX
 					has_recently_lost_war = yes
-					truce_with = FRA
+					truce_with = BOR
 					has_country_flag = pay_1st_pastry_war
 					NOT = { check_variable = { which = owed_cash_money value = 9 } }
 				}
@@ -509,7 +509,46 @@ country_event = {
 					clr_country_flag = pay_1st_pastry_war
 					set_variable = { which = owed_cash_money value = 80 }
 				}
-				FRA = { treasury = 80000 }
+				BOR = { treasury = 80000 }
+			}
+		}
+		
+		random_owned = {
+			limit = {
+				owner = {
+					tag = BOH
+					has_recently_lost_war = yes
+					OR = {
+						truce_with = AUS
+						truce_with = KUK
+						truce_with = SGF
+						truce_with = DNB
+						truce_with = GER
+						truce_with = GCF
+					}
+					has_country_flag = pay_1st_AUS_reparations
+					NOT = { check_variable = { which = owed_cash_money value = 9 } }
+				}
+			}
+			owner = {
+				BOH = {
+					clr_country_flag = pay_1st_AUS_reparations
+					set_variable = { which = owed_cash_money value = 1200 }
+				}
+				random_country = {
+					limit = {
+						OR = {
+							tag = AUS
+							tag = KUK
+							tag = SGF
+							tag = DNB
+							tag = GER
+							tag = GCF
+						}
+						truce_with = BOH
+					}
+					treasury = 1200000
+				}
 			}
 		}
 	}
