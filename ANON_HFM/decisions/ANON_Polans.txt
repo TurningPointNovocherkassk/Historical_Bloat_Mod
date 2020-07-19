@@ -931,9 +931,9 @@ political_decisions = {
 						tag = PRU
 						tag = RUS
 					}
-					relation = { who = THIS value = -400 }
-					leave_alliance = THIS
 				}
+				relation = { who = THIS value = -400 }
+				leave_alliance = THIS
 			}
 		}
 	}
@@ -1487,7 +1487,185 @@ political_decisions = {
 		ai_will_do = { factor = 1 }
 	}
 	
+	declare_BOH_neutrality = {
+		picture = declare_BOH_neutrality_pic
+		potential = {
+			tag = BOH
+			PRC = { exists = yes }
+			owns = 625 #Bohemia
+			owns = 627 #Sudetes
+			owns = 631 #Moravia
+			war = no
+			is_vassal = no
+			is_disarmed = no
+			OR = {
+				has_global_flag = bohemia_warsaw_supported
+				has_global_flag = AUS_releases_BOH
+			}
+			NOT = {
+				has_country_modifier = neutrality
+				has_country_flag = abandoned_BOH_neutrality
+				has_country_flag = BOH_neutrality_violated
+			}	
+		}
+		allow = {
+			NOT = { any_owned_province = { is_core = THIS } }
+			NOT = { badboy = 1 }
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = neutrality
+				duration = -1
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = { factor = 0 government = fascist_dictatorship }
+			modifier = { factor = 0 government = proletarian_dictatorship }
+		}
+	}
+
+
+	abandon_BOH_neutrality = {
+		picture = declare_BOH_neutrality_pic
+		potential = {
+			has_country_modifier = neutrality
+			NOT = { has_country_flag = abandoned_BOH_neutrality }
+		}
+		
+		allow = {
+			prestige = 20
+		}
+		
+		effect = {
+			set_country_flag = abandoned_BOH_neutrality
+			prestige = -20
+			badboy = 5
+			remove_country_modifier = neutrality
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = {
+					OR = {
+						badboy = 0.75
+						government = fascist_dictatorship
+						government = proletarian_dictatorship
+					}
+				}
+			}
+		}
+	}
 	
+	enforce_BOH_neutrality = {
+		picture = declare_BOH_neutrality_pic
+		potential = {
+			has_country_modifier = neutrality
+			ai = yes
+			tag = BOH
+		}
+		
+		allow = {
+			OR = {
+				any_greater_power = { military_access = THIS }
+				any_neighbor_country = { NOT = { vassal_of = THIS } military_access = THIS }
+				sphere_owner = { military_access = THIS }
+				AND = {
+					num_of_allies = 1
+					NOT = { NCT = { alliance_with = THIS } }
+				}
+				AND = {
+					num_of_allies = 2
+					NCT = { exists = yes alliance_with = THIS }
+				}
+				war = yes
+			}
+		}
+		
+		effect = {
+			any_country = {
+				limit = { NOT = { vassal_of = THIS } OR = { military_access = THIS alliance_with = THIS } }
+				relation = { who = THIS value = -125 }
+			}
+			any_country = { limit = { alliance_with = THIS NOT = { vassal_of = THIS } } leave_alliance = THIS }
+			any_country = { limit = { war_with = THIS } end_war = THIS }
+			any_country = { limit = { military_access = THIS NOT = { vassal_of = THIS } } end_military_access = THIS }
+		}
+	}
+	
+	violate_BOH_neutrality = {
+		picture = declare_BOH_neutrality_pic
+		alert = no
+		potential = {
+			BOH = {
+				neighbour = THIS
+				has_country_modifier = neutrality
+			}
+		}
+		
+		allow = {
+			BOH = { has_country_modifier = neutrality }
+			war_policy = jingoism
+			NOT = {
+				is_sphere_leader_of = BOH
+				truce_with = BOH
+				alliance_with = BOH
+			}
+		}
+		
+		effect = {
+			badboy = 25
+			set_country_flag = BOH_neutrality_violator
+			BOH = {
+				set_country_flag = BOH_neutrality_violated
+				remove_country_modifier = neutrality
+				relation = { who = THIS value = -200 }
+			}
+			diplomatic_influence = { who = BOH value = -200 }
+			any_country = {
+				limit = {
+					OR = {
+						alliance_with = BOH
+						is_sphere_leader_of = BOH
+						relation = { who = BOH value = 50 }
+					}
+				}
+				leave_alliance = THIS
+				relation = { who = THIS value = -200 }
+				casus_belli = {
+					target = THIS
+					type = cut_down_to_size
+					months = 60
+				}
+			}
+			casus_belli = {
+				target = BOH
+				type = annex_core_country
+				months = 60
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = {
+					OR = {
+						tag = AUS
+						tag = KUK
+						tag = SGF
+						tag = DNB
+						tag = GER
+						tag = GCF
+					}
+				}
+			}
+		}
+	}
 	
 	
 	

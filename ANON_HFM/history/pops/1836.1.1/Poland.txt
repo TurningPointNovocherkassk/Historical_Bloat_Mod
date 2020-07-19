@@ -646,6 +646,12 @@
 		size = 5615 
 	}
 
+	aristocrats = {
+		culture = czech
+		religion = catholic
+		size = 85 
+	}
+
 	clergymen = {
 		culture = czech
 		religion = catholic
@@ -1093,30 +1099,56 @@
 		size = 10650   
 	}
 	
+	aristocrats = {
+		culture = czech
+		religion = catholic
+		size = 100 
+	}
 	clergymen = {
-		culture = slovak
+		culture = czech
 		religion = catholic
 		size = 100 
 	}
 	artisans = {
-		culture = slovak
+		culture = czech
 		religion = catholic
 		size = 1600
 	}
 	soldiers = {
-		culture = slovak
+		culture = czech
 		religion = catholic
 		size = 200 
 	}
 	farmers = {
+		culture = czech
+		religion = catholic
+		size = 5000
+	}
+	
+	clergymen = {
 		culture = slovak
 		religion = catholic
-		size = 3000
+		size = 50 
+	}
+	artisans = {
+		culture = slovak
+		religion = catholic
+		size = 400
+	}
+	soldiers = {
+		culture = slovak
+		religion = catholic
+		size = 100 
+	}
+	farmers = {
+		culture = slovak
+		religion = catholic
+		size = 750
 	}
 	serfs = {
 		culture = slovak
 		religion = catholic
-		size = 2000
+		size = 500
 	}
 }
 #Auschwitz (lmao arbeit macht frei)
@@ -1279,6 +1311,33 @@
 		culture = ashkenazi
 		religion = jewish
 		size = 2125
+	}
+	
+	
+	aristocrats = {
+		culture = czech
+		religion = catholic
+		size = 100 
+	}
+	clergymen = {
+		culture = czech
+		religion = catholic
+		size = 100 
+	}
+	artisans = {
+		culture = czech
+		religion = catholic
+		size = 1600
+	}
+	soldiers = {
+		culture = czech
+		religion = catholic
+		size = 200 
+	}
+	farmers = {
+		culture = czech
+		religion = catholic
+		size = 5000
 	}
 }
 #West Prussia Region (688000) 
@@ -3104,29 +3163,31 @@
 		size = 1825
 	}
 	
-	# clergymen = {
-		# culture = ukrainian
-		# religion = maronite
-		# size = 500
-	# }
-
-	# artisans = {
-		# culture = ukrainian
-		# religion = maronite
-		# size = 2650
-	# }
-
-	# soldiers = {
-		# culture = ukrainian
-		# religion = maronite
-		# size = 525
-	# }
-
-	# farmers = {
-		# culture = ukrainian
-		# religion = maronite
-		# size = 10000
-	# }
+	clergymen = {
+		culture = slovak
+		religion = catholic
+		size = 100 
+	}
+	artisans = {
+		culture = slovak
+		religion = catholic
+		size = 800
+	}
+	soldiers = {
+		culture = slovak
+		religion = catholic
+		size = 200 
+	}
+	farmers = {
+		culture = slovak
+		religion = catholic
+		size = 1500
+	}
+	serfs = {
+		culture = slovak
+		religion = catholic
+		size = 1000
+	}
 }
 #Krynica
 3654 = {

@@ -250,6 +250,16 @@ polish_uprising_mobilization = {
 	icon = 18
 }
 
+bohemian_uprising_mobilization = {
+	pop_militancy_modifier = -0.05
+	mobilisation_size = 0.5
+	prestige = -0.02
+	war_exhaustion = -0.1
+	tax_efficiency = 0.25
+	tariff_efficiency_modifier = 0.25
+	icon = 18
+}
+
 credit_risk = {
 	max_loan_modifier = -1
 	icon = 10
@@ -4248,6 +4258,12 @@ famine = {
 }
 
 nationalist_poland = {
+	icon = 17
+	core_pop_militancy_modifier = -0.05
+	core_pop_consciousness_modifier = -0.05
+}
+
+nationalist_BOH = {
 	icon = 17
 	core_pop_militancy_modifier = -0.05
 	core_pop_consciousness_modifier = -0.05

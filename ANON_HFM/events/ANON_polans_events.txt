@@ -2097,7 +2097,7 @@ country_event = {
 	option = {
 		name = "EVT666666018OPTA"
 		set_global_flag = paris_congress_held
-		prestige = -20
+		prestige = 20
 		any_country = {
 			limit = {
 				has_country_flag = for_congress_paris
@@ -5963,6 +5963,8 @@ country_event = {
 	
 	is_triggered_only = yes
 	
+	immediate = { set_global_flag = first_lithuanian_revolution }
+	
 	option = {
 		name = "EVT666666048OPTA" #To Arms! To Arms!
 		set_country_flag = lithuania_refuses
@@ -6195,12 +6197,1971 @@ country_event = {
 		release = RUT
 		war = {
 			target = RUT
-			attacker_goal = { casus_belli = civil_war }
-			defender_goal = { casus_belli = civil_war }
+			attacker_goal = { casus_belli = annex_core_country }
+			defender_goal = { casus_belli = become_independent }
 		}
 		change_tag_no_core_switch = RUT
 		ai_chance = {
 			factor = 0
 		}
+	}
+}
+
+############################################################
+#	Bohemian Revolution
+############################################################
+country_event = {
+	id = 666666050
+	title = "EVTNAME666666050"
+	desc = "EVTDESC666666050"
+	picture = "bohemia_event"
+	trigger = {
+		OR = {
+			tag = AUS
+			tag = KUK
+			tag = SGF
+			tag = GCF
+			tag = GER
+			tag = DNB
+		}
+		NOT = { accepted_culture = czech }
+		PRC = { exists = yes }
+		owns = 625 #Bohemia
+		owns = 627 #Sudetes
+		owns = 631 #Moravia
+		OR = {
+			NOT = { exists = BOH }
+			BOH = { vassal_of = THIS }
+		}
+		nationalism_n_imperialism = 1
+		has_global_flag = hungarian_revolution_occurred
+		has_global_flag = first_lithuanian_revolution
+	}
+	
+	mean_time_to_happen = {
+		months = 60
+
+		modifier = {
+			factor = 0.75
+			war_exhaustion = 15
+		}
+		
+		modifier = {
+			factor = 0.5
+			war_exhaustion = 20
+		}
+		
+		modifier = {
+			factor = 0.25
+			OR = {
+				PRU = {
+					war_with = THIS
+				}
+				NGF = {
+					war_with = THIS
+				}
+				GCF = {
+					war_with = THIS
+				}
+				GER = {
+					war_with = THIS
+				}
+			}
+		}
+		
+		modifier = {
+			factor = 0.05
+			RUS = {
+				war_with = THIS
+			}
+		}
+		
+		modifier = {
+			factor = 0.05
+			has_global_flag = 2nd_hungarian_revoultion
+		}
+		
+		modifier = {
+			factor = 0.1
+			has_recently_lost_war = yes
+		}
+	} 
+	
+	fire_only_once = yes
+	
+	option = {
+		name = "EVT666666050OPTA" #Accept the Bohemian compromise
+		set_global_flag = AUS_accepts_BOH
+		prestige = -25
+		any_pop = {
+			limit = { has_pop_culture = czech }
+			militancy = -9
+			consciousness = -9
+		}
+		any_pop = {
+			limit = {
+				NOT = {	
+					OR = {
+						has_pop_culture = czech
+						has_pop_culture = south_german
+						has_pop_culture = volga_german
+					}
+				}
+			}
+			militancy = 5
+			consciousness = 5
+		}
+		any_owned = {
+			limit = {
+				OR = {
+					is_core = HUN
+					is_core = CRO
+					is_core = SLO
+					is_core = ROM
+				}
+			}
+			add_province_modifier = {
+				name = nationalist_agitation
+				duration = 1095
+			}
+		}
+		add_accepted_culture = czech
+		ai_chance = {
+			factor = 0
+		}
+	}
+	option = {
+		name = "EVT666666050OPTB" #To Arms! To Arms!
+		set_global_flag = AUS_refuses_BOH
+		any_owned = {
+			limit = {
+				is_core = BOH
+			}
+			secede_province = BOH
+		}
+		BOH = {
+			capital = 625 #Prague
+			set_country_flag = ANON_total_war_flag
+			government = prussian_constitutionalism
+			political_reform = landed_voting
+			political_reform = appointed
+			political_reform = harassment
+			ruling_party_ideology = liberal
+			add_country_modifier = { name = bohemian_uprising_mobilization duration = 2920 }
+			add_country_modifier = { name = unrecognized_country duration = 1095 }
+		}
+		release = BOH
+		war = {
+			target = BOH
+			attacker_goal = { casus_belli = annex_core_country }
+			defender_goal = { casus_belli = become_independent }
+			call_ally = yes
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = {
+		name = "EVT666666050OPTC" #Let them go
+		set_global_flag = AUS_releases_BOH
+		prestige = -50
+		badboy = -10
+		war_exhaustion = -50
+		any_owned = {
+			limit = {
+				is_core = BOH
+			}
+			remove_core = THIS
+			secede_province = BOH
+		}
+		BOH = {
+			capital = 625 #Prague
+			set_country_flag = ANON_total_war_flag
+			government = prussian_constitutionalism
+			political_reform = landed_voting
+			political_reform = appointed
+			political_reform = harassment
+			ruling_party_ideology = liberal
+			any_owned = {
+				limit = {
+					is_core = THIS
+				}
+				remove_core = THIS
+			}
+			add_country_modifier = { name = bohemian_uprising_mobilization duration = 2920 }
+			add_country_modifier = { name = unrecognized_country duration = 1095 }
+		}
+		release = BOH
+		PRC = { country_event = { id = 666666051 days = 5 } }
+		ai_chance = {
+			factor = 0
+		}
+	}
+	option = {
+		name = "EVT666666050OPTD" #We will support them!
+		set_global_flag = AUS_refuses_BOH
+		any_owned = {
+			limit = {
+				is_core = BOH
+			}
+			secede_province = BOH
+		}
+		BOH = {
+			capital = 625 #Prague
+			set_country_flag = ANON_total_war_flag
+			government = prussian_constitutionalism
+			political_reform = landed_voting
+			political_reform = appointed
+			political_reform = harassment
+			ruling_party_ideology = liberal
+			add_country_modifier = { name = bohemian_uprising_mobilization duration = 2920 }
+			add_country_modifier = { name = unrecognized_country duration = 1095 }
+		}
+		release = BOH
+		war = {
+			target = BOH
+			attacker_goal = { casus_belli = annex_core_country }
+			defender_goal = { casus_belli = become_independent }
+			call_ally = yes
+		}
+		change_tag_no_core_switch = BOH
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+# Notification for polan-ruthenia
+country_event = {
+	id = 666666051
+	title = "EVTNAME666666051"
+	desc = "EVTDESC666666051"
+	picture = "bohemia_event"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVT666666051OPTA" #Act as the mediator
+		FROM = { country_event = { id = 666666053 days = 5 } }
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = {
+		name = "EVT666666051OPTB" #We will help our brothers!
+		create_alliance = FROM
+		relation = { who = FROM value = 400 }
+		FROM = {
+			relation = { who = THIS value = 400 }
+			country_event = { id = 666666052 days = 5 }
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+	option = {
+		name = "EVT666666051OPTC" #This is none of our business
+		prestige = -15
+		ai_chance = {
+			factor = 0
+		}
+	}
+	option = {
+		name = "EVT666666051OPTD" #We will support them! Down with the Habsburgs!
+		change_tag_no_core_switch = BOH
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+# Notification for AUS
+country_event = {
+	id = 666666052
+	title = "EVTNAME666666052"
+	desc = "EVTDESC666666052"
+	picture = "bohemia_event"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVT666666052OPTA"
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+#############################################################################
+#																			#
+#   				Congress of Warsaw: Lead-Up Events						#
+#																			#
+#############################################################################
+country_event = {
+
+	id = 666666053
+
+	title = "EVTNAME666666053" # The Bohemian Question (Initiate Congress of Warsaw)
+	desc = "EVTDESC666666053"
+	picture = "bohemia_event"
+	
+	is_triggered_only = yes
+
+	option = {
+		name = "EVT666666053OPTA"
+		prestige = 20
+		set_global_flag = warsaw_congress_to_be_held
+		set_country_flag = hosting_warsaw_congress
+		BOH = {
+			set_variable = {
+				which = warsaw_congress_support_austria
+				value = 0
+			}
+			set_variable = {
+				which = warsaw_congress_support_bohemia
+				value = 0
+			}
+			set_variable = {
+				which = warsaw_congress_veto
+				value = 0
+			}
+			country_event = 666666056
+			add_country_modifier = { name = no_more_war duration = 1095 }
+		}
+		any_country = {
+			limit = {
+				NOT = {
+					OR = {
+						tag = NGF
+						tag = GER
+						tag = GCF
+						tag = AUS
+						tag = KUK
+						tag = SGF
+						tag = DNB
+					}
+				}
+				war_with = BOH
+			}
+			end_war = BOH
+			#relation = { who = BOH value = 400 }
+		}
+		any_country = {
+			limit = {
+				OR = {
+					tag = NGF
+					tag = GER
+					tag = GCF
+					tag = AUS
+					tag = KUK
+					tag = SGF
+				}
+				war_with = BOH
+			}
+			country_event = 666666055
+			#relation = { who = BOH value = 400 }
+			#diplomatic_influence = { who = BOH value = 300 }
+			add_country_modifier = { name = no_more_war duration = 1095 }
+			set_country_flag = for_congress_warsaw
+			end_war = BOH
+		}
+		any_country = {
+			limit = {
+				is_greater_power = yes
+				capital_scope = { continent = europe }
+				NOT = {
+					tag = THIS
+					tag = BOH
+					tag = GER
+					tag = GCF
+					tag = AUS
+					tag = KUK
+					tag = SGF
+					tag = DNB
+				}
+			}
+			country_event = 666666057
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+
+	id = 666666054
+
+	title = "EVTNAME666666054" # Planning for the Congress
+	desc = "EVTDESC666666054"
+	picture = "berlin_congress_htm"
+
+	trigger = {
+		has_country_flag = hosting_warsaw_congress
+		NOT = { has_country_flag = attending_warsaw_congress }
+	}
+
+	mean_time_to_happen = {
+		months = 2
+	}
+
+	option = {
+		name = "EVT666666054OPTA"
+		set_country_flag = attending_warsaw_congress
+		BOH = {
+			change_variable = {
+				which = warsaw_congress_support_austria
+				value = 1
+			}
+		}
+		ai_chance = {
+			factor = 40
+			modifier = {
+				factor = 0.5
+				tag = ENG
+			}
+			modifier = {
+				factor = 1.5
+				OR = {
+					alliance_with = GER
+					alliance_with = GCF
+					alliance_with = AUS
+					alliance_with = KUK
+					alliance_with = SGF
+					alliance_with = DNB
+				}
+			}
+			modifier = {
+				factor = 0.5
+				OR = {
+					truce_with = GER
+					truce_with = GCF
+					truce_with = AUS
+					truce_with = KUK
+					truce_with = SGF
+					truce_with = DNB
+				}
+			}
+			modifier = {
+				factor = 1.8
+				OR = {
+					relation = { who = GER value = 150 }
+					relation = { who = GCF value = 150 }
+					relation = { who = AUS value = 150 }
+					relation = { who = KUK value = 150 }
+					relation = { who = SGF value = 150 }
+					relation = { who = DNB value = 150 }
+				}
+			}
+			modifier = {
+				factor = 1.6
+				OR = {
+					relation = { who = GER value = 100 }
+					relation = { who = GCF value = 100 }
+					relation = { who = AUS value = 100 }
+					relation = { who = KUK value = 100 }
+					relation = { who = SGF value = 100 }
+					relation = { who = DNB value = 100 }
+				}
+			}
+			modifier = {
+				factor = 1.4
+				OR = {
+					relation = { who = GER value = 50 }
+					relation = { who = GCF value = 50 }
+					relation = { who = AUS value = 50 }
+					relation = { who = KUK value = 50 }
+					relation = { who = SGF value = 50 }
+					relation = { who = DNB value = 50 }
+				}
+			}
+			modifier = {
+				factor = 1.2
+				OR = {
+					relation = { who = GER value = 0 }
+					relation = { who = GCF value = 0 }
+					relation = { who = AUS value = 0 }
+					relation = { who = KUK value = 0 }
+					relation = { who = SGF value = 0 }
+					relation = { who = DNB value = 0 }
+				}
+			}
+		}
+	}
+
+	option = {
+		name = "EVT666666054OPTB"
+		set_country_flag = attending_warsaw_congress
+		BOH = {
+			change_variable = {
+				which = warsaw_congress_support_bohemia
+				value = 1
+			}
+		}
+		ai_chance = {
+			factor = 60
+			modifier = {
+				factor = 1.5
+				tag = ENG
+			}
+			modifier = {
+				factor = 1.75
+				OR = {
+					truce_with = GER
+					truce_with = GCF
+					truce_with = AUS
+					truce_with = KUK
+					truce_with = SGF
+					truce_with = DNB
+				}
+			}
+			modifier = {
+				factor = 1.8
+				NOT = {
+					OR = {
+						relation = { who = GER value = -150 }
+						relation = { who = GCF value = -150 }
+						relation = { who = AUS value = -150 }
+						relation = { who = KUK value = -150 }
+						relation = { who = SGF value = -150 }
+						relation = { who = DNB value = -150 }
+					}
+				}
+			}
+			modifier = {
+				factor = 1.6
+				NOT = {
+					OR = {
+						relation = { who = GER value = -100 }
+						relation = { who = GCF value = -100 }
+						relation = { who = AUS value = -100 }
+						relation = { who = KUK value = -100 }
+						relation = { who = SGF value = -100 }
+						relation = { who = DNB value = -100 }
+					}
+				}
+			}
+			modifier = {
+				factor = 1.4
+				NOT = {
+					OR = {
+						relation = { who = GER value = -50 }
+						relation = { who = GCF value = -50 }
+						relation = { who = AUS value = -50 }
+						relation = { who = KUK value = -50 }
+						relation = { who = SGF value = -50 }
+						relation = { who = DNB value = -50 }
+					}
+				}
+			}
+			modifier = {
+				factor = 1.2
+				NOT = {
+					OR = {
+						relation = { who = GER value = 0 }
+						relation = { who = GCF value = 0 }
+						relation = { who = AUS value = 0 }
+						relation = { who = KUK value = 0 }
+						relation = { who = SGF value = 0 }
+						relation = { who = DNB value = 0 }
+					}
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+
+	id = 666666055
+
+	title = "EVTNAME666666055" # Call for Congress - AUS
+	desc = "EVTDESC666666055"
+	picture = "bohemia_event"
+
+	is_triggered_only = yes
+
+	option = {
+		name = "EVT666666055OPTA"
+		country_event = 666666057
+	}
+}
+
+country_event = {
+
+	id = 666666056
+
+	title = "EVTNAME666666056" # Call for Congress - BOH
+	desc = "EVTDESC666666056"
+	picture = "bohemia_event"
+
+	is_triggered_only = yes
+
+	option = {
+		name = "EVT666666055OPTA"
+		prestige = 10
+		set_country_flag = attending_warsaw_congress
+	}
+}
+
+country_event = {
+
+	id = 666666057
+
+	title = "EVTNAME666666057" # Call for Congress
+	desc = "EVTDESC666666057"
+	picture = "berlin_congress_htm"
+
+	is_triggered_only = yes
+
+	option = {
+		name = "EVT666666054OPTA"
+		prestige = 10
+		set_country_flag = attending_warsaw_congress
+		BOH = {
+			change_variable = {
+				which = warsaw_congress_support_austria
+				value = 1
+			}
+		}
+		ai_chance = {
+			factor = 45
+			modifier = {
+				factor = 0.5
+				tag = ENG
+			}
+			modifier = {
+				factor = 0.5
+				OR = {
+					truce_with = GER
+					truce_with = GCF
+					truce_with = AUS
+					truce_with = KUK
+					truce_with = SGF
+					truce_with = DNB
+				}
+			}
+			modifier = {
+				factor = 1.8
+				OR = {
+					relation = { who = GER value = 150 }
+					relation = { who = GCF value = 150 }
+					relation = { who = AUS value = 150 }
+					relation = { who = KUK value = 150 }
+					relation = { who = SGF value = 150 }
+					relation = { who = DNB value = 150 }
+				}
+			}
+			modifier = {
+				factor = 1.6
+				OR = {
+					relation = { who = GER value = 100 }
+					relation = { who = GCF value = 100 }
+					relation = { who = AUS value = 100 }
+					relation = { who = KUK value = 100 }
+					relation = { who = SGF value = 100 }
+					relation = { who = DNB value = 100 }
+				}
+			}
+			modifier = {
+				factor = 1.4
+				OR = {
+					relation = { who = GER value = 50 }
+					relation = { who = GCF value = 50 }
+					relation = { who = AUS value = 50 }
+					relation = { who = KUK value = 50 }
+					relation = { who = SGF value = 50 }
+					relation = { who = DNB value = 50 }
+				}
+			}
+			modifier = {
+				factor = 1.2
+				OR = {
+					relation = { who = GER value = 0 }
+					relation = { who = GCF value = 0 }
+					relation = { who = AUS value = 0 }
+					relation = { who = KUK value = 0 }
+					relation = { who = SGF value = 0 }
+					relation = { who = DNB value = 0 }
+				}
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					has_country_modifier = neutrality
+					has_country_flag = czech_chimpout_voted_neutral
+				}
+			}
+		}
+	}
+
+	option = {
+		name = "EVT666666054OPTB"
+		prestige = 10
+		set_country_flag = attending_warsaw_congress
+		BOH = {
+			change_variable = {
+				which = warsaw_congress_support_bohemia
+				value = 1
+			}
+		}
+		ai_chance = {
+			factor = 45
+			modifier = {
+				factor = 1.75
+				OR = {
+					truce_with = GER
+					truce_with = GCF
+					truce_with = AUS
+					truce_with = KUK
+					truce_with = SGF
+					truce_with = DNB
+				}
+			}
+			modifier = {
+				factor = 1.8
+				NOT = {
+					OR = {
+						relation = { who = GER value = -150 }
+						relation = { who = GCF value = -150 }
+						relation = { who = AUS value = -150 }
+						relation = { who = KUK value = -150 }
+						relation = { who = SGF value = -150 }
+						relation = { who = DNB value = -150 }
+					}
+				}
+			}
+			modifier = {
+				factor = 1.6
+				NOT = {
+					OR = {
+						relation = { who = GER value = -100 }
+						relation = { who = GCF value = -100 }
+						relation = { who = AUS value = -100 }
+						relation = { who = KUK value = -100 }
+						relation = { who = SGF value = -100 }
+						relation = { who = DNB value = -100 }
+					}
+				}
+			}
+			modifier = {
+				factor = 1.4
+				NOT = {
+					OR = {
+						relation = { who = GER value = -50 }
+						relation = { who = GCF value = -50 }
+						relation = { who = AUS value = -50 }
+						relation = { who = KUK value = -50 }
+						relation = { who = SGF value = -50 }
+						relation = { who = DNB value = -50 }
+					}
+				}
+			}
+			modifier = {
+				factor = 1.2
+				NOT = {
+					OR = {
+						relation = { who = GER value = 0 }
+						relation = { who = GCF value = 0 }
+						relation = { who = AUS value = 0 }
+						relation = { who = KUK value = 0 }
+						relation = { who = SGF value = 0 }
+						relation = { who = DNB value = 0 }
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					has_country_modifier = neutrality
+					has_country_flag = czech_chimpout_voted_neutral
+				}
+			}
+		}
+	}
+
+	option = {
+		name = "EVT666666057OPTA"
+		prestige = -10
+		ai_chance = {
+			factor = 9.5
+			modifier = {
+				factor = 10
+				OR = {
+					has_country_modifier = neutrality
+					has_country_flag = czech_chimpout_voted_neutral
+				}
+			}
+		}
+	}
+
+	option = {
+		name = "EVT666666057OPTB" #Veto
+		set_country_flag = warsaw_congress_veto_flag
+		BOH = {
+			change_variable = {
+				which = warsaw_congress_veto
+				value = 1
+			}
+		}
+	}
+}
+
+
+#############################################################################
+#																			#
+#   					Congress of Warsaw: Resolution						#
+#																			#
+#############################################################################
+
+country_event = {
+	
+	id = 666666058
+
+	title = "EVTNAME666666058" # The Congress (AUS Supported)
+	desc = "EVTDESC666666058"
+	news = yes
+	news_title = "EVTNAME666666058_NEWS_TITLE"
+	news_desc_long = "EVTDESC666666058_NEWS_LONG"
+	news_desc_medium = "EVTDESC666666058_NEWS_MEDIUM"
+	news_desc_short = "EVTDESC666666058_NEWS_SHORT"	
+	picture = "berlin_congress_htm"
+	major = yes
+	
+	trigger = {
+		BOH = {
+			exists = yes
+			war = no
+			check_variable = {
+				which = warsaw_congress_support_austria
+				value = 1
+			}
+		}
+		NOT = { has_global_flag = warsaw_congress_held }
+		has_country_flag = hosting_warsaw_congress
+		has_country_flag = attending_warsaw_congress
+	}
+	
+	mean_time_to_happen = {
+		months = 6
+		modifier = {
+			factor = 0.5
+			BOH = {
+				check_variable = {
+					which = warsaw_congress_support_austria
+					value = 2
+				}
+			}
+		}
+		modifier = {
+			factor = 0.5
+			BOH = {
+				check_variable = {
+					which = warsaw_congress_support_austria
+					value = 3
+				}
+			}
+		}
+		modifier = {
+			factor = 0.5
+			BOH = {
+				check_variable = {
+					which = warsaw_congress_support_austria
+					value = 4
+				}
+			}
+		}
+		modifier = {
+			factor = 0.5
+			BOH = {
+				check_variable = {
+					which = warsaw_congress_support_austria
+					value = 5
+				}
+			}
+		}
+	}
+
+	option = {
+		name = "EVT666666058OPTA"
+		set_global_flag = warsaw_congress_held
+		prestige = 20
+		any_country = {
+			limit = {
+				has_country_flag = for_congress_warsaw
+			}
+			# Inherits BOH
+			inherit = BOH
+			country_event = 666666060
+		}
+		any_country = {
+			limit = {
+				has_country_flag = for_congress_warsaw
+				has_country_modifier = no_more_war
+			}
+			remove_country_modifier = no_more_war
+		}
+	}
+
+}
+
+country_event = {
+	
+	id = 666666059
+
+	title = "EVTNAME666666059" # The Congress (BOH Supported)
+	desc = "EVTDESC666666059"
+	news = yes
+	news_title = "EVTNAME666666058_NEWS_TITLE"
+	news_desc_long = "EVTDESC666666059_NEWS_LONG"
+	news_desc_medium = "EVTDESC666666059_NEWS_MEDIUM"
+	news_desc_short = "EVTDESC666666059_NEWS_SHORT"	
+	picture = "berlin_congress_htm"
+	major = yes
+	
+	trigger = {
+		BOH = {
+			exists = yes
+			war = no
+			check_variable = {
+				which = warsaw_congress_support_bohemia
+				value = 1
+			}
+		}
+		NOT = { has_global_flag = warsaw_congress_held }
+		has_country_flag = hosting_warsaw_congress
+		has_country_flag = attending_warsaw_congress		
+	}
+	
+	mean_time_to_happen = {
+		months = 6
+		modifier = {
+			factor = 0.5
+			BOH = {
+				check_variable = {
+					which = warsaw_congress_support_bohemia
+					value = 2
+				}
+			}
+		}
+		modifier = {
+			factor = 0.5
+			BOH = {
+				check_variable = {
+					which = warsaw_congress_support_bohemia
+					value = 3
+				}
+			}
+		}
+		modifier = {
+			factor = 0.5
+			BOH = {
+				check_variable = {
+					which = warsaw_congress_support_bohemia
+					value = 4
+				}
+			}
+		}
+		modifier = {
+			factor = 0.5
+			BOH = {
+				check_variable = {
+					which = warsaw_congress_support_bohemia
+					value = 5
+				}
+			}
+		}
+	}
+
+	option = {
+		name = "EVT666666058OPTA"
+		set_global_flag = warsaw_congress_held
+		prestige = 20
+		any_country = {
+			limit = {
+				has_country_flag = for_congress_warsaw
+			}
+			country_event = 666666061
+		}
+		any_country = {
+			limit = {
+				has_country_flag = for_congress_warsaw
+				has_country_modifier = no_more_war
+			}
+			remove_country_modifier = no_more_war
+		}
+	}
+}
+
+country_event = {
+
+	id = 666666060
+
+	title = "EVTNAME666666060" # Demands of the Congress (AUS Supported)
+	desc = "EVTDESC666666060"
+	picture = "berlin_congress_htm"
+
+	is_triggered_only = yes
+
+	option = {
+		name = "EVT666666060OPTA"
+		prestige_factor = 0.1
+		set_global_flag = GP_warsaw_supported
+		# Czech Upset
+		any_pop = {
+			limit = {
+				has_pop_culture = czech
+			}
+			militancy = 3
+			consciousness = 3
+		}
+		any_owned = {
+			limit = {
+				culture = czech
+			}
+			add_province_modifier = {
+				name = nationalist_agitation
+				duration = 1095
+			}
+		}
+		# Anyone not Czech Upset
+		any_pop = {
+			limit = {
+				NOT = {
+					OR = {
+						has_pop_culture = czech
+						has_pop_culture = north_german
+						has_pop_culture = south_german
+						has_pop_culture = volga_german
+					}
+				}
+			}
+			militancy = 4
+			consciousness = 4
+		}
+		#Czech as accepted
+		add_accepted_culture = czech
+		# Military Pleased
+		soldiers = {
+			limit = { is_primary_culture = yes }
+			consciousness = -3
+			militancy = -3
+		}
+		officers = {
+			limit = { is_primary_culture = yes }
+			consciousness = -3
+			militancy = -3
+		}
+
+		# Send acknowledgment to attending countries
+		any_greater_power = {
+			limit = { has_country_flag = attending_warsaw_congress }
+			country_event = 666666062
+		}
+		ai_chance = {
+			factor = 30
+		}
+	}
+	option = {
+		name = "EVT666666060OPTB"
+		prestige = -20
+		# Czech Upset
+		any_pop = {
+			limit = {
+				has_pop_culture = czech
+			}
+			militancy = 6
+			consciousness = 4
+		}
+		any_owned = {
+			limit = {
+				culture = czech
+			}
+			add_province_modifier = {
+				name = nationalist_agitation
+				duration = 1825
+			}
+		}
+
+		relation = {
+			who = BOH
+			value = -150
+		}
+		diplomatic_influence = {
+			who = BOH
+			value = -300
+		}
+		# Military Pleased
+		soldiers = {
+			limit = { is_primary_culture = yes }
+			consciousness = -3
+			militancy = -3
+		}
+		officers = {
+			limit = { is_primary_culture = yes }
+			consciousness = -3
+			militancy = -3
+		}
+		# Send refusal to attending countries
+		any_greater_power = {
+			limit = { has_country_flag = attending_warsaw_congress }
+			country_event = 666666064
+		}
+		
+		ai_chance = {
+			factor = 70
+		}
+	}
+}
+
+country_event = {
+
+	id = 666666061
+
+	title = "EVTNAME666666061" # Demands of the Congress (BOH Supported)
+	desc = "EVTDESC666666061"
+	picture = "berlin_congress_htm"
+
+	is_triggered_only = yes
+
+	option = {
+		name = "EVT666666060OPTA"
+		set_global_flag = bohemia_warsaw_supported
+		prestige_factor = 0.1
+		any_owned = {
+			limit = {
+				is_core = BOH
+				is_core = CZH
+				NOT = { is_core = SLV }
+			}
+			remove_core = PRU
+			remove_core = NGF
+			remove_core = GER
+			remove_core = GCF
+			remove_core = AUS
+			remove_core = KUK
+			remove_core = SGF
+			remove_core = DNB
+			add_core = BOH
+			secede_province = BOH
+		}
+		soldiers = {
+			limit = { is_primary_culture = yes }
+			ideology = {
+				value = reactionary
+				factor = 0.20
+			}
+			militancy = 3
+		}
+		officers = {
+			limit = { is_primary_culture = yes }
+			ideology = {
+				value = reactionary
+				factor = 0.40
+			}
+			militancy = 3
+		}
+		relation = {
+			who = BOH
+			value = -100
+		}
+		diplomatic_influence = {
+			who = BOH
+			value = -200
+		}
+		BOH = {
+			remove_country_modifier = unrecognized_country
+			add_country_modifier = {
+				name = nationalist_BOH
+				duration = -1
+			}
+			any_owned = {
+				remove_core = PRU
+				remove_core = NGF
+				remove_core = GER
+				remove_core = GCF
+				remove_core = AUS
+				remove_core = KUK
+				remove_core = SGF
+				remove_core = DNB
+				add_core = BOH
+			}
+		}
+
+		# Send acknowledgment to attending countries
+		any_greater_power = {
+			limit = { has_country_flag = attending_warsaw_congress }
+			country_event = 666666063
+		}
+		
+		ai_chance = {
+			factor = 70
+		}
+	}
+
+	option = {
+		name = "EVT666666060OPTB"
+		clr_country_flag = a_habsburg_on_the_throne_BOH
+		prestige = -20
+		# Czech Upset
+		any_pop = {
+			limit = {
+				has_pop_culture = czech
+			}
+			militancy = 6
+			consciousness = 4
+		}
+		any_owned = {
+			limit = {
+				culture = czech
+			}
+			add_province_modifier = {
+				name = nationalist_agitation
+				duration = 1825
+			}
+		}
+
+		relation = {
+			who = BOH
+			value = -150
+		}
+		diplomatic_influence = {
+			who = BOH
+			value = -300
+		}
+		# Military Pleased
+		soldiers = {
+			limit = { is_primary_culture = yes }
+			consciousness = -3
+			militancy = -3
+		}
+		officers = {
+			limit = { is_primary_culture = yes }
+			consciousness = -3
+			militancy = -3
+		}
+		# Send refusal to attending countries
+		any_greater_power = {
+			limit = { has_country_flag = attending_warsaw_congress }
+			country_event = 666666064
+		}
+		
+		ai_chance = {
+			factor = 30
+		}
+	}
+}
+
+country_event = {
+
+	id = 666666062
+
+	title = "EVTNAME666666062" # The AUS Agrees (AUS Supported)
+	desc = "EVTDESC666666062"
+	picture = "berlin_congress_htm"
+
+	is_triggered_only = yes
+
+	option = {
+		name = "EVT666666062OPTA"
+		
+		#Hosting country gains prestige, gains relations with AUS
+		random_owned = {
+			limit = {
+				owner = { has_country_flag = hosting_warsaw_congress }
+			}
+			owner = {
+				prestige_factor = 0.2
+				relation = {
+					who = GER
+					value = 50
+				}
+				relation = {
+					who = GCF
+					value = 50
+				}
+				relation = {
+					who = AUS
+					value = 50
+				}
+				relation = {
+					who = KUK
+					value = 50
+				}
+				relation = {
+					who = SGF
+					value = 50
+				}
+				relation = {
+					who = DNB
+					value = 50
+				}
+			}
+		}
+		
+		#Other countries gain some prestige
+		random_owned = {
+			limit = {
+				owner = {
+					NOT = {
+						has_country_flag = hosting_warsaw_congress
+						OR = {
+							tag = GER
+							tag = GCF
+							tag = AUS
+							tag = KUK
+							tag = SGF
+							tag = DNB
+						}
+					}
+				}
+			}
+			owner = { prestige = 10 }
+		}
+		
+		#AUS gains relations & influence with the attendants
+		random_owned = {
+			limit = {
+				owner = {
+					NOT = {
+						has_country_flag = for_congress_warsaw
+					}
+				}
+			}
+			owner = {
+				relation = {
+					who = GER
+					value = 50
+				}
+				relation = {
+					who = GCF
+					value = 50
+				}
+				relation = {
+					who = AUS
+					value = 50
+				}
+				relation = {
+					who = KUK
+					value = 50
+				}
+				relation = {
+					who = SGF
+					value = 50
+				}
+				relation = {
+					who = DNB
+					value = 50
+				}
+				diplomatic_influence = {
+					who = GER
+					value = 50
+				}
+				diplomatic_influence = {
+					who = GCF
+					value = 50
+				}
+				diplomatic_influence = {
+					who = AUS
+					value = 50
+				}
+				diplomatic_influence = {
+					who = KUK
+					value = 50
+				}
+				diplomatic_influence = {
+					who = SGF
+					value = 50
+				}
+				diplomatic_influence = {
+					who = DNB
+					value = 50
+				}
+			}
+		}
+		
+		clr_global_flag = warsaw_congress_to_be_held
+		clr_country_flag = for_congress_warsaw
+		clr_country_flag = hosting_warsaw_congress
+	}
+
+}
+
+country_event = {
+
+	id = 666666063
+
+	title = "EVTNAME666666063" # The AUS Agrees (BOH Supported)
+	desc = "EVTDESC666666063"
+	picture = "berlin_congress_htm"
+
+	is_triggered_only = yes
+
+	option = {
+		name = "EVT666666062OPTA"
+		
+		#Hosting country gains prestige, loses relations with AUS and gains relations with bohemia
+		random_owned = {
+			limit = {
+				owner = { has_country_flag = hosting_warsaw_congress }
+			}
+			owner = {
+				prestige_factor = 0.2
+				relation = {
+					who = GER
+					value = -100
+				}
+				relation = {
+					who = GCF
+					value = -100
+				}
+				relation = {
+					who = AUS
+					value = -100
+				}
+				relation = {
+					who = KUK
+					value = -100
+				}
+				relation = {
+					who = SGF
+					value = -100
+				}
+				relation = {
+					who = DNB
+					value = -100
+				}
+				relation = {
+					who = BOH
+					value = 100
+				}
+			}
+		}
+		
+		#Other countries gain some prestige
+		random_owned = {
+			limit = {
+				owner = { NOT = { has_country_flag = hosting_warsaw_congress } }
+			}
+			owner = { prestige = 10 }
+		}
+		
+		#AUS loses relations & influence with the attendants
+		random_owned = {
+			limit = {
+				owner = {
+					NOT = {
+						has_country_flag = for_congress_warsaw
+					}
+				}
+			}
+			owner = {
+				leave_alliance = GER
+				leave_alliance = GCF
+				leave_alliance = AUS
+				leave_alliance = KUK
+				leave_alliance = SGF
+				leave_alliance = DNB
+				relation = {
+					who = GER
+					value = -100
+				}
+				relation = {
+					who = GCF
+					value = -100
+				}
+				relation = {
+					who = AUS
+					value = -100
+				}
+				relation = {
+					who = KUK
+					value = -100
+				}
+				relation = {
+					who = SGF
+					value = -100
+				}
+				relation = {
+					who = DNB
+					value = -100
+				}
+				diplomatic_influence = {
+					who = GER
+					value = -200
+				}
+				diplomatic_influence = {
+					who = GCF
+					value = -200
+				}
+				diplomatic_influence = {
+					who = AUS
+					value = -200
+				}
+				diplomatic_influence = {
+					who = KUK
+					value = -200
+				}
+				diplomatic_influence = {
+					who = SGF
+					value = -200
+				}
+				diplomatic_influence = {
+					who = DNB
+					value = -200
+				}
+			}
+		}
+		
+		clr_global_flag = warsaw_congress_to_be_held
+		clr_country_flag = for_congress_warsaw
+		clr_country_flag = hosting_warsaw_congress
+	}
+}
+
+country_event = {
+
+	id = 666666064
+
+	title = "EVTNAME666666064" # AUS Defies the Congress
+	desc = "EVTDESC666666064"
+	picture = "greatpowers"
+
+	is_triggered_only = yes
+
+	option = {
+		name = "EVT666666064OPTA"
+		set_country_flag = AUS_refused_congress
+		relation = {
+			who = FROM
+			value = -200
+		}
+		diplomatic_influence = {
+			who = FROM
+			value = -200
+		}
+		leave_alliance = FROM
+		casus_belli = {
+			target = FROM
+			type = humiliate
+			months = 60
+		}
+		casus_belli = {
+			target = FROM
+			type = cut_down_to_size
+			months = 60
+		}
+		clr_global_flag = warsaw_congress_to_be_held
+		clr_country_flag = for_congress_warsaw
+		clr_country_flag = attending_warsaw_congress
+		clr_country_flag = hosting_warsaw_congress
+		ai_chance = { factor = 100 }
+	}
+	
+	option = {
+		name = "EVT666666064OPTB"
+		clr_global_flag = warsaw_congress_to_be_held
+		clr_country_flag = for_congress_warsaw
+		clr_country_flag = attending_warsaw_congress
+		clr_country_flag = hosting_warsaw_congress
+		prestige_factor = -0.1
+		ai_chance = { factor = 0 }
+	}
+}
+
+######################################
+#BOH congress vetoed
+######################################
+country_event = {
+	
+	id = 666666065
+
+	title = "EVTNAME666666065" # The Congress (Resolution Vetoed)
+	desc = "EVTDESC666666065"
+	news = yes
+	news_title = "EVTNAME666666065_NEWS_TITLE"
+	news_desc_long = "EVTDESC666666065_NEWS_LONG"
+	news_desc_medium = "EVTDESC666666065_NEWS_MEDIUM"
+	news_desc_short = "EVTDESC666666065_NEWS_SHORT"	
+	picture = "berlin_congress_htm"
+	major = yes
+	
+	trigger = {
+		BOH = {
+			exists = yes
+			war = no
+			check_variable = {
+				which = warsaw_congress_veto
+				value = 1
+			}
+		}
+		NOT = { has_global_flag = warsaw_congress_held }
+		has_country_flag = hosting_warsaw_congress
+		has_country_flag = attending_warsaw_congress
+	}
+	
+	mean_time_to_happen = {
+		months = 5
+		modifier = {
+			factor = 0.5
+			BOH = {
+				check_variable = {
+					which = warsaw_congress_veto
+					value = 2
+				}
+			}
+		}
+		modifier = {
+			factor = 0.5
+			BOH = {
+				check_variable = {
+					which = warsaw_congress_veto
+					value = 3
+				}
+			}
+		}
+		modifier = {
+			factor = 0.5
+			BOH = {
+				check_variable = {
+					which = warsaw_congress_veto
+					value = 4
+				}
+			}
+		}
+		modifier = {
+			factor = 0.5
+			BOH = {
+				check_variable = {
+					which = warsaw_congress_veto
+					value = 5
+				}
+			}
+		}
+	}
+
+	option = {
+		name = "EVT666666065OPTA"
+		set_global_flag = warsaw_congress_held
+		prestige = 20
+		any_country = {
+			limit = {
+				has_country_flag = for_congress_warsaw
+			}
+			country_event = 666666066
+		}
+		any_country = {
+			limit = {
+				has_country_flag = for_congress_warsaw
+				has_country_modifier = no_more_war
+			}
+			remove_country_modifier = no_more_war
+		}
+	}
+}
+
+country_event = {
+
+	id = 666666066
+
+	title = "EVTNAME666666066" # Demands of the Congress (Vetoed)
+	desc = "EVTDESC666666066"
+	picture = "berlin_congress_htm"
+
+	is_triggered_only = yes
+
+	option = {
+		name = "EVT666666066OPTA"
+		prestige_factor = 0.05
+		set_global_flag = AUS_warsaw_vetoed
+		soldiers = {
+			limit = { is_primary_culture = yes }
+			ideology = {
+				value = reactionary
+				factor = 0.20
+			}
+			militancy = -3
+		}
+		officers = {
+			limit = { is_primary_culture = yes }
+			ideology = {
+				value = reactionary
+				factor = 0.40
+			}
+			militancy = -3
+		}
+		relation = {
+			who = BOH
+			value = -400
+		}
+		diplomatic_influence = {
+			who = BOH
+			value = -400
+		}
+		BOH = {
+			add_country_modifier = {
+				name = nationalist_BOH
+				duration = -1
+			}
+		}
+		# Czech Upset
+		any_pop = {
+			limit = {
+				has_pop_culture = czech
+			}
+			militancy = 6
+			consciousness = 4
+		}
+		any_owned = {
+			limit = {
+				culture = czech
+			}
+			add_province_modifier = {
+				name = nationalist_agitation
+				duration = 1825
+			}
+		}
+
+		# Send acknowledgment to attending countries
+		any_greater_power = {
+			limit = { has_country_flag = attending_warsaw_congress }
+			country_event = 666666067
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+
+	id = 666666067
+
+	title = "EVTNAME666666067" # Vetoed
+	desc = "EVTDESC666666067"
+	picture = "berlin_congress_htm"
+
+	is_triggered_only = yes
+
+	option = {
+		name = "EVT666666067OPTA"
+		
+		#Hosting country gains prestige, loses relations with AUS and gains relations with bohemia
+		random_owned = {
+			limit = {
+				owner = { has_country_flag = hosting_warsaw_congress }
+			}
+			owner = {
+				prestige_factor = 0.2
+				relation = {
+					who = GER
+					value = -150
+				}
+				relation = {
+					who = GCF
+					value = -150
+				}
+				relation = {
+					who = AUS
+					value = -150
+				}
+				relation = {
+					who = KUK
+					value = -150
+				}
+				relation = {
+					who = SGF
+					value = -150
+				}
+				relation = {
+					who = DNB
+					value = -150
+				}
+				relation = {
+					who = BOH
+					value = 50
+				}
+			}
+		}
+		
+		#Other countries gain some prestige
+		random_owned = {
+			limit = {
+				owner = { NOT = { has_country_flag = hosting_warsaw_congress } }
+			}
+			owner = { prestige = 5 }
+		}
+		
+		#AUS loses relations & influence with the attendants
+		random_owned = {
+			limit = {
+				owner = {
+					NOT = {
+						has_country_flag = for_congress_warsaw
+						has_country_flag = warsaw_congress_veto_flag
+					}
+				}
+			}
+			owner = {
+				casus_belli = {
+					target = GER
+					type = humiliate
+					months = 60
+				}
+				casus_belli = {
+					target = GCF
+					type = humiliate
+					months = 60
+				}
+				casus_belli = {
+					target = AUS
+					type = humiliate
+					months = 60
+				}
+				casus_belli = {
+					target = KUK
+					type = humiliate
+					months = 60
+				}
+				casus_belli = {
+					target = SGF
+					type = humiliate
+					months = 60
+				}
+				casus_belli = {
+					target = DNB
+					type = humiliate
+					months = 60
+				}
+				leave_alliance = GER
+				leave_alliance = GCF
+				leave_alliance = AUS
+				leave_alliance = KUK
+				leave_alliance = SGF
+				leave_alliance = DNB
+				relation = {
+					who = GER
+					value = -150
+				}
+				relation = {
+					who = GCF
+					value = -150
+				}
+				relation = {
+					who = AUS
+					value = -150
+				}
+				relation = {
+					who = KUK
+					value = -150
+				}
+				relation = {
+					who = SGF
+					value = -150
+				}
+				relation = {
+					who = DNB
+					value = -150
+				}
+				diplomatic_influence = {
+					who = GER
+					value = -200
+				}
+				diplomatic_influence = {
+					who = GCF
+					value = -200
+				}
+				diplomatic_influence = {
+					who = AUS
+					value = -200
+				}
+				diplomatic_influence = {
+					who = KUK
+					value = -200
+				}
+				diplomatic_influence = {
+					who = SGF
+					value = -200
+				}
+				diplomatic_influence = {
+					who = DNB
+					value = -200
+				}
+			}
+		}
+		
+		clr_global_flag = warsaw_congress_to_be_held
+		clr_country_flag = for_congress_warsaw
+		clr_country_flag = hosting_warsaw_congress
+	}
+
+}
+# Bohemia declares neutrality
+country_event = {
+	id = 666666068
+	title = "EVTNAME666666068"
+	desc = "EVTDESC666666068"
+	news = yes
+	news_title = "EVTNAME666666068_NEWS_TITLE"
+	news_desc_long = "EVTDESC666666068_NEWS_LONG"
+	news_desc_medium = "EVTDESC666666068_NEWS_MEDIUM"
+	news_desc_short = "EVTDESC666666068_NEWS_SHORT"	
+	picture = "bohemia_event"
+	
+	trigger = {
+		tag = PRC
+		BOH = { has_country_modifier = neutrality }
+	}
+	
+	fire_only_once = yes
+
+	option = {
+		name = "EVT666666068OPTA"
+		619 = { owner = { country_event = 666666069 } }
+	}
+}
+country_event = {
+	id = 666666069
+	title = "EVTNAME666666069"
+	desc = "EVTDESC666666069"
+	picture = "bohemia_event"
+	
+	is_triggered_only = yes
+
+	option = {
+		name = "EVT666666069OPTA"
+	}
+}
+country_event = {
+	id = 666666070
+	title = "EVTNAME666666070"
+	desc = "EVTDESC666666070"
+	picture = "bohemia_event"
+	trigger = {
+		tag = BOH
+		has_country_modifier = neutrality
+		ai = no
+		OR = {
+			any_greater_power = { military_access = BOH }
+			any_neighbor_country = { NOT = { vassal_of = BOH } military_access = BOH }
+			sphere_owner = { military_access = BOH }
+			AND = {
+				num_of_allies = 1
+				NOT = { any_neighbor_country = { exists = yes alliance_with = BOH vassal_of = BOH } }
+			}
+			AND = {
+				num_of_allies = 2
+				any_neighbor_country = { exists = yes alliance_with = BOH vassal_of = BOH }
+			}
+			war = yes
+		}
+	}
+
+	option = {
+		name = "EVT666666070OPTA"
+		any_country = {
+			limit = { NOT = { vassal_of = BOH } OR = { military_access = BOH alliance_with = BOH } }
+			relation = { who = BOH value = -125 }
+		}
+		any_country = { limit = { alliance_with = BOH NOT = { vassal_of = BOH } } leave_alliance = BOH }
+		any_country = { limit = { war_with = BOH } end_war = BOH }
+		any_country = { limit = { military_access = BOH NOT = { vassal_of = BOH } } end_military_access = BOH }
 	}
 }
