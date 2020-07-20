@@ -1136,6 +1136,7 @@ country_event = {
 	trigger = {
 		war = no
 		PZN = { exists = no }
+		exists = yes
 		OR = {
 			tag = PRU
 			tag = NGF
@@ -8730,3 +8731,80 @@ country_event = {
 		}
 	}
 }
+##################################
+#	Posen event fuckup
+##################################
+country_event = {
+	id = 666666086
+	title = "EVTNAME666666086"
+	desc = "EVTDESC666666086"
+	picture = "treaty"
+	
+	trigger = {
+		OR = {
+			tag = AUS
+			tag = KUK
+			tag = DNB
+			tag = SGF
+			tag = PRU
+			tag = NGF
+			tag = GCF
+			tag = SGF
+		}
+		OR = {
+			700 = {
+				OR = {
+					is_core = KUK
+					is_core = AUS
+					is_core = DNB
+					is_core = SGF
+				}
+			}
+			699 = {
+				OR = {
+					is_core = KUK
+					is_core = AUS
+					is_core = DNB
+					is_core = SGF
+				}
+			}
+			701 = {
+				OR = {
+					is_core = KUK
+					is_core = AUS
+					is_core = DNB
+					is_core = SGF
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "EVT666666083OPTA"
+		set_global_flag = POSEN_FUCKUP
+		700 = {
+			remove_core = AUS
+			remove_core = KUK
+			remove_core = DNB
+			remove_core = SGF
+		}
+		699 = {
+			remove_core = AUS
+			remove_core = KUK
+			remove_core = DNB
+			remove_core = SGF
+		}
+		701 = {
+			remove_core = AUS
+			remove_core = KUK
+			remove_core = DNB
+			remove_core = SGF
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+#############################################
+#			
+#############################################

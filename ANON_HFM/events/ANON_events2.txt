@@ -544,3 +544,19 @@ country_event = {
 		PZN = { country_event = 666666004 }
 	}
 }
+
+country_event = {
+	id = 9999982
+	title = "ukrainian assimliation test"
+	desc = "ukrainians assimilate to the primary culture"
+	picture = "treaty"
+	
+	is_triggered_only = yes
+	
+	option = {
+		any_pop = {
+			limit = { has_pop_culture = ukrainian }
+			assimilate = yes
+		}
+	}
+}
