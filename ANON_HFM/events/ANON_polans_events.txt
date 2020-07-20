@@ -8686,3 +8686,47 @@ country_event = {
 		}
 	}
 }
+country_event = {
+	id = 666666085
+	news = yes
+	title = "EVTNAME666666085"
+	desc = "EVTDESC666666085"
+	news_title = "EVTNAME666666085_NEWS_TITLE"
+	news_desc_long = "EVTDESC666666085_NEWS_LONG"
+	news_desc_medium = "EVTDESC666666085_NEWS_MEDIUM"
+	news_desc_short = "EVTDESC666666085_NEWS_SHORT"
+	picture = "autocracy"
+	fire_only_once = yes
+
+	trigger = {
+		tag = PRC
+		owns = 625 #Bohemia
+		owns = 627 #Sudetes
+		owns = 631 #Moravia
+		OR = {
+			has_country_flag = PRB_peaceful
+			has_country_flag = PRB_war
+		}
+	}
+	
+	option = {
+		name = "EVT666666085OPTA"
+		prestige = 10
+		government = hms_government
+		political_reform = landed_voting
+		political_reform = appointed
+		political_reform = gerrymandering
+		political_reform = culture_voting_only
+		political_reform = federalism
+		inherit = BOH
+		add_accepted_culture = czech
+		BOH = {
+			government = colonial_company
+			all_core = { add_core = PRC }
+		}
+		change_tag = PRB
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
