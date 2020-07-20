@@ -182,7 +182,7 @@ country_event = {
 	id = 666666005
 	title = "EVTNAME666666004"
 	desc = "EVTDESC666666004"
-	news_title = "EVTNAMEEVTNAME666666004_NEWS_TITLE"
+	news_title = "EVTNAME666666004_NEWS_TITLE"
 	news_desc_long = "EVTDESC666666004_NEWS_LONG"
 	news_desc_medium = "EVTDESC666666004_NEWS_MEDIUM"
 	news_desc_short = "EVTDESC666666004_NEWS_SHORT"
@@ -8378,6 +8378,9 @@ country_event = {
 	option = {
 		name = "EVT666666075OPTA"
 		BOH = { set_country_flag = pay_1st_AUS_reparations }
+		diplomatic_influence = { who = BOH value = 400 }
+		create_alliance = BOH
+		military_access = BOH
 		FROM = {
 			badboy = 12.5
 			set_country_flag = BOH_neutrality_violator
@@ -8513,7 +8516,7 @@ country_event = {
 			limit = { owner = { money = 1200000 } }
 			owner = { treasury = -1200000 }
 		}
-		PRC = { country_event = { id = 666666081 days = 365 } }
+		PRC = { country_event = { id = 666666081 days = 5 } }
 		ai_chance = {
 			factor = 5
 		}
@@ -8612,5 +8615,74 @@ country_event = {
 		prestige = 20
 		treasury = 1200000
 		relation = { who = FROM value = 50 }
+	}
+}
+###########################################
+#			The Bohemian Plan
+###########################################
+
+country_event = {
+	id = 666666082
+	title = "EVTNAME666666082"
+	desc = "EVTDESC666666082"
+	picture = "bohemia_event"
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVT666666082OPTA" # Yes, but concessions have to be granted.
+		FROM = { country_event = { id = 666666083 days = 5 } }
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = {
+		name = "EVT666666082OPTB" #Absolutely not.
+		FROM = { country_event = { id = 666666084 days = 5 } }
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+country_event = {
+	id = 666666083
+	title = "EVTNAME666666083"
+	desc = "EVTDESC666666083"
+	picture = "bohemia_event"
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVT666666083OPTA" # Very well.
+		set_country_flag = PRB_peaceful
+		THIS = { country_event = 666666085 }
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+country_event = {
+	id = 666666084
+	title = "EVTNAME666666084"
+	desc = "EVTDESC666666084"
+	picture = "bohemia_event"
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVT666666083OPTB" #Absolutely not. We're tired of your bullshit.
+		set_country_flag = PRB_war
+		badboy = 26
+		prestige = 5
+		leave_alliance = BOH
+		end_military_access = BOH
+		relation = { who = BOH value = -150 }
+		diplomatic_influence = { who = BOH value = -400 }
+		BOH = {
+			all_core = { add_core = PRC }
+		}
+		ai_chance = {
+			factor = 100
+		}
 	}
 }

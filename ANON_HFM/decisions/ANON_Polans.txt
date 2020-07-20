@@ -1644,7 +1644,7 @@ political_decisions = {
 			}
 			casus_belli = {
 				target = BOH
-				type = annex_core_country
+				type = conquest
 				months = 60
 			}
 		}
@@ -1653,21 +1653,50 @@ political_decisions = {
 			factor = 1
 			modifier = {
 				factor = 0
-				NOT = {
-					OR = {
-						tag = AUS
-						tag = KUK
-						tag = SGF
-						tag = DNB
-						tag = GER
-						tag = GCF
-					}
-				}
+				ai = yes
 			}
 		}
 	}
 	
-	
+	the_bohemian_plan = {
+		picture = declare_BOH_neutrality_pic
+		potential = {
+			tag = PRC
+			OR = {
+				AND = {
+					BOH = { vassal_of = THIS }
+					has_country_flag = PRC_vassalized_BOH
+				}
+				AND = {
+					BOH = { alliance_with = THIS }
+					is_sphere_leader_of = BOH
+				}
+			}
+			NOT = { has_country_flag = the_bohemian_plan }
+		}
+		
+		allow = {
+			war_policy = jingoism
+			invention = manifest_destiny
+			invention = constitutionalism
+			invention = biased_multiculturalism
+			invention = expansionism
+			invention = nostalgic_romanticism
+			invention = national_fraternity
+			romanticism = 1
+		}
+		
+		effect = {
+			set_country_flag = the_bohemian_plan
+			BOH = {
+				country_event = { id = 666666082 days = 3 }
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
 	
 	
 }
