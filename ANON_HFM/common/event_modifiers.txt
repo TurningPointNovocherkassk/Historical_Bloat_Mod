@@ -4174,6 +4174,42 @@ federalist_sympathies = {
 }
 
 #########################
+# Habsburg Polans
+
+high_coronation = {
+	prestige = 0.02
+	diplomatic_points_modifier = 0.2
+	influence_modifier = 0.2
+	ruling_party_support = 0.25
+	core_pop_militancy_modifier = -0.015
+	icon = 17
+}
+medium_coronation = {
+	prestige = 0.01
+	diplomatic_points_modifier = 0.1
+	influence_modifier = 0.1
+	ruling_party_support = 0.125
+	core_pop_militancy_modifier = -0.0075
+	icon = 17
+}
+low_coronation = {
+	prestige = 0.005
+	diplomatic_points_modifier = 0.05
+	influence_modifier = 0.05
+	ruling_party_support = 0.0625
+	core_pop_militancy_modifier = -0.00375
+	icon = 17
+}
+old_and_wise_ruler = {
+	prestige = 0.01
+	diplomatic_points_modifier = 0.1
+	influence_modifier = 0.1
+	ruling_party_support = 0.125
+	core_pop_militancy_modifier = -0.0075
+	icon = 17
+}
+
+#########################
 
 kraut_assimilation_policy = {
 	badboy = 0.01

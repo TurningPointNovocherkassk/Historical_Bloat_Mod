@@ -20,6 +20,15 @@ country_event = {
 	mean_time_to_happen = {
 		months = 1000
 		
+		#ANON
+		modifier = {
+			factor = 4
+			OR = {
+				tag = HPL
+				tag = PRC
+				tag = PRB
+			}
+		}
 		modifier = {
 			factor = 4
 			tag = ENG

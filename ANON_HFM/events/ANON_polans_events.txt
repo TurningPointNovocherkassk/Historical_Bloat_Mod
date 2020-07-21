@@ -169,7 +169,7 @@ country_event = {
 		set_global_flag = greater_poland_uprising_suppressed
 		prestige = -25
 		any_pop = { limit = { is_primary_culture = yes } militancy = 7 consciousness = 8 }
-		random_owned = { limit = { owner = { ai = yes } } owner = { THIS = { all_core = { add_core = AUS } } } }
+		#random_owned = { limit = { owner = { ai = yes } } owner = { THIS = { all_core = { add_core = PRU } } } }
 		ai_chance = {
 			factor = 95
 		}
@@ -1159,22 +1159,22 @@ country_event = {
 			relation = { who = THIS value = -25 }
 		}
 			
-		random_owned = {
-			limit = {
-				owner = {
-					OR = {
-						tag = PRU
-						tag = NGF
-						tag = GER
-						tag = GCF
-					}
-				}
-			}
-			owner = {
-				PRU_701 = { add_core = THIS }
-				PZN = { all_core = { add_core = THIS } }
-			}
-		}
+		# random_owned = {
+			# limit = {
+				# owner = {
+					# OR = {
+						# tag = PRU
+						# tag = NGF
+						# tag = GER
+						# tag = GCF
+					# }
+				# }
+			# }
+			# owner = {
+				# PRU_701 = { add_core = THIS }
+				# PZN = { all_core = { add_core = THIS } }
+			# }
+		# }
 		
 		add_tax_relative_income = 0.05
 		
@@ -3027,7 +3027,7 @@ country_event = {
 	id = 666666030
 	title = "EVTNAME666666030"
 	desc = "EVTDESC666666030"
-	picture = "GLM_convention"
+	picture = "karl_ferdinand_habsburg"
 	
 	is_triggered_only = yes
 	
@@ -8731,80 +8731,481 @@ country_event = {
 		}
 	}
 }
-##################################
-#	Posen event fuckup
-##################################
+#############################################
+#				The death of Karol I
+#############################################
 country_event = {
 	id = 666666086
-	title = "EVTNAME666666086"
+	news = yes
+	title = "EVTNAME666666086" #The Death of Karl Ferdinand - King Karol I - succeeded by Archduke Charles Stephen of Austria: Karol II Stefan Habsburg-Lotarynscy
 	desc = "EVTDESC666666086"
-	picture = "treaty"
-	
+	news_title = "EVTNAME666666086_NEWS_TITLE"
+	news_desc_long = "EVTDESC666666086_NEWS_LONG"
+	news_desc_medium = "EVTDESC666666086_NEWS_MEDIUM"
+	news_desc_short = "EVTDESC666666086_NEWS_SHORT"
+	picture = "karl_ferdinand_habsburg"
+	fire_only_once = yes
 	trigger = {
+		year = 1874
+		has_country_flag = a_habsburg_on_the_throne_POL
 		OR = {
-			tag = AUS
-			tag = KUK
-			tag = DNB
-			tag = SGF
-			tag = PRU
-			tag = NGF
-			tag = GCF
-			tag = SGF
-		}
-		OR = {
-			700 = {
-				OR = {
-					is_core = KUK
-					is_core = AUS
-					is_core = DNB
-					is_core = SGF
-				}
-			}
-			699 = {
-				OR = {
-					is_core = KUK
-					is_core = AUS
-					is_core = DNB
-					is_core = SGF
-				}
-			}
-			701 = {
-				OR = {
-					is_core = KUK
-					is_core = AUS
-					is_core = DNB
-					is_core = SGF
-				}
-			}
+			government = hms_government
+			government = prussian_constitutionalism
+			government = absolute_monarchy
+			government = fascist_dictatorship
 		}
 	}
 	
 	option = {
-		name = "EVT666666083OPTA"
-		set_global_flag = POSEN_FUCKUP
-		700 = {
-			remove_core = AUS
-			remove_core = KUK
-			remove_core = DNB
-			remove_core = SGF
-		}
-		699 = {
-			remove_core = AUS
-			remove_core = KUK
-			remove_core = DNB
-			remove_core = SGF
-		}
-		701 = {
-			remove_core = AUS
-			remove_core = KUK
-			remove_core = DNB
-			remove_core = SGF
-		}
-		ai_chance = {
-			factor = 100
-		}
+		name = "EVT666666086OPTA"
+		set_country_flag = karol_I_death
+		add_country_modifier = { name = regency_government duration = 1460 }
+		ai_chance = { factor = 100 }
 	}
 }
 #############################################
-#			
+#				The Coronation of Karol II
 #############################################
+country_event = {
+	id = 666666087
+	news = yes
+	title = "EVTNAME666666087" #Archduke Charles Stephen of Austria: Karol II Stefan Habsburg-Lotarynscy is crowned.
+	desc = "EVTDESC666666087"
+	news_title = "EVTNAME666666087_NEWS_TITLE"
+	news_desc_long = "EVTDESC666666087_NEWS_LONG"
+	news_desc_medium = "EVTDESC666666087_NEWS_MEDIUM"
+	news_desc_short = "EVTDESC666666087_NEWS_SHORT"
+	picture = "karl_stefan_habsburg_young"
+	fire_only_once = yes
+	trigger = {
+		has_country_flag = a_habsburg_on_the_throne_POL
+		NOT = { has_country_modifier = regency_government }
+		has_country_flag = karol_I_death
+		OR = {
+			government = hms_government
+			government = prussian_constitutionalism
+			government = absolute_monarchy
+			government = fascist_dictatorship
+		}
+	}
+	
+	mean_time_to_happen = { days = 35 }
+	
+	option = {
+		name = "EVT666666087OPTA" #Very lavish
+		clr_country_flag = karol_I_death
+		treasury = 150000
+		add_country_modifier = { name = high_coronation duration = 1095 }
+		any_pop = { #reactionaries flex
+			scaled_militancy = {
+				ideology = reactionary
+				factor = -6
+			}
+			scaled_militancy = {
+				ideology = fascist
+				factor = -6
+			}
+			scaled_consciousness = {
+				ideology = reactionary
+				factor = -6
+			}
+			scaled_consciousness = {
+				ideology = fascist
+				factor = -6
+			}
+		}
+		any_pop = { #commie butthurt
+			scaled_militancy = {
+				ideology = socialist
+				factor = 6
+			}
+			scaled_militancy = {
+				ideology = communist
+				factor = 6
+			}
+			scaled_consciousness = {
+				ideology = socialist
+				factor = 6
+			}
+			scaled_consciousness = {
+				ideology = communist
+				factor = 6
+			}
+		}
+		ai_chance = { factor = 100 }
+	}
+	option = {
+		name = "EVT666666087OPTB" #Lavish enough
+		clr_country_flag = karol_I_death
+		treasury = 75000
+		add_country_modifier = { name = medium_coronation duration = 1095 }
+		any_pop = { #reactionaries flex
+			scaled_militancy = {
+				ideology = reactionary
+				factor = -4
+			}
+			scaled_militancy = {
+				ideology = fascist
+				factor = -4
+			}
+			scaled_consciousness = {
+				ideology = reactionary
+				factor = -4
+			}
+			scaled_consciousness = {
+				ideology = fascist
+				factor = -4
+			}
+		}
+		any_pop = { #commie butthurt
+			scaled_militancy = {
+				ideology = socialist
+				factor = 4
+			}
+			scaled_militancy = {
+				ideology = communist
+				factor = 4
+			}
+			scaled_consciousness = {
+				ideology = socialist
+				factor = 4
+			}
+			scaled_consciousness = {
+				ideology = communist
+				factor = 4
+			}
+		}
+		ai_chance = { factor = 0 }
+	}
+	option = {
+		name = "EVT666666087OPTC" #Only a private party
+		clr_country_flag = karol_I_death
+		treasury = 37500
+		add_country_modifier = { name = low_coronation duration = 1095 }
+		any_pop = { #reactionaries flex
+			scaled_militancy = {
+				ideology = reactionary
+				factor = -2
+			}
+			scaled_militancy = {
+				ideology = fascist
+				factor = -2
+			}
+			scaled_consciousness = {
+				ideology = reactionary
+				factor = -2
+			}
+			scaled_consciousness = {
+				ideology = fascist
+				factor = -2
+			}
+		}
+		any_pop = { #commie butthurt
+			scaled_militancy = {
+				ideology = socialist
+				factor = 2
+			}
+			scaled_militancy = {
+				ideology = communist
+				factor = 2
+			}
+			scaled_consciousness = {
+				ideology = socialist
+				factor = 2
+			}
+			scaled_consciousness = {
+				ideology = communist
+				factor = 2
+			}
+		}
+		ai_chance = { factor = 0 }
+	}
+}
+#############################################
+#				Karol's II health worsens
+#############################################
+country_event = {
+	id = 666666088
+	title = "EVTNAME666666088"
+	desc = "EVTDESC666666088"
+	picture = "karl_stefan_habsburg_mid"
+	fire_only_once = yes
+	trigger = {
+		year = 1913
+		has_country_flag = a_habsburg_on_the_throne_POL
+		OR = {
+			government = hms_government
+			government = prussian_constitutionalism
+			government = absolute_monarchy
+			government = fascist_dictatorship
+		}
+		NOT = { has_country_flag = karol_II_abdicates }
+		NOT = { has_country_flag = karol_II_keeps_ruling }
+		NOT = { has_country_flag = karol_II_death }
+	}
+	mean_time_to_happen = {
+		months = 6
+	}
+	
+	option = {
+		name = "EVT666666088OPTA"
+		set_country_flag = karol_II_abdicates
+		country_event = 666666089
+		ai_chance = { factor = 100 }
+	}
+	option = {
+		name = "EVT666666088OPTB"
+		set_country_flag = karol_II_keeps_ruling
+		add_country_modifier = { name = old_and_wise_ruler duration = -1 }
+		ai_chance = { factor = 100 }
+	}
+}
+country_event = {
+	id = 666666089
+	news = yes
+	title = "EVTNAME666666089" #Karol II abdicates
+	desc = "EVTDESC666666089"
+	news_title = "EVTNAME666666089_NEWS_TITLE"
+	news_desc_long = "EVTDESC666666089_NEWS_LONG"
+	news_desc_medium = "EVTDESC666666089_NEWS_MEDIUM"
+	news_desc_short = "EVTDESC666666089_NEWS_SHORT"
+	picture = "karl_stefan_habsburg_old"
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVT666666089OPTA"
+		set_country_flag = karol_II_abdicates
+		country_event = 666666091
+		ai_chance = { factor = 100 }
+	}
+}
+#############################################
+#				The death of Karol I
+#############################################
+country_event = {
+	id = 666666090
+	news = yes
+	title = "EVTNAME666666090" #The Death of Karol II Stefan Habsburg-Lotarynscy - succeeded by Wilhelm Franciszek aka Vasyl I Vyshyvanyi Habsburg-Lotarynscy
+	desc = "EVTDESC666666090"
+	news_title = "EVTNAME666666090_NEWS_TITLE"
+	news_desc_long = "EVTDESC666666090_NEWS_LONG"
+	news_desc_medium = "EVTDESC666666090_NEWS_MEDIUM"
+	news_desc_short = "EVTDESC666666090_NEWS_SHORT"
+	picture = "karl_stefan_habsburg_old"
+	fire_only_once = yes
+	trigger = {
+		has_country_flag = karol_II_keeps_ruling
+		has_country_flag = a_habsburg_on_the_throne_POL
+		OR = {
+			government = hms_government
+			government = prussian_constitutionalism
+			government = absolute_monarchy
+			government = fascist_dictatorship
+		}
+		NOT = { has_country_flag = karol_II_death }
+	}
+	mean_time_to_happen = {
+		months = 156
+	}
+	
+	option = {
+		name = "EVT666666090OPTA"
+		set_country_flag = karol_II_death
+		remove_country_modifier = old_and_wise_ruler
+		country_event = 666666091
+		ai_chance = { factor = 100 }
+	}
+}
+#############################################
+#				The Coronation of Vasyl I
+#############################################
+country_event = {
+	id = 666666091
+	news = yes
+	title = "EVTNAME666666091" #Wilhelm Franz of Austria: Wilhelm Franciszek aka Vasyl I Vyshyvanyi Habsburg-Lotarynscy is crowned.
+	desc = "EVTDESC666666091"
+	news_title = "EVTNAME666666091_NEWS_TITLE"
+	news_desc_long = "EVTDESC666666091_NEWS_LONG"
+	news_desc_medium = "EVTDESC666666091_NEWS_MEDIUM"
+	news_desc_short = "EVTDESC666666091_NEWS_SHORT"
+	picture = "vasyl_vyshyvanyi"
+	fire_only_once = yes
+	trigger = {
+		has_country_flag = a_habsburg_on_the_throne_POL
+		NOT = { has_country_modifier = regency_government }
+		has_country_flag = karol_I_death
+		OR = {
+			government = hms_government
+			government = prussian_constitutionalism
+			government = absolute_monarchy
+			government = fascist_dictatorship
+		}
+	}
+	
+	mean_time_to_happen = { days = 35 }
+	
+	option = {
+		name = "EVT666666091OPTA" #Very lavish
+		set_country_flag = vasyl_I_coronation
+		treasury = 150000
+		add_country_modifier = { name = high_coronation duration = 1095 }
+		any_pop = { #reactionaries flex
+			scaled_militancy = {
+				ideology = reactionary
+				factor = -6
+			}
+			scaled_militancy = {
+				ideology = fascist
+				factor = -6
+			}
+			scaled_consciousness = {
+				ideology = reactionary
+				factor = -6
+			}
+			scaled_consciousness = {
+				ideology = fascist
+				factor = -6
+			}
+		}
+		any_pop = { #commie butthurt
+			scaled_militancy = {
+				ideology = socialist
+				factor = 6
+			}
+			scaled_militancy = {
+				ideology = communist
+				factor = 6
+			}
+			scaled_consciousness = {
+				ideology = socialist
+				factor = 6
+			}
+			scaled_consciousness = {
+				ideology = communist
+				factor = 6
+			}
+		}
+		ai_chance = { factor = 100 }
+	}
+	option = {
+		name = "EVT666666091OPTB" #Lavish enough
+		set_country_flag = vasyl_I_coronation
+		treasury = 75000
+		add_country_modifier = { name = medium_coronation duration = 1095 }
+		any_pop = { #reactionaries flex
+			scaled_militancy = {
+				ideology = reactionary
+				factor = -4
+			}
+			scaled_militancy = {
+				ideology = fascist
+				factor = -4
+			}
+			scaled_consciousness = {
+				ideology = reactionary
+				factor = -4
+			}
+			scaled_consciousness = {
+				ideology = fascist
+				factor = -4
+			}
+		}
+		any_pop = { #commie butthurt
+			scaled_militancy = {
+				ideology = socialist
+				factor = 4
+			}
+			scaled_militancy = {
+				ideology = communist
+				factor = 4
+			}
+			scaled_consciousness = {
+				ideology = socialist
+				factor = 4
+			}
+			scaled_consciousness = {
+				ideology = communist
+				factor = 4
+			}
+		}
+		ai_chance = { factor = 0 }
+	}
+	option = {
+		name = "EVT666666091OPTC" #Only a private party
+		set_country_flag = vasyl_I_coronation
+		treasury = 37500
+		add_country_modifier = { name = low_coronation duration = 1095 }
+		any_pop = { #reactionaries flex
+			scaled_militancy = {
+				ideology = reactionary
+				factor = -2
+			}
+			scaled_militancy = {
+				ideology = fascist
+				factor = -2
+			}
+			scaled_consciousness = {
+				ideology = reactionary
+				factor = -2
+			}
+			scaled_consciousness = {
+				ideology = fascist
+				factor = -2
+			}
+		}
+		any_pop = { #commie butthurt
+			scaled_militancy = {
+				ideology = socialist
+				factor = 2
+			}
+			scaled_militancy = {
+				ideology = communist
+				factor = 2
+			}
+			scaled_consciousness = {
+				ideology = socialist
+				factor = 2
+			}
+			scaled_consciousness = {
+				ideology = communist
+				factor = 2
+			}
+		}
+		ai_chance = { factor = 0 }
+	}
+}
+#############################################
+#				The death of Vasyl I
+#############################################
+country_event = {
+	id = 666666092
+	news = yes
+	title = "EVTNAME666666092"
+	desc = "EVTDESC666666092"
+	news_title = "EVTNAME666666092_NEWS_TITLE"
+	news_desc_long = "EVTDESC666666092_NEWS_LONG"
+	news_desc_medium = "EVTDESC666666092_NEWS_MEDIUM"
+	news_desc_short = "EVTDESC666666092_NEWS_SHORT"
+	picture = "vasyl_vyshyvanyi_old"
+	fire_only_once = yes
+	trigger = {
+		has_country_flag = vasyl_I_coronation
+		has_country_flag = a_habsburg_on_the_throne_POL
+		OR = {
+			government = hms_government
+			government = prussian_constitutionalism
+			government = absolute_monarchy
+			government = fascist_dictatorship
+		}
+		NOT = { has_country_flag = vasyl_I_death }
+	}
+	mean_time_to_happen = {
+		months = 480
+	}
+	
+	option = {
+		name = "EVT666666092OPTA"
+		set_country_flag = karol_II_death
+		ai_chance = { factor = 100 }
+	}
+}
