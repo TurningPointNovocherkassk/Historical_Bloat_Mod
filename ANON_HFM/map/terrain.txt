@@ -1715,8 +1715,9 @@ categories =  {
 	}
 
 	gibraltar = {
-		movement_cost = 1.0
-		defence = 3
+		movement_cost = 1.5
+		defence = 4
+		attrition = 2
 		color = { 22 44 66 }
 		farm_rgo_size = -0.5
 		farm_rgo_eff = 0.1
@@ -2830,10 +2831,10 @@ categories =  {
 	}
 
 	malta = {
-		movement_cost = 1.0
-		attrition = 1
+		movement_cost = 1.5
+		defence = 4
+		attrition = 2
 		color = { 22 44 66 }
-
 		farm_rgo_size = -0.6
 		farm_rgo_eff = 0.0
 		mine_rgo_size = -0.6
