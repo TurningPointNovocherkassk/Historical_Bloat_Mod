@@ -1388,6 +1388,7 @@ political_decisions = {
 				}
 			}
 			invention = manifest_destiny
+			invention = determinism
 			695 = {
 				owner = {
 					is_greater_power = no
@@ -1410,8 +1411,8 @@ political_decisions = {
 			release_vassal = PRD
 			PRD = {
 				government = colonial_company
-				primary_culture = north_german
-				add_accepted_culture = volga_german
+				primary_culture = baltic_german
+				add_accepted_culture = north_german
 				add_accepted_culture = polish
 				add_accepted_culture = masurian
 				create_alliance = THIS
@@ -2192,7 +2193,7 @@ political_decisions = {
 				political_reform = federalism
 				capital = 361
 				add_accepted_culture = lithuanian
-				add_accepted_culture = volga_german
+				add_accepted_culture = baltic_german
 				add_accepted_culture = latvian
 				add_accepted_culture = estonian
 			}
@@ -2303,7 +2304,7 @@ political_decisions = {
 			ESG = { all_core = { add_core = UBD add_core = BBD remove_core = ESG } }
 			UBD = { government = prussian_constitutionalism }
 			all_core = { add_core = BBD }
-			add_accepted_culture = volga_german
+			add_accepted_culture = baltic_german
 			add_accepted_culture = latvian
 			add_accepted_culture = estonian
 			change_tag = BBD

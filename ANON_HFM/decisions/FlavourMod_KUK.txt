@@ -235,10 +235,11 @@ political_decisions = {
 			inherit = NGF
 			inherit = SGF
 			add_accepted_culture = north_german
-			# add_accepted_culture = siebenburger
+			add_accepted_culture = siebenburger
 			# #ANON
-			# add_accepted_culture = danube_german
-			# add_accepted_culture = carpathian_german
+			add_accepted_culture = danube_german
+			add_accepted_culture = carpathian_german
+			add_accepted_culture = baltic_german
 			#
 			add_accepted_culture = volga_german
 			remove_accepted_culture = hungarian
