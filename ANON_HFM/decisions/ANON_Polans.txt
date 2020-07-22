@@ -1854,7 +1854,464 @@ political_decisions = {
 		ai_will_do = { factor = 1 }
 	}
 	
+	liberate_baltic_states = {
+		picture = annex_united_baltic_duchy
+		potential = {
+			OR = {
+				is_culture_group = germanic
+				is_culture_group = polish_culture_group
+				is_culture_group = baltic
+				is_culture_group = scandinavian
+				tag = POL
+				tag = PLC
+				tag = PLR
+				tag = HPL
+				tag = PRC
+				tag = PRB
+				tag = WSF
+			}
+			OR = {
+				LVN = {
+					exists = no
+					all_core = { owned_by = RUS }
+					NOT = {
+						OR = {
+							all_core = { owned_by = UBD }
+							all_core = { owned_by = BBD }
+							all_core = { owned_by = LAT }
+							all_core = { owned_by = EST }
+						}
+					}
+				}
+				KSM = {
+					exists = no
+					all_core = { owned_by = RUS }
+					NOT = {
+						OR = {
+							all_core = { owned_by = UBD }
+							all_core = { owned_by = BBD }
+							all_core = { owned_by = LAT }
+							all_core = { owned_by = EST }
+						}
+					}
+				}
+				ESG = {
+					exists = no
+					all_core = { owned_by = RUS }
+					NOT = {
+						OR = {
+							all_core = { owned_by = UBD }
+							all_core = { owned_by = BBD }
+							all_core = { owned_by = LAT }
+							all_core = { owned_by = EST }
+						}
+					}
+				}
+			}
+			LAT = { exists = no }
+			EST = { exists = no }
+			has_country_flag = russification_of_the_baltic_states
+			NOT = {
+				has_country_flag = liberate_baltic_states
+			}
+		}
+				
+		allow = {
+			war = no
+			is_vassal = no
+			is_disarmed = no
+			is_greater_power = yes
+			nationalism_n_imperialism = 1
+			invention = manifest_destiny
+			invention = determinism
+			war_policy = jingoism
+		}
+		
+		effect = {
+			set_country_flag = liberate_baltic_states
+			prestige = 5
+			badboy = 2.5
+			add_casus_belli = {
+				target = RUS
+				type = free_peoples
+				months = 75
+			}
+			add_casus_belli = {
+				target = RUS
+				type = free_peoples
+				months = 75
+			}
+			add_casus_belli = {
+				target = RUS
+				type = free_peoples
+				months = 75
+			}
+			add_casus_belli = {
+				target = RUS
+				type = free_peoples
+				months = 75
+			}
+			add_casus_belli = {
+				target = RUS
+				type = free_peoples
+				months = 75
+			}
+			add_casus_belli = {
+				target = RUS
+				type = free_peoples
+				months = 75
+			}
+			add_casus_belli = {
+				target = RUS
+				type = free_peoples
+				months = 75
+			}
+			war = {
+				target = RUS
+				attacker_goal = {
+					casus_belli = free_peoples
+					country = LVN
+					state_province_id = 356
+				}
+				attacker_goal = {
+					casus_belli = free_peoples
+					country = LVN
+					state_province_id = 354
+				}
+				attacker_goal = {
+					casus_belli = free_peoples
+					country = LVN
+					state_province_id = 3568
+				}
+				attacker_goal = {
+					casus_belli = free_peoples
+					country = KSM
+					state_province_id = 357
+				}
+				attacker_goal = {
+					casus_belli = free_peoples
+					country = ESG
+					state_province_id = 349
+				}
+				attacker_goal = {
+					casus_belli = free_peoples
+					country = ESG
+					state_province_id = 3567
+				}
+				attacker_goal = {
+					casus_belli = free_peoples
+					country = ESG
+					state_province_id = 3566
+				}
+				defender_goal = {
+					casus_belli = status_quo
+				}
+				call_ally = yes
+			}
+		}
+		ai_will_do = { factor = 1 }
+	}
 	
+	incorporate_the_baltic_states_alternate = {
+		picture = "annex_united_baltic_duchy"
+		potential = {
+			is_greater_power = yes	
+			OR = { 
+				tag = PLC
+				tag = PLR
+			}
+			NOT = { has_country_flag = incorporate_the_baltic_states_alternate }
+		}
+		
+		allow = {
+			war = no
+			nationalism_n_imperialism = 1
+			exists = LVN
+			exists = KSM
+			exists = ESG
+			LVN = {
+				OR = { 
+					is_vassal = no
+					is_substate = no
+					vassal_of = THIS
+				}
+				in_sphere = THIS
+			}
+			KSM = {
+				OR = { 
+					is_vassal = no
+					is_substate = no
+					vassal_of = THIS
+				}
+				in_sphere = THIS
+			}
+			ESG = {
+				OR = { 
+					is_vassal = no
+					is_substate = no
+					vassal_of = THIS
+				}
+				in_sphere = THIS
+			}
+		}
+		
+		effect = {
+			badboy = 2
+			prestige = 10
+			UBD = {
+				inherit = LVN
+				inherit = KSM
+				inherit = ESG
+				any_owned = { 
+					add_core = UBD remove_core = LVN remove_core = KSM remove_core = ESG
+				}
+				any_pop = {
+					limit = { NOT = { is_culture_group = germanic } }
+					militancy = 3
+				}
+			}
+			create_vassal = UBD
+			diplomatic_influence = { who = UBD value = 400 }
+			random_owned = { limit = { owner = { vote_franschise = none_voting } }
+				UBD = { 
+					government = colonial_company 
+					political_reform = none_voting 
+				} 
+			}
+			random_owned = { limit = { owner = { NOT = { vote_franschise = none_voting } } UBD = { government = dominion } } }
+			set_country_flag = incorporate_the_baltic_states_alternate
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	incorporate_the_BBD = {
+		picture = "BBD_picture"
+		potential = {
+			is_greater_power = yes	
+			OR = { 
+				tag = HPL
+				tag = PRC
+				tag = PRB
+				tag = WSF
+			}
+			OR = {
+				has_country_flag = tilsit_act_alternate
+				has_country_flag = tilsit_act
+			}
+			NOT = { has_country_flag = incorporate_the_BBD }
+		}
+		
+		allow = {
+			war = no
+			nationalism_n_imperialism = 1
+			LIT = {
+				OR = {
+					AND = {
+						OR = { 
+							is_vassal = no
+							is_substate = no
+							vassal_of = THIS
+						}
+						in_sphere = THIS
+					}
+					all_core = { owned_by = THIS }
+				}
+			}
+			LVN = {
+				OR = {
+					AND = {
+						OR = { 
+							is_vassal = no
+							is_substate = no
+							vassal_of = THIS
+						}
+						in_sphere = THIS
+					}
+					all_core = { owned_by = THIS }
+				}
+			}
+			KSM = {
+				OR = {
+					AND = {
+						OR = { 
+							is_vassal = no
+							is_substate = no
+							vassal_of = THIS
+						}
+						in_sphere = THIS
+					}
+					all_core = { owned_by = THIS }
+				}
+			}
+			ESG = {
+				OR = {
+					AND = {
+						OR = { 
+							is_vassal = no
+							is_substate = no
+							vassal_of = THIS
+						}
+						in_sphere = THIS
+					}
+					all_core = { owned_by = THIS }
+				}
+			}
+		}
+		
+		effect = {
+			badboy = 2.5
+			prestige = 10
+			any_owned = {
+				limit = {
+					OR = {
+						is_core = LVN
+						is_core = KSM
+						is_core = ESG
+						is_core = LIT
+					}
+				}
+				secede_province = BBD
+			}
+			BBD = {
+				inherit = LVN
+				inherit = KSM
+				inherit = ESG
+				inherit = LIT
+				any_owned = { 
+					add_core = BBD remove_core = LVN remove_core = KSM remove_core = ESG
+				}
+				any_pop = {
+					limit = { is_culture_group = germanic }
+					militancy = 3
+				}
+				government = hms_government
+				political_reform = landed_voting
+				political_reform = appointed
+				political_reform = gerrymandering
+				political_reform = culture_voting_only
+				political_reform = federalism
+				capital = 361
+				add_accepted_culture = lithuanian
+				add_accepted_culture = volga_german
+				add_accepted_culture = latvian
+				add_accepted_culture = estonian
+			}
+			create_vassal = BBD
+			diplomatic_influence = { who = BBD value = 400 }
+			random_owned = { limit = { owner = { vote_franschise = none_voting } }
+				BBD = { 
+					government = colonial_company 
+					political_reform = none_voting 
+				} 
+			}
+			random_owned = { limit = { owner = { NOT = { vote_franschise = none_voting } } UBD = { government = dominion } } }
+			set_country_flag = incorporate_the_BBD
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	LIT_create_BBD = {
+		picture = "BBD_picture"
+		potential = {
+			OR = {
+				is_greater_power = yes	
+				is_secondary_power = yes	
+			}
+			tag = LIT
+			NOT = { has_country_flag = LIT_create_BBD }
+		}
+		
+		allow = {
+			war = no
+			nationalism_n_imperialism = 1
+			LVN = {
+				OR = {
+					AND = {
+						OR = { 
+							is_vassal = no
+							is_substate = no
+						}
+						in_sphere = THIS
+					}
+					AND = {
+						vassal_of = THIS
+						OR = {
+							AND = {
+								THIS = { is_greater_power = yes	}
+								in_sphere = THIS
+							}
+							THIS = { is_secondary_power = yes }
+						}
+					}
+					all_core = { owned_by = THIS }
+				}
+			}
+			KSM = {
+				OR = {
+					AND = {
+						OR = { 
+							is_vassal = no
+							is_substate = no
+						}
+						in_sphere = THIS
+					}
+					AND = {
+						vassal_of = THIS
+						OR = {
+							AND = {
+								THIS = { is_greater_power = yes	}
+								in_sphere = THIS
+							}
+							THIS = { is_secondary_power = yes }
+						}
+					}
+					all_core = { owned_by = THIS }
+				}
+			}
+			ESG = {
+				OR = {
+					AND = {
+						OR = { 
+							is_vassal = no
+							is_substate = no
+						}
+						in_sphere = THIS
+					}
+					AND = {
+						vassal_of = THIS
+						OR = {
+							AND = {
+								THIS = { is_greater_power = yes	}
+								in_sphere = THIS
+							}
+							THIS = { is_secondary_power = yes }
+						}
+					}
+					all_core = { owned_by = THIS }
+				}
+			}
+		}
+		
+		effect = {
+			badboy = 5
+			prestige = 25
+			inherit = LVN
+			inherit = KSM
+			inherit = ESG
+			LVN = { all_core = { add_core = UBD add_core = BBD remove_core = LVN } }
+			KSM = { all_core = { add_core = UBD add_core = BBD remove_core = KSM } }
+			ESG = { all_core = { add_core = UBD add_core = BBD remove_core = ESG } }
+			UBD = { government = prussian_constitutionalism }
+			all_core = { add_core = BBD }
+			add_accepted_culture = volga_german
+			add_accepted_culture = latvian
+			add_accepted_culture = estonian
+			change_tag = BBD
+			political_reform = federalism
+			set_country_flag = LIT_create_BBD
+		}
+		ai_will_do = { factor = 1 }
+	}
 	
 	
 	

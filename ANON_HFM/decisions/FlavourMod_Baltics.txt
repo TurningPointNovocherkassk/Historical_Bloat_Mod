@@ -92,6 +92,10 @@ political_decisions = {
 			OR = { 
 				tag = GER
 				tag = GCF
+				AND = {
+					is_culture_group = scandinavian
+					NOT = { primary_culture = finnish }
+				}
 			}
 			NOT = { has_country_flag = incorporate_the_baltic_states }
 		}
