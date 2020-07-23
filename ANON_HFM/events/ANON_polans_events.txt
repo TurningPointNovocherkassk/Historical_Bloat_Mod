@@ -9339,7 +9339,106 @@ country_event = {
 	
 	option = {
 		name = "EVT666666092OPTA"
-		set_country_flag = karol_II_death
+		set_country_flag = vasyl_I_death
+		random_owned = {
+			limit = {
+				owner = { has_country_flag = vasyl_eccentric }
+			}
+			owner = {
+				primary_culture = polish
+				add_accepted_culture = realukrainian
+				add_accepted_culture = ukrainian
+			}
+		}
 		ai_chance = { factor = 100 }
+	}
+}
+#############################################
+#				Vasyl's eccentricities
+#############################################
+country_event = {
+	id = 666666093
+	title = "EVTNAME666666093"
+	desc = "EVTDESC666666093"
+	picture = "vasyl_vyshyvanyi"
+	fire_only_once = yes
+	trigger = {
+		has_country_flag = vasyl_I_coronation
+		has_country_flag = a_habsburg_on_the_throne_POL
+		OR = {
+			government = hms_government
+			government = prussian_constitutionalism
+			government = absolute_monarchy
+			government = fascist_dictatorship
+		}
+		NOT = {
+			has_country_flag = vasyl_eccentric
+			has_country_flag = vasyl_eccentric_nope
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 6
+	}
+	
+	option = {
+		name = "EVT666666093OPTA"
+		set_country_flag = vasyl_eccentric
+		primary_culture = realukrainian
+		add_accepted_culture = polish
+		add_accepted_culture = ukrainian
+		add_accepted_culture = rusyn
+		any_pop = {
+			limit = {
+				OR = {
+					has_pop_culture = ukrainian
+					has_pop_culture = realukrainian
+				}
+			}
+			militancy = -5
+			consciousness = -5
+		}
+		any_pop = {
+			limit = {
+				OR = {
+					has_pop_culture = russophile
+					has_pop_culture = russian
+				}
+			}
+			militancy = 5
+			consciousness = 5
+		}
+		any_pop = {
+			limit = {
+				NOT = {
+					OR = {
+						has_pop_culture = russophile
+						has_pop_culture = russian
+						has_pop_culture = ukrainian
+						has_pop_culture = realukrainian
+					}
+				}
+			}
+			consciousness = 3
+		}
+		any_owned = {
+			limit = {
+				OR = {
+					is_core = UKR
+					is_core = RUT
+					pop_majority_culture = ukrainian
+					pop_majority_culture = rusyn
+				}
+			}
+			add_province_modifier = { name = cultural_resurgence duration = 3650 }
+		}
+		ai_chance = { factor = 100 }
+	}
+	
+	option = {
+		name = "EVT666666093OPTB"
+		set_country_flag = vasyl_eccentric_nope
+		prestige = -5
+		ai_chance = { factor = 0 }
 	}
 }

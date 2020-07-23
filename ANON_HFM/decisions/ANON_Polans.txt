@@ -2314,6 +2314,158 @@ political_decisions = {
 		ai_will_do = { factor = 1 }
 	}
 	
+	rusyn_act = {
+		picture = rusyn_act_decision
+		potential = {
+			OR ={
+				tag = PRC
+				tag = PRB
+			}
+			any_owned_province = { is_core = CPU }
+			NOT = { has_country_flag = rusyn_act }
+		}
+		
+		allow = {
+			invention = biased_multiculturalism
+			invention = national_fraternity
+			OR = {
+				citizens_rights = culture_voting_only
+				ruling_party_ideology = fascist
+				ruling_party_ideology = communist
+				ruling_party_ideology = socialist
+			}
+		}
+		
+		effect = {
+			set_country_flag = rusyn_act
+			add_accepted_culture = rusyn
+			any_pop = {
+				limit = {
+					has_pop_culture = rusyn
+				}
+				militancy = -5
+				consciousness = -5
+			}
+			any_pop = {
+				limit = {
+					NOT = {
+						has_pop_culture = rusyn
+					}
+				}
+				consciousness = 3
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	white_ruthenian_act = {
+		picture = white_ruthenian_act_pic
+		potential = {
+			OR ={
+				tag = PRC
+				tag = PRB
+			}
+			NOT = { has_country_flag = white_ruthenian_act }
+		}
+		
+		allow = {
+			invention = biased_multiculturalism
+			invention = national_fraternity
+			invention = manifest_destiny
+			invention = determinism
+			OR = {
+				citizens_rights = culture_voting_only
+				ruling_party_ideology = fascist
+				ruling_party_ideology = communist
+				ruling_party_ideology = socialist
+			}
+			is_greater_power = yes
+			nationalism_n_imperialism = 1
+		}
+		
+		effect = {
+			set_country_flag = white_ruthenian_act
+			badboy = 5
+			add_accepted_culture = byelorussian
+			any_pop = {
+				limit = {
+					has_pop_culture = byelorussian
+				}
+				militancy = -5
+				consciousness = -5
+			}
+			any_pop = {
+				limit = {
+					NOT = {
+						has_pop_culture = byelorussian
+					}
+				}
+				consciousness = 3
+			}
+			946 = { add_core = RUT add_core = THIS } #Polotsk
+			945 = { add_core = RUT add_core = THIS } #Vitebsk
+			718 = { add_core = RUT add_core = THIS } #Minsk
+			941 = { add_core = RUT add_core = THIS } #Slutsk
+			942 = { add_core = RUT add_core = THIS } #Mozyr
+			RUS_947 = { add_core = RUT add_core = THIS } #Orsha
+			#943 = { add_core = RUT add_core = THIS } #Smolensk
+			#1015 = { add_core = RUT add_core = THIS } #Premyshl
+			#1016 = { add_core = RUT add_core = THIS } #Bryansk
+			#RUS_977 = { add_core = RUT add_core = THIS } #Kusrk
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	konigberg_pact = {
+		picture = konigsberg_edict
+		potential = {
+			OR ={
+				tag = PRC
+				tag = PRB
+			}
+			BBD = { vassal_of = THIS }
+			PRD = { vassal_of = THIS }
+			has_country_flag = white_ruthenian_act
+			NOT = { has_country_flag = konigberg_pact }
+		}
+		
+		allow = {
+			BBD = { vassal_of = THIS }
+			PRD = {
+				vassal_of = THIS
+				owns = 695
+			}
+			all_core = { owned_by = THIS }
+			is_greater_power = yes
+		}
+		
+		effect = {
+			set_country_flag = konigberg_pact
+			prestige = 5
+			PRD = { all_core = { add_core = BBD } }
+			BBD = {
+				inherit = PRD
+				add_accepted_culture = masurian
+			}
+			707 = { remove_core = BBD add_core = THIS secede_province = THIS } 
+			3574 = { remove_core = BBD add_core = THIS secede_province = THIS } 
+			936 = { remove_core = BBD add_core = THIS secede_province = THIS } 
+			938 = { remove_core = BBD add_core = THIS secede_province = THIS } 
+			3569 = { remove_core = BBD add_core = THIS secede_province = THIS } 
+			947 = { remove_core = BBD add_core = THIS secede_province = THIS } 
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
 	
 	
 	
