@@ -2851,6 +2851,7 @@ political_decisions = {
 					OR = { 
 						AND = { owns = 369 NOT = { has_global_flag = german_renamed_holstein } }
 						AND = { owns = 370 NOT = { has_global_flag = german_renamed_schleswig } }
+						AND = { owns = 3669 NOT = { has_global_flag = german_renamed_eutin } }
 					}
 				}
 				AND = {
@@ -2858,6 +2859,7 @@ political_decisions = {
 					OR = {
 						AND = { owns = 369 NOT = { has_global_flag = scandinavian_renamed_holstein } }
 						AND = { owns = 370 NOT = { has_global_flag = scandinavian_renamed_schleswig } }
+						AND = { owns = 3669 NOT = { has_global_flag = scandinavian_renamed_eutin } }
 					}	
 				}
 			}
@@ -2908,6 +2910,20 @@ political_decisions = {
 					clr_global_flag = scandinavian_renamed_schleswig 
 				}
 			}
+			
+			random_owned = {
+				limit = {
+					province_id = 3669
+					owner = {
+						is_culture_group = germanic
+					}
+				}
+				3669 = { change_province_name = "Olenborg" }
+				owner = { 
+					set_global_flag = german_renamed_eutin 
+					clr_global_flag = scandinavian_renamed_eutin 
+				}
+			}
 			###Danish###
 			random_owned = {
 				limit = {
@@ -2945,6 +2961,20 @@ political_decisions = {
 				owner = { 
 					set_global_flag = scandinavian_renamed_schleswig
 					clr_global_flag = german_renamed_schleswig
+				}
+			}
+			
+			random_owned = {
+				limit = {
+					province_id = 3669
+					owner = {
+						is_culture_group = scandinavian
+					}
+				}
+				3669 = { change_province_name = "Oldenborg" }
+				owner = { 
+					set_global_flag = scandinavian_renamed_eutin
+					clr_global_flag = german_renamed_eutin 
 				}
 			}
 		}

@@ -178,6 +178,7 @@ political_decisions = {
 						AND = { owns = 354 NOT = { has_global_flag = german_renamed_slivonia } }
 						AND = { owns = 357 NOT = { has_global_flag = german_renamed_curonia } }
 						AND = { owns = 3568 NOT = { has_global_flag = german_renamed_pytalovo } }
+						AND = { owns = 3666 NOT = { has_global_flag = german_renamed_kandava } }
 					}
 				}
 				AND = {
@@ -189,6 +190,7 @@ political_decisions = {
 						AND = { owns = 354 NOT = { has_global_flag = latvian_renamed_slivonia } }
 						AND = { owns = 357 NOT = { has_global_flag = latvian_renamed_curonia } }
 						AND = { owns = 3568 NOT = { has_global_flag = latvian_renamed_pytalovo } }
+						AND = { owns = 3666 NOT = { has_global_flag = latvian_renamed_kandava } }
 					}
 				}
 				AND = {
@@ -197,6 +199,7 @@ political_decisions = {
 						AND = { owns = 354 NOT = { has_global_flag = russian_renamed_slivonia } }
 						AND = { owns = 357 NOT = { has_global_flag = russian_renamed_curonia } }
 						AND = { owns = 3568 NOT = { has_global_flag = russian_renamed_pytalovo } }
+						AND = { owns = 3666 NOT = { has_global_flag = russian_renamed_kandava } }
 					}
 				}
 				AND = {
@@ -205,6 +208,7 @@ political_decisions = {
 						AND = { owns = 354 NOT = { has_global_flag = polish_renamed_slivonia } }
 						AND = { owns = 357 NOT = { has_global_flag = polish_renamed_curonia } }
 						AND = { owns = 3568 NOT = { has_global_flag = polish_renamed_pytalovo } }
+						AND = { owns = 3666 NOT = { has_global_flag = polish_renamed_kandava } }
 					}
 				}
 			}
@@ -215,6 +219,73 @@ political_decisions = {
 		}
 		
 		effect = {
+			###German###
+			random_owned = {
+				limit = {
+					province_id = 3666
+					owner = {
+						is_culture_group = germanic
+					}
+				}
+				3666 = { change_province_name = "Kandau"  }
+				owner = { 
+					set_global_flag = german_renamed_kandava
+					clr_global_flag = latvian_renamed_kandava
+					clr_global_flag = russian_renamed_kandava
+					clr_global_flag = polish_renamed_kandava
+				}
+			}
+			###Latvian###
+			random_owned = {
+				limit = {
+					province_id = 3666
+					owner = {
+						OR = { 
+							primary_culture = latvian
+							is_culture_group = baltic
+						}
+					}
+				}
+				3666 = { change_province_name = "Kandava"  }
+				owner = { 
+					set_global_flag = latvian_renamed_kandava
+					clr_global_flag = german_renamed_kandava
+					clr_global_flag = russian_renamed_kandava
+					clr_global_flag = polish_renamed_kandava
+				}
+			}
+			###Russian###
+			random_owned = {
+				limit = {
+					province_id = 3666
+					owner = {
+						is_culture_group = east_slavic
+					}
+				}
+				3666 = { change_province_name = "Kandava"  }
+				owner = { 
+					set_global_flag = russian_renamed_kandava
+					clr_global_flag = german_renamed_kandava
+					clr_global_flag = latvian_renamed_kandava
+					clr_global_flag = polish_renamed_kandava
+				}
+			}
+			###Polish###
+			random_owned = {
+				limit = {
+					province_id = 3666
+					owner = {
+						is_culture_group = polish_culture_group
+					}
+				}
+				3666 = { change_province_name = "Kandawa"  }
+				owner = { 
+					set_global_flag = polish_renamed_kandava
+					clr_global_flag = german_renamed_kandava
+					clr_global_flag = russian_renamed_kandava
+					clr_global_flag = latvian_renamed_kandava
+				}
+			}
 		
 			###German###
 			random_owned = {

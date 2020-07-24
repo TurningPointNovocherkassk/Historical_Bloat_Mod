@@ -467,13 +467,13 @@
 	farmers = {
 		culture = latvian
 		religion = protestant
-		size = 28275
+		size = 38275
 	}
 
 	farmers = {
 		culture = baltic_german
 		religion = protestant
-		size = 1200
+		size = 3200
 	}
 	
 	aristocrats = {
@@ -491,7 +491,7 @@
 	artisans = {
 		culture = baltic_german
 		religion = protestant
-		size = 750
+		size = 5750
 	}
 
 	soldiers = {
@@ -530,6 +530,11 @@
 		culture = ugrian
 		religion = protestant
 		size = 225
+	}
+	farmers = {
+		culture = ugrian
+		religion = protestant
+		size = 1500
 	}
 
 	artisans = {
@@ -574,10 +579,83 @@
 		size = 100
 	}
 
+	clergymen = {
+		culture = ashkenazi
+		religion = jewish
+		size = 100
+	}
+
+	artisans = {
+		culture = ashkenazi
+		religion = jewish
+		size = 250
+	}
+
+	soldiers = {
+		culture = ashkenazi
+		religion = jewish
+		size = 100
+	}
+
 	farmers = {
-		culture = estonian
+		culture = ashkenazi
+		religion = jewish
+		size = 950
+	}
+}
+#Kandava
+3666 = {
+	clergymen = {
+		culture = ugrian
 		religion = protestant
-		size = 1500
+		size = 225
+	}
+	farmers = {
+		culture = ugrian
+		religion = protestant
+		size = 1000
+	}
+
+	artisans = {
+		culture = latvian
+		religion = protestant
+		size = 300
+	}
+
+	soldiers = {
+		culture = latvian
+		religion = protestant
+		size = 250
+	}
+
+	farmers = {
+		culture = latvian
+		religion = protestant
+		size = 15000
+	}
+
+	aristocrats = {
+		culture = baltic_german
+		religion = protestant
+		size = 600
+	}
+
+	clergymen = {
+		culture = baltic_german
+		religion = protestant
+		size = 100
+	}
+
+	artisans = {
+		culture = baltic_german
+		religion = protestant
+		size = 700
+	}
+
+	soldiers = {
+		culture = baltic_german
+		religion = protestant
+		size = 100
 	}
 
 	clergymen = {
