@@ -119,6 +119,7 @@ political_decisions = {
 		news_desc_short = "form_scandinavia_NEWS_SHORT"
 		potential = {
 			NOT = { exists = SCA }
+			is_culture_group = scandinavian
 			has_country_modifier = leader_of_kalmar
 			has_global_flag = scandinavian_political_union
 			NOT = { has_country_flag = post_colonial_country }
@@ -143,6 +144,10 @@ political_decisions = {
 				AND = {
 					NOT = { tag = SCH }
 					SCH = { has_country_modifier = kalmar_union }
+				}
+				AND = {
+					NOT = { tag = FRO }
+					FRO = { has_country_modifier = kalmar_union }
 				}
 			}
 		}
@@ -215,6 +220,7 @@ political_decisions = {
 				}
 				country_event = 11101
 			}
+			369 = { add_core = SCA }
 		}
 
 		ai_will_do = { factor = 1 }
@@ -308,6 +314,7 @@ political_decisions = {
 		potential = {
 			NOT = { exists = SCA }
 			has_global_flag = kalmar_reformed
+			is_culture_group = scandinavian
 			capital_scope = { continent = europe }
 			has_country_modifier = leader_of_kalmar
 			not = { has_global_flag = scandinavian_customs_union }
@@ -371,6 +378,7 @@ political_decisions = {
 		potential = {
 			NOT = { exists = SCA }
 			has_global_flag = scandinavian_customs_union
+			is_culture_group = scandinavian
 			capital_scope = { continent = europe }
 			has_country_modifier = leader_of_kalmar
 			not = { has_global_flag = scandinavian_political_union }
@@ -436,6 +444,7 @@ political_decisions = {
 		picture = reform_kalmar
 		potential = {
 			has_country_modifier = kalmar_union
+			is_culture_group = scandinavian
 			capital_scope = { continent = europe }
 			NOT = { exists = SCA }
 			OR = { 
@@ -456,6 +465,10 @@ political_decisions = {
 					is_greater_power = no
 				}
 				SCH = { 
+					has_country_modifier = leader_of_kalmar	
+					is_greater_power = no
+				}
+				FRO = { 
 					has_country_modifier = leader_of_kalmar	
 					is_greater_power = no
 				}

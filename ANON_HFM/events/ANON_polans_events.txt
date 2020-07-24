@@ -9442,3 +9442,80 @@ country_event = {
 		ai_chance = { factor = 0 }
 	}
 }
+#######################################
+#			Baltic Hegemony
+#######################################
+
+country_event = {
+	id = 666666094
+	title = "EVTNAME666666094"
+	desc = "EVTDESC666666094"
+	picture = "danishgovernment"
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVT666666094OPTA"
+		set_country_flag = securing_north_sea_exit_peace
+		any_pop = {
+			dominant_issue = {
+				factor = 0.02
+				value = pacifism
+			}
+			scaled_militancy = {
+				issue = jingoism
+				factor = 2
+			}
+		}
+		ai_chance = { factor = 100 }
+	}
+	option = {
+		name = "EVT666666094OPTB"
+		set_country_flag = securing_north_sea_exit_war
+		any_pop = {
+			dominant_issue = {
+				factor = 0.02
+				value = jingoism 
+			}
+			scaled_militancy = {
+				issue = pacifism
+				factor = 2
+			}
+		}
+		badboy = 15
+		any_country = {
+			limit = {
+				OR = {
+					is_sphere_leader_of = SWE
+					is_sphere_leader_of = NOR
+					is_sphere_leader_of = DEN
+				}
+			}
+			casus_belli = {
+				target = THIS
+				type = humiliate
+				months = 75
+			}
+			casus_belli = {
+				target = THIS
+				type = cut_down_to_size
+				months = 75
+			}
+		}
+		casus_belli = {
+			target = SWE
+			type = make_puppet
+			months = 150
+		}
+		casus_belli = {
+			target = NOR
+			type = make_puppet
+			months = 150
+		}
+		casus_belli = {
+			target = DEN
+			type = make_puppet
+			months = 150
+		}
+		ai_chance = { factor = 100 }
+	}
+}
