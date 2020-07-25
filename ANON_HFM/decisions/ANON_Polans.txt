@@ -2320,6 +2320,7 @@ political_decisions = {
 			OR ={
 				tag = PRC
 				tag = PRB
+				tag = PLR
 			}
 			any_owned_province = { is_core = CPU }
 			NOT = { has_country_flag = rusyn_act }
@@ -2367,6 +2368,7 @@ political_decisions = {
 			OR ={
 				tag = PRC
 				tag = PRB
+				tag = PLR
 			}
 			NOT = { has_country_flag = white_ruthenian_act }
 		}
@@ -2388,7 +2390,6 @@ political_decisions = {
 		
 		effect = {
 			set_country_flag = white_ruthenian_act
-			badboy = 5
 			add_accepted_culture = byelorussian
 			any_pop = {
 				limit = {
@@ -2405,16 +2406,29 @@ political_decisions = {
 				}
 				consciousness = 3
 			}
-			946 = { add_core = RUT add_core = THIS } #Polotsk
-			945 = { add_core = RUT add_core = THIS } #Vitebsk
-			718 = { add_core = RUT add_core = THIS } #Minsk
-			941 = { add_core = RUT add_core = THIS } #Slutsk
-			942 = { add_core = RUT add_core = THIS } #Mozyr
-			RUS_947 = { add_core = RUT add_core = THIS } #Orsha
-			#943 = { add_core = RUT add_core = THIS } #Smolensk
-			#1015 = { add_core = RUT add_core = THIS } #Premyshl
-			#1016 = { add_core = RUT add_core = THIS } #Bryansk
-			#RUS_977 = { add_core = RUT add_core = THIS } #Kusrk
+			random_owned = {
+				limit = {
+					owner = {
+						OR = {
+							tag = PRC
+							tag = PRB
+						}
+					}
+				}
+				owner = {
+					badboy = 5
+					946 = { add_core = RUT add_core = THIS } #Polotsk
+					945 = { add_core = RUT add_core = THIS } #Vitebsk
+					718 = { add_core = RUT add_core = THIS } #Minsk
+					941 = { add_core = RUT add_core = THIS } #Slutsk
+					942 = { add_core = RUT add_core = THIS } #Mozyr
+					RUS_947 = { add_core = RUT add_core = THIS } #Orsha
+					#943 = { add_core = RUT add_core = THIS } #Smolensk
+					#1015 = { add_core = RUT add_core = THIS } #Premyshl
+					#1016 = { add_core = RUT add_core = THIS } #Bryansk
+					#RUS_977 = { add_core = RUT add_core = THIS } #Kusrk
+				}
+			}
 		}
 		
 		ai_will_do = {
