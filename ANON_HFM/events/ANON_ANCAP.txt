@@ -10,6 +10,7 @@
 	
 		option = {
 			name = "We must help them! Think of the possibilities!"
+			set_country_flag = help_EIC
 			EIC = { country_event = 7979001 }
 			create_alliance = EIC
 			relation = { who = EIC value = 400 }

@@ -2747,6 +2747,7 @@ political_decisions = {
 	
 	form_scandinavia_outside = {
 		news = yes
+		news_title = "form_scandinavia_outside_NEWS_TITLE"
 		news_desc_long = "form_scandinavia_outside_NEWS_LONG"
 		news_desc_medium = "form_scandinavia_outside_NEWS_MEDIUM"
 		news_desc_short = "form_scandinavia_outside_NEWS_SHORT"
@@ -2944,6 +2945,199 @@ political_decisions = {
 		ai_will_do = { factor = 1 }
 	}
 	
+	
+	nordic_concessions = {
+		picture = "baltic_sea_map"
+		potential = {
+			is_greater_power = yes	
+			SCA = { vassal_of = THIS }
+			NOT = { has_country_flag = nordic_concessions }
+		}
+		
+		allow = {
+			war = no
+			total_num_of_ports = 1
+			SCA = {
+				owns = 3668 #Laeso
+				owns = 3667 #Orust, Tjörn & Hisingen
+				owns = 374 #Bornholm
+				owns = 331 #Gotland
+				#owns = 348 #Aland
+				#owns = 369 #Kiel
+			}
+		}
+		
+		effect = {
+			set_country_flag = nordic_concessions
+			#badboy = 2.5
+			prestige = 2.5
+			SCA = {
+				any_owned = {
+					limit = {
+						OR = {
+							province_id = 3668
+							province_id = 3667
+							province_id = 374
+							province_id = 331
+							province_id = 348
+							province_id = 369
+						}
+					}
+					add_core = THIS
+					secede_province = THIS
+				}
+			}
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	baltic_concessions = {
+		picture = "baltic_sea_map"
+		potential = {
+			is_greater_power = yes	
+			OR = {
+				UBD = { vassal_of = THIS }
+				BBD = { vassal_of = THIS }
+			}
+			NOT = { has_country_flag = baltic_concessions }
+		}
+		
+		allow = {
+			war = no
+			total_num_of_ports = 1
+			OR = {
+				UBD = {
+					owns = 3563 #Kärdla
+					owns = 353 #Ösel
+					owns = 358 #Ventspils
+				}
+				BBD = {
+					owns = 3563 #Kärdla
+					owns = 353 #Ösel
+					owns = 358 #Ventspils
+				}
+			}
+		}
+		
+		effect = {
+			set_country_flag = baltic_concessions
+			#badboy = 2.5
+			prestige = 2.5
+			any_country = {
+				limit = {
+					OR = {
+						tag = UBD
+						tag = BBD
+					}
+					vassal_of = THIS
+				}
+				any_owned = {
+					limit = {
+						OR = {
+							province_id = 3563
+							province_id = 353
+							province_id = 358
+						}
+					}
+					add_core = THIS
+					secede_province = THIS
+				}
+			}
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	aland_concession = {
+		picture = "baltic_sea_map"
+		potential = {
+			is_greater_power = yes	
+			OR = {
+				FIN = {
+					OR = {
+						vassal_of = THIS
+						in_sphere = THIS
+					}
+				}
+				SWE = {
+					OR = {
+						vassal_of = THIS
+						in_sphere = THIS
+					}
+				}
+				SCA = {
+					OR = {
+						vassal_of = THIS
+						in_sphere = THIS
+					}
+				}
+			}
+			NOT = {
+				has_country_flag = aland_concession
+				owns = 348
+				is_core = 348
+			}
+		}
+		
+		allow = {
+			war = no
+			total_num_of_ports = 1
+			FIN = {
+				owns = 348 #Aland
+			}
+		}
+		
+		effect = {
+			set_country_flag = aland_concession
+			#badboy = 2.5
+			prestige = 2.5
+			SCA = {
+				any_owned = {
+					limit = {
+						province_id = 348
+					}
+					add_core = THIS
+					secede_province = THIS
+				}
+			}
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	kiel_concession = {
+		picture = "baltic_sea_map"
+		potential = {
+			is_greater_power = yes
+			NOT = {
+				has_country_flag = kiel_concession
+				owns = 369
+				is_core = 369
+			}
+		}
+		
+		allow = {
+			war = no
+			total_num_of_ports = 1
+			369 = {
+				owner = {
+					OR = {
+						vassal_of = THIS
+						in_sphere = THIS
+					}
+				}
+			}
+		}
+		
+		effect = {
+			set_country_flag = kiel_concession
+			#badboy = 2.5
+			prestige = 2.5
+			369 = {
+				add_core = THIS
+				secede_province = THIS
+			}
+		}
+		ai_will_do = { factor = 1 }
+	}
 	
 	
 	

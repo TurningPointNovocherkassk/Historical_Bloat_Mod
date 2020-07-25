@@ -626,6 +626,7 @@ political_decisions = {
 				year = 1862
 				NOT = { government = colonial_company }
 			}
+			NOT = { RUS = { has_country_flag = help_EIC } }
 		}
 		
 		allow = {
