@@ -21,7 +21,7 @@
 					has_country_flag = californio_war_aftermath
 					has_country_flag = mexico_1836_set_up
 				}
-				year = 1860
+				year = 1844
 			}
 		}
 
@@ -33,14 +33,14 @@
 			name = "EVTOPTA1110000" #Appoint Mexican-born Mariano Chico, loyal to the government.
 			set_country_flag = appointed_chico
 			ai_chance = {
-				factor = 90
+				factor = 100
 			}
 		}
 		option = {
 			name = "EVTOPTB1110000" #Appoint Californian Mariano Guadalupe Vallejo Commander of the Fourth Military District and Director of Colonization of the Northern Frontier
 			set_country_flag = appointed_vallejo
 			ai_chance = {
-				factor = 10
+				factor = 0
 			}
 		}
 	}
@@ -109,11 +109,11 @@
 				}
 			}
 			ai_chance = {
-				factor = 90
-				modifier = {
-					factor = 0.52
-					war = yes
-				}
+				factor = 100
+				# modifier = {
+					# factor = 0.5
+					# war = yes
+				# }
 			}	
 		}
 		
@@ -141,11 +141,11 @@
 				}
 			}
 			ai_chance = {
-				factor = 10
-				modifier = {
-					factor = 4.5
-					war = yes
-				}
+				factor = 0
+				# modifier = {
+					# factor = 5.1
+					# war = yes
+				# }
 			}
 		}
 		
@@ -231,7 +231,7 @@
 				add_province_modifier = { name = political_tensions duration = 1825 }
 			}
 			ai_chance = {
-				factor = 90
+				factor = 100
 			}
 		}
 		option = {
@@ -250,7 +250,7 @@
 				call_ally = no
 			}
 			ai_chance = {
-				factor = 10
+				factor = 0
 			}
 		}
 	}
@@ -315,7 +315,7 @@
 				}
 			}
 			ai_chance = {
-				factor = 90
+				factor = 100
 			}
 		}
 		option = {
@@ -340,7 +340,7 @@
 				}
 			}
 			ai_chance = {
-				factor = 10
+				factor = 0
 			}
 		}
 	}
@@ -372,33 +372,33 @@
 		option = {
 			name = "EVTOPTA1110004" #Relent and recognize Alvarado as the Governor
 			set_country_flag = appoint_alvarado_again
-		#	C4L = {
-		#		any_owned = {
-		#			limit = {
-		#				OR = {
-		#					region = MEX_85 #Southern California
-		#					region = MEX_2139 #Baja California
-		#				}
-		#			}
-		#			any_pop = {
-		#				militancy = 4
-		#				consciousness = 4
-		#			}
-		#			add_province_modifier = { name = political_tensions duration = 1825 }
-		#		}
-		#		any_owned = {
-		#			limit = {
-		#				has_province_modifier = political_tensions
-		#				NOT = {
-		#					OR = {
-		#						region = MEX_85 #Southern California
-		#						region = MEX_2139 #Baja California
-		#					}
-		#				}
-		#			}
-		#			remove_province_modifier = political_tensions
-		#		}
-		#	}
+			# C4L = {
+				# any_owned = {
+					# limit = {
+						# OR = {
+							# region = MEX_85 #Southern California
+							# region = MEX_2139 #Baja California
+						# }
+					# }
+					# any_pop = {
+						# militancy = 4
+						# consciousness = 4
+					# }
+					# add_province_modifier = { name = political_tensions duration = 1825 }
+				# }
+				# any_owned = {
+					# limit = {
+						# has_province_modifier = political_tensions
+						# NOT = {
+							# OR = {
+								# region = MEX_85 #Southern California
+								# region = MEX_2139 #Baja California
+							# }
+						# }
+					# }
+					# remove_province_modifier = political_tensions
+				# }
+			# }
 			##############
 			prestige = -15
 			inherit = C4L
@@ -428,7 +428,7 @@
 				remove_province_modifier = political_tensions
 			}
 			ai_chance = {
-				factor = 90
+				factor = 100
 			}
 		}
 		option = {
@@ -481,7 +481,7 @@
 				}
 			}
 			ai_chance = {
-				factor = 10
+				factor = 0
 			}
 		}
 	}
@@ -2585,8 +2585,8 @@
 				limit = {
 					has_pop_culture = texan
 					OR = {
-						ideology = conservative
-						ideology = reactionary
+						pop_majority_ideology = conservative
+						pop_majority_ideology = reactionary
 					}
 				}
 				reduce_pop = 0.975
@@ -2596,6 +2596,14 @@
 				}
 				scaled_consciousness = {
 					ideology = conservative
+					factor = 6
+				}
+				scaled_militancy = {
+					ideology = reactionary
+					factor = 6
+				}
+				scaled_consciousness = {
+					ideology = reactionary
 					factor = 6
 				}
 			}
@@ -3409,9 +3417,10 @@
 		option = {
 			name = "EVTOPTA1110052"
 			country_event = 1110053
+			ai_chance = {
+				factor = 100
+			}
 		}
-		
-		ai_will_do = { factor = 1 }
 	}
 	country_event = {
 		id = 1110053
@@ -5561,6 +5570,79 @@
 			}
 			ai_chance = {
 				factor = 25
+			}
+		}
+	}
+#################################
+# Alta California Failsafe
+
+	country_event = {
+		id = 1110064
+		title = "EVTNAME1110064" 
+		desc = "EVTDESC1110064" 
+		picture = "alta_california"
+		trigger = {
+			OR = {
+				tag = MEX
+				tag = M3X
+				tag = MXM
+			}
+			C4L = {
+				ai = yes
+				vassal_of = THIS
+			}
+			has_country_flag = constitution_1824
+		}
+
+		option = {
+			name = "EVTOPTA1110064"
+			set_country_flag = C4L_annex_cons_1824
+			prestige = 5
+			inherit = C4L
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+	country_event = {
+		id = 1110065
+		title = "EVTNAME1110065" 
+		desc = "EVTDESC1110065" 
+		picture = "alta_california"
+		trigger = {
+			OR = {
+				tag = MEX
+				tag = M3X
+				tag = MXM
+			}
+			C4L = {
+				ai = yes
+				vassal_of = THIS
+			}
+			has_country_flag = constitution_1824_no
+		}
+
+		option = {
+			name = "EVTOPTA1110065"
+			set_country_flag = C4L_annex_cons_1824_no
+			release = C4L
+			war = {
+				target = C4L
+				attacker_goal = { casus_belli = annex_core_country }
+				defender_goal = { casus_belli = become_independent }
+			}
+			ai_chance = {
+				factor = 100
+			}
+		}
+
+		option = {
+			name = "EVTOPTB1110065"
+			set_country_flag = C4L_annex_cons_1824_no
+			prestige = -50
+			release = C4L
+			ai_chance = {
+				factor = 100
 			}
 		}
 	}

@@ -15,7 +15,7 @@ create_the_golden_circle = {
 			prestige = 75
 			has_unclaimed_cores = no 
 			invention = national_fraternity
-			treasury = 1000000
+			money = 1000000
 			MXM = {
 				all_core = {
 					OR = {
@@ -83,8 +83,8 @@ claim_central_america_golden_circle = {
 					who = USA
 					value = -100
 					}
-			}
 		set_global_flag = golden_circle_claims_central_america
+			}
 		ai_will_do = { factor = 1 }
 	}
 	
@@ -123,8 +123,8 @@ claim_north_colombia_golden_circle = {
 					value = -100
 					}
 			prestige = 10
-			ai_will_do = { factor = 1 }
 			}
+		ai_will_do = { factor = 1 }
 	}
 
 claim_the_antilles_golden_circle = {
@@ -213,7 +213,7 @@ claim_cuba_golden_circle = {
 		tag = KGC
 		slavery = yes_slavery
 		NOT = { has_global_flag = golden_circle_claims_cuba }
-		NOT = { have_core_in = CUB }
+		NOT = { any_core = { is_core = CUB } }
 		}
 	
 	allow = {
@@ -273,23 +273,26 @@ gain_conservative_mexico_generals = {
 			tag = MXM
 			tag = M3X
 			}
-		war_with = MEX
 		NOT = { has_country_flag = gain_conservative_generals }
+		}
+	
+	allow = {
+		war_with = MEX
 		}
 	
 	effect = {
 		define_general = {
-			name = "Tomas Mejia"
+			name = "Tomás Mejía"
 			personality = confident
 			background = cavalry_school
 			}
 		define_general = {
-			name = "Miguel Miramon"
+			name = "Miguel Miramón"
 			personality = disciplined
 			background = war_college
 			}
 		define_general = {
-			name = "Leonardo Marquez"
+			name = "Leonardo Márquez"
 			personality = vicious
 			background = natural_born_leader
 			}
@@ -309,7 +312,7 @@ encourage_immigration_to_habsburg_mexico = {
 	allow = {
 		war = no
 		NOT = { war_exhaustion = 25 }
-		NOT = { unemployement = 10 }
+		NOT = { unemployment = 0.25 } #0.1/10% was too low
 		#citizenship_policy = full_citizenship
 		border_policy = open_borders
 		money = 100000

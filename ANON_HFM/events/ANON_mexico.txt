@@ -428,9 +428,9 @@ country_event = {
 			138 = { is_core = USA }
 			133 = { is_core = USA }
 		}
-		#has_global_flag = mexican_american_war
-		#war_with = USA
-		#NOT = { truce_with = USA }
+		# has_global_flag = mexican_american_war
+		# war_with = USA
+		# NOT = { truce_with = USA }
 	}
 
 	mean_time_to_happen = {
@@ -438,7 +438,7 @@ country_event = {
 	}
 	
 	option = {
-		name = "EVT1220001OPTA" #Yes, accept the reforms
+		name = "EVT1220010OPTA" #Yes, accept the reforms
 		war_exhaustion = -10
 		government = democracy
 		political_reform = federalism
@@ -446,12 +446,12 @@ country_event = {
 		political_reform = wealth_weighted_voting
 		political_reform = harassment
 		political_reform = free_press
-		any_pop = { 
-			limit = {
-				type = soldiers
-			}
-			reduce_pop = 1.75
-		}
+		# any_pop = { 
+			# limit = {
+				# type = soldiers
+			# }
+			# reduce_pop = 1.75
+		# }
 		any_pop = {
 			scaled_militancy = {
 				ideology = liberal
@@ -507,7 +507,7 @@ country_event = {
 		ai_chance = { factor = 75 }
 	}
 	option = {
-		name = "EVT1220001OPTB" #No, double-down on the conscription
+		name = "EVT1220010OPTB" #No, double-down on the conscription
 		war_exhaustion = 10
 		political_reform = unitary
 		political_reform = mandatory_service
@@ -522,8 +522,9 @@ country_event = {
 			limit = {
 				type = soldiers
 			}
-			reduce_pop = 1.75
+			reduce_pop = 2
 		}
+		add_country_modifier = { name = super_saiyan_mexico duration = 1825 }
 		any_pop = {
 			scaled_militancy = {
 				ideology = liberal
@@ -2010,13 +2011,13 @@ country_event = {
 		name = "EVT1220034OPTA"
 		MEX = { country_event = 1220035 }
 		ai_chance = {
-			factor = 75
+			factor = 100
 		}	
 	}
 	option = { #Remain sovereign
 		name = "EVT1220034OPTC"
 		ai_chance = {
-			factor = 25
+			factor = 0
 		}	
 	}
 }
@@ -2055,14 +2056,14 @@ country_event = {
 			}
 		}
 		ai_chance = {
-			factor = 85
+			factor = 100
 		}	
 	}
 	option = { #No
 		name = "EVT1220035OPTB"
 		YUC = { country_event = 1220037 }
 		ai_chance = {
-			factor = 15
+			factor = 0
 		}	
 	}
 }
@@ -2082,7 +2083,7 @@ country_event = {
 			value = 400
 		} 
 		ai_chance = {
-			factor = 1
+			factor = 100
 		}	
 	}
 }
@@ -2114,13 +2115,13 @@ country_event = {
 		name = "EVT1220038OPTA"
 		YUC = { country_event = 1220039 }
 		ai_chance = {
-			factor = 95
+			factor = 100
 		}	
 	}
 	option = { # Leave them that way
 		name = "EVT1220038OPTB"
 		ai_chance = {
-			factor = 5
+			factor = 0
 		}	
 	}
 }
@@ -2958,7 +2959,24 @@ country_event = {
 	title = "EVTNAME1220062"
 	desc = "EVTDESC1220062"
 	picture = "caste_war"
-	is_triggered_only = yes
+	#is_triggered_only = yes
+	trigger = {
+		tag = YUC
+		ai = yes
+		OR = {
+			vassal_of = MEX
+			vassal_of = M3X
+			vassal_of = MXM
+		}
+		all_core = {
+			OR = {
+				is_core = MEX
+				is_core = M3X
+				is_core = MXM
+			}
+		}
+		has_global_flag = YUC_MEX_peaceful_reincorporation
+	}
 	
 	option = { # yes
 		name = "EVT1220062OPTA"

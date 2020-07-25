@@ -209,8 +209,10 @@ political_decisions = {
 		potential = {
 			tag = MEX
 			has_global_flag = YUC_autonomous
-			NOT = { has_global_flag = constitution_1824 }
-			NOT = { has_global_flag = constitution_1824_no }
+			OR = {
+				NOT = { has_global_flag = constitution_1824 }
+				has_global_flag = constitution_1824_no
+			}
 			NOT = { has_global_flag = MEX_YUC_annexation_1846 }
 		}
 		

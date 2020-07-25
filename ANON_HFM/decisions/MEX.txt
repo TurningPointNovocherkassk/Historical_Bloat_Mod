@@ -1,77 +1,77 @@
 #Search ANON
 political_decisions = {
-	restore_mexican_empire = {
-		potential = {
-			tag = MEX
-			government = democracy
-			NOT = { has_country_flag = we_have_tried_this_once }
-			NOT = { has_global_flag = santa_anna_emperor }
-			OR = { 
-				FRA = {
-					exists = yes
-					OR = {
-						government = absolute_monarchy
-						government = prussian_constitutionalism
-						government = hms_government
-					}
-				}
-				BOR = {
-					exists = yes
-					OR = {
-						government = absolute_monarchy
-						government = prussian_constitutionalism
-						government = hms_government
-					}
-				}
-			}
-		}
-		allow = {
-			war = no
-			OR = {
-				ruling_party_ideology = conservative
-				ruling_party_ideology = reactionary
-			}
-			average_militancy = 3
-		}
+	# restore_mexican_empire = {
+		# potential = {
+			# tag = MEX
+			# government = democracy
+			# NOT = { has_country_flag = we_have_tried_this_once }
+			# NOT = { has_global_flag = santa_anna_emperor }
+			# OR = { 
+				# FRA = {
+					# exists = yes
+					# OR = {
+						# government = absolute_monarchy
+						# government = prussian_constitutionalism
+						# government = hms_government
+					# }
+				# }
+				# BOR = {
+					# exists = yes
+					# OR = {
+						# government = absolute_monarchy
+						# government = prussian_constitutionalism
+						# government = hms_government
+					# }
+				# }
+			# }
+		# }
+		# allow = {
+			# war = no
+			# OR = {
+				# ruling_party_ideology = conservative
+				# ruling_party_ideology = reactionary
+			# }
+			# average_militancy = 3
+		# }
 		
-		effect = {
-			government = hms_government
-			election = yes
-			random_owned = {
-				limit = { owner = { has_country_modifier = santa_ana_rule } }
-				owner = { remove_country_modifier = santa_ana_rule }
-			}
-			any_pop = {
-				scaled_militancy = {
-					ideology = liberal
-					factor = 8
-				}
-				scaled_militancy = {
-					ideology = socialist
-					factor = 8
-				}
-				scaled_militancy = {
-					ideology = conservative
-					factor = 6
-				}
-			}
-			random_country = {
-				limit = {
-					primary_culture = french
-					capital = 425
-				}	
-				relation = {
-					who = THIS
-					value = 100
-				}
-				diplomatic_influence = {
-					who = THIS
-					value = 100
-				}
-			}
-			set_country_flag = we_have_tried_this_once
-		}
-	}
+		# effect = {
+			# government = hms_government
+			# election = yes
+			# random_owned = {
+				# limit = { owner = { has_country_modifier = santa_ana_rule } }
+				# owner = { remove_country_modifier = santa_ana_rule }
+			# }
+			# any_pop = {
+				# scaled_militancy = {
+					# ideology = liberal
+					# factor = 8
+				# }
+				# scaled_militancy = {
+					# ideology = socialist
+					# factor = 8
+				# }
+				# scaled_militancy = {
+					# ideology = conservative
+					# factor = 6
+				# }
+			# }
+			# random_country = {
+				# limit = {
+					# primary_culture = french
+					# capital = 425
+				# }	
+				# relation = {
+					# who = THIS
+					# value = 100
+				# }
+				# diplomatic_influence = {
+					# who = THIS
+					# value = 100
+				# }
+			# }
+			# set_country_flag = we_have_tried_this_once
+		# }
+	# }
 
 	treaty_of_guadalupe_hidalgo = {
 		picture = treaty_of_guadalupe_hidalgo

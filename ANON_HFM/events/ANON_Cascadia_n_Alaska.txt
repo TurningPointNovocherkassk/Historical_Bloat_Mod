@@ -1301,6 +1301,7 @@ country_event = {
 						is_secondary_power = yes
 						owns = 104 #SanFran
 						owns = 3253 #Liechtensteinin
+						104 = { owner = { vassal_of = MEX } }
 					}
 					OR = {
 						tag = USA
