@@ -2675,8 +2675,8 @@ country_event = {
 		CSC = {
 			any_pop = {	limit = { type = soldiers }	reduce_pop = 3 }
 			any_pop = { limit = { type = artisans } pop_type = soldiers }
-			any_pop = { limit = { NOT = { culture = mayan } } move_pop = 3346 }
-			3346 = {
+			any_pop = { limit = { NOT = { culture = mayan } } move_pop = 3446 }
+			3446 = {
 				change_province_name = "Corozal"
 				owner = { country_event = 1220064 } #Notification event for ENG
 			}
