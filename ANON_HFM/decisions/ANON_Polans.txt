@@ -3153,6 +3153,72 @@ political_decisions = {
 		ai_will_do = { factor = 1 }
 	}
 	
+	destiny_finland_1 = {
+		picture = "baltic_sea_map"
+		potential = {
+			is_greater_power = yes
+			OR = {
+				SWE = { vassal_of = THIS }
+				SCA = { vassal_of = THIS }
+			}
+			BBD = { vassal_of = THIS }
+			NOT = {
+				has_country_flag = destiny_finland
+			}
+		}
+		
+		allow = {
+			war = no
+			FIN = {
+				OR = {
+					AND = {
+						is_vassal = no
+						in_sphere = THIS
+					}
+					vassal_of = THIS
+				}
+			}
+		}
+		
+		effect = {
+			set_country_flag = destiny_finland
+			country_event = 666666095
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	destiny_finland_2 = {
+		picture = "baltic_sea_map"
+		potential = {
+			is_greater_power = yes
+			OR = {
+				SWE = { vassal_of = THIS }
+				SCA = { vassal_of = THIS }
+			}
+			NOT = {
+				has_country_flag = destiny_finland
+			}
+		}
+		
+		allow = {
+			war = no
+			FIN = {
+				OR = {
+					AND = {
+						is_vassal = no
+						in_sphere = THIS
+					}
+					vassal_of = THIS
+				}
+			}
+		}
+		
+		effect = {
+			set_country_flag = destiny_finland
+			country_event = 666666096
+		}
+		ai_will_do = { factor = 1 }
+	}
 	
 	
 	

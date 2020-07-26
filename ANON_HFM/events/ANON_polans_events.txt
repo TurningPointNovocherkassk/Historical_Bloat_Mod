@@ -9519,3 +9519,97 @@ country_event = {
 		ai_chance = { factor = 100 }
 	}
 }
+##########################################
+#			Destiny of Finland
+##########################################
+
+country_event = {
+	id = 666666095
+	title = "EVTNAME666666095"
+	desc = "EVTDESC666666095"
+	picture = "danishgovernment"
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVT666666095OPTA"
+		set_country_flag = finland_vassal
+		create_vassal = FIN
+		ai_chance = { factor = 100 }
+	}
+	option = {
+		name = "EVT666666095OPTB"
+		set_country_flag = finland_annex_SCA
+		FIN = { all_core = { add_core = SCA } }
+		SCA = {
+			inherit = FIN
+			any_pop = {
+				location = { is_core = FIN }
+				militancy = 7
+				consciousness = 7
+				location = {
+					add_province_modifier = {
+						name = nationalist_agitation
+						duration = 1825
+					}
+				}
+			}
+		}
+		ai_chance = { factor = 0 }
+	}
+	option = {
+		name = "EVT666666095OPTC"
+		set_country_flag = finland_annex_baltic
+		FIN = { all_core = { add_core = BBD } }
+		BBD = {
+			inherit = FIN
+			add_accepted_culture = finnish
+			any_pop = {
+				location = { is_core = FIN }
+				militancy = 5
+				consciousness = 5
+				location = {
+					add_province_modifier = {
+						name = nationalist_agitation
+						duration = 1825
+					}
+				}
+			}
+		}
+		ai_chance = { factor = 0 }
+	}
+}
+
+country_event = {
+	id = 666666096
+	title = "EVTNAME666666096"
+	desc = "EVTDESC666666096"
+	picture = "danishgovernment"
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVT666666095OPTA"
+		set_country_flag = finland_vassal
+		create_vassal = FIN
+		ai_chance = { factor = 100 }
+	}
+	option = {
+		name = "EVT666666095OPTB"
+		set_country_flag = finland_annex_SCA
+		FIN = { all_core = { add_core = SCA } }
+		SCA = {
+			inherit = FIN
+			any_pop = {
+				location = { is_core = FIN }
+				militancy = 7
+				consciousness = 7
+				location = {
+					add_province_modifier = {
+						name = nationalist_agitation
+						duration = 1825
+					}
+				}
+			}
+		}
+		ai_chance = { factor = 0 }
+	}
+}

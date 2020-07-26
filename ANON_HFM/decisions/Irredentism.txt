@@ -64,7 +64,15 @@ political_decisions = {
 			RUS_994 = { add_core = FIN }
 			RUS_339 = { add_core = FIN }
 			RUS_349 = { add_core = FIN }
-			add_accepted_culture = ugrian
+			320 = { add_core = FIN }
+			306 = { add_core = FIN }
+			321 = { add_core = FIN }
+			307 = { add_core = FIN }
+			351 = { add_core = FIN }
+			352 = { add_core = FIN }
+			353 = { add_core = FIN }
+			add_accepted_culture = sami
+			add_accepted_culture = karelian
 			prestige = 10
 			badboy = 10
 			set_country_flag = greater_finland
@@ -86,6 +94,7 @@ political_decisions = {
 						primary_culture = ugrian
 						primary_culture = sami
 						primary_culture = estonian
+						primary_culture = karelian
 					}
 				}
 				country_event = 11109 

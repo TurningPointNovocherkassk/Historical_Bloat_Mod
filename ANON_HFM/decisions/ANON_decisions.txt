@@ -11056,7 +11056,10 @@ political_decisions = {
 						primary_culture = sami
 						AND = {
 							is_culture_group = scandinavian
-							accepted_culture = estonian
+								OR = {
+								accepted_culture = estonian
+								accepted_culture = finnish
+							}
 						}
 					}
 					owns = 983 NOT = { has_global_flag = ugric_renamed_kola }
@@ -11085,7 +11088,10 @@ political_decisions = {
 							primary_culture = sami
 							AND = {
 								is_culture_group = scandinavian
-								accepted_culture = estonian
+									OR = {
+									accepted_culture = estonian
+									accepted_culture = finnish
+								}
 							}
 						}
 					}
@@ -11139,7 +11145,10 @@ political_decisions = {
 						primary_culture = sami
 						AND = {
 							is_culture_group = scandinavian
-							accepted_culture = estonian
+								OR = {
+								accepted_culture = estonian
+								accepted_culture = finnish
+							}
 						}
 					}
 					owns = 982 NOT = { has_global_flag = ugric_renamed_petsamo }
@@ -11168,7 +11177,10 @@ political_decisions = {
 							primary_culture = sami
 							AND = {
 								is_culture_group = scandinavian
-								accepted_culture = estonian
+								OR = {
+									accepted_culture = estonian
+									accepted_culture = finnish
+								}
 							}
 						}
 					}
@@ -11210,7 +11222,10 @@ political_decisions = {
 						primary_culture = sami
 						AND = {
 							is_culture_group = scandinavian
-							accepted_culture = estonian
+								OR = {
+								accepted_culture = estonian
+								accepted_culture = finnish
+							}
 						}
 					}
 					owns = 994 NOT = { has_global_flag = ugric_renamed_ingriya }
@@ -11239,7 +11254,10 @@ political_decisions = {
 							primary_culture = sami
 							AND = {
 								is_culture_group = scandinavian
-								accepted_culture = estonian
+									OR = {
+									accepted_culture = estonian
+									accepted_culture = finnish
+								}
 							}
 						}
 					}
