@@ -721,6 +721,7 @@ political_decisions = {
 
 		effect = {
 			set_country_flag = become_HABSBURG_poland_lithuania
+			inherit = LIT
 			country_event = 666666048
 		}
 
@@ -1077,12 +1078,12 @@ political_decisions = {
 				tag = PLC
 				tag = PLR
 			}
+			is_vassal = no
 			NOT = { has_country_flag = claimed_claim_silesia }
 		}
 		
 		allow = {
 			war = no
-			is_vassal = no
 			is_disarmed = no
 			OR = {
 				is_secondary_power = yes
@@ -1142,12 +1143,12 @@ political_decisions = {
 				tag = PLC
 				tag = PLR
 			}
+			is_vassal = no
 			NOT = { has_country_flag = claim_pomerania }			
 		}
 				
 		allow = {
 			war = no
-			is_vassal = no
 			is_disarmed = no
 			OR = {
 				is_secondary_power = yes
@@ -1206,12 +1207,12 @@ political_decisions = {
 				primary_culture = lithuanian
 				accepted_culture = lithuanian
 			}
+			is_vassal = no
 			NOT = { has_country_flag = tilsit_act }			
 		}
 				
 		allow = {
 			war = no
-			is_vassal = no
 			is_disarmed = no
 			OR = {
 				is_secondary_power = yes
@@ -1266,12 +1267,12 @@ political_decisions = {
 				primary_culture = polish
 				accepted_culture = polish
 			}
+			is_vassal = no
 			NOT = { has_country_flag = masurian_plan }			
 		}
 				
 		allow = {
 			war = no
-			is_vassal = no
 			is_disarmed = no
 			OR = {
 				is_secondary_power = yes
@@ -1372,11 +1373,11 @@ political_decisions = {
 					}
 				}
 			}
+			is_vassal = no
 		}
 				
 		allow = {
 			war = no
-			is_vassal = no
 			is_disarmed = no
 			is_greater_power = yes
 			OR = {
@@ -1432,12 +1433,12 @@ political_decisions = {
 			NOT = { has_country_flag = german_question }
 			has_country_flag = konigsberg_edict
 			has_country_flag = negate_partition
+			is_vassal = no
 		}
 				
 		allow = {
 			money = 100000
 			war = no
-			is_vassal = no
 			is_disarmed = no
 			is_greater_power = yes
 			OR = {
@@ -1716,11 +1717,11 @@ political_decisions = {
 				tag = PRB
 			}
 			NOT = { has_country_flag = claimed_bohemian_claims }
+			is_vassal = no
 		}
 		
 		allow = {
 			war = no
-			is_vassal = no
 			is_disarmed = no
 			OR = {
 				is_secondary_power = yes
@@ -1799,12 +1800,12 @@ political_decisions = {
 					primary_culture = south_german
 					primary_culture = north_german
 				}			
-			}			
+			}	
+			is_vassal = no		
 		}
 				
 		allow = {
 			war = no
-			is_vassal = no
 			is_disarmed = no
 			OR = {
 				is_secondary_power = yes
@@ -1915,11 +1916,11 @@ political_decisions = {
 			NOT = {
 				has_country_flag = liberate_baltic_states
 			}
+			is_vassal = no
 		}
 				
 		allow = {
 			war = no
-			is_vassal = no
 			is_disarmed = no
 			is_greater_power = yes
 			nationalism_n_imperialism = 1

@@ -6088,6 +6088,7 @@ country_event = {
 	title = "EVTNAME666666048"
 	desc = "EVTDESC666666048"
 	news = yes
+	major = yes
 	news_title = "EVTDESC666666048_NEWS_TITLE"
 	news_desc_long = "EVTDESC666666048_NEWS_LONG"
 	news_desc_medium = "EVTDESC666666048_NEWS_MEDIUM"
@@ -6096,11 +6097,14 @@ country_event = {
 	
 	is_triggered_only = yes
 	
-	immediate = { set_global_flag = first_lithuanian_revolution }
+	immediate = {
+		set_global_flag = first_lithuanian_revolution
+	}
 	
 	option = {
 		name = "EVT666666048OPTA" #To Arms! To Arms!
 		set_country_flag = lithuania_refuses
+		release = LIT
 		any_owned = {
 			limit = {
 				is_core = LIT
@@ -6120,7 +6124,6 @@ country_event = {
 				remove_core = THIS
 			}
 		}
-		release = LIT
 		war = {
 			target = LIT
 			attacker_goal = { casus_belli = make_puppet }
@@ -6135,6 +6138,7 @@ country_event = {
 	option = {
 		name = "EVT666666048OPTB" #Let them go
 		set_country_flag = lithuania_released
+		release = LIT
 		any_owned = {
 			limit = {
 				is_core = LIT
@@ -6154,7 +6158,6 @@ country_event = {
 				remove_core = THIS
 			}
 		}
-		release = LIT
 		prestige = -25
 		badboy = -10
 		ai_chance = {
@@ -6165,6 +6168,7 @@ country_event = {
 	option = {
 		name = "EVT666666048OPTC" #We will support them! Down with the Habsburgs!
 		set_country_flag = lithuania_refuses
+		release = LIT
 		any_owned = {
 			limit = {
 				is_core = LIT
@@ -6178,7 +6182,6 @@ country_event = {
 			government = absolute_monarchy
 			ruling_party_ideology = reactionary
 		}
-		release = LIT
 		war = {
 			target = LIT
 			attacker_goal = { casus_belli = make_puppet }

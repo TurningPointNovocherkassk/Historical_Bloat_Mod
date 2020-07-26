@@ -560,3 +560,17 @@ country_event = {
 		}
 	}
 }
+
+country_event = {
+	id = 9999981
+	title = "Break Free Test"
+	desc = "What the title says"
+	picture = "treaty"
+	
+	is_triggered_only = yes
+	
+	option = {
+		overlord = { release = THIS }
+		overlord = { release_vassal = THIS }
+	}
+}
