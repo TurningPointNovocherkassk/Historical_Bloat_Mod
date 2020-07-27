@@ -615,6 +615,8 @@ political_decisions = {
 			}
 			random_owned = { 
 				limit = { owner = { accepted_culture = czech } } owner = { remove_accepted_culture = czech }
+				limit = { owner = { accepted_culture = russian } } owner = { remove_accepted_culture = russian }
+				limit = { owner = { accepted_culture = russophile } } owner = { remove_accepted_culture = russophile }
 			}
 			any_country = {
 				limit = {
