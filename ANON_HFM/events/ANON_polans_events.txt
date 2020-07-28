@@ -1286,7 +1286,7 @@ country_event = {
 	}
 
 	mean_time_to_happen = {
-		months = 3
+		months = 4
 		modifier = {
 			factor = 0.5
 			OR = {
@@ -1649,7 +1649,23 @@ country_event = {
 
 	option = {
 		name = "EVT666666015OPTA"
-		country_event = 666666017
+		country_event = { id = 666666017 days = 30 }
+		any_owned = {
+			limit = {
+				province_id = 619 #Vienna
+				owner = {
+					OR = {
+						tag = AUS
+						tag = KUK
+						tag = SGF
+						tag = DNB
+						tag = GCF
+						tag = GER
+					}
+				}
+			}
+			owner = { country_event = 666666025 }
+		}
 	}
 }
 
@@ -2849,27 +2865,28 @@ country_event = {
 	title = "EVTNAME666666025" #The Galicia-Lodomeria Convention
 	desc = "EVTDESC666666025"
 	picture = "GLM_convention"
+	# fire_only_once = yes 
+	is_triggered_only = yes
+	# trigger = {
+		# OR = {
+			# tag = AUS
+			# tag = KUK
+			# tag = SGF
+		# }
+		# OR = {
+			# owns = 714
+			# owns = 702
+		# }
+		# has_country_flag = for_congress_paris
+		# NOT = {
+			# has_country_flag = GLM_convention
+			# has_global_flag = paris_congress_held
+		# }
+	# }
 	
-	trigger = {
-		OR = {
-			tag = AUS
-			tag = KUK
-			tag = SGF
-		}
-		OR = {
-			owns = 714
-			owns = 702
-		}
-		has_country_flag = attending_paris_congress
-		NOT = {
-			has_country_flag = GLM_convention
-			has_global_flag = paris_congress_held
-		}
-	}
-	
-	mean_time_to_happen = {
-		days = 3
-	}
+	# mean_time_to_happen = {
+		# days = 3
+	# }
 	
 	option = {
 		name = "EVT666666025OPTA"
