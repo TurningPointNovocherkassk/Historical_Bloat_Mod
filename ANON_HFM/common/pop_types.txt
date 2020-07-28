@@ -474,6 +474,17 @@ migration_chance = {
 		has_pop_religion = jewish
 		country = { has_country_flag = jewish_country }
 	}
+	modifier = {
+		factor = 2
+		has_pop_religion = karaite
+		country = { has_country_flag = jewish_country_accept_karaite }
+	}
+	modifier = {
+		factor = 2
+		has_pop_religion = samaritan
+		country = { has_country_flag = jewish_country_accept_samaritan }
+	}
+	#
 	
 	group = {
 		modifier = {
@@ -1569,6 +1580,16 @@ assimilation_chance = {
 		has_pop_religion = jewish
 		not = { country = { has_country_flag = jewish_country } }
 	}
+	modifier = {
+		factor = -0.9
+		has_pop_religion = karaite
+		not = { country = { has_country_flag = jewish_country_accept_karaite } }
+	}
+	modifier = {
+		factor = -0.9
+		has_pop_religion = samaritan
+		not = { country = { has_country_flag = jewish_country_accept_samaritan } }
+	}
 	
 	#ANON
 	modifier = {
@@ -1903,6 +1924,8 @@ conversion_chance = {
 		factor = -0.95
 		OR = {
 			has_pop_religion = jewish
+			has_pop_religion = karaite
+			has_pop_religion = samaritan
 			has_pop_religion = mormon
 			has_pop_religion = shiite
 			has_pop_religion = sunni

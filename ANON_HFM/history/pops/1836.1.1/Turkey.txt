@@ -256,6 +256,38 @@
 #under the rule of Ottoman Empire in 1836
 #Istanbul (764000/191000 POPS)
 860 = {
+
+	aristocrats = {
+		culture = karaite_culture
+		religion = karaite
+		size = 250
+	}
+	officers = {
+		culture = karaite_culture
+		religion = karaite
+		size = 100
+	}
+	soldiers = {
+		culture = karaite_culture
+		religion = karaite
+		size = 750
+	}
+	clergymen = {
+		culture = karaite_culture
+		religion = karaite
+		size = 150
+	}
+	artisans = {
+		culture = karaite_culture
+		religion = karaite
+		size = 5000
+	}
+	farmers = {
+		culture = karaite_culture
+		religion = karaite
+		size = 3000
+	}
+
 	aristocrats = {
 		culture = turkish
 		religion = sunni
@@ -491,6 +523,43 @@
 }
 #Uskudar (188000/47000 POPS)
 861 = {
+
+	aristocrats = {
+		culture = karaite_culture
+		religion = karaite
+		size = 100
+	}
+	bureaucrats = {
+		culture = karaite_culture
+		religion = karaite
+		size = 100
+	}
+	officers = {
+		culture = karaite_culture
+		religion = karaite
+		size = 50
+	}
+	soldiers = {
+		culture = karaite_culture
+		religion = karaite
+		size = 150
+	}
+	clergymen = {
+		culture = karaite_culture
+		religion = karaite
+		size = 75
+	}
+	artisans = {
+		culture = karaite_culture
+		religion = karaite
+		size = 2000
+	}
+	farmers = {
+		culture = karaite_culture
+		religion = karaite
+		size = 1500
+	}
+
 	aristocrats = {
 		culture = turkish
 		religion = sunni
@@ -1524,32 +1593,32 @@
 	farmers = {
 		culture = turkish
 		religion = sunni
-		size = 45475
+		size = 35475
 	}
 
 	aristocrats = {
-		culture = turkish #turkic_minor
-		religion = sunni
+		culture = turkic_minor
+		religion = alevi
 		size = 150
 	}
 	clergymen = {
-		culture = turkish #turkic_minor
-		religion = sunni
+		culture = turkic_minor
+		religion = alevi
 		size = 300
 	}
 	artisans = {
-		culture = turkish #turkic_minor
-		religion = sunni
+		culture = turkic_minor
+		religion = alevi
 		size = 3456
 	}
 	soldiers = {
-		culture = turkish #turkic_minor
-		religion = sunni
+		culture = turkic_minor
+		religion = alevi
 		size = 200
 	}
 	farmers = {
-		culture = turkish #turkic_minor
-		religion = sunni
+		culture = turkic_minor
+		religion = alevi
 		size = 20000
 	}
 	
@@ -1569,7 +1638,7 @@
 	farmers = {
 		culture = greek
 		religion = orthodox
-		size = 5000
+		size = 15000
 	}
 		
 	clergymen = {
@@ -2956,28 +3025,28 @@
 	
 	
 	aristocrats = {
-		culture = turkish #turkic_minor
-		religion = sunni
+		culture = turkic_minor
+		religion = alevi
 		size = 150
 	}
 	clergymen = {
-		culture = turkish #turkic_minor
-		religion = sunni
+		culture = turkic_minor
+		religion = alevi
 		size = 300
 	}
 	artisans = {
-		culture = turkish #turkic_minor
-		religion = sunni
+		culture = turkic_minor
+		religion = alevi
 		size = 1456
 	}
 	soldiers = {
-		culture = turkish #turkic_minor
-		religion = sunni
+		culture = turkic_minor
+		religion = alevi
 		size = 200
 	}
 	farmers = {
-		culture = turkish #turkic_minor
-		religion = sunni
+		culture = turkic_minor
+		religion = alevi
 		size = 3000
 	}
 	
@@ -3401,28 +3470,28 @@
 	}
 	
 	aristocrats = {
-		culture = turkish #turkic_minor
-		religion = sunni
+		culture = turkic_minor
+		religion = alevi
 		size = 150
 	}
 	clergymen = {
-		culture = turkish #turkic_minor
-		religion = sunni
+		culture = turkic_minor
+		religion = alevi
 		size = 300
 	}
 	artisans = {
-		culture = turkish #turkic_minor
-		religion = sunni
+		culture = turkic_minor
+		religion = alevi
 		size = 3456
 	}
 	soldiers = {
-		culture = turkish #turkic_minor
-		religion = sunni
+		culture = turkic_minor
+		religion = alevi
 		size = 200
 	}
 	farmers = {
-		culture = turkish #turkic_minor
-		religion = sunni
+		culture = turkic_minor
+		religion = alevi
 		size = 7500
 	}
 	
@@ -4851,27 +4920,27 @@
 	}
 	
 	aristocrats = {
-		culture = turkish #turkic_minor
+		culture = turkic_minor
 		religion = alevi
 		size = 150
 	}
 	clergymen = {
-		culture = turkish #turkic_minor
+		culture = turkic_minor
 		religion = alevi
 		size = 300
 	}
 	artisans = {
-		culture = turkish #turkic_minor
+		culture = turkic_minor
 		religion = alevi
 		size = 2000
 	}
 	soldiers = {
-		culture = turkish #turkic_minor
+		culture = turkic_minor
 		religion = alevi
 		size = 200
 	}
 	farmers = {
-		culture = turkish #turkic_minor
+		culture = turkic_minor
 		religion = alevi
 		size = 10000
 	}
@@ -5485,28 +5554,28 @@
 	}
 	
 	aristocrats = {
-		culture = turkish #turkic_minor
-		religion = sunni
+		culture = turkic_minor
+		religion = alevi
 		size = 150
 	}
 	clergymen = {
-		culture = turkish #turkic_minor
-		religion = sunni
+		culture = turkic_minor
+		religion = alevi
 		size = 300
 	}
 	artisans = {
-		culture = turkish #turkic_minor
-		religion = sunni
+		culture = turkic_minor
+		religion = alevi
 		size = 2000
 	}
 	soldiers = {
-		culture = turkish #turkic_minor
-		religion = sunni
+		culture = turkic_minor
+		religion = alevi
 		size = 200
 	}
 	farmers = {
-		culture = turkish #turkic_minor
-		religion = sunni
+		culture = turkic_minor
+		religion = alevi
 		size = 10000
 	}
 	
@@ -5970,27 +6039,27 @@
 	
 	aristocrats = {
 		culture = turkic_minor #turkic_minor
-		religion = sunni
+		religion = alevi
 		size = 175
 	}
 	clergymen = {
 		culture = turkic_minor #turkic_minor
-		religion = sunni
+		religion = alevi
 		size = 100
 	}
 	artisans = {
 		culture = turkic_minor #turkic_minor
-		religion = sunni
+		religion = alevi
 		size = 100
 	}
 	soldiers = {
 		culture = turkic_minor #turkic_minor
-		religion = sunni
+		religion = alevi
 		size = 150
 	}
 	farmers = {
 		culture = turkic_minor #turkic_minor
-		religion = sunni
+		religion = alevi
 		size = 500
 	}
 	

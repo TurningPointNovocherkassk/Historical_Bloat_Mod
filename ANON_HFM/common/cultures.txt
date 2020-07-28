@@ -192,6 +192,58 @@ jewish_cultures = {
 						"al-Dhimmi" "Shalom"
 		}
 	}
+	samaritan_culture = {
+		color = {172 70 5}
+		first_names = {
+			
+			Abiatar Ahijah Akabon Alon Amit Amram Ananelus Ananias Aretas Aristobulus Azrikam Barak Baruch Belshazar Costobarus Deror Dori 
+			Eiran Eleazar Erotimus Ezra Hadasa Herod Hyrkanus Jannaeus Joazar Yosef Josiada Kahana Hillel Hodaviah Honio Meir Nahum 
+			Nathan Nehemiah Nikanor Nir Obadiah Ofer Omri Pinchas Phannias Phasael Raanan Malichus Manasseh Nogah Shamgar Shammai 
+			Shaul Shemaiah Shemida Silas Simeon Sosa Talmon Tarfon Tovia Yair Yochanan Zadok Chaim 
+
+			Abba Abbaye Acha Achai Achunai Aharon Alechsandri Ammi Amram Amunah Ashi Asher Avomai Avraham Azariah
+			Baboi Baruch Bibai Binyamin Boaz Bustenai Chanan Chananel Chaninai Chanoch Chaim Chayim Chelbo
+			Chisdai Chiyya Chizkiyah Chofni Chushiel Daniel David Dimi Dodai Dudai Efrayim Eina Elazar Elchanan
+			Eldad Eliezer Elyakim Gedalyah Gershom Ghayyat Giat Giza Hillel Hila Isaac Ivomai Kafnai Kahana
+			Kalonymos Levi Kiyomi Machir Malcha Mar Mari Matiyahu Meir Menechem Menashe Mesharsheya Meshulam
+			Mevasser Mishael Mordechai Moshe Nachman Nachshon Nasan Natan Natroi Natronai Nechemiah Nehilai
+			Nesanel Nissim Paltoi Pirkoi Peter Rava Ravai Ravi Ravya Reuven Rivai Saadiah Sechok Shabsai Shalom
+			Shanoi Shemaryah Sherira Sheshna Shila Shimon Shinoi Shlomo Shmuel Sorgo Sulam Tachlifa Tamar Tzadok
+			Tzemach Uri Yaakov Yachya Yechiel Yehudah Yehudai Yehoshua Yeshayah Yisrael Yitzchak Yoel Yosef
+			Yoshiah Yosi Yuda Zakkai Zelekman Zuiskind
+		
+		}
+
+		last_names = { "ben Shushan" "ben Zafrani" "ben Hillel" "ben Nogah" "ben Isaiah" "Shofet" "ben Daniel" "ben Mordechai" "al-Yahud" "ben Shmuel"
+						"al-Dhimmi" "Shalom" "ben Amram" "ben Shalma" "ben Tabia"
+		}
+	}
+	karaite_culture = {
+		color = {39 107 222}
+		first_names = {
+			Seraya 
+			Abiatar Ahijah Akabon Alon Amit Amram Ananelus Ananias Aretas Aristobulus Azrikam Barak Baruch Belshazar Costobarus Deror Dori 
+			Eiran Eleazar Erotimus Ezra Hadasa Herod Hyrkanus Jannaeus Joazar Yosef Josiada Kahana Hillel Hodaviah Honio Meir Nahum 
+			Nathan Nehemiah Nikanor Nir Obadiah Ofer Omri Pinchas Phannias Phasael Raanan Malichus Manasseh Nogah Shamgar Shammai 
+			Shaul Shemaiah Shemida Silas Simeon Sosa Talmon Tarfon Tovia Yair Yochanan Zadok Chaim 
+
+			Abba Abbaye Acha Achai Achunai Aharon Alechsandri Ammi Amram Amunah Ashi Asher Avomai Avraham Azariah
+			Baboi Baruch Bibai Binyamin Boaz Bustenai Chanan Chananel Chaninai Chanoch Chaim Chayim Chelbo
+			Chisdai Chiyya Chizkiyah Chofni Chushiel Daniel David Dimi Dodai Dudai Efrayim Eina Elazar Elchanan
+			Eldad Eliezer Elyakim Gedalyah Gershom Ghayyat Giat Giza Hillel Hila Isaac Ivomai Kafnai Kahana
+			Kalonymos Levi Kiyomi Machir Malcha Mar Mari Matiyahu Meir Menechem Menashe Mesharsheya Meshulam
+			Mevasser Mishael Mordechai Moshe Nachman Nachshon Nasan Natan Natroi Natronai Nechemiah Nehilai
+			Nesanel Nissim Paltoi Pirkoi Peter Rava Ravai Ravi Ravya Reuven Rivai Saadiah Sechok Shabsai Shalom
+			Shanoi Shemaryah Sherira Sheshna Shila Shimon Shinoi Shlomo Shmuel Sorgo Sulam Tachlifa Tamar Tzadok
+			Tzemach Uri Yaakov Yachya Yechiel Yehudah Yehudai Yehoshua Yeshayah Yisrael Yitzchak Yoel Yosef
+			Yoshiah Yosi Yuda Zakkai Zelekman Zuiskind
+		
+		}
+
+		last_names = {
+			Khan Hakham Aga "ben David" "ben Ali" Sultansky Bashyazi Krym Kefeli Qanaï "ben Ya'aqov" Rekhavi Marzouk "ben Yosef" Firrouz
+		}
+	}
 }
 
 beneluxian = {
@@ -518,6 +570,21 @@ british = {
 italian = {
 	leader = european
 	unit = ItalianGC
+	italo_diaspora = { 
+		color = { 94 145 138 }
+		first_names = { Alessandro Alfonso Ambrogio Amedeo Andrea Angelo Antonio Benito Camillo Carlo
+		Cesare Costanzo Davide Enrico Ettore Fabrizio Faustino Federico Felice Ferdinando
+		Fiorenzo Francesco Gaetano Gennaro Girolamo Giulio Giuseppe Guglielmo Innocenzo Leopoldo
+		Luigi Marco Massimo Matteo Nicola Oreste Paolo Pasquale Pietro Prospero
+		Raffaele Roberto Ruggiero Silvio Simone Tancredi Ugo Umberto Vincenzo Vittorio }
+		
+		last_names = { Acton Albricci Badoglio Baldissera Baratieri Bava-Beccaris Cadorna Cagni Canevaro Capello
+		Caviglia Ceccherini Cialdini Cusani d'Absburgo-Toscana d'Austria-Este Dezza "di Borbone di Parma" "di Robilant" "di Savoia"
+		"di Savoia-Aosta" Emo Fanti Fara Filomarino Garibaldi Giardino Govone "La Màrmora" Mambretti 
+		Menabrea Orengo "Pacoret de Saint Bon" Pallavicino Pecori-Giraldi "Pellion di Persano" Pelloux Perruchetti Pianelli Porro
+		Presbitero Ramorino Ricotti-Magnani Sacchi Saletta Sanna Solari "Thaon di Revel" Vaccari Zupelli
+		Fieschi Doria Aleramici Grimaldi Malaspina Spinola }
+	}
 	north_italian = { 
 		color = { 90 210 130}
 		first_names = { Alessandro Alfonso Ambrogio Amedeo Andrea Angelo Antonio Benito Camillo Carlo

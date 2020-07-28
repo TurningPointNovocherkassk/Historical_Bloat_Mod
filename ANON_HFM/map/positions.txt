@@ -40098,8 +40098,8 @@
 # Beirut
 913 = {
     text_position = {
-        x = 3359.700000
-        y = 1325.450000
+        x = 3358.200000
+        y = 1325.350000
     }
 
     text_rotation = 1.017502
@@ -42261,47 +42261,54 @@
 
 # Simferopol
 964 = {
-    unit = {
-        x = 3338.000000
-        y = 1538.000000
-    }
-
     text_position = {
-        x = 3338.600098
-        y = 1536.599976
+        x = 3341.500000
+        y = 1530.900000
     }
 
-    text_scale = 2.400000
+    text_rotation = 0.396334
+    text_scale = 2
+    unit = {
+        x = 3341.500000
+        y = 1534.100000
+    }
+
+    city = {
+        x = 3341.600000
+        y = 1532.450000
+    }
+
+    factory = {
+        x = 3334.400000
+        y = 1530.400000
+    }
+
     building_construction = {
-        x = 3350.000000
+        x = 3349.800000
         y = 1536.000000
     }
 
     military_construction = {
-        x = 3326.000000
-        y = 1538.000000
-    }
-
-    factory = {
-        x = 3344.100098
-        y = 1542.000000
+        x = 3335.700000
+        y = 1533.450000
     }
 
     building_position = {
         fort = {
-            x = 3335.000000
-            y = 1546.500000
+            x = 3333.550000
+            y = 1528.750000
+        }
+
+        railroad = {
+            x = 3341.600000
+            y = 1532.450000
         }
 
         naval_base = {
-            x = 3318.500000
-            y = 1542.599976
+            x = 3329.350000
+            y = 1528.750000
         }
 
-    }
-
-    building_rotation = {
-        naval_base = 1.047198
     }
 
 }
@@ -42309,8 +42316,8 @@
 # Cherson
 965 = {
     text_position = {
-        x = 3322.926923
-        y = 1564.211538
+        x = 3322.350000
+        y = 1564.900000
     }
 
     text_rotation = 0.512935
@@ -42326,8 +42333,8 @@
     }
 
     factory = {
-        x = 3334.000000
-        y = 1560.000000
+        x = 3321.950000
+        y = 1569.550000
     }
 
     building_construction = {
@@ -42418,31 +42425,36 @@
 
 # Sevastopol
 967 = {
-    unit = {
-        x = 3342.000000
-        y = 1526.000000
-    }
-
     text_position = {
-        x = 3342.100098
-        y = 1524.500000
+        x = 3333.150000
+        y = 1520.950000
     }
 
-    text_rotation = 0.610865
-    text_scale = 2.200000
-    building_construction = {
-        x = 3335.899902
-        y = 1526.099976
+    text_rotation = 0.310658
+    text_scale = 1
+    unit = {
+        x = 3333.539394
+        y = 1523.133333
     }
 
-    military_construction = {
-        x = 3340.000000
-        y = 1523.400024
+    city = {
+        x = 3331.163636
+        y = 1523.472727
     }
 
     factory = {
         x = 3351.100098
         y = 1529.000000
+    }
+
+    building_construction = {
+        x = 3334.600000
+        y = 1520.200000
+    }
+
+    military_construction = {
+        x = 3331.300000
+        y = 1524.800000
     }
 
     building_position = {
@@ -42451,17 +42463,14 @@
             y = 1521.099976
         }
 
+        railroad = {
+            x = 3334.121212
+            y = 1524.248485
+        }
+
         naval_base = {
             x = 3327.800049
             y = 1524.500000
-        }
-
-    }
-
-    spawn_railway_track = {
-        {
-            x = 3337.000977
-            y = 1530.498901
         }
 
     }
@@ -42699,8 +42708,8 @@
 # Melitopol
 973 = {
     text_position = {
-        x = 3349.400000
-        y = 1562.223077
+        x = 3359.909091
+        y = 1567.190909
     }
 
     text_rotation = 0.380506
@@ -146756,6 +146765,286 @@
 
     building_rotation = {
         naval_base = 1.570797
+    }
+
+}
+
+# Feodosia
+3670 = {
+    text_position = {
+        x = 3353.090909
+        y = 1528.636364
+    }
+
+    text_rotation = 0.369334
+    text_scale = 1.5
+    unit = {
+        x = 3351.659091
+        y = 1529.636364
+    }
+
+    city = {
+        x = 3357.431818
+        y = 1531.454545
+    }
+
+    factory = {
+        x = 3349.000000
+        y = 1528.045455
+    }
+
+    building_construction = {
+        x = 3355.022727
+        y = 1531.454545
+    }
+
+    military_construction = {
+        x = 3347.840909
+        y = 1526.681818
+    }
+
+    building_position = {
+        fort = {
+            x = 3357.431818
+            y = 1531.454545
+        }
+
+        railroad = {
+            x = 3352.340909
+            y = 1530.795455
+        }
+
+        naval_base = {
+            x = 3356.100000
+            y = 1528.150000
+        }
+
+    }
+
+    building_rotation = {
+        naval_base = 3.752459
+    }
+
+}
+
+# Yalta
+3671 = {
+    text_position = {
+        x = 3342.500000
+        y = 1524.550000
+    }
+
+    text_rotation = 0.696664
+    text_scale = 1.5
+    unit = {
+        x = 3341.440909
+        y = 1526.586364
+    }
+
+    city = {
+        x = 3340.384848
+        y = 1522.130303
+    }
+
+    factory = {
+        x = 3344.454545
+        y = 1527.900000
+    }
+
+    building_construction = {
+        x = 3338.350000
+        y = 1523.572727
+    }
+
+    military_construction = {
+        x = 3344.789394
+        y = 1526.560606
+    }
+
+    building_position = {
+        fort = {
+            x = 3340.384848
+            y = 1522.130303
+        }
+
+        railroad = {
+            x = 3340.900000
+            y = 1523.263636
+        }
+
+        naval_base = {
+            x = 3344.450000
+            y = 1523.150000
+        }
+
+    }
+
+    building_rotation = {
+        naval_base = 3.752459
+    }
+
+}
+
+# Aleshki
+3672 = {
+    text_position = {
+        x = 3326.440909
+        y = 1556.365909
+    }
+
+    text_scale = 2
+    unit = {
+        x = 3325.050000
+        y = 1558.104545
+    }
+
+    city = {
+        x = 3321.843182
+        y = 1562.547727
+    }
+
+    factory = {
+        x = 3315.584091
+        y = 1556.481818
+    }
+
+    building_construction = {
+        x = 3318.365909
+        y = 1559.727273
+    }
+
+    military_construction = {
+        x = 3331.540909
+        y = 1561.581818
+    }
+
+    building_position = {
+        fort = {
+            x = 3321.843182
+            y = 1562.547727
+        }
+
+        railroad = {
+            x = 3327.715909
+            y = 1559.688636
+        }
+
+        naval_base = {
+            x = 3305.693182
+            y = 1557.679545
+        }
+
+    }
+
+}
+
+# Perekop
+3673 = {
+    text_position = {
+        x = 3339.450000
+        y = 1542.050000
+    }
+
+    text_scale = 2
+    unit = {
+        x = 3337.636364
+        y = 1547.318182
+    }
+
+    city = {
+        x = 3332.136364
+        y = 1551.795455
+    }
+
+    factory = {
+        x = 3331.863636
+        y = 1546.113636
+    }
+
+    building_construction = {
+        x = 3341.886364
+        y = 1547.227273
+    }
+
+    military_construction = {
+        x = 3335.590909
+        y = 1549.227273
+    }
+
+    building_position = {
+        fort = {
+            x = 3332.136364
+            y = 1551.795455
+        }
+
+        railroad = {
+            x = 3336.454545
+            y = 1548.045455
+        }
+
+        naval_base = {
+            x = 3330.113636
+            y = 1549.545455
+        }
+
+    }
+
+}
+
+# Yevpatoriya
+3674 = {
+    text_position = {
+        x = 3323.850000
+        y = 1537.050000
+    }
+
+    text_rotation = 5.679864
+    text_scale = 1.5
+    unit = {
+        x = 3326.500000
+        y = 1538.200000
+    }
+
+    city = {
+        x = 3330.200000
+        y = 1534.500000
+    }
+
+    factory = {
+        x = 3315.900000
+        y = 1538.850000
+    }
+
+    building_construction = {
+        x = 3322.950000
+        y = 1541.600000
+    }
+
+    military_construction = {
+        x = 3331.150000
+        y = 1536.850000
+    }
+
+    building_position = {
+        fort = {
+            x = 3330.200000
+            y = 1534.500000
+        }
+
+        railroad = {
+            x = 3327.650000
+            y = 1537.400000
+        }
+
+        naval_base = {
+            x = 3328.800000
+            y = 1532.150000
+        }
+
+    }
+
+    building_rotation = {
+        naval_base = 5.410520
     }
 
 }

@@ -246,6 +246,38 @@
 		religion = orthodox
 		size = 2000
 	}
+
+	clergymen = {
+		culture = italo_diaspora
+		religion = catholic
+		size = 75
+	}
+	artisans = {
+		culture = italo_diaspora
+		religion = catholic
+		size = 500
+	}
+	farmers = {
+		culture = italo_diaspora
+		religion = catholic
+		size = 1500
+	}
+
+	clergymen = {
+		culture = italo_diaspora
+		religion = syriac
+		size = 50
+	}
+	artisans = {
+		culture = italo_diaspora
+		religion = syriac
+		size = 250
+	}
+	farmers = {
+		culture = italo_diaspora
+		religion = syriac
+		size = 500
+	}
 	
 	clergymen = {
 		culture = armenian
@@ -277,6 +309,39 @@
 }
 #Beirut
 913 = {
+
+	clergymen = {
+		culture = italo_diaspora
+		religion = catholic
+		size = 75
+	}
+	artisans = {
+		culture = italo_diaspora
+		religion = catholic
+		size = 500
+	}
+	farmers = {
+		culture = italo_diaspora
+		religion = catholic
+		size = 1500
+	}
+
+	clergymen = {
+		culture = italo_diaspora
+		religion = syriac
+		size = 50
+	}
+	artisans = {
+		culture = italo_diaspora
+		religion = syriac
+		size = 250
+	}
+	farmers = {
+		culture = italo_diaspora
+		religion = syriac
+		size = 500
+	}
+
 	aristocrats = {
 		culture = mashriqi
 		religion = shiite
@@ -423,15 +488,20 @@
 		size = 1625
 	}
 
+	aristocrats = {
+		culture = armenian
+		religion = coptic
+		size = 100
+	}
 	clergymen = {
 		culture = greek
 		religion = orthodox
-		size = 100
+		size = 250
 	}
 	artisans = {
 		culture = greek
 		religion = orthodox
-		size = 600
+		size = 1600
 	}
 	farmers = {
 		culture = greek
@@ -452,12 +522,12 @@
 	artisans = {
 		culture = armenian
 		religion = coptic
-		size = 435
+		size = 1600
 	}
 	farmers = {
 		culture = armenian
 		religion = coptic
-		size = 3000
+		size = 2000
 	}
 
 	clergymen = {
@@ -478,6 +548,40 @@
 }
 #Askaleh (48000/12000 POPS) #Trablos
 914 = {
+
+
+	clergymen = {
+		culture = italo_diaspora
+		religion = catholic
+		size = 75
+	}
+	artisans = {
+		culture = italo_diaspora
+		religion = catholic
+		size = 100
+	}
+	farmers = {
+		culture = italo_diaspora
+		religion = catholic
+		size = 500
+	}
+
+	clergymen = {
+		culture = italo_diaspora
+		religion = syriac
+		size = 50
+	}
+	artisans = {
+		culture = italo_diaspora
+		religion = syriac
+		size = 75
+	}
+	farmers = {
+		culture = italo_diaspora
+		religion = syriac
+		size = 200
+	}
+
 	aristocrats = {
 		culture = mashriqi
 		religion = sunni
@@ -736,6 +840,23 @@
 }
 #Jounieh
 3559 = {
+
+	clergymen = {
+		culture = italo_diaspora
+		religion = catholic
+		size = 75
+	}
+	artisans = {
+		culture = italo_diaspora
+		religion = catholic
+		size = 500
+	}
+	farmers = {
+		culture = italo_diaspora
+		religion = catholic
+		size = 1500
+	}
+
 	aristocrats = {
 		culture = mashriqi
 		religion = shiite
