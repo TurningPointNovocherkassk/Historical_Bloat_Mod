@@ -405,24 +405,14 @@ acquire_core_state = {
 		number_of_states = 2 # annex if you want their last state
 		is_vassal = no
 		any_owned_province = { is_core = THIS }
-		NOT = { has_country_modifier = neutrality }
+		NOT = {
+			has_country_modifier = neutrality
+			has_country_flag = for_congress_paris
+		}
 		THIS = {
 			NOT = {
 				has_country_modifier = neutrality
-				AND = {
-					OR = {
-						tag = PRU
-						tag = NGF
-						tag = GER
-						tag = GCF
-						tag = AUS
-						tag = KUK
-						tag = SGF
-						tag = RUS
-					}
-					has_country_modifier = no_more_war
-					has_global_flag = paris_congress_to_be_held
-				}
+				has_country_flag = for_congress_paris
 			}
 		}
 		OR = {
@@ -500,7 +490,10 @@ acquire_all_cores = {
 		is_vassal = no
 		any_owned_province = { is_core = THIS }
 		any_owned_province = { NOT = { is_core = THIS } }
-		NOT = { has_country_modifier = neutrality }
+		NOT = {
+			has_country_modifier = neutrality
+			has_country_flag = for_congress_paris
+		}
 		THIS = {
 			NOT = {
 				has_country_modifier = neutrality
@@ -508,20 +501,7 @@ acquire_all_cores = {
 					war_policy = pacifism
 					war = no
 				}
-				AND = {
-					OR = {
-						tag = PRU
-						tag = NGF
-						tag = GER
-						tag = GCF
-						tag = AUS
-						tag = KUK
-						tag = SGF
-						tag = RUS
-					}
-					has_country_modifier = no_more_war
-					has_global_flag = paris_congress_to_be_held
-				}
+				has_country_flag = for_congress_paris
 			}
 		}
 		OR = {
@@ -639,18 +619,17 @@ restore_austrian_empire = {
 		NOT = { has_country_modifier = neutrality }
 		NOT = { in_sphere = THIS }
 		#ANON
-		NOT = { has_country_flag = a_habsburg_on_the_throne_POL }
-		NOT = { has_country_modifier = neutrality }
-		#
+		NOT = {
+			has_country_modifier = neutrality
+			has_country_flag = for_congress_paris
+		}
 		THIS = {
 			NOT = {
+				has_country_flag = for_congress_paris
 				has_country_modifier = neutrality
-				AND = {
-					has_country_modifier = no_more_war
-					has_global_flag = paris_congress_to_be_held
-				}
 			}
 		}
+		#
 		OR = {
 			war_with = THIS
 			THIS = { NOT = { has_country_modifier = punitive_effects } }
@@ -684,7 +663,22 @@ restore_austrian_empire = {
 			}
 		}
 	}
-
+	
+	#ANON
+	allowed_countries = {
+		FROM = {
+			NOT = {
+				OR = {
+					tag = PNC
+					tag = HPL
+					tag = PRC
+				}
+				has_country_flag = a_habsburg_on_the_throne_POL
+			}
+		}
+	}
+	#
+	
 	po_demand_state = yes
 	
 	war_name = WAR_AUSTRIAN_EMPIRE_NAME

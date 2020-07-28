@@ -1106,7 +1106,7 @@ political_decisions = {
 		effect = {
 			set_country_flag = claimed_claim_silesia
 			badboy = 5
-			#add_accepted_culture = western_slavic
+			add_accepted_culture = western_slavic
 
 			SLS = { all_core = { add_core = THIS } }
 			any_country = {
@@ -1170,7 +1170,7 @@ political_decisions = {
 		
 		effect = {
 			set_country_flag = claim_pomerania
-			#add_accepted_culture = kashubian
+			add_accepted_culture = kashubian
 			prestige = 10
 			badboy = 5
 			680 = { add_core = THIS }
@@ -1294,6 +1294,7 @@ political_decisions = {
 		
 		effect = {
 			set_country_flag = masurian_plan
+			add_accepted_culture = masurian
 			prestige = 10
 			badboy = 2.5
 			MSR = { all_core = { add_core = THIS } }
@@ -3123,6 +3124,15 @@ political_decisions = {
 	kiel_concession = {
 		picture = "baltic_sea_map"
 		potential = {
+			OR = { 
+				tag = PLC
+				tag = PLR
+				tag = PRC
+				tag = PRB
+				tag = WSF
+				tag = UBD
+				tag = BBD
+			}
 			is_greater_power = yes
 			NOT = {
 				has_country_flag = kiel_concession

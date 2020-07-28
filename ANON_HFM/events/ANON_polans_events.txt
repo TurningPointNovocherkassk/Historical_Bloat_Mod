@@ -1361,6 +1361,7 @@ country_event = {
 						tag = RUS
 					}
 				}
+				exists = yes
 				war_with = PNC
 			}
 			end_war = PNC
@@ -1368,21 +1369,27 @@ country_event = {
 		}
 		any_country = {
 			limit = {
-				OR = {
-					tag = PRU
-					tag = NGF
-					tag = GER
-					tag = GCF
-					tag = AUS
-					tag = KUK
-					tag = SGF
-					tag = RUS
-				}
+				# OR = {
+					# tag = PRU
+					# tag = NGF
+					# tag = GER
+					# tag = GCF
+					# tag = AUS
+					# tag = KUK
+					# tag = SGF
+				# }
+				is_greater_power = yes
+				any_core = { is_core = PNC }
 				war_with = PNC
+				exists = yes
 			}
 			country_event = 666666015
-			#relation = { who = PNC value = 400 }
-			#diplomatic_influence = { who = PNC value = 300 }
+			add_country_modifier = { name = no_more_war duration = 1095 }
+			set_country_flag = for_congress_paris
+			end_war = PNC
+		}
+		RUS = {
+			country_event = 666666015
 			add_country_modifier = { name = no_more_war duration = 1095 }
 			set_country_flag = for_congress_paris
 			end_war = PNC
@@ -3305,6 +3312,7 @@ country_event = {
 	option = {
 		name = "EVT666666033OPTA"
 		clr_country_flag = a_habsburg_on_the_throne_POL
+		clr_country_flag = paris_congress_veto_flag
 		prestige_factor = 0.05
 		set_global_flag = GP_paris_vetoed
 		soldiers = {
@@ -9614,5 +9622,39 @@ country_event = {
 			}
 		}
 		ai_chance = { factor = 0 }
+	}
+}
+#debug event
+country_event = {
+	id = 666666097
+	title = "The War Ends"
+	desc = "Poznan, Krakow and Congress Poland have merged together, we now must declare war to the Polish National Committee."
+	picture = "treaty"
+	
+	trigger = {
+		OR = {
+			tag = PRU
+			tag = NGF
+			tag = GER
+			tag = GCF
+			tag = AUS
+			tag = KUK
+			tag = SGF
+			tag = RUS
+		}
+		OR = {
+			war_with = PZN
+			war_with = CPL
+			war_with = KRA
+		}
+		PNC = { exists = yes }
+	}
+	
+	option = {
+		name = "We are no longer at war with these countries."
+		end_war = PZN
+		end_war = CPL
+		end_war = KRA
+		ai_chance = { factor = 100 }
 	}
 }
