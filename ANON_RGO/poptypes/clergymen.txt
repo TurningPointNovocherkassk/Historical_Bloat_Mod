@@ -1707,6 +1707,46 @@ ideologies = {
 
 	socialist = {
 		factor = 1
+		
+		#ANON
+		modifier = {
+			factor = 4
+			has_pop_religion = jewish
+			country = { 
+				OR = { 
+					is_culture_group = germanic
+					is_culture_group = beneluxian
+					is_culture_group = pan_swiss
+					is_culture_group = scandinavian
+					is_culture_group = british
+					is_culture_group = italian
+					is_culture_group = iberian
+					is_culture_group = french
+					is_culture_group = south_slavic
+					is_culture_group = pan_albanian
+					is_culture_group = pan_romanian
+					is_culture_group = hungarian_culture_group
+					is_culture_group = polish_culture_group
+					is_culture_group = czecho_slovak_culture_group
+					is_primary_culture = greek
+					is_culture_group = turko_semitic
+					is_culture_group = baltic
+					is_culture_group = latin_american_cultures
+				}
+			}
+		}
+		modifier = {
+			factor = 8
+			has_pop_religion = jewish
+			country = { 
+				OR = { 
+					is_culture_group = east_slavic
+					is_culture_group = american_cultures
+					is_culture_group = neo_european_cultures
+				}
+			}
+		}
+		
 		modifier = {
 			factor = 1.1
 			nationalvalue = nv_equality
@@ -1869,6 +1909,46 @@ ideologies = {
 
 	communist = {
 		factor = 1
+		
+		#ANON
+		modifier = {
+			factor = 3
+			has_pop_religion = jewish
+			country = { 
+				OR = { 
+					is_culture_group = germanic
+					is_culture_group = beneluxian
+					is_culture_group = pan_swiss
+					is_culture_group = scandinavian
+					is_culture_group = british
+					is_culture_group = italian
+					is_culture_group = iberian
+					is_culture_group = french
+					is_culture_group = south_slavic
+					is_culture_group = pan_albanian
+					is_culture_group = pan_romanian
+					is_culture_group = hungarian_culture_group
+					is_culture_group = polish_culture_group
+					is_culture_group = czecho_slovak_culture_group
+					is_primary_culture = greek
+					is_culture_group = turko_semitic
+					is_culture_group = baltic
+					is_culture_group = latin_american_cultures
+				}
+			}
+		}
+		modifier = {
+			factor = 6
+			has_pop_religion = jewish
+			country = { 
+				OR = { 
+					is_culture_group = east_slavic
+					is_culture_group = american_cultures
+					is_culture_group = neo_european_cultures
+				}
+			}
+		}
+		
 		
 		modifier = {
 			factor = 0.25

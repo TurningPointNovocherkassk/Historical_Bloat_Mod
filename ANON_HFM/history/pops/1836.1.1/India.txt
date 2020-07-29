@@ -56,6 +56,27 @@
 		religion = protestant
 		size = 90
 	}
+	
+	aristocrats = {
+		culture = sephardic
+		religion = jewish
+		size = 25
+	}
+	clergymen = {
+		culture = sephardic
+		religion = jewish
+		size = 25
+	}
+	bureaucrats = {
+		culture = sephardic
+		religion = jewish
+		size = 25
+	}
+	artisans = {
+		culture = sephardic
+		religion = jewish
+		size = 200
+	}
 }
 
 #India.txt includes modern India, Pakistan and Bangladesh
@@ -222,6 +243,27 @@
 		culture = kashmiri
 		religion = sunni
 		size = 7000
+	}
+	
+	aristocrats = {
+		culture = mizrahi
+		religion = jewish
+		size = 250
+	}
+	clergymen = {
+		culture = mizrahi
+		religion = jewish
+		size = 250
+	}
+	bureaucrats = {
+		culture = mizrahi
+		religion = jewish
+		size = 100
+	}
+	artisans = {
+		culture = mizrahi
+		religion = jewish
+		size = 5000
 	}
 }
 #Chitral (160000/40000 POPS)
@@ -2578,6 +2620,27 @@
 		culture = panjabi
 		religion = sunni
 		size = 420600
+	}
+	
+	aristocrats = {
+		culture = mizrahi
+		religion = jewish
+		size = 250
+	}
+	clergymen = {
+		culture = mizrahi
+		religion = jewish
+		size = 250
+	}
+	bureaucrats = {
+		culture = mizrahi
+		religion = jewish
+		size = 100
+	}
+	artisans = {
+		culture = mizrahi
+		religion = jewish
+		size = 20000
 	}
 }
 #Multan (656000/164000 POPS)
@@ -9706,6 +9769,28 @@
 		religion = zoroastrian
 		size = 20500
 	}
+	
+	
+	aristocrats = {
+		culture = mizrahi
+		religion = jewish
+		size = 250
+	}
+	clergymen = {
+		culture = mizrahi
+		religion = jewish
+		size = 250
+	}
+	bureaucrats = {
+		culture = mizrahi
+		religion = jewish
+		size = 100
+	}
+	artisans = {
+		culture = mizrahi
+		religion = jewish
+		size = 10000
+	}
 }
 #Sukkur (348000/87000 POPS)
 1289 = {
@@ -10117,6 +10202,27 @@
 		size = 24375
 	}
 	
+	aristocrats = {
+		culture = mizrahi
+		religion = jewish
+		size = 250
+	}
+	clergymen = {
+		culture = mizrahi
+		religion = jewish
+		size = 250
+	}
+	bureaucrats = {
+		culture = mizrahi
+		religion = jewish
+		size = 100
+	}
+	artisans = {
+		culture = mizrahi
+		religion = jewish
+		size = 10000
+	}
+	
 	artisans = {
 		culture = persian
 		religion = zoroastrian
@@ -10125,6 +10231,22 @@
 	farmers = {
 		culture = persian
 		religion = zoroastrian
+		size = 3500
+	}
+	artisans = {
+		culture = persian
+		religion = zoroastrian
+		size = 6000
+	}
+	
+	artisans = {
+		culture = armenian
+		religion = coptic
+		size = 2500
+	}
+	farmers = {
+		culture = armenian
+		religion = coptic
 		size = 3500
 	}
 	artisans = {
@@ -10571,10 +10693,67 @@
 		size = 410000
 	}
 
-	artisans = {
-		culture = sindi
+	aristocrats = {
+		culture = mizrahi
 		religion = jewish
-		size = 1100
+		size = 100
+	}
+	clergymen = {
+		culture = mizrahi
+		religion = jewish
+		size = 100
+	}
+	bureaucrats = {
+		culture = mizrahi
+		religion = jewish
+		size = 100
+	}
+	artisans = {
+		culture = mizrahi
+		religion = jewish
+		size = 7500
+	}
+	
+	aristocrats = {
+		culture = marathi
+		religion = jewish
+		size = 250
+	}
+	clergymen = {
+		culture = marathi
+		religion = jewish
+		size = 250
+	}
+	bureaucrats = {
+		culture = marathi
+		religion = jewish
+		size = 100
+	}
+	artisans = {
+		culture = marathi
+		religion = jewish
+		size = 10000
+	}
+
+	aristocrats = {
+		culture = sephardic
+		religion = jewish
+		size = 100
+	}
+	clergymen = {
+		culture = sephardic
+		religion = jewish
+		size = 100
+	}
+	bureaucrats = {
+		culture = sephardic
+		religion = jewish
+		size = 50
+	}
+	artisans = {
+		culture = sephardic
+		religion = jewish
+		size = 5000
 	}
 
 	clergymen = {
@@ -10582,13 +10761,11 @@
 		religion = catholic
 		size = 50
 	}
-
 	artisans = {
 		culture = marathi
 		religion = catholic
 		size = 1950
 	}
-
 	farmers = {
 		culture = marathi
 		religion = catholic
@@ -11087,33 +11264,66 @@
 	aristocrats = {
 		culture = portuguese
 		religion = catholic
-		size = 150
+		size = 200
 	}
-
 	bureaucrats = {
 		culture = portuguese
 		religion = catholic
-		size = 25
+		size = 75
 	}
-
 	clergymen = {
 		culture = portuguese
 		religion = catholic
-		size = 50
+		size = 150
 	}
-
 	artisans = {
 		culture = portuguese
 		religion = catholic
-		size = 500
+		size = 2500
 	}
-
 	soldiers = {
 		culture = portuguese
 		religion = catholic
-		size = 25
+		size = 250
 	}
-
+	
+	aristocrats = {
+		culture = mizrahi
+		religion = jewish
+		size = 100
+	}
+	clergymen = {
+		culture = mizrahi
+		religion = jewish
+		size = 100
+	}
+	bureaucrats = {
+		culture = mizrahi
+		religion = jewish
+		size = 50
+	}
+	artisans = {
+		culture = mizrahi
+		religion = jewish
+		size = 2000
+	}
+	
+	bureaucrats = {
+		culture = italo_diaspora
+		religion = catholic
+		size = 50
+	}
+	clergymen = {
+		culture = italo_diaspora
+		religion = catholic
+		size = 500
+	}
+	artisans = {
+		culture = italo_diaspora
+		religion = catholic
+		size = 250
+	}
+	
 	aristocrats = {
 		culture = marathi
 		religion = catholic
@@ -11300,29 +11510,41 @@
 		religion = sunni
 		size = 100
 	}
-
 	clergymen = {
 		culture = telegu
 		religion = sunni
 		size = 175
 	}
-
 	artisans = {
 		culture = telegu
 		religion = sunni
 		size = 8000
 	}
-
 	soldiers = {
 		culture = telegu
 		religion = sunni
 		size = 150
 	}
-
 	farmers = {
 		culture = telegu
 		religion = sunni
 		size = 5575
+	}
+
+	clergymen = {
+		culture = telegu
+		religion = jewish
+		size = 75
+	}
+	artisans = {
+		culture = telegu
+		religion = jewish
+		size = 350
+	}
+	farmers = {
+		culture = telegu
+		religion = jewish
+		size = 750
 	}
 }
 #Nellore (1056000/264000 POPS)
@@ -11460,6 +11682,7 @@
 #under rule of Britain 1836
 #Madras (4496000/1124000 POPS)
 1304 = {
+
 	aristocrats = {
 		culture = tamil
 		religion = hindu
@@ -11639,6 +11862,27 @@
 		religion = protestant
 		size = 8125
 	}
+	
+	aristocrats = {
+		culture = sephardic
+		religion = jewish
+		size = 250
+	}
+	clergymen = {
+		culture = sephardic
+		religion = jewish
+		size = 250
+	}
+	bureaucrats = {
+		culture = sephardic
+		religion = jewish
+		size = 100
+	}
+	artisans = {
+		culture = sephardic
+		religion = jewish
+		size = 20000
+	}
 }
 #Tanjore (1448000/362000 POPS)
 1309 = {
@@ -11719,9 +11963,68 @@
 		religion = sunni
 		size = 19475
 	}
+	
+	aristocrats = {
+		culture = sephardic
+		religion = jewish
+		size = 250
+	}
+	clergymen = {
+		culture = sephardic
+		religion = jewish
+		size = 250
+	}
+	bureaucrats = {
+		culture = sephardic
+		religion = jewish
+		size = 100
+	}
+	artisans = {
+		culture = sephardic
+		religion = jewish
+		size = 20000
+	}
 }
 #Madurai (1720000/430000 POPS)
 1310 = {
+
+	bureaucrats = {
+		culture = italo_diaspora
+		religion = catholic
+		size = 50
+	}
+	clergymen = {
+		culture = italo_diaspora
+		religion = catholic
+		size = 1000
+	}
+	artisans = {
+		culture = italo_diaspora
+		religion = catholic
+		size = 775
+	}
+	
+	aristocrats = {
+		culture = mizrahi
+		religion = jewish
+		size = 250
+	}
+	clergymen = {
+		culture = mizrahi
+		religion = jewish
+		size = 250
+	}
+	bureaucrats = {
+		culture = mizrahi
+		religion = jewish
+		size = 100
+	}
+	artisans = {
+		culture = mizrahi
+		religion = jewish
+		size = 20000
+	}
+
 	aristocrats = {
 		culture = tamil
 		religion = hindu
@@ -11766,7 +12069,7 @@
 	
 	farmers = {
 		culture = tamil
-		religion = catholic
+		religion = syriac
 		size = 20250
 	}
 
@@ -11881,19 +12184,19 @@
 	bureaucrats = {
 		culture = french
 		religion = catholic
-		size = 10
+		size = 50
 	}
 
 	clergymen = {
 		culture = french
 		religion = catholic
-		size = 15
+		size = 75
 	}
 
 	soldiers = {
 		culture = french
 		religion = catholic
-		size = 25
+		size = 100
 	}
 
 	clergymen = {
@@ -11950,6 +12253,26 @@
 		size = 5000
 	}
 
+	aristocrats = {
+		culture = sephardic
+		religion = jewish
+		size = 250
+	}
+	clergymen = {
+		culture = sephardic
+		religion = jewish
+		size = 250
+	}
+	bureaucrats = {
+		culture = sephardic
+		religion = jewish
+		size = 100
+	}
+	artisans = {
+		culture = sephardic
+		religion = jewish
+		size = 2000
+	}
 }
 #Mysore Region (3140000)
 #Ruled by Mysore 1836 (2004000)
@@ -12384,6 +12707,75 @@
 #Under Rule of Travancore 1836 (1284000)
 #Cochin (808000/202000 POPS)
 1318 = {
+
+	aristocrats = {
+		culture = malayalam
+		religion = jewish
+		size = 175
+	}
+	clergymen = {
+		culture = malayalam
+		religion = jewish
+		size = 175
+	}
+	bureaucrats = {
+		culture = malayalam
+		religion = jewish
+		size = 100
+	}
+	artisans = {
+		culture = malayalam
+		religion = jewish
+		size = 3500
+	}
+	farmers = {
+		culture = malayalam
+		religion = jewish
+		size = 7500
+	}
+
+	aristocrats = {
+		culture = sephardic
+		religion = jewish
+		size = 250
+	}
+	clergymen = {
+		culture = sephardic
+		religion = jewish
+		size = 250
+	}
+	bureaucrats = {
+		culture = sephardic
+		religion = jewish
+		size = 100
+	}
+	artisans = {
+		culture = sephardic
+		religion = jewish
+		size = 10000
+	}
+	farmers = {
+		culture = sephardic
+		religion = jewish
+		size = 5000
+	}
+	
+	bureaucrats = {
+		culture = italo_diaspora
+		religion = catholic
+		size = 50
+	}
+	clergymen = {
+		culture = italo_diaspora
+		religion = catholic
+		size = 1000
+	}
+	artisans = {
+		culture = italo_diaspora
+		religion = catholic
+		size = 1250
+	}
+
 	aristocrats = {
 		culture = malayalam
 		religion = hindu
@@ -12554,6 +12946,23 @@
 }
 #Trivandrum (476000/119000 POPS)
 1319 = {
+
+	bureaucrats = {
+		culture = italo_diaspora
+		religion = catholic
+		size = 50
+	}
+	clergymen = {
+		culture = italo_diaspora
+		religion = catholic
+		size = 1000
+	}
+	artisans = {
+		culture = italo_diaspora
+		religion = catholic
+		size = 775
+	}
+
 	aristocrats = {
 		culture = malayalam
 		religion = hindu
