@@ -3362,9 +3362,93 @@ political_decisions = {
 				limit = { owner = { tag = ISR } }
 				owner = {
 					set_global_flag = law_of_return_issued
+					add_accepted_culture = sephardic
+					add_accepted_culture = mizrahi
 					any_owned = {
 						limit = { is_core = ISR state_id = 967 }
 						add_province_modifier = { name = jewish_farms duration = -1 }
+					}
+				}
+			}
+		}
+	 	ai_will_do = { factor = 1 }
+	}
+	
+	law_of_return_karaite = {
+	picture = law_of_return
+	 	potential = {
+	 		tag = ISR
+	 		has_country_flag = law_of_return_issued 
+			NOT = { has_country_flag = jewish_country_accept_karaite }
+	 	}
+	 
+	 	allow = {
+			invention = national_fraternity
+			border_policy = open_borders
+	 	}
+	 
+	 	effect = {
+			random_owned = { limit = { owner = { ai = no } } owner = { treasury = -5000 } }
+			random_owned = {
+				limit = { owner = { ai = yes } }
+				owner = { set_variable = { which = owed_cash_money value = 5 } } 
+			}
+			set_country_flag = jewish_country_accept_karaite
+			add_accepted_culture = karaite_culture
+			any_country = {
+				any_owned = {
+					limit = {
+						any_pop = {
+							OR = {
+								has_pop_culture = karaite_culture
+								has_pop_religion = karaite
+							}
+						}
+					}
+					add_province_modifier = {
+						name = jewish_diaspora_karaite
+						duration = -1
+					}
+				}
+			}
+		}
+	 	ai_will_do = { factor = 1 }
+	}
+	
+	law_of_return_samaritan = {
+	picture = law_of_return
+	 	potential = {
+	 		tag = ISR
+	 		has_country_flag = law_of_return_issued 
+			NOT = { has_country_flag = jewish_country_accept_samaritan }
+	 	}
+	 
+	 	allow = {
+			invention = national_fraternity
+			border_policy = open_borders
+	 	}
+	 
+	 	effect = {
+			random_owned = { limit = { owner = { ai = no } } owner = { treasury = -5000 } }
+			random_owned = {
+				limit = { owner = { ai = yes } }
+				owner = { set_variable = { which = owed_cash_money value = 5 } } 
+			}
+			set_country_flag = jewish_country_accept_samaritan
+			add_accepted_culture = samaritan_culture
+			any_country = {
+				any_owned = {
+					limit = {
+						any_pop = {
+							OR = {
+								has_pop_culture = samaritan_culture
+								has_pop_religion = samaritan
+							}
+						}
+					}
+					add_province_modifier = {
+						name = jewish_diaspora_samaritan
+						duration = -1
 					}
 				}
 			}

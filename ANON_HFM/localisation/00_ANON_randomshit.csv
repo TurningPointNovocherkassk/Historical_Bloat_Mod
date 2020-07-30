@@ -820,7 +820,7 @@ copt;Copt;;;;;;;;;;;;;;;;;;;;;;;;x
 cossack;Cossack;;;;;;;;;;;;;;;;;;;;;;;;x
 llanero;Llanero;;;;;;;;;;;;;;;;;;;;;;;;x
 sicilian;Sicilian;;;;;;;;;;;;;;;;;;;;;;;;x
-insular;Insular;;;;;;;;;;;;;;;;;;;;;;;;x
+insular;Insular Italian;;;;;;;;;;;;;;;;;;;;;;;;x
 central_italian;Central Italian;;;;;;;;;;;;;;;;;;;;;;;;x
 gaucho;Gaucho;;;;;;;;;;;;;;;;;;;;;;;;x
 jerriais;Norman;;;;;;;;;;;;;;;;;;;;;;;;x
@@ -1582,13 +1582,28 @@ EVTDESC666666096;Now that Finland is under our protection, we must decide their 
 larin_idea_title;The Crimean Idea;;;;;;;;x
 larin_idea_desc;The $MONARCHTITLE$'s government view with favour the establishment in Crimea of a national home for the Jewish people, and will use their best endeavours to facilitate the achievement of this object...'\n\nSince we exert a significant influence in Crimea, we can issue a declaration expressing our favorable attitude toward the establishment of a national home for the Jewish people there.;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
-law_of_return_crimea_title;Enact the Law of Return;;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,
-law_of_return_crimea_desc;The Law of Return 5710-$YEAR$ was enacted by the $COUNTRY_ADJ$ Upper House in $YEAR$. The Law declares that "Every $COUNTRY_ADJ$ has the right to come to this country as an immigrant from the Diaspora". A budget that encompasses economical and social incentives, among other promises, was established in the new law. All aimed at the potential immigrants, with every possible effort being made to bring the $COUNTRY_ADJ$ people back home.;;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,
+law_of_return_crimea_title;Enact the Law of Return;;;;;;;;;x
+law_of_return_crimea_desc;The Law of Return 5710-$YEAR$ was enacted by the $COUNTRY_ADJ$ Upper House in $YEAR$. The Law declares that "Every $COUNTRY_ADJ$ has the right to come to this country as an immigrant from the Diaspora". A budget that encompasses economical and social incentives, among other promises, was established in the new law. All aimed at the potential immigrants, with every possible effort being made to bring the $COUNTRY_ADJ$ people back home.;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
-EVTNAME666666098;The Jewish Homeland;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
-EVTDESC666666098;Jewish families in $PROVINCENAME$, having originally arrived in $COUNTRY$ as a result of the diaspora, are reportedly planning on emigrating to Israel-- the newly-established Jewish homeland in Crimea. We could encourage them to remain, but that might not be a simple matter.;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,
+EVTNAME666666098;The Jewish Homeland;;;;;;;;;x
+EVTDESC666666098;Jewish families in $PROVINCENAME$, having originally arrived in $COUNTRY$ as a result of the diaspora, are reportedly planning on emigrating to Israel-- the newly-established Jewish homeland in Crimea. We could encourage them to remain, but that might not be a simple matter.;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
+EVTNAME666666105;The Karaim Homeland;;;;;;;;;x
+EVTDESC666666105;Karaim families in $PROVINCENAME$, having originally arrived in $COUNTRY$ as a result of the diaspora, are reportedly planning on emigrating to Israel-- the newly-established Jewish homeland. We could encourage them to remain, but that might not be a simple matter.;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
+EVTNAME666666106;The Samaritan Homeland;;;;;;;;;x
+EVTDESC666666106;Samaritan families in $PROVINCENAME$, having originally arrived in $COUNTRY$ as a result of the diaspora, are reportedly planning on emigrating to Israel-- the newly-established Jewish homeland. We could encourage them to remain, but that might not be a simple matter.;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+law_of_return_karaite;Enact the Law of Return for Karaim;;;;;;;;;x
+law_of_return_karaite;The Law of Return 5710-$YEAR$ was enacted by the $COUNTRY_ADJ$ Upper House in $YEAR$. The Law declares that "Every Karaim has the right to come to this country as an immigrant from the Diaspora". A budget that encompasses economical and social incentives, among other promises, was established in the new law. All aimed at the potential immigrants, with every possible effort being made to bring the Karaim people back home.;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+law_of_return_samaritan;Enact the Law of Return for Samaritans;;;;;;;;;x
+law_of_return_samaritan;The Law of Return 5710-$YEAR$ was enacted by the $COUNTRY_ADJ$ Upper House in $YEAR$. The Law declares that "Every Samaritan has the right to come to this country". A budget that encompasses economical and social incentives, among other promises, was established in the new law. All aimed at the potential immigrants, with every possible effort being made to bring the Samaritan people back home.;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+jewish_diaspora_karaite;Karaim;;;;;;;;;x
+jewish_diaspora_karaite_desc;With Karaim now considered to be accepted in Israel, the Karaim of this province are deciding whether or not they should migrate there.;;;;;;;;;x
+jewish_diaspora_samaritan;Samaritans;;;;;;;;;x
+jewish_diaspora_samaritan_desc;With Samaritans now considered to be accepted in Israel, the Samaritans of this province are deciding whether or not they should migrate there.;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x

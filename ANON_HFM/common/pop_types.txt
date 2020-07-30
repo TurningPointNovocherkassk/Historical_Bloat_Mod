@@ -464,28 +464,10 @@ demotion_chance = {
 	}
 }
 
-#general migration chance mtth, same for all pops
+#general migration chance mtth, same for all pops, internal migration
 migration_chance = {
 	factor = 1
-	
-	#ANON
-	modifier = {
-		factor = 2
-		has_pop_religion = jewish
-		country = { has_country_flag = jewish_country }
-	}
-	modifier = {
-		factor = 2
-		has_pop_religion = karaite
-		country = { has_country_flag = jewish_country_accept_karaite }
-	}
-	modifier = {
-		factor = 2
-		has_pop_religion = samaritan
-		country = { has_country_flag = jewish_country_accept_samaritan }
-	}
-	#
-	
+		
 	group = {
 		modifier = {
 			factor = -0.1
@@ -764,7 +746,7 @@ migration_chance = {
 	}
 }
 
-#general colonial migration mtth, same for all pops
+#general colonial migration mtth, same for all pops, colonial migration
 colonialmigration_chance = {
 	factor = 0.25
 
@@ -930,7 +912,7 @@ colonialmigration_chance = {
 	#}
 }
 
-#general emigration chance
+#general emigration chance, external migration
 emigration_chance = {
 	factor = 0.5
 	
@@ -1445,6 +1427,11 @@ emigration_chance = {
 				has_country_flag = sunni_country
 				has_country_flag = shiite_country
 				has_country_flag = ibadi_country
+				has_country_flag = zaydi_country
+				has_country_flag = ismaili_country
+				has_country_flag = druze_country
+				has_country_flag = alawite_country
+				has_country_flag = alevi_country
 				has_country_flag = mahayana_country
 				has_country_flag = shinto_country
 				primary_culture = hakka

@@ -36,7 +36,7 @@ country_event = {
 		}
 		add_country_modifier = {
 			name = small_country_draft
-			duration = 1825
+			duration = -1
 		}
 		any_pop = {
 			limit = { has_pop_culture = mashriqi }
@@ -64,7 +64,7 @@ country_event = {
 				}
 				add_province_modifier = {
 					name = jewish_diaspora
-					duration = 1825
+					duration = -1
 				}
 			}
 		}
@@ -108,7 +108,7 @@ country_event = {
 		set_country_flag = jewish_diaspora
 		add_country_modifier = {
 			name = small_country_draft
-			duration = 1825
+			duration = -1
 		}
 		any_pop = {
 			limit = { has_pop_culture = malagasy }
@@ -139,7 +139,7 @@ country_event = {
 				}
 				add_province_modifier = {
 					name = jewish_diaspora
-					duration = 1825
+					duration = -1
 				}
 			}
 		}
@@ -180,7 +180,7 @@ country_event = {
 		set_country_flag = jewish_diaspora
 		add_country_modifier = {
 			name = small_country_draft
-			duration = 1825
+			duration = -1
 		}
 		any_pop = {
 			limit = {
@@ -217,7 +217,7 @@ country_event = {
 				}
 				add_province_modifier = {
 					name = jewish_diaspora
-					duration = 1825
+					duration = -1
 				}
 			}
 		}
@@ -261,7 +261,7 @@ country_event = {
 		set_country_flag = jewish_diaspora
 		add_country_modifier = {
 			name = small_country_draft
-			duration = 1825
+			duration = -1
 		}
 		any_pop = {
 			limit = {
@@ -293,7 +293,7 @@ country_event = {
 				}
 				add_province_modifier = {
 					name = jewish_diaspora
-					duration = 1825
+					duration = -1
 				}
 			}
 		}
@@ -338,7 +338,7 @@ country_event = {
 		set_country_flag = jewish_diaspora
 		add_country_modifier = {
 			name = small_country_draft
-			duration = 1825
+			duration = -1
 		}
 		any_pop = {
 			limit = {
@@ -377,7 +377,7 @@ country_event = {
 				}
 				add_province_modifier = {
 					name = jewish_diaspora
-					duration = 1825
+					duration = -1
 				}
 			}
 		}
@@ -418,7 +418,7 @@ country_event = {
 		set_country_flag = jewish_diaspora
 		add_country_modifier = {
 			name = small_country_draft
-			duration = 1825
+			duration = -1
 		}
 		any_pop = {
 			limit = {
@@ -455,7 +455,7 @@ country_event = {
 				}
 				add_province_modifier = {
 					name = jewish_diaspora
-					duration = 1825
+					duration = -1
 				}
 			}
 		}
@@ -496,7 +496,7 @@ country_event = {
 		set_country_flag = jewish_diaspora
 		add_country_modifier = {
 			name = small_country_draft
-			duration = 1825
+			duration = -1
 		}
 		any_pop = {
 			limit = {
@@ -529,7 +529,7 @@ country_event = {
 				}
 				add_province_modifier = {
 					name = jewish_diaspora
-					duration = 1825
+					duration = -1
 				}
 			}
 		}
@@ -570,7 +570,7 @@ country_event = {
 		set_country_flag = jewish_diaspora
 		add_country_modifier = {
 			name = small_country_draft
-			duration = 1825
+			duration = -1
 		}
 		any_pop = {
 			limit = {
@@ -605,7 +605,7 @@ country_event = {
 				}
 				add_province_modifier = {
 					name = jewish_diaspora
-					duration = 1825
+					duration = -1
 				}
 			}
 		}
@@ -649,7 +649,7 @@ country_event = {
 		set_country_flag = jewish_diaspora
 		add_country_modifier = {
 			name = small_country_draft
-			duration = 1825
+			duration = -1
 		}
 		any_pop = {
 			limit = {
@@ -687,7 +687,7 @@ country_event = {
 				}
 				add_province_modifier = {
 					name = jewish_diaspora
-					duration = 1825
+					duration = -1
 				}
 			}
 		}
@@ -845,7 +845,7 @@ province_event = {
 	}
 
 	mean_time_to_happen = {
-		months = 400
+		months = 200
 		modifier = {
 			factor = 2
 			owner = { government = democracy }
@@ -958,7 +958,7 @@ province_event = {
 	}
 
 	mean_time_to_happen = {
-		months = 400
+		months = 200
 		modifier = {
 			factor = 2
 			owner = { government = democracy }
@@ -1071,7 +1071,7 @@ province_event = {
 	}
 
 	mean_time_to_happen = {
-		months = 400
+		months = 200
 		modifier = {
 			factor = 2
 			owner = { government = democracy }
@@ -1297,7 +1297,7 @@ province_event = {
 	}
 
 	mean_time_to_happen = {
-		months = 400
+		months = 200
 		modifier = {
 			factor = 2
 			owner = { government = democracy }
@@ -1410,7 +1410,7 @@ province_event = {
 	}
 
 	mean_time_to_happen = {
-		months = 400
+		months = 200
 		modifier = {
 			factor = 2
 			owner = { government = democracy }
@@ -1523,7 +1523,7 @@ province_event = {
 	}
 
 	mean_time_to_happen = {
-		months = 400
+		months = 200
 		modifier = {
 			factor = 2
 			owner = { government = democracy }
@@ -1636,7 +1636,7 @@ province_event = {
 	}
 
 	mean_time_to_happen = {
-		months = 400
+		months = 200
 		modifier = {
 			factor = 2
 			owner = { government = democracy }
@@ -1749,7 +1749,7 @@ province_event = {
 	}
 
 	mean_time_to_happen = {
-		months = 400
+		months = 200
 		modifier = {
 			factor = 2
 			owner = { government = democracy }
@@ -1862,7 +1862,7 @@ province_event = {
 	}
 
 	mean_time_to_happen = {
-		months = 400
+		months = 200
 		modifier = {
 			factor = 2
 			owner = { government = democracy }
@@ -1975,7 +1975,7 @@ province_event = {
 	}
 
 	mean_time_to_happen = {
-		months = 400
+		months = 200
 		modifier = {
 			factor = 2
 			owner = { government = democracy }
@@ -2088,7 +2088,7 @@ province_event = {
 	}
 
 	mean_time_to_happen = {
-		months = 400
+		months = 200
 		modifier = {
 			factor = 2
 			owner = { government = democracy }
@@ -2201,7 +2201,7 @@ province_event = {
 	}
 
 	mean_time_to_happen = {
-		months = 400
+		months = 200
 		modifier = {
 			factor = 2
 			owner = { government = democracy }
@@ -2314,7 +2314,7 @@ province_event = {
 	}
 
 	mean_time_to_happen = {
-		months = 400
+		months = 200
 		modifier = {
 			factor = 2
 			owner = { government = democracy }
@@ -2540,7 +2540,7 @@ province_event = {
 	}
 
 	mean_time_to_happen = {
-		months = 400
+		months = 200
 		modifier = {
 			factor = 2
 			owner = { government = democracy }
@@ -2653,7 +2653,7 @@ province_event = {
 	}
 
 	mean_time_to_happen = {
-		months = 400
+		months = 200
 		modifier = {
 			factor = 2
 			owner = { government = democracy }
@@ -2766,7 +2766,7 @@ province_event = {
 	}
 
 	mean_time_to_happen = {
-		months = 400
+		months = 200
 		modifier = {
 			factor = 2
 			owner = { government = democracy }
@@ -2879,7 +2879,7 @@ province_event = {
 	}
 
 	mean_time_to_happen = {
-		months = 400
+		months = 200
 		modifier = {
 			factor = 2
 			owner = { government = democracy }
@@ -2992,7 +2992,7 @@ province_event = {
 	}
 
 	mean_time_to_happen = {
-		months = 400
+		months = 200
 		modifier = {
 			factor = 2
 			owner = { government = democracy }
@@ -3218,7 +3218,7 @@ province_event = {
 	}
 
 	mean_time_to_happen = {
-		months = 400
+		months = 200
 		modifier = {
 			factor = 2
 			owner = { government = democracy }
@@ -3331,7 +3331,7 @@ province_event = {
 	}
 
 	mean_time_to_happen = {
-		months = 400
+		months = 200
 		modifier = {
 			factor = 2
 			owner = { government = democracy }
@@ -3444,7 +3444,7 @@ province_event = {
 	}
 
 	mean_time_to_happen = {
-		months = 400
+		months = 200
 		modifier = {
 			factor = 2
 			owner = { government = democracy }
@@ -3670,7 +3670,7 @@ province_event = {
 	}
 
 	mean_time_to_happen = {
-		months = 400
+		months = 200
 		modifier = {
 			factor = 2
 			owner = { government = democracy }
@@ -3783,7 +3783,7 @@ province_event = {
 	}
 
 	mean_time_to_happen = {
-		months = 400
+		months = 200
 		modifier = {
 			factor = 2
 			owner = { government = democracy }
@@ -3896,7 +3896,7 @@ province_event = {
 	}
 
 	mean_time_to_happen = {
-		months = 400
+		months = 200
 		modifier = {
 			factor = 2
 			owner = { government = democracy }
@@ -4122,7 +4122,7 @@ province_event = {
 	}
 
 	mean_time_to_happen = {
-		months = 400
+		months = 200
 		modifier = {
 			factor = 2
 			owner = { government = democracy }
@@ -4235,7 +4235,7 @@ province_event = {
 	}
 
 	mean_time_to_happen = {
-		months = 400
+		months = 200
 		modifier = {
 			factor = 2
 			owner = { government = democracy }
@@ -4348,7 +4348,7 @@ province_event = {
 	}
 
 	mean_time_to_happen = {
-		months = 400
+		months = 200
 		modifier = {
 			factor = 2
 			owner = { government = democracy }
@@ -4461,7 +4461,7 @@ province_event = {
 	}
 
 	mean_time_to_happen = {
-		months = 400
+		months = 200
 		modifier = {
 			factor = 2
 			owner = { government = democracy }
@@ -4574,7 +4574,7 @@ province_event = {
 	}
 
 	mean_time_to_happen = {
-		months = 400
+		months = 200
 		modifier = {
 			factor = 2
 			owner = { government = democracy }
@@ -4800,7 +4800,7 @@ province_event = {
 	}
 
 	mean_time_to_happen = {
-		months = 400
+		months = 200
 		modifier = {
 			factor = 2
 			owner = { government = democracy }
@@ -4913,7 +4913,7 @@ province_event = {
 	}
 
 	mean_time_to_happen = {
-		months = 400
+		months = 200
 		modifier = {
 			factor = 2
 			owner = { government = democracy }
@@ -5026,7 +5026,7 @@ province_event = {
 	}
 
 	mean_time_to_happen = {
-		months = 400
+		months = 200
 		modifier = {
 			factor = 2
 			owner = { government = democracy }
@@ -5139,7 +5139,7 @@ province_event = {
 	}
 
 	mean_time_to_happen = {
-		months = 400
+		months = 200
 		modifier = {
 			factor = 2
 			owner = { government = democracy }
@@ -5365,7 +5365,7 @@ province_event = {
 	}
 
 	mean_time_to_happen = {
-		months = 400
+		months = 200
 		modifier = {
 			factor = 2
 			owner = { government = democracy }
@@ -5478,7 +5478,7 @@ province_event = {
 	}
 
 	mean_time_to_happen = {
-		months = 400
+		months = 200
 		modifier = {
 			factor = 2
 			owner = { government = democracy }
@@ -5591,7 +5591,7 @@ province_event = {
 	}
 
 	mean_time_to_happen = {
-		months = 400
+		months = 200
 		modifier = {
 			factor = 2
 			owner = { government = democracy }
@@ -5704,7 +5704,7 @@ province_event = {
 	}
 
 	mean_time_to_happen = {
-		months = 400
+		months = 200
 		modifier = {
 			factor = 2
 			owner = { government = democracy }
@@ -5817,7 +5817,7 @@ province_event = {
 	}
 
 	mean_time_to_happen = {
-		months = 400
+		months = 200
 		modifier = {
 			factor = 2
 			owner = { government = democracy }
@@ -6043,7 +6043,7 @@ province_event = {
 	}
 
 	mean_time_to_happen = {
-		months = 400
+		months = 200
 		modifier = {
 			factor = 2
 			owner = { government = democracy }
@@ -6156,7 +6156,7 @@ province_event = {
 	}
 
 	mean_time_to_happen = {
-		months = 400
+		months = 200
 		modifier = {
 			factor = 2
 			owner = { government = democracy }
@@ -6269,7 +6269,7 @@ province_event = {
 	}
 
 	mean_time_to_happen = {
-		months = 400
+		months = 200
 		modifier = {
 			factor = 2
 			owner = { government = democracy }
@@ -6382,7 +6382,7 @@ province_event = {
 	}
 
 	mean_time_to_happen = {
-		months = 400
+		months = 200
 		modifier = {
 			factor = 2
 			owner = { government = democracy }
@@ -6495,7 +6495,7 @@ province_event = {
 	}
 
 	mean_time_to_happen = {
-		months = 400
+		months = 200
 		modifier = {
 			factor = 2
 			owner = { government = democracy }

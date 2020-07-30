@@ -432,18 +432,22 @@ political_decisions = {
 						alliance_with = TEX
 						has_global_flag = YUC_allied_TEX
 					}
+					has_global_flag = YUC_allied_TEX_no
 					AND = {
 						alliance_with = RGR
 						has_global_flag = YUC_allied_RGR
 					}
+					has_global_flag = YUC_allied_RGR_no
 					AND = {
 						alliance_with = CAL
 						has_global_flag = YUC_allied_CAL
 					}
+					has_global_flag = YUC_allied_CAL_no
 					AND = {
 						alliance_with = C4L
 						has_global_flag = YUC_allied_C4L
 					}
+					has_global_flag = YUC_allied_C4L_no
 					AND = {
 						alliance_with = T4B
 						OR = {
@@ -452,10 +456,12 @@ political_decisions = {
 							has_global_flag = YUC_allied_T4B_3
 						}
 					}
+					has_global_flag = YUC_allied_T4B_no
 					AND = {
 						alliance_with = DES
 						has_global_flag = YUC_allied_DES
 					}
+					has_global_flag = YUC_allied_DES_no
 				}
 			}
 		}

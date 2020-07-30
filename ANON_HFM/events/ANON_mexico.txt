@@ -3225,6 +3225,63 @@ country_event = {
 	option = { # 
 		name = "EVT1220069OPTB"
 		FROM = { country_event = { id = 1220071 days = 5 } }
+		random_owned = {
+			limit = { owner = { tag = TEX } }
+			owner = { set_global_flag = YUC_allied_TEX_no }
+		}
+		random_owned = {
+			limit = { owner = { tag = RGR } }
+			owner = { set_global_flag = YUC_allied_RGR_no }
+		}
+		random_owned = {
+			limit = { owner = { tag = CAL } }
+			owner = { set_global_flag = YUC_allied_CAL_no }
+		}
+		random_owned = {
+			limit = { owner = { tag = C4L } }
+			owner = { set_global_flag = YUC_allied_C4L_no }
+		}
+		random_owned = {
+			limit = {
+				owner = { tag = T4B }
+				NOT = {
+					OR = {
+						has_global_flag = YUC_allied_T4B_1
+						has_global_flag = YUC_allied_T4B_2
+						has_global_flag = YUC_allied_T4B_3
+					}
+				}
+			}
+			owner = { set_global_flag = YUC_allied_T4B_no }
+		}
+		random_owned = {
+			limit = {
+				owner = { tag = T4B }
+				has_global_flag = YUC_allied_T4B_1
+				NOT = {
+					OR = {
+						has_global_flag = YUC_allied_T4B_2
+						has_global_flag = YUC_allied_T4B_3
+					}
+				}
+			}
+			owner = { set_global_flag = YUC_allied_T4B_no }
+		}
+		random_owned = {
+			limit = {
+				owner = { tag = T4B }
+				has_global_flag = YUC_allied_T4B_1
+				has_global_flag = YUC_allied_T4B_2
+				NOT = {
+					has_global_flag = YUC_allied_T4B_3
+				}
+			}
+			owner = { set_global_flag = YUC_allied_T4B_no }
+		}
+		random_owned = {
+			limit = { owner = { tag = DES } }
+			owner = { set_global_flag = YUC_allied_DES_no }
+		}
 		ai_chance = {
 			factor = 0
 		}	

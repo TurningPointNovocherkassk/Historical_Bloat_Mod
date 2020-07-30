@@ -9730,7 +9730,7 @@ country_event = {
 				}
 				add_province_modifier = {
 					name = jewish_diaspora
-					duration = 1825
+					duration = -1
 				}
 			}
 		}
@@ -9888,7 +9888,7 @@ province_event = {
 	}
 
 	mean_time_to_happen = {
-		months = 400
+		months = 200
 		modifier = {
 			factor = 2
 			owner = { government = democracy }
@@ -10001,7 +10001,7 @@ province_event = {
 	}
 
 	mean_time_to_happen = {
-		months = 400
+		months = 200
 		modifier = {
 			factor = 2
 			owner = { government = democracy }
@@ -10114,7 +10114,7 @@ province_event = {
 	}
 
 	mean_time_to_happen = {
-		months = 400
+		months = 200
 		modifier = {
 			factor = 2
 			owner = { government = democracy }
@@ -10227,7 +10227,7 @@ province_event = {
 	}
 
 	mean_time_to_happen = {
-		months = 400
+		months = 200
 		modifier = {
 			factor = 2
 			owner = { government = democracy }
@@ -10340,7 +10340,7 @@ province_event = {
 	}
 
 	mean_time_to_happen = {
-		months = 400
+		months = 200
 		modifier = {
 			factor = 2
 			owner = { government = democracy }
@@ -10453,7 +10453,7 @@ province_event = {
 	}
 
 	mean_time_to_happen = {
-		months = 400
+		months = 200
 		modifier = {
 			factor = 2
 			owner = { government = democracy }
@@ -10542,3 +10542,581 @@ province_event = {
 		}
 	}
 }
+
+province_event = {
+	id = 666666105
+	title = "EVTNAME666666105"
+	desc = "EVTDESC666666105"
+
+	trigger = {
+		OR = {
+			has_global_flag = israel_palestine
+			has_global_flag = israel_madagascar
+			has_global_flag = israel_andinia
+			has_global_flag = israel_guiana
+			has_global_flag = israel_alaska
+			has_global_flag = israel_uganda
+			has_global_flag = israel_japan
+			has_global_flag = israel_cyrenaica
+			has_global_flag = israel_angola
+			has_global_flag = israel_crimea
+		}
+		has_province_modifier = jewish_diaspora_karaite
+		owner = {
+			NOT = { border_policy = closed_borders }
+			war = no
+		}
+		ISR = {
+			exists = yes
+			war = no
+			has_country_flag = jewish_country_accept_karaite
+			OR = {
+				owns = 917
+				owns = 2115
+				owns = 2391
+				owns = 1979
+				owns = 1
+				owns = 2028
+				owns = 1642
+				owns = 1735
+				owns = 2003
+				owns = 967
+			}
+		}
+		OR = {
+			917 = {
+				NOT = { unemployment = 0.1 }
+			}
+			2115 = {
+				NOT = { unemployment = 0.1 }
+			}
+			2391 = {
+				NOT = { unemployment = 0.1 }
+			}
+			1979 = {
+				NOT = { unemployment = 0.1 }
+			}
+			1 = {
+				NOT = { unemployment = 0.1 }
+			}
+			2028 = {
+				NOT = { unemployment = 0.1 }
+			}
+			1642 = {
+				NOT = { unemployment = 0.1 }
+			}
+			1735 = {
+				NOT = { unemployment = 0.1 }
+			}
+			2003 = {
+				NOT = { unemployment = 0.1 }
+			}
+			967 = {
+				NOT = { unemployment = 0.1 }
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 200
+		modifier = {
+			factor = 2
+			owner = { government = democracy }
+		}
+		modifier = {
+			factor = 0.8
+			has_global_flag = law_of_return_issued
+		}
+		modifier = {
+			factor = 1.5
+			owner = { government = hms_government }
+		}
+		modifier = {
+			factor = 0.8
+			owner = { vote_franschise = none_voting }
+		}
+		modifier = {
+			factor = 0.5
+			owner = { religious_policy = moralism }
+		}
+		modifier = {
+			factor = 1.2
+			owner = { religious_policy = pluralism }
+		}
+		modifier = {
+			factor = 0.8
+			owner = { citizenship_policy = residency }
+		}
+		modifier = {
+			factor = 1.2
+			owner = { citizenship_policy = full_citizenship }
+		}
+	}
+
+	option = {
+		name = "EVT98405OPTA"
+		remove_province_modifier = jewish_diaspora_karaite
+		any_pop = {
+			limit = {
+				OR = {
+					has_pop_culture = karaite_culture
+					has_pop_religion = karaite
+				}
+				has_global_flag = israel_palestine
+			}
+			random = {
+				chance = 90
+				money = 500
+				move_pop = 917
+			}
+		}
+		any_pop = {
+			limit = {
+				OR = {
+					has_pop_culture = karaite_culture
+					has_pop_religion = karaite
+				}
+				has_global_flag = israel_madagascar
+			}
+			random = {
+				chance = 90
+				money = 500
+				move_pop = 2115
+			}
+		}
+		any_pop = {
+			limit = {
+				OR = {
+					has_pop_culture = karaite_culture
+					has_pop_religion = karaite
+				}
+				has_global_flag = israel_andinia
+			}
+			random = {
+				chance = 90
+				money = 500
+				move_pop = 2391
+			}
+		}
+		any_pop = {
+			limit = {
+				OR = {
+					has_pop_culture = karaite_culture
+					has_pop_religion = karaite
+				}
+				has_global_flag = israel_guiana
+			}
+			random = {
+				chance = 90
+				money = 500
+				move_pop = 1979
+			}
+		}
+		any_pop = {
+			limit = {
+				OR = {
+					has_pop_culture = karaite_culture
+					has_pop_religion = karaite
+				}
+				has_global_flag = israel_alaska
+			}
+			random = {
+				chance = 90
+				money = 500
+				move_pop = 1
+			}
+		}
+		any_pop = {
+			limit = {
+				OR = {
+					has_pop_culture = karaite_culture
+					has_pop_religion = karaite
+				}
+				has_global_flag = israel_uganda
+			}
+			random = {
+				chance = 90
+				money = 500
+				move_pop = 2028
+			}
+		}
+		any_pop = {
+			limit = {
+				OR = {
+					has_pop_culture = karaite_culture
+					has_pop_religion = karaite
+				}
+				has_global_flag = israel_japan
+			}
+			random = {
+				chance = 90
+				money = 500
+				move_pop = 1642
+			}
+		}
+		any_pop = {
+			limit = {
+				OR = {
+					has_pop_culture = karaite_culture
+					has_pop_religion = karaite
+				}
+				has_global_flag = israel_cyrenaica
+			}
+			random = {
+				chance = 90
+				money = 500
+				move_pop = 1735
+			}
+		}
+		any_pop = {
+			limit = {
+				OR = {
+					has_pop_culture = karaite_culture
+					has_pop_religion = karaite
+				}
+				has_global_flag = israel_angola
+			}
+			random = {
+				chance = 90
+				money = 500
+				move_pop = 2003
+			}
+		}
+		any_pop = {
+			limit = {
+				OR = {
+					has_pop_culture = karaite_culture
+					has_pop_religion = karaite
+				}
+				has_global_flag = israel_crimea
+			}
+			random = {
+				chance = 90
+				money = 500
+				move_pop = 967
+			}
+		}
+		ai_chance = {
+			factor = 75
+		}
+	}
+
+	option = {
+		name = "EVT98405OPTB"
+		remove_province_modifier = jewish_diaspora_karaite
+		any_pop = {
+			limit = {
+				OR = {
+					has_pop_culture = karaite_culture
+					has_pop_religion = karaite
+				}
+			}
+			money = 50
+			consciousness = -3
+		}
+		owner = { treasury = -500 }
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 0
+				owner = { civilized = no }
+			}
+			modifier = {
+				factor = 0
+				owner = {
+					NOT = { money = 1000 }
+				}
+			}
+		}
+	}
+}
+
+province_event = {
+	id = 666666106
+	title = "EVTNAME666666106"
+	desc = "EVTDESC666666106"
+
+	trigger = {
+		OR = {
+			has_global_flag = israel_palestine
+			has_global_flag = israel_madagascar
+			has_global_flag = israel_andinia
+			has_global_flag = israel_guiana
+			has_global_flag = israel_alaska
+			has_global_flag = israel_uganda
+			has_global_flag = israel_japan
+			has_global_flag = israel_cyrenaica
+			has_global_flag = israel_angola
+			has_global_flag = israel_crimea
+		}
+		has_province_modifier = jewish_diaspora_samaritan
+		owner = {
+			NOT = { border_policy = closed_borders }
+			war = no
+		}
+		ISR = {
+			exists = yes
+			war = no
+			has_country_flag = jewish_country_accept_samaritan
+			OR = {
+				owns = 917
+				owns = 2115
+				owns = 2391
+				owns = 1979
+				owns = 1
+				owns = 2028
+				owns = 1642
+				owns = 1735
+				owns = 2003
+				owns = 967
+			}
+		}
+		OR = {
+			917 = {
+				NOT = { unemployment = 0.1 }
+			}
+			2115 = {
+				NOT = { unemployment = 0.1 }
+			}
+			2391 = {
+				NOT = { unemployment = 0.1 }
+			}
+			1979 = {
+				NOT = { unemployment = 0.1 }
+			}
+			1 = {
+				NOT = { unemployment = 0.1 }
+			}
+			2028 = {
+				NOT = { unemployment = 0.1 }
+			}
+			1642 = {
+				NOT = { unemployment = 0.1 }
+			}
+			1735 = {
+				NOT = { unemployment = 0.1 }
+			}
+			2003 = {
+				NOT = { unemployment = 0.1 }
+			}
+			967 = {
+				NOT = { unemployment = 0.1 }
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 200
+		modifier = {
+			factor = 2
+			owner = { government = democracy }
+		}
+		modifier = {
+			factor = 0.8
+			has_global_flag = law_of_return_issued
+		}
+		modifier = {
+			factor = 1.5
+			owner = { government = hms_government }
+		}
+		modifier = {
+			factor = 0.8
+			owner = { vote_franschise = none_voting }
+		}
+		modifier = {
+			factor = 0.5
+			owner = { religious_policy = moralism }
+		}
+		modifier = {
+			factor = 1.2
+			owner = { religious_policy = pluralism }
+		}
+		modifier = {
+			factor = 0.8
+			owner = { citizenship_policy = residency }
+		}
+		modifier = {
+			factor = 1.2
+			owner = { citizenship_policy = full_citizenship }
+		}
+	}
+
+	option = {
+		name = "EVT98405OPTA"
+		remove_province_modifier = jewish_diaspora_samaritan
+		any_pop = {
+			limit = {
+				OR = {
+					has_pop_culture = samaritan_culture
+					has_pop_religion = samaritan
+				}
+				has_global_flag = israel_palestine
+			}
+			random = {
+				chance = 90
+				money = 500
+				move_pop = 917
+			}
+		}
+		any_pop = {
+			limit = {
+				OR = {
+					has_pop_culture = samaritan_culture
+					has_pop_religion = samaritan
+				}
+				has_global_flag = israel_madagascar
+			}
+			random = {
+				chance = 90
+				money = 500
+				move_pop = 2115
+			}
+		}
+		any_pop = {
+			limit = {
+				OR = {
+					has_pop_culture = samaritan_culture
+					has_pop_religion = samaritan
+				}
+				has_global_flag = israel_andinia
+			}
+			random = {
+				chance = 90
+				money = 500
+				move_pop = 2391
+			}
+		}
+		any_pop = {
+			limit = {
+				OR = {
+					has_pop_culture = samaritan_culture
+					has_pop_religion = samaritan
+				}
+				has_global_flag = israel_guiana
+			}
+			random = {
+				chance = 90
+				money = 500
+				move_pop = 1979
+			}
+		}
+		any_pop = {
+			limit = {
+				OR = {
+					has_pop_culture = samaritan_culture
+					has_pop_religion = samaritan
+				}
+				has_global_flag = israel_alaska
+			}
+			random = {
+				chance = 90
+				money = 500
+				move_pop = 1
+			}
+		}
+		any_pop = {
+			limit = {
+				OR = {
+					has_pop_culture = samaritan_culture
+					has_pop_religion = samaritan
+				}
+				has_global_flag = israel_uganda
+			}
+			random = {
+				chance = 90
+				money = 500
+				move_pop = 2028
+			}
+		}
+		any_pop = {
+			limit = {
+				OR = {
+					has_pop_culture = samaritan_culture
+					has_pop_religion = samaritan
+				}
+				has_global_flag = israel_japan
+			}
+			random = {
+				chance = 90
+				money = 500
+				move_pop = 1642
+			}
+		}
+		any_pop = {
+			limit = {
+				OR = {
+					has_pop_culture = samaritan_culture
+					has_pop_religion = samaritan
+				}
+				has_global_flag = israel_cyrenaica
+			}
+			random = {
+				chance = 90
+				money = 500
+				move_pop = 1735
+			}
+		}
+		any_pop = {
+			limit = {
+				OR = {
+					has_pop_culture = samaritan_culture
+					has_pop_religion = samaritan
+				}
+				has_global_flag = israel_angola
+			}
+			random = {
+				chance = 90
+				money = 500
+				move_pop = 2003
+			}
+		}
+		any_pop = {
+			limit = {
+				OR = {
+					has_pop_culture = samaritan_culture
+					has_pop_religion = samaritan
+				}
+				has_global_flag = israel_crimea
+			}
+			random = {
+				chance = 90
+				money = 500
+				move_pop = 967
+			}
+		}
+		ai_chance = {
+			factor = 75
+		}
+	}
+
+	option = {
+		name = "EVT98405OPTB"
+		remove_province_modifier = jewish_diaspora_samaritan
+		any_pop = {
+			limit = {
+				OR = {
+					has_pop_culture = samaritan_culture
+					has_pop_religion = samaritan
+				}
+			}
+			money = 50
+			consciousness = -3
+		}
+		owner = { treasury = -500 }
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 0
+				owner = { civilized = no }
+			}
+			modifier = {
+				factor = 0
+				owner = {
+					NOT = { money = 1000 }
+				}
+			}
+		}
+	}
+}
+	
+	
