@@ -3122,3 +3122,388 @@ country_event = {
 		prestige = 5
 	}
 }
+
+#owns Montevideo
+country_event = {
+	id = 1000086
+	title = "The owners of Montevideo"
+	desc = "We own Montevideo!"
+	picture = "treaty"
+	
+	trigger = {
+		NOT = { has_country_flag = owns_montevideo }
+		owns = 2344
+	}
+			
+	option = {
+		name = "Good to know."
+		set_country_flag = owns_montevideo
+	}
+}
+#doesn't own Montevideo
+country_event = {
+	id = 1000087
+	title = "The owners of Montevideo"
+	desc = "We are no longer the owners of Montevideo!"
+	picture = "treaty"
+	
+	trigger = {
+		has_country_flag = owns_montevideo
+		NOT = { owns = 2344 }
+	}
+			
+	option = {
+		name = "Curses!"
+		clr_country_flag = owns_montevideo
+	}
+}
+
+#owns Buenos Aires
+country_event = {
+	id = 1000088
+	title = "The owners of Buenos Aires"
+	desc = "We own Buenos Aires!"
+	picture = "treaty"
+	
+	trigger = {
+		NOT = { has_country_flag = owns_buenos_aires }
+		owns = 2348
+	}
+			
+	option = {
+		name = "Good to know."
+		set_country_flag = owns_buenos_aires
+	}
+}
+#doesn't own Buenos Aires
+country_event = {
+	id = 1000089
+	title = "The owners of Buenos Aires"
+	desc = "We are no longer the owners of Buenos Aires!"
+	picture = "treaty"
+	
+	trigger = {
+		has_country_flag = owns_buenos_aires
+		NOT = { owns = 2348 }
+	}
+			
+	option = {
+		name = "Curses!"
+		clr_country_flag = owns_buenos_aires
+	}
+}
+
+#owns Lima
+country_event = {
+	id = 1000090
+	title = "The owners of Lima"
+	desc = "We own Lima!"
+	picture = "treaty"
+	
+	trigger = {
+		NOT = { has_country_flag = owns_lima }
+		owns = 2295
+	}
+			
+	option = {
+		name = "Good to know."
+		set_country_flag = owns_lima
+	}
+}
+#doesn't own Lima
+country_event = {
+	id = 1000091
+	title = "The owners of Lima"
+	desc = "We are no longer the owners of Lima!"
+	picture = "treaty"
+	
+	trigger = {
+		has_country_flag = owns_lima
+		NOT = { owns = 2295 }
+	}
+			
+	option = {
+		name = "Curses!"
+		clr_country_flag = owns_lima
+	}
+}
+
+#owns Arequipa
+country_event = {
+	id = 1000090
+	title = "The owners of Arequipa"
+	desc = "We own Arequipa!"
+	picture = "treaty"
+	
+	trigger = {
+		NOT = { has_country_flag = owns_arequipa }
+		owns = 2304
+	}
+			
+	option = {
+		name = "Good to know."
+		set_country_flag = owns_arequipa
+	}
+}
+#doesn't own Arequipa
+country_event = {
+	id = 1000091
+	title = "The owners of Arequipa"
+	desc = "We are no longer the owners of Arequipa!"
+	picture = "treaty"
+	
+	trigger = {
+		has_country_flag = owns_arequipa
+		NOT = { owns = 2304 }
+	}
+			
+	option = {
+		name = "Curses!"
+		clr_country_flag = owns_arequipa
+	}
+}
+
+#owns Asuncion
+country_event = {
+	id = 1000092
+	title = "The owners of Asuncion"
+	desc = "We own Asuncion!"
+	picture = "treaty"
+	
+	trigger = {
+		NOT = { has_country_flag = owns_asuncion }
+		owns = 2339
+	}
+			
+	option = {
+		name = "Good to know."
+		set_country_flag = owns_asuncion
+	}
+}
+#doesn't own Asuncion
+country_event = {
+	id = 1000093
+	title = "The owners of Asuncion"
+	desc = "We are no longer the owners of Asuncion!"
+	picture = "treaty"
+	
+	trigger = {
+		has_country_flag = owns_asuncion
+		NOT = { owns = 2339 }
+	}
+			
+	option = {
+		name = "Curses!"
+		clr_country_flag = owns_asuncion
+	}
+}
+
+#owns Santiago
+country_event = {
+	id = 1000094
+	title = "The owners of Santiago"
+	desc = "We own Santiago!"
+	picture = "treaty"
+	
+	trigger = {
+		NOT = { has_country_flag = owns_santiago }
+		owns = 2324
+	}
+			
+	option = {
+		name = "Good to know."
+		set_country_flag = owns_santiago
+	}
+}
+#doesn't own Santiago
+country_event = {
+	id = 1000095
+	title = "The owners of Santiago"
+	desc = "We are no longer the owners of Santiago!"
+	picture = "treaty"
+	
+	trigger = {
+		has_country_flag = owns_santiago
+		NOT = { owns = 2324 }
+	}
+			
+	option = {
+		name = "Curses!"
+		clr_country_flag = owns_santiago
+	}
+}
+
+#owns Caracas
+country_event = {
+	id = 1000096
+	title = "The owners of Caracas"
+	desc = "We own Caracas!"
+	picture = "treaty"
+	
+	trigger = {
+		NOT = { has_country_flag = owns_caracas }
+		owns = 2264
+	}
+			
+	option = {
+		name = "Good to know."
+		set_country_flag = owns_caracas
+	}
+}
+#doesn't own Caracas
+country_event = {
+	id = 1000097
+	title = "The owners of Caracas"
+	desc = "We are no longer the owners of Caracas!"
+	picture = "treaty"
+	
+	trigger = {
+		has_country_flag = owns_caracas
+		NOT = { owns = 2264 }
+	}
+			
+	option = {
+		name = "Curses!"
+		clr_country_flag = owns_caracas
+	}
+}
+
+#owns Maracaibo
+country_event = {
+	id = 1000098
+	title = "The owners of Maracaibo"
+	desc = "We own Maracaibo!"
+	picture = "treaty"
+	
+	trigger = {
+		NOT = { has_country_flag = owns_maracaibo }
+		owns = 2270
+	}
+			
+	option = {
+		name = "Good to know."
+		set_country_flag = owns_maracaibo
+	}
+}
+#doesn't own Maracaibo
+country_event = {
+	id = 1000099
+	title = "The owners of Maracaibo"
+	desc = "We are no longer the owners of Maracaibo!"
+	picture = "treaty"
+	
+	trigger = {
+		has_country_flag = owns_maracaibo
+		NOT = { owns = 2270 }
+	}
+			
+	option = {
+		name = "Curses!"
+		clr_country_flag = owns_maracaibo
+	}
+}
+
+#owns Santo Domingo
+country_event = {
+	id = 1000100
+	title = "The owners of Santo Domingo"
+	desc = "We own Santo Domingo!"
+	picture = "treaty"
+	
+	trigger = {
+		NOT = { has_country_flag = owns_santo_domingo }
+		owns = 2214
+	}
+			
+	option = {
+		name = "Good to know."
+		set_country_flag = owns_santo_domingo
+	}
+}
+#doesn't own Santo Domingo
+country_event = {
+	id = 1000101
+	title = "The owners of Santo Domingo"
+	desc = "We are no longer the owners of Santo Domingo!"
+	picture = "treaty"
+	
+	trigger = {
+		has_country_flag = owns_santo_domingo
+		NOT = { owns = 2214 }
+	}
+			
+	option = {
+		name = "Curses!"
+		clr_country_flag = owns_santo_domingo
+	}
+}
+
+#owns Havana
+country_event = {
+	id = 1000102
+	title = "The owners of Havana"
+	desc = "We own Havana!"
+	picture = "treaty"
+	
+	trigger = {
+		NOT = { has_country_flag = owns_havana }
+		owns = 2209
+	}
+			
+	option = {
+		name = "Good to know."
+		set_country_flag = owns_havana
+	}
+}
+#doesn't own Havana
+country_event = {
+	id = 1000103
+	title = "The owners of Havana"
+	desc = "We are no longer the owners of Havana!"
+	picture = "treaty"
+	
+	trigger = {
+		has_country_flag = owns_havana
+		NOT = { owns = 2209 }
+	}
+			
+	option = {
+		name = "Curses!"
+		clr_country_flag = owns_havana
+	}
+}
+
+#owns Puerto Rico
+country_event = {
+	id = 1000104
+	title = "The owners of Puerto Rico"
+	desc = "We own Santo Puerto Rico!"
+	picture = "treaty"
+	
+	trigger = {
+		NOT = { has_country_flag = owns_puerto_rico }
+		owns = 2222
+	}
+			
+	option = {
+		name = "Good to know."
+		set_country_flag = owns_puerto_rico
+	}
+}
+#doesn't own Puerto Rico
+country_event = {
+	id = 1000105
+	title = "The owners of Puerto Rico"
+	desc = "We are no longer the owners of Puerto Rico!"
+	picture = "treaty"
+	
+	trigger = {
+		has_country_flag = owns_puerto_rico
+		NOT = { owns = 2222 }
+	}
+			
+	option = {
+		name = "Curses!"
+		clr_country_flag = owns_puerto_rico
+	}
+}

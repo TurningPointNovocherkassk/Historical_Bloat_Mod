@@ -92,6 +92,203 @@ country_migration_target = {
 		has_country_flag = law_of_return_issued
 		has_country_flag = jewish_country_accept_samaritan
 	}
+	
+	modifier = {
+		factor = 4
+		THIS = { is_culture_group = italian }
+		OR = {
+			primary_culture = platinean
+			primary_culture = gaucho
+		}
+	}
+	modifier = {
+		factor = 4
+		THIS = { has_pop_culture = japanese }
+		OR = {
+			primary_culture = brazilian
+			primary_culture = gaucho
+			has_country_flag = owns_montevideo
+		}
+	}
+	modifier = {
+		factor = 2
+		THIS = { has_pop_culture = japanese }
+		has_country_flag = owns_buenos_aires
+	}
+	modifier = {
+		factor = 2
+		THIS = {
+			OR = {
+				has_pop_culture = japanese
+				has_pop_culture = beifaren
+				has_pop_culture = nanfaren
+				has_pop_culture = hakka
+			}
+		}
+		OR = {
+			has_country_flag = owns_lima
+			has_country_flag = owns_arequipa
+		}
+	}
+	modifier = {
+		factor = 4
+		THIS = { is_culture_group = polish_culture_group }
+		OR = {
+			primary_culture = brazilian
+			has_country_flag = owns_asuncion
+		}
+	}
+	modifier = {
+		factor = 2
+		THIS = {
+			OR = {
+				is_culture_group = south_slavic
+				is_culture_group = germanic
+			}
+		}
+		has_country_flag = owns_santiago
+	}
+	modifier = {
+		factor = 1.25
+		THIS = {
+			is_culture_group = british
+		}
+		has_country_flag = owns_santiago
+	}
+	modifier = {
+		factor = 2
+		THIS = {
+			OR = {
+				has_pop_culture = canarian
+				has_pop_culture = andalusian
+				has_pop_culture = spanish
+				has_pop_culture = galician
+			}
+		}
+		OR = {
+			has_country_flag = owns_caracas
+			has_country_flag = owns_maracaibo
+			AND = {
+				has_country_flag = owns_santo_domingo
+				NOT = { primary_culture = afro_antillean }
+			}
+			has_country_flag = owns_havana
+			has_country_flag = owns_puerto_rico
+		}
+	}
+	modifier = {
+		factor = 2
+		THIS = { has_pop_culture = chaldean }
+		OR = {
+			has_country_flag = owns_caracas
+			has_country_flag = owns_maracaibo
+			AND = {
+				has_country_flag = owns_santo_domingo
+				NOT = { primary_culture = afro_antillean }
+			}
+			has_country_flag = owns_havana
+			has_country_flag = owns_puerto_rico
+			primary_culture = californio
+			primary_culture = californian
+			primary_culture = yucateco
+		}
+	}
+	modifier = {
+		factor = 1.5
+		THIS = {
+			has_pop_culture = mashriqi
+		}
+		OR = {
+			has_country_flag = owns_caracas
+			has_country_flag = owns_maracaibo
+			AND = {
+				has_country_flag = owns_santo_domingo
+				NOT = { primary_culture = afro_antillean }
+			}
+			has_country_flag = owns_havana
+			has_country_flag = owns_puerto_rico
+			primary_culture = californio
+			primary_culture = californian
+			primary_culture = yucateco
+		}
+	}
+	modifier = {
+		factor = 4
+		THIS = { has_pop_culture = chaldean }
+		OR = {
+			primary_culture = brazilian
+			primary_culture = central_american
+			primary_culture = mexican
+			primary_culture = norteno
+			has_country_flag = owns_buenos_aires
+		}
+	}
+	modifier = {
+		factor = 2
+		THIS = {
+			has_pop_culture = mashriqi
+		}
+		OR = {
+			primary_culture = brazilian
+			primary_culture = central_american
+			primary_culture = mexican
+			primary_culture = norteno
+			has_country_flag = owns_buenos_aires
+		}
+	}
+	modifier = {
+		factor = 2
+		THIS = {
+			has_pop_culture = assyrian
+		}
+		OR = {
+			has_country_flag = owns_buenos_aires
+			has_country_flag = owns_montevideo
+		}
+	}
+	modifier = {
+		factor = 10
+		THIS = { is_culture_group = east_slavic }
+		OR = {
+			primary_culture = alaskan
+			is_accepted_culture = alaskan
+		}
+		is_vassal = no
+	}
+	modifier = {
+		factor = 10.0
+		THIS = { has_pop_culture = welsh }
+		OR = {
+			has_country_flag = owns_buenos_aires #add for the formation of y wladfa and scots to nova scotia
+			primary_culture = welsh
+			is_accepted_culture = welsh
+		}
+	}
+	modifier = {
+		factor = 10.0
+		THIS = {
+			OR = {
+				has_pop_culture = scottish
+				has_pop_culture = ulster_scot
+			}
+		}
+		OR = {
+			primary_culture = scottish
+			is_accepted_culture = scottish
+			primary_culture = ulster_scot
+			is_accepted_culture = ulster_scot
+		}
+	}
+	modifier = {
+		factor = 10.0
+		THIS = {
+			has_pop_culture = irish
+		}
+		OR = {
+			primary_culture = irish
+			is_accepted_culture = irish
+		}
+	}
 	#
 	
 	
@@ -267,6 +464,112 @@ country_migration_target = {
 
 migration_target = {
 	factor = 0.01
+	
+	#ANON YWL, NSC, PEI, INF (irish newfoundland), T0V (colonia tovar)
+	
+	modifier = {
+		factor = 2.5
+		is_core = YWL
+		THIS = { has_pop_culture = welsh }
+		country = {
+			OR = {
+				primary_culture = irish
+				primary_culture = welsh
+				primary_culture = scottish
+				primary_culture = ulster_scot
+				primary_culture = welsh
+				is_accepted_culture = welsh
+				primary_culture = manx
+				primary_culture = irish
+				primary_culture = breton
+				primary_culture = cornish
+				AND = {
+					primary_culture = platinean
+					ai = no
+				}
+			}
+		}
+	}
+	modifier = {
+		factor = 2.5
+		OR = {
+			is_core = NSC
+			is_core = PEI
+		}
+		OR = {
+			THIS = { has_pop_culture = scottish }
+			THIS = { has_pop_culture = ulster_scot }
+		}
+		has_pop_culture = THIS
+		country = {
+			OR = {
+				primary_culture = irish
+				primary_culture = welsh
+				primary_culture = scottish
+				is_accepted_culture = scottish
+				primary_culture = ulster_scot
+				is_accepted_culture = ulster_scot
+				primary_culture = welsh
+				primary_culture = manx
+				primary_culture = irish
+				primary_culture = breton
+				primary_culture = cornish
+				primary_culture = british
+			}
+		}
+	}
+	modifier = {
+		factor = 2.5
+		is_core = INF
+		THIS = { has_pop_culture = irish }
+		country = {
+			OR = {
+				primary_culture = irish
+				is_accepted_culture = irish
+				primary_culture = welsh
+				primary_culture = scottish
+				primary_culture = ulster_scot
+				primary_culture = welsh
+				primary_culture = manx
+				primary_culture = irish
+				primary_culture = breton
+				primary_culture = cornish
+				primary_culture = british
+			}
+		}
+	}
+	modifier = {
+		factor = 2.5
+		is_core = T0V
+		THIS = { is_culture_group = germanic }
+		country = { has_country_flag = colonia_tovar_founded }
+	}
+	
+	modifier = {
+		factor = 1.05
+		NOT = { country = { any_owned_province = { is_colonial = yes } } }
+		country = { penal_system = colonial_transportation }
+		OR = {
+			trade_goods = coal
+			trade_goods = sulphur
+			trade_goods = iron
+			trade_goods = precious_metal
+			trade_goods = tobacco
+			trade_goods = coffee
+			trade_goods = tea
+		}
+		OR = {
+			terrain = desert
+			terrain = arctic
+			terrain = semidesert
+			terrain = boreal
+			terrain = small_island
+			terrain = montane_tundra
+			terrain = coral_island
+		}
+	}
+	
+	#
 	
 	modifier = {
 		factor = 0.1

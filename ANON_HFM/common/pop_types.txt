@@ -1874,7 +1874,7 @@ conversion_chance = {
 		OR = {
 			not = { location = { controlled_by = owner } }
 			country = { has_country_flag = freedom_of_religion }
-			country = { religion = secular }
+			country = { religion = secularism }
 			AND = {
 				OR = {
 					has_pop_religion = yazidi
