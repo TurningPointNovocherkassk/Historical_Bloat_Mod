@@ -548,6 +548,19 @@ migration_target = {
 		THIS = { is_culture_group = germanic }
 		country = { has_country_flag = colonia_tovar_founded }
 	}
+	modifier = {
+		factor = 2.5
+		OR = {
+			is_core = RGS
+			is_core = JLA
+			state_id = 2457
+			state_id = 2450
+		}
+		THIS = {
+			is_culture_group = germanic
+			is_culture_group = polish_culture_group
+		}
+	}
 	
 	modifier = {
 		factor = 1.05

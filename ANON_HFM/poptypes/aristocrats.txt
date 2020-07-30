@@ -285,6 +285,14 @@ country_migration_target = {
 		has_country_flag = colonia_tovar_founded
 		ai = no
 	}
+	modifier = {
+		factor = 2
+		THIS = { is_culture_group = germanic }
+		OR = {
+			primary_culture = brazilian
+			primary_culture = gaucho
+		}
+	}
 	#
 	
 	modifier = {
@@ -555,6 +563,19 @@ migration_target = {
 		is_core = T0V
 		THIS = { is_culture_group = germanic }
 		country = { has_country_flag = colonia_tovar_founded }
+	}
+	modifier = {
+		factor = 2.5
+		OR = {
+			is_core = RGS
+			is_core = JLA
+			state_id = 2457
+			state_id = 2450
+		}
+		THIS = {
+			is_culture_group = germanic
+			is_culture_group = polish_culture_group
+		}
 	}
 	
 	modifier = {
