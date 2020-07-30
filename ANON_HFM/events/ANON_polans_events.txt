@@ -9675,3 +9675,870 @@ country_event = {
 		ai_chance = { factor = 100 }
 	}
 }
+#The Jewish Diaspora
+country_event = {
+	id = 666666098
+	title = "EVTNAME98400"
+	desc = "EVTDESC98400"
+	picture = "jews"
+	
+	trigger = {
+		tag = ISR
+		war = no
+		NOT = { has_country_flag = jewish_diaspora }
+		has_global_flag = israel_crimea
+	}
+	
+	mean_time_to_happen = {
+		days = 3
+	}
+	
+	option = {
+		name = "EVT98400OPTA"
+		set_country_flag = jewish_diaspora
+		add_country_modifier = {
+			name = small_country_draft
+			duration = 1825
+		}
+		any_pop = {
+			limit = {
+				NOT = { has_pop_religion = jewish }
+			}
+			consciousness = 6
+			militancy = 4
+		}
+		small_arms = 50
+		regular_clothes = 50
+		967 = { change_province_name = "Tel Aviv" }
+		3671 = { change_province_name = "New Negev" }
+		3670 = { change_province_name = "New Jerusalem" }
+		966 = { change_province_name = "New Samaria" }
+		964 = { change_province_name = "Sela Yuhudim" }
+		3674 = { change_province_name = "Zion" }
+		3673 = { change_province_name = "New Nazareth" }
+		any_country = {
+			any_owned = {
+				limit = {
+					any_pop = {
+						OR = {
+							has_pop_culture = ashkenazi
+							has_pop_culture = sephardic
+							has_pop_culture = mizrahi
+							has_pop_religion = jewish
+						}
+					}
+				}
+				add_province_modifier = {
+					name = jewish_diaspora
+					duration = 1825
+				}
+			}
+		}
+		any_country = {
+			limit = {
+				OR = {
+					is_culture_group = turanian
+					is_culture_group = turko_semitic
+				}
+			}
+			relation = { who = THIS value = -200 }
+			casus_belli = {
+				target = THIS
+				type = humiliate
+				months = 600
+			}
+		}
+	}
+}
+
+
+province_event = {
+	id = 666666098
+	title = "EVTNAME666666098"
+	desc = "EVTDESC666666098"
+
+	trigger = {
+		has_global_flag = israel_crimea
+		has_province_modifier = jewish_diaspora
+		owner = {
+			NOT = { border_policy = closed_borders }
+			war = no
+		}
+		ISR = {
+			exists = yes
+			war = no
+			owns = 967
+		}
+		967 = {
+			NOT = { unemployment = 0.1 }
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 200
+		modifier = {
+			factor = 2
+			owner = { government = democracy }
+		}
+		modifier = {
+			factor = 0.8
+			has_global_flag = law_of_return_issued
+		}
+		modifier = {
+			factor = 1.5
+			owner = { government = hms_government }
+		}
+		modifier = {
+			factor = 0.8
+			owner = { vote_franschise = none_voting }
+		}
+		modifier = {
+			factor = 0.5
+			owner = { religious_policy = moralism }
+		}
+		modifier = {
+			factor = 1.2
+			owner = { religious_policy = pluralism }
+		}
+		modifier = {
+			factor = 0.8
+			owner = { citizenship_policy = residency }
+		}
+		modifier = {
+			factor = 1.2
+			owner = { citizenship_policy = full_citizenship }
+		}
+	}
+
+	option = {
+		name = "EVT98405OPTA"
+		remove_province_modifier = jewish_diaspora
+		any_pop = {
+			limit = {
+				OR = {
+					has_pop_culture = ashkenazi
+					has_pop_culture = sephardic
+					has_pop_culture = mizrahi
+					has_pop_religion = jewish
+				}
+			}
+			random = {
+				chance = 90
+				money = 500
+				move_pop = 967
+			}
+		}
+		ai_chance = {
+			factor = 75
+		}
+	}
+
+	option = {
+		name = "EVT98405OPTB"
+		remove_province_modifier = jewish_diaspora
+		any_pop = {
+			limit = {
+				OR = {
+					has_pop_culture = ashkenazi
+					has_pop_culture = sephardic
+					has_pop_culture = mizrahi
+					has_pop_religion = jewish
+				}
+			}
+			money = 50
+			consciousness = -3
+		}
+		owner = { treasury = -500 }
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 0
+				owner = { civilized = no }
+			}
+			modifier = {
+				factor = 0
+				owner = {
+					NOT = { money = 1000 }
+				}
+			}
+		}
+	}
+}
+
+province_event = {
+	id = 666666099
+	title = "EVTNAME666666098"
+	desc = "EVTDESC666666098"
+
+	trigger = {
+		has_global_flag = israel_crimea
+		has_province_modifier = jewish_diaspora
+		owner = {
+			NOT = { border_policy = closed_borders }
+			war = no
+		}
+		ISR = {
+			exists = yes
+			war = no
+			owns = 3671
+		}
+		3671 = {
+			NOT = { unemployment = 0.1 }
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 400
+		modifier = {
+			factor = 2
+			owner = { government = democracy }
+		}
+		modifier = {
+			factor = 0.8
+			has_global_flag = law_of_return_issued
+		}
+		modifier = {
+			factor = 1.5
+			owner = { government = hms_government }
+		}
+		modifier = {
+			factor = 0.8
+			owner = { vote_franschise = none_voting }
+		}
+		modifier = {
+			factor = 0.5
+			owner = { religious_policy = moralism }
+		}
+		modifier = {
+			factor = 1.2
+			owner = { religious_policy = pluralism }
+		}
+		modifier = {
+			factor = 0.8
+			owner = { citizenship_policy = residency }
+		}
+		modifier = {
+			factor = 1.2
+			owner = { citizenship_policy = full_citizenship }
+		}
+	}
+
+	option = {
+		name = "EVT98405OPTA"
+		remove_province_modifier = jewish_diaspora
+		any_pop = {
+			limit = {
+				OR = {
+					has_pop_culture = ashkenazi
+					has_pop_culture = sephardic
+					has_pop_culture = mizrahi
+					has_pop_religion = jewish
+				}
+			}
+			random = {
+				chance = 90
+				money = 250
+				move_pop = 3671
+			}
+		}
+		ai_chance = {
+			factor = 75
+		}
+	}
+
+	option = {
+		name = "EVT98405OPTB"
+		remove_province_modifier = jewish_diaspora
+		any_pop = {
+			limit = {
+				OR = {
+					has_pop_culture = ashkenazi
+					has_pop_culture = sephardic
+					has_pop_culture = mizrahi
+					has_pop_religion = jewish
+				}
+			}
+			money = 50
+			consciousness = -3
+		}
+		owner = { treasury = -500 }
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 0
+				owner = { civilized = no }
+			}
+			modifier = {
+				factor = 0
+				owner = {
+					NOT = { money = 1000 }
+				}
+			}
+		}
+	}
+}
+
+province_event = {
+	id = 666666100
+	title = "EVTNAME666666098"
+	desc = "EVTDESC666666098"
+
+	trigger = {
+		has_global_flag = israel_crimea
+		has_province_modifier = jewish_diaspora
+		owner = {
+			NOT = { border_policy = closed_borders }
+			war = no
+		}
+		ISR = {
+			exists = yes
+			war = no
+			owns = 3670
+		}
+		3670 = {
+			NOT = { unemployment = 0.1 }
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 400
+		modifier = {
+			factor = 2
+			owner = { government = democracy }
+		}
+		modifier = {
+			factor = 0.8
+			has_global_flag = law_of_return_issued
+		}
+		modifier = {
+			factor = 1.5
+			owner = { government = hms_government }
+		}
+		modifier = {
+			factor = 0.8
+			owner = { vote_franschise = none_voting }
+		}
+		modifier = {
+			factor = 0.5
+			owner = { religious_policy = moralism }
+		}
+		modifier = {
+			factor = 1.2
+			owner = { religious_policy = pluralism }
+		}
+		modifier = {
+			factor = 0.8
+			owner = { citizenship_policy = residency }
+		}
+		modifier = {
+			factor = 1.2
+			owner = { citizenship_policy = full_citizenship }
+		}
+	}
+
+	option = {
+		name = "EVT98405OPTA"
+		remove_province_modifier = jewish_diaspora
+		any_pop = {
+			limit = {
+				OR = {
+					has_pop_culture = ashkenazi
+					has_pop_culture = sephardic
+					has_pop_culture = mizrahi
+					has_pop_religion = jewish
+				}
+			}
+			random = {
+				chance = 90
+				money = 250
+				move_pop = 3670
+			}
+		}
+		ai_chance = {
+			factor = 75
+		}
+	}
+
+	option = {
+		name = "EVT98405OPTB"
+		remove_province_modifier = jewish_diaspora
+		any_pop = {
+			limit = {
+				OR = {
+					has_pop_culture = ashkenazi
+					has_pop_culture = sephardic
+					has_pop_culture = mizrahi
+					has_pop_religion = jewish
+				}
+			}
+			money = 50
+			consciousness = -3
+		}
+		owner = { treasury = -500 }
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 0
+				owner = { civilized = no }
+			}
+			modifier = {
+				factor = 0
+				owner = {
+					NOT = { money = 1000 }
+				}
+			}
+		}
+	}
+}
+
+province_event = {
+	id = 666666101
+	title = "EVTNAME666666098"
+	desc = "EVTDESC666666098"
+
+	trigger = {
+		has_global_flag = israel_crimea
+		has_province_modifier = jewish_diaspora
+		owner = {
+			NOT = { border_policy = closed_borders }
+			war = no
+		}
+		ISR = {
+			exists = yes
+			war = no
+			owns = 966
+		}
+		966 = {
+			NOT = { unemployment = 0.1 }
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 400
+		modifier = {
+			factor = 2
+			owner = { government = democracy }
+		}
+		modifier = {
+			factor = 0.8
+			has_global_flag = law_of_return_issued
+		}
+		modifier = {
+			factor = 1.5
+			owner = { government = hms_government }
+		}
+		modifier = {
+			factor = 0.8
+			owner = { vote_franschise = none_voting }
+		}
+		modifier = {
+			factor = 0.5
+			owner = { religious_policy = moralism }
+		}
+		modifier = {
+			factor = 1.2
+			owner = { religious_policy = pluralism }
+		}
+		modifier = {
+			factor = 0.8
+			owner = { citizenship_policy = residency }
+		}
+		modifier = {
+			factor = 1.2
+			owner = { citizenship_policy = full_citizenship }
+		}
+	}
+
+	option = {
+		name = "EVT98405OPTA"
+		remove_province_modifier = jewish_diaspora
+		any_pop = {
+			limit = {
+				OR = {
+					has_pop_culture = ashkenazi
+					has_pop_culture = sephardic
+					has_pop_culture = mizrahi
+					has_pop_religion = jewish
+				}
+			}
+			random = {
+				chance = 90
+				money = 250
+				move_pop = 966
+			}
+		}
+		ai_chance = {
+			factor = 75
+		}
+	}
+
+	option = {
+		name = "EVT98405OPTB"
+		remove_province_modifier = jewish_diaspora
+		any_pop = {
+			limit = {
+				OR = {
+					has_pop_culture = ashkenazi
+					has_pop_culture = sephardic
+					has_pop_culture = mizrahi
+					has_pop_religion = jewish
+				}
+			}
+			money = 50
+			consciousness = -3
+		}
+		owner = { treasury = -500 }
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 0
+				owner = { civilized = no }
+			}
+			modifier = {
+				factor = 0
+				owner = {
+					NOT = { money = 1000 }
+				}
+			}
+		}
+	}
+}
+
+province_event = {
+	id = 666666102
+	title = "EVTNAME666666098"
+	desc = "EVTDESC666666098"
+
+	trigger = {
+		has_global_flag = israel_crimea
+		has_province_modifier = jewish_diaspora
+		owner = {
+			NOT = { border_policy = closed_borders }
+			war = no
+		}
+		ISR = {
+			exists = yes
+			war = no
+			owns = 964
+		}
+		964 = {
+			NOT = { unemployment = 0.1 }
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 400
+		modifier = {
+			factor = 2
+			owner = { government = democracy }
+		}
+		modifier = {
+			factor = 0.8
+			has_global_flag = law_of_return_issued
+		}
+		modifier = {
+			factor = 1.5
+			owner = { government = hms_government }
+		}
+		modifier = {
+			factor = 0.8
+			owner = { vote_franschise = none_voting }
+		}
+		modifier = {
+			factor = 0.5
+			owner = { religious_policy = moralism }
+		}
+		modifier = {
+			factor = 1.2
+			owner = { religious_policy = pluralism }
+		}
+		modifier = {
+			factor = 0.8
+			owner = { citizenship_policy = residency }
+		}
+		modifier = {
+			factor = 1.2
+			owner = { citizenship_policy = full_citizenship }
+		}
+	}
+
+	option = {
+		name = "EVT98405OPTA"
+		remove_province_modifier = jewish_diaspora
+		any_pop = {
+			limit = {
+				OR = {
+					has_pop_culture = ashkenazi
+					has_pop_culture = sephardic
+					has_pop_culture = mizrahi
+					has_pop_religion = jewish
+				}
+			}
+			random = {
+				chance = 90
+				money = 250
+				move_pop = 964
+			}
+		}
+		ai_chance = {
+			factor = 75
+		}
+	}
+
+	option = {
+		name = "EVT98405OPTB"
+		remove_province_modifier = jewish_diaspora
+		any_pop = {
+			limit = {
+				OR = {
+					has_pop_culture = ashkenazi
+					has_pop_culture = sephardic
+					has_pop_culture = mizrahi
+					has_pop_religion = jewish
+				}
+			}
+			money = 50
+			consciousness = -3
+		}
+		owner = { treasury = -500 }
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 0
+				owner = { civilized = no }
+			}
+			modifier = {
+				factor = 0
+				owner = {
+					NOT = { money = 1000 }
+				}
+			}
+		}
+	}
+}
+
+province_event = {
+	id = 666666103
+	title = "EVTNAME666666098"
+	desc = "EVTDESC666666098"
+
+	trigger = {
+		has_global_flag = israel_crimea
+		has_province_modifier = jewish_diaspora
+		owner = {
+			NOT = { border_policy = closed_borders }
+			war = no
+		}
+		ISR = {
+			exists = yes
+			war = no
+			owns = 3674
+		}
+		3674 = {
+			NOT = { unemployment = 0.1 }
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 400
+		modifier = {
+			factor = 2
+			owner = { government = democracy }
+		}
+		modifier = {
+			factor = 0.8
+			has_global_flag = law_of_return_issued
+		}
+		modifier = {
+			factor = 1.5
+			owner = { government = hms_government }
+		}
+		modifier = {
+			factor = 0.8
+			owner = { vote_franschise = none_voting }
+		}
+		modifier = {
+			factor = 0.5
+			owner = { religious_policy = moralism }
+		}
+		modifier = {
+			factor = 1.2
+			owner = { religious_policy = pluralism }
+		}
+		modifier = {
+			factor = 0.8
+			owner = { citizenship_policy = residency }
+		}
+		modifier = {
+			factor = 1.2
+			owner = { citizenship_policy = full_citizenship }
+		}
+	}
+
+	option = {
+		name = "EVT98405OPTA"
+		remove_province_modifier = jewish_diaspora
+		any_pop = {
+			limit = {
+				OR = {
+					has_pop_culture = ashkenazi
+					has_pop_culture = sephardic
+					has_pop_culture = mizrahi
+					has_pop_religion = jewish
+				}
+			}
+			random = {
+				chance = 90
+				money = 250
+				move_pop = 3674
+			}
+		}
+		ai_chance = {
+			factor = 75
+		}
+	}
+
+	option = {
+		name = "EVT98405OPTB"
+		remove_province_modifier = jewish_diaspora
+		any_pop = {
+			limit = {
+				OR = {
+					has_pop_culture = ashkenazi
+					has_pop_culture = sephardic
+					has_pop_culture = mizrahi
+					has_pop_religion = jewish
+				}
+			}
+			money = 50
+			consciousness = -3
+		}
+		owner = { treasury = -500 }
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 0
+				owner = { civilized = no }
+			}
+			modifier = {
+				factor = 0
+				owner = {
+					NOT = { money = 1000 }
+				}
+			}
+		}
+	}
+}
+
+province_event = {
+	id = 666666104
+	title = "EVTNAME666666098"
+	desc = "EVTDESC666666098"
+
+	trigger = {
+		has_global_flag = israel_crimea
+		has_province_modifier = jewish_diaspora
+		owner = {
+			NOT = { border_policy = closed_borders }
+			war = no
+		}
+		ISR = {
+			exists = yes
+			war = no
+			owns = 3673
+		}
+		3673 = {
+			NOT = { unemployment = 0.1 }
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 400
+		modifier = {
+			factor = 2
+			owner = { government = democracy }
+		}
+		modifier = {
+			factor = 0.8
+			has_global_flag = law_of_return_issued
+		}
+		modifier = {
+			factor = 1.5
+			owner = { government = hms_government }
+		}
+		modifier = {
+			factor = 0.8
+			owner = { vote_franschise = none_voting }
+		}
+		modifier = {
+			factor = 0.5
+			owner = { religious_policy = moralism }
+		}
+		modifier = {
+			factor = 1.2
+			owner = { religious_policy = pluralism }
+		}
+		modifier = {
+			factor = 0.8
+			owner = { citizenship_policy = residency }
+		}
+		modifier = {
+			factor = 1.2
+			owner = { citizenship_policy = full_citizenship }
+		}
+	}
+
+	option = {
+		name = "EVT98405OPTA"
+		remove_province_modifier = jewish_diaspora
+		any_pop = {
+			limit = {
+				OR = {
+					has_pop_culture = ashkenazi
+					has_pop_culture = sephardic
+					has_pop_culture = mizrahi
+					has_pop_religion = jewish
+				}
+			}
+			random = {
+				chance = 90
+				money = 250
+				move_pop = 3673
+			}
+		}
+		ai_chance = {
+			factor = 75
+		}
+	}
+
+	option = {
+		name = "EVT98405OPTB"
+		remove_province_modifier = jewish_diaspora
+		any_pop = {
+			limit = {
+				OR = {
+					has_pop_culture = ashkenazi
+					has_pop_culture = sephardic
+					has_pop_culture = mizrahi
+					has_pop_religion = jewish
+				}
+			}
+			money = 50
+			consciousness = -3
+		}
+		owner = { treasury = -500 }
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 0
+				owner = { civilized = no }
+			}
+			modifier = {
+				factor = 0
+				owner = {
+					NOT = { money = 1000 }
+				}
+			}
+		}
+	}
+}

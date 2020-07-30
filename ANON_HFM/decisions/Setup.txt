@@ -3705,6 +3705,11 @@ political_decisions = {
 						has_country_flag = sunni_country
 						has_country_flag = shiite_country
 						has_country_flag = ibadi_country
+						has_country_flag = alevi_country
+						has_country_flag = zaydi_country
+						has_country_flag = ismaili_country
+						has_country_flag = druze_country
+						has_country_flag = alawite_country
 					}
 					any_owned_province = {
 						any_pop = {
@@ -3728,11 +3733,19 @@ political_decisions = {
 
 								has_pop_religion = syriac
 								has_pop_religion = bahai
-								has_pop_religion = alawite
-								has_pop_religion = alevi
 								has_pop_religion = zoroastrian
 								has_pop_religion = mandaean
 								has_pop_religion = confucian
+								
+								has_pop_religion = maronite
+								has_pop_religion = nestorian
+								has_pop_religion = jain
+								has_pop_religion = karaite
+								has_pop_religion = samaritan
+								has_pop_religion = anabaptist
+								has_pop_religion = secular
+								has_pop_religion = atheist
+								
 							}
 						}
 					}
@@ -3921,6 +3934,8 @@ political_decisions = {
 							
 						has_pop_religion = druze
 						has_pop_religion = coptic
+						
+						has_pop_religion = nestorian
 							
 					}
 				}

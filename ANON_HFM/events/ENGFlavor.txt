@@ -3616,6 +3616,22 @@ country_event = {
 			clr_country_flag = shinto_country
 			clr_country_flag = sikh_country
 			clr_country_flag = animist_country
+			
+			clr_country_flag = syriac_country
+			clr_country_flag = maronite_country
+			clr_country_flag = bahai_country
+			clr_country_flag = alawite_country
+			clr_country_flag = alevi_country
+			clr_country_flag = zoroastrian_country
+			clr_country_flag = mandaean_country
+			clr_country_flag = confucian_country
+			clr_country_flag = anabaptist_country
+			clr_country_flag = karaite_country
+			clr_country_flag = samaritan_country
+			clr_country_flag = ismaili_country
+			clr_country_flag = zaydi_country
+			clr_country_flag = jain_country
+			clr_country_flag = atheist_country
 			neutrality = yes
 			2104 = { add_core = BSH }
 		}
@@ -3645,6 +3661,22 @@ country_event = {
 			clr_country_flag = shinto_country
 			clr_country_flag = sikh_country
 			clr_country_flag = animist_country
+			
+			clr_country_flag = syriac_country
+			clr_country_flag = maronite_country
+			clr_country_flag = bahai_country
+			clr_country_flag = alawite_country
+			clr_country_flag = alevi_country
+			clr_country_flag = zoroastrian_country
+			clr_country_flag = mandaean_country
+			clr_country_flag = confucian_country
+			clr_country_flag = anabaptist_country
+			clr_country_flag = karaite_country
+			clr_country_flag = samaritan_country
+			clr_country_flag = ismaili_country
+			clr_country_flag = zaydi_country
+			clr_country_flag = jain_country
+			clr_country_flag = atheist_country
 			neutrality = yes
 			2114 = { add_core = SUA trade_goods = coal }
 		}
@@ -3680,6 +3712,24 @@ country_event = {
 		random_owned = { limit = { owner = { has_country_flag = jewish_country } } FROM = { religion = jewish set_country_flag = jewish_country } }
 		random_owned = { limit = { owner = { has_country_flag = ibadi_country } } FROM = { religion = ibadi set_country_flag = ibadi_country } }
 		random_owned = { limit = { owner = { has_country_flag = yazidi_country } } FROM = { religion = yazidi set_country_flag = yazidi_country } }
+		
+		random_owned = { limit = { owner = { has_country_flag = syriac_country } } FROM = { religion = syriac set_country_flag = syriac_country } }
+		random_owned = { limit = { owner = { has_country_flag = maronite_country } } FROM = { religion = maronite set_country_flag = maronite_country } }
+		random_owned = { limit = { owner = { has_country_flag = bahai_country } } FROM = { religion = bahai set_country_flag = bahai_country } }
+		random_owned = { limit = { owner = { has_country_flag = alawite_country } } FROM = { religion = alawite set_country_flag = alawite_country } }
+		random_owned = { limit = { owner = { has_country_flag = alevi_country } } FROM = { religion = alevi set_country_flag = alevi_country } }
+		random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } FROM = { religion = zoroastrian set_country_flag = zoroastrian_country } }
+		random_owned = { limit = { owner = { has_country_flag = mandaean_country } } FROM = { religion = mandaean set_country_flag = mandaean_country } }
+		random_owned = { limit = { owner = { has_country_flag = confucian_country } } FROM = { religion = confucian set_country_flag = confucian_country } }
+		random_owned = { limit = { owner = { has_country_flag = nestorian_country } } FROM = { religion = nestorian set_country_flag = nestorian_country } }
+		random_owned = { limit = { owner = { has_country_flag = anabaptist_country } } FROM = { religion = anabaptist set_country_flag = anabaptist_country } }
+		random_owned = { limit = { owner = { has_country_flag = karaite_country } } FROM = { religion = karaite set_country_flag = karaite_country } }
+		random_owned = { limit = { owner = { has_country_flag = samaritan_country } } FROM = { religion = samaritan set_country_flag = samaritan_country } }
+		random_owned = { limit = { owner = { has_country_flag = ismaili_country } } FROM = { religion = ismaili set_country_flag = ismaili_country } }
+		random_owned = { limit = { owner = { has_country_flag = zaydi_country } } FROM = { religion = zaydi set_country_flag = zaydi_country } }
+		random_owned = { limit = { owner = { has_country_flag = jain_country } } FROM = { religion = jain set_country_flag = jain_country } }
+		random_owned = { limit = { owner = { has_country_flag = atheist_country } } FROM = { religion = atheist set_country_flag = atheist_country } }
+		random_owned = { limit = { owner = { has_country_flag = secular_country } } FROM = { religion = secular set_country_flag = secular_country } }
 		
 		random_owned = { limit = { slavery = no_slavery } FROM = { political_reform = no_slavery } }
 		

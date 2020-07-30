@@ -3233,7 +3233,144 @@ political_decisions = {
 		ai_will_do = { factor = 1 }
 	}
 	
+	larin_idea = {
+		picture = form_israel
+		potential = {
+			civilized = yes
+			NOT = { has_global_flag = israel_has_her_cores }
+			967 = {
+				OR = {
+					owned_by = THIS
+					owner = {
+						in_sphere = THIS
+					}
+				}
+			}
+			3671 = {
+				OR = {
+					owned_by = THIS
+					owner = {
+						in_sphere = THIS
+					}
+				}
+			}
+			3670 = {
+				OR = {
+					owned_by = THIS
+					owner = {
+						in_sphere = THIS
+					}
+				}
+			}
+			966 = {
+				OR = {
+					owned_by = THIS
+					owner = {
+						in_sphere = THIS
+					}
+				}
+			}
+			964 = {
+				OR = {
+					owned_by = THIS
+					owner = {
+						in_sphere = THIS
+					}
+				}
+			}
+			3673 = {
+				OR = {
+					owned_by = THIS
+					owner = {
+						in_sphere = THIS
+					}
+				}
+			}
+			3674 = {
+				OR = {
+					owned_by = THIS
+					owner = {
+						in_sphere = THIS
+					}
+				}
+			}
+		}
+		allow = {
+			is_greater_power = yes
+			revolution_n_counterrevolution = 1
+			total_num_of_ports = 1
+		}
+		effect = {
+			RUS_964 = { add_core = ISR }
+			prestige = 10
+			set_global_flag = israel_has_her_cores
+			set_global_flag = israel_crimea
+			ISR = { capital = 967 }
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = {
+					OR = {
+						tag = POL
+						tag = HPL
+						tag = PLC
+						tag = PRC
+						tag = PLR
+						tag = PRB
+					}
+				}
+			}
+		}
+	}
 	
+	law_of_return_crimea = {
+	picture = law_of_return
+	 	potential = {
+	 		tag = ISR
+	 		owns = 967
+			owns = 3671
+			owns = 3670
+			owns = 966
+			owns = 964
+			owns = 3674
+			owns = 3673
+	 		NOT = { has_country_flag = law_of_return_issued }
+			has_global_flag = israel_crimea
+	 	}
+	 
+	 	allow = {
+			war = no
+			nationalism_n_imperialism = 1
+			romanticism = 1
+			border_policy = open_borders
+			OR = {
+				money = 50000
+				ai = yes
+			}
+	 	}
+	 
+	 	effect = {
+			random_owned = { limit = { owner = { ai = no } } owner = { treasury = -50000 } }
+			random_owned = {
+				limit = { owner = { ai = yes } }
+				owner = { set_variable = { which = owed_cash_money value = 50 } } 
+			}
+			set_country_flag = law_of_return_issued
+			random_owned = {
+				limit = { owner = { tag = ISR } }
+				owner = {
+					set_global_flag = law_of_return_issued
+					any_owned = {
+						limit = { is_core = ISR state_id = 967 }
+						add_province_modifier = { name = jewish_farms duration = -1 }
+					}
+				}
+			}
+		}
+	 	ai_will_do = { factor = 1 }
+	}
 	
 	
 	

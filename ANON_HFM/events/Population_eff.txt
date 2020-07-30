@@ -676,6 +676,76 @@ province_event = {
 					}
 				}
 			}
+			AND = {
+				owner = { has_country_flag = interning_anabaptists }
+				any_pop = {
+					has_pop_religion = anabaptist
+					NOT = {
+						is_primary_culture = yes
+						is_accepted_culture = yes
+					}
+				}
+			}
+			AND = {
+				owner = { has_country_flag = interning_karaites }
+				any_pop = {
+					has_pop_religion = karaite
+					NOT = {
+						is_primary_culture = yes
+						is_accepted_culture = yes
+					}
+				}
+			}
+			AND = {
+				owner = { has_country_flag = interning_samaritans }
+				any_pop = {
+					has_pop_religion = samaritan
+					NOT = {
+						is_primary_culture = yes
+						is_accepted_culture = yes
+					}
+				}
+			}
+			AND = {
+				owner = { has_country_flag = interning_ismailis }
+				any_pop = {
+					has_pop_religion = ismaili
+					NOT = {
+						is_primary_culture = yes
+						is_accepted_culture = yes
+					}
+				}
+			}
+			AND = {
+				owner = { has_country_flag = interning_zaydis }
+				any_pop = {
+					has_pop_religion = zaydi
+					NOT = {
+						is_primary_culture = yes
+						is_accepted_culture = yes
+					}
+				}
+			}
+			AND = {
+				owner = { has_country_flag = interning_jains }
+				any_pop = {
+					has_pop_religion = jain
+					NOT = {
+						is_primary_culture = yes
+						is_accepted_culture = yes
+					}
+				}
+			}
+			AND = {
+				owner = { has_country_flag = interning_atheists }
+				any_pop = {
+					has_pop_religion = atheist
+					NOT = {
+						is_primary_culture = yes
+						is_accepted_culture = yes
+					}
+				}
+			}
 		}
 		#State Requirements
 		OR = {
@@ -9414,6 +9484,918 @@ province_event = {
 				}
 			}
 		}
+
+		##############anabaptist Religion
+		random_pop = {#Killing in a majority state
+			limit = {
+				has_pop_religion = anabaptist
+				location = {
+					owner = { has_country_flag = interning_anabaptists }
+					state_scope = {
+						OR = {
+							is_accepted_culture = yes
+							is_primary_culture = yes
+						}
+					}
+				}
+			}
+			location = {
+				state_scope = {
+					any_pop = {
+						limit = {
+							is_primary_culture = no
+							is_accepted_culture = no
+							has_pop_religion = anabaptist
+						}
+						reduce_pop = 0.35
+						random = {
+							chance = 50
+							reduce_pop = 0.9
+						}
+						random = {
+							chance = 50
+							reduce_pop = 0.9
+						}
+						random = {
+							chance = 50
+							reduce_pop = 0.9
+						}
+					}
+				}
+			}
+		}
+		
+		#Killing in a minority state
+		random_pop = {
+			limit = {
+				has_pop_religion = anabaptist
+				location = {
+					owner = { has_country_flag = interning_anabaptists }
+					state_scope = {
+						is_primary_culture = no
+						is_accepted_culture = no
+						any_owned_province = {
+							OR = {
+								is_primary_culture = yes
+								is_accepted_culture = yes
+							}
+						}
+					}
+				}
+			}
+			location = {
+				state_scope = {
+					any_pop = {
+						limit = {
+							is_primary_culture = no
+							is_accepted_culture = no
+							has_pop_religion = anabaptist
+						}
+						reduce_pop = 0.55
+						random = {
+							chance = 50
+							reduce_pop = 0.9
+						}
+						random = {
+							chance = 50
+							reduce_pop = 0.9
+						}
+						random = {
+							chance = 50
+							reduce_pop = 0.9
+						}
+					}
+				}
+			}
+		}
+		
+		#Killing in a no-presence state
+		random_pop = {
+			limit = {
+				has_pop_religion = anabaptist
+				location = {
+					owner = { has_country_flag = interning_anabaptists }
+					state_scope = {
+						is_primary_culture = no
+						is_accepted_culture = no
+						NOT = {
+							any_owned_province = {
+								OR = {
+									is_primary_culture = yes
+									is_accepted_culture = yes
+								}
+							}
+						}
+					}
+				}
+			}
+			location = {
+				state_scope = {
+					any_pop = {
+						limit = {
+							is_primary_culture = no
+							is_accepted_culture = no
+							has_pop_religion = anabaptist
+						}
+						reduce_pop = 0.75
+						random = {
+							chance = 50
+							reduce_pop = 0.9
+						}
+						random = {
+							chance = 50
+							reduce_pop = 0.9
+						}
+						random = {
+							chance = 50
+							reduce_pop = 0.9
+						}
+					}
+				}
+			}
+		}
+
+		##############karaite Religion
+		random_pop = {#Killing in a majority state
+			limit = {
+				has_pop_religion = karaite
+				location = {
+					owner = { has_country_flag = interning_karaites }
+					state_scope = {
+						OR = {
+							is_accepted_culture = yes
+							is_primary_culture = yes
+						}
+					}
+				}
+			}
+			location = {
+				state_scope = {
+					any_pop = {
+						limit = {
+							is_primary_culture = no
+							is_accepted_culture = no
+							has_pop_religion = karaite
+						}
+						reduce_pop = 0.35
+						random = {
+							chance = 50
+							reduce_pop = 0.9
+						}
+						random = {
+							chance = 50
+							reduce_pop = 0.9
+						}
+						random = {
+							chance = 50
+							reduce_pop = 0.9
+						}
+					}
+				}
+			}
+		}
+		
+		#Killing in a minority state
+		random_pop = {
+			limit = {
+				has_pop_religion = karaite
+				location = {
+					owner = { has_country_flag = interning_karaites }
+					state_scope = {
+						is_primary_culture = no
+						is_accepted_culture = no
+						any_owned_province = {
+							OR = {
+								is_primary_culture = yes
+								is_accepted_culture = yes
+							}
+						}
+					}
+				}
+			}
+			location = {
+				state_scope = {
+					any_pop = {
+						limit = {
+							is_primary_culture = no
+							is_accepted_culture = no
+							has_pop_religion = karaite
+						}
+						reduce_pop = 0.55
+						random = {
+							chance = 50
+							reduce_pop = 0.9
+						}
+						random = {
+							chance = 50
+							reduce_pop = 0.9
+						}
+						random = {
+							chance = 50
+							reduce_pop = 0.9
+						}
+					}
+				}
+			}
+		}
+		
+		#Killing in a no-presence state
+		random_pop = {
+			limit = {
+				has_pop_religion = karaite
+				location = {
+					owner = { has_country_flag = interning_karaites }
+					state_scope = {
+						is_primary_culture = no
+						is_accepted_culture = no
+						NOT = {
+							any_owned_province = {
+								OR = {
+									is_primary_culture = yes
+									is_accepted_culture = yes
+								}
+							}
+						}
+					}
+				}
+			}
+			location = {
+				state_scope = {
+					any_pop = {
+						limit = {
+							is_primary_culture = no
+							is_accepted_culture = no
+							has_pop_religion = karaite
+						}
+						reduce_pop = 0.75
+						random = {
+							chance = 50
+							reduce_pop = 0.9
+						}
+						random = {
+							chance = 50
+							reduce_pop = 0.9
+						}
+						random = {
+							chance = 50
+							reduce_pop = 0.9
+						}
+					}
+				}
+			}
+		}
+
+		##############samaritan Religion
+		random_pop = {#Killing in a majority state
+			limit = {
+				has_pop_religion = samaritan
+				location = {
+					owner = { has_country_flag = interning_samaritans }
+					state_scope = {
+						OR = {
+							is_accepted_culture = yes
+							is_primary_culture = yes
+						}
+					}
+				}
+			}
+			location = {
+				state_scope = {
+					any_pop = {
+						limit = {
+							is_primary_culture = no
+							is_accepted_culture = no
+							has_pop_religion = samaritan
+						}
+						reduce_pop = 0.35
+						random = {
+							chance = 50
+							reduce_pop = 0.9
+						}
+						random = {
+							chance = 50
+							reduce_pop = 0.9
+						}
+						random = {
+							chance = 50
+							reduce_pop = 0.9
+						}
+					}
+				}
+			}
+		}
+		
+		#Killing in a minority state
+		random_pop = {
+			limit = {
+				has_pop_religion = samaritan
+				location = {
+					owner = { has_country_flag = interning_samaritans }
+					state_scope = {
+						is_primary_culture = no
+						is_accepted_culture = no
+						any_owned_province = {
+							OR = {
+								is_primary_culture = yes
+								is_accepted_culture = yes
+							}
+						}
+					}
+				}
+			}
+			location = {
+				state_scope = {
+					any_pop = {
+						limit = {
+							is_primary_culture = no
+							is_accepted_culture = no
+							has_pop_religion = samaritan
+						}
+						reduce_pop = 0.55
+						random = {
+							chance = 50
+							reduce_pop = 0.9
+						}
+						random = {
+							chance = 50
+							reduce_pop = 0.9
+						}
+						random = {
+							chance = 50
+							reduce_pop = 0.9
+						}
+					}
+				}
+			}
+		}
+		
+		#Killing in a no-presence state
+		random_pop = {
+			limit = {
+				has_pop_religion = samaritan
+				location = {
+					owner = { has_country_flag = interning_samaritans }
+					state_scope = {
+						is_primary_culture = no
+						is_accepted_culture = no
+						NOT = {
+							any_owned_province = {
+								OR = {
+									is_primary_culture = yes
+									is_accepted_culture = yes
+								}
+							}
+						}
+					}
+				}
+			}
+			location = {
+				state_scope = {
+					any_pop = {
+						limit = {
+							is_primary_culture = no
+							is_accepted_culture = no
+							has_pop_religion = samaritan
+						}
+						reduce_pop = 0.75
+						random = {
+							chance = 50
+							reduce_pop = 0.9
+						}
+						random = {
+							chance = 50
+							reduce_pop = 0.9
+						}
+						random = {
+							chance = 50
+							reduce_pop = 0.9
+						}
+					}
+				}
+			}
+		}
+
+		##############ismaili Religion
+		random_pop = {#Killing in a majority state
+			limit = {
+				has_pop_religion = ismaili
+				location = {
+					owner = { has_country_flag = interning_ismailis }
+					state_scope = {
+						OR = {
+							is_accepted_culture = yes
+							is_primary_culture = yes
+						}
+					}
+				}
+			}
+			location = {
+				state_scope = {
+					any_pop = {
+						limit = {
+							is_primary_culture = no
+							is_accepted_culture = no
+							has_pop_religion = ismaili
+						}
+						reduce_pop = 0.35
+						random = {
+							chance = 50
+							reduce_pop = 0.9
+						}
+						random = {
+							chance = 50
+							reduce_pop = 0.9
+						}
+						random = {
+							chance = 50
+							reduce_pop = 0.9
+						}
+					}
+				}
+			}
+		}
+		
+		#Killing in a minority state
+		random_pop = {
+			limit = {
+				has_pop_religion = ismaili
+				location = {
+					owner = { has_country_flag = interning_ismailis }
+					state_scope = {
+						is_primary_culture = no
+						is_accepted_culture = no
+						any_owned_province = {
+							OR = {
+								is_primary_culture = yes
+								is_accepted_culture = yes
+							}
+						}
+					}
+				}
+			}
+			location = {
+				state_scope = {
+					any_pop = {
+						limit = {
+							is_primary_culture = no
+							is_accepted_culture = no
+							has_pop_religion = ismaili
+						}
+						reduce_pop = 0.55
+						random = {
+							chance = 50
+							reduce_pop = 0.9
+						}
+						random = {
+							chance = 50
+							reduce_pop = 0.9
+						}
+						random = {
+							chance = 50
+							reduce_pop = 0.9
+						}
+					}
+				}
+			}
+		}
+		
+		#Killing in a no-presence state
+		random_pop = {
+			limit = {
+				has_pop_religion = ismaili
+				location = {
+					owner = { has_country_flag = interning_ismailis }
+					state_scope = {
+						is_primary_culture = no
+						is_accepted_culture = no
+						NOT = {
+							any_owned_province = {
+								OR = {
+									is_primary_culture = yes
+									is_accepted_culture = yes
+								}
+							}
+						}
+					}
+				}
+			}
+			location = {
+				state_scope = {
+					any_pop = {
+						limit = {
+							is_primary_culture = no
+							is_accepted_culture = no
+							has_pop_religion = ismaili
+						}
+						reduce_pop = 0.75
+						random = {
+							chance = 50
+							reduce_pop = 0.9
+						}
+						random = {
+							chance = 50
+							reduce_pop = 0.9
+						}
+						random = {
+							chance = 50
+							reduce_pop = 0.9
+						}
+					}
+				}
+			}
+		}
+
+		##############zaydi Religion
+		random_pop = {#Killing in a majority state
+			limit = {
+				has_pop_religion = zaydi
+				location = {
+					owner = { has_country_flag = interning_zaydis }
+					state_scope = {
+						OR = {
+							is_accepted_culture = yes
+							is_primary_culture = yes
+						}
+					}
+				}
+			}
+			location = {
+				state_scope = {
+					any_pop = {
+						limit = {
+							is_primary_culture = no
+							is_accepted_culture = no
+							has_pop_religion = zaydi
+						}
+						reduce_pop = 0.35
+						random = {
+							chance = 50
+							reduce_pop = 0.9
+						}
+						random = {
+							chance = 50
+							reduce_pop = 0.9
+						}
+						random = {
+							chance = 50
+							reduce_pop = 0.9
+						}
+					}
+				}
+			}
+		}
+		
+		#Killing in a minority state
+		random_pop = {
+			limit = {
+				has_pop_religion = zaydi
+				location = {
+					owner = { has_country_flag = interning_zaydis }
+					state_scope = {
+						is_primary_culture = no
+						is_accepted_culture = no
+						any_owned_province = {
+							OR = {
+								is_primary_culture = yes
+								is_accepted_culture = yes
+							}
+						}
+					}
+				}
+			}
+			location = {
+				state_scope = {
+					any_pop = {
+						limit = {
+							is_primary_culture = no
+							is_accepted_culture = no
+							has_pop_religion = zaydi
+						}
+						reduce_pop = 0.55
+						random = {
+							chance = 50
+							reduce_pop = 0.9
+						}
+						random = {
+							chance = 50
+							reduce_pop = 0.9
+						}
+						random = {
+							chance = 50
+							reduce_pop = 0.9
+						}
+					}
+				}
+			}
+		}
+		
+		#Killing in a no-presence state
+		random_pop = {
+			limit = {
+				has_pop_religion = zaydi
+				location = {
+					owner = { has_country_flag = interning_zaydis }
+					state_scope = {
+						is_primary_culture = no
+						is_accepted_culture = no
+						NOT = {
+							any_owned_province = {
+								OR = {
+									is_primary_culture = yes
+									is_accepted_culture = yes
+								}
+							}
+						}
+					}
+				}
+			}
+			location = {
+				state_scope = {
+					any_pop = {
+						limit = {
+							is_primary_culture = no
+							is_accepted_culture = no
+							has_pop_religion = zaydi
+						}
+						reduce_pop = 0.75
+						random = {
+							chance = 50
+							reduce_pop = 0.9
+						}
+						random = {
+							chance = 50
+							reduce_pop = 0.9
+						}
+						random = {
+							chance = 50
+							reduce_pop = 0.9
+						}
+					}
+				}
+			}
+		}
+
+		##############jain Religion
+		random_pop = {#Killing in a majority state
+			limit = {
+				has_pop_religion = jain
+				location = {
+					owner = { has_country_flag = interning_jains }
+					state_scope = {
+						OR = {
+							is_accepted_culture = yes
+							is_primary_culture = yes
+						}
+					}
+				}
+			}
+			location = {
+				state_scope = {
+					any_pop = {
+						limit = {
+							is_primary_culture = no
+							is_accepted_culture = no
+							has_pop_religion = jain
+						}
+						reduce_pop = 0.35
+						random = {
+							chance = 50
+							reduce_pop = 0.9
+						}
+						random = {
+							chance = 50
+							reduce_pop = 0.9
+						}
+						random = {
+							chance = 50
+							reduce_pop = 0.9
+						}
+					}
+				}
+			}
+		}
+		
+		#Killing in a minority state
+		random_pop = {
+			limit = {
+				has_pop_religion = jain
+				location = {
+					owner = { has_country_flag = interning_jains }
+					state_scope = {
+						is_primary_culture = no
+						is_accepted_culture = no
+						any_owned_province = {
+							OR = {
+								is_primary_culture = yes
+								is_accepted_culture = yes
+							}
+						}
+					}
+				}
+			}
+			location = {
+				state_scope = {
+					any_pop = {
+						limit = {
+							is_primary_culture = no
+							is_accepted_culture = no
+							has_pop_religion = jain
+						}
+						reduce_pop = 0.55
+						random = {
+							chance = 50
+							reduce_pop = 0.9
+						}
+						random = {
+							chance = 50
+							reduce_pop = 0.9
+						}
+						random = {
+							chance = 50
+							reduce_pop = 0.9
+						}
+					}
+				}
+			}
+		}
+		
+		#Killing in a no-presence state
+		random_pop = {
+			limit = {
+				has_pop_religion = jain
+				location = {
+					owner = { has_country_flag = interning_jains }
+					state_scope = {
+						is_primary_culture = no
+						is_accepted_culture = no
+						NOT = {
+							any_owned_province = {
+								OR = {
+									is_primary_culture = yes
+									is_accepted_culture = yes
+								}
+							}
+						}
+					}
+				}
+			}
+			location = {
+				state_scope = {
+					any_pop = {
+						limit = {
+							is_primary_culture = no
+							is_accepted_culture = no
+							has_pop_religion = jain
+						}
+						reduce_pop = 0.75
+						random = {
+							chance = 50
+							reduce_pop = 0.9
+						}
+						random = {
+							chance = 50
+							reduce_pop = 0.9
+						}
+						random = {
+							chance = 50
+							reduce_pop = 0.9
+						}
+					}
+				}
+			}
+		}
+
+		##############atheist Religion
+		random_pop = {#Killing in a majority state
+			limit = {
+				has_pop_religion = atheist
+				location = {
+					owner = { has_country_flag = interning_atheists }
+					state_scope = {
+						OR = {
+							is_accepted_culture = yes
+							is_primary_culture = yes
+						}
+					}
+				}
+			}
+			location = {
+				state_scope = {
+					any_pop = {
+						limit = {
+							is_primary_culture = no
+							is_accepted_culture = no
+							has_pop_religion = atheist
+						}
+						reduce_pop = 0.35
+						random = {
+							chance = 50
+							reduce_pop = 0.9
+						}
+						random = {
+							chance = 50
+							reduce_pop = 0.9
+						}
+						random = {
+							chance = 50
+							reduce_pop = 0.9
+						}
+					}
+				}
+			}
+		}
+		
+		#Killing in a minority state
+		random_pop = {
+			limit = {
+				has_pop_religion = atheist
+				location = {
+					owner = { has_country_flag = interning_atheists }
+					state_scope = {
+						is_primary_culture = no
+						is_accepted_culture = no
+						any_owned_province = {
+							OR = {
+								is_primary_culture = yes
+								is_accepted_culture = yes
+							}
+						}
+					}
+				}
+			}
+			location = {
+				state_scope = {
+					any_pop = {
+						limit = {
+							is_primary_culture = no
+							is_accepted_culture = no
+							has_pop_religion = atheist
+						}
+						reduce_pop = 0.55
+						random = {
+							chance = 50
+							reduce_pop = 0.9
+						}
+						random = {
+							chance = 50
+							reduce_pop = 0.9
+						}
+						random = {
+							chance = 50
+							reduce_pop = 0.9
+						}
+					}
+				}
+			}
+		}
+		
+		#Killing in a no-presence state
+		random_pop = {
+			limit = {
+				has_pop_religion = atheist
+				location = {
+					owner = { has_country_flag = interning_atheists }
+					state_scope = {
+						is_primary_culture = no
+						is_accepted_culture = no
+						NOT = {
+							any_owned_province = {
+								OR = {
+									is_primary_culture = yes
+									is_accepted_culture = yes
+								}
+							}
+						}
+					}
+				}
+			}
+			location = {
+				state_scope = {
+					any_pop = {
+						limit = {
+							is_primary_culture = no
+							is_accepted_culture = no
+							has_pop_religion = atheist
+						}
+						reduce_pop = 0.75
+						random = {
+							chance = 50
+							reduce_pop = 0.9
+						}
+						random = {
+							chance = 50
+							reduce_pop = 0.9
+						}
+						random = {
+							chance = 50
+							reduce_pop = 0.9
+						}
+					}
+				}
+			}
+		}
+		
+		###########################
 		owner = {
 			random = {
 				chance = 20
@@ -9631,6 +10613,14 @@ country_event = {
 		clr_country_flag = interning_zoroastrians
 		clr_country_flag = interning_mandaeans
 		clr_country_flag = interning_confucians
+		
+		clr_country_flag = interning_anabaptists
+		clr_country_flag = interning_karaites
+		clr_country_flag = interning_samaritans
+		clr_country_flag = interning_ismailis
+		clr_country_flag = interning_zaydis
+		clr_country_flag = interning_jains
+		clr_country_flag = interning_atheists
 		#Specific Cultures
 		clr_country_flag = interning_germanics
 		clr_country_flag = interning_jewish_cultures

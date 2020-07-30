@@ -1874,6 +1874,11 @@ conversion_chance = {
 			has_pop_religion = shiite
 			has_pop_religion = sunni
 			has_pop_religion = ibadi
+			has_pop_religion = alawite
+			has_pop_religion = alevi
+			has_pop_religion = druze
+			has_pop_religion = zaydi
+			has_pop_religion = ismaili
 		}
 	}
 	
@@ -1882,6 +1887,7 @@ conversion_chance = {
 		OR = {
 			not = { location = { controlled_by = owner } }
 			country = { has_country_flag = freedom_of_religion }
+			country = { religion = secular }
 			AND = {
 				OR = {
 					has_pop_religion = yazidi
@@ -1930,6 +1936,7 @@ conversion_chance = {
 			has_pop_religion = shiite
 			has_pop_religion = sunni
 			has_pop_religion = ibadi
+			has_pop_religion = anabaptist
 			AND = {
 				has_pop_religion = shinto
 				has_culture_core = yes
@@ -1939,7 +1946,7 @@ conversion_chance = {
 	
 	#ANON
 	modifier = {
-		factor = 100
+		factor = 0.5
 		has_pop_religion = maronite
 		OR = {
 			has_pop_culture = russophile
@@ -1969,6 +1976,8 @@ conversion_chance = {
 			has_pop_religion = apostolic
 			has_pop_religion = coptic
 			has_pop_religion = maronite
+			has_pop_religion = syriac
+			has_pop_religion = nestorian
 		}
 		has_culture_core = yes
 	}
@@ -1988,6 +1997,8 @@ conversion_chance = {
 			has_pop_religion = apostolic
 			has_pop_religion = coptic
 			has_pop_religion = maronite
+			has_pop_religion = syriac
+			has_pop_religion = nestorian
 		}
 	}
 			

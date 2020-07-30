@@ -139,6 +139,7 @@ political_decisions = {
 			clr_country_flag = interning_shintos
 			clr_country_flag = interning_sikhs
 			clr_country_flag = interning_animists
+			
 			clr_country_flag = interning_syriacs
 			clr_country_flag = interning_maronites
 			clr_country_flag = interning_bahais
@@ -147,6 +148,14 @@ political_decisions = {
 			clr_country_flag = interning_zoroastrians
 			clr_country_flag = interning_mandaeans
 			clr_country_flag = interning_confucians
+			
+			clr_country_flag = interning_anabaptists
+			clr_country_flag = interning_karaites
+			clr_country_flag = interning_samaritans
+			clr_country_flag = interning_ismailis
+			clr_country_flag = interning_zaydis
+			clr_country_flag = interning_jains
+			clr_country_flag = interning_atheists
 			#Specific Cultures
 			clr_country_flag = interning_germanics
 			clr_country_flag = interning_jewish_cultures
@@ -865,6 +874,214 @@ political_decisions = {
 		
 		effect = {
 			set_country_flag = interning_confucians
+			change_variable = { which = slowdown_point value = 1 }
+		}
+		ai_will_do = { factor = 0 }
+	}
+	
+	intern_nestorian = {
+		picture = generic_religion
+		potential = {
+			has_country_modifier = interment_camps
+			has_country_flag = interning_religions
+			any_owned_province = { any_pop = { has_pop_religion = nestorian } }
+			NOT = {
+				has_country_flag = interning_nestorians
+				has_country_flag = nestorian_country
+			}
+			OR = {
+				has_country_flag = government_decisions_on
+				ai = yes
+			}
+		}
+		
+		allow = {
+		}
+		
+		effect = {
+			set_country_flag = interning_nestorians
+			change_variable = { which = slowdown_point value = 1 }
+		}
+		ai_will_do = { factor = 0 }
+	}
+	
+	intern_anabaptist = {
+		picture = generic_religion
+		potential = {
+			has_country_modifier = interment_camps
+			has_country_flag = interning_religions
+			any_owned_province = { any_pop = { has_pop_religion = anabaptist } }
+			NOT = {
+				has_country_flag = interning_anabaptists
+				has_country_flag = anabaptist_country
+			}
+			OR = {
+				has_country_flag = government_decisions_on
+				ai = yes
+			}
+		}
+		
+		allow = {
+		}
+		
+		effect = {
+			set_country_flag = interning_anabaptists
+			change_variable = { which = slowdown_point value = 1 }
+		}
+		ai_will_do = { factor = 0 }
+	}
+	
+	intern_karaite = {
+		picture = generic_religion
+		potential = {
+			has_country_modifier = interment_camps
+			has_country_flag = interning_religions
+			any_owned_province = { any_pop = { has_pop_religion = karaite } }
+			NOT = {
+				has_country_flag = interning_karaites
+				has_country_flag = karaite_country
+			}
+			OR = {
+				has_country_flag = government_decisions_on
+				ai = yes
+			}
+		}
+		
+		allow = {
+		}
+		
+		effect = {
+			set_country_flag = interning_karaites
+			change_variable = { which = slowdown_point value = 1 }
+		}
+		ai_will_do = { factor = 0 }
+	}
+	
+	intern_samaritan = {
+		picture = generic_religion
+		potential = {
+			has_country_modifier = interment_camps
+			has_country_flag = interning_religions
+			any_owned_province = { any_pop = { has_pop_religion = samaritan } }
+			NOT = {
+				has_country_flag = interning_samaritans
+				has_country_flag = samaritan_country
+			}
+			OR = {
+				has_country_flag = government_decisions_on
+				ai = yes
+			}
+		}
+		
+		allow = {
+		}
+		
+		effect = {
+			set_country_flag = interning_samaritans
+			change_variable = { which = slowdown_point value = 1 }
+		}
+		ai_will_do = { factor = 0 }
+	}
+	
+	intern_ismaili = {
+		picture = generic_religion
+		potential = {
+			has_country_modifier = interment_camps
+			has_country_flag = interning_religions
+			any_owned_province = { any_pop = { has_pop_religion = ismaili } }
+			NOT = {
+				has_country_flag = interning_ismailis
+				has_country_flag = ismaili_country
+			}
+			OR = {
+				has_country_flag = government_decisions_on
+				ai = yes
+			}
+		}
+		
+		allow = {
+		}
+		
+		effect = {
+			set_country_flag = interning_ismailis
+			change_variable = { which = slowdown_point value = 1 }
+		}
+		ai_will_do = { factor = 0 }
+	}
+	
+	intern_zaydi = {
+		picture = generic_religion
+		potential = {
+			has_country_modifier = interment_camps
+			has_country_flag = interning_religions
+			any_owned_province = { any_pop = { has_pop_religion = zaydi } }
+			NOT = {
+				has_country_flag = interning_zaydis
+				has_country_flag = zaydi_country
+			}
+			OR = {
+				has_country_flag = government_decisions_on
+				ai = yes
+			}
+		}
+		
+		allow = {
+		}
+		
+		effect = {
+			set_country_flag = interning_zaydi
+			change_variable = { which = slowdown_point value = 1 }
+		}
+		ai_will_do = { factor = 0 }
+	}
+	
+	intern_jain = {
+		picture = generic_religion
+		potential = {
+			has_country_modifier = interment_camps
+			has_country_flag = interning_religions
+			any_owned_province = { any_pop = { has_pop_religion = jain } }
+			NOT = {
+				has_country_flag = interning_jain
+				has_country_flag = jain_country
+			}
+			OR = {
+				has_country_flag = government_decisions_on
+				ai = yes
+			}
+		}
+		
+		allow = {
+		}
+		
+		effect = {
+			set_country_flag = interning_jain
+			change_variable = { which = slowdown_point value = 1 }
+		}
+		ai_will_do = { factor = 0 }
+	}
+	
+	intern_atheist = {
+		picture = generic_religion
+		potential = {
+			has_country_modifier = interment_camps
+			has_country_flag = interning_religions
+			any_owned_province = { any_pop = { has_pop_religion = atheist } }
+			NOT = {
+				has_country_flag = interning_atheists
+				has_country_flag = atheist_country
+			}
+			OR = {
+				has_country_flag = government_decisions_on
+				ai = yes
+			}
+		}
+		
+		allow = {
+		}
+		
+		effect = {
+			set_country_flag = interning_atheists
 			change_variable = { which = slowdown_point value = 1 }
 		}
 		ai_will_do = { factor = 0 }

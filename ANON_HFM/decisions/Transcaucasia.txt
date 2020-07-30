@@ -527,7 +527,7 @@ political_decisions = {
 				set_country_flag = sunni_country
 				clr_country_flag = shiite_country
 				clr_country_flag = orthodox_country
-				clr_country_flag = apostolic_country
+				clr_country_flag = coptic_country
 				religion = sunni
 				primary_culture = azerbaijani
 				remove_accepted_culture = armenian
@@ -563,7 +563,7 @@ political_decisions = {
 				set_country_flag = shiite_country
 				clr_country_flag = sunni_country
 				clr_country_flag = orthodox_country
-				clr_country_flag = apostolic_country
+				clr_country_flag = coptic_country
 				religion = shiite
 				primary_culture = azerbaijani
 				remove_accepted_culture = armenian
@@ -593,6 +593,10 @@ political_decisions = {
 				has_country_flag = orthodox_country
 				has_country_flag = coptic_country
 				has_country_flag = nestorian_country
+				
+				has_country_flag = syriac_country
+				has_country_flag = maronite_country
+				has_country_flag = anabaptist_country
 			}
 		}
 
@@ -606,7 +610,7 @@ political_decisions = {
 				set_country_flag = orthodox_country
 				clr_country_flag = sunni_country
 				clr_country_flag = shiite_country
-				clr_country_flag = apostolic_country
+				clr_country_flag = coptic_country
 				religion = orthodox
 				primary_culture = georgian
 				add_accepted_culture = armenian
@@ -622,7 +626,7 @@ political_decisions = {
 		ai_will_do = { factor = 1 }
 	}
 		
-	make_transcaucasia_apostolic = {
+	make_transcaucasia_coptic = {
 		picture = form_transcaucasia
 		potential = {
 			TCA = {
@@ -638,6 +642,10 @@ political_decisions = {
 				has_country_flag = orthodox_country
 				has_country_flag = coptic_country
 				has_country_flag = nestorian_country
+				
+				has_country_flag = syriac_country
+				has_country_flag = maronite_country
+				has_country_flag = anabaptist_country
 			}
 		}
 
@@ -651,14 +659,14 @@ political_decisions = {
 				set_country_flag = orthodox_country
 				clr_country_flag = sunni_country
 				clr_country_flag = shiite_country
-				religion = apostolic
+				religion = coptic
 				primary_culture = armenian
 				add_accepted_culture = georgian
 				add_accepted_culture = abkhazian
 				add_accepted_culture = ossetian
 				remove_accepted_culture = azerbaijani
 				any_pop = {
-					limit = { NOT = { has_pop_religion = apostolic } }
+					limit = { NOT = { has_pop_religion = coptic } }
 					militancy = 6
 				}
 			}
@@ -683,6 +691,10 @@ political_decisions = {
 				has_country_flag = mormon_country
 				has_country_flag = orthodox_country
 				has_country_flag = coptic_country
+				
+				has_country_flag = syriac_country
+				has_country_flag = maronite_country
+				has_country_flag = anabaptist_country
 			}
 		}
 
@@ -693,7 +705,7 @@ political_decisions = {
 		effect = {
 			ABK = {
 				clr_country_flag = sunni_country
-				clr_country_flag = apostolic_country
+				clr_country_flag = coptic_country
 				set_country_flag = orthodox_country
 				religion = orthodox
 				any_pop = {
@@ -705,7 +717,7 @@ political_decisions = {
 		ai_will_do = { factor = 1 }
 	}
 	
-	make_abkhazia_apostolic = {
+	make_abkhazia_coptic = {
 		picture = form_transcaucasia
 		potential = {
 			ABK = { 
@@ -716,7 +728,7 @@ political_decisions = {
 				is_our_vassal = ABK
 				ABK = { in_sphere = THIS }
 			}
-			has_country_flag = orthodox_country
+			has_country_flag = coptic_country
 		}
 
 		allow = {
@@ -727,9 +739,9 @@ political_decisions = {
 			ABK = {
 				clr_country_flag = sunni_country
 				set_country_flag = orthodox_country
-				religion = apostolic
+				religion = coptic
 				any_pop = {
-					limit = { NOT = { has_pop_religion = apostolic } }
+					limit = { NOT = { has_pop_religion = coptic } }
 					militancy = 6
 				}
 			}

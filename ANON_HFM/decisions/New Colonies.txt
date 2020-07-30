@@ -81,7 +81,7 @@ political_decisions = {
 				clr_country_flag = animist_country
 				clr_country_flag = zoroastrian_country
 				clr_country_flag = nestorian_country
-				clr_country_flag = apostolic_country
+				clr_country_flag = confucian_country
 			}
 			
 			NGR = {
@@ -108,7 +108,7 @@ political_decisions = {
 				clr_country_flag = animist_country
 				clr_country_flag = zoroastrian_country
 				clr_country_flag = nestorian_country
-				clr_country_flag = apostolic_country
+				clr_country_flag = confucian_country
 			}
 			random_owned = { limit = { owner = { has_country_flag = catholic_country } } NGR = { religion = catholic set_country_flag = catholic_country } }
 			random_owned = {
@@ -131,7 +131,7 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = yazidi_country } } NGR = { religion =  yazidi set_country_flag = yazidi_country } }
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } NGR = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } NGR = { religion =  nestorian set_country_flag = nestorian_country } }
-			random_owned = { limit = { owner = { has_country_flag = apostolic_country } } NGR = { religion =  apostolic set_country_flag = apostolic_country } }
+			random_owned = { limit = { owner = { has_country_flag = confucian_country } } NGR = { religion =  confucian set_country_flag = confucian_country } }
 			
 			random_owned = { limit = { owner = { has_country_flag = catholic_country } } ARO = { religion = catholic set_country_flag = catholic_country } }
 			random_owned = {
@@ -154,7 +154,7 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = yazidi_country } } ARO = { religion =  yazidi set_country_flag = yazidi_country } }
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } NGR = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } NGR = { religion =  nestorian set_country_flag = nestorian_country } }
-			random_owned = { limit = { owner = { has_country_flag = apostolic_country } } NGR = { religion =  apostolic set_country_flag = apostolic_country } }
+			random_owned = { limit = { owner = { has_country_flag = confucian_country } } NGR = { religion =  confucian set_country_flag = confucian_country } }
 			
 			random_owned = { limit = { owner = { primary_culture = british } }  NGR = { government = colonial_company } }
 		}
@@ -239,7 +239,7 @@ political_decisions = {
 				clr_country_flag = animist_country
 				clr_country_flag = zoroastrian_country
 				clr_country_flag = nestorian_country
-				clr_country_flag = apostolic_country
+				clr_country_flag = confucian_country
 			}
 			
 			ARO = {
@@ -262,7 +262,7 @@ political_decisions = {
 				clr_country_flag = animist_country
 				clr_country_flag = zoroastrian_country
 				clr_country_flag = nestorian_country
-				clr_country_flag = apostolic_country
+				clr_country_flag = confucian_country
 			}
 			
 			random_owned = { limit = { owner = { has_country_flag = orthodox_country } } NGR = { religion = orthodox set_country_flag = orthodox_country } }
@@ -281,7 +281,7 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = yazidi_country } } NGR = { religion =  yazidi set_country_flag = yazidi_country } }
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } NGR = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } NGR = { religion =  nestorian set_country_flag = nestorian_country } }
-			random_owned = { limit = { owner = { has_country_flag = apostolic_country } } NGR = { religion =  apostolic set_country_flag = apostolic_country } }
+			random_owned = { limit = { owner = { has_country_flag = confucian_country } } NGR = { religion =  confucian set_country_flag = confucian_country } }
 			
 			random_owned = { limit = { owner = { has_country_flag = catholic_country } } ARO = { religion = catholic set_country_flag = catholic_country } }
 			random_owned = {
@@ -304,7 +304,7 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = yazidi_country } } ARO = { religion =  yazidi set_country_flag = yazidi_country } }
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } ARO = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } ARO = { religion =  nestorian set_country_flag = nestorian_country } }
-			random_owned = { limit = { owner = { has_country_flag = apostolic_country } } ARO = { religion =  apostolic set_country_flag = apostolic_country } }
+			random_owned = { limit = { owner = { has_country_flag = confucian_country } } ARO = { religion =  confucian set_country_flag = confucian_country } }
 		}
 	}
 	
@@ -367,7 +367,7 @@ political_decisions = {
 				clr_country_flag = animist_country
 				clr_country_flag = zoroastrian_country
 				clr_country_flag = nestorian_country
-				clr_country_flag = apostolic_country
+				clr_country_flag = confucian_country
 			}
 			
 			random_owned = { limit = { owner = { has_country_flag = catholic_country } } TOG = { religion = catholic set_country_flag = catholic_country } }
@@ -391,7 +391,7 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = yazidi_country } } TOG = { religion =  yazidi set_country_flag = yazidi_country } }
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } TOG = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } TOG = { religion =  nestorian set_country_flag = nestorian_country } }
-			random_owned = { limit = { owner = { has_country_flag = apostolic_country } } TOG = { religion =  apostolic set_country_flag = apostolic_country } }
+			random_owned = { limit = { owner = { has_country_flag = confucian_country } } TOG = { religion =  confucian set_country_flag = confucian_country } }
 		}
 	}
 	
@@ -458,7 +458,7 @@ political_decisions = {
 				clr_country_flag = animist_country
 				clr_country_flag = zoroastrian_country
 				clr_country_flag = nestorian_country
-				clr_country_flag = apostolic_country
+				clr_country_flag = confucian_country
 			}
 			
 			random_owned = { limit = { owner = { has_country_flag = catholic_country } } TOG = { religion = catholic set_country_flag = catholic_country } }
@@ -482,7 +482,7 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = yazidi_country } } TOG = { religion =  yazidi set_country_flag = yazidi_country } }
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } TOG = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } TOG = { religion =  nestorian set_country_flag = nestorian_country } }
-			random_owned = { limit = { owner = { has_country_flag = apostolic_country } } TOG = { religion =  apostolic set_country_flag = apostolic_country } }
+			random_owned = { limit = { owner = { has_country_flag = confucian_country } } TOG = { religion =  confucian set_country_flag = confucian_country } }
 		}
 	}
 	
@@ -550,7 +550,7 @@ political_decisions = {
 				clr_country_flag = animist_country
 				clr_country_flag = zoroastrian_country
 				clr_country_flag = nestorian_country
-				clr_country_flag = apostolic_country
+				clr_country_flag = confucian_country
 			}
 			random_owned = { limit = { owner = { has_country_flag = catholic_country } } IVC = { religion = catholic set_country_flag = catholic_country } }
 			random_owned = {
@@ -573,7 +573,7 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = yazidi_country } } IVC = { religion =  yazidi set_country_flag = yazidi_country } }
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } IVC = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } IVC = { religion =  nestorian set_country_flag = nestorian_country } }
-			random_owned = { limit = { owner = { has_country_flag = apostolic_country } } IVC = { religion =  apostolic set_country_flag = apostolic_country } }
+			random_owned = { limit = { owner = { has_country_flag = confucian_country } } IVC = { religion =  confucian set_country_flag = confucian_country } }
 		}
 	}
 	
@@ -642,7 +642,7 @@ political_decisions = {
 				clr_country_flag = animist_country
 				clr_country_flag = zoroastrian_country
 				clr_country_flag = nestorian_country
-				clr_country_flag = apostolic_country
+				clr_country_flag = confucian_country
 			}
 			random_owned = { limit = { owner = { has_country_flag = catholic_country } } IVC = { religion = catholic set_country_flag = catholic_country } }
 			random_owned = {
@@ -665,7 +665,7 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = yazidi_country } } IVC = { religion =  yazidi set_country_flag = yazidi_country } }
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } IVC = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } IVC = { religion =  nestorian set_country_flag = nestorian_country } }
-			random_owned = { limit = { owner = { has_country_flag = apostolic_country } } IVC = { religion =  apostolic set_country_flag = apostolic_country } }
+			random_owned = { limit = { owner = { has_country_flag = confucian_country } } IVC = { religion =  confucian set_country_flag = confucian_country } }
 		}
 	}
 	
@@ -726,7 +726,7 @@ political_decisions = {
 				clr_country_flag = animist_country
 				clr_country_flag = zoroastrian_country
 				clr_country_flag = nestorian_country
-				clr_country_flag = apostolic_country
+				clr_country_flag = confucian_country
 			}
 			random_owned = { limit = { owner = { has_country_flag = catholic_country } } SLE = { religion = catholic set_country_flag = catholic_country } }
 			random_owned = {
@@ -749,7 +749,7 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = yazidi_country } } SLE = { religion =  yazidi set_country_flag = yazidi_country } }
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } SLE = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } SLE = { religion =  nestorian set_country_flag = nestorian_country } }
-			random_owned = { limit = { owner = { has_country_flag = apostolic_country } } SLE = { religion =  apostolic set_country_flag = apostolic_country } }
+			random_owned = { limit = { owner = { has_country_flag = confucian_country } } SLE = { religion =  confucian set_country_flag = confucian_country } }
 			random_owned = { limit = { owner = { primary_culture = british } } SLE = { government = colonial_company } }
 		}
 	}
@@ -806,7 +806,7 @@ political_decisions = {
 				clr_country_flag = animist_country
 				clr_country_flag = zoroastrian_country
 				clr_country_flag = nestorian_country
-				clr_country_flag = apostolic_country
+				clr_country_flag = confucian_country
 			}
 			random_owned = { limit = { owner = { has_country_flag = catholic_country } } SLE = { religion = catholic set_country_flag = catholic_country } }
 			random_owned = {
@@ -829,7 +829,7 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = yazidi_country } } SLE = { religion =  yazidi set_country_flag = yazidi_country } }
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } SLE = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } SLE = { religion =  nestorian set_country_flag = nestorian_country } }
-			random_owned = { limit = { owner = { has_country_flag = apostolic_country } } SLE = { religion =  apostolic set_country_flag = apostolic_country } }
+			random_owned = { limit = { owner = { has_country_flag = confucian_country } } SLE = { religion =  confucian set_country_flag = confucian_country } }
 			
 			random_owned = { limit = { owner = { primary_culture = british } } SLE = { government = colonial_company } }
 		}
@@ -893,7 +893,7 @@ political_decisions = {
 				clr_country_flag = animist_country
 				clr_country_flag = zoroastrian_country
 				clr_country_flag = nestorian_country
-				clr_country_flag = apostolic_country
+				clr_country_flag = confucian_country
 			}
 			
 			random_owned = { limit = { owner = { has_country_flag = catholic_country } } GNE = { religion = catholic set_country_flag = catholic_country } }
@@ -917,7 +917,7 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = yazidi_country } } GNE = { religion =  yazidi set_country_flag = yazidi_country } }
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } GNE = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } GNE = { religion =  nestorian set_country_flag = nestorian_country } }
-			random_owned = { limit = { owner = { has_country_flag = apostolic_country } } GNE = { religion =  apostolic set_country_flag = apostolic_country } }
+			random_owned = { limit = { owner = { has_country_flag = confucian_country } } GNE = { religion =  confucian set_country_flag = confucian_country } }
 		}
 	}
 	
@@ -981,7 +981,7 @@ political_decisions = {
 				clr_country_flag = animist_country
 				clr_country_flag = zoroastrian_country
 				clr_country_flag = nestorian_country
-				clr_country_flag = apostolic_country
+				clr_country_flag = confucian_country
 			}
 			
 			random_owned = { limit = { owner = { has_country_flag = catholic_country } } GNE = { religion = catholic set_country_flag = catholic_country } }
@@ -1005,7 +1005,7 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = yazidi_country } } GNE = { religion =  yazidi set_country_flag = yazidi_country } }
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } GNE = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } GNE = { religion =  nestorian set_country_flag = nestorian_country } }
-			random_owned = { limit = { owner = { has_country_flag = apostolic_country } } GNE = { religion =  apostolic set_country_flag = apostolic_country } }
+			random_owned = { limit = { owner = { has_country_flag = confucian_country } } GNE = { religion =  confucian set_country_flag = confucian_country } }
 		}
 	}
 	
@@ -1171,7 +1171,7 @@ political_decisions = {
 				clr_country_flag = animist_country
 				clr_country_flag = zoroastrian_country
 				clr_country_flag = nestorian_country
-				clr_country_flag = apostolic_country
+				clr_country_flag = confucian_country
 			}
 			
 			random_owned = { limit = { owner = { has_country_flag = catholic_country } } NIG = { religion = catholic set_country_flag = catholic_country } }
@@ -1195,7 +1195,7 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = yazidi_country } } NIG = { religion =  yazidi set_country_flag = yazidi_country } }
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } NIG = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } NIG = { religion =  nestorian set_country_flag = nestorian_country } }
-			random_owned = { limit = { owner = { has_country_flag = apostolic_country } } NIG = { religion =  apostolic set_country_flag = apostolic_country } }
+			random_owned = { limit = { owner = { has_country_flag = confucian_country } } NIG = { religion =  confucian set_country_flag = confucian_country } }
 		}
 	}
 	
@@ -1268,7 +1268,7 @@ political_decisions = {
 				clr_country_flag = animist_country
 				clr_country_flag = zoroastrian_country
 				clr_country_flag = nestorian_country
-				clr_country_flag = apostolic_country
+				clr_country_flag = confucian_country
 			}
 			
 			random_owned = { limit = { owner = { has_country_flag = catholic_country } } NIG = { religion = catholic set_country_flag = catholic_country } }
@@ -1292,7 +1292,7 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = yazidi_country } } NIG = { religion =  yazidi set_country_flag = yazidi_country } }
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } NIG = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } NIG = { religion =  nestorian set_country_flag = nestorian_country } }
-			random_owned = { limit = { owner = { has_country_flag = apostolic_country } } NIG = { religion =  apostolic set_country_flag = apostolic_country } }
+			random_owned = { limit = { owner = { has_country_flag = confucian_country } } NIG = { religion =  confucian set_country_flag = confucian_country } }
 		}
 	}
 	
@@ -1368,7 +1368,7 @@ political_decisions = {
 				clr_country_flag = animist_country
 				clr_country_flag = zoroastrian_country
 				clr_country_flag = nestorian_country
-				clr_country_flag = apostolic_country
+				clr_country_flag = confucian_country
 			}
 			random_owned = { limit = { owner = { has_country_flag = catholic_country } } CHD = { religion = catholic set_country_flag = catholic_country } }
 			random_owned = {
@@ -1391,7 +1391,7 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = yazidi_country } } CHD = { religion =  yazidi set_country_flag = yazidi_country } }
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } CHD = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } CHD = { religion =  nestorian set_country_flag = nestorian_country } }
-			random_owned = { limit = { owner = { has_country_flag = apostolic_country } } CHD = { religion =  apostolic set_country_flag = apostolic_country } }
+			random_owned = { limit = { owner = { has_country_flag = confucian_country } } CHD = { religion =  confucian set_country_flag = confucian_country } }
 		}
 	}
 	
@@ -1468,7 +1468,7 @@ political_decisions = {
 				clr_country_flag = animist_country
 				clr_country_flag = zoroastrian_country
 				clr_country_flag = nestorian_country
-				clr_country_flag = apostolic_country
+				clr_country_flag = confucian_country
 			}
 			random_owned = { limit = { owner = { has_country_flag = catholic_country } } CHD = { religion = catholic set_country_flag = catholic_country } }
 			random_owned = {
@@ -1491,7 +1491,7 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = yazidi_country } } CHD = { religion =  yazidi set_country_flag = yazidi_country } }
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } CHD = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } CHD = { religion =  nestorian set_country_flag = nestorian_country } }
-			random_owned = { limit = { owner = { has_country_flag = apostolic_country } } CHD = { religion =  apostolic set_country_flag = apostolic_country } }
+			random_owned = { limit = { owner = { has_country_flag = confucian_country } } CHD = { religion =  confucian set_country_flag = confucian_country } }
 		}	
 	}
 	
@@ -1559,7 +1559,7 @@ political_decisions = {
 				clr_country_flag = animist_country
 				clr_country_flag = zoroastrian_country
 				clr_country_flag = nestorian_country
-				clr_country_flag = apostolic_country
+				clr_country_flag = confucian_country
 			}
 			
 			random_owned = { limit = { owner = { has_country_flag = catholic_country } } CMR = { religion = catholic set_country_flag = catholic_country } }
@@ -1583,7 +1583,7 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = yazidi_country } } CMR = { religion =  yazidi set_country_flag = yazidi_country } }
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } CMR = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } CMR = { religion =  nestorian set_country_flag = nestorian_country } }
-			random_owned = { limit = { owner = { has_country_flag = apostolic_country } } CMR = { religion =  apostolic set_country_flag = apostolic_country } }
+			random_owned = { limit = { owner = { has_country_flag = confucian_country } } CMR = { religion =  confucian set_country_flag = confucian_country } }
 		}
 	}
 	
@@ -1659,7 +1659,7 @@ political_decisions = {
 				clr_country_flag = animist_country
 				clr_country_flag = zoroastrian_country
 				clr_country_flag = nestorian_country
-				clr_country_flag = apostolic_country
+				clr_country_flag = confucian_country
 			}
 			
 			random_owned = { limit = { owner = { has_country_flag = catholic_country } } CMR = { religion = catholic set_country_flag = catholic_country } }
@@ -1683,7 +1683,7 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = yazidi_country } } CMR = { religion =  yazidi set_country_flag = yazidi_country } }
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } CMR = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } CMR = { religion =  nestorian set_country_flag = nestorian_country } }
-			random_owned = { limit = { owner = { has_country_flag = apostolic_country } } CMR = { religion =  apostolic set_country_flag = apostolic_country } }
+			random_owned = { limit = { owner = { has_country_flag = confucian_country } } CMR = { religion =  confucian set_country_flag = confucian_country } }
 		}	
 	}
 	
@@ -1743,7 +1743,7 @@ political_decisions = {
 				clr_country_flag = animist_country
 				clr_country_flag = zoroastrian_country
 				clr_country_flag = nestorian_country
-				clr_country_flag = apostolic_country
+				clr_country_flag = confucian_country
 			}
 			
 			random_owned = { limit = { owner = { has_country_flag = catholic_country } } GAB = { religion = catholic set_country_flag = catholic_country } }
@@ -1767,7 +1767,7 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = yazidi_country } } GAB = { religion =  yazidi set_country_flag = yazidi_country } }
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } GAB = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } GAB = { religion =  nestorian set_country_flag = nestorian_country } }
-			random_owned = { limit = { owner = { has_country_flag = apostolic_country } } GAB = { religion =  apostolic set_country_flag = apostolic_country } }
+			random_owned = { limit = { owner = { has_country_flag = confucian_country } } GAB = { religion =  confucian set_country_flag = confucian_country } }
 			random_owned = { limit = { owner = { primary_culture = french } } GAB = { government = colonial_company } }
 		}
 	}
@@ -1825,7 +1825,7 @@ political_decisions = {
 				clr_country_flag = animist_country
 				clr_country_flag = zoroastrian_country
 				clr_country_flag = nestorian_country
-				clr_country_flag = apostolic_country
+				clr_country_flag = confucian_country
 			}
 			
 			random_owned = { limit = { owner = { has_country_flag = catholic_country } } GAB = { religion = catholic set_country_flag = catholic_country } }
@@ -1849,7 +1849,7 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = yazidi_country } } GAB = { religion =  yazidi set_country_flag = yazidi_country } }
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } GAB = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } GAB = { religion =  nestorian set_country_flag = nestorian_country } }
-			random_owned = { limit = { owner = { has_country_flag = apostolic_country } } GAB = { religion =  apostolic set_country_flag = apostolic_country } }
+			random_owned = { limit = { owner = { has_country_flag = confucian_country } } GAB = { religion =  confucian set_country_flag = confucian_country } }
 			random_owned = { limit = { owner = { primary_culture = french } } GAB = { government = colonial_company } }
 		}
 	}
@@ -1914,7 +1914,7 @@ political_decisions = {
 				clr_country_flag = animist_country
 				clr_country_flag = zoroastrian_country
 				clr_country_flag = nestorian_country
-				clr_country_flag = apostolic_country
+				clr_country_flag = confucian_country
 			}
 			
 			random_owned = { limit = { owner = { has_country_flag = catholic_country } } CGO = { religion = catholic set_country_flag = catholic_country } }
@@ -1938,7 +1938,7 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = yazidi_country } } CGO = { religion =  yazidi set_country_flag = yazidi_country } }
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } CGO = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } CGO = { religion =  nestorian set_country_flag = nestorian_country } }
-			random_owned = { limit = { owner = { has_country_flag = apostolic_country } } CGO = { religion =  apostolic set_country_flag = apostolic_country } }
+			random_owned = { limit = { owner = { has_country_flag = confucian_country } } CGO = { religion =  confucian set_country_flag = confucian_country } }
 			
 			random_owned = { limit = { owner = { primary_culture = french } } CGO = { government = colonial_company } }
 		}
@@ -2009,7 +2009,7 @@ political_decisions = {
 				clr_country_flag = animist_country
 				clr_country_flag = zoroastrian_country
 				clr_country_flag = nestorian_country
-				clr_country_flag = apostolic_country
+				clr_country_flag = confucian_country
 			}
 			
 			random_owned = { limit = { owner = { has_country_flag = catholic_country } } CGO = { religion = catholic set_country_flag = catholic_country } }
@@ -2033,7 +2033,7 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = yazidi_country } } CGO = { religion =  yazidi set_country_flag = yazidi_country } }
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } CGO = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } CGO = { religion =  nestorian set_country_flag = nestorian_country } }
-			random_owned = { limit = { owner = { has_country_flag = apostolic_country } } CGO = { religion =  apostolic set_country_flag = apostolic_country } }
+			random_owned = { limit = { owner = { has_country_flag = confucian_country } } CGO = { religion =  confucian set_country_flag = confucian_country } }
 			
 			random_owned = { limit = { owner = { primary_culture = french } } CGO = { government = colonial_company } }
 		}	
@@ -2124,7 +2124,7 @@ political_decisions = {
 				clr_country_flag = animist_country
 				clr_country_flag = zoroastrian_country
 				clr_country_flag = nestorian_country
-				clr_country_flag = apostolic_country
+				clr_country_flag = confucian_country
 			}
 			
 			random_owned = { limit = { owner = { has_country_flag = catholic_country } } CNG = { religion = catholic set_country_flag = catholic_country } }
@@ -2236,7 +2236,7 @@ political_decisions = {
 				clr_country_flag = animist_country
 				clr_country_flag = zoroastrian_country
 				clr_country_flag = nestorian_country
-				clr_country_flag = apostolic_country
+				clr_country_flag = confucian_country
 			}
 			
 			random_owned = { limit = { owner = { has_country_flag = catholic_country } } CNG = { religion = catholic set_country_flag = catholic_country } }
@@ -2260,7 +2260,7 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = yazidi_country } } CNG = { religion =  yazidi set_country_flag = yazidi_country } }
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } CNG = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } CNG = { religion =  nestorian set_country_flag = nestorian_country } }
-			random_owned = { limit = { owner = { has_country_flag = apostolic_country } } CNG = { religion =  apostolic set_country_flag = apostolic_country } }
+			random_owned = { limit = { owner = { has_country_flag = confucian_country } } CNG = { religion =  confucian set_country_flag = confucian_country } }
 		}
 	}
 	
@@ -2343,7 +2343,7 @@ political_decisions = {
 				clr_country_flag = animist_country
 				clr_country_flag = zoroastrian_country
 				clr_country_flag = nestorian_country
-				clr_country_flag = apostolic_country
+				clr_country_flag = confucian_country
 			}
 			
 			random_owned = { limit = { owner = { has_country_flag = catholic_country } } ZAM = { religion = catholic set_country_flag = catholic_country } }
@@ -2449,7 +2449,7 @@ political_decisions = {
 				clr_country_flag = animist_country
 				clr_country_flag = zoroastrian_country
 				clr_country_flag = nestorian_country
-				clr_country_flag = apostolic_country
+				clr_country_flag = confucian_country
 			}
 			
 			random_owned = { limit = { owner = { has_country_flag = catholic_country } } ZAM = { religion = catholic set_country_flag = catholic_country } }
@@ -2473,7 +2473,7 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = yazidi_country } } ZAM = { religion =  yazidi set_country_flag = yazidi_country } }
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } ZAM = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } ZAM = { religion =  nestorian set_country_flag = nestorian_country } }
-			random_owned = { limit = { owner = { has_country_flag = apostolic_country } } ZAM = { religion =  apostolic set_country_flag = apostolic_country } }
+			random_owned = { limit = { owner = { has_country_flag = confucian_country } } ZAM = { religion =  confucian set_country_flag = confucian_country } }
 			random_owned = { limit = { owner = { primary_culture = british } } ZAM = { government = colonial_company } }
 		}	
 	}
@@ -2548,7 +2548,7 @@ political_decisions = {
 				clr_country_flag = animist_country
 				clr_country_flag = zoroastrian_country
 				clr_country_flag = nestorian_country
-				clr_country_flag = apostolic_country
+				clr_country_flag = confucian_country
 			}
 			2026 = { trade_goods = tea }
 			2027 = { trade_goods = tea }
@@ -2575,7 +2575,7 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = yazidi_country } } KNY = { religion =  yazidi set_country_flag = yazidi_country } }
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } KNY = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } KNY = { religion =  nestorian set_country_flag = nestorian_country } }
-			random_owned = { limit = { owner = { has_country_flag = apostolic_country } } KNY = { religion =  apostolic set_country_flag = apostolic_country } }
+			random_owned = { limit = { owner = { has_country_flag = confucian_country } } KNY = { religion =  confucian set_country_flag = confucian_country } }
 			random_owned = { limit = { owner = { primary_culture = british } } KNY = { civilized = yes government = colonial_company } }
 		}
 	}
@@ -2653,7 +2653,7 @@ political_decisions = {
 				clr_country_flag = animist_country
 				clr_country_flag = zoroastrian_country
 				clr_country_flag = nestorian_country
-				clr_country_flag = apostolic_country
+				clr_country_flag = confucian_country
 			}
 			
 			random_owned = { limit = { owner = { has_country_flag = catholic_country } } KNY = { religion = catholic set_country_flag = catholic_country } }
@@ -2677,7 +2677,7 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = yazidi_country } } KNY = { religion =  yazidi set_country_flag = yazidi_country } }
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } KNY = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } KNY = { religion =  nestorian set_country_flag = nestorian_country } }
-			random_owned = { limit = { owner = { has_country_flag = apostolic_country } } KNY = { religion =  apostolic set_country_flag = apostolic_country } }
+			random_owned = { limit = { owner = { has_country_flag = confucian_country } } KNY = { religion =  confucian set_country_flag = confucian_country } }
 			random_owned = { limit = { owner = { primary_culture = british } } KNY = { government = colonial_company } }
 		}
 	}
@@ -2754,7 +2754,7 @@ political_decisions = {
 				clr_country_flag = animist_country
 				clr_country_flag = zoroastrian_country
 				clr_country_flag = nestorian_country
-				clr_country_flag = apostolic_country
+				clr_country_flag = confucian_country
 			}
 			
 			random_owned = { limit = { owner = { has_country_flag = catholic_country } } TNZ = { religion = catholic set_country_flag = catholic_country } }
@@ -2778,7 +2778,7 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = yazidi_country } } TNZ = { religion =  yazidi set_country_flag = yazidi_country } }
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } TNZ = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } TNZ = { religion =  nestorian set_country_flag = nestorian_country } }
-			random_owned = { limit = { owner = { has_country_flag = apostolic_country } } TNZ = { religion =  apostolic set_country_flag = apostolic_country } }
+			random_owned = { limit = { owner = { has_country_flag = confucian_country } } TNZ = { religion =  confucian set_country_flag = confucian_country } }
 			random_owned = { limit = { owner = { is_culture_group = germanic } } TNZ = { government = colonial_company } }
 		}
 	}
@@ -2856,7 +2856,7 @@ political_decisions = {
 				clr_country_flag = animist_country
 				clr_country_flag = zoroastrian_country
 				clr_country_flag = nestorian_country
-				clr_country_flag = apostolic_country
+				clr_country_flag = confucian_country
 			}
 			
 			random_owned = { limit = { owner = { has_country_flag = catholic_country } } TNZ = { religion = catholic set_country_flag = catholic_country } }
@@ -2880,7 +2880,7 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = yazidi_country } } TNZ = { religion =  yazidi set_country_flag = yazidi_country } }
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } TNZ = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } TNZ = { religion =  nestorian set_country_flag = nestorian_country } }
-			random_owned = { limit = { owner = { has_country_flag = apostolic_country } } TNZ = { religion =  apostolic set_country_flag = apostolic_country } }
+			random_owned = { limit = { owner = { has_country_flag = confucian_country } } TNZ = { religion =  confucian set_country_flag = confucian_country } }
 			random_owned = { limit = { owner = { is_culture_group = germanic } } TNZ = { government = colonial_company } }
 		}	
 	}
@@ -2951,7 +2951,7 @@ political_decisions = {
 				clr_country_flag = animist_country
 				clr_country_flag = zoroastrian_country
 				clr_country_flag = nestorian_country
-				clr_country_flag = apostolic_country
+				clr_country_flag = confucian_country
 			}
 			
 			random_owned = { limit = { owner = { has_country_flag = catholic_country } } MLI = { religion = catholic set_country_flag = catholic_country } }
@@ -2974,7 +2974,7 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = yazidi_country } } MLI = { religion =  yazidi set_country_flag = yazidi_country } }
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } MLI = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } MLI = { religion =  nestorian set_country_flag = nestorian_country } }
-			random_owned = { limit = { owner = { has_country_flag = apostolic_country } } MLI = { religion =  apostolic set_country_flag = apostolic_country } }
+			random_owned = { limit = { owner = { has_country_flag = confucian_country } } MLI = { religion =  confucian set_country_flag = confucian_country } }
 			
 			random_owned = { limit = { owner = { primary_culture = french } } MLI = { government = colonial_company } }
 		}
@@ -3050,7 +3050,7 @@ political_decisions = {
 				clr_country_flag = animist_country
 				clr_country_flag = zoroastrian_country
 				clr_country_flag = nestorian_country
-				clr_country_flag = apostolic_country
+				clr_country_flag = confucian_country
 			}
 			
 			random_owned = { limit = { owner = { has_country_flag = catholic_country } } MLI = { religion = catholic set_country_flag = catholic_country } }
@@ -3073,7 +3073,7 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = yazidi_country } } MLI = { religion =  yazidi set_country_flag = yazidi_country } }
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } MLI = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } MLI = { religion =  nestorian set_country_flag = nestorian_country } }
-			random_owned = { limit = { owner = { has_country_flag = apostolic_country } } MLI = { religion =  apostolic set_country_flag = apostolic_country } }
+			random_owned = { limit = { owner = { has_country_flag = confucian_country } } MLI = { religion =  confucian set_country_flag = confucian_country } }
 			
 			random_owned = { limit = { owner = { primary_culture = french } } MLI = { government = colonial_company } }
 		}	
@@ -3223,7 +3223,7 @@ political_decisions = {
 				clr_country_flag = animist_country
 				clr_country_flag = zoroastrian_country
 				clr_country_flag = nestorian_country
-				clr_country_flag = apostolic_country
+				clr_country_flag = confucian_country
 			}
 			
 			random_owned = { limit = { owner = { has_country_flag = catholic_country } } CAR = { religion = catholic set_country_flag = catholic_country } }
@@ -3247,7 +3247,7 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = yazidi_country } } CAR = { religion =  yazidi set_country_flag = yazidi_country } }
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } CAR = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } CAR = { religion =  nestorian set_country_flag = nestorian_country } }
-			random_owned = { limit = { owner = { has_country_flag = apostolic_country } } CAR = { religion =  apostolic set_country_flag = apostolic_country } }
+			random_owned = { limit = { owner = { has_country_flag = confucian_country } } CAR = { religion =  confucian set_country_flag = confucian_country } }
 		}
 	}
 	
@@ -3318,7 +3318,7 @@ political_decisions = {
 				clr_country_flag = animist_country
 				clr_country_flag = zoroastrian_country
 				clr_country_flag = nestorian_country
-				clr_country_flag = apostolic_country
+				clr_country_flag = confucian_country
 			}
 			
 			random_owned = { limit = { owner = { has_country_flag = catholic_country } } CAR = { religion = catholic set_country_flag = catholic_country } }
@@ -3342,7 +3342,7 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = yazidi_country } } CAR = { religion = yazidi set_country_flag = yazidi_country } }
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } CAR = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } CAR = { religion =  nestorian set_country_flag = nestorian_country } }
-			random_owned = { limit = { owner = { has_country_flag = apostolic_country } } CAR = { religion =  apostolic set_country_flag = apostolic_country } }
+			random_owned = { limit = { owner = { has_country_flag = confucian_country } } CAR = { religion =  confucian set_country_flag = confucian_country } }
 		}	
 	}
 	
@@ -3409,7 +3409,7 @@ political_decisions = {
 				clr_country_flag = animist_country
 				clr_country_flag = zoroastrian_country
 				clr_country_flag = nestorian_country
-				clr_country_flag = apostolic_country
+				clr_country_flag = confucian_country
 			}
 			
 			random_owned = { limit = { owner = { has_country_flag = catholic_country } } MLW = { religion = catholic set_country_flag = catholic_country } }
@@ -3433,7 +3433,7 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = yazidi_country } } MLW = { religion = yazidi set_country_flag = yazidi_country } }
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } MLW = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } MLW = { religion =  nestorian set_country_flag = nestorian_country } }
-			random_owned = { limit = { owner = { has_country_flag = apostolic_country } } MLW = { religion =  apostolic set_country_flag = apostolic_country } }
+			random_owned = { limit = { owner = { has_country_flag = confucian_country } } MLW = { religion =  confucian set_country_flag = confucian_country } }
 			
 			random_owned = { limit = { owner = { primary_culture = british owns = 2066 } } 2066 = { change_province_name = "Blantyre" } }
 			random_owned = { limit = { owner = { primary_culture = british } } MLW = { government = colonial_company } }
@@ -3494,7 +3494,7 @@ political_decisions = {
 				clr_country_flag = animist_country
 				clr_country_flag = zoroastrian_country
 				clr_country_flag = nestorian_country
-				clr_country_flag = apostolic_country
+				clr_country_flag = confucian_country
 			}
 			
 			random_owned = { limit = { owner = { has_country_flag = catholic_country } } MLW = { religion = catholic set_country_flag = catholic_country } }
@@ -3518,7 +3518,7 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = yazidi_country } } MLW = { religion = yazidi set_country_flag = yazidi_country } }
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } MLW = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } MLW = { religion =  nestorian set_country_flag = nestorian_country } }
-			random_owned = { limit = { owner = { has_country_flag = apostolic_country } } MLW = { religion =  apostolic set_country_flag = apostolic_country } }
+			random_owned = { limit = { owner = { has_country_flag = confucian_country } } MLW = { religion =  confucian set_country_flag = confucian_country } }
 			random_owned = { limit = { owner = { primary_culture = british owns = 2066 } } 2066 = { change_province_name = "Blantyre" } }
 			random_owned = { limit = { owner = { primary_culture = british } } MLW = { government = colonial_company } }
 		}
@@ -3580,7 +3580,7 @@ political_decisions = {
 				clr_country_flag = animist_country
 				clr_country_flag = zoroastrian_country
 				clr_country_flag = nestorian_country
-				clr_country_flag = apostolic_country
+				clr_country_flag = confucian_country
 			}
 			
 			random_owned = { limit = { owner = { has_country_flag = catholic_country } } GMB = { religion = catholic set_country_flag = catholic_country } }
@@ -3604,7 +3604,7 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = yazidi_country } } GMB = { religion = yazidi set_country_flag = yazidi_country } }
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } GMB = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } GMB = { religion =  nestorian set_country_flag = nestorian_country } }
-			random_owned = { limit = { owner = { has_country_flag = apostolic_country } } GMB = { religion =  apostolic set_country_flag = apostolic_country } }
+			random_owned = { limit = { owner = { has_country_flag = confucian_country } } GMB = { religion =  confucian set_country_flag = confucian_country } }
 		}
 	}
 	
@@ -3683,7 +3683,7 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = yazidi_country } } GMB = { religion = yazidi set_country_flag = yazidi_country } }
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } GMB = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } GMB = { religion =  nestorian set_country_flag = nestorian_country } }
-			random_owned = { limit = { owner = { has_country_flag = apostolic_country } } GMB = { religion =  apostolic set_country_flag = apostolic_country } }
+			random_owned = { limit = { owner = { has_country_flag = confucian_country } } GMB = { religion =  confucian set_country_flag = confucian_country } }
 		}	
 	}
 	
@@ -3772,7 +3772,7 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = yazidi_country } } ANG = { religion = yazidi set_country_flag = yazidi_country } }
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } ANG = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } ANG = { religion =  nestorian set_country_flag = nestorian_country } }
-			random_owned = { limit = { owner = { has_country_flag = apostolic_country } } ANG = { religion =  apostolic set_country_flag = apostolic_country } }
+			random_owned = { limit = { owner = { has_country_flag = confucian_country } } ANG = { religion =  confucian set_country_flag = confucian_country } }
 		}
 		
 		ai_will_do = { factor = 1 }
@@ -3863,7 +3863,7 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = yazidi_country } } ANG = { religion = yazidi set_country_flag = yazidi_country } }
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } ANG = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } ANG = { religion =  nestorian set_country_flag = nestorian_country } }
-			random_owned = { limit = { owner = { has_country_flag = apostolic_country } } ANG = { religion =  apostolic set_country_flag = apostolic_country } }
+			random_owned = { limit = { owner = { has_country_flag = confucian_country } } ANG = { religion =  confucian set_country_flag = confucian_country } }
 		}	
 	}
 	
@@ -3954,7 +3954,7 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = yazidi_country } } MOZ = { religion = yazidi set_country_flag = yazidi_country } }
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } MOZ = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } MOZ = { religion =  nestorian set_country_flag = nestorian_country } }
-			random_owned = { limit = { owner = { has_country_flag = apostolic_country } } MOZ = { religion =  apostolic set_country_flag = apostolic_country } }
+			random_owned = { limit = { owner = { has_country_flag = confucian_country } } MOZ = { religion =  confucian set_country_flag = confucian_country } }
 			
 			2054 = { trade_goods = coal }
 			random_owned = {
@@ -4096,7 +4096,7 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = yazidi_country } } MOZ = { religion = yazidi set_country_flag = yazidi_country } }
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } MOZ = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } MOZ = { religion =  nestorian set_country_flag = nestorian_country } }
-			random_owned = { limit = { owner = { has_country_flag = apostolic_country } } MOZ = { religion =  apostolic set_country_flag = apostolic_country } }
+			random_owned = { limit = { owner = { has_country_flag = confucian_country } } MOZ = { religion =  confucian set_country_flag = confucian_country } }
 		}	
 	}
 	
@@ -4224,7 +4224,7 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = yazidi_country } } BUG = { religion = yazidi set_country_flag = yazidi_country } }
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } BUG = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } BUG = { religion =  nestorian set_country_flag = nestorian_country } }
-			random_owned = { limit = { owner = { has_country_flag = apostolic_country } } BUG = { religion =  apostolic set_country_flag = apostolic_country } }
+			random_owned = { limit = { owner = { has_country_flag = confucian_country } } BUG = { religion =  confucian set_country_flag = confucian_country } }
 			
 			2019 = { change_province_name = "Kampala" }
 		}
@@ -4301,7 +4301,7 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = yazidi_country } } BUG = { religion = yazidi set_country_flag = yazidi_country } }
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } BUG = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } BUG = { religion =  nestorian set_country_flag = nestorian_country } }
-			random_owned = { limit = { owner = { has_country_flag = apostolic_country } } BUG = { religion =  apostolic set_country_flag = apostolic_country } }
+			random_owned = { limit = { owner = { has_country_flag = confucian_country } } BUG = { religion =  confucian set_country_flag = confucian_country } }
 		}
 	}
 	
@@ -4384,7 +4384,7 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = yazidi_country } } TSW = { religion = yazidi set_country_flag = yazidi_country } }
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } TSW = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } TSW = { religion =  nestorian set_country_flag = nestorian_country } }
-			random_owned = { limit = { owner = { has_country_flag = apostolic_country } } TSW = { religion =  apostolic set_country_flag = apostolic_country } }
+			random_owned = { limit = { owner = { has_country_flag = confucian_country } } TSW = { religion =  confucian set_country_flag = confucian_country } }
 		}
 	}
 	
@@ -4463,7 +4463,7 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = yazidi_country } } TSW = { religion = yazidi set_country_flag = yazidi_country } }
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } TSW = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } TSW = { religion =  nestorian set_country_flag = nestorian_country } }
-			random_owned = { limit = { owner = { has_country_flag = apostolic_country } } TSW = { religion =  apostolic set_country_flag = apostolic_country } }
+			random_owned = { limit = { owner = { has_country_flag = confucian_country } } TSW = { religion =  confucian set_country_flag = confucian_country } }
 		}	
 	}
 	
@@ -4630,7 +4630,7 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = yazidi_country } } ASH = { religion = yazidi set_country_flag = yazidi_country } }
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } ASH = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } ASH = { religion =  nestorian set_country_flag = nestorian_country } }
-			random_owned = { limit = { owner = { has_country_flag = apostolic_country } } ASH = { religion =  apostolic set_country_flag = apostolic_country } }
+			random_owned = { limit = { owner = { has_country_flag = confucian_country } } ASH = { religion =  confucian set_country_flag = confucian_country } }
 		}
 	}
 		
@@ -4709,7 +4709,7 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = yazidi_country } } ASH = { religion = yazidi set_country_flag = yazidi_country } }
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } ASH = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } ASH = { religion =  nestorian set_country_flag = nestorian_country } }
-			random_owned = { limit = { owner = { has_country_flag = apostolic_country } } ASH = { religion =  apostolic set_country_flag = apostolic_country } }
+			random_owned = { limit = { owner = { has_country_flag = confucian_country } } ASH = { religion =  confucian set_country_flag = confucian_country } }
 		}
 	}
 	
@@ -4795,7 +4795,7 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = yazidi_country } } BKF = { religion = yazidi set_country_flag = yazidi_country } }
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } BKF = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } BKF = { religion =  nestorian set_country_flag = nestorian_country } }
-			random_owned = { limit = { owner = { has_country_flag = apostolic_country } } BKF = { religion =  apostolic set_country_flag = apostolic_country } }
+			random_owned = { limit = { owner = { has_country_flag = confucian_country } } BKF = { religion =  confucian set_country_flag = confucian_country } }
 		}
 	}
 	
@@ -4877,7 +4877,7 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = yazidi_country } } BKF = { religion = yazidi set_country_flag = yazidi_country } }
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } BKF = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } BKF = { religion =  nestorian set_country_flag = nestorian_country } }
-			random_owned = { limit = { owner = { has_country_flag = apostolic_country } } BKF = { religion =  apostolic set_country_flag = apostolic_country } }
+			random_owned = { limit = { owner = { has_country_flag = confucian_country } } BKF = { religion =  confucian set_country_flag = confucian_country } }
 		}
 	}
 	
@@ -5001,7 +5001,7 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = yazidi_country } } DAH = { religion = yazidi set_country_flag = yazidi_country } }
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } DAH = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } DAH = { religion =  nestorian set_country_flag = nestorian_country } }
-			random_owned = { limit = { owner = { has_country_flag = apostolic_country } } DAH = { religion =  apostolic set_country_flag = apostolic_country } }
+			random_owned = { limit = { owner = { has_country_flag = confucian_country } } DAH = { religion =  confucian set_country_flag = confucian_country } }
 		}
 	}
 	
@@ -5083,7 +5083,7 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = yazidi_country } } DAH = { religion = yazidi set_country_flag = yazidi_country } }
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } DAH = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } DAH = { religion =  nestorian set_country_flag = nestorian_country } }
-			random_owned = { limit = { owner = { has_country_flag = apostolic_country } } DAH = { religion =  apostolic set_country_flag = apostolic_country } }
+			random_owned = { limit = { owner = { has_country_flag = confucian_country } } DAH = { religion =  confucian set_country_flag = confucian_country } }
 		}
 	}
 	
@@ -5298,7 +5298,7 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = yazidi_country } } TMR = { religion = yazidi set_country_flag = yazidi_country } }
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } TMR = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } TMR = { religion =  nestorian set_country_flag = nestorian_country } }
-			random_owned = { limit = { owner = { has_country_flag = apostolic_country } } TMR = { religion =  apostolic set_country_flag = apostolic_country } }
+			random_owned = { limit = { owner = { has_country_flag = confucian_country } } TMR = { religion =  confucian set_country_flag = confucian_country } }
 			
 			any_owned = {
 				limit = { is_core = TMR }
@@ -5377,7 +5377,7 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = yazidi_country } } TMR = { religion = yazidi set_country_flag = yazidi_country } }
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } TMR = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } TMR = { religion =  nestorian set_country_flag = nestorian_country } }
-			random_owned = { limit = { owner = { has_country_flag = apostolic_country } } TMR = { religion =  apostolic set_country_flag = apostolic_country } }
+			random_owned = { limit = { owner = { has_country_flag = confucian_country } } TMR = { religion =  confucian set_country_flag = confucian_country } }
 		}
 
 		ai_will_do = {
@@ -5489,7 +5489,7 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = yazidi_country } } NMB = { religion = yazidi set_country_flag = yazidi_country } }
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } NMB = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } NMB = { religion =  nestorian set_country_flag = nestorian_country } }
-			random_owned = { limit = { owner = { has_country_flag = apostolic_country } } NMB = { religion =  apostolic set_country_flag = apostolic_country } }
+			random_owned = { limit = { owner = { has_country_flag = confucian_country } } NMB = { religion =  confucian set_country_flag = confucian_country } }
 		}
 	}
 	
@@ -5571,7 +5571,7 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = yazidi_country } } NMB = { religion = yazidi set_country_flag = yazidi_country } }
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } NMB = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } NMB = { religion =  nestorian set_country_flag = nestorian_country } }
-			random_owned = { limit = { owner = { has_country_flag = apostolic_country } } NMB = { religion =  apostolic set_country_flag = apostolic_country } }
+			random_owned = { limit = { owner = { has_country_flag = confucian_country } } NMB = { religion =  confucian set_country_flag = confucian_country } }
 		}
 		
 		ai_will_do = {
@@ -5851,7 +5851,7 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = yazidi_country } } GBU = { religion = yazidi set_country_flag = yazidi_country } }
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } GBU = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } GBU = { religion =  nestorian set_country_flag = nestorian_country } }
-			random_owned = { limit = { owner = { has_country_flag = apostolic_country } } GBU = { religion =  apostolic set_country_flag = apostolic_country } }
+			random_owned = { limit = { owner = { has_country_flag = confucian_country } } GBU = { religion =  confucian set_country_flag = confucian_country } }
 		}
 	}
 	
@@ -5929,7 +5929,7 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = yazidi_country } } GBU = { religion = yazidi set_country_flag = yazidi_country } }
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } GBU = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } GBU = { religion =  nestorian set_country_flag = nestorian_country } }
-			random_owned = { limit = { owner = { has_country_flag = apostolic_country } } GBU = { religion =  apostolic set_country_flag = apostolic_country } }
+			random_owned = { limit = { owner = { has_country_flag = confucian_country } } GBU = { religion =  confucian set_country_flag = confucian_country } }
 		}
 		
 		ai_will_do = {
@@ -6022,7 +6022,7 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = yazidi_country } } MAD = { religion = yazidi set_country_flag = yazidi_country } }
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } MAD = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } MAD = { religion =  nestorian set_country_flag = nestorian_country } }
-			random_owned = { limit = { owner = { has_country_flag = apostolic_country } } MAD = { religion =  apostolic set_country_flag = apostolic_country } }
+			random_owned = { limit = { owner = { has_country_flag = confucian_country } } MAD = { religion =  confucian set_country_flag = confucian_country } }
 		}
 	}
 	
@@ -6100,7 +6100,7 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = yazidi_country } } MAD = { religion = yazidi set_country_flag = yazidi_country } }
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } MAD = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } MAD = { religion =  nestorian set_country_flag = nestorian_country } }
-			random_owned = { limit = { owner = { has_country_flag = apostolic_country } } MAD = { religion =  apostolic set_country_flag = apostolic_country } }
+			random_owned = { limit = { owner = { has_country_flag = confucian_country } } MAD = { religion =  confucian set_country_flag = confucian_country } }
 		}
 	}
 	
@@ -6183,7 +6183,7 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = yazidi_country } } ZBW = { religion = yazidi set_country_flag = yazidi_country } }
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } ZBW = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } ZBW = { religion =  nestorian set_country_flag = nestorian_country } }
-			random_owned = { limit = { owner = { has_country_flag = apostolic_country } } ZBW = { religion =  apostolic set_country_flag = apostolic_country } }
+			random_owned = { limit = { owner = { has_country_flag = confucian_country } } ZBW = { religion =  confucian set_country_flag = confucian_country } }
 		}
 	}
 	
@@ -6262,7 +6262,7 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = yazidi_country } } ZBW = { religion = yazidi set_country_flag = yazidi_country } }
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } ZBW = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } ZBW = { religion =  nestorian set_country_flag = nestorian_country } }
-			random_owned = { limit = { owner = { has_country_flag = apostolic_country } } ZBW = { religion =  apostolic set_country_flag = apostolic_country } }
+			random_owned = { limit = { owner = { has_country_flag = confucian_country } } ZBW = { religion =  confucian set_country_flag = confucian_country } }
 		}
 		
 		ai_will_do = {

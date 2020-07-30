@@ -770,6 +770,24 @@ country_event = {
 			clr_country_flag = shinto_country
 			clr_country_flag = sikh_country
 			clr_country_flag = animist_country
+			
+			clr_country_flag = syriac_country
+			clr_country_flag = maronite_country
+			clr_country_flag = bahai_country
+			clr_country_flag = alawite_country
+			clr_country_flag = alevi_country
+			clr_country_flag = zoroastrian_country
+			clr_country_flag = mandaean_country
+			clr_country_flag = confucian_country
+			clr_country_flag = nestorian_country
+			clr_country_flag = anabaptist_country
+			clr_country_flag = karaite_country
+			clr_country_flag = samaritan_country
+			clr_country_flag = ismaili_country
+			clr_country_flag = zaydi_country
+			clr_country_flag = jain_country
+			clr_country_flag = atheist_country
+			clr_country_flag = secular_country
 		}
 		
 		random_owned = { limit = { owner = { has_country_flag = catholic_country } } LSK = { religion = catholic set_country_flag = catholic_country } }
@@ -791,6 +809,24 @@ country_event = {
 		random_owned = { limit = { owner = { has_country_flag = jewish_country } } LSK = { religion = jewish set_country_flag = jewish_country } }
 		random_owned = { limit = { owner = { has_country_flag = ibadi_country } } LSK = { religion = ibadi set_country_flag = ibadi_country } }
 		random_owned = { limit = { owner = { has_country_flag = yazidi_country } } LSK = { religion = yazidi set_country_flag = yazidi_country } }
+		
+		random_owned = { limit = { owner = { has_country_flag = syriac_country } } LSK = { religion = syriac set_country_flag = syriac_country } }
+		random_owned = { limit = { owner = { has_country_flag = maronite_country } } LSK = { religion = maronite set_country_flag = maronite_country } }
+		random_owned = { limit = { owner = { has_country_flag = bahai_country } } LSK = { religion = bahai set_country_flag = bahai_country } }
+		random_owned = { limit = { owner = { has_country_flag = alawite_country } } LSK = { religion = alawite set_country_flag = alawite_country } }
+		random_owned = { limit = { owner = { has_country_flag = alevi_country } } LSK = { religion = alevi set_country_flag = alevi_country } }
+		random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } LSK = { religion = zoroastrian set_country_flag = zoroastrian_country } }
+		random_owned = { limit = { owner = { has_country_flag = mandaean_country } } LSK = { religion = mandaean set_country_flag = mandaean_country } }
+		random_owned = { limit = { owner = { has_country_flag = confucian_country } } LSK = { religion = confucian set_country_flag = confucian_country } }
+		random_owned = { limit = { owner = { has_country_flag = nestorian_country } } LSK = { religion = nestorian set_country_flag = nestorian_country } }
+		random_owned = { limit = { owner = { has_country_flag = anabaptist_country } } LSK = { religion = anabaptist set_country_flag = anabaptist_country } }
+		random_owned = { limit = { owner = { has_country_flag = karaite_country } } LSK = { religion = karaite set_country_flag = karaite_country } }
+		random_owned = { limit = { owner = { has_country_flag = samaritan_country } } LSK = { religion = samaritan set_country_flag = samaritan_country } }
+		random_owned = { limit = { owner = { has_country_flag = ismaili_country } } LSK = { religion = ismaili set_country_flag = ismaili_country } }
+		random_owned = { limit = { owner = { has_country_flag = zaydi_country } } LSK = { religion = zaydi set_country_flag = zaydi_country } }
+		random_owned = { limit = { owner = { has_country_flag = jain_country } } LSK = { religion = jain set_country_flag = jain_country } }
+		random_owned = { limit = { owner = { has_country_flag = atheist_country } } LSK = { religion = atheist set_country_flag = atheist_country } }
+		random_owned = { limit = { owner = { has_country_flag = secular_country } } LSK = { religion = secular set_country_flag = secular_country } }
 	}
 }
 
