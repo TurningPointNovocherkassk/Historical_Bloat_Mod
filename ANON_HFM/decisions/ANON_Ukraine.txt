@@ -1,0 +1,151 @@
+political_decisions = {
+	central_ukraine_mineral_basin = {
+		picture = luhansk_mine
+		potential = {
+			OR = {
+				owns = 961
+				owns = 971
+				owns = 963
+				owns = 972
+				owns = 1018
+				owns = 978
+			}
+			NOT = {
+				OR = {
+					961 = { has_province_modifier = central_ukraine_modifier }
+					971 = { has_province_modifier = central_ukraine_modifier }
+					963 = { has_province_modifier = central_ukraine_modifier }
+					972 = { has_province_modifier = central_ukraine_modifier }
+					1018 = { has_province_modifier = central_ukraine_modifier }
+					978 = { has_province_modifier = central_ukraine_modifier }
+				}
+			}
+		}
+		allow = {
+			OR = {
+				AND = {
+					invention = pit_coal
+					invention = coke
+					advanced_metallurgy = 1
+				}
+				year = 1875
+			}
+		}
+		effect = {
+			any_owned = {
+				limit = {
+					OR = {
+						province_id = 961
+						province_id = 972
+						province_id = 978
+					}
+					NOT = { has_province_modifier = central_ukraine_modifier }
+				}
+				trade_goods = coal
+				add_province_modifier = { name = central_ukraine_modifier duration = -1 }
+			}
+			any_owned = {
+				limit = {
+					OR = {
+						province_id = 971
+						province_id = 963
+						province_id = 1018
+					}
+					NOT = { has_province_modifier = central_ukraine_modifier }
+				}
+				trade_goods = iron
+				add_province_modifier = { name = central_ukraine_modifier duration = -1 }
+			}
+		}
+	 	ai_will_do = { factor = 1 }
+	}
+	donbass_coal_basin = {
+		picture = luhansk_mine
+		potential = {
+			OR = {
+				owns = 974
+				owns = 975
+				owns = 976
+				owns = 980
+				owns = 3648
+				owns = 979
+				owns = 3545
+			}
+			NOT = {
+				OR = {
+					974 = { has_province_modifier = donbass_modifier }
+					975 = { has_province_modifier = donbass_modifier }
+					976 = { has_province_modifier = donbass_modifier }
+					980 = { has_province_modifier = donbass_modifier }
+					3648 = { has_province_modifier = donbass_modifier }
+					979 = { has_province_modifier = donbass_modifier }
+					3545 = { has_province_modifier = donbass_modifier }
+				}
+			}
+		}
+		allow = {
+			OR = {
+				AND = {
+					invention = pit_coal
+					invention = coke
+					advanced_metallurgy = 1
+				}
+				year = 1875
+			}
+			money = 25000
+		}
+		effect = {
+			treasury = -25000
+			any_owned = {
+				limit = {
+					OR = {
+						province_id = 974
+						province_id = 976
+						province_id = 980
+						province_id = 3648
+						province_id = 979
+						province_id = 3545
+					}
+					NOT = { has_province_modifier = donbass_modifier }
+				}
+				trade_goods = coal
+				add_province_modifier = { name = donbass_modifier duration = -1 }
+			}
+			any_owned = {
+				limit = {
+					province_id = 975
+					NOT = { has_province_modifier = donbass_modifier }
+				}
+				change_province_name = "Yuzovka"
+				trade_goods = coal
+				add_province_modifier = { name = donbass_modifier duration = -1 }
+				add_province_modifier = { name = recently_built_city duration = 730 }
+			}
+		}
+	 	ai_will_do = { factor = 1 }
+	}
+	found_melitopol = {
+		picture = gtfo
+		potential = {
+			owns = 973
+			NOT = { has_global_flag = found_melitopol }
+		}
+		allow = {
+			year = 1842
+			money = 5000
+		}
+		effect = {
+			set_global_flag = found_melitopol
+			treasury = -5000
+			any_owned = {
+				limit = {
+					province_id = 973
+				}
+				change_province_name = "Melitopol"
+				trade_goods = coal
+				add_province_modifier = { name = recently_built_city duration = 730 }
+			}
+		}
+	 	ai_will_do = { factor = 1 }
+	}
+}

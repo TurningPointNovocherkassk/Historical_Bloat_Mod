@@ -11258,19 +11258,23 @@ country_event = {
 		FROM = { country_event = 666666109 }
 		ai_chance = {
 			factor = 60 
-				modifier = {
-					factor = 0.8
-					is_greater_power = no
-				}
-				modifier = {
-					factor = 1.5
-					alliance_with = FROM
-				}
-				modifier = {
-					factor = 1.5
-					relation = { who = FROM value = 150 }
-				}
+			modifier = {
+				factor = 0.8
+				FROM = { is_greater_power = no }
 			}
+			modifier = {
+				factor = 1.8
+				is_greater_power = no
+			}
+			modifier = {
+				factor = 1.5
+				alliance_with = FROM
+			}
+			modifier = {
+				factor = 1.5
+				relation = { who = FROM value = 150 }
+			}
+		}
 	}
 
 	option = {
@@ -11278,20 +11282,19 @@ country_event = {
 		FROM = { country_event = 666666110 }
 		ai_chance = {
 			factor = 40 
-				modifier = {
-					factor = 0.2
-					is_greater_power = no
-				}
-				
-				modifier = {
-					factor = 0.6
-					FROM = { is_greater_power = no }
-				}
-				modifier = {
-					factor = 0.1
-					NOT = { relation = { who = FROM value = 0 } }
-				}
+			modifier = {
+				factor = 1.3
+				FROM = { is_greater_power = no }
 			}
+			modifier = {
+				factor = 0.2
+				is_greater_power = no
+			}
+			modifier = {
+				factor = 0.1
+				NOT = { relation = { who = FROM value = 0 } }
+			}
+		}
 	}
 }
 
@@ -11327,6 +11330,9 @@ country_event = {
 		}
 		relation = { who = FROM value = 50 }
 		any_pop = { consciousness = -1 }
+		ai_chance = {
+			factor = 100 
+		}
 	}
 }
 
@@ -11342,5 +11348,119 @@ country_event = {
 	option = {
 		name = "EVT666666110OPTA"
 		relation = { who = FROM value = -100 }
+		ai_chance = {
+			factor = 100 
+		}
+	}
+}
+# Curonian claims on the Gambia
+country_event = {
+	id = 666666111
+	title = "EVTNAME666666111" #From decision courland_gambia, FROM's ultimatum to THIS: Secede Gambia
+	desc = "EVTDESC666666111"
+	picture = "senegambia_event"
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTA666666111"
+		any_owned = {
+			limit = {
+				province_id = 1785
+			}
+			remove_core = THIS
+		}
+		relation = { who = FROM value = 50 }
+		prestige = -10
+		FROM = {
+			country_event = 666666112
+		}
+		ai_chance = {
+			factor = 60 
+			modifier = {
+				factor = 0.8
+				FROM = { is_greater_power = no }
+			}
+			modifier = {
+				factor = 1.8
+				is_greater_power = no
+			}
+			modifier = {
+				factor = 1.5
+				alliance_with = FROM
+			}
+			modifier = {
+				factor = 1.5
+				relation = { who = FROM value = 150 }
+			}
+		}
+	}
+	option = {
+		name = "EVTOPTB666666111"
+		relation = { who = FROM value = -200 }
+		FROM = {
+			country_event = 666666113
+		}
+		prestige = 15
+		ai_chance = {
+			factor = 40 
+			modifier = {
+				factor = 1.3
+				FROM = { is_greater_power = no }
+			}
+			modifier = {
+				factor = 0.2
+				is_greater_power = no
+			}
+			modifier = {
+				factor = 0.1
+				NOT = { relation = { who = FROM value = 0 } }
+			}
+		}
+	}
+}
+country_event = {
+	id = 666666112
+	title = "EVTNAME666666112"
+	desc = "EVTDESC666666112"
+	picture = "senegambia_event"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVT666666112OPTA"
+		FROM = {
+			any_owned = {
+				limit = {
+					province_id = 1785
+				}
+				secede_province = THIS
+			}
+		}
+		relation = { who = FROM value = 50 }
+		prestige = 10
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+country_event = {
+	id = 666666113
+	title = "EVTNAME666666113"
+	desc = "EVTDESC666666113"
+	picture = "senegambia_event"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVT666666113OPTA"
+		relation = { who = FROM value = -200 }
+		add_casus_belli = {
+			target = FROM
+			type = place_in_the_sun
+			months = 120
+		}
+		ai_chance = {
+			factor = 100
+		}
 	}
 }

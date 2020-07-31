@@ -1758,7 +1758,8 @@ political_decisions = {
 					is_culture_group = germanic
 					OR = {
 						AND = { owns = 967 owns = 966 owns = 964 NOT = { has_global_flag = german_renamed_crimea } }
-						AND = { owns = 973 owns = 3672 NOT = { has_global_flag = german_renamed_taurida } }
+						AND = { owns = 3672 NOT = { has_global_flag = german_renamed_taurida1 } }
+						AND = { owns = 973 NOT = { has_global_flag = german_renamed_taurida2 has_global_flag = found_melitopol } }
 					}
 				}
 				AND = {   
@@ -1778,7 +1779,8 @@ political_decisions = {
 					}
 					OR = {
 						AND = { owns = 967 owns = 966 owns = 964 NOT = { has_global_flag = lithuanian_renamed_crimea } }
-						AND = { owns = 973 owns = 3672 NOT = { has_global_flag = lithuanian_renamed_taurida } }
+						AND = { owns = 3672 NOT = { has_global_flag = lithuanian_renamed_taurida1 } }
+						AND = { owns = 973 NOT = { has_global_flag = lithuanian_renamed_taurida2 has_global_flag = found_melitopol } }
 					}
 				}
 				AND = {
@@ -1790,7 +1792,8 @@ political_decisions = {
 					}
 					OR = {
 						AND = { owns = 967 owns = 966 owns = 964 NOT = { has_global_flag = russian_renamed_crimea } }
-						AND = { owns = 973 owns = 3672 NOT = { has_global_flag = russian_renamed_taurida } }
+						AND = { owns = 3672 NOT = { has_global_flag = russian_renamed_taurida1 } }
+						AND = { owns = 973 NOT = { has_global_flag = russian_renamed_taurida2 has_global_flag = found_melitopol } }
 					}
 				}
 				AND = {
@@ -1803,7 +1806,8 @@ political_decisions = {
 					}
 					OR = {
 						AND = { owns = 967 owns = 966 owns = 964 NOT = { has_global_flag = polish_renamed_crimea } }
-						AND = { owns = 973 owns = 3672 NOT = { has_global_flag = polish_renamed_taurida } }
+						AND = { owns = 3672 NOT = { has_global_flag = polish_renamed_taurida1 } }
+						AND = { owns = 973 NOT = { has_global_flag = polish_renamed_taurida2 has_global_flag = found_melitopol } }
 					}
 				}
 				AND = {
@@ -1814,7 +1818,8 @@ political_decisions = {
 					}
 					OR = {
 						AND = { owns = 967 owns = 966 owns = 964 NOT = { has_global_flag = tatar_renamed_crimea } }
-						AND = { owns = 973 owns = 3672 NOT = { has_global_flag = tatar_renamed_taurida } }
+						AND = { owns = 3672 NOT = { has_global_flag = tatar_renamed_taurida1 } }
+						AND = { owns = 973 NOT = { has_global_flag = tatar_renamed_taurida2 has_global_flag = found_melitopol } }
 					}
 				}
 			}
@@ -1835,14 +1840,14 @@ political_decisions = {
 					}
 				}		
 				967 = {
-					change_province_name = "Sebastopoli"
+					change_province_name = "Sebastòpoli"
 					state_scope = { change_region_name = "Crimea" }
 				}				
 				966 = { change_province_name = "Cherc" }			
 				964 = { change_province_name = "Sinferòpoli" }		
 				3670 = { change_province_name = "Caffa" }		
 				3671 = { change_province_name = "Jalta" }		
-				3673 = { change_province_name = "Tafros" }		
+				3673 = { change_province_name = "Taffros" }		
 				3674 = { change_province_name = "Eupatoria" }		
 				owner = { 
 					set_global_flag = italian_renamed_crimea
@@ -1882,6 +1887,25 @@ political_decisions = {
 			}
 			random_owned = {
 				limit = {
+					province_id = 3672
+					owner = {
+						is_culture_group = germanic
+					}
+				}	
+				3672 = {
+					change_province_name = "Oleschky"
+					state_scope = { change_region_name = "Taurien" }
+				}
+				owner = { 
+					set_global_flag = lithuanian_renamed_taurida1
+					clr_global_flag = german_renamed_taurida1
+					clr_global_flag = russian_renamed_taurida1
+					clr_global_flag = polish_renamed_taurida1
+					clr_global_flag = tatar_renamed_taurida1
+				}
+			}
+			random_owned = {
+				limit = {
 					province_id = 973
 					owner = {
 						is_culture_group = germanic
@@ -1889,15 +1913,13 @@ political_decisions = {
 				}			
 				973 = {
 					change_province_name = "Alexandrowsk"
-					state_scope = { change_region_name = "Taurien" }
-				}		
-				3672 = { change_province_name = "Oleschky" }
+				}
 				owner = { 
-					set_global_flag = lithuanian_renamed_taurida
-					clr_global_flag = german_renamed_taurida
-					clr_global_flag = russian_renamed_taurida
-					clr_global_flag = polish_renamed_taurida
-					clr_global_flag = tatar_renamed_taurida
+					set_global_flag = lithuanian_renamed_taurida2
+					clr_global_flag = german_renamed_taurida2
+					clr_global_flag = russian_renamed_taurida2
+					clr_global_flag = polish_renamed_taurida2
+					clr_global_flag = tatar_renamed_taurida2
 				}
 			}
 			
@@ -1938,6 +1960,31 @@ political_decisions = {
 			}
 			random_owned = {
 				limit = {
+					province_id = 3672
+					owner = {
+						OR = { 
+							primary_culture = lithuanian
+							is_culture_group = baltic
+							tag = PLC
+						}
+						NOT = {
+							tag = PLR
+							tag = PRC
+							tag = PRB
+						}
+					}
+				}
+				3672 = { change_province_name = "Aleshkas" state_scope = { change_region_name = "Taurido" } }
+				owner = { 
+					set_global_flag = lithuanian_renamed_taurida1
+					clr_global_flag = german_renamed_taurida1
+					clr_global_flag = russian_renamed_taurida1
+					clr_global_flag = polish_renamed_taurida1
+					clr_global_flag = tatar_renamed_taurida1
+				}
+			}
+			random_owned = {
+				limit = {
 					province_id = 973
 					owner = {
 						OR = { 
@@ -1954,15 +2001,13 @@ political_decisions = {
 				}			
 				973 = {
 					change_province_name = "Aleksandrovskas"
-					state_scope = { change_region_name = "Taurido" }
-				}		
-				3672 = { change_province_name = "Aleshkas" }
+				}
 				owner = { 
-					set_global_flag = lithuanian_renamed_taurida
-					clr_global_flag = german_renamed_taurida
-					clr_global_flag = russian_renamed_taurida
-					clr_global_flag = polish_renamed_taurida
-					clr_global_flag = tatar_renamed_taurida
+					set_global_flag = lithuanian_renamed_taurida2
+					clr_global_flag = german_renamed_taurida2
+					clr_global_flag = russian_renamed_taurida2
+					clr_global_flag = polish_renamed_taurida2
+					clr_global_flag = tatar_renamed_taurida2
 				}
 			}
 			
@@ -1999,6 +2044,27 @@ political_decisions = {
 			}
 			random_owned = {
 				limit = {
+					province_id = 3672
+					owner = {
+						OR = {
+							is_culture_group = east_slavic
+							tag = PLR
+							tag = PRC
+							tag = PRB
+						}
+					}
+				}		
+				3672 = { change_province_name = "Oleshky" state_scope = { change_region_name = "Tavrich" } }
+				owner = { 
+					set_global_flag = russian_renamed_taurida1
+					clr_global_flag = german_renamed_taurida1
+					clr_global_flag = lithuanian_renamed_taurida1
+					clr_global_flag = polish_renamed_taurida1
+					clr_global_flag = tatar_renamed_taurida1
+				}
+			}
+			random_owned = {
+				limit = {
 					province_id = 973
 					owner = {
 						OR = {
@@ -2011,15 +2077,13 @@ political_decisions = {
 				}			
 				973 = {
 					change_province_name = "Aleksandrovsk"
-					state_scope = { change_region_name = "Tavrich" }
-				}		
-				3672 = { change_province_name = "Oleshky" }
+				}
 				owner = { 
-					set_global_flag = russian_renamed_taurida
-					clr_global_flag = german_renamed_taurida
-					clr_global_flag = lithuanian_renamed_taurida
-					clr_global_flag = polish_renamed_taurida
-					clr_global_flag = tatar_renamed_taurida
+					set_global_flag = russian_renamed_taurida2
+					clr_global_flag = german_renamed_taurida2
+					clr_global_flag = lithuanian_renamed_taurida2
+					clr_global_flag = polish_renamed_taurida2
+					clr_global_flag = tatar_renamed_taurida2
 				}
 			}
 			
@@ -2057,6 +2121,28 @@ political_decisions = {
 			}
 			random_owned = {
 				limit = {
+					province_id = 3672
+					owner = {
+						is_culture_group = polish_culture_group
+						NOT = { tag = PLC }
+						NOT = {
+							tag = PLR
+							tag = PRC
+							tag = PRB
+						}
+					}
+				}
+				3672 = { change_province_name = "Aleszki" state_scope = { change_region_name = "Taurydzka" } }
+				owner = { 
+					set_global_flag = polish_renamed_taurida1
+					clr_global_flag = german_renamed_taurida1
+					clr_global_flag = lithuanian_renamed_taurida1
+					clr_global_flag = russian_renamed_taurida1
+					clr_global_flag = tatar_renamed_taurida1
+				}
+			}
+			random_owned = {
+				limit = {
 					province_id = 973
 					owner = {
 						is_culture_group = polish_culture_group
@@ -2070,15 +2156,13 @@ political_decisions = {
 				}			
 				973 = {
 					change_province_name = "Aleksandrowsk"
-					state_scope = { change_region_name = "Taurydzka" }
 				}		
-				3672 = { change_province_name = "Aleszki" }
 				owner = { 
-					set_global_flag = polish_renamed_taurida
-					clr_global_flag = german_renamed_taurida
-					clr_global_flag = lithuanian_renamed_taurida
-					clr_global_flag = russian_renamed_taurida
-					clr_global_flag = tatar_renamed_taurida
+					set_global_flag = polish_renamed_taurida2
+					clr_global_flag = german_renamed_taurida2
+					clr_global_flag = lithuanian_renamed_taurida2
+					clr_global_flag = russian_renamed_taurida2
+					clr_global_flag = tatar_renamed_taurida2
 				}
 			}
 			
@@ -2114,6 +2198,26 @@ political_decisions = {
 			}
 			random_owned = {
 				limit = {
+					province_id = 3672
+					owner = {
+						OR = {
+							primary_culture = tatar
+							is_culture_group = turko_semitic
+							is_culture_group = turanian
+						}
+					}
+				}
+				3672 = { change_province_name = "Qalançaq" state_scope = { change_region_name = "Tavrida" } }
+				owner = { 
+					set_global_flag = tatar_renamed_taurida1
+					clr_global_flag = german_renamed_taurida1
+					clr_global_flag = lithuanian_renamed_taurida1
+					clr_global_flag = russian_renamed_taurida1
+					clr_global_flag = polish_renamed_taurida1
+				}
+			}
+			random_owned = {
+				limit = {
 					province_id = 973
 					owner = {
 						OR = {
@@ -2125,15 +2229,13 @@ political_decisions = {
 				}			
 				973 = {
 					change_province_name = "Kyzyl-Yar"
-					state_scope = { change_region_name = "Tavrida" }
 				}		
-				3672 = { change_province_name = "Qalançaq" }
 				owner = { 
-					set_global_flag = tatar_renamed_taurida
-					clr_global_flag = german_renamed_taurida
-					clr_global_flag = lithuanian_renamed_taurida
-					clr_global_flag = russian_renamed_taurida
-					clr_global_flag = polish_renamed_taurida
+					set_global_flag = tatar_renamed_taurida2
+					clr_global_flag = german_renamed_taurida2
+					clr_global_flag = lithuanian_renamed_taurida2
+					clr_global_flag = russian_renamed_taurida2
+					clr_global_flag = polish_renamed_taurida2
 				}
 			}
 		}

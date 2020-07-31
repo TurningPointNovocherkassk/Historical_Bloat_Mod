@@ -3524,6 +3524,87 @@ political_decisions = {
 		ai_will_do = { factor = 1 }
 	}
 	
+	courland_gambia = {
+		picture = senegambia_decision
+		potential = {
+			OR = {
+				357 = {
+					OR = {
+						owned_by = THIS
+						owner = {
+							OR = {
+								in_sphere = THIS
+								vassal_of = THIS
+								substate_of = THIS
+							}
+						}
+					}
+				}
+				358 = {
+					OR = {
+						owned_by = THIS
+						owner = {
+							OR = {
+								in_sphere = THIS
+								vassal_of = THIS
+								substate_of = THIS
+							}
+						}
+					}
+				}
+			}
+			total_num_of_ports = 1
+			1785 = {
+				NOT = {
+					owned_by = THIS
+					owner = {
+						OR = {
+							vassal_of = THIS
+							substate_of = THIS
+						}
+					}
+				}
+				owner = {
+					NOT = {
+						capital_scope = { continent = west_africa }
+					}
+				}
+			}
+			NOT = { has_country_flag = courland_gambia }
+		}
+		
+		allow = {
+			war = no
+			OR = {
+				AND = {
+					OR = {
+						tag = UBD
+						tag = BBD
+					}
+					OR = {
+						is_secondary_power = yes
+						is_greater_power = yes
+					}
+				}
+				AND = {
+					primary_culture = east_slavic
+					is_greater_power = yes
+				}
+				AND = {
+					is_culture_group = polish_culture_group
+					is_greater_power = yes
+				}
+			}
+			invention = manifest_destiny
+		}
+		
+		effect = {
+			set_country_flag = courland_gambia
+			1785 = { owner = { country_event = 666666111 } }
+		}
+		
+		ai_will_do = { factor = 1 }
+	}
 	
 	
 	
