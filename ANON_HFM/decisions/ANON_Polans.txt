@@ -3456,7 +3456,73 @@ political_decisions = {
 	 	ai_will_do = { factor = 1 }
 	}
 	
+	israel_polygamy = {
+		picture = form_israel
+		potential = {
+	 		tag = ISR
+	 		has_country_flag = law_of_return_issued 
+			NOT = { has_country_flag = israel_polygamy }
+		}
+		
+		allow = {
+			war = no
+			ISR = { all_core = { owned_by = THIS } }
+			OR = {
+				ruling_party_ideology = reactionary
+				ruling_party_ideology = fascist
+				ruling_party_ideology = liberal
+				ruling_party_ideology = anarcho_liberal
+			}
+		}
+		
+		effect = {
+			set_country_flag = israel_polygamy
+			country_event = 666666107
+		}
+		ai_will_do = { factor = 1 }
+	}
 	
+	madagascar_purchase = {
+		picture = map_africa
+		potential = {
+			2121 = { NOT = { owned_by = THIS } owner = { NOT = { capital_scope = { continent = east_africa } } } }
+			2115 = { NOT = { owned_by = THIS } owner = { NOT = { capital_scope = { continent = east_africa } } } }
+			2120 = { NOT = { owned_by = THIS } owner = { NOT = { capital_scope = { continent = east_africa } } } }
+			2119 = { NOT = { owned_by = THIS } owner = { NOT = { capital_scope = { continent = east_africa } } } }
+			2118 = { NOT = { owned_by = THIS } owner = { NOT = { capital_scope = { continent = east_africa } } } }
+			2116 = { NOT = { owned_by = THIS } owner = { NOT = { capital_scope = { continent = east_africa } } } }
+			2122 = { NOT = { owned_by = THIS } owner = { NOT = { capital_scope = { continent = east_africa } } } }
+			2117 = { NOT = { owned_by = THIS } owner = { NOT = { capital_scope = { continent = east_africa } } } }
+			total_num_of_ports = 1
+			MAD = { exists = no }
+			OR = {
+				is_culture_group = polish_culture_group
+				is_culture_group = baltic
+				primary_culture = baltic_german
+			}
+			NOT = { has_country_flag = madagascar_purchase }
+		}
+		
+		allow = {
+			war = no
+			money = 5000000
+			is_greater_power = yes
+			nationalism_n_imperialism = 1
+			2115 = {
+				owner = {
+					war = no
+					relation = { who = THIS value = 100 }
+				}
+			}
+		}
+		
+		effect = {
+			set_country_flag = madagascar_purchase
+			2115 = { owner = { country_event = 666666108 } }
+		}
+		
+		ai_will_do = { factor = 1 }
+	}
 	
 	
 	
