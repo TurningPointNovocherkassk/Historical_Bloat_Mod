@@ -3498,14 +3498,16 @@ political_decisions = {
 			OR = {
 				is_culture_group = polish_culture_group
 				is_culture_group = baltic
+				is_culture_group = east_slavic
 				primary_culture = baltic_german
+				tag = WSF
 			}
 			NOT = { has_country_flag = madagascar_purchase }
 		}
 		
 		allow = {
 			war = no
-			money = 5000000
+			money = 1000000
 			is_greater_power = yes
 			nationalism_n_imperialism = 1
 			2115 = {
@@ -3521,7 +3523,7 @@ political_decisions = {
 			2115 = { owner = { country_event = 666666108 } }
 		}
 		
-		ai_will_do = { factor = 1 }
+		ai_will_do = { factor = 0 }
 	}
 	
 	courland_gambia = {
@@ -3589,24 +3591,707 @@ political_decisions = {
 				AND = {
 					primary_culture = east_slavic
 					is_greater_power = yes
+					OR = {
+						has_country_flag = baltic_concessions
+						has_country_flag = russification_of_the_baltic_states
+					}
 				}
 				AND = {
-					is_culture_group = polish_culture_group
+					OR = {
+						is_culture_group = polish_culture_group
+						AND = {
+							is_culture_group = baltic
+							OR = {
+								tag = PLC
+								tag = PLR
+							}
+						}
+						tag = WSF
+					}
 					is_greater_power = yes
+					has_country_flag = baltic_concessions
 				}
 			}
 			invention = manifest_destiny
+			money = 250000
 		}
 		
 		effect = {
 			set_country_flag = courland_gambia
-			1785 = { owner = { country_event = 666666111 } }
+			1785 = { owner = { country_event = 666666117 } }
+		}
+		
+		ai_will_do = { factor = 0 }
+	}
+	
+	courland_tobago = {
+		picture = courland_tobago_decision
+		potential = {
+			OR = {
+				357 = {
+					OR = {
+						owned_by = THIS
+						owner = {
+							OR = {
+								in_sphere = THIS
+								vassal_of = THIS
+								substate_of = THIS
+							}
+						}
+					}
+				}
+				358 = {
+					OR = {
+						owned_by = THIS
+						owner = {
+							OR = {
+								in_sphere = THIS
+								vassal_of = THIS
+								substate_of = THIS
+							}
+						}
+					}
+				}
+			}
+			total_num_of_ports = 1
+			2238 = {
+				NOT = {
+					owned_by = THIS
+					owner = {
+						OR = {
+							vassal_of = THIS
+							substate_of = THIS
+						}
+					}
+				}
+				owner = {
+					NOT = {
+						capital_scope = { continent = north_america }
+					}
+				}
+			}
+			NOT = { has_country_flag = courland_tobago }
+		}
+		
+		allow = {
+			war = no
+			OR = {
+				AND = {
+					OR = {
+						tag = UBD
+						tag = BBD
+					}
+					OR = {
+						is_secondary_power = yes
+						is_greater_power = yes
+					}
+				}
+				AND = {
+					primary_culture = east_slavic
+					is_greater_power = yes
+					OR = {
+						has_country_flag = baltic_concessions
+						has_country_flag = russification_of_the_baltic_states
+					}
+				}
+				AND = {
+					OR = {
+						is_culture_group = polish_culture_group
+						AND = {
+							is_culture_group = baltic
+							OR = {
+								tag = PLC
+								tag = PLR
+							}
+						}
+						tag = WSF
+					}
+					is_greater_power = yes
+					has_country_flag = baltic_concessions
+				}
+			}
+			money = 100000
+		}
+		
+		effect = {
+			set_country_flag = courland_tobago
+			2238 = { owner = { country_event = 666666114 } }
+		}
+		
+		ai_will_do = { factor = 0 }
+	}
+	
+	rename_gambia = {
+		picture = gtfo
+		potential = {
+			OR = {
+				AND = {
+					is_culture_group = germanic
+					AND = { owns = 1785 NOT = { has_global_flag = german_renamed_gambia } }
+				}
+				AND = {
+					is_culture_group = baltic
+					AND = { owns = 1785 NOT = { has_global_flag = baltic_renamed_gambia } }
+				}
+				AND = {
+					is_culture_group = east_slavic
+					AND = { owns = 1785 NOT = { has_global_flag = russian_renamed_gambia } }
+				}
+				AND = {
+					is_culture_group = polish_culture_group
+					NOT = { tag = WSF }
+					AND = { owns = 1785 NOT = { has_global_flag = polish_renamed_gambia } }
+				}
+				AND = {
+					tag = WSF
+					AND = { owns = 1785 NOT = { has_global_flag = WSF_renamed_gambia } }
+				}
+				AND = {
+					NOT = {
+						OR = {
+							is_culture_group = germanic
+							is_culture_group = baltic
+							is_culture_group = east_slavic
+							AND = {
+								is_culture_group = polish_culture_group
+								NOT = { tag = WSF }
+							}
+							tag = WSF
+						}
+					}
+					AND = { owns = 1785 NOT = { has_global_flag = normal_renamed_gambia } }
+				}
+			}
+		}
+		
+		allow = {
+			#war = no
+		}
+		
+		effect = {
+			
+			###German - gambia###
+			random_owned = {
+				limit = {
+					province_id = 1785
+					owner = {
+						is_culture_group = germanic
+					}
+				}
+				1785 = { change_province_name = "Sankt Jakobus" }	
+				owner = { 
+					set_global_flag = german_renamed_gambia
+					clr_global_flag = baltic_renamed_gambia
+					clr_global_flag = russian_renamed_gambia
+					clr_global_flag = polish_renamed_gambia
+					clr_global_flag = WSF_renamed_gambia
+					clr_global_flag = normal_renamed_gambia
+				}
+			}
+			
+			###Baltic - gambia###
+			random_owned = {
+				limit = {
+					province_id = 1785
+					owner = {
+						is_culture_group = baltic
+					}
+				}	
+				1785 = { change_province_name = "Svētais Jēkabs" }		
+				owner = { 
+					set_global_flag = baltic_renamed_gambia
+					clr_global_flag = german_renamed_gambia
+					clr_global_flag = russian_renamed_gambia 
+					clr_global_flag = polish_renamed_gambia
+					clr_global_flag = WSF_renamed_gambia
+					clr_global_flag = normal_renamed_gambia
+				}
+			}
+			
+			###Russian - gambia###
+			random_owned = {
+				limit = {
+					province_id = 1785
+					owner = {
+						is_culture_group = east_slavic
+					}
+				}
+				1785 = { change_province_name = "Svyatoy Jakob" }	
+				owner = { 
+					set_global_flag = russian_renamed_gambia
+					clr_global_flag = baltic_renamed_gambia
+					clr_global_flag = german_renamed_gambia
+					clr_global_flag = polish_renamed_gambia
+					clr_global_flag = WSF_renamed_gambia
+					clr_global_flag = normal_renamed_gambia
+				}
+			}
+			
+			###Polish - gambia###
+			random_owned = {
+				limit = {
+					province_id = 1785
+					owner = {
+						is_culture_group = polish_culture_group
+						NOT = { tag = WSF }
+					}
+				}
+				1785 = { change_province_name = "Swięty Jakub" }	
+				owner = { 
+					set_global_flag = polish_renamed_gambia
+					clr_global_flag = baltic_renamed_gambia
+					clr_global_flag = german_renamed_gambia
+					clr_global_flag = russian_renamed_gambia
+					clr_global_flag = WSF_renamed_gambia
+					clr_global_flag = normal_renamed_gambia
+				}
+			}
+			
+			###West Slavic Federation - gambia###
+			random_owned = {
+				limit = {
+					province_id = 1785
+					owner = {
+						tag = WSF
+					}
+				}
+				1785 = { change_province_name = "Nowa Polonia" }	
+				owner = { 
+					set_global_flag = WSF_renamed_gambia
+					clr_global_flag = baltic_renamed_gambia
+					clr_global_flag = german_renamed_gambia
+					clr_global_flag = russian_renamed_gambia
+					clr_global_flag = polish_renamed_gambia
+					clr_global_flag = normal_renamed_gambia
+				}
+			}
+			
+			###Normal - gambia###
+			random_owned = {
+				limit = {
+					province_id = 1785
+					owner = {
+						NOT = {
+							OR = {
+								is_culture_group = germanic
+								is_culture_group = baltic
+								is_culture_group = east_slavic
+								AND = {
+									is_culture_group = polish_culture_group
+									NOT = { tag = WSF }
+								}
+								tag = WSF
+							}
+						}
+					}
+				}
+				1785 = { change_province_name = "Bathurst" }	
+				owner = { 
+					set_global_flag = normal_renamed_gambia
+					clr_global_flag = baltic_renamed_gambia
+					clr_global_flag = german_renamed_gambia
+					clr_global_flag = russian_renamed_gambia
+					clr_global_flag = polish_renamed_gambia
+					clr_global_flag = WSF_renamed_gambia
+				}
+			}
 		}
 		
 		ai_will_do = { factor = 1 }
+		
 	}
 	
-	
+	rename_trinidad_tobago = {
+		picture = gtfo
+		potential = {
+			OR = {
+				AND = {
+					is_culture_group = germanic
+					OR = {
+						AND = { owns = 2237 NOT = { has_global_flag = german_renamed_trinidad } }
+						AND = { owns = 2238 NOT = { has_global_flag = german_renamed_tobago } }
+					}
+				}
+				AND = {
+					is_culture_group = baltic
+					OR = {
+						AND = { owns = 2237 NOT = { has_global_flag = baltic_renamed_trinidad } }
+						AND = { owns = 2238 NOT = { has_global_flag = baltic_renamed_tobago } }
+					}
+				}
+				AND = {
+					is_culture_group = east_slavic
+					OR = {
+						AND = { owns = 2237 NOT = { has_global_flag = russian_renamed_trinidad } }
+						AND = { owns = 2238 NOT = { has_global_flag = russian_renamed_tobago } }
+					}
+				}
+				AND = {
+					is_culture_group = polish_culture_group
+					NOT = { tag = WSF }
+					OR = {
+						AND = { owns = 2237 NOT = { has_global_flag = polish_renamed_trinidad } }
+						AND = { owns = 2238 NOT = { has_global_flag = polish_renamed_tobago } }
+					}
+				}
+				AND = {
+					tag = WSF
+					NOT = { tag = WSF }
+					OR = {
+						AND = { owns = 2237 NOT = { has_global_flag = WSF_renamed_trinidad } }
+						AND = { owns = 2238 NOT = { has_global_flag = WSF_renamed_tobago } }
+					}
+				}
+				AND = {
+					NOT = {
+						OR = {
+							is_culture_group = germanic
+							is_culture_group = baltic
+							is_culture_group = east_slavic
+							AND = {
+								is_culture_group = polish_culture_group
+								NOT = { tag = WSF }
+							}
+							tag = WSF
+							is_culture_group = iberian
+							is_culture_group = latin_american_cultures
+						}
+					}
+					OR = {
+						AND = { owns = 2237 NOT = { has_global_flag = normal_renamed_trinidad } }
+						AND = { owns = 2238 NOT = { has_global_flag = normal_renamed_tobago } }
+					}
+				}
+				AND = {
+					OR = {
+						is_culture_group = iberian
+						is_culture_group = latin_american_cultures
+					}
+					OR = {
+						AND = { owns = 2237 NOT = { has_global_flag = spanish_renamed_trinidad } }
+						AND = { owns = 2238 NOT = { has_global_flag = spanish_renamed_tobago } }
+					}
+				}
+			}
+		}
+		
+		allow = {
+			#war = no
+		}
+		
+		effect = {
+			
+			###German - trinidad###
+			random_owned = {
+				limit = {
+					province_id = 2237
+					owner = {
+						is_culture_group = germanic
+					}
+				}
+				2237 = { change_province_name = "Trinität" }	
+				owner = { 
+					set_global_flag = german_renamed_trinidad
+					clr_global_flag = baltic_renamed_trinidad
+					clr_global_flag = russian_renamed_trinidad
+					clr_global_flag = polish_renamed_trinidad
+					clr_global_flag = WSF_renamed_trinidad
+					clr_global_flag = normal_renamed_trinidad
+					clr_global_flag = spanish_renamed_trinidad
+				}
+			}
+			###German - tobago###
+			random_owned = {
+				limit = {
+					province_id = 2238
+					owner = {
+						is_culture_group = germanic
+					}
+				}
+				2238 = { change_province_name = "Neu-Kurländ" }	
+				owner = { 
+					set_global_flag = german_renamed_tobago
+					clr_global_flag = baltic_renamed_tobago
+					clr_global_flag = russian_renamed_tobago
+					clr_global_flag = polish_renamed_tobago
+					clr_global_flag = WSF_renamed_tobago
+					clr_global_flag = normal_renamed_tobago
+					clr_global_flag = spanish_renamed_tobago
+				}
+			}
+			
+			###Baltic - trinidad###
+			random_owned = {
+				limit = {
+					province_id = 2237
+					owner = {
+						is_culture_group = baltic
+					}
+				}	
+				2237 = { change_province_name = "Trīsvienība" }		
+				owner = { 
+					set_global_flag = baltic_renamed_trinidad
+					clr_global_flag = german_renamed_trinidad
+					clr_global_flag = russian_renamed_trinidad 
+					clr_global_flag = polish_renamed_trinidad
+					clr_global_flag = WSF_renamed_trinidad
+					clr_global_flag = normal_renamed_trinidad
+					clr_global_flag = spanish_renamed_trinidad
+				}
+			}
+			###Baltic - tobago###
+			random_owned = {
+				limit = {
+					province_id = 2238
+					owner = {
+						is_culture_group = baltic
+					}
+				}
+				2238 = { change_province_name = "Jaunā Kurija" }	
+				owner = { 
+					set_global_flag = baltic_renamed_tobago
+					clr_global_flag = german_renamed_tobago
+					clr_global_flag = russian_renamed_tobago
+					clr_global_flag = polish_renamed_tobago
+					clr_global_flag = WSF_renamed_tobago
+					clr_global_flag = normal_renamed_tobago
+					clr_global_flag = spanish_renamed_tobago
+				}
+			}
+			
+			###Russian - trinidad###
+			random_owned = {
+				limit = {
+					province_id = 2237
+					owner = {
+						is_culture_group = east_slavic
+					}
+				}
+				2237 = { change_province_name = "Troitsa" }	
+				owner = { 
+					set_global_flag = russian_renamed_trinidad
+					clr_global_flag = baltic_renamed_trinidad
+					clr_global_flag = german_renamed_trinidad
+					clr_global_flag = polish_renamed_trinidad
+					clr_global_flag = WSF_renamed_trinidad
+					clr_global_flag = normal_renamed_trinidad
+					clr_global_flag = spanish_renamed_trinidad
+				}
+			}
+			###Russian - tobago###
+			random_owned = {
+				limit = {
+					province_id = 2237
+					owner = {
+						is_culture_group = east_slavic
+					}
+				}
+				2238 = { change_province_name = "Novaya Kuroniya" }	
+				owner = { 
+					set_global_flag = russian_renamed_tobago
+					clr_global_flag = german_renamed_tobago
+					clr_global_flag = baltic_renamed_tobago
+					clr_global_flag = polish_renamed_tobago
+					clr_global_flag = WSF_renamed_tobago
+					clr_global_flag = normal_renamed_tobago
+					clr_global_flag = spanish_renamed_tobago
+				}
+			}
+			
+			###Polish - trinidad###
+			random_owned = {
+				limit = {
+					province_id = 2237
+					owner = {
+						is_culture_group = polish_culture_group
+						NOT = { tag = WSF }
+					}
+				}
+				2237 = { change_province_name = "Trójca" }	
+				owner = { 
+					set_global_flag = polish_renamed_trinidad
+					clr_global_flag = baltic_renamed_trinidad
+					clr_global_flag = german_renamed_trinidad
+					clr_global_flag = russian_renamed_trinidad
+					clr_global_flag = WSF_renamed_trinidad
+					clr_global_flag = normal_renamed_trinidad
+					clr_global_flag = spanish_renamed_trinidad
+				}
+			}
+			###Polish - tobago###
+			random_owned = {
+				limit = {
+					province_id = 2237
+					owner = {
+						is_culture_group = polish_culture_group
+						NOT = { tag = WSF }
+					}
+				}
+				2238 = { change_province_name = "Nowa Kuronia" }	
+				owner = { 
+					set_global_flag = polish_renamed_tobago
+					clr_global_flag = german_renamed_tobago
+					clr_global_flag = baltic_renamed_tobago
+					clr_global_flag = russian_renamed_tobago
+					clr_global_flag = WSF_renamed_tobago
+					clr_global_flag = normal_renamed_tobago
+					clr_global_flag = spanish_renamed_tobago
+				}
+			}
+			
+			###West Slavic Federation - trinidad###
+			random_owned = {
+				limit = {
+					province_id = 2237
+					owner = {
+						tag = WSF
+					}
+				}
+				2237 = { change_province_name = "Nowa Silesia" }	
+				owner = { 
+					set_global_flag = WSF_renamed_trinidad
+					clr_global_flag = baltic_renamed_trinidad
+					clr_global_flag = german_renamed_trinidad
+					clr_global_flag = russian_renamed_trinidad
+					clr_global_flag = polish_renamed_trinidad
+					clr_global_flag = normal_renamed_trinidad
+					clr_global_flag = spanish_renamed_trinidad
+				}
+			}
+			###West Slavic Federation - tobago###
+			random_owned = {
+				limit = {
+					province_id = 2237
+					owner = {
+						tag = WSF
+					}
+				}
+				2238 = { change_province_name = "Nowa Lusatia" }	
+				owner = { 
+					set_global_flag = WSF_renamed_tobago
+					clr_global_flag = german_renamed_tobago
+					clr_global_flag = baltic_renamed_tobago
+					clr_global_flag = polish_renamed_tobago
+					clr_global_flag = russian_renamed_tobago
+					clr_global_flag = normal_renamed_tobago
+					clr_global_flag = spanish_renamed_tobago
+				}
+			}
+			
+			###Normal - trinidad###
+			random_owned = {
+				limit = {
+					province_id = 2237
+					owner = {
+						NOT = {
+							OR = {
+								is_culture_group = germanic
+								is_culture_group = baltic
+								is_culture_group = east_slavic
+								AND = {
+									is_culture_group = polish_culture_group
+									NOT = { tag = WSF }
+								}
+								tag = WSF
+								is_culture_group = iberian
+								is_culture_group = latin_american_cultures
+							}
+						}
+					}
+				}
+				2237 = { change_province_name = "Trinidad" }	
+				owner = { 
+					set_global_flag = normal_renamed_trinidad
+					clr_global_flag = baltic_renamed_trinidad
+					clr_global_flag = german_renamed_trinidad
+					clr_global_flag = russian_renamed_trinidad
+					clr_global_flag = polish_renamed_trinidad
+					clr_global_flag = WSF_renamed_trinidad
+					clr_global_flag = spanish_renamed_trinidad
+				}
+			}
+			###Normal - tobago###
+			random_owned = {
+				limit = {
+					province_id = 2237
+					owner = {
+						NOT = {
+							OR = {
+								is_culture_group = germanic
+								is_culture_group = baltic
+								is_culture_group = east_slavic
+								AND = {
+									is_culture_group = polish_culture_group
+									NOT = { tag = WSF }
+								}
+								tag = WSF
+								is_culture_group = iberian
+								is_culture_group = latin_american_cultures
+							}
+						}
+					}
+				}
+				2238 = { change_province_name = "Tobago" }	
+				owner = { 
+					set_global_flag = normal_renamed_tobago
+					clr_global_flag = german_renamed_tobago
+					clr_global_flag = baltic_renamed_tobago
+					clr_global_flag = polish_renamed_tobago
+					clr_global_flag = russian_renamed_tobago
+					clr_global_flag = WSF_renamed_tobago
+					clr_global_flag = spanish_renamed_tobago
+				}
+			}
+			
+			###Spanish - trinidad###
+			random_owned = {
+				limit = {
+					province_id = 2237
+					owner = {
+						OR = {
+							is_culture_group = iberian
+							is_culture_group = latin_american_cultures
+						}
+					}
+				}
+				2237 = { change_province_name = "Trinidad" }	
+				owner = { 
+					set_global_flag = spanish_renamed_trinidad
+					clr_global_flag = normal_renamed_trinidad
+					clr_global_flag = baltic_renamed_trinidad
+					clr_global_flag = german_renamed_trinidad
+					clr_global_flag = russian_renamed_trinidad
+					clr_global_flag = polish_renamed_trinidad
+					clr_global_flag = WSF_renamed_trinidad
+				}
+			}
+			###Spanish - tobago###
+			random_owned = {
+				limit = {
+					province_id = 2237
+					owner = {
+						OR = {
+							is_culture_group = iberian
+							is_culture_group = latin_american_cultures
+						}
+					}
+				}
+				2238 = { change_province_name = "Tabaco" }	
+				owner = { 
+					set_global_flag = spanish_renamed_tobago
+					clr_global_flag = german_renamed_tobago
+					clr_global_flag = baltic_renamed_tobago
+					clr_global_flag = polish_renamed_tobago
+					clr_global_flag = russian_renamed_tobago
+					clr_global_flag = WSF_renamed_tobago
+					clr_global_flag = normal_renamed_tobago
+				}
+			}
+		}
+		
+		ai_will_do = { factor = 1 }
+		
+	}
 	
 	
 	

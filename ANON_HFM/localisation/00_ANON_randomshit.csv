@@ -1617,8 +1617,8 @@ madagascar_purchase_title;The Madagascar Purchase;;;;;;;;;x
 madagascar_purchase_desc;$COUNTRY$ is in dire need of a colony, and given our good standing with our friendly colonial powers, we are in position to purchase a most excellent place: Madagascar. An island in South-East Africa with the strangest fauna and an exotic native culture, though its hot climate might seem like a detriment for most people in our nation, our politicians, botanists and explorers alike are quite sure there shall be plenty of natural resources to exploit. Plus, if the deal to purchase Madagascar is successful, we can even use the place as a dumping ground for our surplus undesirables.;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 EVTNAME666666108;The Madagascar Purchase;;;;;;;;;x
-EVTDESC666666108;$FROMCOUNTRY$ has approached our government officials with quite a distinct proposition: The purchase of the Island of Madagascar. They are offering an estimated value of 500,000¤ for the whole island. And while this might seem like a great deal for us, we cannot forget the fact that we would be helping a rising Great Power consolidate itself as a possible competitor in the Colonizing stage.;;;;;;;;;x
-EVT666666108OPTA;It matters not, 500,000¤ is 5000,000¤;;;;;;;;;x
+EVTDESC666666108;$FROMCOUNTRY$ has approached our government officials with quite a distinct proposition: The purchase of the Island of Madagascar. They are offering an estimated value of 1,000,000¤ for the whole island. And while this might seem like a great deal for us, we cannot forget the fact that we would be helping a rising Great Power consolidate itself as a possible competitor in the Colonizing stage.;;;;;;;;;x
+EVT666666108OPTA;It matters not, 1,000,000¤ is 1,000,000¤;;;;;;;;;x
 EVT666666108OPTB;Never!;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 EVTNAME666666109;The Madagascar Purchase - The $FROMCOUNTRY_ADJ$ Response;;;;;;;;;x
@@ -1645,10 +1645,10 @@ found_melitopol_title;Found Melitopol;;;;;;;;;x
 found_melitopol_desc;The sloboda of Aleksandrovsk has grown exponentially in the last 30 years. By granting it proper recognition as a city, we can attract new settlers and investors alike which will cement out position in Taurida. One of the suggested names for its re-foundation is Melitopol, in honor of the old Greek ruins of Melita nearby.;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 courland_gambia_title;Curonian Gambia;;;;;;;;;x
-courland_gambia_desc;Jacob Kettler, Duke of Courland from 1642 to 1682, engaged in several attempts at colonization, one of which was the land around the province of Banjul in the Gambia. The fledgling colony had many troubles until it was stolen by the Dutch and subsequently by the British, the French, Swedish and many others until it came back to British hands. As our standing and influences in the international community grows, we can now demand the masters of the Gambia to hand over their Gambian colony on the basis of the first ownership act. Our control of Courland-Semigallia allows us to lay claims on it. And if they do not hand it back, we would have a very valid casus-belli against them.;;;;;;;;;x
+courland_gambia_desc;Jacob Kettler, Duke of Courland from 1642 to 1682, engaged in several attempts at colonization, one of which was the land around the province of Banjul in the Gambia. The fledgling colony had many troubles until it was stolen by the Dutch and subsequently by the British, the French, Swedish and many others until it came back to British hands. As our standing and influences in the international community grows, we can now demand the masters of the Gambia to hand over their Gambian colony on the basis of the first ownership act. Our control of Courland-Semigallia allows us to lay claims on it. And if they do not hand it back, we would have a very valid casus belli against them. Alternatively, we could make them a nice offer of 250,000¤ for the whole colony and obtain it peacefully.;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
-EVTNAME666666111;Curonian Gambia;;;;;;;;;x
-EVTDESC666666111;A $FROMCOUNTRY$ diplomat has recently approached us demanding we hand over the colony of Banjul in Gambia, on the basis of being its first owners, which dates all the way back to the 1650's. This is surprising as the area has been contested several times, but given our standing in the international stage we should be able to easily fend them off... Unless that is, they decide to use it as a casus-belli to rip it off our hands. What shall we do?;;;;;;;;;x
+EVTNAME666666111;Curonian Gambia - Demanding the Colony;;;;;;;;;x
+EVTDESC666666111;A $FROMCOUNTRY$ diplomat has recently approached us demanding we hand over the colony of Banjul in Gambia, on the basis of being its first owners, which dates all the way back to the 1650's. This is surprising as the area has been contested several times, but given our standing in the international stage we should be able to easily fend them off... Unless that is, they decide to use it as a casus belli to rip it off our hands. What shall we do?;;;;;;;;;x
 EVTOPTA666666111;We cannot risk more war.;;;;;;;;;x
 EVTOPTB666666111;Never! The Gambia has always been ours.;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
@@ -1660,10 +1660,42 @@ EVTNAME666666113;Curonian Gambia - The $FROMCOUNTRY_ADJ$ Response;;;;;;;;;x
 EVTDESC666666113;The $FROMCOUNTRY_ADJ$ diplomats state that the Gambia is and shall always be $FROMCOUNTRY_ADJ$;;;;;;;;;x
 EVT666666113OPTA;Then blood shall be shed!;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
+baltic_concessions;The Baltic Concessions;;;;;;;;;x
+russification_of_the_baltic_states;Russification of the Baltic States;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
+courland_tobago_title;The Tobago Purchase;;;;;;;;;x
+courland_tobago_desc;From 1654 to around 1689, the Island of Tobago of the Lesser Antilles belonged to the Colony of New Courland until a series of unfortunate events forced the Duchy to sell it to the British, who are to this very day the masters of the Island. Indeed ripping it off the hands of the British will be difficult, but we could obtain it by making a high enough offer... If not, we have a valid casus belli to make it ours once more. The story of Colony of New Courland is a sad one, but by placing it within our grasp once again we could amend the hardships the colonists suffered way back then. Though its climate might not be the best, as the island is located within the Atlantic Hurricane Belt, locals and botanists alike describe it as a "Tropical Paradise" when it's not being ravaged by storms.;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
+EVTNAME666666114;The Tobago Purchase;;;;;;;;;x
+EVTDESC666666114;$FROMCOUNTRY$ has approached our government officials with quite a distinct proposition: The purchase of the Island of Tobago. They are offering an estimated value of 100,000¤ for the whole island. And while this might seem like a great deal for us, we cannot forget the fact that we would be helping a rising Great Power consolidate itself as a possible competitor in the Colonizing stage.;;;;;;;;;x
+EVT666666114OPTA;It matters not, 100,000¤ is 100,000¤;;;;;;;;;x
+EVT666666114OPTB;Never!;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
+EVTNAME666666115;The Tobago Purchase - The $FROMCOUNTRY_ADJ$ Response;;;;;;;;;x
+EVTDESC666666115;Government officials have come back from $FROMCOUNTRY$ with great news! They have acceded to the sale of Tobago!;;;;;;;;;x
+EVT666666115OPTA;Hurray!;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
+EVTNAME666666116;The Tobago Purchase - The $FROMCOUNTRY_ADJ$ Response;;;;;;;;;x
+EVTDESC666666116;Government officials have come back from $FROMCOUNTRY$ with bad news! They have refused to sell Tobago!;;;;;;;;;x
+EVT666666116OPTA;Curses!;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+EVTNAME666666117;Curonian Gambia - The Gambian Purchase;;;;;;;;;x
+EVTDESC666666117;Jacob Kettler, Duke of Courland from 1642 to 1682, engaged in several attempts at colonization, one of which was the land around the province of Banjul in the Gambia. The fledgling colony had many troubles until it was stolen by the Dutch and subsequently by the British, the French, Swedish and many others until it came back to British hands. As our standing and influences in the international community grows, we can now demand the masters of the Gambia to hand over their Gambian colony on the basis of the first ownership act. Our control of Courland-Semigallia allows us to lay claims on it. And if they do not hand it back, we would have a very valid casus belli against them. Alternatively, we could make them a nice offer of 250,000¤ for the whole colony and obtain it peacefully.;;;;;;;;;x
+EVT666666117OPTA;Demand it back, it IS still ours!;;;;;;;;;x
+EVT666666117OPTB;Make an offer of 250,000¤;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+EVTNAME666666118;The Gambian Purchase;;;;;;;;;x
+EVTDESC666666118;$FROMCOUNTRY$ has approached our government officials with quite a distinct proposition: The purchase of the Colony of Gambia. They are offering an estimated value of 150,000¤ for the whole colony. And while this might seem like a great deal for us, we cannot forget the fact that we would be helping a rising Great Power consolidate itself as a possible competitor in the Colonizing stage.;;;;;;;;;x
+EVTOPTA666666118;It matters not, 250,000¤ is 250,000¤;;;;;;;;;x
+EVTOPTB666666118;Never!;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+EVTNAME666666119;The Gambian Purchase - The $FROMCOUNTRY_ADJ$ Response;;;;;;;;;x
+EVTDESC666666119;Government officials have come back from $FROMCOUNTRY$ with great news! They have acceded to the sale of the Colony of Gambia!;;;;;;;;;x
+EVT666666119OPTA;Hurray!;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+EVTNAME666666120;The Gambian Purchase - The $FROMCOUNTRY_ADJ$ Response;;;;;;;;;x
+EVTDESC666666120;Government officials have come back from $FROMCOUNTRY$ with bad news! They have refused to sell the Colony of Gambia!;;;;;;;;;x
+EVT666666120OPTA;Curses!;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
@@ -7209,6 +7241,12 @@ rename_bessarabia_desc;Bessarabia is rightfully $COUNTRY_ADJ$, and should use $C
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 rename_suwalki_title;Rename Suwalki ;;;;;;;;;;;;;x
 rename_suwalki_desc;Suwalki is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+rename_gambia_title;Rename Gambia ;;;;;;;;;;;;;x
+rename_gambia_desc;Gambia is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+rename_trinidad_tobago_title;Rename Trinidad and Tobago ;;;;;;;;;;;;;x
+rename_trinidad_tobago_desc;Trinidad and Tobago are rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 rename_marijampole_title;Rename Marijampole ;;;;;;;;;;;;;x
 rename_marijampole_desc;Marijampole is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;x
