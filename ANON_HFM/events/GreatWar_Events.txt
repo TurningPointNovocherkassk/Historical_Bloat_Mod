@@ -2332,7 +2332,11 @@ country_event = {
 			limit = {
 				OR = {
 					is_core = POL
+					is_core = HPL
 					is_core = PLC
+					is_core = PRC
+					is_core = PLR
+					is_core = PRB
 				}
 			}
 			PRU_690 = { remove_core = THIS }
@@ -2693,6 +2697,66 @@ country_event = {
 			684 = { add_core = PLC }
 			685 = { add_core = PLC }
 			2584 = { add_core = PLC }
+		}
+		
+		random_country = {
+			limit = {
+				tag = HPL
+				exists = yes
+				truce_with = THIS
+			}
+			693 = { add_core = HPL }
+			696 = { add_core = HPL }
+			683 = { add_core = HPL }
+			682 = { add_core = HPL }
+			684 = { add_core = HPL }
+			685 = { add_core = HPL }
+			2584 = { add_core = HPL }
+		}
+		
+		random_country = {
+			limit = {
+				tag = PLR
+				exists = yes
+				truce_with = THIS
+			}
+			693 = { add_core = PLR }
+			696 = { add_core = PLR }
+			683 = { add_core = PLR }
+			682 = { add_core = PLR }
+			684 = { add_core = PLR }
+			685 = { add_core = PLR }
+			2584 = { add_core = PLR }
+		}
+		
+		random_country = {
+			limit = {
+				tag = PRC
+				exists = yes
+				truce_with = THIS
+			}
+			693 = { add_core = PRC }
+			696 = { add_core = PRC }
+			683 = { add_core = PRC }
+			682 = { add_core = PRC }
+			684 = { add_core = PRC }
+			685 = { add_core = PRC }
+			2584 = { add_core = PRC }
+		}
+		
+		random_country = {
+			limit = {
+				tag = PRB
+				exists = yes
+				truce_with = THIS
+			}
+			693 = { add_core = PRB }
+			696 = { add_core = PRB }
+			683 = { add_core = PRB }
+			682 = { add_core = PRB }
+			684 = { add_core = PRB }
+			685 = { add_core = PRB }
+			2584 = { add_core = PRB }
 		}
 
 		random_country = {
@@ -3206,7 +3270,11 @@ country_event = {
 			limit = {
 				OR = {
 					is_core = POL
+					is_core = HPL
 					is_core = PLC
+					is_core = PRC
+					is_core = PLR
+					is_core = PRB
 				}
 			}
 			RUS_706 = {
@@ -3294,6 +3362,24 @@ country_event = {
 		any_owned = {
 			limit = {
 				is_core = UBD
+				owner = {
+					truce_with = GCF
+				}
+			}
+			secede_province = GCF
+		}
+		any_owned = {
+			limit = {
+				is_core = BBD
+				owner = {
+					truce_with = GER
+				}
+			}
+			secede_province = GER
+		}
+		any_owned = {
+			limit = {
+				is_core = BBD
 				owner = {
 					truce_with = GCF
 				}
@@ -6496,9 +6582,14 @@ country_event = {
 				truce_with = THIS
 				NOT = { exists = POL }
 				NOT = { exists = PLC }
+				NOT = { exists = HPL }
+				NOT = { exists = PRC }
+				NOT = { exists = PLR }
+				NOT = { exists = PRB }
 				THIS = { owns = 702 }
 			}
 			AUS_702 = { add_core = RUS }
+			RUS_968 = { add_core = RUS }
 			# ANON
 			AUS_662 = { add_core = RUS }
 			RUS_715 = { add_core = RUS }
@@ -6507,7 +6598,14 @@ country_event = {
 		#Poland gets cores back, if it exists			
 		random_country = {
 			limit = {
-				tag = POL
+				OR = {
+					tag = POL
+					tag = HPL
+					tag = PLC
+					tag = PRC
+					tag = PLR
+					tag = PRB
+				}
 				exists = yes
 			}
 			country_event = 96014

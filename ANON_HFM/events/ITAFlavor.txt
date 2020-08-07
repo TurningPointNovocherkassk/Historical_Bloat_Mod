@@ -518,6 +518,53 @@ country_event = {
 				}
 			}
 		}
+		random_country = { #ANON
+			limit = {
+				tag = AUS
+				OR = { 
+					AND = { 
+						owns = 726
+						owns = 727
+						owns = 728
+					}
+					AND = { 
+						NOT = { 
+							owns = 726
+							owns = 727
+							owns = 728
+						}
+						AND = {
+							owns = 729
+							owns = 730
+							owns = 731
+							owns = 733
+							owns = 3645
+						}
+					}
+				}
+				exists = SAR
+			}
+			THIS = {
+				relation = {
+					who = AUS
+					value = -150
+				}
+				casus_belli = {
+					target = AUS
+					type = free_peoples
+					months = 12
+				}
+				war = {
+					target = AUS
+					attacker_goal = {
+						casus_belli = free_peoples
+						country = SAR
+						state_province_id = 733
+					}
+					call_ally = yes
+				}
+			}
+		}
 		random_country = {
 			limit = {
 				tag = KUK
@@ -558,6 +605,100 @@ country_event = {
 						casus_belli = free_peoples
 						country = SAR
 						state_province_id = 729
+					}
+					call_ally = yes
+				}
+			}
+		}
+		random_country = { #ANON
+			limit = {
+				tag = KUK
+				OR = { 
+					AND = { 
+						owns = 726
+						owns = 727
+						owns = 728
+					}
+					AND = { 
+						NOT = { 
+							owns = 726
+							owns = 727
+							owns = 728
+						}
+						AND = {
+							owns = 729
+							owns = 730
+							owns = 731
+							owns = 733
+							owns = 3645
+						}
+					}
+				}
+				exists = SAR
+			}
+			THIS = {
+				relation = {
+					who = KUK
+					value = -150
+				}
+				casus_belli = {
+					target = KUK
+					type = free_peoples
+					months = 12
+				}
+				war = {
+					target = KUK
+					attacker_goal = {
+						casus_belli = free_peoples
+						country = SAR
+						state_province_id = 733
+					}
+					call_ally = yes
+				}
+			}
+		}
+		random_country = {
+			limit = {
+				tag = AUS
+				OR = { 
+					AND = { 
+						owns = 726
+						owns = 727
+						owns = 728
+					}
+					AND = { 
+						NOT = { 
+							owns = 726
+							owns = 727
+							owns = 728
+						}
+						AND = {
+							owns = 729
+							owns = 730
+							owns = 731
+							owns = 733
+							owns = 3645
+						}
+					}
+				}
+				exists = SVY
+			}
+			THIS = {
+				relation = {
+					who = AUS
+					value = -150
+				}
+				casus_belli = {
+					target = AUS
+					type = free_peoples
+					months = 12
+				}
+				war = {
+					target = AUS
+					attacker_goal = {
+						casus_belli = free_peoples
+						country = SVY
+						state_province_id = 733
 					}
 					call_ally = yes
 				}
@@ -648,6 +789,53 @@ country_event = {
 						casus_belli = free_peoples
 						country = SVY
 						state_province_id = 729
+					}
+					call_ally = yes
+				}
+			}
+		}
+		random_country = {
+			limit = {
+				tag = KUK
+				OR = { 
+					AND = { 
+						owns = 726
+						owns = 727
+						owns = 728
+					}
+					AND = { 
+						NOT = { 
+							owns = 726
+							owns = 727
+							owns = 728
+						}
+						AND = {
+							owns = 729
+							owns = 730
+							owns = 731
+							owns = 733
+							owns = 3645
+						}
+					}
+				}
+				exists = SVY
+			}
+			THIS = {
+				relation = {
+					who = KUK
+					value = -150
+				}
+				casus_belli = {
+					target = KUK
+					type = free_peoples
+					months = 12
+				}
+				war = {
+					target = KUK
+					attacker_goal = {
+						casus_belli = free_peoples
+						country = SVY
+						state_province_id = 733
 					}
 					call_ally = yes
 				}

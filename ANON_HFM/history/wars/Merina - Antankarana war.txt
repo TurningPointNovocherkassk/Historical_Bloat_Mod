@@ -1,0 +1,37 @@
+name = "War of the Farrapos"
+
+1835.1.1 = {
+	add_attacker = MAD
+	add_attacker = M1D
+	add_attacker = M3D
+	add_attacker = M4D
+	add_attacker = M5D
+	add_defender = M2D
+	
+	# actor
+	# receiver
+	# casus_belli - cb type
+	# country - 3rd party
+	# state_province_id - target state capital
+	war_goal = {
+		casus_belli = make_puppet
+		actor = MAD
+		receiver = M2D
+	}
+	war_goal = {
+		casus_belli = become_independent
+		actor = M2D
+		receiver = MAD
+	}
+
+}
+
+1838.1.1 = {
+	rem_attacker = MAD
+	rem_attacker = M1D
+	rem_attacker = M2D
+	rem_attacker = M3D
+	rem_attacker = M4D
+	rem_attacker = M5D
+	rem_defender = M2D
+}

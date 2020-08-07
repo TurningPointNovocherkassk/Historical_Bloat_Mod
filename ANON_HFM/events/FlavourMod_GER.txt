@@ -358,7 +358,9 @@ country_event = {
 		}
 		
 		random_owned = {
-			limit = { province_id = 3275 }
+			limit = {
+				province_id = 3275
+			}
 			THIS = { release = PAP }
 			PAP = { government = theocracy }
 		}

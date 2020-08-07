@@ -1953,180 +1953,180 @@ country_event = {
 # }
 
 #Second Treaty of Erzurum
-# country_event = {
-	# id = 300983
-	# is_triggered_only = yes
+country_event = {
+	id = 300983
+	is_triggered_only = yes
 
-	# title = "EVTNAME300983"
-	# desc = "EVTNAME300983"
-	# picture = "treaty_of_erzurum"
+	title = "EVTNAME300983"
+	desc = "EVTNAME300983"
+	picture = "treaty_of_erzurum"
 
-	# option = {
-		# name = "We desire to settle our issues"
-		# FROM = {
-			# country_event = 300984
-		# }
-		# badboy = -3
-		# PER = {
-			# end_war = TUR
-			# relation = {
-				# who = ENG
-				# value = 25
-			# }
-			# relation = {
-				# who = RUS
-				# value = 25
-			# }
-			# relation = {
-				# who = TUR
-				# value = 50
-			# }
-			# any_owned = {
-				# limit = {
-					# is_core = TUR
-				# }
-				# remove_core = TUR
-			# }
-		# }
-		# TUR = {
-			# relation = {
-				# who = ENG
-				# value = 25
-			# }
-			# relation = {
-				# who = RUS
-				# value = 25
-			# }
-			# any_owned = {
-				# limit = {
-					# is_core = PER
-				# }
-				# remove_core = PER
-			# }
-		# }
-		# KHZ = {
-			# any_owned = {
-				# limit = {
-					# is_core = TUR
-				# }
-				# remove_core = TUR
-			# }
-		# }
-		# IRQ = {
-			# any_owned = {
-				# limit = {
-					# is_core = PER
-				# }
-				# remove_core = PER
-			# }
-		# }
-		# KDS = {
-			# any_owned = {
-				# limit = {
-					# is_core = PER
-				# }
-				# remove_core = PER
-			# }
-		# }
-		# ASY = {
-			# any_owned = {
-				# limit = {
-					# is_core = PER
-				# }
-				# remove_core = PER
-			# }
-		# }
-		# ENG = {
-			# diplomatic_influence = {
-				# who = PER
-				# value = 15
-			# }
-			# diplomatic_influence = {
-				# who = TUR
-				# value = 15
-			# }
-		# }
-		# RUS = {
-			# diplomatic_influence = {
-				# who = PER
-				# value = 15
-			# }
-			# diplomatic_influence = {
-				# who = TUR
-				# value = 15
-			# }
-		# }
-		# ai_chance = {
-			# factor = 95
-		# }
-	# }
-	# option = {
-		# name = "Only war can settle our issues"
-		# FROM = {
-			# country_event = 300985
-		# }
-		# badboy = 15
-		# relation = {
-			# who = ENG
-			# value = -100
-		# }
-		# relation = {
-			# who = RUS
-			# value = -100
-		# }
-		# TUR = {
-			# relation = {
-				# who = PER
-				# value = -200
-			# }
-			# war = {
-				# target = PER
-				# attacker_goal = {
-					# casus_belli = acquire_all_cores
-				# }
-				# defender_goal = {
-					# casus_belli = acquire_all_cores
-				# }
-				# call_ally = yes
-			# }
-		# }
-		# ai_chance = {
-			# factor = 5
-			# modifier = {
-				# factor = 0
-				# badboy = 0.6
-			# }
-		# }
-	# }
-# }
+	option = {
+		name = "We desire to settle our issues"
+		FROM = {
+			country_event = 300984
+		}
+		badboy = -3
+		PER = {
+			end_war = TUR
+			relation = {
+				who = ENG
+				value = 25
+			}
+			relation = {
+				who = RUS
+				value = 25
+			}
+			relation = {
+				who = TUR
+				value = 50
+			}
+			any_owned = {
+				limit = {
+					is_core = TUR
+				}
+				remove_core = TUR
+			}
+		}
+		TUR = {
+			relation = {
+				who = ENG
+				value = 25
+			}
+			relation = {
+				who = RUS
+				value = 25
+			}
+			any_owned = {
+				limit = {
+					is_core = PER
+				}
+				remove_core = PER
+			}
+		}
+		KHZ = {
+			any_owned = {
+				limit = {
+					is_core = TUR
+				}
+				remove_core = TUR
+			}
+		}
+		IRQ = {
+			any_owned = {
+				limit = {
+					is_core = PER
+				}
+				remove_core = PER
+			}
+		}
+		KDS = {
+			any_owned = {
+				limit = {
+					is_core = PER
+				}
+				remove_core = PER
+			}
+		}
+		ASY = {
+			any_owned = {
+				limit = {
+					is_core = PER
+				}
+				remove_core = PER
+			}
+		}
+		ENG = {
+			diplomatic_influence = {
+				who = PER
+				value = 15
+			}
+			diplomatic_influence = {
+				who = TUR
+				value = 15
+			}
+		}
+		RUS = {
+			diplomatic_influence = {
+				who = PER
+				value = 15
+			}
+			diplomatic_influence = {
+				who = TUR
+				value = 15
+			}
+		}
+		ai_chance = {
+			factor = 95
+		}
+	}
+	option = {
+		name = "Only war can settle our issues"
+		FROM = {
+			country_event = 300985
+		}
+		badboy = 15
+		relation = {
+			who = ENG
+			value = -100
+		}
+		relation = {
+			who = RUS
+			value = -100
+		}
+		TUR = {
+			relation = {
+				who = PER
+				value = -200
+			}
+			war = {
+				target = PER
+				attacker_goal = {
+					casus_belli = acquire_all_cores
+				}
+				defender_goal = {
+					casus_belli = acquire_all_cores
+				}
+				call_ally = yes
+			}
+		}
+		ai_chance = {
+			factor = 5
+			modifier = {
+				factor = 0
+				badboy = 0.6
+			}
+		}
+	}
+}
 
 #Second Treaty of Erzurum - accepted
-# country_event = {
-	# id = 300984
-	# is_triggered_only = yes
+country_event = {
+	id = 300984
+	is_triggered_only = yes
 
-	# title = "EVTNAME300983"
-	# desc = "EVTDESC300984"
-	# picture = "treaty_of_erzurum"
+	title = "EVTNAME300983"
+	desc = "EVTDESC300984"
+	picture = "treaty_of_erzurum"
 
-	# option = {
-		# name = "Wonderful."
-	# }
-# }
+	option = {
+		name = "Wonderful."
+	}
+}
 
 #Second Treaty of Erzurum - rejected
-# country_event = {
-	# id = 300985
-	# is_triggered_only = yes
+country_event = {
+	id = 300985
+	is_triggered_only = yes
 
-	# title = "EVTNAME300983"
-	# desc = "EVTDESC300985"
-	# picture = "treaty_of_erzurum"
+	title = "EVTNAME300983"
+	desc = "EVTDESC300985"
+	picture = "treaty_of_erzurum"
 
-	# option = {
-		# name = "War it is then."
-	# }
-# }
+	option = {
+		name = "War it is then."
+	}
+}
 
 #First Treaty of Erzurum - alternative
 # country_event = {
@@ -2182,152 +2182,172 @@ country_event = {
 # }
 
 #Second Treaty of Erzurum - alternative
-# country_event = {
-	# id = 300987
-	# title = "EVTNAME300987"
-	# desc = "EVTDESC300987"
-	# picture = "treaty_of_erzurum"
+country_event = {
+	id = 300987
+	title = "EVTNAME300987"
+	desc = "EVTDESC300987"
+	picture = "treaty_of_erzurum"
 
-	# trigger = {
-		# tag = PER
-		# national_provinces_occupied = 0.15
-		# TUR = {
-			# NOT = {
-				# national_provinces_occupied = 0.05
-			# }
-		# }
-		# 934 = {
-			# owned_by = PER
-			# NOT = { is_core = TUR }
-		# }
-		# OR = {
-			# 1108 = {
-				# owned_by = PER
-				# NOT = { controlled_by = PER }
-			# }
-			# 1121 = {
-				# owned_by = PER
-				# NOT = { controlled_by = PER }
-			# }
-		# }
-		# war_with = TUR
-	# }
+	trigger = {
+		tag = PER
+		national_provinces_occupied = 0.15
+		TUR = {
+			NOT = {
+				national_provinces_occupied = 0.05
+			}
+		}
+		934 = {
+			owned_by = PER
+			NOT = { is_core = TUR }
+		}
+		OR = {
+			1108 = {
+				owned_by = PER
+				NOT = { controlled_by = PER }
+			}
+			1121 = {
+				owned_by = PER
+				NOT = { controlled_by = PER }
+			}
+		}
+		war_with = TUR
+	}
 
-	# fire_only_once = yes
+	fire_only_once = yes
 
-	# mean_time_to_happen = {
-		# days = 1
-	# }
+	mean_time_to_happen = {
+		days = 1
+	}
 
 
 
-	# option = {
-		# name = "It was fun while it lasted."
-		# TUR = {
-			# country_event = {
-				# id = 300988
-				# days = 5
-			# }
-		# }
-		# ai_chance = {
-			# factor = 100
-		# }
-	# }
-	# option = {
-		# name = "We fight on."
-		# badboy = 5
-		# war_exhaustion = 10
-		# ai_chance = {
-			# factor = 0
-		# }
-	# }
-# }
+	option = {
+		name = "It was fun while it lasted."
+		TUR = {
+			country_event = {
+				id = 300988
+				days = 5
+			}
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = {
+		name = "We fight on."
+		badboy = 5
+		war_exhaustion = 10
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
 
 #First Treaty of Erzurum - alternative
-# country_event = {
-	# id = 300988
-	# is_triggered_only = yes
+country_event = {
+	id = 300988
+	is_triggered_only = yes
 
-	# title = "EVTNAME300987"
-	# desc = "EVTDESC300988"
-	# picture = "treaty_of_erzurum"
+	title = "EVTNAME300987"
+	desc = "EVTDESC300988"
+	picture = "treaty_of_erzurum"
 
-	# option = {
-		# name = "Good."
-		# end_war = PER
-		# PER = {
-			# country_event = {
-				# id = 300984
-				# days = 5
-			# }
-			# any_owned = {
-				# limit = {
-					# OR = {
-						# region = TUR_885
-						# region = TUR_890
-						# region = TUR_923
-						# region = TUR_931
-						# region = TUR_935
-						# region = ABU_1162
-					# }
-				# }
-				# secede_province = TUR
-				# add_core = TUR
-				# remove_core = PER
-			# }
-		# }
-		# any_owned = {
-			# limit = {
-				# OR = {
-					# region = RUS_1098
-					# region = PER_1112
-					# region = PER_1122
-					# region = PER_1128
-					# region = PER_1132
-				# }
-			# }
-			# secede_province = PER
-			# add_core = PER
-			# remove_core = TUR
-		# }
-		# KHZ = {
-			# any_owned = {
-				# remove_core = TUR
-			# }
-		# }
-		# any_country = {
-			# limit = {
-				# is_greater_power = no
-				# alliance_with = THIS
-			# }
-			# end_war = PER
-		# }
-		# any_country = {
-			# limit = {
-				# is_greater_power = no
-				# alliance_with = PER
-			# }
-			# end_war = THIS
-		# }
-		# ai_chance = {
-			# factor = 100
-		# }
-	# }
-	# option = {
-		# name = "We fight on."
-		# PER = {
-			# country_event = {
-				# id = 300985
-				# days = 5
-			# }
-		# }
-		# badboy = 10
-		# war_exhaustion = 20
-		# ai_chance = {
-			# factor = 0
-		# }
-	# }
-# }
+	option = {
+		name = "Good."
+		end_war = PER
+		PER = {
+			country_event = {
+				id = 300984
+				days = 5
+			}
+			any_owned = {
+				limit = {
+					OR = {
+						region = TUR_885
+						region = TUR_890
+						region = TUR_923
+						region = TUR_931
+						region = TUR_935
+						region = ABU_1162
+					}
+				}
+				secede_province = TUR
+				add_core = TUR
+				remove_core = PER
+			}
+		}
+		any_owned = {
+			limit = {
+				OR = {
+					region = RUS_1098
+					region = PER_1112
+					region = PER_1122
+					region = PER_1128
+					region = PER_1132
+				}
+				NOT = { province_id = 1132 }
+			}
+			secede_province = PER
+			add_core = PER
+			remove_core = TUR
+		}
+		any_owned = {
+			limit = {
+				province_id = 1132
+				is_core = AHW
+				AHW = { exists = yes }
+			}
+			secede_province = AHW
+			add_core = PER
+			remove_core = TUR
+		}
+		any_owned = {
+			limit = {
+				province_id = 1132
+				AHW = { exists = no }
+			}
+			secede_province = PER
+			add_core = PER
+			remove_core = TUR
+		}
+		AHW = {
+			any_owned = {
+				remove_core = TUR
+			}
+		}
+		any_country = {
+			limit = {
+				is_greater_power = no
+				alliance_with = THIS
+			}
+			end_war = PER
+		}
+		any_country = {
+			limit = {
+				is_greater_power = no
+				alliance_with = PER
+			}
+			end_war = THIS
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = {
+		name = "We fight on."
+		PER = {
+			country_event = {
+				id = 300985
+				days = 5
+			}
+		}
+		badboy = 10
+		war_exhaustion = 20
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
 
 # country_event = {
 	# id = 300989

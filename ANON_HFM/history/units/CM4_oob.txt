@@ -1,0 +1,46 @@
+M2D = {
+	#truce_until = 1843.1.1
+	value = 0
+}
+MAD = {
+	truce_until = 1843.1.1
+	value = 0
+}
+CM0 = {
+	truce_until = 1843.1.1
+	value = 0
+}
+CM1 = {
+	truce_until = 1843.1.1
+	value = 0
+}
+CM2 = {
+	truce_until = 1843.1.1
+	value = -400
+}
+CM3 = {
+	truce_until = 1843.1.1
+	value = 0
+}
+army = {
+	name = "Itsandra Warriors"
+	location = 3681
+	leader = {
+		name = "Fey Fumu Itsandra"
+		type = land
+		date = 1836.1.1
+		background = aristocrat
+		personality = keen
+		prestige = 0.05
+	}
+	regiment = {
+		name= "1. Warriors"
+		type = irregular
+		home = 3681
+	}
+	regiment = {
+		name= "2. Warriors"
+		type = irregular
+		home = 3681
+	}
+}

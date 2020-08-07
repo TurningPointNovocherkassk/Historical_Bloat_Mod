@@ -511,7 +511,7 @@ political_decisions = {
 		effect = {
 		set_country_flag = GCO_subjugation_peru
 			badboy = 5
-			casus_belli = { target = PEU type = make_puppet months = 60 }
+			add_casus_belli = { target = PEU type = make_puppet months = 60 }
 		}
 
 		ai_will_do = {
@@ -655,7 +655,7 @@ political_decisions = {
 		effect = {
 		set_country_flag = PBC_subjugation_ecuador
 			badboy = 2.5
-			casus_belli = { target = ECU type = make_puppet months = 60 }
+			add_casus_belli = { target = ECU type = make_puppet months = 60 }
 		}
 
 		ai_will_do = {
@@ -696,7 +696,7 @@ political_decisions = {
 		effect = {
 		set_country_flag = PBC_subjugation_colombia
 			badboy = 2.5
-			casus_belli = { target = CLM type = make_puppet months = 60 }
+			add_casus_belli = { target = CLM type = make_puppet months = 60 }
 		}
 
 		ai_will_do = {
@@ -741,9 +741,9 @@ political_decisions = {
 		effect = {
 		set_country_flag = PBC_subjugation_venezuela
 			badboy = 2.5
-			casus_belli = { target = VNZ type = make_puppet months = 60 }
-			casus_belli = { target = FVZ type = make_puppet months = 60 }
-			casus_belli = { target = USV type = make_puppet months = 60 }
+			add_casus_belli = { target = VNZ type = make_puppet months = 60 }
+			add_casus_belli = { target = FVZ type = make_puppet months = 60 }
+			add_casus_belli = { target = USV type = make_puppet months = 60 }
 		}
 
 		ai_will_do = {
@@ -926,7 +926,10 @@ political_decisions = {
 			war = no
 			is_vassal = no
 			is_greater_power = yes
-			PBC = { vassal_of = THIS }
+			OR = {
+				PBC = { vassal_of = THIS }
+				GCO = { vassal_of = THIS }
+			}
 			OR = {
 				government = hms_government
 				government = absolute_monarchy
@@ -938,9 +941,29 @@ political_decisions = {
 		effect = {
 			set_country_flag = GCO_PBC_bolivars_dream
 			all_core = { add_core = ANF }
-			PBC = {
+			any_country = {
+				limit = {
+					OR = {
+						tag = PBC
+						tag = GCO
+					}
+					vassal_of = THIS
+					ai = yes
+				}
 				all_core = { add_core = ANF }
 				annex_to = THIS
+			}
+			any_country = {
+				limit = {
+					OR = {
+						tag = PBC
+						tag = GCO
+					}
+					vassal_of = THIS
+					ai = no
+				}
+				all_core = { add_core = ANF }
+				country_event = 11101
 			}
 			change_tag = ANF
 		}

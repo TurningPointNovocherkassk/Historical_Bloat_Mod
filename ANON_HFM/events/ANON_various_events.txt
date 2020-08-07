@@ -3477,7 +3477,7 @@ country_event = {
 country_event = {
 	id = 1000104
 	title = "The owners of Puerto Rico"
-	desc = "We own Santo Puerto Rico!"
+	desc = "We own Puerto Rico!"
 	picture = "treaty"
 	
 	trigger = {
@@ -3505,5 +3505,24 @@ country_event = {
 	option = {
 		name = "Curses!"
 		clr_country_flag = owns_puerto_rico
+	}
+}
+#PAP owns rome but not Vatical Hill
+country_event = {
+	id = 1000106
+	title = "The owners of Vatican Hill"
+	desc = "We own Vatican Hill!"
+	picture = "treaty"
+	
+	trigger = {
+		tag = PAP
+		exists = yes
+		owns = 749
+		NOT = { owns = 3275 }
+	}
+			
+	option = {
+		name = "Great!"
+		3275 = { secede_province = PAP }
 	}
 }

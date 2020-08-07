@@ -1167,6 +1167,7 @@ political_decisions = {
 					NOT = { has_pop_religion = sunni } 
 					OR = {
 						has_pop_culture = north_italian
+						has_pop_culture = italo_diaspora
 						has_pop_culture = ashkenazi
 						has_pop_culture = sephardic 
 						has_pop_culture = mizrahi 
@@ -1559,10 +1560,11 @@ political_decisions = {
 			any_pop = { limit = { has_pop_culture = volga_german } literacy = 0.4 }
 			any_pop = { limit = { has_pop_culture = baltic_german } literacy = 0.4 }
 			any_pop = { limit = { has_pop_culture = south_italian } literacy = 0.15 }
+			any_pop = { limit = { has_pop_culture = italo_diaspora } literacy = 0.15 }
 			any_pop = { limit = { has_pop_culture = mongol } literacy = 0.01 }
 			
 			# ANON
-			POL = { all_core = { remove_core = POL } }
+			#POL = { all_core = { remove_core = POL } }
 			any_pop = { limit = { has_pop_culture = ossetian } literacy = 0.01 }
 			any_pop = { limit = { has_pop_culture = persian } literacy = 0.15 }
 			any_pop = { limit = { has_pop_culture = peninsular location = { is_core = DAG }	} literacy = 0.54 }
@@ -2144,6 +2146,24 @@ political_decisions = {
 					has_pop_religion = protestant
 				}
 				literacy = 0.05
+			}
+			any_country = {
+				limit = { primary_culture = malagasy }
+				any_pop = { limit = { has_pop_culture = malagasy has_pop_religion = catholic NOT = { OR = { type = farmers type = labourers type = slaves } type = soldiers } } literacy = 0.3 }
+				any_pop = { limit = { has_pop_culture = malagasy has_pop_religion = protestant NOT = { OR = { type = farmers type = labourers type = slaves type = soldiers } } } literacy = 0.3 }
+				any_pop = { limit = { has_pop_culture = malagasy has_pop_religion = sunni NOT = { OR = { type = farmers type = labourers type = slaves type = soldiers } } } literacy = 0.4 }
+			}
+			any_country = {
+				limit = {
+					OR = {
+						tag = CM0
+						tag = CM1
+						tag = CM2
+						tag = CM3
+						tag = CM4
+					}
+				}
+				any_pop = { limit = { has_pop_religion = sunni NOT = { OR = { type = farmers type = labourers type = slaves type = soldiers } } } literacy = 0.3 }
 			}
 			any_pop = { limit = { has_pop_culture = flemish } literacy = 0.39 }
 			any_pop = { limit = { has_pop_culture = breton } literacy = -0.1 }

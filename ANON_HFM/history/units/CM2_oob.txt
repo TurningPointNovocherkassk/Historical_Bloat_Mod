@@ -1,0 +1,47 @@
+M2D = {
+	#truce_until = 1843.1.1
+	value = 0
+}
+MAD = {
+	truce_until = 1843.1.1
+	value = 0
+}
+CM0 = {
+	truce_until = 1843.1.1
+	value = 0
+}
+CM1 = {
+	truce_until = 1843.1.1
+	value = 0
+}
+CM3 = {
+	truce_until = 1843.1.1
+	value = 0
+}
+CM4 = {
+	truce_until = 1843.1.1
+	value = -400
+}
+army = {
+	name = "Bambao Warriors"
+	location = 2123
+	leader = {
+		name = "Fum Nau wa Kori Dozi"
+		type = land
+		date = 1836.1.1
+		background = aristocrat
+		personality = stalwart
+		prestige = 0.10
+	}
+	regiment = {
+		name= "1. Warriors"
+		type = irregular
+		home = 2123
+	}
+
+	regiment = {
+		name= "2. Warriors"
+		type = irregular
+		home = 2123
+	}
+}

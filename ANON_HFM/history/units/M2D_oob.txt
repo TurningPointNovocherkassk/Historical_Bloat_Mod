@@ -1,0 +1,71 @@
+MAD = {
+	#truce_until = 1843.1.1
+	value = -400
+}
+M3D = {
+	#truce_until = 1843.1.1
+	value = 0
+}
+M4D = {
+	#truce_until = 1843.1.1
+	value = 0
+}
+M5D = {
+	#truce_until = 1843.1.1
+	value = 0
+}
+CM0 = {
+	truce_until = 1843.1.1
+	value = 0
+}
+CM1 = {
+	truce_until = 1843.1.1
+	value = 0
+}
+CM2 = {
+	truce_until = 1843.1.1
+	value = 0
+}
+CM3 = {
+	truce_until = 1843.1.1
+	value = 0
+}
+CM4 = {
+	truce_until = 1843.1.1
+	value = 0
+}
+army = {
+	name = "Antankarana Fighters"
+	location = 3677
+	leader = {
+		name = "Tsimiaro I"
+		type = land
+		date = 1836.1.1
+		background = cautious
+		personality = aristocrat
+		prestige = 0.1
+	}
+	regiment = {
+		name= "1. Fighters"
+		type = irregular
+		home = 2120
+	}
+
+	regiment = {
+		name= "2. Fighters"
+		type = irregular
+		home = 2120
+	}
+
+	regiment = {
+		name= "3. Fighters"
+		type = irregular
+		home = 2120
+	}
+
+	regiment = {
+		name= "1. Artillery"
+		type = artillery
+		home = 3677
+	}
+}

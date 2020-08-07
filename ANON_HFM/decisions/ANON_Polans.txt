@@ -1517,6 +1517,7 @@ political_decisions = {
 			}
 			NOT = {
 				has_country_modifier = neutrality
+				has_country_flag = embraced_BOH_neutrality
 				has_country_flag = abandoned_BOH_neutrality
 				has_country_flag = BOH_neutrality_violated
 			}	
@@ -1527,6 +1528,7 @@ political_decisions = {
 		}
 		
 		effect = {
+			set_country_flag = embraced_BOH_neutrality
 			add_country_modifier = {
 				name = neutrality
 				duration = -1
@@ -1545,7 +1547,11 @@ political_decisions = {
 		picture = declare_BOH_neutrality_pic
 		potential = {
 			has_country_modifier = neutrality
-			NOT = { has_country_flag = abandoned_BOH_neutrality }
+			NOT = {
+				tag = SWI
+				has_country_flag = embraced_BOH_neutrality
+				has_country_flag = abandoned_BOH_neutrality
+			}
 		}
 		
 		allow = {
@@ -1554,6 +1560,7 @@ political_decisions = {
 		
 		effect = {
 			set_country_flag = abandoned_BOH_neutrality
+			clr_country_flag = embraced_BOH_neutrality
 			prestige = -20
 			badboy = 5
 			remove_country_modifier = neutrality

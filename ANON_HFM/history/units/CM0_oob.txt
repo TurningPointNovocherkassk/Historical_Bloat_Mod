@@ -1,0 +1,53 @@
+M2D = {
+	#truce_until = 1843.1.1
+	value = 0
+}
+MAD = {
+	truce_until = 1843.1.1
+	value = 0
+}
+CM1 = {
+	truce_until = 1843.1.1
+	value = -400
+}
+CM2 = {
+	truce_until = 1843.1.1
+	value = 0
+}
+CM3 = {
+	truce_until = 1843.1.1
+	value = 0
+}
+CM4 = {
+	truce_until = 1843.1.1
+	value = 0
+}
+army = {
+	name = "Ndzuwani Warriors"
+	location = 3680
+	leader = {
+		name = "Saidi Alawi bin Abdallah"
+		type = land
+		date = 1836.1.1
+		background = aristocrat
+		personality = skilled
+		prestige = 0.05
+	}
+	regiment = {
+		name= "1. Warriors"
+		type = irregular
+		home = 3680
+	}
+
+	regiment = {
+		name= "2. Warriors"
+		type = irregular
+		home = 3680
+	}
+
+	regiment = {
+		name= "3. Warriors"
+		type = irregular
+		home = 3680
+	}
+}

@@ -758,7 +758,10 @@ political_decisions = {
 			}
 			NOT = { exists = GLM }
 			any_owned_province = {
-				region = AUS_702
+				OR = {
+					region = AUS_702
+					region = RUS_968
+				}
 				is_core = GLM
 			}
 			NOT = {

@@ -1,0 +1,41 @@
+M2D = {
+	#truce_until = 1843.1.1
+	value = 0
+}
+MAD = {
+	truce_until = 1843.1.1
+	value = -400
+}
+CM0 = {
+	truce_until = 1843.1.1
+	value = 0
+}
+CM1 = {
+	truce_until = 1843.1.1
+	value = -400
+}
+CM2 = {
+	truce_until = 1843.1.1
+	value = 0
+}
+CM4 = {
+	truce_until = 1843.1.1
+	value = 0
+}
+army = {
+	name = "Mahore Warriors"
+	location = 2124
+	leader = {
+		name = "Andriantsoly"
+		type = land
+		date = 1836.1.1
+		background = adventurer
+		personality = defiant
+		prestige = 0.2
+	}
+	regiment = {
+		name= "1. Warriors"
+		type = irregular
+		home = 3680
+	}
+}

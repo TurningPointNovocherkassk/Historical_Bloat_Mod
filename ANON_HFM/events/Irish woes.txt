@@ -1058,9 +1058,11 @@ country_event = {
 		IRE = {
 			any_owned = {
 				limit = {
-					province_id = 254
-					province_id = 255
-					province_id = 256
+					OR = {
+						province_id = 254
+						province_id = 255
+						province_id = 256
+					}
 				}
 				add_core = IRE
 				add_core = ENG
@@ -1069,9 +1071,11 @@ country_event = {
 			any_owned = {
 				limit = {
 					NOT = {
-						province_id = 254
-						province_id = 255
-						province_id = 256
+						OR = {
+							province_id = 254
+							province_id = 255
+							province_id = 256
+						}
 					}
 				}
 				add_core = IRE
@@ -1356,9 +1360,11 @@ country_event = {
 			government = dominion
 			any_owned = {
 				limit = {
-					province_id = 254
-					province_id = 255
-					province_id = 256
+					OR = {
+						province_id = 254
+						province_id = 255
+						province_id = 256
+					}
 				}
 				add_core = THIS
 				secede_province = THIS
@@ -1494,9 +1500,11 @@ country_event = {
 			prestige = -80
 			any_owned = {
 				limit = {
-					province_id = 254
-					province_id = 255
-					province_id = 256
+					OR = {
+						province_id = 254
+						province_id = 255
+						province_id = 256
+					}
 				}
 				add_core = THIS
 				secede_province = THIS

@@ -1,0 +1,2622 @@
+political_decisions = {
+	integrate_substates_madagascar = {
+		picture = madagascar_map
+		potential = {
+			tag = MAD
+			NOT = { has_country_flag = integrate_substates_madagascar }
+			OR = {
+				M1D = {
+					OR = {
+						vassal_of = THIS
+						substate_of = THIS
+					}
+				}
+				M2D = {
+					OR = {
+						vassal_of = THIS
+						substate_of = THIS
+					}
+				}
+				M3D = {
+					OR = {
+						vassal_of = THIS
+						substate_of = THIS
+					}
+				}
+				M4D = {
+					OR = {
+						vassal_of = THIS
+						substate_of = THIS
+					}
+				}
+				M5D = {
+					OR = {
+						vassal_of = THIS
+						substate_of = THIS
+					}
+				}
+			}
+		}
+		
+		allow = {
+			war = no
+			OR = {
+				AND = {
+					civilization_progress = 0.25
+					ai = no
+				}
+				AND = {
+					year = 1840
+					ai = yes
+				}
+			}
+		}
+		
+		effect = {
+			set_country_flag = integrate_substates_madagascar
+			prestige = 5
+			years_of_research = 0.05
+			any_country = {
+				limit = {
+					OR = {
+						tag = M1D
+						tag = M2D
+						tag = M3D
+						tag = M4D
+						tag = M5D
+					}
+					OR = {
+						vassal_of = THIS
+						substate_of = THIS
+					}
+					primary_culture = malagasy
+					ai = yes
+				}
+				overlord = {
+					inherit = M1D
+					inherit = M2D
+					inherit = M3D
+					inherit = M4D
+					inherit = M5D
+				}
+			}
+			random_country = {
+				limit = {
+					OR = {
+						vassal_of = THIS
+						substate_of = THIS
+					}
+					primary_culture = malagasy
+				}
+				country_event = 11101
+			}
+		}
+		ai_will_do = { factor = 1 }
+	}
+	rename_madagascar = {
+		picture = gtfo
+		potential = {
+			OR = {
+				AND = {
+					is_culture_group = jewish_cultures
+					OR = {
+						AND = { owns = 3675 owns = 2119 owns = 2118 NOT = { has_global_flag = jew_renamed_east_madagascar } }
+						AND = { owns = 2122 owns = 2117 NOT = { has_global_flag = jew_renamed_west_madagascar } }
+						AND = { owns = 2115 owns = 2116 owns = 3678 NOT = { has_global_flag = jew_renamed_central_madagascar } }
+						AND = { owns = 3676 NOT = { has_global_flag = jew_renamed_stmarie } }
+						AND = { owns = 3677 NOT = { has_global_flag = jew_renamed_nosybe } }
+						AND = { owns = 2120 NOT = { has_global_flag = jew_renamed_antsiranana } }
+						AND = { owns = 2121 NOT = { has_global_flag = jew_renamed_mahajanga } }
+						AND = { owns = 2116 has_global_flag = fiaranantsoa_founded NOT = { has_global_flag = jew_renamed_fiaranantsoa } }
+						AND = { owns = 2122 has_global_flag = toliara_founded NOT = { has_global_flag = jew_renamed_toliara } }
+					}
+				}
+				AND = {
+					is_culture_group = germanic
+					OR = {
+						AND = { owns = 3675 owns = 2119 owns = 2118 NOT = { has_global_flag = german_renamed_east_madagascar } }
+						AND = { owns = 2122 owns = 2117 NOT = { has_global_flag = german_renamed_west_madagascar } }
+						AND = { owns = 2115 owns = 2116 owns = 3678 NOT = { has_global_flag = german_renamed_central_madagascar } }
+						AND = { owns = 3676 NOT = { has_global_flag = german_renamed_stmarie } }
+						AND = { owns = 3677 NOT = { has_global_flag = german_renamed_nosybe } }
+						AND = { owns = 2120 NOT = { has_global_flag = german_renamed_antsiranana } }
+						AND = { owns = 2121 NOT = { has_global_flag = german_renamed_mahajanga } }
+						AND = { owns = 2116 has_global_flag = fiaranantsoa_founded NOT = { has_global_flag = german_renamed_fiaranantsoa } }
+						AND = { owns = 2122 has_global_flag = toliara_founded NOT = { has_global_flag = german_renamed_toliara } }
+					}
+				}
+				AND = {
+					is_culture_group = french
+					OR = {
+						AND = { owns = 3675 owns = 2119 owns = 2118 NOT = { has_global_flag = french_renamed_east_madagascar } }
+						AND = { owns = 2122 owns = 2117 NOT = { has_global_flag = french_renamed_west_madagascar } }
+						AND = { owns = 2115 owns = 2116 owns = 3678 NOT = { has_global_flag = french_renamed_central_madagascar } }
+						AND = { owns = 3676 NOT = { has_global_flag = french_renamed_stmarie } }
+						AND = { owns = 3677 NOT = { has_global_flag = french_renamed_nosybe } }
+						AND = { owns = 2120 NOT = { has_global_flag = french_renamed_antsiranana } }
+						AND = { owns = 2121 NOT = { has_global_flag = french_renamed_mahajanga } }
+						AND = { owns = 2116 has_global_flag = fiaranantsoa_founded NOT = { has_global_flag = french_renamed_fiaranantsoa } }
+						AND = { owns = 2122 has_global_flag = toliara_founded NOT = { has_global_flag = french_renamed_toliara } }
+					}
+				}
+				AND = {
+					is_culture_group = hungarian_culture_group
+					OR = {
+						AND = { owns = 3675 owns = 2119 owns = 2118 NOT = { has_global_flag = hungarian_renamed_east_madagascar } }
+						AND = { owns = 2122 owns = 2117 NOT = { has_global_flag = hungarian_renamed_west_madagascar } }
+						AND = { owns = 2115 owns = 2116 owns = 3678 NOT = { has_global_flag = hungarian_renamed_central_madagascar } }
+						AND = { owns = 3676 NOT = { has_global_flag = hungarian_renamed_stmarie } }
+						AND = { owns = 3677 NOT = { has_global_flag = hungarian_renamed_nosybe } }
+						AND = { owns = 2120 NOT = { has_global_flag = hungarian_renamed_antsiranana } }
+						AND = { owns = 2121 NOT = { has_global_flag = hungarian_renamed_mahajanga } }
+						AND = { owns = 2116 has_global_flag = fiaranantsoa_founded NOT = { has_global_flag = hungarian_renamed_fiaranantsoa } }
+						AND = { owns = 2122 has_global_flag = toliara_founded NOT = { has_global_flag = hungarian_renamed_toliara } }
+					}
+				}
+				AND = {
+					is_culture_group = czecho_slovak_culture_group
+					OR = {
+						AND = { owns = 3675 owns = 2119 owns = 2118 NOT = { has_global_flag = slovak_renamed_east_madagascar } }
+						AND = { owns = 2122 owns = 2117 NOT = { has_global_flag = slovak_renamed_west_madagascar } }
+						AND = { owns = 2115 owns = 2116 owns = 3678 NOT = { has_global_flag = slovak_renamed_central_madagascar } }
+						AND = { owns = 3676 NOT = { has_global_flag = slovak_renamed_stmarie } }
+						AND = { owns = 3677 NOT = { has_global_flag = slovak_renamed_nosybe } }
+						AND = { owns = 2120 NOT = { has_global_flag = slovak_renamed_antsiranana } }
+						AND = { owns = 2121 NOT = { has_global_flag = slovak_renamed_mahajanga } }
+						AND = { owns = 2116 has_global_flag = fiaranantsoa_founded NOT = { has_global_flag = slovak_renamed_fiaranantsoa } }
+						AND = { owns = 2122 has_global_flag = toliara_founded NOT = { has_global_flag = slovak_renamed_toliara } }
+					}
+				}
+				AND = {
+					is_culture_group = baltic
+					OR = {
+						AND = { owns = 3675 owns = 2119 owns = 2118 NOT = { has_global_flag = baltic_renamed_east_madagascar } }
+						AND = { owns = 2122 owns = 2117 NOT = { has_global_flag = baltic_renamed_west_madagascar } }
+						AND = { owns = 2115 owns = 2116 owns = 3678 NOT = { has_global_flag = baltic_renamed_central_madagascar } }
+						AND = { owns = 3676 NOT = { has_global_flag = baltic_renamed_stmarie } }
+						AND = { owns = 3677 NOT = { has_global_flag = baltic_renamed_nosybe } }
+						AND = { owns = 2120 NOT = { has_global_flag = baltic_renamed_antsiranana } }
+						AND = { owns = 2121 NOT = { has_global_flag = baltic_renamed_mahajanga } }
+						AND = { owns = 2116 has_global_flag = fiaranantsoa_founded NOT = { has_global_flag = baltic_renamed_fiaranantsoa } }
+						AND = { owns = 2122 has_global_flag = toliara_founded NOT = { has_global_flag = baltic_renamed_toliara } }
+					}
+				}
+				AND = {
+					is_culture_group = east_slavic
+					OR = {
+						AND = { owns = 3675 owns = 2119 owns = 2118 NOT = { has_global_flag = russian_renamed_east_madagascar } }
+						AND = { owns = 2122 owns = 2117 NOT = { has_global_flag = russian_renamed_west_madagascar } }
+						AND = { owns = 2115 owns = 2116 owns = 3678 NOT = { has_global_flag = russian_renamed_central_madagascar } }
+						AND = { owns = 3676 NOT = { has_global_flag = russian_renamed_stmarie } }
+						AND = { owns = 3677 NOT = { has_global_flag = russian_renamed_nosybe } }
+						AND = { owns = 2120 NOT = { has_global_flag = russian_renamed_antsiranana } }
+						AND = { owns = 2121 NOT = { has_global_flag = russian_renamed_mahajanga } }
+						AND = { owns = 2116 has_global_flag = fiaranantsoa_founded NOT = { has_global_flag = russian_renamed_fiaranantsoa } }
+						AND = { owns = 2122 has_global_flag = toliara_founded NOT = { has_global_flag = russian_renamed_toliara } }
+					}
+				}
+				AND = {
+					is_culture_group = polish_culture_group
+					NOT = { tag = WSF }
+					OR = {
+						AND = { owns = 3675 owns = 2119 owns = 2118 NOT = { has_global_flag = polish_renamed_east_madagascar } }
+						AND = { owns = 2122 owns = 2117 NOT = { has_global_flag = polish_renamed_west_madagascar } }
+						AND = { owns = 2115 owns = 2116 owns = 3678 NOT = { has_global_flag = polish_renamed_central_madagascar } }
+						AND = { owns = 3676 NOT = { has_global_flag = polish_renamed_stmarie } }
+						AND = { owns = 3677 NOT = { has_global_flag = polish_renamed_nosybe } }
+						AND = { owns = 2120 NOT = { has_global_flag = polish_renamed_antsiranana } }
+						AND = { owns = 2121 NOT = { has_global_flag = polish_renamed_mahajanga } }
+						AND = { owns = 2116 has_global_flag = fiaranantsoa_founded NOT = { has_global_flag = polish_renamed_fiaranantsoa } }
+						AND = { owns = 2122 has_global_flag = toliara_founded NOT = { has_global_flag = polish_renamed_toliara } }
+					}
+				}
+				AND = {
+					tag = WSF
+					OR = {
+						AND = { owns = 3675 owns = 2119 owns = 2118 NOT = { has_global_flag = WSF_renamed_east_madagascar } }
+						AND = { owns = 2122 owns = 2117 NOT = { has_global_flag = WSF_renamed_west_madagascar } }
+						AND = { owns = 2115 owns = 2116 owns = 3678 NOT = { has_global_flag = WSF_renamed_central_madagascar } }
+						AND = { owns = 3676 NOT = { has_global_flag = WSF_renamed_stmarie } }
+						AND = { owns = 3677 NOT = { has_global_flag = WSF_renamed_nosybe } }
+						AND = { owns = 2120 NOT = { has_global_flag = WSF_renamed_antsiranana } }
+						AND = { owns = 2121 NOT = { has_global_flag = WSF_renamed_mahajanga } }
+						AND = { owns = 2116 has_global_flag = fiaranantsoa_founded NOT = { has_global_flag = WSF_renamed_fiaranantsoa } }
+						AND = { owns = 2122 has_global_flag = toliara_founded NOT = { has_global_flag = WSF_renamed_toliara } }
+					}
+				}
+				AND = {
+					OR = {
+						is_culture_group = southern_african
+						NOT = {
+							OR = {
+								is_culture_group = germanic
+								is_culture_group = french
+								is_culture_group = hungarian_culture_group
+								is_culture_group = czecho_slovak_culture_group
+								is_culture_group = baltic
+								is_culture_group = east_slavic
+								is_culture_group = polish_culture_group
+								is_culture_group = jewish_cultures
+								tag = WSF
+							}
+						}
+					}
+					OR = {
+						AND = { owns = 3675 owns = 2119 owns = 2118 NOT = { has_global_flag = normal_renamed_east_madagascar } }
+						AND = { owns = 2122 owns = 2117 NOT = { has_global_flag = normal_renamed_west_madagascar } }
+						AND = { owns = 2115 owns = 2116 owns = 3678 NOT = { has_global_flag = normal_renamed_central_madagascar } }
+						AND = { owns = 3676 NOT = { has_global_flag = normal_renamed_stmarie } }
+						AND = { owns = 3677 NOT = { has_global_flag = normal_renamed_nosybe } }
+						AND = { owns = 2120 NOT = { has_global_flag = normal_renamed_antsiranana } }
+						AND = { owns = 2121 NOT = { has_global_flag = normal_renamed_mahajanga } }
+						AND = { owns = 2116 has_global_flag = fiaranantsoa_founded NOT = { has_global_flag = normal_renamed_fiaranantsoa } }
+						AND = { owns = 2122 has_global_flag = toliara_founded NOT = { has_global_flag = normal_renamed_toliara } }
+					}
+				}
+			}
+		}
+		
+		allow = {
+			#war = no
+		}
+		
+		effect = {
+			
+			###Jew - east_madagascar###
+			random_owned = {
+				limit = {
+					province_id = 3675
+					owner = {
+						is_culture_group = jewish_cultures
+					}
+				}
+				3675 = {
+					change_province_name = "Be'er Sheva"
+					state_scope = {
+						change_region_name = "East Israel"
+					}
+				}	
+				2119 = { change_province_name = "Samaria" }	
+				2118 = { change_province_name = "Nazareth" }	
+				owner = { 
+					set_global_flag = jew_renamed_east_madagascar
+					clr_global_flag = german_renamed_east_madagascar
+					clr_global_flag = french_renamed_east_madagascar
+					clr_global_flag = hungarian_renamed_east_madagascar
+					clr_global_flag = slovak_renamed_east_madagascar
+					clr_global_flag = baltic_renamed_east_madagascar
+					clr_global_flag = russian_renamed_east_madagascar
+					clr_global_flag = polish_renamed_east_madagascar
+					clr_global_flag = WSF_renamed_east_madagascar
+					clr_global_flag = normal_renamed_east_madagascar
+				}
+			}
+			###Jew - west_madagascar###
+			random_owned = {
+				limit = {
+					province_id = 2117
+					owner = {
+						is_culture_group = jewish_cultures
+					}
+				}
+				2117 = { 
+					change_province_name = "New Jerusalem"
+					state_scope = {
+						change_region_name = "West Israel"
+					}
+				}	
+				2122 = { change_province_name = "Zion" }	
+				owner = { 
+					set_global_flag = jew_renamed_west_madagascar
+					clr_global_flag = german_renamed_west_madagascar
+					clr_global_flag = french_renamed_west_madagascar
+					clr_global_flag = hungarian_renamed_west_madagascar
+					clr_global_flag = slovak_renamed_west_madagascar
+					clr_global_flag = baltic_renamed_west_madagascar
+					clr_global_flag = russian_renamed_west_madagascar
+					clr_global_flag = polish_renamed_west_madagascar
+					clr_global_flag = WSF_renamed_west_madagascar
+					clr_global_flag = normal_renamed_west_madagascar
+				}
+			}
+			###Jew - central_madagascar###
+			random_owned = {
+				limit = {
+					province_id = 2115
+					owner = {
+						is_culture_group = jewish_cultures
+					}
+				}
+				2115 = { 
+					change_province_name = "Tel Aviv"
+					state_scope = {
+						change_region_name = "Central Israel"
+					}
+				}	
+				2116 = { change_province_name = "Negev" }	
+				3678 = { change_province_name = "New Akko" }	
+				owner = { 
+					set_global_flag = jew_renamed_central_madagascar
+					clr_global_flag = german_renamed_central_madagascar
+					clr_global_flag = french_renamed_central_madagascar
+					clr_global_flag = hungarian_renamed_central_madagascar
+					clr_global_flag = slovak_renamed_central_madagascar
+					clr_global_flag = baltic_renamed_central_madagascar
+					clr_global_flag = russian_renamed_central_madagascar
+					clr_global_flag = polish_renamed_central_madagascar
+					clr_global_flag = WSF_renamed_central_madagascar
+					clr_global_flag = normal_renamed_central_madagascar
+				}
+			}
+			###Jew - stmarie###
+			random_owned = {
+				limit = {
+					province_id = 3676
+					owner = {
+						is_culture_group = jewish_cultures
+					}
+				}
+				3676 = { change_province_name = "Ithamar" }	
+				owner = { 
+					set_global_flag = jew_renamed_stmarie
+					clr_global_flag = german_renamed_stmarie
+					clr_global_flag = french_renamed_stmarie
+					clr_global_flag = hungarian_renamed_stmarie
+					clr_global_flag = slovak_renamed_stmarie
+					clr_global_flag = baltic_renamed_stmarie
+					clr_global_flag = russian_renamed_stmarie
+					clr_global_flag = polish_renamed_stmarie
+					clr_global_flag = WSF_renamed_stmarie
+					clr_global_flag = normal_renamed_stmarie
+				}
+			}
+			###Jew - nosybe###
+			random_owned = {
+				limit = {
+					province_id = 3677
+					owner = {
+						is_culture_group = jewish_cultures
+					}
+				}
+				3677 = { change_province_name = "Beth Rothschild" }	
+				owner = { 
+					set_global_flag = jew_renamed_nosybe
+					clr_global_flag = german_renamed_nosybe
+					clr_global_flag = french_renamed_nosybe
+					clr_global_flag = hungarian_renamed_nosybe
+					clr_global_flag = slovak_renamed_nosybe
+					clr_global_flag = baltic_renamed_nosybe
+					clr_global_flag = russian_renamed_nosybe
+					clr_global_flag = polish_renamed_nosybe
+					clr_global_flag = WSF_renamed_nosybe
+					clr_global_flag = normal_renamed_nosybe
+				}
+			}
+			###Jew - antsiranana###
+			random_owned = {
+				limit = {
+					province_id = 2120
+					owner = {
+						is_culture_group = jewish_cultures
+					}
+				}
+				2120 = { change_province_name = "Netanya Point" }	
+				owner = { 
+					set_global_flag = jew_renamed_antsiranana
+					clr_global_flag = german_renamed_antsiranana
+					clr_global_flag = french_renamed_antsiranana
+					clr_global_flag = hungarian_renamed_antsiranana
+					clr_global_flag = slovak_renamed_antsiranana
+					clr_global_flag = baltic_renamed_antsiranana
+					clr_global_flag = russian_renamed_antsiranana
+					clr_global_flag = polish_renamed_antsiranana
+					clr_global_flag = WSF_renamed_antsiranana
+					clr_global_flag = normal_renamed_antsiranana
+				}
+			}
+			###Jew - mahajanga###
+			random_owned = {
+				limit = {
+					province_id = 2121
+					owner = {
+						is_culture_group = jewish_cultures
+					}
+				}
+				2121 = { change_province_name = "New Haifa" }	
+				owner = { 
+					set_global_flag = jew_renamed_mahajanga
+					clr_global_flag = german_renamed_mahajanga
+					clr_global_flag = french_renamed_mahajanga
+					clr_global_flag = hungarian_renamed_mahajanga
+					clr_global_flag = slovak_renamed_mahajanga
+					clr_global_flag = baltic_renamed_mahajanga
+					clr_global_flag = russian_renamed_mahajanga
+					clr_global_flag = polish_renamed_mahajanga
+					clr_global_flag = WSF_renamed_mahajanga
+					clr_global_flag = normal_renamed_mahajanga
+				}
+			}
+			###Jew - fiaranantsoa###
+			random_owned = {
+				limit = {
+					province_id = 2116
+					owner = {
+						is_culture_group = jewish_cultures
+						has_global_flag = fiaranantsoa_founded
+					}
+				}
+				2116 = { change_province_name = "Fiaranantzoa" }	
+				owner = { 
+					set_global_flag = jew_renamed_fiaranantsoa
+					clr_global_flag = german_renamed_fiaranantsoa
+					clr_global_flag = french_renamed_fiaranantsoa
+					clr_global_flag = hungarian_renamed_fiaranantsoa
+					clr_global_flag = slovak_renamed_fiaranantsoa
+					clr_global_flag = baltic_renamed_fiaranantsoa
+					clr_global_flag = russian_renamed_fiaranantsoa
+					clr_global_flag = polish_renamed_fiaranantsoa
+					clr_global_flag = WSF_renamed_fiaranantsoa
+					clr_global_flag = normal_renamed_fiaranantsoa
+				}
+			}
+			###Jew - toliara###
+			random_owned = {
+				limit = {
+					province_id = 2122
+					owner = {
+						is_culture_group = jewish_cultures
+						has_global_flag = toliara_founded
+					}
+				}
+				2122 = { change_province_name = "Tulear" }	
+				owner = { 
+					set_global_flag = jew_renamed_toliara
+					clr_global_flag = german_renamed_toliara
+					clr_global_flag = french_renamed_toliara
+					clr_global_flag = hungarian_renamed_toliara
+					clr_global_flag = slovak_renamed_toliara
+					clr_global_flag = baltic_renamed_toliara
+					clr_global_flag = russian_renamed_toliara
+					clr_global_flag = polish_renamed_toliara
+					clr_global_flag = WSF_renamed_toliara
+					clr_global_flag = normal_renamed_toliara
+				}
+			}
+			
+			###German - east_madagascar###
+			random_owned = {
+				limit = {
+					province_id = 3675
+					owner = {
+						is_culture_group = germanic
+					}
+				}
+				3675 = {
+					change_province_name = "Sambawa"
+					state_scope = {
+						change_region_name = "Ostmadagaskar"
+					}
+				}	
+				2119 = { change_province_name = "Tamatawe" }	
+				2118 = { change_province_name = "Prinzenfort" }	
+				owner = { 
+					set_global_flag = german_renamed_east_madagascar
+					clr_global_flag = french_renamed_east_madagascar
+					clr_global_flag = hungarian_renamed_east_madagascar
+					clr_global_flag = slovak_renamed_east_madagascar
+					clr_global_flag = baltic_renamed_east_madagascar
+					clr_global_flag = russian_renamed_east_madagascar
+					clr_global_flag = polish_renamed_east_madagascar
+					clr_global_flag = WSF_renamed_east_madagascar
+					clr_global_flag = normal_renamed_east_madagascar
+					clr_global_flag = jew_renamed_east_madagascar
+				}
+			}
+			###German - west_madagascar###
+			random_owned = {
+				limit = {
+					province_id = 2117
+					owner = {
+						is_culture_group = germanic
+					}
+				}
+				2117 = { 
+					change_province_name = "Ampanihi"
+					state_scope = {
+						change_region_name = "Westmadagaskar"
+					}
+				}	
+				2122 = { change_province_name = "Menabe" }	
+				owner = { 
+					set_global_flag = german_renamed_west_madagascar
+					clr_global_flag = french_renamed_west_madagascar
+					clr_global_flag = hungarian_renamed_west_madagascar
+					clr_global_flag = slovak_renamed_west_madagascar
+					clr_global_flag = baltic_renamed_west_madagascar
+					clr_global_flag = russian_renamed_west_madagascar
+					clr_global_flag = polish_renamed_west_madagascar
+					clr_global_flag = WSF_renamed_west_madagascar
+					clr_global_flag = normal_renamed_west_madagascar
+					clr_global_flag = jew_renamed_west_madagascar
+				}
+			}
+			###German - central_madagascar###
+			random_owned = {
+				limit = {
+					province_id = 2115
+					owner = {
+						is_culture_group = germanic
+					}
+				}
+				2115 = { 
+					change_province_name = "Benjowskiburg"
+					state_scope = {
+						change_region_name = "Zentralmadagaskar"
+					}
+				}	
+				2116 = { change_province_name = "Matsiatra" }	
+				3678 = { change_province_name = "Ambositra" }	
+				owner = { 
+					set_global_flag = german_renamed_central_madagascar
+					clr_global_flag = french_renamed_central_madagascar
+					clr_global_flag = hungarian_renamed_central_madagascar
+					clr_global_flag = slovak_renamed_central_madagascar
+					clr_global_flag = baltic_renamed_central_madagascar
+					clr_global_flag = russian_renamed_central_madagascar
+					clr_global_flag = polish_renamed_central_madagascar
+					clr_global_flag = WSF_renamed_central_madagascar
+					clr_global_flag = normal_renamed_central_madagascar
+					clr_global_flag = jew_renamed_central_madagascar
+				}
+			}
+			###German - stmarie###
+			random_owned = {
+				limit = {
+					province_id = 3676
+					owner = {
+						is_culture_group = germanic
+					}
+				}
+				3676 = { change_province_name = "Heilige Maria" }	
+				owner = { 
+					set_global_flag = german_renamed_stmarie
+					clr_global_flag = french_renamed_stmarie
+					clr_global_flag = hungarian_renamed_stmarie
+					clr_global_flag = slovak_renamed_stmarie
+					clr_global_flag = baltic_renamed_stmarie
+					clr_global_flag = russian_renamed_stmarie
+					clr_global_flag = polish_renamed_stmarie
+					clr_global_flag = WSF_renamed_stmarie
+					clr_global_flag = normal_renamed_stmarie
+					clr_global_flag = jew_renamed_stmarie
+				}
+			}
+			###German - nosybe###
+			random_owned = {
+				limit = {
+					province_id = 3677
+					owner = {
+						is_culture_group = germanic
+					}
+				}
+				3677 = { change_province_name = "Baumanndorf" }	
+				owner = { 
+					set_global_flag = german_renamed_nosybe
+					clr_global_flag = french_renamed_nosybe
+					clr_global_flag = hungarian_renamed_nosybe
+					clr_global_flag = slovak_renamed_nosybe
+					clr_global_flag = baltic_renamed_nosybe
+					clr_global_flag = russian_renamed_nosybe
+					clr_global_flag = polish_renamed_nosybe
+					clr_global_flag = WSF_renamed_nosybe
+					clr_global_flag = normal_renamed_nosybe
+					clr_global_flag = jew_renamed_nosybe
+				}
+			}
+			###German - antsiranana###
+			random_owned = {
+				limit = {
+					province_id = 2120
+					owner = {
+						is_culture_group = germanic
+					}
+				}
+				2120 = { change_province_name = "Diego-Suarez" }	
+				owner = { 
+					set_global_flag = german_renamed_antsiranana
+					clr_global_flag = french_renamed_antsiranana
+					clr_global_flag = hungarian_renamed_antsiranana
+					clr_global_flag = slovak_renamed_antsiranana
+					clr_global_flag = baltic_renamed_antsiranana
+					clr_global_flag = russian_renamed_antsiranana
+					clr_global_flag = polish_renamed_antsiranana
+					clr_global_flag = WSF_renamed_antsiranana
+					clr_global_flag = normal_renamed_antsiranana
+					clr_global_flag = jew_renamed_antsiranana
+				}
+			}
+			###German - mahajanga###
+			random_owned = {
+				limit = {
+					province_id = 2121
+					owner = {
+						is_culture_group = germanic
+					}
+				}
+				2121 = { change_province_name = "Mahadschanga" }	
+				owner = { 
+					set_global_flag = german_renamed_mahajanga
+					clr_global_flag = french_renamed_mahajanga
+					clr_global_flag = hungarian_renamed_mahajanga
+					clr_global_flag = slovak_renamed_mahajanga
+					clr_global_flag = baltic_renamed_mahajanga
+					clr_global_flag = russian_renamed_mahajanga
+					clr_global_flag = polish_renamed_mahajanga
+					clr_global_flag = WSF_renamed_mahajanga
+					clr_global_flag = normal_renamed_mahajanga
+					clr_global_flag = jew_renamed_mahajanga
+				}
+			}
+			###German - fiaranantsoa###
+			random_owned = {
+				limit = {
+					province_id = 2116
+					owner = {
+						is_culture_group = germanic
+						has_global_flag = fiaranantsoa_founded
+					}
+				}
+				2116 = { change_province_name = "Gutenbildungstadt" }	
+				owner = { 
+					set_global_flag = german_renamed_fiaranantsoa
+					clr_global_flag = french_renamed_fiaranantsoa
+					clr_global_flag = hungarian_renamed_fiaranantsoa
+					clr_global_flag = slovak_renamed_fiaranantsoa
+					clr_global_flag = baltic_renamed_fiaranantsoa
+					clr_global_flag = russian_renamed_fiaranantsoa
+					clr_global_flag = polish_renamed_fiaranantsoa
+					clr_global_flag = WSF_renamed_fiaranantsoa
+					clr_global_flag = normal_renamed_fiaranantsoa
+					clr_global_flag = jew_renamed_fiaranantsoa
+				}
+			}
+			###German - toliara###
+			random_owned = {
+				limit = {
+					province_id = 2122
+					owner = {
+						is_culture_group = germanic
+						has_global_flag = toliara_founded
+					}
+				}
+				2122 = { change_province_name = "Tulear" }	
+				owner = { 
+					set_global_flag = german_renamed_toliara
+					clr_global_flag = french_renamed_toliara
+					clr_global_flag = hungarian_renamed_toliara
+					clr_global_flag = slovak_renamed_toliara
+					clr_global_flag = baltic_renamed_toliara
+					clr_global_flag = russian_renamed_toliara
+					clr_global_flag = polish_renamed_toliara
+					clr_global_flag = WSF_renamed_toliara
+					clr_global_flag = normal_renamed_toliara
+					clr_global_flag = jew_renamed_toliara
+				}
+			}
+			
+			###French - east_madagascar###
+			random_owned = {
+				limit = {
+					province_id = 3675
+					owner = {
+						is_culture_group = french
+					}
+				}
+				3675 = {
+					change_province_name = "Sambava"
+					state_scope = {
+						change_region_name = "Madagascar Orientale"
+					}
+				}	
+				2119 = { change_province_name = "Tamatave" }	
+				2118 = { change_province_name = "Fort-Dauphin" }	
+				owner = { 
+					set_global_flag = french_renamed_east_madagascar
+					clr_global_flag = german_renamed_east_madagascar
+					clr_global_flag = hungarian_renamed_east_madagascar
+					clr_global_flag = slovak_renamed_east_madagascar
+					clr_global_flag = baltic_renamed_east_madagascar
+					clr_global_flag = russian_renamed_east_madagascar
+					clr_global_flag = polish_renamed_east_madagascar
+					clr_global_flag = WSF_renamed_east_madagascar
+					clr_global_flag = normal_renamed_east_madagascar
+					clr_global_flag = jew_renamed_east_madagascar
+				}
+			}
+			###French - west_madagascar###
+			random_owned = {
+				limit = {
+					province_id = 2117
+					owner = {
+						is_culture_group = french
+					}
+				}
+				2117 = { 
+					change_province_name = "Ampanihy"
+					state_scope = {
+						change_region_name = "Madagascar Occidentale"
+					}
+				}	
+				2122 = { change_province_name = "Menabe" }	
+				owner = { 
+					set_global_flag = french_renamed_west_madagascar
+					clr_global_flag = german_renamed_west_madagascar
+					clr_global_flag = hungarian_renamed_west_madagascar
+					clr_global_flag = slovak_renamed_west_madagascar
+					clr_global_flag = baltic_renamed_west_madagascar
+					clr_global_flag = russian_renamed_west_madagascar
+					clr_global_flag = polish_renamed_west_madagascar
+					clr_global_flag = WSF_renamed_west_madagascar
+					clr_global_flag = normal_renamed_west_madagascar
+					clr_global_flag = jew_renamed_west_madagascar
+				}
+			}
+			###French - central_madagascar###
+			random_owned = {
+				limit = {
+					province_id = 2115
+					owner = {
+						is_culture_group = french
+					}
+				}
+				2115 = { 
+					change_province_name = "Tananarive"
+					state_scope = {
+						change_region_name = "Haute Madagascar"
+					}
+				}	
+				2116 = { change_province_name = "Matsiatra" }	
+				3678 = { change_province_name = "Ambositra" }	
+				owner = { 
+					set_global_flag = french_renamed_central_madagascar
+					clr_global_flag = german_renamed_central_madagascar
+					clr_global_flag = hungarian_renamed_central_madagascar
+					clr_global_flag = slovak_renamed_central_madagascar
+					clr_global_flag = baltic_renamed_central_madagascar
+					clr_global_flag = russian_renamed_central_madagascar
+					clr_global_flag = polish_renamed_central_madagascar
+					clr_global_flag = WSF_renamed_central_madagascar
+					clr_global_flag = normal_renamed_central_madagascar
+					clr_global_flag = jew_renamed_central_madagascar
+				}
+			}
+			###French - stmarie###
+			random_owned = {
+				limit = {
+					province_id = 3676
+					owner = {
+						is_culture_group = french
+					}
+				}
+				3676 = { change_province_name = "Sainte-Marie" }	
+				owner = { 
+					set_global_flag = french_renamed_stmarie
+					clr_global_flag = german_renamed_stmarie
+					clr_global_flag = hungarian_renamed_stmarie
+					clr_global_flag = slovak_renamed_stmarie
+					clr_global_flag = baltic_renamed_stmarie
+					clr_global_flag = russian_renamed_stmarie
+					clr_global_flag = polish_renamed_stmarie
+					clr_global_flag = WSF_renamed_stmarie
+					clr_global_flag = normal_renamed_stmarie
+					clr_global_flag = jew_renamed_stmarie
+				}
+			}
+			###French - nosybe###
+			random_owned = {
+				limit = {
+					province_id = 3677
+					owner = {
+						is_culture_group = french
+					}
+				}
+				3677 = { change_province_name = "Hell-Ville" }	
+				owner = { 
+					set_global_flag = french_renamed_nosybe
+					clr_global_flag = german_renamed_nosybe
+					clr_global_flag = hungarian_renamed_nosybe
+					clr_global_flag = slovak_renamed_nosybe
+					clr_global_flag = baltic_renamed_nosybe
+					clr_global_flag = russian_renamed_nosybe
+					clr_global_flag = polish_renamed_nosybe
+					clr_global_flag = WSF_renamed_nosybe
+					clr_global_flag = normal_renamed_nosybe
+					clr_global_flag = jew_renamed_nosybe
+				}
+			}
+			###French - antsiranana###
+			random_owned = {
+				limit = {
+					province_id = 2120
+					owner = {
+						is_culture_group = french
+					}
+				}
+				2120 = { change_province_name = "Diego-Suarez" }	
+				owner = { 
+					set_global_flag = french_renamed_antsiranana
+					clr_global_flag = german_renamed_antsiranana
+					clr_global_flag = hungarian_renamed_antsiranana
+					clr_global_flag = slovak_renamed_antsiranana
+					clr_global_flag = baltic_renamed_antsiranana
+					clr_global_flag = russian_renamed_antsiranana
+					clr_global_flag = polish_renamed_antsiranana
+					clr_global_flag = WSF_renamed_antsiranana
+					clr_global_flag = normal_renamed_antsiranana
+					clr_global_flag = jew_renamed_antsiranana
+				}
+			}
+			###French - mahajanga###
+			random_owned = {
+				limit = {
+					province_id = 2121
+					owner = {
+						is_culture_group = french
+					}
+				}
+				2121 = { change_province_name = "Majunga" }	
+				owner = { 
+					set_global_flag = french_renamed_mahajanga
+					clr_global_flag = german_renamed_mahajanga
+					clr_global_flag = hungarian_renamed_mahajanga
+					clr_global_flag = slovak_renamed_mahajanga
+					clr_global_flag = baltic_renamed_mahajanga
+					clr_global_flag = russian_renamed_mahajanga
+					clr_global_flag = polish_renamed_mahajanga
+					clr_global_flag = WSF_renamed_mahajanga
+					clr_global_flag = normal_renamed_mahajanga
+					clr_global_flag = jew_renamed_mahajanga
+				}
+			}
+			###French - fiaranantsoa###
+			random_owned = {
+				limit = {
+					province_id = 2116
+					owner = {
+						is_culture_group = french
+						has_global_flag = fiaranantsoa_founded
+					}
+				}
+				2116 = { change_province_name = "Fianarantsoa" }	
+				owner = { 
+					set_global_flag = french_renamed_fiaranantsoa
+					clr_global_flag = german_renamed_fiaranantsoa 
+					clr_global_flag = hungarian_renamed_fiaranantsoa
+					clr_global_flag = slovak_renamed_fiaranantsoa
+					clr_global_flag = baltic_renamed_fiaranantsoa
+					clr_global_flag = russian_renamed_fiaranantsoa
+					clr_global_flag = polish_renamed_fiaranantsoa
+					clr_global_flag = WSF_renamed_fiaranantsoa
+					clr_global_flag = normal_renamed_fiaranantsoa
+					clr_global_flag = jew_renamed_fiaranantsoa
+				}
+			}
+			###French - toliara###
+			random_owned = {
+				limit = {
+					province_id = 2122
+					owner = {
+						is_culture_group = french
+						has_global_flag = toliara_founded
+					}
+				}
+				2122 = { change_province_name = "Tuléar" }	
+				owner = { 
+					set_global_flag = french_renamed_toliara
+					clr_global_flag = german_renamed_toliara
+					clr_global_flag = hungarian_renamed_toliara
+					clr_global_flag = slovak_renamed_toliara
+					clr_global_flag = baltic_renamed_toliara
+					clr_global_flag = russian_renamed_toliara
+					clr_global_flag = polish_renamed_toliara
+					clr_global_flag = WSF_renamed_toliara
+					clr_global_flag = normal_renamed_toliara
+					clr_global_flag = jew_renamed_toliara
+				}
+			}
+			
+			###Hungarian - east_madagascar###
+			random_owned = {
+				limit = {
+					province_id = 3675
+					owner = {
+						is_culture_group = hungarian_culture_group
+					}
+				}
+				3675 = {
+					change_province_name = "Sambava"
+					state_scope = {
+						change_region_name = "East Madagascar"
+					}
+				}	
+				2119 = { change_province_name = "Toamasina" }	
+				2118 = { change_province_name = "Tôlañaro" }		
+				owner = { 
+					set_global_flag = hungarian_renamed_east_madagascar
+					clr_global_flag = german_renamed_east_madagascar
+					clr_global_flag = french_renamed_east_madagascar
+					clr_global_flag = slovak_renamed_east_madagascar
+					clr_global_flag = baltic_renamed_east_madagascar
+					clr_global_flag = russian_renamed_east_madagascar
+					clr_global_flag = polish_renamed_east_madagascar
+					clr_global_flag = WSF_renamed_east_madagascar
+					clr_global_flag = normal_renamed_east_madagascar
+					clr_global_flag = jew_renamed_east_madagascar
+				}
+			}
+			###Hungarian - west_madagascar###
+			random_owned = {
+				limit = {
+					province_id = 2117
+					owner = {
+						is_culture_group = hungarian_culture_group
+					}
+				}
+				2117 = { 
+					change_province_name = "Ampanihy"
+					state_scope = {
+						change_region_name = "West Madagascar"
+					}
+				}	
+				2122 = { change_province_name = "Menabe" }	
+				owner = { 
+					set_global_flag = hungarian_renamed_west_madagascar
+					clr_global_flag = german_renamed_west_madagascar
+					clr_global_flag = french_renamed_west_madagascar
+					clr_global_flag = slovak_renamed_west_madagascar
+					clr_global_flag = baltic_renamed_west_madagascar
+					clr_global_flag = russian_renamed_west_madagascar
+					clr_global_flag = polish_renamed_west_madagascar
+					clr_global_flag = WSF_renamed_west_madagascar
+					clr_global_flag = normal_renamed_west_madagascar
+					clr_global_flag = jew_renamed_west_madagascar
+				}
+			}
+			###Hungarian - central_madagascar###
+			random_owned = {
+				limit = {
+					province_id = 2115
+					owner = {
+						is_culture_group = hungarian_culture_group
+					}
+				}
+				2115 = { 
+					change_province_name = "Antananarivo"
+					state_scope = {
+						change_region_name = "Central Madagascar"
+					}
+				}	
+				2116 = { change_province_name = "Matsiatra" }	
+				3678 = { change_province_name = "Ambositra" }
+				owner = { 
+					set_global_flag = hungarian_renamed_central_madagascar
+					clr_global_flag = german_renamed_central_madagascar
+					clr_global_flag = french_renamed_central_madagascar
+					clr_global_flag = slovak_renamed_central_madagascar
+					clr_global_flag = baltic_renamed_central_madagascar
+					clr_global_flag = russian_renamed_central_madagascar
+					clr_global_flag = polish_renamed_central_madagascar
+					clr_global_flag = WSF_renamed_central_madagascar
+					clr_global_flag = normal_renamed_central_madagascar
+					clr_global_flag = jew_renamed_central_madagascar
+				}
+			}
+			###Hungarian - stmarie###
+			random_owned = {
+				limit = {
+					province_id = 3676
+					owner = {
+						is_culture_group = hungarian_culture_group
+					}
+				}
+				3676 = { change_province_name = "Nosy Boraha" }	
+				owner = { 
+					set_global_flag = hungarian_renamed_stmarie
+					clr_global_flag = german_renamed_stmarie
+					clr_global_flag = french_renamed_stmarie 
+					clr_global_flag = slovak_renamed_stmarie
+					clr_global_flag = baltic_renamed_stmarie
+					clr_global_flag = russian_renamed_stmarie
+					clr_global_flag = polish_renamed_stmarie
+					clr_global_flag = WSF_renamed_stmarie
+					clr_global_flag = normal_renamed_stmarie
+					clr_global_flag = jew_renamed_stmarie
+				}
+			}
+			###Hungarian - nosybe###
+			random_owned = {
+				limit = {
+					province_id = 3677
+					owner = {
+						is_culture_group = hungarian_culture_group
+					}
+				}
+				3677 = { change_province_name = "Nosy Be" }	
+				owner = { 
+					set_global_flag = hungarian_renamed_nosybe
+					clr_global_flag = german_renamed_nosybe
+					clr_global_flag = french_renamed_nosybe 
+					clr_global_flag = slovak_renamed_nosybe
+					clr_global_flag = baltic_renamed_nosybe
+					clr_global_flag = russian_renamed_nosybe
+					clr_global_flag = polish_renamed_nosybe
+					clr_global_flag = WSF_renamed_nosybe
+					clr_global_flag = normal_renamed_nosybe
+					clr_global_flag = jew_renamed_nosybe
+				}
+			}
+			###Hungarian - antsiranana###
+			random_owned = {
+				limit = {
+					province_id = 2120
+					owner = {
+						is_culture_group = hungarian_culture_group
+					}
+				}
+				2120 = { change_province_name = "Antsiranana" }	
+				owner = { 
+					set_global_flag = hungarian_renamed_antsiranana
+					clr_global_flag = german_renamed_antsiranana
+					clr_global_flag = french_renamed_antsiranana 
+					clr_global_flag = slovak_renamed_antsiranana
+					clr_global_flag = baltic_renamed_antsiranana
+					clr_global_flag = russian_renamed_antsiranana
+					clr_global_flag = polish_renamed_antsiranana
+					clr_global_flag = WSF_renamed_antsiranana
+					clr_global_flag = normal_renamed_antsiranana
+					clr_global_flag = jew_renamed_antsiranana
+				}
+			}
+			###Hungarian - mahajanga###
+			random_owned = {
+				limit = {
+					province_id = 2121
+					owner = {
+						is_culture_group = hungarian_culture_group
+					}
+				}
+				2121 = { change_province_name = "Mahajanga" }	
+				owner = { 
+					set_global_flag = hungarian_renamed_mahajanga
+					clr_global_flag = german_renamed_mahajanga
+					clr_global_flag = french_renamed_mahajanga
+					clr_global_flag = slovak_renamed_mahajanga
+					clr_global_flag = baltic_renamed_mahajanga
+					clr_global_flag = russian_renamed_mahajanga
+					clr_global_flag = polish_renamed_mahajanga
+					clr_global_flag = WSF_renamed_mahajanga
+					clr_global_flag = normal_renamed_mahajanga
+					clr_global_flag = jew_renamed_mahajanga
+				}
+			}
+			###Hungarian - fiaranantsoa###
+			random_owned = {
+				limit = {
+					province_id = 2116
+					owner = {
+						is_culture_group = hungarian_culture_group
+						has_global_flag = fiaranantsoa_founded
+					}
+				}
+				2116 = { change_province_name = "Fianarantsoa" }	
+				owner = { 
+					set_global_flag = hungarian_renamed_fiaranantsoa
+					clr_global_flag = german_renamed_fiaranantsoa 
+					clr_global_flag = french_renamed_fiaranantsoa
+					clr_global_flag = slovak_renamed_fiaranantsoa
+					clr_global_flag = baltic_renamed_fiaranantsoa
+					clr_global_flag = russian_renamed_fiaranantsoa
+					clr_global_flag = polish_renamed_fiaranantsoa
+					clr_global_flag = WSF_renamed_fiaranantsoa
+					clr_global_flag = normal_renamed_fiaranantsoa
+					clr_global_flag = jew_renamed_fiaranantsoa
+				}
+			}
+			###Hungarian - toliara###
+			random_owned = {
+				limit = {
+					province_id = 2122
+					owner = {
+						is_culture_group = hungarian_culture_group
+						has_global_flag = toliara_founded
+					}
+				}
+				2122 = { change_province_name = "Toliary" }	
+				owner = { 
+					set_global_flag = hungarian_renamed_toliara
+					clr_global_flag = german_renamed_toliara
+					clr_global_flag = french_renamed_toliara
+					clr_global_flag = slovak_renamed_toliara
+					clr_global_flag = baltic_renamed_toliara
+					clr_global_flag = russian_renamed_toliara
+					clr_global_flag = polish_renamed_toliara
+					clr_global_flag = WSF_renamed_toliara
+					clr_global_flag = normal_renamed_toliara
+					clr_global_flag = jew_renamed_toliara
+				}
+			}
+			
+			###Slovak - east_madagascar###
+			random_owned = {
+				limit = {
+					province_id = 3675
+					owner = {
+						is_culture_group = czecho_slovak_culture_group
+					}
+				}
+				3675 = {
+					change_province_name = "Sambava"
+					state_scope = {
+						change_region_name = "Východný Madagaskar"
+					}
+				}	
+				2119 = { change_province_name = "Tamatave" }	
+				2118 = { change_province_name = "Princ Pevnosti" }	
+				owner = { 
+					set_global_flag = slovak_renamed_east_madagascar
+					clr_global_flag = german_renamed_east_madagascar
+					clr_global_flag = french_renamed_east_madagascar
+					clr_global_flag = hungarian_renamed_east_madagascar
+					clr_global_flag = baltic_renamed_east_madagascar
+					clr_global_flag = russian_renamed_east_madagascar
+					clr_global_flag = polish_renamed_east_madagascar
+					clr_global_flag = WSF_renamed_east_madagascar
+					clr_global_flag = normal_renamed_east_madagascar
+					clr_global_flag = jew_renamed_east_madagascar
+				}
+			}
+			###Slovak - west_madagascar###
+			random_owned = {
+				limit = {
+					province_id = 2117
+					owner = {
+						is_culture_group = czecho_slovak_culture_group
+					}
+				}
+				2117 = { 
+					change_province_name = "Ampanihy"
+					state_scope = {
+						change_region_name = "Západný Madagaskar"
+					}
+				}	
+				2122 = { change_province_name = "Menabe" }	
+				owner = { 
+					set_global_flag = slovak_renamed_west_madagascar
+					clr_global_flag = german_renamed_west_madagascar
+					clr_global_flag = french_renamed_west_madagascar
+					clr_global_flag = hungarian_renamed_west_madagascar 
+					clr_global_flag = baltic_renamed_west_madagascar
+					clr_global_flag = russian_renamed_west_madagascar
+					clr_global_flag = polish_renamed_west_madagascar
+					clr_global_flag = WSF_renamed_west_madagascar
+					clr_global_flag = normal_renamed_west_madagascar
+					clr_global_flag = jew_renamed_west_madagascar
+				}
+			}
+			###Slovak - central_madagascar###
+			random_owned = {
+				limit = {
+					province_id = 2115
+					owner = {
+						is_culture_group = czecho_slovak_culture_group
+					}
+				}
+				2115 = { 
+					change_province_name = "Benovský"
+					state_scope = {
+						change_region_name = "Centrálny Madagaskar"
+					}
+				}	
+				2116 = { change_province_name = "Maciatra" }	
+				3678 = { change_province_name = "Ambocitra" }	
+				owner = { 
+					set_global_flag = slovak_renamed_central_madagascar
+					clr_global_flag = german_renamed_central_madagascar
+					clr_global_flag = french_renamed_central_madagascar
+					clr_global_flag = hungarian_renamed_central_madagascar 
+					clr_global_flag = baltic_renamed_central_madagascar
+					clr_global_flag = russian_renamed_central_madagascar
+					clr_global_flag = polish_renamed_central_madagascar
+					clr_global_flag = WSF_renamed_central_madagascar
+					clr_global_flag = normal_renamed_central_madagascar
+					clr_global_flag = jew_renamed_central_madagascar
+				}
+			}
+			###Slovak - stmarie###
+			random_owned = {
+				limit = {
+					province_id = 3676
+					owner = {
+						is_culture_group = czecho_slovak_culture_group
+					}
+				}
+				3676 = { change_province_name = "Svätý Mária" }	
+				owner = { 
+					set_global_flag = slovak_renamed_stmarie
+					clr_global_flag = german_renamed_stmarie
+					clr_global_flag = french_renamed_stmarie 
+					clr_global_flag = hungarian_renamed_stmarie 
+					clr_global_flag = baltic_renamed_stmarie
+					clr_global_flag = russian_renamed_stmarie
+					clr_global_flag = polish_renamed_stmarie
+					clr_global_flag = WSF_renamed_stmarie
+					clr_global_flag = normal_renamed_stmarie
+					clr_global_flag = jew_renamed_stmarie
+				}
+			}
+			###Slovak - nosybe###
+			random_owned = {
+				limit = {
+					province_id = 3677
+					owner = {
+						is_culture_group = czecho_slovak_culture_group
+					}
+				}
+				3677 = { change_province_name = "Vel'ký Ostrov" }	
+				owner = { 
+					set_global_flag = slovak_renamed_nosybe
+					clr_global_flag = german_renamed_nosybe
+					clr_global_flag = french_renamed_nosybe 
+					clr_global_flag = hungarian_renamed_nosybe 
+					clr_global_flag = baltic_renamed_nosybe
+					clr_global_flag = russian_renamed_nosybe
+					clr_global_flag = polish_renamed_nosybe
+					clr_global_flag = WSF_renamed_nosybe
+					clr_global_flag = normal_renamed_nosybe
+					clr_global_flag = jew_renamed_nosybe
+				}
+			}
+			###Slovak - antsiranana###
+			random_owned = {
+				limit = {
+					province_id = 2120
+					owner = {
+						is_culture_group = czecho_slovak_culture_group
+					}
+				}
+				2120 = { change_province_name = "Anciranana" }	
+				owner = { 
+					set_global_flag = slovak_renamed_antsiranana
+					clr_global_flag = german_renamed_antsiranana
+					clr_global_flag = french_renamed_antsiranana 
+					clr_global_flag = hungarian_renamed_antsiranana 
+					clr_global_flag = baltic_renamed_antsiranana
+					clr_global_flag = russian_renamed_antsiranana
+					clr_global_flag = polish_renamed_antsiranana
+					clr_global_flag = WSF_renamed_antsiranana
+					clr_global_flag = normal_renamed_antsiranana
+					clr_global_flag = jew_renamed_antsiranana
+				}
+			}
+			###Slovak - mahajanga###
+			random_owned = {
+				limit = {
+					province_id = 2121
+					owner = {
+						is_culture_group = czecho_slovak_culture_group
+					}
+				}
+				2121 = { change_province_name = "Nový Trencín" }	
+				owner = { 
+					set_global_flag = slovak_renamed_mahajanga
+					clr_global_flag = german_renamed_mahajanga
+					clr_global_flag = french_renamed_mahajanga
+					clr_global_flag = hungarian_renamed_mahajanga 
+					clr_global_flag = baltic_renamed_mahajanga
+					clr_global_flag = russian_renamed_mahajanga
+					clr_global_flag = polish_renamed_mahajanga
+					clr_global_flag = WSF_renamed_mahajanga
+					clr_global_flag = normal_renamed_mahajanga
+					clr_global_flag = jew_renamed_mahajanga
+				}
+			}
+			###Slovak - fiaranantsoa###
+			random_owned = {
+				limit = {
+					province_id = 2116
+					owner = {
+						is_culture_group = czecho_slovak_culture_group
+						has_global_flag = fiaranantsoa_founded
+					}
+				}
+				2116 = { change_province_name = "Dobrévzdelanie" }	
+				owner = { 
+					set_global_flag = slovak_renamed_fiaranantsoa
+					clr_global_flag = german_renamed_fiaranantsoa 
+					clr_global_flag = french_renamed_fiaranantsoa
+					clr_global_flag = hungarian_renamed_fiaranantsoa 
+					clr_global_flag = baltic_renamed_fiaranantsoa
+					clr_global_flag = russian_renamed_fiaranantsoa
+					clr_global_flag = polish_renamed_fiaranantsoa
+					clr_global_flag = WSF_renamed_fiaranantsoa
+					clr_global_flag = normal_renamed_fiaranantsoa
+					clr_global_flag = jew_renamed_fiaranantsoa
+				}
+			}
+			###Slovak - toliara###
+			random_owned = {
+				limit = {
+					province_id = 2122
+					owner = {
+						is_culture_group = czecho_slovak_culture_group
+						has_global_flag = toliara_founded
+					}
+				}
+				2122 = { change_province_name = "Toliara" }	
+				owner = { 
+					set_global_flag = slovak_renamed_toliara
+					clr_global_flag = german_renamed_toliara
+					clr_global_flag = french_renamed_toliara
+					clr_global_flag = hungarian_renamed_toliara
+					clr_global_flag = baltic_renamed_toliara
+					clr_global_flag = russian_renamed_toliara
+					clr_global_flag = polish_renamed_toliara
+					clr_global_flag = WSF_renamed_toliara
+					clr_global_flag = normal_renamed_toliara
+					clr_global_flag = jew_renamed_toliara
+				}
+			}
+			
+			###Baltic - east_madagascar###
+			random_owned = {
+				limit = {
+					province_id = 3675
+					owner = {
+						is_culture_group = baltic
+					}
+				}	
+				3675 = {
+					change_province_name = "Sambava"
+					state_scope = {
+						change_region_name = "East Madagascar"
+					}
+				}	
+				2119 = { change_province_name = "Toamasina" }	
+				2118 = { change_province_name = "Tôlañaro" }	
+				owner = { 
+					set_global_flag = baltic_renamed_east_madagascar
+					clr_global_flag = german_renamed_east_madagascar
+					clr_global_flag = french_renamed_east_madagascar
+					clr_global_flag = hungarian_renamed_east_madagascar
+					clr_global_flag = slovak_renamed_east_madagascar
+					clr_global_flag = russian_renamed_east_madagascar 
+					clr_global_flag = polish_renamed_east_madagascar
+					clr_global_flag = WSF_renamed_east_madagascar
+					clr_global_flag = normal_renamed_east_madagascar
+					clr_global_flag = jew_renamed_east_madagascar
+				}
+			}
+			###Baltic - west_madagascar###
+			random_owned = {
+				limit = {
+					province_id = 2117
+					owner = {
+						is_culture_group = baltic
+					}
+				}
+				2117 = { 
+					change_province_name = "Ampanihy"
+					state_scope = {
+						change_region_name = "West Madagascar"
+					}
+				}	
+				2122 = { change_province_name = "Menabe" }	
+				owner = { 
+					set_global_flag = baltic_renamed_west_madagascar
+					clr_global_flag = german_renamed_west_madagascar
+					clr_global_flag = french_renamed_west_madagascar
+					clr_global_flag = hungarian_renamed_west_madagascar
+					clr_global_flag = slovak_renamed_west_madagascar
+					clr_global_flag = russian_renamed_west_madagascar
+					clr_global_flag = polish_renamed_west_madagascar
+					clr_global_flag = WSF_renamed_west_madagascar
+					clr_global_flag = normal_renamed_west_madagascar
+					clr_global_flag = jew_renamed_west_madagascar
+				}
+			}
+			###Baltic - central_madagascar###
+			random_owned = {
+				limit = {
+					province_id = 2115
+					owner = {
+						is_culture_group = baltic
+					}
+				}
+				2115 = { 
+					change_province_name = "Antananarivo"
+					state_scope = {
+						change_region_name = "Central Madagascar"
+					}
+				}	
+				2116 = { change_province_name = "Matsiatra" }	
+				3678 = { change_province_name = "Ambositra" }
+				owner = { 
+					set_global_flag = baltic_renamed_central_madagascar
+					clr_global_flag = german_renamed_central_madagascar
+					clr_global_flag = french_renamed_central_madagascar
+					clr_global_flag = hungarian_renamed_central_madagascar 
+					clr_global_flag = slovak_renamed_central_madagascar 
+					clr_global_flag = russian_renamed_central_madagascar
+					clr_global_flag = polish_renamed_central_madagascar
+					clr_global_flag = WSF_renamed_central_madagascar
+					clr_global_flag = normal_renamed_central_madagascar
+					clr_global_flag = jew_renamed_central_madagascar
+				}
+			}
+			###Baltic - stmarie###
+			random_owned = {
+				limit = {
+					province_id = 3676
+					owner = {
+						is_culture_group = baltic
+					}
+				}
+				3676 = { change_province_name = "Nosy Boraha" }
+				owner = { 
+					set_global_flag = baltic_renamed_stmarie
+					clr_global_flag = german_renamed_stmarie
+					clr_global_flag = french_renamed_stmarie 
+					clr_global_flag = hungarian_renamed_stmarie 
+					clr_global_flag = slovak_renamed_stmarie 
+					clr_global_flag = russian_renamed_stmarie
+					clr_global_flag = polish_renamed_stmarie
+					clr_global_flag = WSF_renamed_stmarie
+					clr_global_flag = normal_renamed_stmarie
+					clr_global_flag = jew_renamed_stmarie
+				}
+			}
+			###Baltic - nosybe###
+			random_owned = {
+				limit = {
+					province_id = 3677
+					owner = {
+						is_culture_group = baltic
+					}
+				}
+				3677 = { change_province_name = "Nosy Be" }	
+				owner = { 
+					set_global_flag = baltic_renamed_nosybe
+					clr_global_flag = german_renamed_nosybe
+					clr_global_flag = french_renamed_nosybe 
+					clr_global_flag = hungarian_renamed_nosybe 
+					clr_global_flag = slovak_renamed_nosybe 
+					clr_global_flag = russian_renamed_nosybe
+					clr_global_flag = polish_renamed_nosybe
+					clr_global_flag = WSF_renamed_nosybe
+					clr_global_flag = normal_renamed_nosybe
+					clr_global_flag = jew_renamed_nosybe
+				}
+			}
+			###Baltic - antsiranana###
+			random_owned = {
+				limit = {
+					province_id = 2120
+					owner = {
+						is_culture_group = baltic
+					}
+				}
+				2120 = { change_province_name = "Antsiranana" }	
+				owner = { 
+					set_global_flag = baltic_renamed_antsiranana
+					clr_global_flag = german_renamed_antsiranana
+					clr_global_flag = french_renamed_antsiranana 
+					clr_global_flag = hungarian_renamed_antsiranana 
+					clr_global_flag = slovak_renamed_antsiranana 
+					clr_global_flag = russian_renamed_antsiranana
+					clr_global_flag = polish_renamed_antsiranana
+					clr_global_flag = WSF_renamed_antsiranana
+					clr_global_flag = normal_renamed_antsiranana
+					clr_global_flag = jew_renamed_antsiranana
+				}
+			}
+			###Baltic - mahajanga###
+			random_owned = {
+				limit = {
+					province_id = 2121
+					owner = {
+						is_culture_group = baltic
+					}
+				}
+				2121 = { change_province_name = "Mahajanga" }	
+				owner = { 
+					set_global_flag = baltic_renamed_mahajanga
+					clr_global_flag = german_renamed_mahajanga
+					clr_global_flag = french_renamed_mahajanga
+					clr_global_flag = hungarian_renamed_mahajanga 
+					clr_global_flag = slovak_renamed_mahajanga
+					clr_global_flag = russian_renamed_mahajanga
+					clr_global_flag = polish_renamed_mahajanga
+					clr_global_flag = WSF_renamed_mahajanga
+					clr_global_flag = normal_renamed_mahajanga
+					clr_global_flag = jew_renamed_mahajanga
+				}
+			}
+			###Baltic - fiaranantsoa###
+			random_owned = {
+				limit = {
+					province_id = 2116
+					owner = {
+						is_culture_group = baltic
+						has_global_flag = fiaranantsoa_founded
+					}
+				}
+				2116 = { change_province_name = "Fianarantsoa" }	
+				owner = { 
+					set_global_flag = baltic_renamed_fiaranantsoa
+					clr_global_flag = german_renamed_fiaranantsoa 
+					clr_global_flag = french_renamed_fiaranantsoa
+					clr_global_flag = hungarian_renamed_fiaranantsoa 
+					clr_global_flag = slovak_renamed_fiaranantsoa
+					clr_global_flag = russian_renamed_fiaranantsoa
+					clr_global_flag = polish_renamed_fiaranantsoa
+					clr_global_flag = WSF_renamed_fiaranantsoa
+					clr_global_flag = normal_renamed_fiaranantsoa
+					clr_global_flag = jew_renamed_fiaranantsoa
+				}
+			}
+			###Baltic - toliara###
+			random_owned = {
+				limit = {
+					province_id = 2122
+					owner = {
+						is_culture_group = baltic
+						has_global_flag = toliara_founded
+					}
+				}
+				2122 = { change_province_name = "Toliary" }	
+				owner = { 
+					set_global_flag = baltic_renamed_toliara
+					clr_global_flag = german_renamed_toliara
+					clr_global_flag = french_renamed_toliara
+					clr_global_flag = hungarian_renamed_toliara
+					clr_global_flag = slovak_renamed_toliara 
+					clr_global_flag = russian_renamed_toliara
+					clr_global_flag = polish_renamed_toliara
+					clr_global_flag = WSF_renamed_toliara
+					clr_global_flag = normal_renamed_toliara
+					clr_global_flag = jew_renamed_toliara
+				}
+			}
+			
+			###Russian - east_madagascar###
+			random_owned = {
+				limit = {
+					province_id = 3675
+					owner = {
+						is_culture_group = east_slavic
+					}
+				}
+				3675 = {
+					change_province_name = "Sambava"
+					state_scope = {
+						change_region_name = "Vostochnyi Madagaskar"
+					}
+				}	
+				2119 = { change_province_name = "Tamatave" }	
+				2118 = { change_province_name = "Fort Tsarevich" }	
+				owner = { 
+					set_global_flag = russian_renamed_east_madagascar
+					clr_global_flag = baltic_renamed_east_madagascar
+					clr_global_flag = french_renamed_east_madagascar
+					clr_global_flag = hungarian_renamed_east_madagascar
+					clr_global_flag = slovak_renamed_east_madagascar
+					clr_global_flag = german_renamed_east_madagascar
+					clr_global_flag = polish_renamed_east_madagascar
+					clr_global_flag = WSF_renamed_east_madagascar
+					clr_global_flag = normal_renamed_east_madagascar
+					clr_global_flag = jew_renamed_east_madagascar
+				}
+			}
+			###Russian - west_madagascar###
+			random_owned = {
+				limit = {
+					province_id = 2117
+					owner = {
+						is_culture_group = east_slavic
+					}
+				}
+				2117 = { 
+					change_province_name = "Ampanykhyi"
+					state_scope = {
+						change_region_name = "Zapadnyi Madagaskar"
+					}
+				}	
+				2122 = { change_province_name = "Menabe" }	
+				owner = { 
+					set_global_flag = russian_renamed_west_madagascar
+					clr_global_flag = german_renamed_west_madagascar
+					clr_global_flag = french_renamed_west_madagascar
+					clr_global_flag = hungarian_renamed_west_madagascar
+					clr_global_flag = slovak_renamed_west_madagascar
+					clr_global_flag = baltic_renamed_west_madagascar
+					clr_global_flag = polish_renamed_west_madagascar
+					clr_global_flag = WSF_renamed_west_madagascar
+					clr_global_flag = normal_renamed_west_madagascar
+					clr_global_flag = jew_renamed_west_madagascar
+				}
+			}
+			###Russian - central_madagascar###
+			random_owned = {
+				limit = {
+					province_id = 2115
+					owner = {
+						is_culture_group = east_slavic
+					}
+				}
+				2115 = { 
+					change_province_name = "Benyovskysk"
+					state_scope = {
+						change_region_name = "Tsentralnyi Madagaskar"
+					}
+				}	
+				2116 = { change_province_name = "Matsiatra" }	
+				3678 = { change_province_name = "Ambositra" }	
+				owner = { 
+					set_global_flag = russian_renamed_central_madagascar
+					clr_global_flag = german_renamed_central_madagascar
+					clr_global_flag = french_renamed_central_madagascar
+					clr_global_flag = hungarian_renamed_central_madagascar 
+					clr_global_flag = slovak_renamed_central_madagascar 
+					clr_global_flag = baltic_renamed_central_madagascar
+					clr_global_flag = polish_renamed_central_madagascar
+					clr_global_flag = WSF_renamed_central_madagascar
+					clr_global_flag = normal_renamed_central_madagascar
+					clr_global_flag = jew_renamed_central_madagascar
+				}
+			}
+			###Russian - stmarie###
+			random_owned = {
+				limit = {
+					province_id = 3676
+					owner = {
+						is_culture_group = east_slavic
+					}
+				}
+				3676 = { change_province_name = "Svyataya Mariya" }	
+				owner = { 
+					set_global_flag = russian_renamed_stmarie
+					clr_global_flag = german_renamed_stmarie
+					clr_global_flag = french_renamed_stmarie 
+					clr_global_flag = hungarian_renamed_stmarie 
+					clr_global_flag = slovak_renamed_stmarie 
+					clr_global_flag = baltic_renamed_stmarie 
+					clr_global_flag = polish_renamed_stmarie
+					clr_global_flag = WSF_renamed_stmarie
+					clr_global_flag = normal_renamed_stmarie
+					clr_global_flag = jew_renamed_stmarie
+				}
+			}
+			###Russian - nosybe###
+			random_owned = {
+				limit = {
+					province_id = 3677
+					owner = {
+						is_culture_group = east_slavic
+					}
+				}
+				3677 = { change_province_name = "Yermaksk" }	
+				owner = { 
+					set_global_flag = russian_renamed_nosybe
+					clr_global_flag = german_renamed_nosybe
+					clr_global_flag = french_renamed_nosybe 
+					clr_global_flag = hungarian_renamed_nosybe 
+					clr_global_flag = slovak_renamed_nosybe 
+					clr_global_flag = baltic_renamed_nosybe 
+					clr_global_flag = polish_renamed_nosybe
+					clr_global_flag = WSF_renamed_nosybe
+					clr_global_flag = normal_renamed_nosybe
+					clr_global_flag = jew_renamed_nosybe
+				}
+			}
+			###Russian - antsiranana###
+			random_owned = {
+				limit = {
+					province_id = 2120
+					owner = {
+						is_culture_group = east_slavic
+					}
+				}
+				2120 = { change_province_name = "Antsiranana" }	
+				owner = { 
+					set_global_flag = russian_renamed_antsiranana
+					clr_global_flag = german_renamed_antsiranana
+					clr_global_flag = french_renamed_antsiranana 
+					clr_global_flag = hungarian_renamed_antsiranana 
+					clr_global_flag = slovak_renamed_antsiranana 
+					clr_global_flag = baltic_renamed_antsiranana
+					clr_global_flag = polish_renamed_antsiranana
+					clr_global_flag = WSF_renamed_antsiranana
+					clr_global_flag = normal_renamed_antsiranana
+					clr_global_flag = jew_renamed_antsiranana
+				}
+			}
+			###Russian - mahajanga###
+			random_owned = {
+				limit = {
+					province_id = 2121
+					owner = {
+						is_culture_group = east_slavic
+					}
+				}
+				2121 = { change_province_name = "Makhadzhanga" }	
+				owner = { 
+					set_global_flag = russian_renamed_mahajanga
+					clr_global_flag = german_renamed_mahajanga
+					clr_global_flag = french_renamed_mahajanga
+					clr_global_flag = hungarian_renamed_mahajanga 
+					clr_global_flag = slovak_renamed_mahajanga
+					clr_global_flag = baltic_renamed_mahajanga
+					clr_global_flag = polish_renamed_mahajanga
+					clr_global_flag = WSF_renamed_mahajanga
+					clr_global_flag = normal_renamed_mahajanga
+					clr_global_flag = jew_renamed_mahajanga
+				}
+			}
+			###Russian - fiaranantsoa###
+			random_owned = {
+				limit = {
+					province_id = 2116
+					owner = {
+						is_culture_group = east_slavic
+						has_global_flag = fiaranantsoa_founded
+					}
+				}
+				2116 = { change_province_name = "Obrazovaniyesk" }	
+				owner = { 
+					set_global_flag = russian_renamed_fiaranantsoa
+					clr_global_flag = german_renamed_fiaranantsoa 
+					clr_global_flag = french_renamed_fiaranantsoa
+					clr_global_flag = hungarian_renamed_fiaranantsoa 
+					clr_global_flag = slovak_renamed_fiaranantsoa
+					clr_global_flag = baltic_renamed_fiaranantsoa 
+					clr_global_flag = polish_renamed_fiaranantsoa
+					clr_global_flag = WSF_renamed_fiaranantsoa
+					clr_global_flag = normal_renamed_fiaranantsoa
+					clr_global_flag = jew_renamed_fiaranantsoa
+				}
+			}
+			###Russian - toliara###
+			random_owned = {
+				limit = {
+					province_id = 2122
+					owner = {
+						is_culture_group = east_slavic
+						has_global_flag = toliara_founded
+					}
+				}
+				2122 = { change_province_name = "Tulyar" }	
+				owner = { 
+					set_global_flag = russian_renamed_toliara
+					clr_global_flag = german_renamed_toliara
+					clr_global_flag = french_renamed_toliara
+					clr_global_flag = hungarian_renamed_toliara
+					clr_global_flag = slovak_renamed_toliara 
+					clr_global_flag = baltic_renamed_toliara 
+					clr_global_flag = polish_renamed_toliara
+					clr_global_flag = WSF_renamed_toliara
+					clr_global_flag = normal_renamed_toliara
+					clr_global_flag = jew_renamed_toliara
+				}
+			}
+			
+			###Polish - east_madagascar###
+			random_owned = {
+				limit = {
+					province_id = 3675
+					owner = {
+						is_culture_group = polish_culture_group
+						NOT = { tag = WSF }
+					}
+				}		
+				
+				3675 = {
+					change_province_name = "Sambawa"
+					state_scope = {
+						change_region_name = "Madagaskar Wschodni"
+					}
+				}	
+				2119 = { change_province_name = "Swiety Andrzej" }	
+				2118 = { change_province_name = "Nowa Warszawa" }		
+				owner = { 
+					set_global_flag = polish_renamed_east_madagascar
+					clr_global_flag = french_renamed_east_madagascar
+					clr_global_flag = hungarian_renamed_east_madagascar
+					clr_global_flag = slovak_renamed_east_madagascar
+					clr_global_flag = baltic_renamed_east_madagascar
+					clr_global_flag = german_renamed_east_madagascar
+					clr_global_flag = russian_renamed_east_madagascar
+					clr_global_flag = WSF_renamed_east_madagascar
+					clr_global_flag = normal_renamed_east_madagascar
+					clr_global_flag = jew_renamed_east_madagascar
+				}
+			}
+			###Polish - west_madagascar###
+			random_owned = {
+				limit = {
+					province_id = 2117
+					owner = {
+						is_culture_group = polish_culture_group
+						NOT = { tag = WSF }
+					}
+				}	
+				2117 = { 
+					change_province_name = "Nowy Lwów"
+					state_scope = {
+						change_region_name = "Zachodni Madagaskar"
+					}
+				}	
+				2122 = { change_province_name = "Mleczny-Zupiek" }	
+				owner = { 
+					set_global_flag = polish_renamed_west_madagascar
+					clr_global_flag = german_renamed_west_madagascar
+					clr_global_flag = french_renamed_west_madagascar
+					clr_global_flag = hungarian_renamed_west_madagascar
+					clr_global_flag = slovak_renamed_west_madagascar
+					clr_global_flag = baltic_renamed_west_madagascar
+					clr_global_flag = russian_renamed_west_madagascar
+					clr_global_flag = WSF_renamed_west_madagascar
+					clr_global_flag = normal_renamed_west_madagascar
+					clr_global_flag = jew_renamed_west_madagascar
+				}
+			}
+			###Polish - central_madagascar###
+			random_owned = {
+				limit = {
+					province_id = 2115
+					owner = {
+						is_culture_group = polish_culture_group
+						NOT = { tag = WSF }
+					}
+				}
+				2115 = { 
+					change_province_name = "Beniowski"
+					state_scope = {
+						change_region_name = "Centralny Madagaskar"
+					}
+				}	
+				2116 = { change_province_name = "Dziwnemalpieck" }	
+				3678 = { change_province_name = "Ambocitra" }	
+				owner = { 
+					set_global_flag = polish_renamed_central_madagascar
+					clr_global_flag = german_renamed_central_madagascar
+					clr_global_flag = french_renamed_central_madagascar
+					clr_global_flag = hungarian_renamed_central_madagascar 
+					clr_global_flag = slovak_renamed_central_madagascar 
+					clr_global_flag = baltic_renamed_central_madagascar
+					clr_global_flag = russian_renamed_central_madagascar
+					clr_global_flag = WSF_renamed_central_madagascar
+					clr_global_flag = normal_renamed_central_madagascar
+					clr_global_flag = jew_renamed_central_madagascar
+				}
+			}
+			###Polish - stmarie###
+			random_owned = {
+				limit = {
+					province_id = 3676
+					owner = {
+						is_culture_group = polish_culture_group
+						NOT = { tag = WSF }
+					}
+				}
+				3676 = { change_province_name = "Swieta Maryja" }	
+				owner = { 
+					set_global_flag = polish_renamed_stmarie
+					clr_global_flag = german_renamed_stmarie
+					clr_global_flag = french_renamed_stmarie 
+					clr_global_flag = hungarian_renamed_stmarie 
+					clr_global_flag = slovak_renamed_stmarie 
+					clr_global_flag = baltic_renamed_stmarie 
+					clr_global_flag = russian_renamed_stmarie
+					clr_global_flag = WSF_renamed_stmarie
+					clr_global_flag = normal_renamed_stmarie
+					clr_global_flag = jew_renamed_stmarie
+				}
+			}
+			###Polish - nosybe###
+			random_owned = {
+				limit = {
+					province_id = 3677
+					owner = {
+						is_culture_group = polish_culture_group
+						NOT = { tag = WSF }
+					}
+				}
+				3677 = { change_province_name = "Przewalski" }	
+				owner = { 
+					set_global_flag = polish_renamed_nosybe
+					clr_global_flag = german_renamed_nosybe
+					clr_global_flag = french_renamed_nosybe 
+					clr_global_flag = hungarian_renamed_nosybe 
+					clr_global_flag = slovak_renamed_nosybe 
+					clr_global_flag = baltic_renamed_nosybe 
+					clr_global_flag = russian_renamed_nosybe
+					clr_global_flag = WSF_renamed_nosybe
+					clr_global_flag = normal_renamed_nosybe
+					clr_global_flag = jew_renamed_nosybe
+				}
+			}
+			###Polish - antsiranana###
+			random_owned = {
+				limit = {
+					province_id = 2120
+					owner = {
+						is_culture_group = polish_culture_group
+						NOT = { tag = WSF }
+					}
+				}
+				2120 = { change_province_name = "Nowy Gdansk" }	
+				owner = { 
+					set_global_flag = polish_renamed_antsiranana
+					clr_global_flag = german_renamed_antsiranana
+					clr_global_flag = french_renamed_antsiranana 
+					clr_global_flag = hungarian_renamed_antsiranana 
+					clr_global_flag = slovak_renamed_antsiranana 
+					clr_global_flag = baltic_renamed_antsiranana
+					clr_global_flag = russian_renamed_antsiranana
+					clr_global_flag = WSF_renamed_antsiranana
+					clr_global_flag = normal_renamed_antsiranana
+					clr_global_flag = jew_renamed_antsiranana
+				}
+			}
+			###Polish - mahajanga###
+			random_owned = {
+				limit = {
+					province_id = 2121
+					owner = {
+						is_culture_group = polish_culture_group
+						NOT = { tag = WSF }
+					}
+				}
+				2121 = { change_province_name = "Nowa Lódz" }	
+				owner = { 
+					set_global_flag = polish_renamed_mahajanga
+					clr_global_flag = german_renamed_mahajanga
+					clr_global_flag = french_renamed_mahajanga
+					clr_global_flag = hungarian_renamed_mahajanga 
+					clr_global_flag = slovak_renamed_mahajanga
+					clr_global_flag = baltic_renamed_mahajanga
+					clr_global_flag = russian_renamed_mahajanga
+					clr_global_flag = WSF_renamed_mahajanga
+					clr_global_flag = normal_renamed_mahajanga
+					clr_global_flag = jew_renamed_mahajanga
+				}
+			}
+			###Polish - fiaranantsoa###
+			random_owned = {
+				limit = {
+					province_id = 2116
+					owner = {
+						is_culture_group = polish_culture_group
+						has_global_flag = fiaranantsoa_founded
+					}
+				}
+				2116 = { change_province_name = "Dobraedukacja" }	
+				owner = { 
+					set_global_flag = polish_renamed_fiaranantsoa
+					clr_global_flag = german_renamed_fiaranantsoa 
+					clr_global_flag = french_renamed_fiaranantsoa
+					clr_global_flag = hungarian_renamed_fiaranantsoa 
+					clr_global_flag = slovak_renamed_fiaranantsoa
+					clr_global_flag = baltic_renamed_fiaranantsoa 
+					clr_global_flag = russian_renamed_fiaranantsoa 
+					clr_global_flag = WSF_renamed_fiaranantsoa
+					clr_global_flag = normal_renamed_fiaranantsoa
+					clr_global_flag = jew_renamed_fiaranantsoa
+				}
+			}
+			###Polish - toliara###
+			random_owned = {
+				limit = {
+					province_id = 2122
+					owner = {
+						is_culture_group = polish_culture_group
+						has_global_flag = toliara_founded
+					}
+				}
+				2122 = { change_province_name = "Tolijara" }	
+				owner = { 
+					set_global_flag = polish_renamed_toliara
+					clr_global_flag = german_renamed_toliara
+					clr_global_flag = french_renamed_toliara
+					clr_global_flag = hungarian_renamed_toliara
+					clr_global_flag = slovak_renamed_toliara 
+					clr_global_flag = baltic_renamed_toliara 
+					clr_global_flag = russian_renamed_toliara 
+					clr_global_flag = WSF_renamed_toliara
+					clr_global_flag = normal_renamed_toliara
+					clr_global_flag = jew_renamed_toliara
+				}
+			}
+			
+			###West Slavic Federation - east_madagascar###
+			random_owned = {
+				limit = {
+					province_id = 3675
+					owner = {
+						tag = WSF
+					}
+				}
+				3675 = {
+					change_province_name = "Sambawa"
+					state_scope = {
+						change_region_name = "East Madagaskar"
+					}
+				}	
+				2119 = { change_province_name = "Swiety Andrzej" }	
+				2118 = { change_province_name = "Nowa Warszawa" }
+				owner = { 
+					set_global_flag = WSF_renamed_east_madagascar
+					clr_global_flag = baltic_renamed_east_madagascar
+					clr_global_flag = german_renamed_east_madagascar
+					clr_global_flag = french_renamed_east_madagascar
+					clr_global_flag = hungarian_renamed_east_madagascar
+					clr_global_flag = slovak_renamed_east_madagascar
+					clr_global_flag = russian_renamed_east_madagascar
+					clr_global_flag = polish_renamed_east_madagascar
+					clr_global_flag = normal_renamed_east_madagascar
+					clr_global_flag = jew_renamed_east_madagascar
+				}
+			}
+			###WSF - west_madagascar###
+			random_owned = {
+				limit = {
+					province_id = 2117
+					owner = {
+						tag = WSF
+					}
+				}
+				2117 = {
+					change_province_name = "Nová Bratislava"
+					state_scope = {
+						change_region_name = "West Madagaskar"
+					}
+				}	
+				2122 = { change_province_name = "Mleczny-Zupiek" }	
+				owner = { 
+					set_global_flag = WSF_renamed_west_madagascar
+					clr_global_flag = german_renamed_west_madagascar
+					clr_global_flag = french_renamed_west_madagascar
+					clr_global_flag = hungarian_renamed_west_madagascar
+					clr_global_flag = slovak_renamed_west_madagascar
+					clr_global_flag = baltic_renamed_west_madagascar
+					clr_global_flag = polish_renamed_west_madagascar
+					clr_global_flag = russian_renamed_west_madagascar
+					clr_global_flag = normal_renamed_west_madagascar
+					clr_global_flag = jew_renamed_west_madagascar
+				}
+			}
+			###WSF - central_madagascar###
+			random_owned = {
+				limit = {
+					province_id = 2115
+					owner = {
+						tag = WSF
+					}
+				}
+				2115 = { 
+					change_province_name = "Beniowski"
+					state_scope = {
+						change_region_name = "Central Madagaskar"
+					}
+				}	
+				2116 = { change_province_name = "Dziwnemalpieck" }	
+				3678 = { change_province_name = "Ambocitra" }	
+				owner = { 
+					set_global_flag = WSF_renamed_central_madagascar
+					clr_global_flag = german_renamed_central_madagascar
+					clr_global_flag = french_renamed_central_madagascar
+					clr_global_flag = hungarian_renamed_central_madagascar 
+					clr_global_flag = slovak_renamed_central_madagascar 
+					clr_global_flag = baltic_renamed_central_madagascar
+					clr_global_flag = russian_renamed_central_madagascar
+					clr_global_flag = polish_renamed_central_madagascar 
+					clr_global_flag = normal_renamed_central_madagascar
+					clr_global_flag = jew_renamed_central_madagascar
+				}
+			}
+			###WSF - stmarie###
+			random_owned = {
+				limit = {
+					province_id = 3676
+					owner = {
+						tag = WSF
+					}
+				}
+				3676 = { change_province_name = "Swieta Maryja" }	
+				owner = { 
+					set_global_flag = WSF_renamed_stmarie
+					clr_global_flag = german_renamed_stmarie
+					clr_global_flag = french_renamed_stmarie 
+					clr_global_flag = hungarian_renamed_stmarie 
+					clr_global_flag = slovak_renamed_stmarie 
+					clr_global_flag = baltic_renamed_stmarie 
+					clr_global_flag = russian_renamed_stmarie
+					clr_global_flag = polish_renamed_stmarie 
+					clr_global_flag = normal_renamed_stmarie
+					clr_global_flag = jew_renamed_stmarie
+				}
+			}
+			###WSF - nosybe###
+			random_owned = {
+				limit = {
+					province_id = 3677
+					owner = {
+						tag = WSF
+					}
+				}
+				3677 = { change_province_name = "Przewalski" }		
+				owner = { 
+					set_global_flag = WSF_renamed_nosybe
+					clr_global_flag = german_renamed_nosybe
+					clr_global_flag = french_renamed_nosybe 
+					clr_global_flag = hungarian_renamed_nosybe 
+					clr_global_flag = slovak_renamed_nosybe 
+					clr_global_flag = baltic_renamed_nosybe 
+					clr_global_flag = russian_renamed_nosybe
+					clr_global_flag = polish_renamed_nosybe 
+					clr_global_flag = normal_renamed_nosybe
+					clr_global_flag = jew_renamed_nosybe
+				}
+			}
+			###WSF - antsiranana###
+			random_owned = {
+				limit = {
+					province_id = 2120
+					owner = {
+						tag = WSF
+					}
+				}
+				2120 = { change_province_name = "Nowy Gdansk" }	
+				owner = { 
+					set_global_flag = WSF_renamed_antsiranana
+					clr_global_flag = german_renamed_antsiranana
+					clr_global_flag = french_renamed_antsiranana 
+					clr_global_flag = hungarian_renamed_antsiranana 
+					clr_global_flag = slovak_renamed_antsiranana 
+					clr_global_flag = baltic_renamed_antsiranana
+					clr_global_flag = russian_renamed_antsiranana
+					clr_global_flag = polish_renamed_antsiranana
+					clr_global_flag = normal_renamed_antsiranana
+					clr_global_flag = jew_renamed_antsiranana
+				}
+			}
+			###WSF - mahajanga###
+			random_owned = {
+				limit = {
+					province_id = 2121
+					owner = {
+						tag = WSF
+					}
+				}
+				2121 = { change_province_name = "Trójca" }	
+				owner = { 
+					set_global_flag = WSF_renamed_mahajanga
+					clr_global_flag = german_renamed_mahajanga 
+					clr_global_flag = french_renamed_mahajanga
+					clr_global_flag = hungarian_renamed_mahajanga 
+					clr_global_flag = slovak_renamed_mahajanga
+					clr_global_flag = baltic_renamed_mahajanga
+					clr_global_flag = russian_renamed_mahajanga
+					clr_global_flag = polish_renamed_mahajanga 
+					clr_global_flag = normal_renamed_mahajanga
+					clr_global_flag = jew_renamed_mahajanga
+				}
+			}
+			###WSF - fiaranantsoa###
+			random_owned = {
+				limit = {
+					province_id = 2116
+					owner = {
+						tag = WSF
+						has_global_flag = fiaranantsoa_founded
+					}
+				}
+				2116 = { change_province_name = "Dobraedukacja" }		
+				owner = { 
+					set_global_flag = WSF_renamed_fiaranantsoa
+					clr_global_flag = german_renamed_fiaranantsoa 
+					clr_global_flag = french_renamed_fiaranantsoa
+					clr_global_flag = hungarian_renamed_fiaranantsoa 
+					clr_global_flag = slovak_renamed_fiaranantsoa
+					clr_global_flag = baltic_renamed_fiaranantsoa 
+					clr_global_flag = russian_renamed_fiaranantsoa 
+					clr_global_flag = polish_renamed_fiaranantsoa
+					clr_global_flag = normal_renamed_fiaranantsoa
+					clr_global_flag = jew_renamed_fiaranantsoa
+				}
+			}
+			###WSF - toliara###
+			random_owned = {
+				limit = {
+					province_id = 2122
+					owner = {
+						tag = WSF
+						has_global_flag = toliara_founded
+					}
+				}
+				2122 = { change_province_name = "Tolijara" }	
+				owner = { 
+					set_global_flag = WSF_renamed_toliara
+					clr_global_flag = german_renamed_toliara
+					clr_global_flag = french_renamed_toliara
+					clr_global_flag = hungarian_renamed_toliara
+					clr_global_flag = slovak_renamed_toliara 
+					clr_global_flag = baltic_renamed_toliara 
+					clr_global_flag = russian_renamed_toliara 
+					clr_global_flag = polish_renamed_toliara
+					clr_global_flag = normal_renamed_toliara
+					clr_global_flag = jew_renamed_toliara
+				}
+			}
+			
+			###Normal - east_madagascar###
+			random_owned = {
+				limit = {
+					province_id = 3675
+					owner = {
+						OR = {
+							is_culture_group = southern_african
+							NOT = {
+								OR = {
+									is_culture_group = germanic
+									is_culture_group = french
+									is_culture_group = hungarian_culture_group
+									is_culture_group = czecho_slovak_culture_group
+									is_culture_group = baltic
+									is_culture_group = east_slavic
+									is_culture_group = polish_culture_group
+									is_culture_group = jewish_cultures
+									tag = WSF
+								}
+							}
+						}
+					}
+				}
+				3675 = {
+					change_province_name = "Sambava"
+					state_scope = {
+						change_region_name = "East Madagascar"
+					}
+				}	
+				2119 = { change_province_name = "Toamasina" }	
+				2118 = { change_province_name = "Tôlañaro" }	
+				owner = { 
+					set_global_flag = normal_renamed_east_madagascar
+					clr_global_flag = french_renamed_east_madagascar
+					clr_global_flag = hungarian_renamed_east_madagascar
+					clr_global_flag = slovak_renamed_east_madagascar
+					clr_global_flag = baltic_renamed_east_madagascar
+					clr_global_flag = german_renamed_east_madagascar
+					clr_global_flag = russian_renamed_east_madagascar
+					clr_global_flag = polish_renamed_east_madagascar
+					clr_global_flag = WSF_renamed_east_madagascar
+					clr_global_flag = jew_renamed_east_madagascar
+				}
+			}
+			###Normal - west_madagascar###
+			random_owned = {
+				limit = {
+					province_id = 2117
+					owner = {
+						OR = {
+							is_culture_group = southern_african
+							NOT = {
+								OR = {
+									is_culture_group = germanic
+									is_culture_group = french
+									is_culture_group = hungarian_culture_group
+									is_culture_group = czecho_slovak_culture_group
+									is_culture_group = baltic
+									is_culture_group = east_slavic
+									is_culture_group = polish_culture_group
+									is_culture_group = jewish_cultures
+									tag = WSF
+								}
+							}
+						}
+					}
+				}
+				2117 = { 
+					change_province_name = "Ampanihy"
+					state_scope = {
+						change_region_name = "West Madagascar"
+					}
+				}	
+				2122 = { change_province_name = "Menabe" }	
+				owner = { 
+					set_global_flag = normal_renamed_west_madagascar
+					clr_global_flag = german_renamed_west_madagascar
+					clr_global_flag = french_renamed_west_madagascar
+					clr_global_flag = hungarian_renamed_west_madagascar
+					clr_global_flag = slovak_renamed_west_madagascar
+					clr_global_flag = baltic_renamed_west_madagascar
+					clr_global_flag = polish_renamed_west_madagascar
+					clr_global_flag = russian_renamed_west_madagascar
+					clr_global_flag = WSF_renamed_west_madagascar
+					clr_global_flag = jew_renamed_west_madagascar
+				}
+			}
+			###Normal - central_madagascar###
+			random_owned = {
+				limit = {
+					province_id = 2115
+					owner = {
+						OR = {
+							is_culture_group = southern_african
+							NOT = {
+								OR = {
+									is_culture_group = germanic
+									is_culture_group = french
+									is_culture_group = hungarian_culture_group
+									is_culture_group = czecho_slovak_culture_group
+									is_culture_group = baltic
+									is_culture_group = east_slavic
+									is_culture_group = polish_culture_group
+									is_culture_group = jewish_cultures
+									tag = WSF
+								}
+							}
+						}
+					}
+				}
+				2115 = { 
+					change_province_name = "Antananarivo"
+					state_scope = {
+						change_region_name = "Central Madagascar"
+					}
+				}	
+				2116 = { change_province_name = "Matsiatra" }	
+				3678 = { change_province_name = "Ambositra" }	
+				owner = { 
+					set_global_flag = normal_renamed_central_madagascar
+					clr_global_flag = german_renamed_central_madagascar
+					clr_global_flag = french_renamed_central_madagascar
+					clr_global_flag = hungarian_renamed_central_madagascar 
+					clr_global_flag = slovak_renamed_central_madagascar 
+					clr_global_flag = baltic_renamed_central_madagascar
+					clr_global_flag = russian_renamed_central_madagascar
+					clr_global_flag = polish_renamed_central_madagascar 
+					clr_global_flag = WSF_renamed_central_madagascar
+					clr_global_flag = jew_renamed_central_madagascar
+				}
+			}
+			###Normal - stmarie###
+			random_owned = {
+				limit = {
+					province_id = 3676
+					owner = {
+						OR = {
+							is_culture_group = southern_african
+							NOT = {
+								OR = {
+									is_culture_group = germanic
+									is_culture_group = french
+									is_culture_group = hungarian_culture_group
+									is_culture_group = czecho_slovak_culture_group
+									is_culture_group = baltic
+									is_culture_group = east_slavic
+									is_culture_group = polish_culture_group
+									is_culture_group = jewish_cultures
+									tag = WSF
+								}
+							}
+						}
+					}
+				}
+				3676 = { change_province_name = "Nosy Boraha" }	
+				owner = { 
+					set_global_flag = normal_renamed_stmarie
+					clr_global_flag = german_renamed_stmarie
+					clr_global_flag = french_renamed_stmarie 
+					clr_global_flag = hungarian_renamed_stmarie 
+					clr_global_flag = slovak_renamed_stmarie 
+					clr_global_flag = baltic_renamed_stmarie 
+					clr_global_flag = russian_renamed_stmarie
+					clr_global_flag = polish_renamed_stmarie 
+					clr_global_flag = WSF_renamed_stmarie
+					clr_global_flag = jew_renamed_stmarie
+				}
+			}
+			###Normal - nosybe###
+			random_owned = {
+				limit = {
+					province_id = 3677
+					owner = {
+						OR = {
+							is_culture_group = southern_african
+							NOT = {
+								OR = {
+									is_culture_group = germanic
+									is_culture_group = french
+									is_culture_group = hungarian_culture_group
+									is_culture_group = czecho_slovak_culture_group
+									is_culture_group = baltic
+									is_culture_group = east_slavic
+									is_culture_group = polish_culture_group
+									is_culture_group = jewish_cultures
+									tag = WSF
+								}
+							}
+						}
+					}
+				}
+				3677 = { change_province_name = "Nosy Be" }	
+				owner = { 
+					set_global_flag = normal_renamed_nosybe
+					clr_global_flag = german_renamed_nosybe
+					clr_global_flag = french_renamed_nosybe 
+					clr_global_flag = hungarian_renamed_nosybe 
+					clr_global_flag = slovak_renamed_nosybe 
+					clr_global_flag = baltic_renamed_nosybe 
+					clr_global_flag = russian_renamed_nosybe
+					clr_global_flag = polish_renamed_nosybe 
+					clr_global_flag = WSF_renamed_nosybe
+					clr_global_flag = jew_renamed_nosybe
+				}
+			}
+			###Normal - antsiranana###
+			random_owned = {
+				limit = {
+					province_id = 2120
+					owner = {
+						OR = {
+							is_culture_group = southern_african
+							NOT = {
+								OR = {
+									is_culture_group = germanic
+									is_culture_group = french
+									is_culture_group = hungarian_culture_group
+									is_culture_group = czecho_slovak_culture_group
+									is_culture_group = baltic
+									is_culture_group = east_slavic
+									is_culture_group = polish_culture_group
+									is_culture_group = jewish_cultures
+									tag = WSF
+								}
+							}
+						}
+					}
+				}
+				2120 = { change_province_name = "Antsirañana" }	
+				owner = { 
+					set_global_flag = normal_renamed_antsiranana
+					clr_global_flag = german_renamed_antsiranana
+					clr_global_flag = french_renamed_antsiranana 
+					clr_global_flag = hungarian_renamed_antsiranana 
+					clr_global_flag = slovak_renamed_antsiranana 
+					clr_global_flag = baltic_renamed_antsiranana
+					clr_global_flag = russian_renamed_antsiranana
+					clr_global_flag = polish_renamed_antsiranana
+					clr_global_flag = WSF_renamed_antsiranana
+					clr_global_flag = jew_renamed_antsiranana
+				}
+			}
+			###Normal - mahajanga###
+			random_owned = {
+				limit = {
+					province_id = 2121
+					owner = {
+						OR = {
+							is_culture_group = southern_african
+							NOT = {
+								OR = {
+									is_culture_group = germanic
+									is_culture_group = french
+									is_culture_group = hungarian_culture_group
+									is_culture_group = czecho_slovak_culture_group
+									is_culture_group = baltic
+									is_culture_group = east_slavic
+									is_culture_group = polish_culture_group
+									is_culture_group = jewish_cultures
+									tag = WSF
+								}
+							}
+						}
+					}
+				}
+				2121 = { change_province_name = "Mahajanga" }	
+				owner = { 
+					set_global_flag = normal_renamed_mahajanga
+					clr_global_flag = german_renamed_mahajanga 
+					clr_global_flag = french_renamed_mahajanga
+					clr_global_flag = hungarian_renamed_mahajanga 
+					clr_global_flag = slovak_renamed_mahajanga
+					clr_global_flag = baltic_renamed_mahajanga
+					clr_global_flag = russian_renamed_mahajanga
+					clr_global_flag = polish_renamed_mahajanga 
+					clr_global_flag = WSF_renamed_mahajanga
+					clr_global_flag = jew_renamed_mahajanga
+				}
+			}
+			###Normal - fiaranantsoa###
+			random_owned = {
+				limit = {
+					province_id = 2116
+					owner = {
+						OR = {
+							is_culture_group = southern_african
+							NOT = {
+								OR = {
+									is_culture_group = germanic
+									is_culture_group = french
+									is_culture_group = hungarian_culture_group
+									is_culture_group = czecho_slovak_culture_group
+									is_culture_group = baltic
+									is_culture_group = east_slavic
+									is_culture_group = polish_culture_group
+									is_culture_group = jewish_cultures
+									tag = WSF
+								}
+							}
+						}
+						has_global_flag = fiaranantsoa_founded
+					}
+				}
+				2116 = { change_province_name = "Fianarantsoa" }	
+				owner = { 
+					set_global_flag = normal_renamed_fiaranantsoa
+					clr_global_flag = german_renamed_fiaranantsoa 
+					clr_global_flag = french_renamed_fiaranantsoa
+					clr_global_flag = hungarian_renamed_fiaranantsoa 
+					clr_global_flag = slovak_renamed_fiaranantsoa
+					clr_global_flag = baltic_renamed_fiaranantsoa 
+					clr_global_flag = russian_renamed_fiaranantsoa 
+					clr_global_flag = polish_renamed_fiaranantsoa
+					clr_global_flag = WSF_renamed_fiaranantsoa
+					clr_global_flag = jew_renamed_fiaranantsoa
+				}
+			}
+			###Normal - toliara###
+			random_owned = {
+				limit = {
+					province_id = 2122
+					owner = {
+						OR = {
+							is_culture_group = southern_african
+							NOT = {
+								OR = {
+									is_culture_group = germanic
+									is_culture_group = french
+									is_culture_group = hungarian_culture_group
+									is_culture_group = czecho_slovak_culture_group
+									is_culture_group = baltic
+									is_culture_group = east_slavic
+									is_culture_group = polish_culture_group
+									is_culture_group = jewish_cultures
+									tag = WSF
+								}
+							}
+						}
+						has_global_flag = toliara_founded
+					}
+				}
+				2122 = { change_province_name = "Toliary" }	
+				owner = { 
+					set_global_flag = normal_renamed_toliara
+					clr_global_flag = german_renamed_toliara
+					clr_global_flag = french_renamed_toliara
+					clr_global_flag = hungarian_renamed_toliara
+					clr_global_flag = slovak_renamed_toliara 
+					clr_global_flag = baltic_renamed_toliara 
+					clr_global_flag = russian_renamed_toliara 
+					clr_global_flag = polish_renamed_toliara
+					clr_global_flag = WSF_renamed_toliara
+					clr_global_flag = jew_renamed_toliara
+				}
+			}
+		}
+		
+		ai_will_do = { factor = 1 }
+		
+	}
+}

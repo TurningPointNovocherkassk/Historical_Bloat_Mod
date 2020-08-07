@@ -1719,6 +1719,12 @@ pan_nationalist_rebels = {
 			OR = {
 				culture = north_italian
 				culture = south_italian
+				culture = italo_diaspora
+				culture = central_italian
+				culture = sicilian
+				culture = insular
+				culture = dalmatian
+				culture = maltese
 			}
 			ITA = { exists = no }
 			NOT = {
@@ -2838,6 +2844,12 @@ red_shirts = {
 				OR = {
 					culture = south_italian
 					culture = north_italian
+					culture = italo_diaspora
+					culture = central_italian
+					culture = sicilian
+					culture = insular
+					culture = dalmatian
+					culture = maltese
 				}
 			}
 		}

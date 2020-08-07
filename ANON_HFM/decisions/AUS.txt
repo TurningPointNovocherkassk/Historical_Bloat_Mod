@@ -1168,8 +1168,14 @@ political_decisions = {
 					}
 					AND = {
 						OR = {
-							primary_culture = north_german
-							primary_culture = south_german
+							culture = north_italian
+							culture = south_italian
+							culture = italo_diaspora
+							culture = central_italian
+							culture = sicilian
+							culture = insular
+							culture = dalmatian
+							culture = maltese
 						}
 						owns = 612
 						owns = 615

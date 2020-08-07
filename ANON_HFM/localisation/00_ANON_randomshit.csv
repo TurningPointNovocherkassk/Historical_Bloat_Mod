@@ -372,7 +372,19 @@ PROV3671;Yalta;;;;;;;;;x
 PROV3672;Oleshky;;;;;;;;;x
 PROV3673;Perekop;;;;;;;;;x
 PROV3674;Yevpatoriya;;;;;;;;;x
+PROV3675;Sambava;;;;;;;;;x
+PROV3676;Sainte-Marie;;;;;;;;;x
+PROV3677;Hell-Ville;;;;;;;;;x
+PROV3678;Ambositra;;;;;;;;;x
+PROV3679;Moheli;;;;;;;;;x
+PROV3680;Anjouan;;;;;;;;;x
+PROV3681;Ntsudjini;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
+2123;Ngazidja;;;;;;;;;x
+FRA_2124;Comoros;;;;;;;;;x
+MAD_2117;East Madagascar;;;;;;;;;x
+MAD_2121;West Madagascar;;;;;;;;;x
+MAD_2115;Central Madagascar;;;;;;;;;x
 RUS_3672;Mainland Taurida;;;;;;;;;x
 PRU_682;Lower Silesia;;;;;;;;;x
 PRU_684;Upper Silesia;;;;;;;;;x
@@ -1697,6 +1709,8 @@ EVTNAME666666120;The Gambian Purchase - The $FROMCOUNTRY_ADJ$ Response;;;;;;;;;x
 EVTDESC666666120;Government officials have come back from $FROMCOUNTRY$ with bad news! They have refused to sell the Colony of Gambia!;;;;;;;;;x
 EVT666666120OPTA;Curses!;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
+integrate_substates_madagascar_title;Consolidate Imerina rule throughout Madagascar;;;;;;;;;x
+integrate_substates_madagascar_desc;The time has come for the proper integration of all our conquered territories, consolidating our rule throughout the Island of Madagascar and better positioning ourselves for a final campaign against Antankarana to the north. It shall be done.;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
@@ -2043,14 +2057,14 @@ T5B_democracy;Republic of Bathang;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 T5B_fascist_dictatorship;Free Bathang Republic;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,
 T5B_proletarian_dictatorship;Bathang Socialist Republic;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
-TRP;Tripura;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,
-TRP_ADJ;Tripuri;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,
-TRP_absolute_monarchy;Tripura;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,
-TRP_prussian_constitutionalism;Tripura;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,
-TRP_hms_government;Tripura;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,
-TRP_democracy;Republic of Tripura;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,
-TRP_fascist_dictatorship;Free Tripuri Republic;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,
-TRP_proletarian_dictatorship;Tripuri Socialist Federation;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,
+TR1;Tripura;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,
+TR1_ADJ;Tripuri;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,
+TR1_absolute_monarchy;Tripura;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,
+TR1_prussian_constitutionalism;Tripura;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,
+TR1_hms_government;Tripura;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,
+TR1_democracy;Republic of Tripura;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,
+TR1_fascist_dictatorship;Free Tripuri Republic;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,
+TR1_proletarian_dictatorship;Tripuri Socialist Federation;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 NGA;Nagalim;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,
 NGA_ADJ;Naga;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,
@@ -2105,6 +2119,96 @@ DAR_hms_government;Darfur Sultanate;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 DAR_democracy;Darfur Republic;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,
 DAR_fascist_dictatorship;Darfur;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,
 DAR_proletarian_dictatorship;Socialist Republic of Darfur;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+M5D;Toamasina;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,
+M5D_ADJ;Toamasina;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,
+M5D_absolute_monarchy;Toamasina Kingdom;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,
+M5D_prussian_constitutionalism;Toamasina Kingdom;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,
+M5D_hms_government;Toamasina Kingdom;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,
+M5D_democracy;Toamasina Republic;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,
+M5D_fascist_dictatorship;Toamasina;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,
+M5D_proletarian_dictatorship;Socialist Republic of Toamasina;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+M4D;Menabe;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,
+M4D_ADJ;Menabe;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,
+M4D_absolute_monarchy;Menabe Kingdom;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,
+M4D_prussian_constitutionalism;Menabe Kingdom;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,
+M4D_hms_government;Menabe Kingdom;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,
+M4D_democracy;Menabe Republic;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,
+M4D_fascist_dictatorship;Menabe;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,
+M4D_proletarian_dictatorship;Socialist Republic of Menabe;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+M3D;Antongila;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,
+M3D_ADJ;Antongila;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,
+M3D_absolute_monarchy;Antongila Kingdom;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,
+M3D_prussian_constitutionalism;Antongila Kingdom;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,
+M3D_hms_government;Antongila Kingdom;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,
+M3D_democracy;Antongila Republic;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,
+M3D_fascist_dictatorship;Antongila;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,
+M3D_proletarian_dictatorship;Socialist Republic of Antongila;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+M2D;Antankarana;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,
+M2D_ADJ;Antankarana;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,
+M2D_absolute_monarchy;Antankarana Kingdom;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,
+M2D_prussian_constitutionalism;Antankarana Kingdom;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,
+M2D_hms_government;Antankarana Kingdom;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,
+M2D_democracy;Antankarana Republic;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,
+M2D_fascist_dictatorship;Antankarana;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,
+M2D_proletarian_dictatorship;Socialist Republic of Antankarana;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+M1D;Iboina;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,
+M1D_ADJ;Iboina;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,
+M1D_absolute_monarchy;Iboina Kingdom;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,
+M1D_prussian_constitutionalism;Iboina Kingdom;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,
+M1D_hms_government;Iboina Kingdom;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,
+M1D_democracy;Iboina Republic;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,
+M1D_fascist_dictatorship;Iboina;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,
+M1D_proletarian_dictatorship;Socialist Republic of Iboina;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+CM0;Anjouan;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,
+CM0_ADJ;Ndzuwani;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,
+CM0_absolute_monarchy;Ndzuwani Sultanate;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,
+CM0_prussian_constitutionalism;Ndzuwani Sultanate;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,
+CM0_hms_government;Ndzuwani Sultanate;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,
+CM0_democracy;Anjouan Republic;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,
+CM0_fascist_dictatorship;Ndzuwani;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,
+CM0_proletarian_dictatorship;Socialist Republic of Ndzuwani;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+CM1;Mohéli;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,
+CM1_ADJ;Mwali;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,
+CM1_absolute_monarchy;Mwali Sultanate;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,
+CM1_prussian_constitutionalism;Mwali Sultanate;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,
+CM1_hms_government;Mwali Sultanate;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,
+CM1_democracy;Mohéli Republic;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,
+CM1_fascist_dictatorship;Mwali;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,
+CM1_proletarian_dictatorship;Socialist Republic of Mwali;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+CM2;Grand Comoro;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,
+CM2_ADJ;Bambao;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,
+CM2_absolute_monarchy;Bambao Sultanate;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,
+CM2_prussian_constitutionalism;Bambao Sultanate;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,
+CM2_hms_government;Bambao Sultanate;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,
+CM2_democracy;Grand Comoro Republic;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,
+CM2_fascist_dictatorship;Bambao;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,
+CM2_proletarian_dictatorship;Socialist Republic of Bambao;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+CM3;Mayotte;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,
+CM3_ADJ;Mahori;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,
+CM3_absolute_monarchy;Mahori Sultanate;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,
+CM3_prussian_constitutionalism;Mahori Sultanate;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,
+CM3_hms_government;Mahori Sultanate;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,
+CM3_democracy;Mayotte Republic;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,
+CM3_fascist_dictatorship;Mahori;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,
+CM3_proletarian_dictatorship;Socialist Republic of Mahori;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+CM4;Itsandra;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,
+CM4_ADJ;Itsandra;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,
+CM4_absolute_monarchy;Itsandra Sultanate;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,
+CM4_prussian_constitutionalism;Itsandra Sultanate;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,
+CM4_hms_government;Itsandra Sultanate;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,
+CM4_democracy;Itsandra Republic;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,
+CM4_fascist_dictatorship;Itsandra;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,
+CM4_proletarian_dictatorship;Socialist Republic of Itsandra;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 NYE_theocracy;Zaydi;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x,,,,,
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
@@ -2316,10 +2420,10 @@ EVTOPT666666003A;…;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 EVTNAME666666004;The Greater Poland uprising of $YEAR$;;;;;;;;;x
 EVTDESC666666004a;Word has reached us that the Poles have been organizing a revolt against our rule. Aided by émigrés from France, they are beginning to organize in the city of Posen right now.;;;;;;;;;x
-EVTDESC666666004;A demonstration in the city of Posen, in the Grand Duchy of Posen, soon turned sour when the Polish-run "Polish National Committee" went from demanding autonomy for the Poles and reconciliation among the Poles, Germans and Jews, to restrict the its membership to Poles only in a move to maintain supremacy within their own organization. Days later, an opposing "German Committee" was formed, which was largely influenced by German public officials loyal to the Prussian King and disgruntled Jews expelled from the Polish Committee… Soon enough the breakdown of Prussian authority allowed long-simmering resentments to explode: Polish nobility and peasantry took up arms, preparing for confrontation with the Prussian Army which was sent to quell the protests, Prussian symbols were torn down, and in a couple of places, fighting erupted with German colonists all across the Grand Duchy.;;;;;;;;;x
-EVTDESC666666004_NEWS_LONG;A demonstration in the city of Posen soon turned sour when the Polish-run "Polish National Committee" went from demanding autonomy for the Poles and reconciliation among the Poles, Germans and Jews, to restrict the its membership to Poles only in a move to maintain supremacy within their own organization. Days later, an opposing "German Committee" was formed, which was largely influenced by German public officials loyal to the Prussian King and disgruntled Jews expelled from the Polish Committee… Soon enough the breakdown of Prussian authority allowed long-simmering resentments to explode: Polish nobility and peasantry took up arms, preparing for confrontation with the Prussian Army which was sent to quell the protests, Prussian symbols were torn down, and in a couple of places, fighting erupted with German colonists all across the Grand Duchy.;;;;;;;;;x
-EVTDESC666666004_NEWS_MEDIUM;A demonstration in the Grand Duchy of Posen soon turned sour when the Polish-run "Polish National Committee" went from demanding autonomy for the Poles and reconciliation among the Poles, Germans and Jews, to restrict the its membership to Poles only in a move to maintain supremacy within their own organization. Soon enough the breakdown of Prussian authority allowed long-simmering resentments to explode: Polish nobility and peasantry took up arms, preparing for confrontation with the Prussian Army which was sent to quell the protests.;;;;;;;;;x
-EVTDESC666666004_NEWS_SHORT;A demonstration in the Grand Duchy of Posen soon turned sour when the Polish-run "Polish National Committee" went from demanding autonomy for the Poles and reconciliation among the Poles, Germans and Jews, to restrict the its membership to Poles only. The breakdown of Prussian authority in the demonstrations allowed for long-simmering resentments to explode: Polish nobility and peasantry took up arms against the Prussians.;;;;;;;;;x
+EVTDESC666666004;A demonstration in the city of Posen, in the Grand Duchy of Posen, soon turned sour when the Polish-run "Polish National Committee" went from demanding autonomy for the Poles and reconciliation among the Poles, Germans and Jews, to restrict its membership to Poles only in a move to maintain supremacy within their own organization. Days later, an opposing "German Committee" was formed, which was largely influenced by German public officials loyal to the Prussian King and disgruntled Jews expelled from the Polish Committee… Soon enough the breakdown of Prussian authority allowed long-simmering resentments to explode: Polish nobility and peasantry took up arms, preparing for confrontation with the Prussian Army which was sent to quell the protests, Prussian symbols were torn down, and in a couple of places, fighting erupted with German colonists all across the Grand Duchy.;;;;;;;;;x
+EVTDESC666666004_NEWS_LONG;A demonstration in the city of Posen soon turned sour when the Polish-run "Polish National Committee" went from demanding autonomy for the Poles and reconciliation among the Poles, Germans and Jews, to restrict its membership to Poles only in a move to maintain supremacy within their own organization. Days later, an opposing "German Committee" was formed, which was largely influenced by German public officials loyal to the Prussian King and disgruntled Jews expelled from the Polish Committee… Soon enough the breakdown of Prussian authority allowed long-simmering resentments to explode: Polish nobility and peasantry took up arms, preparing for confrontation with the Prussian Army which was sent to quell the protests, Prussian symbols were torn down, and in a couple of places, fighting erupted with German colonists all across the Grand Duchy.;;;;;;;;;x
+EVTDESC666666004_NEWS_MEDIUM;A demonstration in the Grand Duchy of Posen soon turned sour when the Polish-run "Polish National Committee" went from demanding autonomy for the Poles and reconciliation among the Poles, Germans and Jews, to restrict its membership to Poles only in a move to maintain supremacy within their own organization. Soon enough the breakdown of Prussian authority allowed long-simmering resentments to explode: Polish nobility and peasantry took up arms, preparing for confrontation with the Prussian Army which was sent to quell the protests.;;;;;;;;;x
+EVTDESC666666004_NEWS_SHORT;A demonstration in the Grand Duchy of Posen soon turned sour when the Polish-run "Polish National Committee" went from demanding autonomy for the Poles and reconciliation among the Poles, Germans and Jews, to restrict its membership to Poles only. The breakdown of Prussian authority in the demonstrations allowed for long-simmering resentments to explode: Polish nobility and peasantry took up arms against the Prussians.;;;;;;;;;x
 EVTNAME666666004_NEWS_TITLE;The Greater Poland uprising of $YEAR$;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 EVTNAME666666006;The Greater Poland uprising of $YEAR$;;;;;;;;;x
@@ -7136,6 +7240,9 @@ rename_istria_desc;Sudküstenland is rightfully $COUNTRY_ADJ$, and should use $CO
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 rename_fiume_title;Rename Carnaro ;;;;;;;;;;;;;x
 rename_fiume_desc;Carnaro is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+rename_madagascar_title;Rename Madagascar ;;;;;;;;;;;;;x
+rename_madagascar_desc;Madagascar is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 rename_silesia_title;Rename Silesia ;;;;;;;;;;;;;x
 rename_silesia_desc;Silesia is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;x
