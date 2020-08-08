@@ -3106,8 +3106,13 @@ political_decisions = {
 		allow = {
 			war = no
 			total_num_of_ports = 1
-			FIN = {
-				owns = 348 #Aland
+			348 = {
+				owner = {
+					OR = {
+						vassal_of = THIS
+						in_sphere = THIS
+					}
+				}
 			}
 		}
 		
@@ -3115,7 +3120,14 @@ political_decisions = {
 			set_country_flag = aland_concession
 			#badboy = 2.5
 			prestige = 2.5
-			SCA = {
+			any_country = {
+				limit = {
+					OR = {
+						vassal_of = THIS
+						in_sphere = THIS
+					}
+					owns = 348
+				}
 				any_owned = {
 					limit = {
 						province_id = 348
