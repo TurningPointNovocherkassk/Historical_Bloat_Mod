@@ -1,4 +1,58 @@
 political_decisions = {
+
+	sale_of_mayotte = {
+		picture = "dreams_of_empire"
+		potential = {
+			NOT = {
+				OR = {
+					has_country_flag = mayotte_purchase_started
+					has_global_flag = mayotte_purchase_completed
+				}
+			}
+			civilized = no
+			tag = CM3
+			owns = 2124
+			MAD = M2D_sunni_migration
+			year = 1842
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			set_country_flag = mayotte_purchase_started
+			country_event = 61610011
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	ultimatum_for_imerina = {
+		picture = "antankarana_flag_decision"
+		potential = {
+			has_country_flag = helping_M2D
+			M2D = { vassal_of = THIS }
+			NOT = {
+				has_country_flag = ultimatum_for_imerina
+			}
+		}
+		
+		allow = {
+			war = no
+			nationalism_n_imperialism = 1
+			total_num_of_ports = 1
+		}
+		
+		effect = {
+			set_country_flag = ultimatum_for_imerina
+			prestige = 5
+			MAD = { country_event = { id = 61610005 days = 30 } }
+		}
+		ai_will_do = { factor = 1 }
+	}
+
 	integrate_substates_madagascar = {
 		picture = madagascar_map
 		potential = {

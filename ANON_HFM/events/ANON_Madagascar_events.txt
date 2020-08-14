@@ -1,0 +1,1050 @@
+
+country_event = {
+	id = 61610000
+	title = "EVTNAME61610000"
+	desc = "EVTDESC61610000"
+	picture = "antankarana_flag"
+	fire_only_once = yes
+	
+	trigger = {
+		tag = MAD
+		M2D = { all_core = { owned_by = MAD } }
+		has_country_flag = integrate_substates_madagascar
+		NOT = { has_country_flag = M2D_sunni_migration }
+		year = 1841
+	}
+
+	mean_time_to_happen = {
+		months = 2
+	}
+	
+	option = {
+		name = "EVT61610000OPTA"
+		set_country_flag = M2D_sunni_migration
+		any_pop = {
+			limit = {
+				location = { province_id = 2120 }
+				has_pop_religion = sunni
+				has_pop_culture = malagasy
+			}
+			move_pop = 3677
+		}
+		release_vassal = M2D
+		country_event = 61610001
+		ai_chance = {
+			factor = 100
+		}	
+	}
+}
+country_event = {
+	id = 61610001
+	title = "EVTNAME61610000"
+	desc = "EVTDESC61610000"
+	picture = "antankarana_flag"
+	is_triggered_only = yes
+			
+	option = {
+		name = "EVT61610000OPTA"
+		2120 = { secede_province = MAD }
+		release_vassal = M2D
+		ai_chance = {
+			factor = 100
+		}	
+	}
+}
+# nearby yuropean power gets dumb event to rescue antankarana
+country_event = {
+	id = 61610002
+	title = "EVTNAME61610002"
+	desc = "EVTDESC61610002"
+	picture = "antankarana_flag"
+	
+	trigger = {
+		civilized = yes
+		OR = {
+			is_greater_power = yes
+			is_secondary_power = yes
+		}
+		OR = {
+			owns = 2060 #Mozambique
+			primary_culture = boer
+			owns = 2048 #Zanzibar
+			any_owned_province = { region = FRA_2124 } #Comoros
+			any_owned_province = { region = ENG_2125 } #Indian Ocean Territories
+		}
+		total_num_of_ports = 1
+		MAD = { has_country_flag = M2D_sunni_migration }
+		M2D = { exists = yes }
+		NOT = {
+			has_global_flag = helped_M2D
+			has_country_flag = helping_M2D
+			has_country_flag = refused_M2D
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 12
+		modifier = {
+			factor = 0.08
+			ai = no
+		}
+		modifier = {
+			factor = 0.16
+			OR = {
+				tag = FRA
+				tag = BOR
+			}
+		}
+	}
+	
+	option = {
+		name = "EVT61610002OPTA"
+		set_country_flag = refused_M2D
+		relation = {
+			who = M2D
+			value = -400
+		}
+		diplomatic_influence = {
+			who = M2D
+			value = -400
+		}
+		MAD = { country_event = 61610003 }
+		ai_chance = {
+			factor = 99
+			modifier = {
+				factor = 0
+				OR = {
+					tag = FRA
+					tag = BOR
+				}
+			}
+		}
+	}
+	option = {
+		name = "EVT61610002OPTB"
+		set_global_flag = helped_M2D
+		set_country_flag = helping_M2D
+		create_vassal = M2D
+		create_alliance = M2D
+		relation = {
+			who = M2D
+			value = 400
+		}
+		diplomatic_influence = {
+			who = M2D
+			value = 400
+		}
+		MAD = { country_event = 61610004 }
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 100
+				OR = {
+					tag = FRA
+					tag = BOR
+				}
+			}
+		}	
+	}
+}
+country_event = {
+	id = 61610003
+	title = "EVTNAME61610003"
+	desc = "EVTDESC61610003"
+	picture = "antankarana_flag"
+	is_triggered_only = yes
+			
+	option = {
+		name = "EVT61610003OPTA"
+		prestige = 1.5
+		FROM = {
+			relation = {
+				who = MAD
+				value = 50
+			}
+			diplomatic_influence = {
+				who = MAD
+				value = 25
+			}
+		}
+		relation = {
+			who = FROM
+			value = 50
+		}
+		ai_chance = {
+			factor = 100
+		}	
+	}
+}
+country_event = {
+	id = 61610004
+	title = "EVTNAME61610004"
+	desc = "EVTDESC61610004"
+	picture = "antankarana_flag"
+	is_triggered_only = yes
+			
+	option = {
+		name = "EVT61610004OPTA"
+		prestige = 1.5
+		FROM = {
+			relation = {
+				who = MAD
+				value = -50
+			}
+			diplomatic_influence = {
+				who = MAD
+				value = -25
+			}
+		}
+		relation = {
+			who = FROM
+			value = -50
+		}
+		ai_chance = {
+			factor = 100
+		}	
+	}
+}
+#FROMCOUNTRY ultimatum, secede boina and antankarana or face war; FROMCOUNTRY makes protectorates (vassal)
+country_event = {
+	id = 61610005
+	title = "EVTNAME61610005"
+	desc = "EVTDESC61610005"
+	picture = "antankarana_flag"
+	is_triggered_only = yes
+			
+	option = {
+		name = "EVT61610005OPTA"
+		prestige = -5
+		any_owned = {
+			limit = { province_id = 2121 }
+			secede_province = M1D
+		}
+		any_owned = {
+			limit = { province_id = 2120 }
+			secede_province = M2D
+		}
+		FROM = {
+			country_event = 61610006
+		}
+		ai_chance = {
+			factor = 100
+		}	
+	}
+			
+	option = {
+		name = "EVT61610005OPTB"
+		prestige = 5
+		FROM = {
+			country_event = 61610007
+		}
+		ai_chance = {
+			factor = 0
+		}	
+	}
+}
+country_event = {
+	id = 61610006
+	title = "EVTNAME61610006"
+	desc = "EVTDESC61610006"
+	picture = "antankarana_flag"
+	is_triggered_only = yes
+			
+	option = {
+		name = "EVT61610006OPTA"
+		create_alliance = M1D
+		create_vassal = M1D
+		relation = {
+			who = M1D
+			value = 400
+		}
+		diplomatic_influence = {
+			who = M1D
+			value = 400
+		}
+		create_alliance = M2D
+		create_vassal = M2D
+		relation = {
+			who = M2D
+			value = 400
+		}
+		diplomatic_influence = {
+			who = M2D
+			value = 400
+		}
+		M2D = {
+			capital = 2120
+			any_owned = {
+				limit = { province_id = 3677 }
+				secede_province = THIS
+			}
+		}
+		ai_chance = {
+			factor = 100
+		}	
+	}
+}
+country_event = {
+	id = 61610007
+	title = "EVTNAME61610007"
+	desc = "EVTDESC61610007"
+	picture = "antankarana_flag"
+	is_triggered_only = yes
+			
+	option = {
+		name = "EVT61610007OPTA"
+		set_country_flag = merina_GP_war
+		MAD = { country_event = 61610008 }
+		add_casus_belli = {
+			target = MAD
+			type = free_peoples
+			months = 75
+		}
+		add_casus_belli = {
+			target = MAD
+			type = free_allied_cores
+			months = 75
+		}
+		war = {
+			target = MAD
+			attacker_goal = {
+				casus_belli = liberate_country
+				country = M1D
+			}
+			attacker_goal = {
+				casus_belli = free_allied_cores
+				country = M2D
+				state_province_id = 2120
+			}
+			defender_goal = {
+				casus_belli = acquire_all_cores
+			}
+		}
+		ai_chance = {
+			factor = 100
+		}	
+	}
+}
+country_event = {
+	id = 61610008
+	title = "EVTNAME61610008"
+	desc = "EVTDESC61610008"
+	picture = "antankarana_flag"
+	is_triggered_only = yes
+			
+	option = {
+		name = "EVT61610008OPTA"
+		set_country_flag = GP_merina_war
+		add_country_modifier = { name = super_saiyan_mexico duration = 2920 }
+		ai_chance = {
+			factor = 100
+		}	
+	}
+}
+country_event = {
+	id = 61610009
+	news = yes
+	title = "EVTNAME61610009"
+	desc = "EVTDESC61610009"
+	news_title = "EVTNAME61610009_NEWS_TITLE"
+	news_desc_long = "EVTDESC61610009_NEWS_LONG"
+	news_desc_medium = "EVTDESC61610009_NEWS_MEDIUM"
+	news_desc_short = "EVTDESC61610009_NEWS_SHORT"	
+	picture = "antankarana_flag"
+	fire_only_once = yes
+	
+	trigger = {
+		tag = MAD
+		war = no
+		has_recently_lost_war = no
+		OR = {
+			any_greater_power = { truce_with = THIS }
+			POR = { truce_with = THIS }
+		}
+		has_country_flag = GP_merina_war
+		NOT = { has_country_flag = MAD_province_shuffle }
+	}
+	
+	option = {
+		name = "EVT61610009OPTA"
+		set_country_flag = MAD_province_shuffle
+		prestige = 5
+		years_of_research = 0.5
+		remove_country_modifier = super_saiyan_mexico
+		random_country = {
+			any_owned = {
+				limit = {
+					owner = {
+						OR = {
+							is_greater_power = yes
+							is_secondary_power = yes
+						}
+						truce_with = THIS
+						overlord = M2D
+					}
+					is_core = THIS
+				}
+				secede_province = THIS
+			}
+		}
+		any_country = {
+			limit = {
+				is_vassal = yes
+				overlord = {
+					OR = {
+						is_greater_power = yes
+						is_secondary_power = yes
+					}
+					truce_with = THIS
+				}
+				any_owned_province = { is_core = THIS }
+			}
+			annex_to = THIS
+		}
+		ai_chance = {
+			factor = 100
+		}	
+	}
+}
+country_event = {
+	id = 61610010
+	title = "EVTNAME61610010"
+	desc = "EVTDESC61610010"
+	picture = "antankarana_flag"
+	fire_only_once = yes
+	
+	trigger = {
+		has_country_flag = merina_GP_war
+		war = no
+		truce_with = MAD
+		has_recently_lost_war = no
+		OR = {
+			M1D = { exists = yes }
+			M2D = { exists = yes }
+		}
+		MAD = { has_country_flag = GP_merina_war }
+		NOT = { has_country_flag = MAD_province_shuffle2 }
+	}
+	
+	option = {
+		name = "EVT61610010OPTA"
+		set_country_flag = MAD_province_shuffle2
+		MAD = { remove_country_modifier = super_saiyan_mexico }
+		create_vassal = M1D
+		create_vassal = M2D
+		M2D = {
+			any_owned = {
+				limit = {
+					owner = {
+						vassal_of = THIS
+						owns = 3677
+						owns = 2120
+					}
+					province_id = 3677
+				}
+				secede_province = THIS
+			}
+			capital = 2120
+		}
+		ai_chance = {
+			factor = 100
+		}	
+	}
+}
+	
+#############################
+###The sale of Mayotte
+
+country_event = {
+	id = 61610011
+	title = "EVTNAME61610011"
+	desc = "EVTDESC61610011"
+	picture = "treaty"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVT61610011OPTA"
+		any_country = {
+			limit = {
+				total_num_of_ports = 1
+				NOT = {
+					OR = {
+						tag = THIS
+						vassal_of = THIS
+						substate_of = THIS
+					}
+				}
+				OR = {
+					is_greater_power = yes
+					is_secondary_power = yes
+				}
+				OR = {
+					owns = 2060 #Mozambique
+					primary_culture = boer
+					owns = 2048 #Zanzibar
+					any_owned_province = { region = FRA_2124 } #Comoros
+					any_owned_province = { region = ENG_2125 } #Indian Ocean Territories
+					any_owned_province = { is_core = MAD }
+				}
+			}
+			set_country_flag = mayotte_purchase_interest
+			prestige = 0.5
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = {
+		name = "EVT61610011OPTB"
+		set_global_flag = mayotte_sale_refuse
+		prestige = 0.5
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+country_event = {
+	id = 61610012
+	title = "EVTNAME61610012" #the Mayotte Purchase
+	desc = "EVTDESC61610012"
+	picture = "treaty"
+	
+	trigger = {
+		CM3 = {
+			civilized = no
+			owns = 2124
+		}
+		MAD = M2D_sunni_migration
+		NOT = {
+			has_global_flag = mayotte_sale_refuse
+			has_global_flag = mayotte_purchase_process_global
+			has_global_flag = mayotte_purchase_completed
+			has_country_flag = refused_mayotte
+			any_owned_province = { is_core = CM3 }
+			truce_with = CM3
+		}
+		has_country_flag = mayotte_purchase_interest
+		exists = yes
+	}
+	
+	mean_time_to_happen = {
+		months = 5
+		modifier = {
+			factor = 0.1
+			ai = no
+		}
+		modifier = {
+			factor = 0.2
+			OR = {
+				tag = FRA
+				tag = BOR
+			}
+		}
+		modifier = {
+			factor = 2
+			OR = {
+				tag = ENG
+				tag = ENL
+			}
+			ai = yes
+		}
+	}
+	
+	immediate = {
+		set_global_flag = mayotte_purchase_process_global
+	}
+		
+	option = {
+		name = "EVT61610012OPTA"
+		random_owned = { limit = { owner = { ai = no } } owner = { treasury = -30000 } }
+		random_owned = {
+			limit = { owner = { ai = yes NOT = { check_variable = { which = owed_cash_money value = 1 } } } }
+			owner = { set_variable = { which = owed_cash_money value = 100 } }
+		}
+		random_owned = {
+			limit = { owner = { ai = yes check_variable = { which = owed_cash_money value = 9 } } }
+			owner = { change_variable = { which = owed_cash_money value = 100 } }
+		}
+		CM3 = { country_event = 61610013 }
+		ai_chance = {
+			factor = 75
+			modifier = {
+				factor = 100
+				OR = {
+					AND = {
+						OR = {
+							tag = FRA
+							tag = BOR
+						}
+						ai = yes
+					}
+					ai = no
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "EVT61610012OPTB"
+		clr_country_flag = mayotte_purchase_interest
+		set_country_flag = refused_mayotte
+		CM3 = { country_event = 61610016 }
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 0
+				OR = {
+					AND = {
+						OR = {
+							tag = FRA
+							tag = BOR
+						}
+						ai = yes
+					}
+					ai = no
+				}
+			}
+		}
+	}
+}
+#the Mayotte Purchase
+country_event = {
+	id = 61610013
+	title = "EVTNAME61610013"
+	desc = "EVTDESC61610013"
+	picture = "treaty"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVT61610013OPTA"
+		set_global_flag = mayotte_purchase_completed
+		prestige = 10
+		any_pop = {
+			limit = {
+				type = aristocrats
+				has_pop_culture = malagasy
+			}
+			money = 30000
+		}
+		FROM = { country_event = 61610014 }
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 100
+				OR = {
+					AND = {
+						OR = {
+							tag = FRA
+							tag = BOR
+						}
+						ai = yes
+					}
+					ai = no
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "EVT61610013OPTB"
+		clr_global_flag = mayotte_purchase_process_global
+		FROM = {
+			clr_country_flag = mayotte_purchase_interest
+			country_event = 61610015
+		}
+		any_country = {
+			limit = {
+				total_num_of_ports = 1
+				NOT = {
+					OR = {
+						tag = THIS
+						vassal_of = THIS
+						substate_of = THIS
+					}
+				}
+				OR = {
+					is_greater_power = yes
+					is_secondary_power = yes
+				}
+				OR = {
+					owns = 2060 #Mozambique
+					primary_culture = boer
+					owns = 2048 #Zanzibar
+					any_owned_province = { region = FRA_2124 } #Comoros
+					any_owned_province = { region = ENG_2125 } #Indian Ocean Territories
+					any_owned_province = { is_core = MAD }
+				}
+			}
+			set_country_flag = mayotte_purchase_interest
+		}
+		ai_chance = {
+			factor = 70
+			modifier = {
+				factor = 0
+				FROM = {
+					OR = {
+						AND = {
+							OR = {
+								tag = FRA
+								tag = BOR
+							}
+							ai = yes
+						}
+						ai = no
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "EVT61610013OPTC"
+		prestige = -2.5
+		set_global_flag = mayotte_sale_refuse
+		FROM = {
+			clr_country_flag = mayotte_purchase_interest
+			country_event = 61610015
+		}
+		#random_country = { limit = { tag = FROM } treasury = 30000 }
+		ai_chance = {
+			factor = 5
+		}
+	}
+}
+country_event = {
+	id = 61610014
+	title = "EVTNAME61610014"
+	desc = "EVTDESC61610014"
+	picture = "treaty"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVT61610014OPTA"
+		prestige = 2.5
+		CM3 = { annex_to = THIS }
+		set_country_flag = bought_mayotte
+	}
+}
+country_event = {
+	id = 61610015
+	title = "EVTNAME61610015"
+	desc = "EVTDESC61610015"
+	picture = "treaty"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVT61610015OPTA"
+		prestige = -2.5
+		treasury = 25000
+		relation = { who = CM3 value = -25 }
+	}
+}
+country_event = {
+	id = 61610016
+	title = "EVTNAME61610016"
+	desc = "EVTDESC61610016"
+	picture = "treaty"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVT61610016OPTA"
+		prestige = -2.5
+		treasury = 25000
+		relation = { who = CM3 value = -25 }
+	}
+}
+
+#############################
+###The Johanna Expedition
+
+country_event = { #unga bungas capture american ship, hilarity ensues when americans bomb the shit outta them
+	id = 61610017
+	title = "EVTNAME61610017"
+	desc = "EVTDESC61610017"
+	picture = "USS_Dale"
+	fire_only_once = yes
+
+	trigger = {
+		tag = CM0
+		owns = 3680
+		year = 1850
+		NOT = {
+			has_country_flag = johanna_niggardry
+			has_country_flag = johanna_no_niggardry
+		}
+	}
+	mean_time_to_happen = {
+		months = 4
+	}
+	
+	option = {
+		name = "EVT61610017OPTA"
+		set_country_flag = johanna_niggardry
+		badboy = 1
+		3593 = {
+			any_pop = {
+				limit = {
+					has_pop_culture = yankee
+					pop_type = slaves
+				}
+			}
+			move_pop = 3680
+		}
+		3680 = {
+			sub_unit = { type = clipper_transport value = current }
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = {
+		name = "EVT61610017OPTB"
+		set_country_flag = johanna_no_niggardry
+		prestige = 5
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+country_event = { #notification event for america
+	id = 61610018
+	title = "EVTNAME61610018"
+	desc = "EVTDESC61610018"
+	picture = "USS_Dale"
+	fire_only_once = yes
+
+	trigger = {
+		total_num_of_ports = 1
+		owns = 2146 #DC
+		CM0 = {
+			exists = yes
+			has_country_flag = johanna_niggardry
+		}
+		NOT = { has_country_flag = johanna_expedition }
+		NOT = { has_country_flag = johanna_expedition_no }
+		year = 1851
+		total_num_of_ports = 1
+	}
+	mean_time_to_happen = {
+		months = 8
+	}
+	
+	option = {
+		name = "EVT61610018OPTA"
+		set_country_flag = johanna_expedition
+		3680 = {
+			sub_unit = { type = frigate value = current }
+			owner = { country_event = 61610019 }
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = {
+		name = "EVT61610018OPTB"
+		set_country_flag = johanna_expedition_no
+		prestige = -25
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+country_event = { #commerce raider nearby reaches the island of johanna, ungabungas asked to free sailors, or else...
+	id = 61610019
+	title = "EVTNAME61610019"
+	desc = "EVTDESC61610019"
+	picture = "USS_Dale"
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		3680 = {
+			fort = -3
+			naval_base = -3
+		}
+	}
+	
+	option = {
+		name = "EVT61610019OPTA"
+		relation = { who = FROM value = -25 }
+		FROM = { country_event = 61610020 }
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = {
+		name = "EVT61610019OPTB"
+		random_owned = { limit = { owner = { ai = no } } owner = { treasury = -15000 } }
+		random_owned = {
+			limit = { owner = { ai = yes } }
+			owner = { set_variable = { which = owed_cash_money value = 15 } } 
+		}
+		prestige = -2.5
+		treasury = -15000
+		3680 = {
+			any_pop = {
+				limit = {
+					has_pop_culture = yankee
+					pop_type = slaves
+				}
+				pop_type = labourers
+				move_pop = 244 #New Bedford
+			}
+		}
+		relation = { who = FROM value = 25 }
+		FROM = { country_event = 61610021 }
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+country_event = { #ungabungas don't free sailors
+	id = 61610020
+	title = "EVTNAME61610020"
+	desc = "EVTDESC61610020"
+	picture = "USS_Dale"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVT61610020OPTA" #murrika goes to war demanding reparations
+		FROM = {
+			country_event = 61610022
+			set_country_flag = pay_USA_reparations
+		}
+		casus_belli = {
+			target = FROM
+			type = war_reparations
+			months = 36
+		}
+		war = {
+			target = FROM
+			attacker_goal = { casus_belli = war_reparations }
+			defender_goal = { casus_belli = status_quo }
+			defender_goal = { casus_belli = call_allies_cb }
+			call_ally = yes
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+	
+	option = {
+		name = "EVT61610020OPTB" #murrika goes to war with the intention of annexing johanna
+		FROM = { country_event = 61610023 }
+		badboy = 2
+		casus_belli = {
+			target = FROM
+			type = establish_protectorate_NI_casus_belli
+			months = 40
+		}
+		war = {
+			target = FROM
+			attacker_goal = { casus_belli = establish_protectorate_NI_casus_belli }
+			defender_goal = { casus_belli = status_quo }
+			defender_goal = { casus_belli = call_allies_cb }
+			call_ally = yes
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+		
+	option = {
+		name = "EVT61610020OPTC" #murrika don't do shit
+		FROM = { country_event = 61610024 }
+		prestige = -25
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+country_event = { #niggas cough up 15k pounds ~20k dollars
+	id = 61610021
+	title = "EVTNAME61610021"
+	desc = "EVTDESC61610021"
+	picture = "USS_Dale"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVT61610021OPTA"
+		prestige = 5
+		treasury = 15000
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+country_event = { #murrika goes to war for reparations
+	id = 61610022
+	title = "EVTNAME61610022"
+	desc = "EVTDESC61610022"
+	picture = "USS_Dale"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVT61610022OPTA"
+		3680 = {
+			any_pop = {
+				limit = {
+					has_pop_culture = yankee
+					pop_type = slaves
+				}
+				pop_type = labourers
+				move_pop = 244 #New Bedford
+			}
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+country_event = { #murrika goes to war with the intention of annexing johanna
+	id = 61610023
+	title = "EVTNAME61610023"
+	desc = "EVTDESC61610023"
+	picture = "USS_Dale"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVT61610023OPTA"
+		3680 = {
+			any_pop = {
+				limit = {
+					has_pop_culture = yankee
+					pop_type = slaves
+				}
+				pop_type = labourers
+			}
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+country_event = { #murrika don't do shit
+	id = 61610024
+	title = "EVTNAME61610024"
+	desc = "EVTDESC61610024"
+	picture = "USS_Dale"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVT61610024OPTA"
+		prestige = 25
+		ai_chance = {
+			factor = 100
+		}
+	}
+}

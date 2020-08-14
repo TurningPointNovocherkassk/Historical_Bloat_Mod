@@ -1162,37 +1162,73 @@
 	aristocrats = {
 		culture = peninsular
 		religion = ibadi
-		size = 150
+		size = 300
 	}
 	bureaucrats = {
 		culture = peninsular
 		religion = ibadi
-		size = 75
+		size = 150
 	}
 	officers = {
 		culture = peninsular
 		religion = ibadi
-		size = 75
+		size = 150
 	}
 	clergymen = {
 		culture = peninsular
 		religion = ibadi
-		size = 50
+		size = 300
 	}
 	artisans = {
 		culture = peninsular
 		religion = ibadi
-		size = 4000
+		size = 8000
 	}
 	farmers = {
 		culture = peninsular
 		religion = ibadi
+		size = 3000
+	}
+	soldiers = {
+		culture = peninsular
+		religion = ibadi
+		size = 2400
+	}
+
+	aristocrats = {
+		culture = persian
+		religion = shiite
+		size = 150
+	}
+	bureaucrats = {
+		culture = persian
+		religion = shiite
+		size = 75
+	}
+	officers = {
+		culture = persian
+		religion = shiite
+		size = 75
+	}
+	clergymen = {
+		culture = persian
+		religion = shiite
+		size = 150
+	}
+	artisans = {
+		culture = persian
+		religion = shiite
+		size = 4000
+	}
+	farmers = {
+		culture = persian
+		religion = shiite
 		size = 1500
 	}
 
 	soldiers = {
-		culture = peninsular
-		religion = ibadi
+		culture = persian
+		religion = shiite
 		size = 500
 	}
 
@@ -1229,7 +1265,7 @@
 	slaves = {
 		culture = lacustrine_bantu
 		religion = animist
-		size = 8000
+		size = 16000
 	}
 
 }

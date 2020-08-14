@@ -7901,6 +7901,17 @@ war_reparations = {
 				country_event = 45108
 			}
 		}
+		random_owned = {
+			limit = {
+				owner = {
+					tag = CM0
+					has_country_flag = pay_USA_reparations
+				}
+			}
+			owner = {
+				country_event = 45108
+			}
+		}
 	}
 }
 

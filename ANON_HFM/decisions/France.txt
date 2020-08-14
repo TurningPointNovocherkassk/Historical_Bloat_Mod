@@ -281,34 +281,34 @@ political_decisions = {
 		ai_will_do = { factor = 1 }
 	}
 	
-	annex_mayotte = {
-		picture = dreams_of_empire
-		potential = {
-			primary_culture = french
-			is_greater_power = yes
-			capital = 425
-			2124 = { empty = yes }
-		}
+	# annex_mayotte = {
+		# picture = dreams_of_empire
+		# potential = {
+			# primary_culture = french
+			# is_greater_power = yes
+			# capital = 425
+			# 2124 = { empty = yes }
+		# }
 		
-		allow = {
-			war = no
-			medicine = 1
-		}
+		# allow = {
+			# war = no
+			# medicine = 1
+		# }
 		
-		effect = {
-			prestige = 3
-			2124 = { add_core = THIS }
-			2123 = {
-				secede_province = THIS
-			}
-			2124 = {
-				secede_province = THIS
-				change_province_name = "Mayotte"
-			}
-		}
+		# effect = {
+			# prestige = 3
+			# 2124 = { add_core = THIS }
+			# 2123 = {
+				# secede_province = THIS
+			# }
+			# 2124 = {
+				# secede_province = THIS
+				# change_province_name = "Mayotte"
+			# }
+		# }
 		
-		ai_will_do = { factor = 1 }
-	}
+		# ai_will_do = { factor = 1 }
+	# }
 	
 	claim_savoy = {
 		picture = form_italy

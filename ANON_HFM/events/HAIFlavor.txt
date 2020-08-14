@@ -551,6 +551,29 @@ country_event = {
 				}
 			}
 		}
+		
+		random_owned = {
+			limit = {
+				owner = {
+					tag = CM0
+					has_recently_lost_war = yes
+					OR = {
+						truce_with = USA
+						truce_with = CSA
+						truce_with = FSA
+					}
+					has_country_flag = pay_USA_reparations
+					NOT = { check_variable = { which = owed_cash_money value = 9 } }
+				}
+			}
+			owner = {
+				CM0 = {
+					clr_country_flag = pay_USA_reparations
+					set_variable = { which = owed_cash_money value = 15 }
+				}
+				2146 = { owner = { treasury = 15000 } }
+			}
+		}
 	}
 }
 
