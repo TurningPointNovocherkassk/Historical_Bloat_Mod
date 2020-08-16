@@ -1,5 +1,96 @@
 political_decisions = {
 
+	found_fianarantsoa = {
+		picture = "gtfo"
+		potential = {
+			NOT = {
+				has_global_flag = fiaranantsoa_founded
+			}
+			OR = {
+				civilized = yes
+				AND = {
+					ai = no
+					civilization_progress = 0.25
+				}
+				AND = {
+					ai = yes
+					year = 1845
+				}
+			}
+			owns = 2116 #Fianarantsoa
+		}
+		
+		allow = {
+			war = no
+			money = 5000
+		}
+		
+		effect = {
+			set_global_flag = fiaranantsoa_founded
+			2116 = {
+				add_province_modifier = { name = recently_built_city duration = 1825 }
+				change_province_name = "Fiaranantsoa"
+			}
+			random_owned = {
+				limit = {
+					owner = {
+						tag = MAD
+						civilized = no
+					}
+				}
+				years_of_research = 0.5
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	found_toliara = {
+		picture = "gtfo"
+		potential = {
+			NOT = {
+				has_global_flag = toliara_founded
+			}
+			OR = {
+				civilized = yes
+				AND = {
+					ai = no
+					civilization_progress = 0.5
+				}
+				AND = {
+					ai = yes
+					year = 1897
+				}
+			}
+			owns = 2122 #Toliara
+		}
+		
+		allow = {
+			war = no
+			money = 10000
+		}
+		
+		effect = {
+			set_global_flag = toliara_founded
+			2122 = {
+				add_province_modifier = { name = recently_built_city duration = 1825 }
+				change_province_name = "Toliary"
+			}
+			random_owned = {
+				limit = {
+					owner = {
+						tag = MAD
+						civilized = no
+					}
+				}
+				years_of_research = 0.5
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
 	sale_of_mayotte = {
 		picture = "dreams_of_empire"
 		potential = {

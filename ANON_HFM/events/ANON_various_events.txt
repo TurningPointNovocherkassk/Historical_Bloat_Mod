@@ -3193,41 +3193,6 @@ country_event = {
 	}
 }
 
-#owns Lima
-country_event = {
-	id = 1000090
-	title = "The owners of Lima"
-	desc = "We own Lima!"
-	picture = "treaty"
-	
-	trigger = {
-		NOT = { has_country_flag = owns_lima }
-		owns = 2295
-	}
-			
-	option = {
-		name = "Good to know."
-		set_country_flag = owns_lima
-	}
-}
-#doesn't own Lima
-country_event = {
-	id = 1000091
-	title = "The owners of Lima"
-	desc = "We are no longer the owners of Lima!"
-	picture = "treaty"
-	
-	trigger = {
-		has_country_flag = owns_lima
-		NOT = { owns = 2295 }
-	}
-			
-	option = {
-		name = "Curses!"
-		clr_country_flag = owns_lima
-	}
-}
-
 #owns Arequipa
 country_event = {
 	id = 1000090
@@ -3524,5 +3489,90 @@ country_event = {
 	option = {
 		name = "Great!"
 		3275 = { secede_province = PAP }
+	}
+}
+
+
+#owns Lima
+country_event = {
+	id = 1000107
+	title = "The owners of Lima"
+	desc = "We own Lima!"
+	picture = "treaty"
+	
+	trigger = {
+		NOT = { has_country_flag = owns_lima }
+		owns = 2295
+	}
+			
+	option = {
+		name = "Good to know."
+		set_country_flag = owns_lima
+	}
+}
+#doesn't own Lima
+country_event = {
+	id = 1000108
+	title = "The owners of Lima"
+	desc = "We are no longer the owners of Lima!"
+	picture = "treaty"
+	
+	trigger = {
+		has_country_flag = owns_lima
+		NOT = { owns = 2295 }
+	}
+			
+	option = {
+		name = "Curses!"
+		clr_country_flag = owns_lima
+	}
+}
+#russia infamy
+country_event = {
+	id = 1000109
+	title = "Russian infamy, AI exclusive"
+	desc = "Failsafe so Russia doesn't go over 25 infamy"
+	picture = "treaty"
+	
+	trigger = {
+		tag = RUS
+		ai = yes
+		badboy = 1 #25
+	}
+			
+	option = {
+		name = "Ok thx."
+		random_owned = {
+			limit = {
+				owner = {
+					badboy = 1 #25
+					NOT = { badboy = 1.2 } #30
+				}
+			}
+			owner = {
+				badboy = -10
+			}
+		}
+		random_owned = {
+			limit = {
+				owner = {
+					badboy = 1.2 #30
+					NOT = { badboy = 1.6 } #40
+				}
+			}
+			owner = {
+				badboy = -20
+			}
+		}
+		random_owned = {
+			limit = {
+				owner = {
+					badboy = 1.6 #40
+				}
+			}
+			owner = {
+				badboy = -30
+			}
+		}
 	}
 }

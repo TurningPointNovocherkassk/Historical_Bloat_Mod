@@ -3778,7 +3778,7 @@ country_event = {
 	
 	trigger = {
 		tag = PER
-		#admin_reform = no_admin_reform		
+		# admin_reform = no_admin_reform		
 		1147 = {
 			owner = {
 				OR = {
@@ -3788,7 +3788,7 @@ country_event = {
 			}
 		}
 		has_country_flag = naser_al_din
-		civilized = no
+		# civilized = no
 	}
 	fire_only_once = yes
 	
@@ -3797,7 +3797,7 @@ country_event = {
 	}
 	
 	immediate = {
-		release = KHR
+		release_vassal = KHR
 	}
 	
 	option = {

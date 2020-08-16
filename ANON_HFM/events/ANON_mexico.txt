@@ -1588,7 +1588,7 @@ country_event = {
 		set_country_flag = pena_barragan_surrender
 		MEX = { country_event = 1220026 }
 		ai_chance = {
-			factor = 70
+			factor = 90
 		}	
 	}
 	option = { # Capture and use him as a bargain chip (Achieve full independence this way)
@@ -1596,7 +1596,7 @@ country_event = {
 		set_country_flag = pena_barragan_captured
 		MEX = { country_event = 1220027 }
 		ai_chance = {
-			factor = 20
+			factor = 10
 		}	
 	}
 	option = { # Execute him
@@ -1604,7 +1604,7 @@ country_event = {
 		set_country_flag = pena_barragan_executed
 		MEX = { country_event = 1220028 }
 		ai_chance = {
-			factor = 10
+			factor = 0
 		}	
 	}
 }
@@ -1638,7 +1638,7 @@ country_event = { # Peña y Barragán allowed to flee under the condition that he 
 		YUC = { country_event = 1220029 }
 		set_global_flag = YUC_ceasefire
 		ai_chance = {
-			factor = 70
+			factor = 100
 		}	
 	}
 	option = { # lolno
@@ -1655,7 +1655,7 @@ country_event = { # Peña y Barragán allowed to flee under the condition that he 
 		}
 		YUC = { country_event = 1220030 }
 		ai_chance = {
-			factor = 30
+			factor = 0
 		}	
 	}
 }

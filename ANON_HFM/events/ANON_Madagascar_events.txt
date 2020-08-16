@@ -762,7 +762,7 @@ country_event = {
 #############################
 ###The Johanna Expedition
 
-country_event = { #unga bungas capture american ship, hilarity ensues when americans bomb the shit outta them
+country_event = { #unga bu=gas capture american ship, hilarity ensues when americans bomb the shit outta them
 	id = 61610017
 	title = "EVTNAME61610017"
 	desc = "EVTDESC61610017"
@@ -921,7 +921,7 @@ country_event = { #ungabungas don't free sailors
 		casus_belli = {
 			target = FROM
 			type = war_reparations
-			months = 36
+			months = 40
 		}
 		war = {
 			target = FROM
@@ -941,12 +941,12 @@ country_event = { #ungabungas don't free sailors
 		badboy = 2
 		casus_belli = {
 			target = FROM
-			type = establish_protectorate_NI_casus_belli
+			type = annex_core_country
 			months = 40
 		}
 		war = {
 			target = FROM
-			attacker_goal = { casus_belli = establish_protectorate_NI_casus_belli }
+			attacker_goal = { casus_belli = annex_core_country }
 			defender_goal = { casus_belli = status_quo }
 			defender_goal = { casus_belli = call_allies_cb }
 			call_ally = yes
