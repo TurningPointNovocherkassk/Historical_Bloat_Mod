@@ -3576,3 +3576,146 @@ country_event = {
 		}
 	}
 }
+#AUS/KUK doesn't own galicia, secedes chortkiv to whoever owns galicia
+country_event = {
+	id = 1000110
+	title = "The owners of Chortkiv"
+	desc = "We are pleased to inform that the ownership of Chorkiv has been passed to us."
+	picture = "treaty"
+	
+	trigger = {
+		owns = 702
+		NOT = {
+			OR = {
+				tag = AUS
+				tag = KUK
+				tag = DNB
+				tag = GER
+				tag = SGF
+			}
+		}
+		OR = {
+			AUS = {
+				owns = 3661
+				NOT = { owns = 662 }
+			}
+			KUK = {
+				owns = 3661
+				NOT = { owns = 662 }
+			}
+			DNB = {
+				owns = 3661
+				NOT = { owns = 662 }
+			}
+			GER = {
+				owns = 3661
+				NOT = { owns = 662 }
+			}
+			SGF = {
+				owns = 3661
+				NOT = { owns = 662 }
+			}
+		}
+	}
+			
+	option = {
+		name = "Great!"
+		3661 = { secede_province = THIS }
+	}
+}
+#TUR is cut off from Bosnia but they still own Herzegovina
+country_event = {
+	id = 1000111
+	title = "The owners of Herzegovina"
+	desc = "We are pleased to inform that the ownership of Herzegovina has been passed to us."
+	picture = "treaty"
+	
+	trigger = {
+		owns = 783
+		NOT = {
+			tag = TUR
+		}
+		TUR = {
+			any_owned_province = { region = TUR_3636 }
+			NOT = {
+				owns = 783 #Sarajevo
+				owns = 804 #Novi Pazar
+				# owns = 2177 #Pljevlja
+				# owns = 2569 #Niksic
+			}
+		}
+	}
+			
+	option = {
+		name = "Great!"
+		TUR = {
+			any_owned = {
+				limit = {
+					region = TUR_3636
+				}
+				secede_province = THIS
+			}
+		}
+	}
+}
+#TUR obtains cores in 1156 & 1158, but the rest of Anizzah remains uncored
+country_event = {
+	id = 1000112
+	title = "Our claims on the Syrian Desert"
+	desc = "We now have claims on the Syrian Desert."
+	picture = "treaty"
+	
+	trigger = {
+		tag = TUR
+		OR = {
+			1156 = { is_core = THIS }
+			1158 = { is_core = THIS }
+		}
+		NOT = {
+			OR = {
+				3558 = { is_core = THIS }
+				931 = { is_core = THIS }
+				907 = { is_core = THIS }
+				3556 = { is_core = THIS }
+			}
+		}
+		NOT = { has_country_flag = syrian_desert_cores }
+	}
+			
+	option = {
+		name = "Great!"
+		set_country_flag = syrian_desert_cores
+		3558 = { add_core = THIS }
+		931 = { add_core = THIS }
+		907 = { add_core = THIS }
+		3556 = { add_core = THIS }
+		1156 = { add_core = THIS }
+		1158 = { add_core = THIS }
+	}
+}
+#TUR obtains cores in Riyadh, but the East Arabian Coast remains uncored
+country_event = {
+	id = 1000113
+	title = "Our claims on the East Arabian Coast"
+	desc = "We now have claims on the East Arabian Coast."
+	picture = "treaty"
+	
+	trigger = {
+		tag = TUR
+		1157 = { is_core = THIS }
+		NOT = {
+			OR = {
+				1163 = { is_core = THIS }
+				1164 = { is_core = THIS }
+			}
+		}
+		NOT = { has_country_flag = arabian_coast_cores }
+	}
+			
+	option = {
+		name = "Great!"
+		set_country_flag = arabian_coast_cores
+		1163 = { add_core = THIS }
+		1164 = { add_core = THIS }
+	}
+}

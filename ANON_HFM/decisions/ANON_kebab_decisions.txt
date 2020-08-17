@@ -23,6 +23,7 @@ political_decisions = {
 				OR = {
 					in_sphere = TUR
 					vassal_of = TUR
+					substate_of = TUR
 				}
 			}
 			owns = 1151
@@ -38,6 +39,7 @@ political_decisions = {
 					name = nationalist_agitation
 					duration = 3650
 				}
+				add_core = THIS
 			}
 			set_country_flag = abolish_anizzah
 		}

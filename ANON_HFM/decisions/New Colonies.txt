@@ -82,6 +82,18 @@ political_decisions = {
 				clr_country_flag = zoroastrian_country
 				clr_country_flag = nestorian_country
 				clr_country_flag = confucian_country
+				
+				clr_country_flag = maronite_country
+				clr_country_flag = bahai_country
+				clr_country_flag = alevi_country
+				clr_country_flag = alawite_country
+				clr_country_flag = jain_country
+				clr_country_flag = karaite_country
+				clr_country_flag = samaritan_country
+				clr_country_flag = zaydi_country
+				clr_country_flag = ismaili_country
+				clr_country_flag = secular_country
+				clr_country_flag = atheist_country
 			}
 			
 			NGR = {
@@ -109,6 +121,18 @@ political_decisions = {
 				clr_country_flag = zoroastrian_country
 				clr_country_flag = nestorian_country
 				clr_country_flag = confucian_country
+				
+				clr_country_flag = maronite_country
+				clr_country_flag = bahai_country
+				clr_country_flag = alevi_country
+				clr_country_flag = alawite_country
+				clr_country_flag = jain_country
+				clr_country_flag = karaite_country
+				clr_country_flag = samaritan_country
+				clr_country_flag = zaydi_country
+				clr_country_flag = ismaili_country
+				clr_country_flag = secular_country
+				clr_country_flag = atheist_country
 			}
 			random_owned = { limit = { owner = { has_country_flag = catholic_country } } NGR = { religion = catholic set_country_flag = catholic_country } }
 			random_owned = {
@@ -133,6 +157,19 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } NGR = { religion =  nestorian set_country_flag = nestorian_country } }
 			random_owned = { limit = { owner = { has_country_flag = confucian_country } } NGR = { religion =  confucian set_country_flag = confucian_country } }
 			
+			random_owned = { limit = { owner = { has_country_flag = maronite_country } } NGR = { religion = maronite set_country_flag = maronite_country } }
+			random_owned = { limit = { owner = { has_country_flag = bahai_country } } NGR = { religion = bahai set_country_flag = bahai_country } }
+			random_owned = { limit = { owner = { has_country_flag = mandaean_country } } NGR = { religion = mandaean set_country_flag = mandaean_country } }
+			random_owned = { limit = { owner = { has_country_flag = alevi_country } } NGR = { religion = alevi set_country_flag = alevi_country } }
+			random_owned = { limit = { owner = { has_country_flag = alawite_country } } NGR = { religion = alawite set_country_flag = alawite_country } }
+			random_owned = { limit = { owner = { has_country_flag = jain_country } } NGR = { religion = jain set_country_flag = jain_country } }
+			random_owned = { limit = { owner = { has_country_flag = karaite_country } } NGR = { religion = karaite set_country_flag = karaite_country } }
+			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } NGR = { religion = samaritan set_country_flag = samaritan_country } }
+			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } NGR = { religion = zaydi set_country_flag = zaydi_country } }
+			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } NGR = { religion = ismaili set_country_flag = ismaili_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } NGR = { religion = secular set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } NGR = { religion = atheist set_country_flag = atheist_country } }
+			
 			random_owned = { limit = { owner = { has_country_flag = catholic_country } } ARO = { religion = catholic set_country_flag = catholic_country } }
 			random_owned = {
 				limit = { owner = { has_country_flag = protestant_country } }
@@ -152,9 +189,22 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = jewish_country } } ARO = { religion = jewish set_country_flag = jewish_country } }
 			random_owned = { limit = { owner = { has_country_flag = ibadi_country } } ARO = { religion = ibadi set_country_flag = ibadi_country } }
 			random_owned = { limit = { owner = { has_country_flag = yazidi_country } } ARO = { religion =  yazidi set_country_flag = yazidi_country } }
-			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } NGR = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
-			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } NGR = { religion =  nestorian set_country_flag = nestorian_country } }
-			random_owned = { limit = { owner = { has_country_flag = confucian_country } } NGR = { religion =  confucian set_country_flag = confucian_country } }
+			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } ARO = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
+			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } ARO = { religion =  nestorian set_country_flag = nestorian_country } }
+			random_owned = { limit = { owner = { has_country_flag = confucian_country } } ARO = { religion =  confucian set_country_flag = confucian_country } }
+			
+			random_owned = { limit = { owner = { has_country_flag = maronite_country } } ARO = { religion = maronite set_country_flag = maronite_country } }
+			random_owned = { limit = { owner = { has_country_flag = bahai_country } } ARO = { religion = bahai set_country_flag = bahai_country } }
+			random_owned = { limit = { owner = { has_country_flag = mandaean_country } } ARO = { religion = mandaean set_country_flag = mandaean_country } }
+			random_owned = { limit = { owner = { has_country_flag = alevi_country } } ARO = { religion = alevi set_country_flag = alevi_country } }
+			random_owned = { limit = { owner = { has_country_flag = alawite_country } } ARO = { religion = alawite set_country_flag = alawite_country } }
+			random_owned = { limit = { owner = { has_country_flag = jain_country } } ARO = { religion = jain set_country_flag = jain_country } }
+			random_owned = { limit = { owner = { has_country_flag = karaite_country } } ARO = { religion = karaite set_country_flag = karaite_country } }
+			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } ARO = { religion = samaritan set_country_flag = samaritan_country } }
+			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } ARO = { religion = zaydi set_country_flag = zaydi_country } }
+			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } ARO = { religion = ismaili set_country_flag = ismaili_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } ARO = { religion = secular set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } ARO = { religion = atheist set_country_flag = atheist_country } }
 			
 			random_owned = { limit = { owner = { primary_culture = british } }  NGR = { government = colonial_company } }
 		}
@@ -240,6 +290,18 @@ political_decisions = {
 				clr_country_flag = zoroastrian_country
 				clr_country_flag = nestorian_country
 				clr_country_flag = confucian_country
+				
+				clr_country_flag = maronite_country
+				clr_country_flag = bahai_country
+				clr_country_flag = alevi_country
+				clr_country_flag = alawite_country
+				clr_country_flag = jain_country
+				clr_country_flag = karaite_country
+				clr_country_flag = samaritan_country
+				clr_country_flag = zaydi_country
+				clr_country_flag = ismaili_country
+				clr_country_flag = secular_country
+				clr_country_flag = atheist_country
 			}
 			
 			ARO = {
@@ -263,6 +325,18 @@ political_decisions = {
 				clr_country_flag = zoroastrian_country
 				clr_country_flag = nestorian_country
 				clr_country_flag = confucian_country
+				
+				clr_country_flag = maronite_country
+				clr_country_flag = bahai_country
+				clr_country_flag = alevi_country
+				clr_country_flag = alawite_country
+				clr_country_flag = jain_country
+				clr_country_flag = karaite_country
+				clr_country_flag = samaritan_country
+				clr_country_flag = zaydi_country
+				clr_country_flag = ismaili_country
+				clr_country_flag = secular_country
+				clr_country_flag = atheist_country
 			}
 			
 			random_owned = { limit = { owner = { has_country_flag = orthodox_country } } NGR = { religion = orthodox set_country_flag = orthodox_country } }
@@ -282,6 +356,19 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } NGR = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } NGR = { religion =  nestorian set_country_flag = nestorian_country } }
 			random_owned = { limit = { owner = { has_country_flag = confucian_country } } NGR = { religion =  confucian set_country_flag = confucian_country } }
+			
+			random_owned = { limit = { owner = { has_country_flag = maronite_country } } NGR = { religion = maronite set_country_flag = maronite_country } }
+			random_owned = { limit = { owner = { has_country_flag = bahai_country } } NGR = { religion = bahai set_country_flag = bahai_country } }
+			random_owned = { limit = { owner = { has_country_flag = mandaean_country } } NGR = { religion = mandaean set_country_flag = mandaean_country } }
+			random_owned = { limit = { owner = { has_country_flag = alevi_country } } NGR = { religion = alevi set_country_flag = alevi_country } }
+			random_owned = { limit = { owner = { has_country_flag = alawite_country } } NGR = { religion = alawite set_country_flag = alawite_country } }
+			random_owned = { limit = { owner = { has_country_flag = jain_country } } NGR = { religion = jain set_country_flag = jain_country } }
+			random_owned = { limit = { owner = { has_country_flag = karaite_country } } NGR = { religion = karaite set_country_flag = karaite_country } }
+			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } NGR = { religion = samaritan set_country_flag = samaritan_country } }
+			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } NGR = { religion = zaydi set_country_flag = zaydi_country } }
+			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } NGR = { religion = ismaili set_country_flag = ismaili_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } NGR = { religion = secular set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } NGR = { religion = atheist set_country_flag = atheist_country } }
 			
 			random_owned = { limit = { owner = { has_country_flag = catholic_country } } ARO = { religion = catholic set_country_flag = catholic_country } }
 			random_owned = {
@@ -305,6 +392,19 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } ARO = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } ARO = { religion =  nestorian set_country_flag = nestorian_country } }
 			random_owned = { limit = { owner = { has_country_flag = confucian_country } } ARO = { religion =  confucian set_country_flag = confucian_country } }
+			
+			random_owned = { limit = { owner = { has_country_flag = maronite_country } } ARO = { religion = maronite set_country_flag = maronite_country } }
+			random_owned = { limit = { owner = { has_country_flag = bahai_country } } ARO = { religion = bahai set_country_flag = bahai_country } }
+			random_owned = { limit = { owner = { has_country_flag = mandaean_country } } ARO = { religion = mandaean set_country_flag = mandaean_country } }
+			random_owned = { limit = { owner = { has_country_flag = alevi_country } } ARO = { religion = alevi set_country_flag = alevi_country } }
+			random_owned = { limit = { owner = { has_country_flag = alawite_country } } ARO = { religion = alawite set_country_flag = alawite_country } }
+			random_owned = { limit = { owner = { has_country_flag = jain_country } } ARO = { religion = jain set_country_flag = jain_country } }
+			random_owned = { limit = { owner = { has_country_flag = karaite_country } } ARO = { religion = karaite set_country_flag = karaite_country } }
+			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } ARO = { religion = samaritan set_country_flag = samaritan_country } }
+			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } ARO = { religion = zaydi set_country_flag = zaydi_country } }
+			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } ARO = { religion = ismaili set_country_flag = ismaili_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } ARO = { religion = secular set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } ARO = { religion = atheist set_country_flag = atheist_country } }
 		}
 	}
 	
@@ -368,6 +468,18 @@ political_decisions = {
 				clr_country_flag = zoroastrian_country
 				clr_country_flag = nestorian_country
 				clr_country_flag = confucian_country
+				
+				clr_country_flag = maronite_country
+				clr_country_flag = bahai_country
+				clr_country_flag = alevi_country
+				clr_country_flag = alawite_country
+				clr_country_flag = jain_country
+				clr_country_flag = karaite_country
+				clr_country_flag = samaritan_country
+				clr_country_flag = zaydi_country
+				clr_country_flag = ismaili_country
+				clr_country_flag = secular_country
+				clr_country_flag = atheist_country
 			}
 			
 			random_owned = { limit = { owner = { has_country_flag = catholic_country } } TOG = { religion = catholic set_country_flag = catholic_country } }
@@ -392,6 +504,19 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } TOG = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } TOG = { religion =  nestorian set_country_flag = nestorian_country } }
 			random_owned = { limit = { owner = { has_country_flag = confucian_country } } TOG = { religion =  confucian set_country_flag = confucian_country } }
+			
+			random_owned = { limit = { owner = { has_country_flag = maronite_country } } TOG = { religion = maronite set_country_flag = maronite_country } }
+			random_owned = { limit = { owner = { has_country_flag = bahai_country } } TOG = { religion = bahai set_country_flag = bahai_country } }
+			random_owned = { limit = { owner = { has_country_flag = mandaean_country } } TOG = { religion = mandaean set_country_flag = mandaean_country } }
+			random_owned = { limit = { owner = { has_country_flag = alevi_country } } TOG = { religion = alevi set_country_flag = alevi_country } }
+			random_owned = { limit = { owner = { has_country_flag = alawite_country } } TOG = { religion = alawite set_country_flag = alawite_country } }
+			random_owned = { limit = { owner = { has_country_flag = jain_country } } TOG = { religion = jain set_country_flag = jain_country } }
+			random_owned = { limit = { owner = { has_country_flag = karaite_country } } TOG = { religion = karaite set_country_flag = karaite_country } }
+			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } TOG = { religion = samaritan set_country_flag = samaritan_country } }
+			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } TOG = { religion = zaydi set_country_flag = zaydi_country } }
+			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } TOG = { religion = ismaili set_country_flag = ismaili_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } TOG = { religion = secular set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } TOG = { religion = atheist set_country_flag = atheist_country } }
 		}
 	}
 	
@@ -459,6 +584,18 @@ political_decisions = {
 				clr_country_flag = zoroastrian_country
 				clr_country_flag = nestorian_country
 				clr_country_flag = confucian_country
+				
+				clr_country_flag = maronite_country
+				clr_country_flag = bahai_country
+				clr_country_flag = alevi_country
+				clr_country_flag = alawite_country
+				clr_country_flag = jain_country
+				clr_country_flag = karaite_country
+				clr_country_flag = samaritan_country
+				clr_country_flag = zaydi_country
+				clr_country_flag = ismaili_country
+				clr_country_flag = secular_country
+				clr_country_flag = atheist_country
 			}
 			
 			random_owned = { limit = { owner = { has_country_flag = catholic_country } } TOG = { religion = catholic set_country_flag = catholic_country } }
@@ -483,6 +620,19 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } TOG = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } TOG = { religion =  nestorian set_country_flag = nestorian_country } }
 			random_owned = { limit = { owner = { has_country_flag = confucian_country } } TOG = { religion =  confucian set_country_flag = confucian_country } }
+			
+			random_owned = { limit = { owner = { has_country_flag = maronite_country } } TOG = { religion = maronite set_country_flag = maronite_country } }
+			random_owned = { limit = { owner = { has_country_flag = bahai_country } } TOG = { religion = bahai set_country_flag = bahai_country } }
+			random_owned = { limit = { owner = { has_country_flag = mandaean_country } } TOG = { religion = mandaean set_country_flag = mandaean_country } }
+			random_owned = { limit = { owner = { has_country_flag = alevi_country } } TOG = { religion = alevi set_country_flag = alevi_country } }
+			random_owned = { limit = { owner = { has_country_flag = alawite_country } } TOG = { religion = alawite set_country_flag = alawite_country } }
+			random_owned = { limit = { owner = { has_country_flag = jain_country } } TOG = { religion = jain set_country_flag = jain_country } }
+			random_owned = { limit = { owner = { has_country_flag = karaite_country } } TOG = { religion = karaite set_country_flag = karaite_country } }
+			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } TOG = { religion = samaritan set_country_flag = samaritan_country } }
+			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } TOG = { religion = zaydi set_country_flag = zaydi_country } }
+			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } TOG = { religion = ismaili set_country_flag = ismaili_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } TOG = { religion = secular set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } TOG = { religion = atheist set_country_flag = atheist_country } }
 		}
 	}
 	
@@ -551,6 +701,18 @@ political_decisions = {
 				clr_country_flag = zoroastrian_country
 				clr_country_flag = nestorian_country
 				clr_country_flag = confucian_country
+				
+				clr_country_flag = maronite_country
+				clr_country_flag = bahai_country
+				clr_country_flag = alevi_country
+				clr_country_flag = alawite_country
+				clr_country_flag = jain_country
+				clr_country_flag = karaite_country
+				clr_country_flag = samaritan_country
+				clr_country_flag = zaydi_country
+				clr_country_flag = ismaili_country
+				clr_country_flag = secular_country
+				clr_country_flag = atheist_country
 			}
 			random_owned = { limit = { owner = { has_country_flag = catholic_country } } IVC = { religion = catholic set_country_flag = catholic_country } }
 			random_owned = {
@@ -574,6 +736,19 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } IVC = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } IVC = { religion =  nestorian set_country_flag = nestorian_country } }
 			random_owned = { limit = { owner = { has_country_flag = confucian_country } } IVC = { religion =  confucian set_country_flag = confucian_country } }
+			
+			random_owned = { limit = { owner = { has_country_flag = maronite_country } } IVC = { religion = maronite set_country_flag = maronite_country } }
+			random_owned = { limit = { owner = { has_country_flag = bahai_country } } IVC = { religion = bahai set_country_flag = bahai_country } }
+			random_owned = { limit = { owner = { has_country_flag = mandaean_country } } IVC = { religion = mandaean set_country_flag = mandaean_country } }
+			random_owned = { limit = { owner = { has_country_flag = alevi_country } } IVC = { religion = alevi set_country_flag = alevi_country } }
+			random_owned = { limit = { owner = { has_country_flag = alawite_country } } IVC = { religion = alawite set_country_flag = alawite_country } }
+			random_owned = { limit = { owner = { has_country_flag = jain_country } } IVC = { religion = jain set_country_flag = jain_country } }
+			random_owned = { limit = { owner = { has_country_flag = karaite_country } } IVC = { religion = karaite set_country_flag = karaite_country } }
+			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } IVC = { religion = samaritan set_country_flag = samaritan_country } }
+			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } IVC = { religion = zaydi set_country_flag = zaydi_country } }
+			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } IVC = { religion = ismaili set_country_flag = ismaili_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } IVC = { religion = secular set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } IVC = { religion = atheist set_country_flag = atheist_country } }
 		}
 	}
 	
@@ -643,6 +818,18 @@ political_decisions = {
 				clr_country_flag = zoroastrian_country
 				clr_country_flag = nestorian_country
 				clr_country_flag = confucian_country
+				
+				clr_country_flag = maronite_country
+				clr_country_flag = bahai_country
+				clr_country_flag = alevi_country
+				clr_country_flag = alawite_country
+				clr_country_flag = jain_country
+				clr_country_flag = karaite_country
+				clr_country_flag = samaritan_country
+				clr_country_flag = zaydi_country
+				clr_country_flag = ismaili_country
+				clr_country_flag = secular_country
+				clr_country_flag = atheist_country
 			}
 			random_owned = { limit = { owner = { has_country_flag = catholic_country } } IVC = { religion = catholic set_country_flag = catholic_country } }
 			random_owned = {
@@ -666,6 +853,19 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } IVC = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } IVC = { religion =  nestorian set_country_flag = nestorian_country } }
 			random_owned = { limit = { owner = { has_country_flag = confucian_country } } IVC = { religion =  confucian set_country_flag = confucian_country } }
+			
+			random_owned = { limit = { owner = { has_country_flag = maronite_country } } IVC = { religion = maronite set_country_flag = maronite_country } }
+			random_owned = { limit = { owner = { has_country_flag = bahai_country } } IVC = { religion = bahai set_country_flag = bahai_country } }
+			random_owned = { limit = { owner = { has_country_flag = mandaean_country } } IVC = { religion = mandaean set_country_flag = mandaean_country } }
+			random_owned = { limit = { owner = { has_country_flag = alevi_country } } IVC = { religion = alevi set_country_flag = alevi_country } }
+			random_owned = { limit = { owner = { has_country_flag = alawite_country } } IVC = { religion = alawite set_country_flag = alawite_country } }
+			random_owned = { limit = { owner = { has_country_flag = jain_country } } IVC = { religion = jain set_country_flag = jain_country } }
+			random_owned = { limit = { owner = { has_country_flag = karaite_country } } IVC = { religion = karaite set_country_flag = karaite_country } }
+			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } IVC = { religion = samaritan set_country_flag = samaritan_country } }
+			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } IVC = { religion = zaydi set_country_flag = zaydi_country } }
+			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } IVC = { religion = ismaili set_country_flag = ismaili_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } IVC = { religion = secular set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } IVC = { religion = atheist set_country_flag = atheist_country } }
 		}
 	}
 	
@@ -727,6 +927,18 @@ political_decisions = {
 				clr_country_flag = zoroastrian_country
 				clr_country_flag = nestorian_country
 				clr_country_flag = confucian_country
+				
+				clr_country_flag = maronite_country
+				clr_country_flag = bahai_country
+				clr_country_flag = alevi_country
+				clr_country_flag = alawite_country
+				clr_country_flag = jain_country
+				clr_country_flag = karaite_country
+				clr_country_flag = samaritan_country
+				clr_country_flag = zaydi_country
+				clr_country_flag = ismaili_country
+				clr_country_flag = secular_country
+				clr_country_flag = atheist_country
 			}
 			random_owned = { limit = { owner = { has_country_flag = catholic_country } } SLE = { religion = catholic set_country_flag = catholic_country } }
 			random_owned = {
@@ -750,6 +962,20 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } SLE = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } SLE = { religion =  nestorian set_country_flag = nestorian_country } }
 			random_owned = { limit = { owner = { has_country_flag = confucian_country } } SLE = { religion =  confucian set_country_flag = confucian_country } }
+			
+			random_owned = { limit = { owner = { has_country_flag = maronite_country } } SLE = { religion = maronite set_country_flag = maronite_country } }
+			random_owned = { limit = { owner = { has_country_flag = bahai_country } } SLE = { religion = bahai set_country_flag = bahai_country } }
+			random_owned = { limit = { owner = { has_country_flag = mandaean_country } } SLE = { religion = mandaean set_country_flag = mandaean_country } }
+			random_owned = { limit = { owner = { has_country_flag = alevi_country } } SLE = { religion = alevi set_country_flag = alevi_country } }
+			random_owned = { limit = { owner = { has_country_flag = alawite_country } } SLE = { religion = alawite set_country_flag = alawite_country } }
+			random_owned = { limit = { owner = { has_country_flag = jain_country } } SLE = { religion = jain set_country_flag = jain_country } }
+			random_owned = { limit = { owner = { has_country_flag = karaite_country } } SLE = { religion = karaite set_country_flag = karaite_country } }
+			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } SLE = { religion = samaritan set_country_flag = samaritan_country } }
+			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } SLE = { religion = zaydi set_country_flag = zaydi_country } }
+			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } SLE = { religion = ismaili set_country_flag = ismaili_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } SLE = { religion = secular set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } SLE = { religion = atheist set_country_flag = atheist_country } }
+			
 			random_owned = { limit = { owner = { primary_culture = british } } SLE = { government = colonial_company } }
 		}
 	}
@@ -807,6 +1033,18 @@ political_decisions = {
 				clr_country_flag = zoroastrian_country
 				clr_country_flag = nestorian_country
 				clr_country_flag = confucian_country
+				
+				clr_country_flag = maronite_country
+				clr_country_flag = bahai_country
+				clr_country_flag = alevi_country
+				clr_country_flag = alawite_country
+				clr_country_flag = jain_country
+				clr_country_flag = karaite_country
+				clr_country_flag = samaritan_country
+				clr_country_flag = zaydi_country
+				clr_country_flag = ismaili_country
+				clr_country_flag = secular_country
+				clr_country_flag = atheist_country
 			}
 			random_owned = { limit = { owner = { has_country_flag = catholic_country } } SLE = { religion = catholic set_country_flag = catholic_country } }
 			random_owned = {
@@ -830,6 +1068,19 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } SLE = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } SLE = { religion =  nestorian set_country_flag = nestorian_country } }
 			random_owned = { limit = { owner = { has_country_flag = confucian_country } } SLE = { religion =  confucian set_country_flag = confucian_country } }
+			
+			random_owned = { limit = { owner = { has_country_flag = maronite_country } } SLE = { religion = maronite set_country_flag = maronite_country } }
+			random_owned = { limit = { owner = { has_country_flag = bahai_country } } SLE = { religion = bahai set_country_flag = bahai_country } }
+			random_owned = { limit = { owner = { has_country_flag = mandaean_country } } SLE = { religion = mandaean set_country_flag = mandaean_country } }
+			random_owned = { limit = { owner = { has_country_flag = alevi_country } } SLE = { religion = alevi set_country_flag = alevi_country } }
+			random_owned = { limit = { owner = { has_country_flag = alawite_country } } SLE = { religion = alawite set_country_flag = alawite_country } }
+			random_owned = { limit = { owner = { has_country_flag = jain_country } } SLE = { religion = jain set_country_flag = jain_country } }
+			random_owned = { limit = { owner = { has_country_flag = karaite_country } } SLE = { religion = karaite set_country_flag = karaite_country } }
+			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } SLE = { religion = samaritan set_country_flag = samaritan_country } }
+			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } SLE = { religion = zaydi set_country_flag = zaydi_country } }
+			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } SLE = { religion = ismaili set_country_flag = ismaili_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } SLE = { religion = secular set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } SLE = { religion = atheist set_country_flag = atheist_country } }
 			
 			random_owned = { limit = { owner = { primary_culture = british } } SLE = { government = colonial_company } }
 		}
@@ -894,6 +1145,18 @@ political_decisions = {
 				clr_country_flag = zoroastrian_country
 				clr_country_flag = nestorian_country
 				clr_country_flag = confucian_country
+				
+				clr_country_flag = maronite_country
+				clr_country_flag = bahai_country
+				clr_country_flag = alevi_country
+				clr_country_flag = alawite_country
+				clr_country_flag = jain_country
+				clr_country_flag = karaite_country
+				clr_country_flag = samaritan_country
+				clr_country_flag = zaydi_country
+				clr_country_flag = ismaili_country
+				clr_country_flag = secular_country
+				clr_country_flag = atheist_country
 			}
 			
 			random_owned = { limit = { owner = { has_country_flag = catholic_country } } GNE = { religion = catholic set_country_flag = catholic_country } }
@@ -918,6 +1181,19 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } GNE = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } GNE = { religion =  nestorian set_country_flag = nestorian_country } }
 			random_owned = { limit = { owner = { has_country_flag = confucian_country } } GNE = { religion =  confucian set_country_flag = confucian_country } }
+			
+			random_owned = { limit = { owner = { has_country_flag = maronite_country } } GNE = { religion = maronite set_country_flag = maronite_country } }
+			random_owned = { limit = { owner = { has_country_flag = bahai_country } } GNE = { religion = bahai set_country_flag = bahai_country } }
+			random_owned = { limit = { owner = { has_country_flag = mandaean_country } } GNE = { religion = mandaean set_country_flag = mandaean_country } }
+			random_owned = { limit = { owner = { has_country_flag = alevi_country } } GNE = { religion = alevi set_country_flag = alevi_country } }
+			random_owned = { limit = { owner = { has_country_flag = alawite_country } } GNE = { religion = alawite set_country_flag = alawite_country } }
+			random_owned = { limit = { owner = { has_country_flag = jain_country } } GNE = { religion = jain set_country_flag = jain_country } }
+			random_owned = { limit = { owner = { has_country_flag = karaite_country } } GNE = { religion = karaite set_country_flag = karaite_country } }
+			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } GNE = { religion = samaritan set_country_flag = samaritan_country } }
+			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } GNE = { religion = zaydi set_country_flag = zaydi_country } }
+			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } GNE = { religion = ismaili set_country_flag = ismaili_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } GNE = { religion = secular set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } GNE = { religion = atheist set_country_flag = atheist_country } }
 		}
 	}
 	
@@ -982,6 +1258,18 @@ political_decisions = {
 				clr_country_flag = zoroastrian_country
 				clr_country_flag = nestorian_country
 				clr_country_flag = confucian_country
+				
+				clr_country_flag = maronite_country
+				clr_country_flag = bahai_country
+				clr_country_flag = alevi_country
+				clr_country_flag = alawite_country
+				clr_country_flag = jain_country
+				clr_country_flag = karaite_country
+				clr_country_flag = samaritan_country
+				clr_country_flag = zaydi_country
+				clr_country_flag = ismaili_country
+				clr_country_flag = secular_country
+				clr_country_flag = atheist_country
 			}
 			
 			random_owned = { limit = { owner = { has_country_flag = catholic_country } } GNE = { religion = catholic set_country_flag = catholic_country } }
@@ -1006,6 +1294,19 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } GNE = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } GNE = { religion =  nestorian set_country_flag = nestorian_country } }
 			random_owned = { limit = { owner = { has_country_flag = confucian_country } } GNE = { religion =  confucian set_country_flag = confucian_country } }
+			
+			random_owned = { limit = { owner = { has_country_flag = maronite_country } } GNE = { religion = maronite set_country_flag = maronite_country } }
+			random_owned = { limit = { owner = { has_country_flag = bahai_country } } GNE = { religion = bahai set_country_flag = bahai_country } }
+			random_owned = { limit = { owner = { has_country_flag = mandaean_country } } GNE = { religion = mandaean set_country_flag = mandaean_country } }
+			random_owned = { limit = { owner = { has_country_flag = alevi_country } } GNE = { religion = alevi set_country_flag = alevi_country } }
+			random_owned = { limit = { owner = { has_country_flag = alawite_country } } GNE = { religion = alawite set_country_flag = alawite_country } }
+			random_owned = { limit = { owner = { has_country_flag = jain_country } } GNE = { religion = jain set_country_flag = jain_country } }
+			random_owned = { limit = { owner = { has_country_flag = karaite_country } } GNE = { religion = karaite set_country_flag = karaite_country } }
+			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } GNE = { religion = samaritan set_country_flag = samaritan_country } }
+			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } GNE = { religion = zaydi set_country_flag = zaydi_country } }
+			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } GNE = { religion = ismaili set_country_flag = ismaili_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } GNE = { religion = secular set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } GNE = { religion = atheist set_country_flag = atheist_country } }
 		}
 	}
 	
@@ -1172,6 +1473,18 @@ political_decisions = {
 				clr_country_flag = zoroastrian_country
 				clr_country_flag = nestorian_country
 				clr_country_flag = confucian_country
+				
+				clr_country_flag = maronite_country
+				clr_country_flag = bahai_country
+				clr_country_flag = alevi_country
+				clr_country_flag = alawite_country
+				clr_country_flag = jain_country
+				clr_country_flag = karaite_country
+				clr_country_flag = samaritan_country
+				clr_country_flag = zaydi_country
+				clr_country_flag = ismaili_country
+				clr_country_flag = secular_country
+				clr_country_flag = atheist_country
 			}
 			
 			random_owned = { limit = { owner = { has_country_flag = catholic_country } } NIG = { religion = catholic set_country_flag = catholic_country } }
@@ -1196,6 +1509,19 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } NIG = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } NIG = { religion =  nestorian set_country_flag = nestorian_country } }
 			random_owned = { limit = { owner = { has_country_flag = confucian_country } } NIG = { religion =  confucian set_country_flag = confucian_country } }
+			
+			random_owned = { limit = { owner = { has_country_flag = maronite_country } } NIG = { religion = maronite set_country_flag = maronite_country } }
+			random_owned = { limit = { owner = { has_country_flag = bahai_country } } NIG = { religion = bahai set_country_flag = bahai_country } }
+			random_owned = { limit = { owner = { has_country_flag = mandaean_country } } NIG = { religion = mandaean set_country_flag = mandaean_country } }
+			random_owned = { limit = { owner = { has_country_flag = alevi_country } } NIG = { religion = alevi set_country_flag = alevi_country } }
+			random_owned = { limit = { owner = { has_country_flag = alawite_country } } NIG = { religion = alawite set_country_flag = alawite_country } }
+			random_owned = { limit = { owner = { has_country_flag = jain_country } } NIG = { religion = jain set_country_flag = jain_country } }
+			random_owned = { limit = { owner = { has_country_flag = karaite_country } } NIG = { religion = karaite set_country_flag = karaite_country } }
+			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } NIG = { religion = samaritan set_country_flag = samaritan_country } }
+			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } NIG = { religion = zaydi set_country_flag = zaydi_country } }
+			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } NIG = { religion = ismaili set_country_flag = ismaili_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } NIG = { religion = secular set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } NIG = { religion = atheist set_country_flag = atheist_country } }
 		}
 	}
 	
@@ -1269,6 +1595,18 @@ political_decisions = {
 				clr_country_flag = zoroastrian_country
 				clr_country_flag = nestorian_country
 				clr_country_flag = confucian_country
+				
+				clr_country_flag = maronite_country
+				clr_country_flag = bahai_country
+				clr_country_flag = alevi_country
+				clr_country_flag = alawite_country
+				clr_country_flag = jain_country
+				clr_country_flag = karaite_country
+				clr_country_flag = samaritan_country
+				clr_country_flag = zaydi_country
+				clr_country_flag = ismaili_country
+				clr_country_flag = secular_country
+				clr_country_flag = atheist_country
 			}
 			
 			random_owned = { limit = { owner = { has_country_flag = catholic_country } } NIG = { religion = catholic set_country_flag = catholic_country } }
@@ -1293,6 +1631,19 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } NIG = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } NIG = { religion =  nestorian set_country_flag = nestorian_country } }
 			random_owned = { limit = { owner = { has_country_flag = confucian_country } } NIG = { religion =  confucian set_country_flag = confucian_country } }
+			
+			random_owned = { limit = { owner = { has_country_flag = maronite_country } } NIG = { religion = maronite set_country_flag = maronite_country } }
+			random_owned = { limit = { owner = { has_country_flag = bahai_country } } NIG = { religion = bahai set_country_flag = bahai_country } }
+			random_owned = { limit = { owner = { has_country_flag = mandaean_country } } NIG = { religion = mandaean set_country_flag = mandaean_country } }
+			random_owned = { limit = { owner = { has_country_flag = alevi_country } } NIG = { religion = alevi set_country_flag = alevi_country } }
+			random_owned = { limit = { owner = { has_country_flag = alawite_country } } NIG = { religion = alawite set_country_flag = alawite_country } }
+			random_owned = { limit = { owner = { has_country_flag = jain_country } } NIG = { religion = jain set_country_flag = jain_country } }
+			random_owned = { limit = { owner = { has_country_flag = karaite_country } } NIG = { religion = karaite set_country_flag = karaite_country } }
+			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } NIG = { religion = samaritan set_country_flag = samaritan_country } }
+			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } NIG = { religion = zaydi set_country_flag = zaydi_country } }
+			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } NIG = { religion = ismaili set_country_flag = ismaili_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } NIG = { religion = secular set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } NIG = { religion = atheist set_country_flag = atheist_country } }
 		}
 	}
 	
@@ -1369,6 +1720,18 @@ political_decisions = {
 				clr_country_flag = zoroastrian_country
 				clr_country_flag = nestorian_country
 				clr_country_flag = confucian_country
+				
+				clr_country_flag = maronite_country
+				clr_country_flag = bahai_country
+				clr_country_flag = alevi_country
+				clr_country_flag = alawite_country
+				clr_country_flag = jain_country
+				clr_country_flag = karaite_country
+				clr_country_flag = samaritan_country
+				clr_country_flag = zaydi_country
+				clr_country_flag = ismaili_country
+				clr_country_flag = secular_country
+				clr_country_flag = atheist_country
 			}
 			random_owned = { limit = { owner = { has_country_flag = catholic_country } } CHD = { religion = catholic set_country_flag = catholic_country } }
 			random_owned = {
@@ -1392,6 +1755,19 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } CHD = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } CHD = { religion =  nestorian set_country_flag = nestorian_country } }
 			random_owned = { limit = { owner = { has_country_flag = confucian_country } } CHD = { religion =  confucian set_country_flag = confucian_country } }
+			
+			random_owned = { limit = { owner = { has_country_flag = maronite_country } } CHD = { religion = maronite set_country_flag = maronite_country } }
+			random_owned = { limit = { owner = { has_country_flag = bahai_country } } CHD = { religion = bahai set_country_flag = bahai_country } }
+			random_owned = { limit = { owner = { has_country_flag = mandaean_country } } CHD = { religion = mandaean set_country_flag = mandaean_country } }
+			random_owned = { limit = { owner = { has_country_flag = alevi_country } } CHD = { religion = alevi set_country_flag = alevi_country } }
+			random_owned = { limit = { owner = { has_country_flag = alawite_country } } CHD = { religion = alawite set_country_flag = alawite_country } }
+			random_owned = { limit = { owner = { has_country_flag = jain_country } } CHD = { religion = jain set_country_flag = jain_country } }
+			random_owned = { limit = { owner = { has_country_flag = karaite_country } } CHD = { religion = karaite set_country_flag = karaite_country } }
+			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } CHD = { religion = samaritan set_country_flag = samaritan_country } }
+			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } CHD = { religion = zaydi set_country_flag = zaydi_country } }
+			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } CHD = { religion = ismaili set_country_flag = ismaili_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } CHD = { religion = secular set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } CHD = { religion = atheist set_country_flag = atheist_country } }
 		}
 	}
 	
@@ -1469,6 +1845,18 @@ political_decisions = {
 				clr_country_flag = zoroastrian_country
 				clr_country_flag = nestorian_country
 				clr_country_flag = confucian_country
+				
+				clr_country_flag = maronite_country
+				clr_country_flag = bahai_country
+				clr_country_flag = alevi_country
+				clr_country_flag = alawite_country
+				clr_country_flag = jain_country
+				clr_country_flag = karaite_country
+				clr_country_flag = samaritan_country
+				clr_country_flag = zaydi_country
+				clr_country_flag = ismaili_country
+				clr_country_flag = secular_country
+				clr_country_flag = atheist_country
 			}
 			random_owned = { limit = { owner = { has_country_flag = catholic_country } } CHD = { religion = catholic set_country_flag = catholic_country } }
 			random_owned = {
@@ -1492,6 +1880,19 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } CHD = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } CHD = { religion =  nestorian set_country_flag = nestorian_country } }
 			random_owned = { limit = { owner = { has_country_flag = confucian_country } } CHD = { religion =  confucian set_country_flag = confucian_country } }
+			
+			random_owned = { limit = { owner = { has_country_flag = maronite_country } } CHD = { religion = maronite set_country_flag = maronite_country } }
+			random_owned = { limit = { owner = { has_country_flag = bahai_country } } CHD = { religion = bahai set_country_flag = bahai_country } }
+			random_owned = { limit = { owner = { has_country_flag = mandaean_country } } CHD = { religion = mandaean set_country_flag = mandaean_country } }
+			random_owned = { limit = { owner = { has_country_flag = alevi_country } } CHD = { religion = alevi set_country_flag = alevi_country } }
+			random_owned = { limit = { owner = { has_country_flag = alawite_country } } CHD = { religion = alawite set_country_flag = alawite_country } }
+			random_owned = { limit = { owner = { has_country_flag = jain_country } } CHD = { religion = jain set_country_flag = jain_country } }
+			random_owned = { limit = { owner = { has_country_flag = karaite_country } } CHD = { religion = karaite set_country_flag = karaite_country } }
+			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } CHD = { religion = samaritan set_country_flag = samaritan_country } }
+			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } CHD = { religion = zaydi set_country_flag = zaydi_country } }
+			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } CHD = { religion = ismaili set_country_flag = ismaili_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } CHD = { religion = secular set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } CHD = { religion = atheist set_country_flag = atheist_country } }
 		}	
 	}
 	
@@ -1560,6 +1961,18 @@ political_decisions = {
 				clr_country_flag = zoroastrian_country
 				clr_country_flag = nestorian_country
 				clr_country_flag = confucian_country
+				
+				clr_country_flag = maronite_country
+				clr_country_flag = bahai_country
+				clr_country_flag = alevi_country
+				clr_country_flag = alawite_country
+				clr_country_flag = jain_country
+				clr_country_flag = karaite_country
+				clr_country_flag = samaritan_country
+				clr_country_flag = zaydi_country
+				clr_country_flag = ismaili_country
+				clr_country_flag = secular_country
+				clr_country_flag = atheist_country
 			}
 			
 			random_owned = { limit = { owner = { has_country_flag = catholic_country } } CMR = { religion = catholic set_country_flag = catholic_country } }
@@ -1584,6 +1997,19 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } CMR = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } CMR = { religion =  nestorian set_country_flag = nestorian_country } }
 			random_owned = { limit = { owner = { has_country_flag = confucian_country } } CMR = { religion =  confucian set_country_flag = confucian_country } }
+			
+			random_owned = { limit = { owner = { has_country_flag = maronite_country } } CMR = { religion = maronite set_country_flag = maronite_country } }
+			random_owned = { limit = { owner = { has_country_flag = bahai_country } } CMR = { religion = bahai set_country_flag = bahai_country } }
+			random_owned = { limit = { owner = { has_country_flag = mandaean_country } } CMR = { religion = mandaean set_country_flag = mandaean_country } }
+			random_owned = { limit = { owner = { has_country_flag = alevi_country } } CMR = { religion = alevi set_country_flag = alevi_country } }
+			random_owned = { limit = { owner = { has_country_flag = alawite_country } } CMR = { religion = alawite set_country_flag = alawite_country } }
+			random_owned = { limit = { owner = { has_country_flag = jain_country } } CMR = { religion = jain set_country_flag = jain_country } }
+			random_owned = { limit = { owner = { has_country_flag = karaite_country } } CMR = { religion = karaite set_country_flag = karaite_country } }
+			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } CMR = { religion = samaritan set_country_flag = samaritan_country } }
+			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } CMR = { religion = zaydi set_country_flag = zaydi_country } }
+			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } CMR = { religion = ismaili set_country_flag = ismaili_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } CMR = { religion = secular set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } CMR = { religion = atheist set_country_flag = atheist_country } }
 		}
 	}
 	
@@ -1660,6 +2086,18 @@ political_decisions = {
 				clr_country_flag = zoroastrian_country
 				clr_country_flag = nestorian_country
 				clr_country_flag = confucian_country
+				
+				clr_country_flag = maronite_country
+				clr_country_flag = bahai_country
+				clr_country_flag = alevi_country
+				clr_country_flag = alawite_country
+				clr_country_flag = jain_country
+				clr_country_flag = karaite_country
+				clr_country_flag = samaritan_country
+				clr_country_flag = zaydi_country
+				clr_country_flag = ismaili_country
+				clr_country_flag = secular_country
+				clr_country_flag = atheist_country
 			}
 			
 			random_owned = { limit = { owner = { has_country_flag = catholic_country } } CMR = { religion = catholic set_country_flag = catholic_country } }
@@ -1684,6 +2122,19 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } CMR = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } CMR = { religion =  nestorian set_country_flag = nestorian_country } }
 			random_owned = { limit = { owner = { has_country_flag = confucian_country } } CMR = { religion =  confucian set_country_flag = confucian_country } }
+			
+			random_owned = { limit = { owner = { has_country_flag = maronite_country } } CMR = { religion = maronite set_country_flag = maronite_country } }
+			random_owned = { limit = { owner = { has_country_flag = bahai_country } } CMR = { religion = bahai set_country_flag = bahai_country } }
+			random_owned = { limit = { owner = { has_country_flag = mandaean_country } } CMR = { religion = mandaean set_country_flag = mandaean_country } }
+			random_owned = { limit = { owner = { has_country_flag = alevi_country } } CMR = { religion = alevi set_country_flag = alevi_country } }
+			random_owned = { limit = { owner = { has_country_flag = alawite_country } } CMR = { religion = alawite set_country_flag = alawite_country } }
+			random_owned = { limit = { owner = { has_country_flag = jain_country } } CMR = { religion = jain set_country_flag = jain_country } }
+			random_owned = { limit = { owner = { has_country_flag = karaite_country } } CMR = { religion = karaite set_country_flag = karaite_country } }
+			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } CMR = { religion = samaritan set_country_flag = samaritan_country } }
+			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } CMR = { religion = zaydi set_country_flag = zaydi_country } }
+			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } CMR = { religion = ismaili set_country_flag = ismaili_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } CMR = { religion = secular set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } CMR = { religion = atheist set_country_flag = atheist_country } }
 		}	
 	}
 	
@@ -1744,6 +2195,18 @@ political_decisions = {
 				clr_country_flag = zoroastrian_country
 				clr_country_flag = nestorian_country
 				clr_country_flag = confucian_country
+				
+				clr_country_flag = maronite_country
+				clr_country_flag = bahai_country
+				clr_country_flag = alevi_country
+				clr_country_flag = alawite_country
+				clr_country_flag = jain_country
+				clr_country_flag = karaite_country
+				clr_country_flag = samaritan_country
+				clr_country_flag = zaydi_country
+				clr_country_flag = ismaili_country
+				clr_country_flag = secular_country
+				clr_country_flag = atheist_country
 			}
 			
 			random_owned = { limit = { owner = { has_country_flag = catholic_country } } GAB = { religion = catholic set_country_flag = catholic_country } }
@@ -1768,6 +2231,19 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } GAB = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } GAB = { religion =  nestorian set_country_flag = nestorian_country } }
 			random_owned = { limit = { owner = { has_country_flag = confucian_country } } GAB = { religion =  confucian set_country_flag = confucian_country } }
+			
+			random_owned = { limit = { owner = { has_country_flag = maronite_country } } GAB = { religion = maronite set_country_flag = maronite_country } }
+			random_owned = { limit = { owner = { has_country_flag = bahai_country } } GAB = { religion = bahai set_country_flag = bahai_country } }
+			random_owned = { limit = { owner = { has_country_flag = mandaean_country } } GAB = { religion = mandaean set_country_flag = mandaean_country } }
+			random_owned = { limit = { owner = { has_country_flag = alevi_country } } GAB = { religion = alevi set_country_flag = alevi_country } }
+			random_owned = { limit = { owner = { has_country_flag = alawite_country } } GAB = { religion = alawite set_country_flag = alawite_country } }
+			random_owned = { limit = { owner = { has_country_flag = jain_country } } GAB = { religion = jain set_country_flag = jain_country } }
+			random_owned = { limit = { owner = { has_country_flag = karaite_country } } GAB = { religion = karaite set_country_flag = karaite_country } }
+			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } GAB = { religion = samaritan set_country_flag = samaritan_country } }
+			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } GAB = { religion = zaydi set_country_flag = zaydi_country } }
+			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } GAB = { religion = ismaili set_country_flag = ismaili_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } GAB = { religion = secular set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } GAB = { religion = atheist set_country_flag = atheist_country } }
 			random_owned = { limit = { owner = { primary_culture = french } } GAB = { government = colonial_company } }
 		}
 	}
@@ -1826,6 +2302,18 @@ political_decisions = {
 				clr_country_flag = zoroastrian_country
 				clr_country_flag = nestorian_country
 				clr_country_flag = confucian_country
+				
+				clr_country_flag = maronite_country
+				clr_country_flag = bahai_country
+				clr_country_flag = alevi_country
+				clr_country_flag = alawite_country
+				clr_country_flag = jain_country
+				clr_country_flag = karaite_country
+				clr_country_flag = samaritan_country
+				clr_country_flag = zaydi_country
+				clr_country_flag = ismaili_country
+				clr_country_flag = secular_country
+				clr_country_flag = atheist_country
 			}
 			
 			random_owned = { limit = { owner = { has_country_flag = catholic_country } } GAB = { religion = catholic set_country_flag = catholic_country } }
@@ -1850,6 +2338,19 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } GAB = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } GAB = { religion =  nestorian set_country_flag = nestorian_country } }
 			random_owned = { limit = { owner = { has_country_flag = confucian_country } } GAB = { religion =  confucian set_country_flag = confucian_country } }
+			
+			random_owned = { limit = { owner = { has_country_flag = maronite_country } } GAB = { religion = maronite set_country_flag = maronite_country } }
+			random_owned = { limit = { owner = { has_country_flag = bahai_country } } GAB = { religion = bahai set_country_flag = bahai_country } }
+			random_owned = { limit = { owner = { has_country_flag = mandaean_country } } GAB = { religion = mandaean set_country_flag = mandaean_country } }
+			random_owned = { limit = { owner = { has_country_flag = alevi_country } } GAB = { religion = alevi set_country_flag = alevi_country } }
+			random_owned = { limit = { owner = { has_country_flag = alawite_country } } GAB = { religion = alawite set_country_flag = alawite_country } }
+			random_owned = { limit = { owner = { has_country_flag = jain_country } } GAB = { religion = jain set_country_flag = jain_country } }
+			random_owned = { limit = { owner = { has_country_flag = karaite_country } } GAB = { religion = karaite set_country_flag = karaite_country } }
+			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } GAB = { religion = samaritan set_country_flag = samaritan_country } }
+			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } GAB = { religion = zaydi set_country_flag = zaydi_country } }
+			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } GAB = { religion = ismaili set_country_flag = ismaili_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } GAB = { religion = secular set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } GAB = { religion = atheist set_country_flag = atheist_country } }
 			random_owned = { limit = { owner = { primary_culture = french } } GAB = { government = colonial_company } }
 		}
 	}
@@ -1915,6 +2416,18 @@ political_decisions = {
 				clr_country_flag = zoroastrian_country
 				clr_country_flag = nestorian_country
 				clr_country_flag = confucian_country
+				
+				clr_country_flag = maronite_country
+				clr_country_flag = bahai_country
+				clr_country_flag = alevi_country
+				clr_country_flag = alawite_country
+				clr_country_flag = jain_country
+				clr_country_flag = karaite_country
+				clr_country_flag = samaritan_country
+				clr_country_flag = zaydi_country
+				clr_country_flag = ismaili_country
+				clr_country_flag = secular_country
+				clr_country_flag = atheist_country
 			}
 			
 			random_owned = { limit = { owner = { has_country_flag = catholic_country } } CGO = { religion = catholic set_country_flag = catholic_country } }
@@ -1939,6 +2452,19 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } CGO = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } CGO = { religion =  nestorian set_country_flag = nestorian_country } }
 			random_owned = { limit = { owner = { has_country_flag = confucian_country } } CGO = { religion =  confucian set_country_flag = confucian_country } }
+			
+			random_owned = { limit = { owner = { has_country_flag = maronite_country } } CGO = { religion = maronite set_country_flag = maronite_country } }
+			random_owned = { limit = { owner = { has_country_flag = bahai_country } } CGO = { religion = bahai set_country_flag = bahai_country } }
+			random_owned = { limit = { owner = { has_country_flag = mandaean_country } } CGO = { religion = mandaean set_country_flag = mandaean_country } }
+			random_owned = { limit = { owner = { has_country_flag = alevi_country } } CGO = { religion = alevi set_country_flag = alevi_country } }
+			random_owned = { limit = { owner = { has_country_flag = alawite_country } } CGO = { religion = alawite set_country_flag = alawite_country } }
+			random_owned = { limit = { owner = { has_country_flag = jain_country } } CGO = { religion = jain set_country_flag = jain_country } }
+			random_owned = { limit = { owner = { has_country_flag = karaite_country } } CGO = { religion = karaite set_country_flag = karaite_country } }
+			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } CGO = { religion = samaritan set_country_flag = samaritan_country } }
+			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } CGO = { religion = zaydi set_country_flag = zaydi_country } }
+			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } CGO = { religion = ismaili set_country_flag = ismaili_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } CGO = { religion = secular set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } CGO = { religion = atheist set_country_flag = atheist_country } }
 			
 			random_owned = { limit = { owner = { primary_culture = french } } CGO = { government = colonial_company } }
 		}
@@ -2010,6 +2536,18 @@ political_decisions = {
 				clr_country_flag = zoroastrian_country
 				clr_country_flag = nestorian_country
 				clr_country_flag = confucian_country
+				
+				clr_country_flag = maronite_country
+				clr_country_flag = bahai_country
+				clr_country_flag = alevi_country
+				clr_country_flag = alawite_country
+				clr_country_flag = jain_country
+				clr_country_flag = karaite_country
+				clr_country_flag = samaritan_country
+				clr_country_flag = zaydi_country
+				clr_country_flag = ismaili_country
+				clr_country_flag = secular_country
+				clr_country_flag = atheist_country
 			}
 			
 			random_owned = { limit = { owner = { has_country_flag = catholic_country } } CGO = { religion = catholic set_country_flag = catholic_country } }
@@ -2034,6 +2572,19 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } CGO = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } CGO = { religion =  nestorian set_country_flag = nestorian_country } }
 			random_owned = { limit = { owner = { has_country_flag = confucian_country } } CGO = { religion =  confucian set_country_flag = confucian_country } }
+			
+			random_owned = { limit = { owner = { has_country_flag = maronite_country } } CGO = { religion = maronite set_country_flag = maronite_country } }
+			random_owned = { limit = { owner = { has_country_flag = bahai_country } } CGO = { religion = bahai set_country_flag = bahai_country } }
+			random_owned = { limit = { owner = { has_country_flag = mandaean_country } } CGO = { religion = mandaean set_country_flag = mandaean_country } }
+			random_owned = { limit = { owner = { has_country_flag = alevi_country } } CGO = { religion = alevi set_country_flag = alevi_country } }
+			random_owned = { limit = { owner = { has_country_flag = alawite_country } } CGO = { religion = alawite set_country_flag = alawite_country } }
+			random_owned = { limit = { owner = { has_country_flag = jain_country } } CGO = { religion = jain set_country_flag = jain_country } }
+			random_owned = { limit = { owner = { has_country_flag = karaite_country } } CGO = { religion = karaite set_country_flag = karaite_country } }
+			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } CGO = { religion = samaritan set_country_flag = samaritan_country } }
+			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } CGO = { religion = zaydi set_country_flag = zaydi_country } }
+			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } CGO = { religion = ismaili set_country_flag = ismaili_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } CGO = { religion = secular set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } CGO = { religion = atheist set_country_flag = atheist_country } }
 			
 			random_owned = { limit = { owner = { primary_culture = french } } CGO = { government = colonial_company } }
 		}	
@@ -2125,6 +2676,18 @@ political_decisions = {
 				clr_country_flag = zoroastrian_country
 				clr_country_flag = nestorian_country
 				clr_country_flag = confucian_country
+				
+				clr_country_flag = maronite_country
+				clr_country_flag = bahai_country
+				clr_country_flag = alevi_country
+				clr_country_flag = alawite_country
+				clr_country_flag = jain_country
+				clr_country_flag = karaite_country
+				clr_country_flag = samaritan_country
+				clr_country_flag = zaydi_country
+				clr_country_flag = ismaili_country
+				clr_country_flag = secular_country
+				clr_country_flag = atheist_country
 			}
 			
 			random_owned = { limit = { owner = { has_country_flag = catholic_country } } CNG = { religion = catholic set_country_flag = catholic_country } }
@@ -2237,6 +2800,18 @@ political_decisions = {
 				clr_country_flag = zoroastrian_country
 				clr_country_flag = nestorian_country
 				clr_country_flag = confucian_country
+				
+				clr_country_flag = maronite_country
+				clr_country_flag = bahai_country
+				clr_country_flag = alevi_country
+				clr_country_flag = alawite_country
+				clr_country_flag = jain_country
+				clr_country_flag = karaite_country
+				clr_country_flag = samaritan_country
+				clr_country_flag = zaydi_country
+				clr_country_flag = ismaili_country
+				clr_country_flag = secular_country
+				clr_country_flag = atheist_country
 			}
 			
 			random_owned = { limit = { owner = { has_country_flag = catholic_country } } CNG = { religion = catholic set_country_flag = catholic_country } }
@@ -2261,6 +2836,19 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } CNG = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } CNG = { religion =  nestorian set_country_flag = nestorian_country } }
 			random_owned = { limit = { owner = { has_country_flag = confucian_country } } CNG = { religion =  confucian set_country_flag = confucian_country } }
+			
+			random_owned = { limit = { owner = { has_country_flag = maronite_country } } CNG = { religion = maronite set_country_flag = maronite_country } }
+			random_owned = { limit = { owner = { has_country_flag = bahai_country } } CNG = { religion = bahai set_country_flag = bahai_country } }
+			random_owned = { limit = { owner = { has_country_flag = mandaean_country } } CNG = { religion = mandaean set_country_flag = mandaean_country } }
+			random_owned = { limit = { owner = { has_country_flag = alevi_country } } CNG = { religion = alevi set_country_flag = alevi_country } }
+			random_owned = { limit = { owner = { has_country_flag = alawite_country } } CNG = { religion = alawite set_country_flag = alawite_country } }
+			random_owned = { limit = { owner = { has_country_flag = jain_country } } CNG = { religion = jain set_country_flag = jain_country } }
+			random_owned = { limit = { owner = { has_country_flag = karaite_country } } CNG = { religion = karaite set_country_flag = karaite_country } }
+			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } CNG = { religion = samaritan set_country_flag = samaritan_country } }
+			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } CNG = { religion = zaydi set_country_flag = zaydi_country } }
+			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } CNG = { religion = ismaili set_country_flag = ismaili_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } CNG = { religion = secular set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } CNG = { religion = atheist set_country_flag = atheist_country } }
 		}
 	}
 	
@@ -2344,6 +2932,18 @@ political_decisions = {
 				clr_country_flag = zoroastrian_country
 				clr_country_flag = nestorian_country
 				clr_country_flag = confucian_country
+				
+				clr_country_flag = maronite_country
+				clr_country_flag = bahai_country
+				clr_country_flag = alevi_country
+				clr_country_flag = alawite_country
+				clr_country_flag = jain_country
+				clr_country_flag = karaite_country
+				clr_country_flag = samaritan_country
+				clr_country_flag = zaydi_country
+				clr_country_flag = ismaili_country
+				clr_country_flag = secular_country
+				clr_country_flag = atheist_country
 			}
 			
 			random_owned = { limit = { owner = { has_country_flag = catholic_country } } ZAM = { religion = catholic set_country_flag = catholic_country } }
@@ -2450,6 +3050,18 @@ political_decisions = {
 				clr_country_flag = zoroastrian_country
 				clr_country_flag = nestorian_country
 				clr_country_flag = confucian_country
+				
+				clr_country_flag = maronite_country
+				clr_country_flag = bahai_country
+				clr_country_flag = alevi_country
+				clr_country_flag = alawite_country
+				clr_country_flag = jain_country
+				clr_country_flag = karaite_country
+				clr_country_flag = samaritan_country
+				clr_country_flag = zaydi_country
+				clr_country_flag = ismaili_country
+				clr_country_flag = secular_country
+				clr_country_flag = atheist_country
 			}
 			
 			random_owned = { limit = { owner = { has_country_flag = catholic_country } } ZAM = { religion = catholic set_country_flag = catholic_country } }
@@ -2474,6 +3086,19 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } ZAM = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } ZAM = { religion =  nestorian set_country_flag = nestorian_country } }
 			random_owned = { limit = { owner = { has_country_flag = confucian_country } } ZAM = { religion =  confucian set_country_flag = confucian_country } }
+			
+			random_owned = { limit = { owner = { has_country_flag = maronite_country } } ZAM = { religion = maronite set_country_flag = maronite_country } }
+			random_owned = { limit = { owner = { has_country_flag = bahai_country } } ZAM = { religion = bahai set_country_flag = bahai_country } }
+			random_owned = { limit = { owner = { has_country_flag = mandaean_country } } ZAM = { religion = mandaean set_country_flag = mandaean_country } }
+			random_owned = { limit = { owner = { has_country_flag = alevi_country } } ZAM = { religion = alevi set_country_flag = alevi_country } }
+			random_owned = { limit = { owner = { has_country_flag = alawite_country } } ZAM = { religion = alawite set_country_flag = alawite_country } }
+			random_owned = { limit = { owner = { has_country_flag = jain_country } } ZAM = { religion = jain set_country_flag = jain_country } }
+			random_owned = { limit = { owner = { has_country_flag = karaite_country } } ZAM = { religion = karaite set_country_flag = karaite_country } }
+			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } ZAM = { religion = samaritan set_country_flag = samaritan_country } }
+			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } ZAM = { religion = zaydi set_country_flag = zaydi_country } }
+			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } ZAM = { religion = ismaili set_country_flag = ismaili_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } ZAM = { religion = secular set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } ZAM = { religion = atheist set_country_flag = atheist_country } }
 			random_owned = { limit = { owner = { primary_culture = british } } ZAM = { government = colonial_company } }
 		}	
 	}
@@ -2549,6 +3174,18 @@ political_decisions = {
 				clr_country_flag = zoroastrian_country
 				clr_country_flag = nestorian_country
 				clr_country_flag = confucian_country
+				
+				clr_country_flag = maronite_country
+				clr_country_flag = bahai_country
+				clr_country_flag = alevi_country
+				clr_country_flag = alawite_country
+				clr_country_flag = jain_country
+				clr_country_flag = karaite_country
+				clr_country_flag = samaritan_country
+				clr_country_flag = zaydi_country
+				clr_country_flag = ismaili_country
+				clr_country_flag = secular_country
+				clr_country_flag = atheist_country
 			}
 			2026 = { trade_goods = tea }
 			2027 = { trade_goods = tea }
@@ -2576,6 +3213,19 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } KNY = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } KNY = { religion =  nestorian set_country_flag = nestorian_country } }
 			random_owned = { limit = { owner = { has_country_flag = confucian_country } } KNY = { religion =  confucian set_country_flag = confucian_country } }
+			
+			random_owned = { limit = { owner = { has_country_flag = maronite_country } } KNY = { religion = maronite set_country_flag = maronite_country } }
+			random_owned = { limit = { owner = { has_country_flag = bahai_country } } KNY = { religion = bahai set_country_flag = bahai_country } }
+			random_owned = { limit = { owner = { has_country_flag = mandaean_country } } KNY = { religion = mandaean set_country_flag = mandaean_country } }
+			random_owned = { limit = { owner = { has_country_flag = alevi_country } } KNY = { religion = alevi set_country_flag = alevi_country } }
+			random_owned = { limit = { owner = { has_country_flag = alawite_country } } KNY = { religion = alawite set_country_flag = alawite_country } }
+			random_owned = { limit = { owner = { has_country_flag = jain_country } } KNY = { religion = jain set_country_flag = jain_country } }
+			random_owned = { limit = { owner = { has_country_flag = karaite_country } } KNY = { religion = karaite set_country_flag = karaite_country } }
+			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } KNY = { religion = samaritan set_country_flag = samaritan_country } }
+			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } KNY = { religion = zaydi set_country_flag = zaydi_country } }
+			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } KNY = { religion = ismaili set_country_flag = ismaili_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } KNY = { religion = secular set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } KNY = { religion = atheist set_country_flag = atheist_country } }
 			random_owned = { limit = { owner = { primary_culture = british } } KNY = { civilized = yes government = colonial_company } }
 		}
 	}
@@ -2654,6 +3304,18 @@ political_decisions = {
 				clr_country_flag = zoroastrian_country
 				clr_country_flag = nestorian_country
 				clr_country_flag = confucian_country
+				
+				clr_country_flag = maronite_country
+				clr_country_flag = bahai_country
+				clr_country_flag = alevi_country
+				clr_country_flag = alawite_country
+				clr_country_flag = jain_country
+				clr_country_flag = karaite_country
+				clr_country_flag = samaritan_country
+				clr_country_flag = zaydi_country
+				clr_country_flag = ismaili_country
+				clr_country_flag = secular_country
+				clr_country_flag = atheist_country
 			}
 			
 			random_owned = { limit = { owner = { has_country_flag = catholic_country } } KNY = { religion = catholic set_country_flag = catholic_country } }
@@ -2678,6 +3340,19 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } KNY = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } KNY = { religion =  nestorian set_country_flag = nestorian_country } }
 			random_owned = { limit = { owner = { has_country_flag = confucian_country } } KNY = { religion =  confucian set_country_flag = confucian_country } }
+			
+			random_owned = { limit = { owner = { has_country_flag = maronite_country } } KNY = { religion = maronite set_country_flag = maronite_country } }
+			random_owned = { limit = { owner = { has_country_flag = bahai_country } } KNY = { religion = bahai set_country_flag = bahai_country } }
+			random_owned = { limit = { owner = { has_country_flag = mandaean_country } } KNY = { religion = mandaean set_country_flag = mandaean_country } }
+			random_owned = { limit = { owner = { has_country_flag = alevi_country } } KNY = { religion = alevi set_country_flag = alevi_country } }
+			random_owned = { limit = { owner = { has_country_flag = alawite_country } } KNY = { religion = alawite set_country_flag = alawite_country } }
+			random_owned = { limit = { owner = { has_country_flag = jain_country } } KNY = { religion = jain set_country_flag = jain_country } }
+			random_owned = { limit = { owner = { has_country_flag = karaite_country } } KNY = { religion = karaite set_country_flag = karaite_country } }
+			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } KNY = { religion = samaritan set_country_flag = samaritan_country } }
+			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } KNY = { religion = zaydi set_country_flag = zaydi_country } }
+			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } KNY = { religion = ismaili set_country_flag = ismaili_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } KNY = { religion = secular set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } KNY = { religion = atheist set_country_flag = atheist_country } }
 			random_owned = { limit = { owner = { primary_culture = british } } KNY = { government = colonial_company } }
 		}
 	}
@@ -2755,6 +3430,18 @@ political_decisions = {
 				clr_country_flag = zoroastrian_country
 				clr_country_flag = nestorian_country
 				clr_country_flag = confucian_country
+				
+				clr_country_flag = maronite_country
+				clr_country_flag = bahai_country
+				clr_country_flag = alevi_country
+				clr_country_flag = alawite_country
+				clr_country_flag = jain_country
+				clr_country_flag = karaite_country
+				clr_country_flag = samaritan_country
+				clr_country_flag = zaydi_country
+				clr_country_flag = ismaili_country
+				clr_country_flag = secular_country
+				clr_country_flag = atheist_country
 			}
 			
 			random_owned = { limit = { owner = { has_country_flag = catholic_country } } TNZ = { religion = catholic set_country_flag = catholic_country } }
@@ -2779,6 +3466,19 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } TNZ = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } TNZ = { religion =  nestorian set_country_flag = nestorian_country } }
 			random_owned = { limit = { owner = { has_country_flag = confucian_country } } TNZ = { religion =  confucian set_country_flag = confucian_country } }
+			
+			random_owned = { limit = { owner = { has_country_flag = maronite_country } } TNZ = { religion = maronite set_country_flag = maronite_country } }
+			random_owned = { limit = { owner = { has_country_flag = bahai_country } } TNZ = { religion = bahai set_country_flag = bahai_country } }
+			random_owned = { limit = { owner = { has_country_flag = mandaean_country } } TNZ = { religion = mandaean set_country_flag = mandaean_country } }
+			random_owned = { limit = { owner = { has_country_flag = alevi_country } } TNZ = { religion = alevi set_country_flag = alevi_country } }
+			random_owned = { limit = { owner = { has_country_flag = alawite_country } } TNZ = { religion = alawite set_country_flag = alawite_country } }
+			random_owned = { limit = { owner = { has_country_flag = jain_country } } TNZ = { religion = jain set_country_flag = jain_country } }
+			random_owned = { limit = { owner = { has_country_flag = karaite_country } } TNZ = { religion = karaite set_country_flag = karaite_country } }
+			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } TNZ = { religion = samaritan set_country_flag = samaritan_country } }
+			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } TNZ = { religion = zaydi set_country_flag = zaydi_country } }
+			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } TNZ = { religion = ismaili set_country_flag = ismaili_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } TNZ = { religion = secular set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } TNZ = { religion = atheist set_country_flag = atheist_country } }
 			random_owned = { limit = { owner = { is_culture_group = germanic } } TNZ = { government = colonial_company } }
 		}
 	}
@@ -2857,6 +3557,18 @@ political_decisions = {
 				clr_country_flag = zoroastrian_country
 				clr_country_flag = nestorian_country
 				clr_country_flag = confucian_country
+				
+				clr_country_flag = maronite_country
+				clr_country_flag = bahai_country
+				clr_country_flag = alevi_country
+				clr_country_flag = alawite_country
+				clr_country_flag = jain_country
+				clr_country_flag = karaite_country
+				clr_country_flag = samaritan_country
+				clr_country_flag = zaydi_country
+				clr_country_flag = ismaili_country
+				clr_country_flag = secular_country
+				clr_country_flag = atheist_country
 			}
 			
 			random_owned = { limit = { owner = { has_country_flag = catholic_country } } TNZ = { religion = catholic set_country_flag = catholic_country } }
@@ -2881,6 +3593,19 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } TNZ = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } TNZ = { religion =  nestorian set_country_flag = nestorian_country } }
 			random_owned = { limit = { owner = { has_country_flag = confucian_country } } TNZ = { religion =  confucian set_country_flag = confucian_country } }
+			
+			random_owned = { limit = { owner = { has_country_flag = maronite_country } } TNZ = { religion = maronite set_country_flag = maronite_country } }
+			random_owned = { limit = { owner = { has_country_flag = bahai_country } } TNZ = { religion = bahai set_country_flag = bahai_country } }
+			random_owned = { limit = { owner = { has_country_flag = mandaean_country } } TNZ = { religion = mandaean set_country_flag = mandaean_country } }
+			random_owned = { limit = { owner = { has_country_flag = alevi_country } } TNZ = { religion = alevi set_country_flag = alevi_country } }
+			random_owned = { limit = { owner = { has_country_flag = alawite_country } } TNZ = { religion = alawite set_country_flag = alawite_country } }
+			random_owned = { limit = { owner = { has_country_flag = jain_country } } TNZ = { religion = jain set_country_flag = jain_country } }
+			random_owned = { limit = { owner = { has_country_flag = karaite_country } } TNZ = { religion = karaite set_country_flag = karaite_country } }
+			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } TNZ = { religion = samaritan set_country_flag = samaritan_country } }
+			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } TNZ = { religion = zaydi set_country_flag = zaydi_country } }
+			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } TNZ = { religion = ismaili set_country_flag = ismaili_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } TNZ = { religion = secular set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } TNZ = { religion = atheist set_country_flag = atheist_country } }
 			random_owned = { limit = { owner = { is_culture_group = germanic } } TNZ = { government = colonial_company } }
 		}	
 	}
@@ -2952,6 +3677,18 @@ political_decisions = {
 				clr_country_flag = zoroastrian_country
 				clr_country_flag = nestorian_country
 				clr_country_flag = confucian_country
+				
+				clr_country_flag = maronite_country
+				clr_country_flag = bahai_country
+				clr_country_flag = alevi_country
+				clr_country_flag = alawite_country
+				clr_country_flag = jain_country
+				clr_country_flag = karaite_country
+				clr_country_flag = samaritan_country
+				clr_country_flag = zaydi_country
+				clr_country_flag = ismaili_country
+				clr_country_flag = secular_country
+				clr_country_flag = atheist_country
 			}
 			
 			random_owned = { limit = { owner = { has_country_flag = catholic_country } } MLI = { religion = catholic set_country_flag = catholic_country } }
@@ -2975,6 +3712,19 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } MLI = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } MLI = { religion =  nestorian set_country_flag = nestorian_country } }
 			random_owned = { limit = { owner = { has_country_flag = confucian_country } } MLI = { religion =  confucian set_country_flag = confucian_country } }
+			
+			random_owned = { limit = { owner = { has_country_flag = maronite_country } } MLI = { religion = maronite set_country_flag = maronite_country } }
+			random_owned = { limit = { owner = { has_country_flag = bahai_country } } MLI = { religion = bahai set_country_flag = bahai_country } }
+			random_owned = { limit = { owner = { has_country_flag = mandaean_country } } MLI = { religion = mandaean set_country_flag = mandaean_country } }
+			random_owned = { limit = { owner = { has_country_flag = alevi_country } } MLI = { religion = alevi set_country_flag = alevi_country } }
+			random_owned = { limit = { owner = { has_country_flag = alawite_country } } MLI = { religion = alawite set_country_flag = alawite_country } }
+			random_owned = { limit = { owner = { has_country_flag = jain_country } } MLI = { religion = jain set_country_flag = jain_country } }
+			random_owned = { limit = { owner = { has_country_flag = karaite_country } } MLI = { religion = karaite set_country_flag = karaite_country } }
+			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } MLI = { religion = samaritan set_country_flag = samaritan_country } }
+			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } MLI = { religion = zaydi set_country_flag = zaydi_country } }
+			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } MLI = { religion = ismaili set_country_flag = ismaili_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } MLI = { religion = secular set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } MLI = { religion = atheist set_country_flag = atheist_country } }
 			
 			random_owned = { limit = { owner = { primary_culture = french } } MLI = { government = colonial_company } }
 		}
@@ -3051,6 +3801,18 @@ political_decisions = {
 				clr_country_flag = zoroastrian_country
 				clr_country_flag = nestorian_country
 				clr_country_flag = confucian_country
+				
+				clr_country_flag = maronite_country
+				clr_country_flag = bahai_country
+				clr_country_flag = alevi_country
+				clr_country_flag = alawite_country
+				clr_country_flag = jain_country
+				clr_country_flag = karaite_country
+				clr_country_flag = samaritan_country
+				clr_country_flag = zaydi_country
+				clr_country_flag = ismaili_country
+				clr_country_flag = secular_country
+				clr_country_flag = atheist_country
 			}
 			
 			random_owned = { limit = { owner = { has_country_flag = catholic_country } } MLI = { religion = catholic set_country_flag = catholic_country } }
@@ -3074,6 +3836,19 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } MLI = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } MLI = { religion =  nestorian set_country_flag = nestorian_country } }
 			random_owned = { limit = { owner = { has_country_flag = confucian_country } } MLI = { religion =  confucian set_country_flag = confucian_country } }
+			
+			random_owned = { limit = { owner = { has_country_flag = maronite_country } } MLI = { religion = maronite set_country_flag = maronite_country } }
+			random_owned = { limit = { owner = { has_country_flag = bahai_country } } MLI = { religion = bahai set_country_flag = bahai_country } }
+			random_owned = { limit = { owner = { has_country_flag = mandaean_country } } MLI = { religion = mandaean set_country_flag = mandaean_country } }
+			random_owned = { limit = { owner = { has_country_flag = alevi_country } } MLI = { religion = alevi set_country_flag = alevi_country } }
+			random_owned = { limit = { owner = { has_country_flag = alawite_country } } MLI = { religion = alawite set_country_flag = alawite_country } }
+			random_owned = { limit = { owner = { has_country_flag = jain_country } } MLI = { religion = jain set_country_flag = jain_country } }
+			random_owned = { limit = { owner = { has_country_flag = karaite_country } } MLI = { religion = karaite set_country_flag = karaite_country } }
+			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } MLI = { religion = samaritan set_country_flag = samaritan_country } }
+			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } MLI = { religion = zaydi set_country_flag = zaydi_country } }
+			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } MLI = { religion = ismaili set_country_flag = ismaili_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } MLI = { religion = secular set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } MLI = { religion = atheist set_country_flag = atheist_country } }
 			
 			random_owned = { limit = { owner = { primary_culture = french } } MLI = { government = colonial_company } }
 		}	
@@ -3224,6 +3999,18 @@ political_decisions = {
 				clr_country_flag = zoroastrian_country
 				clr_country_flag = nestorian_country
 				clr_country_flag = confucian_country
+				
+				clr_country_flag = maronite_country
+				clr_country_flag = bahai_country
+				clr_country_flag = alevi_country
+				clr_country_flag = alawite_country
+				clr_country_flag = jain_country
+				clr_country_flag = karaite_country
+				clr_country_flag = samaritan_country
+				clr_country_flag = zaydi_country
+				clr_country_flag = ismaili_country
+				clr_country_flag = secular_country
+				clr_country_flag = atheist_country
 			}
 			
 			random_owned = { limit = { owner = { has_country_flag = catholic_country } } CAR = { religion = catholic set_country_flag = catholic_country } }
@@ -3248,6 +4035,19 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } CAR = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } CAR = { religion =  nestorian set_country_flag = nestorian_country } }
 			random_owned = { limit = { owner = { has_country_flag = confucian_country } } CAR = { religion =  confucian set_country_flag = confucian_country } }
+			
+			random_owned = { limit = { owner = { has_country_flag = maronite_country } } CAR = { religion = maronite set_country_flag = maronite_country } }
+			random_owned = { limit = { owner = { has_country_flag = bahai_country } } CAR = { religion = bahai set_country_flag = bahai_country } }
+			random_owned = { limit = { owner = { has_country_flag = mandaean_country } } CAR = { religion = mandaean set_country_flag = mandaean_country } }
+			random_owned = { limit = { owner = { has_country_flag = alevi_country } } CAR = { religion = alevi set_country_flag = alevi_country } }
+			random_owned = { limit = { owner = { has_country_flag = alawite_country } } CAR = { religion = alawite set_country_flag = alawite_country } }
+			random_owned = { limit = { owner = { has_country_flag = jain_country } } CAR = { religion = jain set_country_flag = jain_country } }
+			random_owned = { limit = { owner = { has_country_flag = karaite_country } } CAR = { religion = karaite set_country_flag = karaite_country } }
+			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } CAR = { religion = samaritan set_country_flag = samaritan_country } }
+			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } CAR = { religion = zaydi set_country_flag = zaydi_country } }
+			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } CAR = { religion = ismaili set_country_flag = ismaili_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } CAR = { religion = secular set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } CAR = { religion = atheist set_country_flag = atheist_country } }
 		}
 	}
 	
@@ -3319,6 +4119,18 @@ political_decisions = {
 				clr_country_flag = zoroastrian_country
 				clr_country_flag = nestorian_country
 				clr_country_flag = confucian_country
+				
+				clr_country_flag = maronite_country
+				clr_country_flag = bahai_country
+				clr_country_flag = alevi_country
+				clr_country_flag = alawite_country
+				clr_country_flag = jain_country
+				clr_country_flag = karaite_country
+				clr_country_flag = samaritan_country
+				clr_country_flag = zaydi_country
+				clr_country_flag = ismaili_country
+				clr_country_flag = secular_country
+				clr_country_flag = atheist_country
 			}
 			
 			random_owned = { limit = { owner = { has_country_flag = catholic_country } } CAR = { religion = catholic set_country_flag = catholic_country } }
@@ -3343,6 +4155,19 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } CAR = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } CAR = { religion =  nestorian set_country_flag = nestorian_country } }
 			random_owned = { limit = { owner = { has_country_flag = confucian_country } } CAR = { religion =  confucian set_country_flag = confucian_country } }
+			
+			random_owned = { limit = { owner = { has_country_flag = maronite_country } } CAR = { religion = maronite set_country_flag = maronite_country } }
+			random_owned = { limit = { owner = { has_country_flag = bahai_country } } CAR = { religion = bahai set_country_flag = bahai_country } }
+			random_owned = { limit = { owner = { has_country_flag = mandaean_country } } CAR = { religion = mandaean set_country_flag = mandaean_country } }
+			random_owned = { limit = { owner = { has_country_flag = alevi_country } } CAR = { religion = alevi set_country_flag = alevi_country } }
+			random_owned = { limit = { owner = { has_country_flag = alawite_country } } CAR = { religion = alawite set_country_flag = alawite_country } }
+			random_owned = { limit = { owner = { has_country_flag = jain_country } } CAR = { religion = jain set_country_flag = jain_country } }
+			random_owned = { limit = { owner = { has_country_flag = karaite_country } } CAR = { religion = karaite set_country_flag = karaite_country } }
+			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } CAR = { religion = samaritan set_country_flag = samaritan_country } }
+			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } CAR = { religion = zaydi set_country_flag = zaydi_country } }
+			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } CAR = { religion = ismaili set_country_flag = ismaili_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } CAR = { religion = secular set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } CAR = { religion = atheist set_country_flag = atheist_country } }
 		}	
 	}
 	
@@ -3410,6 +4235,18 @@ political_decisions = {
 				clr_country_flag = zoroastrian_country
 				clr_country_flag = nestorian_country
 				clr_country_flag = confucian_country
+				
+				clr_country_flag = maronite_country
+				clr_country_flag = bahai_country
+				clr_country_flag = alevi_country
+				clr_country_flag = alawite_country
+				clr_country_flag = jain_country
+				clr_country_flag = karaite_country
+				clr_country_flag = samaritan_country
+				clr_country_flag = zaydi_country
+				clr_country_flag = ismaili_country
+				clr_country_flag = secular_country
+				clr_country_flag = atheist_country
 			}
 			
 			random_owned = { limit = { owner = { has_country_flag = catholic_country } } MLW = { religion = catholic set_country_flag = catholic_country } }
@@ -3434,6 +4271,19 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } MLW = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } MLW = { religion =  nestorian set_country_flag = nestorian_country } }
 			random_owned = { limit = { owner = { has_country_flag = confucian_country } } MLW = { religion =  confucian set_country_flag = confucian_country } }
+			
+			random_owned = { limit = { owner = { has_country_flag = maronite_country } } MLW = { religion = maronite set_country_flag = maronite_country } }
+			random_owned = { limit = { owner = { has_country_flag = bahai_country } } MLW = { religion = bahai set_country_flag = bahai_country } }
+			random_owned = { limit = { owner = { has_country_flag = mandaean_country } } MLW = { religion = mandaean set_country_flag = mandaean_country } }
+			random_owned = { limit = { owner = { has_country_flag = alevi_country } } MLW = { religion = alevi set_country_flag = alevi_country } }
+			random_owned = { limit = { owner = { has_country_flag = alawite_country } } MLW = { religion = alawite set_country_flag = alawite_country } }
+			random_owned = { limit = { owner = { has_country_flag = jain_country } } MLW = { religion = jain set_country_flag = jain_country } }
+			random_owned = { limit = { owner = { has_country_flag = karaite_country } } MLW = { religion = karaite set_country_flag = karaite_country } }
+			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } MLW = { religion = samaritan set_country_flag = samaritan_country } }
+			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } MLW = { religion = zaydi set_country_flag = zaydi_country } }
+			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } MLW = { religion = ismaili set_country_flag = ismaili_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } MLW = { religion = secular set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } MLW = { religion = atheist set_country_flag = atheist_country } }
 			
 			random_owned = { limit = { owner = { primary_culture = british owns = 2066 } } 2066 = { change_province_name = "Blantyre" } }
 			random_owned = { limit = { owner = { primary_culture = british } } MLW = { government = colonial_company } }
@@ -3495,6 +4345,18 @@ political_decisions = {
 				clr_country_flag = zoroastrian_country
 				clr_country_flag = nestorian_country
 				clr_country_flag = confucian_country
+				
+				clr_country_flag = maronite_country
+				clr_country_flag = bahai_country
+				clr_country_flag = alevi_country
+				clr_country_flag = alawite_country
+				clr_country_flag = jain_country
+				clr_country_flag = karaite_country
+				clr_country_flag = samaritan_country
+				clr_country_flag = zaydi_country
+				clr_country_flag = ismaili_country
+				clr_country_flag = secular_country
+				clr_country_flag = atheist_country
 			}
 			
 			random_owned = { limit = { owner = { has_country_flag = catholic_country } } MLW = { religion = catholic set_country_flag = catholic_country } }
@@ -3519,6 +4381,19 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } MLW = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } MLW = { religion =  nestorian set_country_flag = nestorian_country } }
 			random_owned = { limit = { owner = { has_country_flag = confucian_country } } MLW = { religion =  confucian set_country_flag = confucian_country } }
+			
+			random_owned = { limit = { owner = { has_country_flag = maronite_country } } MLW = { religion = maronite set_country_flag = maronite_country } }
+			random_owned = { limit = { owner = { has_country_flag = bahai_country } } MLW = { religion = bahai set_country_flag = bahai_country } }
+			random_owned = { limit = { owner = { has_country_flag = mandaean_country } } MLW = { religion = mandaean set_country_flag = mandaean_country } }
+			random_owned = { limit = { owner = { has_country_flag = alevi_country } } MLW = { religion = alevi set_country_flag = alevi_country } }
+			random_owned = { limit = { owner = { has_country_flag = alawite_country } } MLW = { religion = alawite set_country_flag = alawite_country } }
+			random_owned = { limit = { owner = { has_country_flag = jain_country } } MLW = { religion = jain set_country_flag = jain_country } }
+			random_owned = { limit = { owner = { has_country_flag = karaite_country } } MLW = { religion = karaite set_country_flag = karaite_country } }
+			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } MLW = { religion = samaritan set_country_flag = samaritan_country } }
+			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } MLW = { religion = zaydi set_country_flag = zaydi_country } }
+			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } MLW = { religion = ismaili set_country_flag = ismaili_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } MLW = { religion = secular set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } MLW = { religion = atheist set_country_flag = atheist_country } }
 			random_owned = { limit = { owner = { primary_culture = british owns = 2066 } } 2066 = { change_province_name = "Blantyre" } }
 			random_owned = { limit = { owner = { primary_culture = british } } MLW = { government = colonial_company } }
 		}
@@ -3581,6 +4456,18 @@ political_decisions = {
 				clr_country_flag = zoroastrian_country
 				clr_country_flag = nestorian_country
 				clr_country_flag = confucian_country
+				
+				clr_country_flag = maronite_country
+				clr_country_flag = bahai_country
+				clr_country_flag = alevi_country
+				clr_country_flag = alawite_country
+				clr_country_flag = jain_country
+				clr_country_flag = karaite_country
+				clr_country_flag = samaritan_country
+				clr_country_flag = zaydi_country
+				clr_country_flag = ismaili_country
+				clr_country_flag = secular_country
+				clr_country_flag = atheist_country
 			}
 			
 			random_owned = { limit = { owner = { has_country_flag = catholic_country } } GMB = { religion = catholic set_country_flag = catholic_country } }
@@ -3605,6 +4492,19 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } GMB = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } GMB = { religion =  nestorian set_country_flag = nestorian_country } }
 			random_owned = { limit = { owner = { has_country_flag = confucian_country } } GMB = { religion =  confucian set_country_flag = confucian_country } }
+			
+			random_owned = { limit = { owner = { has_country_flag = maronite_country } } GMB = { religion = maronite set_country_flag = maronite_country } }
+			random_owned = { limit = { owner = { has_country_flag = bahai_country } } GMB = { religion = bahai set_country_flag = bahai_country } }
+			random_owned = { limit = { owner = { has_country_flag = mandaean_country } } GMB = { religion = mandaean set_country_flag = mandaean_country } }
+			random_owned = { limit = { owner = { has_country_flag = alevi_country } } GMB = { religion = alevi set_country_flag = alevi_country } }
+			random_owned = { limit = { owner = { has_country_flag = alawite_country } } GMB = { religion = alawite set_country_flag = alawite_country } }
+			random_owned = { limit = { owner = { has_country_flag = jain_country } } GMB = { religion = jain set_country_flag = jain_country } }
+			random_owned = { limit = { owner = { has_country_flag = karaite_country } } GMB = { religion = karaite set_country_flag = karaite_country } }
+			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } GMB = { religion = samaritan set_country_flag = samaritan_country } }
+			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } GMB = { religion = zaydi set_country_flag = zaydi_country } }
+			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } GMB = { religion = ismaili set_country_flag = ismaili_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } GMB = { religion = secular set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } GMB = { religion = atheist set_country_flag = atheist_country } }
 		}
 	}
 	
@@ -3660,6 +4560,21 @@ political_decisions = {
 				clr_country_flag = shinto_country
 				clr_country_flag = sikh_country
 				clr_country_flag = animist_country
+				clr_country_flag = zoroastrian_country
+				clr_country_flag = nestorian_country
+				clr_country_flag = confucian_country
+				
+				clr_country_flag = maronite_country
+				clr_country_flag = bahai_country
+				clr_country_flag = alevi_country
+				clr_country_flag = alawite_country
+				clr_country_flag = jain_country
+				clr_country_flag = karaite_country
+				clr_country_flag = samaritan_country
+				clr_country_flag = zaydi_country
+				clr_country_flag = ismaili_country
+				clr_country_flag = secular_country
+				clr_country_flag = atheist_country
 			}
 			
 			random_owned = { limit = { owner = { has_country_flag = catholic_country } } GMB = { religion = catholic set_country_flag = catholic_country } }
@@ -3684,6 +4599,19 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } GMB = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } GMB = { religion =  nestorian set_country_flag = nestorian_country } }
 			random_owned = { limit = { owner = { has_country_flag = confucian_country } } GMB = { religion =  confucian set_country_flag = confucian_country } }
+			
+			random_owned = { limit = { owner = { has_country_flag = maronite_country } } GMB = { religion = maronite set_country_flag = maronite_country } }
+			random_owned = { limit = { owner = { has_country_flag = bahai_country } } GMB = { religion = bahai set_country_flag = bahai_country } }
+			random_owned = { limit = { owner = { has_country_flag = mandaean_country } } GMB = { religion = mandaean set_country_flag = mandaean_country } }
+			random_owned = { limit = { owner = { has_country_flag = alevi_country } } GMB = { religion = alevi set_country_flag = alevi_country } }
+			random_owned = { limit = { owner = { has_country_flag = alawite_country } } GMB = { religion = alawite set_country_flag = alawite_country } }
+			random_owned = { limit = { owner = { has_country_flag = jain_country } } GMB = { religion = jain set_country_flag = jain_country } }
+			random_owned = { limit = { owner = { has_country_flag = karaite_country } } GMB = { religion = karaite set_country_flag = karaite_country } }
+			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } GMB = { religion = samaritan set_country_flag = samaritan_country } }
+			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } GMB = { religion = zaydi set_country_flag = zaydi_country } }
+			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } GMB = { religion = ismaili set_country_flag = ismaili_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } GMB = { religion = secular set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } GMB = { religion = atheist set_country_flag = atheist_country } }
 		}	
 	}
 	
@@ -3732,6 +4660,21 @@ political_decisions = {
 				clr_country_flag = shinto_country
 				clr_country_flag = sikh_country
 				clr_country_flag = animist_country
+				clr_country_flag = zoroastrian_country
+				clr_country_flag = nestorian_country
+				clr_country_flag = confucian_country
+				
+				clr_country_flag = maronite_country
+				clr_country_flag = bahai_country
+				clr_country_flag = alevi_country
+				clr_country_flag = alawite_country
+				clr_country_flag = jain_country
+				clr_country_flag = karaite_country
+				clr_country_flag = samaritan_country
+				clr_country_flag = zaydi_country
+				clr_country_flag = ismaili_country
+				clr_country_flag = secular_country
+				clr_country_flag = atheist_country
 			}
 			random_owned = {
 				limit = { owner = { is_culture_group = iberian } }
@@ -3773,6 +4716,19 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } ANG = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } ANG = { religion =  nestorian set_country_flag = nestorian_country } }
 			random_owned = { limit = { owner = { has_country_flag = confucian_country } } ANG = { religion =  confucian set_country_flag = confucian_country } }
+			
+			random_owned = { limit = { owner = { has_country_flag = maronite_country } } ANG = { religion = maronite set_country_flag = maronite_country } }
+			random_owned = { limit = { owner = { has_country_flag = bahai_country } } ANG = { religion = bahai set_country_flag = bahai_country } }
+			random_owned = { limit = { owner = { has_country_flag = mandaean_country } } ANG = { religion = mandaean set_country_flag = mandaean_country } }
+			random_owned = { limit = { owner = { has_country_flag = alevi_country } } ANG = { religion = alevi set_country_flag = alevi_country } }
+			random_owned = { limit = { owner = { has_country_flag = alawite_country } } ANG = { religion = alawite set_country_flag = alawite_country } }
+			random_owned = { limit = { owner = { has_country_flag = jain_country } } ANG = { religion = jain set_country_flag = jain_country } }
+			random_owned = { limit = { owner = { has_country_flag = karaite_country } } ANG = { religion = karaite set_country_flag = karaite_country } }
+			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } ANG = { religion = samaritan set_country_flag = samaritan_country } }
+			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } ANG = { religion = zaydi set_country_flag = zaydi_country } }
+			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } ANG = { religion = ismaili set_country_flag = ismaili_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } ANG = { religion = secular set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } ANG = { religion = atheist set_country_flag = atheist_country } }
 		}
 		
 		ai_will_do = { factor = 1 }
@@ -3840,6 +4796,21 @@ political_decisions = {
 				clr_country_flag = shinto_country
 				clr_country_flag = sikh_country
 				clr_country_flag = animist_country
+				clr_country_flag = zoroastrian_country
+				clr_country_flag = nestorian_country
+				clr_country_flag = confucian_country
+				
+				clr_country_flag = maronite_country
+				clr_country_flag = bahai_country
+				clr_country_flag = alevi_country
+				clr_country_flag = alawite_country
+				clr_country_flag = jain_country
+				clr_country_flag = karaite_country
+				clr_country_flag = samaritan_country
+				clr_country_flag = zaydi_country
+				clr_country_flag = ismaili_country
+				clr_country_flag = secular_country
+				clr_country_flag = atheist_country
 			}
 			
 			random_owned = { limit = { owner = { has_country_flag = catholic_country } } ANG = { religion = catholic set_country_flag = catholic_country } }
@@ -3864,6 +4835,19 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } ANG = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } ANG = { religion =  nestorian set_country_flag = nestorian_country } }
 			random_owned = { limit = { owner = { has_country_flag = confucian_country } } ANG = { religion =  confucian set_country_flag = confucian_country } }
+			
+			random_owned = { limit = { owner = { has_country_flag = maronite_country } } ANG = { religion = maronite set_country_flag = maronite_country } }
+			random_owned = { limit = { owner = { has_country_flag = bahai_country } } ANG = { religion = bahai set_country_flag = bahai_country } }
+			random_owned = { limit = { owner = { has_country_flag = mandaean_country } } ANG = { religion = mandaean set_country_flag = mandaean_country } }
+			random_owned = { limit = { owner = { has_country_flag = alevi_country } } ANG = { religion = alevi set_country_flag = alevi_country } }
+			random_owned = { limit = { owner = { has_country_flag = alawite_country } } ANG = { religion = alawite set_country_flag = alawite_country } }
+			random_owned = { limit = { owner = { has_country_flag = jain_country } } ANG = { religion = jain set_country_flag = jain_country } }
+			random_owned = { limit = { owner = { has_country_flag = karaite_country } } ANG = { religion = karaite set_country_flag = karaite_country } }
+			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } ANG = { religion = samaritan set_country_flag = samaritan_country } }
+			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } ANG = { religion = zaydi set_country_flag = zaydi_country } }
+			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } ANG = { religion = ismaili set_country_flag = ismaili_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } ANG = { religion = secular set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } ANG = { religion = atheist set_country_flag = atheist_country } }
 		}	
 	}
 	
@@ -3911,6 +4895,21 @@ political_decisions = {
 				clr_country_flag = shinto_country
 				clr_country_flag = sikh_country
 				clr_country_flag = animist_country
+				clr_country_flag = zoroastrian_country
+				clr_country_flag = nestorian_country
+				clr_country_flag = confucian_country
+				
+				clr_country_flag = maronite_country
+				clr_country_flag = bahai_country
+				clr_country_flag = alevi_country
+				clr_country_flag = alawite_country
+				clr_country_flag = jain_country
+				clr_country_flag = karaite_country
+				clr_country_flag = samaritan_country
+				clr_country_flag = zaydi_country
+				clr_country_flag = ismaili_country
+				clr_country_flag = secular_country
+				clr_country_flag = atheist_country
 			}
 			random_owned = {
 				limit = { owner = { is_culture_group = iberian } }
@@ -3955,6 +4954,19 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } MOZ = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } MOZ = { religion =  nestorian set_country_flag = nestorian_country } }
 			random_owned = { limit = { owner = { has_country_flag = confucian_country } } MOZ = { religion =  confucian set_country_flag = confucian_country } }
+			
+			random_owned = { limit = { owner = { has_country_flag = maronite_country } } MOZ = { religion = maronite set_country_flag = maronite_country } }
+			random_owned = { limit = { owner = { has_country_flag = bahai_country } } MOZ = { religion = bahai set_country_flag = bahai_country } }
+			random_owned = { limit = { owner = { has_country_flag = mandaean_country } } MOZ = { religion = mandaean set_country_flag = mandaean_country } }
+			random_owned = { limit = { owner = { has_country_flag = alevi_country } } MOZ = { religion = alevi set_country_flag = alevi_country } }
+			random_owned = { limit = { owner = { has_country_flag = alawite_country } } MOZ = { religion = alawite set_country_flag = alawite_country } }
+			random_owned = { limit = { owner = { has_country_flag = jain_country } } MOZ = { religion = jain set_country_flag = jain_country } }
+			random_owned = { limit = { owner = { has_country_flag = karaite_country } } MOZ = { religion = karaite set_country_flag = karaite_country } }
+			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } MOZ = { religion = samaritan set_country_flag = samaritan_country } }
+			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } MOZ = { religion = zaydi set_country_flag = zaydi_country } }
+			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } MOZ = { religion = ismaili set_country_flag = ismaili_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } MOZ = { religion = secular set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } MOZ = { religion = atheist set_country_flag = atheist_country } }
 			
 			2054 = { trade_goods = coal }
 			random_owned = {
@@ -4073,6 +5085,21 @@ political_decisions = {
 				clr_country_flag = shinto_country
 				clr_country_flag = sikh_country
 				clr_country_flag = animist_country
+				clr_country_flag = zoroastrian_country
+				clr_country_flag = nestorian_country
+				clr_country_flag = confucian_country
+				
+				clr_country_flag = maronite_country
+				clr_country_flag = bahai_country
+				clr_country_flag = alevi_country
+				clr_country_flag = alawite_country
+				clr_country_flag = jain_country
+				clr_country_flag = karaite_country
+				clr_country_flag = samaritan_country
+				clr_country_flag = zaydi_country
+				clr_country_flag = ismaili_country
+				clr_country_flag = secular_country
+				clr_country_flag = atheist_country
 			}
 			
 			random_owned = { limit = { owner = { has_country_flag = catholic_country } } MOZ = { religion = catholic set_country_flag = catholic_country } }
@@ -4097,6 +5124,19 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } MOZ = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } MOZ = { religion =  nestorian set_country_flag = nestorian_country } }
 			random_owned = { limit = { owner = { has_country_flag = confucian_country } } MOZ = { religion =  confucian set_country_flag = confucian_country } }
+			
+			random_owned = { limit = { owner = { has_country_flag = maronite_country } } MOZ = { religion = maronite set_country_flag = maronite_country } }
+			random_owned = { limit = { owner = { has_country_flag = bahai_country } } MOZ = { religion = bahai set_country_flag = bahai_country } }
+			random_owned = { limit = { owner = { has_country_flag = mandaean_country } } MOZ = { religion = mandaean set_country_flag = mandaean_country } }
+			random_owned = { limit = { owner = { has_country_flag = alevi_country } } MOZ = { religion = alevi set_country_flag = alevi_country } }
+			random_owned = { limit = { owner = { has_country_flag = alawite_country } } MOZ = { religion = alawite set_country_flag = alawite_country } }
+			random_owned = { limit = { owner = { has_country_flag = jain_country } } MOZ = { religion = jain set_country_flag = jain_country } }
+			random_owned = { limit = { owner = { has_country_flag = karaite_country } } MOZ = { religion = karaite set_country_flag = karaite_country } }
+			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } MOZ = { religion = samaritan set_country_flag = samaritan_country } }
+			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } MOZ = { religion = zaydi set_country_flag = zaydi_country } }
+			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } MOZ = { religion = ismaili set_country_flag = ismaili_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } MOZ = { religion = secular set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } MOZ = { religion = atheist set_country_flag = atheist_country } }
 		}	
 	}
 	
@@ -4201,6 +5241,21 @@ political_decisions = {
 				clr_country_flag = shinto_country
 				clr_country_flag = sikh_country
 				clr_country_flag = animist_country
+				clr_country_flag = zoroastrian_country
+				clr_country_flag = nestorian_country
+				clr_country_flag = confucian_country
+				
+				clr_country_flag = maronite_country
+				clr_country_flag = bahai_country
+				clr_country_flag = alevi_country
+				clr_country_flag = alawite_country
+				clr_country_flag = jain_country
+				clr_country_flag = karaite_country
+				clr_country_flag = samaritan_country
+				clr_country_flag = zaydi_country
+				clr_country_flag = ismaili_country
+				clr_country_flag = secular_country
+				clr_country_flag = atheist_country
 			}
 			
 			random_owned = { limit = { owner = { has_country_flag = catholic_country } } BUG = { religion = catholic set_country_flag = catholic_country } }
@@ -4225,6 +5280,19 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } BUG = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } BUG = { religion =  nestorian set_country_flag = nestorian_country } }
 			random_owned = { limit = { owner = { has_country_flag = confucian_country } } BUG = { religion =  confucian set_country_flag = confucian_country } }
+			
+			random_owned = { limit = { owner = { has_country_flag = maronite_country } } BUG = { religion = maronite set_country_flag = maronite_country } }
+			random_owned = { limit = { owner = { has_country_flag = bahai_country } } BUG = { religion = bahai set_country_flag = bahai_country } }
+			random_owned = { limit = { owner = { has_country_flag = mandaean_country } } BUG = { religion = mandaean set_country_flag = mandaean_country } }
+			random_owned = { limit = { owner = { has_country_flag = alevi_country } } BUG = { religion = alevi set_country_flag = alevi_country } }
+			random_owned = { limit = { owner = { has_country_flag = alawite_country } } BUG = { religion = alawite set_country_flag = alawite_country } }
+			random_owned = { limit = { owner = { has_country_flag = jain_country } } BUG = { religion = jain set_country_flag = jain_country } }
+			random_owned = { limit = { owner = { has_country_flag = karaite_country } } BUG = { religion = karaite set_country_flag = karaite_country } }
+			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } BUG = { religion = samaritan set_country_flag = samaritan_country } }
+			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } BUG = { religion = zaydi set_country_flag = zaydi_country } }
+			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } BUG = { religion = ismaili set_country_flag = ismaili_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } BUG = { religion = secular set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } BUG = { religion = atheist set_country_flag = atheist_country } }
 			
 			2019 = { change_province_name = "Kampala" }
 		}
@@ -4278,6 +5346,21 @@ political_decisions = {
 				clr_country_flag = shinto_country
 				clr_country_flag = sikh_country
 				clr_country_flag = animist_country
+				clr_country_flag = zoroastrian_country
+				clr_country_flag = nestorian_country
+				clr_country_flag = confucian_country
+				
+				clr_country_flag = maronite_country
+				clr_country_flag = bahai_country
+				clr_country_flag = alevi_country
+				clr_country_flag = alawite_country
+				clr_country_flag = jain_country
+				clr_country_flag = karaite_country
+				clr_country_flag = samaritan_country
+				clr_country_flag = zaydi_country
+				clr_country_flag = ismaili_country
+				clr_country_flag = secular_country
+				clr_country_flag = atheist_country
 			}
 			
 			random_owned = { limit = { owner = { has_country_flag = catholic_country } } BUG = { religion = catholic set_country_flag = catholic_country } }
@@ -4302,6 +5385,19 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } BUG = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } BUG = { religion =  nestorian set_country_flag = nestorian_country } }
 			random_owned = { limit = { owner = { has_country_flag = confucian_country } } BUG = { religion =  confucian set_country_flag = confucian_country } }
+			
+			random_owned = { limit = { owner = { has_country_flag = maronite_country } } BUG = { religion = maronite set_country_flag = maronite_country } }
+			random_owned = { limit = { owner = { has_country_flag = bahai_country } } BUG = { religion = bahai set_country_flag = bahai_country } }
+			random_owned = { limit = { owner = { has_country_flag = mandaean_country } } BUG = { religion = mandaean set_country_flag = mandaean_country } }
+			random_owned = { limit = { owner = { has_country_flag = alevi_country } } BUG = { religion = alevi set_country_flag = alevi_country } }
+			random_owned = { limit = { owner = { has_country_flag = alawite_country } } BUG = { religion = alawite set_country_flag = alawite_country } }
+			random_owned = { limit = { owner = { has_country_flag = jain_country } } BUG = { religion = jain set_country_flag = jain_country } }
+			random_owned = { limit = { owner = { has_country_flag = karaite_country } } BUG = { religion = karaite set_country_flag = karaite_country } }
+			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } BUG = { religion = samaritan set_country_flag = samaritan_country } }
+			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } BUG = { religion = zaydi set_country_flag = zaydi_country } }
+			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } BUG = { religion = ismaili set_country_flag = ismaili_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } BUG = { religion = secular set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } BUG = { religion = atheist set_country_flag = atheist_country } }
 		}
 	}
 	
@@ -4361,6 +5457,21 @@ political_decisions = {
 				clr_country_flag = shinto_country
 				clr_country_flag = sikh_country
 				clr_country_flag = animist_country
+				clr_country_flag = zoroastrian_country
+				clr_country_flag = nestorian_country
+				clr_country_flag = confucian_country
+				
+				clr_country_flag = maronite_country
+				clr_country_flag = bahai_country
+				clr_country_flag = alevi_country
+				clr_country_flag = alawite_country
+				clr_country_flag = jain_country
+				clr_country_flag = karaite_country
+				clr_country_flag = samaritan_country
+				clr_country_flag = zaydi_country
+				clr_country_flag = ismaili_country
+				clr_country_flag = secular_country
+				clr_country_flag = atheist_country
 			}
 			
 			random_owned = { limit = { owner = { has_country_flag = catholic_country } } TSW = { religion = catholic set_country_flag = catholic_country } }
@@ -4385,6 +5496,19 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } TSW = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } TSW = { religion =  nestorian set_country_flag = nestorian_country } }
 			random_owned = { limit = { owner = { has_country_flag = confucian_country } } TSW = { religion =  confucian set_country_flag = confucian_country } }
+			
+			random_owned = { limit = { owner = { has_country_flag = maronite_country } } TSW = { religion = maronite set_country_flag = maronite_country } }
+			random_owned = { limit = { owner = { has_country_flag = bahai_country } } TSW = { religion = bahai set_country_flag = bahai_country } }
+			random_owned = { limit = { owner = { has_country_flag = mandaean_country } } TSW = { religion = mandaean set_country_flag = mandaean_country } }
+			random_owned = { limit = { owner = { has_country_flag = alevi_country } } TSW = { religion = alevi set_country_flag = alevi_country } }
+			random_owned = { limit = { owner = { has_country_flag = alawite_country } } TSW = { religion = alawite set_country_flag = alawite_country } }
+			random_owned = { limit = { owner = { has_country_flag = jain_country } } TSW = { religion = jain set_country_flag = jain_country } }
+			random_owned = { limit = { owner = { has_country_flag = karaite_country } } TSW = { religion = karaite set_country_flag = karaite_country } }
+			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } TSW = { religion = samaritan set_country_flag = samaritan_country } }
+			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } TSW = { religion = zaydi set_country_flag = zaydi_country } }
+			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } TSW = { religion = ismaili set_country_flag = ismaili_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } TSW = { religion = secular set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } TSW = { religion = atheist set_country_flag = atheist_country } }
 		}
 	}
 	
@@ -4440,6 +5564,21 @@ political_decisions = {
 				clr_country_flag = shinto_country
 				clr_country_flag = sikh_country
 				clr_country_flag = animist_country
+				clr_country_flag = zoroastrian_country
+				clr_country_flag = nestorian_country
+				clr_country_flag = confucian_country
+				
+				clr_country_flag = maronite_country
+				clr_country_flag = bahai_country
+				clr_country_flag = alevi_country
+				clr_country_flag = alawite_country
+				clr_country_flag = jain_country
+				clr_country_flag = karaite_country
+				clr_country_flag = samaritan_country
+				clr_country_flag = zaydi_country
+				clr_country_flag = ismaili_country
+				clr_country_flag = secular_country
+				clr_country_flag = atheist_country
 			}
 			
 			random_owned = { limit = { owner = { has_country_flag = catholic_country } } TSW = { religion = catholic set_country_flag = catholic_country } }
@@ -4464,6 +5603,19 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } TSW = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } TSW = { religion =  nestorian set_country_flag = nestorian_country } }
 			random_owned = { limit = { owner = { has_country_flag = confucian_country } } TSW = { religion =  confucian set_country_flag = confucian_country } }
+			
+			random_owned = { limit = { owner = { has_country_flag = maronite_country } } TSW = { religion = maronite set_country_flag = maronite_country } }
+			random_owned = { limit = { owner = { has_country_flag = bahai_country } } TSW = { religion = bahai set_country_flag = bahai_country } }
+			random_owned = { limit = { owner = { has_country_flag = mandaean_country } } TSW = { religion = mandaean set_country_flag = mandaean_country } }
+			random_owned = { limit = { owner = { has_country_flag = alevi_country } } TSW = { religion = alevi set_country_flag = alevi_country } }
+			random_owned = { limit = { owner = { has_country_flag = alawite_country } } TSW = { religion = alawite set_country_flag = alawite_country } }
+			random_owned = { limit = { owner = { has_country_flag = jain_country } } TSW = { religion = jain set_country_flag = jain_country } }
+			random_owned = { limit = { owner = { has_country_flag = karaite_country } } TSW = { religion = karaite set_country_flag = karaite_country } }
+			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } TSW = { religion = samaritan set_country_flag = samaritan_country } }
+			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } TSW = { religion = zaydi set_country_flag = zaydi_country } }
+			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } TSW = { religion = ismaili set_country_flag = ismaili_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } TSW = { religion = secular set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } TSW = { religion = atheist set_country_flag = atheist_country } }
 		}	
 	}
 	
@@ -4607,6 +5759,21 @@ political_decisions = {
 				clr_country_flag = shinto_country
 				clr_country_flag = sikh_country
 				clr_country_flag = animist_country
+				clr_country_flag = zoroastrian_country
+				clr_country_flag = nestorian_country
+				clr_country_flag = confucian_country
+				
+				clr_country_flag = maronite_country
+				clr_country_flag = bahai_country
+				clr_country_flag = alevi_country
+				clr_country_flag = alawite_country
+				clr_country_flag = jain_country
+				clr_country_flag = karaite_country
+				clr_country_flag = samaritan_country
+				clr_country_flag = zaydi_country
+				clr_country_flag = ismaili_country
+				clr_country_flag = secular_country
+				clr_country_flag = atheist_country
 			}
 			
 			random_owned = { limit = { owner = { has_country_flag = catholic_country } } ASH = { religion = catholic set_country_flag = catholic_country } }
@@ -4631,6 +5798,19 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } ASH = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } ASH = { religion =  nestorian set_country_flag = nestorian_country } }
 			random_owned = { limit = { owner = { has_country_flag = confucian_country } } ASH = { religion =  confucian set_country_flag = confucian_country } }
+			
+			random_owned = { limit = { owner = { has_country_flag = maronite_country } } ASH = { religion = maronite set_country_flag = maronite_country } }
+			random_owned = { limit = { owner = { has_country_flag = bahai_country } } ASH = { religion = bahai set_country_flag = bahai_country } }
+			random_owned = { limit = { owner = { has_country_flag = mandaean_country } } ASH = { religion = mandaean set_country_flag = mandaean_country } }
+			random_owned = { limit = { owner = { has_country_flag = alevi_country } } ASH = { religion = alevi set_country_flag = alevi_country } }
+			random_owned = { limit = { owner = { has_country_flag = alawite_country } } ASH = { religion = alawite set_country_flag = alawite_country } }
+			random_owned = { limit = { owner = { has_country_flag = jain_country } } ASH = { religion = jain set_country_flag = jain_country } }
+			random_owned = { limit = { owner = { has_country_flag = karaite_country } } ASH = { religion = karaite set_country_flag = karaite_country } }
+			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } ASH = { religion = samaritan set_country_flag = samaritan_country } }
+			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } ASH = { religion = zaydi set_country_flag = zaydi_country } }
+			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } ASH = { religion = ismaili set_country_flag = ismaili_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } ASH = { religion = secular set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } ASH = { religion = atheist set_country_flag = atheist_country } }
 		}
 	}
 		
@@ -4686,6 +5866,21 @@ political_decisions = {
 				clr_country_flag = shinto_country
 				clr_country_flag = sikh_country
 				clr_country_flag = animist_country
+				clr_country_flag = zoroastrian_country
+				clr_country_flag = nestorian_country
+				clr_country_flag = confucian_country
+				
+				clr_country_flag = maronite_country
+				clr_country_flag = bahai_country
+				clr_country_flag = alevi_country
+				clr_country_flag = alawite_country
+				clr_country_flag = jain_country
+				clr_country_flag = karaite_country
+				clr_country_flag = samaritan_country
+				clr_country_flag = zaydi_country
+				clr_country_flag = ismaili_country
+				clr_country_flag = secular_country
+				clr_country_flag = atheist_country
 			}
 			
 			random_owned = { limit = { owner = { has_country_flag = catholic_country } } ASH = { religion = catholic set_country_flag = catholic_country } }
@@ -4710,6 +5905,19 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } ASH = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } ASH = { religion =  nestorian set_country_flag = nestorian_country } }
 			random_owned = { limit = { owner = { has_country_flag = confucian_country } } ASH = { religion =  confucian set_country_flag = confucian_country } }
+			
+			random_owned = { limit = { owner = { has_country_flag = maronite_country } } ASH = { religion = maronite set_country_flag = maronite_country } }
+			random_owned = { limit = { owner = { has_country_flag = bahai_country } } ASH = { religion = bahai set_country_flag = bahai_country } }
+			random_owned = { limit = { owner = { has_country_flag = mandaean_country } } ASH = { religion = mandaean set_country_flag = mandaean_country } }
+			random_owned = { limit = { owner = { has_country_flag = alevi_country } } ASH = { religion = alevi set_country_flag = alevi_country } }
+			random_owned = { limit = { owner = { has_country_flag = alawite_country } } ASH = { religion = alawite set_country_flag = alawite_country } }
+			random_owned = { limit = { owner = { has_country_flag = jain_country } } ASH = { religion = jain set_country_flag = jain_country } }
+			random_owned = { limit = { owner = { has_country_flag = karaite_country } } ASH = { religion = karaite set_country_flag = karaite_country } }
+			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } ASH = { religion = samaritan set_country_flag = samaritan_country } }
+			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } ASH = { religion = zaydi set_country_flag = zaydi_country } }
+			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } ASH = { religion = ismaili set_country_flag = ismaili_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } ASH = { religion = secular set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } ASH = { religion = atheist set_country_flag = atheist_country } }
 		}
 	}
 	
@@ -4772,6 +5980,21 @@ political_decisions = {
 				clr_country_flag = shinto_country
 				clr_country_flag = sikh_country
 				clr_country_flag = animist_country
+				clr_country_flag = zoroastrian_country
+				clr_country_flag = nestorian_country
+				clr_country_flag = confucian_country
+				
+				clr_country_flag = maronite_country
+				clr_country_flag = bahai_country
+				clr_country_flag = alevi_country
+				clr_country_flag = alawite_country
+				clr_country_flag = jain_country
+				clr_country_flag = karaite_country
+				clr_country_flag = samaritan_country
+				clr_country_flag = zaydi_country
+				clr_country_flag = ismaili_country
+				clr_country_flag = secular_country
+				clr_country_flag = atheist_country
 			}
 			
 			random_owned = { limit = { owner = { has_country_flag = catholic_country } } BKF = { religion = catholic set_country_flag = catholic_country } }
@@ -4796,6 +6019,19 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } BKF = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } BKF = { religion =  nestorian set_country_flag = nestorian_country } }
 			random_owned = { limit = { owner = { has_country_flag = confucian_country } } BKF = { religion =  confucian set_country_flag = confucian_country } }
+			
+			random_owned = { limit = { owner = { has_country_flag = maronite_country } } BKF = { religion = maronite set_country_flag = maronite_country } }
+			random_owned = { limit = { owner = { has_country_flag = bahai_country } } BKF = { religion = bahai set_country_flag = bahai_country } }
+			random_owned = { limit = { owner = { has_country_flag = mandaean_country } } BKF = { religion = mandaean set_country_flag = mandaean_country } }
+			random_owned = { limit = { owner = { has_country_flag = alevi_country } } BKF = { religion = alevi set_country_flag = alevi_country } }
+			random_owned = { limit = { owner = { has_country_flag = alawite_country } } BKF = { religion = alawite set_country_flag = alawite_country } }
+			random_owned = { limit = { owner = { has_country_flag = jain_country } } BKF = { religion = jain set_country_flag = jain_country } }
+			random_owned = { limit = { owner = { has_country_flag = karaite_country } } BKF = { religion = karaite set_country_flag = karaite_country } }
+			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } BKF = { religion = samaritan set_country_flag = samaritan_country } }
+			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } BKF = { religion = zaydi set_country_flag = zaydi_country } }
+			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } BKF = { religion = ismaili set_country_flag = ismaili_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } BKF = { religion = secular set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } BKF = { religion = atheist set_country_flag = atheist_country } }
 		}
 	}
 	
@@ -4854,6 +6090,21 @@ political_decisions = {
 				clr_country_flag = shinto_country
 				clr_country_flag = sikh_country
 				clr_country_flag = animist_country
+				clr_country_flag = zoroastrian_country
+				clr_country_flag = nestorian_country
+				clr_country_flag = confucian_country
+				
+				clr_country_flag = maronite_country
+				clr_country_flag = bahai_country
+				clr_country_flag = alevi_country
+				clr_country_flag = alawite_country
+				clr_country_flag = jain_country
+				clr_country_flag = karaite_country
+				clr_country_flag = samaritan_country
+				clr_country_flag = zaydi_country
+				clr_country_flag = ismaili_country
+				clr_country_flag = secular_country
+				clr_country_flag = atheist_country
 			}
 			
 			random_owned = { limit = { owner = { has_country_flag = catholic_country } } BKF = { religion = catholic set_country_flag = catholic_country } }
@@ -4878,6 +6129,19 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } BKF = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } BKF = { religion =  nestorian set_country_flag = nestorian_country } }
 			random_owned = { limit = { owner = { has_country_flag = confucian_country } } BKF = { religion =  confucian set_country_flag = confucian_country } }
+			
+			random_owned = { limit = { owner = { has_country_flag = maronite_country } } BKF = { religion = maronite set_country_flag = maronite_country } }
+			random_owned = { limit = { owner = { has_country_flag = bahai_country } } BKF = { religion = bahai set_country_flag = bahai_country } }
+			random_owned = { limit = { owner = { has_country_flag = mandaean_country } } BKF = { religion = mandaean set_country_flag = mandaean_country } }
+			random_owned = { limit = { owner = { has_country_flag = alevi_country } } BKF = { religion = alevi set_country_flag = alevi_country } }
+			random_owned = { limit = { owner = { has_country_flag = alawite_country } } BKF = { religion = alawite set_country_flag = alawite_country } }
+			random_owned = { limit = { owner = { has_country_flag = jain_country } } BKF = { religion = jain set_country_flag = jain_country } }
+			random_owned = { limit = { owner = { has_country_flag = karaite_country } } BKF = { religion = karaite set_country_flag = karaite_country } }
+			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } BKF = { religion = samaritan set_country_flag = samaritan_country } }
+			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } BKF = { religion = zaydi set_country_flag = zaydi_country } }
+			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } BKF = { religion = ismaili set_country_flag = ismaili_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } BKF = { religion = secular set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } BKF = { religion = atheist set_country_flag = atheist_country } }
 		}
 	}
 	
@@ -4978,6 +6242,21 @@ political_decisions = {
 				clr_country_flag = shinto_country
 				clr_country_flag = sikh_country
 				clr_country_flag = animist_country
+				clr_country_flag = zoroastrian_country
+				clr_country_flag = nestorian_country
+				clr_country_flag = confucian_country
+				
+				clr_country_flag = maronite_country
+				clr_country_flag = bahai_country
+				clr_country_flag = alevi_country
+				clr_country_flag = alawite_country
+				clr_country_flag = jain_country
+				clr_country_flag = karaite_country
+				clr_country_flag = samaritan_country
+				clr_country_flag = zaydi_country
+				clr_country_flag = ismaili_country
+				clr_country_flag = secular_country
+				clr_country_flag = atheist_country
 			}
 			
 			random_owned = { limit = { owner = { has_country_flag = catholic_country } } DAH = { religion = catholic set_country_flag = catholic_country } }
@@ -5002,6 +6281,19 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } DAH = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } DAH = { religion =  nestorian set_country_flag = nestorian_country } }
 			random_owned = { limit = { owner = { has_country_flag = confucian_country } } DAH = { religion =  confucian set_country_flag = confucian_country } }
+			
+			random_owned = { limit = { owner = { has_country_flag = maronite_country } } DAH = { religion = maronite set_country_flag = maronite_country } }
+			random_owned = { limit = { owner = { has_country_flag = bahai_country } } DAH = { religion = bahai set_country_flag = bahai_country } }
+			random_owned = { limit = { owner = { has_country_flag = mandaean_country } } DAH = { religion = mandaean set_country_flag = mandaean_country } }
+			random_owned = { limit = { owner = { has_country_flag = alevi_country } } DAH = { religion = alevi set_country_flag = alevi_country } }
+			random_owned = { limit = { owner = { has_country_flag = alawite_country } } DAH = { religion = alawite set_country_flag = alawite_country } }
+			random_owned = { limit = { owner = { has_country_flag = jain_country } } DAH = { religion = jain set_country_flag = jain_country } }
+			random_owned = { limit = { owner = { has_country_flag = karaite_country } } DAH = { religion = karaite set_country_flag = karaite_country } }
+			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } DAH = { religion = samaritan set_country_flag = samaritan_country } }
+			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } DAH = { religion = zaydi set_country_flag = zaydi_country } }
+			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } DAH = { religion = ismaili set_country_flag = ismaili_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } DAH = { religion = secular set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } DAH = { religion = atheist set_country_flag = atheist_country } }
 		}
 	}
 	
@@ -5060,6 +6352,21 @@ political_decisions = {
 				clr_country_flag = shinto_country
 				clr_country_flag = sikh_country
 				clr_country_flag = animist_country
+				clr_country_flag = zoroastrian_country
+				clr_country_flag = nestorian_country
+				clr_country_flag = confucian_country
+				
+				clr_country_flag = maronite_country
+				clr_country_flag = bahai_country
+				clr_country_flag = alevi_country
+				clr_country_flag = alawite_country
+				clr_country_flag = jain_country
+				clr_country_flag = karaite_country
+				clr_country_flag = samaritan_country
+				clr_country_flag = zaydi_country
+				clr_country_flag = ismaili_country
+				clr_country_flag = secular_country
+				clr_country_flag = atheist_country
 			}
 			
 			random_owned = { limit = { owner = { has_country_flag = catholic_country } } DAH = { religion = catholic set_country_flag = catholic_country } }
@@ -5084,6 +6391,19 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } DAH = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } DAH = { religion =  nestorian set_country_flag = nestorian_country } }
 			random_owned = { limit = { owner = { has_country_flag = confucian_country } } DAH = { religion =  confucian set_country_flag = confucian_country } }
+			
+			random_owned = { limit = { owner = { has_country_flag = maronite_country } } DAH = { religion = maronite set_country_flag = maronite_country } }
+			random_owned = { limit = { owner = { has_country_flag = bahai_country } } DAH = { religion = bahai set_country_flag = bahai_country } }
+			random_owned = { limit = { owner = { has_country_flag = mandaean_country } } DAH = { religion = mandaean set_country_flag = mandaean_country } }
+			random_owned = { limit = { owner = { has_country_flag = alevi_country } } DAH = { religion = alevi set_country_flag = alevi_country } }
+			random_owned = { limit = { owner = { has_country_flag = alawite_country } } DAH = { religion = alawite set_country_flag = alawite_country } }
+			random_owned = { limit = { owner = { has_country_flag = jain_country } } DAH = { religion = jain set_country_flag = jain_country } }
+			random_owned = { limit = { owner = { has_country_flag = karaite_country } } DAH = { religion = karaite set_country_flag = karaite_country } }
+			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } DAH = { religion = samaritan set_country_flag = samaritan_country } }
+			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } DAH = { religion = zaydi set_country_flag = zaydi_country } }
+			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } DAH = { religion = ismaili set_country_flag = ismaili_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } DAH = { religion = secular set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } DAH = { religion = atheist set_country_flag = atheist_country } }
 		}
 	}
 	
@@ -5275,6 +6595,21 @@ political_decisions = {
 				clr_country_flag = shinto_country
 				clr_country_flag = sikh_country
 				clr_country_flag = animist_country
+				clr_country_flag = zoroastrian_country
+				clr_country_flag = nestorian_country
+				clr_country_flag = confucian_country
+				
+				clr_country_flag = maronite_country
+				clr_country_flag = bahai_country
+				clr_country_flag = alevi_country
+				clr_country_flag = alawite_country
+				clr_country_flag = jain_country
+				clr_country_flag = karaite_country
+				clr_country_flag = samaritan_country
+				clr_country_flag = zaydi_country
+				clr_country_flag = ismaili_country
+				clr_country_flag = secular_country
+				clr_country_flag = atheist_country
 			}
 			
 			random_owned = { limit = { owner = { has_country_flag = catholic_country } } TMR = { religion = catholic set_country_flag = catholic_country } }
@@ -5299,6 +6634,19 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } TMR = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } TMR = { religion =  nestorian set_country_flag = nestorian_country } }
 			random_owned = { limit = { owner = { has_country_flag = confucian_country } } TMR = { religion =  confucian set_country_flag = confucian_country } }
+			
+			random_owned = { limit = { owner = { has_country_flag = maronite_country } } TMR = { religion = maronite set_country_flag = maronite_country } }
+			random_owned = { limit = { owner = { has_country_flag = bahai_country } } TMR = { religion = bahai set_country_flag = bahai_country } }
+			random_owned = { limit = { owner = { has_country_flag = mandaean_country } } TMR = { religion = mandaean set_country_flag = mandaean_country } }
+			random_owned = { limit = { owner = { has_country_flag = alevi_country } } TMR = { religion = alevi set_country_flag = alevi_country } }
+			random_owned = { limit = { owner = { has_country_flag = alawite_country } } TMR = { religion = alawite set_country_flag = alawite_country } }
+			random_owned = { limit = { owner = { has_country_flag = jain_country } } TMR = { religion = jain set_country_flag = jain_country } }
+			random_owned = { limit = { owner = { has_country_flag = karaite_country } } TMR = { religion = karaite set_country_flag = karaite_country } }
+			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } TMR = { religion = samaritan set_country_flag = samaritan_country } }
+			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } TMR = { religion = zaydi set_country_flag = zaydi_country } }
+			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } TMR = { religion = ismaili set_country_flag = ismaili_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } TMR = { religion = secular set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } TMR = { religion = atheist set_country_flag = atheist_country } }
 			
 			any_owned = {
 				limit = { is_core = TMR }
@@ -5350,6 +6698,21 @@ political_decisions = {
 				clr_country_flag = shinto_country
 				clr_country_flag = sikh_country
 				clr_country_flag = animist_country
+				clr_country_flag = zoroastrian_country
+				clr_country_flag = nestorian_country
+				clr_country_flag = confucian_country
+				
+				clr_country_flag = maronite_country
+				clr_country_flag = bahai_country
+				clr_country_flag = alevi_country
+				clr_country_flag = alawite_country
+				clr_country_flag = jain_country
+				clr_country_flag = karaite_country
+				clr_country_flag = samaritan_country
+				clr_country_flag = zaydi_country
+				clr_country_flag = ismaili_country
+				clr_country_flag = secular_country
+				clr_country_flag = atheist_country
 			}
 			any_owned = {
 				limit = { is_core = TMR }
@@ -5378,6 +6741,19 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } TMR = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } TMR = { religion =  nestorian set_country_flag = nestorian_country } }
 			random_owned = { limit = { owner = { has_country_flag = confucian_country } } TMR = { religion =  confucian set_country_flag = confucian_country } }
+			
+			random_owned = { limit = { owner = { has_country_flag = maronite_country } } TMR = { religion = maronite set_country_flag = maronite_country } }
+			random_owned = { limit = { owner = { has_country_flag = bahai_country } } TMR = { religion = bahai set_country_flag = bahai_country } }
+			random_owned = { limit = { owner = { has_country_flag = mandaean_country } } TMR = { religion = mandaean set_country_flag = mandaean_country } }
+			random_owned = { limit = { owner = { has_country_flag = alevi_country } } TMR = { religion = alevi set_country_flag = alevi_country } }
+			random_owned = { limit = { owner = { has_country_flag = alawite_country } } TMR = { religion = alawite set_country_flag = alawite_country } }
+			random_owned = { limit = { owner = { has_country_flag = jain_country } } TMR = { religion = jain set_country_flag = jain_country } }
+			random_owned = { limit = { owner = { has_country_flag = karaite_country } } TMR = { religion = karaite set_country_flag = karaite_country } }
+			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } TMR = { religion = samaritan set_country_flag = samaritan_country } }
+			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } TMR = { religion = zaydi set_country_flag = zaydi_country } }
+			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } TMR = { religion = ismaili set_country_flag = ismaili_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } TMR = { religion = secular set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } TMR = { religion = atheist set_country_flag = atheist_country } }
 		}
 
 		ai_will_do = {
@@ -5459,6 +6835,21 @@ political_decisions = {
 				clr_country_flag = shinto_country
 				clr_country_flag = sikh_country
 				clr_country_flag = animist_country
+				clr_country_flag = zoroastrian_country
+				clr_country_flag = nestorian_country
+				clr_country_flag = confucian_country
+				
+				clr_country_flag = maronite_country
+				clr_country_flag = bahai_country
+				clr_country_flag = alevi_country
+				clr_country_flag = alawite_country
+				clr_country_flag = jain_country
+				clr_country_flag = karaite_country
+				clr_country_flag = samaritan_country
+				clr_country_flag = zaydi_country
+				clr_country_flag = ismaili_country
+				clr_country_flag = secular_country
+				clr_country_flag = atheist_country
 			}
 			
 			random_owned = {
@@ -5490,6 +6881,19 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } NMB = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } NMB = { religion =  nestorian set_country_flag = nestorian_country } }
 			random_owned = { limit = { owner = { has_country_flag = confucian_country } } NMB = { religion =  confucian set_country_flag = confucian_country } }
+			
+			random_owned = { limit = { owner = { has_country_flag = maronite_country } } NMB = { religion = maronite set_country_flag = maronite_country } }
+			random_owned = { limit = { owner = { has_country_flag = bahai_country } } NMB = { religion = bahai set_country_flag = bahai_country } }
+			random_owned = { limit = { owner = { has_country_flag = mandaean_country } } NMB = { religion = mandaean set_country_flag = mandaean_country } }
+			random_owned = { limit = { owner = { has_country_flag = alevi_country } } NMB = { religion = alevi set_country_flag = alevi_country } }
+			random_owned = { limit = { owner = { has_country_flag = alawite_country } } NMB = { religion = alawite set_country_flag = alawite_country } }
+			random_owned = { limit = { owner = { has_country_flag = jain_country } } NMB = { religion = jain set_country_flag = jain_country } }
+			random_owned = { limit = { owner = { has_country_flag = karaite_country } } NMB = { religion = karaite set_country_flag = karaite_country } }
+			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } NMB = { religion = samaritan set_country_flag = samaritan_country } }
+			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } NMB = { religion = zaydi set_country_flag = zaydi_country } }
+			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } NMB = { religion = ismaili set_country_flag = ismaili_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } NMB = { religion = secular set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } NMB = { religion = atheist set_country_flag = atheist_country } }
 		}
 	}
 	
@@ -5547,6 +6951,21 @@ political_decisions = {
 				clr_country_flag = shinto_country
 				clr_country_flag = sikh_country
 				clr_country_flag = animist_country
+				clr_country_flag = zoroastrian_country
+				clr_country_flag = nestorian_country
+				clr_country_flag = confucian_country
+				
+				clr_country_flag = maronite_country
+				clr_country_flag = bahai_country
+				clr_country_flag = alevi_country
+				clr_country_flag = alawite_country
+				clr_country_flag = jain_country
+				clr_country_flag = karaite_country
+				clr_country_flag = samaritan_country
+				clr_country_flag = zaydi_country
+				clr_country_flag = ismaili_country
+				clr_country_flag = secular_country
+				clr_country_flag = atheist_country
 			}
 			
 			random_owned = { limit = { owner = { has_country_flag = catholic_country } } NMB = { religion = catholic set_country_flag = catholic_country } }
@@ -5572,6 +6991,19 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } NMB = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } NMB = { religion =  nestorian set_country_flag = nestorian_country } }
 			random_owned = { limit = { owner = { has_country_flag = confucian_country } } NMB = { religion =  confucian set_country_flag = confucian_country } }
+			
+			random_owned = { limit = { owner = { has_country_flag = maronite_country } } NMB = { religion = maronite set_country_flag = maronite_country } }
+			random_owned = { limit = { owner = { has_country_flag = bahai_country } } NMB = { religion = bahai set_country_flag = bahai_country } }
+			random_owned = { limit = { owner = { has_country_flag = mandaean_country } } NMB = { religion = mandaean set_country_flag = mandaean_country } }
+			random_owned = { limit = { owner = { has_country_flag = alevi_country } } NMB = { religion = alevi set_country_flag = alevi_country } }
+			random_owned = { limit = { owner = { has_country_flag = alawite_country } } NMB = { religion = alawite set_country_flag = alawite_country } }
+			random_owned = { limit = { owner = { has_country_flag = jain_country } } NMB = { religion = jain set_country_flag = jain_country } }
+			random_owned = { limit = { owner = { has_country_flag = karaite_country } } NMB = { religion = karaite set_country_flag = karaite_country } }
+			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } NMB = { religion = samaritan set_country_flag = samaritan_country } }
+			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } NMB = { religion = zaydi set_country_flag = zaydi_country } }
+			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } NMB = { religion = ismaili set_country_flag = ismaili_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } NMB = { religion = secular set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } NMB = { religion = atheist set_country_flag = atheist_country } }
 		}
 		
 		ai_will_do = {
@@ -5828,6 +7260,21 @@ political_decisions = {
 				clr_country_flag = shinto_country
 				clr_country_flag = sikh_country
 				clr_country_flag = animist_country
+				clr_country_flag = zoroastrian_country
+				clr_country_flag = nestorian_country
+				clr_country_flag = confucian_country
+				
+				clr_country_flag = maronite_country
+				clr_country_flag = bahai_country
+				clr_country_flag = alevi_country
+				clr_country_flag = alawite_country
+				clr_country_flag = jain_country
+				clr_country_flag = karaite_country
+				clr_country_flag = samaritan_country
+				clr_country_flag = zaydi_country
+				clr_country_flag = ismaili_country
+				clr_country_flag = secular_country
+				clr_country_flag = atheist_country
 			}
 			
 			random_owned = { limit = { owner = { has_country_flag = catholic_country } } GBU = { religion = catholic set_country_flag = catholic_country } }
@@ -5852,6 +7299,19 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } GBU = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } GBU = { religion =  nestorian set_country_flag = nestorian_country } }
 			random_owned = { limit = { owner = { has_country_flag = confucian_country } } GBU = { religion =  confucian set_country_flag = confucian_country } }
+			
+			random_owned = { limit = { owner = { has_country_flag = maronite_country } } GBU = { religion = maronite set_country_flag = maronite_country } }
+			random_owned = { limit = { owner = { has_country_flag = bahai_country } } GBU = { religion = bahai set_country_flag = bahai_country } }
+			random_owned = { limit = { owner = { has_country_flag = mandaean_country } } GBU = { religion = mandaean set_country_flag = mandaean_country } }
+			random_owned = { limit = { owner = { has_country_flag = alevi_country } } GBU = { religion = alevi set_country_flag = alevi_country } }
+			random_owned = { limit = { owner = { has_country_flag = alawite_country } } GBU = { religion = alawite set_country_flag = alawite_country } }
+			random_owned = { limit = { owner = { has_country_flag = jain_country } } GBU = { religion = jain set_country_flag = jain_country } }
+			random_owned = { limit = { owner = { has_country_flag = karaite_country } } GBU = { religion = karaite set_country_flag = karaite_country } }
+			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } GBU = { religion = samaritan set_country_flag = samaritan_country } }
+			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } GBU = { religion = zaydi set_country_flag = zaydi_country } }
+			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } GBU = { religion = ismaili set_country_flag = ismaili_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } GBU = { religion = secular set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } GBU = { religion = atheist set_country_flag = atheist_country } }
 		}
 	}
 	
@@ -5906,6 +7366,21 @@ political_decisions = {
 				clr_country_flag = shinto_country
 				clr_country_flag = sikh_country
 				clr_country_flag = animist_country
+				clr_country_flag = zoroastrian_country
+				clr_country_flag = nestorian_country
+				clr_country_flag = confucian_country
+				
+				clr_country_flag = maronite_country
+				clr_country_flag = bahai_country
+				clr_country_flag = alevi_country
+				clr_country_flag = alawite_country
+				clr_country_flag = jain_country
+				clr_country_flag = karaite_country
+				clr_country_flag = samaritan_country
+				clr_country_flag = zaydi_country
+				clr_country_flag = ismaili_country
+				clr_country_flag = secular_country
+				clr_country_flag = atheist_country
 			}
 			
 			random_owned = { limit = { owner = { has_country_flag = catholic_country } } GBU = { religion = catholic set_country_flag = catholic_country } }
@@ -5930,6 +7405,19 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } GBU = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } GBU = { religion =  nestorian set_country_flag = nestorian_country } }
 			random_owned = { limit = { owner = { has_country_flag = confucian_country } } GBU = { religion =  confucian set_country_flag = confucian_country } }
+			
+			random_owned = { limit = { owner = { has_country_flag = maronite_country } } GBU = { religion = maronite set_country_flag = maronite_country } }
+			random_owned = { limit = { owner = { has_country_flag = bahai_country } } GBU = { religion = bahai set_country_flag = bahai_country } }
+			random_owned = { limit = { owner = { has_country_flag = mandaean_country } } GBU = { religion = mandaean set_country_flag = mandaean_country } }
+			random_owned = { limit = { owner = { has_country_flag = alevi_country } } GBU = { religion = alevi set_country_flag = alevi_country } }
+			random_owned = { limit = { owner = { has_country_flag = alawite_country } } GBU = { religion = alawite set_country_flag = alawite_country } }
+			random_owned = { limit = { owner = { has_country_flag = jain_country } } GBU = { religion = jain set_country_flag = jain_country } }
+			random_owned = { limit = { owner = { has_country_flag = karaite_country } } GBU = { religion = karaite set_country_flag = karaite_country } }
+			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } GBU = { religion = samaritan set_country_flag = samaritan_country } }
+			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } GBU = { religion = zaydi set_country_flag = zaydi_country } }
+			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } GBU = { religion = ismaili set_country_flag = ismaili_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } GBU = { religion = secular set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } GBU = { religion = atheist set_country_flag = atheist_country } }
 		}
 		
 		ai_will_do = {
@@ -5999,13 +7487,25 @@ political_decisions = {
 				clr_country_flag = shinto_country
 				clr_country_flag = sikh_country
 				clr_country_flag = animist_country
+				clr_country_flag = zoroastrian_country
+				clr_country_flag = nestorian_country
+				clr_country_flag = confucian_country
+				
+				clr_country_flag = maronite_country
+				clr_country_flag = bahai_country
+				clr_country_flag = alevi_country
+				clr_country_flag = alawite_country
+				clr_country_flag = jain_country
+				clr_country_flag = karaite_country
+				clr_country_flag = samaritan_country
+				clr_country_flag = zaydi_country
+				clr_country_flag = ismaili_country
+				clr_country_flag = secular_country
+				clr_country_flag = atheist_country
 			}
 			random_owned = { limit = { owner = { primary_culture = french } } MAD = { government = colonial_company } }
 			random_owned = { limit = { owner = { has_country_flag = catholic_country } } MAD = { religion = catholic set_country_flag = catholic_country } }
-			random_owned = {
-				limit = { owner = { has_country_flag = protestant_country } }
-				MAD = { religion = protestant set_country_flag = protestant_country }
-			}
+			random_owned = { limit = { owner = { has_country_flag = protestant_country } } MAD = { religion = protestant set_country_flag = protestant_country } }
 			random_owned = { limit = { owner = { has_country_flag = orthodox_country } } MAD = { religion = orthodox set_country_flag = orthodox_country } }
 			random_owned = { limit = { owner = { has_country_flag = mormon_country } } MAD = { religion = mormon set_country_flag = mormon_country } }
 			random_owned = { limit = { owner = { has_country_flag = coptic_country } } MAD = { religion = coptic set_country_flag = coptic_country } }
@@ -6023,6 +7523,19 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } MAD = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } MAD = { religion =  nestorian set_country_flag = nestorian_country } }
 			random_owned = { limit = { owner = { has_country_flag = confucian_country } } MAD = { religion =  confucian set_country_flag = confucian_country } }
+			
+			random_owned = { limit = { owner = { has_country_flag = maronite_country } } MAD = { religion = maronite set_country_flag = maronite_country } }
+			random_owned = { limit = { owner = { has_country_flag = bahai_country } } MAD = { religion = bahai set_country_flag = bahai_country } }
+			random_owned = { limit = { owner = { has_country_flag = mandaean_country } } MAD = { religion = mandaean set_country_flag = mandaean_country } }
+			random_owned = { limit = { owner = { has_country_flag = alevi_country } } MAD = { religion = alevi set_country_flag = alevi_country } }
+			random_owned = { limit = { owner = { has_country_flag = alawite_country } } MAD = { religion = alawite set_country_flag = alawite_country } }
+			random_owned = { limit = { owner = { has_country_flag = jain_country } } MAD = { religion = jain set_country_flag = jain_country } }
+			random_owned = { limit = { owner = { has_country_flag = karaite_country } } MAD = { religion = karaite set_country_flag = karaite_country } }
+			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } MAD = { religion = samaritan set_country_flag = samaritan_country } }
+			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } MAD = { religion = zaydi set_country_flag = zaydi_country } }
+			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } MAD = { religion = ismaili set_country_flag = ismaili_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } MAD = { religion = secular set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } MAD = { religion = atheist set_country_flag = atheist_country } }
 		}
 	}
 	
@@ -6077,6 +7590,21 @@ political_decisions = {
 				clr_country_flag = shinto_country
 				clr_country_flag = sikh_country
 				clr_country_flag = animist_country
+				clr_country_flag = zoroastrian_country
+				clr_country_flag = nestorian_country
+				clr_country_flag = confucian_country
+				
+				clr_country_flag = maronite_country
+				clr_country_flag = bahai_country
+				clr_country_flag = alevi_country
+				clr_country_flag = alawite_country
+				clr_country_flag = jain_country
+				clr_country_flag = karaite_country
+				clr_country_flag = samaritan_country
+				clr_country_flag = zaydi_country
+				clr_country_flag = ismaili_country
+				clr_country_flag = secular_country
+				clr_country_flag = atheist_country
 			}
 			
 			random_owned = { limit = { owner = { has_country_flag = catholic_country } } MAD = { religion = catholic set_country_flag = catholic_country } }
@@ -6101,6 +7629,19 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } MAD = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } MAD = { religion =  nestorian set_country_flag = nestorian_country } }
 			random_owned = { limit = { owner = { has_country_flag = confucian_country } } MAD = { religion =  confucian set_country_flag = confucian_country } }
+			
+			random_owned = { limit = { owner = { has_country_flag = maronite_country } } MAD = { religion = maronite set_country_flag = maronite_country } }
+			random_owned = { limit = { owner = { has_country_flag = bahai_country } } MAD = { religion = bahai set_country_flag = bahai_country } }
+			random_owned = { limit = { owner = { has_country_flag = mandaean_country } } MAD = { religion = mandaean set_country_flag = mandaean_country } }
+			random_owned = { limit = { owner = { has_country_flag = alevi_country } } MAD = { religion = alevi set_country_flag = alevi_country } }
+			random_owned = { limit = { owner = { has_country_flag = alawite_country } } MAD = { religion = alawite set_country_flag = alawite_country } }
+			random_owned = { limit = { owner = { has_country_flag = jain_country } } MAD = { religion = jain set_country_flag = jain_country } }
+			random_owned = { limit = { owner = { has_country_flag = karaite_country } } MAD = { religion = karaite set_country_flag = karaite_country } }
+			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } MAD = { religion = samaritan set_country_flag = samaritan_country } }
+			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } MAD = { religion = zaydi set_country_flag = zaydi_country } }
+			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } MAD = { religion = ismaili set_country_flag = ismaili_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } MAD = { religion = secular set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } MAD = { religion = atheist set_country_flag = atheist_country } }
 		}
 	}
 	
@@ -6160,6 +7701,21 @@ political_decisions = {
 				clr_country_flag = shinto_country
 				clr_country_flag = sikh_country
 				clr_country_flag = animist_country
+				clr_country_flag = zoroastrian_country
+				clr_country_flag = nestorian_country
+				clr_country_flag = confucian_country
+				
+				clr_country_flag = maronite_country
+				clr_country_flag = bahai_country
+				clr_country_flag = alevi_country
+				clr_country_flag = alawite_country
+				clr_country_flag = jain_country
+				clr_country_flag = karaite_country
+				clr_country_flag = samaritan_country
+				clr_country_flag = zaydi_country
+				clr_country_flag = ismaili_country
+				clr_country_flag = secular_country
+				clr_country_flag = atheist_country
 			}
 			
 			random_owned = { limit = { owner = { has_country_flag = catholic_country } } ZBW = { religion = catholic set_country_flag = catholic_country } }
@@ -6184,6 +7740,19 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } ZBW = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } ZBW = { religion =  nestorian set_country_flag = nestorian_country } }
 			random_owned = { limit = { owner = { has_country_flag = confucian_country } } ZBW = { religion =  confucian set_country_flag = confucian_country } }
+			
+			random_owned = { limit = { owner = { has_country_flag = maronite_country } } ZBW = { religion = maronite set_country_flag = maronite_country } }
+			random_owned = { limit = { owner = { has_country_flag = bahai_country } } ZBW = { religion = bahai set_country_flag = bahai_country } }
+			random_owned = { limit = { owner = { has_country_flag = mandaean_country } } ZBW = { religion = mandaean set_country_flag = mandaean_country } }
+			random_owned = { limit = { owner = { has_country_flag = alevi_country } } ZBW = { religion = alevi set_country_flag = alevi_country } }
+			random_owned = { limit = { owner = { has_country_flag = alawite_country } } ZBW = { religion = alawite set_country_flag = alawite_country } }
+			random_owned = { limit = { owner = { has_country_flag = jain_country } } ZBW = { religion = jain set_country_flag = jain_country } }
+			random_owned = { limit = { owner = { has_country_flag = karaite_country } } ZBW = { religion = karaite set_country_flag = karaite_country } }
+			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } ZBW = { religion = samaritan set_country_flag = samaritan_country } }
+			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } ZBW = { religion = zaydi set_country_flag = zaydi_country } }
+			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } ZBW = { religion = ismaili set_country_flag = ismaili_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } ZBW = { religion = secular set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } ZBW = { religion = atheist set_country_flag = atheist_country } }
 		}
 	}
 	
@@ -6239,6 +7808,21 @@ political_decisions = {
 				clr_country_flag = shinto_country
 				clr_country_flag = sikh_country
 				clr_country_flag = animist_country
+				clr_country_flag = zoroastrian_country
+				clr_country_flag = nestorian_country
+				clr_country_flag = confucian_country
+				
+				clr_country_flag = maronite_country
+				clr_country_flag = bahai_country
+				clr_country_flag = alevi_country
+				clr_country_flag = alawite_country
+				clr_country_flag = jain_country
+				clr_country_flag = karaite_country
+				clr_country_flag = samaritan_country
+				clr_country_flag = zaydi_country
+				clr_country_flag = ismaili_country
+				clr_country_flag = secular_country
+				clr_country_flag = atheist_country
 			}
 			
 			random_owned = { limit = { owner = { has_country_flag = catholic_country } } ZBW = { religion = catholic set_country_flag = catholic_country } }
@@ -6263,6 +7847,19 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } ZBW = { religion =  zoroastrian set_country_flag = zoroastrian_country } }
 			random_owned = { limit = { owner = { has_country_flag = nestorian_country } } ZBW = { religion =  nestorian set_country_flag = nestorian_country } }
 			random_owned = { limit = { owner = { has_country_flag = confucian_country } } ZBW = { religion =  confucian set_country_flag = confucian_country } }
+			
+			random_owned = { limit = { owner = { has_country_flag = maronite_country } } ZBW = { religion = maronite set_country_flag = maronite_country } }
+			random_owned = { limit = { owner = { has_country_flag = bahai_country } } ZBW = { religion = bahai set_country_flag = bahai_country } }
+			random_owned = { limit = { owner = { has_country_flag = mandaean_country } } ZBW = { religion = mandaean set_country_flag = mandaean_country } }
+			random_owned = { limit = { owner = { has_country_flag = alevi_country } } ZBW = { religion = alevi set_country_flag = alevi_country } }
+			random_owned = { limit = { owner = { has_country_flag = alawite_country } } ZBW = { religion = alawite set_country_flag = alawite_country } }
+			random_owned = { limit = { owner = { has_country_flag = jain_country } } ZBW = { religion = jain set_country_flag = jain_country } }
+			random_owned = { limit = { owner = { has_country_flag = karaite_country } } ZBW = { religion = karaite set_country_flag = karaite_country } }
+			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } ZBW = { religion = samaritan set_country_flag = samaritan_country } }
+			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } ZBW = { religion = zaydi set_country_flag = zaydi_country } }
+			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } ZBW = { religion = ismaili set_country_flag = ismaili_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } ZBW = { religion = secular set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } ZBW = { religion = atheist set_country_flag = atheist_country } }
 		}
 		
 		ai_will_do = {

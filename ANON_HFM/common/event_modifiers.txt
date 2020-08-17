@@ -1254,12 +1254,6 @@ colonial_dry_spell = {
 	icon = 14
 }
 
-colonial_exploitation = {
-	farm_rgo_eff = 0.1
-	mine_rgo_eff = 0.1
-	icon = 18
-}
-
 colonial_museum_of_natural_history = {
 	research_points_modifier = 0.02
 	prestige = 0.01
@@ -3711,6 +3705,18 @@ foreign_weapons_imported = {
 ######
 #ANON#
 ######
+
+lambert_charter_mod = {
+	loan_interest = 0.25
+	max_loan_modifier = 0.25
+	education_efficiency_modifier = 0.05
+	global_pop_consciousness_modifier = 0.02
+	supply_consumption = 0.15
+	min_military_spending = 0.25
+	farm_rgo_eff = 0.1
+	mine_rgo_eff = 0.1
+	icon = 5
+}
 
 serbian_uprising_mobilization = {
 	pop_militancy_modifier = -0.05

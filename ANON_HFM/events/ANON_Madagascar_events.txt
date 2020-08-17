@@ -1048,3 +1048,109 @@ country_event = { #murrika don't do shit
 		}
 	}
 }
+# FROMCOUNTRY proposed Lambert Charter
+country_event = {
+	id = 61610025
+	title = "EVTNAME61610025"
+	desc = "EVTDESC61610025"
+	#picture = "gtfo"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVT61610025OPTA"
+		FROM = { country_event = 61610026 }
+		random_owned = {
+			limit = {
+				owner = {
+					tag = MAD
+					civilized = no
+				}
+			}
+			years_of_research = 1
+		}
+		add_country_modifier = { name = lambert_charter_mod duration = 1825 }
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = {
+		name = "EVT61610025OPTB"
+		FROM = { country_event = 61610027 }
+		prestige = 5
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+# Madagascar accepts
+country_event = {
+	id = 61610026
+	title = "EVTNAME61610026"
+	desc = "EVTDESC61610026"
+	#picture = "gtfo"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVT61610026OPTA"
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				is_sphere_leader_of = MAD
+			}
+			diplomatic_influence = { who = MAD value = -150 }
+			relation = { who = THIS value = -50 }
+		}
+		diplomatic_influence = {
+			who = MAD
+			value = 400
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+# Madagascar refuses
+country_event = {
+	id = 61610027
+	title = "EVTNAME61610027"
+	desc = "EVTDESC61610027"
+	#picture = "gtfo"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVT61610027OPTA"
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				is_sphere_leader_of = MAD
+			}
+			relation = { who = THIS value = -150 }
+			casus_belli = {
+				target = THIS
+				type = humiliate
+				months = 12
+			}
+		}
+		FROM = {
+			relation = {
+				who = THIS
+				value = -150
+			}
+		}
+		diplomatic_influence = {
+			who = MAD
+			value = -400
+		}
+		casus_belli = {
+			target = MAD
+			type = add_to_sphere
+			months = 36
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
