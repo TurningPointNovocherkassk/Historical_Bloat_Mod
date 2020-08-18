@@ -3814,6 +3814,96 @@ political_decisions = {
 					reduce_pop = 25
 				}
 			}
+			random_owned = {
+				limit = {
+					province_id = 3676 #St. Marie
+				}
+				add_province_modifier = {
+					name = indentured_workers
+					duration = 7300
+				}
+				any_pop = {
+					limit = {
+						has_pop_culture = indo_caribbean
+						has_pop_religion = hindu
+					}
+					reduce_pop = 15
+				}
+				any_pop = {
+					limit = {
+						has_pop_culture = indo_caribbean
+						has_pop_religion = sunni
+					}
+					reduce_pop = 15
+				}
+				any_pop = {
+					limit = {
+						has_pop_culture = indo_caribbean
+						has_pop_religion = catholic
+					}
+					reduce_pop = 15
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 3675 #Sambava
+				}
+				add_province_modifier = {
+					name = indentured_workers
+					duration = 7300
+				}
+				any_pop = {
+					limit = {
+						has_pop_culture = indo_caribbean
+						has_pop_religion = hindu
+					}
+					reduce_pop = 15
+				}
+				any_pop = {
+					limit = {
+						has_pop_culture = indo_caribbean
+						has_pop_religion = sunni
+					}
+					reduce_pop = 15
+				}
+				any_pop = {
+					limit = {
+						has_pop_culture = indo_caribbean
+						has_pop_religion = catholic
+					}
+					reduce_pop = 15
+				}
+			}
+			random_owned = {
+				limit = {
+					province_id = 2120 #Antsiranana
+				}
+				add_province_modifier = {
+					name = indentured_workers
+					duration = 7300
+				}
+				any_pop = {
+					limit = {
+						has_pop_culture = indo_caribbean
+						has_pop_religion = hindu
+					}
+					reduce_pop = 15
+				}
+				any_pop = {
+					limit = {
+						has_pop_culture = indo_caribbean
+						has_pop_religion = sunni
+					}
+					reduce_pop = 15
+				}
+				any_pop = {
+					limit = {
+						has_pop_culture = indo_caribbean
+						has_pop_religion = catholic
+					}
+					reduce_pop = 15
+				}
+			}
 			
 		}
 		ai_will_do = { factor = 1 }
