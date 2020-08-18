@@ -92,12 +92,12 @@ political_decisions = {
 		
 		allow = {
 			war = no
-			money = 5000
+			money = 20000
 		}
 		
 		effect = {
 			set_global_flag = antsirabe_founded
-			treasury = -5000
+			treasury = -20000
 			3682 = {
 				add_province_modifier = { name = recently_built_city duration = 730 }
 				add_province_modifier = { name = malagasy_sanitorium duration = 9125 }
@@ -133,13 +133,13 @@ political_decisions = {
 		
 		allow = {
 			war = no
-			money = 15000
+			money = 50000
 		}
 		
 		effect = {
 			set_country_flag = jean_laborde_reforms
 			prestige = 10
-			treasury = -15000
+			treasury = -50000
 			random_country = {
 				limit = {
 					primary_culture = french
@@ -707,12 +707,12 @@ political_decisions = {
 		
 		allow = {
 			war = no
-			money = 15000
+			money = 30000
 		}
 	
 		effect = {
 			set_global_flag = fiaranantsoa_founded
-			treasury = -15000
+			treasury = -30000
 			2116 = {
 				add_province_modifier = { name = city_good_education duration = 2920 }
 				change_province_name = "Fiaranantsoa"
@@ -816,12 +816,12 @@ political_decisions = {
 		
 		allow = {
 			war = no
-			money = 10000
+			money = 20000
 		}
 		
 		effect = {
 			set_global_flag = toliara_founded
-			treasury = -10000
+			treasury = -20000
 			2122 = {
 				add_province_modifier = { name = recently_built_city duration = 1825 }
 				change_province_name = "Toliary"
