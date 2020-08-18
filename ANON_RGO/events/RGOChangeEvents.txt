@@ -7695,7 +7695,27 @@ province_event = {
 		add_province_modifier = {
 			name = new_production
 			duration = 730
-		}			
+		}	
+		ai_chance = {
+			factor = 16.0
+			modifier = {
+				factor = 0
+				OR = {
+					any_neighbor_country = {
+						any_owned_province = {
+							trade_goods = sugar
+							unemployment_by_type = { value = 0.05 type = farmers }
+						}
+					}
+					any_greater_power = {
+						any_owned_province = {
+							trade_goods = sugar
+							unemployment_by_type = { value = 0.05 type = farmers }
+						}
+					}
+				}
+			}
+		}		
 	}	
 	option = {
 		name = "Plant it with coffee."
@@ -7703,6 +7723,26 @@ province_event = {
 		add_province_modifier = {
 			name = new_production
 			duration = 730
+		}
+		ai_chance = {
+			factor = 16.0
+			modifier = {
+				factor = 0
+				OR = {
+					any_neighbor_country = {
+						any_owned_province = {
+							trade_goods = coffee
+							unemployment_by_type = { value = 0.05 type = farmers }
+						}
+					}
+					any_greater_power = {
+						any_owned_province = {
+							trade_goods = coffee
+							unemployment_by_type = { value = 0.05 type = farmers }
+						}
+					}
+				}
+			}
 		}
 	}
 	option = {
@@ -7712,6 +7752,26 @@ province_event = {
 			name = new_production
 			duration = 730
 		}
+		ai_chance = {
+			factor = 16.0
+			modifier = {
+				factor = 0
+				OR = {
+					any_neighbor_country = {
+						any_owned_province = {
+							trade_goods = cotton
+							unemployment_by_type = { value = 0.05 type = farmers }
+						}
+					}
+					any_greater_power = {
+						any_owned_province = {
+							trade_goods = cotton
+							unemployment_by_type = { value = 0.05 type = farmers }
+						}
+					}
+				}
+			}
+		}
 	}
 	option = {
 		name = "Plant it with spices."
@@ -7719,6 +7779,26 @@ province_event = {
 		add_province_modifier = {
 			name = new_production
 			duration = 730
+		}
+		ai_chance = {
+			factor = 16.0
+			modifier = {
+				factor = 0
+				OR = {
+					any_neighbor_country = {
+						any_owned_province = {
+							trade_goods = spices
+							unemployment_by_type = { value = 0.05 type = farmers }
+						}
+					}
+					any_greater_power = {
+						any_owned_province = {
+							trade_goods = spices
+							unemployment_by_type = { value = 0.05 type = farmers }
+						}
+					}
+				}
+			}
 		}
 	}
 	option = {
@@ -7728,6 +7808,26 @@ province_event = {
 			name = new_production
 			duration = 730
 		}
+		ai_chance = {
+			factor = 16.0
+			modifier = {
+				factor = 0
+				OR = {
+					any_neighbor_country = {
+						any_owned_province = {
+							trade_goods = cocoa
+							unemployment_by_type = { value = 0.05 type = farmers }
+						}
+					}
+					any_greater_power = {
+						any_owned_province = {
+							trade_goods = cocoa
+							unemployment_by_type = { value = 0.05 type = farmers }
+						}
+					}
+				}
+			}
+		}
 	}
 	option = {
 		name = "Plant it with tobacco."
@@ -7736,12 +7836,35 @@ province_event = {
 			name = new_production
 			duration = 730
 		}
+		ai_chance = {
+			factor = 16.0
+			modifier = {
+				factor = 0
+				OR = {
+					any_neighbor_country = {
+						any_owned_province = {
+							trade_goods = tobacco
+							unemployment_by_type = { value = 0.05 type = farmers }
+						}
+					}
+					any_greater_power = {
+						any_owned_province = {
+							trade_goods = tobacco
+							unemployment_by_type = { value = 0.05 type = farmers }
+						}
+					}
+				}
+			}
+		}
 	}
 	option = {
 		name = "Intensify the existing operation."
 		add_province_modifier = {
 			name = intense_farming
 			duration = 730
+		}
+		ai_chance = {
+			factor = 0.4
 		}
 	}
 }

@@ -1,5 +1,440 @@
 political_decisions = {
 
+	become_comoros = {
+		picture = dreams_of_empire
+		potential = {
+			OR = {
+				tag = CM0
+				tag = CM1
+				tag = CM2
+				tag = CM3
+				tag = CM4
+			}
+			CMS = { exists = no }
+			NOT = { has_country_flag = become_comoros }
+		}
+		
+		allow = {
+			OR = {
+				civilized = yes
+				civilization_progress = 0.5
+			}
+			is_vassal = no
+		}
+		
+		effect = {
+			set_country_flag = become_comoros
+			prestige = 10
+			FRA_2124 = { add_core = CMS }
+			change_tag = CMS
+			any_country = {
+				limit = {
+					OR = {
+						tag = CM0 #Anjouan
+						tag = CM1 #Moheli
+						tag = CM2 #Ngazidja
+						tag = CM3 #Mayotte
+						tag = CM4 #Itsandra
+					}
+					OR = {
+						in_sphere = THIS
+						substate_of = THIS
+						vassal_of = THIS
+					}
+				}
+				country_event = 11101
+			}
+		}
+		
+		ai_will_do = { factor = 1 }
+	}
+	
+	nosybe_treaty_port = {
+		picture = socotra_yemen
+		potential = {
+			NOT = { has_global_flag = nosybe_treaty_port }
+			has_country_modifier = negotiating_treaty
+			3677 = { owner = { has_country_modifier = negotiating_unequal_treaty civilized = no truce_with = THIS } }
+		}
+		
+		allow = {
+		}
+		
+		effect = {
+			remove_country_modifier = negotiating_treaty
+			3677 = { secede_province = THIS change_controller = THIS }
+			set_global_flag = nosybe_treaty_port
+		}
+		
+		ai_will_do = { factor = 1 }
+	}
+	
+	found_antsirabe = {
+		picture = "gtfo"
+		potential = {
+			NOT = {
+				has_global_flag = antsirabe_founded
+			}
+			year = 1868 
+			OR = {
+				civilized = yes
+				AND = {
+					ai = no
+					civilization_progress = 0.75
+				}
+				AND = {
+					ai = yes
+					year = 1872  
+				}
+			}
+			owns = 3682 #antsirabe
+		}
+		
+		allow = {
+			war = no
+			money = 5000
+		}
+		
+		effect = {
+			set_global_flag = antsirabe_founded
+			treasury = -5000
+			3682 = {
+				add_province_modifier = { name = recently_built_city duration = 730 }
+				add_province_modifier = { name = malagasy_sanitorium duration = 9125 }
+				change_province_name = "Antsirabe"
+				trade_goods = sulphur
+			}
+			random_owned = {
+				limit = {
+					owner = {
+						tag = MAD
+						civilized = no
+					}
+				}
+				owner = { years_of_research = 0.35 }
+			}
+			relation = { who = NOR value = 100 }
+			NOR = { relation = { who = THIS value = 100 } }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	jean_laborde_reforms = {
+		picture = "jean_laborde"
+		potential = {
+			NOT = {
+				has_country_flag = jean_laborde_reforms
+			}
+			tag = MAD
+			civilized = no
+		}
+		
+		allow = {
+			war = no
+			money = 15000
+		}
+		
+		effect = {
+			set_country_flag = jean_laborde_reforms
+			prestige = 10
+			treasury = -15000
+			random_country = {
+				limit = {
+					primary_culture = french
+					capital = 425
+				}
+				diplomatic_influence = {
+					who = MAD
+					value = 50
+				}
+			}
+			#Transport Improvement
+			# random_owned = {
+				# limit = {
+					# owner = { 
+						# transport_improv = no_transport_improv
+						# civilized = no
+					# } 
+				# }
+				# owner = {
+					# economic_reform = yes_transport_improv 			
+					# activate_technology = experimental_railroad
+					# activate_technology = piston_steam_engine
+					# build_railway_in_capital = {
+						# in_whole_capital_state = yes # no = just in main capital province.
+						# limit_to_world_greatest_level = yes
+					# }
+					
+					# any_pop = {
+						# scaled_militancy = {
+							# ideology = liberal
+							# factor = 0.25
+						# }
+						# scaled_militancy = {
+							# ideology = conservative
+							# factor = 0.5
+						# }
+						# scaled_militancy = {
+							# ideology = reactionary
+							# factor = 1.5
+						# }
+					# }
+					# research_points = -1000
+				# }
+			# }
+			#Firearm Production
+			random_owned = {
+				limit = {
+					owner = { 
+						firearms_production = no_firearms_production
+						civilized = no
+					} 
+				}
+				owner = {
+					economic_reform = yes_firearms_production			
+					activate_technology = breech_loaded_rifles
+					activate_technology = guild_based_production
+					# activate_technology = piston_steam_engine
+					build_factory_in_capital_state = small_arms_factory
+					
+					any_pop = {
+						scaled_militancy = {
+							ideology = liberal
+							factor = 0.25
+						}
+						scaled_militancy = {
+							ideology = conservative
+							factor = 0.5
+						}
+						scaled_militancy = {
+							ideology = reactionary
+							factor = 1.5
+						}
+					}
+					research_points = -1000
+				}
+			}
+			#Artillery
+			random_owned = {
+				limit = {
+					owner = { 
+						foreign_artillery = no_foreign_artillery
+						civilized = no
+					} 
+				}
+				owner = {
+					military_reform = yes_foreign_artillery 				
+					activate_technology = bronze_muzzle_loaded_artillery
+					activate_technology = iron_muzzle_loaded_artillery
+					activate_technology = artillery_production
+					# activate_building = artillery_factory 
+					set_country_flag = using_foreign_artillery
+					build_factory_in_capital_state = artillery_factory
+					
+					any_pop = {
+						scaled_militancy = {
+							ideology = liberal
+							factor = 0.25
+						}
+						scaled_militancy = {
+							ideology = conservative
+							factor = 0.5
+						}
+						scaled_militancy = {
+							ideology = reactionary
+							factor = 1.5
+						}
+					}
+					research_points = -1000
+				}
+			}
+			#Industry
+			random_owned = {
+				limit = {
+					owner = { 
+						pre_indust = no_pre_indust
+						civilized = no
+					} 
+				}
+				owner = {
+					economic_reform = yes_pre_indust	
+					# activate_technology = piston_steam_engine	
+					activate_technology = mechanized_mining	
+					activate_technology = basic_chemistry
+					# ammunition_production = 1
+					# explosives_production = 1
+					# activate_building = explosives_factory 	
+					# activate_building = ammunition_factory 	
+					# activate_building = glass_factory 	
+					# activate_building = fertilizer_factory 	
+					# activate_building = liquor_distillery 	
+					build_factory_in_capital_state = cement_factory
+					build_factory_in_capital_state = glass_factory
+					build_factory_in_capital_state = fertilizer_factory
+					build_factory_in_capital_state = liquor_distillery
+					build_factory_in_capital_state = explosives_factory
+					build_factory_in_capital_state = ammunition_factory
+					
+					any_pop = {
+						scaled_militancy = {
+							ideology = liberal
+							factor = 0.75
+						}
+						scaled_militancy = {
+							ideology = conservative
+							factor = 1.5
+						}
+						scaled_militancy = {
+							ideology = reactionary
+							factor = 4.5
+						}
+					}
+					research_points = -1000
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				year = 1850
+			}
+		}
+	}
+
+	production_madagascar = {
+		picture = madagascar_map
+		potential = {
+			NOT = {
+				has_global_flag = production_madagascar
+			}
+			OR = {
+				AND = {
+					tag = MAD
+					civilized = yes
+				}
+				MAD = {
+					OR = {
+						all_core = { owned_by = MAD }
+						any_core = { owned_by = THIS }
+					}
+					vassal_of = THIS
+				}
+				MAD = {
+					OR = {
+						all_core = { owned_by = MAD }
+						any_core = { owned_by = THIS }
+					}
+					substate_of = THIS
+				}
+				MAD = { all_core = { owned_by = THIS } }
+			}
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = production_madagascar
+			country_event = 8181001
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	end_comoro_minors = {
+		picture = dreams_of_empire
+		potential = {
+			has_global_flag = berlin_conference
+			is_greater_power = yes
+			nationalism_n_imperialism = 1
+			civilized = yes
+			# NOT = { has_country_flag = end_comoro_minors }
+			any_owned_province = { has_building = naval_base }
+			OR = {
+				CM0 = {
+					exists = yes
+					civilized = no
+				}
+				CM1 = {
+					exists = yes
+					civilized = no
+				}
+				CM2 = {
+					exists = yes
+					civilized = no
+				}
+				CM3 = {
+					exists = yes
+					civilized = no
+				}
+				CM4 = {
+					exists = yes
+					civilized = no
+				}
+			}
+		}
+		
+		allow = {
+			OR = {
+				CM0 = {
+					in_sphere = THIS
+					war = no
+				}
+				CM1 = {
+					in_sphere = THIS
+					war = no
+				}
+				CM2 = {
+					in_sphere = THIS
+					war = no
+				}
+				CM3 = {
+					in_sphere = THIS
+					war = no
+				}
+				CM4 = {
+					in_sphere = THIS
+					war = no
+				}
+			}
+			OR = {
+				any_owned_province = { continent = africa } 
+				any_owned_province = { continent = south_west_africa } 
+				any_owned_province = { continent = east_africa } 
+				any_owned_province = { continent = west_africa }
+				any_owned_province = { continent = central_africa }
+			}
+			has_global_flag = berlin_conference
+			invention = mission_to_civilize
+		}
+		
+		effect = {
+			# set_country_flag = end_comoro_minors
+			any_country = {
+				limit = {
+					OR = {
+						tag = CM0 #Anjouan
+						tag = CM1 #Moheli
+						tag = CM2 #Ngazidja
+						tag = CM3 #Mayotte
+						tag = CM4 #Itsandra
+					}
+					in_sphere = THIS
+				}
+				country_event = 95505
+			}
+		}
+		
+		ai_will_do = { factor = 1 }
+	}
+	
 	MAD_adopt_religion = {
 		picture = madagascar_map
 		potential = {
@@ -60,8 +495,8 @@ political_decisions = {
 				random_owned = { limit = { owner = { has_country_flag = samaritan_country } } MAD = { religion = samaritan set_country_flag = samaritan_country } }
 				random_owned = { limit = { owner = { has_country_flag = zaydi_country } } MAD = { religion = zaydi set_country_flag = zaydi_country } }
 				random_owned = { limit = { owner = { has_country_flag = ismaili_country } } MAD = { religion = ismaili set_country_flag = ismaili_country } }
-				random_owned = { limit = { owner = { has_country_flag = secular_country } } MAD = { religion = secular set_country_flag = secular_country } }
-				random_owned = { limit = { owner = { has_country_flag = atheist_country } } MAD = { religion = atheist set_country_flag = atheist_country } }
+				random_owned = { limit = { owner = { has_country_flag = secular_country } } MAD = { religion = secularism set_country_flag = secular_country } }
+				random_owned = { limit = { owner = { has_country_flag = atheist_country } } MAD = { religion = atheism set_country_flag = atheist_country } }
 			}
 			any_pop = {
 				limit = {
@@ -83,11 +518,29 @@ political_decisions = {
 			is_greater_power = yes
 			nationalism_n_imperialism = 1
 			civilized = yes
-			NOT = { has_global_flag = end_malagasy_minors }
+			# NOT = { has_global_flag = end_malagasy_minors }
 			any_owned_province = { has_building = naval_base }
-			MAD = {
-				exists = yes
-				civilized = no
+			OR = {
+				M1D = {
+					exists = yes
+					civilized = no
+				}
+				M2D = {
+					exists = yes
+					civilized = no
+				}
+				M3D = {
+					exists = yes
+					civilized = no
+				}
+				M4D = {
+					exists = yes
+					civilized = no
+				}
+				M5D = {
+					exists = yes
+					civilized = no
+				}
 			}
 		}
 		
@@ -126,7 +579,7 @@ political_decisions = {
 		}
 		
 		effect = {
-			set_global_flag = end_malagasy_minors
+			# set_global_flag = end_malagasy_minors
 			any_country = {
 				limit = {
 					OR = {
@@ -254,13 +707,14 @@ political_decisions = {
 		
 		allow = {
 			war = no
-			money = 5000
+			money = 15000
 		}
-		
+	
 		effect = {
 			set_global_flag = fiaranantsoa_founded
+			treasury = -15000
 			2116 = {
-				add_province_modifier = { name = recently_built_city duration = 1825 }
+				add_province_modifier = { name = city_good_education duration = 2920 }
 				change_province_name = "Fiaranantsoa"
 			}
 			random_owned = {
@@ -270,13 +724,76 @@ political_decisions = {
 						civilized = no
 					}
 				}
-				years_of_research = 0.5
+				owner = { years_of_research = 0.5 }
 			}
+			
+			#education reform
+			random_owned = {
+				limit = {
+					owner = { 
+						education_reform = no_education_reform
+						civilized = no
+					} 
+				}
+				owner = {
+					economic_reform = yes_education_reform 		
+					plurality = 5
+					
+					any_pop = {
+						scaled_militancy = {
+							ideology = liberal
+							factor = 0.25
+						}
+						scaled_militancy = {
+							ideology = conservative
+							factor = 0.5
+						}
+						scaled_militancy = {
+							ideology = reactionary
+							factor = 1.5
+						}
+					}
+					research_points = -1000
+				}
+			}
+			
+			#research reform
+			random_owned = {
+				limit = {
+					owner = { 
+						research_reform = no_research_reform
+						civilized = no
+					} 
+				}
+				owner = {
+					economic_reform = yes_research_reform		
+					activate_technology = malthusian_thought
+					activate_technology = late_enlightenment_philosophy
+					
+					any_pop = {
+						scaled_militancy = {
+							ideology = liberal
+							factor = 0.25
+						}
+						scaled_militancy = {
+							ideology = conservative
+							factor = 0.5
+						}
+						scaled_militancy = {
+							ideology = reactionary
+							factor = 1.5
+						}
+					}
+					research_points = -1000
+				}
+			}
+			
 		}
 		ai_will_do = {
 			factor = 1
 		}
 	}
+	
 	found_toliara = {
 		picture = "gtfo"
 		potential = {
@@ -304,6 +821,7 @@ political_decisions = {
 		
 		effect = {
 			set_global_flag = toliara_founded
+			treasury = -10000
 			2122 = {
 				add_province_modifier = { name = recently_built_city duration = 1825 }
 				change_province_name = "Toliary"
@@ -315,7 +833,7 @@ political_decisions = {
 						civilized = no
 					}
 				}
-				years_of_research = 0.5
+				owner = { years_of_research = 0.5 }
 			}
 		}
 		ai_will_do = {
@@ -335,12 +853,13 @@ political_decisions = {
 			civilized = no
 			tag = CM3
 			owns = 2124
-			MAD = M2D_sunni_migration
+			MAD = { has_country_flag = M2D_sunni_migration }
 			year = 1842
 		}
 		
 		allow = {
 			war = no
+			is_vassal = no
 		}
 		
 		effect = {
@@ -470,6 +989,7 @@ political_decisions = {
 		}
 		ai_will_do = { factor = 1 }
 	}
+	
 	rename_madagascar = {
 		picture = gtfo
 		potential = {
@@ -479,13 +999,14 @@ political_decisions = {
 					OR = {
 						AND = { owns = 3675 owns = 2119 owns = 2118 NOT = { has_global_flag = jew_renamed_east_madagascar } }
 						AND = { owns = 2122 owns = 2117 NOT = { has_global_flag = jew_renamed_west_madagascar } }
-						AND = { owns = 2115 owns = 2116 owns = 3678 NOT = { has_global_flag = jew_renamed_central_madagascar } }
+						AND = { owns = 2115 owns = 2116 owns = 3678 owns = 3682 NOT = { has_global_flag = jew_renamed_central_madagascar } }
 						AND = { owns = 3676 NOT = { has_global_flag = jew_renamed_stmarie } }
 						AND = { owns = 3677 NOT = { has_global_flag = jew_renamed_nosybe } }
 						AND = { owns = 2120 NOT = { has_global_flag = jew_renamed_antsiranana } }
 						AND = { owns = 2121 NOT = { has_global_flag = jew_renamed_mahajanga } }
 						AND = { owns = 2116 has_global_flag = fiaranantsoa_founded NOT = { has_global_flag = jew_renamed_fiaranantsoa } }
 						AND = { owns = 2122 has_global_flag = toliara_founded NOT = { has_global_flag = jew_renamed_toliara } }
+						AND = { owns = 3682 has_global_flag = antsirabe_founded NOT = { has_global_flag = jew_renamed_antsirabe } }
 					}
 				}
 				AND = {
@@ -493,13 +1014,14 @@ political_decisions = {
 					OR = {
 						AND = { owns = 3675 owns = 2119 owns = 2118 NOT = { has_global_flag = german_renamed_east_madagascar } }
 						AND = { owns = 2122 owns = 2117 NOT = { has_global_flag = german_renamed_west_madagascar } }
-						AND = { owns = 2115 owns = 2116 owns = 3678 NOT = { has_global_flag = german_renamed_central_madagascar } }
+						AND = { owns = 2115 owns = 2116 owns = 3678 owns = 3682 NOT = { has_global_flag = german_renamed_central_madagascar } }
 						AND = { owns = 3676 NOT = { has_global_flag = german_renamed_stmarie } }
 						AND = { owns = 3677 NOT = { has_global_flag = german_renamed_nosybe } }
 						AND = { owns = 2120 NOT = { has_global_flag = german_renamed_antsiranana } }
 						AND = { owns = 2121 NOT = { has_global_flag = german_renamed_mahajanga } }
 						AND = { owns = 2116 has_global_flag = fiaranantsoa_founded NOT = { has_global_flag = german_renamed_fiaranantsoa } }
 						AND = { owns = 2122 has_global_flag = toliara_founded NOT = { has_global_flag = german_renamed_toliara } }
+						AND = { owns = 3682 has_global_flag = antsirabe_founded NOT = { has_global_flag = german_renamed_antsirabe } }
 					}
 				}
 				AND = {
@@ -507,13 +1029,14 @@ political_decisions = {
 					OR = {
 						AND = { owns = 3675 owns = 2119 owns = 2118 NOT = { has_global_flag = french_renamed_east_madagascar } }
 						AND = { owns = 2122 owns = 2117 NOT = { has_global_flag = french_renamed_west_madagascar } }
-						AND = { owns = 2115 owns = 2116 owns = 3678 NOT = { has_global_flag = french_renamed_central_madagascar } }
+						AND = { owns = 2115 owns = 2116 owns = 3678 owns = 3682 NOT = { has_global_flag = french_renamed_central_madagascar } }
 						AND = { owns = 3676 NOT = { has_global_flag = french_renamed_stmarie } }
 						AND = { owns = 3677 NOT = { has_global_flag = french_renamed_nosybe } }
 						AND = { owns = 2120 NOT = { has_global_flag = french_renamed_antsiranana } }
 						AND = { owns = 2121 NOT = { has_global_flag = french_renamed_mahajanga } }
 						AND = { owns = 2116 has_global_flag = fiaranantsoa_founded NOT = { has_global_flag = french_renamed_fiaranantsoa } }
 						AND = { owns = 2122 has_global_flag = toliara_founded NOT = { has_global_flag = french_renamed_toliara } }
+						AND = { owns = 3682 has_global_flag = antsirabe_founded NOT = { has_global_flag = french_renamed_antsirabe } }
 					}
 				}
 				AND = {
@@ -521,13 +1044,14 @@ political_decisions = {
 					OR = {
 						AND = { owns = 3675 owns = 2119 owns = 2118 NOT = { has_global_flag = hungarian_renamed_east_madagascar } }
 						AND = { owns = 2122 owns = 2117 NOT = { has_global_flag = hungarian_renamed_west_madagascar } }
-						AND = { owns = 2115 owns = 2116 owns = 3678 NOT = { has_global_flag = hungarian_renamed_central_madagascar } }
+						AND = { owns = 2115 owns = 2116 owns = 3678 owns = 3682 NOT = { has_global_flag = hungarian_renamed_central_madagascar } }
 						AND = { owns = 3676 NOT = { has_global_flag = hungarian_renamed_stmarie } }
 						AND = { owns = 3677 NOT = { has_global_flag = hungarian_renamed_nosybe } }
 						AND = { owns = 2120 NOT = { has_global_flag = hungarian_renamed_antsiranana } }
 						AND = { owns = 2121 NOT = { has_global_flag = hungarian_renamed_mahajanga } }
 						AND = { owns = 2116 has_global_flag = fiaranantsoa_founded NOT = { has_global_flag = hungarian_renamed_fiaranantsoa } }
 						AND = { owns = 2122 has_global_flag = toliara_founded NOT = { has_global_flag = hungarian_renamed_toliara } }
+						AND = { owns = 3682 has_global_flag = antsirabe_founded NOT = { has_global_flag = hungarian_renamed_antsirabe } }
 					}
 				}
 				AND = {
@@ -535,13 +1059,14 @@ political_decisions = {
 					OR = {
 						AND = { owns = 3675 owns = 2119 owns = 2118 NOT = { has_global_flag = slovak_renamed_east_madagascar } }
 						AND = { owns = 2122 owns = 2117 NOT = { has_global_flag = slovak_renamed_west_madagascar } }
-						AND = { owns = 2115 owns = 2116 owns = 3678 NOT = { has_global_flag = slovak_renamed_central_madagascar } }
+						AND = { owns = 2115 owns = 2116 owns = 3678 owns = 3682 NOT = { has_global_flag = slovak_renamed_central_madagascar } }
 						AND = { owns = 3676 NOT = { has_global_flag = slovak_renamed_stmarie } }
 						AND = { owns = 3677 NOT = { has_global_flag = slovak_renamed_nosybe } }
 						AND = { owns = 2120 NOT = { has_global_flag = slovak_renamed_antsiranana } }
 						AND = { owns = 2121 NOT = { has_global_flag = slovak_renamed_mahajanga } }
 						AND = { owns = 2116 has_global_flag = fiaranantsoa_founded NOT = { has_global_flag = slovak_renamed_fiaranantsoa } }
 						AND = { owns = 2122 has_global_flag = toliara_founded NOT = { has_global_flag = slovak_renamed_toliara } }
+						AND = { owns = 3682 has_global_flag = antsirabe_founded NOT = { has_global_flag = slovak_renamed_antsirabe } }
 					}
 				}
 				AND = {
@@ -549,13 +1074,14 @@ political_decisions = {
 					OR = {
 						AND = { owns = 3675 owns = 2119 owns = 2118 NOT = { has_global_flag = baltic_renamed_east_madagascar } }
 						AND = { owns = 2122 owns = 2117 NOT = { has_global_flag = baltic_renamed_west_madagascar } }
-						AND = { owns = 2115 owns = 2116 owns = 3678 NOT = { has_global_flag = baltic_renamed_central_madagascar } }
+						AND = { owns = 2115 owns = 2116 owns = 3678 owns = 3682 NOT = { has_global_flag = baltic_renamed_central_madagascar } }
 						AND = { owns = 3676 NOT = { has_global_flag = baltic_renamed_stmarie } }
 						AND = { owns = 3677 NOT = { has_global_flag = baltic_renamed_nosybe } }
 						AND = { owns = 2120 NOT = { has_global_flag = baltic_renamed_antsiranana } }
 						AND = { owns = 2121 NOT = { has_global_flag = baltic_renamed_mahajanga } }
 						AND = { owns = 2116 has_global_flag = fiaranantsoa_founded NOT = { has_global_flag = baltic_renamed_fiaranantsoa } }
 						AND = { owns = 2122 has_global_flag = toliara_founded NOT = { has_global_flag = baltic_renamed_toliara } }
+						AND = { owns = 3682 has_global_flag = antsirabe_founded NOT = { has_global_flag = baltic_renamed_antsirabe } }
 					}
 				}
 				AND = {
@@ -563,13 +1089,14 @@ political_decisions = {
 					OR = {
 						AND = { owns = 3675 owns = 2119 owns = 2118 NOT = { has_global_flag = russian_renamed_east_madagascar } }
 						AND = { owns = 2122 owns = 2117 NOT = { has_global_flag = russian_renamed_west_madagascar } }
-						AND = { owns = 2115 owns = 2116 owns = 3678 NOT = { has_global_flag = russian_renamed_central_madagascar } }
+						AND = { owns = 2115 owns = 2116 owns = 3678 owns = 3682 NOT = { has_global_flag = russian_renamed_central_madagascar } }
 						AND = { owns = 3676 NOT = { has_global_flag = russian_renamed_stmarie } }
 						AND = { owns = 3677 NOT = { has_global_flag = russian_renamed_nosybe } }
 						AND = { owns = 2120 NOT = { has_global_flag = russian_renamed_antsiranana } }
 						AND = { owns = 2121 NOT = { has_global_flag = russian_renamed_mahajanga } }
 						AND = { owns = 2116 has_global_flag = fiaranantsoa_founded NOT = { has_global_flag = russian_renamed_fiaranantsoa } }
 						AND = { owns = 2122 has_global_flag = toliara_founded NOT = { has_global_flag = russian_renamed_toliara } }
+						AND = { owns = 3682 has_global_flag = antsirabe_founded NOT = { has_global_flag = russian_renamed_antsirabe } }
 					}
 				}
 				AND = {
@@ -578,13 +1105,14 @@ political_decisions = {
 					OR = {
 						AND = { owns = 3675 owns = 2119 owns = 2118 NOT = { has_global_flag = polish_renamed_east_madagascar } }
 						AND = { owns = 2122 owns = 2117 NOT = { has_global_flag = polish_renamed_west_madagascar } }
-						AND = { owns = 2115 owns = 2116 owns = 3678 NOT = { has_global_flag = polish_renamed_central_madagascar } }
+						AND = { owns = 2115 owns = 2116 owns = 3678 owns = 3682 NOT = { has_global_flag = polish_renamed_central_madagascar } }
 						AND = { owns = 3676 NOT = { has_global_flag = polish_renamed_stmarie } }
 						AND = { owns = 3677 NOT = { has_global_flag = polish_renamed_nosybe } }
 						AND = { owns = 2120 NOT = { has_global_flag = polish_renamed_antsiranana } }
 						AND = { owns = 2121 NOT = { has_global_flag = polish_renamed_mahajanga } }
 						AND = { owns = 2116 has_global_flag = fiaranantsoa_founded NOT = { has_global_flag = polish_renamed_fiaranantsoa } }
 						AND = { owns = 2122 has_global_flag = toliara_founded NOT = { has_global_flag = polish_renamed_toliara } }
+						AND = { owns = 3682 has_global_flag = antsirabe_founded NOT = { has_global_flag = polish_renamed_antsirabe } }
 					}
 				}
 				AND = {
@@ -592,13 +1120,14 @@ political_decisions = {
 					OR = {
 						AND = { owns = 3675 owns = 2119 owns = 2118 NOT = { has_global_flag = WSF_renamed_east_madagascar } }
 						AND = { owns = 2122 owns = 2117 NOT = { has_global_flag = WSF_renamed_west_madagascar } }
-						AND = { owns = 2115 owns = 2116 owns = 3678 NOT = { has_global_flag = WSF_renamed_central_madagascar } }
+						AND = { owns = 2115 owns = 2116 owns = 3678 owns = 3682 NOT = { has_global_flag = WSF_renamed_central_madagascar } }
 						AND = { owns = 3676 NOT = { has_global_flag = WSF_renamed_stmarie } }
 						AND = { owns = 3677 NOT = { has_global_flag = WSF_renamed_nosybe } }
 						AND = { owns = 2120 NOT = { has_global_flag = WSF_renamed_antsiranana } }
 						AND = { owns = 2121 NOT = { has_global_flag = WSF_renamed_mahajanga } }
 						AND = { owns = 2116 has_global_flag = fiaranantsoa_founded NOT = { has_global_flag = WSF_renamed_fiaranantsoa } }
 						AND = { owns = 2122 has_global_flag = toliara_founded NOT = { has_global_flag = WSF_renamed_toliara } }
+						AND = { owns = 3682 has_global_flag = antsirabe_founded NOT = { has_global_flag = WSF_renamed_antsirabe } }
 					}
 				}
 				AND = {
@@ -609,13 +1138,14 @@ political_decisions = {
 					OR = {
 						AND = { owns = 3675 owns = 2119 owns = 2118 NOT = { has_global_flag = british_renamed_east_madagascar } }
 						AND = { owns = 2122 owns = 2117 NOT = { has_global_flag = british_renamed_west_madagascar } }
-						AND = { owns = 2115 owns = 2116 owns = 3678 NOT = { has_global_flag = british_renamed_central_madagascar } }
+						AND = { owns = 2115 owns = 2116 owns = 3678 owns = 3682 NOT = { has_global_flag = british_renamed_central_madagascar } }
 						AND = { owns = 3676 NOT = { has_global_flag = british_renamed_stmarie } }
 						AND = { owns = 3677 NOT = { has_global_flag = british_renamed_nosybe } }
 						AND = { owns = 2120 NOT = { has_global_flag = british_renamed_antsiranana } }
 						AND = { owns = 2121 NOT = { has_global_flag = british_renamed_mahajanga } }
 						AND = { owns = 2116 has_global_flag = fiaranantsoa_founded NOT = { has_global_flag = british_renamed_fiaranantsoa } }
 						AND = { owns = 2122 has_global_flag = toliara_founded NOT = { has_global_flag = british_renamed_toliara } }
+						AND = { owns = 3682 has_global_flag = antsirabe_founded NOT = { has_global_flag = british_renamed_antsirabe } }
 					}
 				}
 				AND = {
@@ -626,13 +1156,14 @@ political_decisions = {
 					OR = {
 						AND = { owns = 3675 owns = 2119 owns = 2118 NOT = { has_global_flag = portuguese_renamed_east_madagascar } }
 						AND = { owns = 2122 owns = 2117 NOT = { has_global_flag = portuguese_renamed_west_madagascar } }
-						AND = { owns = 2115 owns = 2116 owns = 3678 NOT = { has_global_flag = portuguese_renamed_central_madagascar } }
+						AND = { owns = 2115 owns = 2116 owns = 3678 owns = 3682 NOT = { has_global_flag = portuguese_renamed_central_madagascar } }
 						AND = { owns = 3676 NOT = { has_global_flag = portuguese_renamed_stmarie } }
 						AND = { owns = 3677 NOT = { has_global_flag = portuguese_renamed_nosybe } }
 						AND = { owns = 2120 NOT = { has_global_flag = portuguese_renamed_antsiranana } }
 						AND = { owns = 2121 NOT = { has_global_flag = portuguese_renamed_mahajanga } }
 						AND = { owns = 2116 has_global_flag = fiaranantsoa_founded NOT = { has_global_flag = portuguese_renamed_fiaranantsoa } }
 						AND = { owns = 2122 has_global_flag = toliara_founded NOT = { has_global_flag = portuguese_renamed_toliara } }
+						AND = { owns = 3682 has_global_flag = antsirabe_founded NOT = { has_global_flag = portuguese_renamed_antsirabe } }
 					}
 				}
 				AND = {
@@ -643,13 +1174,14 @@ political_decisions = {
 					OR = {
 						AND = { owns = 3675 owns = 2119 owns = 2118 NOT = { has_global_flag = dutch_renamed_east_madagascar } }
 						AND = { owns = 2122 owns = 2117 NOT = { has_global_flag = dutch_renamed_west_madagascar } }
-						AND = { owns = 2115 owns = 2116 owns = 3678 NOT = { has_global_flag = dutch_renamed_central_madagascar } }
+						AND = { owns = 2115 owns = 2116 owns = 3678 owns = 3682 NOT = { has_global_flag = dutch_renamed_central_madagascar } }
 						AND = { owns = 3676 NOT = { has_global_flag = dutch_renamed_stmarie } }
 						AND = { owns = 3677 NOT = { has_global_flag = dutch_renamed_nosybe } }
 						AND = { owns = 2120 NOT = { has_global_flag = dutch_renamed_antsiranana } }
 						AND = { owns = 2121 NOT = { has_global_flag = dutch_renamed_mahajanga } }
 						AND = { owns = 2116 has_global_flag = fiaranantsoa_founded NOT = { has_global_flag = dutch_renamed_fiaranantsoa } }
 						AND = { owns = 2122 has_global_flag = toliara_founded NOT = { has_global_flag = dutch_renamed_toliara } }
+						AND = { owns = 3682 has_global_flag = antsirabe_founded NOT = { has_global_flag = dutch_renamed_antsirabe } }
 					}
 				}
 				AND = {
@@ -678,13 +1210,14 @@ political_decisions = {
 					OR = {
 						AND = { owns = 3675 owns = 2119 owns = 2118 NOT = { has_global_flag = normal_renamed_east_madagascar } }
 						AND = { owns = 2122 owns = 2117 NOT = { has_global_flag = normal_renamed_west_madagascar } }
-						AND = { owns = 2115 owns = 2116 owns = 3678 NOT = { has_global_flag = normal_renamed_central_madagascar } }
+						AND = { owns = 2115 owns = 2116 owns = 3678 owns = 3682 NOT = { has_global_flag = normal_renamed_central_madagascar } }
 						AND = { owns = 3676 NOT = { has_global_flag = normal_renamed_stmarie } }
 						AND = { owns = 3677 NOT = { has_global_flag = normal_renamed_nosybe } }
 						AND = { owns = 2120 NOT = { has_global_flag = normal_renamed_antsiranana } }
 						AND = { owns = 2121 NOT = { has_global_flag = normal_renamed_mahajanga } }
 						AND = { owns = 2116 has_global_flag = fiaranantsoa_founded NOT = { has_global_flag = normal_renamed_fiaranantsoa } }
 						AND = { owns = 2122 has_global_flag = toliara_founded NOT = { has_global_flag = normal_renamed_toliara } }
+						AND = { owns = 3682 has_global_flag = antsirabe_founded NOT = { has_global_flag = normal_renamed_antsirabe } }
 					}
 				}
 			}
@@ -775,6 +1308,7 @@ political_decisions = {
 				}	
 				2116 = { change_province_name = "Negev" }	
 				3678 = { change_province_name = "New Akko" }	
+				3682 = { change_province_name = "Fivavachannah" }	
 				owner = { 
 					set_global_flag = jew_renamed_central_madagascar
 					clr_global_flag = german_renamed_central_madagascar
@@ -943,6 +1477,32 @@ political_decisions = {
 					clr_global_flag = british_renamed_toliara
 				}
 			}
+			###Jew - antsirabe###
+			random_owned = {
+				limit = {
+					province_id = 3682
+					owner = {
+						is_culture_group = jewish_cultures
+						has_global_flag = antsirabe_founded
+					}
+				}
+				3682 = { change_province_name = "Antzi'rabbi" }	
+				owner = { 
+					set_global_flag = jew_renamed_antsirabe
+					clr_global_flag = german_renamed_antsirabe
+					clr_global_flag = french_renamed_antsirabe
+					clr_global_flag = hungarian_renamed_antsirabe
+					clr_global_flag = slovak_renamed_antsirabe
+					clr_global_flag = baltic_renamed_antsirabe
+					clr_global_flag = russian_renamed_antsirabe
+					clr_global_flag = polish_renamed_antsirabe
+					clr_global_flag = WSF_renamed_antsirabe
+					clr_global_flag = normal_renamed_antsirabe
+					clr_global_flag = dutch_renamed_antsirabe
+					clr_global_flag = portuguese_renamed_antsirabe
+					clr_global_flag = british_renamed_antsirabe
+				}
+			}
 			
 			###German - east_madagascar###
 			random_owned = {
@@ -1023,6 +1583,7 @@ political_decisions = {
 				}	
 				2116 = { change_province_name = "Matsiatra" }	
 				3678 = { change_province_name = "Ambositra" }	
+				3682 = { change_province_name = "Fiwawakhana" }	
 				owner = { 
 					set_global_flag = german_renamed_central_madagascar
 					clr_global_flag = french_renamed_central_madagascar
@@ -1191,6 +1752,32 @@ political_decisions = {
 					clr_global_flag = british_renamed_toliara
 				}
 			}
+			###German - antsirabe###
+			random_owned = {
+				limit = {
+					province_id = 3682
+					owner = {
+						is_culture_group = germanic
+						has_global_flag = antsirabe_founded
+					}
+				}
+				3682 = { change_province_name = "Salzstadt" }	
+				owner = { 
+					set_global_flag = german_renamed_antsirabe
+					clr_global_flag = jew_renamed_antsirabe 
+					clr_global_flag = french_renamed_antsirabe
+					clr_global_flag = hungarian_renamed_antsirabe
+					clr_global_flag = slovak_renamed_antsirabe
+					clr_global_flag = baltic_renamed_antsirabe
+					clr_global_flag = russian_renamed_antsirabe
+					clr_global_flag = polish_renamed_antsirabe
+					clr_global_flag = WSF_renamed_antsirabe
+					clr_global_flag = normal_renamed_antsirabe
+					clr_global_flag = dutch_renamed_antsirabe
+					clr_global_flag = portuguese_renamed_antsirabe
+					clr_global_flag = british_renamed_antsirabe
+				}
+			}
 			
 			###French - east_madagascar###
 			random_owned = {
@@ -1271,6 +1858,7 @@ political_decisions = {
 				}	
 				2116 = { change_province_name = "Matsiatra" }	
 				3678 = { change_province_name = "Ambositra" }	
+				3682 = { change_province_name = "Fivavahana" }	
 				owner = { 
 					set_global_flag = french_renamed_central_madagascar
 					clr_global_flag = german_renamed_central_madagascar
@@ -1436,6 +2024,32 @@ political_decisions = {
 					clr_global_flag = british_renamed_toliara
 				}
 			}
+			###French - antsirabe###
+			random_owned = {
+				limit = {
+					province_id = 3682
+					owner = {
+						is_culture_group = french
+						has_global_flag = antsirabe_founded
+					}
+				}
+				3682 = { change_province_name = "Antsirabe" }	
+				owner = {  
+					set_global_flag = french_renamed_antsirabe
+					clr_global_flag = jew_renamed_antsirabe 
+					clr_global_flag = german_renamed_antsirabe
+					clr_global_flag = hungarian_renamed_antsirabe
+					clr_global_flag = slovak_renamed_antsirabe
+					clr_global_flag = baltic_renamed_antsirabe
+					clr_global_flag = russian_renamed_antsirabe
+					clr_global_flag = polish_renamed_antsirabe
+					clr_global_flag = WSF_renamed_antsirabe
+					clr_global_flag = normal_renamed_antsirabe
+					clr_global_flag = dutch_renamed_antsirabe
+					clr_global_flag = portuguese_renamed_antsirabe
+					clr_global_flag = british_renamed_antsirabe
+				}
+			}
 			
 			###Hungarian - east_madagascar###
 			random_owned = {
@@ -1516,6 +2130,7 @@ political_decisions = {
 				}	
 				2116 = { change_province_name = "Máciatra" }	
 				3678 = { change_province_name = "Ambószitra" }
+				3682 = { change_province_name = "Fiwawahana" }	
 				owner = { 
 					set_global_flag = hungarian_renamed_central_madagascar
 					clr_global_flag = german_renamed_central_madagascar
@@ -1681,6 +2296,32 @@ political_decisions = {
 					clr_global_flag = british_renamed_toliara
 				}
 			}
+			###Hungarian - antsirabe###
+			random_owned = {
+				limit = {
+					province_id = 3682
+					owner = {
+						is_culture_group = hungarian_culture_group
+						has_global_flag = antsirabe_founded
+					}
+				}
+				3682 = { change_province_name = "Áncirábe" }	
+				owner = {  
+					set_global_flag = hungarian_renamed_antsirabe
+					clr_global_flag = jew_renamed_antsirabe 
+					clr_global_flag = german_renamed_antsirabe
+					clr_global_flag = french_renamed_antsirabe
+					clr_global_flag = slovak_renamed_antsirabe
+					clr_global_flag = baltic_renamed_antsirabe
+					clr_global_flag = russian_renamed_antsirabe
+					clr_global_flag = polish_renamed_antsirabe
+					clr_global_flag = WSF_renamed_antsirabe
+					clr_global_flag = normal_renamed_antsirabe
+					clr_global_flag = dutch_renamed_antsirabe
+					clr_global_flag = portuguese_renamed_antsirabe
+					clr_global_flag = british_renamed_antsirabe
+				}
+			}
 			
 			###Slovak - east_madagascar###
 			random_owned = {
@@ -1761,6 +2402,7 @@ political_decisions = {
 				}	
 				2116 = { change_province_name = "Maciatra" }	
 				3678 = { change_province_name = "Ambocitra" }	
+				3682 = { change_province_name = "Fiwawachana" }	
 				owner = { 
 					set_global_flag = slovak_renamed_central_madagascar
 					clr_global_flag = german_renamed_central_madagascar
@@ -1926,6 +2568,32 @@ political_decisions = {
 					clr_global_flag = british_renamed_toliara
 				}
 			}
+			###Slovak - antsirabe###
+			random_owned = {
+				limit = {
+					province_id = 3682
+					owner = {
+						is_culture_group = czecho_slovak_culture_group
+						has_global_flag = antsirabe_founded
+					}
+				}
+				3682 = { change_province_name = "Ancirabe" }	
+				owner = {  
+					set_global_flag = slovak_renamed_antsirabe
+					clr_global_flag = jew_renamed_antsirabe 
+					clr_global_flag = german_renamed_antsirabe
+					clr_global_flag = french_renamed_antsirabe
+					clr_global_flag = hungarian_renamed_antsirabe 
+					clr_global_flag = baltic_renamed_antsirabe
+					clr_global_flag = russian_renamed_antsirabe
+					clr_global_flag = polish_renamed_antsirabe
+					clr_global_flag = WSF_renamed_antsirabe
+					clr_global_flag = normal_renamed_antsirabe
+					clr_global_flag = dutch_renamed_antsirabe
+					clr_global_flag = portuguese_renamed_antsirabe
+					clr_global_flag = british_renamed_antsirabe
+				}
+			}
 			
 			###Baltic - east_madagascar###
 			random_owned = {
@@ -2006,6 +2674,7 @@ political_decisions = {
 				}	
 				2116 = { change_province_name = "Matsiatra" }	
 				3678 = { change_province_name = "Ambositra" }
+				3682 = { change_province_name = "Fivavahana" }	
 				owner = { 
 					set_global_flag = baltic_renamed_central_madagascar
 					clr_global_flag = german_renamed_central_madagascar
@@ -2171,6 +2840,32 @@ political_decisions = {
 					clr_global_flag = british_renamed_toliara
 				}
 			}
+			###Baltic - antsirabe###
+			random_owned = {
+				limit = {
+					province_id = 3682
+					owner = {
+						is_culture_group = baltic
+						has_global_flag = antsirabe_founded
+					}
+				}
+				3682 = { change_province_name = "Antsirabe" }	
+				owner = {  
+					set_global_flag = baltic_renamed_antsirabe
+					clr_global_flag = jew_renamed_antsirabe 
+					clr_global_flag = german_renamed_antsirabe
+					clr_global_flag = french_renamed_antsirabe
+					clr_global_flag = hungarian_renamed_antsirabe 
+					clr_global_flag = slovak_renamed_antsirabe
+					clr_global_flag = russian_renamed_antsirabe
+					clr_global_flag = polish_renamed_antsirabe
+					clr_global_flag = WSF_renamed_antsirabe
+					clr_global_flag = normal_renamed_antsirabe
+					clr_global_flag = dutch_renamed_antsirabe
+					clr_global_flag = portuguese_renamed_antsirabe
+					clr_global_flag = british_renamed_antsirabe
+				}
+			}
 			
 			###Russian - east_madagascar###
 			random_owned = {
@@ -2249,8 +2944,9 @@ political_decisions = {
 						change_region_name = "Tsentralnyi Madagaskar"
 					}
 				}	
-				2116 = { change_province_name = "Matsiatra" }	
+				2116 = { change_province_name = "Matsyatra" }	
 				3678 = { change_province_name = "Ambositra" }	
+				3682 = { change_province_name = "Fyvavakhana" }	
 				owner = { 
 					set_global_flag = russian_renamed_central_madagascar
 					clr_global_flag = german_renamed_central_madagascar
@@ -2322,7 +3018,7 @@ political_decisions = {
 						is_culture_group = east_slavic
 					}
 				}
-				2120 = { change_province_name = "Antsiranana" }	
+				2120 = { change_province_name = "Antsyranana" }	
 				owner = { 
 					set_global_flag = russian_renamed_antsiranana
 					clr_global_flag = german_renamed_antsiranana
@@ -2416,6 +3112,32 @@ political_decisions = {
 					clr_global_flag = british_renamed_toliara
 				}
 			}
+			###Russian - antsirabe###
+			random_owned = {
+				limit = {
+					province_id = 3682
+					owner = {
+						is_culture_group = east_slavic
+						has_global_flag = antsirabe_founded
+					}
+				}
+				3682 = { change_province_name = "Antsyrabe" }	
+				owner = {  
+					set_global_flag = russian_renamed_antsirabe
+					clr_global_flag = jew_renamed_antsirabe 
+					clr_global_flag = german_renamed_antsirabe
+					clr_global_flag = french_renamed_antsirabe
+					clr_global_flag = hungarian_renamed_antsirabe 
+					clr_global_flag = slovak_renamed_antsirabe
+					clr_global_flag = baltic_renamed_antsirabe 
+					clr_global_flag = polish_renamed_antsirabe
+					clr_global_flag = WSF_renamed_antsirabe
+					clr_global_flag = normal_renamed_antsirabe
+					clr_global_flag = dutch_renamed_antsirabe
+					clr_global_flag = portuguese_renamed_antsirabe
+					clr_global_flag = british_renamed_antsirabe
+				}
+			}
 			
 			###Polish - east_madagascar###
 			random_owned = {
@@ -2500,6 +3222,7 @@ political_decisions = {
 				}	
 				2116 = { change_province_name = "Dziwnemalpieck" }	
 				3678 = { change_province_name = "Ambocitra" }	
+				3682 = { change_province_name = "Fiwawachana" }	
 				owner = { 
 					set_global_flag = polish_renamed_central_madagascar
 					clr_global_flag = german_renamed_central_madagascar
@@ -2669,6 +3392,32 @@ political_decisions = {
 					clr_global_flag = british_renamed_toliara
 				}
 			}
+			###Polish - antsirabe###
+			random_owned = {
+				limit = {
+					province_id = 3682
+					owner = {
+						is_culture_group = polish_culture_group
+						has_global_flag = antsirabe_founded
+					}
+				}
+				3682 = { change_province_name = "Ancyrabe" }	
+				owner = {  
+					set_global_flag = polish_renamed_antsirabe
+					clr_global_flag = jew_renamed_antsirabe 
+					clr_global_flag = german_renamed_antsirabe
+					clr_global_flag = french_renamed_antsirabe
+					clr_global_flag = hungarian_renamed_antsirabe 
+					clr_global_flag = slovak_renamed_antsirabe
+					clr_global_flag = baltic_renamed_antsirabe 
+					clr_global_flag = russian_renamed_antsirabe 
+					clr_global_flag = WSF_renamed_antsirabe
+					clr_global_flag = normal_renamed_antsirabe
+					clr_global_flag = dutch_renamed_antsirabe
+					clr_global_flag = portuguese_renamed_antsirabe
+					clr_global_flag = british_renamed_antsirabe
+				}
+			}
 			
 			###West Slavic Federation - east_madagascar###
 			random_owned = {
@@ -2749,6 +3498,7 @@ political_decisions = {
 				}	
 				2116 = { change_province_name = "Dziwnemalpieck" }	
 				3678 = { change_province_name = "Ambocitra" }	
+				3682 = { change_province_name = "Fiwawachana" }	
 				owner = { 
 					set_global_flag = WSF_renamed_central_madagascar
 					clr_global_flag = german_renamed_central_madagascar
@@ -2914,6 +3664,32 @@ political_decisions = {
 					clr_global_flag = british_renamed_toliara
 				}
 			}
+			###WSF - antsirabe###
+			random_owned = {
+				limit = {
+					province_id = 3682
+					owner = {
+						tag = WSF
+						has_global_flag = antsirabe_founded
+					}
+				}
+				3682 = { change_province_name = "Ancyrabe" }	
+				owner = {  
+					set_global_flag = WSF_renamed_antsirabe
+					clr_global_flag = jew_renamed_antsirabe 
+					clr_global_flag = german_renamed_antsirabe
+					clr_global_flag = french_renamed_antsirabe
+					clr_global_flag = hungarian_renamed_antsirabe 
+					clr_global_flag = slovak_renamed_antsirabe
+					clr_global_flag = baltic_renamed_antsirabe 
+					clr_global_flag = russian_renamed_antsirabe 
+					clr_global_flag = polish_renamed_antsirabe 
+					clr_global_flag = normal_renamed_antsirabe
+					clr_global_flag = dutch_renamed_antsirabe
+					clr_global_flag = portuguese_renamed_antsirabe
+					clr_global_flag = british_renamed_antsirabe
+				}
+			}
 			
 			###Normal - east_madagascar###
 			random_owned = {
@@ -3057,6 +3833,7 @@ political_decisions = {
 				}	
 				2116 = { change_province_name = "Matsiatra" }	
 				3678 = { change_province_name = "Ambositra" }	
+				3682 = { change_province_name = "Fivavahana" }	
 				owner = { 
 					set_global_flag = normal_renamed_central_madagascar
 					clr_global_flag = german_renamed_central_madagascar
@@ -3348,6 +4125,53 @@ political_decisions = {
 					clr_global_flag = british_renamed_toliara
 				}
 			}
+			###Normal - antsirabe###
+			random_owned = {
+				limit = {
+					province_id = 3682
+					owner = {
+						OR = {
+							is_culture_group = southern_african
+							NOT = {
+								OR = {
+									is_culture_group = germanic
+									is_culture_group = french
+									is_culture_group = hungarian_culture_group
+									is_culture_group = czecho_slovak_culture_group
+									is_culture_group = baltic
+									is_culture_group = east_slavic
+									is_culture_group = polish_culture_group
+									is_culture_group = jewish_cultures
+									is_culture_group = british
+									is_culture_group = american_cultures
+									primary_culture = portuguese
+									primary_culture = brazilian
+									is_culture_group = beneluxian
+									primary_culture = boer
+									tag = WSF
+								}
+							}
+						}
+						has_global_flag = antsirabe_founded
+					}
+				}
+				3682 = { change_province_name = "Antsirabe" }	
+				owner = {  
+					set_global_flag = normal_renamed_antsirabe
+					clr_global_flag = jew_renamed_antsirabe 
+					clr_global_flag = german_renamed_antsirabe
+					clr_global_flag = french_renamed_antsirabe
+					clr_global_flag = hungarian_renamed_antsirabe 
+					clr_global_flag = slovak_renamed_antsirabe
+					clr_global_flag = baltic_renamed_antsirabe 
+					clr_global_flag = russian_renamed_antsirabe 
+					clr_global_flag = polish_renamed_antsirabe 
+					clr_global_flag = WSF_renamed_antsirabe 
+					clr_global_flag = dutch_renamed_antsirabe
+					clr_global_flag = portuguese_renamed_antsirabe
+					clr_global_flag = british_renamed_antsirabe
+				}
+			}
 			
 			###British - east_madagascar###
 			random_owned = {
@@ -3437,6 +4261,7 @@ political_decisions = {
 				}	
 				2116 = { change_province_name = "Matsiatra" }	
 				3678 = { change_province_name = "Ambositra" }	
+				3682 = { change_province_name = "Fivavahana" }	
 				owner = { 
 					set_global_flag = british_renamed_central_madagascar
 					clr_global_flag = german_renamed_central_madagascar
@@ -3623,6 +4448,35 @@ political_decisions = {
 					clr_global_flag = portuguese_renamed_toliara
 				}
 			}
+			###British - antsirabe###
+			random_owned = {
+				limit = {
+					province_id = 3682
+					owner = {
+						OR = {
+							is_culture_group = british
+							is_culture_group = american_cultures
+						}
+						has_global_flag = antsirabe_founded
+					}
+				}
+				3682 = { change_province_name = "Antsirabe" }	
+				owner = {  
+					set_global_flag = british_renamed_antsirabe
+					clr_global_flag = jew_renamed_antsirabe 
+					clr_global_flag = german_renamed_antsirabe
+					clr_global_flag = french_renamed_antsirabe
+					clr_global_flag = hungarian_renamed_antsirabe 
+					clr_global_flag = slovak_renamed_antsirabe
+					clr_global_flag = baltic_renamed_antsirabe 
+					clr_global_flag = russian_renamed_antsirabe 
+					clr_global_flag = polish_renamed_antsirabe 
+					clr_global_flag = WSF_renamed_antsirabe 
+					clr_global_flag = dutch_renamed_antsirabe
+					clr_global_flag = portuguese_renamed_antsirabe
+					clr_global_flag = normal_renamed_antsirabe 
+				}
+			}
 			
 			###Portuguese - east_madagascar###
 			random_owned = {
@@ -3712,6 +4566,7 @@ political_decisions = {
 				}	
 				2116 = { change_province_name = "Maçiatra" }	
 				3678 = { change_province_name = "Ambositra" }	
+				3682 = { change_province_name = "Fivavahana" }	
 				owner = { 
 					set_global_flag = portuguese_renamed_central_madagascar
 					clr_global_flag = german_renamed_central_madagascar
@@ -3898,6 +4753,35 @@ political_decisions = {
 					clr_global_flag = portuguese_renamed_toliara
 				}
 			}
+			###Portuguese - antsirabe###
+			random_owned = {
+				limit = {
+					province_id = 3682
+					owner = {
+						OR = {
+							primary_culture = portuguese
+							primary_culture = brazilian
+						}
+						has_global_flag = antsirabe_founded
+					}
+				}
+				3682 = { change_province_name = "Ançirabe" }	
+				owner = {  
+					set_global_flag = portuguese_renamed_antsirabe
+					clr_global_flag = jew_renamed_antsirabe 
+					clr_global_flag = german_renamed_antsirabe
+					clr_global_flag = french_renamed_antsirabe
+					clr_global_flag = hungarian_renamed_antsirabe 
+					clr_global_flag = slovak_renamed_antsirabe
+					clr_global_flag = baltic_renamed_antsirabe 
+					clr_global_flag = russian_renamed_antsirabe 
+					clr_global_flag = polish_renamed_antsirabe 
+					clr_global_flag = WSF_renamed_antsirabe 
+					clr_global_flag = dutch_renamed_antsirabe
+					clr_global_flag = british_renamed_antsirabe 
+					clr_global_flag = normal_renamed_antsirabe 
+				}
+			}
 			
 			###Dutch - east_madagascar###
 			random_owned = {
@@ -3987,6 +4871,7 @@ political_decisions = {
 				}	
 				2116 = { change_province_name = "Matsiatra" }	
 				3678 = { change_province_name = "Ambositra" }	
+				3682 = { change_province_name = "Fivavaschana" }
 				owner = { 
 					set_global_flag = dutch_renamed_central_madagascar
 					clr_global_flag = german_renamed_central_madagascar
@@ -4171,6 +5056,35 @@ political_decisions = {
 					clr_global_flag = normal_renamed_toliara
 					clr_global_flag = portuguese_renamed_toliara
 					clr_global_flag = british_renamed_toliara
+				}
+			}
+			###Dutch - antsirabe###
+			random_owned = {
+				limit = {
+					province_id = 3682
+					owner = {
+						OR = {
+							is_culture_group = beneluxian
+							primary_culture = boer
+						}
+						has_global_flag = antsirabe_founded
+					}
+				}
+				3682 = { change_province_name = "Antsiraab" }	
+				owner = {  
+					set_global_flag = dutch_renamed_antsirabe
+					clr_global_flag = jew_renamed_antsirabe 
+					clr_global_flag = german_renamed_antsirabe
+					clr_global_flag = french_renamed_antsirabe
+					clr_global_flag = hungarian_renamed_antsirabe 
+					clr_global_flag = slovak_renamed_antsirabe
+					clr_global_flag = baltic_renamed_antsirabe 
+					clr_global_flag = russian_renamed_antsirabe 
+					clr_global_flag = polish_renamed_antsirabe 
+					clr_global_flag = WSF_renamed_antsirabe 
+					clr_global_flag = portuguese_renamed_antsirabe 
+					clr_global_flag = british_renamed_antsirabe 
+					clr_global_flag = normal_renamed_antsirabe 
 				}
 			}
 		}
@@ -5791,6 +6705,12 @@ political_decisions = {
 		effect = {
 			set_global_flag = comoros_organized
 			
+			CM0 = { all_core = { remove_core = CM0 } }
+			CM1 = { all_core = { remove_core = CM1 } }
+			CM2 = { all_core = { remove_core = CM2 } }
+			CM3 = { all_core = { remove_core = CM3 } }
+			CM4 = { all_core = { remove_core = CM4 } }
+			
 			prestige = 1
 			
 			any_owned = {
@@ -5872,8 +6792,8 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } CMS = { religion = samaritan set_country_flag = samaritan_country } }
 			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } CMS = { religion = zaydi set_country_flag = zaydi_country } }
 			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } CMS = { religion = ismaili set_country_flag = ismaili_country } }
-			random_owned = { limit = { owner = { has_country_flag = secular_country } } CMS = { religion = secular set_country_flag = secular_country } }
-			random_owned = { limit = { owner = { has_country_flag = atheist_country } } CMS = { religion = atheist set_country_flag = atheist_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } CMS = { religion = secularism set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } CMS = { religion = atheism set_country_flag = atheist_country } }
 		}
 	}
 	
@@ -5984,8 +6904,8 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } CMS = { religion = samaritan set_country_flag = samaritan_country } }
 			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } CMS = { religion = zaydi set_country_flag = zaydi_country } }
 			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } CMS = { religion = ismaili set_country_flag = ismaili_country } }
-			random_owned = { limit = { owner = { has_country_flag = secular_country } } CMS = { religion = secular set_country_flag = secular_country } }
-			random_owned = { limit = { owner = { has_country_flag = atheist_country } } CMS = { religion = atheist set_country_flag = atheist_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } CMS = { religion = secularism set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } CMS = { religion = atheism set_country_flag = atheist_country } }
 		}
 	}
 	

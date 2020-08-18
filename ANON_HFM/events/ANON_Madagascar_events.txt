@@ -380,7 +380,6 @@ country_event = {
 							is_secondary_power = yes
 						}
 						truce_with = THIS
-						overlord = M2D
 					}
 					is_core = THIS
 				}
@@ -515,7 +514,7 @@ country_event = {
 			civilized = no
 			owns = 2124
 		}
-		MAD = M2D_sunni_migration
+		MAD = { has_country_flag = M2D_sunni_migration }
 		NOT = {
 			has_global_flag = mayotte_sale_refuse
 			has_global_flag = mayotte_purchase_process_global
@@ -792,8 +791,8 @@ country_event = { #unga bu=gas capture american ship, hilarity ensues when ameri
 					has_pop_culture = yankee
 					pop_type = slaves
 				}
+				move_pop = 3680
 			}
-			move_pop = 3680
 		}
 		3680 = {
 			sub_unit = { type = clipper_transport value = current }
@@ -829,7 +828,6 @@ country_event = { #notification event for america
 		NOT = { has_country_flag = johanna_expedition }
 		NOT = { has_country_flag = johanna_expedition_no }
 		year = 1851
-		total_num_of_ports = 1
 	}
 	mean_time_to_happen = {
 		months = 8
@@ -1067,7 +1065,7 @@ country_event = {
 					civilized = no
 				}
 			}
-			years_of_research = 1
+			owner = { years_of_research = 1 }
 		}
 		add_country_modifier = { name = lambert_charter_mod duration = 1825 }
 		ai_chance = {

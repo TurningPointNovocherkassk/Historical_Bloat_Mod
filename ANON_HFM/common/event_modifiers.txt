@@ -3706,6 +3706,16 @@ foreign_weapons_imported = {
 #ANON#
 ######
 
+
+city_good_education = {
+	assimilation_rate = 1.0
+	immigrant_attract = 0.5
+	population_growth = 0.01
+	administrative_efficiency_modifier = 0.05
+	education_efficiency_modifier = 0.05
+	icon = 19
+}
+
 lambert_charter_mod = {
 	loan_interest = 0.25
 	max_loan_modifier = 0.25
@@ -4077,6 +4087,13 @@ alaska_cloumbia_trade = {
 
 ######################### ANON Randumb
 
+malagasy_sanitorium = {
+	immigrant_attract = 0.25
+	assimilation_rate = 0.375
+	population_growth = 0.001
+	icon = 13
+}
+
 central_ukraine_modifier = {
 	mine_RGO_eff = 0.25
 	mine_RGO_size = 0.25
@@ -4263,6 +4280,12 @@ cultural_resurgence_polan = {
 	icon = 7
 }
 #########################
+
+colonial_exploitation = {
+	farm_rgo_eff = 0.1
+	mine_rgo_eff = 0.1
+	icon = 18
+}
 
 kraut_assimilation_policy = {
 	badboy = 0.01

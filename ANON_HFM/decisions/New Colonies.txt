@@ -167,8 +167,8 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } NGR = { religion = samaritan set_country_flag = samaritan_country } }
 			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } NGR = { religion = zaydi set_country_flag = zaydi_country } }
 			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } NGR = { religion = ismaili set_country_flag = ismaili_country } }
-			random_owned = { limit = { owner = { has_country_flag = secular_country } } NGR = { religion = secular set_country_flag = secular_country } }
-			random_owned = { limit = { owner = { has_country_flag = atheist_country } } NGR = { religion = atheist set_country_flag = atheist_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } NGR = { religion = secularism set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } NGR = { religion = atheism set_country_flag = atheist_country } }
 			
 			random_owned = { limit = { owner = { has_country_flag = catholic_country } } ARO = { religion = catholic set_country_flag = catholic_country } }
 			random_owned = {
@@ -203,8 +203,8 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } ARO = { religion = samaritan set_country_flag = samaritan_country } }
 			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } ARO = { religion = zaydi set_country_flag = zaydi_country } }
 			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } ARO = { religion = ismaili set_country_flag = ismaili_country } }
-			random_owned = { limit = { owner = { has_country_flag = secular_country } } ARO = { religion = secular set_country_flag = secular_country } }
-			random_owned = { limit = { owner = { has_country_flag = atheist_country } } ARO = { religion = atheist set_country_flag = atheist_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } ARO = { religion = secularism set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } ARO = { religion = atheism set_country_flag = atheist_country } }
 			
 			random_owned = { limit = { owner = { primary_culture = british } }  NGR = { government = colonial_company } }
 		}
@@ -367,8 +367,8 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } NGR = { religion = samaritan set_country_flag = samaritan_country } }
 			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } NGR = { religion = zaydi set_country_flag = zaydi_country } }
 			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } NGR = { religion = ismaili set_country_flag = ismaili_country } }
-			random_owned = { limit = { owner = { has_country_flag = secular_country } } NGR = { religion = secular set_country_flag = secular_country } }
-			random_owned = { limit = { owner = { has_country_flag = atheist_country } } NGR = { religion = atheist set_country_flag = atheist_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } NGR = { religion = secularism set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } NGR = { religion = atheism set_country_flag = atheist_country } }
 			
 			random_owned = { limit = { owner = { has_country_flag = catholic_country } } ARO = { religion = catholic set_country_flag = catholic_country } }
 			random_owned = {
@@ -403,8 +403,8 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } ARO = { religion = samaritan set_country_flag = samaritan_country } }
 			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } ARO = { religion = zaydi set_country_flag = zaydi_country } }
 			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } ARO = { religion = ismaili set_country_flag = ismaili_country } }
-			random_owned = { limit = { owner = { has_country_flag = secular_country } } ARO = { religion = secular set_country_flag = secular_country } }
-			random_owned = { limit = { owner = { has_country_flag = atheist_country } } ARO = { religion = atheist set_country_flag = atheist_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } ARO = { religion = secularism set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } ARO = { religion = atheism set_country_flag = atheist_country } }
 		}
 	}
 	
@@ -515,8 +515,8 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } TOG = { religion = samaritan set_country_flag = samaritan_country } }
 			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } TOG = { religion = zaydi set_country_flag = zaydi_country } }
 			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } TOG = { religion = ismaili set_country_flag = ismaili_country } }
-			random_owned = { limit = { owner = { has_country_flag = secular_country } } TOG = { religion = secular set_country_flag = secular_country } }
-			random_owned = { limit = { owner = { has_country_flag = atheist_country } } TOG = { religion = atheist set_country_flag = atheist_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } TOG = { religion = secularism set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } TOG = { religion = atheism set_country_flag = atheist_country } }
 		}
 	}
 	
@@ -631,8 +631,8 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } TOG = { religion = samaritan set_country_flag = samaritan_country } }
 			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } TOG = { religion = zaydi set_country_flag = zaydi_country } }
 			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } TOG = { religion = ismaili set_country_flag = ismaili_country } }
-			random_owned = { limit = { owner = { has_country_flag = secular_country } } TOG = { religion = secular set_country_flag = secular_country } }
-			random_owned = { limit = { owner = { has_country_flag = atheist_country } } TOG = { religion = atheist set_country_flag = atheist_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } TOG = { religion = secularism set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } TOG = { religion = atheism set_country_flag = atheist_country } }
 		}
 	}
 	
@@ -747,8 +747,8 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } IVC = { religion = samaritan set_country_flag = samaritan_country } }
 			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } IVC = { religion = zaydi set_country_flag = zaydi_country } }
 			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } IVC = { religion = ismaili set_country_flag = ismaili_country } }
-			random_owned = { limit = { owner = { has_country_flag = secular_country } } IVC = { religion = secular set_country_flag = secular_country } }
-			random_owned = { limit = { owner = { has_country_flag = atheist_country } } IVC = { religion = atheist set_country_flag = atheist_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } IVC = { religion = secularism set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } IVC = { religion = atheism set_country_flag = atheist_country } }
 		}
 	}
 	
@@ -864,8 +864,8 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } IVC = { religion = samaritan set_country_flag = samaritan_country } }
 			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } IVC = { religion = zaydi set_country_flag = zaydi_country } }
 			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } IVC = { religion = ismaili set_country_flag = ismaili_country } }
-			random_owned = { limit = { owner = { has_country_flag = secular_country } } IVC = { religion = secular set_country_flag = secular_country } }
-			random_owned = { limit = { owner = { has_country_flag = atheist_country } } IVC = { religion = atheist set_country_flag = atheist_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } IVC = { religion = secularism set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } IVC = { religion = atheism set_country_flag = atheist_country } }
 		}
 	}
 	
@@ -973,8 +973,8 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } SLE = { religion = samaritan set_country_flag = samaritan_country } }
 			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } SLE = { religion = zaydi set_country_flag = zaydi_country } }
 			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } SLE = { religion = ismaili set_country_flag = ismaili_country } }
-			random_owned = { limit = { owner = { has_country_flag = secular_country } } SLE = { religion = secular set_country_flag = secular_country } }
-			random_owned = { limit = { owner = { has_country_flag = atheist_country } } SLE = { religion = atheist set_country_flag = atheist_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } SLE = { religion = secularism set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } SLE = { religion = atheism set_country_flag = atheist_country } }
 			
 			random_owned = { limit = { owner = { primary_culture = british } } SLE = { government = colonial_company } }
 		}
@@ -1079,8 +1079,8 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } SLE = { religion = samaritan set_country_flag = samaritan_country } }
 			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } SLE = { religion = zaydi set_country_flag = zaydi_country } }
 			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } SLE = { religion = ismaili set_country_flag = ismaili_country } }
-			random_owned = { limit = { owner = { has_country_flag = secular_country } } SLE = { religion = secular set_country_flag = secular_country } }
-			random_owned = { limit = { owner = { has_country_flag = atheist_country } } SLE = { religion = atheist set_country_flag = atheist_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } SLE = { religion = secularism set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } SLE = { religion = atheism set_country_flag = atheist_country } }
 			
 			random_owned = { limit = { owner = { primary_culture = british } } SLE = { government = colonial_company } }
 		}
@@ -1192,8 +1192,8 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } GNE = { religion = samaritan set_country_flag = samaritan_country } }
 			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } GNE = { religion = zaydi set_country_flag = zaydi_country } }
 			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } GNE = { religion = ismaili set_country_flag = ismaili_country } }
-			random_owned = { limit = { owner = { has_country_flag = secular_country } } GNE = { religion = secular set_country_flag = secular_country } }
-			random_owned = { limit = { owner = { has_country_flag = atheist_country } } GNE = { religion = atheist set_country_flag = atheist_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } GNE = { religion = secularism set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } GNE = { religion = atheism set_country_flag = atheist_country } }
 		}
 	}
 	
@@ -1305,8 +1305,8 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } GNE = { religion = samaritan set_country_flag = samaritan_country } }
 			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } GNE = { religion = zaydi set_country_flag = zaydi_country } }
 			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } GNE = { religion = ismaili set_country_flag = ismaili_country } }
-			random_owned = { limit = { owner = { has_country_flag = secular_country } } GNE = { religion = secular set_country_flag = secular_country } }
-			random_owned = { limit = { owner = { has_country_flag = atheist_country } } GNE = { religion = atheist set_country_flag = atheist_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } GNE = { religion = secularism set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } GNE = { religion = atheism set_country_flag = atheist_country } }
 		}
 	}
 	
@@ -1520,8 +1520,8 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } NIG = { religion = samaritan set_country_flag = samaritan_country } }
 			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } NIG = { religion = zaydi set_country_flag = zaydi_country } }
 			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } NIG = { religion = ismaili set_country_flag = ismaili_country } }
-			random_owned = { limit = { owner = { has_country_flag = secular_country } } NIG = { religion = secular set_country_flag = secular_country } }
-			random_owned = { limit = { owner = { has_country_flag = atheist_country } } NIG = { religion = atheist set_country_flag = atheist_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } NIG = { religion = secularism set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } NIG = { religion = atheism set_country_flag = atheist_country } }
 		}
 	}
 	
@@ -1642,8 +1642,8 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } NIG = { religion = samaritan set_country_flag = samaritan_country } }
 			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } NIG = { religion = zaydi set_country_flag = zaydi_country } }
 			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } NIG = { religion = ismaili set_country_flag = ismaili_country } }
-			random_owned = { limit = { owner = { has_country_flag = secular_country } } NIG = { religion = secular set_country_flag = secular_country } }
-			random_owned = { limit = { owner = { has_country_flag = atheist_country } } NIG = { religion = atheist set_country_flag = atheist_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } NIG = { religion = secularism set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } NIG = { religion = atheism set_country_flag = atheist_country } }
 		}
 	}
 	
@@ -1766,8 +1766,8 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } CHD = { religion = samaritan set_country_flag = samaritan_country } }
 			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } CHD = { religion = zaydi set_country_flag = zaydi_country } }
 			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } CHD = { religion = ismaili set_country_flag = ismaili_country } }
-			random_owned = { limit = { owner = { has_country_flag = secular_country } } CHD = { religion = secular set_country_flag = secular_country } }
-			random_owned = { limit = { owner = { has_country_flag = atheist_country } } CHD = { religion = atheist set_country_flag = atheist_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } CHD = { religion = secularism set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } CHD = { religion = atheism set_country_flag = atheist_country } }
 		}
 	}
 	
@@ -1891,8 +1891,8 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } CHD = { religion = samaritan set_country_flag = samaritan_country } }
 			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } CHD = { religion = zaydi set_country_flag = zaydi_country } }
 			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } CHD = { religion = ismaili set_country_flag = ismaili_country } }
-			random_owned = { limit = { owner = { has_country_flag = secular_country } } CHD = { religion = secular set_country_flag = secular_country } }
-			random_owned = { limit = { owner = { has_country_flag = atheist_country } } CHD = { religion = atheist set_country_flag = atheist_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } CHD = { religion = secularism set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } CHD = { religion = atheism set_country_flag = atheist_country } }
 		}	
 	}
 	
@@ -2008,8 +2008,8 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } CMR = { religion = samaritan set_country_flag = samaritan_country } }
 			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } CMR = { religion = zaydi set_country_flag = zaydi_country } }
 			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } CMR = { religion = ismaili set_country_flag = ismaili_country } }
-			random_owned = { limit = { owner = { has_country_flag = secular_country } } CMR = { religion = secular set_country_flag = secular_country } }
-			random_owned = { limit = { owner = { has_country_flag = atheist_country } } CMR = { religion = atheist set_country_flag = atheist_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } CMR = { religion = secularism set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } CMR = { religion = atheism set_country_flag = atheist_country } }
 		}
 	}
 	
@@ -2133,8 +2133,8 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } CMR = { religion = samaritan set_country_flag = samaritan_country } }
 			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } CMR = { religion = zaydi set_country_flag = zaydi_country } }
 			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } CMR = { religion = ismaili set_country_flag = ismaili_country } }
-			random_owned = { limit = { owner = { has_country_flag = secular_country } } CMR = { religion = secular set_country_flag = secular_country } }
-			random_owned = { limit = { owner = { has_country_flag = atheist_country } } CMR = { religion = atheist set_country_flag = atheist_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } CMR = { religion = secularism set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } CMR = { religion = atheism set_country_flag = atheist_country } }
 		}	
 	}
 	
@@ -2242,8 +2242,8 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } GAB = { religion = samaritan set_country_flag = samaritan_country } }
 			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } GAB = { religion = zaydi set_country_flag = zaydi_country } }
 			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } GAB = { religion = ismaili set_country_flag = ismaili_country } }
-			random_owned = { limit = { owner = { has_country_flag = secular_country } } GAB = { religion = secular set_country_flag = secular_country } }
-			random_owned = { limit = { owner = { has_country_flag = atheist_country } } GAB = { religion = atheist set_country_flag = atheist_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } GAB = { religion = secularism set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } GAB = { religion = atheism set_country_flag = atheist_country } }
 			random_owned = { limit = { owner = { primary_culture = french } } GAB = { government = colonial_company } }
 		}
 	}
@@ -2349,8 +2349,8 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } GAB = { religion = samaritan set_country_flag = samaritan_country } }
 			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } GAB = { religion = zaydi set_country_flag = zaydi_country } }
 			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } GAB = { religion = ismaili set_country_flag = ismaili_country } }
-			random_owned = { limit = { owner = { has_country_flag = secular_country } } GAB = { religion = secular set_country_flag = secular_country } }
-			random_owned = { limit = { owner = { has_country_flag = atheist_country } } GAB = { religion = atheist set_country_flag = atheist_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } GAB = { religion = secularism set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } GAB = { religion = atheism set_country_flag = atheist_country } }
 			random_owned = { limit = { owner = { primary_culture = french } } GAB = { government = colonial_company } }
 		}
 	}
@@ -2463,8 +2463,8 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } CGO = { religion = samaritan set_country_flag = samaritan_country } }
 			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } CGO = { religion = zaydi set_country_flag = zaydi_country } }
 			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } CGO = { religion = ismaili set_country_flag = ismaili_country } }
-			random_owned = { limit = { owner = { has_country_flag = secular_country } } CGO = { religion = secular set_country_flag = secular_country } }
-			random_owned = { limit = { owner = { has_country_flag = atheist_country } } CGO = { religion = atheist set_country_flag = atheist_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } CGO = { religion = secularism set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } CGO = { religion = atheism set_country_flag = atheist_country } }
 			
 			random_owned = { limit = { owner = { primary_culture = french } } CGO = { government = colonial_company } }
 		}
@@ -2583,8 +2583,8 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } CGO = { religion = samaritan set_country_flag = samaritan_country } }
 			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } CGO = { religion = zaydi set_country_flag = zaydi_country } }
 			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } CGO = { religion = ismaili set_country_flag = ismaili_country } }
-			random_owned = { limit = { owner = { has_country_flag = secular_country } } CGO = { religion = secular set_country_flag = secular_country } }
-			random_owned = { limit = { owner = { has_country_flag = atheist_country } } CGO = { religion = atheist set_country_flag = atheist_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } CGO = { religion = secularism set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } CGO = { religion = atheism set_country_flag = atheist_country } }
 			
 			random_owned = { limit = { owner = { primary_culture = french } } CGO = { government = colonial_company } }
 		}	
@@ -2847,8 +2847,8 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } CNG = { religion = samaritan set_country_flag = samaritan_country } }
 			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } CNG = { religion = zaydi set_country_flag = zaydi_country } }
 			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } CNG = { religion = ismaili set_country_flag = ismaili_country } }
-			random_owned = { limit = { owner = { has_country_flag = secular_country } } CNG = { religion = secular set_country_flag = secular_country } }
-			random_owned = { limit = { owner = { has_country_flag = atheist_country } } CNG = { religion = atheist set_country_flag = atheist_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } CNG = { religion = secularism set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } CNG = { religion = atheism set_country_flag = atheist_country } }
 		}
 	}
 	
@@ -3097,8 +3097,8 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } ZAM = { religion = samaritan set_country_flag = samaritan_country } }
 			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } ZAM = { religion = zaydi set_country_flag = zaydi_country } }
 			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } ZAM = { religion = ismaili set_country_flag = ismaili_country } }
-			random_owned = { limit = { owner = { has_country_flag = secular_country } } ZAM = { religion = secular set_country_flag = secular_country } }
-			random_owned = { limit = { owner = { has_country_flag = atheist_country } } ZAM = { religion = atheist set_country_flag = atheist_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } ZAM = { religion = secularism set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } ZAM = { religion = atheism set_country_flag = atheist_country } }
 			random_owned = { limit = { owner = { primary_culture = british } } ZAM = { government = colonial_company } }
 		}	
 	}
@@ -3224,8 +3224,8 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } KNY = { religion = samaritan set_country_flag = samaritan_country } }
 			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } KNY = { religion = zaydi set_country_flag = zaydi_country } }
 			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } KNY = { religion = ismaili set_country_flag = ismaili_country } }
-			random_owned = { limit = { owner = { has_country_flag = secular_country } } KNY = { religion = secular set_country_flag = secular_country } }
-			random_owned = { limit = { owner = { has_country_flag = atheist_country } } KNY = { religion = atheist set_country_flag = atheist_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } KNY = { religion = secularism set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } KNY = { religion = atheism set_country_flag = atheist_country } }
 			random_owned = { limit = { owner = { primary_culture = british } } KNY = { civilized = yes government = colonial_company } }
 		}
 	}
@@ -3351,8 +3351,8 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } KNY = { religion = samaritan set_country_flag = samaritan_country } }
 			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } KNY = { religion = zaydi set_country_flag = zaydi_country } }
 			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } KNY = { religion = ismaili set_country_flag = ismaili_country } }
-			random_owned = { limit = { owner = { has_country_flag = secular_country } } KNY = { religion = secular set_country_flag = secular_country } }
-			random_owned = { limit = { owner = { has_country_flag = atheist_country } } KNY = { religion = atheist set_country_flag = atheist_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } KNY = { religion = secularism set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } KNY = { religion = atheism set_country_flag = atheist_country } }
 			random_owned = { limit = { owner = { primary_culture = british } } KNY = { government = colonial_company } }
 		}
 	}
@@ -3477,8 +3477,8 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } TNZ = { religion = samaritan set_country_flag = samaritan_country } }
 			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } TNZ = { religion = zaydi set_country_flag = zaydi_country } }
 			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } TNZ = { religion = ismaili set_country_flag = ismaili_country } }
-			random_owned = { limit = { owner = { has_country_flag = secular_country } } TNZ = { religion = secular set_country_flag = secular_country } }
-			random_owned = { limit = { owner = { has_country_flag = atheist_country } } TNZ = { religion = atheist set_country_flag = atheist_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } TNZ = { religion = secularism set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } TNZ = { religion = atheism set_country_flag = atheist_country } }
 			random_owned = { limit = { owner = { is_culture_group = germanic } } TNZ = { government = colonial_company } }
 		}
 	}
@@ -3604,8 +3604,8 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } TNZ = { religion = samaritan set_country_flag = samaritan_country } }
 			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } TNZ = { religion = zaydi set_country_flag = zaydi_country } }
 			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } TNZ = { religion = ismaili set_country_flag = ismaili_country } }
-			random_owned = { limit = { owner = { has_country_flag = secular_country } } TNZ = { religion = secular set_country_flag = secular_country } }
-			random_owned = { limit = { owner = { has_country_flag = atheist_country } } TNZ = { religion = atheist set_country_flag = atheist_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } TNZ = { religion = secularism set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } TNZ = { religion = atheism set_country_flag = atheist_country } }
 			random_owned = { limit = { owner = { is_culture_group = germanic } } TNZ = { government = colonial_company } }
 		}	
 	}
@@ -3723,8 +3723,8 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } MLI = { religion = samaritan set_country_flag = samaritan_country } }
 			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } MLI = { religion = zaydi set_country_flag = zaydi_country } }
 			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } MLI = { religion = ismaili set_country_flag = ismaili_country } }
-			random_owned = { limit = { owner = { has_country_flag = secular_country } } MLI = { religion = secular set_country_flag = secular_country } }
-			random_owned = { limit = { owner = { has_country_flag = atheist_country } } MLI = { religion = atheist set_country_flag = atheist_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } MLI = { religion = secularism set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } MLI = { religion = atheism set_country_flag = atheist_country } }
 			
 			random_owned = { limit = { owner = { primary_culture = french } } MLI = { government = colonial_company } }
 		}
@@ -3847,8 +3847,8 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } MLI = { religion = samaritan set_country_flag = samaritan_country } }
 			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } MLI = { religion = zaydi set_country_flag = zaydi_country } }
 			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } MLI = { religion = ismaili set_country_flag = ismaili_country } }
-			random_owned = { limit = { owner = { has_country_flag = secular_country } } MLI = { religion = secular set_country_flag = secular_country } }
-			random_owned = { limit = { owner = { has_country_flag = atheist_country } } MLI = { religion = atheist set_country_flag = atheist_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } MLI = { religion = secularism set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } MLI = { religion = atheism set_country_flag = atheist_country } }
 			
 			random_owned = { limit = { owner = { primary_culture = french } } MLI = { government = colonial_company } }
 		}	
@@ -4046,8 +4046,8 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } CAR = { religion = samaritan set_country_flag = samaritan_country } }
 			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } CAR = { religion = zaydi set_country_flag = zaydi_country } }
 			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } CAR = { religion = ismaili set_country_flag = ismaili_country } }
-			random_owned = { limit = { owner = { has_country_flag = secular_country } } CAR = { religion = secular set_country_flag = secular_country } }
-			random_owned = { limit = { owner = { has_country_flag = atheist_country } } CAR = { religion = atheist set_country_flag = atheist_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } CAR = { religion = secularism set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } CAR = { religion = atheism set_country_flag = atheist_country } }
 		}
 	}
 	
@@ -4166,8 +4166,8 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } CAR = { religion = samaritan set_country_flag = samaritan_country } }
 			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } CAR = { religion = zaydi set_country_flag = zaydi_country } }
 			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } CAR = { religion = ismaili set_country_flag = ismaili_country } }
-			random_owned = { limit = { owner = { has_country_flag = secular_country } } CAR = { religion = secular set_country_flag = secular_country } }
-			random_owned = { limit = { owner = { has_country_flag = atheist_country } } CAR = { religion = atheist set_country_flag = atheist_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } CAR = { religion = secularism set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } CAR = { religion = atheism set_country_flag = atheist_country } }
 		}	
 	}
 	
@@ -4282,8 +4282,8 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } MLW = { religion = samaritan set_country_flag = samaritan_country } }
 			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } MLW = { religion = zaydi set_country_flag = zaydi_country } }
 			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } MLW = { religion = ismaili set_country_flag = ismaili_country } }
-			random_owned = { limit = { owner = { has_country_flag = secular_country } } MLW = { religion = secular set_country_flag = secular_country } }
-			random_owned = { limit = { owner = { has_country_flag = atheist_country } } MLW = { religion = atheist set_country_flag = atheist_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } MLW = { religion = secularism set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } MLW = { religion = atheism set_country_flag = atheist_country } }
 			
 			random_owned = { limit = { owner = { primary_culture = british owns = 2066 } } 2066 = { change_province_name = "Blantyre" } }
 			random_owned = { limit = { owner = { primary_culture = british } } MLW = { government = colonial_company } }
@@ -4392,8 +4392,8 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } MLW = { religion = samaritan set_country_flag = samaritan_country } }
 			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } MLW = { religion = zaydi set_country_flag = zaydi_country } }
 			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } MLW = { religion = ismaili set_country_flag = ismaili_country } }
-			random_owned = { limit = { owner = { has_country_flag = secular_country } } MLW = { religion = secular set_country_flag = secular_country } }
-			random_owned = { limit = { owner = { has_country_flag = atheist_country } } MLW = { religion = atheist set_country_flag = atheist_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } MLW = { religion = secularism set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } MLW = { religion = atheism set_country_flag = atheist_country } }
 			random_owned = { limit = { owner = { primary_culture = british owns = 2066 } } 2066 = { change_province_name = "Blantyre" } }
 			random_owned = { limit = { owner = { primary_culture = british } } MLW = { government = colonial_company } }
 		}
@@ -4503,8 +4503,8 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } GMB = { religion = samaritan set_country_flag = samaritan_country } }
 			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } GMB = { religion = zaydi set_country_flag = zaydi_country } }
 			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } GMB = { religion = ismaili set_country_flag = ismaili_country } }
-			random_owned = { limit = { owner = { has_country_flag = secular_country } } GMB = { religion = secular set_country_flag = secular_country } }
-			random_owned = { limit = { owner = { has_country_flag = atheist_country } } GMB = { religion = atheist set_country_flag = atheist_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } GMB = { religion = secularism set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } GMB = { religion = atheism set_country_flag = atheist_country } }
 		}
 	}
 	
@@ -4610,8 +4610,8 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } GMB = { religion = samaritan set_country_flag = samaritan_country } }
 			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } GMB = { religion = zaydi set_country_flag = zaydi_country } }
 			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } GMB = { religion = ismaili set_country_flag = ismaili_country } }
-			random_owned = { limit = { owner = { has_country_flag = secular_country } } GMB = { religion = secular set_country_flag = secular_country } }
-			random_owned = { limit = { owner = { has_country_flag = atheist_country } } GMB = { religion = atheist set_country_flag = atheist_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } GMB = { religion = secularism set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } GMB = { religion = atheism set_country_flag = atheist_country } }
 		}	
 	}
 	
@@ -4727,8 +4727,8 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } ANG = { religion = samaritan set_country_flag = samaritan_country } }
 			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } ANG = { religion = zaydi set_country_flag = zaydi_country } }
 			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } ANG = { religion = ismaili set_country_flag = ismaili_country } }
-			random_owned = { limit = { owner = { has_country_flag = secular_country } } ANG = { religion = secular set_country_flag = secular_country } }
-			random_owned = { limit = { owner = { has_country_flag = atheist_country } } ANG = { religion = atheist set_country_flag = atheist_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } ANG = { religion = secularism set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } ANG = { religion = atheism set_country_flag = atheist_country } }
 		}
 		
 		ai_will_do = { factor = 1 }
@@ -4846,8 +4846,8 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } ANG = { religion = samaritan set_country_flag = samaritan_country } }
 			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } ANG = { religion = zaydi set_country_flag = zaydi_country } }
 			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } ANG = { religion = ismaili set_country_flag = ismaili_country } }
-			random_owned = { limit = { owner = { has_country_flag = secular_country } } ANG = { religion = secular set_country_flag = secular_country } }
-			random_owned = { limit = { owner = { has_country_flag = atheist_country } } ANG = { religion = atheist set_country_flag = atheist_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } ANG = { religion = secularism set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } ANG = { religion = atheism set_country_flag = atheist_country } }
 		}	
 	}
 	
@@ -4965,8 +4965,8 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } MOZ = { religion = samaritan set_country_flag = samaritan_country } }
 			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } MOZ = { religion = zaydi set_country_flag = zaydi_country } }
 			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } MOZ = { religion = ismaili set_country_flag = ismaili_country } }
-			random_owned = { limit = { owner = { has_country_flag = secular_country } } MOZ = { religion = secular set_country_flag = secular_country } }
-			random_owned = { limit = { owner = { has_country_flag = atheist_country } } MOZ = { religion = atheist set_country_flag = atheist_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } MOZ = { religion = secularism set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } MOZ = { religion = atheism set_country_flag = atheist_country } }
 			
 			2054 = { trade_goods = coal }
 			random_owned = {
@@ -5135,8 +5135,8 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } MOZ = { religion = samaritan set_country_flag = samaritan_country } }
 			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } MOZ = { religion = zaydi set_country_flag = zaydi_country } }
 			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } MOZ = { religion = ismaili set_country_flag = ismaili_country } }
-			random_owned = { limit = { owner = { has_country_flag = secular_country } } MOZ = { religion = secular set_country_flag = secular_country } }
-			random_owned = { limit = { owner = { has_country_flag = atheist_country } } MOZ = { religion = atheist set_country_flag = atheist_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } MOZ = { religion = secularism set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } MOZ = { religion = atheism set_country_flag = atheist_country } }
 		}	
 	}
 	
@@ -5291,8 +5291,8 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } BUG = { religion = samaritan set_country_flag = samaritan_country } }
 			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } BUG = { religion = zaydi set_country_flag = zaydi_country } }
 			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } BUG = { religion = ismaili set_country_flag = ismaili_country } }
-			random_owned = { limit = { owner = { has_country_flag = secular_country } } BUG = { religion = secular set_country_flag = secular_country } }
-			random_owned = { limit = { owner = { has_country_flag = atheist_country } } BUG = { religion = atheist set_country_flag = atheist_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } BUG = { religion = secularism set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } BUG = { religion = atheism set_country_flag = atheist_country } }
 			
 			2019 = { change_province_name = "Kampala" }
 		}
@@ -5396,8 +5396,8 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } BUG = { religion = samaritan set_country_flag = samaritan_country } }
 			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } BUG = { religion = zaydi set_country_flag = zaydi_country } }
 			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } BUG = { religion = ismaili set_country_flag = ismaili_country } }
-			random_owned = { limit = { owner = { has_country_flag = secular_country } } BUG = { religion = secular set_country_flag = secular_country } }
-			random_owned = { limit = { owner = { has_country_flag = atheist_country } } BUG = { religion = atheist set_country_flag = atheist_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } BUG = { religion = secularism set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } BUG = { religion = atheism set_country_flag = atheist_country } }
 		}
 	}
 	
@@ -5507,8 +5507,8 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } TSW = { religion = samaritan set_country_flag = samaritan_country } }
 			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } TSW = { religion = zaydi set_country_flag = zaydi_country } }
 			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } TSW = { religion = ismaili set_country_flag = ismaili_country } }
-			random_owned = { limit = { owner = { has_country_flag = secular_country } } TSW = { religion = secular set_country_flag = secular_country } }
-			random_owned = { limit = { owner = { has_country_flag = atheist_country } } TSW = { religion = atheist set_country_flag = atheist_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } TSW = { religion = secularism set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } TSW = { religion = atheism set_country_flag = atheist_country } }
 		}
 	}
 	
@@ -5614,8 +5614,8 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } TSW = { religion = samaritan set_country_flag = samaritan_country } }
 			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } TSW = { religion = zaydi set_country_flag = zaydi_country } }
 			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } TSW = { religion = ismaili set_country_flag = ismaili_country } }
-			random_owned = { limit = { owner = { has_country_flag = secular_country } } TSW = { religion = secular set_country_flag = secular_country } }
-			random_owned = { limit = { owner = { has_country_flag = atheist_country } } TSW = { religion = atheist set_country_flag = atheist_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } TSW = { religion = secularism set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } TSW = { religion = atheism set_country_flag = atheist_country } }
 		}	
 	}
 	
@@ -5809,8 +5809,8 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } ASH = { religion = samaritan set_country_flag = samaritan_country } }
 			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } ASH = { religion = zaydi set_country_flag = zaydi_country } }
 			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } ASH = { religion = ismaili set_country_flag = ismaili_country } }
-			random_owned = { limit = { owner = { has_country_flag = secular_country } } ASH = { religion = secular set_country_flag = secular_country } }
-			random_owned = { limit = { owner = { has_country_flag = atheist_country } } ASH = { religion = atheist set_country_flag = atheist_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } ASH = { religion = secularism set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } ASH = { religion = atheism set_country_flag = atheist_country } }
 		}
 	}
 		
@@ -5916,8 +5916,8 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } ASH = { religion = samaritan set_country_flag = samaritan_country } }
 			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } ASH = { religion = zaydi set_country_flag = zaydi_country } }
 			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } ASH = { religion = ismaili set_country_flag = ismaili_country } }
-			random_owned = { limit = { owner = { has_country_flag = secular_country } } ASH = { religion = secular set_country_flag = secular_country } }
-			random_owned = { limit = { owner = { has_country_flag = atheist_country } } ASH = { religion = atheist set_country_flag = atheist_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } ASH = { religion = secularism set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } ASH = { religion = atheism set_country_flag = atheist_country } }
 		}
 	}
 	
@@ -6030,8 +6030,8 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } BKF = { religion = samaritan set_country_flag = samaritan_country } }
 			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } BKF = { religion = zaydi set_country_flag = zaydi_country } }
 			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } BKF = { religion = ismaili set_country_flag = ismaili_country } }
-			random_owned = { limit = { owner = { has_country_flag = secular_country } } BKF = { religion = secular set_country_flag = secular_country } }
-			random_owned = { limit = { owner = { has_country_flag = atheist_country } } BKF = { religion = atheist set_country_flag = atheist_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } BKF = { religion = secularism set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } BKF = { religion = atheism set_country_flag = atheist_country } }
 		}
 	}
 	
@@ -6140,8 +6140,8 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } BKF = { religion = samaritan set_country_flag = samaritan_country } }
 			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } BKF = { religion = zaydi set_country_flag = zaydi_country } }
 			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } BKF = { religion = ismaili set_country_flag = ismaili_country } }
-			random_owned = { limit = { owner = { has_country_flag = secular_country } } BKF = { religion = secular set_country_flag = secular_country } }
-			random_owned = { limit = { owner = { has_country_flag = atheist_country } } BKF = { religion = atheist set_country_flag = atheist_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } BKF = { religion = secularism set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } BKF = { religion = atheism set_country_flag = atheist_country } }
 		}
 	}
 	
@@ -6292,8 +6292,8 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } DAH = { religion = samaritan set_country_flag = samaritan_country } }
 			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } DAH = { religion = zaydi set_country_flag = zaydi_country } }
 			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } DAH = { religion = ismaili set_country_flag = ismaili_country } }
-			random_owned = { limit = { owner = { has_country_flag = secular_country } } DAH = { religion = secular set_country_flag = secular_country } }
-			random_owned = { limit = { owner = { has_country_flag = atheist_country } } DAH = { religion = atheist set_country_flag = atheist_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } DAH = { religion = secularism set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } DAH = { religion = atheism set_country_flag = atheist_country } }
 		}
 	}
 	
@@ -6402,8 +6402,8 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } DAH = { religion = samaritan set_country_flag = samaritan_country } }
 			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } DAH = { religion = zaydi set_country_flag = zaydi_country } }
 			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } DAH = { religion = ismaili set_country_flag = ismaili_country } }
-			random_owned = { limit = { owner = { has_country_flag = secular_country } } DAH = { religion = secular set_country_flag = secular_country } }
-			random_owned = { limit = { owner = { has_country_flag = atheist_country } } DAH = { religion = atheist set_country_flag = atheist_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } DAH = { religion = secularism set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } DAH = { religion = atheism set_country_flag = atheist_country } }
 		}
 	}
 	
@@ -6645,8 +6645,8 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } TMR = { religion = samaritan set_country_flag = samaritan_country } }
 			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } TMR = { religion = zaydi set_country_flag = zaydi_country } }
 			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } TMR = { religion = ismaili set_country_flag = ismaili_country } }
-			random_owned = { limit = { owner = { has_country_flag = secular_country } } TMR = { religion = secular set_country_flag = secular_country } }
-			random_owned = { limit = { owner = { has_country_flag = atheist_country } } TMR = { religion = atheist set_country_flag = atheist_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } TMR = { religion = secularism set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } TMR = { religion = atheism set_country_flag = atheist_country } }
 			
 			any_owned = {
 				limit = { is_core = TMR }
@@ -6752,8 +6752,8 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } TMR = { religion = samaritan set_country_flag = samaritan_country } }
 			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } TMR = { religion = zaydi set_country_flag = zaydi_country } }
 			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } TMR = { religion = ismaili set_country_flag = ismaili_country } }
-			random_owned = { limit = { owner = { has_country_flag = secular_country } } TMR = { religion = secular set_country_flag = secular_country } }
-			random_owned = { limit = { owner = { has_country_flag = atheist_country } } TMR = { religion = atheist set_country_flag = atheist_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } TMR = { religion = secularism set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } TMR = { religion = atheism set_country_flag = atheist_country } }
 		}
 
 		ai_will_do = {
@@ -6892,8 +6892,8 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } NMB = { religion = samaritan set_country_flag = samaritan_country } }
 			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } NMB = { religion = zaydi set_country_flag = zaydi_country } }
 			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } NMB = { religion = ismaili set_country_flag = ismaili_country } }
-			random_owned = { limit = { owner = { has_country_flag = secular_country } } NMB = { religion = secular set_country_flag = secular_country } }
-			random_owned = { limit = { owner = { has_country_flag = atheist_country } } NMB = { religion = atheist set_country_flag = atheist_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } NMB = { religion = secularism set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } NMB = { religion = atheism set_country_flag = atheist_country } }
 		}
 	}
 	
@@ -7002,8 +7002,8 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } NMB = { religion = samaritan set_country_flag = samaritan_country } }
 			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } NMB = { religion = zaydi set_country_flag = zaydi_country } }
 			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } NMB = { religion = ismaili set_country_flag = ismaili_country } }
-			random_owned = { limit = { owner = { has_country_flag = secular_country } } NMB = { religion = secular set_country_flag = secular_country } }
-			random_owned = { limit = { owner = { has_country_flag = atheist_country } } NMB = { religion = atheist set_country_flag = atheist_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } NMB = { religion = secularism set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } NMB = { religion = atheism set_country_flag = atheist_country } }
 		}
 		
 		ai_will_do = {
@@ -7310,8 +7310,8 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } GBU = { religion = samaritan set_country_flag = samaritan_country } }
 			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } GBU = { religion = zaydi set_country_flag = zaydi_country } }
 			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } GBU = { religion = ismaili set_country_flag = ismaili_country } }
-			random_owned = { limit = { owner = { has_country_flag = secular_country } } GBU = { religion = secular set_country_flag = secular_country } }
-			random_owned = { limit = { owner = { has_country_flag = atheist_country } } GBU = { religion = atheist set_country_flag = atheist_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } GBU = { religion = secularism set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } GBU = { religion = atheism set_country_flag = atheist_country } }
 		}
 	}
 	
@@ -7416,8 +7416,8 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } GBU = { religion = samaritan set_country_flag = samaritan_country } }
 			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } GBU = { religion = zaydi set_country_flag = zaydi_country } }
 			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } GBU = { religion = ismaili set_country_flag = ismaili_country } }
-			random_owned = { limit = { owner = { has_country_flag = secular_country } } GBU = { religion = secular set_country_flag = secular_country } }
-			random_owned = { limit = { owner = { has_country_flag = atheist_country } } GBU = { religion = atheist set_country_flag = atheist_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } GBU = { religion = secularism set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } GBU = { religion = atheism set_country_flag = atheist_country } }
 		}
 		
 		ai_will_do = {
@@ -7454,6 +7454,12 @@ political_decisions = {
 		
 		effect = {
 			set_global_flag = madagascar_organized
+			
+			M1D = { all_core = { remove_core = M1D } }
+			M2D = { all_core = { remove_core = M2D } }
+			M3D = { all_core = { remove_core = M3D } }
+			M4D = { all_core = { remove_core = M4D } }
+			M5D = { all_core = { remove_core = M5D } }
 			
 			prestige = 1
 			
@@ -7534,8 +7540,8 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } MAD = { religion = samaritan set_country_flag = samaritan_country } }
 			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } MAD = { religion = zaydi set_country_flag = zaydi_country } }
 			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } MAD = { religion = ismaili set_country_flag = ismaili_country } }
-			random_owned = { limit = { owner = { has_country_flag = secular_country } } MAD = { religion = secular set_country_flag = secular_country } }
-			random_owned = { limit = { owner = { has_country_flag = atheist_country } } MAD = { religion = atheist set_country_flag = atheist_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } MAD = { religion = secularism set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } MAD = { religion = atheism set_country_flag = atheist_country } }
 		}
 	}
 	
@@ -7640,8 +7646,8 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } MAD = { religion = samaritan set_country_flag = samaritan_country } }
 			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } MAD = { religion = zaydi set_country_flag = zaydi_country } }
 			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } MAD = { religion = ismaili set_country_flag = ismaili_country } }
-			random_owned = { limit = { owner = { has_country_flag = secular_country } } MAD = { religion = secular set_country_flag = secular_country } }
-			random_owned = { limit = { owner = { has_country_flag = atheist_country } } MAD = { religion = atheist set_country_flag = atheist_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } MAD = { religion = secularism set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } MAD = { religion = atheism set_country_flag = atheist_country } }
 		}
 	}
 	
@@ -7751,8 +7757,8 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } ZBW = { religion = samaritan set_country_flag = samaritan_country } }
 			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } ZBW = { religion = zaydi set_country_flag = zaydi_country } }
 			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } ZBW = { religion = ismaili set_country_flag = ismaili_country } }
-			random_owned = { limit = { owner = { has_country_flag = secular_country } } ZBW = { religion = secular set_country_flag = secular_country } }
-			random_owned = { limit = { owner = { has_country_flag = atheist_country } } ZBW = { religion = atheist set_country_flag = atheist_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } ZBW = { religion = secularism set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } ZBW = { religion = atheism set_country_flag = atheist_country } }
 		}
 	}
 	
@@ -7858,8 +7864,8 @@ political_decisions = {
 			random_owned = { limit = { owner = { has_country_flag = samaritan_country } } ZBW = { religion = samaritan set_country_flag = samaritan_country } }
 			random_owned = { limit = { owner = { has_country_flag = zaydi_country } } ZBW = { religion = zaydi set_country_flag = zaydi_country } }
 			random_owned = { limit = { owner = { has_country_flag = ismaili_country } } ZBW = { religion = ismaili set_country_flag = ismaili_country } }
-			random_owned = { limit = { owner = { has_country_flag = secular_country } } ZBW = { religion = secular set_country_flag = secular_country } }
-			random_owned = { limit = { owner = { has_country_flag = atheist_country } } ZBW = { religion = atheist set_country_flag = atheist_country } }
+			random_owned = { limit = { owner = { has_country_flag = secular_country } } ZBW = { religion = secularism set_country_flag = secular_country } }
+			random_owned = { limit = { owner = { has_country_flag = atheist_country } } ZBW = { religion = atheism set_country_flag = atheist_country } }
 		}
 		
 		ai_will_do = {

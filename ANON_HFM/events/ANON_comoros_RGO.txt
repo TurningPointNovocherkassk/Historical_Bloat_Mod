@@ -1,0 +1,372 @@
+
+# Comoros RGO change after the Suez Canal construction. Non-RGO version
+province_event = {
+	id = 8181000
+	title = "EVTNAME8181000"
+	desc = "EVTDESC8181000"
+	
+	trigger = {
+		owned_by = THIS
+		controlled_by = THIS
+		is_canal_enabled = 2
+		OR = {
+			province_id = 2124
+			province_id = 2123
+			province_id = 3681
+			province_id = 3679
+			province_id = 3680
+		}
+		NOT = {
+			OR = {
+				trade_goods = fruit
+				trade_goods = tobacco
+				trade_goods = cotton
+				trade_goods = coffee
+			}
+			has_province_modifier = switched_production
+			has_province_modifier = new_production
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 24
+	}
+	
+	option = {
+		name = "Plant it with coffee."
+		trade_goods = coffee
+		add_province_modifier = {
+			name = new_production
+			duration = 730
+		}
+		ai_chance = {
+			factor = 25.0
+			modifier = {
+				factor = 0
+				OR = {
+					any_neighbor_country = {
+						any_owned_province = {
+							trade_goods = coffee
+							unemployment_by_type = { value = 0.05 type = farmers }
+						}
+					}
+					any_greater_power = {
+						any_owned_province = {
+							trade_goods = coffee
+							unemployment_by_type = { value = 0.05 type = farmers }
+						}
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = "Plant it with cotton."
+		trade_goods = cotton
+		add_province_modifier = {
+			name = new_production
+			duration = 730
+		}
+		ai_chance = {
+			factor = 25.0
+			modifier = {
+				factor = 0
+				OR = {
+					any_neighbor_country = {
+						any_owned_province = {
+							trade_goods = cotton
+							unemployment_by_type = { value = 0.05 type = farmers }
+						}
+					}
+					any_greater_power = {
+						any_owned_province = {
+							trade_goods = cotton
+							unemployment_by_type = { value = 0.05 type = farmers }
+						}
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = "Plant it with tobacco."
+		trade_goods = tobacco
+		add_province_modifier = {
+			name = new_production
+			duration = 730
+		}
+		ai_chance = {
+			factor = 25.0
+			modifier = {
+				factor = 0
+				OR = {
+					any_neighbor_country = {
+						any_owned_province = {
+							trade_goods = tobacco
+							unemployment_by_type = { value = 0.05 type = farmers }
+						}
+					}
+					any_greater_power = {
+						any_owned_province = {
+							trade_goods = tobacco
+							unemployment_by_type = { value = 0.05 type = farmers }
+						}
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = "Plant it with fruit."
+		trade_goods = fruit
+		add_province_modifier = {
+			name = new_production
+			duration = 730
+		}
+		ai_chance = {
+			factor = 25.0
+			modifier = {
+				factor = 0
+				OR = {
+					any_neighbor_country = {
+						any_owned_province = {
+							trade_goods = fruit
+							unemployment_by_type = { value = 0.05 type = farmers }
+						}
+					}
+					any_greater_power = {
+						any_owned_province = {
+							trade_goods = fruit
+							unemployment_by_type = { value = 0.05 type = farmers }
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+#Madagascar Production, non-RGO
+country_event = {
+	id = 8181001
+	title = "EVTNAME8181001"
+	desc = "EVTDESC8181001"
+	picture = "treaty"
+	
+	is_triggered_only = yes
+		
+	option = {
+		name = "EVTOPTA8181001" #Historical Option
+		
+		2115 = { trade_goods = grain } #Tananarive
+		3678 = { trade_goods = grain } #Ambositra
+		2116 = { trade_goods = grain } #Fianarantsoa
+		2118 = { trade_goods = coal add_province_modifier = { name = new_production duration = 730 } } #Tolanaro
+		2119 = { trade_goods = iron add_province_modifier = { name = new_production duration = 730 } } #Toamasina
+		2117 = { trade_goods = tropical_wood } #Ampanihy
+		2112 = { trade_goods = tropical_wood } #Toliara
+		3675 = { trade_goods = fruit } #Sambava, historically spices
+		2120 = { trade_goods = coffee add_province_modifier = { name = new_production duration = 730 } } #Antsiranana, historically cocoa and coffee
+		3677 = { trade_goods = coffee add_province_modifier = { name = new_production duration = 730 } } #Nosy Be, historically cocoa and coffee
+		3682 = { trade_goods = sulphur } #Antsirabe
+
+		ai_chance = { factor = 50 }
+	}
+	
+	option = {
+		name = "EVTOPTB8181001" #Tea Option
+		
+		2115 = { trade_goods = tea add_province_modifier = { name = new_production duration = 730 } } #Tananarive
+		3678 = { trade_goods = tea add_province_modifier = { name = new_production duration = 730 } } #Ambositra
+		2116 = { trade_goods = tea add_province_modifier = { name = new_production duration = 730 } } #Fianarantsoa
+		2118 = { trade_goods = coal add_province_modifier = { name = new_production duration = 730 } } #Tolanaro
+		2119 = { trade_goods = iron add_province_modifier = { name = new_production duration = 730 } } #Toamasina
+		2117 = { trade_goods = tropical_wood } #Ampanihy
+		2112 = { trade_goods = tropical_wood } #Toliara
+		3675 = { trade_goods = fruit } #Sambava, historically spices
+		2120 = { trade_goods = coffee add_province_modifier = { name = new_production duration = 730 } } #Antsiranana, historically cocoa and coffee
+		3677 = { trade_goods = coffee add_province_modifier = { name = new_production duration = 730 } } #Nosy Be, historically cocoa and coffee
+		3682 = { trade_goods = sulphur } #Antsirabe
+		
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 0
+				OR = {
+					any_neighbor_country = {
+						any_owned_province = {
+							trade_goods = tea
+							unemployment_by_type = { value = 0.05 type = farmers }
+						}
+					}
+					any_greater_power = {
+						any_owned_province = {
+							trade_goods = tea
+							unemployment_by_type = { value = 0.05 type = farmers }
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "EVTOPTC8181001" #Cotton Option
+		
+		2115 = { trade_goods = cotton add_province_modifier = { name = new_production duration = 730 } } #Tananarive
+		3678 = { trade_goods = cotton add_province_modifier = { name = new_production duration = 730 } } #Ambositra
+		2116 = { trade_goods = cotton add_province_modifier = { name = new_production duration = 730 } } #Fianarantsoa
+		2118 = { trade_goods = coal add_province_modifier = { name = new_production duration = 730 } } #Tolanaro
+		2119 = { trade_goods = iron add_province_modifier = { name = new_production duration = 730 } } #Toamasina
+		2117 = { trade_goods = tropical_wood } #Ampanihy
+		2112 = { trade_goods = tropical_wood } #Toliara
+		3675 = { trade_goods = fruit } #Sambava, historically spices
+		2120 = { trade_goods = coffee add_province_modifier = { name = new_production duration = 730 } } #Antsiranana, historically cocoa and coffee
+		3677 = { trade_goods = coffee add_province_modifier = { name = new_production duration = 730 } } #Nosy Be, historically cocoa and coffee
+		3682 = { trade_goods = sulphur } #Antsirabe
+		
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 0
+				OR = {
+					any_neighbor_country = {
+						any_owned_province = {
+							trade_goods = cotton
+							unemployment_by_type = { value = 0.05 type = labourers }
+						}
+					}
+					any_greater_power = {
+						any_owned_province = {
+							trade_goods = cotton
+							unemployment_by_type = { value = 0.05 type = labourers }
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "EVTOPTD8181001" #Coffee
+		
+		2115 = { trade_goods = coffee add_province_modifier = { name = new_production duration = 730 } } #Tananarive
+		3678 = { trade_goods = coffee add_province_modifier = { name = new_production duration = 730 } } #Ambositra
+		2116 = { trade_goods = coffee add_province_modifier = { name = new_production duration = 730 } } #Fianarantsoa
+		2118 = { trade_goods = coal add_province_modifier = { name = new_production duration = 730 } } #Tolanaro
+		2119 = { trade_goods = iron add_province_modifier = { name = new_production duration = 730 } } #Toamasina
+		2117 = { trade_goods = tropical_wood } #Ampanihy
+		2112 = { trade_goods = tropical_wood } #Toliara
+		3675 = { trade_goods = fruit } #Sambava, historically spices
+		2120 = { trade_goods = coffee add_province_modifier = { name = new_production duration = 730 } } #Antsiranana, historically cocoa and coffee
+		3677 = { trade_goods = coffee add_province_modifier = { name = new_production duration = 730 } } #Nosy Be, historically cocoa and coffee
+		3682 = { trade_goods = sulphur } #Antsirabe
+		
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 0
+				OR = {
+					any_neighbor_country = {
+						any_owned_province = {
+							trade_goods = coffee
+							unemployment_by_type = { value = 0.05 type = farmers }
+						}
+					}
+					any_greater_power = {
+						any_owned_province = {
+							trade_goods = coffee
+							unemployment_by_type = { value = 0.05 type = farmers }
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "EVTOPTE8181001" #Tobacco
+		
+		2115 = { trade_goods = tobacco add_province_modifier = { name = new_production duration = 730 } } #Tananarive
+		3678 = { trade_goods = tobacco add_province_modifier = { name = new_production duration = 730 } } #Ambositra
+		2116 = { trade_goods = tobacco add_province_modifier = { name = new_production duration = 730 } } #Fianarantsoa
+		2118 = { trade_goods = coal add_province_modifier = { name = new_production duration = 730 } } #Tolanaro
+		2119 = { trade_goods = iron add_province_modifier = { name = new_production duration = 730 } } #Toamasina
+		2117 = { trade_goods = tropical_wood } #Ampanihy
+		2112 = { trade_goods = tropical_wood } #Toliara
+		3675 = { trade_goods = fruit } #Sambava, historically spices
+		2120 = { trade_goods = coffee add_province_modifier = { name = new_production duration = 730 } } #Antsiranana, historically cocoa and coffee
+		3677 = { trade_goods = coffee add_province_modifier = { name = new_production duration = 730 } } #Nosy Be, historically cocoa and coffee
+		3682 = { trade_goods = sulphur } #Antsirabe
+		
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 0
+				OR = {
+					any_neighbor_country = {
+						any_owned_province = {
+							trade_goods = tobacco
+							unemployment_by_type = { value = 0.05 type = farmers }
+						}
+					}
+					any_greater_power = {
+						any_owned_province = {
+							trade_goods = tobacco
+							unemployment_by_type = { value = 0.05 type = farmers }
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "EVTOPTX8181001" #Fruit
+		
+		2115 = { trade_goods = fruit add_province_modifier = { name = new_production duration = 730 } } #Tananarive
+		3678 = { trade_goods = fruit add_province_modifier = { name = new_production duration = 730 } } #Ambositra
+		2116 = { trade_goods = fruit add_province_modifier = { name = new_production duration = 730 } } #Fianarantsoa
+		2118 = { trade_goods = coal add_province_modifier = { name = new_production duration = 730 } } #Tolanaro
+		2119 = { trade_goods = iron add_province_modifier = { name = new_production duration = 730 } } #Toamasina
+		2117 = { trade_goods = tropical_wood } #Ampanihy
+		2112 = { trade_goods = tropical_wood } #Toliara
+		3675 = { trade_goods = fruit } #Sambava, historically spices
+		2120 = { trade_goods = coffee add_province_modifier = { name = new_production duration = 730 } } #Antsiranana, historically cocoa and coffee
+		3677 = { trade_goods = coffee add_province_modifier = { name = new_production duration = 730 } } #Nosy Be, historically cocoa and coffee
+		3682 = { trade_goods = sulphur } #Antsirabe
+		
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 0
+				OR = {
+					any_neighbor_country = {
+						any_owned_province = {
+							trade_goods = fruit
+							unemployment_by_type = { value = 0.05 type = farmers }
+						}
+					}
+					any_greater_power = {
+						any_owned_province = {
+							trade_goods = fruit
+							unemployment_by_type = { value = 0.05 type = farmers }
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "EVTOPTZ8181001" #Leave it as is
+		any_owned = {
+			limit = { is_core = MAD }
+			any_pop = {
+				militancy = -3
+				consciousness = 1
+			}
+		}
+		ai_chance = { factor = 0 }
+	}
+}
