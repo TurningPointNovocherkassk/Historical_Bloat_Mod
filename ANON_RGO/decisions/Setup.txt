@@ -1207,7 +1207,7 @@ political_decisions = {
 			
 			any_pop = { limit = { has_pop_culture = ukrainian } literacy = 0.02 }
 			
-			any_pop = { limit = { has_pop_culture = greek } literacy = 0.07 }
+			any_pop = { limit = { is_culture_group = pan_greek } literacy = 0.07 }
 			
 			# ANON
 			any_pop = { limit = { has_pop_culture = assyrian } literacy = 0.07 }
@@ -1291,16 +1291,16 @@ political_decisions = {
 				#add_core = ANT
 			}
 			TUR_863 = {
-				add_core = ANT
+				#add_core = ANT
 			}
 			TUR_869 = {
-				add_core = ANT
+				#add_core = ANT
 			}
 			881 = {
-				add_core = ANT
+				#add_core = ANT
 			}
 			880 = { 
-				add_core = ANT
+				#add_core = ANT
 			}
 			
 			TUR_809 = {
@@ -1308,7 +1308,7 @@ political_decisions = {
 			}
 			diplomatic_influence = { who = SAM value = 400 }
 			SAM = {
-				any_pop = { limit = { culture = greek } literacy = 0.07 }
+				any_pop = { limit = { is_culture_group = pan_greek } literacy = 0.07 }
 				any_pop = { limit = { culture = turkish } literacy = 0.1 } 
 			}
 			#ANON
@@ -1348,7 +1348,7 @@ political_decisions = {
 			any_pop = { limit = { has_pop_religion = catholic NOT = { has_pop_culture = assyrian} } literacy = 0.01 }
 			
 			# ANON
-			any_pop = { limit = { OR = { has_pop_culture = greek has_pop_culture = armenian has_pop_culture = copt has_pop_culture = assyrian } } literacy = 0.07 }
+			any_pop = { limit = { OR = { is_culture_group = pan_greek is_culture_group = caucasian is_culture_group = levantine } } literacy = 0.07 }
 		}
 	}
 	
@@ -1367,12 +1367,9 @@ political_decisions = {
 			any_pop = {
 				limit = {
 					OR = {
-						has_pop_culture = turkish 
+						is_culture_group = turko_semitic
+						is_culture_group = caucasian  
 						has_pop_culture = persian 
-						has_pop_culture = azerbaijani 
-						has_pop_culture = circassian 
-						has_pop_culture = chechen 
-						has_pop_culture = armenian
 					} 
 				}
 				literacy = 0.02
@@ -1388,7 +1385,7 @@ political_decisions = {
 			
 			any_pop = { limit = { is_culture_group = arab } literacy = 0.01 }
 			any_pop = { limit = { has_pop_religion = catholic NOT = { has_pop_culture = assyrian } } literacy = 0.01 }
-			any_pop = { limit = { has_pop_culture = greek } literacy = 0.07 }
+			any_pop = { limit = { is_culture_group = pan_greek } literacy = 0.07 }
 			
 			# ANON
 			any_pop = { limit = { has_pop_culture = assyrian } literacy = 0.07 }
@@ -1427,7 +1424,7 @@ political_decisions = {
 			
 			any_pop = { limit = { is_culture_group = arab } literacy = 0.01 }
 			any_pop = { limit = { has_pop_religion = catholic NOT = { has_pop_culture = assyrian } } literacy = 0.25 }
-			any_pop = { limit = { has_pop_culture = greek } literacy = 0.1 }
+			any_pop = { limit = { is_culture_group = pan_greek } literacy = 0.1 }
 			
 			# ANON
 			any_pop = { limit = { has_pop_culture = mandaic } literacy = 0.25 }
@@ -1492,7 +1489,7 @@ political_decisions = {
 				
 				any_pop = { limit = { is_culture_group = arab } literacy = 0.01 }
 				any_pop = { limit = { has_pop_religion = catholic NOT = { has_pop_culture = assyrian } } literacy = 0.25 }
-				any_pop = { limit = { has_pop_culture = greek } literacy = 0.1 }
+				any_pop = { limit = { is_culture_group = pan_greek } literacy = 0.1 }
 				
 				# ANON
 				any_pop = { limit = { has_pop_culture = mandaic } literacy = 0.25 }
@@ -1613,7 +1610,7 @@ political_decisions = {
 			any_pop = { limit = { OR = { has_pop_culture = polish has_pop_culture = lithuanian has_pop_culture = cossack } } literacy = 0.19 }
 			
 			any_pop = { limit = { OR = { has_pop_culture = romanian has_pop_culture = serb has_pop_culture = bulgarian } } literacy = 0.03 }
-			any_pop = { limit = { OR = { has_pop_culture = greek has_pop_culture = south_italian has_pop_culture = armenian } } literacy = 0.07 }
+			any_pop = { limit = { OR = { is_culture_group = pan_greek is_culture_group = italian has_pop_culture = armenian } } literacy = 0.07 }
 			any_pop = { limit = { has_pop_culture = swedish } literacy = 0.79 }
 			any_pop = {
 				limit = {
@@ -1730,6 +1727,7 @@ political_decisions = {
 			3344 = { trade_goods = fish }
 			983 = { remove_core = KRL }
 			
+			3685 = { trade_goods = lead }
 			3621 = { trade_goods = lead }
 			3629 = { trade_goods = lead }
 			2250 = { trade_goods = lead }
@@ -2595,7 +2593,7 @@ political_decisions = {
 		}
 		
 		effect = {
-			any_pop = { limit = { has_pop_culture = greek } literacy = 0.05 }
+			any_pop = { limit = { is_culture_group = pan_greek } literacy = 0.05 }
 			any_pop = { limit = { has_pop_culture = kurdish } literacy = -0.01 }
 			
 			#ANON
@@ -2606,7 +2604,7 @@ political_decisions = {
 			
 			#ANON
 			MIG = {
-				any_pop = { limit = { has_pop_culture = greek } literacy = 0.05 }
+				any_pop = { limit = { is_culture_group = pan_greek } literacy = 0.05 }
 				any_pop = { limit = { has_pop_culture = sephardic } literacy = 0.54 }
 				any_pop = { limit = { has_pop_culture = mizrahi } literacy = 0.54 }
 				any_pop = { limit = { has_pop_culture = abkhazian NOT = { OR = { has_pop_religion = sunni has_pop_religion = animist } } } literacy = 0.02 }
@@ -4920,7 +4918,7 @@ political_decisions = {
 					literacy = 0.25
 				}
 			}
-			XNG = {
+			XIN = {
 				any_pop = {
 					limit = {
 						OR = { has_pop_culture = tibetan has_pop_culture = east_tibetan has_pop_culture = west_tibetan has_pop_culture = south_tibetan }

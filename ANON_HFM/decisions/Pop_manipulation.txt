@@ -175,6 +175,7 @@ political_decisions = {
 			clr_country_flag = interning_east_slavic
 			clr_country_flag = interning_baltic
 			clr_country_flag = interning_levantine
+			clr_country_flag = interning_pan_greek
 			clr_country_flag = interning_turko_semitic
 			clr_country_flag = interning_caucasian
 			clr_country_flag = interning_arab
@@ -1066,7 +1067,7 @@ political_decisions = {
 		potential = {
 			has_country_modifier = interment_camps
 			has_country_flag = interning_religions
-			any_owned_province = { any_pop = { has_pop_religion = atheist } }
+			any_owned_province = { any_pop = { has_pop_religion = atheism } }
 			NOT = {
 				has_country_flag = interning_atheists
 				has_country_flag = atheist_country
@@ -2001,6 +2002,37 @@ political_decisions = {
 		effect = {
 			set_country_flag = interning_jewish_cultures
 			change_variable = { which = slowdown_point value = 1 }
+		}
+		ai_will_do = { factor = 0 }
+	}
+	
+	intern_pan_greek = { #Hellenic
+		picture = generic_culture
+		potential = {
+			has_country_modifier = interment_camps
+			has_country_flag = interning_cultures
+			any_owned_province = {
+				any_pop = {
+					is_culture_group = pan_greek
+					NOT = {
+						is_primary_culture = yes
+						is_accepted_culture = yes
+					}
+				}
+			}
+			NOT = { has_country_flag = interning_pan_greek }
+			OR = {
+				has_country_flag = government_decisions_on
+				ai = yes
+			}
+		}
+		
+		allow = {
+		}
+		
+		effect = {
+			set_country_flag = interning_pan_greek
+			change_variable = { which = slowdown_point value = 3 }
 		}
 		ai_will_do = { factor = 0 }
 	}

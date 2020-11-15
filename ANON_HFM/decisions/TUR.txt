@@ -312,12 +312,12 @@ political_decisions = {
 				any_pop = {
 					OR = {
 						AND = {
-							has_pop_culture = greek
+							is_culture_group = pan_greek
 							has_pop_religion = orthodox
 						}
 						AND = {
 							has_pop_culture = armenian
-							has_pop_religion = apostolic
+							has_pop_religion = coptic
 						}
 						AND = {
 							has_pop_culture = assyrian
@@ -449,7 +449,6 @@ political_decisions = {
 						has_pop_religion = orthodox
 						has_pop_religion = coptic
 						has_pop_religion = nestorian
-						has_pop_religion = apostolic
 						has_pop_religion = maronite
 					}
 				}
@@ -846,6 +845,7 @@ political_decisions = {
 				is_culture_group = south_slavic
 				is_culture_group = east_slavic
 				is_culture_group = levantine
+				is_culture_group = pan_greek
 				is_culture_group = czecho_slovak_culture_group
 			}
 			owns = 860
@@ -867,6 +867,7 @@ political_decisions = {
 			860 = {
 				change_province_name = "Constantinople"
 				any_pop = { limit = { is_culture_group = levantine } militancy = -1 }
+				any_pop = { limit = { is_culture_group = pan_greek } militancy = -1 }
 			}
 			858 = { change_province_name = "Saranta Ekklisies" }
 			859 = { change_province_name = "Kallipolis" }
@@ -960,7 +961,7 @@ political_decisions = {
 			prestige = 2
 			860 = {
 				change_province_name = "Istanbul"
-				any_pop = { limit = { has_pop_culture = turkish } militancy = -4 }
+				any_pop = { limit = { is_culture_group = turko_semitic } militancy = -4 }
 			}
 			858 = { change_province_name = "Kirklareli" }
 			859 = { change_province_name = "Gallipoli" }

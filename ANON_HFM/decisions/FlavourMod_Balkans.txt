@@ -46,7 +46,7 @@ political_decisions = {
 					militancy = 8
 				}
 				any_pop = { 
-						limit = { has_pop_culture = greek } 
+						limit = { is_culture_group = pan_greek } 
 						militancy = -5 
 						reduce_pop = 1.75
 				}
@@ -67,7 +67,7 @@ political_decisions = {
 					reduce_pop = 1.5
 				}				
 				any_pop = { 
-						limit = { culture = greek } 
+						limit = { is_culture_group = pan_greek } 
 						militancy = -1 
 						reduce_pop = 0.98
 						move_pop = 860
@@ -135,7 +135,7 @@ political_decisions = {
 	greek_rename_rumelia = {
 		picture = gtfo
 		potential = {
-			primary_culture = greek
+			is_culture_group = pan_greek
 			owns = 815
 			NOT = { has_global_flag = greek_rename_rumelia }
 		}
@@ -194,7 +194,7 @@ political_decisions = {
 	greek_rename_epirus = {
 		picture = gtfo
 		potential = {
-			primary_culture = greek
+			is_culture_group = pan_greek
 			OR = { 
 				AND = { 
 					owns = 824
@@ -310,7 +310,7 @@ political_decisions = {
 	greek_rename_s_macedonia = {
 		picture = gtfo
 		potential = {
-			primary_culture = greek
+			is_culture_group = pan_greek
 			owns = 821
 			NOT = { has_global_flag = greek_rename_s_macedonia }
 		}
@@ -397,7 +397,7 @@ political_decisions = {
 	greek_rename_e_macedonia = {
 		picture = gtfo
 		potential = {
-			primary_culture = greek
+			is_culture_group = pan_greek
 			owns = 829
 			NOT = { has_global_flag = greek_rename_e_macedonia }
 		}
@@ -483,7 +483,7 @@ political_decisions = {
 	greek_rename_n_macedonia = {
 		picture = gtfo
 		potential = {
-			primary_culture = greek
+			is_culture_group = pan_greek
 			owns = 806
 			NOT = { has_global_flag = greek_rename_n_macedonia }
 		}

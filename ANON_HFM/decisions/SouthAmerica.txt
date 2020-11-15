@@ -220,29 +220,20 @@ political_decisions = {
 		picture = new_life
 		potential = {
 			OR = {
-				is_culture_group = latin_american_cultures
-				is_culture_group = american_cultures
-				is_culture_group = african_diaspora_cultures
-				is_culture_group = native_american
-				primary_culture = australian
-				primary_culture = anglo_canadian
-				primary_culture = french_canadian
-			}
-			OR = {
-				continent = north_america
-				continent = south_america
-				primary_culture = australian
+				capital_scope = { continent = north_america }
+				capital_scope = { continent = south_america }
+				tag = NZL
+				tag = AST
+				AND = {
+					tag = SAF
+					primary_culture = boer
+				}
 			}
 			is_greater_power = no
 			NOT = { has_country_flag = come_to_the_new_world }
-			# So Bolivia and Paraguay get fucked? Nope.
-			#number_of_states = 2
-			#num_of_ports = 1
-			#ANON
-			OR = {
-				number_of_states = 2
-				num_of_ports = 1
-			}
+			NOT = { has_country_modifier = slow_immigration_boom }
+			NOT = { has_country_flag = border_control }
+			NOT = { has_country_modifier = border_control }
 		}
 		
 		allow = {
@@ -259,6 +250,7 @@ political_decisions = {
 			OR = {
 				government = democracy
 				government = hms_government
+				government = prussian_constitutionalism
 			}
 			money = 60000
 		}
@@ -271,10 +263,10 @@ political_decisions = {
 		}
 		
 		ai_will_do = {
-			factor = 0
+			factor = 1
 			modifier = {
-				factor = 100
-				OR  = { tag = BRZ tag = CHL }
+				factor = 0
+				NOT = { OR  = { tag = BRZ tag = CHL } }
 			}
 		}
 	}

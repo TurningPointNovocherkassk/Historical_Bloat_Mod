@@ -645,6 +645,85 @@ political_decisions = {
 			capital = 706
 			all_core = { remove_core = PNC }
 			remove_country_modifier = unrecognized_country
+			# nice fuckup retard
+			set_country_flag = polans_absolutist
+			ruling_party_ideology = reactionary
+			government = absolute_monarchy
+			nationalvalue = nv_autocracy
+			political_reform = no_slavery
+			political_reform = none_voting
+			political_reform = party_appointed
+			political_reform = first_past_the_post
+			political_reform = no_meeting
+			political_reform = state_press
+			political_reform = no_trade_unions
+			political_reform = underground_parties
+			political_reform = mandatory_service
+			political_reform = primary_culture_only
+			political_reform = serfdom
+			political_reform = open_borders
+			political_reform = totalitarianism
+			social_reform = no_minimum_wage
+			social_reform = no_work_hour_limit
+			social_reform = no_safety
+			social_reform = no_subsidies
+			social_reform = no_pensions
+			social_reform = no_health_care
+			social_reform = no_schools
+			social_reform = capital_punishment
+			social_reform = child_labor_legal
+			nationalize = yes
+			any_pop = {
+				scaled_militancy = {
+					ideology = liberal
+					factor = 4
+				}
+				scaled_consciousness = {
+					ideology = liberal
+					factor = 4
+				}
+				scaled_militancy = {
+					ideology = communist
+					factor = 4
+				}
+				scaled_consciousness = {
+					ideology = communist
+					factor = 4
+				}
+				scaled_militancy = {
+					ideology = socialist
+					factor = 4
+				}
+				scaled_consciousness = {
+					ideology = socialist
+					factor = 4
+				}
+				
+				scaled_militancy = {
+					ideology = anarcho_liberal
+					factor = 4
+				}
+				scaled_consciousness = {
+					ideology = anarcho_liberal
+					factor = 4
+				}
+				scaled_militancy = {
+					ideology = reactionary
+					factor = -4
+				}
+				scaled_consciousness = {
+					ideology = reactionary
+					factor = -4
+				}
+				scaled_militancy = {
+					ideology = conservative
+					factor = -2
+				}
+				scaled_consciousness = {
+					ideology = conservative
+					factor = -2
+				}
+			}
 			any_pop = {
 				limit = {
 					has_pop_culture = polish
@@ -3517,6 +3596,12 @@ political_decisions = {
 			2116 = { NOT = { owned_by = THIS } owner = { NOT = { capital_scope = { continent = east_africa } } } }
 			2122 = { NOT = { owned_by = THIS } owner = { NOT = { capital_scope = { continent = east_africa } } } }
 			2117 = { NOT = { owned_by = THIS } owner = { NOT = { capital_scope = { continent = east_africa } } } }
+			    
+			3675 = { NOT = { owned_by = THIS } owner = { NOT = { capital_scope = { continent = east_africa } } } }
+			3676 = { NOT = { owned_by = THIS } owner = { NOT = { capital_scope = { continent = east_africa } } } }
+			3677 = { NOT = { owned_by = THIS } owner = { NOT = { capital_scope = { continent = east_africa } } } }
+			3678 = { NOT = { owned_by = THIS } owner = { NOT = { capital_scope = { continent = east_africa } } } }
+			3682 = { NOT = { owned_by = THIS } owner = { NOT = { capital_scope = { continent = east_africa } } } }
 			total_num_of_ports = 1
 			MAD = { exists = no }
 			OR = {
@@ -3613,7 +3698,7 @@ political_decisions = {
 					}
 				}
 				AND = {
-					primary_culture = east_slavic
+					is_culture_group = east_slavic
 					is_greater_power = yes
 					OR = {
 						has_country_flag = baltic_concessions
@@ -3711,7 +3796,7 @@ political_decisions = {
 					}
 				}
 				AND = {
-					primary_culture = east_slavic
+					is_culture_group = east_slavic
 					is_greater_power = yes
 					OR = {
 						has_country_flag = baltic_concessions

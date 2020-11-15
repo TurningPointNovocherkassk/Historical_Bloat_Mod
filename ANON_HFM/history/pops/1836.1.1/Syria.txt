@@ -202,20 +202,25 @@
 		size = 7175
 	}
 	
+	aristocrats = {
+		culture = levantine_greek
+		religion = orthodox
+		size = 100
+	}
 	clergymen = {
-		culture = greek
+		culture = levantine_greek
 		religion = orthodox
 		size = 75
 	}
 	artisans = {
-		culture = greek
-		religion = orthodox
-		size = 750
-	}
-	farmers = {
-		culture = greek
+		culture = levantine_greek
 		religion = orthodox
 		size = 5175
+	}
+	farmers = {
+		culture = levantine_greek
+		religion = orthodox
+		size = 750
 	}
 
 	clergymen = {
@@ -586,20 +591,25 @@
 		size = 5175
 	}
 	
+	aristocrats = {
+		culture = levantine_greek
+		religion = orthodox
+		size = 100
+	}
 	clergymen = {
-		culture = greek
+		culture = levantine_greek
 		religion = orthodox
 		size = 75
 	}
 	artisans = {
-		culture = greek
-		religion = orthodox
-		size = 750
-	}
-	farmers = {
-		culture = greek
+		culture = levantine_greek
 		religion = orthodox
 		size = 2575
+	}
+	farmers = {
+		culture = levantine_greek
+		religion = orthodox
+		size = 750
 	}
 	
 	clergymen = {
@@ -730,20 +740,25 @@
 	}
 	
 	
+	aristocrats = {
+		culture = levantine_greek
+		religion = orthodox
+		size = 100
+	}
 	clergymen = {
-		culture = greek
+		culture = levantine_greek
 		religion = orthodox
 		size = 75
 	}
 	artisans = {
-		culture = greek
-		religion = orthodox
-		size = 500
-	}
-	farmers = {
-		culture = greek
+		culture = levantine_greek
 		religion = orthodox
 		size = 1000
+	}
+	farmers = {
+		culture = levantine_greek
+		religion = orthodox
+		size = 500
 	}
 	
 	artisans = {
@@ -878,6 +893,27 @@
 		religion = sunni
 		size = 2500
 	}
+	
+	soldiers = {
+		culture = levantine_greek
+		religion = orthodox
+		size = 110
+	}
+	clergymen = {
+		culture = levantine_greek
+		religion = orthodox
+		size = 110
+	}
+	artisans = {
+		culture = levantine_greek
+		religion = orthodox
+		size = 1000
+	}
+	farmers = {
+		culture = levantine_greek
+		religion = orthodox
+		size = 150
+	}
 }
 #Latakia (112000/28000 POPS)
 905 = {
@@ -962,18 +998,28 @@
 	}
 	
 	
-	clergymen = {
-		culture = greek
+	aristocrats = {
+		culture = levantine_greek
 		religion = orthodox
-		size = 25
+		size = 100
+	}
+	bureaucrats = {
+		culture = levantine_greek
+		religion = orthodox
+		size = 50
+	}
+	clergymen = {
+		culture = levantine_greek
+		religion = orthodox
+		size = 100
 	}
 	artisans = {
-		culture = greek
+		culture = levantine_greek
 		religion = orthodox
-		size = 1050
+		size = 3050
 	}
 	farmers = {
-		culture = greek
+		culture = levantine_greek
 		religion = orthodox
 		size = 1500
 	}
@@ -1605,17 +1651,17 @@
 
 	clergymen = {
 		culture = assyrian
-		religion = coptic
+		religion = nestorian
 		size = 100
 	}
 	artisans = {
 		culture = assyrian
-		religion = coptic
+		religion = nestorian
 		size = 550
 	}
 	farmers = {
 		culture = assyrian
-		religion = coptic
+		religion = nestorian
 		size = 8350
 	}
 	

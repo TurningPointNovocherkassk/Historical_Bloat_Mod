@@ -473,7 +473,7 @@ political_decisions = {
 				primary_culture = serb
 				primary_culture = bulgarian
 				primary_culture = montenegrin
-				primary_culture = greek
+				is_culture_group = pan_greek
 				primary_culture = vlach
 				primary_culture = romanian
 			}
@@ -531,7 +531,14 @@ political_decisions = {
 			any_pop = {
 				limit = {
 					has_pop_culture = albanian
-					location = TUR_803 #S. Serbia
+					location = {
+						OR = {
+							province_id = 798   
+							province_id = 804
+							province_id = 799
+							province_id = 2577
+						}
+					}
 				}
 				move_pop = 850
 			}
@@ -551,7 +558,7 @@ political_decisions = {
 				primary_culture = serb
 				primary_culture = bulgarian
 				primary_culture = montenegrin
-				primary_culture = greek
+				is_culture_group = pan_greek
 				primary_culture = vlach
 				primary_culture = romanian
 			}
@@ -587,7 +594,12 @@ political_decisions = {
 			any_pop = {
 				limit = {
 					has_pop_culture = albanian
-					location = TUR_806 #N. Macedonia
+					location = {
+						OR = {
+							province_id = 807   
+							province_id = 806
+						}
+					}
 				}
 				move_pop = 849
 			}
@@ -607,7 +619,7 @@ political_decisions = {
 				primary_culture = serb
 				primary_culture = bulgarian
 				primary_culture = montenegrin
-				primary_culture = greek
+				is_culture_group = pan_greek
 				primary_culture = vlach
 				primary_culture = romanian
 			}
@@ -643,7 +655,16 @@ political_decisions = {
 			any_pop = {
 				limit = {
 					has_pop_culture = albanian
-					location = TUR_832 #Thessalia
+					has_pop_religion = sunni
+					location = {
+						OR = {
+							province_id = 852   
+							province_id = 825
+							province_id = 837
+							province_id = 826
+							province_id = 827
+						}
+					}
 				}
 				move_pop = 853
 			}
@@ -663,7 +684,7 @@ political_decisions = {
 				primary_culture = serb
 				primary_culture = bulgarian
 				primary_culture = montenegrin
-				primary_culture = greek
+				is_culture_group = pan_greek
 				primary_culture = vlach
 				primary_culture = romanian
 			}
@@ -692,6 +713,17 @@ political_decisions = {
 				any_pop = {
 					limit = {
 						has_pop_culture = albanian
+						has_pop_religion = sunni
+					}
+					move_pop = 849 #Tirana
+				}
+				remove_core = ALB
+			}
+			852 = {
+				any_pop = {
+					limit = {
+						has_pop_culture = albanian
+						has_pop_religion = sunni
 					}
 					move_pop = 849 #Tirana
 				}
@@ -700,7 +732,16 @@ political_decisions = {
 			any_pop = {
 				limit = {
 					has_pop_culture = albanian
-					location = TUR_832 #Thessalia
+					has_pop_religion = sunni
+					location = {
+						OR = {
+							province_id = 824   
+							province_id = 825
+							province_id = 837
+							province_id = 826
+							province_id = 827
+						}
+					}
 				}
 				move_pop = 849
 			}
@@ -723,7 +764,7 @@ political_decisions = {
 					primary_culture = montenegrin
 					has_global_flag = montenegro_organized
 				}
-				primary_culture = greek
+				is_culture_group = pan_greek
 				primary_culture = vlach
 				primary_culture = romanian
 			}
@@ -752,16 +793,23 @@ political_decisions = {
 					limit = {
 						has_pop_culture = albanian
 					}
-					move_pop = 850 #Shkoder
+					move_pop = 849 #Tirana
 				}
 				remove_core = ALB
 			}
 			any_pop = {
 				limit = {
 					has_pop_culture = albanian
-					location = MON_2582 #Montenegro
+					location = {
+						OR = {
+							province_id = 2583   
+							province_id = 800
+							province_id = 2582
+							province_id = 850
+						}
+					}
 				}
-				move_pop = 850
+				move_pop = 849
 			}
 			any_owned = {
 				limit = {
@@ -782,7 +830,7 @@ political_decisions = {
 					primary_culture = montenegrin
 					has_global_flag = montenegro_organized
 				}
-				primary_culture = greek
+				is_culture_group = pan_greek
 				primary_culture = vlach
 				primary_culture = romanian
 			}
@@ -821,14 +869,29 @@ political_decisions = {
 					limit = {
 						has_pop_culture = bosniak
 					}
-					move_pop = 787 #Foca
+					move_pop = 788 # Mostar
+				}
+				remove_core = BOS
+			}
+			3637 = {
+				any_pop = {
+					limit = {
+						has_pop_culture = bosniak
+					}
+					move_pop = 788 # Mostar
 				}
 				remove_core = BOS
 			}
 			any_pop = {
 				limit = {
 					has_pop_culture = bosniak
-					location = MON_2582 #Montenegro
+					location = {
+						OR = {
+							province_id = 2583   
+							province_id = 800
+							province_id = 2582
+						}
+					}
 				}
 				move_pop = 787
 			}
@@ -848,7 +911,7 @@ political_decisions = {
 				primary_culture = serb
 				primary_culture = bulgarian
 				primary_culture = montenegrin
-				primary_culture = greek
+				is_culture_group = pan_greek
 				primary_culture = vlach
 				primary_culture = romanian
 			}
@@ -884,7 +947,14 @@ political_decisions = {
 			any_pop = {
 				limit = {
 					has_pop_culture = bosniak
-					location = TUR_803 #S. Serbia
+					location = {
+						OR = {
+							province_id = 798   
+							province_id = 804
+							province_id = 799
+							province_id = 2577
+						}
+					}
 				}
 				move_pop = 787 #Foca
 			}
@@ -1809,9 +1879,9 @@ political_decisions = {
 								region = TUR_869
 								region = TUR_863
 
-							region = TUR_891 #Bitlis
-							region = TUR_3435 #Harput
-							region = TUR_879 #Sivas
+								region = TUR_891 #Bitlis
+								region = TUR_3435 #Harput
+								region = TUR_879 #Sivas
 							}
 						}
 					}

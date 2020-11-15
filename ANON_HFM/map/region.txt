@@ -453,7 +453,7 @@ MON_2582 = { 2583 800 2582 } #Montenegro
 
 TUR_803 = { 798 804 799 2577 } #Southern Serbia
 
-TUR_805 = { 805 819 820 821 822 } #Southern Macedonia
+TUR_805 = { 805 819 820 821 822 3686 } #Southern Macedonia
 
 TUR_806 = { 806 807 1780 } #Northern Macedonia
 
@@ -469,9 +469,13 @@ ION_826 = { 826 827 3644 } #Ionian Islands, added by ANON
 
 TUR_832 = { 832 831 833 825 824 } #Thessalia
 
-GRE_837 = { 834 837 836 835 838 845 } #Attica - Central Greece
+GRE_837 = { 834 837 836 835 } #Attica - Central Greece
 
-EGY_843 = { 848 843 844 846 847 } #Aegean Islands
+TUR_843 = { 843 846 844 3684 3685 } #East Aegean Islands, ANON
+
+GRE_838 = { 838 845 3683 } #West Aegean Islands, ANON
+
+EGY_843 = { 848 847 } #Crete, formerly Aegean Islands
 
 TUR_853 = { 849 853 852 851 850 } #Albania
 

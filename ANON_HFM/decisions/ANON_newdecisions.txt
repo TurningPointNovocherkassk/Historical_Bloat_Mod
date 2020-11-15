@@ -304,9 +304,9 @@ political_decisions = {
 					OR = {
 						owned_by = ARC
 						owned_by = ARG
+						owned_by = THIS
 					}
 					OR = {
-						owned_by = THIS
 						owned_by = BOL
 						owned_by = PBC
 					}
@@ -317,7 +317,7 @@ political_decisions = {
 		}
 		effect = {
 			set_country_flag = costa_guzman_secret_treaty
-			2368 = {
+			2310 = {
 				owner = {
 					country_event = 1000035
 				}

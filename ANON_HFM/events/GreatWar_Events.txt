@@ -3512,7 +3512,7 @@ country_event = {
 			limit = {
 				OR = {
 					region = RUS_339
-					region = RUS_2587
+					region = RUS_983
 				}
 				owner = { truce_with = FIN }
 			}
@@ -3531,7 +3531,7 @@ country_event = {
 			limit = {
 				OR = {
 					region = RUS_339
-					region = RUS_2587
+					region = RUS_983
 				}
 				owner = { truce_with = SCA }
 				FIN = {
@@ -7297,7 +7297,7 @@ country_event = {
 					duration = 1095
 				}
 				any_pop = {
-					limit = { has_pop_culture = turkish }
+					limit = { is_culture_group = turko_semitic }
 					militancy = 10
 				}
 			}
@@ -7322,7 +7322,7 @@ country_event = {
 					duration = 1095
 				}
 				any_pop = {
-					limit = { has_pop_culture = turkish }
+					limit = { is_culture_group = turko_semitic }
 					militancy = 10
 				}
 			}

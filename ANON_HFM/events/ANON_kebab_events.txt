@@ -1591,16 +1591,19 @@
 						has_pop_culture = bulgarian
 						has_pop_culture = serb
 						has_pop_culture = romanian
-						has_pop_culture = greek
+						is_culture_group = pan_greek
 						has_pop_culture = assyrian
 						has_pop_culture = armenian
 						has_pop_culture = kurdish
 						has_pop_culture = circassian
-						has_pop_culture = turkish
+						is_culture_group = turko_semitic
+						has_pop_culture = tatar
 						has_pop_culture = mashriqi
 						has_pop_culture = bedouin
 						has_pop_culture = peninsular
 						has_pop_culture = chaldean
+						has_pop_culture = alawitec
+						has_pop_culture = druzec
 					}
 					location = {
 						OR = {
@@ -1634,6 +1637,10 @@
 						culture = serb
 						culture = romanian
 						culture = greek
+						culture = cappadocian_greek
+						culture = pontic_greek
+						culture = levantine_greek
+						culture = insular_greek
 						culture = circassian
 					}
 					OR = {
@@ -1653,6 +1660,10 @@
 				limit = {
 					OR = {
 						culture = greek
+						culture = cappadocian_greek
+						culture = pontic_greek
+						culture = levantine_greek
+						culture = insular_greek
 						culture = assyrian
 						culture = armenian
 						culture = kurdish
@@ -1683,6 +1694,8 @@
 						culture = peninsular
 						culture = circassian
 						culture = chaldean
+						culture = alawitec
+						culture = druzec
 					}
 					OR = {
 						is_core = SYR
@@ -1715,16 +1728,19 @@
 						has_pop_culture = bulgarian
 						has_pop_culture = serb
 						has_pop_culture = romanian
-						has_pop_culture = greek
+						is_culture_group = pan_greek
 						has_pop_culture = assyrian
 						has_pop_culture = armenian
 						has_pop_culture = kurdish
 						has_pop_culture = circassian
-						has_pop_culture = turkish
+						is_culture_group = turko_semitic
+						has_pop_culture = tatar
 						has_pop_culture = mashriqi
 						has_pop_culture = bedouin
 						has_pop_culture = peninsular
 						has_pop_culture = chaldean
+						has_pop_culture = alawitec
+						has_pop_culture = druzec
 					}
 					location = {
 						OR = {
@@ -1758,6 +1774,10 @@
 						culture = serb
 						culture = romanian
 						culture = greek
+						culture = cappadocian_greek
+						culture = pontic_greek
+						culture = levantine_greek
+						culture = insular_greek
 						culture = circassian
 					}
 					OR = {
@@ -1777,11 +1797,17 @@
 				limit = {
 					OR = {
 						culture = greek
+						culture = cappadocian_greek
+						culture = pontic_greek
+						culture = levantine_greek
+						culture = insular_greek
 						culture = assyrian
 						culture = armenian
 						culture = kurdish
 						culture = circassian
 						culture = chaldean
+						culture = alawitec
+						culture = druzec
 					}
 					OR = {
 						is_core = ARM
@@ -1808,6 +1834,8 @@
 						culture = peninsular
 						culture = circassian
 						culture = chaldean
+						culture = alawitec
+						culture = druzec
 					}
 					OR = {
 						is_core = SYR

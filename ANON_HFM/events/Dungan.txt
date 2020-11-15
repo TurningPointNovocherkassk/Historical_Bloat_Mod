@@ -297,6 +297,7 @@ country_event = {
 	option = {
 		name = "EVT80126OPTA"
 		#clr_global_flag = dungan_rebellion
+		set_global_flag = dungan_rebellion_crushed
 		prestige = 10
 		plurality = -2
 	#	UYG = { 
@@ -356,6 +357,7 @@ country_event = {
 		name = "EVT80123OPTA"
 		prestige = 10
 		QNG = { prestige = -10 }
+		set_global_flag = dungan_rebellion_victorious
 		#clr_global_flag = dungan_rebellion
 	}
 }

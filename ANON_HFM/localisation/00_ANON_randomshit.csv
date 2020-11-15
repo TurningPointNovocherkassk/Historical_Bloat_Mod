@@ -380,7 +380,16 @@ PROV3679;Moheli;;;;;;;;;x
 PROV3680;Anjouan;;;;;;;;;x
 PROV3681;Ntsudjini;;;;;;;;;x
 PROV3682;Vakinankaratra;;;;;;;;;x
+PROV3683;Sporades;;;;;;;;;x
+PROV3684;Imbros & Tenedos;;;;;;;;;x
+PROV3685;Thassos & Samothrace;;;;;;;;;x
+PROV3686;Dafni;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
+PROV844;Mytilene & Lemnos;;;;;;;;;x
+PROV843;Samos, Chios & Nikaria;;;;;;;;;x
+GRE_838;Western Aegean Islands;;;;;;;;;x
+TUR_843;Eastern Aegean Islands;;;;;;;;;x
+EGY_843;Crete;;;;;;;;;x
 2123;Moroni;;;;;;;;;x
 2124;Mahori;;;;;;;;;x
 FRA_2124;Comoros;;;;;;;;;x
@@ -887,6 +896,15 @@ masurian;Masurian;;;;;;;;;;;;;x
 sorbian;Sorb;;;;;;;;;;;;;x
 western_slavic;Silesian;;;;;;;;;;;;;x
 uighur;Taranchi;;;;;;;;;;;;;x
+greek;Peninsular Greek;;;;;;;;;;;;;x
+cappadocian_greek;Anatolian Greek;;;;;;;;;;;;;x
+pontic_greek;Pontic Greek;;;;;;;;;;;;;x
+insular_greek;Insular Greek;;;;;;;;;;;;;x
+levantine_greek;Levantine Greek;;;;;;;;;;;;;x
+italiot;Italiot Greek;;;;;;;;;;;;;x
+pan_greek;Hellenic;;;;;;;;;;;;;x
+karamanli;Karamanli;;;;;;;;;;;;;x
+yoruk;Yörük;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 alaskan;Alyaskan;;;;;;;;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
@@ -5666,10 +5684,10 @@ EVTDESC1000034;$FROMCOUNTRY$ has decided to relinquish their claims on Tarija, b
 EVTOPTA1000034;The gall of the $FROMCOUNTRY_ADJ$s! ;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 costa_guzman_secret_treaty_title;The Quirno Costa-Vaca Guzmán Treaty ;;;;;;;;;;;;;x
-costa_guzman_secret_treaty_desc;Bolivia’s current political climate is astonishingly turbulent, something $COUNTRY$ could make use of in hopes for obtaining territorial gains. Minister Norberto Quirno Costa proposes to coerce Bolivians into signing a treaty, in utmost secrecy from the Chilean Government, recognizing $COUNTRY_ADJ$ claims over the currently-disputed territories of the Puna de Atacama. However, these claims might not come free, and $COUNTRY$ might have to give up something in return: The Tarija. By giving up our historical claims on Tarija, Bolivia might accept recognizing our claims on the Puna, a remote region which has been under Chilean occupation since the War of the Pacific, surely a thorn on Bolivia’s side. We might come in conflict with Chile in the future, but their current political situation is also very precarious, which might grant us the opportunity to annex the iron-rich region of the Puna all for ourselves. ;;;;;;;;;;;;;x
+costa_guzman_secret_treaty_desc;Bolivia’s current political climate is astonishingly turbulent, something $COUNTRY$ could make use of in hopes for obtaining territorial gains. Minister Norberto Quirno Costa proposes coercing Bolivians into signing a treaty, in utmost secrecy from the Chilean Government, recognizing $COUNTRY_ADJ$ claims over the currently-disputed territories of the Puna de Atacama. However, these claims might not come free, and $COUNTRY$ might have to give up something in return: The Tarija. By giving up our historical claims on Tarija, Bolivia might accept recognizing our claims on the Puna, a remote region which has been under Chilean occupation since the War of the Pacific, surely a thorn on Bolivia’s side. We might come in conflict with Chile in the future, but their current political situation is also very precarious, which might grant us the opportunity to annex the iron-rich region of the Puna all for ourselves. ;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 EVTNAME1000035;The Quirno Costa-Vaca Guzmán Treaty of $YEAR$ ;;;;;;;;;;;;;x
-EVTDESC1000035;$FROMCOUNTRY_ADJ$ Minister Norberto Quirno Costa wishes to strike a deal with us: By renouncing to their claims on Tarija, they want $COUNTRY$ to recognize their claims on the Puna de Atacama, a region which is currently under Chilean occupation. Surely their moves are ulterior, but $COUNTRY$ could also obtain something from all this, states our Envoy to $FROMCOUNTRY_ADJ$santiago Vaca Guzmán, perhaps fomenting border frictions between Chile and $COUNTRY$ might be a good idea in the current political climate, which might just give us the opportunity to snatch the Puna and the Atacama Littoral back to $COUNTRY_ADJ$ hands. ;;;;;;;;;;;;;x
+EVTDESC1000035;$FROMCOUNTRY_ADJ$ Minister Norberto Quirno Costa wishes to strike a deal with us: By renouncing to their claims on Tarija, they want $COUNTRY$ to recognize their claims on the Puna de Atacama, a region which is currently under Chilean occupation. Surely their moves are ulterior, but $COUNTRY$ could also obtain something from all this, states our Envoy to $FROMCOUNTRY_ADJ$ Mr. Santiago Vaca Guzmán, perhaps fomenting border frictions between Chile and $COUNTRY$ might be a good idea in the current political climate, which might just give us the opportunity to snatch the Puna and the Atacama Littoral back to $COUNTRY_ADJ$ hands. ;;;;;;;;;;;;;x
 EVTOPTA1000035;It must be done, close the deal. ;;;;;;;;;;;;;x
 EVTOPTB1000035;We cannot allow the $FROMCOUNTRY_ADJ$s to lay claims over our sovereignty! ;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
@@ -5685,7 +5703,7 @@ barros_gutierrez_treaty_title;The Barros Borgoño-Gutiérrez Treaty ;;;;;;;;;;;;;x
 barros_gutierrez_treaty_desc;After the completion of our campaigns in the Atacama Littoral, $COUNTRY$ obtained sizeable territorial gains from countries that have been quite a bit hostile to us in the past. The War of the Pacific only increased this enmity and now $COUNTRY$shares a land border with Peru, something which places the $COUNTRY_ADJ$ nation in quite the precarious position. Our Minister for Foreign Affairs, Luis Barros Borgoño, has given our $MONARCHTITLE$ quite a peculiar proposition to solve any further boundary issues with the Peruvians: Granting the ports of Tacna and Arica to the now landlocked nation of Bolivia in exchange of the abandonment of their claims on the Puna de Atacama, as well as the formalization and ratification of the $COUNTRY_ADJ$ ownership of these territories. Without a shared border with Peru, as well as the abandonment of any territories claimed by them, $COUNTRY$ will have one less problem to take care of in the future. ;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 EVTNAME1000038;The Barros Borgoño-Gutiérrez Treaty of $YEAR$ ;;;;;;;;;;;;;x
-EVTDESC1000038;$FROMCOUNTRY_ADJ$ Minister for Foreign Affairs, Luis Barros Borgoño, has arrived in $COUNTRY$ with quite a peculiar proposition: A treaty to formally recognize $FROMCOUNTRY_ADJ$ ownership of the Puna de Atacama, and abandoning any $COUNTRY_ADJ$ claims over the region, in exchange of the secesion of the ports of Tacna and Arica to $COUNTRY$. While many of our Statesmen have been outraged by such proposition, our Plenipotentiary Minister, Heriberto Gutiérrez, has argued that giving up the remote and scarcely-populated region of the Puna for two seaports in the Pacific might be very beneficial for our nation. ;;;;;;;;;;;;;x
+EVTDESC1000038;$FROMCOUNTRY_ADJ$ Minister for Foreign Affairs, Luis Barros Borgoño, has arrived in $COUNTRY$ with quite a peculiar proposition: A treaty to formally recognize $FROMCOUNTRY_ADJ$ ownership of the Puna de Atacama, and abandoning any $COUNTRY_ADJ$ claims over the region, in exchange of the secession of the ports of Tacna and Arica to $COUNTRY$. While many of our Statesmen have been outraged by such proposition, our Plenipotentiary Minister, Heriberto Gutiérrez, has argued that giving up the remote and scarcely-populated region of the Puna for two seaports in the Pacific might be very beneficial for our nation. ;;;;;;;;;;;;;x
 EVTOPTA1000038;It must be done, ratify this treaty. ;;;;;;;;;;;;;x
 EVTOPTB1000038;Outrageous, the Puna de Atacama is rightfully $COUNTRY_ADJ$ and it shall remain so! ;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
@@ -5698,7 +5716,7 @@ EVTDESC1000040;$FROMCOUNTRY$ is outraged by our proposition and their Plenipoten
 EVTOPTA1000040;They're welcome to try and take it. ;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 rocha_cano_protocol_title;The Rocha-Cano Protocol ;;;;;;;;;;;;;x
-rocha_cano_protocol_desc;Dardo Rocha, the $COUNTRY_ADJ$ envoy for Bolivia, suggests that $COUNTRY$should reaffirm her claims on the Puna de Atacama after the aftermath that came from the Quirno Costa-Vaca Guzmán Treaty, which was signed in secrecy from the Chilean government. Bolivia should also be exorted to abandon all claims on the Puna if they so wish to remain outside any future conflicts with our nation, as well as with the Chileans… Their country is in a very precarious state, and Mr. Dardo Rocha believes this should help ease any tensions with out northwestern neighbor. ;;;;;;;;;;;;;x
+rocha_cano_protocol_desc;Dardo Rocha, the $COUNTRY_ADJ$ envoy for Bolivia, suggests that $COUNTRY$ should reaffirm her claims on the Puna de Atacama after the aftermath that came from the Quirno Costa-Vaca Guzmán Treaty, which was signed in secrecy from the Chilean government. Bolivia should also be extorted to abandon all claims on the Puna if they so wish to remain outside any future conflicts with our nation, as well as with the Chileans… Their country is in a very precarious state, and Mr. Dardo Rocha believes this should help ease any tensions with out northwestern neighbor. ;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 EVTNAME1000041;The Rocha-Cano Protocol of $YEAR$ ;;;;;;;;;;;;;x
 EVTDESC1000041;Dardo Rocha, the $FROMCOUNTRY_ADJ$ envoy for $COUNTRY$, wishes to reaffirm $FROMCOUNTRY_ADJ$ claims on the Puna and also exhorts our Minister for Foreign Affairs, Mr. Emeterio Cano, to abandon all $COUNTRY$ claims in the Puna de Atacama if our nation wishes to remain outside any future confrontations with $FROMCOUNTRY$ and Chile over the aforementioned territories. ;;;;;;;;;;;;;x
@@ -8275,8 +8293,11 @@ EVTNAME888888015;The Treaty of Ili;;;;;;;;;;;;;x
 EVTDESC888888015;The Qing Emperor has decided to refuse our proposal, citing that it is not in their best interest! ;;;;;;;;;;;;;x
 EVT888888015OPTA;Curse them! ;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
-the_great_game_kashgaria_title;The Great Game Comes to Kashgaria;;;;;;;;;x
-the_great_game_kashgaria_desc;We must press our domination of Central Asia. This means that Kashgaria must join our nation, or stand forever more subject to British aggression in the region.;;;;;;;;;x,
+the_great_game_kashgaria_title;The Great Game Comes to Yedishahr;;;;;;;;;x
+the_great_game_kashgaria_desc;We must press our domination of Central Asia. This means that Yedishahr must join our nation, or stand forever more subject to Foreign aggression in the region.;;;;;;;;;x,
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+annex_XIN_title;The conquest of Tarim and Dzungaria;;;;;;;;;x
+annex_XIN_desc;We must press our domination of Central Asia by completing the conquest of Tarim and Dzungaria, as they remained outside our control upon having conquered the Yedishahr Emirate.;;;;;;;;;x,
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 the_great_game_tibet_title;The Great Game Comes to Tibet;;;;;;;;;x
 the_great_game_tibet_desc;We must press our domination of Central Asia. This means that Tibet must join our nation, or stand forever more subject to British aggression in the region.;;;;;;;;;x,
@@ -8291,10 +8312,25 @@ the_great_game_darwaz_title;The Great Game Comes to Darwaz;;;;;;;;;x
 the_great_game_darwaz_desc;We must press our domination of Cental Asia. This means that Darwaz must join our nation, or stand forever more subject to British aggression in the region.;;;;;;;;;x,
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 intern_iranian_title;Article 3: Iranian Internment;;;;;;;;;;;;;;;;;;;;;;;;;;;x
-intern_iranian_desc;§WThe first main goal of the $COUNTRY_ADJ$ measures must be strict segregation of the §YIranian - that is, the Persians, Tajiks, Pashtuns, Baluchi, §W- from the rest of the population. In the execution of this, first of all, is the seizing of the Iranian-Turanian population by the introduction of a registration order and similar appropriate measures. All rights of freedom for the Iranians are to be withdrawn. They are to be placed in internment camps and at the same time are to be separated according to sexes. These internment camps can be placed under the supervision of their own Iranian self-government with Iranian officials. The guarding of the boundaries between the internment camps and the outer world, is, however, the duty of the Police."\n\n§YAdds 3 points to the "slowdown" scale. Starting at 4 points, every 2 points will decrease speed by 20%.;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;xx
+intern_iranian_desc;§WThe first main goal of the $COUNTRY_ADJ$ measures must be strict segregation of the §YIranians - that is, the Persians, Tajiks, Pashtuns, Baluchi, §W- from the rest of the population. In the execution of this, first of all, is the seizing of the Iranian-Turanian population by the introduction of a registration order and similar appropriate measures. All rights of freedom for the Iranians are to be withdrawn. They are to be placed in internment camps and at the same time are to be separated according to sexes. These internment camps can be placed under the supervision of their own Iranian self-government with Iranian officials. The guarding of the boundaries between the internment camps and the outer world, is, however, the duty of the Police."\n\n§YAdds 3 points to the "slowdown" scale. Starting at 4 points, every 2 points will decrease speed by 20%.;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;xx
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 intern_turanian_title;Article 3: Turanian Internment;;;;;;;;;;;;;;;;;;;;;;;;;;;x
-intern_turanian_desc;§WThe first main goal of the $COUNTRY_ADJ$ measures must be strict segregation of the §YTuranian - that is, the Uzbeks, Kazakhs, Kirgiz, Uighurs, Hazaras, Turkmens, Tatars §W- from the rest of the population. In the execution of this, first of all, is the seizing of the Turanian population by the introduction of a registration order and similar appropriate measures. All rights of freedom for the Turanians are to be withdrawn. They are to be placed in internment camps and at the same time are to be separated according to sexes. These internment camps can be placed under the supervision of their own Turanian self-government with Turanian officials. The guarding of the boundaries between the internment camps and the outer world, is, however, the duty of the Police."\n\n§YAdds 3 points to the "slowdown" scale. Starting at 4 points, every 2 points will decrease speed by 20%.;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;xx
+intern_turanian_desc;§WThe first main goal of the $COUNTRY_ADJ$ measures must be strict segregation of the §YTuranians - that is, the Uzbeks, Kazakhs, Kirgiz, Uighurs, Hazaras, Turkmens, Tatars §W- from the rest of the population. In the execution of this, first of all, is the seizing of the Turanian population by the introduction of a registration order and similar appropriate measures. All rights of freedom for the Turanians are to be withdrawn. They are to be placed in internment camps and at the same time are to be separated according to sexes. These internment camps can be placed under the supervision of their own Turanian self-government with Turanian officials. The guarding of the boundaries between the internment camps and the outer world, is, however, the duty of the Police."\n\n§YAdds 3 points to the "slowdown" scale. Starting at 4 points, every 2 points will decrease speed by 20%.;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;xx
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+intern_levantine_title;Article 3: Levantine Internment;;;;;;;;;;;;;;;;;;;;;;;;;;;x
+intern_levantine_desc;§WThe first main goal of the $COUNTRY_ADJ$ measures must be strict segregation of the §YLevantines - that is, the Assyrians, Syriac-Arameans, Copts, Mandaeans §W- from the rest of the population. In the execution of this, first of all, is the seizing of the Levantine population by the introduction of a registration order and similar appropriate measures. All rights of freedom for the Levantine are to be withdrawn. They are to be placed in internment camps and at the same time are to be separated according to sexes. These internment camps can be placed under the supervision of their own Levantine self-government with Levantine officials. The guarding of the boundaries between the internment camps and the outer world, is, however, the duty of the Police."\n\n§YAdds 3 points to the "slowdown" scale. Starting at 4 points, every 2 points will decrease speed by 20%.;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;xx
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+intern_pan_greek_title;Article 3: Hellenic Internment;;;;;;;;;;;;;;;;;;;;;;;;;;;x
+intern_pan_greek_desc;§WThe first main goal of the $COUNTRY_ADJ$ measures must be strict segregation of the §YHellenics - that is, the Peninsular Greeks, Anatolian Greeks, Pontic Greeks, Insular Greeks, Levantine Greeks, Italiot Greeks §W- from the rest of the population. In the execution of this, first of all, is the seizing of the Greek population by the introduction of a registration order and similar appropriate measures. All rights of freedom for the Greeks are to be withdrawn. They are to be placed in internment camps and at the same time are to be separated according to sexes. These internment camps can be placed under the supervision of their own Greeks self-government with Greek officials. The guarding of the boundaries between the internment camps and the outer world, is, however, the duty of the Police."\n\n§YAdds 3 points to the "slowdown" scale. Starting at 4 points, every 2 points will decrease speed by 20%.;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;xx
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+turko_semitic;Turko-Anatolian;;;;;;;;;;;;;;;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+#turkish;Ottoman;;;;;;;;;;;;;;;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+#realturkshit;Turkish;;;;;;;;;;;;;;;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+intern_turko_semitic_title;Article 3: Turko-Anatolian Internment;;;;;;;;;;;;;;;;;;;;;;;;;;;x
+intern_turko_semitic_desc;§WThe first main goal of the $COUNTRY_ADJ$ measures must be strict segregation of the §YTurko-Anatolians - that is, the Ottomans, Turkish, Azeri Turks, Karamanlides, Yörük §W- from the rest of the population. In the execution of this, first of all, is the seizing of the Turko-Anatolian population by the introduction of a registration order and similar appropriate measures. All rights of freedom for the Turko-Anatolian are to be withdrawn. They are to be placed in internment camps and at the same time are to be separated according to sexes. These internment camps can be placed under the supervision of their own Turko-Anatolian self-government with Turko-Anatolian officials. The guarding of the boundaries between the internment camps and the outer world, is, however, the duty of the Police."\n\n§YAdds 3 points to the "slowdown" scale. Starting at 4 points, every 2 points will decrease speed by 20%.;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;xx
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x

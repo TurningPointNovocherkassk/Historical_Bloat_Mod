@@ -132,7 +132,11 @@ political_decisions = {
 			any_owned = {
 				limit = {
 					owned_by = THIS
-					is_capital = yes
+					#is_capital = yes
+					port = yes
+					is_overseas = no
+					is_colonial = no
+					controlled_by = THIS
 				}
 				sub_unit = { type = steam_transport value = current }
 				sub_unit = { type = steam_transport value = current }

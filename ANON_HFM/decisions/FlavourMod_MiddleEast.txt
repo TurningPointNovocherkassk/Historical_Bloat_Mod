@@ -163,8 +163,12 @@ political_decisions = {
 		potential = {
 			NOT = { 
 				primary_culture = turkish
-				primary_culture = greek
+				is_culture_group = pan_greek
+				primary_culture = georgian
 				primary_culture = armenian
+				primary_culture = assyrian
+				primary_culture = chaldean
+				primary_culture = copt
 			}
 			owns = 894
 			has_country_flag = sykes_picot_agreed

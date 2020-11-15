@@ -3781,7 +3781,8 @@ country_event = {
 	fire_only_once = yes
 
 	trigger = {
-		tag = CPL
+		# tag = CPL #Nice fuckup, retard
+		tag = PNC
 		government = provisional_government
 		NOT = {
 			OR = {
@@ -4867,22 +4868,20 @@ country_event = {
 		add_country_modifier = { name = kraut_assimilation_policy duration = 3600 }
 		treasury = -100000
 		badboy = 2.5
-		any_pop = {
+		any_owned = {
 			limit = {
-				location = { is_core = THIS }
+				is_core = THIS
 				OR = {
-					has_pop_culture = north_german
-					has_pop_culture = south_german
-					has_pop_culture = volga_german
-					has_pop_culture = carpathian_german
-					has_pop_culture = baltic_german
+					culture = north_german
+					culture = south_german
+					culture = volga_german
+					culture = carpathian_german
+					culture = baltic_german
 				}
 			}
-			location = {
-				add_province_modifier = { name = polonization_modifier duration = -1 }
-				add_province_modifier = { name = minority_building_restrictions duration = 7300	}
-				add_province_modifier = { name = discriminatory_school_system duration = 7300 }	
-			}
+			add_province_modifier = { name = polonization_modifier duration = -1 }
+			add_province_modifier = { name = minority_building_restrictions duration = 7300	}
+			add_province_modifier = { name = discriminatory_school_system duration = 7300 }	
 
 		}
 		any_pop = {
@@ -9570,15 +9569,17 @@ country_event = {
 		FIN = { all_core = { add_core = SCA } }
 		SCA = {
 			inherit = FIN
-			any_pop = {
-				location = { is_core = FIN }
-				militancy = 7
-				consciousness = 7
-				location = {
-					add_province_modifier = {
-						name = nationalist_agitation
-						duration = 1825
-					}
+			any_owned = {
+				limit = {
+					is_core = FIN
+				}
+				any_pop = {
+					militancy = 7
+					consciousness = 7
+				}
+				add_province_modifier = {
+					name = nationalist_agitation
+					duration = 1825
 				}
 			}
 		}
@@ -9591,15 +9592,17 @@ country_event = {
 		BBD = {
 			inherit = FIN
 			add_accepted_culture = finnish
-			any_pop = {
-				location = { is_core = FIN }
-				militancy = 5
-				consciousness = 5
-				location = {
-					add_province_modifier = {
-						name = nationalist_agitation
-						duration = 1825
-					}
+			any_owned = {
+				limit = {
+					is_core = FIN
+				}
+				any_pop = {
+					militancy = 5
+					consciousness = 5
+				}
+				add_province_modifier = {
+					name = nationalist_agitation
+					duration = 1825
 				}
 			}
 		}
@@ -9626,15 +9629,17 @@ country_event = {
 		FIN = { all_core = { add_core = SCA } }
 		SCA = {
 			inherit = FIN
-			any_pop = {
-				location = { is_core = FIN }
-				militancy = 7
-				consciousness = 7
-				location = {
-					add_province_modifier = {
-						name = nationalist_agitation
-						duration = 1825
-					}
+			any_owned = {
+				limit = {
+					is_core = FIN
+				}
+				any_pop = {
+					militancy = 7
+					consciousness = 7
+				}
+				add_province_modifier = {
+					name = nationalist_agitation
+					duration = 1825
 				}
 			}
 		}
@@ -11251,6 +11256,12 @@ country_event = {
 					province_id = 2116
 					province_id = 2122
 					province_id = 2117
+					
+					province_id = 3675
+					province_id = 3676
+					province_id = 3677
+					province_id = 3678
+					province_id = 3682
 				}
 			}
 			remove_core = THIS
@@ -11323,6 +11334,12 @@ country_event = {
 						province_id = 2116
 						province_id = 2122
 						province_id = 2117
+					
+						province_id = 3675
+						province_id = 3676
+						province_id = 3677
+						province_id = 3678
+						province_id = 3682
 					}
 				}
 				secede_province = THIS

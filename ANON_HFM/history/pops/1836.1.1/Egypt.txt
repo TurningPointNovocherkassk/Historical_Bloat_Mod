@@ -3,7 +3,6 @@
 #Cairo (1004600/251150 POPS)
 1745 = {
 
-	
 	aristocrats = {
 		culture = karaite_culture
 		religion = karaite
@@ -188,14 +187,29 @@
 	}
 
 	clergymen = {
-		culture = greek
+		culture = levantine_greek
+		religion = orthodox
+		size = 100
+	}
+	artisans = {
+		culture = levantine_greek
+		religion = orthodox
+		size = 9000
+	}
+	aristocrats = {
+		culture = levantine_greek
+		religion = orthodox
+		size = 200
+	}
+	bureaucrats = {
+		culture = levantine_greek
 		religion = orthodox
 		size = 75
 	}
-	artisans = {
-		culture = greek
+	farmers = {
+		culture = levantine_greek
 		religion = orthodox
-		size = 9000
+		size = 2000
 	}
 	
 	clergymen = {
@@ -207,6 +221,11 @@
 		culture = armenian
 		religion = coptic
 		size = 6000
+	}
+	farmers = {
+		culture = armenian
+		religion = coptic
+		size = 750
 	}
 
 	clergymen = {
@@ -226,11 +245,6 @@
 		size = 9000
 	}
 
-	slaves = {
-		culture = greek
-		religion = orthodox
-		size = 1025
-	}
 }
 #Dumyat (402600/100650 POPS)
 1746 = {
@@ -359,14 +373,29 @@
 	
 	
 	clergymen = {
-		culture = greek
+		culture = levantine_greek
+		religion = orthodox
+		size = 100
+	}
+	artisans = {
+		culture = levantine_greek
+		religion = orthodox
+		size = 8000
+	}
+	aristocrats = {
+		culture = levantine_greek
+		religion = orthodox
+		size = 100
+	}
+	bureaucrats = {
+		culture = levantine_greek
 		religion = orthodox
 		size = 50
 	}
-	artisans = {
-		culture = greek
+	farmers = {
+		culture = levantine_greek
 		religion = orthodox
-		size = 8000
+		size = 1000
 	}
 	
 	
@@ -478,14 +507,29 @@
 	
 	
 	clergymen = {
-		culture = greek
+		culture = levantine_greek
 		religion = orthodox
 		size = 75
 	}
 	artisans = {
-		culture = greek
+		culture = levantine_greek
 		religion = orthodox
 		size = 3000
+	}
+	aristocrats = {
+		culture = levantine_greek
+		religion = orthodox
+		size = 100
+	}
+	bureaucrats = {
+		culture = levantine_greek
+		religion = orthodox
+		size = 50
+	}
+	farmers = {
+		culture = levantine_greek
+		religion = orthodox
+		size = 1000
 	}
 }
 #Mansura (256200/64050 POPS)
@@ -595,14 +639,29 @@
 	}
 	
 	clergymen = {
-		culture = greek
+		culture = levantine_greek
 		religion = orthodox
-		size = 25
+		size = 75
 	}
 	artisans = {
-		culture = greek
+		culture = levantine_greek
 		religion = orthodox
 		size = 2000
+	}
+	aristocrats = {
+		culture = levantine_greek
+		religion = orthodox
+		size = 100
+	}
+	bureaucrats = {
+		culture = levantine_greek
+		religion = orthodox
+		size = 50
+	}
+	farmers = {
+		culture = levantine_greek
+		religion = orthodox
+		size = 1000
 	}
 	
 }
@@ -703,14 +762,29 @@
 	
 	
 	clergymen = {
-		culture = greek
+		culture = levantine_greek
 		religion = orthodox
 		size = 75
 	}
 	artisans = {
-		culture = greek
+		culture = levantine_greek
 		religion = orthodox
 		size = 2000
+	}
+	aristocrats = {
+		culture = levantine_greek
+		religion = orthodox
+		size = 100
+	}
+	bureaucrats = {
+		culture = levantine_greek
+		religion = orthodox
+		size = 50
+	}
+	farmers = {
+		culture = levantine_greek
+		religion = orthodox
+		size = 1000
 	}
 }
 #Giza (386400/96600 POPS)
@@ -820,14 +894,29 @@
 	
 	
 	clergymen = {
-		culture = greek
+		culture = levantine_greek
 		religion = orthodox
 		size = 75
 	}
 	artisans = {
-		culture = greek
+		culture = levantine_greek
 		religion = orthodox
 		size = 3000
+	}
+	aristocrats = {
+		culture = levantine_greek
+		religion = orthodox
+		size = 100
+	}
+	bureaucrats = {
+		culture = levantine_greek
+		religion = orthodox
+		size = 50
+	}
+	farmers = {
+		culture = levantine_greek
+		religion = orthodox
+		size = 1000
 	}
 }
 #Alexandria Region (736000)
@@ -968,14 +1057,29 @@
 	}
 
 	clergymen = {
-		culture = greek
+		culture = levantine_greek
 		religion = orthodox
-		size = 50
+		size = 100
 	}
 	artisans = {
-		culture = greek
+		culture = levantine_greek
 		religion = orthodox
 		size = 10000
+	}
+	aristocrats = {
+		culture = levantine_greek
+		religion = orthodox
+		size = 200
+	}
+	bureaucrats = {
+		culture = levantine_greek
+		religion = orthodox
+		size = 75
+	}
+	farmers = {
+		culture = levantine_greek
+		religion = orthodox
+		size = 2000
 	}
 		
 	clergymen = {
@@ -1368,17 +1472,17 @@
 	}
 	
 	clergymen = {
-		culture = greek
+		culture = levantine_greek
 		religion = orthodox
 		size = 500
 	}
 	artisans = {
-		culture = greek
+		culture = levantine_greek
 		religion = orthodox
 		size = 150
 	}
 	farmers = {
-		culture = greek
+		culture = levantine_greek
 		religion = orthodox
 		size = 100
 	}

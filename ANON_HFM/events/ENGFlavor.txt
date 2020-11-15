@@ -3728,8 +3728,8 @@ country_event = {
 		random_owned = { limit = { owner = { has_country_flag = ismaili_country } } FROM = { religion = ismaili set_country_flag = ismaili_country } }
 		random_owned = { limit = { owner = { has_country_flag = zaydi_country } } FROM = { religion = zaydi set_country_flag = zaydi_country } }
 		random_owned = { limit = { owner = { has_country_flag = jain_country } } FROM = { religion = jain set_country_flag = jain_country } }
-		random_owned = { limit = { owner = { has_country_flag = atheist_country } } FROM = { religion = atheist set_country_flag = atheist_country } }
-		random_owned = { limit = { owner = { has_country_flag = secular_country } } FROM = { religion = secular set_country_flag = secular_country } }
+		random_owned = { limit = { owner = { has_country_flag = atheist_country } } FROM = { religion = atheism set_country_flag = atheist_country } }
+		random_owned = { limit = { owner = { has_country_flag = secular_country } } FROM = { religion = secularim set_country_flag = secular_country } }
 		
 		random_owned = { limit = { slavery = no_slavery } FROM = { political_reform = no_slavery } }
 		

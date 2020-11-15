@@ -987,7 +987,7 @@ political_decisions = {
 				AND = {
 					TUR = { NOT = { has_country_flag = eastern_rumelia_exchange } }
 					any_owned_province = {
-						has_pop_culture = turkish
+						OR = { culture = turkish culture = azerbaijani culture = karamanli culture = yoruk culture = kurdish culture = tatar culture = circassian }
 						OR = {
 							province_id = 808
 							province_id = 815
@@ -1000,7 +1000,7 @@ political_decisions = {
 				AND = {
 					TUR = { NOT = { has_country_flag = thessalia_exchange } }
 					any_owned_province = {
-						has_pop_culture = turkish
+						OR = { culture = turkish culture = azerbaijani culture = karamanli culture = yoruk culture = kurdish culture = tatar culture = circassian }
 						OR = {
 							province_id = 831
 							province_id = 832
@@ -1013,7 +1013,7 @@ political_decisions = {
 				AND = {
 					TUR = { NOT = { has_country_flag = southern_macedonia_exchange } }
 					any_owned_province = {
-						has_pop_culture = turkish
+						OR = { culture = turkish culture = azerbaijani culture = karamanli culture = yoruk culture = kurdish culture = tatar culture = circassian }
 						OR = {
 							province_id = 819
 							province_id = 820
@@ -1026,7 +1026,7 @@ political_decisions = {
 				AND = {
 					TUR = { NOT = { has_country_flag = eastern_macedonia_exchange } }
 					any_owned_province = {
-						has_pop_culture = turkish
+						OR = { culture = turkish culture = azerbaijani culture = karamanli culture = yoruk culture = kurdish culture = tatar culture = circassian }
 						OR = {
 							province_id = 823
 							province_id = 829
@@ -1042,7 +1042,7 @@ political_decisions = {
 				AND = {
 					TUR = { NOT = { has_country_flag = bulgaria_exchange } }
 					any_owned_province = {
-						has_pop_culture = turkish
+						OR = { culture = turkish culture = azerbaijani culture = karamanli culture = yoruk culture = kurdish culture = tatar culture = circassian }
 						OR = {
 							province_id = 809
 							province_id = 810
@@ -1056,7 +1056,7 @@ political_decisions = {
 				AND = {
 					TUR = { NOT = { has_country_flag = dobrudja_exchange } }
 					any_owned_province = {
-						has_pop_culture = turkish
+						OR = { culture = turkish culture = azerbaijani culture = karamanli culture = yoruk culture = kurdish culture = tatar culture = circassian }
 						OR = {
 							province_id = 818
 							province_id = 674
@@ -1067,7 +1067,7 @@ political_decisions = {
 				AND = {
 					TUR = { NOT = { has_country_flag = macedonia_exchange } }
 					any_owned_province = {
-						has_pop_culture = turkish
+						OR = { culture = turkish culture = azerbaijani culture = karamanli culture = yoruk culture = kurdish culture = tatar culture = circassian }
 						OR = {
 							province_id = 806
 							province_id = 807
@@ -1078,7 +1078,7 @@ political_decisions = {
 				AND = {
 					TUR = { NOT = { has_country_flag = southern_serbia_exchange } }
 					any_owned_province = {
-						has_pop_culture = turkish
+						OR = { culture = turkish culture = azerbaijani culture = karamanli culture = yoruk culture = kurdish culture = tatar culture = circassian }
 						OR = {
 							province_id = 804
 							province_id = 798
@@ -1090,7 +1090,7 @@ political_decisions = {
 				AND = {
 					TUR = { NOT = { has_country_flag = kosovo_exchange } }
 					any_owned_province = {
-						has_pop_culture = turkish
+						OR = { culture = turkish culture = azerbaijani culture = karamanli culture = yoruk culture = kurdish culture = tatar culture = circassian }
 						OR = {
 							province_id = 802
 							province_id = 803
@@ -1101,7 +1101,7 @@ political_decisions = {
 				AND = {
 					TUR = { NOT = { has_country_flag = montenegro_exchange } }
 					any_owned_province = {
-						has_pop_culture = turkish
+						OR = { culture = turkish culture = azerbaijani culture = karamanli culture = yoruk culture = kurdish culture = tatar culture = circassian }
 						OR = {
 							province_id = 800
 						}
@@ -1110,7 +1110,7 @@ political_decisions = {
 				AND = {
 					TUR = { NOT = { has_country_flag = bosnia_exchange } }
 					any_owned_province = {
-						has_pop_culture = turkish
+						OR = { culture = turkish culture = azerbaijani culture = karamanli culture = yoruk culture = kurdish culture = tatar culture = circassian }
 						OR = {
 							province_id = 789
 							province_id = 784
@@ -1124,7 +1124,7 @@ political_decisions = {
 				AND = {
 					TUR = { NOT = { has_country_flag = herzegovina_exchange } }
 					any_owned_province = {
-						has_pop_culture = turkish
+						OR = { culture = turkish culture = azerbaijani culture = karamanli culture = yoruk culture = kurdish culture = tatar culture = circassian }
 						OR = {
 							province_id = 788
 							province_id = 3636
@@ -1136,7 +1136,7 @@ political_decisions = {
 				AND = {
 					TUR = { NOT = { has_country_flag = albania_exchange } }
 					any_owned_province = {
-						has_pop_culture = turkish
+						OR = { culture = turkish culture = azerbaijani culture = karamanli culture = yoruk culture = kurdish culture = tatar culture = circassian }
 						OR = {
 							province_id = 849
 							province_id = 850
@@ -1183,6 +1183,8 @@ political_decisions = {
 				AND = {
 					NOT = { TUR_823 = { NOT = { owned_by = THIS } } }
 					NOT = { EGY_843 = { NOT = { owned_by = THIS } } }
+					NOT = { TUR_843 = { NOT = { owned_by = THIS } } }
+					NOT = { GRE_838 = { NOT = { owned_by = THIS } } }
 					has_country_flag = southern_macedonia_exchange
 					has_country_flag = thessalia_exchange
 					NOT = { TUR = { has_country_flag = eastern_macedonia_exchange } }
@@ -1241,7 +1243,7 @@ political_decisions = {
 						owns = 852
 						owns = 853
 						any_owned_province = {
-							has_pop_culture = turkish
+							OR = { culture = turkish culture = azerbaijani culture = karamanli culture = yoruk culture = kurdish culture = tatar culture = circassian }
 							OR = {
 								province_id = 849
 								province_id = 850
@@ -1274,7 +1276,7 @@ political_decisions = {
 						owns = 786
 						owns = 787
 						any_owned_province = {
-							has_pop_culture = turkish
+							OR = { culture = turkish culture = azerbaijani culture = karamanli culture = yoruk culture = kurdish culture = tatar culture = circassian }
 							OR = {
 								province_id = 789 
 								province_id = 784
@@ -1305,7 +1307,7 @@ political_decisions = {
 						owns = 3637
 						owns = 2569
 						any_owned_province = {
-							has_pop_culture = turkish
+							OR = { culture = turkish culture = azerbaijani culture = karamanli culture = yoruk culture = kurdish culture = tatar culture = circassian }
 							OR = {
 								province_id = 788
 								province_id = 3636
@@ -1332,7 +1334,7 @@ political_decisions = {
 					owner = {
 						owns = 800
 						any_owned_province = {
-							has_pop_culture = turkish
+							OR = { culture = turkish culture = azerbaijani culture = karamanli culture = yoruk culture = kurdish culture = tatar culture = circassian }
 							OR = {
 								province_id = 800
 							}
@@ -1359,7 +1361,7 @@ political_decisions = {
 						owns = 799
 						owns = 2577
 						any_owned_province = {
-							has_pop_culture = turkish
+							OR = { culture = turkish culture = azerbaijani culture = karamanli culture = yoruk culture = kurdish culture = tatar culture = circassian }
 							OR = {
 								province_id = 804
 								province_id = 798
@@ -1387,7 +1389,7 @@ political_decisions = {
 						owns = 803
 						owns = 3621
 						any_owned_province = {
-							has_pop_culture = turkish
+							OR = { culture = turkish culture = azerbaijani culture = karamanli culture = yoruk culture = kurdish culture = tatar culture = circassian }
 							OR = {
 								province_id = 802
 								province_id = 803
@@ -1416,7 +1418,7 @@ political_decisions = {
 						owns = 807
 						owns = 1780
 						any_owned_province = {
-							has_pop_culture = turkish
+							OR = { culture = turkish culture = azerbaijani culture = karamanli culture = yoruk culture = kurdish culture = tatar culture = circassian }
 							OR = {
 								province_id = 806
 								province_id = 807
@@ -1444,7 +1446,7 @@ political_decisions = {
 						owns = 674
 						owns = 675
 						any_owned_province = {
-							has_pop_culture = turkish
+							OR = { culture = turkish culture = azerbaijani culture = karamanli culture = yoruk culture = kurdish culture = tatar culture = circassian }
 							OR = {
 								province_id = 818
 								province_id = 674
@@ -1475,7 +1477,7 @@ political_decisions = {
 						owns = 813
 						owns = 814
 						any_owned_province = {
-							has_pop_culture = turkish
+							OR = { culture = turkish culture = azerbaijani culture = karamanli culture = yoruk culture = kurdish culture = tatar culture = circassian }
 							OR = {
 								province_id = 809
 								province_id = 810
@@ -1508,7 +1510,7 @@ political_decisions = {
 						owns = 825
 						owns = 824
 						any_owned_province = {
-							has_pop_culture = turkish
+							OR = { culture = turkish culture = azerbaijani culture = karamanli culture = yoruk culture = kurdish culture = tatar culture = circassian }
 							OR = {
 								province_id = 831
 								province_id = 832
@@ -1542,7 +1544,7 @@ political_decisions = {
 						owns = 822
 						owns = 805
 						any_owned_province = {
-							has_pop_culture = turkish
+							OR = { culture = turkish culture = azerbaijani culture = karamanli culture = yoruk culture = kurdish culture = tatar culture = circassian }
 							OR = {
 								province_id = 819
 								province_id = 820
@@ -1582,7 +1584,7 @@ political_decisions = {
 						owns = 847
 						owns = 848
 						any_owned_province = {
-							has_pop_culture = turkish
+							OR = { culture = turkish culture = azerbaijani culture = karamanli culture = yoruk culture = kurdish culture = tatar culture = circassian }
 							OR = {
 								province_id = 823
 								province_id = 829
@@ -1619,7 +1621,7 @@ political_decisions = {
 						owns = 816
 						owns = 817
 						any_owned_province = {
-							has_pop_culture = turkish
+							OR = { culture = turkish culture = azerbaijani culture = karamanli culture = yoruk culture = kurdish culture = tatar culture = circassian }
 							OR = {
 								province_id = 808
 								province_id = 815

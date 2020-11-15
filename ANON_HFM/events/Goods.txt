@@ -343,7 +343,7 @@ province_event = {
 							primary_culture = anglo_canadian
 						}
 						owns = 6
-						life_rating = 10
+						# life_rating = 10
 					}
 				}
 				6 = {
@@ -361,11 +361,11 @@ province_event = {
 							is_culture_group = east_slavic
 						}
 						owns = 6
-						life_rating = 10
+						# life_rating = 10
 					}
 				}
 				6 = {
-					change_province_name = "Belaloshadersk"
+					change_province_name = "Byelokonysk"
 					life_rating = 5
 				}
 			}
@@ -379,7 +379,7 @@ province_event = {
 							is_culture_group = latin_american_cultures
 						}
 						owns = 6
-						life_rating = 10
+						# life_rating = 10
 					}
 				}
 				6 = {
@@ -394,7 +394,7 @@ province_event = {
 					owner = {
 						primary_culture = japanese
 						owns = 6
-						life_rating = 10
+						# life_rating = 10
 					}
 				}
 				6 = {
@@ -443,13 +443,15 @@ province_event = {
 			name = diamonds_are_boer
 			duration = 1825
 		}
-		random_owned = {
-			limit = {
-				owner = {
-					NOT = { has_country_modifier = diamond_rush_country }
+		owner = {
+			random_owned = {
+				limit = {
+					owner = {
+						NOT = { has_country_modifier = diamond_rush_country }
+					}
 				}
+				owner = { add_country_modifier = { name = diamond_rush_country duration = 1095 } }
 			}
-			owner = { add_country_modifier = { name = diamond_rush_country duration = 1095 } }
 		}
 	}
 }
@@ -489,13 +491,15 @@ province_event = {
 			name = diamonds_are_boer
 			duration = 1825
 		}
-		random_owned = {
-			limit = {
-				owner = {
-					NOT = { has_country_modifier = diamond_rush_country }
+		owner = {
+			random_owned = {
+				limit = {
+					owner = {
+						NOT = { has_country_modifier = diamond_rush_country }
+					}
 				}
+				owner = { add_country_modifier = { name = diamond_rush_country duration = 1095 } }
 			}
-			owner = { add_country_modifier = { name = diamond_rush_country duration = 1095 } }
 		}
 	}
 }
@@ -580,13 +584,15 @@ province_event = {
 			name = anon_rubber_boom
 			duration = 1095
 		}
-		random_owned = {
-			limit = {
-				owner = {
-					NOT = { has_country_modifier = rubber_boom_country }
+		owner = {
+			random_owned = {
+				limit = {
+					owner = {
+						NOT = { has_country_modifier = rubber_boom_country }
+					}
 				}
+				owner = { add_country_modifier = { name = rubber_boom_country duration = 1095 } }
 			}
-			owner = { add_country_modifier = { name = rubber_boom_country duration = 1095 } }
 		}
 		# life_rating = 5
 	}
@@ -657,13 +663,15 @@ province_event = {
 			name = anon_rubber_boom
 			duration = 1095
 		}
-		random_owned = {
-			limit = {
-				owner = {
-					NOT = { has_country_modifier = rubber_boom_country }
+		owner = {
+			random_owned = {
+				limit = {
+					owner = {
+						NOT = { has_country_modifier = rubber_boom_country }
+					}
 				}
+				owner = { add_country_modifier = { name = rubber_boom_country duration = 1095 } }
 			}
-			owner = { add_country_modifier = { name = rubber_boom_country duration = 1095 } }
 		}
 		# life_rating = 5
 	}

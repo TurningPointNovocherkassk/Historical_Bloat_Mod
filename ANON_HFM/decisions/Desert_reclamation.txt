@@ -86,8 +86,15 @@ political_decisions = {
 				owns = 1147
 				is_our_vassal = KHR
 			}
+			OR = {
+				AND = {
+					owns = 1150
+					owns = 3470
+				}
+				is_our_vassal = ZFU
+			}
 
-			NOT = { has_country_flag = persian_asia }
+			# NOT = { has_country_flag = persian_asia }
 		}
 
 		allow = {
@@ -105,7 +112,7 @@ political_decisions = {
 			OR = {
 				civilized = yes
 				foreign_training = yes_foreign_training
-				#has_country_flag = turkmenchay_treaty
+				# has_country_flag = turkmenchay_treaty
 			}
 		}
 
@@ -118,6 +125,10 @@ political_decisions = {
 			3473 = { add_core = PER }
 			relation = {
 				who = KHI
+				value = -10
+			}
+			relation = {
+				who = TKM
 				value = -10
 			}
 		}
@@ -197,6 +208,7 @@ political_decisions = {
 		potential = {
 			tag = PER
 			owns = 1135
+			NOT = { owns = 1136 }
 			NOT = { has_country_flag = bushehr_asserted }
 		}
 
@@ -402,7 +414,7 @@ political_decisions = {
 		# potential = {
 			# tag = PER
 			# owns = 1135
-			# is_our_vassal = KHZ
+			# is_our_vassal = AHW
 		# }
 
 		# allow = {
@@ -413,12 +425,12 @@ political_decisions = {
 
 		# effect = {
 			# badboy = 1
-			# KHZ = {
+			# AHW = {
 				# any_owned = {
 					# add_core = PER
 				# }
 			# }
-			# inherit = KHZ
+			# inherit = AHW
 		# }
 		# ai_will_do = {
 			# factor = 1

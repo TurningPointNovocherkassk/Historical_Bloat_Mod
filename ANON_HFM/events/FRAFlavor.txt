@@ -1156,7 +1156,7 @@ country_event = {
 			limit = { is_core = CRE }
 			change_controller = THIS
 			any_pop = {
-				limit = { has_pop_culture = greek }
+				limit = { is_culture_group = pan_greek }
 				militancy = -8
 			}
 			secede_province = CRE

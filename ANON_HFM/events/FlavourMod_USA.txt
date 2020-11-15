@@ -268,11 +268,13 @@ country_event = {
 				}
 				any_owned = {
 					limit = {
-						region = MEX_94
-						region = MEX_100
-						region = MEX_97
-						region = USA_111
-						region = USA_106
+						OR = {
+							region = MEX_94
+							region = MEX_100
+							region = MEX_97
+							region = USA_111
+							region = USA_106
+						}
 					}
 					secede_province = MEX
 				}
@@ -439,7 +441,7 @@ country_event = {
 				government = democracy
 			}
 			AND = {
-				primary_culture = latin_american_cultures
+				is_culture_group = latin_american_cultures
 				OR = {
 					owns = 104 #San Francisco
 					owns = 89 #Los Angeles

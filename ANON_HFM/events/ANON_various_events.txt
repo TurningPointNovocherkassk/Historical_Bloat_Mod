@@ -1339,18 +1339,24 @@ country_event = {
 		option = {
 			name = "EVTOPTA1000035"
 			set_country_flag = costa_guzman_accept
-			BOL_2370 = { add_core = THIS } #Puna de Atacama
+			BOL_2370 = { add_core = FROM } #Puna de Atacama
 			2371 = { #Tarija
 				secede_province = THIS
-				remove_core = FROM
 				remove_core = ARG
 				remove_core = ARC
+				remove_core = SBA
+				remove_core = CRT
+				remove_core = ENT
+				remove_core = LPL
 			}
 			2315 = { #Yavi
-				secede_province = FROM
-				remove_core = THIS
-				remove_core = BOL
-				remove_core = PBC
+				secede_province = THIS
+				remove_core = ARG
+				remove_core = ARC
+				remove_core = SBA
+				remove_core = CRT
+				remove_core = ENT
+				remove_core = LPL
 			}
 			FROM = { country_event = 1000036 }
 			ai_chance = {
@@ -1408,20 +1414,22 @@ country_event = {
 		option = {
 			name = "EVTOPTA1000038"
 			set_country_flag = barros_gutierrez_accept
-			BOL_2370 = { #Puna de Atacama
+			any_owned = {
+				limit = { region = BOL_2370 } #Puna de Atacama
 				add_core = CHL
 				remove_core = THIS
 				remove_core = BOL
+				secede_province = FROM
 			}
 			2308 = { #Arica
 				add_core = FROM
-				add_core = BOL
+				remove_core = BOL
 				remove_core = THIS
 				secede_province = FROM
 			}
 			2578 = { #Tacna
 				add_core = FROM
-				add_core = BOL
+				remove_core = BOL
 				remove_core = THIS
 				secede_province = FROM
 			}
@@ -1482,8 +1490,8 @@ country_event = {
 			name = "EVTOPTA1000041"
 			set_country_flag = rocha_cano_accept
 			BOL_2370 = { #Puna de Atacama
-				add_core = THIS
-				remove_core = FROM
+				add_core = FROM
+				remove_core = THIS
 				remove_core = BOL
 			}
 			FROM = { country_event = 1000042 }

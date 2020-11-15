@@ -2004,7 +2004,7 @@ country_event = {
 				remove_core = PER
 			}
 		}
-		KHZ = {
+		AHW = {
 			any_owned = {
 				limit = {
 					is_core = TUR
@@ -2681,7 +2681,7 @@ country_event = {
 				# vassal_of = PER
 				# NOT = {
 					# tag = KHR
-					# tag = KHZ
+					# tag = AHW
 				# }
 			# }
 			# country_event = {
@@ -2697,7 +2697,7 @@ country_event = {
 						# days = 45
 					# }
 				# }
-				# KHZ = {
+				# AHW = {
 					# country_event = {
 						# id = 301072
 						# days = 167
@@ -2711,7 +2711,7 @@ country_event = {
 						# days = 32
 					# }
 				# }
-				# KHZ = {
+				# AHW = {
 					# country_event = {
 						# id = 301072
 						# days = 74
@@ -2725,7 +2725,7 @@ country_event = {
 						# days = 149
 					# }
 				# }
-				# KHZ = {
+				# AHW = {
 					# country_event = {
 						# id = 301072
 						# days = 184
@@ -2740,7 +2740,7 @@ country_event = {
 						# days = 64
 					# }
 				# }
-				# KHZ = {
+				# AHW = {
 					# country_event = {
 						# id = 301072
 						# days = 201
@@ -3274,7 +3274,7 @@ country_event = {
 				# vassal_of = PER
 				# NOT = {
 					# tag = KHR
-					# tag = KHZ
+					# tag = AHW
 				# }
 			# }
 			# country_event = {
@@ -3290,7 +3290,7 @@ country_event = {
 						# days = 45
 					# }
 				# }
-				# KHZ = {
+				# AHW = {
 					# country_event = {
 						# id = 301072
 						# days = 167
@@ -3304,7 +3304,7 @@ country_event = {
 						# days = 32
 					# }
 				# }
-				# KHZ = {
+				# AHW = {
 					# country_event = {
 						# id = 301072
 						# days = 74
@@ -3318,7 +3318,7 @@ country_event = {
 						# days = 149
 					# }
 				# }
-				# KHZ = {
+				# AHW = {
 					# country_event = {
 						# id = 301072
 						# days = 184
@@ -3333,7 +3333,7 @@ country_event = {
 						# days = 64
 					# }
 				# }
-				# KHZ = {
+				# AHW = {
 					# country_event = {
 						# id = 301072
 						# days = 201
@@ -3565,7 +3565,7 @@ country_event = {
 				# factor = 1.25
 			# }
 			# modifier = {
-				# tag = KHZ
+				# tag = AHW
 				# factor = 0.75
 			# }
 		# }
@@ -3586,7 +3586,7 @@ country_event = {
 				# factor = 0.75
 			# }
 			# modifier = {
-				# tag = KHZ
+				# tag = AHW
 				# factor = 1.25
 			# }
 		# }
@@ -3633,11 +3633,11 @@ country_event = {
 		# exists = yes
 		# ai = yes
 		# war = no
-		# exists = KHZ
-		# NOT = { is_our_vassal = KHZ }
-		# NOT = { KHZ = { part_of_sphere = yes } }
-		# NOT = { KHZ = { is_vassal = yes } }
-		# NOT = { KHZ = { stronger_army_than = PER } }
+		# exists = AHW
+		# NOT = { is_our_vassal = AHW }
+		# NOT = { AHW = { part_of_sphere = yes } }
+		# NOT = { AHW = { is_vassal = yes } }
+		# NOT = { AHW = { stronger_army_than = PER } }
 		# military_score = 4
 	# }
 
@@ -3652,12 +3652,12 @@ country_event = {
 	# option = {
 		# name = "It is ours afterall..."
 		# casus_belli = {
-			# target = KHZ
+			# target = AHW
 			# type = make_puppet
 			# months = 12
 		# }
 		# war = {
-			# target = KHZ
+			# target = AHW
 			# attacker_goal = {
 				# casus_belli = make_puppet
 			# }

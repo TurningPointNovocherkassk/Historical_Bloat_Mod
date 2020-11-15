@@ -1591,6 +1591,8 @@ assimilation_chance = {
 			has_pop_culture = sorbian
 			has_pop_culture = kashubian
 			has_pop_culture = masurian
+			has_pop_culture = karamanli
+			has_pop_culture = yoruk
 		}
 		NOT = {
 			OR = {
@@ -1603,6 +1605,8 @@ assimilation_chance = {
 				country = { primary_culture = sorbian }
 				country = { primary_culture = kashubian }
 				country = { primary_culture = masurian }
+				country = { primary_culture = karamanli }
+				country = { primary_culture = yoruk }
 			}
 		}
 	}
@@ -1924,6 +1928,7 @@ conversion_chance = {
 			has_pop_religion = sunni
 			has_pop_religion = ibadi
 			has_pop_religion = anabaptist
+			has_pop_culture = karamanli
 			AND = {
 				has_pop_religion = shinto
 				has_culture_core = yes

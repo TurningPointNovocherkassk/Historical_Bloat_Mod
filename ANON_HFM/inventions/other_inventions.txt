@@ -1240,14 +1240,14 @@ Populism = {
 			factor = 1
 			OR = {
 				nationalvalue = nv_equality
-				nationalvalue = nv_unity
-				nationalvalue = nv_prosperity
+				# nationalvalue = nv_unity
+				# nationalvalue = nv_prosperity
 			}
 		}
-		modifier = {
-			factor = 2
-			nationalvalue = nv_fraternity
-		}
+		# modifier = {
+			# factor = 2
+			# nationalvalue = nv_fraternity
+		# }
 	}
 	social_reform_desire = 0.05
 	effect = {
@@ -1273,14 +1273,14 @@ Establishment = {
 			factor = 1
 			OR = {
 				nationalvalue = nv_order
-				nationalvalue = nv_unity
-				nationalvalue = nv_dominion
+				# nationalvalue = nv_unity
+				# nationalvalue = nv_dominion
 			}
 		}
-		modifier = {
-			factor = 2
-			nationalvalue = nv_productivity
-		}
+		# modifier = {
+			# factor = 2
+			# nationalvalue = nv_productivity
+		# }
 	}
 	social_reform_desire = -0.05
 	effect = {
@@ -1306,14 +1306,14 @@ Clericalism = {
 			factor = 1
 			OR = {
 				nationalvalue = nv_order
-				nationalvalue = nv_unity
-				nationalvalue = nv_dominion
+				# nationalvalue = nv_unity
+				# nationalvalue = nv_dominion
 			}
 		}
-		modifier = {
-			factor = 2
-			nationalvalue = nv_productivity
-		}
+		# modifier = {
+			# factor = 2
+			# nationalvalue = nv_productivity
+		# }
 	}
 	core_pop_militancy_modifier = -0.01
 	core_pop_consciousness_modifier = -0.03
@@ -1338,14 +1338,14 @@ Anticlericalism = {
 			factor = 1
 			OR = {
 				nationalvalue = nv_liberty
-				nationalvalue = nv_prosperity
-				nationalvalue = nv_glory
+				# nationalvalue = nv_prosperity
+				# nationalvalue = nv_glory
 			}
 		}
-		modifier = {
-			factor = 2
-			nationalvalue = nv_freedom
-		}
+		# modifier = {
+			# factor = 2
+			# nationalvalue = nv_freedom
+		# }
 	}
 	core_pop_consciousness_modifier = 0.03
 	effect = { plurality = 0.02 }
@@ -1373,14 +1373,14 @@ Bureaucracy = {
 			factor = 4
 			OR = {
 				nationalvalue = nv_equality
-				nationalvalue = nv_unity
-				nationalvalue = nv_prosperity
+				# nationalvalue = nv_unity
+				# nationalvalue = nv_prosperity
 			}
 		}
-		modifier = {
-			factor = 5
-			nationalvalue = nv_fraternity
-		}
+		# modifier = {
+			# factor = 5
+			# nationalvalue = nv_fraternity
+		# }
 	}
 	effect = { plurality = 0.02 }
 	political_reform_desire = 0.10
@@ -1404,18 +1404,18 @@ Nepotism = {
 			factor = 3
 			government = absolute_monarchy
 		}
-		modifier = {
-			factor = 4
-			OR = {
-				nationalvalue = nv_might
-				nationalvalue = nv_glory
-				nationalvalue = nv_dominion
-			}
-		}
-		modifier = {
-			factor = 5
-			nationalvalue = nv_supremacy
-		}
+		# modifier = {
+			# factor = 4
+			# OR = {
+				# nationalvalue = nv_might
+				# nationalvalue = nv_glory
+				# nationalvalue = nv_dominion
+			# }
+		# }
+		# modifier = {
+			# factor = 5
+			# nationalvalue = nv_supremacy
+		# }
 	}
 	effect = { plurality = -0.05 }
 	political_reform_desire = -0.10
@@ -1443,8 +1443,8 @@ Aristocracy = {
 			factor = 4
 			OR = {
 				nationalvalue = nv_order
-				nationalvalue = nv_unity
-				nationalvalue = nv_dominion
+				# nationalvalue = nv_unity
+				# nationalvalue = nv_dominion
 			}
 		}
 		modifier = {
@@ -1479,14 +1479,14 @@ Meritocracy = {
 			factor = 4
 			OR = {
 				nationalvalue = nv_liberty
-				nationalvalue = nv_prosperity
-				nationalvalue = nv_glory
+				# nationalvalue = nv_prosperity
+				# nationalvalue = nv_glory
 			}
 		}
-		modifier = {
-			factor = 5
-			nationalvalue = nv_freedom
-		}
+		# modifier = {
+			# factor = 5
+			# nationalvalue = nv_freedom
+		# }
 	}
 	effect = { plurality = 0.05 }
 	political_reform_desire = 0.05
@@ -1534,14 +1534,14 @@ jominian_attitude = {
 			factor = 4
 			OR = {
 				nationalvalue = nv_equality
-				nationalvalue = nv_unity
-				nationalvalue = nv_prosperity
+				# nationalvalue = nv_unity
+				# nationalvalue = nv_prosperity
 			}
 		}
-		modifier = {
-			factor = 5
-			nationalvalue = nv_fraternity
-		}
+		# modifier = {
+			# factor = 5
+			# nationalvalue = nv_fraternity
+		# }
 	}
 	effect = {
 		morale = 0.25
@@ -1560,18 +1560,18 @@ clausewitzian_theory = {
 	news = no
 	chance = {
 		base = 3
-		modifier = {
-			factor = 4
-			OR = {
-				nationalvalue = nv_might
-				nationalvalue = nv_glory
-				nationalvalue = nv_dominion
-			}
-		}
-		modifier = {
-			factor = 5
-			nationalvalue = nv_supremacy
-		}
+		# modifier = {
+			# factor = 4
+			# OR = {
+				# nationalvalue = nv_might
+				# nationalvalue = nv_glory
+				# nationalvalue = nv_dominion
+			# }
+		# }
+		# modifier = {
+			# factor = 5
+			# nationalvalue = nv_supremacy
+		# }
 		modifier = {
 			factor = 2
 			tag = PRU
@@ -1599,30 +1599,30 @@ declaration_of_the_rights_of_man = {
 			factor = 1
 			OR = {
 				nationalvalue = nv_equality
-				nationalvalue = nv_unity
-				nationalvalue = nv_prosperity
+				# nationalvalue = nv_unity
+				# nationalvalue = nv_prosperity
 			}
 		}
-		modifier = {
-			factor = 2
-			nationalvalue = nv_fraternity
-		}
+		# modifier = {
+			# factor = 2
+			# nationalvalue = nv_fraternity
+		# }
 		modifier = {
 			factor = 5
 			average_militancy = 4
 		}
-		modifier = {
-			factor = 4
-			nationalvalue = nv_enlightenment
-		}
-		modifier = {
-			factor = 2
-			nationalvalue = nv_loyalty
-		}
-		modifier = {
-			factor = 6
-			nationalvalue = nv_progress
-		}
+		# modifier = {
+			# factor = 4
+			# nationalvalue = nv_enlightenment
+		# }
+		# modifier = {
+			# factor = 2
+			# nationalvalue = nv_loyalty
+		# }
+		# modifier = {
+			# factor = 6
+			# nationalvalue = nv_progress
+		# }
 		modifier = {
 			factor = -3
 			civilized = no
@@ -1763,26 +1763,26 @@ spirit_of_freedom = {
 			factor = 5
 			OR = {
 				nationalvalue = nv_liberty
-				nationalvalue = nv_prosperity
-				nationalvalue = nv_glory
+				# nationalvalue = nv_prosperity
+				# nationalvalue = nv_glory
 			}
 		}
-		modifier = {
-			factor = 8
-			nationalvalue = nv_freedom
-		}
-		modifier = {
-			factor = 5
-			OR = {
-				nationalvalue = nv_equality
-				nationalvalue = nv_unity
-				nationalvalue = nv_prosperity
-			}
-		}
-		modifier = {
-			factor = 8
-			nationalvalue = nv_fraternity
-		}
+		# modifier = {
+			# factor = 8
+			# nationalvalue = nv_freedom
+		# }
+		# modifier = {
+			# factor = 5
+			# OR = {
+				# nationalvalue = nv_equality
+				# nationalvalue = nv_unity
+				# nationalvalue = nv_prosperity
+			# }
+		# }
+		# modifier = {
+			# factor = 8
+			# nationalvalue = nv_fraternity
+		# }
 		modifier = {
 			factor = -8
 			civilized = no

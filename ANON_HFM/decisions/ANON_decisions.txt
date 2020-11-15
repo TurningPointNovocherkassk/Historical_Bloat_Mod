@@ -617,10 +617,11 @@ political_decisions = {
 					OR = {
 						in_sphere = THIS
 						vassal_of = THIS
+						substate_of = THIS
 					}
 				}
 				any_owned = {
-					limit = { is_core = ober_ost }
+					limit = { is_core = THIS }
 					secede_province = THIS
 				}
 			}			
@@ -828,7 +829,7 @@ political_decisions = {
 				}
 				AND = {
 					OR = {
-						primary_culture = turkish
+						is_culture_group = turko_semitic
 						is_culture_group = turanian
 					}
 					OR = {
@@ -933,7 +934,7 @@ political_decisions = {
 					province_id = 677
 					owner = {
 						OR = { 
-							primary_culture = turkish
+							is_culture_group = turko_semitic
 							is_culture_group = turanian
 						}
 					}
@@ -956,7 +957,7 @@ political_decisions = {
 					province_id = 3622
 					owner = {
 						OR = { 
-							primary_culture = turkish
+							is_culture_group = turko_semitic
 							is_culture_group = turanian
 						}
 					}
@@ -975,7 +976,7 @@ political_decisions = {
 					province_id = 3347
 					owner = {
 						OR = { 
-							primary_culture = turkish
+							is_culture_group = turko_semitic
 							is_culture_group = turanian
 						}
 					}
@@ -6774,7 +6775,10 @@ political_decisions = {
 					AND = { owns = 850 NOT = { has_global_flag = southslavic_renamed_shkoder } }
 				}
 				AND = {
-					is_culture_group = levantine
+					OR = {
+						is_culture_group = levantine
+						is_culture_group = pan_greek
+					}
 					AND = { owns = 850 NOT = { has_global_flag = levantine_renamed_shkoder } }
 				}
 				AND = {
@@ -6839,7 +6843,10 @@ political_decisions = {
 				limit = {
 					province_id = 850
 					owner = {
-						is_culture_group = levantine
+						OR = {
+							is_culture_group = levantine
+							is_culture_group = pan_greek
+						}
 					}
 				}
 				850 = {
@@ -7950,7 +7957,7 @@ political_decisions = {
 					AND = { owns = 791 NOT = { has_global_flag = hungarian_renamed_syrmia } }
 				}
 				AND = {
-					primary_culture = greek
+					is_culture_group = pan_greek
 					AND = { owns = 791 NOT = { has_global_flag = greek_renamed_syrmia } }
 				}
 			}
@@ -8024,7 +8031,7 @@ political_decisions = {
 				limit = {
 					province_id = 791
 					owner = {
-						primary_culture = greek
+						is_culture_group = pan_greek
 					}
 				}
 				791 = {
@@ -8060,7 +8067,7 @@ political_decisions = {
 					AND = { owns = 793 NOT = { has_global_flag = hungarian_renamed_vukovar } }
 				}
 				AND = {
-					primary_culture = greek
+					is_culture_group = pan_greek
 					AND = { owns = 793 NOT = { has_global_flag = greek_renamed_vukovar } }
 				}
 			}
@@ -8134,7 +8141,7 @@ political_decisions = {
 				limit = {
 					province_id = 793
 					owner = {
-						primary_culture = greek
+						is_culture_group = pan_greek
 					}
 				}
 				793 = {
@@ -12801,7 +12808,7 @@ political_decisions = {
 	greek_rename_bulgaria = {
 		picture = gtfo
 		potential = {
-			primary_culture = greek
+			is_culture_group = pan_greek
 			owns = 809
 			NOT = { has_global_flag = greek_rename_bulgaria }
 		}
@@ -12832,7 +12839,7 @@ political_decisions = {
 	bulgarian_rename_bulgaria = {
 		picture = gtfo
 		potential = {
-			NOT = { primary_culture = greek }
+			NOT = { is_culture_group = pan_greek }
 			owns = 809
 			NOT = { has_global_flag = bulgarian_rename_bulgaria }
 		}
@@ -12863,7 +12870,7 @@ political_decisions = {
 	greek_rename_dubrovnik = {
 		picture = gtfo
 		potential = {
-			primary_culture = greek
+			is_culture_group = pan_greek
 			owns = 782
 			NOT = { has_global_flag = greek_rename_dubrovnik }
 		}
@@ -12946,7 +12953,7 @@ political_decisions = {
 	greek_rename_montenegro = {
 		picture = gtfo
 		potential = {
-			primary_culture = greek
+			is_culture_group = pan_greek
 			owns = 2583
 			NOT = { has_global_flag = greek_rename_montenegro }
 		}
@@ -13009,7 +13016,7 @@ political_decisions = {
 	greek_rename_sserbia = {
 		picture = gtfo
 		potential = {
-			primary_culture = greek
+			is_culture_group = pan_greek
 			owns = 803
 			NOT = { has_global_flag = greek_rename_sserbia }
 		}
@@ -13072,7 +13079,7 @@ political_decisions = {
 	greek_rename_nserbia = {
 		picture = gtfo
 		potential = {
-			primary_culture = greek
+			is_culture_group = pan_greek
 			owns = 794
 			NOT = { has_global_flag = greek_rename_nserbia }
 		}
@@ -13134,7 +13141,7 @@ political_decisions = {
 	greek_rename_dobrudja = {
 		picture = gtfo
 		potential = {
-			primary_culture = greek
+			is_culture_group = pan_greek
 			owns = 674
 			NOT = { has_global_flag = greek_rename_dobrudja }
 		}
@@ -13162,7 +13169,7 @@ political_decisions = {
 	normal_rename_dobrudja = {
 		picture = gtfo
 		potential = {
-			NOT = { primary_culture = greek }
+			NOT = { is_culture_group = pan_greek }
 			owns = 674
 			NOT = { has_global_flag = normal_rename_dobrudja }
 		}
@@ -13190,7 +13197,7 @@ political_decisions = {
 	greek_rename_campania = {
 		picture = gtfo
 		potential = {
-			primary_culture = greek
+			is_culture_group = pan_greek
 			owns = 754
 			NOT = { has_global_flag = greek_rename_campania }
 		}
@@ -13262,7 +13269,7 @@ political_decisions = {
 	greek_rename_puglia = {
 		picture = gtfo
 		potential = {
-			primary_culture = greek
+			is_culture_group = pan_greek
 			owns = 756
 			NOT = { has_global_flag = greek_rename_puglia }
 		}
@@ -13332,7 +13339,7 @@ political_decisions = {
 	greek_rename_rome = {
 		picture = gtfo
 		potential = {
-			primary_culture = greek
+			is_culture_group = pan_greek
 			owns = 749
 			NOT = { has_global_flag = greek_rename_rome }
 		}
@@ -13406,7 +13413,7 @@ political_decisions = {
 	greek_rename_crimea = {
 		picture = gtfo
 		potential = {
-			primary_culture = greek
+			is_culture_group = pan_greek
 			owns = 967  
 			NOT = { has_global_flag = greek_rename_crimea }
 		}
@@ -13447,7 +13454,7 @@ political_decisions = {
 	russian_rename_crimea = {
 		picture = gtfo
 		potential = {
-			NOT = { primary_culture = greek }
+			NOT = { is_culture_group = pan_greek }
 			owns = 967  
 			NOT = { has_global_flag = russian_rename_crimea }
 		}
@@ -13478,7 +13485,7 @@ political_decisions = {
 	greek_rename_taman = {
 		picture = gtfo
 		potential = {
-			primary_culture = greek
+			is_culture_group = pan_greek
 			owns = 1049  
 			NOT = { has_global_flag = greek_rename_taman }
 		}
@@ -13499,7 +13506,7 @@ political_decisions = {
 	normal_rename_taman = {
 		picture = gtfo
 		potential = {
-			NOT = { primary_culture = greek }
+			NOT = { is_culture_group = pan_greek }
 			owns = 1049  
 			NOT = { has_global_flag = normal_rename_taman }
 		}
@@ -13521,7 +13528,7 @@ political_decisions = {
 	greek_rename_odessa = {
 		picture = gtfo
 		potential = {
-			primary_culture = greek
+			is_culture_group = pan_greek
 			owns = 968  
 			NOT = { has_global_flag = greek_rename_odessa }
 		}
@@ -13542,7 +13549,7 @@ political_decisions = {
 	normal_rename_odessa = {
 		picture = gtfo
 		potential = {
-			NOT = { primary_culture = greek }
+			NOT = { is_culture_group = pan_greek }
 			owns = 968  
 			NOT = { has_global_flag = normal_rename_odessa }
 		}
@@ -13565,7 +13572,7 @@ political_decisions = {
 	greek_rename_moldova = {
 		picture = gtfo
 		potential = {
-			primary_culture = greek
+			is_culture_group = pan_greek
 			owns = 3280  
 			owns = 678  
 			NOT = { has_global_flag = greek_rename_moldova }
@@ -13589,7 +13596,7 @@ political_decisions = {
 	normal_rename_moldova = {
 		picture = gtfo
 		potential = {
-			NOT = { primary_culture = greek }
+			NOT = { is_culture_group = pan_greek }
 			owns = 3280  
 			owns = 678  
 			NOT = { has_global_flag = normal_rename_moldova }
@@ -13614,7 +13621,7 @@ political_decisions = {
 	greek_rename_sicily = {
 		picture = gtfo
 		potential = {
-			primary_culture = greek
+			is_culture_group = pan_greek
 			owns = 763
 			NOT = { has_global_flag = greek_rename_sicily }
 		}
@@ -13875,7 +13882,7 @@ political_decisions = {
 				add_core = BYZ
 			}
 			any_pop = {
-				limit = { has_pop_culture = greek }
+				limit = { is_culture_group = pan_greek }
 				militancy = -1
 				dominant_issue = { factor = 0.1 value = jingoism }
 			}
@@ -13916,7 +13923,7 @@ political_decisions = {
 				add_core = BYZ
 			}
 			any_pop = {
-				limit = { has_pop_culture = greek }
+				limit = { is_culture_group = pan_greek }
 				militancy = -1
 				dominant_issue = { factor = 0.1 value = jingoism }
 			}
@@ -13954,7 +13961,7 @@ political_decisions = {
 				add_core = BYZ
 			}
 			any_pop = {
-				limit = { has_pop_culture = greek }
+				limit = { is_culture_group = pan_greek }
 				militancy = -1
 				dominant_issue = { factor = 0.1 value = jingoism }
 			}
@@ -14004,7 +14011,7 @@ political_decisions = {
 				add_core = BYZ
 			}
 			any_pop = {
-				limit = { has_pop_culture = greek }
+				limit = { is_culture_group = pan_greek }
 				militancy = -1
 				dominant_issue = { factor = 0.1 value = jingoism }
 			}
@@ -14063,7 +14070,7 @@ political_decisions = {
 				add_core = BYZ
 			}
 			any_pop = {
-				limit = { has_pop_culture = greek }
+				limit = { is_culture_group = pan_greek }
 				militancy = -1
 				dominant_issue = { factor = 0.1 value = jingoism }
 			}
@@ -14140,7 +14147,7 @@ political_decisions = {
 				add_core = BYZ # benevento
 			}
 			any_pop = {
-				limit = { has_pop_culture = greek }
+				limit = { is_culture_group = pan_greek }
 				militancy = -1
 				dominant_issue = { factor = 0.1 value = jingoism }
 			}
@@ -14210,7 +14217,7 @@ political_decisions = {
 				add_core = BYZ
 			}
 			any_pop = {
-				limit = { has_pop_culture = greek }
+				limit = { is_culture_group = pan_greek }
 				militancy = -1
 				dominant_issue = { factor = 0.1 value = jingoism }
 			}
@@ -14279,7 +14286,7 @@ political_decisions = {
 	picture = claim_pontus
 	
 		potential = {
-			primary_culture = greek
+			is_culture_group = pan_greek
 			has_country_flag = greece_has_got_a_brand_new_bag
 			#has_country_flag = claim_pontus
 			NOT = { has_country_flag = claim_rumelia }
@@ -14307,7 +14314,7 @@ political_decisions = {
 				add_core = GRE
 			}
 			any_pop = {
-				limit = { has_pop_culture = greek }
+				limit = { is_culture_group = pan_greek }
 				militancy = -1
 				dominant_issue = { factor = 0.1 value = jingoism }
 			}
@@ -14323,7 +14330,7 @@ political_decisions = {
 	picture = claim_pontus
 	
 		potential = {
-			primary_culture = greek
+			is_culture_group = pan_greek
 			has_country_flag = greece_has_got_a_brand_new_bag
 			#GRE = { all_core = { owned_by = THIS } }
 			NOT = { has_country_flag = claim_ikonion }
@@ -14344,7 +14351,7 @@ political_decisions = {
 				all_core = { add_core = THIS remove_core = IKO }
 			}
 			any_pop = {
-				limit = { has_pop_culture = greek }
+				limit = { is_culture_group = pan_greek }
 				militancy = -1
 				dominant_issue = { factor = 0.1 value = jingoism }
 			}
@@ -14359,7 +14366,7 @@ political_decisions = {
 	picture = claim_pontus
 	
 		potential = {
-			primary_culture = greek
+			is_culture_group = pan_greek
 			has_country_flag = greece_has_got_a_brand_new_bag
 			#GRE = { all_core = { owned_by = THIS } }
 			NOT = { has_country_flag = claim_antioch }
@@ -14380,7 +14387,7 @@ political_decisions = {
 				all_core = { add_core = THIS remove_core = ACH }
 			}
 			any_pop = {
-				limit = { has_pop_culture = greek }
+				limit = { is_culture_group = pan_greek }
 				militancy = -1
 				dominant_issue = { factor = 0.1 value = jingoism }
 			}
@@ -14396,7 +14403,7 @@ political_decisions = {
 	picture = claim_pontus
 	
 		potential = {
-			primary_culture = greek
+			is_culture_group = pan_greek
 			has_country_flag = greece_has_got_a_brand_new_bag
 			#has_country_flag = claim_pontus
 			NOT = { has_country_flag = claim_nmacedonia }
@@ -14421,7 +14428,7 @@ political_decisions = {
 				add_core = GRE
 			}
 			any_pop = {
-				limit = { has_pop_culture = greek }
+				limit = { is_culture_group = pan_greek }
 				militancy = -1
 				dominant_issue = { factor = 0.1 value = jingoism }
 			}

@@ -49,7 +49,7 @@ political_decisions = {
 				limit = {
 					OR = {
 						has_pop_religion = orthodox
-						has_pop_religion = apostolic
+						has_pop_religion = coptic
 						has_pop_religion = nestorian
 						has_pop_religion = catholic
 						has_pop_religion = maronite
@@ -79,7 +79,12 @@ political_decisions = {
 								is_core = TCA
 							}
 						}
-						has_pop_culture = turkish
+						OR = {
+							is_culture_group = turko_semitic
+							has_pop_culture = kurdish
+							has_pop_culture = tatar
+							has_pop_culture = circassian
+						}
 					}
 					reduce_pop = 0.70
 				}
@@ -287,7 +292,7 @@ political_decisions = {
 	unite_with_byzantium = {
 	picture = unite_with_greece
 		potential = {
-			primary_culture = greek
+			is_culture_group = pan_greek
 			NOT = { tag = BYZ }
 			exists = BYZ
 			NOT = { has_country_flag = unite_with_byzantium }
@@ -630,7 +635,9 @@ political_decisions = {
 					any_pop = {
 						OR = {
 							is_culture_group = turko_semitic
-							has_pop_culture = turkish
+							has_pop_culture = kurdish
+							has_pop_culture = tatar
+							has_pop_culture = circassian
 						} 
 					}
 				}
@@ -763,7 +770,7 @@ political_decisions = {
 	greek_rename_transjordan = {
 		picture = gtfo
 		potential = {
-			primary_culture = greek
+			is_culture_group = pan_greek
 			owns = 908
 			NOT = { has_global_flag = greek_rename_transjordan }
 		}
@@ -793,7 +800,7 @@ political_decisions = {
 	normal_rename_transjordan = {
 		picture = gtfo
 		potential = {
-			NOT = { primary_culture = greek }
+			NOT = { is_culture_group = pan_greek }
 			owns = 908
 			NOT = { has_global_flag = normal_rename_transjordan }
 			has_global_flag = greek_rename_transjordan
@@ -824,7 +831,7 @@ political_decisions = {
 	greek_rename_palestine = {
 		picture = gtfo
 		potential = {
-			primary_culture = greek
+			is_culture_group = pan_greek
 			owns = 917
 			NOT = { has_global_flag = greek_rename_palestine }
 		}
@@ -854,7 +861,7 @@ political_decisions = {
 	normal_rename_palestine = {
 		picture = gtfo
 		potential = {
-			NOT = { primary_culture = greek }
+			NOT = { is_culture_group = pan_greek }
 			owns = 917
 			NOT = { has_global_flag = normal_rename_palestine }
 			has_global_flag = greek_rename_palestine
@@ -885,7 +892,7 @@ political_decisions = {
 	greek_rename_lebanon = {
 		picture = gtfo
 		potential = {
-			primary_culture = greek
+			is_culture_group = pan_greek
 			owns = 913
 			NOT = { has_global_flag = greek_rename_lebanon }
 		}
@@ -916,7 +923,7 @@ political_decisions = {
 	normal_rename_lebanon = {
 		picture = gtfo
 		potential = {
-			NOT = { primary_culture = greek }
+			NOT = { is_culture_group = pan_greek }
 			owns = 913
 			NOT = { has_global_flag = normal_rename_lebanon }
 			has_global_flag = greek_rename_lebanon
@@ -948,7 +955,7 @@ political_decisions = {
 	greek_rename_syria = {
 		picture = gtfo
 		potential = {
-			primary_culture = greek
+			is_culture_group = pan_greek
 			owns = 902
 			NOT = { has_global_flag = greek_rename_syria }
 		}
@@ -979,7 +986,7 @@ political_decisions = {
 	normal_rename_syria = {
 		picture = gtfo
 		potential = {
-			NOT = { primary_culture = greek }
+			NOT = { is_culture_group = pan_greek }
 			owns = 902
 			NOT = { has_global_flag = normal_rename_syria }
 			has_global_flag = greek_rename_syria
@@ -1011,7 +1018,7 @@ political_decisions = {
 	greek_rename_bosnia = {
 		picture = gtfo
 		potential = {
-			primary_culture = greek
+			is_culture_group = pan_greek
 			owns = 783
 			NOT = { has_global_flag = greek_rename_bosnia }
 		}
@@ -1043,7 +1050,7 @@ political_decisions = {
 	normal_rename_bosnia = {
 		picture = gtfo
 		potential = {
-			NOT = { primary_culture = greek }
+			NOT = { is_culture_group = pan_greek }
 			owns = 783
 			NOT = { has_global_flag = normal_rename_bosnia }
 			has_global_flag = greek_rename_bosnia
@@ -1693,7 +1700,7 @@ political_decisions = {
 	# greek_rename_aleppo = {
 		# picture = gtfo
 		# potential = {
-			# primary_culture = greek
+			# is_culture_group = pan_greek
 			# owns = 900
 			# NOT = { has_global_flag = greek_rename_aleppo }
 		# }
@@ -1723,7 +1730,7 @@ political_decisions = {
 	# normal_rename_aleppo = {
 		# picture = gtfo
 		# potential = {
-			# NOT = { primary_culture = greek }
+			# NOT = { is_culture_group = pan_greek }
 			# owns = 900
 			# NOT = { has_global_flag = normal_rename_aleppo }
 			# has_global_flag = greek_rename_aleppo
@@ -1754,7 +1761,7 @@ political_decisions = {
 	# greek_rename_tunisia = {
 		# picture = gtfo
 		# potential = {
-			# primary_culture = greek
+			# is_culture_group = pan_greek
 			# owns = 1725
 			# NOT = { has_global_flag = greek_rename_tunisia }
 		# }
@@ -1785,7 +1792,7 @@ political_decisions = {
 	# normal_rename_tunisia = {
 		# picture = gtfo
 		# potential = {
-			# NOT = { primary_culture = greek }
+			# NOT = { is_culture_group = pan_greek }
 			# owns = 1725
 			# NOT = { has_global_flag = normal_rename_tunisia }
 			# has_global_flag = greek_rename_tunisia
@@ -1817,7 +1824,7 @@ political_decisions = {
 	# greek_rename_tripolitania = {
 		# picture = gtfo
 		# potential = {
-			# primary_culture = greek
+			# is_culture_group = pan_greek
 			# owns = 1731
 			# NOT = { has_global_flag = greek_rename_tripolitania }
 		# }
@@ -1850,7 +1857,7 @@ political_decisions = {
 	# normal_rename_tripolitania = {
 		# picture = gtfo
 		# potential = {
-			# NOT = { primary_culture = greek }
+			# NOT = { is_culture_group = pan_greek }
 			# owns = 1731
 			# NOT = { has_global_flag = normal_rename_tripolitania }
 			# has_global_flag = greek_rename_tripolitania
@@ -1884,7 +1891,7 @@ political_decisions = {
 	# greek_rename_alexandria = {
 		# picture = gtfo
 		# potential = {
-			# primary_culture = greek
+			# is_culture_group = pan_greek
 			# owns = 1751
 			# NOT = { has_global_flag = greek_rename_alexandria }
 		# }
@@ -1913,7 +1920,7 @@ political_decisions = {
 	# normal_rename_alexandria = {
 		# picture = gtfo
 		# potential = {
-			# NOT = { primary_culture = greek }
+			# NOT = { is_culture_group = pan_greek }
 			# owns = 1751
 			# NOT = { has_global_flag = normal_rename_alexandria }
 			# has_global_flag = greek_rename_alexandria
@@ -1943,7 +1950,7 @@ political_decisions = {
 	# greek_rename_cairo = {
 		# picture = gtfo
 		# potential = {
-			# primary_culture = greek
+			# is_culture_group = pan_greek
 			# owns = 1745
 			# NOT = { has_global_flag = greek_rename_cairo }
 		# }
@@ -1973,7 +1980,7 @@ political_decisions = {
 	# normal_rename_cairo = {
 		# picture = gtfo
 		# potential = {
-			# NOT = { primary_culture = greek }
+			# NOT = { is_culture_group = pan_greek }
 			# owns = 1745
 			# NOT = { has_global_flag = normal_rename_cairo }
 			# has_global_flag = greek_rename_cairo
@@ -2004,7 +2011,7 @@ political_decisions = {
 	# greek_rename_midegy = {
 		# picture = gtfo
 		# potential = {
-			# primary_culture = greek
+			# is_culture_group = pan_greek
 			# owns = 1763
 			# NOT = { has_global_flag = greek_rename_midegy }
 		# }
@@ -2034,7 +2041,7 @@ political_decisions = {
 	# normal_rename_midegy = {
 		# picture = gtfo
 		# potential = {
-			# NOT = { primary_culture = greek }
+			# NOT = { is_culture_group = pan_greek }
 			# owns = 1763
 			# NOT = { has_global_flag = normal_rename_midegy }
 			# has_global_flag = greek_rename_midegy
@@ -2065,7 +2072,7 @@ political_decisions = {
 	# greek_rename_egydesert = {
 		# picture = gtfo
 		# potential = {
-			# primary_culture = greek
+			# is_culture_group = pan_greek
 			# owns = 1765
 			# NOT = { has_global_flag = greek_rename_egydesert }
 		# }
@@ -2096,7 +2103,7 @@ political_decisions = {
 	# normal_rename_egydesert = {
 		# picture = gtfo
 		# potential = {
-			# NOT = { primary_culture = greek }
+			# NOT = { is_culture_group = pan_greek }
 			# owns = 1765
 			# NOT = { has_global_flag = normal_rename_egydesert }
 			# has_global_flag = greek_rename_egydesert
@@ -2128,7 +2135,7 @@ political_decisions = {
 	# greek_rename_dalmatia = {
 		# picture = gtfo
 		# potential = {
-			# primary_culture = greek
+			# is_culture_group = pan_greek
 			# owns = 780
 			# NOT = { has_global_flag = greek_rename_dalmatia }
 		# }
@@ -2156,7 +2163,7 @@ political_decisions = {
 	# normal_rename_dalmatia = {
 		# picture = gtfo
 		# potential = {
-			# NOT = { primary_culture = greek }
+			# NOT = { is_culture_group = pan_greek }
 			# NOT = { is_culture_group = germanic }
 			# NOT = { is_culture_group = south_slavic }
 			# owns = 780
@@ -2187,7 +2194,7 @@ political_decisions = {
 	# greek_rename_istria = {
 		# picture = gtfo
 		# potential = {
-			# primary_culture = greek
+			# is_culture_group = pan_greek
 			# owns = 769
 			# NOT = { has_global_flag = greek_rename_istria }
 		# }
@@ -2216,7 +2223,7 @@ political_decisions = {
 	# normal_rename_istria = {
 		# picture = gtfo
 		# potential = {
-			# NOT = { primary_culture = greek }
+			# NOT = { is_culture_group = pan_greek }
 			# owns = 769
 			# NOT = { has_global_flag = normal_rename_istria }
 			# has_global_flag = greek_rename_istria
@@ -2246,7 +2253,7 @@ political_decisions = {
 	# greek_rename_friuli = {
 		# picture = gtfo
 		# potential = {
-			# primary_culture = greek
+			# is_culture_group = pan_greek
 			# owns = 733
 			# NOT = { has_global_flag = greek_rename_friuli }
 		# }
@@ -2274,7 +2281,7 @@ political_decisions = {
 	# normal_rename_friuli = {
 		# picture = gtfo
 		# potential = {
-			# NOT = { primary_culture = greek }
+			# NOT = { is_culture_group = pan_greek }
 			# NOT = { is_culture_group = germanic }
 			# NOT = { is_culture_group = south_slavic }
 			# owns = 733
@@ -2305,7 +2312,7 @@ political_decisions = {
 	# greek_rename_stirol = {
 		# picture = gtfo
 		# potential = {
-			# primary_culture = greek
+			# is_culture_group = pan_greek
 			# owns = 734
 			# NOT = { has_global_flag = greek_rename_stirol }
 		# }
@@ -2332,7 +2339,7 @@ political_decisions = {
 	# normal_rename_stirol = {
 		# picture = gtfo
 		# potential = {
-			# NOT = { primary_culture = greek }
+			# NOT = { is_culture_group = pan_greek }
 			# owns = 734
 			# NOT = { has_global_flag = normal_rename_stirol }
 			# has_global_flag = greek_rename_stirol
@@ -2360,7 +2367,7 @@ political_decisions = {
 	# greek_rename_venetia = {
 		# picture = gtfo
 		# potential = {
-			# primary_culture = greek
+			# is_culture_group = pan_greek
 			# owns = 729
 			# NOT = { has_global_flag = greek_rename_venetia }
 		# }
@@ -2390,7 +2397,7 @@ political_decisions = {
 	# normal_rename_venetia = {
 		# picture = gtfo
 		# potential = {
-			# NOT = { primary_culture = greek }
+			# NOT = { is_culture_group = pan_greek }
 			# NOT = { is_culture_group = germanic }
 			# NOT = { is_culture_group = italian }
 			# owns = 729
@@ -2424,7 +2431,7 @@ political_decisions = {
 	# greek_rename_lombardia = {
 		# picture = gtfo
 		# potential = {
-			# primary_culture = greek
+			# is_culture_group = pan_greek
 			# owns = 726
 			# NOT = { has_global_flag = greek_rename_lombardia }
 		# }
@@ -2453,7 +2460,7 @@ political_decisions = {
 	# normal_rename_lombardia = {
 		# picture = gtfo
 		# potential = {
-			# NOT = { primary_culture = greek }
+			# NOT = { is_culture_group = pan_greek }
 			# NOT = { is_culture_group = germanic }
 			# NOT = { is_culture_group = italian }
 			# owns = 726
@@ -2486,7 +2493,7 @@ political_decisions = {
 	# greek_rename_piemonte = {
 		# picture = gtfo
 		# potential = {
-			# primary_culture = greek
+			# is_culture_group = pan_greek
 			# owns = 720
 			# NOT = { has_global_flag = greek_rename_piemonte }
 		# }
@@ -2517,7 +2524,7 @@ political_decisions = {
 	# normal_rename_piemonte = {
 		# picture = gtfo
 		# potential = {
-			# NOT = { primary_culture = greek }
+			# NOT = { is_culture_group = pan_greek }
 			# owns = 720
 			# NOT = { has_global_flag = normal_rename_piemonte }
 			# has_global_flag = greek_rename_piemonte
@@ -2550,7 +2557,7 @@ political_decisions = {
 	# greek_rename_tuscany = {
 		# picture = gtfo
 		# potential = {
-			# primary_culture = greek
+			# is_culture_group = pan_greek
 			# owns = 744
 			# NOT = { has_global_flag = greek_rename_tuscany }
 		# }
@@ -2580,7 +2587,7 @@ political_decisions = {
 	# normal_rename_tuscany = {
 		# picture = gtfo
 		# potential = {
-			# NOT = { primary_culture = greek }
+			# NOT = { is_culture_group = pan_greek }
 			# owns = 744
 			# NOT = { has_global_flag = normal_rename_tuscany }
 			# has_global_flag = greek_rename_tuscany
@@ -2612,7 +2619,7 @@ political_decisions = {
 	# greek_rename_emiliaromagna = {
 		# picture = gtfo
 		# potential = {
-			# primary_culture = greek
+			# is_culture_group = pan_greek
 			# owns = 741
 			# NOT = { has_global_flag = greek_rename_emiliaromagna }
 		# }
@@ -2644,7 +2651,7 @@ political_decisions = {
 	# normal_rename_emiliaromagna = {
 		# picture = gtfo
 		# potential = {
-			# NOT = { primary_culture = greek }
+			# NOT = { is_culture_group = pan_greek }
 			# owns = 741
 			# NOT = { has_global_flag = normal_rename_emiliaromagna }
 			# has_global_flag = greek_rename_emiliaromagna
@@ -2678,7 +2685,7 @@ political_decisions = {
 	# greek_rename_sardinia = {
 		# picture = gtfo
 		# potential = {
-			# primary_culture = greek
+			# is_culture_group = pan_greek
 			# owns = 765
 			# NOT = { has_global_flag = greek_rename_sardinia }
 		# }
@@ -2706,7 +2713,7 @@ political_decisions = {
 	# normal_rename_sardinia = {
 		# picture = gtfo
 		# potential = {
-			# NOT = { primary_culture = greek }
+			# NOT = { is_culture_group = pan_greek }
 			# owns = 765
 			# NOT = { has_global_flag = normal_rename_sardinia }
 			# has_global_flag = greek_rename_sardinia
@@ -2736,7 +2743,7 @@ political_decisions = {
 	# greek_rename_provence = {
 		# picture = gtfo
 		# potential = {
-			# primary_culture = greek
+			# is_culture_group = pan_greek
 			# owns = 467
 			# NOT = { has_global_flag = greek_rename_provence }
 		# }
@@ -2766,7 +2773,7 @@ political_decisions = {
 	# normal_rename_provence = {
 		# picture = gtfo
 		# potential = {
-			# NOT = { primary_culture = greek }
+			# NOT = { is_culture_group = pan_greek }
 			# owns = 467
 			# NOT = { has_global_flag = normal_rename_provence }
 			# has_global_flag = greek_rename_provence
@@ -2797,7 +2804,7 @@ political_decisions = {
 	# greek_rename_savoie = {
 		# picture = gtfo
 		# potential = {
-			# primary_culture = greek
+			# is_culture_group = pan_greek
 			# owns = 465
 			# NOT = { has_global_flag = greek_rename_savoie }
 		# }
@@ -2826,7 +2833,7 @@ political_decisions = {
 	# normal_rename_savoie = {
 		# picture = gtfo
 		# potential = {
-			# NOT = { primary_culture = greek }
+			# NOT = { is_culture_group = pan_greek }
 			# NOT = { is_culture_group = italian }
 			# owns = 465
 			# NOT = { has_global_flag = normal_rename_savoie }
@@ -2857,7 +2864,7 @@ political_decisions = {
 	# greek_rename_cyrenaica = {
 		# picture = gtfo
 		# potential = {
-			# primary_culture = greek
+			# is_culture_group = pan_greek
 			# owns = 1735
 			# NOT = { has_global_flag = greek_rename_cyrenaica }
 		# }
@@ -2888,7 +2895,7 @@ political_decisions = {
 	# normal_rename_cyrenaica = {
 		# picture = gtfo
 		# potential = {
-			# NOT = { primary_culture = greek }
+			# NOT = { is_culture_group = pan_greek }
 			# owns = 1735
 			# NOT = { has_global_flag = normal_rename_cyrenaica }
 			# has_global_flag = greek_rename_cyrenaica

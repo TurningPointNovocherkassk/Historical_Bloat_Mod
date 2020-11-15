@@ -404,14 +404,14 @@ country_event = {
 		political_reform = federalism
 		political_reform = free_press
 		political_reform = bankruptcy
-		political_reform = colonial_transportation
+		social_reform = colonial_transportation
 		political_reform = all_voting_pops
 		political_reform = universal_weighted_voting
 		political_reform = no_slavery
 		nationalvalue = nv_equality
 		ruling_party_ideology = liberal
-		consciousness = -15
-		militancy = -15
+		consciousness = -9
+		militancy = -9
 		set_country_flag = become_USV
 		define_general = {
 			name = "Ezequiel Zamora"
@@ -466,7 +466,7 @@ country_event = {
 			political_reform = federalism
 			political_reform = free_press
 			political_reform = bankruptcy
-			political_reform = colonial_transportation
+			social_reform = colonial_transportation
 			political_reform = all_voting_pops
 			political_reform = universal_weighted_voting
 			political_reform = no_slavery
@@ -580,7 +580,7 @@ country_event = {
 			political_reform = federalism
 			political_reform = free_press
 			political_reform = bankruptcy
-			political_reform = colonial_transportation
+			social_reform = colonial_transportation
 			political_reform = all_voting_pops
 			political_reform = universal_weighted_voting
 			political_reform = no_slavery
@@ -713,7 +713,7 @@ country_event = {
 			political_reform = free_press
 			political_reform = no_slavery
 			political_reform = bankruptcy
-			political_reform = colonial_transportation
+			social_reform = colonial_transportation
 			political_reform = all_voting_pops
 			political_reform = universal_weighted_voting
 			nationalvalue = nv_liberty
@@ -863,7 +863,7 @@ country_event = {
 			political_reform = free_press
 			political_reform = no_slavery
 			political_reform = bankruptcy
-			political_reform = colonial_transportation
+			social_reform = colonial_transportation
 			political_reform = all_voting_pops
 			political_reform = universal_weighted_voting
 			nationalvalue = nv_liberty
@@ -1536,7 +1536,7 @@ country_event = {
 			political_reform = free_press
 			political_reform = no_slavery
 			political_reform = bankruptcy
-			political_reform = colonial_transportation
+			social_reform = colonial_transportation
 			political_reform = all_voting_pops
 			political_reform = universal_weighted_voting
 		}
@@ -1655,7 +1655,7 @@ country_event = {
 			political_reform = free_press
 			political_reform = no_slavery
 			political_reform = bankruptcy
-			political_reform = colonial_transportation
+			social_reform = colonial_transportation
 			political_reform = all_voting_pops
 			political_reform = universal_weighted_voting
 		}
@@ -3358,7 +3358,9 @@ country_event = {
 						province_id = 3621
 					}
 				}
-			any_pop = { limit = { has_pop_culture = turkish } move_pop = 860 }
+				any_pop = { limit = { is_culture_group = turko_semitic } move_pop = 860 }
+				any_pop = { limit = { has_pop_culture = kurdish } move_pop = 860 }
+				any_pop = { limit = { has_pop_culture = tatar } move_pop = 860 }
 			}
 		}
 		
@@ -3380,7 +3382,7 @@ country_event = {
 							NOT = { is_culture_group = pan_albanian }
 							NOT = { is_culture_group = pan_romanian }
 							NOT = { has_pop_culture = tatar }
-							NOT = { has_pop_culture = turkish }
+							NOT = { is_culture_group = turko_semitic }
 						}
 					move_pop = 860
 				}
@@ -3457,7 +3459,9 @@ country_event = {
 						province_id = 2569
 					}
 				}
-			any_pop = { limit = { has_pop_culture = turkish } move_pop = 860 }
+				any_pop = { limit = { is_culture_group = turko_semitic } move_pop = 860 }
+				any_pop = { limit = { has_pop_culture = kurdish } move_pop = 860 }
+				any_pop = { limit = { has_pop_culture = tatar } move_pop = 860 }
 			}
 		}
 		
@@ -3479,7 +3483,7 @@ country_event = {
 							NOT = { is_culture_group = pan_albanian }
 							NOT = { is_culture_group = pan_romanian }
 							NOT = { has_pop_culture = tatar }
-							NOT = { has_pop_culture = turkish }
+							NOT = { is_culture_group = turko_semitic }
 						}
 					move_pop = 860
 				}
@@ -3841,7 +3845,7 @@ country_event = {
 			VOJ = {
 				OR = {
 					vassal_of = THIS
-					substante_of = THIS
+					substate_of = THIS
 				}
 			}
 			OR = {
@@ -3909,14 +3913,23 @@ country_event = {
 				country_event = 100048
 				inherit = THIS
 			}
-			SER = { country_event = 100048 }
+			random_country = {
+				limit = {
+					exists = yes
+					OR = {
+						tag = SER
+						tag = YUG
+					}
+				}
+				country_event = 100048
+			}
 			ai_chance = {
 				factor = 5
 				modifier = {
 					factor = 100
 					year = 1860
 					KUK = { exists = yes }
-					vassal_of = KUK
+					THIS = { vassal_of = KUK }
 				}
 			}
 		}
@@ -3969,7 +3982,11 @@ country_event = {
 			}
 			random_country = {
 				limit = {
-					tag = SER
+					exists = yes
+					OR = {
+						tag = SER
+						tag = YUG
+					}
 					OR = {
 						is_vassal = no
 						is_substate = no
@@ -3979,10 +3996,14 @@ country_event = {
 			}
 			random_country = {
 				limit = {
-					tag = SER
+					exists = yes
+					OR = {
+						tag = SER
+						tag = YUG
+					}
 					OR = {
 						vassal_of = TUR
-						substante_of = TUR
+						substate_of = TUR
 					}
 				}
 				country_event = 100053
@@ -4005,7 +4026,16 @@ country_event = {
 				value = -400
 			}	
 			FROM = { country_event = 100051 }
-			SER = { country_event = 100051 }
+			random_country = {
+				limit = {
+					exists = yes
+					OR = {
+						tag = SER
+						tag = YUG
+					}
+				}
+				country_event = 100051
+			}
 			ai_chance = {
 				factor = 0
 			}

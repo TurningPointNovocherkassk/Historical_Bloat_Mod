@@ -76,7 +76,7 @@ province_event = {
 		}
 		modifier = {
 			factor = 0.75
-			has = legation_quarter
+			has_province_modifier = legation_quarter
 		}
 	}
 	
@@ -287,6 +287,7 @@ country_event = {
 				}
 				province_event = {
 					id = 301113
+					days = 5
 				}
 			}
 		
@@ -312,6 +313,7 @@ country_event = {
 				}
 				province_event = {
 					id = 301112
+					days = 5
 				}
 			}
 		
@@ -566,8 +568,8 @@ country_event = {
 					money = 50
 					consciousness = 2
 				}
+				remove_province_modifier = futile
 			}
-			remove_province_modifier = futile
 		}
 		relation = {
 			who = PER
@@ -598,6 +600,7 @@ country_event = {
 				}
 				province_event = {
 					id = 301116
+					days = 5
 				}
 			}
 		
@@ -654,6 +657,7 @@ country_event = {
 				}
 				province_event = {
 					id = 301117
+					days = 5
 				}
 			}
 		

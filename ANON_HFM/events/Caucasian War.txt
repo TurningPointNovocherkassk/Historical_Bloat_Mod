@@ -104,9 +104,10 @@ country_event = {
 				OR = {
 					has_pop_culture = circassian
 					has_pop_culture = chechen
-					has_pop_culture = turkish
-					has_pop_culture = abkhazian
-					culthas_pop_cultureure = tatar
+					is_culture_group = turko_semitic
+					has_pop_culture = kurdish
+					has_pop_culture = tatar
+					has_pop_culture = circassian
 				}
 				location = { is_core = CIR }
 			}
@@ -124,8 +125,10 @@ country_event = {
 				OR = {
 					has_pop_culture = circassian
 					has_pop_culture = chechen
-					has_pop_culture = turkish
+					is_culture_group = turko_semitic
+					has_pop_culture = kurdish
 					has_pop_culture = tatar
+					has_pop_culture = circassian
 				}
 				location = { is_core = CIR }
 			}
@@ -223,7 +226,7 @@ country_event = {
 			}
 		secede_province = CIR
 		}
-		CIR = { all_core = { add_core = RUS } add_country_flag = ANON_total_war_flag }
+		CIR = { all_core = { add_core = RUS } set_country_flag = ANON_total_war_flag }
 		DAG = { all_core = { add_core = RUS } }
 		CHY = { all_core = { add_core = RUS } }
 		OSS = {

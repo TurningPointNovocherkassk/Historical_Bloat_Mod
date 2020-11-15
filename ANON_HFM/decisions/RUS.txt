@@ -832,8 +832,11 @@ political_decisions = {
 		}
 		
 		allow = {
-			BUK = { exists = yes }
-			war = no
+			BUK = {
+				exists = yes
+				NOT = { truce_with = THIS }
+			}
+			# war = no
 		}
 		
 		effect = {
@@ -893,8 +896,11 @@ political_decisions = {
 		}
 		
 		allow = {
-			KOK = { exists = yes }
-			war = no
+			KOK = {
+				exists = yes
+				NOT = { truce_with = THIS }
+			}
+			# war = no
 		}
 		
 		effect = {
@@ -966,8 +972,11 @@ political_decisions = {
 		}
 		
 		allow = {
-			KHI = { exists = yes }
-			war = no
+			KHI = {
+				exists = yes
+				NOT = { truce_with = THIS }
+			}
+			# war = no
 		}
 		
 		effect = {
@@ -1288,7 +1297,7 @@ political_decisions = {
 			random_owned = {
 				limit = {
 					owner = {
-						is_phere_leader = UBD
+						is_sphere_leader_of = UBD
 						primary_culture = russian
 					}
 				}
@@ -1306,9 +1315,9 @@ political_decisions = {
 			random_owned = {
 				limit = {
 					owner = {
-						is_phere_leader = LVN
-						is_phere_leader = KSM
-						is_phere_leader = ESG
+						is_sphere_leader_of = LVN
+						is_sphere_leader_of = KSM
+						is_sphere_leader_of = ESG
 						primary_culture = russian
 					}
 				}

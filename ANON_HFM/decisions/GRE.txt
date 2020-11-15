@@ -170,7 +170,7 @@ political_decisions = {
 	picture = claim_pontus
 	
 		potential = {
-			primary_culture = greek
+			is_culture_group = pan_greek
 			has_country_flag = greece_has_got_a_brand_new_bag
 			NOT = { has_country_flag = claim_pontus }
 			NOT = { has_country_flag = greek_pacifism }
@@ -191,7 +191,7 @@ political_decisions = {
 				all_core = { add_core = THIS remove_core = PNT }
 			}
 			any_pop = {
-				limit = { has_pop_culture = greek }
+				limit = { is_culture_group = pan_greek }
 				militancy = -1
 				dominant_issue = { factor = 0.1 value = jingoism }
 			}
@@ -205,7 +205,7 @@ political_decisions = {
 	unite_with_greece = {
 	picture = unite_with_greece
 		potential = {
-			primary_culture = greek
+			is_culture_group = pan_greek
 			NOT = { tag = GRE }
 			exists = GRE
 			NOT = { has_country_flag = unite_with_greece }
@@ -324,7 +324,7 @@ political_decisions = {
 	grecofication = {
 		picture = megali_idea
 		potential = {
-			primary_culture = greek
+			is_culture_group = pan_greek
 			nationalism_n_imperialism = 1
 			OR = {
 				###ANATOLIA###

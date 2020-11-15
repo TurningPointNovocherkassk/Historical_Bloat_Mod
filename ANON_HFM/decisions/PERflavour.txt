@@ -107,7 +107,7 @@ political_decisions = {
 		allow = {
 			war = no
 			OR = {
-				military_reform = yes_foreign_officers 
+				foreign_officers = yes_foreign_officers
 				civilized = yes
 			}
 		}
@@ -479,7 +479,7 @@ political_decisions = {
 					who = PER
 					value = 100
 				}
-				influence = {
+				diplomatic_influence = {
 					who = PER
 					value = 50
 				}

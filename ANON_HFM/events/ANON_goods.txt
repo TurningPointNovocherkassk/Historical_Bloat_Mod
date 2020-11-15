@@ -322,13 +322,15 @@ province_event = {
 		owner = { random_owned = { limit = { province_id = 2410 NOT = { life_rating = 39 } } life_rating = 10 } }
 		owner = { random_owned = { limit = { province_id = 2413 NOT = { life_rating = 39 } } life_rating = 10 } }
 		owner = { random_owned = { limit = { province_id = 2417 NOT = { life_rating = 39 } } life_rating = 10 } }
-		random_owned = {
-			limit = {
-				owner = {
-					NOT = { has_country_modifier = diamond_rush_country }
+		owner = {
+			random_owned = {
+				limit = {
+					owner = {
+						NOT = { has_country_modifier = diamond_rush_country }
+					}
 				}
+				owner = { add_country_modifier = { name = diamond_rush_country duration = 1095 } }
 			}
-			owner = { add_country_modifier = { name = diamond_rush_country duration = 1095 } }
 		}
 	}
 }
@@ -358,13 +360,15 @@ province_event = {
 			name = anon_diamond_rush
 			duration = 1825
 		}
-		random_owned = {
-			limit = {
-				owner = {
-					NOT = { has_country_modifier = diamond_rush_country }
+		owner = {
+			random_owned = {
+				limit = {
+					owner = {
+						NOT = { has_country_modifier = diamond_rush_country }
+					}
 				}
+				owner = { add_country_modifier = { name = diamond_rush_country duration = 1095 } }
 			}
-			owner = { add_country_modifier = { name = diamond_rush_country duration = 1095 } }
 		}
 	}
 }
@@ -431,13 +435,15 @@ province_event = {
 			name = anon_rubber_boom
 			duration = 1095
 		}
-		random_owned = {
-			limit = {
-				owner = {
-					NOT = { has_country_modifier = rubber_boom_country }
+		owner = {
+			random_owned = {
+				limit = {
+					owner = {
+						NOT = { has_country_modifier = rubber_boom_country }
+					}
 				}
+				owner = { add_country_modifier = { name = rubber_boom_country duration = 1095 } }
 			}
-			owner = { add_country_modifier = { name = rubber_boom_country duration = 1095 } }
 		}
 	}
 }
@@ -672,7 +678,7 @@ province_event = {
 							primary_culture = anglo_canadian
 						}
 						owns = 6
-						life_rating = 15
+						# life_rating = 15
 					}
 				}
 				6 = {
@@ -690,7 +696,7 @@ province_event = {
 							is_culture_group = east_slavic
 						}
 						owns = 6
-						life_rating = 15
+						# life_rating = 15
 					}
 				}
 				6 = {
@@ -708,7 +714,7 @@ province_event = {
 							is_culture_group = latin_american_cultures
 						}
 						owns = 6
-						life_rating = 15
+						# life_rating = 15
 					}
 				}
 				6 = {
@@ -723,7 +729,7 @@ province_event = {
 					owner = {
 						primary_culture = japanese
 						owns = 6
-						life_rating = 15
+						# life_rating = 15
 					}
 				}
 				6 = {
@@ -775,18 +781,20 @@ province_event = {
 		trade_goods = precious_metal
 		add_province_modifier = { name = silver_rush duration = 1095 }
 		add_province_modifier = { name = silver_mine duration = -1 }
-		random_owned = {
-			limit = {
-				owner = {
-					NOT = { has_country_modifier = silver_rush_country }
-					OR = { 
-						capital_scope = { continent = north_america } 
-						capital_scope = { continent = south_america }
-						primary_culture = australian
+		owner = {
+			random_owned = {
+				limit = {
+					owner = {
+						NOT = { has_country_modifier = silver_rush_country }
+						OR = { 
+							capital_scope = { continent = north_america } 
+							capital_scope = { continent = south_america }
+							primary_culture = australian
+						}
 					}
 				}
+				owner = { add_country_modifier = { name = silver_rush_country duration = 1095 } }
 			}
-			owner = { add_country_modifier = { name = silver_rush_country duration = 1095 } }
 		}
 	}
 }
@@ -841,18 +849,20 @@ province_event = {
 	option = {
 		name = "EVTOPTA1100"
 		trade_goods = precious_metal
-		random_owned = {
-			limit = {
-				owner = {
-					NOT = { has_country_modifier = gold_rush_country }
-					OR = { 
-						capital_scope = { continent = north_america } 
-						capital_scope = { continent = south_america }
-						primary_culture = australian
+		owner = {
+			random_owned = {
+				limit = {
+					owner = {
+						NOT = { has_country_modifier = gold_rush_country }
+						OR = { 
+							capital_scope = { continent = north_america } 
+							capital_scope = { continent = south_america }
+							primary_culture = australian
+						}
 					}
 				}
+				owner = { add_country_modifier = { name = gold_rush_country duration = 1095 } }
 			}
-			owner = { add_country_modifier = { name = gold_rush_country duration = 1095 } }
 		}
 		owner = {
 			random_owned = {
@@ -987,18 +997,20 @@ province_event = {
 		trade_goods = precious_metal
 		add_province_modifier = { name = silver_rush duration = 1095 }
 		add_province_modifier = { name = silver_mine duration = -1 }
-		random_owned = {
-			limit = {
-				owner = {
-					NOT = { has_country_modifier = silver_rush_country }
-					OR = { 
-						capital_scope = { continent = north_america } 
-						capital_scope = { continent = south_america }
-						primary_culture = australian
+		owner = {
+			random_owned = {
+				limit = {
+					owner = {
+						NOT = { has_country_modifier = silver_rush_country }
+						OR = { 
+							capital_scope = { continent = north_america } 
+							capital_scope = { continent = south_america }
+							primary_culture = australian
+						}
 					}
 				}
+				owner = { add_country_modifier = { name = silver_rush_country duration = 1095 } }
 			}
-			owner = { add_country_modifier = { name = silver_rush_country duration = 1095 } }
 		}
 		any_pop = {
 			limit = {

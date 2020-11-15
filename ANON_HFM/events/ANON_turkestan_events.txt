@@ -11,8 +11,17 @@ country_event = {
 
 	option = {
 		name = "EVT888888000OPTA"
-		relation = { who = RUS value = -50 }
-		RUS = { diplomatic_influence = { who = THIS value = -50 } }
+		random_owned = {
+			limit = {
+				owner = {
+					tag = QNG
+				}
+			}
+			owner = {
+				relation = { who = RUS value = -50 }
+				RUS = { diplomatic_influence = { who = THIS value = -50 } }
+			}
+		}
 		ai_chance = {
 			factor = 100
 		}
@@ -60,7 +69,7 @@ country_event = {
 		}
 		set_global_flag = livadia_fail
 		ai_chance = {
-			factor = 85
+			factor = 80
 			modifier = {
 				factor = 1.1
 				NOT = { war_exhaustion = 25 }
@@ -262,20 +271,24 @@ country_event = {
 					substate_of = THIS
 				}
 				OR = {
-					primary_culture = hanhui
-					primary_culture = turkic_minor
+					# primary_culture = hanhui
+					# primary_culture = turkic_minor
+					tag = XIN
+					tag = ALT
 				}
-				OR = {
-					capital = 1600
-					capital = 1596
-					capital = 1068
-				}
+				# OR = {
+					# capital = 1600
+					# capital = 1596
+					# capital = 1068
+				# }
 			}
 			annex_to = THIS
 		}
 		
 		any_owned = { limit = { is_core = XIN } add_province_modifier = { name = nationalist_agitation duration = 365 } }
-		any_owned = { limit = { is_core = XIN } add_core = QNG }
+		any_owned = { limit = { is_core = XIN } add_core = THIS }
+		any_owned = { limit = { is_core = ALT } add_province_modifier = { name = nationalist_agitation duration = 365 } }
+		any_owned = { limit = { is_core = ALT } add_core = THIS }
 		
 		ai_chance = {
 			factor = 20
@@ -352,8 +365,14 @@ country_event = {
 			limit = { is_core = RUS }
 			secede_province = RUS
 		}
+		random_owned = { limit = { owner = { tag = ALT } } RUS = { inherit = THIS } }
+		
 		FROM = { any_owned = { limit = { is_core = XIN } add_province_modifier = { name = nationalist_agitation duration = 365 } } }
-		FROM = { any_owned = { limit = { is_core = XIN NOT = { is_core = RUS } } add_core = QNG } }
+		FROM = { any_owned = { limit = { is_core = XIN NOT = { is_core = RUS } } add_core = FROM } }
+		
+		FROM = { any_owned = { limit = { is_core = ALT } add_province_modifier = { name = nationalist_agitation duration = 365 } } }
+		FROM = { any_owned = { limit = { is_core = ALT NOT = { is_core = RUS } } add_core = FROM } }
+		
 		ai_chance = {
 			factor = 95
 			modifier = {
@@ -649,14 +668,18 @@ country_event = {
 	
 	trigger = {
 		tag = XIN
-		substate_of = QNG
+		OR = {
+			substate_of = QNG
+			vassal_of = QNG
+		}
 		NOT = { num_of_revolts = 1 }
 		1594 = {
 			owned_by = XIN
 			controlled_by = XIN
 			OR = {
 				has_province_modifier = anti_manchu_sentiment
-				average_militancy = 4
+				average_militancy = 3
+				# average_militancy = 4
 			}
 		}
 		OR = {
@@ -703,6 +726,7 @@ country_event = {
 			government = absolute_monarchy
 			primary_culture = uighur
 			remove_accepted_culture = beifaren
+			remove_accepted_culture = hanhui
 			add_accepted_culture = tajik
 			add_accepted_culture = iranian_minor
 			add_accepted_culture = kazak
@@ -730,3 +754,26 @@ country_event = {
 		ai_chance = { factor = 0 }
 	}
 }
+###########################################################
+# RUS conquest of UYG, notification for QNG
+
+# country_event = {
+	# id = 888888017
+	# title = "EVTNAME888888017"
+	# desc = "EVTDESC888888017"
+	# picture = "asian_administration"
+	# is_triggered_only = yes
+
+	# option = {
+		# name = "EVT888888017OPTA"
+		# FROM = {
+			# relation = { who = THIS value = -100 }
+			# diplomatic_influence = { who = QNG value = -100 }
+			# diplomatic_influence = { who = KML value = -100 }
+			# diplomatic_influence = { who = XIN value = -100 }
+		# }
+		# ai_chance = {
+			# factor = 100
+		# }
+	# }
+# }

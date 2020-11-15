@@ -15,11 +15,11 @@ country_event = {
 					}
 					owner = {
 						any_owned = {
-							limit = { any_pop = { has_pop_culture = turkish } }
+							limit = { any_pop = { is_culture_group = turko_semitic } }
 							add_province_modifier = { name = turkish_women duration = 10950}
 						}
 						any_pop = {
-							limit = { has_pop_culture = turkish }
+							limit = { is_culture_group = turko_semitic }
 							reduce_pop = 0.5
 							move_pop = 876
 						}

@@ -325,6 +325,16 @@ province_event = {
 				}
 			}
 			AND = {
+				owner = { has_country_flag = interning_pan_greek }
+				any_pop = {
+					is_culture_group = pan_greek
+					NOT = {
+						is_primary_culture = yes
+						is_accepted_culture = yes
+					}
+				}
+			}
+			AND = {
 				owner = { has_country_flag = interning_levantine }
 				any_pop = {
 					is_culture_group = levantine
@@ -4778,6 +4788,137 @@ province_event = {
 							is_primary_culture = no
 							is_accepted_culture = no
 							is_culture_group = jewish_cultures
+						}
+						reduce_pop = 0.85
+						random = {
+							chance = 10
+							reduce_pop = 0.9
+						}
+						random = {
+							chance = 10
+							reduce_pop = 0.9
+						}
+						random = {
+							chance = 10
+							reduce_pop = 0.9
+						}
+					}
+				}
+			}
+		}
+		
+		##############Hellenic Cultures
+		random_pop = {#Killing in a majority state
+			limit = {
+				is_culture_group = pan_greek
+				location = {
+					owner = { has_country_flag = interning_pan_greek }
+					state_scope = {
+						OR = {
+							is_accepted_culture = yes
+							is_primary_culture = yes
+						}
+						has_national_minority = yes
+					}
+				}
+			}
+			location = {
+				state_scope = {
+					any_pop = {
+						limit = {
+							is_primary_culture = no
+							is_accepted_culture = no
+							is_culture_group = pan_greek
+						}
+						reduce_pop = 0.35
+						random = {
+							chance = 30
+							reduce_pop = 0.9
+						}
+						random = {
+							chance = 30
+							reduce_pop = 0.9
+						}
+						random = {
+							chance = 30
+							reduce_pop = 0.9
+						}
+					}
+				}
+			}
+		}
+		
+		#Killing in a minority state
+		random_pop = {
+			limit = {
+				is_culture_group = pan_greek
+				location = {
+					owner = { has_country_flag = interning_pan_greek }
+					state_scope = {
+						is_primary_culture = no
+						is_accepted_culture = no
+						any_owned_province = {
+							OR = {
+								is_primary_culture = yes
+								is_accepted_culture = yes
+							}
+						}
+					}
+				}
+			}
+			location = {
+				state_scope = {
+					any_pop = {
+						limit = {
+							is_primary_culture = no
+							is_accepted_culture = no
+							is_culture_group = pan_greek
+						}
+						reduce_pop = 0.65
+						random = {
+							chance = 20
+							reduce_pop = 0.9
+						}
+						random = {
+							chance = 20
+							reduce_pop = 0.9
+						}
+						random = {
+							chance = 20
+							reduce_pop = 0.9
+						}
+					}
+				}
+			}
+		}
+		
+		#Killing in a no-presence state
+		random_pop = {
+			limit = {
+				is_culture_group = pan_greek
+				location = {
+					owner = { has_country_flag = interning_pan_greek }
+					state_scope = {
+						is_primary_culture = no
+						is_accepted_culture = no
+						NOT = {
+							any_owned_province = {
+								OR = {
+									is_primary_culture = yes
+									is_accepted_culture = yes
+								}
+							}
+						}
+					}
+				}
+			}
+			location = {
+				state_scope = {
+					any_pop = {
+						limit = {
+							is_primary_culture = no
+							is_accepted_culture = no
+							is_culture_group = pan_greek
 						}
 						reduce_pop = 0.85
 						random = {
@@ -10640,6 +10781,7 @@ country_event = {
 		clr_country_flag = interning_east_slavic
 		clr_country_flag = interning_baltic
 		clr_country_flag = interning_levantine
+		clr_country_flag = interning_pan_greek
 		clr_country_flag = interning_turko_semitic
 		clr_country_flag = interning_caucasian
 		clr_country_flag = interning_arab

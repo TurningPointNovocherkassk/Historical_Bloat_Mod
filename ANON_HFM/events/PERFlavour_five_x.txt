@@ -51,8 +51,6 @@ country_event = {
 		NOT = { has_global_flag = bab_has_appeared }
 	}
 	
-	fire_only_once = yes
-	
 	mean_time_to_happen = {
 		months = 24
 		modifier = {
@@ -133,7 +131,9 @@ country_event = {
 				name = religious_insurrection
 				duration = 365
 			}
-			reduce_pop = 0.95
+			any_pop = {
+				reduce_pop = 0.95
+			}
 		}
 		
 		ai_chance = {
@@ -263,7 +263,9 @@ country_event = {
 				name = religious_insurrection
 				duration = 365
 			}
-			reduce_pop = 0.95
+			any_pop = {
+				reduce_pop = 0.95
+			}
 		}
 		
 		ai_chance = {
@@ -290,7 +292,9 @@ country_event = {
 				name = religious_insurrection
 				duration = 365
 			}
-			reduce_pop = 0.95
+			any_pop = {
+				reduce_pop = 0.95
+			}
 		}
 		any_pop = {
 			limit = {
@@ -324,7 +328,7 @@ province_event = {
             owner = { any_neighbor_country = { tag = PER } }
         }
         OR = {   
-            owner = { is_culture_group = arabic }
+            owner = { is_culture_group = arab }
             owner = { is_culture_group = turko_semitic }
             owner = { is_culture_group = iranian }
             owner = { is_culture_group = turanian }
@@ -387,8 +391,6 @@ country_event = {
 			PER = { civilized = yes }
 		}
 	}
-	
-	fire_only_once = yes
 	
 	mean_time_to_happen = {
 		months = 24
@@ -595,8 +597,6 @@ country_event = {
 			average_consciousness = 2
 		}
 	}
-	
-	fire_only_once = yes
 	
 	mean_time_to_happen = {
 		months = 8
@@ -959,8 +959,6 @@ country_event = {
 		}
 	}
 	
-	fire_only_once = yes
-	
 	mean_time_to_happen = {
 		months = 36
 		modifier = {
@@ -1164,8 +1162,6 @@ country_event = {
 		NOT = { has_country_flag = pahlavis_usurped }
 	}
 	
-	fire_only_once = yes
-	
 	mean_time_to_happen = {
 		months = 10
 		modifier = {
@@ -1189,7 +1185,7 @@ country_event = {
 	option = {
 		name = "The money is better spent on other things."
 		prestige = -3
-		random_neighbor_country = {
+		any_neighbor_country = {
 			relation = {
 				who = PER
 				value = 50
@@ -1214,8 +1210,6 @@ country_event = {
 		NOT = { has_country_flag = naser_al_din }
 	}
 	
-	fire_only_once = yes
-	
 	mean_time_to_happen = {
 		months = 11
 	}
@@ -1238,7 +1232,7 @@ country_event = {
 		OR = {
 			tag = PER
 			tag = TUR
-			is_culture_group = arabic
+			is_culture_group = arab
 		}
 		NOT = { has_country_flag = al_afghani_visit }
 		year = 1865
@@ -1321,8 +1315,6 @@ country_event = {
 		}
 		has_country_flag = naser_al_din
 	}
-	
-	fire_only_once = yes
 	
 	mean_time_to_happen = {
 		months = 120
@@ -1418,8 +1410,6 @@ country_event = {
 		war = no
 	}
 	
-	fire_only_once = yes
-	
 	mean_time_to_happen = {
 		months = 8
 	}
@@ -1484,8 +1474,6 @@ country_event = {
 		civilized = yes
 		year = 1900
 	}
-	
-	fire_only_once = yes
 	
 	mean_time_to_happen = {
 		months = 72
@@ -1557,8 +1545,6 @@ country_event = {
             government = absolute_monarchy
         }
     }
-	
-	fire_only_once = yes
 	
 	mean_time_to_happen = {
 		months = 48
@@ -2032,8 +2018,12 @@ country_event = {
 		has_country_flag = naser_in_europe
 		OR = {
 			civilized = yes
-			NOT = { unciv_military_training = military_levies }
-			NOT = { unciv_officer_corps = aristocratic_officers }
+			# NOT = { unciv_military_training = military_levies }
+			# NOT = { unciv_officer_corps = aristocratic_officers }
+			AND = {
+				foreign_training = yes_foreign_training
+				foreign_officers = yes_foreign_officers
+			}
 		}
 	}
 	
@@ -2326,7 +2316,6 @@ country_event = {
 			has_global_flag = tobacco_regie_flag
 		}
 	}
-	fire_only_once = yes
 	
 	mean_time_to_happen = {
 		months = 120
@@ -2410,7 +2399,7 @@ country_event = {
 		political_reform = yes_meeting
 		political_reform = free_press
 		political_reform = non_secret_ballots
-		political_reform = limited
+		# political_reform = limited # no idea what this is
 		any_neighbor_country = {
 			limit = {
 				is_greater_power = no
@@ -2546,13 +2535,13 @@ province_event = {
 					duration = 895
 				}
 			}
-			any_pop = {
-				ideology = {
-					factor = 0.2
-					value = separatist
-				}
-				militancy = 2
-			}
+			# any_pop = {
+				# ideology = {
+					# factor = 0.2
+					# value = separatist
+				# }
+				# militancy = 2
+			# }
 		}
 	}
 }
@@ -2605,20 +2594,17 @@ country_event = {
 			}
 			prestige = 20
 		}
-	 casus_belli = {
-		type = conquest_any
-		duration = 60
-	 }
-     war = {
-       target = KHR
-       attacker_goal = {
-         casus_belli = conquest_any
-       }
-       defender_goal = {
-         casus_belli = status_quo
-       }
-     }
-   }
+		casus_belli = { target = KHR type = conquest_any months = 60 }
+		war = {
+			target = KHR
+			attacker_goal = {
+				casus_belli = conquest_any
+			}
+			defender_goal = {
+				casus_belli = status_quo
+			}
+		}
+	}
 }
 	
 # Province event - trouble brewing in Gilan, Jangali movement, +MIL, -Prestige
@@ -2674,13 +2660,13 @@ province_event = {
 					duration = 895
 				}
 			}
-			any_pop = {
-				ideology = {
-					factor = 0.2
-					value = separatist
-				}
-				militancy = 2
-			}
+			# any_pop = {
+				# ideology = {
+					# factor = 0.2
+					# value = separatist
+				# }
+				# militancy = 2
+			# }
 		}
 	}
 }
@@ -3071,7 +3057,7 @@ country_event = {
 	
 	option = {
 		name = "Can he end this crisis?"
-		kill_leader = "Reza Khan"
+		# kill_leader = "Reza Khan" # invalid command, that's not how it works. leader IDs are hardcoded in the beginning of each save.
 		war_exhaustion = -50
 		prestige = -15
 		years_of_research = 0.1
@@ -3098,8 +3084,8 @@ country_event = {
 		political_reform = jefferson_method
 		political_reform = yes_meeting
 		political_reform = free_press
-		political_reform = no_secret_ballots
-		political_reform = limited
+		political_reform = non_secret_ballots
+		# political_reform = limited # no idea what this is 
 		remove_country_modifier = expert_diplomat
 		remove_country_modifier = successful_industrialist
 		remove_country_modifier = ivory_tower_intellectual
@@ -4342,192 +4328,192 @@ country_event = {
 }
 
 # The Kaveh Publication
-country_event = {
-	id = 190358
-	title = "EVTNAME190358"
-	desc = "EVTDESC190358"
-	picture = "persia_kaveh"
+# country_event = {
+	# id = 190358
+	# title = "EVTNAME190358"
+	# desc = "EVTDESC190358"
+	# picture = "persia_kaveh"
 	
-	trigger = {
-		tag = PER
-		exists = yes
-		NOT = {
-			press_rights = state_press
-		}
-	}
-	fire_only_once = yes
+	# trigger = {
+		# tag = PER
+		# exists = yes
+		# NOT = {
+			# press_rights = state_press
+		# }
+	# }
+	# fire_only_once = yes
 	
-	mean_time_to_happen = {
-		months = 60
-		modifier = {
-			average_consciousness = 3
-			factor = 0.5
-		}
-		modifier = {
-			average_consciousness = 6
-			factor = 0.5
-		}
-		modifier = {
-			press_rights = free_press
-			factor = 0.5
-		}
+	# mean_time_to_happen = {
+		# months = 60
+		# modifier = {
+			# average_consciousness = 3
+			# factor = 0.5
+		# }
+		# modifier = {
+			# average_consciousness = 6
+			# factor = 0.5
+		# }
+		# modifier = {
+			# press_rights = free_press
+			# factor = 0.5
+		# }
 		
-	}
+	# }
 	
-	option = {
-		name = "Help them help us"
-		money = -3000
-		plurality = 1
-		any_country = {
-			limit = {
-				tag = THIS
-				social_reform_name = elite
-			}
-			any_pop = {
-				limit = {
-					OR = {
-						has_pop_religion = shiite
-						has_pop_religion = sunni
-						has_pop_religion = ibadi
-					}
-				}
-				ideology = {
-					factor = 0.02
-					value = liberal
-				}
-				scaled_consciousness = {
-					factor = 2
-					ideology = liberal
-				}
-				scaled_consciousness = {
-					factor = 5
-					ideology = reactionary
-				}
-				dominant_issue = {
-					value = moralism
-					factor = 0.05
-				}
-			}
-		}
-		any_country = {
-			limit = {
-				tag = THIS
-				social_reform_name = low_schools
-			}
-			any_pop = {
-				limit = {
-					OR = {
-						has_pop_religion = shiite
-						has_pop_religion = sunni
-						has_pop_religion = ibadi
-					}
-				}
-				ideology = {
-					factor = 0.02
-					value = liberal
-				}
-				scaled_consciousness = {
-					factor = 2
-					ideology = liberal
-				}
-				scaled_consciousness = {
-					factor = 5
-					ideology = reactionary
-				}
-				dominant_issue = {
-					value = good_schools
-					factor = 0.05
-				}
-			}
-		}
-		any_country = {
-			limit = {
-				tag = THIS
-				social_reform_name = public
-			}
-			any_pop = {
-				limit = {
-					OR = {
-						has_pop_religion = shiite
-						has_pop_religion = sunni
-						has_pop_religion = ibadi
-					}
-				}
-				literacy = 0.01
-				ideology = {
-					factor = 0.02
-					value = liberal
-				}
-				scaled_consciousness = {
-					factor = 2
-					ideology = liberal
-				}
-				scaled_consciousness = {
-					factor = 5
-					ideology = reactionary
-				}
-			}
-		}
-		ai_chance = {
-			factor = 75	
-			modifier = {
-				NOT = { money = 5000 }
-				factor = 0.01
-			}
-		}
-	}
-	option = {
-		name = "What dangerous ideas"
-		plurality = -1
-		any_pop = {
-			ideology = {
-				factor = 0.02
-				value = reactionary
-			}
-			scaled_consciousness = {
-				factor = -4
-				ideology = reactionary
-			}
-		}
-		ai_chance = {
-			factor = 15		
-		}
-	}
-	option = {
-		name = "We'd like to see their ideas pushed very hard"
-		plurality = 3
-		political_reform = public
-		any_pop = {
-			limit = {
-				OR = {
-					has_pop_religion = shiite
-					has_pop_religion = sunni
-					has_pop_religion = ibadi
-				}
-			}
-			literacy = 0.01
-			ideology = {
-				factor = 0.02
-				value = reactionary
-			}
-			scaled_consciousness = {
-				factor = 2
-				ideology = liberal
-			}
-			scaled_consciousness = {
-				factor = -3
-				ideology = reactionary
-			}
-			scaled_militancy = {
-				factor = 6
-				ideology = reactionary
-			}
-		}
-		ai_chance = {
-			factor = 10		
-		}
-	}
-}
+	# option = {
+		# name = "Help them help us"
+		# money = -3000
+		# plurality = 1
+		# any_country = {
+			# limit = {
+				# tag = THIS
+				# social_reform_name = elite
+			# }
+			# any_pop = {
+				# limit = {
+					# OR = {
+						# has_pop_religion = shiite
+						# has_pop_religion = sunni
+						# has_pop_religion = ibadi
+					# }
+				# }
+				# ideology = {
+					# factor = 0.02
+					# value = liberal
+				# }
+				# scaled_consciousness = {
+					# factor = 2
+					# ideology = liberal
+				# }
+				# scaled_consciousness = {
+					# factor = 5
+					# ideology = reactionary
+				# }
+				# dominant_issue = {
+					# value = moralism
+					# factor = 0.05
+				# }
+			# }
+		# }
+		# any_country = {
+			# limit = {
+				# tag = THIS
+				# social_reform_name = low_schools
+			# }
+			# any_pop = {
+				# limit = {
+					# OR = {
+						# has_pop_religion = shiite
+						# has_pop_religion = sunni
+						# has_pop_religion = ibadi
+					# }
+				# }
+				# ideology = {
+					# factor = 0.02
+					# value = liberal
+				# }
+				# scaled_consciousness = {
+					# factor = 2
+					# ideology = liberal
+				# }
+				# scaled_consciousness = {
+					# factor = 5
+					# ideology = reactionary
+				# }
+				# dominant_issue = {
+					# value = good_schools
+					# factor = 0.05
+				# }
+			# }
+		# }
+		# any_country = {
+			# limit = {
+				# tag = THIS
+				# social_reform_name = public
+			# }
+			# any_pop = {
+				# limit = {
+					# OR = {
+						# has_pop_religion = shiite
+						# has_pop_religion = sunni
+						# has_pop_religion = ibadi
+					# }
+				# }
+				# literacy = 0.01
+				# ideology = {
+					# factor = 0.02
+					# value = liberal
+				# }
+				# scaled_consciousness = {
+					# factor = 2
+					# ideology = liberal
+				# }
+				# scaled_consciousness = {
+					# factor = 5
+					# ideology = reactionary
+				# }
+			# }
+		# }
+		# ai_chance = {
+			# factor = 75	
+			# modifier = {
+				# NOT = { money = 5000 }
+				# factor = 0.01
+			# }
+		# }
+	# }
+	# option = {
+		# name = "What dangerous ideas"
+		# plurality = -1
+		# any_pop = {
+			# ideology = {
+				# factor = 0.02
+				# value = reactionary
+			# }
+			# scaled_consciousness = {
+				# factor = -4
+				# ideology = reactionary
+			# }
+		# }
+		# ai_chance = {
+			# factor = 15		
+		# }
+	# }
+	# option = {
+		# name = "We'd like to see their ideas pushed very hard"
+		# plurality = 3
+		# political_reform = public
+		# any_pop = {
+			# limit = {
+				# OR = {
+					# has_pop_religion = shiite
+					# has_pop_religion = sunni
+					# has_pop_religion = ibadi
+				# }
+			# }
+			# literacy = 0.01
+			# ideology = {
+				# factor = 0.02
+				# value = reactionary
+			# }
+			# scaled_consciousness = {
+				# factor = 2
+				# ideology = liberal
+			# }
+			# scaled_consciousness = {
+				# factor = -3
+				# ideology = reactionary
+			# }
+			# scaled_militancy = {
+				# factor = 6
+				# ideology = reactionary
+			# }
+		# }
+		# ai_chance = {
+			# factor = 10		
+		# }
+	# }
+# }
 
 # The Unveiled Protests
 country_event = {
@@ -4835,7 +4821,7 @@ province_event = {
 	picture = "molla_nasreddin"
 	
 	trigger = {
-		id = 1090
+		province_id = 1090
 		year = 1880
 		owner = { NOT = { press_rights = state_press } }
 	}
@@ -4953,7 +4939,7 @@ province_event = {
 				exists = yes
 				OR = {
 					is_culture_group = turko_semitic
-					is_culture_group = arabic
+					is_culture_group = arab
 					is_culture_group = iranian
 					is_culture_group = turanian
 				}
@@ -5965,8 +5951,8 @@ country_event = {
 		war = no
 		has_country_flag = naser_in_europe
 		OR = {
-			military_constructions = advanced_military_constructions
-			industrial_construction = advanced_industrial_construction
+			military_constructions = yes_military_constructions
+			industrial_construction = yes_industrial_construction
 			civilized = yes
 		}
 	}

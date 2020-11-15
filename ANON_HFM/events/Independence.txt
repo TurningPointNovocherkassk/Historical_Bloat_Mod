@@ -2619,28 +2619,50 @@ country_event = {
 		NOT = {
 			exists = CRE
 			has_country_flag = no_crete_independence
-			primary_culture = greek
+			is_culture_group = pan_greek
 		}
 		is_possible_vassal = CRE
 		revolution_n_counterrevolution = 1
 		OR = {
 			AND = {
-				NOT = { accepted_culture = greek }
+				NOT = {
+					OR = {
+						accepted_culture = greek
+						accepted_culture = insular_greek
+						accepted_culture = cappadocian_greek
+						accepted_culture = levantine_greek
+						accepted_culture = pontic_greek
+						accepted_culture = italiot
+					}
+				}
 				any_state = {
 					any_owned_province = {
 						is_core = CRE
-						culture = greek
+						OR = {
+							culture = greek
+							culture = insular_greek
+						}
 						literacy = 0.25
 					}
 					average_militancy = 3
 				}
 			}
 			AND = {
-				accepted_culture = greek
+				OR = {
+					accepted_culture = greek
+					accepted_culture = insular_greek
+					accepted_culture = cappadocian_greek
+					accepted_culture = levantine_greek
+					accepted_culture = pontic_greek
+					accepted_culture = italiot
+				}
 				any_state = {
 					any_owned_province = {
 						is_core = CRE
-						culture = greek
+						OR = {
+							culture = greek
+							culture = insular_greek
+						}
 						literacy = 0.5
 					}
 					average_militancy = 7
@@ -2655,7 +2677,7 @@ country_event = {
 		modifier = {
 			factor = 1.5
 			any_pop = {
-				has_pop_culture = greek
+				is_culture_group = pan_greek
 				is_accepted_culture = yes
 			}
 		}	
@@ -2686,12 +2708,35 @@ country_event = {
 		}
 	}
 
-	immediate = { random_owned = { limit = { owner = { accepted_culture = greek } } owner = { remove_accepted_culture = greek } } }
+	immediate = {
+		random_owned = {
+			limit = {
+				owner = {
+					OR = {
+						accepted_culture = greek
+						accepted_culture = insular_greek
+						accepted_culture = cappadocian_greek
+						accepted_culture = levantine_greek
+						accepted_culture = pontic_greek
+						accepted_culture = italiot
+					}
+				}
+			}
+			owner = {
+				remove_accepted_culture = greek
+				remove_accepted_culture = insular_greek
+				remove_accepted_culture = cappadocian_greek
+				remove_accepted_culture = levantine_greek
+				remove_accepted_culture = pontic_greek
+				remove_accepted_culture = italiot
+			}
+		}
+	}
 	
 	option = {
 		name = "EVT90017OPTA"
 		any_pop = {
-			limit = { has_pop_culture = greek}
+			limit = { is_culture_group = pan_greek }
 			militancy = 3
 		}
 		any_owned = {
@@ -2748,17 +2793,17 @@ country_event = {
 		release_vassal = CRE
 		CRE = {
 			any_pop = {
-				limit = { has_pop_culture = greek }
+				limit = { is_culture_group = pan_greek }
 				militancy = -8
 			}
 		}
 		any_pop = {
-			limit = { has_pop_culture = greek }
+			limit = { is_culture_group = pan_greek }
 			militancy = -3
 		}
 		any_pop = {
 			limit = {
-				NOT = { has_pop_culture = greek }
+				NOT = { is_culture_group = pan_greek }
 				is_primary_culture = no
 			}
 			militancy = 1
@@ -2827,7 +2872,7 @@ country_event = {
 		any_pop = {
 			limit = {
 				location = { is_core = CRE }
-				has_pop_culture = greek
+				is_culture_group = pan_greek
 			}
 			militancy = 8
 		}
