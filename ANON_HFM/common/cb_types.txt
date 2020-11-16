@@ -2715,6 +2715,7 @@ monroe_doctrine = {
 						}
 						OR = {
 							has_global_flag = 1850_VNZ_ENG_treaty_refuse
+							has_global_flag = ENG_VNZ_problem_deport
 							has_global_flag = ENG_VNZ_problem_genocide
 							ENG = {
 								OR = {
@@ -2745,12 +2746,19 @@ monroe_doctrine = {
 			}
 			NOT = {
 				is_core = USA
-				region = ARG_2391 
-				region = CHL_2332
+				# Eastern Pacific Islands
+				region = ECU_2285
+				# South Atlantic Islands
 				region = ENG_2132
+				# Patagonia Septentrional
+				region = ARG_2391 
+				# Patagonia Meridional
 				region = ARG_2398
-				province_id = 2190
-				province_id = 2200
+				# Belize
+				region = ENG_2190
+				# Moskito Coast
+				region = UCA_2200
+				# Fort Ross
 				province_id = 3390
 				#ANON
 				AND = {
@@ -2759,21 +2767,22 @@ monroe_doctrine = {
 						region = VNZ_2278
 					}
 					OR = {
-						has_global_flag = 1850_VNZ_ENG_treaty_refuse
-						has_global_flag = ENG_VNZ_problem_genocide
+						has_global_flag = 1850_VNZ_ENG_treaty_accept
+						has_global_flag = ENG_VNZ_problem_nothing
+						has_global_flag = ENG_VNZ_problem_settlers
 						ENG = {
 							OR = {
-								has_country_flag = VNZ_arbitration_denied
-								has_country_flag = VNZ_BRZ_NET_war
+								has_country_flag = VNZ_arbitration_accepted
+								has_country_flag = VNZ_BRZ_NET_arbitration_accepted
 							}
-							NOT = { has_country_flag = ENG_perfidious_albion }
+							# NOT = { has_country_flag = ENG_perfidious_albion }
 						}
 						ENL = {
 							OR = {
-								has_country_flag = VNZ_arbitration_denied
-								has_country_flag = VNZ_BRZ_NET_war
+								has_country_flag = VNZ_arbitration_accepted
+								has_country_flag = VNZ_BRZ_NET_arbitration_accepted
 							}
-							NOT = { has_country_flag = ENG_perfidious_albion }
+							# NOT = { has_country_flag = ENG_perfidious_albion }
 						}
 					}
 				}
@@ -2836,20 +2845,21 @@ monroe_doctrine = {
 					}
 					OR = {
 						has_global_flag = 1850_VNZ_ENG_treaty_refuse
+						has_global_flag = ENG_VNZ_problem_deport
 						has_global_flag = ENG_VNZ_problem_genocide
 						ENG = {
 							OR = {
 								has_country_flag = VNZ_arbitration_denied
 								has_country_flag = VNZ_BRZ_NET_war
-								NOT = { has_country_flag = ENG_perfidious_albion }
 							}
+							NOT = { has_country_flag = ENG_perfidious_albion }
 						}
 						ENL = {
 							OR = {
 								has_country_flag = VNZ_arbitration_denied
 								has_country_flag = VNZ_BRZ_NET_war
-								NOT = { has_country_flag = ENG_perfidious_albion }
 							}
+							NOT = { has_country_flag = ENG_perfidious_albion }
 						}
 					}
 				}
@@ -2884,13 +2894,19 @@ monroe_doctrine = {
 		NOT = {
 			any_owned_province = {
 				OR = {
-					is_core = USA
-					region = ARG_2391 
-					region = CHL_2332
+					# Eastern Pacific Islands
+					region = ECU_2285
+					# South Atlantic Islands
 					region = ENG_2132
+					# Patagonia Septentrional
+					region = ARG_2391 
+					# Patagonia Meridional
 					region = ARG_2398
-					province_id = 2190
-					province_id = 2200
+					# Belize
+					region = ENG_2190
+					# Moskito Coast
+					region = UCA_2200
+					# Fort Ross
 					province_id = 3390
 					#ANON
 					AND = {
@@ -2899,21 +2915,22 @@ monroe_doctrine = {
 							region = VNZ_2278
 						}
 						OR = {
-							has_global_flag = 1850_VNZ_ENG_treaty_refuse
-							has_global_flag = ENG_VNZ_problem_genocide
+							has_global_flag = 1850_VNZ_ENG_treaty_accept
+							has_global_flag = ENG_VNZ_problem_nothing
+							has_global_flag = ENG_VNZ_problem_settlers
 							ENG = {
 								OR = {
-									has_country_flag = VNZ_arbitration_denied
-									has_country_flag = VNZ_BRZ_NET_war
-									NOT = { has_country_flag = ENG_perfidious_albion }
+									has_country_flag = VNZ_arbitration_accepted
+									has_country_flag = VNZ_BRZ_NET_arbitration_accepted
 								}
+								# NOT = { has_country_flag = ENG_perfidious_albion }
 							}
 							ENL = {
 								OR = {
-									has_country_flag = VNZ_arbitration_denied
-									has_country_flag = VNZ_BRZ_NET_war
-									NOT = { has_country_flag = ENG_perfidious_albion }
+									has_country_flag = VNZ_arbitration_accepted
+									has_country_flag = VNZ_BRZ_NET_arbitration_accepted
 								}
+								# NOT = { has_country_flag = ENG_perfidious_albion }
 							}
 						}
 					}
