@@ -563,14 +563,13 @@ country_event = {
 
 country_event = {
 	id = 9999981
-	title = "Break Free Test"
-	desc = "What the title says"
-	picture = "treaty"
+	title = "Mohammad Shah"
+	desc = "This nigga takes power"
+	picture = "mirza_abbas_funeral"
 	
 	is_triggered_only = yes
 	
 	option = {
-		overlord = { release = THIS }
-		overlord = { release_vassal = THIS }
+		PER = { set_country_flag = mohammad_shah }
 	}
 }
