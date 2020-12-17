@@ -2690,7 +2690,7 @@ political_decisions = {
 			owns = 730
 			owns = 731
 			owns = 732
-			owns = 733
+			# owns = 733
 			NOT = {
 				has_global_flag = german_veneto
 			}
@@ -2716,9 +2716,9 @@ political_decisions = {
 			732 = {
 				change_province_name = "Trevixen"
 			}
-			733 = {
-				change_province_name = "Weiden"
-			}
+			# 733 = {
+			# 	change_province_name = "Weiden"
+			# }
 			set_global_flag = german_veneto
 			clr_global_flag = italian_veneto
 		}
@@ -2735,7 +2735,7 @@ political_decisions = {
 			owns = 730
 			owns = 731
 			owns = 732
-			owns = 733
+			# owns = 733
 			NOT = {
 				has_global_flag = italian_veneto
 			}
@@ -2761,9 +2761,9 @@ political_decisions = {
 			732 = {
 				change_province_name = "Treviso"
 			}
-			733 = {
-				change_province_name = "Udine"
-			}
+			# 733 = {
+				# change_province_name = "Udine"
+			# }
 			set_global_flag = italian_veneto
 			clr_global_flag = german_veneto
 		}

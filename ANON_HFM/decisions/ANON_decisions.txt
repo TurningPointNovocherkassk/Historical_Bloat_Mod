@@ -442,7 +442,7 @@ political_decisions = {
 				tag = ESG
 				tag = UBD
 			}
-			primary_culture = volga_german
+			primary_culture = baltic_german
 			NOT = {
 				OR = {
 					has_country_flag = germanization_baltics_LVN
@@ -544,7 +544,7 @@ political_decisions = {
 			NOT = {
 				has_country_flag = ober_ost_shall_unite_by_sword
 			}
-			primary_culture = volga_german
+			primary_culture = baltic_german
 		}
 		
 		allow = {
@@ -577,7 +577,7 @@ political_decisions = {
 				has_country_flag = integrate_lithuania
 			}
 			LIT = { exists = yes }
-			primary_culture = volga_german
+			primary_culture = baltic_german
 		}
 		
 		allow = {
@@ -653,7 +653,7 @@ political_decisions = {
 				exists = UBD
 				has_country_flag = UBD_shall_unite_by_sword
 			}
-			primary_culture = volga_german
+			primary_culture = baltic_german
 		}
 		
 		allow = {
@@ -668,9 +668,9 @@ political_decisions = {
 			is_vassal = no
 			war = no
 			OR = {
-				354 = { owned_by = THIS pop_majority_culture = volga_german }
-				357 = { owned_by = THIS pop_majority_culture = volga_german }
-				349 = { owned_by = THIS pop_majority_culture = volga_german }
+				354 = { owned_by = THIS pop_majority_culture = baltic_german }
+				357 = { owned_by = THIS pop_majority_culture = baltic_german }
+				349 = { owned_by = THIS pop_majority_culture = baltic_german }
 			}
 		}
 		
@@ -696,7 +696,7 @@ political_decisions = {
 				tag = ESG
 			}
 			NOT = { exists = UBD }
-			primary_culture = volga_german
+			primary_culture = baltic_german
 		}
 		
 		allow = {
@@ -5587,6 +5587,9 @@ political_decisions = {
 				}
 				733 = {
 					change_province_name = "Weiden"
+					state_scope = {
+						change_region_name = "Friaul"
+					}
 				}
 				owner = { 
 					set_global_flag = germanic_renamed_udine
@@ -5606,6 +5609,9 @@ political_decisions = {
 				}
 				733 = {
 					change_province_name = "Videm"
+					state_scope = {
+						change_region_name = "Furlanija"
+					}
 				}
 				owner = { 
 					set_global_flag = southslavic_renamed_udine
@@ -5625,6 +5631,9 @@ political_decisions = {
 				}
 				733 = {
 					change_province_name = "Udin"
+					state_scope = {
+						change_region_name = "Friûl"
+					}
 				}
 				owner = { 
 					set_global_flag = romansh_renamed_udine
@@ -5644,6 +5653,9 @@ political_decisions = {
 				}
 				733 = {
 					change_province_name = "Udine"
+					state_scope = {
+						change_region_name = "Friuli"
+					}
 				}
 				owner = { 
 					set_global_flag = italian_renamed_udine

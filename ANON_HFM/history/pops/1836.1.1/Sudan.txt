@@ -68,6 +68,12 @@
 		size = 300
 	}
 
+	artisans = {
+		culture = misri
+		religion = sunni
+		size = 1000
+	}
+
 	aristocrats = {
 		culture = bedouin
 		religion = sunni
@@ -108,6 +114,50 @@
 		culture = dinka
 		religion = animist
 		size = 5000
+	}
+	
+	
+	aristocrats = {
+		culture = copt
+		religion = coptic
+		size = 75
+	}
+	clergymen = {
+		culture = copt
+		religion = coptic
+		size = 100
+	}
+	artisans = {
+		culture = copt
+		religion = coptic
+		size = 1500
+	}
+	farmers = {
+		culture = copt
+		religion = coptic
+		size = 300
+	}
+	
+	
+	aristocrats = {
+		culture = greek #levantine_greek
+		religion = orthodox
+		size = 35
+	}
+	clergymen = {
+		culture = greek #levantine_greek
+		religion = orthodox
+		size = 35
+	}
+	artisans = {
+		culture = greek #levantine_greek
+		religion = orthodox
+		size = 250
+	}
+	farmers = {
+		culture = greek #levantine_greek
+		religion = orthodox
+		size = 75
 	}
 }
 #Wadi Madani (136000/34000 POPS)
@@ -152,6 +202,49 @@
 		culture = dinka
 		religion = animist
 		size = 4000
+	}
+	
+	aristocrats = {
+		culture = copt
+		religion = coptic
+		size = 35
+	}
+	clergymen = {
+		culture = copt
+		religion = coptic
+		size = 35
+	}
+	artisans = {
+		culture = copt
+		religion = coptic
+		size = 750
+	}
+	farmers = {
+		culture = copt
+		religion = coptic
+		size = 150
+	}
+	
+	
+	aristocrats = {
+		culture = greek #levantine_greek
+		religion = orthodox
+		size = 35
+	}
+	clergymen = {
+		culture = greek #levantine_greek
+		religion = orthodox
+		size = 35
+	}
+	artisans = {
+		culture = greek #levantine_greek
+		religion = orthodox
+		size = 100
+	}
+	farmers = {
+		culture = greek #levantine_greek
+		religion = orthodox
+		size = 50
 	}
 }
 #Kassala (252000/63000 POPS)
@@ -245,6 +338,22 @@
 		culture = beja
 		religion = sunni
 		size = 3625
+	}
+	
+	clergymen = {
+		culture = copt
+		religion = coptic
+		size = 75
+	}
+	farmers = {
+		culture = copt
+		religion = coptic
+		size = 150
+	}
+	artisans = {
+		culture = copt
+		religion = coptic
+		size = 600
 	}
 }
 #Sennar (160000/40000 POPS)
@@ -696,6 +805,49 @@
 		religion = animist
 		size = 2000
 	}
+	
+	aristocrats = {
+		culture = copt
+		religion = coptic
+		size = 35
+	}
+	clergymen = {
+		culture = copt
+		religion = coptic
+		size = 75
+	}
+	farmers = {
+		culture = copt
+		religion = coptic
+		size = 75
+	}
+	artisans = {
+		culture = copt
+		religion = coptic
+		size = 500
+	}
+	
+	
+	aristocrats = {
+		culture = greek #levantine_greek
+		religion = orthodox
+		size = 35
+	}
+	clergymen = {
+		culture = greek #levantine_greek
+		religion = orthodox
+		size = 35
+	}
+	artisans = {
+		culture = greek #levantine_greek
+		religion = orthodox
+		size = 250
+	}
+	farmers = {
+		culture = greek #levantine_greek
+		religion = orthodox
+		size = 75
+	}
 }
 #Halaib (48000/12000 POPS) #now part of Sudan 
 1834 = {
@@ -970,6 +1122,22 @@
 		religion = sunni
 		size = 900
 	}
+	
+	clergymen = {
+		culture = copt
+		religion = coptic
+		size = 75
+	}
+	artisans = {
+		culture = copt
+		religion = coptic
+		size = 250
+	}
+	farmers = {
+		culture = copt
+		religion = coptic
+		size = 75
+	}
 }
 #Hayya (104000/26000 POPS)
 1836 = {
@@ -1061,6 +1229,28 @@
 		culture = beja
 		religion = sunni
 		size = 16500
+	}
+	
+	
+	aristocrats = {
+		culture = copt
+		religion = coptic
+		size = 35
+	}
+	clergymen = {
+		culture = copt
+		religion = coptic
+		size = 75
+	}
+	farmers = {
+		culture = copt
+		religion = coptic
+		size = 75
+	}
+	artisans = {
+		culture = copt
+		religion = coptic
+		size = 500
 	}
 }
 #Atbarah (40000/1000 POPS)
@@ -1154,6 +1344,23 @@
 		religion = sunni
 		size = 2700
 	}
+	
+	
+	clergymen = {
+		culture = copt
+		religion = coptic
+		size = 35
+	}
+	farmers = {
+		culture = copt
+		religion = coptic
+		size = 75
+	}
+	artisans = {
+		culture = copt
+		religion = coptic
+		size = 300
+	}
 }
 #Salima (8000/2000 POPS)
 2564 = {
@@ -1185,6 +1392,36 @@
 		culture = berber
 		religion = sunni
 		size = 1800
+	}
+	
+	aristocrats = {
+		culture = bedouin
+		religion = sunni
+		size = 25
+	}
+
+	clergymen = {
+		culture = bedouin
+		religion = sunni
+		size = 50
+	}
+
+	artisans = {
+		culture = bedouin
+		religion = sunni
+		size = 100
+	}
+
+	soldiers = {
+		culture = bedouin
+		religion = sunni
+		size = 25
+	}
+
+	farmers = {
+		culture = bedouin
+		religion = sunni
+		size = 250
 	}
 }
 #Kordofan Region (524000)

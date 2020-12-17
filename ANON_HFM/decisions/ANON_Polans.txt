@@ -1047,6 +1047,7 @@ political_decisions = {
 		}
 		effect = {
 			set_country_flag = the_commonwealth_3_nations
+			add_accepted_culture = ukrainian
 			badboy = 12.5
 			prestige = 12.5
 			all_core = { add_core = PLR remove_core = PLC }
@@ -4190,7 +4191,7 @@ political_decisions = {
 			###Russian - tobago###
 			random_owned = {
 				limit = {
-					province_id = 2237
+					province_id = 2238
 					owner = {
 						is_culture_group = east_slavic
 					}

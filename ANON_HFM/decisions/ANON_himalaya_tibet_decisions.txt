@@ -2155,7 +2155,7 @@ political_decisions = {
 					}
 				}
 				AND = {
-					NOT = { OR = { is_culture_group = turanian is_culture_group = east_asian is_culture_group = east_slavic } }
+					NOT = { OR = { primary_culture = mongol is_culture_group = turanian is_culture_group = east_asian is_culture_group = east_slavic } }
 					OR = {
 						AND = {
 							owns = 1600 NOT = { has_global_flag = normal_rename_urumqi }
@@ -2421,7 +2421,7 @@ political_decisions = {
 				limit = {
 					province_id = 1600
 					owner = {
-						NOT = { OR = { is_culture_group = turanian is_culture_group = east_asian is_culture_group = east_slavic } }
+						NOT = { OR = { primary_culture = mongol is_culture_group = turanian is_culture_group = east_asian is_culture_group = east_slavic } }
 					}
 				}
 				1600 = { change_province_name = "Urumqi"
@@ -2439,7 +2439,7 @@ political_decisions = {
 				limit = {
 					province_id = 1595
 					owner = {
-						NOT = { OR = { is_culture_group = turanian is_culture_group = east_asian } }
+						NOT = { OR = { primary_culture = mongol is_culture_group = turanian is_culture_group = east_asian } }
 					}
 				}
 				1595 = { change_province_name = "Ili" }
@@ -2454,7 +2454,7 @@ political_decisions = {
 				limit = {
 					province_id = 1596
 					owner = {
-						NOT = { OR = { is_culture_group = turanian is_culture_group = east_asian } }
+						NOT = { OR = { primary_culture = mongol is_culture_group = turanian is_culture_group = east_asian } }
 					}
 				}
 				1596 = { change_province_name = "Tulta" }
@@ -2468,7 +2468,7 @@ political_decisions = {
 				limit = {
 					province_id = 1599
 					owner = {
-						NOT = { OR = { is_culture_group = turanian is_culture_group = east_asian } }
+						NOT = { OR = { primary_culture = mongol is_culture_group = turanian is_culture_group = east_asian } }
 					}
 				}
 				1599 = { change_province_name = "Kumul" }
@@ -2482,7 +2482,7 @@ political_decisions = {
 				limit = {
 					province_id = 3580
 					owner = {
-						NOT = { OR = { is_culture_group = turanian is_culture_group = east_asian is_culture_group = east_slavic } }
+						NOT = { OR = { primary_culture = mongol is_culture_group = turanian is_culture_group = east_asian is_culture_group = east_slavic } }
 					}
 				}
 				3580 = { change_province_name = "Dzungarian Gate" }
@@ -2497,7 +2497,7 @@ political_decisions = {
 				limit = {
 					province_id = 3581
 					owner = {
-						NOT = { OR = { is_culture_group = turanian is_culture_group = east_asian is_culture_group = east_slavic } }
+						NOT = { OR = { primary_culture = mongol is_culture_group = turanian is_culture_group = east_asian is_culture_group = east_slavic } }
 					}
 				}
 				3581 = { change_province_name = "Chuguchak" }
@@ -2512,7 +2512,7 @@ political_decisions = {
 				limit = {
 					province_id = 3583
 					owner = {
-						NOT = { OR = { is_culture_group = turanian is_culture_group = east_asian is_culture_group = east_slavic } }
+						NOT = { OR = { primary_culture = mongol is_culture_group = turanian is_culture_group = east_asian is_culture_group = east_slavic } }
 					}
 				}
 				3583 = { change_province_name = "Turfan" }
@@ -2589,7 +2589,7 @@ political_decisions = {
 							owns = 1594 NOT = { has_global_flag = sinic_rename_tarim }
 						}
 						AND = {
-							owns = 3583 NOT = { has_global_flag = sinic_rename_turpan }
+							owns = 2607 NOT = { has_global_flag = sinic_rename_qakilik }
 						}
 					}
 				}
@@ -2600,7 +2600,7 @@ political_decisions = {
 							owns = 1594 NOT = { has_global_flag = bhodic_rename_tarim }
 						}
 						AND = {
-							owns = 3583 NOT = { has_global_flag = bhodic_rename_turpan }
+							owns = 2607 NOT = { has_global_flag = bhodic_rename_qakilik }
 						}
 					}
 				}
@@ -2615,7 +2615,7 @@ political_decisions = {
 							owns = 1594 NOT = { has_global_flag = mongolic_rename_tarim }
 						}
 						AND = {
-							owns = 3583 NOT = { has_global_flag = mongolic_rename_turpan }
+							owns = 2607 NOT = { has_global_flag = mongolic_rename_qakilik }
 						}
 					}
 				}
@@ -2727,7 +2727,8 @@ political_decisions = {
 						}
 					}
 				}
-				1594 = { change_province_name = "Kashgar"
+				1594 = {
+					change_province_name = "Kashgar"
 					state_scope = {
 						change_region_name = "Altishahr"
 					}

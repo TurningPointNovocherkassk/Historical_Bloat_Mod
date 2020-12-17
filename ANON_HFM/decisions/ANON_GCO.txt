@@ -1222,14 +1222,14 @@ political_decisions = {
 		
 		effect = {
 			set_country_flag = colonia_tovar_founded
-			415 = { #Rouen, where they parted from.
+			3593 = {
 				any_pop = {
 					limit = {
 						has_pop_culture = south_german
 					}
 					move_pop = 3361
 				}
-				remove_core = T0B
+				# remove_core = T0B
 			}
 			3361 = { #Maracay
 				add_province_modifier = {

@@ -1844,7 +1844,7 @@ political_decisions = {
 				OR = {
 					is_culture_group = east_slavic
 					is_culture_group = iberian
-					primary_culture = mexican
+					is_culture_group = latin_american_cultures
 					primary_culture = alaskan
 				}
 			}
@@ -1904,7 +1904,7 @@ political_decisions = {
 			}  
 			3394 = { change_province_name = "Waskov" }
 			83 = { change_province_name = "Yevgeniygrad" }
-			3388 = { change_province_name = "Klamatov" }
+			3388 = { change_province_name = "Klamatovsk" }
 		}
 		ai_will_do = { factor = 1 }
 	}
@@ -1915,7 +1915,7 @@ political_decisions = {
 				OR = {
 					is_culture_group = east_slavic
 					is_culture_group = iberian
-					primary_culture = mexican
+					is_culture_group = latin_american_cultures
 					primary_culture = alaskan
 				}
 			}
@@ -1983,7 +1983,7 @@ political_decisions = {
 				OR = {
 					is_culture_group = east_slavic
 					is_culture_group = iberian
-					primary_culture = mexican
+					is_culture_group = latin_american_cultures
 					primary_culture = alaskan
 				}
 			}
@@ -2054,7 +2054,7 @@ political_decisions = {
 				OR = {
 					is_culture_group = east_slavic
 					is_culture_group = iberian
-					primary_culture = mexican
+					is_culture_group = latin_american_cultures
 					primary_culture = alaskan
 				}
 			}
@@ -2258,7 +2258,7 @@ political_decisions = {
 		picture = gtfo
 		potential = {
 			OR = {
-				primary_culture = mexican
+				is_culture_group = latin_american_cultures
 				is_culture_group = iberian
 			}
 			owns = 3393
@@ -2659,7 +2659,7 @@ political_decisions = {
 		picture = gtfo
 		potential = {
 			OR = {
-				primary_culture = mexican
+				is_culture_group = latin_american_cultures
 				is_culture_group = iberian
 			}
 			OR = {
@@ -2943,7 +2943,7 @@ political_decisions = {
 			6 = { change_province_name = "Whitehorse" }
 			17 = { change_province_name = "Stikine" }
 			7 = { change_province_name = "Dawson" }
-			8 = { change_province_name = "Ross River" }
+			# 8 = { change_province_name = "Ross River" }
 			2629 = { change_province_name = "Fort Nelson" }
 		}
 		ai_will_do = { factor = 1 }
@@ -2953,7 +2953,7 @@ political_decisions = {
 		potential = {
 			OR = {
 				is_culture_group = iberian
-				primary_culture = mexican
+				is_culture_group = latin_american_cultures
 			}
 			owns = 6
 			NOT = { has_global_flag = SPA_rename_whitehorse }
@@ -2972,7 +2972,7 @@ political_decisions = {
 			#17 = { change_province_name = "Buena Esperanza" }
 			17 = { change_province_name = "Estajín" }
 			7 = { change_province_name = "San David" }
-			8 = { change_province_name = "Rio Rosario" }
+			# 8 = { change_province_name = "Rio Rosario" }
 			2629 = { change_province_name = "Fuerte Gutiérrez" }
 		}
 		ai_will_do = { factor = 1 }
@@ -3000,7 +3000,7 @@ political_decisions = {
 			6 = { change_province_name = "Belaloshadersk" }
 			17 = { change_province_name = "Shtakhin" }
 			7 = { change_province_name = "Svyatoy David" }
-			8 = { change_province_name = "Reka Ross'" }
+			# 8 = { change_province_name = "Reka Ross'" }
 			2629 = { change_province_name = "Krepost Potemkin" }
 		}
 		ai_will_do = { factor = 1 }
@@ -3026,7 +3026,7 @@ political_decisions = {
 			6 = { change_province_name = "Hakuba" }
 			17 = { change_province_name = "Kibou" }
 			7 = { change_province_name = "Sutakiin" }
-			8 = { change_province_name = "Kasuka" } #Kaska Dena
+			# 8 = { change_province_name = "Kasuka" } #Kaska Dena
 			2629 = { change_province_name = "Toride-Katsu" } #In honor of Katsu Kaishu
 		}
 		ai_will_do = { factor = 1 }
@@ -3081,7 +3081,7 @@ political_decisions = {
 		potential = {
 			OR = {
 				is_culture_group = iberian
-				primary_culture = mexican
+				is_culture_group = latin_american_cultures
 			}
 			owns = 1
 			NOT = { has_global_flag = SPA_rename_alaska }

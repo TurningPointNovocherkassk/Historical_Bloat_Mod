@@ -276,6 +276,10 @@ political_decisions = {
 	claim_rub_al_khali = {
 		potential = {
 			primary_culture = peninsular
+			NOT = {
+				tag = NYE
+				ai = yes
+			}
 			NOT = { has_country_flag = claim_rub_al_khali }
 			OR = {
 				1161 = { empty = yes }
@@ -294,6 +298,11 @@ political_decisions = {
 				owns = 1178
 				owns = 1167
 				owns = 1166
+						owns = 3482
+						owns = 1412
+						owns = 1176
+						owns = 1173
+						owns = 1175
 			}
 			OR = {
 				1161 = { empty = yes }
@@ -321,6 +330,11 @@ political_decisions = {
 						province_id = 1178
 						province_id = 1167
 						province_id = 1166
+						province_id = 3482
+						province_id = 1412
+						province_id = 1176
+						province_id = 1173
+						province_id = 1175
 					}
 					owner = { ai = no }
 				}

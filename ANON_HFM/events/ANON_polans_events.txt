@@ -2638,8 +2638,19 @@ country_event = {
 		}
 		
 		clr_global_flag = paris_congress_to_be_held
-		clr_country_flag = for_congress_paris
+		clr_country_flag = for_congress_paris #1
 		clr_country_flag = hosting_paris_congress
+		any_country = {
+			limit = {
+				OR = {
+					has_country_flag = for_congress_paris
+					has_country_flag = hosting_paris_congress
+				}
+			}
+			clr_global_flag = paris_congress_to_be_held
+			clr_country_flag = for_congress_paris
+			clr_country_flag = hosting_paris_congress
+		}
 	}
 
 }
@@ -2797,8 +2808,19 @@ country_event = {
 		}
 		
 		clr_global_flag = paris_congress_to_be_held
-		clr_country_flag = for_congress_paris
+		clr_country_flag = for_congress_paris #2
 		clr_country_flag = hosting_paris_congress
+		any_country = {
+			limit = {
+				OR = {
+					has_country_flag = for_congress_paris
+					has_country_flag = hosting_paris_congress
+				}
+			}
+			clr_global_flag = paris_congress_to_be_held
+			clr_country_flag = for_congress_paris
+			clr_country_flag = hosting_paris_congress
+		}
 	}
 }
 
@@ -2835,20 +2857,50 @@ country_event = {
 			type = cut_down_to_size
 			months = 60
 		}
+		
 		clr_global_flag = paris_congress_to_be_held
-		clr_country_flag = for_congress_paris
+		clr_country_flag = for_congress_paris #3
 		clr_country_flag = attending_paris_congress
 		clr_country_flag = hosting_paris_congress
+		any_country = {
+			limit = {
+				OR = {
+					has_country_flag = for_congress_paris
+					has_country_flag = attending_paris_congress
+					has_country_flag = hosting_paris_congress
+				}
+			}
+			clr_global_flag = paris_congress_to_be_held
+			clr_country_flag = for_congress_paris
+			clr_country_flag = attending_paris_congress
+			clr_country_flag = hosting_paris_congress
+		}
 		ai_chance = { factor = 100 }
 	}
 	
 	option = {
 		name = "EVT666666024OPTB"
+		
 		clr_global_flag = paris_congress_to_be_held
-		clr_country_flag = for_congress_paris
+		clr_country_flag = for_congress_paris #4
 		clr_country_flag = attending_paris_congress
 		clr_country_flag = hosting_paris_congress
 		clr_country_flag = receiving_GLM
+		any_country = {
+			limit = {
+				OR = {
+					has_country_flag = for_congress_paris
+					has_country_flag = attending_paris_congress
+					has_country_flag = hosting_paris_congress
+					has_country_flag = receiving_GLM
+				}
+			}
+			clr_global_flag = paris_congress_to_be_held
+			clr_country_flag = for_congress_paris
+			clr_country_flag = attending_paris_congress
+			clr_country_flag = hosting_paris_congress
+			clr_country_flag = receiving_GLM
+		}
 		prestige_factor = -0.1
 		ai_chance = { factor = 0 }
 	}
@@ -3599,8 +3651,19 @@ country_event = {
 		}
 		
 		clr_global_flag = paris_congress_to_be_held
-		clr_country_flag = for_congress_paris
+		clr_country_flag = for_congress_paris #5
 		clr_country_flag = hosting_paris_congress
+		any_country = {
+			limit = {
+				OR = {
+					has_country_flag = for_congress_paris
+					has_country_flag = hosting_paris_congress
+				}
+			}
+			clr_global_flag = paris_congress_to_be_held
+			clr_country_flag = for_congress_paris
+			clr_country_flag = hosting_paris_congress
+		}
 	}
 
 }
@@ -7740,8 +7803,19 @@ country_event = {
 		}
 		
 		clr_global_flag = warsaw_congress_to_be_held
-		clr_country_flag = for_congress_warsaw
+		clr_country_flag = for_congress_warsaw #1
 		clr_country_flag = hosting_warsaw_congress
+		any_country = {
+			limit = {
+				OR = {
+					has_country_flag = for_congress_warsaw
+					has_country_flag = hosting_warsaw_congress
+				}
+			}
+			clr_global_flag = warsaw_congress_to_be_held
+			clr_country_flag = for_congress_warsaw
+			clr_country_flag = hosting_warsaw_congress
+		}
 	}
 
 }
@@ -7873,8 +7947,19 @@ country_event = {
 		}
 		
 		clr_global_flag = warsaw_congress_to_be_held
-		clr_country_flag = for_congress_warsaw
+		clr_country_flag = for_congress_warsaw #2
 		clr_country_flag = hosting_warsaw_congress
+		any_country = {
+			limit = {
+				OR = {
+					has_country_flag = for_congress_warsaw
+					has_country_flag = hosting_warsaw_congress
+				}
+			}
+			clr_global_flag = warsaw_congress_to_be_held
+			clr_country_flag = for_congress_warsaw
+			clr_country_flag = hosting_warsaw_congress
+		}
 	}
 }
 
@@ -7910,19 +7995,47 @@ country_event = {
 			type = cut_down_to_size
 			months = 60
 		}
+		
 		clr_global_flag = warsaw_congress_to_be_held
-		clr_country_flag = for_congress_warsaw
+		clr_country_flag = for_congress_warsaw #3
 		clr_country_flag = attending_warsaw_congress
 		clr_country_flag = hosting_warsaw_congress
+		any_country = {
+			limit = {
+				OR = {
+					has_country_flag = for_congress_warsaw
+					has_country_flag = attending_warsaw_congress
+					has_country_flag = hosting_warsaw_congress
+				}
+			}
+			clr_global_flag = warsaw_congress_to_be_held
+			clr_country_flag = for_congress_warsaw
+			clr_country_flag = attending_warsaw_congress
+			clr_country_flag = hosting_warsaw_congress
+		}
 		ai_chance = { factor = 100 }
 	}
 	
 	option = {
 		name = "EVT666666064OPTB"
+		
 		clr_global_flag = warsaw_congress_to_be_held
-		clr_country_flag = for_congress_warsaw
+		clr_country_flag = for_congress_warsaw #4
 		clr_country_flag = attending_warsaw_congress
 		clr_country_flag = hosting_warsaw_congress
+		any_country = {
+			limit = {
+				OR = {
+					has_country_flag = for_congress_warsaw
+					has_country_flag = attending_warsaw_congress
+					has_country_flag = hosting_warsaw_congress
+				}
+			}
+			clr_global_flag = warsaw_congress_to_be_held
+			clr_country_flag = for_congress_warsaw
+			clr_country_flag = attending_warsaw_congress
+			clr_country_flag = hosting_warsaw_congress
+		}
 		prestige_factor = -0.1
 		ai_chance = { factor = 0 }
 	}
@@ -8250,8 +8363,19 @@ country_event = {
 		}
 		
 		clr_global_flag = warsaw_congress_to_be_held
-		clr_country_flag = for_congress_warsaw
+		clr_country_flag = for_congress_warsaw #5
 		clr_country_flag = hosting_warsaw_congress
+		any_country = {
+			limit = {
+				OR = {
+					has_country_flag = for_congress_warsaw
+					has_country_flag = hosting_warsaw_congress
+				}
+			}
+			clr_global_flag = warsaw_congress_to_be_held
+			clr_country_flag = for_congress_warsaw
+			clr_country_flag = hosting_warsaw_congress
+		}
 	}
 
 }

@@ -547,17 +547,14 @@ country_event = {
 
 country_event = {
 	id = 9999982
-	title = "ukrainian assimliation test"
-	desc = "ukrainians assimilate to the primary culture"
+	title = "ukrainian accepted"
+	desc = "ukrainians are accepted in your country"
 	picture = "treaty"
 	
 	is_triggered_only = yes
 	
 	option = {
-		any_pop = {
-			limit = { has_pop_culture = ukrainian }
-			assimilate = yes
-		}
+		add_accepted_culture = ukrainian
 	}
 }
 

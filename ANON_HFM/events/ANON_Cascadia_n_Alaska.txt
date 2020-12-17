@@ -522,13 +522,13 @@
 				remove_core = CAN
 				secede_province = FROM
 			}
-			8 = {
-				add_core = FROM
-				add_core = LSK
-				remove_core = RPL
-				remove_core = CAN
-				secede_province = FROM
-			}
+			# 8 = {
+				# add_core = FROM
+				# add_core = LSK
+				# remove_core = RPL
+				# remove_core = CAN
+				# secede_province = FROM
+			# }
 			2629 = {
 				add_core = FROM
 				add_core = LSK
@@ -799,12 +799,12 @@ country_event = {
 		OR = {
 			owns = 6
 			owns = 7
-			owns = 8
+			# owns = 8
 		}
 		OR = {
 			6 = { produces = precious_metal } #Whitehorse
 			7 = { produces = precious_metal } #Dawson
-			8 = { produces = precious_metal } #Ross River
+			# 8 = { produces = precious_metal } #Ross River
 		}
 		NOT = { has_global_flag = klondike_gold_rush }
 	}
@@ -819,7 +819,7 @@ country_event = {
 						OR = {
 							province_id = 6
 							province_id = 7
-							province_id = 8
+							# province_id = 8
 						}
 					}
 					is_culture_group = native_american
@@ -843,7 +843,7 @@ country_event = {
 								OR = {
 									province_id = 6
 									province_id = 7
-									province_id = 8
+									# province_id = 8
 								}
 							}
 							has_pop_culture = alaskan
@@ -868,7 +868,7 @@ country_event = {
 								OR = {
 									province_id = 6
 									province_id = 7
-									province_id = 8
+									# province_id = 8
 								}
 							}
 							has_pop_culture = anglo_canadian
@@ -883,7 +883,7 @@ country_event = {
 								OR = {
 									province_id = 6
 									province_id = 7
-									province_id = 8
+									# province_id = 8
 								}
 							}
 							has_pop_culture = french_canadian
@@ -908,7 +908,7 @@ country_event = {
 								OR = {
 									province_id = 6
 									province_id = 7
-									province_id = 8
+									# province_id = 8
 								}
 							}
 							has_pop_culture = spanish
@@ -923,7 +923,7 @@ country_event = {
 								OR = {
 									province_id = 6
 									province_id = 7
-									province_id = 8
+									# province_id = 8
 								}
 							}
 							has_pop_culture = mexican
@@ -945,7 +945,7 @@ country_event = {
 								OR = {
 									province_id = 6
 									province_id = 7
-									province_id = 8
+									# province_id = 8
 								}
 							}
 							has_pop_culture = yankee
@@ -969,13 +969,13 @@ country_event = {
 					duration = 365
 				}			
 			}
-			8 = { 
-				life_rating = 5
-				add_province_modifier = {
-					name = klondike_gold_rush
-					duration = 365
-				}			
-			}
+			# 8 = { 
+				# life_rating = 5
+				# add_province_modifier = {
+					# name = klondike_gold_rush
+					# duration = 365
+				# }			
+			# }
 			set_global_flag = klondike_gold_rush
 	}
 }

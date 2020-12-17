@@ -714,7 +714,7 @@ darwinism = {
 		}
 	}
 	effect = {
-		education_efficiency = 0.25
+		education_efficiency = 0.50
 	}
 }
 social_darwinism = {
@@ -735,9 +735,8 @@ social_darwinism = {
 		war_exhaustion = -0.05
 	}
 }
-#social_science
 sociology = {
-	limit = { social_science = 1 }
+	limit = { biologism = 1 }
 	news = no
 	chance = {
 		base = 2
@@ -752,24 +751,8 @@ sociology = {
 	}
 	core_pop_consciousness_modifier = 0.01
 }
-social_psychology = {
-	limit = { social_science = 1 }
-	news = no
-	chance = {
-		base = 2
-		modifier = {
-			factor = 2
-			experimental_psychology = 1
-		}
-		modifier = {
-			factor = 2
-			behaviorism = 1
-		}
-	}
-	core_pop_consciousness_modifier = 0.01
-}
 political_science = {
-	limit = { social_science = 1 }
+	limit = { biologism = 1 }
 	news = no
 	chance = {
 		base = 2
@@ -784,6 +767,23 @@ political_science = {
 		modifier = {
 			factor = 1
 			naval_directionism = 1
+		}
+	}
+	core_pop_consciousness_modifier = 0.01
+}
+#social_science
+social_psychology = {
+	limit = { social_science = 1 }
+	news = no
+	chance = {
+		base = 2
+		modifier = {
+			factor = 2
+			experimental_psychology = 1
+		}
+		modifier = {
+			factor = 2
+			behaviorism = 1
 		}
 	}
 	core_pop_consciousness_modifier = 0.01

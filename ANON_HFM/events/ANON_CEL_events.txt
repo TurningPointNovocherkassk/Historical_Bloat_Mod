@@ -36,18 +36,18 @@
 		option = {
 			name = "EVTOPT1999999000A" #Excellent!
 			set_global_flag = y_wladfa_beginning
-			277 = {
+			3593 = {
 				any_pop = {
 					limit = {
 						has_pop_culture = welsh
 					}
 					move_pop = 2396
 				}
-				remove_core = PWL
+				# remove_core = PWL
 			}
 			2396 = {
 				add_core = YWL
-				#trade_goods = grain
+				# trade_goods = grain
 			}
 			ai_chance = {
 				factor = 95
@@ -108,14 +108,14 @@
 					reduce_pop = 2.5
 				}
 			}
-			296 = {
+			3687 = { # Secret province 2
 				any_pop = {
 					limit = {
 						has_pop_culture = welsh
 					}
 					move_pop = 2397
 				}
-				remove_core = PWL
+				# remove_core = PWL
 			}
 			2397 = {
 				add_core = YWL

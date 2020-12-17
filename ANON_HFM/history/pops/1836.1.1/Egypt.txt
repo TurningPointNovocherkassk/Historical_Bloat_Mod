@@ -31,12 +31,12 @@
 	artisans = {
 		culture = karaite_culture
 		religion = karaite
-		size = 4000
+		size = 6000
 	}
 	farmers = {
 		culture = karaite_culture
 		religion = karaite
-		size = 3000
+		size = 1000
 	}
 
 	aristocrats = {
@@ -99,37 +99,7 @@
 	artisans = {
 		culture = misri
 		religion = sunni
-		size = 10000
-	}
-
-	artisans = {
-		culture = misri
-		religion = sunni
-		size = 10000
-	}
-
-	artisans = {
-		culture = misri
-		religion = sunni
-		size = 10000
-	}
-
-	artisans = {
-		culture = misri
-		religion = sunni
-		size = 10000
-	}
-
-	artisans = {
-		culture = misri
-		religion = sunni
-		size = 10000
-	}
-
-	artisans = {
-		culture = misri
-		religion = sunni
-		size = 500
+		size = 40500
 	}
 
 	soldiers = {
@@ -156,62 +126,76 @@
 		size = 146000
 	}
 
-	bureaucrats = {
+	aristocrats = {
 		culture = copt
 		religion = coptic
-		size = 25
+		size = 200
 	}
-
+	soldiers = {
+		culture = copt
+		religion = coptic
+		size = 250
+	}
 	clergymen = {
 		culture = copt
 		religion = coptic
-		size = 175
+		size = 500
+	}
+	bureaucrats = {
+		culture = copt
+		religion = coptic
+		size = 250
 	}
 
 	artisans = {
 		culture = copt
 		religion = coptic
-		size = 10000
+		size = 50000
 	}
 
 	artisans = {
 		culture = copt
 		religion = coptic
-		size = 8000
+		size = 15000
 	}
 
 	farmers = {
 		culture = copt
 		religion = coptic
-		size = 26800
+		size = 6800
 	}
 
 	clergymen = {
-		culture = levantine_greek
+		culture = greek #levantine_greek
 		religion = orthodox
 		size = 100
 	}
 	artisans = {
-		culture = levantine_greek
+		culture = greek #levantine_greek
 		religion = orthodox
-		size = 9000
+		size = 15000
 	}
 	aristocrats = {
-		culture = levantine_greek
+		culture = greek #levantine_greek
 		religion = orthodox
 		size = 200
 	}
 	bureaucrats = {
-		culture = levantine_greek
+		culture = greek #levantine_greek
 		religion = orthodox
 		size = 75
 	}
 	farmers = {
-		culture = levantine_greek
+		culture = greek #levantine_greek
 		religion = orthodox
-		size = 2000
+		size = 1000
 	}
 	
+	aristocrats = {
+		culture = armenian
+		religion = coptic
+		size = 75
+	}
 	clergymen = {
 		culture = armenian
 		religion = coptic
@@ -220,7 +204,7 @@
 	artisans = {
 		culture = armenian
 		religion = coptic
-		size = 6000
+		size = 10000
 	}
 	farmers = {
 		culture = armenian
@@ -231,7 +215,7 @@
 	clergymen = {
 		culture = sephardic
 		religion = jewish
-		size = 25
+		size = 75
 	}
 	artisans = {
 		culture = sephardic
@@ -267,12 +251,12 @@
 	artisans = {
 		culture = karaite_culture
 		religion = karaite
-		size = 2000
+		size = 3000
 	}
 	farmers = {
 		culture = karaite_culture
 		religion = karaite
-		size = 1500
+		size = 500
 	}
 
 	aristocrats = {
@@ -316,18 +300,6 @@
 		religion = sunni
 		size = 10000
 	}
-
-	artisans = {
-		culture = copt
-		religion = coptic
-		size = 10000
-	}
-
-	artisans = {
-		culture = copt
-		religion = coptic
-		size = 10000
-	}
 	
 	artisans = {
 		culture = misri
@@ -353,16 +325,38 @@
 		size = 79238
 	}
 
+	aristocrats = {
+		culture = copt
+		religion = coptic
+		size = 75
+	}
+	bureaucrats = {
+		culture = copt
+		religion = coptic
+		size = 50
+	}
 	clergymen = {
 		culture = copt
 		religion = coptic
-		size = 25
+		size = 200
 	}
 
 	artisans = {
 		culture = copt
 		religion = coptic
 		size = 150
+	}
+
+	artisans = {
+		culture = copt
+		religion = coptic
+		size = 15000
+	}
+
+	artisans = {
+		culture = copt
+		religion = coptic
+		size = 15000
 	}
 
 	farmers = {
@@ -372,28 +366,44 @@
 	}
 	
 	
+	aristocrats = {
+		culture = copt
+		religion = coptic
+		size = 75
+	}
+	soldiers = {
+		culture = copt
+		religion = coptic
+		size = 100
+	}
 	clergymen = {
-		culture = levantine_greek
+		culture = copt
+		religion = coptic
+		size = 250
+	}
+	
+	clergymen = {
+		culture = greek #levantine_greek
 		religion = orthodox
 		size = 100
 	}
 	artisans = {
-		culture = levantine_greek
+		culture = greek #levantine_greek
 		religion = orthodox
 		size = 8000
 	}
 	aristocrats = {
-		culture = levantine_greek
+		culture = greek #levantine_greek
 		religion = orthodox
 		size = 100
 	}
 	bureaucrats = {
-		culture = levantine_greek
+		culture = greek #levantine_greek
 		religion = orthodox
 		size = 50
 	}
 	farmers = {
-		culture = levantine_greek
+		culture = greek #levantine_greek
 		religion = orthodox
 		size = 1000
 	}
@@ -431,12 +441,12 @@
 	artisans = {
 		culture = karaite_culture
 		religion = karaite
-		size = 2000
+		size = 3000
 	}
 	farmers = {
 		culture = karaite_culture
 		religion = karaite
-		size = 1500
+		size = 500
 	}
 
 	aristocrats = {
@@ -487,47 +497,62 @@
 		size = 55625
 	}
 
+	aristocrats = {
+		culture = copt
+		religion = coptic
+		size = 75
+	}
+	bureaucrats = {
+		culture = copt
+		religion = coptic
+		size = 75
+	}
+	soldiers = {
+		culture = copt
+		religion = coptic
+		size = 100
+	}
 	clergymen = {
 		culture = copt
 		religion = coptic
-		size = 25
+		size = 250
 	}
 
 	artisans = {
 		culture = copt
 		religion = coptic
-		size = 100
+		size = 25000
 	}
 
 	farmers = {
 		culture = copt
 		religion = coptic
-		size = 15875
+		size = 1000
 	}
 	
 	
 	clergymen = {
-		culture = levantine_greek
+		culture = greek #levantine_greek
 		religion = orthodox
 		size = 75
 	}
 	artisans = {
-		culture = levantine_greek
+		culture = greek #levantine_greek
 		religion = orthodox
 		size = 3000
 	}
 	aristocrats = {
-		culture = levantine_greek
+		culture = greek #levantine_greek
 		religion = orthodox
 		size = 100
 	}
 	bureaucrats = {
-		culture = levantine_greek
+		culture = greek #levantine_greek
 		religion = orthodox
 		size = 50
 	}
 	farmers = {
-		culture = levantine_greek
+		culture = greek #levantine_greek
 		religion = orthodox
 		size = 1000
 	}
@@ -553,12 +578,12 @@
 	artisans = {
 		culture = karaite_culture
 		religion = karaite
-		size = 2000
+		size = 3000
 	}
 	farmers = {
 		culture = karaite_culture
 		religion = karaite
-		size = 1500
+		size = 500
 	}
 
 	aristocrats = {
@@ -609,22 +634,32 @@
 		size = 44700
 	}
 
+	aristocrats = {
+		culture = copt
+		religion = coptic
+		size = 75
+	}
+	soldiers = {
+		culture = copt
+		religion = coptic
+		size = 100
+	}
 	clergymen = {
 		culture = copt
 		religion = coptic
-		size = 25
+		size = 150
 	}
 
 	artisans = {
 		culture = copt
 		religion = coptic
-		size = 100
+		size = 13875
 	}
 
 	farmers = {
 		culture = copt
 		religion = coptic
-		size = 11875
+		size = 1000
 	}
 
 	clergymen = {
@@ -639,29 +674,29 @@
 	}
 	
 	clergymen = {
-		culture = levantine_greek
+		culture = greek #levantine_greek
 		religion = orthodox
 		size = 75
 	}
 	artisans = {
-		culture = levantine_greek
+		culture = greek #levantine_greek
 		religion = orthodox
-		size = 2000
+		size = 3000
 	}
 	aristocrats = {
-		culture = levantine_greek
+		culture = greek #levantine_greek
 		religion = orthodox
 		size = 100
 	}
 	bureaucrats = {
-		culture = levantine_greek
+		culture = greek #levantine_greek
 		religion = orthodox
 		size = 50
 	}
 	farmers = {
-		culture = levantine_greek
+		culture = greek #levantine_greek
 		religion = orthodox
-		size = 1000
+		size = 500
 	}
 	
 }
@@ -742,47 +777,57 @@
 		size = 39625
 	}
 
-	clergymen = {
+	aristocrats = {
 		culture = copt
 		religion = coptic
-		size = 50
+		size = 75
 	}
-
-	artisans = {
+	soldiers = {
 		culture = copt
 		religion = coptic
 		size = 100
 	}
+	clergymen = {
+		culture = copt
+		religion = coptic
+		size = 250
+	}
 
-	farmers = {
+	artisans = {
 		culture = copt
 		religion = coptic
 		size = 11850
 	}
+
+	farmers = {
+		culture = copt
+		religion = coptic
+		size = 1000
+	}
 	
 	
 	clergymen = {
-		culture = levantine_greek
+		culture = greek #levantine_greek
 		religion = orthodox
 		size = 75
 	}
 	artisans = {
-		culture = levantine_greek
+		culture = greek #levantine_greek
 		religion = orthodox
 		size = 2000
 	}
 	aristocrats = {
-		culture = levantine_greek
+		culture = greek #levantine_greek
 		religion = orthodox
 		size = 100
 	}
 	bureaucrats = {
-		culture = levantine_greek
+		culture = greek #levantine_greek
 		religion = orthodox
 		size = 50
 	}
 	farmers = {
-		culture = levantine_greek
+		culture = greek #levantine_greek
 		religion = orthodox
 		size = 1000
 	}
@@ -818,12 +863,12 @@
 	artisans = {
 		culture = karaite_culture
 		religion = karaite
-		size = 2000
+		size = 3000
 	}
 	farmers = {
 		culture = karaite_culture
 		religion = karaite
-		size = 1500
+		size = 500
 	}
 
 	aristocrats = {
@@ -874,47 +919,62 @@
 		size = 54820
 	}
 
+	aristocrats = {
+		culture = copt
+		religion = coptic
+		size = 75
+	}
+	bureaucrats = {
+		culture = copt
+		religion = coptic
+		size = 35
+	}
+	soldiers = {
+		culture = copt
+		religion = coptic
+		size = 100
+	}
 	clergymen = {
 		culture = copt
 		religion = coptic
-		size = 50
+		size = 250
 	}
 
 	artisans = {
 		culture = copt
 		religion = coptic
-		size = 11150
+		size = 23150
 	}
 
 	farmers = {
 		culture = copt
 		religion = coptic
-		size = 12800
+		size = 2800
 	}
 	
 	
 	clergymen = {
-		culture = levantine_greek
+		culture = greek #levantine_greek
 		religion = orthodox
 		size = 75
 	}
 	artisans = {
-		culture = levantine_greek
+		culture = greek #levantine_greek
 		religion = orthodox
 		size = 3000
 	}
 	aristocrats = {
-		culture = levantine_greek
+		culture = greek #levantine_greek
 		religion = orthodox
 		size = 100
 	}
 	bureaucrats = {
-		culture = levantine_greek
+		culture = greek #levantine_greek
 		religion = orthodox
 		size = 50
 	}
 	farmers = {
-		culture = levantine_greek
+		culture = greek #levantine_greek
 		religion = orthodox
 		size = 1000
 	}
@@ -947,12 +1007,12 @@
 	artisans = {
 		culture = karaite_culture
 		religion = karaite
-		size = 4000
+		size = 6000
 	}
 	farmers = {
 		culture = karaite_culture
 		religion = karaite
-		size = 3000
+		size = 1000
 	}
 
 	aristocrats = {
@@ -1021,34 +1081,49 @@
 		size = 90725
 	}
 
+	aristocrats = {
+		culture = copt
+		religion = coptic
+		size = 100
+	}
+	soldiers = {
+		culture = copt
+		religion = coptic
+		size = 100
+	}
+	clergymen = {
+		culture = copt
+		religion = coptic
+		size = 375
+	}
 	bureaucrats = {
 		culture = copt
 		religion = coptic
-		size = 25
+		size = 100
 	}
 
 	clergymen = {
 		culture = copt
 		religion = coptic
-		size = 125
+		size = 375
 	}
 
 	artisans = {
 		culture = copt
 		religion = coptic
-		size = 750
+		size = 42125
 	}
 
 	farmers = {
 		culture = copt
 		religion = coptic
-		size = 38125
+		size = 1750
 	}
 
 	clergymen = {
 		culture = sephardic
 		religion = jewish
-		size = 10
+		size = 75
 	}
 	artisans = {
 		culture = sephardic
@@ -1057,27 +1132,27 @@
 	}
 
 	clergymen = {
-		culture = levantine_greek
+		culture = greek #levantine_greek
 		religion = orthodox
 		size = 100
 	}
 	artisans = {
-		culture = levantine_greek
+		culture = greek #levantine_greek
 		religion = orthodox
 		size = 10000
 	}
 	aristocrats = {
-		culture = levantine_greek
+		culture = greek #levantine_greek
 		religion = orthodox
 		size = 200
 	}
 	bureaucrats = {
-		culture = levantine_greek
+		culture = greek #levantine_greek
 		religion = orthodox
 		size = 75
 	}
 	farmers = {
-		culture = levantine_greek
+		culture = greek #levantine_greek
 		religion = orthodox
 		size = 2000
 	}
@@ -1177,6 +1252,27 @@
 		religion = sunni
 		size = 2700
 	}
+	
+	soldiers = {
+		culture = copt
+		religion = coptic
+		size = 100
+	}
+	clergymen = {
+		culture = copt
+		religion = coptic
+		size = 75
+	}
+	artisans = {
+		culture = copt
+		religion = coptic
+		size = 1250
+	}
+	farmers = {
+		culture = copt
+		religion = coptic
+		size = 100
+	}
 }
 #Sidi Barrani (20000/5000 POPS)
 1753 = {
@@ -1209,6 +1305,44 @@
 		religion = sunni
 		size = 4575
 	}
+	
+	
+	soldiers = {
+		culture = misri
+		religion = sunni
+		size = 100
+	}
+	clergymen = {
+		culture = misri
+		religion = sunni
+		size = 75
+	}
+	artisans = {
+		culture = misri
+		religion = sunni
+		size = 1250
+	}
+	farmers = {
+		culture = misri
+		religion = sunni
+		size = 100
+	}
+	
+	clergymen = {
+		culture = copt
+		religion = coptic
+		size = 35
+	}
+	artisans = {
+		culture = copt
+		religion = coptic
+		size = 250
+	}
+	farmers = {
+		culture = copt
+		religion = coptic
+		size = 75
+	}
 }
 #Siwa (16000/4000 POPS)
 1754 = {
@@ -1239,7 +1373,34 @@
 	farmers = {
 		culture = berber
 		religion = sunni
-		size = 3650
+		size = 3050
+	}
+	
+	
+	aristocrats = {
+		culture = bedouin
+		religion = sunni
+		size = 35
+	}
+	clergymen = {
+		culture = bedouin
+		religion = sunni
+		size = 50
+	}
+	artisans = {
+		culture = bedouin
+		religion = sunni
+		size = 100
+	}
+	soldiers = {
+		culture = bedouin
+		religion = sunni
+		size = 25
+	}
+	farmers = {
+		culture = bedouin
+		religion = sunni
+		size = 700
 	}
 }
 #Sinai Region (100000)
@@ -1255,13 +1416,13 @@
 	bureaucrats = {
 		culture = misri
 		religion = sunni
-		size = 10
+		size = 35
 	}
 
 	officers = {
 		culture = misri
 		religion = sunni
-		size = 25
+		size = 35
 	}
 
 	clergymen = {
@@ -1293,6 +1454,11 @@
 		religion = coptic
 		size = 100
 	}
+	bureaucrats = {
+		culture = copt
+		religion = coptic
+		size = 75
+	}
 	clergymen = {
 		culture = copt
 		religion = coptic
@@ -1301,12 +1467,38 @@
 	artisans = {
 		culture = copt
 		religion = coptic
-		size = 1150
+		size = 5000
 	}
 	farmers = {
 		culture = copt
 		religion = coptic
-		size = 5000
+		size = 1150
+	}
+	
+	clergymen = {
+		culture = greek #levantine_greek
+		religion = orthodox
+		size = 75
+	}
+	bureaucrats = {
+		culture = greek #levantine_greek
+		religion = orthodox
+		size = 50
+	}
+	artisans = {
+		culture = greek #levantine_greek
+		religion = orthodox
+		size = 1500
+	}
+	aristocrats = {
+		culture = greek #levantine_greek
+		religion = orthodox
+		size = 50
+	}
+	farmers = {
+		culture = greek #levantine_greek
+		religion = orthodox
+		size = 500
 	}
 }
 #Al Arish (16000/4000 POPS)
@@ -1379,12 +1571,28 @@
 	artisans = {
 		culture = copt
 		religion = coptic
-		size = 150
+		size = 600
 	}
 	farmers = {
 		culture = copt
 		religion = coptic
-		size = 500
+		size = 150
+	}
+	
+	clergymen = {
+		culture = greek #levantine_greek
+		religion = orthodox
+		size = 35
+	}
+	artisans = {
+		culture = greek #levantine_greek
+		religion = orthodox
+		size = 200
+	}
+	farmers = {
+		culture = greek #levantine_greek
+		religion = orthodox
+		size = 75
 	}
 }
 #Sharm al Shaykh (12000/3000 POPS)
@@ -1453,7 +1661,7 @@
 	clergymen = {
 		culture = copt
 		religion = coptic
-		size = 150
+		size = 750
 	}
 	soldiers = {
 		culture = copt
@@ -1463,26 +1671,31 @@
 	artisans = {
 		culture = copt
 		religion = coptic
-		size = 1800
+		size = 5800
 	}
 	farmers = {
 		culture = copt
 		religion = coptic
-		size = 4000
+		size = 1000
 	}
 	
+	aristocrats = {
+		culture = greek #levantine_greek
+		religion = orthodox
+		size = 50
+	}
 	clergymen = {
-		culture = levantine_greek
+		culture = greek #levantine_greek
 		religion = orthodox
 		size = 500
 	}
 	artisans = {
-		culture = levantine_greek
+		culture = greek #levantine_greek
 		religion = orthodox
-		size = 150
+		size = 250
 	}
 	farmers = {
-		culture = levantine_greek
+		culture = greek #levantine_greek
 		religion = orthodox
 		size = 100
 	}
@@ -1520,6 +1733,32 @@
 		religion = sunni
 		size = 1800
 	}
+	
+	aristocrats = {
+		culture = berber
+		religion = sunni
+		size = 20
+	}
+	clergymen = {
+		culture = berber
+		religion = sunni
+		size = 35
+	}
+	artisans = {
+		culture = berber
+		religion = sunni
+		size = 75
+	}
+	soldiers = {
+		culture = berber
+		religion = sunni
+		size = 25
+	}
+	farmers = {
+		culture = berber
+		religion = sunni
+		size = 500
+	}
 }
 #Bawiti (12000/3000 POPS)
 1759 = {
@@ -1528,29 +1767,51 @@
 		religion = sunni
 		size = 50
 	}
-
 	clergymen = {
 		culture = bedouin
 		religion = sunni
 		size = 75
 	}
-
 	artisans = {
 		culture = bedouin
 		religion = sunni
 		size = 150
 	}
-
 	soldiers = {
 		culture = bedouin
 		religion = sunni
 		size = 25
 	}
-
 	farmers = {
 		culture = bedouin
 		religion = sunni
-		size = 2700
+		size = 2000
+	}
+	
+	aristocrats = {
+		culture = berber
+		religion = sunni
+		size = 35
+	}
+	clergymen = {
+		culture = berber
+		religion = sunni
+		size = 50
+	}
+	artisans = {
+		culture = berber
+		religion = sunni
+		size = 100
+	}
+	soldiers = {
+		culture = berber
+		religion = sunni
+		size = 25
+	}
+	farmers = {
+		culture = berber
+		religion = sunni
+		size = 700
 	}
 }
 #Mut (20000/5000 POPS)
@@ -1582,7 +1843,34 @@
 	farmers = {
 		culture = bedouin
 		religion = sunni
-		size = 4575
+		size = 3575
+	}
+	
+	
+	aristocrats = {
+		culture = berber
+		religion = sunni
+		size = 35
+	}
+	clergymen = {
+		culture = berber
+		religion = sunni
+		size = 50
+	}
+	artisans = {
+		culture = berber
+		religion = sunni
+		size = 100
+	}
+	soldiers = {
+		culture = berber
+		religion = sunni
+		size = 25
+	}
+	farmers = {
+		culture = berber
+		religion = sunni
+		size = 1000
 	}
 }
 #Baris (16000/4000 POPS)
@@ -1615,6 +1903,32 @@
 		culture = bedouin
 		religion = sunni
 		size = 3650
+	}
+	
+	aristocrats = {
+		culture = berber
+		religion = sunni
+		size = 35
+	}
+	clergymen = {
+		culture = berber
+		religion = sunni
+		size = 50
+	}
+	artisans = {
+		culture = berber
+		religion = sunni
+		size = 100
+	}
+	soldiers = {
+		culture = berber
+		religion = sunni
+		size = 25
+	}
+	farmers = {
+		culture = berber
+		religion = sunni
+		size = 750
 	}
 }
 #Vostani Region (672000)
@@ -1663,28 +1977,39 @@
 		size = 37390
 	}
 
+	aristocrats = {
+		culture = copt
+		religion = coptic
+		size = 75
+	}
+	soldiers = {
+		culture = copt
+		religion = coptic
+		size = 100
+	}
+	
 	bureaucrats = {
 		culture = copt
 		religion = coptic
-		size = 15
+		size = 35
 	}
 
 	clergymen = {
 		culture = copt
 		religion = coptic
-		size = 150
+		size = 300
 	}
 
 	artisans = {
 		culture = copt
 		religion = coptic
-		size = 900
+		size = 20935
 	}
 
 	farmers = {
 		culture = copt
 		religion = coptic
-		size = 20935
+		size = 1000
 	}
 }
 #Bani Suwayf (76000/19000 OPS) }
@@ -1746,22 +2071,53 @@
 		size = 15575
 	}
 
+	aristocrats = {
+		culture = copt
+		religion = coptic
+		size = 75
+	}
+	soldiers = {
+		culture = copt
+		religion = coptic
+		size = 100
+	}
 	clergymen = {
 		culture = copt
 		religion = coptic
-		size = 50
+		size = 250
 	}
 
 	artisans = {
 		culture = copt
 		religion = coptic
-		size = 150
+		size = 4000
 	}
 
 	farmers = {
 		culture = copt
 		religion = coptic
-		size = 2800
+		size = 1250
+	}
+	
+	clergymen = {
+		culture = greek #levantine_greek
+		religion = orthodox
+		size = 75
+	}
+	artisans = {
+		culture = greek #levantine_greek
+		religion = orthodox
+		size = 1000
+	}
+	aristocrats = {
+		culture = greek #levantine_greek
+		religion = orthodox
+		size = 35
+	}
+	farmers = {
+		culture = greek #levantine_greek
+		religion = orthodox
+		size = 100
 	}
 }
 #Minya (104000/26000 POPS)
@@ -1796,22 +2152,37 @@
 		size = 18325
 	}
 
-	clergymen = {
-		culture = misri
+	aristocrats = {
+		culture = copt
 		religion = coptic
-		size = 50
+		size = 75
+	}
+	bureaucrats = {
+		culture = copt
+		religion = coptic
+		size = 35
+	}
+	soldiers = {
+		culture = copt
+		religion = coptic
+		size = 100
+	}
+	clergymen = {
+		culture = copt
+		religion = coptic
+		size = 200
 	}
 
 	artisans = {
 		culture = copt
 		religion = coptic
-		size = 250
+		size = 6000
 	}
 
 	farmers = {
 		culture = copt
 		religion = coptic
-		size = 4800
+		size = 1150
 	}
 }
 #Fayyum (192000/48000 POPS)
@@ -1870,25 +2241,66 @@
 	farmers = {
 		culture = misri
 		religion = sunni
-		size = 37675
+		size = 30675
 	}
 
+
+	aristocrats = {
+		culture = copt
+		religion = coptic
+		size = 100
+	}
+	bureaucrats = {
+		culture = copt
+		religion = coptic
+		size = 100
+	}
+	soldiers = {
+		culture = copt
+		religion = coptic
+		size = 100
+	}
 	clergymen = {
 		culture = copt
 		religion = coptic
-		size = 50
+		size = 250
 	}
-
 	artisans = {
 		culture = copt
 		religion = coptic
-		size = 300
+		size = 23950
 	}
-
 	farmers = {
 		culture = copt
 		religion = coptic
-		size = 5650
+		size = 1500
+	}
+	
+
+	clergymen = {
+		culture = greek #levantine_greek
+		religion = orthodox
+		size = 75
+	}
+	artisans = {
+		culture = greek #levantine_greek
+		religion = orthodox
+		size = 1000
+	}
+	aristocrats = {
+		culture = greek #levantine_greek
+		religion = orthodox
+		size = 75
+	}
+	bureaucrats = {
+		culture = greek #levantine_greek
+		religion = orthodox
+		size = 35
+	}
+	farmers = {
+		culture = greek #levantine_greek
+		religion = orthodox
+		size = 100
 	}
 }
 #Suhaj (96000/24000 POPS)
@@ -1923,22 +2335,30 @@
 		size = 20025
 	}
 
-	clergymen = {
+	aristocrats = {
 		culture = copt
 		religion = coptic
-		size = 50
+		size = 75
 	}
-
-	artisans = {
+	soldiers = {
 		culture = copt
 		religion = coptic
 		size = 100
 	}
-
+	clergymen = {
+		culture = copt
+		religion = coptic
+		size = 100
+	}
+	artisans = {
+		culture = copt
+		religion = coptic
+		size = 2850
+	}
 	farmers = {
 		culture = copt
 		religion = coptic
-		size = 1850
+		size = 500
 	}
 }
 #Said Region (244000)
@@ -1987,28 +2407,35 @@
 		size = 6980
 	}
 
-	bureaucrats = {
+	aristocrats = {
 		culture = copt
 		religion = coptic
-		size = 5
+		size = 75
 	}
-
-	clergymen = {
-		culture = copt
-		religion = coptic
-		size = 50
-	}
-
-	artisans = {
+	soldiers = {
 		culture = copt
 		religion = coptic
 		size = 100
 	}
-
+	bureaucrats = {
+		culture = copt
+		religion = coptic
+		size = 35
+	}
+	clergymen = {
+		culture = copt
+		religion = coptic
+		size = 150
+	}
+	artisans = {
+		culture = copt
+		religion = coptic
+		size = 4850
+	}
 	farmers = {
 		culture = copt
 		religion = coptic
-		size = 3850
+		size = 500
 	}
 }
 #Luxor (68000/17000 POPS)
@@ -2049,16 +2476,36 @@
 		size = 50
 	}
 
+	aristocrats = {
+		culture = copt
+		religion = coptic
+		size = 75
+	}
+	bureaucrats = {
+		culture = copt
+		religion = coptic
+		size = 35
+	}
+	soldiers = {
+		culture = copt
+		religion = coptic
+		size = 100
+	}
+	clergymen = {
+		culture = copt
+		religion = coptic
+		size = 150
+	}
 	artisans = {
 		culture = copt
 		religion = coptic
-		size = 250
+		size = 5000
 	}
 
 	farmers = {
 		culture = copt
 		religion = coptic
-		size = 4700
+		size = 1750
 	}
 }
 #Idfu (76000/19000 POPS)
@@ -2093,22 +2540,32 @@
 		size = 15475
 	}
 
+	aristocrats = {
+		culture = copt
+		religion = coptic
+		size = 75
+	}
+	soldiers = {
+		culture = copt
+		religion = coptic
+		size = 100
+	}
 	clergymen = {
 		culture = copt
 		religion = coptic
-		size = 50
+		size = 150
 	}
 
 	artisans = {
 		culture = copt
 		religion = coptic
-		size = 100
+		size = 5000
 	}
 
 	farmers = {
 		culture = copt
 		religion = coptic
-		size = 1850
+		size = 250
 	}
 }
 #Qina (52000/13000 POPS)
@@ -2143,28 +2600,68 @@
 		size = 10000
 	}
 
-	clergymen = {
+	aristocrats = {
 		culture = copt
 		religion = coptic
 		size = 50
 	}
-
-	artisans = {
+	soldiers = {
+		culture = copt
+		religion = coptic
+		size = 100
+	}
+	clergymen = {
 		culture = copt
 		religion = coptic
 		size = 100
 	}
 
+	artisans = {
+		culture = copt
+		religion = coptic
+		size = 3000
+	}
+
 	farmers = {
 		culture = copt
 		religion = coptic
-		size = 1850
+		size = 250
 	}
 }
 #Red Sea Region (44000) #see Sudan.txt for balance of the region  
 #under the rule of Egypt in 1836
 #Qusayr (12000/3000 POPS)
 1770 = {
+	aristocrats = {
+		culture = misri
+		religion = sunni
+		size = 15
+	}
+
+	clergymen = {
+		culture = misri
+		religion = sunni
+		size = 25
+	}
+
+	artisans = {
+		culture = misri
+		religion = sunni
+		size = 50
+	}
+
+	soldiers = {
+		culture = misri
+		religion = sunni
+		size = 10
+	}
+
+	farmers = {
+		culture = misri
+		religion = sunni
+		size = 900
+	}
+	
 	aristocrats = {
 		culture = bedouin
 		religion = sunni
@@ -2193,6 +2690,23 @@
 		culture = bedouin
 		religion = sunni
 		size = 2700
+	}
+	
+	
+	clergymen = {
+		culture = copt
+		religion = coptic
+		size = 35
+	}
+	artisans = {
+		culture = copt
+		religion = coptic
+		size = 150
+	}
+	farmers = {
+		culture = copt
+		religion = coptic
+		size = 75
 	}
 }
 #Marsa Alam (20000/5000 POPS)
@@ -2256,9 +2770,55 @@
 		religion = sunni
 		size = 3650
 	}
+	
+	clergymen = {
+		culture = copt
+		religion = coptic
+		size = 35
+	}
+	artisans = {
+		culture = copt
+		religion = coptic
+		size = 150
+	}
+	farmers = {
+		culture = copt
+		religion = coptic
+		size = 75
+	}
 }
 #Ras Gharib (12000/3000 POPS)
 1772 = {
+	aristocrats = {
+		culture = misri
+		religion = sunni
+		size = 15
+	}
+
+	clergymen = {
+		culture = misri
+		religion = sunni
+		size = 25
+	}
+
+	artisans = {
+		culture = misri
+		religion = sunni
+		size = 50
+	}
+
+	soldiers = {
+		culture = misri
+		religion = sunni
+		size = 10
+	}
+
+	farmers = {
+		culture = misri
+		religion = sunni
+		size = 900
+	}
+	
 	aristocrats = {
 		culture = bedouin
 		religion = sunni
@@ -2297,11 +2857,11 @@
 	artisans = {
 		culture = copt
 		religion = coptic
-		size = 150
+		size = 500
 	}
 	farmers = {
 		culture = copt
 		religion = coptic
-		size = 500
+		size = 150
 	}
 }

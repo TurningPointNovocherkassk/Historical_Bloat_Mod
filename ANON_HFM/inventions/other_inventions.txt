@@ -93,7 +93,7 @@ improved_artillery_manufacturing = {
 }
 
 practical_artillery_experience = {
-	limit = { iron_breech_loaded_artillery = 1 }
+	limit = { breech_loaded_rifles = 1 }
 	news = no
 	chance = {
 		base = 5
@@ -360,7 +360,7 @@ turbine_driven_trawlers = {
 }
 
 combine_harvesters = {
-	limit = { high_n_low_pressure_steam_engines = 1 }
+	limit = { high_pressure_steam_engine = 1 }
 	news = no
 	chance = {
 		base = 5
@@ -376,7 +376,7 @@ combine_harvesters = {
 }
 
 mechanised_plantations = {
-	limit = { high_n_low_pressure_steam_engines = 1 }
+	limit = { high_pressure_steam_engine = 1 }
 	news = no
 	chance = {
 		base = 5
@@ -534,27 +534,27 @@ spinning_jenny = {
 	}
 }
 
-tree_plantations = {
-	limit = { publishing_industry = 1 }
-	news = no
-	chance = {
-		base = 5
-	}
-	effect = {
-		rgo_goods_throughput = {
-			timber = 0.1
-		}
-		rgo_goods_throughput = {
-			rubber = 0.1
-		}
-		rgo_goods_throughput = {
-			tropical_wood = 0.1
-		}
-	}
-}
+# tree_plantations = {
+	# limit = { publishing_industry = 1 }
+	# news = no
+	# chance = {
+		# base = 5
+	# }
+	# effect = {
+		# rgo_goods_throughput = {
+			# timber = 0.1
+		# }
+		# rgo_goods_throughput = {
+			# rubber = 0.1
+		# }
+		# rgo_goods_throughput = {
+			# tropical_wood = 0.1
+		# }
+	# }
+# }
 
 logging = {
-	limit = { practical_steam_engine = 1 }
+	limit = { piston_steam_engine = 1 }
 	news = no
 	chance = {
 		base = 5
@@ -589,30 +589,31 @@ regenerative_forestry = {
 }
 
 alite = {
-	limit = { practical_steam_engine = 1 }
+	limit = { piston_steam_engine = 1 }
 	news = no
 	chance = {
 		base = 5
 	}
 	effect = {
 		factory_goods_input = {
-			cement = -0.05
+			cement = 0.05
 		}
 	}
 }
 
-portland_cement = {
-	limit = { high_n_low_pressure_steam_engines = 1 }
-	news = no
-	chance = {
-		base = 5
-	}
-	effect = {
-		factory_goods_output = {
-			cement = 0.1
-		}
-	}
-}
+# Already in DBI
+# portland_cement = {
+	# limit = { high_pressure_steam_engine = 1 }
+	# news = no
+	# chance = {
+		# base = 5
+	# }
+	# effect = {
+		# factory_goods_output = {
+			# cement = 0.1
+		# }
+	# }
+# }
 
 self_propelled_artillery = {
 	limit = { heavy_armament_dunno = 1 }
@@ -1025,21 +1026,21 @@ spearhead_doctrine = {
 	}
 }
 
-nitrate_extraction_process = {
-	limit = { clean_coal = 1 }
-	news = no
-	chance = {
-		base = 5
-	}
-	effect = {
-		rgo_goods_throughput = {
-			sulphur = 0.1
-		}
-		factory_goods_output = {
-			ammunition = 0.25
-		}
-	}
-}
+# nitrate_extraction_process = {
+	# limit = { clean_coal = 1 }
+	# news = no
+	# chance = {
+		# base = 5
+	# }
+	# effect = {
+		# rgo_goods_throughput = {
+			# sulphur = 0.1
+		# }
+		# factory_goods_output = {
+			# ammunition = 0.25
+		# }
+	# }
+# }
 
 artficial_nitrates = {
 	limit = { inorganic_chemistry = 1 }
@@ -1083,12 +1084,10 @@ penicillin = {
 		base = 6
 	}
 	effect = {
-		factory_goods_output = {
-			supply_limit = 0.25	
-			soldier_to_pop_loss = 0.01
-			pop_growth = 0.0001
-			land_attrition = -0.05 
-		}
+		supply_limit = 0.25	
+		soldier_to_pop_loss = 0.01
+		pop_growth = 0.0001
+		land_attrition = -0.05 
 	}
 }
 
@@ -1127,18 +1126,18 @@ seafood_packing = {
 	}
 }
 
-zinc_alloys = {
-	limit = { clean_coal = 1 }
-	news = no
-	chance = {
-		base = 6
-	}
-	effect = {
-		factory_goods_output = {
-			steel = 0.03
-		}
-	}
-}
+# zinc_alloys = {
+	# limit = { clean_coal = 1 }
+	# news = no
+	# chance = {
+		# base = 6
+	# }
+	# effect = {
+		# factory_goods_output = {
+			# steel = 0.03
+		# }
+	# }
+# }
 
 brass = {
 	limit = { hot_blast = 1 }
@@ -1153,18 +1152,19 @@ brass = {
 	}
 }
 
-poudre_b = {
-	limit = { hot_blast = 1 }
-	news = no
-	chance = {
-		base = 6
-	}
-	effect = {
-		factory_goods_output = {
-			ammunition = 0.25
-		}
-	}
-}
+# Already in DBI
+# poudre_b = {
+	# limit = { hot_blast = 1 }
+	# news = no
+	# chance = {
+		# base = 6
+	# }
+	# effect = {
+		# factory_goods_output = {
+			# ammunition = 0.25
+		# }
+	# }
+# }
 
 cordite = {
 	limit = { bessemer_process = 1 }
@@ -1493,20 +1493,20 @@ Meritocracy = {
 	social_reform_desire = 0.05
 }
 
-synthetic_rubber = {
-	limit = { electricity = 1 }
-	news = no
-	chance = {
-		base = 6
-		modifier = {
-			factor = -10 
-			civilized = no
-		}
-	}
-	effect = {
-		activate_building = synthetic_rubber_factory 
-	}
-}
+# synthetic_rubber = {
+	# limit = { electricity = 1 }
+	# news = no
+	# chance = {
+		# base = 6
+		# modifier = {
+			# factor = -10 
+			# civilized = no
+		# }
+	# }
+	# effect = {
+		# activate_building = synthetic_rubber_factory 
+	# }
+# }
 
 methyl_isoprene = {
 	limit = { synthetic_polymers = 1 }
@@ -1706,10 +1706,10 @@ machine_gun_deployment = {
 	}
 	chance = {
 		base = 1
-		modifier = {
-			factor = -20
-			not = { invention = standard_bolt_action_rifle_armament }
-		}
+		# modifier = {
+			# factor = -20
+			# not = { invention = standard_bolt_action_rifle_armament }
+		# }
 		modifier = {
 			factor = -1
 			not = { army_nco_training = 1 }
@@ -1803,7 +1803,7 @@ spirit_of_freedom = {
 #		base = 5
 #		modifier = {
 #			factor = 3
-#			practical_steam_engine = 1
+#			piston_steam_engine = 1
 #		}
 #	}
 #	effect = {
@@ -1856,9 +1856,6 @@ necessity_focus = {
 			furniture = 0.02
 		} 
 		factory_goods_output = {
-			infantry_clothes = 0.02
-		} 
-		factory_goods_output = {
 			fabric = 0.02
 		} 
 		factory_goods_output = {
@@ -1901,9 +1898,9 @@ high_tech_focus = {
 		factory_goods_output = {
 			radio = 0.02
 		} 
-		factory_goods_output = {
-			pharmaceuticals = 0.02
-		} 
+		# factory_goods_output = {
+			# pharmaceuticals = 0.02
+		# } 
 		factory_goods_output = {
 			electric_gear = 0.02
 		} 
@@ -2382,19 +2379,20 @@ basic_training = {
 	
 }
 
-rosendale_cement = {
-	limit = { inorganic_chemistry = 1 }
-	news = no
-	chance = {
-		base = 15
-	}
-	effect = {
-		factory_goods_output = {
-			cement = 0.1
-		}
-	}
+# Already in DBI
+# rosendale_cement = {
+	# limit = { inorganic_chemistry = 1 }
+	# news = no
+	# chance = {
+		# base = 15
+	# }
+	# effect = {
+		# factory_goods_output = {
+			# cement = 0.1
+		# }
+	# }
 	
-}
+# }
 
 synthetic_cement = {
 	limit = {

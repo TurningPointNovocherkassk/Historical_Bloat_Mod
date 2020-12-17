@@ -216,7 +216,7 @@ From;To;Type;Through;Data;Comment
 1136;1135;impassable;0;0;Bushire - Shiraz
 1138;1135;impassable;0;0;Kangan - Shiraz
 1138;3471;impassable;0;0;Kangan - Larestan
-2788;3471;impassable;0;0;Lengeh - Larestan
+1141;3471;impassable;0;0;Lengeh - Larestan
 
 #
 # Alborz ANON
@@ -512,19 +512,30 @@ From;To;Type;Through;Data;Comment
 838;832;sea;2772;0;Volos-Khalkis Strait
 3684;859;sea;2773;0;Imbros-Gallipoli Strait
 3684;865;sea;2773;0;Imbros-Canakale Strait
-871;875;impassable;0;0;Denizi-Antalya
+874;875;impassable;0;0;Burdur-Antalya
 873;875;impassable;0;0;Konya-Antalya
 873;895;impassable;0;0;Konya-Silifke
-3432;895;impassable;0;0;Karaman-Silifke
 3432;894;impassable;0;0;Karaman-Adana
 3432;3433;impassable;0;0;Karaman-Kozan
+879;3433;impassable;0;0;Sivas-Kozan
 882;879;impassable;0;0;Trebizond-Sivas
 882;888;impassable;0;0;Trebizond-Erzincan
 3320;888;impassable;0;0;Rize-Erzincan
 3320;887;impassable;0;0;Rize-Erzurum
+# 871;874;impassable;0;0;Denizli-Burdur
+875;871;impassable;0;0;Antalya-Denizli
+3433;896;impassable;0;0;Kozan-Marash
+894;896;impassable;0;0;Adana-Marash
+898;896;impassable;0;0;Antep-Marash
+881;876;impassable;0;0;Bolu-Ankara
+880;876;impassable;0;0;Kastamonu-Ankara
+877;3431;impassable;0;0;Amasya-Cankiri
+877;880;impassable;0;0;Amasya-Kastamonu
+898;894;impassable;0;0;Antep-Adana
 
 #ANON Lebanon
 #3560;902;impassable;0;0;Zahle-Damascus
+3560;3324;impassable;0;0;Zahle-Golan
 912;902;impassable;0;0;Baalbek-Damascus
 912;903;impassable;0;0;Baalbek-Homs
 

@@ -3931,6 +3931,9 @@ political_decisions = {
 		}
 		
 		effect = {
+			#ANON
+			SOK = { inherit = ADW }
+			KBO = { inherit = BRM }
 			any_pop = {
 				limit = {
 					location = { is_core = LBN }

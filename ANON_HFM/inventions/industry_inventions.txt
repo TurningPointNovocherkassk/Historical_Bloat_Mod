@@ -760,24 +760,6 @@ artillery_production = {
 		activate_building = artillery_factory 
 	}
 }
-bronze_artillery_production = {
-	limit = { bronze_muzzle_loaded_artillery = 1 }
-	news = no
-	chance = {
-		base = 2
-		modifier = {
-			factor = 2
-			invention = explosives_production
-		}
-		modifier = {
-			factor = 2
-			bronze_muzzle_loaded_artillery = 1
-		}
-	}
-	effect = {
-		activate_building = bronze_artillery_factory 
-	}
-}
 #puddling
 pit_coal = {
 	limit = { puddling = 1 }
@@ -921,9 +903,6 @@ bessemer_steel = {
 		factory_goods_throughput = {
 			steel = 0.05
 		}
-		factory_goods_throughput = {
-			bronze = 0.025
-		}
 		rgo_goods_output = {
 			precious_metal = 0.3
 		}
@@ -956,9 +935,6 @@ martin_steel = {
 		factory_goods_output = {
 			steel = 0.02
 		}
-		factory_goods_output = {
-			bronze = 0.01
-		}
 	}
 }
 thomas_steel = {
@@ -977,9 +953,6 @@ thomas_steel = {
 	effect = {
 		factory_goods_output = {
 			steel = 0.02
-		}
-		factory_goods_output = {
-			bronze = 0.01
 		}
 	}
 }
@@ -1000,9 +973,6 @@ electric_rolling_techniques = {
 	effect = {
 		factory_goods_output = {
 			steel = 0.02
-		}
-		factory_goods_output = {
-			bronze = 0.01
 		}
 		rgo_goods_output = {
 			precious_metal = 0.15
@@ -1033,7 +1003,6 @@ steel_alloys = {
 	}
 	effect = {
 		factory_goods_output = { steel = 0.02 }
-		factory_goods_output = { bronze = 0.01 }
 		rgo_goods_output = {
 			precious_metal = 0.05
 		}
@@ -1084,9 +1053,6 @@ stainless_steel = {
 	effect = {
 		factory_goods_output = {
 			steel = 0.05
-		}
-		factory_goods_output = {
-			bronze = 0.025
 		}
 	}
 }

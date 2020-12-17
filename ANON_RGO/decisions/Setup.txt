@@ -1332,6 +1332,9 @@ political_decisions = {
 		}
 		
 		effect = {
+			#ANON
+			SOK = { inherit = ADW }
+			KBO = { inherit = BRM }
 			any_pop = {
 				limit = { OR = { has_pop_culture = turkish has_pop_culture = circassian has_pop_culture = chechen } }
 				literacy = 0.02
@@ -1812,7 +1815,7 @@ political_decisions = {
 			1744 = { trade_goods = lead }
 			1771 = { trade_goods = lead }
 			608 = { trade_goods = lead }
-			2665 = { trade_goods = lead }
+			# 2665 = { trade_goods = lead }
 			616 = { trade_goods = lead }
 			1985 = { trade_goods = lead }
 			1701 = { trade_goods = lead }
@@ -1959,6 +1962,9 @@ political_decisions = {
 			2531 = { trade_goods = spices }
 			1137 = { trade_goods = spices }
 			
+			1239 = { trade_goods = sugar }
+			3460 = { trade_goods = sugar }
+			1244 = { trade_goods = sugar }
 			3676 = { trade_goods = sugar }
 			3676 = { trade_goods = sugar }
 			2270 = { trade_goods = sugar }
@@ -2113,7 +2119,7 @@ political_decisions = {
 			1444 = { trade_goods = sea_oil }
 			1458 = { trade_goods = sea_oil }
 			1464 = { trade_goods = sea_oil }
-			2637 = { trade_goods = sea_oil }
+			# 2637 = { trade_goods = sea_oil }
 			2634 = { trade_goods = sea_oil }
 			1072 = { trade_goods = sea_oil }
 			1073 = { trade_goods = sea_oil }
@@ -2131,9 +2137,9 @@ political_decisions = {
 			2 = { trade_goods = furs }
 			17 = { trade_goods = furs }
 			6 = { trade_goods = furs }
-			8 = { trade_goods = furs }
+			# 8 = { trade_goods = furs }
 			7 = { trade_goods = furs }
-			10 = { trade_goods = furs }
+			# 10 = { trade_goods = furs }
 			2598 = { trade_goods = furs }
 			15 = { trade_goods = furs }
 			13 = { trade_goods = furs }
@@ -2167,10 +2173,10 @@ political_decisions = {
 			2644 = { trade_goods = furs }
 			2618 = { trade_goods = furs }
 			2620 = { trade_goods = furs }
-			2638 = { trade_goods = furs }
-			2639 = { trade_goods = furs }
+			# 2638 = { trade_goods = furs }
+			# 2639 = { trade_goods = furs }
 			2660 = { trade_goods = furs }
-			2622 = { trade_goods = furs }
+			# 2622 = { trade_goods = furs }
 			2661 = { trade_goods = furs }
 			2666 = { trade_goods = furs }
 			2633 = { trade_goods = furs }
@@ -2183,7 +2189,7 @@ political_decisions = {
 			2652 = { trade_goods = furs }
 			2668 = { trade_goods = furs }
 			2653 = { trade_goods = furs }
-			2643 = { trade_goods = furs }
+			# 2643 = { trade_goods = furs }
 			2667 = { trade_goods = furs }
 			2672 = { trade_goods = furs }
 			2621 = { trade_goods = furs }
