@@ -246,7 +246,8 @@ political_decisions = {
 			MON = { all_core = { add_core = BYZ } }
 			BYZ = { inherit = MON }
 			any_pop = {
-				limit = { has_pop_culture = montenegrin }
+				# limit = { has_pop_culture = montenegrin }
+				limit = { has_pop_culture = serb }
 				scaled_militancy = { factor = 3 ideology = reactionary }
 				scaled_consciousness = { factor = 3 ideology = conservative }
 			}
@@ -472,40 +473,40 @@ political_decisions = {
 			}
 		}
 	}
-	accept_montenegrins = {
-		picture = montenegrins
-		potential = {
-			NOT = { has_country_flag = accept_montenegrins }
-			tag = BYZ
-			any_owned_province = {
-				any_pop = {
-					has_pop_culture = montenegrin
-				}
-			}
-			NOT = { has_country_flag = greek_pacifism }
-			has_country_flag = integrate_montenegro
-		}
-		allow = {
-			owns = 2583
-			NOT = { exists = YUG }
-			citizens_rights = culture_voting_only
-		}
-		effect = {
-			add_accepted_culture = montenegrin
-			set_country_flag = accept_montenegrins
-			any_pop = {
-				limit = {
-					is_accepted_culture = no
-					is_primary_culture = no
-				}
-				consciousness = 5
-			}
-			any_pop = {
-				limit = { has_pop_culture = montenegrin }
-				militancy = -9
-			}
-		}
-	}
+	# accept_montenegrins = {
+		# picture = montenegrins
+		# potential = {
+			# NOT = { has_country_flag = accept_montenegrins }
+			# tag = BYZ
+			# any_owned_province = {
+				# any_pop = {
+					# has_pop_culture = montenegrin
+				# }
+			# }
+			# NOT = { has_country_flag = greek_pacifism }
+			# has_country_flag = integrate_montenegro
+		# }
+		# allow = {
+			# owns = 2583
+			# NOT = { exists = YUG }
+			# citizens_rights = culture_voting_only
+		# }
+		# effect = {
+			# add_accepted_culture = montenegrin
+			# set_country_flag = accept_montenegrins
+			# any_pop = {
+				# limit = {
+					# is_accepted_culture = no
+					# is_primary_culture = no
+				# }
+				# consciousness = 5
+			# }
+			# any_pop = {
+				# limit = { has_pop_culture = montenegrin }
+				# militancy = -9
+			# }
+		# }
+	# }
 	accept_armenians = {
 		picture = armenian_fedayi
 		potential = {

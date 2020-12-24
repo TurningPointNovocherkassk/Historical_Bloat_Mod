@@ -652,7 +652,7 @@ political_decisions = {
 					add_accepted_culture = serb
 					add_accepted_culture = croat
 					add_accepted_culture = slovene
-					add_accepted_culture = montenegrin
+					# add_accepted_culture = montenegrin
 				}
 			}
 			change_tag = YUG
@@ -765,9 +765,9 @@ political_decisions = {
 			BOS = { all_core = { add_core = YUG } }
 			SLO = { all_core = { add_core = YUG } }
 			TUR_853 = { add_core = YUG }
-			YUG = {
-				add_accepted_culture = montenegrin
-			}
+			# YUG = {
+				# add_accepted_culture = montenegrin
+			# }
 			any_country = {
 				limit = {
 					OR = {
@@ -2084,7 +2084,7 @@ political_decisions = {
 		}
 		
 		effect = {
-			778 = { add_core = HUN }
+			AUS_778 = { add_core = HUN }
 			badboy = 1
 		}
 		ai_will_do = { factor = 1 }

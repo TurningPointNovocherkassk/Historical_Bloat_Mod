@@ -408,11 +408,13 @@ acquire_core_state = {
 		NOT = {
 			has_country_modifier = neutrality
 			has_country_flag = for_congress_paris
+			has_country_flag = YUC_ceasefire
 		}
 		THIS = {
 			NOT = {
 				has_country_modifier = neutrality
 				has_country_flag = for_congress_paris
+				has_country_flag = YUC_ceasefire
 			}
 		}
 		OR = {
@@ -493,6 +495,7 @@ acquire_all_cores = {
 		NOT = {
 			has_country_modifier = neutrality
 			has_country_flag = for_congress_paris
+			has_country_flag = YUC_ceasefire
 		}
 		THIS = {
 			NOT = {
@@ -502,6 +505,7 @@ acquire_all_cores = {
 					war = no
 				}
 				has_country_flag = for_congress_paris
+				has_country_flag = YUC_ceasefire
 			}
 		}
 		OR = {
@@ -731,28 +735,28 @@ colonial_reconquest_cb = {
 			}
 			OR = {
 				AND = {
-				THIS = { 
-					tag = NET 
-					has_country_flag = conquest_of_jambi
-				}
-				tag = DJA
+					THIS = { 
+						tag = NET 
+						has_country_flag = conquest_of_jambi
+					}
+					tag = DJA
 				}
 				AND = {
-				THIS = { 
-					tag = NET 
-					has_country_flag = javanese_integrated
-				}
-				tag = JAV
+					THIS = { 
+						tag = NET 
+						has_country_flag = javanese_integrated
+					}
+					tag = JAV
 				}
 				AND = {
-				THIS = { 
-					tag = NET 
-					has_country_flag = tidore_integrated
+					THIS = {
+						tag = NET 
+						has_country_flag = tidore_integrated
 					}
-				tag = MAL
-					}
+					tag = MAL
 				}
 			}
+		}
 		NOT = { number_of_states = 3 }
 		part_of_sphere = no
 		is_vassal = no
@@ -1221,26 +1225,100 @@ annex_core_country = {
 	good_relation_militancy_factor = 1
 
 	can_use = {
-		NOT = { is_our_vassal = THIS }
-		is_vassal = no
-		any_owned_province = { is_core = THIS }
-		NOT = {
-			any_owned_province = {
-				NOT = { is_core = THIS }
+		OR = {
+			AND = {
+				THIS = {
+					tag = AUS
+					NOT = {
+						OR = {
+							has_country_modifier = great_war
+							has_country_modifier = great_war2
+							has_country_modifier = great_war3
+							has_country_flag = in_great_war
+							has_country_flag = ultimatum_accepted
+							has_country_flag = dismantling_treaty
+						}
+						OR = {
+							has_country_flag = ultimatum_accepted
+							has_country_flag = dismantling_treaty
+						}
+						OR = {
+							has_country_modifier = punitive_effects
+							has_country_modifier = no_more_war
+							has_country_modifier = neutrality
+						}
+					}
+				}
+				NOT = {
+					has_country_modifier = neutrality
+					is_our_vassal = THIS
+				}
+				OR = {
+					tag = HUN
+					tag = SLO
+					tag = BOH
+					tag = CZH
+					tag = SLV
+					tag = GLM
+					tag = CRO
+					tag = SIE
+					tag = VOJ
+					tag = TSX
+					tag = BAN
+					tag = DLM
+					tag = RGU
+					tag = BKV
+					tag = FIU
+					tag = TRE
+					tag = CPU
+					tag = SZE
+					tag = TST
+					tag = RUT
+					AND = {
+						tag = KRA
+						has_global_flag = krakow_war
+						NOT = { has_global_flag = krakow_succeeded }
+					}
+					AND = {
+						tag = VEN
+						THIS = {
+							NOT = {
+								OR = {
+									has_country_flag = austria_let_venice_go
+									has_country_flag = accepts_italy
+								}
+							}
+						}
+					}
+					AND = {
+						tag = BOS
+						THIS = { has_country_flag = annexed_bosnia }
+					}
+				}
 			}
-		}
-		NOT = { has_country_modifier = neutrality }
-		THIS = {
-			NOT = { has_country_modifier = neutrality }
-		}
-		OR = {
-			war_with = THIS
-			THIS = { NOT = { has_country_modifier = punitive_effects } }
-		}
-		OR = {
-			NOT = { has_country_flag = dismantle_declared }
-			THIS = { NOT = { has_country_flag = in_great_war } }
-			THIS = { ai = no }
+			AND = {
+				NOT = { is_our_vassal = THIS }
+				is_vassal = no
+				any_owned_province = { is_core = THIS }
+				NOT = {
+					any_owned_province = {
+						NOT = { is_core = THIS }
+					}
+				}
+				NOT = { has_country_modifier = neutrality }
+				THIS = {
+					NOT = { has_country_modifier = neutrality }
+				}
+				OR = {
+					war_with = THIS
+					THIS = { NOT = { has_country_modifier = punitive_effects } }
+				}
+				OR = {
+					NOT = { has_country_flag = dismantle_declared }
+					THIS = { NOT = { has_country_flag = in_great_war } }
+					THIS = { ai = no }
+				}
+			}
 		}
 	}
 
@@ -3264,7 +3342,10 @@ cut_down_to_size = {
 	can_use = {
 		NOT = { is_our_vassal = THIS }
 		OR = {
-			AND = { THIS = { num_of_ports = 1 } num_of_ports = 1 }
+			AND = {
+				THIS = { total_amount_of_ships = 5 }
+                any_owned_province = { port = yes }
+			}
 			neighbour = THIS
 			war_with = THIS
 			any_neighbor_country = { OR = { vassal_of = THIS substate_of = THIS in_sphere = THIS } }
@@ -3275,6 +3356,10 @@ cut_down_to_size = {
 		THIS = {
 			civilized = yes
 			NOT = { has_country_modifier = neutrality }
+		}
+		OR = {
+			war_with = THIS
+			THIS = { military_score = 1 }
 		}
 		OR = {
 			war_with = THIS
@@ -3333,7 +3418,7 @@ cut_down_to_size = {
 				THIS = {
 					civilized = yes
 					NOT = { is_culture_group = east_asian }
-					num_of_ports = 1
+                    any_owned_province = { port = yes }
 				}
 			}
 			owner = { add_country_modifier = { name = negotiating_unequal_treaty duration = 30 } }
@@ -6823,9 +6908,28 @@ treaty_port_casus_belli = {
 	can_use = {
 		NOT = { is_our_vassal = THIS }
 		THIS = {
-			num_of_ports = 1
 			civilized = yes
+            is_disarmed = no
+            any_owned_province = { has_building = naval_base }
 			NOT = { has_country_modifier = neutrality }
+            OR = {
+                naval_plans = 1
+                ai = yes
+            }
+			OR = {
+				AND = {
+                    military_score = 25
+                    total_amount_of_ships = 25
+                    total_pops = 250000
+                    rank = 16
+				}
+				war_with = THIS
+			}
+			OR = {
+				NOT = { war_policy = pacifism }
+				ai = no
+				war_with = THIS
+			}
 		}
 		NOT = { has_country_modifier = neutrality }
 		civilized = no
@@ -6916,7 +7020,7 @@ treaty_port_casus_belli = {
 				THIS = {
 					civilized = yes
 					NOT = { is_culture_group = east_asian }
-					num_of_ports = 1
+                    any_owned_province = { port = yes }
 				}
 			}
 		owner = { add_country_modifier = { name = negotiating_unequal_treaty duration = -1 } }

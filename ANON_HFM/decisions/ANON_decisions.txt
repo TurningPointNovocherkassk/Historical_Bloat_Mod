@@ -1,5 +1,142 @@
 political_decisions = {
 			
+	germanization_minorities = {
+		picture = gtfo
+		
+		potential = {
+			is_culture_group = germanic
+			any_owned_province = {
+				OR = {
+					is_core = LUS
+					is_core = SLS
+					is_core = KSH
+					is_core = MSR
+					region = AUS_626 #Sudetenland
+				}
+			}
+			NOT = {
+				OR = {
+					has_country_flag = germanization_LUS
+					has_country_flag = germanization_SLS
+					has_country_flag = germanization_KSH
+					has_country_flag = germanization_MSR
+					has_country_flag = germanization_sudetes
+				}
+			}
+		}
+		
+		allow = {
+			revolution_n_counterrevolution = 1
+			school_reforms = acceptable_schools
+			OR = {
+				ruling_party_ideology = reactionary
+				ruling_party_ideology = fascist
+				ruling_party_ideology = communist
+			}
+		}
+		
+		effect = {
+			badboy = 1
+			any_owned = {
+				limit = {
+					is_core = LUS
+				}
+				owner = {
+					set_country_flag = germanization_LUS
+					remove_accepted_culture = sorbian
+				}
+				any_pop = {
+					limit = { has_pop_culture = sorbian }
+					militancy = 4
+					consciousness = 4
+				}
+				add_province_modifier = { name = germanization_baltics_modifier duration = -1 }
+			}
+			any_owned = {
+				limit = {
+					is_core = SLS
+				}
+				owner = {
+					set_country_flag = germanization_SLS
+					remove_accepted_culture = western_slavic
+				}
+				any_pop = {
+					limit = { has_pop_culture = western_slavic }
+					militancy = 4
+					consciousness = 4
+				}
+				add_province_modifier = { name = germanization_baltics_modifier duration = -1 }
+			}
+			any_owned = {
+				limit = {
+					OR = {
+						is_core = KSH
+						province_id = 546
+						province_id = 679
+						province_id = 680
+						province_id = 681
+						province_id = 690
+						province_id = 691
+						province_id = 692
+						province_id = 693
+					}
+				}
+				owner = {
+					set_country_flag = germanization_KSH
+					remove_accepted_culture = kashubian
+				}
+				any_pop = {
+					limit = { has_pop_culture = kashubian }
+					militancy = 4
+					consciousness = 4
+				}
+				add_province_modifier = { name = germanization_baltics_modifier duration = -1 }
+			}
+			any_owned = {
+				limit = {
+					OR = {
+						is_core = MSR
+						province_id = 693
+						province_id = 696
+						province_id = 3660
+						province_id = 3659
+						province_id = 3658
+						province_id = 695
+						province_id = 3573
+					}
+				}
+				owner = {
+					set_country_flag = germanization_MSR
+					remove_accepted_culture = masurian
+				}
+				any_pop = {
+					limit = { has_pop_culture = masurian }
+					militancy = 4
+					consciousness = 4
+				}
+				add_province_modifier = { name = germanization_baltics_modifier duration = -1 }
+			}
+			any_owned = {
+				limit = {
+					region = AUS_626
+				}
+				owner = {
+					set_country_flag = germanization_sudetes
+					remove_accepted_culture = czech
+				}
+				any_pop = {
+					limit = { has_pop_culture = czech }
+					militancy = 4
+					consciousness = 4
+				}
+				add_province_modifier = { name = germanization_baltics_modifier duration = -1 }
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+			
 	rename_silesia = {
 		picture = gtfo
 		potential = {
@@ -475,6 +612,16 @@ political_decisions = {
 					remove_accepted_culture = latvian
 					remove_accepted_culture = estonian
 				}
+				any_pop = {
+					limit = {
+						OR = {
+							has_pop_culture = latvian
+							has_pop_culture = estonian
+						}
+					}
+					militancy = 4
+					consciousness = 4
+				}
 				add_province_modifier = { name = germanization_baltics_modifier duration = -1 }
 			}
 			any_owned = {
@@ -485,6 +632,11 @@ political_decisions = {
 					set_country_flag = germanization_baltics_KSM
 					remove_accepted_culture = latvian
 				}
+				any_pop = {
+					limit = { has_pop_culture = latvian }
+					militancy = 4
+					consciousness = 4
+				}
 				add_province_modifier = { name = germanization_baltics_modifier duration = -1 }
 			}
 			any_owned = {
@@ -494,6 +646,11 @@ political_decisions = {
 				owner = {
 					set_country_flag = germanization_baltics_ESG
 					remove_accepted_culture = estonian
+				}
+				any_pop = {
+					limit = { has_pop_culture = estonian }
+					militancy = 4
+					consciousness = 4
 				}
 				add_province_modifier = { name = germanization_baltics_modifier duration = -1 }
 			}
@@ -511,6 +668,17 @@ political_decisions = {
 					remove_accepted_culture = estonian
 					remove_accepted_culture = lithuanian
 				}
+				any_pop = {
+					limit = {
+						OR = {
+							has_pop_culture = latvian
+							has_pop_culture = estonian
+							has_pop_culture = lithuanian
+						}
+					}
+					militancy = 4
+					consciousness = 4
+				}
 				add_province_modifier = { name = germanization_baltics_modifier duration = -1 }
 			}
 			any_owned = {
@@ -526,6 +694,17 @@ political_decisions = {
 					remove_accepted_culture = latvian
 					remove_accepted_culture = estonian
 					remove_accepted_culture = lithuanian
+				}
+				any_pop = {
+					limit = {
+						OR = {
+							has_pop_culture = latvian
+							has_pop_culture = estonian
+							has_pop_culture = lithuanian
+						}
+					}
+					militancy = 4
+					consciousness = 4
 				}
 				add_province_modifier = { name = germanization_baltics_modifier duration = -1 }
 			}
@@ -12906,10 +13085,10 @@ political_decisions = {
 	serbian_rename_dubrovnik = {
 		picture = gtfo
 		potential = {
-			OR = {
+			# OR = {
 				primary_culture = serb
-				primary_culture = montenegrin
-			}
+				# primary_culture = montenegrin
+			# }
 			owns = 782
 			NOT = { has_global_flag = serbian_rename_dubrovnik }
 		}
@@ -12995,10 +13174,10 @@ political_decisions = {
 	serbian_rename_montenegro = {
 		picture = gtfo
 		potential = {
-			OR = {
+			# OR = {
 				primary_culture = serb
-				primary_culture = montenegrin
-			}
+				# primary_culture = montenegrin
+			# }
 			owns = 2583
 			NOT = { has_global_flag = serbian_rename_montenegro }
 		}
@@ -13058,10 +13237,10 @@ political_decisions = {
 	serbian_rename_sserbia = {
 		picture = gtfo
 		potential = {
-		OR = {
-			primary_culture = serb
-			primary_culture = montenegrin
-		}
+			# OR = {
+				primary_culture = serb
+				# primary_culture = montenegrin
+			# }
 			owns = 803
 			NOT = { has_global_flag = serbian_rename_sserbia }
 		}
@@ -13120,10 +13299,10 @@ political_decisions = {
 	serbian_rename_nserbia = {
 		picture = gtfo
 		potential = {
-		OR = {
-			primary_culture = serb
-			primary_culture = montenegrin
-		}
+			# OR = {
+				primary_culture = serb
+				# primary_culture = montenegrin
+			# }
 			owns = 794
 			NOT = { has_global_flag = serbian_rename_nserbia }
 			has_global_flag = greek_rename_nserbia

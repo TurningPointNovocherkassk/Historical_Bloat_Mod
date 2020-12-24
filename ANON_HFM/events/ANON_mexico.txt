@@ -1636,7 +1636,7 @@ country_event = { # Peña y Barragán allowed to flee under the condition that he 
 			end_war = YUC
 		}
 		YUC = { country_event = 1220029 }
-		set_global_flag = YUC_ceasefire
+		set_country_flag = YUC_ceasefire
 		ai_chance = {
 			factor = 100
 		}	
@@ -1733,7 +1733,7 @@ country_event = { # Peña y Barragán captured, used as a bargain chip. He persona
 			factor = 3
 		}
 		YUC = { country_event = 1220032 }
-		set_global_flag = YUC_ceasefire
+		set_country_flag = YUC_ceasefire
 		ai_chance = {
 			factor = 33.3
 			modifier = {
@@ -1822,7 +1822,7 @@ country_event = { # Peña y Barragán is executed by the savage army of Yucatan
 			factor = 3
 		}
 		YUC = { country_event = 1220032 }
-		set_global_flag = YUC_ceasefire
+		set_country_flag = YUC_ceasefire
 		ai_chance = {
 			factor = 33.3
 		}	
@@ -2016,6 +2016,10 @@ country_event = {
 	}
 	option = { #Remain sovereign
 		name = "EVT1220034OPTC"
+		any_country = {
+			limit = { capital = 2172 }
+			clr_country_flag = YUC_ceasefire
+		}
 		ai_chance = {
 			factor = 0
 		}	
@@ -2032,6 +2036,7 @@ country_event = {
 	option = { #Yes, makes all conservatives angry.
 		name = "EVT1220035OPTA"
 		set_global_flag = YUC_autonomous
+		clr_country_flag = YUC_ceasefire
 		YUC = {
 			country_event = 1220036
 		}
@@ -2062,6 +2067,7 @@ country_event = {
 	option = { #No
 		name = "EVT1220035OPTB"
 		YUC = { country_event = 1220037 }
+		clr_country_flag = YUC_ceasefire
 		ai_chance = {
 			factor = 0
 		}	
@@ -2249,8 +2255,16 @@ country_event = {
 	
 	trigger = {
 		tag = YUC
-		has_global_flag = constitution_1824
-		has_global_flag = 2nd_YUC_republic
+		OR = {
+			AND = {
+				has_global_flag = constitution_1824
+				NOT = { has_global_flag = 2nd_YUC_republic }
+			}
+			AND = {
+				has_global_flag = constitution_1824
+				has_global_flag = 2nd_YUC_republic
+			}
+		}
 		is_vassal = no
 		NOT = {
 			has_country_flag = 2nd_YUC_annex

@@ -1,5 +1,5 @@
 ###################################
-#Grant land to soldiers in exchange for their services during the war of independence.
+#Grant land to veterans in exchange for their services during the war of independence.
 country_event = {
 	id = 100000
 	title = "EVTNAME100000"
@@ -462,6 +462,7 @@ country_event = {
 			all_core = { add_core = FVZ }
 		}
 		FVZ = {
+			set_country_flag = ANON_total_war_flag
 			ruling_party_ideology = liberal
 			political_reform = federalism
 			political_reform = free_press
@@ -576,6 +577,7 @@ country_event = {
 			all_core = { add_core = FVZ }
 		}
 		FVZ = {
+			set_country_flag = ANON_total_war_flag
 			ruling_party_ideology = liberal
 			political_reform = federalism
 			political_reform = free_press
@@ -706,6 +708,7 @@ country_event = {
 			secede_province = ZLA
 		}
 		ZLA = {	
+			set_country_flag = ANON_total_war_flag
 			military_access = FVZ
 			create_alliance = FVZ
 			ruling_party_ideology = liberal
@@ -848,6 +851,7 @@ country_event = {
 			secede_province = ZLA
 		}
 		ZLA = {	
+			set_country_flag = ANON_total_war_flag
 			relation = {
 				who = FVZ
 				value = 200
@@ -3838,6 +3842,7 @@ country_event = {
 		title = "EVTNAME100045"
 		desc = "EVTDESC100045"
 		picture = "Patrijarh_Rajacic_blagosilja_vojsku"
+		fire_only_once = yes
 		
 		trigger = {
 			has_global_flag = end_of_hungarian_revolution_I
@@ -3851,6 +3856,13 @@ country_event = {
 			OR = {
 				tag = AUS
 				tag = KUK
+			}
+			NOT = {
+				OR = {
+					has_global_flag = VOJ_respected_autonomy
+					has_global_flag = VOJ_disrupted_autonomy_join
+					has_global_flag = VOJ_disrupted_autonomy_fight
+				}
 			}
 		}
 		

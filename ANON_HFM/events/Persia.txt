@@ -790,25 +790,50 @@ country_event = {
 				remove_core = PER
 			}
 		}
-		1118 = { secede_province = PER }
-		1109 = { secede_province = PER }
-		1110 = { secede_province = PER }
-		1111 = { secede_province = PER }
-		1132 = { secede_province = PER }
-		PER = {
-			random_owned = {
-				limit = { owner = { is_our_vassal = AHW } }
-				1132 = { secede_province = AHW }
-				AHW = { capital = 1132 }
+		1118 = { secede_province = PER remove_core = TUR }
+		1109 = { secede_province = PER remove_core = TUR }
+		1110 = { secede_province = PER remove_core = TUR }
+		1111 = { secede_province = PER remove_core = TUR }
+		1132 = { secede_province = PER remove_core = TUR }
+		any_owned = {
+			limit = {
+				OR = {
+					province_id = 1133
+					province_id = 1131
+					province_id = 3530
+					province_id = 1132
+				}
+				is_core = AHW
+				AHW = { exists = yes }
 			}
+			secede_province = AHW
+			add_core = PER
+			remove_core = TUR 
 		}
-		924 = { secede_province = TUR }
-		925 = { secede_province = TUR }
-		924 = { secede_province = TUR }
-		890 = { secede_province = TUR }
-		891 = { secede_province = TUR }
-		892 = { secede_province = TUR }
-		2414 = { secede_province = TUR }
+		any_owned = {
+			limit = {
+				OR = {
+					province_id = 1133
+					province_id = 1131
+					province_id = 3530
+					province_id = 1132
+				}
+				OR = {
+					is_core = PER
+					is_core = AHW
+				}
+				AHW = { exists = no }
+			}
+			secede_province = PER
+			remove_core = TUR 
+		}
+		924 = { secede_province = TUR remove_core = PER }
+		925 = { secede_province = TUR remove_core = PER }
+		924 = { secede_province = TUR remove_core = PER }
+		890 = { secede_province = TUR remove_core = PER }
+		891 = { secede_province = TUR remove_core = PER }
+		892 = { secede_province = TUR remove_core = PER }
+		2414 = { secede_province = TUR remove_core = PER }
 		THIS = { 
 			relation = {
 				who = TUR

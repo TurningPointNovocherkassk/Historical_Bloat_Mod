@@ -570,3 +570,21 @@ country_event = {
 		PER = { set_country_flag = mohammad_shah }
 	}
 }
+
+country_event = {
+	id = 9999980
+	title = "Instant Hungary"
+	desc = "Hungary appears"
+	picture = "treaty"
+	
+	is_triggered_only = yes
+	
+	option = {
+		any_owned = {
+			limit = {
+				is_core = HUN
+			}
+			secede_province = HUN
+		}
+	}
+}
