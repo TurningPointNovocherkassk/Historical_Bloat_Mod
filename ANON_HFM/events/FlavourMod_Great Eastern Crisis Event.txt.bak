@@ -5,7 +5,7 @@ country_event = {
 	desc = "EVTDESC99820"
 	picture = "russo_turkish"
 	major = yes
-
+	
 	trigger = {
 		AND = {
 			tag = RUS
@@ -13,9 +13,9 @@ country_event = {
 		}
 		is_greater_power = yes
 		OR = {
-			AND = {
+			AND = { 
 				year = 1870
-				OR = {
+				OR = { 
 					has_global_flag = treaty_of_paris_1856
 					has_global_flag = treaty_of_paris_russia
 				}
@@ -23,7 +23,7 @@ country_event = {
 			AND = {
 				year = 1860
 				OR = {
-					TUR = {
+					TUR = { 
 						war_with = ROM
 						war_with = GRE
 						war_with = BUL
@@ -74,31 +74,31 @@ country_event = {
 		NOT = { has_global_flag = great_eastern_crisis }
 		NOT = { has_global_flag = berlin_congress_to_be_held }
 	}
-
+	
 	mean_time_to_happen = {
 		months = 45
-
+		
 		modifier = {
 			factor = 0.5
-			has_global_flag = treaty_of_paris_russia
+			has_global_flag = treaty_of_paris_russia 
 		}
-
+		
 		modifier = {
 			factor = 0.5
 			year = 1873
 		}
-
+		
 		modifier = {
 			factor = 0.4
 			year = 1874
 		}
-
+		
 		modifier = {
 			factor = 0.05
 			year = 1875
 		}
 	}
-
+	
 	immediate = {
 		set_global_flag = great_eastern_crisis
 	}
@@ -121,7 +121,7 @@ country_event = {
 			factor = 100
 		}
 	}
-
+	
 	option = {
 		name = "EVTOPT99820B"
 		set_global_flag = great_eastern_crisis_refused
@@ -166,7 +166,7 @@ country_event = {
 	trigger = {
 		has_country_modifier = great_eastern_crisis
 	}
-
+	
 	mean_time_to_happen = {
 		days = 2
 	}
@@ -175,7 +175,7 @@ country_event = {
 		name = "EVT90062OPTA"
 		remove_country_modifier = great_eastern_crisis
 		prestige = 5
-		relation = {
+		relation = { 
 			who = RUS
 			value = 50
 		}
@@ -194,24 +194,24 @@ country_event = {
 				value = 1
 			}
 		}
-
+		
 		ai_chance = {
 			factor = 99
 			modifier = {
 				factor = 0
-				OR = {
+				OR = { 
 					has_country_flag = sunni_country
 					has_country_flag = shiite_country
 				}
 			}
 		}
 	}
-
+	
 	option = {
 		name = "EVT99821OPTB"
 		remove_country_modifier = great_eastern_crisis
 		badboy = 5
-		relation = {
+		relation = { 
 			who = RUS
 			value = -200
 		}
@@ -238,16 +238,16 @@ country_event = {
 				consciousness = 8
 			}
 		}
-		RUS = {
+		RUS = { 
 			set_country_flag = ottomans_were_supported
 			country_event = 99824
 		}
-
+		
 		ai_chance = {
 			factor = 1
 			modifier = {
 				factor = 0
-				OR = {
+				OR = { 
 					has_country_flag = orthodox_country
 					has_country_flag = protestant_country
 					has_country_flag = catholic_country
@@ -263,7 +263,7 @@ country_event = {
 	title = "EVTNAME99822"
 	desc = "EVTDESC99822"
 	picture = "Administration"
-
+	
 	is_triggered_only = yes
 
 	option = {
@@ -281,14 +281,14 @@ country_event = {
 				factor = 0.5
 				FROM = { NOT = { military_score = 150 }  }
 			}
-
+			
 			modifier = {
 				factor = 2
 				has_global_flag = constantinople_conference
 			}
 		}
 	}
-
+	
 	option = {
 		name = "EVT99822OPTB" #Refuse
 		prestige = 10
@@ -357,7 +357,7 @@ country_event = {
 	option = {
 		name = "EVT99828OPTA"
 		remove_country_modifier = great_eastern_crisis
-		relation = {
+		relation = { 
 			who = FROM
 			value = -200
 		}
@@ -384,14 +384,14 @@ country_event = {
 				consciousness = 8
 			}
 		}
-		FROM = {
+		FROM = { 
 			set_country_flag = ottomans_were_supported
 			country_event = 99824
 		}
-
+		
 		ai_chance = {
 			factor = 40
-
+			
 			modifier = {
 				factor = 100
 				military_score = 100
@@ -406,13 +406,13 @@ country_event = {
 			}
 		}
 	}
-
+	
 	option = {
 		name = "EVT99821OPTB"
 		prestige = -20
 		ai_chance = {
 			factor = 60
-
+			
 			modifier = {
 				factor = 100
 				NOT = { military_score = 100 }
@@ -449,17 +449,17 @@ country_event = {
 			defender_goal = { casus_belli = status_quo }
 			call_ally = yes
 		}
-
+		
 		any_country = {
 			limit = {
 				has_country_modifier = great_eastern_crisis
 			}
 			remove_country_modifier = great_eastern_crisis
 		}
-
+		
 		ai_chance = { factor = 1 }
 	}
-
+	
 	option = {
 		name = "EVT99824OPTB"
 		prestige = -25
@@ -470,14 +470,14 @@ country_event = {
 			militancy = 5
 			consciousness = 5
 		}
-
+		
 		any_country = {
 			limit = {
 				has_country_modifier = great_eastern_crisis
 			}
 			remove_country_modifier = great_eastern_crisis
 		}
-
+		
 		ai_chance = { factor = 0 }
 	}
 }
@@ -488,7 +488,7 @@ country_event = {
 	title = "EVTNAME99825"
 	desc = "EVTDESC99825"
 	picture = "berlin_congress_htm"
-
+	
 	trigger = {
 		has_country_flag = started_the_great_eastern_crisis
 		NOT = { has_country_flag = ottomans_were_supported }
@@ -506,7 +506,7 @@ country_event = {
 		}
 		NOT = { has_global_flag = great_eastern_crisis_war_demanded_turks }
 	}
-
+	
 	mean_time_to_happen = {
 		months = 2
 		modifier = {
@@ -589,7 +589,7 @@ country_event = {
 
 #Ottomans receive the Russian Demand - War
 country_event = {
-
+	
 	id = 99826
 	title = "EVTNAME99826"
 	desc = "EVTDESC99826"
@@ -617,7 +617,7 @@ country_event = {
 	}
 }
 
-#Balkan Minors
+#Balkan Minors 
 country_event = {
 	id = 99829
 	title = "EVTNAME99829"
@@ -701,7 +701,7 @@ country_event = {
 	option = {
 		name = "EVT99832OPTA"
 		prestige = -5
-
+		
 		# Take temporary control of rebel-controlled provinces
 		any_owned = {
 			limit = {
@@ -718,7 +718,7 @@ country_event = {
 			}
 			change_controller = TUR
 		}
-
+		
 		# Remove cores
 		TUR_674 = { remove_core = TUR } # Dobrudja
 		TUR_788 = { remove_core = TUR } # Bosnia
@@ -733,15 +733,12 @@ country_event = {
 		TUR_806 = { remove_core = TUR } # N.Macedonia
 		TUR_805 = { remove_core = TUR } # W.Macedonia
 		TUR_855 = { remove_core = TUR } # Cyprus
-		EGY_843 = { remove_core = TUR } # Crete
-		3685 = { remove_core = TUR } #Thassos & Samothrace
-		3631 = { remove_core = TUR } #Ada Kaleh
-		TUR_3636 = { remove_core = TUR } #Herzegovina
-		TUR_802 = { remove_core = TUR } #Kosovo
-		TUR_843 = { remove_core = TUR } #Eastern Aegean Islands
+		847 = { remove_core = TUR } #Chania
+		848 = { remove_core = TUR } #Iraklion
+		EGY_843 = { remove_core = TUR } #Aegean Islands
 		TUR_860 = { remove_core = TUR } #Thrace
 		860 = { remove_core = TUR } #Constantinople
-
+		
 		#Secede Istanbul, Kars to Russia
 		random_owned = {
 			limit = {
@@ -761,7 +758,7 @@ country_event = {
 			limit = { region = TUR_885 }
 			secede_province = RUS
 		}
-
+		
 		#Secede to Bulgaria
 		random_owned = {
 			limit = {
@@ -785,8 +782,8 @@ country_event = {
 				}
 			}
 		}
-
-
+		
+		
 		# Free Moldavia & Wallachia, and return Constanta and Tulcea to Wallachia
 		random_country = {
 			limit = {
@@ -865,7 +862,7 @@ country_event = {
 			}
 			secede_province = ROM
 		}
-
+	
 		# Give Bulgaria, Eastern Rumelia, Silestre, Thrace to Bulgaria, free it if vassaled
 		random_country = {
 			limit = {
@@ -912,7 +909,7 @@ country_event = {
 			}
 			TUR = { release_vassal = MON }
 		}
-
+		
 		# Any Bosnian lands given to Bosnia, it is freed if vassaled
 		random_owned = {
 			limit = {
@@ -951,7 +948,7 @@ country_event = {
 			}
 			TUR = { release_vassal = BOS }
 		}
-
+		
 		# Any Croatian lands given to Croatia, it is freed if vassaled
 		random_owned = {
 			limit = {
@@ -988,7 +985,7 @@ country_event = {
 			}
 			TUR = { release_vassal = CRO }
 		}
-
+		
 		# Any Dalmatian lands given to Dalmatia, it is freed if vassaled
 		random_owned = {
 			limit = {
@@ -1015,7 +1012,7 @@ country_event = {
 			}
 			TUR = { release_vassal = DLM }
 		}
-
+		
 		# Any Serbian lands given to Serbia, it is freed if vassaled
 		any_owned = {
 			limit = { is_core = SER }
@@ -1082,7 +1079,7 @@ country_event = {
 				}
 			}
 		}
-
+		
 		#Return Aegean Islands to Greece
 		random_owned = {
 			limit = {
@@ -1104,7 +1101,7 @@ country_event = {
 			TUR = { release_vassal = SAM }
 			GRE = { inherit = SAM }
 		}
-
+		
 		#Give Crete to Greece
 		random_owned = {
 			limit = {
@@ -1126,7 +1123,7 @@ country_event = {
 			TUR = { release_vassal = CRE }
 			GRE = { inherit = CRE }
 		}
-
+		
 		#Return Cyprus to Greece
 		random_owned = {
 			limit = {
@@ -1165,7 +1162,7 @@ country_event = {
 			limit = { is_core = ALB }
 			secede_province = ALB
 		}
-
+		
 		# Military Upset
 		soldiers = {
 			limit = { is_primary_culture = yes }
@@ -1183,34 +1180,34 @@ country_event = {
 			}
 			militancy = 5
 		}
-
-		RUS = {
+		
+		RUS = {			
 			relation = { who = SER value = 400 }
 			diplomatic_influence = { who = SER value = 200 }
 			create_alliance = SER
-
+			
 			relation = { who = BUL value = 400 }
 			diplomatic_influence = { who = BUL value = 200 }
 			create_alliance = BUL
-
+			
 			relation = { who = MON value = 400 }
 			diplomatic_influence = { who = MON value = 200 }
 			create_alliance = MON
-
+			
 			relation = { who = ROM value = 400 }
 			diplomatic_influence = { who = ROM value = 200 }
 			create_alliance = ROM
-
+			
 			relation = { who = ALB value = 400 }
 			diplomatic_influence = { who = ALB value = 200 }
 			create_alliance = ALB
-
-
+			
+			
 		}
 		678 = { secede_province = RUS }
 		3347 = { secede_province = RUS }
 		3417 = { secede_province = ROM }
-
+		
 		ROM = {
 			add_country_modifier = {
 				name = nationalist_balkans

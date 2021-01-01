@@ -1313,7 +1313,7 @@ political_decisions = {
 				year = 1870
 			}
 			tag = RUS
-			year = 1859
+			# year = 1859
 			USA = { NOT = { war_with = CSA } }
 		}
 		
@@ -1373,6 +1373,7 @@ political_decisions = {
 							NOT = { tag = TUR }
 						}
 					}
+					exists = yes
 				}
 				set_country_flag = alaska_purchase_interest
 				prestige = 0.5

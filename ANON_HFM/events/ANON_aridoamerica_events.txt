@@ -1181,7 +1181,7 @@
 				}
 			}
 			random_owned = {
-				limit = { owner = { ai = no NOT = { tag = USA } } }
+				limit = { owner = { ai = no } }
 				owner = {
 					relation = {
 						who = TEX
@@ -1194,21 +1194,20 @@
 				}
 			}
 			random_owned = {
-				limit = { owner = { ai = no tag = USA } }
+				limit = { owner = { ai = yes NOT = { tag = USA } } }
 				owner = {
 					relation = {
 						who = TEX
-						value = 100
+						value = 50
 					}
 					diplomatic_influence = {
 						who = TEX
-						value = 50
+						value = 25
 					}
 				}
-			
 			}
 			random_owned = {
-				limit = { owner = { ai = yes } }
+				limit = { owner = { ai = yes tag = USA } }
 				owner = {
 					relation = {
 						who = TEX
@@ -1268,14 +1267,13 @@
 						value = 75
 					}
 				}
-			
 			}
 			random_owned = {
-				limit = { owner = { ai = yes } }
+				limit = { owner = { ai = yes NOT = { tag = ENG } } }
 				owner = {
 					relation = {
 						who = MEX
-						value = 100
+						value = 75
 					}
 					diplomatic_influence = {
 						who = MEX
@@ -1284,7 +1282,7 @@
 				}
 			}
 			random_owned = {
-				limit = { owner = { tag = ENG } }
+				limit = { owner = { ai = yes tag = ENG } }
 				owner = {
 					relation = {
 						who = MEX

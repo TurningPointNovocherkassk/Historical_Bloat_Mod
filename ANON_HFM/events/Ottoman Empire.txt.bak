@@ -10,7 +10,7 @@ country_event = {
 	title = "EVTNAME98625"
 	desc = "EVTDESC98625"
 	picture = "young_turks_meeting"
-
+	
 	trigger = {
 		tag = TUR
 		war = no
@@ -32,7 +32,7 @@ country_event = {
 			has_country_flag = ottomans_to_turks
 		}
 	}
-
+	
 	mean_time_to_happen = {
 		months = 24
 		modifier = {
@@ -56,7 +56,7 @@ country_event = {
 			NOT = { average_militancy = 1 }
 		}
 	}
-
+	
 	option = {
 		name = "EVT98625OPTA"
 		set_country_flag = ottoman_constitution_refused
@@ -82,7 +82,7 @@ country_event = {
 			}
 		}
 		rich_strata = {
-			limit = {
+			limit = { 
 				is_primary_culture = yes
 			}
 			ideology = {
@@ -104,7 +104,7 @@ country_event = {
 				is_accepted_culture = no
 			}
 			consciousness = 5
-		}
+		}		
 	}
 	option = {
 		name = "EVT98625OPTB"
@@ -114,7 +114,7 @@ country_event = {
 		government = prussian_constitutionalism
 		election = yes
 		any_pop = {
-			limit = {
+			limit = { 
 				is_primary_culture = yes
 				OR = {
 					strata = rich
@@ -173,7 +173,7 @@ country_event = {
 	news_desc_short = "EVTDESC98626_NEWS_SHORT"
 	picture = "Ottoman"
 	major = yes
-
+	
 	trigger = {
 		tag = TUR
 		OR = {
@@ -192,7 +192,7 @@ country_event = {
 			has_country_flag = ottomans_to_turks
 		}
 	}
-
+	
 	mean_time_to_happen = {
 		months = 48
 		modifier = {
@@ -220,7 +220,7 @@ country_event = {
 			war = yes
 		}
 	}
-
+	
 	option = {
 		name = "EVT98626OPTA"
 		set_country_flag = ottoman_constitution_refused
@@ -233,7 +233,7 @@ country_event = {
 		political_reform = state_press
 		political_reform = state_controlled
 		political_reform = underground_parties
-
+		
 		clr_country_flag = election_started
 		clr_country_flag = conservative_party_in_power
 		clr_country_flag = liberal_party_in_power
@@ -242,7 +242,7 @@ country_event = {
 		clr_country_flag = communist_party_in_power
 		clr_country_flag = fascist_party_in_power
 		clr_country_flag = anarcho_liberal_party_in_power
-
+		
 		add_country_modifier = {
 			name = national_confusion
 			duration = 365
@@ -255,13 +255,13 @@ country_event = {
 			factor = 80
 		}
 	}
-
+	
 	option = {
 		name = "EVT98626OPTB"
 		set_country_flag = ottoman_constitution_supported
 		prestige = 5
 		any_pop = {
-			limit = {
+			limit = { 
 				is_primary_culture = yes
 				OR = {
 					strata = rich
@@ -291,14 +291,14 @@ country_event = {
 		}
 	}
 }
-
+	
 #Inspired Nationalists
 country_event = {
 	id = 98630
 	title = "EVTNAME98630"
 	desc = "EVTDESC98630"
 	picture = "armenian_nationalists"
-
+	
 	trigger = {
 		tag = TUR
 		has_global_flag = liberal_revolutions_should_now_fire
@@ -329,7 +329,7 @@ country_event = {
 			}
 		}
 	}
-
+	
 	mean_time_to_happen = {
 		months = 6
 		modifier = {
@@ -337,7 +337,7 @@ country_event = {
 			num_of_revolts = 1
 		}
 	}
-
+	
 	option = {
 		name = "EVT98630OPTA"
 		prestige = -5
@@ -416,7 +416,7 @@ country_event = {
 	title = "EVTNAME98635"
 	desc = "EVTDESC98635"
 	picture = "young_turks"
-
+	
 	trigger = {
 		tag = TUR
 		government = absolute_monarchy
@@ -427,7 +427,7 @@ country_event = {
 			has_country_flag = young_turks
 		}
 	}
-
+	
 	mean_time_to_happen = {
 		months = 50
 		modifier = {
@@ -463,7 +463,7 @@ country_event = {
 			liberal = 30
 		}
 	}
-
+	
 	option = {
 		name = "EVT98635OPTA"
 		set_country_flag = young_turks
@@ -489,7 +489,7 @@ country_event = {
 			}
 		}
 	}
-
+	
 	option = {
 		name = "EVT98635OPTB"
 		set_country_flag = young_turks
@@ -525,7 +525,7 @@ country_event = {
 	news_desc_medium = "EVTDESC98636_NEWS_MEDIUM"
 	news_desc_short = "EVTDESC98636_NEWS_SHORT"
 	picture = "young_turks"
-
+	
 	trigger = {
 		tag = TUR
 		is_greater_power = no
@@ -552,7 +552,7 @@ country_event = {
 			}
 		}
 	}
-
+	
 	mean_time_to_happen = {
 		months = 50
 		modifier = {
@@ -607,7 +607,7 @@ country_event = {
 			NOT = { prestige = 10 }
 		}
 	}
-
+	
 	option = {
 		name = "EVT98636OPTA"
 		set_country_flag = turkish_nationalism_activated
@@ -621,7 +621,7 @@ country_event = {
 				ideology = socialist
 				factor = 3
 			}
-		}
+		}		
 	}
 }
 
@@ -636,20 +636,20 @@ country_event = {
 	news_desc_short = "EVTDESC98640_NEWS_SHORT"
 	major = yes
 	picture = "young_turks"
-
+	
 	trigger = {
 		tag = TUR
 		war = no
-		NOT = { has_country_flag = ottomans_to_turks }
+		NOT = { has_country_flag = ottomans_to_turks }		
 		NOT = { government = absolute_monarchy }
 		NOT = { government = prussian_constitutionalism }
-		NOT = { government = hms_government }
+		NOT = { government = hms_government }		
 	}
-
+	
 	mean_time_to_happen = {
 		days = 3
 	}
-
+	
 	option = {
 		name = "EVT98640OPTA"
 		set_country_flag = ottomans_to_turks
@@ -691,7 +691,7 @@ country_event = {
 					NOT = {
 						province_id = 900 #Antioch
 						region = TUR_823 #Western Thrace
-						region = TUR_809 #Eastern Rumelia
+						region = TUR_809 #Eastern Rumelia				
 						region = TUR_860 #Thrace
 						region = TUR_869 #Izmir
 						region = TUR_863 #Bursa
@@ -723,7 +723,7 @@ country_event = {
 				NOT = {
 					province_id = 900 #Antioch
 					region = TUR_823 #Western Thrace
-					region = TUR_809 #Eastern Rumelia
+					region = TUR_809 #Eastern Rumelia				
 					region = TUR_860 #Thrace
 					region = TUR_869 #Izmir
 					region = TUR_863 #Bursa
@@ -776,9 +776,9 @@ country_event = {
 		TUR_806 = { remove_core = TUR } # N.Macedonia
 		TUR_805 = { remove_core = TUR } # W.Macedonia
 		TUR_855 = { remove_core = TUR } # Cyprus
-		EGY_843 = { remove_core = TUR } # Crete
-		3685 = { remove_core = TUR } #Thassos & Samothrace
-		3631 = { remove_core = TUR } #Ada Kaleh
+		847 = { remove_core = TUR } #Chania
+		848 = { remove_core = TUR } #Iraklion
+		843 = { remove_core = TUR }
 		any_owned = {
 			limit = {
 				NOT = { is_core = TUR }
@@ -816,7 +816,7 @@ country_event = {
 	picture = "ahmet_muhtar_pasa_sanaa"
 
 	fire_only_once = yes
-
+	
 	trigger = {
 		tag = TUR
 		war = no
@@ -833,9 +833,9 @@ country_event = {
 		nationalism_n_imperialism = 1
 		NOT = { casus_belli = NYE }
 	}
-
+	
 	mean_time_to_happen = { months = 4 }
-
+	
 	option = {
 		name = "EVT98641OPTA"
 		diplomatic_influence = { who = NYE value = -400 }
@@ -857,7 +857,7 @@ country_event = {
 				months = 40
 			}
 		}
-
+		
 		random_country = {
 			limit = {
 				tag = NYE
@@ -874,11 +874,11 @@ country_event = {
 				months = 40
 			}
 		}
-
-
-		ai_chance = {
-			factor = 0
-			modifier = {
+			
+			
+		ai_chance = { 
+			factor = 0 
+			modifier = { 
 			factor = 100
 				NYE = {
 					part_of_sphere = yes
@@ -887,7 +887,7 @@ country_event = {
 				}
 			}
 		}
-
+		
 	option = {
 		name = "EVT98641OPTB"
 		prestige = 5
@@ -910,7 +910,7 @@ country_event = {
 				months = 40
 			}
 		}
-
+		
 		random_country = {
 			limit = {
 				tag = NYE
@@ -927,7 +927,7 @@ country_event = {
 				months = 40
 			}
 		}
-
+		
 		random_country = {
 			limit = {
 				tag = TUR
@@ -941,7 +941,7 @@ country_event = {
 				call_ally = no
 			}
 		}
-
+		
 		random_country = {
 			limit = {
 				tag = TUR
@@ -955,12 +955,12 @@ country_event = {
 				call_ally = no
 			}
 		}
+		
 
-
-
+		
 		ai_chance = {
-			factor = 100
-			modifier = {
+			factor = 100 
+			modifier = { 
 				factor = 0
 				NYE = {
 				part_of_sphere = yes
@@ -979,7 +979,7 @@ country_event = {
 	picture = "Shilluk_village2"
 
 	fire_only_once = yes
-
+	
 	trigger = {
 		any_neighbor_country = { tag = SHK }
 		owns = 1830
@@ -996,12 +996,12 @@ country_event = {
 			}
 		}
 	}
-
+	
 	mean_time_to_happen = {
 		months = 36
 	}
 
-
+	
 	option = {
 		name = "EVT98642OPTA"
 		1832 = { secede_province = THIS any_pop = { reduce_pop = 0.8 } }
@@ -1022,7 +1022,7 @@ country_event = {
 	picture = "senussi_on_the_march"
 
 	fire_only_once = yes
-
+	
 	trigger = {
 		NOT = { tag = CYR }
 		owns = 1735
@@ -1030,12 +1030,12 @@ country_event = {
 		year = 1853
 		CYR = { exists = no }
 	}
-
+	
 	mean_time_to_happen = {
 		months = 24
 	}
 
-
+	
 	option = {
 		name = "EVT98643OPTA"
 		1738 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 21 }
@@ -1043,16 +1043,16 @@ country_event = {
 			1738 = { secede_province = CYR }
 			capital = 1738
 		}
-
+		
 		relation = { who = CYR value = -400 }
 		diplomatic_influence = { who = CYR value = -400 }
-
+		
 		any_country = {
 			limit = { OR = { NOT = { has_country_flag = sunni_country } tag = THIS } }
 			relation = { who = CYR value = -200 }
 			diplomatic_influence = { who = CYR value = -200 }
 		}
-
+		
 		random_country = {
 			limit = {
 				tag = CYR
@@ -1060,14 +1060,14 @@ country_event = {
 				NOT = { vassal_of = THIS }
 				NOT = { in_sphere = THIS }
 			}
-
+			
 			add_casus_belli = {
 				target = THIS
 				type = establish_protectorate_casus_belli
 				months = 120
 			}
 		}
-
+		
 		random_country = {
 			limit = {
 				tag = CYR
@@ -1078,14 +1078,14 @@ country_event = {
 				NOT = { vassal_of = THIS }
 				NOT = { in_sphere = THIS }
 			}
-
+			
 			add_casus_belli = {
 				target = THIS
 				type = establish_protectorate_NI_casus_belli
 				months = 120
 			}
 		}
-
+		
 		random_country = {
 			limit = {
 				tag = CYR
@@ -1102,9 +1102,9 @@ country_event = {
 				months = 120
 			}
 		}
-
-
-
+		
+		
+		
 		random_country = {
 			limit = {
 				tag = CYR
@@ -1112,14 +1112,14 @@ country_event = {
 				NOT = { vassal_of = THIS }
 				NOT = { in_sphere = THIS }
 			}
-
+			
 			add_casus_belli = {
 				target = THIS
 				type = demand_concession_casus_belli
 				months = 40
 			}
 		}
-
+		
 		random_country = {
 			limit = {
 				tag = CYR
@@ -1130,14 +1130,14 @@ country_event = {
 				NOT = { vassal_of = THIS }
 				NOT = { in_sphere = THIS }
 			}
-
+			
 			add_casus_belli = {
 				target = THIS
 				type = demand_concession_NI_casus_belli
 				months = 40
 			}
 		}
-
+		
 		random_country = {
 			limit = {
 				tag = CYR
@@ -1156,17 +1156,17 @@ country_event = {
 		}
 		ai_chance = { factor = 0 }
 	}
-
+			
 	option = {
 		name = "EVT98643OPTB"
-
+		
 		1738 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 21 }
-
+		
 		CYR = {
 			1738 = { secede_province = CYR }
 			capital = 1738
 		}
-
+		
 		random_country = {
 			limit = {
 				tag = CYR
@@ -1174,14 +1174,14 @@ country_event = {
 				NOT = { vassal_of = THIS }
 				NOT = { in_sphere = THIS }
 			}
-
+			
 			add_casus_belli = {
 				target = THIS
 				type = establish_protectorate_casus_belli
 				months = 120
 			}
 		}
-
+		
 		random_country = {
 			limit = {
 				tag = CYR
@@ -1192,14 +1192,14 @@ country_event = {
 				NOT = { vassal_of = THIS }
 				NOT = { in_sphere = THIS }
 			}
-
+			
 			add_casus_belli = {
 				target = THIS
 				type = establish_protectorate_NI_casus_belli
 				months = 120
 			}
 		}
-
+		
 		random_country = {
 			limit = {
 				tag = CYR
@@ -1216,7 +1216,7 @@ country_event = {
 				months = 120
 			}
 		}
-
+		
 		random_country = {
 			limit = {
 				tag = CYR
@@ -1224,14 +1224,14 @@ country_event = {
 				NOT = { vassal_of = THIS }
 				NOT = { in_sphere = THIS }
 			}
-
+			
 			add_casus_belli = {
 				target = THIS
 				type = demand_concession_casus_belli
 				months = 40
 			}
 		}
-
+		
 		random_country = {
 			limit = {
 				tag = CYR
@@ -1242,14 +1242,14 @@ country_event = {
 				NOT = { vassal_of = THIS }
 				NOT = { in_sphere = THIS }
 			}
-
+			
 			add_casus_belli = {
 				target = THIS
 				type = demand_concession_NI_casus_belli
 				months = 40
 			}
 		}
-
+		
 		random_country = {
 			limit = {
 				tag = CYR
@@ -1266,7 +1266,7 @@ country_event = {
 				months = 40
 			}
 		}
-
+		
 		relation = { who = CYR value = -300 }
 		any_greater_power = {
 			limit = { OR = { NOT = { has_country_flag = sunni_country } tag = THIS } }
@@ -1275,29 +1275,29 @@ country_event = {
 		}
 		diplomatic_influence = { who = CYR value = -200 }
 		change_tag_no_core_switch = CYR
-
+		
 		ai_chance = { factor = 0 }
 	}
-
+	
 	option = {
 		name = "EVT98641OPTB"
-
+		
 		1738 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 21 }
-
+		
 		CYR = {
 			1738 = { secede_province = CYR }
 			capital = 1738
 		}
-
+			
 		relation = { who = CYR value = -400 }
 		diplomatic_influence = { who = CYR value = -400 }
-
+		
 		any_greater_power = {
 			limit = { OR = { NOT = { has_country_flag = sunni_country } tag = TUR } }
 			relation = { who = CYR value = -400 }
 			diplomatic_influence = { who = CYR value = -400 }
 		}
-
+		
 		random_country = {
 			limit = {
 				tag = CYR
@@ -1305,14 +1305,14 @@ country_event = {
 				NOT = { vassal_of = THIS }
 				NOT = { in_sphere = THIS }
 			}
-
+			
 			add_casus_belli = {
 				target = THIS
 				type = establish_protectorate_casus_belli
 				months = 120
 			}
 		}
-
+		
 		random_country = {
 			limit = {
 				tag = CYR
@@ -1323,14 +1323,14 @@ country_event = {
 				NOT = { vassal_of = THIS }
 				NOT = { in_sphere = THIS }
 			}
-
+			
 			add_casus_belli = {
 				target = THIS
 				type = establish_protectorate_NI_casus_belli
 				months = 120
 			}
 		}
-
+		
 		random_country = {
 			limit = {
 				tag = CYR
@@ -1347,13 +1347,13 @@ country_event = {
 				months = 120
 			}
 		}
-
+		
 		casus_belli = {
 			target = CYR
 			type = conquest_any
 			months = 60
 		}
-
+		
 		war = {
 			target = CYR
 				attacker_goal = { casus_belli = conquest_any }
@@ -1373,7 +1373,7 @@ country_event = {
 	news_desc_medium = "EVTDESC96170_NEWS_MEDIUM"
 	news_desc_short = "EVTDESC96170_NEWS_SHORT"
 	picture = "mahdist_rule"
-
+	
 	trigger = {
 		owns = 1827
 		SUD = { exists = no }
@@ -1387,9 +1387,9 @@ country_event = {
 			tag = ARU
 		}
 	}
-
+	
 	fire_only_once = yes
-
+	
 	mean_time_to_happen = {
 		months = 40
 		modifier = {
@@ -1433,7 +1433,7 @@ country_event = {
 			is_greater_power = yes
 		}
 	}
-
+	
 	option = {
 		name = "EVT97170OPTA"
 		set_global_flag = mahdist_uprising
@@ -1443,9 +1443,9 @@ country_event = {
 				remove_core = TUR
 			}
 		}
-
+		
 		1834 = { add_core = EGY }
-
+		
 		any_pop = {
 			limit = {
 				has_pop_culture = sudanese
@@ -1456,7 +1456,7 @@ country_event = {
 			ideology = { factor = -0.1 value = liberal }
 			ideology = { factor = 0.3 value = reactionary }
 		}
-
+		
 		1827 = { any_pop = { limit = { has_pop_religion = sunni } militancy = 7 } }
 		any_owned = {
 			limit = { is_core = SUD }
@@ -1500,7 +1500,7 @@ province_event = {
 	id = 97171
 	title = "EVTNAME97171" #Mahdists in $PROVINCENAME$
 	desc = "EVTDESC97171"
-
+	
 	trigger = {
 		is_core = SUD
 		NOT = { controlled_by = REB }
@@ -1518,7 +1518,7 @@ province_event = {
 			has_global_flag = mahdist_uprising
 		}
 	}
-
+	
 	mean_time_to_happen = {
 		months = 30
 		modifier = {
@@ -1542,7 +1542,7 @@ province_event = {
 			units_in_province = 1
 		}
 	}
-
+	
 	option = {
 		name = "EVT97171OPTA"
 		state_scope = {
@@ -1568,7 +1568,7 @@ country_event = {
 	picture = "mahdist_rule"
 
 	fire_only_once = yes
-
+	
 	trigger = {
 		war = no
 		SUD = { exists = no }
@@ -1580,10 +1580,10 @@ country_event = {
 			is_core = SUD
 		}
 	}
-
+	
 	mean_time_to_happen = { months = 1 }
 
-
+	
 	option = {
 		name = "EVT98645OPTA"
 		any_owned = { limit = { is_core = SUD } secede_province = SUD }
@@ -1614,24 +1614,24 @@ country_event = {
 			clr_country_flag = communist_party_in_power
 			clr_country_flag = fascist_party_in_power
 			clr_country_flag = anarcho_liberal_party_in_power
-
+			
 			add_country_modifier = { name = national_confusion duration = 365 }
 		}
-
+		
 		any_country = {
 			limit = { is_greater_power = yes }
 			relation = { who = SUD value = -400 }
 			diplomatic_influence = { who = SUD value = -400 }
 		}
-
+		
 		any_country = {
 			limit = { NOT = { is_greater_power = yes } neighbour = SUD }
 			relation = { who = SUD value = -400 }
 		}
-
+		
 		ai_chance = { factor = 100 }
 	}
-
+	
 	option = {
 		name = "EVT98645OPTB"
 		any_owned = { limit = { is_core = SUD }
@@ -1664,21 +1664,21 @@ country_event = {
 			clr_country_flag = communist_party_in_power
 			clr_country_flag = fascist_party_in_power
 			clr_country_flag = anarcho_liberal_party_in_power
-
+			
 			add_country_modifier = { name = national_confusion duration = 365 }
 		}
-
+		
 		any_country = {
 			limit = { is_greater_power = yes }
 			relation = { who = SUD value = -400 }
 			diplomatic_influence = { who = SUD value = -400 }
 		}
-
+		
 		any_country = {
 			limit = { NOT = { is_greater_power = yes } neighbour = SUD }
 			relation = { who = SUD value = -400 }
 		}
-
+		
 		change_tag_no_core_switch = SUD
 		ai_chance = { factor = 0 }
 	}
@@ -1693,14 +1693,14 @@ country_event = {
 	picture = "yao_slave"
 
 	fire_only_once = yes
-
+	
 	trigger = {
 		owns = 1832
 		owns = 1827
 		1844 = { empty = yes }
 		1847 = { empty = yes }
 	}
-
+	
 	mean_time_to_happen = {
 		months = 12
 		modifier = {
@@ -1709,13 +1709,13 @@ country_event = {
 		}
 	}
 
-
+	
 	option = {
 		name = "EVT98646OPTA"
-		1844 = {
+		1844 = { 
 			life_rating = 20
 			add_core = SUD
-			secede_province = THIS
+			secede_province = THIS 
 			slaves = { reduce_pop = 1.2 }
 			any_pop = { limit = { has_pop_culture = sudanese } reduce_pop = 1.2 }
 			any_pop = { literacy = -0.99 }
@@ -1723,7 +1723,7 @@ country_event = {
 		1845 = {
 			life_rating = 20
 			add_core = SUD
-			secede_province = THIS
+			secede_province = THIS 
 			slaves = { reduce_pop = 1.2 }
 			any_pop = { limit = { has_pop_culture = sudanese } reduce_pop = 1.2 }
 			any_pop = { literacy = -0.99 }
@@ -1731,7 +1731,7 @@ country_event = {
 		1846 = {
 			life_rating = 20
 			add_core = SUD
-			secede_province = THIS
+			secede_province = THIS 
 			slaves = { reduce_pop = 1.2 }
 			any_pop = { limit = { has_pop_culture = sudanese } reduce_pop = 1.2 }
 			any_pop = { literacy = -0.99 }
@@ -1739,7 +1739,7 @@ country_event = {
 		1847 = {
 			life_rating = 20
 			add_core = SUD
-			secede_province = THIS
+			secede_province = THIS 
 			slaves = { reduce_pop = 1.2 }
 			any_pop = { limit = { has_pop_culture = sudanese } reduce_pop = 1.2 }
 			any_pop = { literacy = -0.99 }
@@ -1755,7 +1755,7 @@ country_event = {
 	picture = "yao_slave"
 
 	fire_only_once = yes
-
+	
 	trigger = {
 		owns = 1832
 		owns = 1827
@@ -1770,91 +1770,91 @@ country_event = {
 		1839 = { empty = yes }
 		year = 1874
 	}
-
+	
 	mean_time_to_happen = {
 		months = 12
-
+		
 		modifier = {
 			factor = 0.25
 			has_global_flag = berlin_conference
 		}
 	}
 
-
+	
 	option = {
 		name = "EVT98647OPTA"
 		1841 = {
-			secede_province = THIS
+			secede_province = THIS 
 			life_rating = 22
 			add_core = SUD
 			add_core = DAR
 			any_pop = { literacy = -0.99 }
 		}
 		1842 = {
-			secede_province = THIS
+			secede_province = THIS 
 			add_core = SUD
 			add_core = DAR
 			any_pop = { literacy = -0.99 }
 		}
 		1843 = {
-			secede_province = THIS
+			secede_province = THIS 
 			life_rating = 25
 			add_core = SUD
 			add_core = DAR
 			any_pop = { literacy = -0.99 }
 		}
 		1739 = {
-			secede_province = THIS
+			secede_province = THIS 
 			add_core = SUD
 			any_pop = { literacy = -0.99 }
 		}
 		1839 = {
-			secede_province = THIS
+			secede_province = THIS 
 			life_rating = 22
 			add_core = SUD
 			add_core = DAR
 			any_pop = { literacy = -0.99 }
 		}
-
-		any_owned = {
+		
+		any_owned = { 
 			limit = { is_core = DAR NOT = { province_id = 1845 } }
 			any_pop = { reduce_pop = 0.98 }
 		}
 
 		ai_chance = { factor = 5 }
 	}
-
+	
 	option = {
 		name = "EVT98647OPTB"
 		prestige = -5
 		1841 = {
-			secede_province = THIS
+			secede_province = THIS 
 			life_rating = 22
 			add_core = SUD
 			add_core = DAR
 			any_pop = { literacy = -0.99 }
 		}
 		1842 = {
-			secede_province = THIS
+			secede_province = THIS 
 			add_core = SUD
 			add_core = DAR
 			any_pop = { literacy = -0.99 }
 		}
 		1843 = {
-			secede_province = THIS
+			secede_province = THIS 
 			life_rating = 25
 			add_core = SUD
 			add_core = DAR
 			any_pop = { literacy = -0.99 }
 		}
-
+		
 		any_owned = { limit = {
 			is_core = DAR
 			NOT = { province_id = 1845 }
 				}
 			secede_province = DAR
 			}
-
+			
 		ai_chance = { factor = 0 }
 	}
 }
@@ -1867,27 +1867,27 @@ country_event = {
 	picture = "muhammad_ali"
 
 	fire_only_once = yes
-
+	
 	trigger = {
 		owns = 1874
 		year = 1841
 		civilized = no
 	}
-
+	
 	mean_time_to_happen = { months = 6 }
 
-
+	
 	option = {
 		name = "EVT98648OPTA"
 		treasury = 20000
 		1874 = { secede_province = WRL }
 		ai_chance = { factor = 100 }
 	}
-
+	
 	option = {
 		name = "EVT98648OPTB"
-		1874 = {
-			any_pop = {
+		1874 = { 
+			any_pop = { 
 				militancy = 5
 				consciousness = 7
 			}
@@ -1903,23 +1903,23 @@ country_event = {
 	picture = "vladika_peter"
 
 	fire_only_once = yes
-
+	
 	trigger = {
 		tag = MON
 		government = theocracy
 		year = 1849
 		exists = yes
 	}
-
+	
 	mean_time_to_happen = { months = 12 }
 
-
+	
 	option = {
 		name = "EVT98649OPTA"
 		government = absolute_monarchy
 		ai_chance = { factor = 100 }
 	}
-
+	
 	option = {
 		name = "EVT98649OPTB"
 		ai_chance = { factor = 0 }
@@ -1935,7 +1935,7 @@ country_event = {
 
 	is_triggered_only = yes
 
-
+	
 	option = {
 		name = "EVT986500OPTA"
 		any_pop = {
@@ -1952,7 +1952,7 @@ country_event = {
 			factor = 25
 		}
 	}
-
+	
 	option = {
 		name = "EVT986500OPTB"
 		prestige = 5
@@ -1967,16 +1967,16 @@ country_event = {
 		FROM = {
 			release_vassal = THIS
 			diplomatic_influence = { who = THIS value = -400 }
-
+			
 			casus_belli = { target = THIS type = conquest_any months = 30 }
-
+		
 			war = {
 				target = THIS
 				attacker_goal = { casus_belli = conquest_any }
 				defender_goal = { casus_belli = status_quo }
 			}
 		}
-
+		
 		ai_chance = { factor = 75 }
 	}
 }
@@ -1987,9 +1987,9 @@ country_event = {
 	title = "EVTNAME986501"
 	desc = "EVTDESC986501"
 	picture = "bedr_khan_massacres"
-
+	
 	is_triggered_only = yes
-
+	
 	option = {
 		name = "EVT986501OPTA"
 	}
@@ -2014,11 +2014,11 @@ country_event = {
 		EGY = { war = no }
 		NOT = { year = 1860 }
 	}
-
+	
 	fire_only_once = yes
-
+		
 	mean_time_to_happen = { months = 1 }
-
+	
 	option = {
 		name = "EVT986503OPTA"
 		set_country_flag = return_persian_lands_on_finish
@@ -2077,7 +2077,7 @@ country_event = {
 				}
 				defender_goal = { casus_belli = humiliate }
 		}
-
+		
 		random_country = {
 			limit = { tag = PER ai = yes exists = yes }
 			relation = { who = BHT value = -400 }
@@ -2095,16 +2095,16 @@ country_event = {
 				defender_goal = { casus_belli = humiliate }
 			}
 		}
-
+		
 		ai_chance = {
-			factor = 100
+			factor = 100 
 			modifier = {
 				factor = 0
 				BHT = { ai = no }
 			}
 		}
 	}
-
+	
 	option = {
 		name = "EVT986503OPTB"
 		set_country_flag = return_persian_lands_on_finish
@@ -2118,7 +2118,7 @@ country_event = {
 		PER = { relation = { who = BHT value = -400 } }
 		leave_alliance = BHT
 		any_country = {
-			limit = {
+			limit = { 
 				NOT = { tag = BHT }
 				ai = yes
 				exists = yes
@@ -2156,7 +2156,7 @@ country_event = {
 			}
 		}
 	}
-
+		
 	option = {
 		name = "EVT986503OPTC"
 		2414 = { change_province_name = "Cizre" }
@@ -2168,7 +2168,7 @@ country_event = {
 		diplomatic_influence = { who = BHT value = -400 }
 		leave_alliance = BHT
 		any_country = {
-			limit = {
+			limit = { 
 				NOT = { tag = BHT }
 				ai = yes
 				exists = yes
@@ -2197,8 +2197,8 @@ country_event = {
 				background = uncommonly_young
 			}
 		}
-		PER = { relation = { who = BHT value = -400 } }
-
+		PER = { relation = { who = BHT value = -400 } }		
+		
 		any_country = {
 			limit = { is_greater_power = yes capital_scope = { continent = europe } NOT = { tag = THIS } }
 			relation = { who = THIS value = -100 }
@@ -2207,8 +2207,8 @@ country_event = {
 				type = humiliate
 				months = 36
 			}
-		}
-
+		}	
+		
 		ai_chance = {
 			factor = 50
 			modifier = {
@@ -2244,14 +2244,14 @@ country_event = {
 	}
 
 	mean_time_to_happen = { months = 60 }
-
+	
 	option = {
 		name = "EVT986504OPTA"
 		badboy = 1
 			any_pop = { limit = { is_state_religion = yes } militancy = -4 }
 			any_pop = { limit = { is_state_religion = no } militancy = 9 }
 			random_list = {
-				25 = {
+				25 = { 
 					any_pop = { limit = { has_pop_religion = syriac } reduce_pop = 0.95 }
 					any_pop = { limit = { has_pop_religion = coptic } reduce_pop = 0.95 }
 
@@ -2259,7 +2259,7 @@ country_event = {
 					any_pop = { limit = { has_pop_religion = nestorian } reduce_pop = 0.95 }
 					any_pop = { limit = { has_pop_religion = maronite } reduce_pop = 0.95 }
 				}
-				25 = {
+				25 = { 
 					any_pop = { limit = { has_pop_religion = yazidi } reduce_pop = 0.9 }
 					any_pop = { limit = { has_pop_religion = coptic } reduce_pop = 0.9 }
 
@@ -2267,7 +2267,7 @@ country_event = {
 					any_pop = { limit = { has_pop_religion = nestorian } reduce_pop = 0.9 }
 					any_pop = { limit = { has_pop_religion = maronite } reduce_pop = 0.9 }
 				}
-				25 = {
+				25 = { 
 					any_pop = { limit = { has_pop_religion = yazidi } reduce_pop = 0.85 }
 					any_pop = { limit = { has_pop_religion = coptic } reduce_pop = 0.85 }
 
@@ -2275,7 +2275,7 @@ country_event = {
 					any_pop = { limit = { has_pop_religion = nestorian } reduce_pop = 0.85 }
 					any_pop = { limit = { has_pop_religion = maronite } reduce_pop = 0.85 }
 				}
-				25 = {
+				25 = { 
 					any_pop = { limit = { has_pop_religion = yazidi } reduce_pop = 0.8 }
 
 					any_pop = { limit = { has_pop_religion = syriac } reduce_pop = 0.8 }
@@ -2284,7 +2284,7 @@ country_event = {
 					any_pop = { limit = { has_pop_religion = maronite } reduce_pop = 0.8 }
 				}
 			}
-
+		
 		any_country = {
 			limit = { is_greater_power = yes capital_scope = { continent = europe } NOT = { tag = THIS } }
 			relation = { who = THIS value = -100 }
@@ -2305,11 +2305,11 @@ country_event = {
 		BHT = { exists = no }
 		owns = 2414
 	}
-
+	
 	fire_only_once = yes
-
+		
 	mean_time_to_happen = { days = 1 }
-
+	
 	option = {
 		name = "EVT986505OPTA"
 		clr_country_flag = return_persian_lands_on_finish
@@ -2332,22 +2332,22 @@ country_event = {
 						has_pop_religion = coptic
 						has_pop_religion = maronite
 					}
-				}
-				militancy = -3
+				} 
+				militancy = -3 
 				consciousness = -3
-			}
+			} 
 		}
-
+			
 		any_owned = { limit = { OR = { is_core = RDL is_core = MKN is_core = JLI } } secede_province = PER }
-
+		
 		BTL = { all_core = { remove_core = BTL } }
 		BDN = { all_core = { remove_core = BDN } }
 		BHT = { all_core = { remove_core = BHT } }
 		BNB = { all_core = { remove_core = BNB } }
 		SRN = { all_core = { remove_core = SRN } }
 		RDL = { all_core = { remove_core = RDL } }
-		MKN = { all_core = { remove_core = MKN } }
-		JLI = { all_core = { remove_core = JLI } }
+		MKN = { all_core = { remove_core = MKN } }	
+		JLI = { all_core = { remove_core = JLI } }	
 	}
 }
 
@@ -2375,13 +2375,13 @@ country_event = {
 			}
 		}
 	}
-
+	
 	fire_only_once = yes
-
+		
 	mean_time_to_happen = {
 		days = 1
 	}
-
+	
 	option = {
 		name = "EVT986506OPTA"
 		release_vassal = EGY
@@ -2397,7 +2397,7 @@ country_event = {
 	major = yes
 
 	is_triggered_only = yes
-
+	
 	option = {
 		name = "EVT986507OPTA"
 		badboy = 2
@@ -2415,16 +2415,16 @@ country_event = {
 	picture = "population_exchange"
 
 	is_triggered_only = yes
-
+	
 	option = {
 		name = "EVT986508OPTA"
 		random_country = {
 			limit = { tag = FROM NOT = { has_country_flag = population_exchange_with_turkey } }
 			set_country_flag = population_exchange_with_turkey
 		}
-
+		
 		FROM = { set_country_flag = thessalia_exchange }
-
+		
 		relation = { who = FROM value = 15 }
 		FROM = {
 			random_owned = {
@@ -2436,7 +2436,7 @@ country_event = {
 			limit = { province_id = 869 any_pop = { is_culture_group = pan_greek } }
 			any_pop = { limit = { is_culture_group = pan_greek } move_pop = 824 }
 		}
-
+			
 		FROM = {
 			random_owned = {
 				limit = { province_id = 833 any_pop = { OR = { is_culture_group = turko_semitic has_pop_culture = kurdish has_pop_culture = tatar has_pop_culture = circassian } } }
@@ -2447,7 +2447,7 @@ country_event = {
 			limit = { province_id = 872 any_pop = { is_culture_group = pan_greek } }
 			any_pop = { limit = { is_culture_group = pan_greek } move_pop = 833 }
 		}
-
+			
 		FROM = {
 			random_owned = {
 				limit = { province_id = 825 any_pop = { OR = { is_culture_group = turko_semitic has_pop_culture = kurdish has_pop_culture = tatar has_pop_culture = circassian } } }
@@ -2458,7 +2458,7 @@ country_event = {
 			limit = { province_id = 869 any_pop = { is_culture_group = pan_greek } }
 			any_pop = { limit = { is_culture_group = pan_greek } move_pop = 825 }
 		}
-
+			
 		FROM = {
 			random_owned = {
 				limit = { province_id = 832 any_pop = { OR = { is_culture_group = turko_semitic has_pop_culture = kurdish has_pop_culture = tatar has_pop_culture = circassian } } }
@@ -2469,18 +2469,18 @@ country_event = {
 			limit = { province_id = 871 any_pop = { is_culture_group = pan_greek } }
 			any_pop = { limit = { is_culture_group = pan_greek } move_pop = 832 }
 		}
-
+			
 		FROM = {
 			random_owned = {
 				limit = { province_id = 831 any_pop = { OR = { is_culture_group = turko_semitic has_pop_culture = kurdish has_pop_culture = tatar has_pop_culture = circassian } } }
 				any_pop = { limit = { OR = { is_culture_group = turko_semitic has_pop_culture = kurdish has_pop_culture = tatar has_pop_culture = circassian } } move_pop = 870 }
-			}
+			} 
 		}
 		random_owned = {
 			limit = { province_id = 870 any_pop = { is_culture_group = pan_greek } }
 			any_pop = { limit = { is_culture_group = pan_greek } move_pop = 831 }
 		}
-
+		
 		FROM = {
 			any_owned = {
 				limit = {
@@ -2495,7 +2495,7 @@ country_event = {
 				remove_core = TUR
 			}
 		}
-
+		
 		any_owned = {
 			limit = {
 				OR = {
@@ -2508,19 +2508,19 @@ country_event = {
 			remove_core = GRE
 			remove_core = ANT
 		}
-
+		
 		ANT = {
 			all_core = {
 				remove_core = ANT
 			}
 		}
-
+		
 		ai_chance = {
 			factor = 0.9
 			modifier = { factor = 0.25 is_greater_power = yes is_disarmed = no military_score = 50 FROM = { is_greater_power = no } }
 		}
 	}
-
+	
 	option = {
 		name = "EVT986508OPTB"
 		relation = { who = FROM value = -150 }
@@ -2548,7 +2548,7 @@ country_event = {
 	picture = "population_exchange"
 
 	is_triggered_only = yes
-
+	
 	option = {
 		name = "EVT986508OPTA"
 		random_country = {
@@ -2567,7 +2567,7 @@ country_event = {
 			limit = { province_id = 863 any_pop = { is_culture_group = pan_greek } }
 			any_pop = { limit = { is_culture_group = pan_greek } move_pop = 805 }
 		}
-
+			
 		FROM = {
 			random_owned = {
 				limit = { province_id = 822 any_pop = { OR = { is_culture_group = turko_semitic has_pop_culture = kurdish has_pop_culture = tatar has_pop_culture = circassian } } }
@@ -2578,7 +2578,7 @@ country_event = {
 			limit = { province_id = 864 any_pop = { is_culture_group = pan_greek } }
 			any_pop = { limit = { is_culture_group = pan_greek } move_pop = 822 }
 		}
-
+			
 		FROM = {
 			random_owned = {
 				limit = { province_id = 821 any_pop = { OR = { is_culture_group = turko_semitic has_pop_culture = kurdish has_pop_culture = tatar has_pop_culture = circassian } } }
@@ -2589,7 +2589,7 @@ country_event = {
 			limit = { province_id = 865 any_pop = { is_culture_group = pan_greek } }
 			any_pop = { limit = { is_culture_group = pan_greek } move_pop = 821 }
 		}
-
+			
 		FROM = {
 			random_owned = {
 				limit = { province_id = 819 any_pop = { OR = { is_culture_group = turko_semitic has_pop_culture = kurdish has_pop_culture = tatar has_pop_culture = circassian } } }
@@ -2600,30 +2600,30 @@ country_event = {
 			limit = { province_id = 862 any_pop = { is_culture_group = pan_greek } }
 			any_pop = { limit = { is_culture_group = pan_greek } move_pop = 819 }
 		}
-
+			
 		FROM = {
 			random_owned = {
 				limit = { province_id = 820 any_pop = { OR = { is_culture_group = turko_semitic has_pop_culture = kurdish has_pop_culture = tatar has_pop_culture = circassian } } }
 				any_pop = { limit = { OR = { is_culture_group = turko_semitic has_pop_culture = kurdish has_pop_culture = tatar has_pop_culture = circassian } } move_pop = 867 }
-			}
+			} 
 		}
 		random_owned = {
 			limit = { province_id = 867 any_pop = { is_culture_group = pan_greek } }
 			any_pop = { limit = { is_culture_group = pan_greek } move_pop = 820 }
 		}
-
+		
 		FROM = {
 			random_owned = {
 				limit = { province_id = 853 any_pop = { OR = { is_culture_group = turko_semitic has_pop_culture = kurdish has_pop_culture = tatar has_pop_culture = circassian } } }
 				any_pop = { limit = { OR = { is_culture_group = turko_semitic has_pop_culture = kurdish has_pop_culture = tatar has_pop_culture = circassian } } move_pop = 861 }
-			}
+			} 
 		}
 		random_owned = {
 			limit = { province_id = 861 any_pop = { is_culture_group = pan_greek } }
 			any_pop = { limit = { is_culture_group = pan_greek } move_pop = 834 }
 		}
-
-		FROM = {
+		
+		FROM = {		
 			any_owned = {
 				limit = {
 					OR = {
@@ -2638,7 +2638,7 @@ country_event = {
 				remove_core = TUR
 			}
 		}
-
+		
 		any_owned = {
 			limit = {
 				OR = {
@@ -2653,13 +2653,13 @@ country_event = {
 			remove_core = GRE
 			remove_core = ANT
 		}
-
+		
 		ai_chance = {
 			factor = 0.9
 			modifier = { factor = 0.25 is_greater_power = yes is_disarmed = no military_score = 50 FROM = { is_greater_power = no } }
 		}
 	}
-
+	
 	option = {
 		name = "EVT986508OPTB"
 		relation = { who = FROM value = -150 }
@@ -2687,7 +2687,7 @@ country_event = {
 	picture = "population_exchange"
 
 	is_triggered_only = yes
-
+	
 	option = {
 		name = "EVT986508OPTA"
 		relation = { who = FROM value = 15 }
@@ -2706,7 +2706,7 @@ country_event = {
 			limit = { province_id = 828 any_pop = { is_culture_group = pan_greek } }
 			any_pop = { limit = { is_culture_group = pan_greek } move_pop = 823 }
 		}
-
+			
 		FROM = {
 			random_owned = {
 				limit = { province_id = 829 any_pop = { OR = { is_culture_group = turko_semitic has_pop_culture = kurdish has_pop_culture = tatar has_pop_culture = circassian } } }
@@ -2717,7 +2717,7 @@ country_event = {
 			limit = { province_id = 859 any_pop = { is_culture_group = pan_greek } }
 			any_pop = { limit = { is_culture_group = pan_greek } move_pop = 829 }
 		}
-
+			
 		FROM = {
 			random_owned = {
 				limit = { province_id = 830 any_pop = { OR = { is_culture_group = turko_semitic has_pop_culture = kurdish has_pop_culture = tatar has_pop_culture = circassian } } }
@@ -2728,7 +2728,7 @@ country_event = {
 			limit = { province_id = 858 any_pop = { is_culture_group = pan_greek } }
 			any_pop = { limit = { is_culture_group = pan_greek } move_pop = 830 }
 		}
-
+			
 		FROM = {
 			random_owned = {
 				limit = { province_id = 844 any_pop = { OR = { is_culture_group = turko_semitic has_pop_culture = kurdish has_pop_culture = tatar has_pop_culture = circassian } } }
@@ -2739,55 +2739,55 @@ country_event = {
 			limit = { province_id = 860 any_pop = { is_culture_group = pan_greek } }
 			any_pop = { limit = { is_culture_group = pan_greek } move_pop = 834 }
 		}
-
+			
 		FROM = {
 			random_owned = {
 				limit = { province_id = 843 any_pop = { OR = { is_culture_group = turko_semitic has_pop_culture = kurdish has_pop_culture = tatar has_pop_culture = circassian } } }
 				any_pop = { limit = { OR = { is_culture_group = turko_semitic has_pop_culture = kurdish has_pop_culture = tatar has_pop_culture = circassian } } move_pop = 861 }
-			}
+			} 
 		}
 		random_owned = {
 			limit = { province_id = 861 any_pop = { is_culture_group = pan_greek } }
 			any_pop = { limit = { is_culture_group = pan_greek } move_pop = 843 }
 		}
-
+		
 		FROM = {
 			random_owned = {
 				limit = { province_id = 846 any_pop = { OR = { is_culture_group = turko_semitic has_pop_culture = kurdish has_pop_culture = tatar has_pop_culture = circassian } } }
 				any_pop = { limit = { OR = { is_culture_group = turko_semitic has_pop_culture = kurdish has_pop_culture = tatar has_pop_culture = circassian } } move_pop = 860 }
-			}
+			} 
 		}
 		FROM = {
 			random_owned = {
 				limit = { province_id = 847 any_pop = { OR = { is_culture_group = turko_semitic has_pop_culture = kurdish has_pop_culture = tatar has_pop_culture = circassian } } }
 				any_pop = { limit = { OR = { is_culture_group = turko_semitic has_pop_culture = kurdish has_pop_culture = tatar has_pop_culture = circassian } } move_pop = 860 }
-			}
+			} 
 		}
 		FROM = {
 			random_owned = {
 				limit = { province_id = 848 any_pop = { OR = { is_culture_group = turko_semitic has_pop_culture = kurdish has_pop_culture = tatar has_pop_culture = circassian } } }
 				any_pop = { limit = { OR = { is_culture_group = turko_semitic has_pop_culture = kurdish has_pop_culture = tatar has_pop_culture = circassian } } move_pop = 860 }
-			}
+			} 
 		}
-
+		
 		any_owned = { limit = { is_core = TUR NOT = { is_core = GRE } } any_pop = { limit = { is_culture_group = pan_greek } move_pop = 834 } }
 		PNT = { all_core = { remove_core = PNT } }
 		IKO = { all_core = { remove_core = IKO } }
 		ACH = { all_core = { remove_core = ACH } }
-
+		
 		FROM = { any_pop = { limit = { is_culture_group = pan_greek has_pop_religion = sunni } move_pop = 860 } }
-
+		
 		any_owned = { limit = { OR = { province_id = 855 province_id = 856 province_id = 857 } }
 			any_pop = { limit = { is_culture_group = pan_greek NOT = { has_pop_religion = sunni } } move_pop = 834 }
 			remove_core = GRE remove_core = CYP
 		}
-
+		
 		FROM = { any_owned = { limit = { OR = { province_id = 855 province_id = 856 province_id = 857 } }
 				any_pop = { limit = { OR = { is_culture_group = turko_semitic has_pop_culture = kurdish has_pop_culture = tatar has_pop_culture = circassian } } move_pop = 858 }
 				remove_core = TUR remove_core = CYP
 			}
 		}
-
+		
 		FROM = {
 			any_owned = {
 				limit = { is_core = BUL }
@@ -2813,20 +2813,20 @@ country_event = {
 				}
 			}
 		}
-
+		
 		random_country = {
 			limit = { owns = 834 834 = { NOT = { has_province_modifier = repatriation } } }
 			834 = { add_province_modifier = { name = repatriation duration = -1 } }
 		}
-
+		
 		random_owned = { limit = { province_id = 860 NOT = { has_province_modifier = repatriation } }
 			add_province_modifier = { name = repatriation duration = -1 }
 		}
-
+		
 		random_owned = { limit = { province_id = 861 NOT = { has_province_modifier = repatriation } }
 			add_province_modifier = { name = repatriation duration = -1 }
 		}
-
+		
 		FROM = {
 			any_owned = {
 				limit = {
@@ -2844,7 +2844,7 @@ country_event = {
 				remove_core = TUR
 			}
 		}
-
+		
 		any_owned = {
 			limit = {
 				OR = {
@@ -2861,13 +2861,13 @@ country_event = {
 			remove_core = GRE
 			remove_core = ANT
 		}
-
+		
 		ai_chance = {
 			factor = 0.9
 			modifier = { factor = 0.25 is_greater_power = yes is_disarmed = no military_score = 50 FROM = { is_greater_power = no } }
 		}
 	}
-
+	
 	option = {
 		name = "EVT986508OPTB"
 		relation = { who = FROM value = -150 }
@@ -2895,7 +2895,7 @@ country_event = {
 	picture = "population_exchange"
 
 	is_triggered_only = yes
-
+	
 	option = {
 		name = "EVT986508OPTA"
 		relation = { who = FROM value = 15 }
@@ -2909,13 +2909,13 @@ country_event = {
 				any_pop = { limit = { OR = { is_culture_group = turko_semitic has_pop_culture = kurdish has_pop_culture = tatar has_pop_culture = circassian } } move_pop = 860 }
 			}
 		}
-
+			
 		FROM = {
 			random_owned = {
 				limit = { province_id = 815 any_pop = { OR = { is_culture_group = turko_semitic has_pop_culture = kurdish has_pop_culture = tatar has_pop_culture = circassian } } }
 				any_pop = { limit = { OR = { is_culture_group = turko_semitic has_pop_culture = kurdish has_pop_culture = tatar has_pop_culture = circassian } } move_pop = 860 }
 			}
-		}
+		}		
 		FROM = {
 			random_owned = {
 				limit = { province_id = 816 any_pop = { OR = { is_culture_group = turko_semitic has_pop_culture = kurdish has_pop_culture = tatar has_pop_culture = circassian } } }
@@ -2928,7 +2928,7 @@ country_event = {
 				any_pop = { limit = { OR = { is_culture_group = turko_semitic has_pop_culture = kurdish has_pop_culture = tatar has_pop_culture = circassian } } move_pop = 860 }
 			}
 		}
-
+		
 		FROM = {
 			any_owned = {
 				limit = { is_core = BUL }
@@ -2954,11 +2954,11 @@ country_event = {
 				}
 			}
 		}
-
+		
 		random_owned = { limit = { province_id = 860 NOT = { has_province_modifier = repatriation } }
 			add_province_modifier = { name = repatriation duration = -1 }
 		}
-
+		
 		random_owned = { limit = { province_id = 861 NOT = { has_province_modifier = repatriation } }
 			add_province_modifier = { name = repatriation duration = -1 }
 		}
@@ -2975,13 +2975,13 @@ country_event = {
 				remove_core = TUR
 			}
 		}
-
+		
 		ai_chance = {
 			factor = 0.9
 			modifier = { factor = 0.25 is_greater_power = yes is_disarmed = no military_score = 50 FROM = { is_greater_power = no } }
 		}
 	}
-
+	
 	option = {
 		name = "EVT986508OPTB"
 		relation = { who = FROM value = -150 }
@@ -3009,7 +3009,7 @@ country_event = {
 	picture = "population_exchange"
 
 	is_triggered_only = yes
-
+	
 	option = {
 		name = "EVT986508OPTA"
 		relation = { who = FROM value = 15 }
@@ -3017,7 +3017,7 @@ country_event = {
 			limit = { tag = FROM NOT = { has_country_flag = population_exchange_with_turkey } }
 			set_country_flag = population_exchange_with_turkey
 		}
-
+		
 		FROM = {
 			any_owned = {
 				limit = {
@@ -3030,7 +3030,7 @@ country_event = {
 			any_pop = { limit = { OR = { is_culture_group = turko_semitic has_pop_culture = kurdish has_pop_culture = tatar has_pop_culture = circassian } } move_pop = 860 }
 			}
 		}
-
+		
 		FROM = {
 			any_owned = {
 				limit = {
@@ -3043,7 +3043,7 @@ country_event = {
 			any_pop = { limit = { OR = { is_culture_group = turko_semitic has_pop_culture = kurdish has_pop_culture = tatar has_pop_culture = circassian } } move_pop = 861 }
 			}
 		}
-
+		
 		FROM = {
 			any_owned = {
 				limit = { is_core = BUL }
@@ -3069,23 +3069,23 @@ country_event = {
 				}
 			}
 		}
-
+		
 		FROM = { any_pop = { limit = { has_pop_culture = bulgarian has_pop_religion = sunni } move_pop = 860 } }
-
+		
 		any_pop = { limit = { has_pop_culture = bulgarian NOT = { has_pop_religion = sunni location = { is_core = BUL } } } move_pop = 809 }
-
+				
 		random_owned = { limit = { province_id = 860 NOT = { has_province_modifier = repatriation } }
 			add_province_modifier = { name = repatriation duration = -1 }
 		}
-
+		
 		random_owned = { limit = { province_id = 861 NOT = { has_province_modifier = repatriation } }
 			add_province_modifier = { name = repatriation duration = -1 }
 		}
-
+		
 		random_owned = { limit = { province_id = 809 NOT = { has_province_modifier = repatriation } }
 			add_province_modifier = { name = repatriation duration = -1 }
 		}
-
+		
 		FROM = {
 			any_owned = {
 				limit = {
@@ -3101,13 +3101,13 @@ country_event = {
 				remove_core = TUR
 			}
 		}
-
+		
 		ai_chance = {
 			factor = 0.9
 			modifier = { factor = 0.25 is_greater_power = yes is_disarmed = no military_score = 50 FROM = { is_greater_power = no } }
 		}
 	}
-
+	
 	option = {
 		name = "EVT986508OPTB"
 		relation = { who = FROM value = -150 }
@@ -3135,7 +3135,7 @@ country_event = {
 	picture = "population_exchange"
 
 	is_triggered_only = yes
-
+	
 	option = {
 		name = "EVT986508OPTA"
 		relation = { who = FROM value = 15 }
@@ -3143,7 +3143,7 @@ country_event = {
 			limit = { tag = FROM NOT = { has_country_flag = population_exchange_with_turkey } }
 			set_country_flag = population_exchange_with_turkey
 		}
-
+		
 		FROM = {
 			any_owned = {
 				limit = {
@@ -3156,7 +3156,7 @@ country_event = {
 			any_pop = { limit = { OR = { is_culture_group = turko_semitic has_pop_culture = kurdish has_pop_culture = tatar has_pop_culture = circassian } } move_pop = 860 }
 			}
 		}
-
+		
 		FROM = {
 			any_owned = {
 				limit = {
@@ -3188,18 +3188,18 @@ country_event = {
 				}
 			}
 		}
-
+		
 		FROM = { any_pop = { limit = { has_pop_culture = bulgarian has_pop_religion = sunni } move_pop = 860 } }
 		FROM = { any_pop = { limit = { has_pop_culture = romanian has_pop_religion = sunni } move_pop = 860 } }
-
+						
 		random_owned = { limit = { province_id = 860 NOT = { has_province_modifier = repatriation } }
 			add_province_modifier = { name = repatriation duration = -1 }
 		}
-
+		
 		random_owned = { limit = { province_id = 861 NOT = { has_province_modifier = repatriation } }
 			add_province_modifier = { name = repatriation duration = -1 }
 		}
-
+		
 		FROM = {
 			any_owned = {
 				limit = {
@@ -3212,13 +3212,13 @@ country_event = {
 				remove_core = TUR
 			}
 		}
-
+		
 		ai_chance = {
 			factor = 0.9
 			modifier = { factor = 0.25 is_greater_power = yes is_disarmed = no military_score = 50 FROM = { is_greater_power = no } }
 		}
 	}
-
+	
 	option = {
 		name = "EVT986508OPTB"
 		relation = { who = FROM value = -150 }
@@ -3249,7 +3249,7 @@ country_event = {
 	picture = "population_exchange"
 
 	is_triggered_only = yes
-
+	
 	option = {
 		name = "EVT986508OPTA"
 		relation = { who = FROM value = 15 }
@@ -3257,7 +3257,7 @@ country_event = {
 			limit = { tag = FROM NOT = { has_country_flag = population_exchange_with_turkey } }
 			set_country_flag = population_exchange_with_turkey
 		}
-
+		
 		FROM = {
 			any_owned = {
 				limit = {
@@ -3270,7 +3270,7 @@ country_event = {
 			any_pop = { limit = { OR = { is_culture_group = turko_semitic has_pop_culture = kurdish has_pop_culture = tatar has_pop_culture = circassian } } move_pop = 860 }
 			}
 		}
-
+		
 		FROM = {
 			any_owned = {
 				limit = { is_core = MCD }
@@ -3296,15 +3296,15 @@ country_event = {
 				}
 			}
 		}
-
+				
 		random_owned = { limit = { province_id = 860 NOT = { has_province_modifier = repatriation } }
 			add_province_modifier = { name = repatriation duration = -1 }
 		}
-
+		
 		random_owned = { limit = { province_id = 861 NOT = { has_province_modifier = repatriation } }
 			add_province_modifier = { name = repatriation duration = -1 }
 		}
-
+		
 		FROM = {
 			any_owned = {
 				limit = {
@@ -3317,13 +3317,13 @@ country_event = {
 				remove_core = TUR
 			}
 		}
-
+		
 		ai_chance = {
 			factor = 0.9
 			modifier = { factor = 0.25 is_greater_power = yes is_disarmed = no military_score = 50 FROM = { is_greater_power = no } }
 		}
 	}
-
+	
 	option = {
 		name = "EVT986508OPTB"
 		relation = { who = FROM value = -150 }
@@ -3343,7 +3343,7 @@ country_event = {
 	picture = "population_exchange"
 
 	is_triggered_only = yes
-
+	
 	option = {
 		name = "EVT986508OPTA"
 		relation = { who = FROM value = 15 }
@@ -3351,7 +3351,7 @@ country_event = {
 			limit = { tag = FROM NOT = { has_country_flag = population_exchange_with_turkey } }
 			set_country_flag = population_exchange_with_turkey
 		}
-
+		
 		FROM = {
 			any_owned = {
 				limit = {
@@ -3360,7 +3360,7 @@ country_event = {
 			any_pop = { limit = { OR = { is_culture_group = turko_semitic has_pop_culture = kurdish has_pop_culture = tatar has_pop_culture = circassian } } move_pop = 860 }
 			}
 		}
-
+		
 		FROM = {
 			any_owned = {
 				limit = {
@@ -3372,7 +3372,7 @@ country_event = {
 			any_pop = { limit = { OR = { is_culture_group = turko_semitic has_pop_culture = kurdish has_pop_culture = tatar has_pop_culture = circassian } } move_pop = 861 }
 			}
 		}
-
+		
 		FROM = {
 			any_owned = {
 				limit = { is_core = SER }
@@ -3398,20 +3398,20 @@ country_event = {
 				}
 			}
 		}
-
+		
 		any_owned = {
 			limit = { is_core = TUR NOT = { is_core = SER is_core = MON } }
 			any_pop = { limit = { has_pop_culture = serb NOT = { has_pop_religion = sunni } } move_pop = 798 }
 		}
-
+				
 		random_owned = { limit = { province_id = 860 NOT = { has_province_modifier = repatriation } }
 			add_province_modifier = { name = repatriation duration = -1 }
 		}
-
+		
 		random_owned = { limit = { province_id = 861 NOT = { has_province_modifier = repatriation } }
 			add_province_modifier = { name = repatriation duration = -1 }
 		}
-
+		
 		FROM = {
 			any_owned = {
 				limit = {
@@ -3424,13 +3424,13 @@ country_event = {
 				remove_core = TUR
 			}
 		}
-
+		
 		ai_chance = {
 			factor = 0.9
 			modifier = { factor = 0.25 is_greater_power = yes is_disarmed = no military_score = 50 FROM = { is_greater_power = no } }
 		}
 	}
-
+	
 	option = {
 		name = "EVT986508OPTB"
 		relation = { who = FROM value = -150 }
@@ -3450,7 +3450,7 @@ country_event = {
 	picture = "population_exchange"
 
 	is_triggered_only = yes
-
+	
 	option = {
 		name = "EVT986508OPTA"
 		relation = { who = FROM value = 15 }
@@ -3458,7 +3458,7 @@ country_event = {
 			limit = { tag = FROM NOT = { has_country_flag = population_exchange_with_turkey } }
 			set_country_flag = population_exchange_with_turkey
 		}
-
+		
 		FROM = {
 			any_owned = {
 				limit = {
@@ -3471,20 +3471,20 @@ country_event = {
 			any_pop = { limit = { OR = { is_culture_group = turko_semitic has_pop_culture = kurdish has_pop_culture = tatar has_pop_culture = circassian } } move_pop = 860 }
 			}
 		}
-
+		
 		any_owned = {
 			limit = { is_core = TUR NOT = { is_core = SER is_core = MON } }
 			any_pop = { limit = { has_pop_culture = serb NOT = { has_pop_religion = sunni } } move_pop = 2569 }
 		}
-
+		
 		random_owned = { limit = { province_id = 860 NOT = { has_province_modifier = repatriation } }
 			add_province_modifier = { name = repatriation duration = -1 }
 		}
-
+		
 		random_owned = { limit = { province_id = 861 NOT = { has_province_modifier = repatriation } }
 			add_province_modifier = { name = repatriation duration = -1 }
 		}
-
+		
 		FROM = {
 			any_owned = {
 				limit = { is_core = MON }
@@ -3510,7 +3510,7 @@ country_event = {
 				}
 			}
 		}
-
+		
 		FROM = {
 			any_owned = {
 				limit = {
@@ -3523,13 +3523,13 @@ country_event = {
 				remove_core = TUR
 			}
 		}
-
+		
 		ai_chance = {
 			factor = 0.9
 			modifier = { factor = 0.25 is_greater_power = yes is_disarmed = no military_score = 50 FROM = { is_greater_power = no } }
 		}
 	}
-
+	
 	option = {
 		name = "EVT986508OPTB"
 		relation = { who = FROM value = -150 }
@@ -3549,7 +3549,7 @@ country_event = {
 	picture = "population_exchange"
 
 	is_triggered_only = yes
-
+	
 	option = {
 		name = "EVT986508OPTA"
 		relation = { who = FROM value = 15 }
@@ -3557,7 +3557,7 @@ country_event = {
 			limit = { tag = FROM NOT = { has_country_flag = population_exchange_with_turkey } }
 			set_country_flag = population_exchange_with_turkey
 		}
-
+		
 		FROM = {
 			any_owned = {
 				limit = {
@@ -3571,7 +3571,7 @@ country_event = {
 			any_pop = { limit = { OR = { is_culture_group = turko_semitic has_pop_culture = kurdish has_pop_culture = tatar has_pop_culture = circassian } } move_pop = 860 }
 			}
 		}
-
+		
 		FROM = {
 			any_owned = {
 				limit = {
@@ -3584,15 +3584,15 @@ country_event = {
 			any_pop = { limit = { OR = { is_culture_group = turko_semitic has_pop_culture = kurdish has_pop_culture = tatar has_pop_culture = circassian } } move_pop = 861 }
 			}
 		}
-
+		
 		random_owned = { limit = { province_id = 860 NOT = { has_province_modifier = repatriation } }
 			add_province_modifier = { name = repatriation duration = -1 }
 		}
-
+		
 		random_owned = { limit = { province_id = 861 NOT = { has_province_modifier = repatriation } }
 			add_province_modifier = { name = repatriation duration = -1 }
 		}
-
+		
 		FROM = {
 			any_owned = {
 				limit = { is_core = BOS }
@@ -3618,7 +3618,7 @@ country_event = {
 				}
 			}
 		}
-
+		
 		FROM = {
 			any_owned = {
 				limit = {
@@ -3635,13 +3635,13 @@ country_event = {
 				remove_core = TUR
 			}
 		}
-
+		
 		ai_chance = {
 			factor = 0.9
 			modifier = { factor = 0.25 is_greater_power = yes is_disarmed = no military_score = 50 FROM = { is_greater_power = no } }
 		}
 	}
-
+	
 	option = {
 		name = "EVT986508OPTB"
 		relation = { who = FROM value = -150 }
@@ -3661,7 +3661,7 @@ country_event = {
 	picture = "population_exchange"
 
 	is_triggered_only = yes
-
+	
 	option = {
 		name = "EVT986508OPTA"
 		relation = { who = FROM value = 15 }
@@ -3669,7 +3669,7 @@ country_event = {
 			limit = { tag = FROM NOT = { has_country_flag = population_exchange_with_turkey } }
 			set_country_flag = population_exchange_with_turkey
 		}
-
+		
 		FROM = {
 			any_owned = {
 				limit = {
@@ -3682,7 +3682,7 @@ country_event = {
 			any_pop = { limit = { OR = { is_culture_group = turko_semitic has_pop_culture = kurdish has_pop_culture = tatar has_pop_culture = circassian } } move_pop = 860 }
 			}
 		}
-
+		
 		FROM = {
 			any_owned = {
 				limit = {
@@ -3694,7 +3694,7 @@ country_event = {
 			any_pop = { limit = { OR = { is_culture_group = turko_semitic has_pop_culture = kurdish has_pop_culture = tatar has_pop_culture = circassian } } move_pop = 861 }
 			}
 		}
-
+		
 		FROM = {
 			any_owned = {
 				limit = { is_core = ALB }
@@ -3720,15 +3720,15 @@ country_event = {
 				}
 			}
 		}
-
+		
 		random_owned = { limit = { province_id = 860 NOT = { has_province_modifier = repatriation } }
 			add_province_modifier = { name = repatriation duration = -1 }
 		}
-
+		
 		random_owned = { limit = { province_id = 861 NOT = { has_province_modifier = repatriation } }
 			add_province_modifier = { name = repatriation duration = -1 }
 		}
-
+		
 		FROM = {
 			any_owned = {
 				limit = {
@@ -3743,13 +3743,13 @@ country_event = {
 				remove_core = TUR
 			}
 		}
-
+		
 		ai_chance = {
 			factor = 0.9
 			modifier = { factor = 0.25 is_greater_power = yes is_disarmed = no military_score = 50 FROM = { is_greater_power = no } }
 		}
 	}
-
+	
 	option = {
 		name = "EVT986508OPTB"
 		relation = { who = FROM value = -150 }
@@ -3783,55 +3783,55 @@ province_event = {
 			}
 		}
 	}
-
+	
 	mean_time_to_happen = { days = 1 }
-
+	
 	option = {
 		name = "EVT986519OPTA"
 		owner = {
 			random_owned = {
 				limit = {
-					province_id = 2577
-					NOT = { any_neighbor_province = { owned_by = THIS } }
+					province_id = 2577 
+					NOT = { any_neighbor_province = { owned_by = THIS } } 
 					any_neighbor_province = { owned_by = MON }
 				}
 			secede_province = MON
 			}
 		}
-
+		
 		owner = {
 			random_owned = {
 				limit = {
-					province_id = 2577
-					NOT = { any_neighbor_province = { owned_by = THIS } }
+					province_id = 2577 
+					NOT = { any_neighbor_province = { owned_by = THIS } } 
 					any_neighbor_province = { owned_by = YUG }
 				}
 			secede_province = YUG
 			}
 		}
-
+		
 		owner = {
 			random_owned = {
 				limit = {
-					province_id = 804
-					NOT = { any_neighbor_province = { owned_by = THIS } }
+					province_id = 804 
+					NOT = { any_neighbor_province = { owned_by = THIS } } 
 					any_neighbor_province = { owned_by = SER }
 				}
 			secede_province = SER
 			}
 		}
-
+		
 		owner = {
 			random_owned = {
 				limit = {
-					province_id = 804
-					NOT = { any_neighbor_province = { owned_by = THIS } }
+					province_id = 804 
+					NOT = { any_neighbor_province = { owned_by = THIS } } 
 					any_neighbor_province = { owned_by = YUG }
 				}
 			secede_province = YUG
 			}
 		}
-
+		
 	}
 }
 
@@ -3841,7 +3841,7 @@ country_event = {
 	title = "EVTNAME168050"
 	desc = "EVTDESC168050"
 	picture = "qatar_beach"
-
+	
 	trigger = {
 		tag = TUR
 		exists = QAT
@@ -3856,9 +3856,9 @@ country_event = {
 		owns = 1164
 		NOT = { has_country_flag = qatar_protection }
 	}
-
+	
 	fire_only_once = yes
-
+	
 	mean_time_to_happen = {
 		months = 24
 		modifier = {
@@ -3866,7 +3866,7 @@ country_event = {
 			relation = { who = QAT value = 100 }
 		}
 	}
-
+	
 	option = {
 		name = "EVT168050OPTA"#protect
 		set_country_flag = qatar_protection
@@ -3892,7 +3892,7 @@ country_event = {
 	title = "EVTNAME168060"
 	desc = "EVTDESC168060"
 	picture = "arab_revolt"
-
+	
 	trigger = {
 		tag = TUR
 		NOT = { exists = QAT }
@@ -3901,9 +3901,9 @@ country_event = {
 		has_country_flag = qatar_protection
 		year = 1890
 	}
-
+	
 	fire_only_once = yes
-
+	
 	mean_time_to_happen = {
 		months = 45
 		modifier = {
@@ -3915,10 +3915,10 @@ country_event = {
 			1165 = { pop_militancy = 7 }
 		}
 	}
-
+	
 	option = {
 		name = "EVT168060OPTA"#Blast!
-		1165 = {
+		1165 = { 
 			remove_core = TUR
 			any_pop = {
 				militancy = 4
@@ -3934,7 +3934,7 @@ country_event = {
 	title = "EVTNAME168070"
 	desc = "EVTDESC168070"
 	picture = "al_wajbah"
-
+	
 	trigger = {
 		tag = TUR
 		NOT = { exists = QAT }
@@ -3943,9 +3943,9 @@ country_event = {
 		has_country_flag = qatar_protection
 		year = 1905
 	}
-
+	
 	fire_only_once = yes
-
+	
 	mean_time_to_happen = {
 		months = 120
 		modifier = {
@@ -3957,7 +3957,7 @@ country_event = {
 			1165 = { pop_militancy = 7 }
 		}
 	}
-
+	
 	option = {
 		name = "EVT168070OPTA"#Yes
 		release = QAT
@@ -3984,7 +3984,7 @@ country_event = {
 			modifier = { factor = 0 badboy = 0.8 }#don't go over the infamy limit
 		}
 	}
-
+	
 	option = {
 		name = "EVT168070OPTC"#Reassert our right to rule
 		1165 = {
@@ -3997,7 +3997,7 @@ country_event = {
 		badboy = 7.5
 		relation = { who = ENG value = -200 }
 		relation = { who = PER value = -200 }
-
+		
 		ai_chance = {
 			factor = 0.1
 			modifier = { factor = 2 war_policy = jingoism }

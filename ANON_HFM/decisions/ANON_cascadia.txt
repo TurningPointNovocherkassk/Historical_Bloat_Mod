@@ -2334,7 +2334,10 @@ political_decisions = {
 	JAP_rename_carsoncity = {
 		picture = gtfo
 		potential = {
+			OR = {
 				primary_culture = japanese
+				primary_culture = ryukyuan
+			}
 			owns = 3393
 			NOT = { has_global_flag = JAP_rename_carsoncity }
 			has_global_flag = american_frontier
@@ -2428,7 +2431,7 @@ political_decisions = {
 				}
 			}
 			OR = {
-				is_culture_group = east_slavic
+				tag = RUS
 				primary_culture = alaskan
 			}
 			year = 1840
@@ -2438,7 +2441,6 @@ political_decisions = {
 					in_sphere = THIS
 					vassal_of = THIS
 					substate_of = THIS
-					ai = no
 					all_core = {
 						OR = {
 							owned_by = THIS
@@ -2461,6 +2463,7 @@ political_decisions = {
 		
 		allow = {
 			#war = no
+			exists = yes
 		}
 		
 		effect = {
@@ -2469,6 +2472,13 @@ political_decisions = {
 		}
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				factor = 0
+				OR = {
+					LSK = { ai = no }
+					RUS = { ai = no }
+				}
+			}
 		}
 	}
 		
@@ -2504,7 +2514,10 @@ political_decisions = {
 					NOT = { has_global_flag = iberoamerican_rename_ftross }
 				}
 				AND = {
-					primary_culture = japanese
+					OR = {
+						primary_culture = japanese
+						primary_culture = ryukyuan
+					}
 					owns = 3390
 					NOT = { has_global_flag = japanese_rename_ftross }
 				}
@@ -2592,7 +2605,10 @@ political_decisions = {
 				limit = {
 					province_id = 3390
 					owner = {
-						primary_culture = japanese
+						OR = {
+							primary_culture = japanese
+							primary_culture = ryukyuan
+						}
 					}
 				}
 				3390 = { change_province_name = "Toride-Roshiajin" }
@@ -2706,14 +2722,21 @@ political_decisions = {
 					}
 					has_country_flag = the_alaskan_question
 				}
-				primary_culture = japanese
+				OR = {
+					primary_culture = japanese
+					primary_culture = ryukyuan
+				}
 				OR = {
 					AND = {
 						is_culture_group = iberian
 						has_global_flag = reconquista
 					}
 					AND = {
-						tag = MEX
+						OR = {
+							tag = MEX
+							tag = MXM
+							tag = M3X
+						}
 						has_country_flag = manifest_destiny_refuted
 					}
 				}
@@ -2725,6 +2748,7 @@ political_decisions = {
 						OR = {
 							in_sphere = THIS
 							vassal_of = THIS
+							substate_of = THIS
 						}
 					}
 				}
@@ -2778,7 +2802,10 @@ political_decisions = {
 					}
 				}
 				AND = {
-					primary_culture = japanese
+					OR = {
+						primary_culture = japanese
+						primary_culture = ryukyuan
+					}
 					is_greater_power = yes
 				}
 				AND = {
@@ -2792,7 +2819,11 @@ political_decisions = {
 							has_global_flag = reconquista
 						}
 						AND = {
-							tag = MEX
+							OR = {
+								tag = MEX
+								tag = MXM
+								tag = M3X
+							}
 							has_country_flag = manifest_destiny_refuted
 						}
 					}
@@ -3008,7 +3039,10 @@ political_decisions = {
 	JAP_rename_whitehorse = {
 		picture = map_alaska
 		potential = {
-			primary_culture = japanese
+			OR = {
+				primary_culture = japanese
+				primary_culture = ryukyuan
+			}
 			owns = 6
 			owns = 17
 			NOT = { has_global_flag = JAP_rename_whitehorse }
@@ -3204,7 +3238,10 @@ political_decisions = {
 	JAP_rename_alaska = {
 		picture = map_alaska
 		potential = {
-			primary_culture = japanese
+			OR = {
+				primary_culture = japanese
+				primary_culture = ryukyuan
+			}
 			owns = 1
 			NOT = { has_global_flag = JAP_rename_alaska }
 		}

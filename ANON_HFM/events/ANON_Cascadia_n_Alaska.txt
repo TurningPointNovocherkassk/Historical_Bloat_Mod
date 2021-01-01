@@ -465,7 +465,7 @@
 			relation = { who = ENG value = -100 }
 			badboy = 3
 			ai_chance = {
-				factor = 90
+				factor = 100
 			}
 		}
 		option = {
@@ -473,7 +473,7 @@
 			relation = { who = ENG value = 50 }
 			prestige = -10
 			ai_chance = {
-				factor = 10
+				factor = 0
 			}
 		}
 	}
@@ -1292,6 +1292,7 @@ country_event = {
 					NOT = {
 						OR = {
 							tag = RUS
+							tag = LSK
 							vassal_of = RUS
 							substate_of = RUS
 						}
@@ -1311,11 +1312,17 @@ country_event = {
 						tag = MXM
 						tag = M3X
 						tag = ARD
-						tag = JAP
 						tag = CAS
 						tag = CAL
 						tag = C4L
 						tag = LIE
+						AND = {
+							OR = {
+								primary_culture = japanese
+								primary_culture = ryukyuan
+							}
+							civilized = yes
+						}
 						has_country_flag = aridoamerica_alliance_leader
 						AND = {
 							OR = {
@@ -1330,6 +1337,7 @@ country_event = {
 							NOT = { tag = TUR }
 						}
 					}
+					exists = yes
 				}
 				set_country_flag = fort_ross_purchase_interest
 				prestige = 0.5
@@ -1385,8 +1393,8 @@ country_event = {
 				}
 			}
 			NOT = {
-				has_global_flag = fort_ross_sale_refuse
 				has_global_flag = fort_ross_purchase_process_global
+				has_global_flag = fort_ross_sale_refuse
 				has_global_flag = fort_ross_purchase_completed
 				has_country_flag = refused_fort_ross
 				any_owned_province = { is_core = RUS }
@@ -1461,6 +1469,7 @@ country_event = {
 		
 		option = {
 			name = "EVT1100013OPTB"
+			clr_global_flag = fort_ross_purchase_process_global
 			clr_country_flag = fort_ross_purchase_interest
 			set_country_flag = refused_fort_ross
 			RUS = { country_event = 1100043 }
@@ -1557,11 +1566,17 @@ country_event = {
 						tag = MXM
 						tag = M3X
 						tag = ARD
-						tag = JAP
 						tag = CAS
 						tag = CAL
 						tag = C4L
 						tag = LIE
+						AND = {
+							OR = {
+								primary_culture = japanese
+								primary_culture = ryukyuan
+							}
+							civilized = yes
+						}
 						has_country_flag = aridoamerica_alliance_leader
 						AND = {
 							OR = {
@@ -5651,7 +5666,7 @@ country_event = {
 			}
 			set_global_flag = silver_rush_nevada
 	}
-} 
+}
 
 	country_event = {
 		id = 1100043

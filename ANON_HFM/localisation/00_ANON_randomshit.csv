@@ -2770,8 +2770,8 @@ EVTDESC666666030;$FROMCOUNTRY$ has agreed to live up to its part of the bargain 
 EVT666666030OPTA;Excellent, we will abide by our agreement.;;;;;;;;;x
 EVT666666030OPTB;Their help was worthless! Forget it!;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
-EVTNAME666666031;The Poles Have Refused;;;;;;;;;x
-EVTDESC666666031;The treacherous poles have refused their end of the bargain, labeling our help as worthless… This cannot stand without consequences!;;;;;;;;;x
+EVTNAME666666031;$FROMCOUNTRY$ Has Refused;;;;;;;;;x
+EVTDESC666666031;$FROMCOUNTRY$ has refused their end of the bargain, labeling our help as worthless… This cannot stand without consequences!;;;;;;;;;x
 EVT666666031OPTA;To Arms!;;;;;;;;;x
 EVT666666031OPTB;We shall get to them in due time…;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
@@ -5935,7 +5935,7 @@ reorganize_cascadian_territories_title;A Federalist model for Cascadia ;;;;;;;;;
 reorganize_cascadian_territories_desc;The $COUNTRY_ADJ$ Nation has finally been consolidated and our old unitary model of governance makes it nigh-impossible to properly manage the vast expanses of land comprising our country. A heated debate has ensued in $CAPITAL$ and after several days of deliberations, our Statesmen have come to the conclusion that Cascadia must follow a federalist model in which every state shall possess a certain degree of autonomy… Our nation must also be restructured in order for this model to work and three states have been proposed: The State of Jefferson shall be the southernmost state, named in honor of US President Thomas Jefferson who facilitated the expedition of Lewis & Clark in the territories which became $COUNTRY$ and comprised of our holdings in Northern California and Southwestern Oregon. The State of Oregon, comprising the territories between the 42nd and 49th parallels, sans those belonging to Jefferson. And the state of Columbia, comprised of the territories between the 49th and the infamous 54°40' parallels. With this new model, $COUNTRY_ADJ$shall enjoy a greater degree of autonomy, which translates in more settlers and more towns and cities founded in our nation.;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 CAS_from_whitehorse_and_down_title;Whitehorse and Down ;;;;;;;;;;;;;x
-CAS_from_whitehorse_and_down_desc;With the acquisition of Alaska many in $COUNTRY$ are calling for the immediate annexation of all territories south of the Yukon River. Those in favor of the idea claim that it is our destiny to establish a contiguous federation north of the 49th parallel. A heated debate has ensued and now $COUNTRY$ must decide what to do… ;;;;;;;;;;;;;x
+CAS_from_whitehorse_and_down_desc;With the acquisition of Alaska many in $COUNTRY$ are calling for the immediate annexation of all territories south of the Yukon River. Those in favor of the idea claim that it is our destiny to establish a contiguous federation north of the 54°40' parallel. A heated debate has ensued and now $COUNTRY$ must decide what to do… ;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 EVTNAME1100003;Whitehorse and Down ;;;;;;;;;;;;;x
 EVTDESC1100003;With the acquisition of Alaska many in $COUNTRY$ are calling for the immediate annexation of all territories south of the Yukon River. Those in favor of the idea claim that it is our destiny to establish a contiguous federation north of the 54°40' parallel. If we follow through with this demand we can rest assured that the British will not be happy.;;;;;;;;;;;;;x
@@ -7702,6 +7702,16 @@ EVT777777398OPTA;Curse them! ;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 PNJ_chushul_title;The Treaty of Chushul of $YEAR$ ;;;;;;;;;;;;;x
 PNJ_chushul_desc;After conquering the territories of Sumdo and Purang, our top diplomats are suggesting we sit down with the Qing envoys in order to discuss the future of this war.;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+chushul_treaty_title;The Treaty of Chushul of $YEAR$ ;;;;;;;;;;;;;x
+chushul_treaty_desc;After turning back the tides of war against our Sikh aggressors, $COUNTRY$ is in a favorable position to negotiate a proper, and very beneficial, end to this pointless war.;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 EVTNAME777777001;The Treaty of Chushul of $YEAR$ ;;;;;;;;;;;;;x
 EVTDESC777777001;The territories of Sumdo and Purang are under our control. Now is the time to sit down with the Qing and work out a peace deal that will see them transferred into $COUNTRY_ADJ$ hands!;;;;;;;;;;;;;x

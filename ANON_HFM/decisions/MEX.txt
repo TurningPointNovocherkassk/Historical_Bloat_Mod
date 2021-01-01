@@ -133,17 +133,26 @@ political_decisions = {
 		potential = {
 			exists = yes
 			OR = {
-				tag = MEX
-				tag = TEX
+				AND = {
+					OR = {
+						tag = MEX
+						tag = MXM
+						tag = M3M
+					}
+					NOT = { has_country_flag = treaty_of_guadalupe_hidalgo }
+				}
+				# tag = TEX
 				tag = DES
-				tag = CAL
-				tag = C4L
+				# tag = CAL
+				# tag = C4L
+				tag = ARD
+				AND = {
+					tag = CAS
+					has_country_flag = grosscascadiums_awaken
+				}
 			}
 			USA = { has_country_flag = hasmanifestdestiny }
-			NOT = {
-				has_country_flag = treaty_of_guadalupe_hidalgo
-				has_country_flag = manifest_destiny_refuted
-			}
+			NOT = { has_country_flag = manifest_destiny_refuted }
 		}
 		
 		allow = {
@@ -151,24 +160,37 @@ political_decisions = {
 			NOT = { has_recently_lost_war = yes }
 			OR = {
 				AND = {
-					tag = MEX
+					OR = {
+						tag = MEX
+						tag = MXM
+						tag = M3M
+					}
 					is_greater_power = yes
 					invention = manifest_destiny
 				}
 				AND = {
-					NOT = { tag = MEX }
+					OR = {
+						tag = ARD
+						tag = CAS
+					}
+					is_greater_power = yes
+					invention = manifest_destiny
+					all_core = { owned_by = THIS }
+				}
+				AND = {
+					tag = DES
 					OR = {
 						is_greater_power = yes
 						is_secondary_power = yes
 					}
 					invention = manifest_destiny
+					all_core = { owned_by = THIS }
 				}
 				AND = {
 					truce_with = USA
 					USA = { has_recently_lost_war = yes }
 				}
 			}
-			all_core = { owned_by = THIS }
 		}
 		
 		effect = {
@@ -181,57 +203,144 @@ political_decisions = {
 			
 			any_owned = {
 				limit = {
-					is_core = USA
+					OR = {
+						is_core = USA
+						is_core = CSA
+						is_core = FSA
+					}
 					is_core = THIS
 				}
 				remove_core = USA
+				remove_core = CSA
+				remove_core = FSA
 			}
 			
 			random_owned = {
-				limit = { owner = { OR = { tag = DES tag = CAL tag = C4L } } }
-					owner = {
-					any_owned = {
-						limit = {
-							is_core = MEX
-							is_core = THIS
-						}
-				remove_core = MEX
-					}
-				}
-			}
-			
-			random_owned = {
-				limit = { owner = { primary_culture = texan } }
-					owner = {
-					any_owned = {
-						limit = {
-							is_core = MEX
-							is_core = THIS
-						}
-				remove_core = MEX
-					}
-				}
-			}
-			
-			random_owned = {
-				limit = { owner = { primary_culture = mexican NOT = { tag = C4L } } }
+				limit = { owner = { OR = { tag = USA tag = CSA tag = FSA } } }
 				owner = {
-					TEX_132 = { add_core = MEX } #Texas
-					MEX_103 = { add_core = MEX } #New Mexico
-					MEX_100 = { add_core = MEX } #Arizona
-					MEX_85 = { add_core = MEX } #California
-					MEX_104 = { add_core = MEX } #California
-					MEX_94 = { add_core = MEX } #Nevada
-					MEX_97 = { add_core = MEX } #Utah
-					110 = { add_core = MEX } #Rock Springs
-					107 = { add_core = MEX } #Riverside
-					108 = { add_core = MEX } #Grand Junction
-					109 = { add_core = MEX } #Aspen
-					103 = { add_core = MEX } #Pueblo
-					128 = { add_core = MEX } #Hugoton
-					129 = { add_core = MEX } #Guymon
-					3398 = { add_core = MEX } #Warm Springs
-					3399 = { add_core = MEX } #White River
+					any_owned = {
+						limit = {
+							OR = {
+								is_core = MEX
+								is_core = MXM
+								is_core = M3M
+								is_core = ARD
+								is_core = DES
+								is_core = CAS
+								is_core = THIS
+							}
+							OR = {
+								is_core = USA
+								is_core = CSA
+								is_core = FSA
+							}
+						}
+						remove_core = USA
+						remove_core = CSA
+						remove_core = FSA
+					}
+				}
+			}
+			
+			random_owned = {
+				limit = { owner = { OR = { tag = DES tag = ARD } } }
+				owner = {
+					any_owned = {
+						limit = {
+							OR = {
+								is_core = MEX
+								is_core = MXM
+								is_core = M3M
+								is_core = USA
+								is_core = CSA
+								is_core = FSA
+							}
+							is_core = THIS
+						}
+						remove_core = MEX
+						remove_core = MXM
+						remove_core = M3M
+						remove_core = USA
+						remove_core = CSA
+						remove_core = FSA
+					}
+				}
+			}
+			
+			random_owned = {
+				limit = { owner = { OR = { tag = ENG tag = RPL tag = CAN tag = RUS } } }
+				owner = {
+					any_owned = {
+						limit = {
+							OR = {
+								is_core = ENG
+								is_core = RPL
+								is_core = CAN
+								is_core = RUS
+							}
+							is_core = THIS
+						}
+						remove_core = ENG
+						remove_core = RPL
+						remove_core = CAN
+						remove_core = RUS
+					}
+				}
+			}
+			
+			random_owned = {
+				limit = { owner = { tag = CAS } }
+				owner = {
+					any_owned = {
+						limit = {
+							OR = {
+								is_core = MEX
+								is_core = MXM
+								is_core = M3M
+								is_core = USA
+								is_core = CSA
+								is_core = FSA
+								is_core = ENG
+								is_core = RPL
+								is_core = CAN
+								is_core = RUS
+							}
+							is_core = THIS
+						}
+						remove_core = MEX
+						remove_core = MXM
+						remove_core = M3M
+						remove_core = USA
+						remove_core = CSA
+						remove_core = FSA
+						remove_core = ENG
+						remove_core = RPL
+						remove_core = CAN
+						remove_core = RUS
+					}
+				}
+			}
+			
+			random_owned = {
+				limit = { owner = { OR = { tag = MEX tag = MXM tag = M3M } } }
+				owner = {
+					TEX_132 = { add_core = THIS } #East Texas
+					TEX_133 = { add_core = THIS } #West Texas
+					MEX_103 = { add_core = THIS } #New Mexico
+					MEX_100 = { add_core = THIS } #Arizona
+					MEX_85 = { add_core = THIS } #S. California
+					MEX_104 = { add_core = THIS } #N. California
+					MEX_94 = { add_core = THIS } #Nevada
+					MEX_97 = { add_core = THIS } #Utah
+					110 = { add_core = THIS } #Rock Springs
+					107 = { add_core = THIS } #Riverside
+					108 = { add_core = THIS } #Grand Junction
+					109 = { add_core = THIS } #Aspen
+					103 = { add_core = THIS } #Pueblo
+					128 = { add_core = THIS } #Hugoton
+					129 = { add_core = THIS } #Guymon
+					3398 = { add_core = THIS } #Warm Springs
+					3399 = { add_core = THIS } #White River
 				}
 			}
 		}

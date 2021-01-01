@@ -679,175 +679,160 @@ political_decisions = {
 		ai_will_do = { factor = 1 }
 	}
 	
-	PNJ_chushul = {
+	chushul_treaty = {
 		picture = gtfo
 		potential = {
-			tag = PNJ
-			war_with = QNG
-			war_with = TIB
-			TIB = { ai = yes }
-			NOT = {
-				has_global_flag = signed_treaty_of_chushul_PNJ
-				has_global_flag = signed_treaty_of_chushul_QNG
-				has_global_flag = signed_treaty_of_chushul_TIB_secretdeal #Secret alliance against QNG
-				has_global_flag = signed_treaty_of_chushul_definitive
-				has_country_flag = kashmir_defeated
-				has_country_flag = tibet_defeated
-				has_country_flag = tibet_secret_deal
-				has_country_flag = chushul_definitive
-			}
-		}
-		
-		allow = {
-			3452 = {
-				OR = {
-					controlled_by = PNJ
-					controller = { alliance_with = PNJ }
-				}
-				province_control_days = 60
-			}
-			3531 = {
-				OR = {
-					controlled_by = PNJ
-					controller = { alliance_with = PNJ }
-				}
-				province_control_days = 60
-			}
-			NOT = {
-				any_owned_province = {
-					is_core = LAD
-					OR = {
-						controlled_by = QNG
-						controller = { alliance_with = QNG }
-					}
-				}
-			}
-		}
-		
-		effect = {		
-			country_event = 777777001
-		}
-		ai_will_do = { factor = 1 }
-	}
-	QNG_chushul = {
-		picture = gtfo
-		potential = {
-			tag = QNG
-			war_with = PNJ
-			TIB = { ai = yes }
-			NOT = {
-				has_global_flag = signed_treaty_of_chushul_PNJ
-				has_global_flag = signed_treaty_of_chushul_QNG
-				has_global_flag = signed_treaty_of_chushul_TIB_secretdeal #Secret alliance against QNG
-				has_global_flag = signed_treaty_of_chushul_definitive
-				has_country_flag = kashmir_defeated
-				has_country_flag = tibet_defeated
-				has_country_flag = tibet_secret_deal
-				has_country_flag = chushul_definitive
-			}
-		}
-		
-		allow = {
-			1226 = {
-				OR = {
-					controlled_by = QNG
-					controller = { alliance_with = QNG }
-				}
-				province_control_days = 60
-			}
-			3455 = {
-				OR = {
-					controlled_by = QNG
-					controller = { alliance_with = QNG }
-				}
-				province_control_days = 60
-			}
-			NOT = {
-				TIB = {
-					any_owned_province = {
-						is_core = PNJ
-						OR = {
-							controlled_by = PNJ
-							controller = { alliance_with = PNJ }
-						}
-					}
-				}
-			}
-		}
-		
-		effect = {		
-			country_event = 777777005
-		}
-		ai_will_do = { factor = 1 }
-	}
-	TIB_chushul = {
-		picture = gtfo
-		potential = {
-			tag = TIB
-			war_with = PNJ
-			is_vassal = yes
-			NOT = {
-				has_global_flag = signed_treaty_of_chushul_PNJ
-				has_global_flag = signed_treaty_of_chushul_QNG
-				has_global_flag = signed_treaty_of_chushul_TIB_secretdeal #Secret alliance against QNG
-				has_global_flag = signed_treaty_of_chushul_definitive
-				has_country_flag = kashmir_defeated
-				has_country_flag = tibet_defeated
-				has_country_flag = tibet_secret_deal
-				has_country_flag = chushul_definitive
-			}
-		}
-		
-			allow = {
 			OR = {
 				AND = {
+					tag = PNJ
+					war_with = QNG
+					war_with = TIB
+					TIB = { ai = yes }
+				}
+				AND = {
+					tag = QNG
+					war_with = PNJ
+					TIB = { ai = yes }
+				}
+				AND = {
+					tag = TIB
+					ai = no
+					war_with = PNJ
+					is_vassal = yes
+				}
+			}
+			NOT = {
+				has_global_flag = signed_treaty_of_chushul_PNJ
+				has_global_flag = signed_treaty_of_chushul_QNG
+				has_global_flag = signed_treaty_of_chushul_TIB_secretdeal #Secret alliance against QNG
+				has_global_flag = signed_treaty_of_chushul_definitive
+				has_country_flag = kashmir_defeated
+				has_country_flag = tibet_defeated
+				has_country_flag = tibet_secret_deal
+				has_country_flag = chushul_definitive
+			}
+		}
+		
+		allow = {
+			OR = {
+				AND = {
+					tag = PNJ
 					3452 = {
 						OR = {
 							controlled_by = PNJ
 							controller = { alliance_with = PNJ }
 						}
-						province_control_days = 50
+						province_control_days = 60
 					}
 					3531 = {
 						OR = {
 							controlled_by = PNJ
 							controller = { alliance_with = PNJ }
 						}
-						province_control_days = 50
+						province_control_days = 60
+					}
+					NOT = {
+						any_owned_province = {
+							is_core = LAD
+							OR = {
+								controlled_by = QNG
+								controller = { alliance_with = QNG }
+							}
+						}
 					}
 				}
 				AND = {
+					tag = QNG
 					1226 = {
 						OR = {
-							controlled_by = TIB
-							controller = { alliance_with = TIB }
+							controlled_by = QNG
+							controller = { alliance_with = QNG }
 						}
-						province_control_days = 50
+						province_control_days = 60
 					}
 					3455 = {
 						OR = {
-							controlled_by = TIB
-							controller = { alliance_with = TIB }
+							controlled_by = QNG
+							controller = { alliance_with = QNG }
 						}
-						province_control_days = 50
+						province_control_days = 60
+					}
+					NOT = {
+						TIB = {
+							any_owned_province = {
+								is_core = PNJ
+								OR = {
+									controlled_by = PNJ
+									controller = { alliance_with = PNJ }
+								}
+							}
+						}
 					}
 				}
-			}
-			NOT = {
-				TIB = {
-					any_owned_province = {
-						is_core = PNJ
-						OR = {
-							controlled_by = PNJ
-							controller = { alliance_with = PNJ }
+				AND = {
+					tag = TIB
+					OR = {
+						AND = {
+							3452 = {
+								OR = {
+									controlled_by = PNJ
+									controller = { alliance_with = PNJ }
+								}
+								province_control_days = 50
+							}
+							3531 = {
+								OR = {
+									controlled_by = PNJ
+									controller = { alliance_with = PNJ }
+								}
+								province_control_days = 50
+							}
+						}
+						AND = {
+							1226 = {
+								OR = {
+									controlled_by = TIB
+									controller = { alliance_with = TIB }
+								}
+								province_control_days = 50
+							}
+							3455 = {
+								OR = {
+									controlled_by = TIB
+									controller = { alliance_with = TIB }
+								}
+								province_control_days = 50
+							}
+						}
+					}
+					NOT = {
+						TIB = {
+							any_owned_province = {
+								is_core = PNJ
+								OR = {
+									controlled_by = PNJ
+									controller = { alliance_with = PNJ }
+								}
+							}
 						}
 					}
 				}
 			}
 		}
 		
-		effect = {		
-			country_event = 777777010
+		effect = {
+			random_owned = {
+				limit = { owner = { tag = PNJ } }
+				country_event = 777777001
+			}
+			random_owned = {
+				limit = { owner = { tag = QNG } }
+				country_event = 777777005
+			}
+			random_owned = {
+				limit = { owner = { tag = TIB } }
+				country_event = 777777010
+			}
 		}
 		ai_will_do = { factor = 1 }
 	}

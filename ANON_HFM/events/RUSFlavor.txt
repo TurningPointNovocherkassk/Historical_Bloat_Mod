@@ -330,7 +330,13 @@ country_event = {
 			tag = MXM
 			tag = M3X
 			tag = ARD
-			tag = JAP
+			AND = {
+				OR = {
+					primary_culture = japanese
+					primary_culture = ryukyuan
+				}
+				civilized = yes
+			}
 			tag = CAS
 			tag = CAL
 			tag = C4L
@@ -439,6 +445,7 @@ country_event = {
 	option = {
 		name = "EVT32509OPTB"
 		clr_country_flag = alaska_purchase_interest
+		clr_global_flag = alaska_purchase_process_global
 		set_country_flag = refused_alaska
 		ai_chance = {
 			factor = 5
@@ -514,7 +521,13 @@ country_event = {
 					tag = MXM
 					tag = M3X
 					tag = ARD
-					tag = JAP
+					AND = {
+						OR = {
+							primary_culture = japanese
+							primary_culture = ryukyuan
+						}
+						civilized = yes
+					}
 					tag = CAS
 					tag = CAL
 					tag = C4L
@@ -534,6 +547,7 @@ country_event = {
 					has_country_flag = bought_fort_ross
 				}
 				relation = { who = RUS value = 0 }
+				exists = yes
 			}
 			set_country_flag = alaska_purchase_interest
 		}
@@ -650,6 +664,7 @@ country_event = {
 					NOT = {
 						OR = {
 							primary_culture = japanese
+							primary_culture = ryukyuan
 							primary_culture = cascadian
 							tag = UOR
 							tag = JEF
@@ -722,7 +737,7 @@ country_event = {
 			}
 		}
 		
-		random_owned = { limit = { owner = { primary_culture = japanese } }
+		random_owned = { limit = { owner = { OR = { primary_culture = japanese primary_culture = ryukyuan } } }
 			owner = {
 				1 = { change_province_name = "Dai Tenshi" }
 				2 = { change_province_name = "Jionisosu" }

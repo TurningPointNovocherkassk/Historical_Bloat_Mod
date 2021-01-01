@@ -7,22 +7,22 @@ country_event = {
 	title = "EVTNAME1100050"
 	desc = "EVTDESC1100050"
 	picture = "reform_war"
-
+	
 	fire_only_once = yes
-
+	
 	trigger = {
 		tag = MEX
 		NOT = {war_with = USA }
 		has_global_flag = mexican_american_war
 		government = provisional_government
 		}
-
+	
 	immediate = {
 		MEX = { all_core = { add_core = M3X } }
 		set_global_flag = mexican_reform_war
 		MEX = { capital = 2162 }
 		}
-
+	
 	option = {
 		name = "EVTOPTA1100050" #Pick Liberal Mexico
 		2172 = { secede_province = M3X }
@@ -71,7 +71,7 @@ country_event = {
 			call_ally = no
 			}
 		}
-
+	
 	option = {
 		name = "EVTOPTB1100050" #Pick Conservative Mexico
 		2172 = { secede_province = M3X }
@@ -124,18 +124,18 @@ country_event = {
 			}
 		}
 	}
-
+	
 #Getting PayDay Loans from European Powers
 country_event = {
 	id = 1100051
 	title = "EVTNAME1100051"
 	desc = "EVTDESC1100051"
 	picture = "treaty_of_san_diego"
-
+	
 	fire_only_once = yes
-
+	
 	trigger = {
-		tag = MEX
+		tag = MEX 
 		has_global_flag = mexican_reform_war
 		NOT = { has_global_flag = conservatives_win }
 		}
@@ -145,13 +145,13 @@ country_event = {
 		set_global_flag = mexico_asks_for_loans
 		ai_chance = { factor = 100 }
 		}
-
+	
 	option = {
 		name = "EVTOPTB1100051"
 		set_global_flag = mexico_requests_US_aid
 		ai_chance = { factor = 0 }
 		}
-
+	
 	option = {
 		name = "EVTOPTC1100051" #No Money
 		prestige = 20
@@ -165,7 +165,7 @@ country_event = {
 		title = "EVTNAME1100052"
 		desc = "EVTDESC1100052"
 		picture = "treaty_of_san_diego"
-
+		
 	trigger = {
 		NOT = { tag = MEX }
 		OR = {
@@ -176,9 +176,9 @@ country_event = {
 		has_global_flag = mexico_asks_for_loans
 		money = 150000
 		}
-
+	
 	fire_only_once = yes
-
+	
 	option = {
 		name = "EVTOPTA1100052" #Send Money and Supplies
 		THIS = {
@@ -196,9 +196,9 @@ country_event = {
 			canned_food = 30
 			}
 		THIS = { set_country_flag = gave_mexico_aid }
-		ai_chance = { factor = 20 }
+		ai_chance = { factor = 20 } 
 		}
-
+	
 	option = {
 		name = "EVTOPTB1100052" #Send Money
 		THIS = {
@@ -216,16 +216,16 @@ country_event = {
 		ai_chance = { factor = 10 }
 		}
 	}
-
+	
 #Convention of London for Greater Powers and Spain
 country_event = {
 	id = 1100053
 	title = "EVTNAME1100053"
 	desc = "EVTDESC1100053"
 	picture = "MEX_revolution"
-
+	
 	fire_only_once = yes
-
+	
 	trigger = {
 		NOT = { tag = FRA }
 		NOT = { tag = USA }
@@ -244,7 +244,7 @@ country_event = {
 		has_global_flag = american_civil_war_has_happened
 		NOT = { exists = M3X }
 		}
-
+	
 	option = {
 		name = "EVTOPTA1100053" #Declare war for Money back
 		THIS = {
@@ -255,10 +255,10 @@ country_event = {
 				call_ally = no
 				}
 			}
-
+		
 		ai_chance = { factor = 100 }
 		}
-
+	
 	option = {
 		name = "EVTOPTB1100053" #No War
 		THIS = {
@@ -274,18 +274,18 @@ country_event = {
 			}
 		ai_chance = { factor = 0 }
 		}
-
+	
 	}
-
+	
 #Convetion of London for France
 country_event = {
 	id = 1100070
 	title = "EVTNAME1100070"
 	desc = "EVTDESC1100070"
 	picture = "MEX_revolution"
-
+	
 	fire_only_once = yes
-
+	
 	trigger = {
 		tag = FRA
 		has_global_flag = mexico_didnt_pay
@@ -296,7 +296,7 @@ country_event = {
 		#	has_country_flag = gave_mexico_money
 		#	}
 		}
-
+	
 	option = {
 		name = "EVTOPTA1100070" #Create the Maximilian Empire of Mexico
 		FRA = {
@@ -306,7 +306,7 @@ country_event = {
 			}
 		ai_chance = { factor = 100 }
 		}
-
+	
 	option = {
 		name = "EVTOPTB1100070" #Declare war for Money back
 		FRA = {
@@ -321,7 +321,7 @@ country_event = {
 			}
 		ai_chance = { factor = 0 }
 		}
-
+		
 	option = {
 		name = "EVTOPTC1100070" #No War
 		FRA = {
@@ -345,23 +345,23 @@ country_event = {
 	title = "EVTNAME1100071"
 	desc = "EVTDESC1100071"
 	picture = "MEX_revolution"
-
+	
 	fire_only_once = yes
-
+	
 	trigger = {
 		war_with = MEX
 		has_country_flag = mexican_payday_war
 		has_global_flag = french_begins_intervention
 		exists = MXM
 		}
-
+	
 	option = {
 		name = "EVTOPTA1100071" #Leave the War
 		THIS = {
 			end_war = MEX
 			prestige = 5
 			relation = {
-				who = MEX
+				who = MEX 
 				value = 100
 				}
 			relation = {
@@ -379,10 +379,10 @@ country_event = {
 				who = FRA
 				value = 50
 				}
-			relation = {
+			relation = {  
 				who = USA
 				value = -25
-				}
+				}	
 			}
 		ai_chance = { factor = 0 }
 		}
@@ -394,9 +394,9 @@ country_event = {
 	title = "EVTNAME1100072"
 	desc = "EVTDESC1100072"
 	picture = "reform_war"
-
+	
 	fire_only_once = yes
-
+	
 	trigger = {
 		tag = MEX
 		NOT = { exists = MXM }
@@ -404,13 +404,7 @@ country_event = {
 		has_global_flag = mexican_reform_war
 		NOT = { has_global_flag = reform_war_stalemate }
 		}
-
-		immediate = {
-			government = democracy
-			ruling_party_ideology = liberal
-			political_reform = wealth_voting
-		}
-
+	
 	option = {
 		name = "EVTOPTA1100072" #Don't Pay back the Money
 		M3X = { all_core = { remove_core = M3X } }
@@ -418,7 +412,7 @@ country_event = {
 		set_global_flag = mexico_didnt_pay
 		ai_chance = { factor = 1 }
 		}
-
+	
 	option = {
 		name = "EVTOPTB1100072" #Pay back the money
 		any_country = {
@@ -431,7 +425,7 @@ country_event = {
 			M3X = { all_core = { remove_core = M3X } }
 			}
 		}
-
+	
 	}
 
 #Stalemate in Reform War
@@ -440,9 +434,9 @@ country_event = {
 	title = "EVTNAME1100073"
 	desc = "EVTDESC1100073"
 	picture = "crowning_of_maximilian" #Replace with the crowning of Maximilian later
-
+	
 	fire_only_once = yes
-
+	
 	trigger = {
 		tag = M3X
 		NOT = { war_with = MEX }
@@ -456,10 +450,10 @@ country_event = {
 		#		}
 		#	}
 		}
-
+		
 	immediate = {
 		MEX = { all_core = { add_core = MXM } }
-		FRA = { create_alliance = MXM
+		FRA = { create_alliance = MXM 
 				relation = {
 					who = MXM
 					value = 400
@@ -476,7 +470,7 @@ country_event = {
 		change_tag_no_core_switch = MXM
 		#MXM = { inherit = M3X }
 		}
-
+		
 	option = {
 		name = "EVTOPTA1100073"
 		change_tag_no_core_switch = MXM
@@ -495,16 +489,16 @@ country_event = {
 			}
 		}
 	}
-
+	
 #Conservatives Win in Mexico
 country_event = {
 	id = 1100074
 	title = "EVTNAME1100074"
 	desc = "EVTDESC1100074"
-	picture = "crowning_of_maximilian"
-
+	picture = "crowning_of_maximilian" 
+	
 	fire_only_once = yes
-
+	
 	trigger = {
 		tag = M3X
 		NOT = { war_with = MEX }
@@ -517,14 +511,14 @@ country_event = {
 		NOT = { exists = MEX }
 		has_global_flag = mexican_reform_war
 		}
-
+	
 	immediate = { M3X = { all_core = { remove_core = M3X } } }
-
+	
 	option = {
 		name = "EVTOPTA1100074" #Become the Monarchy
 		MEX = { all_core = { add_core = MXM } }
 		2172 = { secede_province = MXM }
-		FRA = { create_alliance = MXM
+		FRA = { create_alliance = MXM 
 				relation = {
 					who = MXM
 					value = 400
@@ -541,9 +535,9 @@ country_event = {
 		3333 = { secede_province = M3X }
 		#MXM = { inherit = M3X }
 		MEX = { all_core = { remove_core = MEX } }
-		ai_chance = { factor = 50 }
+		ai_chance = { factor = 50 } 
 		}
-
+	
 	option = {
 		name = "EVTOPTB1100074" #Stay as Mexico
 		#change_tag = MEX
@@ -558,17 +552,17 @@ country_event = {
 		ai_chance = { factor = 50 }
 		}
 	}
-
-#2nd French Intervention of Mexico
+	
+#2nd French Intervention of Mexico                                 
 
 country_event = {
 	id = 1100060
 	title = "EVTNAME1100060"
 	desc = "EVTDESC1100060"
 	picture = "second_french_intervention"
-
+	
 	fire_only_once = yes
-
+	
 	trigger = {
 		##year = 1863
 		tag = MEX
@@ -582,12 +576,12 @@ country_event = {
 		#NOT = { has_global_flag = liberal_mexico_wins }
 		NOT = { has_global_flag = conservatives_win }
 	}
-
+	
 	immediate = {
 		set_global_flag = second_french_intervetion
 		MEX = { capital = 2147 }
 		MEX = { all_core = { add_core = MXM } }
-		FRA = { create_alliance = MXM
+		FRA = { create_alliance = MXM 
 				relation = {
 					who = MXM
 					value = 400
@@ -598,7 +592,7 @@ country_event = {
 				}
 			}
 	}
-
+	
 	option = {
 		name = "EVTOPTA1100060"
 		any_pop = {
@@ -635,7 +629,7 @@ country_event = {
 			call_ally = no
 		}
 	}
-
+	
 	option = {
 		name = "EVTOPTB1100060"
 		any_pop = {
@@ -665,9 +659,9 @@ country_event = {
 		2168 = { secede_province = MXM }
 		2169 = { secede_province = MXM }
 		3425 = { secede_province = MXM }
-
+		
 		change_tag_no_core_switch = MXM
-
+		
 		MEX = {
 			war = {
 				target = MXM
@@ -690,16 +684,16 @@ country_event = {
 	#news_desc_medium = "EVTDESC1100061_NEWS_MEDIUM"
 	#news_desc_short = "EVTDESC1100061_NEWS_SHORT"
 	picture = "execution_of_emperor_maximillian"
-
+	
 	fire_only_once = yes
-
+	
 	trigger = {
 		tag = MEX
 		has_global_flag = second_french_intervetion
 		2172 = { controlled_by = MEX }
 		2143 = { controlled_by = MEX }
 		}
-
+		
 	option = {
 		name = "EVTOPTA1100061" #Executing Maximilian
 		MEX = {
@@ -711,7 +705,7 @@ country_event = {
 					prestige = 10
 					}
 			end_war = FRA
-
+		
 			FRA = {
 			relation = {
 				who = THIS
@@ -722,7 +716,7 @@ country_event = {
 				value = -200
 				}
 			}
-
+		
 			any_country = {
 				limit = {
 					is_greater_power = yes
@@ -746,7 +740,7 @@ country_event = {
 			}
 			ai_chance = { factor = 90 }
 		}
-
+	
 	option = {
 		name = "EVTOPTB1100061" #Sparing Maximilian
 		MEX = {
@@ -760,16 +754,16 @@ country_event = {
 		ai_chance = { factor = 10 }
 		}
 	}
-
+	
 #French Intervention is a success
 country_event = {
 	id = 1100062
 	title = "EVTNAME1100062"
 	desc = "EVTDESC1100062"
 	picture = "MEX_revolution"
-
+	
 	fire_only_once = yes
-
+	
 	trigger = {
 		tag = MXM
 		has_global_flag = second_french_intervetion
@@ -803,16 +797,16 @@ country_event = {
 			}
 		}
 	}
-
+	
 #French Intervention is a failure. Maximilian is not executed however Republican Mexico still wins
 country_event = {
 	id = 1100063
 	title = "EVTNAME1100063"
 	desc = "EVTDESC1100063"
 	picture = "MEX_revolution"
-
+	
 	fire_only_once = yes
-
+	
 	trigger = {
 		tag = MEX
 		has_global_flag = second_french_intervetion
@@ -820,7 +814,7 @@ country_event = {
 		NOT = { war_with = MXM }
 		NOT = { war_with = FRA }
 		}
-
+	
 	option = {
 		name = "EVTOPTA1100063"
 		MEX = {
@@ -834,26 +828,26 @@ country_event = {
 			}
 		}
 	}
-
+	
 #USA invokes the Monroe Doctrine, CSA/FSA defeated
 country_event = {
 	id = 1100064
 	title = "EVTNAME1100064"
 	desc = "EVTDESC1100064"
 	picture = "yankee"
-
+	
 	fire_only_once = yes
-
+	
 	trigger = {
 		tag = USA
 		NOT = { exists = CSA }
 		NOT = { exists = FSA }
 		#year = 1860
 		has_global_flag = second_french_intervetion
-		has_global_flag = american_civil_war_has_happened
+		has_global_flag = american_civil_war_has_happened 
 		MEX = { war_with = MXM }
 		}
-
+		
 	option = {
 		name = "EVTOPTA1100064" ## Actual declaration of War against France and Habsburg Mexico ##
 		USA = {
@@ -865,7 +859,7 @@ country_event = {
 					}
 			}
 		USA = {
-			create_alliance = MEX
+			create_alliance = MEX 
 				relation = {
 					who = MEX
 					value = 400
@@ -888,7 +882,7 @@ country_event = {
 				}
 			any_pop = {
 				limit = {
-					NOT = {
+					NOT = { 
 						OR = {
 							has_pop_culture = dixie
 							has_pop_culture = texan
@@ -906,7 +900,7 @@ country_event = {
 		ai_chance = { factor = 30 }
 		}
 	option = {
-		name = "EVTOPTB1100064" ## Sending of supplies to Mexico
+		name = "EVTOPTB1100064" ## Sending of supplies to Mexico 
 		USA = {
 			ammunition = -500
 			small_arms = -250
@@ -925,7 +919,7 @@ country_event = {
 				value = 100
 				}
 			diplomatic_influence = {
-				who = MEX
+				who = MEX 
 				value = 50
 				}
 			}
@@ -952,7 +946,7 @@ country_event = {
 			}
 		ai_chance = { factor = 10 }
 		}
-
+	
 	}
 
 #CSA Intervention
@@ -961,9 +955,9 @@ country_event = {
 	title = "EVTNAME1100065"
 	desc = "EVTDESC1100065"
 	picture = "dixie_mansion"
-
+	
 	fire_only_once = yes
-
+	
 	trigger = {
 		tag = CSA
 		#year = 1863
@@ -984,7 +978,7 @@ country_event = {
 					}
 			}
 		CSA = {
-			create_alliance = MXM
+			create_alliance = MXM 
 				relation = {
 					who = MXM
 					value = 400
@@ -1006,7 +1000,7 @@ country_event = {
 		ai_chance = { factor = 30 }
 		}
 	option = {
-		name = "EVTOPTB1100065" ## Sending of supplies to Habsburg Mexico
+		name = "EVTOPTB1100065" ## Sending of supplies to Habsburg Mexico 
 		CSA = {
 			ammunition = -100
 			small_arms = -50
@@ -1025,7 +1019,7 @@ country_event = {
 				value = 100
 				}
 			diplomatic_influence = {
-				who = MXM
+				who = MXM 
 				value = 50
 				}
 			}
@@ -1042,7 +1036,7 @@ country_event = {
 		prestige = 25
 		set_global_flag = CSA_intervenes
 		ai_chance = { factor = 40 }
-		}
+		} 
 	option = {
 		name = "EVTOPTC1100065" ## No aid rendered to Habsburg Mexico
 		CSA = {
@@ -1053,7 +1047,7 @@ country_event = {
 			war_exhaustion = -5
 			}
 		ai_chance = { factor = 30 }
-		}
+		}	
 	}
 
 #USA aid options to Mexico in the event the CSA intervenes
@@ -1062,9 +1056,9 @@ country_event = {
 	title = "EVTNAME1100066"
 	desc = "EVTDESC1100066"
 	picture = "yankee"
-
+	
 	fire_only_once = yes
-
+	
 	trigger = {
 		tag = USA
 		truce_with = CSA
@@ -1072,7 +1066,7 @@ country_event = {
 		has_global_flag = CSA_intervenes
 		has_global_flag = second_french_intervetion
 		}
-
+		
 	option = {
 		name = "EVTOPTA1100066" #Supplies sent to Mexico
 		USA = {
@@ -1090,7 +1084,7 @@ country_event = {
 		USA = {
 			relation = {
 				who = MEX
-				value = 100
+				value = 100 
 				}
 			diplomatic_influence = {
 				who = MEX
@@ -1126,7 +1120,7 @@ country_event = {
 					}
 			}
 		USA = {
-			create_alliance = MEX
+			create_alliance = MEX 
 				relation = {
 					who = MEX
 					value = 400
@@ -1139,7 +1133,7 @@ country_event = {
 		USA = {
 			relation = {
 				who = MEX
-				value = 400
+				value = 400 
 				}
 			diplomatic_influence = {
 				who = MEX
@@ -1196,20 +1190,20 @@ country_event = {
 				who = MEX
 				value = -50
 				}
-			}
+			}	
 		ai_chance = { factor = 30 }
-		}
+		}	
 	}
-
+	
 #Moving of the capital to El Paso de Norte
 country_event = {
 	id = 1100067
 	title = "EVTNAME1100067"
 	desc = "EVTDESC1100067"
 	picture = "MEX_revolution"
-
+	
 	fire_only_once = yes
-
+	
 	trigger = {
 		tag = MEX
 		OR = {
@@ -1219,8 +1213,8 @@ country_event = {
 		has_global_flag = second_french_intervetion
 		war_with = MXM
 		}
-
-	option = {
+		
+	option = { 
 		name = "EVTOPTA1100067" #Move capital to El Paso de Norte
 		MEX = {
 			capital = 2143
@@ -1232,7 +1226,7 @@ country_event = {
 			}
 		ai_chance = { factor = 90 }
 		}
-
+	
 	option = {
 		name = "EVTOPTB1100067" #Don't Move Capital
 		MEX = {
@@ -1241,11 +1235,11 @@ country_event = {
 			}
 		ai_chance = { factor = 10 }
 		}
-
+		
 	}
 
 ##################################################################
-###                Dos Mexicos Event Chain                     ###
+###                Dos Mexicos Event Chain                     ###        
 ##################################################################
 
 #Maximilian offers Juarez to join the Empire and to give him a seat.
@@ -1254,16 +1248,16 @@ country_event = {
 	title = "EVTNAME1100068"
 	desc = "EVTDESC1100068"
 	picture = "confederation"
-
+	
 	fire_only_once = yes
-
+	
 	trigger = {
 		tag = MEX
 		has_global_flag = second_french_intervetion
 		NOT = { war_with = MXM }
 		exists = MXM
 		}
-
+	
 	option = {
 		name = "EVTOPTA1100068" #Juarez refuses, but doesn't instigate war
 		MEX = {
@@ -1275,7 +1269,7 @@ country_event = {
 			}
 		ai_chance = { factor = 0 }
 		}
-
+		
 	option = {
 		name = "EVTOPTB1100068" #Juarez accepts
 		#change_tag = MXM
@@ -1297,7 +1291,7 @@ country_event = {
 		set_global_flag = juarez_accepts
 		ai_chance = { factor = 10 }
 		}
-
+	
 	option = {
 		name = "EVTOPTC1100068" #Juarez refuses, instigates war
 		MEX = {
@@ -1319,9 +1313,9 @@ country_event = {
 		id = 1100069
 		title = "EVTNAME1100069"
 		desc = "EVTDESC1100069"
-
+		
 		#trigger
-
+		
 		trigger = {
 			ai = yes
 			tag = M3X
@@ -1329,21 +1323,21 @@ country_event = {
 			exists = MEX
 			has_global_flag = conservatives_win
 			}
-
-		option = {
+			
+		option = { 
 			name = "EVTOPTA1100069"
 			MEX = { inherit = M3X }
-			ai_chance = { factor = 100 }
+			ai_chance = { factor = 100 }			
 			}
-
+		
 	}
-
+	
 country_event = {
 		id = 1100075
 		title = "EVTNAME1100069"
 		desc = "EVTDESC1100069"
-
-
+		
+		
 		trigger = {
 			ai = yes
 			tag = MEX
@@ -1351,31 +1345,31 @@ country_event = {
 			exists = MXM
 			has_global_flag = juarez_accepts
 			}
-
-		option = {
+			
+		option = { 
 			name = "EVTOPTA1100069"
 			MXM= { inherit = MEX }
 			ai_chance = { factor = 100 }
 			}
 	}
-
+	
 country_event = {
 		id = 1100076
 		title = "EVTNAME1100069"
 		desc = "EVTDESC1100069"
-
-
+		
+		
 		trigger = {
 			ai = yes
 			tag = M3X
 			capital = 3333
 			exists = MXM
 			}
-
-		option = {
+			
+		option = { 
 			name = "EVTOPTA1100069"
 			MXM = { inherit = M3X }
 			ai_chance = { factor = 100 }
 			}
-
+			
 	}

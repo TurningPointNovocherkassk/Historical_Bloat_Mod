@@ -157,7 +157,10 @@ political_decisions = {
 			OR = {
 				AND = {
 					tag = EIC
-					is_substate = yes
+					OR = {
+						is_substate = yes
+						is_vassal = yes
+					}
 				}
 				AND = {
 					tag = ENG

@@ -27,7 +27,10 @@ political_decisions = {
 		
 		allow = {
 			revolution_n_counterrevolution = 1
-			school_reforms = acceptable_schools
+			OR = {
+				school_reforms = acceptable_schools
+				school_reforms = good_schools
+			}
 			OR = {
 				ruling_party_ideology = reactionary
 				ruling_party_ideology = fascist
@@ -50,6 +53,7 @@ political_decisions = {
 					militancy = 4
 					consciousness = 4
 				}
+				remove_core = LUS
 				add_province_modifier = { name = germanization_baltics_modifier duration = -1 }
 			}
 			any_owned = {
@@ -65,6 +69,7 @@ political_decisions = {
 					militancy = 4
 					consciousness = 4
 				}
+				# remove_core = SLS
 				add_province_modifier = { name = germanization_baltics_modifier duration = -1 }
 			}
 			any_owned = {
@@ -90,6 +95,7 @@ political_decisions = {
 					militancy = 4
 					consciousness = 4
 				}
+				remove_core = KSH
 				add_province_modifier = { name = germanization_baltics_modifier duration = -1 }
 			}
 			any_owned = {
@@ -114,6 +120,7 @@ political_decisions = {
 					militancy = 4
 					consciousness = 4
 				}
+				remove_core = MSR
 				add_province_modifier = { name = germanization_baltics_modifier duration = -1 }
 			}
 			any_owned = {
@@ -129,6 +136,8 @@ political_decisions = {
 					militancy = 4
 					consciousness = 4
 				}
+				# remove_core = CZH
+				# remove_core = BOH
 				add_province_modifier = { name = germanization_baltics_modifier duration = -1 }
 			}
 		}
@@ -593,7 +602,10 @@ political_decisions = {
 		
 		allow = {
 			nationalism_n_imperialism = 1
-			school_reforms = acceptable_schools
+			OR = {
+				school_reforms = acceptable_schools
+				school_reforms = good_schools
+			}
 			OR = {
 				ruling_party_ideology = reactionary
 				ruling_party_ideology = fascist

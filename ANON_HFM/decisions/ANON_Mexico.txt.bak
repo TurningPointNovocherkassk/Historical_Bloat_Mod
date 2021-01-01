@@ -1,5 +1,5 @@
 political_decisions = {
-
+	
 	make_santanna_dictator = {
 		picture = santa_anna
 		potential = {
@@ -9,14 +9,14 @@ political_decisions = {
 			NOT = { has_global_flag = ayutla_revolution }
 			NOT = { has_global_flag = santa_anna_emperor }
 		}
-
+		
 		allow = {
 			OR = {
 				ruling_party_ideology = conservative
 				ruling_party_ideology = reactionary
 			}
 		}
-
+		
 		effect = {
 			set_global_flag = santa_anna_dictatorship
 			war_exhaustion = -30
@@ -33,7 +33,7 @@ political_decisions = {
 			political_reform = no_trade_unions
 			political_reform = first_past_the_post
 			define_general = {
-				name = "Antonio L?pez de Santa Anna"
+				name = "Antonio López de Santa Anna"
 				personality = au_fait
 				background = natural_born_leader
 				prestige = 0.5
@@ -82,7 +82,7 @@ political_decisions = {
 					ideology = socialist
 					factor = 6
 				}
-
+				
 				scaled_militancy = {
 					ideology = conservative
 					factor = -6
@@ -103,7 +103,7 @@ political_decisions = {
 		}
 		ai_will_do = { factor = 0 }
 	}
-
+	
 	make_santanna_emperor = {
 		picture = santa_anna
 		potential = {
@@ -113,19 +113,19 @@ political_decisions = {
 			has_global_flag = ayutla_revolution_continues
 			NOT = { has_global_flag = santa_anna_emperor }
 		}
-
+		
 		allow = {
 			NOT = { has_country_modifier = global_liberal_agitation }
 			government = presidential_dictatorship
 		}
-
+		
 		effect = {
 			set_global_flag = santa_anna_emperor
 			country_event = 1220016
 		}
 		ai_will_do = { factor = 1 }
 	}
-
+	
 	integrate_USCA = {
 		picture = form_USCA
 		potential = {
@@ -135,7 +135,7 @@ political_decisions = {
 				vassal_of = THIS
 			}
 		}
-
+		
 		allow = {
 			is_greater_power = yes
 			UCA = {
@@ -148,12 +148,12 @@ political_decisions = {
 			}
 			diplomatic_influence = {
 				who = UCA
-				value = 100
+				value = 200
 			}
 			prestige = 100
 			war = no
 		}
-
+		
 		effect = {
 			set_global_flag = integrate_USCA
 			prestige = 30
@@ -165,7 +165,7 @@ political_decisions = {
 		}
 		ai_will_do = { factor = 1 }
 	}
-
+	
 	yucatecan_question = {
 		potential = {
 			tag = MEX
@@ -173,19 +173,19 @@ political_decisions = {
 			year = 1843
 			NOT = { has_global_flag = yucatecan_question }
 		}
-
+		
 		allow = {
 			war = no
 			money = 2600
 		}
-
+		
 		effect = {
 			set_global_flag = yucatecan_question
 			country_event = 1220033
 		}
 		ai_will_do = { factor = 1 }
 	}
-
+	
 	yucatecan_destiny = {
 		potential = {
 			tag = YUC
@@ -193,18 +193,18 @@ political_decisions = {
 			has_country_flag = YUC_has_blockade
 			NOT = { has_global_flag = yucatecan_destiny }
 		}
-
+		
 		allow = {
 			war = no
 		}
-
+		
 		effect = {
 			set_global_flag = yucatecan_destiny
 			country_event = 1220034
 		}
 		ai_will_do = { factor = 1 }
 	}
-
+	
 	MEX_YUC_annexation_1846 = {
 		potential = {
 			tag = MEX
@@ -215,7 +215,7 @@ political_decisions = {
 			# }
 			NOT = { has_global_flag = MEX_YUC_annexation_1846 }
 		}
-
+		
 		allow = {
 			war = no
 			YUC = {
@@ -226,7 +226,7 @@ political_decisions = {
 				ruling_party_ideology = reactionary
 			}
 		}
-
+		
 		effect = {
 			set_global_flag = MEX_YUC_annexation_1846
 			country_event = 1220038
@@ -239,7 +239,7 @@ political_decisions = {
 			}
 		}
 	}
-
+	
 	USA_blockade_YUC = {
 		potential = {
 			tag = USA
@@ -252,13 +252,13 @@ political_decisions = {
 			NOT = { has_global_flag = 2nd_YUC_annex }
 			NOT = { has_global_flag = USA_blockade_YUC }
 		}
-
+		
 		allow = {
 			war = yes
 			war_with = MEX
 			exists = YUC
 		}
-
+		
 		effect = {
 			set_global_flag = USA_blockade_YUC
 			YUC = {
@@ -273,7 +273,7 @@ political_decisions = {
 			factor = 1
 		}
 	}
-
+	
 	total_war_in_CSC = {
 		alert = yes
 		picture = begin_line_of_advantage
@@ -282,7 +282,7 @@ political_decisions = {
 			NOT = { has_country_flag = CSC_draft_happened }
 			tag = CSC
 		}
-
+		
 		allow = {
 			OR = {
 				war_with = MEX
@@ -290,7 +290,7 @@ political_decisions = {
 				war_with = YUC
 			}
 		}
-
+		
 		effect = {
 			iron = 10
 			wool = 10
@@ -302,13 +302,13 @@ political_decisions = {
 				name = small_country_draft
 				duration = 365
 			}
-			set_country_flag = CSC_draft_happened
+			set_country_flag = CSC_draft_happened 
 		}
 		ai_will_do = {
 			factor = 1
 		}
 	}
-
+	
 	YUC_MEX_peaceful_reincorporation = { # THIS IS THE LAST TIME THIS SHIT HAPPENS I PROMISE
 		alert = yes
 		potential = {
@@ -317,11 +317,11 @@ political_decisions = {
 			year = 1848
 			has_global_flag = YUC_MEX_pls_help
 		}
-
+		
 		allow = {
 			vassal_of = MEX
 		}
-
+		
 		effect = {
 			set_global_flag = YUC_MEX_peaceful_reincorporation
 			country_event = 1220062
@@ -330,7 +330,7 @@ political_decisions = {
 			factor = 1
 		}
 	}
-
+	
 	CSC_plea_to_ENG = {
 		alert = yes
 		potential = {
@@ -343,7 +343,7 @@ political_decisions = {
 				}
 			}
 		}
-
+		
 		allow = {
 			war = no
 			3446 = {
@@ -353,7 +353,7 @@ political_decisions = {
 				}
 			}
 		}
-
+		
 		effect = {
 			set_global_flag = CSC_plea_to_ENG
 			country_event = 1220065
@@ -362,15 +362,15 @@ political_decisions = {
 			factor = 1
 		}
 	}
-
-
+	
+	
 	claimed_greater_CSC = {
 		alert = yes
 		potential = {
 			tag = CSC
 			NOT = { has_country_flag = claimed_greater_CSC }
 		}
-
+		
 		allow = {
 			war = no
 			is_vassal = no
@@ -395,7 +395,7 @@ political_decisions = {
 				}
 			}
 		}
-
+		
 		effect = {
 			set_country_flag = claimed_greater_CSC
 			prestige = 5
@@ -408,12 +408,12 @@ political_decisions = {
 			UCA_2191 = { add_core = CSC }
 			2194 = { add_core = CSC }
 		}
-
+		
 		ai_will_do = {
 			factor = 1
 		}
 	}
-
+	
 	YUC_TEX_RGR_CAL_C4L_T4B_DES_alliance = {
 		alert = yes
 		potential = {
@@ -465,12 +465,12 @@ political_decisions = {
 				}
 			}
 		}
-
+		
 		allow = {
 			war = no
 			is_vassal = no
 		}
-
+		
 		effect = {
 			any_country = {
 				limit = {
@@ -492,14 +492,14 @@ political_decisions = {
 			factor = 1
 		}
 	}
-
+	
 	spencer_mariscal_treaty = {
 		alert = yes
 		potential = {
 			NOT = { has_global_flag = spencer_mariscal_treaty }
 			CSC = { exists = yes }
 		}
-
+		
 		allow = {
 			war = no
 			OR = {
@@ -512,7 +512,7 @@ political_decisions = {
 				owns = 3358 #Valladolid
 			}
 		}
-
+		
 		effect = {
 			set_global_flag = spencer_mariscal_treaty
 			300 = { owner = { country_event = 1220074 } }
@@ -524,7 +524,7 @@ political_decisions = {
 				NOT = { year = 1893 }
 			}
 		}
-
+	
 	}
-
+	
 }

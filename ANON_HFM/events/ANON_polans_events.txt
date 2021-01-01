@@ -3051,6 +3051,10 @@ country_event = {
 	
 	trigger = {
 		PNC = { has_country_flag = a_habsburg_on_the_throne_POL }
+		NOT = {
+			has_country_flag = GLM_abide
+			has_country_flag = GLM_betray
+		}
 		has_global_flag = paris_congress_held
 		war = no
 		OR = {
@@ -3071,6 +3075,7 @@ country_event = {
 	option = {
 		name = "EVT666666029OPTA"
 		#PNC = { clr_country_flag = a_habsburg_on_the_throne_POL }
+		set_country_flag = GLM_abide
 		random_country = {
 			limit = { has_country_flag = receiving_GLM }
 			country_event = 666666030
@@ -3085,6 +3090,7 @@ country_event = {
 		clr_country_flag = a_habsburg_on_the_throne_POL
 		GLM = { all_core = { add_core = PNC } } # Galicia-Lodomeria
 		prestige = -10
+		set_country_flag = GLM_betray
 		random_country = {
 			limit = { has_country_flag = receiving_GLM }
 			country_event = 666666031
@@ -3240,7 +3246,24 @@ country_event = {
 			}
 			modifier = {
 				factor = 0.5
+				OR = {
+					tag = AUS
+					tag = KUK
+					tag = SGF
+					tag = GCF
+					tag = GER
+					tag = DNB
+				}
 				PNC = { brigades_compare = 1.5 }
+			}
+			modifier = {
+				factor = 0.5
+				tag = PNC
+				OR = {
+					AUS = { brigades_compare = 1.5 }
+					KUK = { brigades_compare = 1.5 }
+					SGF = { brigades_compare = 1.5 }
+				}
 			}
 		}
 	}
@@ -3272,7 +3295,24 @@ country_event = {
 			}
 			modifier = {
 				factor = 0.5
+				OR = {
+					tag = AUS
+					tag = KUK
+					tag = SGF
+					tag = GCF
+					tag = GER
+					tag = DNB
+				}
 				PNC = { NOT = { brigades_compare = 1 } }
+			}
+			modifier = {
+				factor = 0.5
+				tag = PNC
+				OR = {
+					AUS = { NOT = { brigades_compare = 1 } }
+					KUK = { NOT = { brigades_compare = 1 } }
+					SGF = { NOT = { brigades_compare = 1 } }
+				}
 			}
 		}
 	}
