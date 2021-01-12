@@ -118,6 +118,13 @@ dismantle_factories
 take_puppet
 acquire_vassal_core_region
 liberate_puppet
+
+#Kaladah
+trucebreak_gp
+trucebreak_sp
+trucebreak_minor
+trucebreak_unciv
+anti_slavery_cb
 }
 
 # Great War CB's
@@ -408,12 +415,14 @@ acquire_core_state = {
 		NOT = {
 			has_country_modifier = neutrality
 			has_country_flag = for_congress_paris
+			has_country_flag = for_congress_warsaw
 			has_country_flag = YUC_ceasefire
 		}
 		THIS = {
 			NOT = {
 				has_country_modifier = neutrality
 				has_country_flag = for_congress_paris
+				has_country_flag = for_congress_warsaw
 				has_country_flag = YUC_ceasefire
 			}
 		}
@@ -495,6 +504,7 @@ acquire_all_cores = {
 		NOT = {
 			has_country_modifier = neutrality
 			has_country_flag = for_congress_paris
+			has_country_flag = for_congress_warsaw
 			has_country_flag = YUC_ceasefire
 		}
 		THIS = {
@@ -505,6 +515,7 @@ acquire_all_cores = {
 					war = no
 				}
 				has_country_flag = for_congress_paris
+				has_country_flag = for_congress_warsaw
 				has_country_flag = YUC_ceasefire
 			}
 		}
@@ -626,10 +637,12 @@ restore_austrian_empire = {
 		NOT = {
 			has_country_modifier = neutrality
 			has_country_flag = for_congress_paris
+			has_country_flag = for_congress_warsaw
 		}
 		THIS = {
 			NOT = {
 				has_country_flag = for_congress_paris
+				has_country_flag = for_congress_warsaw
 				has_country_modifier = neutrality
 			}
 		}
@@ -8466,5 +8479,239 @@ liberate_puppet = {
 			}
 			country_event = 19370
 		}
+	}
+}
+
+#Trucebreak GP
+trucebreak_gp = {
+	sprite_index = 28
+	is_triggered_only = yes
+	months = 0
+	crisis = no
+
+	constructing_cb = no
+
+	badboy_factor = 0
+	prestige_factor = 0
+	peace_cost_factor = 0
+	penalty_factor = 0
+	always = yes
+
+	break_truce_prestige_factor = 0
+	break_truce_infamy_factor = 15
+	break_truce_militancy_factor = 2
+	truce_months = 48
+
+	good_relation_prestige_factor = 1
+	good_relation_infamy_factor = 1
+	good_relation_militancy_factor = 1
+
+	po_remove_prestige = yes
+
+	war_name = WAR_TRUCEBREAK_GP_NAME
+
+	can_use = {
+		truce_with = THIS
+		is_greater_power = yes
+		is_vassal = no
+		THIS = { ai = no }
+		THIS = {
+			NOT = { has_country_modifier = no_more_war }
+		}
+	}
+
+	on_add = {
+	}
+
+	on_po_accepted = {
+	}
+}
+
+#Trucebreak SP
+trucebreak_sp = {
+	sprite_index = 28
+	is_triggered_only = yes
+	months = 0
+	crisis = no
+
+	constructing_cb = no
+
+	badboy_factor = 0
+	prestige_factor = 0
+	peace_cost_factor = 0
+	penalty_factor = 0
+	always = yes
+
+	break_truce_prestige_factor = 0
+	break_truce_infamy_factor = 6
+	break_truce_militancy_factor = 0.5
+	truce_months = 48
+
+	good_relation_prestige_factor = 1
+	good_relation_infamy_factor = 1
+	good_relation_militancy_factor = 1
+
+	po_remove_prestige = yes
+
+	war_name = WAR_TRUCEBREAK_SP_NAME
+
+	can_use = {
+		truce_with = THIS
+		is_greater_power = no
+		is_secondary_power = yes
+		is_vassal = no
+		THIS = { ai = no }
+		THIS = {
+			NOT = { has_country_modifier = no_more_war }
+		}
+	}
+
+	on_add = {
+	}
+
+	on_po_accepted = {
+	}
+}
+
+#Trucebreak Minor
+trucebreak_minor = {
+	sprite_index = 28
+	is_triggered_only = yes
+	months = 0
+	crisis = no
+
+	constructing_cb = no
+
+	badboy_factor = 0
+	prestige_factor = 0
+	peace_cost_factor = 0
+	penalty_factor = 0
+	always = yes
+
+	break_truce_prestige_factor = 0
+	break_truce_infamy_factor = 2
+	break_truce_militancy_factor = 0
+	truce_months = 48
+
+	good_relation_prestige_factor = 1
+	good_relation_infamy_factor = 1
+	good_relation_militancy_factor = 1
+
+	po_remove_prestige = yes
+
+	war_name = WAR_NAME
+
+	can_use = {
+		truce_with = THIS
+		is_greater_power = no
+		is_secondary_power = no
+		civilized = yes
+		is_vassal = no
+		THIS = { ai = no }
+		THIS = {
+			NOT = { has_country_modifier = no_more_war }
+		}
+	}
+
+	on_add = {
+	}
+
+	on_po_accepted = {
+	}
+}
+
+#Trucebreak Unciv
+trucebreak_unciv = {
+	sprite_index = 28
+	is_triggered_only = yes
+	months = 0
+	crisis = no
+
+	constructing_cb = no
+
+	badboy_factor = 0
+	prestige_factor = 0
+	peace_cost_factor = 0
+	penalty_factor = 0
+	always = yes
+
+	break_truce_prestige_factor = 0
+	break_truce_infamy_factor = 1
+	break_truce_militancy_factor = 0
+	truce_months = 48
+
+	good_relation_prestige_factor = 1
+	good_relation_infamy_factor = 1
+	good_relation_militancy_factor = 1
+
+	po_remove_prestige = yes
+
+	war_name = WAR_NAME
+
+	can_use = {
+		truce_with = THIS
+		civilized = no
+		is_vassal = no
+		THIS = { ai = no }
+		THIS = {
+			NOT = { has_country_modifier = no_more_war }
+		}
+	}
+
+	on_add = {
+	}
+
+	on_po_accepted = {
+	}
+}
+
+#Anti-Slavery CB
+anti_slavery_cb = {
+	sprite_index = 9
+	is_triggered_only = yes
+	months = 12
+
+	badboy_factor = 2
+	prestige_factor = 1
+	peace_cost_factor = 30
+	penalty_factor = 1
+
+	break_truce_prestige_factor = 1
+	break_truce_infamy_factor = 1
+	break_truce_militancy_factor = 1
+	truce_months = 48
+
+	good_relation_prestige_factor = 1
+	good_relation_infamy_factor = 1
+	good_relation_militancy_factor = 1
+
+	po_remove_prestige = yes
+
+	war_name = WAR_ANTI_SLAVERY_NAME
+
+	can_use = {
+		NOT = { slavery = no_slavery }
+		THIS = { slavery = no_slavery }
+		OR = {
+			THIS = { tag = ENG }
+			THIS = { tag = USA }
+			THIS = { ai = no }
+		}
+		OR = {
+			war_with = THIS
+			THIS = { ai = no }
+		}
+		vassal = no
+		civilized = yes
+		THIS = {
+			NOT = { has_country_modifier = no_more_war }
+		}
+	}
+
+	on_add = {
+	}
+
+	on_po_accepted = {
+		political_reform = no_slavery
 	}
 }

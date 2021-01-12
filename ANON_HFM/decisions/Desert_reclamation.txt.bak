@@ -821,12 +821,6 @@ political_decisions = {
 				defender_goal = { casus_belli = status_quo }
 				call_ally = no
 			}
-			PER = {
-				any_owned = {
-					limit = { is_core = HND }
-					secede_province = ENG
-				}
-			}
 			# 1145 = {
 				# add_core = PER
 			# }

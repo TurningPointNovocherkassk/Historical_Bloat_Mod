@@ -6,7 +6,7 @@ political_decisions = {
 			# government = democracy
 			# NOT = { has_country_flag = we_have_tried_this_once }
 			# NOT = { has_global_flag = santa_anna_emperor }
-			# OR = {
+			# OR = { 
 				# FRA = {
 					# exists = yes
 					# OR = {
@@ -33,7 +33,7 @@ political_decisions = {
 			# }
 			# average_militancy = 3
 		# }
-
+		
 		# effect = {
 			# government = hms_government
 			# election = yes
@@ -59,7 +59,7 @@ political_decisions = {
 				# limit = {
 					# primary_culture = french
 					# capital = 425
-				# }
+				# }	
 				# relation = {
 					# who = THIS
 					# value = 100
@@ -126,7 +126,7 @@ political_decisions = {
 			factor = 1
 		}
 	}
-
+	
 	#ANON
 	refute_manifest_destiny = {
 		picture = manifest_destiny
@@ -154,7 +154,7 @@ political_decisions = {
 			USA = { has_country_flag = hasmanifestdestiny }
 			NOT = { has_country_flag = manifest_destiny_refuted }
 		}
-
+		
 		allow = {
 			war = no
 			NOT = { has_recently_lost_war = yes }
@@ -192,7 +192,7 @@ political_decisions = {
 				}
 			}
 		}
-
+		
 		effect = {
 			set_country_flag = manifest_destiny_refuted
 			prestige = 10
@@ -200,8 +200,8 @@ political_decisions = {
 				prestige = -25
 				relation = { who = THIS value = -200 }
 			}
-
-			all_core = {
+			
+			any_owned = {
 				limit = {
 					OR = {
 						is_core = USA
@@ -214,7 +214,7 @@ political_decisions = {
 				remove_core = CSA
 				remove_core = FSA
 			}
-
+			
 			random_owned = {
 				limit = { owner = { OR = { tag = USA tag = CSA tag = FSA } } }
 				owner = {
@@ -241,7 +241,7 @@ political_decisions = {
 					}
 				}
 			}
-
+			
 			random_owned = {
 				limit = { owner = { OR = { tag = DES tag = ARD } } }
 				owner = {
@@ -266,7 +266,7 @@ political_decisions = {
 					}
 				}
 			}
-
+			
 			random_owned = {
 				limit = { owner = { OR = { tag = ENG tag = RPL tag = CAN tag = RUS } } }
 				owner = {
@@ -287,7 +287,7 @@ political_decisions = {
 					}
 				}
 			}
-
+			
 			random_owned = {
 				limit = { owner = { tag = CAS } }
 				owner = {
@@ -320,7 +320,7 @@ political_decisions = {
 					}
 				}
 			}
-
+			
 			random_owned = {
 				limit = { owner = { OR = { tag = MEX tag = MXM tag = M3M } } }
 				owner = {
@@ -344,10 +344,10 @@ political_decisions = {
 				}
 			}
 		}
-
+		
 		ai_will_do = {
 			factor = 1
 		}
-
+		
 	}
 }

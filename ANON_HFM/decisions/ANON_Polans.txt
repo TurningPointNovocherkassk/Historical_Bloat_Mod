@@ -1935,10 +1935,17 @@ political_decisions = {
 					tag = MML
 					OR = {
 						vassal_of = THIS
+						substate_of = THIS
 						in_sphere = THIS
 					}
 				}
 				annex_to = LIT
+			}
+			any_owned = {
+				limit = {
+					is_core = MML
+				}
+				secede_province = LIT
 			}
 			create_vassal = LIT
 		}

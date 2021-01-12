@@ -194,10 +194,10 @@ political_decisions = {
 			any_owned = {
 				limit = { is_core = INO NOT = { province_id = 1446 } }
 					remove_core = JAV
-					remove_core = DJA
-					remove_core = SAK
-					remove_core = ATJ
-					remove_core = BAL
+					remove_core = DJA 
+					remove_core = SAK 
+					remove_core = ATJ 
+					remove_core = BAL 
 					remove_core = SLW
 					remove_core = MAL
 					remove_core = KLM
@@ -214,7 +214,7 @@ political_decisions = {
 			factor = 1
 		}
 	}
-
+	
 	unite_malaya = {
 		picture = map_east_indies
 		potential = {
@@ -336,7 +336,7 @@ political_decisions = {
 			factor = 1
 		}
 	}
-
+	
 	create_malaya = {
 		picture = map_east_indies
 		potential = {
@@ -462,7 +462,7 @@ political_decisions = {
 
 		effect = {
 			set_global_flag = malaya_formed
-
+			
 			prestige = 20
 			random_country = {
 				limit = {
@@ -706,7 +706,7 @@ political_decisions = {
 			factor = 1
 		}
 	}
-
+	
 	north_borneo_company = {
 		picture = map_east_indies
 		potential = {
@@ -733,7 +733,7 @@ political_decisions = {
 				}
 			}
 		}
-
+		
 		allow = {
 			war = no
 			revolution_n_counterrevolution = 1
@@ -752,7 +752,7 @@ political_decisions = {
 				}
 			}
 		}
-
+		
 		effect = {
 			prestige = 5
 			set_country_flag = north_borneo_company
@@ -780,7 +780,7 @@ political_decisions = {
 			}
 		}
 	}
-
+	
 	sulu_protectorate = {
 		picture = map_east_indies
 		potential = {
@@ -856,7 +856,7 @@ political_decisions = {
 
 		ai_will_do = { factor = 1 }
 	}
-
+	
 	flores_sale = {
 		picture = map_east_indies
 		alert = no
@@ -874,7 +874,7 @@ political_decisions = {
 				owns = 1451
 			}
 		}
-
+		
 		allow = {
 			nationalism_n_imperialism = 1
 			NOT = { 1445 = { owner = { has_country_modifier = in_bankrupcy } } }
@@ -888,11 +888,11 @@ political_decisions = {
 				has_country_modifier = in_bankrupcy
 			}
 		}
-
+		
 		effect = {
 			set_country_flag = flores_sale
-			1445 = {
-				owner = {
+			1445 = { 
+				owner = { 
 					country_event = 97125
 				}
 			}
@@ -909,7 +909,7 @@ political_decisions = {
 			}
 		}
 	}
-
+	
 	create_cambodian_protectorate = {
 		picture = unequal_treaty
 		potential = {
@@ -937,7 +937,7 @@ political_decisions = {
 			}
 			NOT = { has_global_flag = created_cambodian_protectorate }
 		}
-
+		
 		allow = {
 			war = no
 			revolution_n_counterrevolution = 1
@@ -953,7 +953,7 @@ political_decisions = {
 				}
 			}
 		}
-
+		
 		effect = {
 			set_global_flag = created_cambodian_protectorate
 			prestige = 10
@@ -966,7 +966,7 @@ political_decisions = {
 			country_event = 199071
 		}
 	}
-
+	
 	create_laos_protectorate = {
 		picture = unequal_treaty
 		potential = {
@@ -1034,7 +1034,7 @@ political_decisions = {
 				}
 			}
 		}
-
+		
 		allow = {
 			war = no
 			revolution_n_counterrevolution = 1
@@ -1046,7 +1046,7 @@ political_decisions = {
 				}
 			}
 		}
-
+		
 		effect = {
 			prestige = 5
 			random = {
@@ -1079,7 +1079,7 @@ political_decisions = {
 			}
 		}
 	}
-
+	
 	siamese_border_treaty = {
 		picture = unequal_treaty
 		potential = {
@@ -1110,14 +1110,14 @@ political_decisions = {
 			}
 			NOT = { has_country_flag = enacted_siamese_border_treaty }
 		}
-
+		
 		allow = {
 			war = no
 			SIA = { war = no }
 			revolution_n_counterrevolution = 1
 			blue_and_brown_water_schools = 1
 		}
-
+		
 		effect = {
 			set_country_flag = enacted_siamese_border_treaty
 			random = {
@@ -1127,7 +1127,7 @@ political_decisions = {
 			SIA = { country_event = 95652 }
 		}
 	}
-
+	
 	annex_champasak = {
 		picture = unequal_treaty
 		potential = {
@@ -1142,7 +1142,7 @@ political_decisions = {
 			SIA = { ai = yes }
 			NOT = { has_country_flag = champassak_annexed }
 		}
-
+		
 		allow = {
 			war = no
 			has_recently_lost_war = no
@@ -1155,7 +1155,7 @@ political_decisions = {
 				SIA = { in_sphere = THIS }
 			}
 		}
-
+		
 		effect = {
 			set_country_flag = champassak_annexed
 			SIA = { release = CHK }
@@ -1195,7 +1195,7 @@ political_decisions = {
 				}
 			}
 		}
-
+		
 		allow = {
 			war_with = DAI
 			OR = {
@@ -1205,7 +1205,7 @@ political_decisions = {
 				}
 				nationalism_n_imperialism = 1
 			}
-
+				
 			DAI = {
 				OR = {
 					war_exhaustion = 40
@@ -1218,7 +1218,7 @@ political_decisions = {
 				war_exhaustion = 10
 			}
 		}
-
+		
 		effect = {
 			set_country_flag = negotiate_unequal_treaty
 			random = {
@@ -1230,12 +1230,12 @@ political_decisions = {
 				country_event = 95655
 			}
 		}
-
+		
 		ai_will_do = {
 			factor = 1
 		}
 	}
-
+	
 	form_french_indochina = {
 		picture = map_indochina
 		potential = {
@@ -1251,7 +1251,7 @@ political_decisions = {
 			}
 			NOT = { has_country_flag = created_my_indochina }
 		}
-
+		
 		allow = {
 			OR = {
 				owns = 1380
@@ -1259,7 +1259,7 @@ political_decisions = {
 			}
 			revolution_n_counterrevolution = 1
 		}
-
+		
 		effect = {
 			set_country_flag = created_my_indochina
 			prestige = 10
@@ -1291,7 +1291,7 @@ political_decisions = {
 			}
 		}
 	}
-
+	
 	organize_laos = {
 		picture = form_laos
 		potential = {
@@ -1351,7 +1351,7 @@ political_decisions = {
 				}
 			}
 		}
-
+		
 		allow = {
 			war = no
 			revolution_n_counterrevolution = 1
@@ -1362,7 +1362,7 @@ political_decisions = {
 			1363 = { owned_by = THIS }
 			1360 = { owned_by = THIS }
 		}
-
+		
 		effect = {
 			set_global_flag = laos_organized
 			prestige = 5
@@ -1398,7 +1398,7 @@ political_decisions = {
 		}
 		ai_will_do = { factor = 1 }
 	}
-
+	
 	form_laos = {
 		picture = form_laos
 		potential = {
@@ -1408,7 +1408,7 @@ political_decisions = {
 			NOT = { has_country_flag = laos_formed }
 			NOT = { has_country_flag = post_colonial_country }
 		}
-
+		
 		allow = {
 			war = no
 			OR = {
@@ -1457,7 +1457,7 @@ political_decisions = {
 				}
 			}
 		}
-
+		
 		effect = {
 			set_country_flag = laos_formed
 			prestige = 10
@@ -1480,7 +1480,7 @@ political_decisions = {
 				owner = {
 					1358 = { add_core = LXA }
 					1359 = { add_core = LXA }
-				}
+				} 
 			}
 			any_country = {
 				limit = {
@@ -1510,7 +1510,7 @@ political_decisions = {
 						who = THIS
 						value = 5
 					}
-					NOT = {
+					NOT = { 
 						tag = THIS
 						truce_with = THIS
 					}
@@ -1530,7 +1530,7 @@ political_decisions = {
 			}
 		}
 	}
-
+	
 	organize_vietnam = {
 		picture = vietnam_coffee
 		potential = {
@@ -1538,23 +1538,16 @@ political_decisions = {
 			NOT = { has_country_flag = vietnam_organized }
 			any_owned_province = { is_core = DAI }
 		}
-
+		
 		allow = {
 			war = no
-			DAI = {
-				all_core = {
-					OR = {
-						owned_by = THIS
-						province_id = 3496
-					}
-				}
-			}
+			DAI = { all_core = { owned_by = THIS } }
 			OR = {
 				year = 1900
 				steam_turbine = 1
 			}
 		}
-
+		
 		effect = {
 			prestige = 5
 			set_country_flag = vietnam_organized
@@ -1563,8 +1556,8 @@ political_decisions = {
 		}
 		ai_will_do = { factor = 1 }
 	}
-
-
+	
+	
 	rename_bismarck_islands = {
 		picture = bismarck_archipelago
 		potential = {
@@ -1628,11 +1621,11 @@ political_decisions = {
 				}
 			}
 		}
-
+		
 		allow = {
 			war = no
 		}
-
+		
 		effect = {
 			prestige = 2
 			clr_global_flag = bismarck_islands_anglo
@@ -1647,7 +1640,7 @@ political_decisions = {
 			clr_global_flag = bismarck_islands_russian
 			clr_global_flag = bismarck_islands_scandinavian
 			clr_global_flag = wir_wollen_unseren_alten_kaiser_wilhelm_wiederhaben
-
+		
 			random_owned = {
 				limit = {
 					owner = {
@@ -1662,10 +1655,10 @@ political_decisions = {
 				2537 = { change_province_name = "New Britain" }
 				owner = { set_global_flag = bismarck_islands_anglo }
 			}
-
+			
 			random_owned = {
 				limit = {
-					owner = {
+					owner = { 
 						OR = {
 							is_culture_group = french
 							primary_culture = french_canadian
@@ -1676,7 +1669,7 @@ political_decisions = {
 				2537 = { change_province_name = "New Corsica" }
 				owner = { set_global_flag = bismarck_islands_french }
 			}
-
+			
 			random_owned = {
 				limit = {
 					owner = { is_culture_group = germanic }
@@ -1685,7 +1678,7 @@ political_decisions = {
 				2537 = { change_province_name = "Neu-Pommern" }
 				owner = { set_global_flag = bismarck_islands_german }
 			}
-
+			
 			random_owned = {
 				limit = {
 					owner = { is_culture_group = italian }
@@ -1694,7 +1687,7 @@ political_decisions = {
 				2537 = { change_province_name = "New Sicily" }
 				owner = { set_global_flag = bismarck_islands_italian }
 			}
-
+			
 			random_owned = {
 				limit = {
 					owner = { primary_culture = dutch }
@@ -1703,10 +1696,10 @@ political_decisions = {
 				2537 = { change_province_name = "New Holland" }
 				owner = { set_global_flag = bismarck_islands_dutch }
 			}
-
+			
 			random_owned = {
 				limit = {
-					owner = {
+					owner = { 
 						OR = {
 							primary_culture = wallonian
 							primary_culture = flemish
@@ -1717,10 +1710,10 @@ political_decisions = {
 				2537 = { change_province_name = "New Flanders" }
 				owner = { set_global_flag = bismarck_islands_belgian }
 			}
-
+			
 			random_owned = {
 				limit = {
-					owner = {
+					owner = { 
 						primary_culture = japanese
 					}
 				}
@@ -1728,10 +1721,10 @@ political_decisions = {
 				2537 = { change_province_name = "New Ezo" }
 				owner = { set_global_flag = bismarck_islands_japanese }
 			}
-
+			
 			random_owned = {
 				limit = {
-					owner = {
+					owner = { 
 						primary_culture = spanish
 					}
 				}
@@ -1739,10 +1732,10 @@ political_decisions = {
 				2537 = { change_province_name = "New Leon" }
 				owner = { set_global_flag = bismarck_islands_spanish }
 			}
-
+			
 			random_owned = {
 				limit = {
-					owner = {
+					owner = { 
 						primary_culture = portuguese
 					}
 				}
@@ -1750,10 +1743,10 @@ political_decisions = {
 				2537 = { change_province_name = "New Algarve" }
 				owner = { set_global_flag = bismarck_islands_portuguese }
 			}
-
+			
 			random_owned = {
 				limit = {
-					owner = {
+					owner = { 
 						primary_culture = russian
 					}
 				}
@@ -1764,7 +1757,7 @@ political_decisions = {
 
 			random_owned = {
 				limit = {
-					owner = {
+					owner = { 
 						is_culture_group = scandinavian
 					}
 				}
@@ -1772,15 +1765,15 @@ political_decisions = {
 				2537 = { change_province_name = "New Gotland" }
 				owner = { set_global_flag = bismarck_islands_scandinavian }
 			}
-
+			
 		}
-
+		
 		ai_will_do = {
-			factor = 1
+			factor = 1 
 			modifier = { factor = 0 tag = GER }
 		}
 	}
-
+	
 	create_vietnamese_protectorate = {
 		picture = unequal_treaty
 		potential = {
@@ -1805,7 +1798,7 @@ political_decisions = {
 			}
 			NOT = { has_global_flag = created_vietnamese_protectorate }
 		}
-
+		
 		allow = {
 			war = no
 			mass_politics = 1
@@ -1820,7 +1813,7 @@ political_decisions = {
 				}
 			}
 		}
-
+		
 		effect = {
 			set_global_flag = created_vietnamese_protectorate
 			prestige = 10

@@ -6620,6 +6620,7 @@ country_event = {
 			defender_goal = { casus_belli = become_independent }
 			call_ally = yes
 		}
+		PRC = { country_event = { id = 666666051 days = 5 } }
 		ai_chance = {
 			factor = 100
 		}
@@ -6655,7 +6656,6 @@ country_event = {
 			add_country_modifier = { name = unrecognized_country duration = 1095 }
 		}
 		release = BOH
-		PRC = { country_event = { id = 666666051 days = 5 } }
 		ai_chance = {
 			factor = 0
 		}
@@ -6747,6 +6747,7 @@ country_event = {
 	
 	option = {
 		name = "EVT666666052OPTA"
+		relation = { who = FROM value = 400 }
 		ai_chance = {
 			factor = 100
 		}
@@ -8433,7 +8434,10 @@ country_event = {
 	
 	trigger = {
 		tag = PRC
-		BOH = { has_country_modifier = neutrality }
+		BOH = {
+			has_country_modifier = neutrality
+			exists = yes
+		}
 	}
 	
 	fire_only_once = yes
