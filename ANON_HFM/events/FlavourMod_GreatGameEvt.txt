@@ -708,6 +708,7 @@ country_event = {
 			defender_goal = { casus_belli = status_quo }
 			call_ally = no
 		}
+		ENG = { country_event = 99206 }
 		ai_chance = { factor = 100 }
 	}
 
@@ -716,5 +717,32 @@ country_event = {
 		badboy = -1
 		relation = { who = SIN value = 50 }
 		ai_chance = { factor = 0 }
+	}
+}
+
+#Princely State of Khairpur
+country_event = {
+	id = 99206
+	title = "EVTNAME99206"
+	desc = "EVTDESC99206"
+	picture = "napiers_expedition_to_sindh"
+
+	is_triggered_only = yes
+
+	option = {
+		name = "EVT99206OPTA"
+		badboy = -0.5
+		SIN = { release = KHP }
+		create_vassal = KHP
+		diplomatic_influence = {
+			who = KHP
+			value = 400
+		}
+		ai_chance = { factor = 90 }
+	}
+
+	option = {
+		name = "EVT99206OPTB"
+		ai_chance = { factor = 10 }
 	}
 }

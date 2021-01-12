@@ -688,9 +688,9 @@ country_event = {
 	trigger = {
 		tag = ENG
 		war = no
-		NOT = { owns = 1288 }
 		has_country_flag = anglo_afghan_war
-		SIN = { vassal = no }
+		SIN = { exists = yes }
+		SIN = { is_vassal = no }
 	}
 
 	mean_time_to_happen = {

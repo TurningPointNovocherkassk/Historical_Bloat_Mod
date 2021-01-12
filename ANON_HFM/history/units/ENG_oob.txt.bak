@@ -83,23 +83,23 @@ NYE ={
 	influence_value = 0
 }
 
-ARC = { 
+ARC = {
 	value = -50
 	level = 1
 	influence_value = 0
 }
 
-SBA = { 
+SBA = {
 	value = -50
 	level = 1
 	influence_value = 0
 }
-CRT = { 
+CRT = {
 	value = -10
 	level = 1
 	influence_value = 0
 }
-ENT = { 
+ENT = {
 	value = -10
 	level = 1
 	influence_value = 0
@@ -361,6 +361,16 @@ MUG = {
 	level = 5
 	influence_value = 0
 }
+KHP = {
+	value = 125
+	level = 5
+	influence_value = 0
+}
+ASM = {
+	value = 125
+	level = 5
+	influence_value = 5
+}
 
 leader = {
 	name = "Thomas Cochrane"
@@ -542,13 +552,13 @@ army = {
 		type = guard
 		home = 293
 	}
-	
+
 	regiment = {
 		name= "The Scots Fusiliers Guards"
 		type = guard
 		home = 271
 	}
-	
+
 	regiment = {
 		name= "The Black Watch Regiment"
 		type = guard
@@ -560,19 +570,19 @@ army = {
 		type = artillery
 		home = 295
 	}
-	
+
 	regiment = {
 		name= "8th Regiment Royal Artillery"
 		type = artillery
 		home = 298
 	}
-	
+
 	regiment = {
 		name= "9th Regiment Royal Artillery"
 		type = artillery
 		home = 284
 	}
-	
+
 }
 
 army = {
@@ -582,7 +592,7 @@ army = {
 		name= "9th Queen's Royal Lancers"
 		type = cuirassier
 		home = 278
-	}	
+	}
 	regiment = {
 		name= "14th King's Hussars"
 		type = hussar
@@ -603,7 +613,7 @@ army = {
 		type = infantry
 		home = 300
 	}
-	
+
 	regiment = {
 		name= "The Royal Fusiliers"
 		type = guard
@@ -665,13 +675,13 @@ army = {
 army = {
 	name = "The Toronto Garrison"
 	location = 46
-	
+
 	regiment = {
 		name= "Prince of Wales's Lancers"
 		type = cuirassier
 		home = 276
 	}
-	
+
 	regiment = {
 		name= "12th (The East Suffolk) Regiment"
 		type = infantry
@@ -689,31 +699,31 @@ army = {
 		type = infantry
 		home = 46
 	}
-	
+
 	regiment = {
 		name= "Prince of Wales's Own Regiment"
 		type = infantry
 		home = 286
 	}
-	
+
 	regiment = {
 		name= "1st Canadian Royal Artillery"
 		type = artillery
 		home = 266
 	}
-	
+
 	regiment = {
 		name= "2nd Canadian Royal Artillery"
 		type = artillery
 		home = 292
 	}
-	
+
 	regiment = {
 		name= "1st Regiment Royal Artillery"
 		type = artillery
 		home = 255
 	}
-	
+
 	regiment = {
 		name= "3rd Regiment Royal Artillery"
 		type = artillery
@@ -725,13 +735,13 @@ army = {
 army = {
 	name = "The Montreal Garrison"
 	location = 58
-	
+
 	regiment = {
 		name= "2nd Dragoons (Royal Scots Greys)"
 		type = cuirassier
 		home = 269
 	}
-	
+
 	regiment = {
 		name= "1st Canadian Royal Regiment"
 		type = infantry
@@ -749,25 +759,25 @@ army = {
 		type = infantry
 		home = 277
 	}
-	
+
 	regiment = {
 		name= "34th (Cumberland) Regiment"
 		type = infantry
 		home = 264
 	}
-	
+
 	regiment = {
 		name= "6th Regiment Royal Artillery"
 		type = artillery
 		home = 259
 	}
-	
+
 	regiment = {
 		name= "7th Regiment Royal Artillery"
 		type = artillery
 		home = 275
 	}
-	
+
 	regiment = {
 		name= "8th Regiment Royal Artillery"
 		type = artillery
@@ -778,7 +788,7 @@ army = {
 army = {
 	name = "The South Africa Garrison"
 	location = 2087
-	
+
 	regiment = {
 		name= "The East Yorkshire Regiment"
 		type = infantry
@@ -796,7 +806,7 @@ army = {
 		type = infantry
 		home = 281
 	}
-	
+
 	regiment = {
 		name= "The Cape Town Rifles"
 		type = infantry
@@ -808,7 +818,7 @@ army = {
 		type = artillery
 		home = 273
 	}
-		
+
 }
 
 navy = {
@@ -1168,8 +1178,8 @@ navy = {
 	ship = {
 		name= "Nemesis"
 		type = ironclad
-	}	
-	
+	}
+
 	ship = {
 		name= "HMS Foudroyant"
 		type = manowar
@@ -1194,7 +1204,7 @@ navy = {
 		name= "HMS Revenge"
 		type = manowar
 	}
-	
+
 	ship = {
 		name= "HMS Bellona"
 		type = manowar
@@ -1278,7 +1288,7 @@ navy = {
 	ship = {
 		name= "HMS Winchester"
 		type = frigate
-	}	
+	}
 }
 
 navy = {
@@ -1393,12 +1403,12 @@ navy = {
 		name= "HMS Active"
 		type = manowar
 	}
-	
+
 	ship = {
 		name= "HMS Britannia"
 		type = manowar
 	}
-	
+
 	ship = {
 		name= "HMS Ann and Amelia"
 		type = manowar
@@ -1607,12 +1617,12 @@ navy = {
 		name= "HMS Daring"
 		type = frigate
 	}
-	
+
 	ship = {
 		name= "HMS Good Hope"
 		type = frigate
 	}
-	
+
 }
 
 navy = {
@@ -1752,7 +1762,7 @@ navy = {
 		name= "6th Transport Flotilla"
 		type = clipper_transport
 	}
-	
+
 	ship = {
 		name= "23th Transport Flotilla"
 		type = clipper_transport
@@ -1867,4 +1877,3 @@ navy = {
 	}
 
 }
-
