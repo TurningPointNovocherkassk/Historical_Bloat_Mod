@@ -1169,12 +1169,12 @@ country_event = {
 			create_alliance = NEP
 			relation = { who = NEP value = 400 }
 			treasury = 5000
+			country_event = 777777029
 		}
 		QNG = {
 			relation = { who = NEP value = 400 }
 			create_vassal = NEP
 			create_vassal = TIB
-			country_event = 777777029
 		}
 		set_global_flag = thapathali_treaty_definitive
 		ai_chance = {

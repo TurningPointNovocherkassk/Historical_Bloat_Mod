@@ -4,13 +4,13 @@
 #Conflicts between Persia and Oman-Muscat over Bandar Abbas (and Qeshm if applicable.)
 #Governors of Fars and Kerman threaten to besiege the Bandar Abbas province, seeking to exort tribute from OMA, OMA threatens to blockade PER (for AI PER)
 	country_event = {
-		id = 999999000
+		id = 999999000 
 		title = "EVTNAME999999000"
 		desc = "EVTDESC999999000"
 		picture = "PER_pcr_insurrection"
-
+		
 		fire_only_once = yes
-
+		
 		trigger = {
 			NOT = { has_global_flag = aiPER_bandar_abbas_conflict_NOWAR }
 			NOT = { has_global_flag = aiPER_bandar_abbas_conflict_WAR }
@@ -21,11 +21,11 @@
 			NOT = { truce_with = PER }
 			PER = { ai = yes }
 		}
-
+		
 		mean_time_to_happen = {
 			months = 12
 		}
-
+		
 		#GP uses their influence to stop them.
 		option = {
 			name = "EVTOPT999999000A"
@@ -50,7 +50,7 @@
 				modifier = { factor = 0 part_of_sphere = no }
 			}
 		}
-
+		
 		#PER goes to war against OMA
 		option = {
 			name = "EVTOPT999999000B"
@@ -68,7 +68,7 @@
 					value = -200
 				}
 			}
-
+			
 			random_country = {
 				limit = { tag = PER }
 				leave_alliance = THIS
@@ -79,7 +79,7 @@
 					call_ally = yes
 				}
 			}
-
+			
 			ai_chance = {
 				factor = 50
 				modifier = { factor = 0 sphere_owner = { alliance_with = THIS } }
@@ -88,18 +88,18 @@
 				modifier = { factor = 0 war = yes }
 			}
 		}
-
+		
 	}
-
+	
 #Governors of Fars and Kerman threaten to besiege the Bandar Abbas province, seeking to exort tribute from OMA, OMA threatens to blockade PER (for NON AI PER)
 	country_event = {
 		id = 999999001
 		title = "EVTNAME999999001"
 		desc = "EVTDESC999999001"
 		picture = "PER_pcr_insurrection"
-
+		
 		fire_only_once = yes
-
+		
 		trigger = {
 			NOT = { has_global_flag = bandar_abbas_conflict_NOWAR }
 			NOT = { has_global_flag = bandar_abbas_conflict_WAR }
@@ -110,11 +110,11 @@
 			NOT = { truce_with = OMA }
 			PER = { ai = no }
 		}
-
+		
 		mean_time_to_happen = {
 			months = 12
 		}
-
+		
 		#GP uses their influence to stop them.
 		option = {
 			name = "EVTOPT999999001A"
@@ -133,7 +133,7 @@
 				}
 			}
 		}
-
+		
 		#PER goes to war against OMA
 		option = {
 			name = "EVTOPT999999001B"
@@ -159,7 +159,7 @@
 					value = -200
 				}
 			}
-
+			
 			leave_alliance = OMA
 			war = {
 				target = OMA
@@ -168,18 +168,18 @@
 				call_ally = yes
 			}
 		}
-
+		
 	}
-
+	
 #PER takes over Bandar Abbas (and Qeshm if applicable) while OMA's Sultan is in Zanzibar (For AI OMA)
 	country_event = {
-		id = 999999002
+		id = 999999002 
 		title = "EVTNAME999999002"
 		desc = "EVTDESC999999002"
 		picture = "PER_pcr_embassy"
-
+		
 		fire_only_once = yes
-
+		
 		trigger = {
 			tag = PER
 			NOT = { owns = 1142 }
@@ -195,7 +195,7 @@
 						tag = ENG
 						is_greater_power = yes
 					}
-					has_country_flag = intervened_herat
+					has_country_flag = intervened_herat 
 				}
 			}
 			NOT = { has_global_flag = anglo_persian_war }
@@ -203,11 +203,11 @@
 			NOT = { has_global_flag = aiOMA_PER_1142_takeover_true }
 			NOT = { has_global_flag = aiOMA_PER_1142_takeover_false }
 		}
-
+		
 		mean_time_to_happen = {
 			months = 12
 		}
-
+		
 		#Take Bandar Abbas (and Qeshm if applicable)
 		option = {
 			name = "EVTOPT999999002A"
@@ -248,12 +248,12 @@
 				}
 			}
 			prestige = 5
-
+			
 			ai_chance = {
 				factor = 90
 			}
 		}
-
+		
 		#Don't take it.
 		option = {
 			name = "EVTOPT999999002B"
@@ -268,26 +268,26 @@
 					value = 25
 				}
 			}
-
+			
 			ai_chance = {
 				factor = 10
 			}
 		}
-
+		
 	}
-
+	
 #PER takes over Bandar Abbas (and Qeshm if applicable) while OMA's Sultan is in Zanzibar (For NON AI OMA)
 	country_event = {
-		id = 999999003
+		id = 999999003 
 		title = "EVTNAME999999003"
 		desc = "EVTDESC999999003"
 		picture = "PER_pcr_embassy"
-
+		
 		fire_only_once = yes
-
+		
 		trigger = {
 			tag = OMA
-			OMA = {
+			OMA = {	
 				capital = 2048
 				ai = no
 			}
@@ -300,18 +300,18 @@
 						tag = ENG
 						is_greater_power = yes
 					}
-					has_country_flag = intervened_herat
+					has_country_flag = intervened_herat 
 				}
 			}
 			NOT = { has_global_flag = anglo_persian_war }
 			NOT = { has_global_flag = PER_1142_takeover_true }
 			NOT = { has_global_flag = PER_1142_takeover_false }
 		}
-
+		
 		mean_time_to_happen = {
 			months = 12
 		}
-
+		
 		#Renew lease
 		option = {
 			name = "EVTOPT999999003A"
@@ -322,7 +322,7 @@
 				treasury = 2500
 			}
 		}
-
+		
 		#Don't renew lease
 		option = {
 			name = "EVTOPT999999003B"
@@ -352,19 +352,19 @@
 			}
 			prestige = -10
 		}
-
-
+		
+		
 	}
-
+	
 #Upon the completion of the Anglo-Persian war, ENG persuades PER to renew the leasing of Bandar Abbas (and Qeshm if aplicable) to OMA (AI OMA)
 	country_event = {
-		id = 999999004
+		id = 999999004 
 		title = "EVTNAME999999004"
 		desc = "EVTDESC999999004"
 		picture = "PER_pcr_embassy"
-
+		
 		fire_only_once = yes
-
+		
 		trigger = {
 			ENG = { has_country_flag = treaty_of_paris_anglo_persian }
 			NOT = { has_global_flag = aiOMA_PER_1142_lease_renewed }
@@ -372,16 +372,16 @@
 			has_global_flag = aiOMA_PER_1142_takeover_true
 			tag = PER
 			owns = 1142
-			OMA = {
+			OMA = { 
 				#money = 2500
 				ai = yes
 			}
 		}
-
+		
 		mean_time_to_happen = {
 			months = 3
 		}
-
+	
 		#Accept.
 		option = {
 			name = "EVTOPT999999004A"
@@ -411,12 +411,12 @@
 			}
 			OMA = { treasury = -5000 }
 			treasury = 5000
-
+			
 			ai_chance = {
 				factor = 75
 			}
-		}
-
+		}	
+		
 		#Refuse.
 		option = {
 			name = "EVTOPT999999004B"
@@ -454,41 +454,41 @@
 				name = smol_badboy
 				duration = 912
 			}
-
+			
 			ai_chance = {
 				factor = 25
 			}
-		}
+		}	
 	}
-
+	
 #Upon the completion of the Anglo-Persian war, ENG persuades PER to renew the leasing of Bandar Abbas (and Qeshm if aplicable) to OMA (NON AI OMA)
 	country_event = {
-		id = 999999005
+		id = 999999005 
 		title = "EVTNAME999999005"
 		desc = "EVTDESC999999005"
 		picture = "PER_pcr_embassy"
-
+		
 		fire_only_once = yes
-
+		
 		trigger = {
 			ENG = { has_country_flag = treaty_of_paris_anglo_persian }
 			NOT = { has_global_flag = OMA_PER_1142_lease_renewed }
 			NOT = { has_global_flag = OMA_PER_NOT_1142_lease_renewed }
 			NOT = { has_global_flag = PER_1142_takeover_false }
 			tag = OMA
-			PER = {
+			PER = { 
 				owns = 1142
 			}
-			OMA = {
+			OMA = { 
 				#money = 2500
 				ai = no
 			}
 		}
-
+		
 		mean_time_to_happen = {
 			months = 3
 		}
-
+	
 		#Accept.
 		option = {
 			name = "EVTOPT999999005A"
@@ -520,7 +520,7 @@
 			}
 			treasury = -5000
 		}
-
+		
 		#Refuse.
 		option = {
 			name = "EVTOPT999999005B"
@@ -547,41 +547,41 @@
 					remove_core = OMA
 				}
 			}
-		}
+		}	
 	}
-
+	
 #In 1868, the lease is renewed under british pressure. (AI OMA)
 	country_event = {
-		id = 999999006
+		id = 999999006 
 		title = "EVTNAME999999006"
 		desc = "EVTDESC999999006"
 		picture = "PER_pcr_embassy"
-
+		
 		fire_only_once = yes
-
+		
 		trigger = {
 			has_global_flag = aiOMA_PER_1142_lease_renewed
 			NOT = { has_global_flag = aiOMA_1868_lease_renewed }
 			NOT = { has_global_flag = aiOMA_NOT_1868_lease_renewed }
 			tag = PER
-			OMA = {
+			OMA = { 
 				owns = 1142
 				ai = yes
 			}
 			year = 1868
 		}
-
+		
 		mean_time_to_happen = {
 			months = 3
 		}
-
+	
 		#Renew lease.
 		option = {
 			name = "EVTOPT999999006A"
 			set_global_flag = aiOMA_1868_lease_renewed
 			OMA = { treasury = -7500 }
 			treasury = 7500
-
+			
 			any_country = {
 				limit = {
 					is_sphere_leader_of = OMA
@@ -595,12 +595,12 @@
 					value = 25
 				}
 			}
-
+			
 			ai_chance = {
 				factor = 75
 			}
-		}
-
+		}	
+		
 		#Don't renew lease.
 		option = {
 			name = "EVTOPT999999006B"
@@ -653,45 +653,45 @@
 				name = smol_badboy
 				duration = 912
 			}
-
+			
 			ai_chance = {
 				factor = 25
 			}
-		}
+		}	
 	}
-
+	
 #In 1868, the lease is renewed under british pressure. (NON AI OMA)
 	country_event = {
-		id = 999999007
+		id = 999999007 
 		title = "EVTNAME999999007"
 		desc = "EVTDESC999999007"
 		picture = "PER_pcr_embassy"
-
+		
 		fire_only_once = yes
-
+		
 		trigger = {
 			has_global_flag = OMA_PER_1142_lease_renewed
 			NOT = { has_global_flag = OMA_1868_lease_renewed }
 			NOT = { has_global_flag = OMA_NOT_1868_lease_renewed }
 			tag = OMA
-			OMA = {
+			OMA = { 
 				owns = 1142
 				ai = no
 			}
 			year = 1868
 		}
-
+		
 		mean_time_to_happen = {
 			months = 3
 		}
-
+	
 		#Renew lease.
 		option = {
 			name = "EVTOPT999999007A"
 			set_global_flag = OMA_1868_lease_renewed
 			OMA = { treasury = -7500 }
 			treasury = 7500
-
+			
 			any_country = {
 				limit = {
 					is_sphere_leader_of = OMA
@@ -705,8 +705,8 @@
 					value = 25
 				}
 			}
-		}
-
+		}	
+		
 		#Don't renew lease.
 		option = {
 			name = "EVTOPT999999007B"
@@ -734,19 +734,19 @@
 				remove_core = OMA
 				secede_province = PER
 			}
-		}
+		}	
 	}
-
+	
 #Coup in OMA; PER cites a clause which permitted the termination of the lease if OMA's sultan was overthrown. (AI OMA)
 #https://en.wikipedia.org/wiki/List_of_rulers_of_Oman
 	country_event = {
-		id = 999999008
+		id = 999999008 
 		title = "EVTNAME999999008"
 		desc = "EVTDESC999999008"
 		picture = "PER_pcr_embassy"
-
+		
 		fire_only_once = yes
-
+		
 		trigger = {
 			has_global_flag = aiOMA_1868_lease_renewed
 			NOT = { has_global_flag = aiOMA_PER_clause_kikery }
@@ -758,11 +758,11 @@
 				has_country_flag = OMA_sultan_overthrown
 			}
 		}
-
+		
 		mean_time_to_happen = {
 			months = 1
 		}
-
+	
 		#TERMINATE LEASE
 		option = {
 			name = "EVTOPT999999008A"
@@ -807,12 +807,12 @@
 					value = -50
 				}
 			}
-
+			
 			ai_chance = {
 				factor = 95
 			}
 		}
-
+		
 		#lolno
 		option = {
 			name = "EVTOPT999999008B"
@@ -866,23 +866,23 @@
 				}
 				militancy = 5
 			}
-
+			
 			ai_chance = {
 				factor = 5
 			}
 		}
 	}
-
+	
 #Coup in OMA; PER cites a clause which permitted the termination of the lease if OMA's sultan was overthrown. (NON AI OMA)
 #https://en.wikipedia.org/wiki/List_of_rulers_of_Oman
 	country_event = {
-		id = 999999009
+		id = 999999009 
 		title = "EVTNAME999999009"
 		desc = "EVTDESC999999009"
 		picture = "PER_pcr_insurrection"
-
+		
 		fire_only_once = yes
-
+		
 		trigger = {
 			has_global_flag = OMA_1868_lease_renewed
 			NOT = { has_global_flag = OMA_PER_clause_kikery }
@@ -898,11 +898,11 @@
 				ai = yes
 			}
 		}
-
+		
 		mean_time_to_happen = {
 			months = 1
 		}
-
+	
 		#Reluctantly agree.
 		option = {
 			name = "EVTOPT999999009A"
@@ -946,7 +946,7 @@
 			}
 			prestige = -2.5
 		}
-
+		
 		#Tell them to go fuck themselves.
 		option = {
 			name = "EVTOPT999999009B"
@@ -969,23 +969,23 @@
 			PER = {
 				country_event = {id=999999010 days = 1}
 			}
-
+			
 			ai_chance = {
 				factor = 5
 			}
 		}
 	}
-
+			
 #PER's response to OMA's bullshit (NON AI OMA)
 	country_event = {
-		id = 999999010
+		id = 999999010 
 		title = "EVTNAME999999010"
 		desc = "EVTDESC999999010"
 		picture = "PER_pcr_embassy"
-
+		
 		fire_only_once = yes
 		is_triggered_only = yes
-
+		
 		#Nope.
 		option = {
 			name = "EVTOPT999999010A"
@@ -1030,9 +1030,9 @@
 				}
 				country_event = { id = 999999011 days = 5 }
 			}
-
+			
 			OMA = { country_event = { id = 999999012 days = 7 } }
-
+			
 			ai_chance = {
 				factor = 70
 				modifier = { factor = 0.75 any_greater_power = { is_sphere_leader_of = OMA } }
@@ -1040,7 +1040,7 @@
 				modifier = { factor = 0 war = yes }
 			}
 		}
-
+		
 		#Okayfine.
 		option = {
 			name = "EVTOPT999999010B"
@@ -1077,9 +1077,9 @@
 				militancy = 6
 			}
 			prestige = -10
-
+			
 			OMA = { country_event = { id = 999999013 days = 1 } }
-
+			
 			ai_chance = {
 				factor = 30
 				#modifier = { factor = 2.4 any_greater_power = { is_sphere_leader_of = OMA } }
@@ -1087,19 +1087,19 @@
 				modifier = { factor = 0 OMA = { war = yes } }
 			}
 		}
-
+		
 	}
-
+			
 #GP response to PER's plea (NON AI OMA)
 	country_event = {
-		id = 999999011
+		id = 999999011 
 		title = "EVTNAME999999011"
 		desc = "EVTDESC999999011"
 		picture = "PER_pcr_embassy"
-
+		
 		fire_only_once = yes
 		is_triggered_only = yes
-
+			
 		option = {
 			name = "EVTOPT999999011A"		#Help the Persians
 			set_country_flag = GP_response_PER_voted
@@ -1160,7 +1160,7 @@
 				consciousness = 4
 				militancy = -6
 			}
-
+			
 			ai_chance = {
 				factor = 25
 				modifier = { factor = 0 alliance_with = FROM }
@@ -1180,7 +1180,7 @@
 				}
 			}
 		}
-
+		
 		option = {
 			name = "EVTOPT999999011B" 		#condemn OMA
 			set_country_flag = GP_response_PER_voted
@@ -1206,7 +1206,7 @@
 				}
 			}
 		}
-
+			
 		option = {
 			name = "EVTOPT999999011C"		#stay neutral
 			set_country_flag = GP_response_PER_voted
@@ -1229,7 +1229,7 @@
 				}
 			}
 		}
-
+		
 		option = {
 			name = "EVTOPT999999011D"		#support OMA
 			set_country_flag = GP_response_PER_voted
@@ -1238,7 +1238,7 @@
 			any_pop = {
 				limit = { has_pop_culture = persian }
 				militancy = 4
-				consciousness = 7
+				consciousness = 7 
 			}
 			ai_chance = {
 				factor = 25
@@ -1266,17 +1266,17 @@
 			}
 		}
 	}
-
+	
 #PER's response to OMA: War. (NON AI OMA)
 	country_event = {
-		id = 999999012
+		id = 999999012 
 		title = "EVTNAME999999012"
 		desc = "EVTDESC999999012"
 		picture = "PER_pcr_embassy"
-
+		
 		fire_only_once = yes
 		is_triggered_only = yes
-
+			
 		option = {
 			name = "EVTOPT999999012A"
 			random_country = {
@@ -1290,35 +1290,35 @@
 				}
 			}
 		}
-
+		
 	}
-
+	
 #PER's response to OMA: Peace. (NON AI OMA)
 	country_event = {
-		id = 999999013
+		id = 999999013 
 		title = "EVTNAME999999013"
 		desc = "EVTDESC999999013"
 		picture = "PER_pcr_embassy"
-
+		
 		fire_only_once = yes
 		is_triggered_only = yes
-
+			
 		option = {
 			name = "EVTOPT999999013A"
 		}
-
+		
 	}
-
+	
 #Palace coup in OMA, Salim bin Thuwayni Al-Busaid deposed by Imam Azzan bin Qais Al-Busaid of the Imamate of Oman
 #https://en.wikipedia.org/wiki/Salim_bin_Thuwaini,_Sultan_of_Muscat_and_Oman
 	country_event = {
-		id = 999999014
+		id = 999999014 
 		title = "EVTNAME999999014"
 		desc = "EVTDESC999999014"
 		picture = "PER_pcr_insurrection"
-
+		
 		fire_only_once = yes
-
+		
 		trigger = {
 			NOT = { has_country_flag = OMA_sultan_overthrown }
 			NOT = { has_country_flag = NOT_OMA_sultan_overthrown }
@@ -1326,7 +1326,7 @@
 			tag = OMA
 			war = no
 		}
-
+		
 		mean_time_to_happen = {
 			months = 10
 		}
@@ -1358,18 +1358,18 @@
 					value = 200
 				}
 			}
-
+			
 			define_general = {
 				name = "Azzan bin Qais Al-Busaid"
 				personality = deeply_religious
 				background = natural_born_leader
 			}
-
+			
 			ai_chance = {
 				factor = 90
 			}
 		}
-
+		
 		#Refuse.
 		option = {
 			name = "EVTOPT999999014B"
@@ -1393,7 +1393,7 @@
 			officers = {
 				limit = {
 					is_primary_culture = yes
-					has_pop_religion = ibadi
+					has_pop_religion = ibadi				
 				}
 				ideology = {
 					value = reactionary
@@ -1403,7 +1403,7 @@
 			soldiers = {
 				limit = {
 					is_primary_culture = yes
-					has_pop_religion = ibadi
+					has_pop_religion = ibadi				
 				}
 				ideology = {
 					value = reactionary
@@ -1413,7 +1413,7 @@
 			rich_strata = {
 				limit = {
 					is_primary_culture = yes
-					has_pop_religion = ibadi
+					has_pop_religion = ibadi				
 				}
 				ideology = {
 					value = reactionary
@@ -1423,7 +1423,7 @@
 			middle_strata = {
 				limit = {
 					is_primary_culture = yes
-					has_pop_religion = ibadi
+					has_pop_religion = ibadi				
 				}
 				ideology = {
 					value = reactionary
@@ -1437,7 +1437,7 @@
 				militancy = 9
 				consciousness = 5
 			}
-
+			
 			ai_chance = {
 				factor = 10
 			}
@@ -1447,20 +1447,20 @@
 
 #TUR, EGY and PER's option to take in Circassian refugees from Russia.
 	country_event = {
-		id = 999999015
+		id = 999999015 
 		title = "EVTNAME999999015"
 		desc = "EVTDESC999999015"
 		picture = "circassian_exodus"
-
+		
 		fire_only_once = yes
 		is_triggered_only = yes
-
+			
 		#Accept them.
 		option = {
 			name = "EVTOPT999999015A"
 			any_pop = {
 				limit = {
-					has_pop_religion = sunni
+					has_pop_religion = sunni	
 					OR = {
 						culture = circassian
 						culture = chechen
@@ -1485,7 +1485,7 @@
 			}
 			any_pop = {
 				limit = {
-					has_pop_religion = sunni
+					has_pop_religion = sunni	
 					OR = {
 						culture = circassian
 						culture = chechen
@@ -1510,7 +1510,7 @@
 			}
 			any_pop = {
 				limit = {
-					has_pop_religion = sunni
+					has_pop_religion = sunni	
 					OR = {
 						culture = circassian
 						culture = chechen
@@ -1532,7 +1532,7 @@
 			}
 			any_pop = {
 				limit = {
-					has_pop_religion = sunni
+					has_pop_religion = sunni	
 					OR = {
 						culture = circassian
 						culture = chechen
@@ -1556,7 +1556,7 @@
 				factor = 100
 			}
 		}
-
+		
 		#Turn them down, lol get fucked ch*rkas.
 		option = {
 			name = "EVTOPT999999015B"
@@ -1565,26 +1565,26 @@
 				factor = 0
 			}
 		}
-
+		
 	}
-
+	
 #A sudden influx of Circassian immigrants severely destabilizes the t*rkish realm.
 #It doesn't help that they were massively settled where christians were the majority and weren't given proper housing, food and medicine.
 	country_event = {
-		id = 999999016
+		id = 999999016 
 		title = "EVTNAME999999016"
 		desc = "EVTDESC999999016"
 		picture = "circassian_exodus"
-
+		
 		is_triggered_only = yes
-
+			
 		immediate = {
 			set_country_flag = anticircassian_sentiment
-		}
-
+		}	
+			
 		option = {
 			name = "EVTOPT999999016A"
-
+			
 			any_pop = {
 				limit = {
 					OR = {
@@ -1629,7 +1629,7 @@
 				militancy = 6
 				consciousness = 4
 			}
-
+			
 			any_owned = {
 				limit = {
 					OR = {
@@ -1710,18 +1710,18 @@
 					duration = 1825
 				}
 			}
-
+									
 			ai_chance = {
 				factor = 99
 				modifier = { factor = 0 money = 100001 }
 			}
 		}
-
+		
 		option = {
 			name = "EVTOPT999999016B"
-
+			
 			treasury = -100000
-
+			
 			any_pop = {
 				limit = {
 					OR = {
@@ -1766,7 +1766,7 @@
 				militancy = 3
 				consciousness = 2
 			}
-
+			
 			any_owned = {
 				limit = {
 					OR = {
@@ -1850,40 +1850,40 @@
 					duration = 912
 				}
 			}
-
+			
 			ai_chance = {
 				factor = 1
 				modifier = { factor = 100 money = 100001 }
 			}
 		}
-
+		
 	}
-
+	
 #TUR's notification about the expulsion of Circassians from one of their provinces.
 	country_event = {
-		id = 999999018
+		id = 999999018 
 		title = "EVTNAME999999018"
 		desc = "EVTDESC999999018"
 		picture = "PER_pcr_embassy"
-
+		
 		is_triggered_only = yes
-
+			
 		option = {
 			name = "EVTOPT999999018A"
 		}
-
+		
 	}
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
+	
 #OMA's Sphere leader's notification about the gifting of Khuriya Muriya Islands.
 	country_event = {
-		id = 999999019
+		id = 999999019 
 		title = "EVTNAME999999019"
 		desc = "EVTDESC999999019"
 		picture = "PER_pcr_embassy"
-
+		
 		is_triggered_only = yes
-
+			
 		option = { #This could come in handy
 			name = "EVTOPT999999019A"
 			3335 = {
@@ -1912,7 +1912,7 @@
 				factor = 70
 			}
 		}
-
+		
 		option = { #lolnope
 			name = "EVTOPT999999019B"
 			diplomatic_influence = {
@@ -1934,89 +1934,38 @@
 				factor = 30
 			}
 		}
-
+		
 	}
 
 #OMA's notification about the gifting of Khuriya Muriya Islands. (GP accepts)
 	country_event = {
-		id = 999999020
+		id = 999999020 
 		title = "EVTNAME999999020"
 		desc = "EVTDESC999999020"
 		picture = "PER_pcr_embassy"
-
+		
 		is_triggered_only = yes
-
+			
 		option = {
 			name = "EVTOPT999999020A"
 		}
-
+		
 	}
-
+	
 #OMA's notification about the gifting of Khuriya Muriya Islands. (GP turns it away)
 	country_event = {
-		id = 999999021
+		id = 999999021 
 		title = "EVTNAME999999021"
 		desc = "EVTDESC999999021"
 		picture = "PER_pcr_embassy"
-
+		
 		is_triggered_only = yes
-
+			
 		option = {
 			name = "EVTOPT999999021A"
 		}
-
+		
 	}
-
-#Hungarian Seizure of Ada Kaleh
-country_event = {
-	id = 999999022
-	title = "EVTNAME999999022"
-	desc = "EVTDESC999999022"
-	picture = "ada_kaleh"
-
-	trigger = {
-		OR = {
-			tag = AUS
-			tag = KUK
-			tag = DNB
-			tag = HUN
-		}
-		SIE = {
-			any_core = { owned_by = THIS }
-		}
-		3631 = {
-			owned_by = TUR
-			NOT = { is_core = TUR }
-		}
-		OR = {
-			ROM = { war_with = TUR }
-			SER = { war_with = TUR }
-			GRE = { war_with = TUR }
-			YUG = { war_with = TUR }
-			BUL = { war_with = TUR }
-		}
-	}
-
-	option = {
-		name = "EVT999999OPTA"
-		3631 = { secede_province = THIS }
-		relation = {
-			who = TUR
-			value = -1
-		}
-		ai_chance = { factor = 90 }
-	}
-
-	option = {
-		name = "EVT999999OPTB"
-		relation = {
-			who = TUR
-			value = 1
-		}
-		ai_chance = { factor = 10 }
-	}
-}
-
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
