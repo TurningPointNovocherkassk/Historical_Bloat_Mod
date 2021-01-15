@@ -63,6 +63,16 @@ political_decisions = {
 			BKV = {
 				all_core = { add_core = KUK }
 			}
+			random_country = {
+				limit = {
+					tag = AUS
+					has_global_flag = italian_federation
+					is_our_vassal = ITF
+				}
+				VEN = {
+					all_core = { add_core = KUK }
+				}
+			}
 			any_pop = {
 				limit = { has_pop_culture = hungarian }
 				militancy = -4

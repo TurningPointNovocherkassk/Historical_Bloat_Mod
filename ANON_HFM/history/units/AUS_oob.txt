@@ -12,7 +12,7 @@ WAL = {
 }
 
 #German Minors
-BAD = {	
+BAD = {
 	value = 125
 	level = 5
 	influence_value = 0
@@ -111,7 +111,7 @@ WEI = {
 	value = 125
 	military_access = yes
 }
-LIE = {	
+LIE = {
 	value = 125
 	level = 5
 	influence_value = 0
@@ -129,9 +129,9 @@ SER = {
 	influence_value = 0
 }
 SAR = {
-	value = 50
-	level = 2
-	influence_value = 0
+	value = 125
+	level = 3
+	influence_value = 25
 }
 PAP = {
 	value = 125
@@ -164,7 +164,7 @@ LUC = {
 }
 DEN = {
 	value = 55
-} 
+}
 
 #Other GP's
 ENG = { value = -75 }
@@ -498,4 +498,3 @@ leader = {
 	background = aristocrat
 	prestige = 0.1
 }
-

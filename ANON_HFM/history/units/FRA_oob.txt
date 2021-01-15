@@ -38,9 +38,9 @@ SWI = {
 	influence_value = 25
 }
 SAR = {
-	value = 125		#relation
-	level = 4		#3=cordial, 4 = friendly, 5 sphere
-	influence_value = 25
+	value = 75		#relation
+	level = 2		#3=cordial, 4 = friendly, 5 sphere
+	influence_value = 0
 }
 GRE = {
 	value = 75	#relation
@@ -77,19 +77,19 @@ army = {
 		type = guard
 		home = 427
 	}
-	
+
 	regiment = {
 		name= "1ère Division d'Hussard"
 		type = hussar
 		home = 420
 	}
-	
+
 	regiment = {
 		name= "2ère Division d'Hussard"
 		type = hussar
 		home = 446
 	}
-	
+
 	regiment = {
 		name= "1.1ère Division d'Infanterie"
 		type = infantry
@@ -107,25 +107,25 @@ army = {
 		type = infantry
 		home = 401
 	}
-	
+
 	regiment = {
 		name= "1.1ère Division d'Artillerie"
 		type = artillery
 		home = 425
 	}
-	
+
 	regiment = {
 		name= "2.1ère Division d'Artillerie"
 		type = artillery
 		home = 400
 	}
-	
+
 	regiment = {
 		name= "3.1ère Division d'Artillerie"
 		type = artillery
 		home = 453
 	}
-	
+
 	regiment = {
 		name= "4.1ère Division d'Artillerie"
 		type = artillery
@@ -135,13 +135,13 @@ army = {
 army = {
 	name = "1ère Armée"
 	location = 409
-	
+
 	regiment = {
 		name= "1ère Division d'Hussard"
 		type = hussar
 		home = 458
 	}
-	
+
 	regiment = {
 		name= "1.1ème Division d'Infanterie"
 		type = infantry
@@ -171,7 +171,7 @@ army = {
 		type = infantry
 		home = 403
 	}
-	
+
 	regiment = {
 		name= "2.3ème Division d'Infanterie"
 		type = infantry
@@ -183,26 +183,26 @@ army = {
 		type = artillery
 		home = 399
 	}
-	
+
 	regiment = {
 		name= "2.1ème Division d'Artillerie"
 		type = artillery
 		home = 400
 	}
-	
+
 	regiment = {
 		name= "3.1ème Division d'Artillerie"
 		type = artillery
 		home = 399
 	}
-	
+
 	regiment = {
 		name= "4.1ème Division d'Artillerie"
 		type = artillery
 		home = 399
 	}
 }
-	
+
 army = {
 	name = "2ème Armée"
 	location = 471
@@ -224,7 +224,7 @@ army = {
 		type = cuirassier
 		home = 406
 	}
-	
+
 	regiment = {
 		name= "1.7ème Division d'Infanterie"
 		type = infantry
@@ -242,7 +242,7 @@ army = {
 		type = infantry
 		home = 417
 	}
-	
+
 	regiment = {
 		name= "4.7ème Division d'Infanterie"
 		type = infantry
@@ -254,7 +254,7 @@ army = {
 		type = infantry
 		home = 448
 	}
-	
+
 	regiment = {
 		name= "4.1ème Division d'Artillerie"
 		type = artillery
@@ -272,7 +272,7 @@ army = {
 		type = artillery
 		home = 462
 	}
-	
+
 	regiment = {
 		name= "5.3ème Division d'Artillerie"
 		type = artillery
@@ -283,7 +283,7 @@ army = {
 
 army = {
 	name = "Armée d'Algerie"
-	
+
 	leader = {
 		name = "Bertrand Clauzel"
 		date = 1803.1.1
@@ -292,7 +292,7 @@ army = {
 		background = elderly
 		prestige = 0.1
 	}
-	
+
 	location = 1700
 	regiment = {
 		name= "1.4ème Division d'Infanterie"
@@ -341,7 +341,7 @@ army = {
 		type = artillery
 		home = 459
 	}
-	
+
 	regiment = {
 		name= "3ème Division d'Artillerie"
 		type = artillery
@@ -405,7 +405,7 @@ army = {
 		type = infantry
 		home = 408
 	}
-	
+
 	regiment = {
 		name= "1.11ème Division d'Infanterie"
 		type = infantry
@@ -423,7 +423,7 @@ army = {
 		type = cuirassier
 		home = 460
 	}
-	
+
 	regiment = {
 		name= "1ème Division d'Artillerie"
 		type = artillery
@@ -435,7 +435,7 @@ army = {
 		type = artillery
 		home = 451
 	}
-	
+
 	regiment = {
 		name= "3ème Division d'Artillerie"
 		type = artillery
@@ -952,5 +952,3 @@ leader = {
 	background = unfit
 	prestige = 0.0
 }
-	
-	

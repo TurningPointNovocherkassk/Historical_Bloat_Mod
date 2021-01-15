@@ -1,7 +1,7 @@
 political_decisions = {
 
 	lateran_pacts = {
-		
+
 		potential = {
 			tag = ITA
 			PAP = {
@@ -18,7 +18,7 @@ political_decisions = {
 			}
 			NOT = { has_country_flag = released_PAP }
 		}
-		
+
 		allow = {
 			tag = ITA
 			PAP = {
@@ -33,7 +33,7 @@ political_decisions = {
 			NOT = { has_country_flag = released_PAP }
 			war = no
 		}
-		
+
 		effect = {
 			set_country_flag = released_PAP
 			any_owned = {
@@ -46,7 +46,7 @@ political_decisions = {
 			release_vassal = PAP
 			ITA = {	country_event = {id=100011 days = 1} }
 		}
-		
+
 		ai_will_do = {
 			factor = 1
 		}
@@ -60,7 +60,7 @@ political_decisions = {
 			NOT = {	has_country_flag = claimed_provence	}
 			has_global_flag = plombieres_refused
 		}
-		
+
 		allow = {
 			OR = {
 				war_policy = jingoism
@@ -75,14 +75,14 @@ political_decisions = {
 				has_country_modifier = no_more_war
 			}
 		}
-		
+
 		effect = {
 			set_country_flag = claimed_provence
 			badboy = 3
 			FRA_467 = { add_core = ITA }
 		}
 	}
-	
+
 	reverse_treaty_of_milan = {
 	picture = form_italy
 		potential = {
@@ -91,15 +91,15 @@ political_decisions = {
 			has_country_flag = claimed_provence
 			NOT = { has_country_flag = reverse_treaty_of_milan }
 		}
-		
+
 		allow = {
-			war = no		
+			war = no
 			owns = 720
 			owns = 744
 			owns = 465
 			owns = 721
 		}
-		
+
 		effect = {
 			set_country_flag = reverse_treaty_of_milan
 			prestige = 10
@@ -108,11 +108,11 @@ political_decisions = {
 			466 = { remove_core = FRA add_core = ITA }
 			472 = { remove_core = FRA add_core = ITA }
 		}
-		
+
 		ai_will_do = { factor = 1 }
 	}
-	
-	
+
+
 	italian_renamed_provence = {
 		picture = gtfo
 		potential = {
@@ -120,25 +120,25 @@ political_decisions = {
 		owns = 467
 		NOT = { has_global_flag = italian_renamed_provence }
 		}
-		
+
 		allow = {
 			war = no
 		}
-		
+
 		effect = {
 			random_owned = {
 				limit = {
 					province_id = 467
 				}
-				467 = { 
-					change_province_name = "Marsiglia"  
+				467 = {
+					change_province_name = "Marsiglia"
 					state_scope = { change_region_name = "Provenza" }
 				}
 				468 = { change_province_name = "Avignone" }
 				469 = { change_province_name = "Digno" }
 				470 = { change_province_name = "Tolone" }
 				471 = { change_province_name = "Foro di Giulio" }
-				owner = { 
+				owner = {
 					set_global_flag = italian_renamed_provence
 					clr_global_flag = french_renamed_provence
 				}
@@ -146,7 +146,7 @@ political_decisions = {
 		}
 		ai_will_do = { factor = 1 }
 	}
-	
+
 	french_renamed_provence = {
 		picture = gtfo
 		potential = {
@@ -154,25 +154,25 @@ political_decisions = {
 			owns = 467
 			has_global_flag = french_renamed_provence
 		}
-		
+
 		allow = {
 			war = no
 		}
-		
+
 		effect = {
 			random_owned = {
 				limit = {
 					province_id = 467
 				}
-				467 = { 
-					change_province_name = "Marseille"  
+				467 = {
+					change_province_name = "Marseille"
 					state_scope = { change_region_name = "Provence" }
 				}
 				468 = { change_province_name = "Avignon" }
 				469 = { change_province_name = "Digne" }
 				470 = { change_province_name = "Toulon" }
 				471 = { change_province_name = "Frejus" }
-				owner = { 
+				owner = {
 					set_global_flag = french_renamed_provence
 					clr_global_flag = italian_renamed_provence
 				}
@@ -180,5 +180,257 @@ political_decisions = {
 		}
 		ai_will_do = { factor = 1 }
 	}
-	
+	federate_italian_states = {
+    picture = italian_islands
+    potential = {
+			has_global_flag = italy_federation_yes
+      OR = {
+        tag = AUS
+        tag = KUK
+      }
+      is_greater_power = yes
+      NOT = { exists = ITA }
+      NOT = { has_global_flag = italian_federation }
+      OR = {
+        any_owned_province = { is_core = ITA }
+        SAR = { in_sphere = THIS }
+        SIC = { in_sphere = THIS }
+        PAP = { in_sphere = THIS }
+        TUS = { in_sphere = THIS }
+        MOD = { in_sphere = THIS }
+        PAR = { in_sphere = THIS }
+        LUC = { in_sphere = THIS }
+        LOM = { in_sphere = THIS }
+        VEN = { in_sphere = THIS }
+      }
+    }
+    allow = {
+			has_global_flag = aus_italy_domination_confirmed
+      war = no
+      ITA = {
+        all_core = {
+          OR = {
+            OR = {
+              owned_by = THIS
+              owner = { in_sphere = THIS }
+            }
+            NOT = {
+              OR = {
+                culture = north_italian
+                culture = south_italian
+								culture = central_italian
+								culture = sicilian
+								culture = insular
+              }
+            }
+          }
+        }
+      }
+      VEN = {
+        all_core = {
+          OR = {
+            OR = {
+              owned_by = THIS
+              owner = { in_sphere = THIS }
+            }
+            NOT = {
+              OR = {
+                culture = north_italian
+                culture = south_italian
+              }
+            }
+          }
+        }
+      }
+    }
+    effect = {
+			set_global_flag = italian_federation
+      prestige = 10
+      any_country = {
+        limit = {
+          OR = {
+            primary_culture = north_italian
+						primary_culture = central_italian
+            primary_culture = south_italian
+						primary_culture = sicilian
+						primary_culture = insular
+						tag = MNC
+          }
+        }
+        annex_to = THIS
+      }
+      VEN = { all_core = { remove_core = LOM } }
+      SRD = { all_core = { remove_core = SAR } }
+      PAR = { all_core = { add_core = ITF remove_core = PAR } }
+      SAR = { all_core = { add_core = ITF remove_core = SAR } }
+      LUC = { all_core = { add_core = ITF remove_core = LUC } }
+      MOD = { all_core = { add_core = ITF remove_core = MOD } }
+      TUS = { all_core = { add_core = ITF remove_core = TUS } }
+      RMG = { all_core = { add_core = ITF remove_core = PAP remove_core = RMG } }
+			T4V = { all_core = { add_core = SRD remove_core = T4V } }
+			MNC = { all_core = { add_core = ITF remove_core = MNC } }
+			SMR = { all_core = { add_core = ITF remove_core = SMR } }
+			LOM = { all_core = { add_core = ITF remove_core = LOM } }
+      release_vassal = ITF
+			release_vassal = PAP
+      release_vassal = SIC
+      release_vassal = SRD
+      PAP = { government = theocracy }
+      create_alliance = ITF
+      create_alliance = SIC
+      create_alliance = SRD
+      create_alliance = PAP
+      diplomatic_influence = {
+        who = SIC
+        value = 400
+      }
+      diplomatic_influence = {
+        who = ITF
+        value = 400
+      }
+      diplomatic_influence = {
+        who = PAP
+        value = 400
+      }
+      diplomatic_influence = {
+        who = SRD
+        value = 400
+      }
+    }
+    ai_will_do = {
+      factor = 1
+    }
+  }
+
+	treaty_of_annecy_fra = {
+		picture = italian_islands
+		potential = {
+			OR = {
+				tag = FRA
+				tag = BOR
+			}
+			OR = {
+				has_global_flag = aus_dominate_italy_fra_vs_aus
+				has_global_flag = aus_dominate_italy_frapru_vs_aus
+				has_global_flag = aus_dominate_italy_frapru_vs_ausrus
+			}
+			NOT = { has_global_flag = treaty_of_annecy_fra }
+			NOT = { has_global_flag = treaty_of_annecy_aus }
+		}
+		allow = {
+			truce_with = AUS
+			AUS = { is_disarmed = yes }
+			war = no
+		}
+
+		effect = {
+			set_global_flag = treaty_of_annecy_fra
+			clr_global_flag = aus_dominate_italy
+			clr_global_flag = italy_federation_yes
+			clr_global_flag = aus_dominate_italy_russia_backed_austria
+			clr_global_flag = aus_dominate_italy_fra_vs_aus
+			clr_global_flag = aus_dominate_italy_frapru_vs_aus
+			clr_global_flag = aus_dominate_italy_frapru_vs_ausrus
+			prestige = 50
+			AUS = {
+				release_vassal = SAR
+				release = VEN
+				release = LOM
+			}
+			create_vassal = SAR
+			create_vassal = LOM
+			465 = { add_core = THIS secede_province = THIS }
+      466 = { add_core = THIS secede_province = THIS }
+      472 = { add_core = THIS secede_province = THIS }
+			any_country = {
+				limit = {
+					is_culture_group = italian
+				}
+				country_event = 777202011
+			}
+		}
+
+		ai_will_do = { factor = 1 }
+	}
+
+	treaty_of_annecy_aus = {
+		picture = italian_islands
+		potential = {
+			tag = AUS
+			OR = {
+				has_global_flag = aus_dominate_italy_fra_vs_aus
+				has_global_flag = aus_dominate_italy_frapru_vs_aus
+				has_global_flag = aus_dominate_italy_frapru_vs_ausrus
+			}
+			NOT = { has_global_flag = treaty_of_annecy_fra }
+			NOT = { has_global_flag = treaty_of_annecy_aus }
+		}
+
+		allow = {
+			OR = {
+				AND = {
+					truce_with = FRA
+					FRA = { is_disarmed = yes }
+				}
+				AND = {
+					truce_with = BOR
+					BOR = { is_disarmed = yes }
+				}
+			}
+			war = no
+		}
+
+		effect = {
+			set_global_flag = treaty_of_annecy_aus
+			set_global_flag = aus_italy_domination_confirmed
+			clr_global_flag = aus_dominate_italy_fra_vs_aus
+			clr_global_flag = aus_dominate_italy_frapru_vs_aus
+			clr_global_flag = aus_dominate_italy_frapru_vs_ausrus
+			clr_global_flag = aus_dominate_italy_fra_claim_savoy
+			prestige = 50
+			random_country = {
+				limit = {
+					OR = {
+						tag = FRA
+						tag = BOR
+					}
+					exists = yes
+				}
+				prestige = -50
+			}
+			random_country = {
+				limit = {
+					OR = {
+						tag = FRA
+						tag = BOR
+					}
+					exists = yes
+					owns = 412
+				}
+				release = ALS
+			}
+			random_country = {
+				limit = {
+					OR = {
+						tag = FRA
+						tag = BOR
+					}
+					exists = yes
+					alliance_with = PRU
+				}
+				leave_alliance = PRU
+				relation = {
+					who = PRU
+					value = -200
+				}
+			}
+			create_vassal = ALS
+			465 = { remove_core = FRA remove_core = BOR }
+			466 = { remove_core = FRA remove_core = BOR }
+			472 = { remove_core = FRA remove_core = BOR }
+			473 = { remove_core = FRA remove_core = BOR }
+			SAR = { country_event = 777202014 }
+		}
+		ai_will_do = { factor = 1 }
+	}
 }

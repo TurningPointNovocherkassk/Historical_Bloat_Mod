@@ -55,14 +55,14 @@ political_decisions = {
 				factor = 0
 				NOT = { has_country_modifier = malevolent_ai }
 			}
-			
+
 			modifier = {
 				factor = 0
 				badboy = 0.5
 			}
 		}
 	}
-	
+
 	mobilize_tribesmen = {
 		picture = form_the_ikhwan
 		potential = {
@@ -164,7 +164,7 @@ political_decisions = {
 		}
 
 		ai_will_do = {
-			factor = 1 
+			factor = 1
 			modifier = {
 				factor = 0
 				OR = {
@@ -322,7 +322,7 @@ political_decisions = {
 			any_country = {
 				limit = {
 					civilized = no
-					any_owned_province = { 
+					any_owned_province = {
 						OR = {
 							region = NEJ_1157
 							region = NEJ_1156
@@ -375,7 +375,7 @@ political_decisions = {
 				}
 			}
 		}
-		
+
 		ai_will_do = {
 			factor = 1
 		}
@@ -428,6 +428,7 @@ political_decisions = {
 			NOT = {
 				1157 = { is_core = HDJ }
 			}
+			year = 1845
 		}
 
 		allow = {
@@ -512,12 +513,12 @@ political_decisions = {
 				}
 			}
 		}
-		
+
 		allow = {
 			revolution_n_counterrevolution = 1
 			war_with = TUR
 		}
-		
+
 		effect = {
 			set_global_flag = arab_nationalism_encouraged
 			set_country_flag = friend_of_the_arabs
@@ -551,11 +552,11 @@ political_decisions = {
 			NOT = { has_country_flag = ibn_saud }
 			tag = NEJ
 		}
-		
+
 		allow = {
 			government = absolute_monarchy
 		}
-		
+
 		effect = {
 			set_country_flag = ibn_saud
 			define_general = {
@@ -584,7 +585,7 @@ political_decisions = {
 					}
 					NOT = { exists = NEJ }
 				}
-			}		
+			}
 			NOT = { has_country_flag = the_ikhwan_formed }
 		}
 
@@ -607,7 +608,7 @@ political_decisions = {
 			}
 			any_pop = {
 				limit = { has_pop_culture = bedouin }
-				ideology = {	
+				ideology = {
 					value = reactionary
 					factor = 0.2
 				}
@@ -626,7 +627,7 @@ political_decisions = {
 			}
 			any_pop = {
 				limit = { has_pop_culture = peninsular }
-				ideology = {	
+				ideology = {
 					value = reactionary
 					factor = 0.2
 				}
@@ -651,15 +652,15 @@ political_decisions = {
 				NOT = { has_province_modifier = holy_city }
 			}
 			OR = {
-				is_culture_group = arab	
+				is_culture_group = arab
 				is_culture_group = turko_semitic
 			}
 		}
-		
+
 		allow = {
 			owns = 1151
 		}
-		
+
 		effect = {
 			1151 = {
 				add_province_modifier = {
@@ -703,7 +704,7 @@ political_decisions = {
 			}
 			YEM_1178 = { #Yemen
 				add_core = ARA
-			}			
+			}
 		}
 
 		ai_will_do = {
@@ -740,10 +741,10 @@ political_decisions = {
 			factor = 1
 		}
 	}
-	
+
 	integrate_bahrain_trucial_states = {
 		picture = bahrain_trade
-		
+
 		potential = {
 			is_greater_power = yes
 			is_sphere_leader_of = ABU
@@ -786,7 +787,7 @@ political_decisions = {
 
 		ai_will_do = { factor = 1 }
 	}
-	
+
 	integrate_qatar_trucial_states = {
 		picture = doha_city
 		potential = {
@@ -831,7 +832,7 @@ political_decisions = {
 
 		ai_will_do = { factor = 1 }
 	}
-	
+
 	claim_bahrain_qatar_peninsula = {
 		picture = bahrain_trade
 		potential = {
@@ -868,12 +869,12 @@ political_decisions = {
 		effect = {
 			set_country_flag = claimed_the_persian_gulf
 			badboy = 2
-			1165 = { add_core = THIS } 
+			1165 = { add_core = THIS }
 			1162 = { add_core = THIS }
 			}
 		ai_will_do = { factor = 1 }
 	}
-	
+
 	vassalize_trucial_states = {
 		picture = dubai_city
 		potential = {
@@ -903,7 +904,7 @@ political_decisions = {
 			create_vassal = ABU
 			create_alliance = ABU
 			ABU = { political_reform = no_slavery research_points = 3000 }
-			
+
 			random_owned = { limit = { exists = NEJ } owner = { diplomatic_influence = { who = NEJ value = 25 } } }
 			random_owned = { limit = { exists = HAL } owner = { diplomatic_influence = { who = HAL value = 25 } } }
 			random_owned = { limit = { exists = BHR } owner = { diplomatic_influence = { who = BHR value = 25 } } }
@@ -914,7 +915,7 @@ political_decisions = {
 		}
 		ai_will_do = { factor = 1 }
 	}
-	
+
 	yemeni_sultanates_conquest = {
 		picture = map_arabia
 		alert = no
@@ -936,12 +937,12 @@ political_decisions = {
 			is_sphere_leader_of = MHR
 			}
 		}
-		
+
 		allow = {
 			civilized = yes
 			nationalism_n_imperialism = 1
 		}
-		
+
 		effect = {
 			badboy = 2
 			set_country_flag = claimed_yemen
@@ -953,7 +954,7 @@ political_decisions = {
 			diplomatic_influence = { who = MHR value = -400 }
 			diplomatic_influence = { who = YEM value = -400 }
 			diplomatic_influence = { who = NYE value = -400 }
-			
+
 			random_country = {
 				limit = {
 					exists = yes
@@ -968,7 +969,7 @@ political_decisions = {
 				months = 120
 				}
 			}
-			
+
 			random_country = {
 				limit = {
 					exists = yes
@@ -983,7 +984,7 @@ political_decisions = {
 				months = 120
 				}
 			}
-			
+
 			random_country = {
 				limit = {
 					exists = yes
@@ -998,7 +999,7 @@ political_decisions = {
 				months = 120
 				}
 			}
-			
+
 			random_country = {
 				limit = {
 					exists = yes
@@ -1013,7 +1014,7 @@ political_decisions = {
 				months = 120
 				}
 			}
-			
+
 			random_country = {
 				limit = {
 					exists = yes
@@ -1028,7 +1029,7 @@ political_decisions = {
 				months = 120
 				}
 			}
-			
+
 			random_country = {
 				limit = {
 					exists = yes
@@ -1043,7 +1044,7 @@ political_decisions = {
 				months = 120
 				}
 			}
-			
+
 			random_country = {
 				limit = {
 					exists = yes
@@ -1058,7 +1059,7 @@ political_decisions = {
 				months = 120
 				}
 			}
-			
+
 			random_country = {
 				limit = {
 					exists = yes
@@ -1073,7 +1074,7 @@ political_decisions = {
 				months = 120
 				}
 			}
-			
+
 		random_country = {
 				limit = {
 					exists = yes
@@ -1088,7 +1089,7 @@ political_decisions = {
 				months = 120
 				}
 			}
-			
+
 			random_country = {
 				limit = {
 					exists = yes
@@ -1103,7 +1104,7 @@ political_decisions = {
 				months = 120
 				}
 			}
-			
+
 			random_owned = { limit = { exists = NEJ } owner = { diplomatic_influence = { who = NEJ value = 25 } } }
 			random_owned = { limit = { exists = HAL } owner = { diplomatic_influence = { who = HAL value = 25 } } }
 			random_owned = { limit = { exists = BHR } owner = { diplomatic_influence = { who = BHR value = 25 } } }
@@ -1111,13 +1112,13 @@ political_decisions = {
 			random_owned = { limit = { exists = ABU } owner = { diplomatic_influence = { who = ABU value = 25 } } }
 			random_owned = { limit = { exists = KWT } owner = { diplomatic_influence = { who = KWT value = 25 } } }
 		}
-		
-			ai_will_do = { 
-				factor = 1 
+
+			ai_will_do = {
+				factor = 1
 				modifier = { factor = 0 badboy = 0.8 }
 			}
 		}
-		
+
 	found_dar_es_salaam = {
 		picture = tanzania_shop
 		potential = {

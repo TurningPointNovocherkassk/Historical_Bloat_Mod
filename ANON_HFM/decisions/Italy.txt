@@ -11,9 +11,9 @@ political_decisions = {
 			money = 40000
 		}
 
-		effect = { 
+		effect = {
            	treasury = -80000
-            prestige = 15                   
+            prestige = 15
             political_reform = free_press
             set_country_flag = accademia_della_crusca
         }
@@ -33,14 +33,14 @@ political_decisions = {
 			owns = 472
 			OR = {
 				AUS = {
-					OR = { 
+					OR = {
 						AND = {
 							owns = 726
 							owns = 727
 							owns = 728
 						}
 						AND = {
-							NOT = { 
+							NOT = {
 								owns = 726
 								owns = 727
 								owns = 728
@@ -53,13 +53,13 @@ political_decisions = {
 				}
 				KUK = {
 					OR = {
-						AND = { 
+						AND = {
 							owns = 726
 							owns = 727
 							owns = 728
 						}
 						AND = {
-							NOT = { 
+							NOT = {
 								owns = 726
 								owns = 727
 								owns = 728
@@ -101,23 +101,23 @@ political_decisions = {
 				NOT = { num_of_revolts = 1 }
 				NOT = { truce_with = AUS }
 				NOT = { truce_with = KUK }
-			}			
+			}
 		}
-		
+
 		effect = {
 			set_country_flag = plombieres
 			set_global_flag = plombieres
 			AUS_726 = { add_core = THIS }
 			random_country = {
 				limit = {
-					OR = { 
-						AND = { 
+					OR = {
+						AND = {
 							owns = 726
 							owns = 727
 							owns = 728
 						}
-						AND = { 
-							NOT = { 
+						AND = {
+							NOT = {
 								owns = 726
 								owns = 727
 								owns = 728
@@ -135,7 +135,7 @@ political_decisions = {
 			}
 			FRA = { country_event = 90038 }
 		}
-		
+
 		ai_will_do = {
 			factor = 1
 			modifier = {
@@ -148,16 +148,16 @@ political_decisions = {
 	cavours_diplomacy = {
 		potential = {
 			OR = {
-				AND = { 
+				AND = {
 					tag = ITA
 					NOT = { exists = SAR }
 					NOT = { exists = SVY }
 				}
-				AND = { 
+				AND = {
 					tag = SAR
 					NOT = { exists = ITA }
 				}
-				AND = { 
+				AND = {
 					tag = SVY
 					NOT = { exists = ITA }
 				}
@@ -170,7 +170,7 @@ political_decisions = {
 			owns = 472
 			exists = FRA
 		}
-		
+
 		allow = {
 			relation = {
 				who = FRA
@@ -180,7 +180,7 @@ political_decisions = {
 			owns = 727
 			owns = 728
 		}
-		
+
 		effect = {
 			set_country_flag = cavour_has_done_his
 			leave_alliance = FRA
@@ -328,7 +328,7 @@ political_decisions = {
 			}
 		}
 	}
-	
+
 	award_order_of_st_francis = {
 		picture = award_order_of_st_francis
 		potential = {
@@ -340,7 +340,7 @@ political_decisions = {
 		allow = {
 			prestige = 25
 		}
-		
+
 		effect = {
 			years_of_research = 0.2
 			prestige = 2
@@ -354,7 +354,7 @@ political_decisions = {
 				tag = SAR
 				tag = SVY
 			}
-			OR = { 
+			OR = {
 				government = absolute_monarchy
 				government = prussian_constitutionalism
 			}
@@ -366,7 +366,7 @@ political_decisions = {
 		}
 
 		allow = {
-			OR = { 
+			OR = {
 				average_militancy = 2
 				average_consciousness = 5
 				num_of_revolts = 1
@@ -390,9 +390,9 @@ political_decisions = {
 						ideology = conservative
 						factor = -6
 					}
-					scaled_militancy = { 
+					scaled_militancy = {
 						ideology = reactionary
-						factor = 3   
+						factor = 3
 					}
 				}
 			}
@@ -418,11 +418,11 @@ political_decisions = {
 			year = 1858
 			owns = 741
 		}
-		
+
 		allow = {
 			idealism = 1
 		}
-		
+
 		effect = {
 			prestige = 15
 			badboy = 1
@@ -434,10 +434,10 @@ political_decisions = {
 			}
 			set_country_flag = edgardo_mortara
 		}
-		
+
 		ai_will_do = { factor = 1 }
 	}
-	
+
 	the_first_vatican_council = {
 		potential = {
 			tag = PAP
@@ -463,7 +463,7 @@ political_decisions = {
 			}
 			set_country_flag = first_vatican_council_held
 		}
-		
+
 		ai_will_do = { factor = 1 }
 	}
 
@@ -604,10 +604,10 @@ political_decisions = {
 				remove_core = BNT
 			}
 		}
-		
+
 		ai_will_do = { factor = 1 }
 	}
-	
+
 	italia_irredenta = {
 		picture = italia_irredenta
 		potential = {
@@ -616,7 +616,7 @@ political_decisions = {
 				AND = { owns = 727 NOT = { has_global_flag = italian_claimed_venetia } } #Lombardy
 				AND = {
 					owns = 729 #Venice
-					NOT = { has_global_flag = italian_claimed_south_tirol } 
+					NOT = { has_global_flag = italian_claimed_south_tirol }
 					OR = {
 						AND = {
 							ai = no
@@ -635,7 +635,7 @@ political_decisions = {
 						}
 					}
 				}
-				
+
 				#Aosta
 				AND = {
 					721 = { NOT = { is_core = ITA } } #Aosta
@@ -656,7 +656,7 @@ political_decisions = {
 					}
 					NOT = { has_global_flag = italian_reclaim_aosta }
 				}
-				
+
 				#Savoie
 				AND = {
 					465 = { NOT = { is_core = ITA } } #Savoia
@@ -704,7 +704,7 @@ political_decisions = {
 				AUS_729 = { add_core = ITA }
 				owner = { set_global_flag = italian_claimed_venetia }
 			}
-			
+
 			#Claim Trieste & South Tirol
 			random_owned = {
 				limit = {
@@ -730,13 +730,13 @@ political_decisions = {
 					}
 				}
 				AUS_734 = { add_core = ITA remove_core = TST }
-				AUS_736 = { add_core = ITA }   
+				AUS_736 = { add_core = ITA }
 				AUS_770 = { add_core = ITA }
 				AUS_778 = { add_core = ITA }
 				AUS_733 = { add_core = ITA }
 				owner = { set_global_flag = italian_claimed_venetia }
 			}
-			
+
 			#Claim Savoia
 			random_owned = {
 				limit = {
@@ -755,30 +755,30 @@ political_decisions = {
 						NOT = {
 							truce_with = FRA
 							truce_with = BOR
-						}	
+						}
 					}
 				}
 				465 = { add_core = ITA }
 				466 = { add_core = ITA }
 				472 = { add_core = ITA }
 			}
-			
+
 			#Claim Aosta
 			random_owned = {
 				limit = {
 					owner = {
 						is_culture_group = italian
 						has_global_flag = the_treaty_of_milan
-						NOT = { 
+						NOT = {
 							truce_with = FRA
 							truce_with = BOR
-						}	
+						}
 					}
 				}
 				721 = { add_core = ITA }
 			}
 		}
-		
+
 		ai_will_do = {
 			factor = 1
 		}
@@ -793,7 +793,7 @@ political_decisions = {
 			ai = yes
 			NOT = {
 				exists = ITA
-				has_country_flag = war_italian_independence
+				has_global_flag = war_italian_independence
 			}
 			OR = {
 				AUS = {
@@ -840,7 +840,7 @@ political_decisions = {
 		}
 
 		effect = {
-			set_country_flag = war_italian_independence
+			set_global_flag = war_italian_independence
 			any_pop = {
 				limit = { is_primary_culture = yes }
 				militancy = -2
@@ -919,7 +919,7 @@ political_decisions = {
 				create_alliance = THIS
 			}
 		}
-		
+
 		ai_will_do = { factor = 1 }
 	}
 
@@ -933,7 +933,7 @@ political_decisions = {
 				has_global_flag = garibaldi_redshirts
 			}
 		}
-		
+
 		allow = {
 			war = no
 			OR = {
@@ -1004,7 +1004,7 @@ political_decisions = {
 				}
 			}
 		}
-		
+
 		ai_will_do = { factor = 1 }
 	}
 
@@ -1068,7 +1068,7 @@ political_decisions = {
 				}
 			}
 		}
-		
+
 		ai_will_do = { factor = 1 }
 	}
 
@@ -1124,7 +1124,7 @@ political_decisions = {
 						owner = { capital = 744 }
 					}
 					change_tag = TUS
-				}	
+				}
 			}
 			random_country = {
 				limit = {
@@ -1139,7 +1139,7 @@ political_decisions = {
 			factor = 1
 		}
 	}
-	
+
 	treaty_of_ouchy = {
 		picture = treaty_signing
 		potential = {
@@ -1147,7 +1147,7 @@ political_decisions = {
 			has_country_flag = guerra_di_libia
 			NOT = { has_country_flag = treaty_of_ouchy }
 		}
-		
+
 		allow = {
 			war = no
 			owns = 1731
@@ -1157,7 +1157,7 @@ political_decisions = {
 				any_owned_province = { OR =  { is_core = TRI is_core = CYR } }
 			}
 		}
-		
+
 		effect = {
 			set_country_flag = treaty_of_ouchy
 			prestige = 10
@@ -1175,7 +1175,7 @@ political_decisions = {
 				}
 			}
 			random_state = {
-				limit = { 
+				limit = {
 					any_owned_province = { is_core = TUR }
 				}
 				any_owned = {
@@ -1188,21 +1188,21 @@ political_decisions = {
 				value = 100
 			}
 		}
-		
+
 		ai_will_do = {
 			factor = 1
 		}
 	}
-	
+
 	perfect_fusion = {
 		picture = perfect_fusion
 		potential = {
 			tag = SAR
 			NOT = { has_country_flag = perfect_fusion }
 		}
-		
+
 		allow = {
-			OR = { 
+			OR = {
 				state_n_government = 1
 				year = 1847
 			}
@@ -1218,11 +1218,11 @@ political_decisions = {
 			}
 			SRD = { all_core = { owned_by = THIS } }
 		}
-		
+
 		effect = {
 			add_accepted_culture = insular
 			plurality = 5
-			SRD = { 
+			SRD = {
 				all_core = {
 					any_pop = { consciousness = 3 militancy = -9 }
 					remove_core = SRD
@@ -1231,10 +1231,10 @@ political_decisions = {
 			any_pop = { scaled_militancy = { factor = 3 ideology = reactionary  } }
 			set_country_flag = perfect_fusion
 		}
-		
+
 		ai_will_do = { factor = 1 }
 	}
-	
+
 	become_savoy = {
 		potential = {
 			tag = SAR
@@ -1327,14 +1327,14 @@ political_decisions = {
 
 		ai_will_do = { factor = 1 }
 	}
-	
+
 	conquest_of_the_adriatic = {
 	picture = conquest_adriatic
 		potential = {
 			tag = ITA
 			NOT = { has_country_flag = conquest_adriatic_happened }
 		}
-		
+
 		allow = {
 			is_greater_power = yes
 			nationalism_n_imperialism = 1
@@ -1346,7 +1346,7 @@ political_decisions = {
 				war_policy = jingoism
 			}
 		}
-		
+
 		effect = {
 			badboy = 2
 			set_country_flag = conquest_adriatic_happened
@@ -1360,12 +1360,12 @@ political_decisions = {
 			3637 = { add_core = ITA }
 			add_accepted_culture = dalmatian
 		}
-		
+
 		ai_will_do = {
 			factor = 1
 		}
 	}
-	
+
 	reclaim_italian_lands = {
 	picture = reclaim_italian_lands
 		potential = {
@@ -1373,7 +1373,7 @@ political_decisions = {
 			NOT = { has_country_flag = reclaim_italian_lands }
 			has_country_flag = conquest_adriatic_happened
 		}
-		
+
 		allow = {
 			is_greater_power = yes
 			OR = {
@@ -1384,7 +1384,7 @@ political_decisions = {
 				war_policy = jingoism
 			}
 		}
-		
+
 		effect = {
 			badboy = 10
 			set_country_flag = reclaim_italian_lands
@@ -1399,12 +1399,12 @@ political_decisions = {
 			3644 = { add_core = ITA }
 			850 = { add_core = ITA }
 		}
-		
+
 		ai_will_do = {
 			factor = 1
 		}
 	}
-	
+
 	fatherland_altar = {
 	picture = build_vittoriano
 		potential = {
@@ -1419,12 +1419,12 @@ political_decisions = {
 			}
 			NOT = { has_country_flag = vittoriano_built }
 		}
-		
+
 		allow = {
 			money = 10000
 			realism = 1
 		}
-		
+
 		effect = {
 			treasury = -10000
 			prestige = 20
@@ -1457,11 +1457,11 @@ political_decisions = {
 				}
 			}
 		}
-		
+
 		ai_will_do = { factor = 1 }
 	}
-	
-	
+
+
 	abolish_italian_minors = {
 		picture = law_of_guarantees
 		potential = {
@@ -1536,15 +1536,15 @@ political_decisions = {
 			}
 		}
 		ai_will_do = {
-			factor = 1 
+			factor = 1
 			modifier = {
 				factor = 0
 				badboy = 0.9
 			}
 		}
 	}
-	
-	
+
+
 #Appoint Camillo Benso Cavour
 	appoint_camillo_cavour = {
 		picture = SAR_appoint_camillo_cavour
@@ -1568,7 +1568,7 @@ political_decisions = {
 		effect = {
 			set_country_flag = camillo_cavour_appointed
 			add_country_modifier = { name = camillo_cavour duration = 3650 }
-		
+
 			any_pop = {
 				limit = { is_culture_group = italian }
 				militancy = -1
@@ -1576,5 +1576,5 @@ political_decisions = {
 			}
 		}
 	}
-	
+
 }
