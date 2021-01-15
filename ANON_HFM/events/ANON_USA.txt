@@ -1,0 +1,168 @@
+###Canadian Expansion taken from HFM More Stuff found here https://pastebin.com/uVxScsSr
+country_event = {
+	id = 72749
+	title = "The Americans Claim All of Canada"
+	desc = EVTDESC72749
+	picture = "boer_war"
+	is_triggered_only = yes
+
+	option = {
+		name = "We should have burnt that colony to the ground when we had the chance!"
+			ENG_9 = { add_core = ENG }
+			CAN_13 = { add_core = ENG }
+			ENG_22 = { add_core = ENG }
+			ENG_30 = { add_core = ENG }
+			ENG_36 = { add_core = ENG }
+			CAN_46 = { add_core = ENG }
+			CAN_50 = { add_core = ENG }
+			CAN_58 = { add_core = ENG }
+			CAN_60 = { add_core = ENG }
+			ENG_68 = { add_core = ENG }
+			ENG_74 = { add_core = ENG }
+			77 = { remove_core = ENG }
+			ENG_6 = { add_core = CAN }
+			ENG_9 = { add_core = CAN }
+			CAN_13 = { add_core = CAN }
+			CAN_18 = { add_core = CAN }
+			ENG_22 = { add_core = CAN }
+			ENG_30 = { add_core = CAN }
+			ENG_36 = { add_core = CAN }
+			CAN_46 = { add_core = CAN }
+			CAN_50 = { add_core = CAN }
+			CAN_58 = { add_core = CAN }
+			CAN_60 = { add_core = CAN }
+			ENG_68 = { add_core = CAN }
+			ENG_74 = { add_core = CAN }
+			77 = { remove_core = CAN }
+		any_country = {
+			limit = {
+				vassal_of = THIS
+				OR = {
+					tag = CAN
+					tag = COL
+					tag = RPL
+					tag = MRU
+					tag = QUE
+					tag = NEW
+					tag = MTC
+				}
+			}
+			annex_to = THIS
+		}
+		RPL = { all_core = { remove_core = RPL } }
+		war = {
+			target = USA
+			attacker_goal = { casus_belli = cut_down_to_size }
+			defender_goal = { casus_belli = cut_down_to_size }
+			call_ally = yes
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = 994180
+	title = "Release New England"
+	desc = "New England would serve as a valuable ally in the New World."
+	picture = "boer_war"
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = ENG
+		has_global_flag = USA_CAN_denied
+		war = no
+		owns = 243
+	}
+
+
+	option = {
+		name = "Ok."
+		release_vassal = NEN
+		badboy = -5
+		NEN = {
+			primary_culture = yankee
+			add_accepted_culture = anglo_canadian
+			government = democracy
+		}
+		create_alliance = NEN
+		diplomatic_influence = {
+			who = NEN
+			value = 400
+		}
+	}
+}
+
+country_event = {
+	id = 72748
+	title = "Treaty of Ottawa"
+	desc = EVTDESC72748
+	major = yes
+	is_triggered_only = yes
+
+	option = {
+		name = "Will America ever recover from this crushing defeat?"
+		prestige = -30
+		any_pop = {
+			limit = {
+				OR = {
+					is_primary_culture = yes
+					is_accepted_culture = yes
+				}
+			}
+			militancy = 8
+			consciousness = 8
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = 72747
+	title = "Liberation? Or New Overlords?"
+	desc = "The recent war between the United States and our European Overloads has resulted in our so called liberation by American forces."
+	is_triggered_only = yes
+
+	option = {
+		name = "The Americans can't be worse than the Europeans."
+		FROM = {
+			release_vassal = THIS
+			diplomatic_influence = {
+				who = THIS
+				value = -400
+			}
+			leave_alliance = THIS
+		}
+		USA = {
+			diplomatic_influence = {
+				who = THIS
+				value = 400
+			}
+			create_alliance = THIS
+		}
+		government = democracy
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = 72740
+	title = "Treaty of Philadelphia"
+	desc = EVTDESC72740
+	major = yes
+	is_triggered_only = yes
+
+	option = {
+		name = "Damn those colonist! May they freeze in their new territories."
+		prestige = -30
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
