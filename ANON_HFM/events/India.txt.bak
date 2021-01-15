@@ -5,11 +5,11 @@
 #################################################################################
 
 province_event = {
-
+	
 	id = 97100
 	title = "EVTNAME97100" #Rebellion in Indian State
 	desc = "EVTDESC97100"
-
+	
 	trigger = {
 		is_core = HND
 		controlled_by = THIS
@@ -43,11 +43,11 @@ province_event = {
 					average_consciousness = 5
 					average_militancy = 2
 				}
-			}
+			}	
 		}
 		NOT = { poor_strata_everyday_needs = 0.9 }
 	}
-
+	
 	mean_time_to_happen = {
 		months = 600
 		modifier = {
@@ -101,7 +101,7 @@ province_event = {
 			owner = { war = yes }
 		}
 	}
-
+	
 	option = {
 		name = "EVT97100OPTA"
 		state_scope = {
@@ -146,12 +146,12 @@ province_event = {
 }
 
 country_event = {
-
+	
 	id = 97105
 	title = "EVTNAME97105" #Rebellion Against Foreign Rule
 	desc = "EVTDESC97105"
 	picture = "sepoy"
-
+	
 	trigger = {
 		OR = {
 			is_culture_group = south_asian
@@ -185,7 +185,7 @@ country_event = {
 		NOT = { any_owned_province = { has_province_modifier = nationalist_agitation } }
 		NOT = { poor_strata_everyday_needs = 0.7 }
 	}
-
+	
 	mean_time_to_happen = {
 		months = 400
 		modifier = {
@@ -209,7 +209,7 @@ country_event = {
 			NOT = { poor_strata_life_needs = 0.8 }
 		}
 	}
-
+	
 	option = {
 		name = "EVT90040OPTA"
 		random_state = {
@@ -229,15 +229,15 @@ country_event = {
 	}
 }
 
-
+	
 #################################################################################
 #																				#
 #             				Indian Nationalism	Events							#
 #																				#
-#################################################################################
+#################################################################################	
 
 country_event = {
-
+	
 	id = 97110
 	title = "EVTNAME97110" #The Stirrings of Indian Nationalism
 	desc = "EVTDESC97110"
@@ -246,7 +246,7 @@ country_event = {
 	news_desc_medium = "EVTDESC97110_NEWS_MEDIUM"
 	news_desc_short = "EVTDESC97110_NEWS_SHORT"
 	picture = "national_congress"
-
+	
 	trigger = {
 		OR = {
 			is_culture_group = south_asian
@@ -258,9 +258,9 @@ country_event = {
 		revolution_n_counterrevolution = 1
 		NOT = { has_global_flag = indian_call_to_union }
 	}
-
+	
 	fire_only_once = yes
-
+	
 	mean_time_to_happen = {
 		months = 100
 		modifier = {
@@ -312,7 +312,7 @@ country_event = {
 			is_culture_group = south_asian
 		}
 	}
-
+	
 	option = {
 		name = "EVT97110OPTA"
 		set_global_flag = indian_call_to_union
@@ -376,14 +376,14 @@ country_event = {
 }
 
 country_event = {
-
+	
 	id = 97111
 	title = "EVTNAME97110"
 	desc = "EVTDESC97111"
-	picture = "national_congress"
+	picture = "national_congress"	
 
 	is_triggered_only = yes
-
+	
 	option = {
 		name = "EVT97111OPTA"
 		clr_country_flag = sepoy_rebellion
@@ -449,7 +449,7 @@ country_event = {
 	title = "EVTNAME97115" #The Death of Ranjit Singh
 	desc = "EVTDESC97115"
 	picture = "ranjit_singh_death"
-
+	
 	trigger = {
 		tag = PNJ
 		has_country_flag = singh
@@ -458,9 +458,9 @@ country_event = {
 		NOT = { truce_with = ENG }
 		NOT = { has_global_flag = ranjit_singh_dead }
 	}
-
+	
 	mean_time_to_happen = { months = 6 }
-
+	
 	option = {
 		name = "EVT97115OPTA"
 		set_global_flag = ranjit_singh_dead
@@ -484,38 +484,34 @@ country_event = {
 	news_desc_medium = "EVTDESC97116_NEWS_MEDIUM"
 	news_desc_short = "EVTDESC97116_NEWS_SHORT"
 	picture = "ranjit_singh_death"
-
+	
 	trigger = {
 		tag = ENG
 		has_global_flag = ranjit_singh_dead
-		OR = {
-			NOT = {
-				truce_with = PNJ
-				relation = { who = PNJ value = 150 }
-				alliance_with = PNJ
-				}
-			PNJ = { ai = yes }
+		NOT = { 
+			truce_with = PNJ 
+			relation = { who = PNJ value = 150 }
+			alliance_with = PNJ
 		}
-
 		war = no
 		NOT = { has_global_flag = 1_anglo_sikh_war }
 	}
-
+	
 	mean_time_to_happen = {
 		months = 72
 		modifier = { factor = 0.8 PNJ = { average_militancy = 3 } }
-
+		
 		modifier = { factor = 0.5 PNJ = { average_militancy = 7 } }
-
+		
 		modifier = { factor = 0.8 ENG = { ai = yes } }
-
+		
 		modifier = { factor = 0.1 year = 1845 }
-
+		
 		modifier = { factor = 0.01 year = 1846 }
 	}
-
+	
 	immediate = { set_global_flag = 1_anglo_sikh_war }
-
+	
 	option = {
 		name = "EVT97116OPTA"
 		#badboy = 2
@@ -555,7 +551,7 @@ country_event = {
 			factor = 10
 		}
 	}
-
+			
 	option = {
 		name = "EVT97116OPTB"
 		badboy = 2
@@ -563,13 +559,13 @@ country_event = {
 		leave_alliance = PNJ
 		war = {
 			target = PNJ
-			attacker_goal = {
+			attacker_goal = { 
 				casus_belli = great_game_cb
 			}
 			defender_goal = { casus_belli = status_quo }
 			call_ally = no
 		}
-
+		
 		ai_chance = {
 			factor = 90
 		}
@@ -581,16 +577,16 @@ country_event = {
 #	title = "EVTNAME97117"
 #	desc = "EVTDESC97117"
 #	picture = "afghan_tribes"
-#
+#	
 #	trigger = {
 #		NOT = { has_country_modifier = afghan_tribal_warfare }
 #		tag = AFG
 #		war = yes
 #		civilized = no
 #	}
-#
+#	
 #	mean_time_to_happen = { days = 1 }
-#
+#	
 #	option = {
 #		name = "EVT97117OPTA"
 #		add_country_modifier = {
@@ -607,7 +603,7 @@ country_event = {
 	title = "EVTNAME97119"
 	desc = "EVTDESC97119"
 	picture = "death_of_zafar"
-
+	
 	trigger = {
 		war = no
 		owns = 1236
@@ -618,11 +614,11 @@ country_event = {
 		}
 		year = 1862
 	}
-
+	
 	fire_only_once = yes
-
+	
 	mean_time_to_happen = { months = 30 }
-
+	
 	option = {
 		name = "EVT97119OPTA"
 		MUG = { all_core = { remove_core = MUG } }
@@ -637,7 +633,7 @@ province_event = {
 	id = 971200
 	title = "EVTNAME971200"
 	desc = "EVTDESC971200"
-
+	
 	trigger = {
 		year = 1867
 		trade_goods = coffee
@@ -656,13 +652,13 @@ province_event = {
 		}
 		NOT = { year = 1910 }
 	}
-
+	
 	mean_time_to_happen = {
 		months = 24
 		modifier = { factor = 0.5 any_neighbor_province = { trade_goods = tea } }
 		modifier = { factor = 200 province_id = 1455 NOT = { year = 1895 } }
 	}
-
+	
 	option = {
 		name = "EVT971200OPTA"
 		trade_goods = tea
@@ -700,37 +696,37 @@ province_event = {
 	id = 97121
 	title = "EVTNAME97121"
 	desc = "EVTDESC97121"
-
+	
 	trigger = {
 		owner = { has_country_flag = sepoy_rebellion }
-		is_core = HND
+		is_core = HND 
 		any_pop = { is_primary_culture = yes }
 		controlled_by_rebels = yes
 		average_militancy = 2
 		NOT = { year = 1880 }
 		is_colonial = yes
-		owner = {
+		owner = { 
 			NOT = { is_culture_group = indo_iranian }
 			NOT = { is_culture_group = south_asian }
 		}
 	}
-
+	
 	fire_only_once = yes
-
+	
 	allow_multiple_instances  = no
-
+	
 	mean_time_to_happen = {
-		months = 80
+		months = 80 
 		modifier = { factor = 0.5 average_militancy = 4 }
 		modifier = { factor = 0.25 average_militancy = 7 }
 	}
-
+	
 	option = {
 		name = "EVT97121OPTA"
 		any_pop = { limit = { is_primary_culture = yes } reduce_pop = 0.99 }
 		owner = {
 			any_pop = {
-				limit = { is_primary_culture = yes }
+				limit = { is_primary_culture = yes } 
 				scaled_consciousness = { factor = 2 issue = jingoism }
 				dominant_issue = { value = jingoism factor = 0.05 }
 			}

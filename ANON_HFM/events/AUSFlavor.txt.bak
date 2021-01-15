@@ -9,9 +9,9 @@ country_event = {
 		}
 		year = 1836
 	}
-
+	
 	fire_only_once = yes
-
+ 
 	mean_time_to_happen =  {
 		months = 6
 		modifier = {
@@ -29,7 +29,7 @@ country_event = {
 	picture = "smoking"
 
 	option = {
-		name = "EVTOPTA31501"
+		name = "EVTOPTA31501" 
 		rich_strata = {
 			consciousness = 1
 		}
@@ -56,10 +56,10 @@ country_event = {
 			government = hms_government
 		}
 		NOT = {
-			year = 1845
+			year = 1845		
 		}
 	}
-
+	
 	fire_only_once = yes
 
 	mean_time_to_happen =  {
@@ -90,7 +90,7 @@ country_event = {
 				value = reactionary
 				factor = 0.3
 			}
-		}
+		}			
 		any_pop = {
 			scaled_militancy = {
 				factor = -2
@@ -121,7 +121,7 @@ country_event = {
 			has_country_flag = HungarianLanguage
 		}
 	}
-
+ 
 	mean_time_to_happen =  {
 		months = 6
 		modifier = {
@@ -139,7 +139,7 @@ country_event = {
 	picture = "Budapest"
 
 	option = {
-		name = "EVTOPTA31503"
+		name = "EVTOPTA31503" 
 		set_country_flag = HungarianLanguage
 		any_pop = {
 			limit = {
@@ -150,7 +150,7 @@ country_event = {
 			consciousness = -1
 		}
 		any_pop = {
-			limit = {
+			limit = {		
 				OR = {
 					has_pop_culture = slovak
 					has_pop_culture = croat
@@ -206,7 +206,7 @@ country_event = {
 	picture = "Ilija"
 
 	option = {
-		name = "EVTOPTA31504"
+		name = "EVTOPTA31504" 
 		set_country_flag = IlyaGarashinin
 		any_pop = {
 			limit = {
@@ -270,9 +270,9 @@ country_event = {
 			year = 1900
 		}
 	}
-
+	
 	fire_only_once = yes
-
+ 
 	mean_time_to_happen =  {
 		months = 6
 
@@ -293,7 +293,7 @@ country_event = {
 	picture = "Sisi"
 
 	option = {
-		name = "EVTOPTA31502"
+		name = "EVTOPTA31502" 
 		any_pop = {
 			limit = { is_primary_culture = yes }
 			scaled_consciousness = {
@@ -324,9 +324,9 @@ country_event = {
 			year = 1914
 		}
 	}
-
+	
 	fire_only_once = yes
-
+ 
 	mean_time_to_happen =  {
 		months = 6
 
@@ -347,7 +347,7 @@ country_event = {
 	picture = "theatre"
 
 	option = {
-		name = "EVTOPTA31502"
+		name = "EVTOPTA31502" 
 		prestige = 3
 	}
 }
@@ -364,9 +364,9 @@ country_event = {
 		year = 1842
 		NOT = {	exists = LOM }
 	}
-
+	
 	fire_only_once = yes
-
+ 
 	mean_time_to_happen =  {
 		months = 5
 		modifier = {
@@ -384,12 +384,12 @@ country_event = {
 	picture = "Verdi"
 
 	option = {
-		name = "EVTOPTA35400"
+		name = "EVTOPTA35400" 
 		prestige = 15
-		any_pop = {
-			limit = {
-				has_pop_culture = north_italian
-			}
+		any_pop = { 
+			limit = { 
+				has_pop_culture = north_italian 
+			} 
 			consciousness = 3
 			militancy = 6
 		}
@@ -417,9 +417,9 @@ country_event = {
 			has_country_flag = committee_polish_independence
 			year = 1850
 			primary_culture = polish
-		}
+		}	
 	}
-
+	
 	mean_time_to_happen =  {
 		months = 5
 		modifier = {
@@ -450,7 +450,7 @@ country_event = {
 				name = nationalist_agitation
 				duration = 365
 			}
-		}
+		}	
 	}
 }
 
@@ -471,13 +471,13 @@ country_event = {
 			has_country_flag = liberal_revolution_in_progress
 			has_country_modifier = springtime_of_nations
 		}
-		NOT = {
+		NOT = { 
 			exists = HUN
 			press_rights = free_press
 			has_global_flag = hungarian_revolution_occurred
 		}
 		any_state = {
-			any_owned_province = {
+			any_owned_province = { 
 				is_core = HUN
 				culture = hungarian
 			}
@@ -492,7 +492,7 @@ country_event = {
 		modifier = {
 			factor = 0.5
 			any_state = {
-				any_owned_province = {
+				any_owned_province = { 
 					is_core = HUN
 					culture = hungarian
 				}
@@ -577,7 +577,7 @@ country_event = {
 			tag = KUK
 		}
 		year = 1849
-		NOT = {
+		NOT = { 
 			exists = BOH
 			exists = CZH
 		}
@@ -612,12 +612,12 @@ country_event = {
 				name = nationalist_agitation
 				duration = 365
 			}
-		}
+		}				
 	}
 }
 
 country_event = {
-
+	
 	id = 90016 # Archduke Ferdinand's Assassination
 
 	title = "EVTNAME90016"
@@ -664,7 +664,7 @@ country_event = {
 			revolt_percentage = .25
 			truce_with = SER
 			is_sphere_leader_of = SER
-		}
+		}		
 	}
 
 	mean_time_to_happen = {
@@ -674,7 +674,7 @@ country_event = {
 	immediate = {
 		set_country_flag = ferdinand_assassinated
 	}
-
+	
 	option = {
 		name = "EVT90016OPTA"
 		any_owned = {
@@ -702,7 +702,7 @@ country_event = {
 			attacker_goal = {
 				casus_belli = conquest_any
 			}
-		}
+		}	
 		any_pop = {
 			limit = { is_primary_culture = yes }
 			militancy = -6
@@ -776,12 +776,12 @@ country_event = {
 
 	trigger = {
 		tag = AUS
-		has_global_flag = krakow_uprising
+		has_global_flag = krakow_uprising 
 	}
-	mean_time_to_happen = { days = 1 }
-
+	mean_time_to_happen = { days = 1 } 
+	
 	fire_only_once = yes
-
+	
 	option = {
 		name = "EVT600050OPTA" #Talk with the other powers
 		random_country = {
@@ -798,17 +798,17 @@ country_event = {
 		country_event = 600052
 		}
 		RUS = { country_event = 600052 }
-
+		
 		ai_chance = {
 			factor = 0.95
 			modifier = { factor = 0 KRA = { ai = no } }
 		}
 	}
-
+	
 	option = {
 		name = "EVT600050OPTB" #Suppress the Poles! Occupy Krakow!
 		set_global_flag = krakow_war
-		703 = { add_core = GLM }
+		703 = { add_core = GLM add_core = AUS }
 		badboy = 10
 		prestige = -5
 		any_pop = { limit = { has_pop_culture = polish } militancy = 3 consciousness = 5 }
@@ -835,7 +835,7 @@ country_event = {
 			modifier = { factor = 0 KRA = { ai = no } }
 		}
 	}
-
+	
 	option = {
 		name = "EVT600050OPTC" #Ignore the Poles. They are harmless.
 		prestige = -40
@@ -858,7 +858,7 @@ country_event = {
 
 	is_triggered_only = yes
 	fire_only_once = yes
-
+	
 	option = {
 		name = "EVT600052OPTA" #Yes
 		random_owned = { limit = { owner = { primary_culture = north_german } } owner = { set_global_flag = prussia_agrees } }
@@ -869,20 +869,20 @@ country_event = {
 			modifier = { factor = 0.9 NOT = { relation = { who = AUS value = 50 } } }
 		}
 	}
-
+	
 	option = {
 		name = "EVT600052OPTB" #No
 		random_owned = {
 			limit = { owner = { primary_culture = north_german } }
-			owner = { set_global_flag = prussia_disagrees set_country_flag = prussia_disagrees }
+			owner = { set_global_flag = prussia_disagrees set_country_flag = prussia_disagrees } 
 		}
 		random_owned = {
 			limit = { owner = { primary_culture = russian } }
-			owner = { set_global_flag = russia_disagrees set_country_flag = russia_disagrees }
+			owner = { set_global_flag = russia_disagrees set_country_flag = russia_disagrees } 
 		}
 		relation = { who = AUS value = -100 }
 		any_pop = { limit = { is_culture_group = polish_culture_group } militancy = 7 consciousness = 9 }
-		ai_chance = {
+		ai_chance = { 
 			factor = 0.01
 			modifier = { factor = 1.5 NOT = { relation = { who = AUS value = 0 } } }
 			modifier = { factor = 1.75 NOT = { relation = { who = AUS value = 50 } } }
@@ -907,12 +907,12 @@ country_event = {
 		has_global_flag = prussia_agrees
 		has_global_flag = russia_agrees
 	}
-
-	mean_time_to_happen = { days = 4 }
-
+	
+	mean_time_to_happen = { days = 4 } 
+	
 	fire_only_once = yes
 
-
+	
 	option = {
 		name = "EVT600054OPTA" #to krakow!
 		set_global_flag = krakow_war
@@ -920,12 +920,12 @@ country_event = {
 		clr_global_flag = russia_agrees
 		prestige = 10
 		badboy = 3
-		703 = { add_core = GLM }
+		703 = { add_core = GLM add_core = AUS }
 		any_pop = { limit = { has_pop_culture = polish } militancy = 1 consciousness = 5 }
 		KRA = { country_event = 666666006 }
 		ai_chance = { factor = 100 }
 	}
-
+	
 	option = {
 		name = "EVT600054OPTB" # refuse to take action
 		clr_global_flag = prussia_agrees
@@ -967,11 +967,11 @@ country_event = {
 			}
 		}
 	}
-
-	mean_time_to_happen = { days = 4 }
-
+	
+	mean_time_to_happen = { days = 4 } 
+	
 	fire_only_once = yes
-
+	
 	option = {
 		name = "EVT600055OPTA" #We don't care
 		set_global_flag = krakow_war
@@ -979,7 +979,7 @@ country_event = {
 		clr_global_flag = russia_agrees
 		clr_country_flag = prussia_disagrees
 		clr_country_flag = russia_disagrees
-		703 = { add_core = GLM }
+		703 = { add_core = GLM add_core = AUS }
 		badboy = 7
 		any_pop = { limit = { has_pop_culture = polish } militancy = 6 consciousness = 7 }
 		any_country = {
@@ -999,7 +999,7 @@ country_event = {
 			modifier = { factor = 0 badboy = 0.6 }
 		}
 	}
-
+	
 	option = {
 		name = "EVT600055OPTB" # refuse to take action
 		clr_global_flag = prussia_agrees
@@ -1023,7 +1023,7 @@ country_event = {
 	title = "EVTNAME600056"
 	desc = "EVTDESC600056"
 	picture = "krakow_uprising"
-
+	
 	trigger = {
 		KRA = { war = no exists = yes }
 		has_global_flag = krakow_succeeded
@@ -1039,23 +1039,23 @@ country_event = {
 			tag = KUK
 		}
 	}
-
-	mean_time_to_happen = { months = 24 }
-
+	
+	mean_time_to_happen = { months = 24 } 
+	
 	option = {
 		name = "EVT600056OPTA"
 		random_owned = { limit = { owner = { ai = yes } } owner = { add_casus_belli = { target = KRA type = conquest months = 36 } } }
 		any_owned = { limit = { any_core = { primary_culture = polish } } add_province_modifier = { name = polish_spirit duration = 180 } }
 	}
 }
-
+		
 country_event = {
 
 	id = 60055557
 	title = "EVTNAME60055557"
 	desc = "EVTDESC60055557"
 	picture = "polish_uprising_aus"
-
+	
 	trigger = {
 		OR = {
 			tag = AUS
@@ -1067,11 +1067,11 @@ country_event = {
 		}
 		debt_law = serfdom
 	}
-
+	
 	fire_only_once = yes
-
-	mean_time_to_happen = { months = 1 }
-
+	
+	mean_time_to_happen = { months = 1 } 
+	
 	option = {
 		name = "EVT60055557OPTA"
 		set_country_flag = serfdom_abolished_generic
@@ -1105,7 +1105,7 @@ country_event = {
 		}
 		ai_chance = { factor = 80 }
 	}
-
+		
 	option = {
 		name = "EVT60055557OPTB"
 		set_country_flag = serfdom_abolished_generic
@@ -1142,7 +1142,7 @@ country_event = {
 		}
 		ai_chance = { factor = 20 }
 		}
-
+		
 	option = {
 		name = "EVT60055557OPTC"
 		set_country_flag = serfdom_abolished_generic
@@ -1178,7 +1178,7 @@ country_event = {
 		}
 		ai_chance = { factor = 0 }
 		}
-
+		
 	option = {
 		name = "EVT60055557OPTD"
 		clr_global_flag = krakow_uprising
@@ -1200,16 +1200,16 @@ country_event = {
 	title = "EVTNAME60055558"
 	desc = "EVTDESC60055558"
 	picture = "croatian_settlement"
-
+	
 	trigger = {
 		tag = KUK
 		any_owned_province = { is_core = CRO }
 	}
-
+	
 	fire_only_once = yes
-
-	mean_time_to_happen = { months = 1 }
-
+	
+	mean_time_to_happen = { months = 1 } 
+	
 	option = {
 		name = "EVT60055558OPTA"
 		CRO = { all_core = { remove_core = HUN } }
@@ -1225,9 +1225,9 @@ country_event = {
 	title = "EVTNAME60055559"
 	desc = "EVTDESC60055559"
 	picture = "danishgovernment"
-
+	
 	is_triggered_only = yes
-
+	
 	option = {
 		name = "EVT60055559OPTA"
 		623 = { #Sopron
@@ -1261,7 +1261,7 @@ country_event = {
 		FROM = { badboy = -2 }
 		ai_chance = { factor = 0.95 }
 	}
-
+	
 	option = {
 		name = "EVT60055559OPTB"
 		relation = { who = FROM value = -110 }
