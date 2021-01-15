@@ -1,10 +1,11 @@
-color = { 206  43  55 }
+color = { 59  148  65 }
+fascist_dictatorship = { 97 137 61 }
 graphical_culture = ItalianGC
 
 party = {
-	name = "ITS_reactionary"
+	name = "ITA_reactionary"
 	start_date = 1830.1.1
-	end_date = 2000.1.1
+	end_date = 9000.1.1
 
 	ideology = reactionary
 
@@ -17,7 +18,7 @@ party = {
 }
 
 party = {
-	name = "ITS_conservative"
+	name = "ITA_conservative"
 	start_date = 1830.1.1
 	end_date = 1913.1.1
 
@@ -32,9 +33,9 @@ party = {
 }
 
 party = {
-	name = "ITS_conservative_2"
+	name = "ITA_conservative_2"
 	start_date = 1912.1.1
-	end_date = 2000.1.1
+	end_date = 9000.1.1
 
 	ideology = conservative
 
@@ -47,9 +48,9 @@ party = {
 }
 
 party = {
-	name = "ITS_conservative_3"
+	name = "ITA_conservative_3"
 	start_date = 1880.1.1
-	end_date = 2000.1.1
+	end_date = 9000.1.1
 
 	ideology = conservative
 
@@ -62,7 +63,7 @@ party = {
 }
 
 party = {
-	name = "ITS_liberal"
+	name = "ITA_liberal"
 	start_date = 1830.1.1
 	end_date = 1913.1.1
 
@@ -77,9 +78,9 @@ party = {
 }
 
 party = {
-	name = "ITS_liberal_2"
+	name = "ITA_liberal_2"
 	start_date = 1880.1.1
-	end_date = 2000.1.1
+	end_date = 9000.1.1
 
 	ideology = liberal
 
@@ -93,7 +94,7 @@ party = {
 
 
 party = {
-	name = "ITS_socialist"
+	name = "ITA_socialist"
 	start_date = 1848.1.1
 	end_date = 1922.1.1
 
@@ -108,9 +109,9 @@ party = {
 }
 
 party = {
-	name = "ITS_socialist_2"
+	name = "ITA_socialist_2"
 	start_date = 1892.1.1
-	end_date = 2000.1.1
+	end_date = 9000.1.1
 
 	ideology = socialist
 
@@ -123,9 +124,9 @@ party = {
 }
 
 party = {
-	name = "ITS_anarcho_liberal"
+	name = "ITA_anarcho_liberal"
 	start_date = 1830.1.1
-	end_date = 2000.1.1
+	end_date = 9000.1.1
 
 	ideology = anarcho_liberal
 
@@ -138,9 +139,9 @@ party = {
 }
 
 party = {
-	name = "ITS_communist"
+	name = "ITA_communist"
 	start_date = 1848.1.1
-	end_date = 2000.1.1
+	end_date = 9000.1.1
 
 	ideology = communist
 
@@ -153,9 +154,9 @@ party = {
 }
 
 party = {
-	name = "ITS_fascist"
+	name = "ITA_fascist"
 	start_date = 1900.1.1
-	end_date = 2000.1.1
+	end_date = 9000.1.1
 
 	ideology = fascist
 
@@ -178,26 +179,26 @@ unit_names = {
 		"Dante Alighieri" "Conti di Cavour" "Giulio Cesare" "Leonarda da Vince" "Andrea Doria" Duilio "Francesco Caracciolo" Littorio Roma Terribile Formidabile "Principe di Carignano" Messina "Conte Verde" "Re d'Italia" "Re di Portogallo" "Regina Maria Pia" "San Martino" Castelfidardo Ancona Affondatore "Principe Amedeo" Italia Lepanto "Ruggiero di Lauria" "Francesco Morosini" "Emanuele Filiberto"
 	}
 	manowar = {
-		Sicilia Sardegna Puglia Libia Campania Basilicata Quarto Venezia Trento "Valle d'Aosta" Piemonte Liguria Lombardia Veneto Trentino Friuli "Emilia-Romagna" Toscana Marche Umbria Lazio Abruzzo Molise Calabria 
+		Sicilia Sardegna Puglia Libia Campania Basilicata Quarto Venezia Trento "Valle d'Aosta" Piemonte Liguria Lombardia Veneto Trentino Friuli "Emilia-Romagna" Toscana Marche Umbria Lazio Abruzzo Molise Calabria
 	}
 	cruiser = {
-		"Marco Polo" "Carlo Alberto" "Vettor Pisani" Amalfi Pisa "San Giorgio" "San Marco" "Nino Bixio" Marsala Taranto Brindisi Bari Trieste Fiume Gorizia Pola Zara Bolzano 
+		"Marco Polo" "Carlo Alberto" "Vettor Pisani" "General Garibaldi" "General San Martin" "General Belgrano" "General Pueyrredon" Amalfi Pisa "San Giorgio" "San Marco" "Nino Bixio" Marsala Taranto Brindisi Bari Trieste Fiume Gorizia Pola Zara Bolzano
 	}
 	frigate = {
-		Fulmine Lampo Freccia Dardo Strale Euro Ostro Nembo Turbine Aquilone Borea Zeffiro Espero Artigliere Bersagliere Corazziere
+		Fulmine Lampo Freccia Dardo Strale Euro Ostro Nembo Turbine Aquilone Borea Zeffiro Espero Artigliere Bersagliere Corazziere Garibaldino
 		Granatiere Lanciere Alpino Fuciliere Pontiere Ascaro Indomito Impavido Impetuoso Insidioso Intrepido Irrequieto Ardito Ardente Audace Animoso
 	}
 	monitor = {
 		"Dante Alighieri" "Conti di Cavour" "Giulio Cesare" "Leonarda da Vince" "Andrea Doria" Duilio "Francesco Caracciolo" Littorio Roma Terribile Formidabile "Principe di Carignano" Messina "Conte Verde" "Re d'Italia" "Re di Portogallo" "Regina Maria Pia" "San Martino" Castelfidardo Ancona Affondatore "Principe Amedeo" Italia Lepanto "Ruggiero di Lauria" "Francesco Morosini" "Emanuele Filiberto"
-		
+
 	}
 	clipper_transport = {
-		 
+
 	}
 	steam_transport = {
-	
+
 	}
 	commerce_raider = {
-		"Rosolino Pilo" "Giuseppe Cesare Abba" "Pilade Bronzetti" "Giuseppe Missori" "Antonio Mosto" "Ippolito Nievo" "Francesco Nullo" "Simone Schiaffino" "Giuseppe Sirtori" "Giovanni Acerbi" "Vincenzo Giordano Orsini" "Francesco Stucco"  
+		"Rosolino Pilo" "Giuseppe Cesare Abba" "Pilade Bronzetti" "Giuseppe Missori" "Antonio Mosto" "Ippolito Nievo" "Francesco Nullo" "Simone Schiaffino" "Giuseppe Sirtori" "Giovanni Acerbi" "Vincenzo Giordano Orsini" "Francesco Stucco"
 	}
 }
