@@ -9,9 +9,9 @@ country_event = {
 	title = "EVTNAME97500" #Sovereign Authority in the Holy Land
 	desc = "EVTDESC97500"
 	picture = "french_on_crimean_war"
-	
+
 	is_triggered_only = yes
-	
+
 	option = {
 		name = "EVT97500OPTA"
 		prestige = 10
@@ -36,7 +36,7 @@ country_event = {
 			}
 		}
 	}
-	
+
 	option = {
 		name = "EVT97500OPTB"
 		set_global_flag = france_protector_of_eastern_christians
@@ -68,9 +68,9 @@ country_event = {
 	title = "EVTNAME97501" #Turks Refuse Our Claim
 	desc = "EVTDESC97501"
 	picture = "ottoman"
-	
+
 	is_triggered_only = yes
-	
+
 	option = {
 		name = "EVT97501OPTA"
 		TUR = { country_event = 97502 }
@@ -80,7 +80,7 @@ country_event = {
 			factor = 99
 		}
 	}
-	
+
 	option = {
 		name = "EVT97501OPTB"
 		prestige = -50
@@ -96,14 +96,20 @@ country_event = {
 	title = "EVTNAME97502" #French Escalation
 	desc = "EVTDESC97502"
 	picture = "crimean_war_ships"
-	
+
 	is_triggered_only = yes
-	
+
 	option = {
 		name = "EVT97502OPTA"
 		set_global_flag = france_protector_of_eastern_christians
 		prestige = -20
-		create_alliance = FROM
+		any_country = {
+			limit = {
+				tag = FROM
+				NOT = { has_global_flag = aus_dominate_italy_russia_backed_austria }
+			}
+			create_alliance = THIS
+		}
 		FROM = { country_event = 97504 }
 		RUS = { country_event = 97503 }
 		ai_chance = {
@@ -114,7 +120,7 @@ country_event = {
 			}
 		}
 	}
-	
+
 	option = {
 		name = "EVT97502OPTB"
 		set_country_flag = refused_french_claim
@@ -157,9 +163,9 @@ country_event = {
 	news_desc_medium = "EVTDESC97503_NEWS_MEDIUM"
 	news_desc_short = "EVTDESC97503_NEWS_SHORT"
 	picture = "russian_claims_on_holy_land"
-	
+
 	is_triggered_only = yes
-	
+
 	option = {
 		name = "EVT97503OPTA"
 		diplomatic_influence = { who = TUR value = -400 }
@@ -172,9 +178,9 @@ country_event = {
 	title = "EVTNAME97504" #Ottomans Have Agreed
 	desc = "EVTDESC97504"
 	picture = "ottoman"
-	
+
 	is_triggered_only = yes
-	
+
 	option = {
 		name = "EVT97504OPTA"
 		prestige = 20
@@ -189,9 +195,15 @@ country_event = {
 			relation = { who = FRA value = -25 }
 			relation = { who = BOR value = -25 }
 		}
-		diplomatic_influence = { who = TUR value = 300 }
-		relation = { who = TUR value = 300 }
-		create_alliance = TUR
+		any_country = {
+			limit = {
+				tag = TUR
+				NOT = { has_global_flag = aus_dominate_italy_russia_backed_austria }
+			}
+			create_alliance = THIS
+			diplomatic_influence = { who = TUR value = 300 }
+			relation = { who = TUR value = 300 }
+		}
 	}
 }
 
@@ -200,7 +212,7 @@ country_event = {
 	title = "EVTNAME97505" #French Authority in the Holy Land
 	desc = "EVTDESC97505"
 	picture = "french_on_crimean_war"
-	
+
 	trigger = {
 		tag = TUR
 		has_country_flag = refused_french_claim
@@ -218,15 +230,15 @@ country_event = {
 			}
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		days = 10
 	}
-	
+
 	immediate = {
 		clr_country_flag = refused_french_claim
 	}
-	
+
 	option = {
 		name = "EVT97505OPTA"
 		set_global_flag = france_protector_of_eastern_christians
@@ -235,7 +247,7 @@ country_event = {
 			limit = {
 				primary_culture = french
 				capital = 425
-			}	
+			}
 			country_event = 97504
 		}
 		RUS = { country_event = 97503 }
@@ -247,9 +259,9 @@ country_event = {
 	title = "EVTNAME97505" #UK's Response
 	desc = "EVTDESC97506"
 	picture = "ottoman"
-	
+
 	fire_only_once = yes
-	
+
 	trigger = {
 		tag = ENG
 		is_greater_power = yes
@@ -262,11 +274,11 @@ country_event = {
 			has_global_flag = treaty_of_paris_russia
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		days = 10
 	}
-	
+
 	option = {
 		name = "EVT97506OPTA"
 		prestige = -10
@@ -286,7 +298,7 @@ country_event = {
 			}
 		}
 	}
-	
+
 	option = {
 		name = "EVT97506OPTB"
 		set_country_flag = england_protecting_interests
@@ -302,6 +314,10 @@ country_event = {
 				factor = 0.5
 				alliance_with = RUS
 			}
+			modifier = {
+				factor = 0
+				has_global_flag = aus_dominate_italy_russia_backed_austria
+			}
 		}
 	}
 }
@@ -311,9 +327,9 @@ country_event = {
 	title = "EVTNAME97507" #The War is Lost
 	desc = "EVTDESC97507"
 	picture = "crimean_war_defeat"
-	
+
 	fire_only_once = yes
-	
+
 	trigger = {
 		tag = TUR
 		RUS = { war_with = TUR }
@@ -330,9 +346,9 @@ country_event = {
 			NOT = { country_units_in_province = TUR }
 			province_control_days = 90
 		}
-		national_provinces_occupied = .60		
+		national_provinces_occupied = .60
 	}
-	
+
 	mean_time_to_happen = {
 		months = 8
 		modifier = {
@@ -352,7 +368,7 @@ country_event = {
 			NOT = { total_amount_of_divisions = 5 }
 		}
 	}
-	
+
 	option = {
 		name = "EVT97507OPTA"
 		prestige = -20
@@ -373,9 +389,9 @@ country_event = {
 	title = "EVTNAME97508" #The Ottoman Surrender
 	desc = "EVTDESC97508"
 	major = yes
-	
+
 	is_triggered_only = yes
-	
+
 	option = {
 		name = "EVT97508OPTA"
 		set_country_flag = crimean_surrender
@@ -390,7 +406,7 @@ country_event = {
 		}
 		ai_chance = { factor = 100 }
 	}
-	
+
 	option = {
 		name = "EVT97508OPTB"
 		ai_chance = { factor = 0 }
@@ -402,9 +418,9 @@ country_event = {
 	title = "EVTNAME97509"
 	desc = "EVTDESC97509"
 	picture = "crimean_war_defeat"
-	
+
 	is_triggered_only = yes
-	
+
 	option = {
 		name = "EVT97509OPTA"
 		any_country = {
@@ -425,9 +441,9 @@ country_event = {
 	title = "EVTNAME97511"
 	desc = "EVTDESC97511"
 	picture = "crimean_war_defeat"
-	
+
 	is_triggered_only = yes
-	
+
 	option = {
 		name = "EVT97511OPTA"
 		any_country = {
@@ -446,9 +462,9 @@ country_event = {
 	news_desc_medium = "EVTDESC97512_NEWS_MEDIUM"
 	news_desc_short = "EVTDESC97512_NEWS_SHORT"
 	picture = "treaty_of_paris_1856"
-	
+
 	is_triggered_only = yes
-	
+
 	option = {
 		name = "EVT97512OPTA"
 		prestige = -20
@@ -466,7 +482,7 @@ country_event = {
 			limit = { region = TUR_885 }
 			secede_province = TCA
 		}
-		
+
 		# Any Montenegran lands given to Montenegro, it is freed if vassaled
 		any_owned = {
 			limit = { is_core = MON }
@@ -479,7 +495,7 @@ country_event = {
 			}
 			TUR = { release_vassal = MON }
 		}
-		
+
 		# Give Bulgaria, Eastern Rumelia and Silestre to Bulgaria, free it if vassaled
 		random_country = {
 			limit = {
@@ -517,7 +533,7 @@ country_event = {
 			}
 			secede_province = BUL
 		}
-		
+
 		# Free Serbia if it is owned, return Nis, Leskovac
 		random_owned = {
 			limit = {
@@ -551,7 +567,7 @@ country_event = {
 			}
 			TUR = { release_vassal = SER }
 		}
-		
+
 		# Thessalia, S. Macedonia returned to Greece
 		random_country = {
 			limit = {
@@ -591,7 +607,7 @@ country_event = {
 					secede_province = GRE
 				}
 			}
-		}	
+		}
 		random_owned = {
 			limit = {
 				province_id = 842 #Patras
@@ -603,7 +619,7 @@ country_event = {
 				}
 			}
 		}
-		
+
 		#If Samos does not exist, release as vassal
 		random_owned = {
 			limit = {
@@ -648,8 +664,8 @@ country_event = {
 					months = 60
 				}
 			}
-		}	
-		
+		}
+
 		random_country = {
 			limit = {
 				tag = ENG
@@ -673,19 +689,19 @@ country_event = {
 			military_access = TUR
 			diplomatic_influence = { who = TUR value = 100 }
 			relation = { who = TUR value = 200 }
-			
+
 			relation = { who = SER value = 400 }
 			diplomatic_influence = { who = SER value = 200 }
 			create_alliance = SER
-			
+
 			relation = { who = BUL value = 400 }
 			diplomatic_influence = { who = BUL value = 200 }
 			create_alliance = BUL
-			
+
 			relation = { who = MON value = 400 }
 			diplomatic_influence = { who = MON value = 200 }
 			create_alliance = MON
-			
+
 			relation = { who = ROM value = 400 }
 			diplomatic_influence = { who = ROM value = 200 }
 			create_alliance = ROM
@@ -745,14 +761,14 @@ country_event = {
 	news_desc_medium = "EVTDESC97510_NEWS_MEDIUM"
 	news_desc_short = "EVTDESC97510_NEWS_SHORT"
 	picture = "treaty_of_paris_1856"
-	
+
 	is_triggered_only = yes
-	
+
 	option = {
 		name = "EVT97510OPTA"
 		prestige = -10
 		remove_country_modifier = protector_of_eastern_christendom
-		348 = { 
+		348 = {
 			fort = -3
 			naval_base = -3
 			secede_province = FIN
@@ -787,7 +803,7 @@ country_event = {
 			factor = 99
 		}
 	}
-	
+
 	option = {
 		name = "EVT97510OPTB"
 		ROM = { all_core = { remove_core = RUS } }
@@ -909,7 +925,7 @@ country_event = {
 			factor = 95
 		}
 	}
-	
+
 	option = {
 		name = "EVT97515OPTB"
 		prestige = -5
@@ -973,7 +989,7 @@ country_event = {
 			}
 		}
 	}
-	
+
 	option = {
 		name = "EVT97516OPTB"
 		prestige = -5
@@ -1052,9 +1068,9 @@ country_event = {
 	title = "EVTNAME97520"
 	desc = "EVTDESC97520"
 	picture = "Celebration"
-	
+
 	fire_only_once = yes
-	
+
 	trigger = {
 		tag = ROM
 		has_country_flag = romanian_war_of_independence
@@ -1069,11 +1085,11 @@ country_event = {
 			truce_with = TUR
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		days = 3
 	}
-	
+
 	option = {
 		name = "EVT97520OPTA"
 		clr_country_flag = romanian_war_of_independence
@@ -1082,7 +1098,7 @@ country_event = {
 		3417 = { secede_province = ROM add_core = RUS }
 		ai_chance = { factor = 100 }
 	}
-	
+
 	option = {
 		name = "EVT97520OPTB"
 		clr_country_flag = romanian_war_of_independence
@@ -1098,7 +1114,7 @@ country_event = {
 			}
 		}
 		ai_chance = { factor = 0 }
-	}	
+	}
 }
 
 country_event = {
@@ -1108,7 +1124,7 @@ country_event = {
 	picture = "ottoman"
 
 	fire_only_once = yes
-	
+
 	trigger = {
 		tag = ROM
 		has_country_flag = romanian_war_of_independence
@@ -1121,14 +1137,14 @@ country_event = {
 			NOT = { owns = 3347 }
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		days = 3
 	}
-	
+
 	option = {
 		name = "EVT97521OPTA"
-		clr_country_flag = romanian_war_of_independence	
+		clr_country_flag = romanian_war_of_independence
 		any_pop = {
 			limit = { is_primary_culture = yes }
 			militancy = 5
@@ -1192,7 +1208,7 @@ country_event = {
 		}
 		ai_chance = { factor = 100 }
 	}
-	
+
 	option = {
 		name = "EVT97525OPTB"
 		prestige = -25
@@ -1238,7 +1254,7 @@ country_event = {
 		}
 		ai_chance = { factor = 100 }
 	}
-	
+
 	option = {
 		name = "EVT97525OPTB"
 		prestige = -25

@@ -895,14 +895,11 @@ country_event = { #French diplomatic victory
 
   option = {
     name = "EVT777202013OPTA"
-    random_country = {
-      limit = {
-        tag = THIS
-        has_global_flag = aus_dominate_italy_fra_claim_savoy
+    THIS = {
+      all_core = {
+        limit = { owned_by = SAR }
+        secede_province = THIS
       }
-      465 = { secede_province = THIS }
-      466 = { secede_province = THIS }
-      472 = { secede_province = THIS }
     }
     diplomatic_influence = {
       who = SAR
