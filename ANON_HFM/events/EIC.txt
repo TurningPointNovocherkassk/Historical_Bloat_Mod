@@ -52,9 +52,9 @@ country_event = {
 	title = "EVTNAME9990000"
 	desc = "EVTDESC9990002"
 	picture = "deliberation"
-	
+
 	is_triggered_only = yes
-	
+
 	option = {
 		name = "EVT9990002OPTA"
 		3263 = { add_core = HND }
@@ -89,129 +89,142 @@ country_event = {
 			}
 		}
 		ai_chance = {
-			factor = 1
+			factor = 10
 			modifier = {
-				factor = 25
+				factor = 9
 				ENG = {
-					NOT = {
-						OR = {
-							ruling_party_ideology = fascist
-							ruling_party_ideology = conservative
-							ruling_party_ideology = reactionary
-							ruling_party_ideology = anarcho_liberal
-						}
-					}
+					NOT = { rank = 1 }
+					rank = 2
 				}
 			}
 			modifier = {
-				factor = 25
-				OR = {
-					ENG = {
-						exists = yes
-						NOT = { owns = 81 }
-					}
-					ENL = {
-						exists = yes
-						NOT = { owns = 81 }
-					}
+				factor = 90
+				ENG = {
+					NOT = { rank = 2 }
 				}
 			}
-			modifier = {
-				factor = 75
-				BUR = {
-					exists = yes
-					is_vassal = no
-					OR = {
-						owns = 1332 #Pegu
-						owns = 1330 #Rangoon
-						owns = 1331 #Bassein
-					}
-				}
-			}
-			modifier = {
-				factor = 75
-				PER = {
-					owns = 1212 #Herat
-				}
-			}
-			modifier = {
-				factor = 75
-				AFG = {
-					has_country_flag = rejected_durand
-					exists = yes
-					is_vassal = no
-				}
-			}
-			modifier = {
-				factor = 75
-				PNJ = {
-					has_country_flag = ranjit_singh_dead
-					exists = yes
-					is_vassal = no
-				}
-			}
-			modifier = {
-				factor = 75
-				MUG = {
-					exists = yes
-					is_vassal = no
-				}
-			}
-			modifier = {
-				factor = 75
-				RUS = {
-					any_neighbor_country = {
-						tag = EIC
-					}
-				}
-			}
-			modifier = {
-				factor = 100
-				QNG = {	has_country_flag = second_opium_war	}
-				OR = {
-					ENG = {
-						has_recently_lost_war = yes
-						truce_with = QNG
-						NOT = { any_owned = { is_core = { CHI } } } 
-					}
-					ENL = {
-						has_recently_lost_war = yes
-						truce_with = QNG
-						NOT = { any_owned = { is_core = { CHI } } } 
-					}
-				}
-			}
-			modifier = {
-				factor = 100
-				THIS = {
-					OR = {
-						ruling_party_ideology = fascist
-						ruling_party_ideology = reactionary
-						ruling_party_ideology = anarcho_liberal
-						ruling_party_ideology = communist
-					}
-				}
-			}
-			modifier = {
-				factor = 100
-				ENL = { exists = yes }
-			}
-			modifier = {
-				factor = 100
-				1587 = { #Lhasa
-					owned_by = RUS #event for RUS to help them
-				}
-			}
-			modifier = {
-				factor = 100
-				IRE = {
-					exists = yes
-					is_vassal = no
-				}
-			}
+			#modifier = {
+			#	factor = 25
+			#	ENG = {
+			#		NOT = {
+			#			OR = {
+			#				ruling_party_ideology = fascist
+			#				ruling_party_ideology = conservative
+			#				ruling_party_ideology = reactionary
+			#				ruling_party_ideology = anarcho_liberal
+			#			}
+			#		}
+			#	}
+			#}
+			#modifier = {
+			#	factor = 25
+			#	OR = {
+			#		ENG = {
+			#			exists = yes
+			#			NOT = { owns = 81 }
+			#		}
+			#		ENL = {
+			#			exists = yes
+			#			NOT = { owns = 81 }
+			#		}
+			#	}
+			#}
+			#modifier = {
+			#	factor = 75
+			#	BUR = {
+			#		exists = yes
+			#		is_vassal = no
+			#		OR = {
+			#			owns = 1332 #Pegu
+			#			owns = 1330 #Rangoon
+			#			owns = 1331 #Bassein
+			#		}
+			#	}
+			#}
+			#modifier = {
+			#	factor = 75
+			#	PER = {
+			#		owns = 1212 #Herat
+			#	}
+			#}
+			#modifier = {
+			#	factor = 75
+			#	AFG = {
+			#		has_country_flag = rejected_durand
+			#		exists = yes
+			#		is_vassal = no
+			#	}
+			#}
+			#modifier = {
+			#	factor = 75
+			#	PNJ = {
+			#		has_country_flag = ranjit_singh_dead
+			#		exists = yes
+			#		is_vassal = no
+			#	}
+			#}
+			#modifier = {
+			#	factor = 75
+			#	MUG = {
+			#		exists = yes
+			#		is_vassal = no
+			#	}
+			#}
+			#modifier = {
+			#	factor = 75
+			#	RUS = {
+			#		any_neighbor_country = {
+			#			tag = EIC
+			#		}
+			#	}
+			#}
+			#modifier = {
+			#	factor = 100
+			#	QNG = {	has_country_flag = second_opium_war	}
+			#	OR = {
+			#		ENG = {
+			#			has_recently_lost_war = yes
+			#			truce_with = QNG
+			#			NOT = { any_owned = { is_core = { CHI } } }
+			#		}
+			#		ENL = {
+			#			has_recently_lost_war = yes
+			#			truce_with = QNG
+			#			NOT = { any_owned = { is_core = { CHI } } }
+			#		}
+			#	}
+			#}
+			#modifier = {
+			#	factor = 100
+			#	THIS = {
+			#		OR = {
+			#			ruling_party_ideology = fascist
+			#			ruling_party_ideology = reactionary
+			#			ruling_party_ideology = anarcho_liberal
+			#			ruling_party_ideology = communist
+			#		}
+			#	}
+			#}
+			#modifier = {
+			#	factor = 100
+			#	ENL = { exists = yes }
+			#}
+			#modifier = {
+			#	factor = 100
+			#	1587 = { #Lhasa
+			#		owned_by = RUS #event for RUS to help them
+			#	}
+			#}
+			#modifier = {
+			#	factor = 100
+			#	IRE = {
+			#		exists = yes
+			#		is_vassal = no
+			#	}
+			#}
 		}
 	}
-	
+
 	option = {
 		name = "EVT9990002OPTB"
 		3263 = { add_core = HND }
@@ -219,130 +232,145 @@ country_event = {
 			country_event = 9990004
 		}
 		ai_chance = {
-			factor = 99
+			factor = 90
 			modifier = {
-				factor = 0.25
+				factor = 0
 				ENG = {
-					NOT = {
-						OR = {
-							ruling_party_ideology = fascist
-							ruling_party_ideology = conservative
-							ruling_party_ideology = reactionary
-							ruling_party_ideology = anarcho_liberal
-						}
-					}
+					NOT = { rank = 1 }
 				}
-			}
-			modifier = {
-				factor = 0.25
-				OR = {
-					ENG = {
-						exists = yes
-						NOT = { owns = 81 }
-					}
-					ENL = {
-						exists = yes
-						NOT = { owns = 81 }
-					}
-				}
-			}
-			modifier = {
-				factor = 0.75
-				BUR = {
-					exists = yes
-					is_vassal = no
-					OR = {
-						owns = 1332 #Pegu
-						owns = 1330 #Rangoon
-						owns = 1331 #Bassein
-					}
-				}
-			}
-			modifier = {
-				factor = 0.75
-				PER = {
-					owns = 1212 #Herat
-				}
-			}
-			modifier = {
-				factor = 0.75
-				AFG = {
-					has_country_flag = rejected_durand
-					exists = yes
-					is_vassal = no
-				}
-			}
-			modifier = {
-				factor = 0.75
-				PNJ = {
-					has_country_flag = ranjit_singh_dead
-					exists = yes
-					is_vassal = no
-				}
-			}
-			modifier = {
-				factor = 0.75
-				MUG = {
-					exists = yes
-					is_vassal = no
-				}
-			}
-			modifier = {
-				factor = 0.75
-				RUS = {
-					any_neighbor_country = {
-						tag = EIC
-					}
+				any_greater_power = {
+					NOT = { tag = ENG }
+					ai = no
+					rank = 1
 				}
 			}
 			modifier = {
 				factor = 0
-				QNG = {	has_country_flag = second_opium_war	}
-				OR = {
-					ENG = {
-						has_recently_lost_war = yes
-						truce_with = QNG
-						NOT = { any_owned = { is_core = { CHI } } } 
-					}
-					ENL = {
-						has_recently_lost_war = yes
-						truce_with = QNG
-						NOT = { any_owned = { is_core = { CHI } } } 
-					}
-				}
+				RUS = { ai = no }
 			}
-			modifier = {
-				factor = 0
-				THIS = {
-					OR = {
-						ruling_party_ideology = fascist
-						ruling_party_ideology = reactionary
-						ruling_party_ideology = anarcho_liberal
-						ruling_party_ideology = communist
-					}
-				}
-			}
-			modifier = {
-				factor = 0
-				ENL = { exists = yes }
-			}
-			modifier = {
-				factor = 0
-				1587 = { #Lhasa
-					owned_by = RUS #event for RUS to help them
-				}
-			}
-			modifier = {
-				factor = 0
-				IRE = {
-					exists = yes
-					is_vassal = no
-				}
-			}
+			#modifier = {
+			#	factor = 0.25
+			#	ENG = {
+			#		NOT = {
+			#			OR = {
+			#				ruling_party_ideology = fascist
+			#				ruling_party_ideology = conservative
+			#				ruling_party_ideology = reactionary
+			#				ruling_party_ideology = anarcho_liberal
+			#			}
+			#		}
+			#	}
+			#}
+			#modifier = {
+			#	factor = 0.25
+			#	OR = {
+			#		ENG = {
+			#			exists = yes
+			#			NOT = { owns = 81 }
+			#		}
+			#		ENL = {
+			#			exists = yes
+			#			NOT = { owns = 81 }
+			#		}
+			#	}
+			#}
+			#modifier = {
+			#	factor = 0.75
+			#	BUR = {
+			#		exists = yes
+			#		is_vassal = no
+			#		OR = {
+			#			owns = 1332 #Pegu
+			#			owns = 1330 #Rangoon
+			#			owns = 1331 #Bassein
+			#		}
+			#	}
+			#}
+			#modifier = {
+			#	factor = 0.75
+			#	PER = {
+			#		owns = 1212 #Herat
+			#	}
+			#}
+			#modifier = {
+			#	factor = 0.75
+			#	AFG = {
+			#		has_country_flag = rejected_durand
+			#		exists = yes
+			#		is_vassal = no
+			#	}
+			#}
+			#modifier = {
+			#	factor = 0.75
+			#	PNJ = {
+			#		has_country_flag = ranjit_singh_dead
+			#		exists = yes
+			#		is_vassal = no
+			#	}
+			#}
+			#modifier = {
+			#	factor = 0.75
+			#	MUG = {
+			#		exists = yes
+			#		is_vassal = no
+			#	}
+			#}
+			#modifier = {
+			#	factor = 0.75
+			#	RUS = {
+			#		any_neighbor_country = {
+			#			tag = EIC
+			#		}
+			#	}
+			#}
+			#modifier = {
+			#	factor = 0
+			#	QNG = {	has_country_flag = second_opium_war	}
+			#	OR = {
+			#		ENG = {
+			#			has_recently_lost_war = yes
+			#			truce_with = QNG
+			#			NOT = { any_owned = { is_core = { CHI } } }
+			#		}
+			#		ENL = {
+			#			has_recently_lost_war = yes
+			#			truce_with = QNG
+			#			NOT = { any_owned = { is_core = { CHI } } }
+			#		}
+			#	}
+			#}
+			#modifier = {
+			#	factor = 0
+			#	THIS = {
+			#		OR = {
+			#			ruling_party_ideology = fascist
+			#			ruling_party_ideology = reactionary
+			#			ruling_party_ideology = anarcho_liberal
+			#			ruling_party_ideology = communist
+			#		}
+			#	}
+			#}
+			#modifier = {
+			#	factor = 0
+			#	ENL = { exists = yes }
+			#}
+			#modifier = {
+			#	factor = 0
+			#	1587 = { #Lhasa
+			#		owned_by = RUS #event for RUS to help them
+			#	}
+			#}
+			#modifier = {
+			#	factor = 0
+			#	IRE = {
+			#		exists = yes
+			#		is_vassal = no
+			#	}
+			#}
 		}
 	}
 }
-	
+
 country_event = {
 	id = 9990003
 	title = "EVTNAME9990003"
@@ -350,7 +378,7 @@ country_event = {
 	picture = "deliberation"
 	major = yes
 	is_triggered_only = yes
-	
+
 	option = {
 		name = "EVT9990003OPTA"
 		badboy = -10
@@ -370,7 +398,7 @@ country_event = {
 		FROM = {
 			country_event = 9990012
 			country_event = 9990013
-		}	
+		}
 		war = {
 			target = EIC
 			attacker_goal = {
@@ -390,10 +418,10 @@ country_event = {
 	title = "EVTNAME9990000"
 	desc = "EVTDESC9990004"
 	picture = "deliberation"
-	
+
 	major = yes
 	is_triggered_only = yes
-	
+
 	option = {
 		name = "EVT9990004OPTA"
 		treasury = 50000
@@ -412,27 +440,27 @@ country_event = {
 	desc = "EVTDESC9990005"
 	picture = sepoy
 	major = yes
-	
+
 	trigger = {
 		tag = EIC
 		has_global_flag = war_with_EIC
 		war = no
 		is_vassal = no
 	}
-	
+
 	fire_only_once = yes
-	
+
 	mean_time_to_happen = {
 		days = 1
 	}
-	
+
 	option = {
 		name = "EVT9990005OPTA"
 		prestige = 50
 		civilized = yes
 		government = prussian_constitutionalism
 		any_pop = {
-			limit = { 
+			limit = {
 				culture = british
 				location = { is_core = HND }
 			}
@@ -550,7 +578,7 @@ country_event = {
 			}
 			country_event = 9990006
 		}
-		
+
 		ENG_1251 = {
 			add_core = EIC
 		}
@@ -570,9 +598,9 @@ country_event = {
 	title = "EVTNAME9990005"
 	desc = "EVTDESC9990006"
 	picture = sepoy
-	
+
 	is_triggered_only = yes
-	
+
 	option = {
 		name = "EVT9990006OPTA"
 		leave_alliance = ENG
@@ -598,7 +626,7 @@ country_event = {
 			factor = 60
 		}
 	}
-	
+
 	option = {
 		name = "EVT9990006OPTB"
 		leave_alliance = ENG
@@ -629,10 +657,10 @@ country_event = {
 	title = "EVTNAME9990000"
 	desc = "EVTDESC9990004"
 	picture = "deliberation"
-	
+
 	is_triggered_only = yes
 	fire_only_once = yes
-	
+
 	option = {
 		name = "EVT9990007OPTA"
 		any_owned = {
@@ -649,9 +677,9 @@ country_event = {
 	title = "EVTNAME9990008"
 	desc = "EVTDESC9990008"
 	picture = "deliberation"
-	
+
 	is_triggered_only = yes
-	
+
 	option = {
 		name = "EVT9990002OPTA"
 	}
@@ -662,7 +690,7 @@ country_event = {
 	title = "EVTNAME9990009"
 	desc = "EVTDESC9990009"
 	picture = Artillery
-	
+
 	trigger = {
 		tag = EIC
 		substate_of = ENG
@@ -769,11 +797,11 @@ country_event = {
 			}
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		months = 1
 	}
-	
+
 	option = {
 		name = "EVTOPT99910"
 		random_owned = {
@@ -934,7 +962,7 @@ country_event = {
 	title = "EVTNAME9990009"
 	desc = "EVTDESC9990009"
 	picture = Artillery
-	
+
 	trigger = {
 		tag = EIC
 		substate_of = ENG
@@ -1051,11 +1079,11 @@ country_event = {
 			}
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		days = 1
 	}
-	
+
 	option = {
 		name = "EVTOPT99910"
 		random_owned = {
@@ -1231,9 +1259,9 @@ country_event = {
 	title = "EVTNAME9990011"
 	desc = "EVTDESC9990011"
 	picture = "deliberation"
-	
+
 	is_triggered_only = yes
-	
+
 	option = {
 		name = "EVT9990011OPTA"
 		casus_belli = {
@@ -1249,9 +1277,9 @@ country_event = {
 	title = "EVTNAME9990012"
 	desc = "EVTDESC9990012"
 	picture = "boer_war"
-	
+
 	is_triggered_only = yes
-	
+
 	option = {
 		name = "EVTDESC9990012OPTA"
 		release = MAH
@@ -1268,9 +1296,9 @@ country_event = {
 	title = "EVTNAME9990013"
 	desc = "EVTDESC9990013"
 	picture = "PDA_Blockade"
-	
+
 	is_triggered_only = yes
-	
+
 	option = {
 		name = "EVTDESC9990013OPTA"
 		release = SRI
@@ -1329,7 +1357,7 @@ country_event = {
 			sub_unit = { type = steam_transport value = current }
 			sub_unit = { type = steam_transport value = current }
 			sub_unit = { type = steam_transport value = current }
-			
+
 		}
 	}
 }
