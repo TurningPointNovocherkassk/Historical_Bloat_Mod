@@ -35,11 +35,9 @@ country_event = {
 
 	option = {
 		name = "EVT777777000OPTA"
-		3531 = { add_core = PNJ }
-		3531 = { add_core = HND }
+		3531 = { add_core = PNJ add_core = HND add_core = KAS }
 		3549 = { add_core = HND }
-		3550 = { add_core = PNJ }
-		3550 = { add_core = HND }
+		3550 = { add_core = PNJ add_core = HND }
 		define_general = {
 			name = "Gulab Singh Jamwal"
 			personality = implacable
@@ -314,19 +312,14 @@ country_event = {
 		relation = { who = QNG value = -150 }
 		set_global_flag = signed_treaty_of_chushul_QNG
 		prestige = -5
-		3531 = { remove_core = PNJ }
-		3452 = { remove_core = PNJ }
+		3531 = { remove_core = PNJ remove_core = HND }
+		3452 = { remove_core = PNJ remove_core = HND secede_province = TIB }
+		3453 = { remove_core = PNJ remove_core = HND }
+		3549 = { remove_core = PNJ remove_core = HND remove_core = KAS secede_province = TIB }
+		3550 = { remove_core = PNJ remove_core = HND }
 		release_vassal = LAD
-		QNG = {
-			create_vassal = LAD
-			military_access = LAD
-			create_alliance = LAD
-			relation = {
-				who = LAD
-				value = 200
-			}
-			country_event = 777777007
-		}
+
+		QNG = { country_event = 777777007 }
 		LAD = {
 			country_event = 777777009
 		}
@@ -420,6 +413,21 @@ country_event = {
 			any_owned = {
 				limit = { is_core = LAD }
 				secede_province = LAD
+			}
+		}
+		PNJ = {
+			any_owned = {
+				limit = { is_core = LAD }
+				secede_province = LAD
+			}
+		}
+		QNG = {
+			create_vassal = LAD
+			military_access = LAD
+			create_alliance = LAD
+			relation = {
+				who = LAD
+				value = 200
 			}
 		}
 	}
@@ -829,12 +837,9 @@ country_event = {
 				}
 			}
 		}
-		3531 = { remove_core = PNJ }
-		3531 = { remove_core = HND }
-		3549 = { remove_core = PNJ }
-		3549 = { remove_core = HND }
-		3550 = { remove_core = PNJ }
-		3550 = { remove_core = HND }
+		3531 = { remove_core = PNJ remove_core = HND }
+		3549 = { remove_core = PNJ remove_core = HND remove_core = KAS }
+		3550 = { remove_core = PNJ remove_core = HND }
 		FROM = { country_event = 777777020 }
 		ai_chance = {
 			factor = 100
@@ -3977,6 +3982,7 @@ country_event = { #The Saitula Question
 
 	trigger = {
 		NOT = { has_country_flag = settled_saitula_question }
+		NOT = { has_global_flag = signed_treaty_of_chushul_QNG }
 		KAS = { vassal_of = ENG }
 		NOT = {
 			3453 = { owned_by = KAS }
@@ -3988,12 +3994,14 @@ country_event = { #The Saitula Question
 	option = {
 		name = "EVT777777404OPTA"
 		KAS = { country_event = 777777405 }
+		3453 = { add_core = HND }
 		set_country_flag = settled_saitula_question
 	}
 
 	option = {
 		name = "EVT777777404OPTB"
 		set_country_flag = settled_saitula_question
+		3453 = { remove_core = HND }
 	}
 }
 
