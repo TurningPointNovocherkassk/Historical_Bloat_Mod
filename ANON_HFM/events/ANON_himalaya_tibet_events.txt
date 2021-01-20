@@ -1295,6 +1295,9 @@ country_event = {
 		ENG = {
 			country_event = 777777032
 		}
+		1252 = {
+			owner = { country_event = 777777401 }
+		}
 		clr_country_flag = SIK_renewed_lease
 		ai_chance = {
 			factor = 10
@@ -1326,9 +1329,6 @@ country_event = {
 		FROM = {
 			country_event = 777777034
 		}
-		1252 = {
-			owner = { country_event = 777777401 }
-		}
 		ai_chance = {
 			factor = 0
 		}
@@ -1346,10 +1346,18 @@ country_event = {
 
 	option = {
 		name = "EVT777777032OPTA" #colonial war
-		casus_belli ={
-			target = SIK
-			type = demand_concession_casus_belli
-			months = 60
+		1252 = {
+			owner = {
+				war = {
+					target = SIK
+					attacker_goal = {
+						casus_belli = acquire_state
+						state_province_id = 1252
+					}
+					defender_goal = { casus_belli = status_quo }
+					call_ally = no
+				}
+			}
 		}
 		1252 = {
 			owner = { country_event = 777777401 }
