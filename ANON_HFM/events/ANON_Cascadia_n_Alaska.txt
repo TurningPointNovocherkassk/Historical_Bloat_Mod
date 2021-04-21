@@ -5898,31 +5898,55 @@ country_event = {
 			owns = 79
 			owns = 81
 			NOT = { tag = USA }
-			year = 1843
+			year = 1849
 			OR = {
 				AND = {
 					tag = ENG
 					is_greater_power = yes
+					has_global_flag = oregon_war_happened_1234
 				}
-				vassal_of = ENG
-				substate_of = ENG
-				in_sphere = ENG
-				
+				AND = {
+					OR = {
+						vassal_of = ENG
+						substate_of = ENG
+						in_sphere = ENG
+					}
+					has_global_flag = oregon_war_happened_1234
+				}
+				AND = {
+					OR = {
+						vassal_of = ENG
+						substate_of = ENG
+						in_sphere = ENG
+						AND = {
+							tag = ENG
+							is_greater_power = yes
+						}
+					}
+					NOT = { has_global_flag = oregon_war_happened_1234 }
+				}
 			}
 			USA = {
 				OR = {
 					exists = no
 					vassal_of = ENG
 					in_sphere = ENG
-					any_owned_province = {
-						NOT = {
-							OR = {
-								region = USA_247 # New England
-								region = USA_243 # Massachusetts 
-								region = USA_219 # Maryland 
-							}
+					AND = {
+						OR = {
+							truce_with = ENG
+							truce_with = THIS
 						}
+						has_recently_lost_war = yes
 					}
+					# any_owned_province = {
+						# NOT = {
+							# OR = {
+								# region = USA_247 # New England
+								# region = USA_243 # Massachusetts 
+								# region = USA_219 # Maryland 
+							# }
+						# }
+					# }
 				}
 			}
 			UOR = {
@@ -5931,6 +5955,7 @@ country_event = {
 			CAS = {
 				exists = no
 			}
+			NOT = { has_global_flag = oregon_split_columbia_river }
 			NOT = { has_global_flag = anglo_oregon }
 		}
 		
@@ -5941,7 +5966,7 @@ country_event = {
 		option = {
 			name = "EVTOPTA1100047"
 			set_global_flag = anglo_oregon
-			UOR = { all_core = { add_core = COL add_core = THIS remove_core = UOR } }
+			UOR = { all_core = { add_core = COL add_core = THIS remove_core = USA remove_core = UOR } }
 			80 = { #Walla-Walla
 				life_rating = 15
 				secede_province = THIS

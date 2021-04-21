@@ -512,6 +512,7 @@ country_event = {
 		COL = { exists = no }
 		#ANON
 		has_global_flag = champoeg_meetings
+		NOT = { has_global_flag = anglo_oregon }
 	}
 	
 	mean_time_to_happen = {
@@ -960,6 +961,7 @@ country_event = {
 				}
 			}
 			secede_province = RPL
+			country_event = 1100047
 		}
 		any_owned = {
 			limit = {
@@ -970,6 +972,7 @@ country_event = {
 				}
 			}
 			secede_province = CAN
+			country_event = 1100047
 		}
 		COL = { all_core = { remove_core = USA } }
 		any_pop = {
@@ -993,12 +996,15 @@ country_event = {
 	
 	option = {
 		name = "EVT44153OPTB"
+		set_global_flag = oregon_war_happened_1234
 		prestige = 5
 		relation = { who = ENG value = -100 }
 		COL = { all_core = { add_core = USA } }
 		COL = { all_core = { add_core = ENG } }
 		CAN_13 = { add_core = USA }
 		CAN_13 = { add_core = ENG }
+		UOR = { all_core = { add_core = ENG } }
+		UOR = { all_core = { add_core = ENG } }
 		2629 = { remove_core = USA remove_core = ENG }
 		18 = { remove_core = USA remove_core = ENG }
 		any_pop = {
@@ -1270,6 +1276,7 @@ country_event = {
 	
 	option = {
 		name = "EVT44156OPTA"
+		set_global_flag = oregon_split_columbia_river
 		prestige = 15
 		78 = { add_core = ENG }
 		79 = { add_core = ENG }
