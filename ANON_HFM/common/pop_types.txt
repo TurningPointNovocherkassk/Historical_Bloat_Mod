@@ -1579,6 +1579,13 @@ assimilation_chance = {
 	}
 	
 	#ANON
+	# modifier = {
+		# factor = -10
+		# has_pop_culture = south_german
+		# location = { province_id = 3361 }
+		# country = { NOT = { is_culture_group = germanic } }
+	# }
+	#ANON
 	modifier = {
 		factor = -0.75
 		OR = {
@@ -1683,6 +1690,15 @@ assimilation_chance = {
 		factor = 1
 		has_pop_culture = ukrainian
 		country = { primary_culture = realukrainian }
+	}
+	#ANON
+	modifier = {
+		factor = 1
+		has_pop_culture = ukrainian
+		country = {
+			primary_culture = realukrainian
+			has_country_flag = vasyl_eccentric
+		}
 	}
 	
 	modifier = {
@@ -1935,6 +1951,16 @@ conversion_chance = {
 			}
 		}
 	}
+
+	#ANON
+	modifier = {
+		factor = 100
+		has_pop_religion = control_religion
+		OR = {
+			country = { has_country_flag = colonia_tovar_founded }
+			country = { has_country_flag = vasyl_eccentric }
+		}
+	}
 	
 	#ANON
 	modifier = {
@@ -1989,7 +2015,17 @@ conversion_chance = {
 			has_pop_religion = apostolic
 			has_pop_religion = coptic
 			has_pop_religion = maronite
-			has_pop_religion = syriac
+			AND = {
+				has_pop_religion = syriac
+				NOT = {
+					OR = {
+						has_pop_culture = ukrainian
+						has_pop_culture = realukrainian
+						has_pop_culture = rusyn
+						has_pop_culture = byelorussian
+					}
+				}
+			}
 			has_pop_religion = nestorian
 		}
 	}

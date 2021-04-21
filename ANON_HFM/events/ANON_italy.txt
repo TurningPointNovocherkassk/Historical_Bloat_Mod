@@ -303,6 +303,7 @@ country_event = { #Russia declares neutrality
       }
       country_event = {
         id = 777202007
+		days = 1
       }
       country_event = 777202019
     }
@@ -881,8 +882,8 @@ country_event = { #Lose influence in Italy
       who = FROM
       value = -100
     }
-  }
   ai_chance = { factor = 100 }
+  }
 }
 
 country_event = { #French diplomatic victory

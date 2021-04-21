@@ -43,108 +43,108 @@ country_event = {
 				location = { is_core = CAL }
 				is_culture_group = native_american
 			}
-				reduce_pop = 0.05
-			}
-			random_owned = {
-				limit = { owner = { primary_culture = yankee } }
-				owner = {
-					any_pop = {
-						limit = {
-							location = { is_core = CAL }
-							culture = yankee
-						}
-						reduce_pop = 1.5
+			reduce_pop = 0.05
+		}
+		random_owned = {
+			limit = { owner = { primary_culture = yankee } }
+			owner = {
+				any_pop = {
+					limit = {
+						location = { is_core = CAL }
+						culture = yankee
 					}
-					104 = { assimilate = yes }
-					89 = { assimilate = yes }
-					90 = { assimilate = yes }
+					reduce_pop = 1.5
 				}
+				# 104 = { assimilate = yes }
+				# 89 = { assimilate = yes }
+				# 90 = { assimilate = yes }
 			}
-			random_owned = {
-				limit = { owner = { primary_culture = mexican } }
-				owner = {
-					any_pop = {
-						limit = {
-							location = { is_core = CAL }
-							culture = mexican
-						}
-						reduce_pop = 1.5
+		}
+		random_owned = {
+			limit = { owner = { primary_culture = mexican } }
+			owner = {
+				any_pop = {
+					limit = {
+						location = { is_core = CAL }
+						culture = mexican
 					}
-					any_pop = {
-						limit = {
-							location = { is_core = CAL }
-							culture = yankee
-						}
-						reduce_pop = 0.2
-					}
-					#ANON
-					104 = { assimilate = yes }
-					89 = { assimilate = yes }
-					90 = { assimilate = yes }
+					reduce_pop = 1.5
 				}
-			}
-			random_owned = {
-				limit = { owner = { primary_culture = californio } }
-				owner = {
-					any_pop = {
-						limit = {
-							location = { is_core = CAL }
-							culture = californio
-						}
-						reduce_pop = 1.5
+				any_pop = {
+					limit = {
+						location = { is_core = CAL }
+						culture = yankee
 					}
-					any_pop = {
-						limit = {
-							location = { is_core = CAL }
-							culture = yankee
-						}
-						reduce_pop = 0.2
-					}
-					#ANON
-					104 = { assimilate = yes }
-					89 = { assimilate = yes }
-					90 = { assimilate = yes }
+					reduce_pop = 0.2
 				}
+				#ANON
+				# 104 = { assimilate = yes }
+				# 89 = { assimilate = yes }
+				# 90 = { assimilate = yes }
 			}
-			
-			84 = { 
+		}
+		random_owned = {
+			limit = { owner = { primary_culture = californio } }
+			owner = {
+				any_pop = {
+					limit = {
+						location = { is_core = CAL }
+						culture = californio
+					}
+					reduce_pop = 1.5
+				}
+				any_pop = {
+					limit = {
+						location = { is_core = CAL }
+						culture = yankee
+					}
+					reduce_pop = 0.2
+				}
+				#ANON
+				# 104 = { assimilate = yes }
+				# 89 = { assimilate = yes }
+				# 90 = { assimilate = yes }
+			}
+		}
+		
+		84 = { 
+			add_province_modifier = {
+				name = california_gold_rush
+				duration = 365
+			}			
+		}
+		104 = { 
+			add_province_modifier = {
+				name = california_gold_rush
+				duration = 365
+			}			
+		}
+		89 = { 
+			add_province_modifier = {
+				name = california_gold_rush
+				duration = 365
+			}			
+		}
+		90 = { 
+			add_province_modifier = {
+				name = california_gold_rush
+				duration = 365
+			}			
+		}
+		#ANON
+		87 = {
+			add_province_modifier = {
+				name = california_gold_rush
+				duration = 365
+			}			
+		}
+		3389 = { 
 				add_province_modifier = {
-					name = california_gold_rush
-					duration = 365
-				}			
-			}
-			104 = { 
-				add_province_modifier = {
-					name = california_gold_rush
-					duration = 365
-				}			
-			}
-			89 = { 
-				add_province_modifier = {
-					name = california_gold_rush
-					duration = 365
-				}			
-			}
-			90 = { 
-				add_province_modifier = {
-					name = california_gold_rush
-					duration = 365
-				}			
-			}
-			#ANON
-			87 = {
-				add_province_modifier = {
-					name = california_gold_rush
-					duration = 365
-				}			
-			}
-			3389 = { 
-				add_province_modifier = {
-					name = california_gold_rush
-					duration = 365
-				}			
-			}
-			set_global_flag = cali_gold_rush
+				name = california_gold_rush
+				duration = 365
+			}			
+		}
+		set_global_flag = cali_gold_rush
 	}
 }
 

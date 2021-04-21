@@ -15,7 +15,7 @@ party_issues = {
 	economic_policy = {
 		laissez_faire = {
 			max_tax = 0.5
-			factory_owner_cost = 0.3
+			factory_owner_cost = 0.25
 			factory_output = 0.1
 			import_cost = -0.25
 			
@@ -142,7 +142,7 @@ party_issues = {
 	war_policy = {
 		jingoism = {
 			max_military_spending = 1.0
-			min_military_spending = 0.5
+			min_military_spending = 0.25
 			supply_consumption = 0.1
 			war_exhaustion_effect = 0.5
 			is_jingoism = yes
@@ -153,7 +153,7 @@ party_issues = {
 		}
 		pro_military = {
 			max_military_spending = 1.0
-			min_military_spending = 0.25
+			min_military_spending = 0.125
 			war_exhaustion_effect = 0.7
 			cb_generation_speed_modifier = 0.2
 			mobilization_impact = 3
@@ -263,7 +263,8 @@ political_reforms = {
 			global_immigrant_attract = 0.01
 			allow = {
 				NOT = { has_country_flag = theocratic_government }
-				NOT = { has_country_flag = government_busy_with_something }
+				NOT = { has_country_flag = fascist_gov }
+				NOT = { has_country_flag = communist_gov }
 			}
 			cb_generation_speed_modifier = 0.1
 		}
@@ -324,7 +325,8 @@ political_reforms = {
 			rules = { rich_only = yes }
 			global_immigrant_attract = 0.01
 			allow = {
-				NOT = { has_country_flag = government_busy_with_something }
+				NOT = { has_country_flag = fascist_gov }
+				NOT = { has_country_flag = communist_gov }
 			}
 		}
 		state_equal_weight = {
@@ -667,7 +669,7 @@ political_reforms = {
 	colonial_policy = {
 		next_step_only = yes
 		settlement = {
-			global_assimilation_rate = 0.01
+			global_assimilation_rate = 0.075
 			global_immigrant_attract = 0.1
 			supply_consumption = 0.05
 			tax_efficiency = -0.03
@@ -681,16 +683,20 @@ political_reforms = {
 		}
 		exploitation = {
 			prestige = 0.1
-			tax_efficiency = 0.01
+			tax_efficiency = 0.03
+			supply_consumption = 0.05
 			non_accepted_pop_militancy_modifier = -0.05
+			navy_tech_research_bonus = 0.05
+			suppression_points_modifier = 0.25
 			administrative_multiplier = 1
 			allow = { colonial_nation = yes }
 		}
 				
 		civilizing = {
 			prestige = 0.1
-			global_assimilation_rate = 0.05
-			education_efficiency_modifier = 0.05
+			global_assimilation_rate = 0.1
+			education_efficiency_modifier = 0.1
+			culture_tech_research_bonus = 0.05
 			administrative_multiplier = 1
 			allow = { 
 				colonial_nation = yes 
@@ -704,16 +710,20 @@ political_reforms = {
 		
 		no_colonies = {
 			allow = { colonial_nation = no }
+			supply_consumption = -0.05
+			navy_tech_research_bonus = -0.05
+			army_tech_research_bonus = 0.05
 		}
 	}
 	
 	centralization = {
 		totalitarianism = {
 			global_immigrant_attract = -1
-			global_assimilation_rate = 0.01
+			global_assimilation_rate = 0.05
 			tax_efficiency = 0.05
 			mobilisation_size = 0.05
-			cb_generation_speed_modifier = 0.2
+			cb_generation_speed_modifier = 0.25
+			suppression_points_modifier = 0.2
 			allow = {
 				has_global_flag = revolution_n_counter_researched
 				OR = {

@@ -213,12 +213,12 @@ political_decisions = {
 			clr_global_flag = normal_rename_hawaii
 			clr_global_flag = HAW_rename_hawaii
 			658 = {
-				change_province_name = "Gavayi" 
+				change_province_name = "Gavay" 
 				state_scope = {
-					change_region_name = "Gavayskiye Ostrova"
+					change_region_name = "Gavayskie Ostrova"
 				}
 			}  
-			3306 = { change_province_name = "Atuvayi" }
+			3306 = { change_province_name = "Atuvay" }
 			3305 = { change_province_name = "Oakhu" }
 			2623 = { change_province_name = "Polputi" }
 		}
@@ -306,7 +306,7 @@ political_decisions = {
 			set_global_flag = RUS_rename_south_line
 			clr_global_flag = normal_rename_south_line
 			clr_global_flag = HAW_rename_south_line
-			3351 = { change_province_name = "Yuzh'nyye Laynskiye Ostrova" }
+			3351 = { change_province_name = "Yuzhnyye Laynskiye Sporady" }
 		}
 		ai_will_do = { factor = 1 }
 	}
@@ -378,7 +378,7 @@ political_decisions = {
 #			clr_global_flag = normal_rename_central_pacific
 #			clr_global_flag = HAW_rename_central_pacific
 #			2526 = {
-#				change_province_name = "Sever'nyye Laynskiye Ostrova" 
+#				change_province_name = "Pal'myra i Severnyye Polineziyskiye Sporady" 
 #				state_scope = {
 #					change_region_name = "Tsentral'nyye Polineziyskiye Sporady"
 #				}
@@ -469,12 +469,12 @@ political_decisions = {
 			clr_global_flag = normal_rename_central_pacific
 			clr_global_flag = HAW_rename_central_pacific
 			2526 = {
-				change_province_name = "Sever'nyye Laynskiye Ostrova" 
+				change_province_name = "Pal'mira i Sever'nyye Laynskiye Sporady" 
 				state_scope = {
 					change_region_name = "Tsentral'nyye Polineziyskiye Sporady"
 				}
 			}
-			2524 = { change_province_name = "Ueyk" }
+			2524 = { change_province_name = "Bellinsgauzen" }
 			3352 = { change_province_name = "Sheffer Atol" }
 		}
 		ai_will_do = { factor = 1 }

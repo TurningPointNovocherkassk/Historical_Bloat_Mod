@@ -354,17 +354,23 @@ country_event = {
 				NOT = { tag = TUR }
 			}
 			has_country_flag = bought_fort_ross
+			AND = {
+				ai = no
+				NOT = { alliance_with = RUS }
+				relation = { who = RUS value = 50 }
+			}
 		}
-		relation = { who = RUS value = 0 }
 		OR = {
 			is_greater_power = yes
 			is_secondary_power = yes
 			owns = 104 #SanFran
-			owns = 3253 #Liechtensteinin
+			owns = 3253 #Liechtenstein
 		}
 		#war = no
 		nationalism_n_imperialism = 1
 		has_country_flag = alaska_purchase_interest
+		relation = { who = RUS value = -25 }
+		exists = yes
 	}
 	
 	mean_time_to_happen = {
@@ -546,7 +552,7 @@ country_event = {
 					}
 					has_country_flag = bought_fort_ross
 				}
-				relation = { who = RUS value = 0 }
+				relation = { who = RUS value = -25 }
 				exists = yes
 			}
 			set_country_flag = alaska_purchase_interest

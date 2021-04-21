@@ -378,7 +378,10 @@ political_decisions = {
 
 	russian_vladivostok = {
 		potential = {
-			tag = RUS
+			OR = {
+				tag = RUS
+				is_culture_group = east_slavic
+			}
 			owns = 1085
 			owns = 1084
 			owns = 2617
@@ -1092,6 +1095,12 @@ political_decisions = {
 			1034 = { change_province_name = "Kuybyshev" }
 			1039 = { change_province_name = "Stalingrad" }
 			1058 = { change_province_name = "Sverdlovsk" }
+			random_owned = {
+				limit = {
+					province_id = 695
+				}
+				change_province_name = "Kaliningrad"
+			}
 		}
 		ai_will_do = { factor = 1 }
 	}
@@ -1210,6 +1219,10 @@ political_decisions = {
 				owns = 952
 				owns = 953
 				owns = 702
+				
+				owns = 3653
+				owns = 3655
+				owns = 3661
 			}
 			NOT = { has_global_flag = poles_expelled }
 		}
@@ -1220,6 +1233,10 @@ political_decisions = {
 			owns = 952
 			owns = 953
 			owns = 702
+			
+			owns = 3653
+			owns = 3655
+			owns = 3661
 			mass_politics = 1
 			NOT = { citizenship_policy = full_citizenship }
 			NOT = { citizens_rights = all_voting_pops }
@@ -1227,6 +1244,20 @@ political_decisions = {
 				government = fascist_dictatorship
 				government = proletarian_dictatorship
 				government = bourgeois_dictatorship
+				AND = {
+					OR = {
+						government = absolute_monarchy
+						government = prussian_constitutionalism
+						government = hms_government
+					}
+					OR = {
+						ruling_party_ideology = fascist
+						ruling_party_ideology = communist
+						ruling_party_ideology = anarcho_liberal
+						ruling_party_ideology = reactionary
+					}
+					great_wars_enabled = yes
+				}
 			}
 		}
 		
@@ -1246,13 +1277,26 @@ political_decisions = {
 			952 = { remove_core = GLM }
 			
 			953 = { remove_core = POL }
-			953 = { remove_core = RUT }
+			# 953 = { remove_core = RUT }
 			953 = { remove_core = GLM }
+			
+			3653 = { remove_core = POL }
+			3653 = { remove_core = GLM }
+			
+			3655 = { remove_core = POL }
+			3655 = { remove_core = GLM }
+			
+			3661 = { remove_core = POL }
+			3661 = { remove_core = GLM }
 			
 			702 = { any_pop = { limit = { has_pop_culture = polish } move_pop = 715 } }
 			952 = { any_pop = { limit = { has_pop_culture = polish } move_pop = 706 } }
 			953 = { any_pop = { limit = { has_pop_culture = polish } move_pop = 716 } }
 			951 = { any_pop = { limit = { has_pop_culture = polish } move_pop = 708 } }
+			
+			3653 = { any_pop = { limit = { has_pop_culture = polish } move_pop = 705 } }
+			3655 = { any_pop = { limit = { has_pop_culture = polish } move_pop = 3322 } }
+			3661 = { any_pop = { limit = { has_pop_culture = polish } move_pop = 713 } }
 		}
 		ai_will_do = { factor = 1 }
 	}

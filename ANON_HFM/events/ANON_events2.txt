@@ -42,11 +42,11 @@ country_event = {
 		option = {
 			name = "EVTOPTA9999998"
 			#create_vassal = VNZ
-			#form_alliance = VNZ
+			#create_alliance = VNZ
 			create_vassal = CLM
-			form_alliance = CLM
+			create_alliance = CLM
 			create_vassal = ECU
-			form_alliance = ECU
+			create_alliance = ECU
 		}
 		option = {
 			name = "EVTOPTB9999998"
@@ -54,12 +54,12 @@ country_event = {
 				who = SPA
 				value = 400
 			}
-			form_alliance = SPA
+			create_alliance = SPA
 		}
 		option = {
 			name = "EVTOPTA9999998"
 			create_vassal = HAI
-			form_alliance = HAI
+			create_alliance = HAI
 		}
 		option = {
 			name = "EVTOPTB9999998"
@@ -67,7 +67,7 @@ country_event = {
 				who = HAI
 				value = 400
 			}
-			form_alliance = HAI
+			create_alliance = HAI
 		}
 		option = {
 			name = "EVTOPTC9999998"
@@ -290,7 +290,7 @@ country_event = {
 			artillery = 200
 			wine = 400
 			liquor = 400
-			add_country_modifier = { name = ANON_total_war duration = -1 }
+			add_country_modifier = { name = ANON_total_war_mod duration = -1 }
 			set_country_flag = ANON_total_war_flag
 
 		}
@@ -340,7 +340,7 @@ country_event = {
 	picture = "News"
 	
 	trigger = {
-		invention = ANON_total_war
+		invention = ANON_total_war_mod
 		NOT = { has_country_flag = ANON_untotal_war_prepare }
 	}
 	

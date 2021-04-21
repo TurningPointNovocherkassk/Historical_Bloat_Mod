@@ -993,6 +993,42 @@ germanization_baltics_modifier_desc;We are hard at work towards an integration p
 germanization_minorities_title;Germanization of the Slavic Minorities;;;;;;;;;x
 germanization_minorities_desc;The Slavic peoples peoples within our lands are a source of disunity and should be integrated by any means necessary as soon as possible - With a strong countrywide schooling system which will teach them the German language and help them assimilate into the German society, making them indistinguishable from a true-born German.;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
+romania_regains_transylvania_title;Our Claims in Transylvania;;;;;;;;;x
+romania_regains_transylvania_desc;One of the terms of the Austrian-sponsored unification of the Wallachian and Moldavian Principalities was to renounce to any and all claims on Transylvania. Since their influence in our nation is forever gone, we can now actively claim Transylvania as an organic part of our nation.;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+annex_alaska_title;Formally Annex Alyaska;;;;;;;;;x
+annex_alaska_desc;The Colony of Alyaska has been self-administrated part of our realm since the last century, it is time to take full control over our American Colony.;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+EVTNAME1100045;Open the Hawaiian Frontiers ;;;;;;;;;;;;;;;;;;;;x
+EVTDESC1100045;The $COUNTRY_ADJ$ territories in the Central Pacific are extensive, but lack settlers. It is time to encourage immigration so the vast $COUNTRY_ADJ$ wilderness can be tamed, onwards to the Central Pacific! ;;;;;;;;;;;;;;;;;;;;x
+EVT1100045OPTA;Hurray!;;;;;;;;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+EVTNAME1100046;Open the American Frontiers ;;;;;;;;;;;;;;;;;;;;x
+EVTDESC1100046;The $COUNTRY_ADJ$ territories in North America are extensive, but lack settlers. It is time to encourage immigration so the vast $COUNTRY_ADJ$ wilderness can be tamed, onwards to America! ;;;;;;;;;;;;;;;;;;;;x
+EVT1100046OPTA;Hurray!;;;;;;;;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
@@ -3014,7 +3050,7 @@ LUS_ADJ;Lusatian;;;;;;;;;;;;;;;;;;;;;;;;x
 LUS_proletarian_dictatorship;Socialist Republic of Lusatia;;;;;;;;;x
 LUS_presidential_dictatorship;Republic of Lusatia;;;;;;;;;x
 LUS_bourgeois_dictatorship;Republic of Lusatia;;;;;;;;;x
-LUS_fascist_dictatorship;Corporatist Wendland;;;;;;;;;x
+LUS_fascist_dictatorship;United Corporatist Lusatia;;;;;;;;;x
 LUS_absolute_monarchy;Lusatia;;;;;;;;;x
 LUS_prussian_constitutionalism;Lusatia;;;;;;;;;x
 LUS_hms_government;Lusatia;;;;;;;;;x
@@ -3482,8 +3518,9 @@ jain;Jain;;;;;;;;;;;;;;;;;;;;;;;;x
 zaydi;Zaydi;;;;;;;;;;;;;;;;;;;;;;;;x
 ismaili;Ismaili;;;;;;;;;;;;;;;;;;;;;;;;x
 anabaptist;Anabaptist;;;;;;;;;;;;;;;;;;;;;;;;x
-atheist;Atheist;;;;;;;;;;;;;;;;;;;;;;;;x
-secular;Secular;;;;;;;;;;;;;;;;;;;;;;;;x
+atheism;Atheist;;;;;;;;;;;;;;;;;;;;;;;;x
+secularim;Secular;;;;;;;;;;;;;;;;;;;;;;;;x
+control_religion;-;;;;;;;;;;;;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 Orthodox;Eastern Orthodox;;;;;;;;;;;;;;;;;;;;;;;;x
 coptic;Oriental Orthodox;;;;;;;;;;;;;;;;;;;;;;;;x
@@ -4526,86 +4563,125 @@ claim_newfoundland_desc;The island of Newfoundland is home to many Irishmen. Bas
 claim_nova_scotia_prince_edward_title;Claim Nova Scotia and the Prince Edward Island ;;;;;;;;;;;;;x
 claim_nova_scotia_prince_edward_desc;Nova Scotia and the Prince Edward Island are home to many Scots. Based on their population, we could lay claims over there and obtain territories across the seas. ;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
-irish_rename_connacht_title;Rename Connacht;;;;;;;;;;;;;x
-irish_rename_connacht_desc;Connacht is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names. ;;;;;;;;;;;;;x
+rename_connacht_title;Rename Connacht;;;;;;;;;;;;;x
+rename_connacht_desc;Connacht is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names. ;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
-normal_rename_connacht_title;Rename Connacht;;;;;;;;;;;;;x
-normal_rename_connacht_desc;Connacht is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names. ;;;;;;;;;;;;;x
+# irish_rename_connacht_title;Rename Connacht;;;;;;;;;;;;;x
+# irish_rename_connacht_desc;Connacht is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names. ;;;;;;;;;;;;;x
+# #;;;;;;;;;;;;;;;;;;;;;;;;;x
+# normal_rename_connacht_title;Rename Connacht;;;;;;;;;;;;;x
+# normal_rename_connacht_desc;Connacht is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names. ;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
-irish_rename_munster_title;Rename Munster;;;;;;;;;;;;;x
-irish_rename_munster_desc;Munster is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names. ;;;;;;;;;;;;;x
+rename_munster_title;Rename Munster;;;;;;;;;;;;;x
+rename_munster_desc;Munster is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names. ;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
-normal_rename_munster_title;Rename Munster;;;;;;;;;;;;;x
-normal_rename_munster_desc;Munster is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names. ;;;;;;;;;;;;;x
+# irish_rename_munster_title;Rename Munster;;;;;;;;;;;;;x
+# irish_rename_munster_desc;Munster is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names. ;;;;;;;;;;;;;x
+# #;;;;;;;;;;;;;;;;;;;;;;;;;x
+# normal_rename_munster_title;Rename Munster;;;;;;;;;;;;;x
+# normal_rename_munster_desc;Munster is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names. ;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
-irish_rename_leinster_title;Rename Leinster;;;;;;;;;;;;;x
-irish_rename_leinster_desc;Leinster is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names. ;;;;;;;;;;;;;x
+rename_leinster_title;Rename Leinster;;;;;;;;;;;;;x
+rename_leinster_desc;Leinster is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names. ;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
-normal_rename_leinster_title;Rename Leinster;;;;;;;;;;;;;x
-normal_rename_leinster_desc;Leinster is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names. ;;;;;;;;;;;;;x
+# irish_rename_leinster_title;Rename Leinster;;;;;;;;;;;;;x
+# irish_rename_leinster_desc;Leinster is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names. ;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
-irish_rename_ulster_title;Rename Ulster;;;;;;;;;;;;;x
-irish_rename_ulster_desc;Ulster is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names. ;;;;;;;;;;;;;x
+# normal_rename_leinster_title;Rename Leinster;;;;;;;;;;;;;x
+# normal_rename_leinster_desc;Leinster is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names. ;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
-scot_rename_ulster_title;Rename Ulster;;;;;;;;;;;;;x
-scot_rename_ulster_desc;Ulster is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names. ;;;;;;;;;;;;;x
+rename_ulster_title;Rename Ulster;;;;;;;;;;;;;x
+rename_ulster_desc;Ulster is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names. ;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
-normal_rename_ulster_title;Rename Ulster;;;;;;;;;;;;;x
-normal_rename_ulster_desc;Ulster is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names. ;;;;;;;;;;;;;x
+# irish_rename_ulster_title;Rename Ulster;;;;;;;;;;;;;x
+# irish_rename_ulster_desc;Ulster is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names. ;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
-scot_rename_highlands_title;Rename the Highlands;;;;;;;;;;;;;x
-scot_rename_highlands_desc;The Highlands are rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names. ;;;;;;;;;;;;;x
+# scot_rename_ulster_title;Rename Ulster;;;;;;;;;;;;;x
+# scot_rename_ulster_desc;Ulster is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names. ;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
-normal_rename_highlands_title;Rename the Highlands;;;;;;;;;;;;;x
-normal_rename_highlands_desc;The Highlands are rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names. ;;;;;;;;;;;;;x
+# normal_rename_ulster_title;Rename Ulster;;;;;;;;;;;;;x
+# normal_rename_ulster_desc;Ulster is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names. ;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
-scot_rename_lowlands_title;Rename the Lowlands;;;;;;;;;;;;;x
-scot_rename_lowlands_desc;The Lowlands are rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names. ;;;;;;;;;;;;;x
+rename_highlands_title;Rename the Highlands;;;;;;;;;;;;;x
+rename_highlands_desc;The Highlands are rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names. ;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
-normal_rename_lowlands_title;Rename the Lowlands;;;;;;;;;;;;;x
-normal_rename_lowlands_desc;The Lowlands are rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names. ;;;;;;;;;;;;;x
+# scot_rename_highlands_title;Rename the Highlands;;;;;;;;;;;;;x
+# scot_rename_highlands_desc;The Highlands are rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names. ;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
-manx_rename_mann_title;Rename the Isle of Man;;;;;;;;;;;;;x
-manx_rename_mann_desc;The Isle of Man is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names. ;;;;;;;;;;;;;x
+# normal_rename_highlands_title;Rename the Highlands;;;;;;;;;;;;;x
+# normal_rename_highlands_desc;The Highlands are rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names. ;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
-normal_rename_mann_title;Rename the Isle of Man;;;;;;;;;;;;;x
-normal_rename_mann_desc;The Isle of Man is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names. ;;;;;;;;;;;;;x
+rename_lowlands_title;Rename the Lowlands;;;;;;;;;;;;;x
+rename_lowlands_desc;The Lowlands are rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names. ;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
-welsh_rename_wales_title;Rename Wales;;;;;;;;;;;;;x
-welsh_rename_wales_desc;Wales is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names. ;;;;;;;;;;;;;x
+# scot_rename_lowlands_title;Rename the Lowlands;;;;;;;;;;;;;x
+# scot_rename_lowlands_desc;The Lowlands are rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names. ;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
-normal_rename_wales_title;Rename Wales;;;;;;;;;;;;;x
-normal_rename_wales_desc;Wales is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names. ;;;;;;;;;;;;;x
+# normal_rename_lowlands_title;Rename the Lowlands;;;;;;;;;;;;;x
+# normal_rename_lowlands_desc;The Lowlands are rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names. ;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
-cornish_rename_cornwall_title;Rename Cornwall;;;;;;;;;;;;;x
-cornish_rename_cornwall_desc;Cornwall is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names. ;;;;;;;;;;;;;x
+rename_mann_title;Rename the Isle of Man;;;;;;;;;;;;;x
+rename_mann_desc;The Isle of Man is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names. ;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
-normal_rename_cornwall_title;Rename Cornwall;;;;;;;;;;;;;x
-normal_rename_cornwall_desc;Cornwall is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names. ;;;;;;;;;;;;;x
+# manx_rename_mann_title;Rename the Isle of Man;;;;;;;;;;;;;x
+# manx_rename_mann_desc;The Isle of Man is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names. ;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
-breton_rename_brittany_title;Rename Brittany;;;;;;;;;;;;;x
+# normal_rename_mann_title;Rename the Isle of Man;;;;;;;;;;;;;x
+# normal_rename_mann_desc;The Isle of Man is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names. ;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+rename_wales_title;Rename Wales;;;;;;;;;;;;;x
+rename_wales_desc;Wales is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names. ;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+# welsh_rename_wales_title;Rename Wales;;;;;;;;;;;;;x
+# welsh_rename_wales_desc;Wales is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names. ;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+# normal_rename_wales_title;Rename Wales;;;;;;;;;;;;;x
+# normal_rename_wales_desc;Wales is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names. ;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+rename_cornwall_title;Rename Cornwall;;;;;;;;;;;;;x
+rename_cornwall_desc;Cornwall is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names. ;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+# cornish_rename_cornwall_title;Rename Cornwall;;;;;;;;;;;;;x
+# cornish_rename_cornwall_desc;Cornwall is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names. ;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+# normal_rename_cornwall_title;Rename Cornwall;;;;;;;;;;;;;x
+# normal_rename_cornwall_desc;Cornwall is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names. ;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+rename_brittany_title;Rename Brittany;;;;;;;;;;;;;x
+rename_brittany_desc;Brittany is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names. ;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+# breton_rename_brittany_title;Rename Brittany;;;;;;;;;;;;;x
 breton_rename_brittany_desc;Brittany is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names. ;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
-normal_rename_brittany_title;Rename Brittany;;;;;;;;;;;;;x
-normal_rename_brittany_desc;Brittany is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names. ;;;;;;;;;;;;;x
+# normal_rename_brittany_title;Rename Brittany;;;;;;;;;;;;;x
+# normal_rename_brittany_desc;Brittany is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names. ;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
-irish_rename_newfoundland_title;Rename Newfoundland;;;;;;;;;;;;;x
-irish_rename_newfoundland_desc;Newfoundland is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names. ;;;;;;;;;;;;;x
+rename_newfoundland_title;Rename Newfoundland;;;;;;;;;;;;;x
+rename_newfoundland_desc;Newfoundland is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names. ;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
-normal_rename_newfoundland_title;Rename Newfoundland;;;;;;;;;;;;;x
-normal_rename_newfoundland_desc;Newfoundland is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names. ;;;;;;;;;;;;;x
+# irish_rename_newfoundland_title;Rename Newfoundland;;;;;;;;;;;;;x
+# irish_rename_newfoundland_desc;Newfoundland is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names. ;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
-scot_rename_nova_scotia_title;Rename Nova Scotia;;;;;;;;;;;;;x
-scot_rename_nova_scotia_desc;Nova Scotia is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names. ;;;;;;;;;;;;;x
+# normal_rename_newfoundland_title;Rename Newfoundland;;;;;;;;;;;;;x
+# normal_rename_newfoundland_desc;Newfoundland is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names. ;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
-welsh_rename_patagonia_title;Rename Chubut;;;;;;;;;;;;;x
-welsh_rename_patagonia_desc;The Chubut is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names. ;;;;;;;;;;;;;x
+rename_nova_scotia_title;Rename Nova Scotia;;;;;;;;;;;;;x
+rename_nova_scotia_desc;Nova Scotia is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names. ;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
-normal_rename_patagonia_title;Rename Chubut;;;;;;;;;;;;;x
-normal_rename_patagonia_desc;The Chubut is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names. ;;;;;;;;;;;;;x
+# scot_rename_nova_scotia_title;Rename Nova Scotia;;;;;;;;;;;;;x
+# scot_rename_nova_scotia_desc;Nova Scotia is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names. ;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
-normal_rename_nova_scotia_title;Rename Nova Scotia;;;;;;;;;;;;;x
-normal_rename_nova_scotia_desc;Nova Scotia is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names. ;;;;;;;;;;;;;x
+# normal_rename_nova_scotia_title;Rename Nova Scotia;;;;;;;;;;;;;x
+# normal_rename_nova_scotia_desc;Nova Scotia is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names. ;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+rename_patagonia_title;Rename Chubut;;;;;;;;;;;;;x
+rename_patagonia_desc;The Chubut is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names. ;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+# welsh_rename_patagonia_title;Rename Chubut;;;;;;;;;;;;;x
+# welsh_rename_patagonia_desc;The Chubut is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names. ;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+# normal_rename_patagonia_title;Rename Chubut;;;;;;;;;;;;;x
+# normal_rename_patagonia_desc;The Chubut is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names. ;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 annex_galicia_spain_title;Diplomatically Annex Galicia;;;;;;;;;;;;;x
 annex_galicia_spain_desc;Originally a Celtic Nation, Galicians underwent a gradual process of Latinization. It is time to diplomatically reunite with our long-lost brothers! ;;;;;;;;;;;;;x
@@ -4959,6 +5035,16 @@ POL_reactionary;Szlachta;;;;;;;;;;;;;;;;;;x
 POL_anarcho_liberal;Partia Radykalna;;;;;;;;;;;;;;;;;;x
 POL_communist;Komunistyczna Partia Polski;;;;;;;;;;;;;;;;;;x
 POL_fascist;Obóz Narodowo-Radykalny;;;;;;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+SLS_conservative;National Committee;;;;;;;;;;;;;;;;;;x
+SLS_liberal;Democratic Society;;;;;;;;;;;;;;;;;;x
+SLS_liberal_2;Farmers' Party;;;;;;;;;;;;;;;;;;x
+SLS_socialist;Workers' Alliance;;;;;;;;;;;;;;;;;;x
+SLS_conservative_2;National Party;;;;;;;;;;;;;;;;;;x
+SLS_reactionary;Szlachta;;;;;;;;;;;;;;;;;;x
+SLS_anarcho_liberal;Radical Party;;;;;;;;;;;;;;;;;;x
+SLS_communist;Communist Party;;;;;;;;;;;;;;;;;;x
+SLS_fascist;National-Radical Camps;;;;;;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 PNC;Polish National Committee;;;;;;;;;x
 PNC_ADJ;Polish;;;;;;;;;x
@@ -7582,8 +7668,8 @@ rename_villach_desc;Villach is rightfully $COUNTRY_ADJ$, and should use $COUNTRY
 rename_ungvar_title;Rename Ungvar ;;;;;;;;;;;;;x
 rename_ungvar_desc;Ungvar is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
-rename_khust_title;Rename Khust ;;;;;;;;;;;;;x
-rename_khust_desc;Khust is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;x
+rename_khust_title;Rename Transcarpatia ;;;;;;;;;;;;;x
+rename_khust_desc;Transcarpatia is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 rename_svaliava_title;Rename Svaliava ;;;;;;;;;;;;;x
 rename_svaliava_desc;Svaliava is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;x
@@ -8403,6 +8489,10 @@ EVTNAME1100054;The Baker and the $MONARCHTITLE$;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 EVTDESC1100054;During the early years of the new Mexican republic there was widespread civil disorder as factions competed for control of the country. The fighting often resulted in the destruction or looting of private property. Foreigners whose property was damaged or destroyed by rioters or bandits were usually unable to obtain compensation from the Mexican government and they began to appeal to their own governments for help and compensation. In a complaint to the French $MONARCHTITLE$, a French pastry chef known only as Monsieur Remontel claimed that in 1832 Mexican officers looted his shop in Tacubaya. Other complaints from French nationals (among them the looting in 1828 of French shops at the Parian market and the execution in 1837 of a French citizen accused of piracy) culminated in $YEAR$ with prime minister Louis-Mathieu Molé recommending a demand from Mexico for the payment of 600,000 pesos (3 million Francs - 120,000¤) in damages.;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 EVT1100054OPTA;Mexico needs to be held responsible.;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 EVT1100054OPTB;We should not bother with such trivial matters.;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+EVTNAME1100047;The Colonization of the Southern Columbia District;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+EVTDESC1100047;The Southern Columbia District shall now fall in our hands as no other country has claims on it. ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+EVTOPTA1100047;Hurray!;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x

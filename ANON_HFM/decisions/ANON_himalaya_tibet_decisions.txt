@@ -3796,6 +3796,7 @@ political_decisions = {
 			OR = {
 				ENG = { neighbour = CRL }
 				KAS = { neighbour = CRL }
+			}
 			NOT = {
 				CRL = { vassal_of = ENG }
 			}

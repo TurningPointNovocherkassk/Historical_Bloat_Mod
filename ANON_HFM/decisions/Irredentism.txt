@@ -61,6 +61,10 @@ political_decisions = {
 		}
 
 		effect = {
+			EST = { all_core = { add_core = FIN } }
+			KRL = { all_core = { add_core = FIN } }
+			SMI = { all_core = { add_core = FIN } }
+			IZH = { all_core = { add_core = FIN } }
 			RUS_994 = { add_core = FIN }
 			RUS_339 = { add_core = FIN }
 			RUS_349 = { add_core = FIN }
@@ -71,19 +75,25 @@ political_decisions = {
 			351 = { add_core = FIN }
 			352 = { add_core = FIN }
 			353 = { add_core = FIN }
-			add_accepted_culture = sami
+			add_accepted_culture = estonian
 			add_accepted_culture = karelian
+			add_accepted_culture = sami
+			add_accepted_culture = ugrian
 			prestige = 10
 			badboy = 10
 			set_country_flag = greater_finland
 			any_country = {
 				limit = {
 					is_greater_power = no
-					is_vassal = no
-					relation = {
-						who = FIN
-						value = 5
+					OR = {
+						is_vassal = no
+						vassal_of = THIS
 					}
+					# relation = {
+						# who = FIN
+						# value = 5
+					# }
+					in_sphere = THIS
 					NOT = {
 						tag = FIN
 						truce_with = FIN

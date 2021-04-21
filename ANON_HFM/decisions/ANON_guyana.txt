@@ -2898,83 +2898,90 @@ political_decisions = {
 
 		effect = {
 			prestige = 10
+			ENG_1979 = { add_core = UGU } #Guyana
+			VNZ_2278 = { add_core = UGU } #Guayana
+			3615 = { add_core = UGU } #Caicara
+			2278 = { add_core = UGU } #Atabapo
+			3374 = { add_core = UGU } #Maroa
+			3603 = { add_core = UGU } #Rio Negro
+			2408 = { add_core = UGU } #Oriximina
 			any_country = {
 				limit = {
-					owns = 2242
-					vassal_of = THIS
+					OR = {
+						owns = 2242
+						owns = 3379
+						owns = 3373
+						owns = 3382
+						owns = 2243
+						owns = 2239
+						owns = 1979
+						owns = 2240
+						owns = 2245
+						owns = 3384
+						owns = 3383
+						owns = 2241
+						owns = 2246
+						owns = 3380
+						owns = 3381
+						owns = 2415
+						owns = 2480
+						owns = 2277
+						owns = 3608
+						owns = 2275
+						owns = 2276
+						owns = 2532
+						owns = 3596
+						owns = 3615
+						owns = 2278
+						owns = 3603
+						owns = 2408
+						owns = 3374
+					}
+					OR = {
+						in_sphere = THIS
+						vassal_of = THIS
+					}
+					OR = {
+						is_vassal = no
+						vassal_of = THIS
+					}
 				}
-				2242 = { secede_province = THIS }
-			}
-			any_country = {
-				limit = {
-					owns = 3379
-					vassal_of = THIS
+				any_owned = {
+					limit = {
+						OR = {
+							province_id = 2242
+							province_id = 3379
+							province_id = 3373
+							province_id = 3382
+							province_id = 2243
+							province_id = 2239
+							province_id = 1979
+							province_id = 2240
+							province_id = 2245
+							province_id = 3384
+							province_id = 3383
+							province_id = 2241
+							province_id = 2246
+							province_id = 3380
+							province_id = 3381
+							province_id = 2415
+							province_id = 2480
+							province_id = 2277
+							province_id = 3608
+							province_id = 2275
+							province_id = 2276
+							province_id = 2532
+							province_id = 3596
+							province_id = 3615
+							province_id = 2278
+							province_id = 3603
+							province_id = 2408
+							province_id = 3374
+						}
+					}
+					add_core = UGU
+					secede_province = THIS
 				}
-				3379 = { secede_province = THIS }
-			}
-			any_country = {
-				limit = {
-					owns = 3373
-					vassal_of = THIS
-				}
-				3373 = { secede_province = THIS }
-			}
-			any_country = {
-				limit = {
-					owns = 3382
-					vassal_of = THIS
-				}
-				3382 = { secede_province = THIS }
-			}
-			any_country = {
-				limit = {
-					owns = 2243
-					owns = 2239
-					owns = 1979
-					vassal_of = THIS
-				}
-				2243 = { secede_province = THIS }
-				2239 = { secede_province = THIS }
-				1979 = { secede_province = THIS }
-			}
-			any_country = {
-				limit = {
-					owns = 2240
-					owns = 2245
-					vassal_of = THIS
-				}
-				2240 = { secede_province = THIS }
-				2245 = { secede_province = THIS }
-			}
-			any_country = {
-				limit = {
-					owns = 3384
-					vassal_of = THIS
-				}
-				3384 = { secede_province = THIS }
-			}
-			any_country = {
-				limit = {
-					owns = 3383
-					vassal_of = THIS
-				}
-				3383 = { secede_province = THIS }
-			}
-			any_country = {
-				limit = {
-					owns = 2241
-					owns = 2246
-					vassal_of = THIS
-				}
-				2241 = { secede_province = THIS }
-				2246 = { secede_province = THIS }
-			}
-			any_country = {
-				limit = {
-					owns = 2245
-					vassal_of = THIS
-				}
-				2245 = { secede_province = THIS }
 			}
 			any_country = {
 				limit = {
@@ -2985,11 +2992,17 @@ political_decisions = {
 						tag = CUN
 					}
 					NOT = { tag = THIS }
-					in_sphere = THIS
+					OR = {
+						in_sphere = THIS
+						vassal_of = THIS
+					}
+					OR = {
+						is_vassal = no
+						vassal_of = THIS
+					}
 				}
 				annex_to = THIS
 			}
-			ENG_1979 = { add_core = UGU } #Guyana
 			any_owned = {
 				limit = {
 					is_core = UGU
@@ -3193,7 +3206,13 @@ political_decisions = {
 		
 		effect = {
 			set_country_flag = UGU_claim_guayana
-			VNZ_2278 = { add_core = THIS }
+			ENG_1979 = { add_core = THIS } #Guyana
+			VNZ_2278 = { add_core = THIS } #Guayana
+			3615 = { add_core = THIS } #Caicara
+			2278 = { add_core = THIS } #Atabapo
+			3374 = { add_core = THIS } #Maroa
+			3603 = { add_core = THIS } #Rio Negro
+			2408 = { add_core = THIS } #Oriximina
 		}
 
 		ai_will_do = {

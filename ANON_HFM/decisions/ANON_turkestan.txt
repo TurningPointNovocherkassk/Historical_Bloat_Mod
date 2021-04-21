@@ -613,15 +613,15 @@ political_decisions = {
 					}
 				}
 			}
-			1068 = {
-				owner = {
-					OR = {
-						tag = QNG
-						vassal_of = QNG
-						substate_of = QNG
-					}
-				}
-			}
+			# 1068 = {
+				# owner = {
+					# OR = {
+						# tag = QNG
+						# vassal_of = QNG
+						# substate_of = QNG
+					# }
+				# }
+			# }
 			OR = {
 				QNG = {
 					# neighbour = RUS
@@ -693,18 +693,18 @@ political_decisions = {
 					}
 				}
 			}
-			1068 = {
-				owner = {
-					OR = {
-						tag = QNG
-						tag = TPG
-						vassal_of = QNG
-						vassal_of = TPG
-						substate_of = QNG
-						substate_of = TPG
-					}
-				}
-			}
+			# 1068 = {
+				# owner = {
+					# OR = {
+						# tag = QNG
+						# tag = TPG
+						# vassal_of = QNG
+						# vassal_of = TPG
+						# substate_of = QNG
+						# substate_of = TPG
+					# }
+				# }
+			# }
 		}
 		
 		effect = {
@@ -1179,6 +1179,14 @@ political_decisions = {
 		
 		effect = {
 			set_global_flag = middlejuz_taken
+			diplomatic_influence = {
+				who = J01
+				value = -400
+			}
+			relation = {
+				who = J01
+				value = -400
+			}
 			badboy = 1
 			add_casus_belli = {
 				target = J01

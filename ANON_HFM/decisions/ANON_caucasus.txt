@@ -93,9 +93,7 @@ political_decisions = {
 		effect = {
 			any_country = {
 				limit = {
-					OR = {
-						primary_culture = georgian
-					}
+					primary_culture = georgian
 					OR = {
 						in_sphere = THIS
 						vassal_of = THIS
@@ -181,7 +179,7 @@ political_decisions = {
 		effect = {
 			set_country_flag = TCA_claim_azerbaijan
 			AZB = { all_core = { add_core = THIS } }
-			add_accepted_is_culture_group = turko_semitic
+			add_accepted_culture = azerbaijani
 
 		}
 		ai_will_do = {
@@ -806,7 +804,7 @@ political_decisions = {
 							is_core = GEO
 						}
 					}
-					annex_to = THIS
+					secede_province = THIS
 				}
 			}
 			political_reform = confederalism
@@ -1084,7 +1082,7 @@ political_decisions = {
 				}
 				country_event = 11101
 			}
-			add_accepted_has_pop_culture = georgian
+			add_accepted_culture = georgian
 			add_accepted_culture = greek
 			add_accepted_culture = cappadocian_greek
 			add_accepted_culture = levantine_greek
@@ -1163,7 +1161,7 @@ political_decisions = {
 			add_accepted_culture = levantine_greek
 			add_accepted_culture = pontic_greek
 			add_accepted_culture = assyrian
-			add_accepted_has_pop_culture = georgian
+			add_accepted_culture = georgian
 			set_global_flag = armenia_united
 		}
 		ai_will_do = { factor = 1 }
@@ -1228,11 +1226,11 @@ political_decisions = {
 			set_country_flag = claim_greater_georgia
 			add_accepted_culture = armenian
 			add_accepted_culture = greek
-			add_accepted_culture = cappadocian_greek
-			add_accepted_culture = pontic_greek
+			# add_accepted_culture = cappadocian_greek
+			# add_accepted_culture = pontic_greek
 			add_accepted_culture = abkhazian
 			add_accepted_culture = lazi
-			#add_accepted_culture = ossetian
+			add_accepted_culture = ossetian
 			any_country = {
 				limit = {
 					ai = yes
@@ -1791,8 +1789,8 @@ political_decisions = {
 				}
 				country_event = 11101
 			}
+			add_accepted_culture = dagestani
 			add_accepted_culture = tatar
-			add_accepted_is_culture_group = turko_semitic
 			add_accepted_culture = chechen
 			change_tag = DAG
 		}
@@ -1835,6 +1833,14 @@ political_decisions = {
 			set_country_flag = claimed_georgia
 			RUS_1090 = { add_core = THIS }
 			RUS_1092 = { add_core = THIS }
+			KRT = { all_core = { add_core = THIS } }
+			KKH = { all_core = { add_core = THIS } }
+			IME = { all_core = { add_core = THIS } }
+			GUR = { all_core = { add_core = THIS } }
+			SMA = { all_core = { add_core = THIS } }
+			SVA = { all_core = { add_core = THIS } }
+			MIG = { all_core = { add_core = THIS } }
+			ABK = { all_core = { add_core = THIS } }
 		}
 		
 		ai_will_do = {
@@ -1860,7 +1866,6 @@ political_decisions = {
 					vassal_of = THIS
 					all_core = {
 						OR = {
-							province_id = 1090
 							owned_by = THIS
 							owner = {
 								in_sphere = THIS
@@ -1979,7 +1984,6 @@ political_decisions = {
 
 		effect = {
 			set_global_flag = is_georgia
-			clr_country_flag = claimed_georgia
 			capital = 1090
 			prestige = 10
 			add_accepted_culture = abkhazian
@@ -1993,10 +1997,15 @@ political_decisions = {
 						in_sphere = THIS
 						vassal_of = THIS
 					}
+					OR = {
+						is_vassal = no
+						vassal_of = THIS
+					}
 					NOT = {	tag = THIS }
 				}
 				country_event = 11101
 			}
+			change_tag = GEO
 			RUS_1090 = { add_core = GEO } #Georgia
 			RUS_1092 = { add_core = GEO } #Georgia
 			3293 = { add_core = GEO } #Sochi
@@ -2013,7 +2022,6 @@ political_decisions = {
 			SVA = { all_core = { remove_core = SVA } }
 			MIG = { all_core = { remove_core = MIG } }
 			ABK = { all_core = { remove_core = ABK } }
-			change_tag = GEO
 		}
 
 		ai_will_do = { factor = 1 }

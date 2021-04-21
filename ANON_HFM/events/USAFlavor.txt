@@ -1125,6 +1125,7 @@ country_event = {
 		#owns = 91
 		#owns = 92
 		NOT = { has_global_flag = 1843_greatmigration }
+		NOT = { has_global_flag = anglo_oregon }
 	}
 	
 	fire_only_once = yes
@@ -1670,6 +1671,9 @@ country_event = {
 	
 	option = {
 		name = "EVTOPTA16454" #Alright, let's buy everything
+		#ANON
+		set_global_flag = big_gadsden
+		#
 		FROM = { treasury = 100000 any_pop = { militancy = 2 consciousness = 3 } }
 		
 		random_owned = { limit = { owner = { ai = no } } owner = { treasury = -100000 } }
@@ -1680,8 +1684,7 @@ country_event = {
 		
 		102 = { add_core = THIS add_core = CAL remove_core = MEX }
 		2662 = { add_core = THIS add_core = CAL remove_core = MEX }
-		2139 = { add_core = THIS add_core = CAL remove_core = MEX }
-		2138 = { add_core = THIS add_core = CAL remove_core = MEX }
+		MEX_2139 = { add_core = THIS add_core = CAL remove_core = MEX } #Baja
 		FROM = { any_owned = { limit = { is_core = THIS } secede_province = THIS } }
 		random_owned = { limit = { owner = { NOT = { slavery = no_slavery } } } MEX_2138 = { is_slave = yes } }
 		relation = { who = FROM value = 150 }
@@ -1710,6 +1713,9 @@ country_event = {
 	
 	option = {
 		name = "EVTOPTB16454" #We don't have the money, buy only the historical stuff
+		#ANON
+		set_global_flag = historical_gadsden
+		#
 		FROM = { treasury = 50000 any_pop = { militancy = 1 consciousness = 1 } }
 		random_owned = { limit = { owner = { ai = no } } owner = { treasury = -50000 } }
 		random_owned = {
@@ -1727,6 +1733,9 @@ country_event = {
 	option = {
 		name = "EVTOPTC16454" #We are broke, don't buy anything
 		FROM = { country_event = 16457 }
+		#ANON
+		set_global_flag = gadsden_denied
+		#
 		ai_chance = {
 			factor = 0
 		}
@@ -1744,6 +1753,9 @@ country_event = {
 	
 	option = {
 		name = "EVTOPTA16455" #Done
+		#ANON
+		set_global_flag = historical_gadsden
+		#
 		FROM = { treasury = 50000 any_pop = { militancy = 1 consciousness = 1 } }
 		random_owned = { limit = { owner = { ai = no } } owner = { treasury = -50000 } }
 		random_owned = {
@@ -1761,6 +1773,9 @@ country_event = {
 	option = {
 		name = "EVTOPTB16455" #We are broke, don't buy anything
 		FROM = { country_event = 16457 }
+		#ANON
+		set_global_flag = gadsden_denied
+		#
 		ai_chance = {
 			factor = 0
 		}
@@ -1778,6 +1793,9 @@ country_event = {
 	
 	option = {
 		name = "EVTOPTA16456" #We will have what we want - one way or another
+		#ANON
+		set_global_flag = gadsden_bitch
+		#
 		badboy = 10
 		prestige = -5
 		102 = { add_core = THIS }
@@ -1796,6 +1814,9 @@ country_event = {
 	option = {
 		name = "EVTOPTB16456" #Let it go
 		relation = { who = FROM value = -10 }
+		#ANON
+		set_global_flag = gadsden_denied
+		#
 		ai_chance = {
 			factor = 5
 			modifier = {	
@@ -1815,6 +1836,9 @@ country_event = {
 		}
 		FROM = { treasury = 10000 }
 		relation = { who = FROM value = -10 }
+		#ANON
+		set_global_flag = gadsden_denied
+		#
 		ai_chance = {
 			factor = 5
 			modifier = {	

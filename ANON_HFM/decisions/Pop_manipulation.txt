@@ -13,7 +13,9 @@ political_decisions = {
 				government = fascist_dictatorship
 				government = presidential_dictatorship
 				government = proletarian_dictatorship
+				government = bourgeois_dictatorship
 				tag = ISR
+				tag = TUR
 			}
 			revolution_n_counterrevolution = 1
 		}
@@ -25,18 +27,28 @@ political_decisions = {
 				has_country_modifier = law_changed_by_force
 				has_country_modifier = national_confusion
 				has_recently_lost_war = yes
+				citizens_rights = all_voting_pops
 			}
 			OR = {
-				government = absolute_monarchy
-				government = theocracy
-				government = fascist_dictatorship
-				government = presidential_dictatorship
-				government = proletarian_dictatorship
-			}
-			OR = {
-				ruling_party_ideology = reactionary
-				ruling_party_ideology = fascist
-				ruling_party_ideology = communist
+				AND = {
+					OR = {
+						government = absolute_monarchy
+						government = theocracy
+						government = fascist_dictatorship
+						government = presidential_dictatorship
+						government = proletarian_dictatorship
+						government = bourgeois_dictatorship
+					}
+					OR = {
+						ruling_party_ideology = reactionary
+						ruling_party_ideology = fascist
+						ruling_party_ideology = communist
+					}
+				}
+				AND = {
+					tag = ISR
+					tag = TUR
+				}
 			}
 		}
 		

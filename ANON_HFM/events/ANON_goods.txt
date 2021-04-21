@@ -157,6 +157,7 @@ province_event = {
 			province_id = 3384		# Tapahoni - French/Dutch Guyana
 		}
 		NOT = { trade_goods = precious_metal }
+		NOT = { has_province_flag = had_gold_rush }
 	}
 
 	mean_time_to_happen =  {
@@ -168,6 +169,7 @@ province_event = {
 
 	option = {
 		name = "EVTOPTA1100"
+		set_province_flag = had_gold_rush
 		trade_goods = precious_metal
 		add_province_modifier = { name = gold_rush duration = 1095 }
 		owner = { random_owned = { limit = { province_id = 2242 NOT = { life_rating = 39 } } life_rating = 15 } }
@@ -205,7 +207,9 @@ province_event = {
 			province_id = 2446		# Sao Joao del Rey - Brazil
 		}
 		NOT = { trade_goods = precious_metal }
-		NOT = { has_global_flag = ouro_preto }
+		NOT = { has_province_flag = had_gold_rush }
+		NOT = { has_province_flag = ouro_preto }
+		NOT = { has_province_flag = ouro_preto_end }
 	}
 
 	mean_time_to_happen =  {
@@ -217,11 +221,11 @@ province_event = {
 
 	option = {
 		name = "EVTOPTA1100"
+		set_province_flag = had_gold_rush
 		trade_goods = precious_metal
 		add_province_modifier = { name = gold_rush duration = 1095 }
-		owner = { random_owned = { limit = { province_id = 2444 NOT = { life_rating = 39 } } life_rating = 10 } }
+		owner = { random_owned = { limit = { province_id = 2444 NOT = { life_rating = 39 } } life_rating = 10 set_province_flag = ouro_preto } }
 		owner = {
-			set_global_flag = ouro_preto
 			random_owned = {
 				limit = {
 					owner = {
@@ -247,7 +251,8 @@ province_event = {
 		year = 1880
 		province_id = 2443			# Januaria/Diamantina Brazil
 		NOT = { trade_goods = precious_metal }
-		NOT = { trade_goods = precious_goods }
+		has_province_flag = had_diamond_rush
+		NOT = { has_province_flag = had_gold_rush }
 	}
 
 	mean_time_to_happen =  {
@@ -259,12 +264,9 @@ province_event = {
 
 	option = {
 		name = "EVTOPTA1999000006"
+		set_province_flag = had_gold_rush
 		trade_goods = precious_metal
 		add_province_modifier = { name = gold_rush duration = 365 }
-		#add_province_modifier = {
-		#	name = switched_production
-		#	duration = 365
-		#}
 		owner = {
 			random_owned = {
 				limit = {
@@ -300,6 +302,7 @@ province_event = {
 			province_id = 2417			# Vila Bela - Brazil
 		}
 		NOT = { trade_goods = precious_goods }
+		NOT = { has_province_flag = had_diamond_rush }
 	}
 
 	mean_time_to_happen =  {
@@ -311,6 +314,7 @@ province_event = {
 
 	option = {
 		name = "EVTOPTA1105"
+		set_province_flag = had_diamond_rush
 		trade_goods = precious_goods
 		add_province_modifier = {
 			name = anon_diamond_rush
@@ -344,6 +348,8 @@ province_event = {
 		province_id = 2443			# Januaria/Diamantina Brazil
 		NOT = { trade_goods = precious_goods }
 		NOT = { trade_goods = precious_metal }
+		NOT = { has_province_flag = had_diamond_rush }
+		NOT = { has_province_flag = had_gold_rush }
 	}
 
 	mean_time_to_happen =  {
@@ -355,6 +361,7 @@ province_event = {
 
 	option = {
 		name = "EVTOPTA1999000008"
+		set_province_flag = had_diamond_rush
 		trade_goods = precious_goods
 		add_province_modifier = {
 			name = anon_diamond_rush
@@ -458,6 +465,8 @@ province_event = {
 		year = 1854
 		province_id = 2441		# Ouro Preto - Brazil
 		trade_goods = precious_metal
+		has_province_flag = ouro_preto
+		NOT = { has_province_flag = ouro_preto_end }
 	}
 
 	mean_time_to_happen =  {
@@ -469,6 +478,7 @@ province_event = {
 
 	option = {
 		name = "EVTOPTA1999000010"
+		set_province_flag = ouro_preto_end
 		trade_goods = iron
 		add_province_modifier = {
 			name = switched_production
@@ -491,6 +501,8 @@ province_event = {
 		year = 1906
 		province_id = 2446		# Sao Joao del Rey - Brazil
 		trade_goods = precious_metal
+		has_province_flag = had_gold_rush
+		NOT = { has_province_flag = sao_joao_end }
 	}
 
 	mean_time_to_happen =  {
@@ -502,6 +514,7 @@ province_event = {
 
 	option = {
 		name = "EVTOPTA1999000011"
+		set_province_flag = sao_joao_end
 		trade_goods = coffee
 		add_province_modifier = {
 			name = switched_production
@@ -524,6 +537,7 @@ province_event = {
 		year = 1879
 		province_id = 2			# Juneau - Alaska
 		NOT = { trade_goods = precious_metal }
+		NOT = { has_province_flag = had_gold_rush }
 	}
 
 	mean_time_to_happen =  {
@@ -535,6 +549,7 @@ province_event = {
 
 	option = {
 		name = "EVTOPTA1100"
+		set_province_flag = had_gold_rush
 		trade_goods = precious_metal
 		add_province_modifier = { name = gold_rush duration = 1095 }
 		owner = {
@@ -563,6 +578,7 @@ province_event = {
 		year = 1871
 		province_id = 1			# Sitka - Alaska
 		NOT = { trade_goods = precious_metal }
+		NOT = { has_province_flag = had_gold_rush }
 	}
 
 	mean_time_to_happen =  {
@@ -574,6 +590,7 @@ province_event = {
 
 	option = {
 		name = "EVTOPTA1100"
+		set_province_flag = had_gold_rush
 		trade_goods = precious_metal
 		add_province_modifier = { name = gold_rush duration = 1095 }
 		owner = {
@@ -601,6 +618,7 @@ province_event = {
 		year = 1898
 		province_id = 2631			# Unalakleet/Nome - Alaska
 		NOT = { trade_goods = precious_metal }
+		NOT = { has_province_flag = had_gold_rush }
 	}
 
 	mean_time_to_happen =  {
@@ -612,6 +630,7 @@ province_event = {
 
 	option = {
 		name = "EVTOPTA1100"
+		set_province_flag = had_gold_rush
 		trade_goods = precious_metal
 		add_province_modifier = { name = gold_rush duration = 1095 }
 		owner = {
@@ -639,6 +658,7 @@ province_event = {
 		year = 1902
 		province_id = 2630			# Fairbanks - Alaska
 		NOT = { trade_goods = precious_metal }
+		NOT = { has_province_flag = had_gold_rush }
 	}
 
 	mean_time_to_happen =  {
@@ -650,6 +670,7 @@ province_event = {
 
 	option = {
 		name = "EVTOPTA1100"
+		set_province_flag = had_gold_rush
 		trade_goods = precious_metal
 		add_province_modifier = { name = gold_rush duration = 1095 }
 		owner = {
@@ -751,7 +772,7 @@ province_event = {
 		OR = {
 			AND = {
 				year = 1858
-				province_id = 3383 #Tahoe/Carson City, Comstock lode
+				province_id = 3393 #Tahoe/Carson City, Comstock lode
 			}
 			AND = {
 				year = 1899
@@ -760,6 +781,7 @@ province_event = {
 			AND = {
 				year = 1878
 				province_id = 109 #Aspen
+				has_province_flag = had_gold_rush
 			}
 			AND = {
 				year = 1888
@@ -767,6 +789,7 @@ province_event = {
 			}
 		}
 		NOT = { trade_goods = precious_metal }
+		NOT = { has_province_flag = had_silver_rush }
 	}
 
 	mean_time_to_happen =  {
@@ -778,6 +801,7 @@ province_event = {
 
 	option = {
 		name = "EVTOPTA1999000016"
+		set_province_flag = had_silver_rush
 		trade_goods = precious_metal
 		add_province_modifier = { name = silver_rush duration = 1095 }
 		add_province_modifier = { name = silver_mine duration = -1 }
@@ -809,6 +833,7 @@ province_event = {
 		year = 1848
 		province_id = 3307		#Modoc
 		NOT = { trade_goods = iron }
+		NOT = { has_province_flag = found_iron }
 	}
 
 	mean_time_to_happen =  {
@@ -820,6 +845,7 @@ province_event = {
 
 	option = {
 		name = "EVTOPTA1999000017"
+		set_province_flag = found_iron
 		trade_goods = iron
 	}
 }
@@ -837,6 +863,8 @@ province_event = {
 		}
 		year = 1857
 		NOT = { trade_goods = precious_metal }
+		NOT = { has_province_flag = had_gold_rush }
+		NOT = { has_province_flag = had_silver_rush }
 	}
 
 	mean_time_to_happen =  {
@@ -849,6 +877,22 @@ province_event = {
 	option = {
 		name = "EVTOPTA1100"
 		trade_goods = precious_metal
+		set_province_flag = had_gold_rush
+		owner = {
+			random_owned = {
+				limit = {
+					NOT = { has_province_modifier = silver_mine }
+					owner = {
+						OR = { 
+							capital_scope = { continent = north_america } 
+							capital_scope = { continent = south_america }
+							primary_culture = australian
+						}
+					}
+				}
+				remove_province_modifier = silver_mine
+			}
+		}
 		owner = {
 			random_owned = {
 				limit = {
@@ -910,7 +954,8 @@ province_event = {
 		year = 1884
 		province_id = 98 #Silver Reef, Cedar City.
 		trade_goods = precious_metal
-		NOT = { has_global_flag = cedar_city_end }
+		NOT = { has_province_flag = cedar_city_end }
+		has_province_flag = had_silver_rush
 	}
 
 	mean_time_to_happen =  {
@@ -922,7 +967,7 @@ province_event = {
 
 	option = {
 		name = "EVTOPTA1999000019"
-		set_global_flag = cedar_city_end
+		set_province_flag = cedar_city_end
 		trade_goods = grain
 		remove_province_modifier = silver_mine
 		add_province_modifier = {
@@ -982,7 +1027,8 @@ province_event = {
 		year = 1864
 		province_id = 98 #Silver Reef, Cedar City.
 		NOT = { trade_goods = precious_metal }
-		NOT = { has_global_flag = cedar_city_end }
+		NOT = { has_province_flag = had_silver_rush }
+		NOT = { has_province_flag = cedar_city_end }
 	}
 
 	mean_time_to_happen =  {
@@ -994,6 +1040,7 @@ province_event = {
 
 	option = {
 		name = "EVTOPTA1999000016"
+		set_province_flag = had_silver_rush
 		trade_goods = precious_metal
 		add_province_modifier = { name = silver_rush duration = 1095 }
 		add_province_modifier = { name = silver_mine duration = -1 }

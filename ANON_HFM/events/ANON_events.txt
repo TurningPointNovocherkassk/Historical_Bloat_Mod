@@ -410,8 +410,10 @@ country_event = {
 		political_reform = no_slavery
 		nationalvalue = nv_equality
 		ruling_party_ideology = liberal
-		consciousness = -9
-		militancy = -9
+		any_pop = {
+			consciousness = -7
+			militancy = -7
+		}
 		set_country_flag = become_USV
 		define_general = {
 			name = "Ezequiel Zamora"
@@ -1752,7 +1754,6 @@ country_event = {
 			diplomatic_influence = { who = KRT value = -100 }
 			relation = { who = SMA value = -200 }
 			diplomatic_influence = { who = SMA value = -100 }
-			relation = { who = IME value = -200 }
 			#AZERBAIJAN#
 			diplomatic_influence = { who = AZ1 value = -100 }
 			relation = { who = AZ1 value = -200 }
@@ -1811,7 +1812,6 @@ country_event = {
 			diplomatic_influence = { who = KRT value = -100 }
 			relation = { who = SMA value = -200 }
 			diplomatic_influence = { who = SMA value = -100 }
-			relation = { who = IME value = -200 }
 			#AZERBAIJAN#
 			diplomatic_influence = { who = AZ1 value = -100 }
 			relation = { who = AZ1 value = -200 }
@@ -1866,7 +1866,6 @@ country_event = {
 			diplomatic_influence = { who = KRT value = -100 }
 			relation = { who = SMA value = -200 }
 			diplomatic_influence = { who = SMA value = -100 }
-			relation = { who = IME value = -200 }
 			#AZERBAIJAN#
 			diplomatic_influence = { who = AZ1 value = -100 }
 			relation = { who = AZ1 value = -200 }
@@ -1921,7 +1920,6 @@ country_event = {
 			diplomatic_influence = { who = KRT value = -100 }
 			relation = { who = SMA value = -200 }
 			diplomatic_influence = { who = SMA value = -100 }
-			relation = { who = IME value = -200 }
 			#AZERBAIJAN#
 			diplomatic_influence = { who = AZ1 value = -100 }
 			relation = { who = AZ1 value = -200 }
@@ -1976,7 +1974,6 @@ country_event = {
 			diplomatic_influence = { who = KRT value = -100 }
 			relation = { who = SMA value = -200 }
 			diplomatic_influence = { who = SMA value = -100 }
-			relation = { who = IME value = -200 }
 			#AZERBAIJAN#
 			diplomatic_influence = { who = AZ1 value = -100 }
 			relation = { who = AZ1 value = -200 }
@@ -4482,6 +4479,57 @@ country_event = {
 				}
 				secede_province = ROM
 			}
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+	
+	country_event = {
+		id = 100058
+		title = "Vassal or Substate with nonexistent Suzerain"
+		desc = "This is AI-exclusive, contact Benisman if you're getting this event."
+		
+		trigger = {
+			exists = no
+			ai = yes
+			OR = {
+				num_of_substates = 1
+				num_of_vassals_no_substates = 1
+			}
+		}
+		
+		option = {
+			name = "Very well..."
+			
+			any_country = {
+				limit = {
+					exists = yes
+					OR = {
+						vassal_of = THIS
+						substate_of = THIS
+					}
+				}
+				country_event = 100059
+			}
+			
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+	country_event = {
+		id = 100059
+		title = "Vassal or Substate with Nonexistent Suzerain"
+		desc = "It appears our suzerain no longer exists. We are a free country now."
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = "Very well..."
+			
+			FROM = { release_vassal = THIS }
+			
 			ai_chance = {
 				factor = 100
 			}

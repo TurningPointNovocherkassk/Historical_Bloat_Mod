@@ -8,6 +8,8 @@ political_decisions = {
 				tag = ARM
 				tag = GRA
 				
+				tag = GGE
+				
 				tag = ME5
 				
 				tag = GUR
@@ -134,6 +136,8 @@ political_decisions = {
 				tag = RUS
 				tag = GRA
 				
+				tag = GGE
+				
 				tag = ME5
 				
 				tag = GUR
@@ -259,13 +263,19 @@ political_decisions = {
 						tag = MIG	
 					}
 					ai = yes
-					in_sphere = THIS
+					OR = {
+						in_sphere = THIS
+						vassal_of = THIS
+					}
 				}
 				annex_to = THIS
 			}
 			any_country = {
 				limit = {
-					in_sphere = THIS
+					OR = {
+						in_sphere = THIS
+						vassal_of = THIS
+					}
 					war = no
 				}
 				any_owned = {

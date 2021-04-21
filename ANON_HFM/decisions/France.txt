@@ -470,6 +470,7 @@ political_decisions = {
 			remove_accepted_culture = rhinelander
 			#ANON
 			remove_accepted_culture = jerriais
+			remove_accepted_culture = catalan
 			any_owned = {
 				limit = {
 					is_core = THIS
@@ -523,6 +524,12 @@ political_decisions = {
 					SWI = { exists = no }
 				}
 				SWI = { all_core = { remove_core = SWI } }
+			}
+			random_owned = {
+				limit = {
+					ARP = { exists = no }
+				}
+				ARP = { all_core = { remove_core = ARP } }
 			}
 			any_country = {
 				limit = {

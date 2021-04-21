@@ -3663,7 +3663,6 @@ province_event = {
 		continent = north_america
 		NOT = { is_core = CSA }
 		OR = {
-			#is_core = USA
 			#state_id = 131
 			#state_id = 136
 			#
@@ -3685,11 +3684,10 @@ province_event = {
 			#state_id = 146
 			#province_id = 96
 			
+			is_core = USA
 			state_id = 131
 			state_id = 136
 			state_id = 132
-			state_id = 105
-			state_id = 100
 			state_id = 146
 			state_id = 143
 			state_id = 139
@@ -3704,8 +3702,51 @@ province_event = {
 			state_id = 187
 			state_id = 190
 			state_id = 129
-			province_id = 96
 			province_id = 2146
+			
+			province_id = 100
+			province_id = 3396
+			province_id = 101
+			
+			province_id = 105
+			province_id = 3397
+			province_id = 2148
+			
+			province_id = 96
+			
+			AND = {
+				OR = {
+					province_id = 102
+					province_id = 2662
+				}
+				OR = {
+					has_global_flag = historical_gadsden
+					has_global_flag = big_gadsden
+					has_global_flag = gadsden_bitch
+				}
+				NOT = { has_global_flag = gadsden_denied }
+			}
+			# AND = {
+				# OR = {
+					# province_id = 2139
+					# province_id = 2138
+					# province_id = 102
+					# province_id = 2662
+				# }
+				# has_global_flag = big_gadsden
+				# NOT = { has_global_flag = gadsden_denied }
+			# }
+			AND = {
+				OR = {
+					# Yucatan
+					state_id = 2183
+					state_id = 2184
+					state_id = 3358
+					state_id = 2190
+					state_id = 2189
+				}
+				has_global_flag = YUC_becomes_USA_state
+			}
 		}
 		#ANON
 		NOT = {
@@ -3729,12 +3770,53 @@ province_event = {
 					NOT = { has_global_flag = american_civil_war_has_happened }
 				}
 				AND = {
-					tag = MEX
-					owns = 133
+					exists = yes
+					OR = {
+						tag = MEX
+						tag = M3X
+						tag = MXM
+					}
+					OR = {
+						owns = 132
+						owns = 136
+						owns = 96
+						owns = 105
+						owns = 100
+						owns = 129
+					}
+					USA = { has_country_flag = hasmanifestdestiny NOT = { has_country_flag = manifest_destiny_refuted } }
+				}
+				AND = {
+					exists = yes
+					OR = {
+						primary_culture = texan
+						primary_culture = cajun
+						primary_culture = louisianan
+						primary_culture = mormon_culture
+						primary_culture = californian
+						primary_culture = cascadian
+						primary_culture = californio
+						primary_culture = norteno
+						AND = {
+							primary_culture = yucateco
+							has_global_flag = YUC_becomes_USA_state
+						}
+					}
 				}
 			}
 		}
 		OR = {
+			AND = {
+				state_scope = { is_slave = yes }
+				OR = {
+					yes_slavery = 10
+					freedom_of_womb = 10
+				}
+				OR = {
+					yes_slavery = 20
+					freedom_of_womb = 20
+				}
+			}
 			average_consciousness = 6
 			AND = {
 				owner = { ruling_party_ideology = liberal }
@@ -3743,6 +3825,42 @@ province_event = {
 			AND = {
 				owner = { upper_house = { ideology = liberal value = 0.4 } }
 				average_consciousness = 3
+			}
+			AND = {
+				owner = {
+					exists = yes
+					OR = {
+						tag = MEX
+						tag = M3X
+						tag = MXM
+					}
+					OR = {
+						owns = 132
+						owns = 136
+						owns = 96
+						owns = 105
+						owns = 100
+						owns = 129
+					}
+				}
+				USA = { has_country_flag = hasmanifestdestiny NOT = { has_country_flag = manifest_destiny_refuted } }
+			}
+			owner = {
+				exists = yes
+				OR = {
+					primary_culture = texan
+					primary_culture = cajun
+					primary_culture = louisianan
+					primary_culture = mormon_culture
+					primary_culture = californian
+					primary_culture = cascadian
+					primary_culture = californio
+					primary_culture = norteno
+					AND = {
+						primary_culture = yucateco
+						has_global_flag = YUC_becomes_USA_state
+					}
+				}
 			}
 		}
 	}
@@ -3765,7 +3883,31 @@ province_event = {
 	
 	option = {
 		name = "EVTOPTA16250"
-		state_scope = { any_owned = { add_core = CSA }
+		state_scope = {
+			any_owned = {
+				limit = {
+					OR = {
+						state_id = 131
+						state_id = 136
+						state_id = 132
+						state_id = 146
+						state_id = 143
+						state_id = 139
+						state_id = 194
+						state_id = 195
+						state_id = 200
+						state_id = 201
+						state_id = 205
+						state_id = 209
+						state_id = 60
+						state_id = 218
+						state_id = 187
+						state_id = 190
+						state_id = 129
+					}
+				}
+				add_core = CSA
+			}
 			any_pop = {
 				dominant_issue = {
 					value = yes_slavery
@@ -3779,6 +3921,153 @@ province_event = {
 					type = soldiers
 				}
 				reduce_pop = 1.5
+			}
+		}
+		state_scope = {
+			any_owned = {
+				limit = {
+					OR = {
+						# Yucatan
+						state_id = 2183
+						state_id = 2184
+						state_id = 3358
+						state_id = 2190
+						state_id = 2189
+					}
+					has_global_flag = YUC_becomes_USA_state
+				}
+				add_core = CSA
+			}
+			any_pop = {
+				dominant_issue = {
+					value = yes_slavery
+					factor = 0.2
+				}
+				militancy = 1
+			}
+			any_pop = {
+				limit = {
+					OR = {
+						culture = dixie
+						culture = yucateco
+					}
+					type = soldiers
+				}
+				reduce_pop = 1.5
+			}
+			any_pop = {
+				limit = {
+					culture = mayan
+					OR = {
+						type = farmers
+						type = labourers
+						type = artisans
+					}
+				}
+				militancy = 9
+				consciousness = 9 
+				pop_type = slaves
+			}
+		}
+		# owner = {
+			# any_owned = {
+				# limit = {
+					# OR = {
+						# province_id = 2139
+						# province_id = 2138
+						# province_id = 102
+						# province_id = 2662
+					# }
+					# has_global_flag = big_gadsden
+					# NOT = { has_global_flag = gadsden_denied }
+				# }
+				# add_core = CSA
+				# any_pop = {
+					# limit = {
+						# culture = dixie
+					# }
+					# dominant_issue = {
+						# value = yes_slavery
+						# factor = 0.2
+					# }
+					# militancy = 1
+				# }
+				# any_pop = {
+					# limit = {
+						# culture = dixie
+						# type = soldiers
+					# }
+					# reduce_pop = 1.5
+				# }
+			# }
+		# }
+		owner = {
+			any_owned = {
+				limit = {
+					OR = {
+						province_id = 102
+						province_id = 2662
+					}
+					OR = {
+						has_global_flag = historical_gadsden
+						has_global_flag = big_gadsden
+						has_global_flag = gadsden_bitch
+					}
+					NOT = { has_global_flag = gadsden_denied }
+				}
+				add_core = CSA
+				any_pop = {
+					limit = {
+						culture = dixie
+					}
+					dominant_issue = {
+						value = yes_slavery
+						factor = 0.2
+					}
+					militancy = 1
+				}
+				any_pop = {
+					limit = {
+						culture = dixie
+						type = soldiers
+					}
+					reduce_pop = 1.5
+				}
+			}
+		}
+		owner = { #Arizona, New Mexico & las vegas
+			any_owned = {
+				limit = {
+					OR = {
+						province_id = 100
+						province_id = 3396
+						province_id = 101
+						
+						province_id = 105
+						province_id = 3397
+						province_id = 2148
+						
+						province_id = 96
+					}
+				}
+				add_core = CSA
+				any_pop = {
+					limit = {
+						culture = dixie
+					}
+					dominant_issue = {
+						value = yes_slavery
+						factor = 0.2
+					}
+					militancy = 1
+				}
+				any_pop = {
+					limit = {
+						culture = dixie
+						type = soldiers
+					}
+					reduce_pop = 1.5
+				}
 			}
 		}
 	}

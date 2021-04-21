@@ -1156,7 +1156,7 @@ political_decisions = {
 			ALD_1704 = { owned_by = THIS }
 			ALD_1708 = { owned_by = THIS }
 			FRA_1700 = { owned_by = THIS }
-			NOT = { exists = ALD }
+			ALD = { exists = no }
 		}
 		
 		effect = {

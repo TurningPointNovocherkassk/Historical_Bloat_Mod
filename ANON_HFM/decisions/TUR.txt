@@ -323,6 +323,10 @@ political_decisions = {
 							has_pop_culture = assyrian
 							has_pop_religion = nestorian
 						}
+						AND = {
+							has_pop_culture = assyrian
+							has_pop_religion = maronite
+						}
 					}
 				}
 			}
@@ -930,9 +934,9 @@ political_decisions = {
 				militancy = -1
 				}
 			}
-			858 = { change_province_name = "Saranta Ekklisies" }
-			859 = { change_province_name = "Kallipolis" }
-			828 = { change_province_name = "Thracian Hadrianopolis" }
+			858 = { change_province_name = "Lozengrad" }
+			859 = { change_province_name = "Kalipol" }
+			828 = { change_province_name = "Odrinpol" }
 		}
 		
 		ai_will_do = { factor = 1 }

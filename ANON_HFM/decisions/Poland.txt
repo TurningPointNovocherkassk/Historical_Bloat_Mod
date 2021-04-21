@@ -23,6 +23,9 @@ political_decisions = {
 			NOT = { has_country_flag = GLM_convention }
 			NOT = { has_country_flag = a_habsburg_on_the_throne_POL }
 			NOT = { tag = PLC }
+			NOT = { has_country_flag = became_plc }
+			NOT = { has_country_flag = the_commonwealth_3_nations }
+			NOT = { has_country_flag = stopped_poland_lithuania }
 		}
 
 		allow = {
@@ -104,6 +107,8 @@ political_decisions = {
 				primary_culture = lithuanian
 			}
 			NOT = { exists = PLC }
+			NOT = { has_country_flag = became_plc }
+			NOT = { has_country_flag = the_commonwealth_3_nations }
 			NOT = { has_country_flag = post_colonial_country }
 			NOT = { has_country_flag = a_habsburg_on_the_throne_POL }
 		}
@@ -163,6 +168,7 @@ political_decisions = {
 		}
 
 		effect = {
+			set_country_flag = became_plc
 			prestige = 30
 			random_owned = { 
 				limit = { owner = { accepted_culture = south_german } } owner = { remove_accepted_culture = south_german }
@@ -258,6 +264,7 @@ political_decisions = {
 		potential = {
 			tag = PLC
 			NOT = { exists = POL }
+			NOT = { has_country_flag = stopped_poland_lithuania }
 		}
 
 		allow = {
@@ -270,6 +277,7 @@ political_decisions = {
 
 		effect = {
 			prestige = -35
+			set_country_flag = stopped_poland_lithuania
 			PLC = { all_core = { remove_core = PLC } }
 			689 = { add_core = POL }
 			702 = { add_core = POL }
@@ -317,6 +325,8 @@ political_decisions = {
 			}
 			change_tag = POL
 			capital = 706
+			clr_country_flag = became_plc
+			clr_country_flag = the_commonwealth_3_nations
 		}
 
 		ai_will_do = {
@@ -341,6 +351,8 @@ political_decisions = {
 			}
 			NOT = { has_country_flag = unite_with_poland }
 			NOT = { has_country_flag = post_colonial_country }
+			NOT = { has_country_flag = became_plc }
+			NOT = { has_country_flag = the_commonwealth_3_nations }
 		}
 
 		allow = {

@@ -3742,7 +3742,7 @@ colonia_tovar_founded = {
 	icon = 13
 	population_growth = 0.005
 	immigrant_attract = 0.15
-	assimilation_rate = 0.025
+	assimilation_rate = -0.25
 }
 good_immigrants = {
 	icon = 9
@@ -4095,21 +4095,23 @@ malagasy_sanitorium = {
 }
 
 central_ukraine_modifier = {
-	mine_RGO_eff = 0.25
-	mine_RGO_size = 0.25
+	mine_RGO_eff = 0.125
+	mine_RGO_size = 0.125
+	rgo_output = 0.05
 	population_growth = 0.001
 	immigrant_attract = 0.075
 	icon = 13
 }
 
 donbass_modifier = {
-	mine_RGO_eff = 0.5
-	mine_RGO_size = 0.5
+	mine_RGO_eff = 0.25
+	mine_RGO_size = 0.25
+	rgo_output = 0.05
 	population_growth = 0.002
 	immigrant_attract = 0.15
 	icon = 13
 }
-
+	
 jewish_polygamy = {
 	population_growth = 0.005
 	icon = 19

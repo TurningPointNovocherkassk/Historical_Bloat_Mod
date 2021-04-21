@@ -115,13 +115,11 @@ country_migration_target = {
 	}
 	modifier = {
 		factor = 2
-		THIS = {
-			OR = {
-				has_pop_culture = japanese
-				has_pop_culture = beifaren
-				has_pop_culture = nanfaren
-				has_pop_culture = hakka
-			}
+		OR = {
+			THIS = { has_pop_culture = japanese }
+			THIS = { has_pop_culture = beifaren }
+			THIS = { has_pop_culture = nanfaren }
+			THIS = { has_pop_culture = hakka }
 		}
 		OR = {
 			has_country_flag = owns_lima
@@ -138,11 +136,9 @@ country_migration_target = {
 	}
 	modifier = {
 		factor = 2
-		THIS = {
-			OR = {
-				is_culture_group = south_slavic
-				is_culture_group = germanic
-			}
+		OR = {
+			THIS = { is_culture_group = south_slavic }
+			THIS = { is_culture_group = germanic }
 		}
 		has_country_flag = owns_santiago
 	}
@@ -155,13 +151,11 @@ country_migration_target = {
 	}
 	modifier = {
 		factor = 2
-		THIS = {
-			OR = {
-				has_pop_culture = canarian
-				has_pop_culture = andalusian
-				has_pop_culture = spanish
-				has_pop_culture = galician
-			}
+		OR = {
+			THIS = { has_pop_culture = canarian }
+			THIS = { has_pop_culture = andalusian }
+			THIS = { has_pop_culture = spanish }
+			THIS = { has_pop_culture = galician }
 		}
 		OR = {
 			has_country_flag = owns_caracas
@@ -264,11 +258,9 @@ country_migration_target = {
 	}
 	modifier = {
 		factor = 10.0
-		THIS = {
-			OR = {
-				has_pop_culture = scottish
-				has_pop_culture = ulster_scot
-			}
+		OR = {
+			THIS = { has_pop_culture = scottish }
+			THIS = { has_pop_culture = ulster_scot }
 		}
 		OR = {
 			primary_culture = scottish
@@ -505,23 +497,24 @@ migration_target =
 		factor = 2.5
 		is_core = YWL
 		THIS = { has_pop_culture = welsh }
-		country = {
-			OR = {
-				primary_culture = irish
-				primary_culture = welsh
-				primary_culture = scottish
-				primary_culture = ulster_scot
-				primary_culture = welsh
-				is_accepted_culture = welsh
-				primary_culture = manx
-				primary_culture = irish
-				primary_culture = breton
-				primary_culture = cornish
-				AND = {
-					primary_culture = platinean
-					ai = no
-				}
-			}
+		OR = {
+			country = { primary_culture = scottish }
+			country = { is_accepted_culture = scottish }
+			country = { primary_culture = ulster_scot }
+			country = { is_accepted_culture = ulster_scot }
+			country = { primary_culture = welsh }
+			country = { is_accepted_culture = welsh }
+			country = { primary_culture = manx }
+			country = { is_accepted_culture = manx }
+			country = { primary_culture = irish }
+			country = { is_accepted_culture = irish }
+			country = { primary_culture = breton }
+			country = { is_accepted_culture = breton }
+			country = { primary_culture = cornish }
+			country = { is_accepted_culture = cornish }
+			country = { primary_culture = british }
+			country = { is_accepted_culture = british }
+			AND = { primary_culture = platinean ai = no }
 		}
 	}
 	modifier = {
@@ -535,41 +528,46 @@ migration_target =
 			THIS = { has_pop_culture = ulster_scot }
 		}
 		has_pop_culture = THIS
-		country = {
-			OR = {
-				primary_culture = irish
-				primary_culture = welsh
-				primary_culture = scottish
-				is_accepted_culture = scottish
-				primary_culture = ulster_scot
-				is_accepted_culture = ulster_scot
-				primary_culture = welsh
-				primary_culture = manx
-				primary_culture = irish
-				primary_culture = breton
-				primary_culture = cornish
-				primary_culture = british
-			}
+		OR = {
+			country = { primary_culture = scottish }
+			country = { is_accepted_culture = scottish }
+			country = { primary_culture = ulster_scot }
+			country = { is_accepted_culture = ulster_scot }
+			country = { primary_culture = welsh }
+			country = { is_accepted_culture = welsh }
+			country = { primary_culture = manx }
+			country = { is_accepted_culture = manx }
+			country = { primary_culture = irish }
+			country = { is_accepted_culture = irish }
+			country = { primary_culture = breton }
+			country = { is_accepted_culture = breton }
+			country = { primary_culture = cornish }
+			country = { is_accepted_culture = cornish }
+			country = { primary_culture = british }
+			country = { is_accepted_culture = british }
 		}
 	}
 	modifier = {
 		factor = 2.5
 		is_core = INF
 		THIS = { has_pop_culture = irish }
-		country = {
-			OR = {
-				primary_culture = irish
-				is_accepted_culture = irish
-				primary_culture = welsh
-				primary_culture = scottish
-				primary_culture = ulster_scot
-				primary_culture = welsh
-				primary_culture = manx
-				primary_culture = irish
-				primary_culture = breton
-				primary_culture = cornish
-				primary_culture = british
-			}
+		OR = {
+			country = { primary_culture = scottish }
+			country = { is_accepted_culture = scottish }
+			country = { primary_culture = ulster_scot }
+			country = { is_accepted_culture = ulster_scot }
+			country = { primary_culture = welsh }
+			country = { is_accepted_culture = welsh }
+			country = { primary_culture = manx }
+			country = { is_accepted_culture = manx }
+			country = { primary_culture = irish }
+			country = { is_accepted_culture = irish }
+			country = { primary_culture = breton }
+			country = { is_accepted_culture = breton }
+			country = { primary_culture = cornish }
+			country = { is_accepted_culture = cornish }
+			country = { primary_culture = british }
+			country = { is_accepted_culture = british }
 		}
 	}
 	modifier = {
@@ -586,9 +584,9 @@ migration_target =
 			state_id = 2457
 			state_id = 2450
 		}
-		THIS = {
-			is_culture_group = germanic
-			is_culture_group = polish_culture_group
+		OR = {
+			THIS = { is_culture_group = germanic }
+			THIS = { is_culture_group = polish_culture_group }
 		}
 	}
 	
@@ -2059,44 +2057,41 @@ ideologies = {
 		
 		#ANON
 		modifier = {
-			factor = 4
+			factor = 5
 			has_pop_religion = jewish
-			country = { 
-				OR = { 
-					is_culture_group = germanic
-					is_culture_group = beneluxian
-					is_culture_group = pan_swiss
-					is_culture_group = scandinavian
-					is_culture_group = british
-					is_culture_group = italian
-					is_culture_group = iberian
-					is_culture_group = french
-					is_culture_group = south_slavic
-					is_culture_group = pan_albanian
-					is_culture_group = pan_romanian
-					is_culture_group = hungarian_culture_group
-					is_culture_group = polish_culture_group
-					is_culture_group = czecho_slovak_culture_group
-					is_culture_group = pan_greek
-					is_culture_group = levantine
-					is_culture_group = caucasian
-					is_culture_group = turko_semitic
-					is_culture_group = baltic
-					is_culture_group = latin_american_cultures
-				}
+			OR = {
+				country = { is_culture_group = germanic }
+				country = { is_culture_group = beneluxian }
+				country = { is_culture_group = pan_swiss }
+				country = { is_culture_group = scandinavian }
+				country = { is_culture_group = british }
+				country = { is_culture_group = italian }
+				country = { is_culture_group = iberian }
+				country = { is_culture_group = french }
+				country = { is_culture_group = south_slavic }
+				country = { is_culture_group = pan_albanian }
+				country = { is_culture_group = pan_romanian }
+				country = { is_culture_group = hungarian_culture_group }
+				country = { is_culture_group = polish_culture_group }
+				country = { is_culture_group = czecho_slovak_culture_group }
+				country = { is_culture_group = pan_greek }
+				country = { is_culture_group = levantine }
+				country = { is_culture_group = caucasian }
+				country = { is_culture_group = turko_semitic }
+				country = { is_culture_group = baltic }
+				country = { is_culture_group = latin_american_cultures }
 			}
 		}
 		modifier = {
-			factor = 8
+			factor = 10
 			has_pop_religion = jewish
-			country = { 
-				OR = { 
-					is_culture_group = east_slavic
-					is_culture_group = american_cultures
-					is_culture_group = neo_european_cultures
-				}
+			OR = { 
+				country = { is_culture_group = east_slavic }
+				country = { is_culture_group = american_cultures }
+				country = { is_culture_group = neo_european_cultures }
 			}
 		}
+		#
 		
 		modifier = {
 			factor = 1.1
@@ -2265,42 +2260,39 @@ ideologies = {
 		modifier = {
 			factor = 3
 			has_pop_religion = jewish
-			country = { 
-				OR = { 
-					is_culture_group = germanic
-					is_culture_group = beneluxian
-					is_culture_group = pan_swiss
-					is_culture_group = scandinavian
-					is_culture_group = british
-					is_culture_group = italian
-					is_culture_group = iberian
-					is_culture_group = french
-					is_culture_group = south_slavic
-					is_culture_group = pan_albanian
-					is_culture_group = pan_romanian
-					is_culture_group = hungarian_culture_group
-					is_culture_group = polish_culture_group
-					is_culture_group = czecho_slovak_culture_group
-					is_culture_group = pan_greek
-					is_culture_group = levantine
-					is_culture_group = caucasian
-					is_culture_group = turko_semitic
-					is_culture_group = baltic
-					is_culture_group = latin_american_cultures
-				}
+			OR = {
+				country = { is_culture_group = germanic }
+				country = { is_culture_group = beneluxian }
+				country = { is_culture_group = pan_swiss }
+				country = { is_culture_group = scandinavian }
+				country = { is_culture_group = british }
+				country = { is_culture_group = italian }
+				country = { is_culture_group = iberian }
+				country = { is_culture_group = french }
+				country = { is_culture_group = south_slavic }
+				country = { is_culture_group = pan_albanian }
+				country = { is_culture_group = pan_romanian }
+				country = { is_culture_group = hungarian_culture_group }
+				country = { is_culture_group = polish_culture_group }
+				country = { is_culture_group = czecho_slovak_culture_group }
+				country = { is_culture_group = pan_greek }
+				country = { is_culture_group = levantine }
+				country = { is_culture_group = caucasian }
+				country = { is_culture_group = turko_semitic }
+				country = { is_culture_group = baltic }
+				country = { is_culture_group = latin_american_cultures }
 			}
 		}
 		modifier = {
 			factor = 6
 			has_pop_religion = jewish
-			country = { 
-				OR = { 
-					is_culture_group = east_slavic
-					is_culture_group = american_cultures
-					is_culture_group = neo_european_cultures
-				}
+			OR = { 
+				country = { is_culture_group = east_slavic }
+				country = { is_culture_group = american_cultures }
+				country = { is_culture_group = neo_european_cultures }
 			}
 		}
+		#
 		
 		
 		modifier = {

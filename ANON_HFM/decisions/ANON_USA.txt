@@ -63,9 +63,7 @@ political_decisions = {
 			ENG_74 = { add_core = USA }
 			77 = { remove_core = USA }
 			ENG = {
-				country_event = {
-					id = 72749
-				}
+				country_event = 72749
 			}
 			relation = {
 				who = ENG
@@ -155,9 +153,7 @@ political_decisions = {
 			250 = { remove_core = MRU }
 			ENG = { all_core = { remove_core = USA } }
 			USA = {
-				country_event = {
-					id = 72748
-				}
+				country_event = 72748
 			}
 		}
 		ai_will_do = {
@@ -233,9 +229,7 @@ political_decisions = {
 						vassal_of = ENG
 					}
 				}
-				country_event = {
-					id = 72747
-				}
+				country_event = 72747
 			}
 			USA = { all_core = { remove_core = ENG } }
 			ENG = {
@@ -246,6 +240,7 @@ political_decisions = {
 					remove_core = ENG
 					secede_province = USA
 				}
+				country_event = 72740
 			}
 		}
 		ai_will_do = {

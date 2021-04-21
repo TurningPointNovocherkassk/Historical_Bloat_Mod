@@ -137,7 +137,7 @@ political_decisions = {
 					OR = {
 						tag = MEX
 						tag = MXM
-						tag = M3M
+						tag = M3X
 					}
 					NOT = { has_country_flag = treaty_of_guadalupe_hidalgo }
 				}
@@ -163,7 +163,7 @@ political_decisions = {
 					OR = {
 						tag = MEX
 						tag = MXM
-						tag = M3M
+						tag = M3X
 					}
 					is_greater_power = yes
 					invention = manifest_destiny
@@ -223,7 +223,7 @@ political_decisions = {
 							OR = {
 								is_core = MEX
 								is_core = MXM
-								is_core = M3M
+								is_core = M3X
 								is_core = ARD
 								is_core = DES
 								is_core = CAS
@@ -250,7 +250,7 @@ political_decisions = {
 							OR = {
 								is_core = MEX
 								is_core = MXM
-								is_core = M3M
+								is_core = M3X
 								is_core = USA
 								is_core = CSA
 								is_core = FSA
@@ -259,7 +259,7 @@ political_decisions = {
 						}
 						remove_core = MEX
 						remove_core = MXM
-						remove_core = M3M
+						remove_core = M3X
 						remove_core = USA
 						remove_core = CSA
 						remove_core = FSA
@@ -296,7 +296,7 @@ political_decisions = {
 							OR = {
 								is_core = MEX
 								is_core = MXM
-								is_core = M3M
+								is_core = M3X
 								is_core = USA
 								is_core = CSA
 								is_core = FSA
@@ -309,7 +309,7 @@ political_decisions = {
 						}
 						remove_core = MEX
 						remove_core = MXM
-						remove_core = M3M
+						remove_core = M3X
 						remove_core = USA
 						remove_core = CSA
 						remove_core = FSA
@@ -322,7 +322,7 @@ political_decisions = {
 			}
 
 			random_owned = {
-				limit = { owner = { OR = { tag = MEX tag = MXM tag = M3M } } }
+				limit = { owner = { OR = { tag = MEX tag = MXM tag = M3X } } }
 				owner = {
 					TEX_132 = { add_core = THIS } #East Texas
 					TEX_133 = { add_core = THIS } #West Texas

@@ -1026,6 +1026,8 @@ political_decisions = {
 			has_country_flag = organize_PLC_1st
 			has_country_flag = the_PLC_claims_1st
 			any_owned_province = { is_core = UKR }
+			
+			has_country_flag = became_plc
 			NOT = { has_country_flag = the_commonwealth_3_nations }
 		}
 		allow = {
@@ -1956,7 +1958,16 @@ political_decisions = {
 		picture = annex_united_baltic_duchy
 		potential = {
 			OR = {
-				is_culture_group = germanic
+				AND = {
+					is_culture_group = germanic
+					NOT = {
+						OR = {
+							tag = AUS
+							tag = KUK
+							# tag = DNB
+						}
+					}
+				}
 				is_culture_group = polish_culture_group
 				is_culture_group = baltic
 				is_culture_group = scandinavian
@@ -2023,6 +2034,7 @@ political_decisions = {
 			invention = manifest_destiny
 			invention = determinism
 			war_policy = jingoism
+			total_num_of_ports = 1
 		}
 		
 		effect = {
@@ -2107,7 +2119,31 @@ political_decisions = {
 				call_ally = yes
 			}
 		}
-		ai_will_do = { factor = 1 }
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = {
+					relation = { who = RUS value = 25 }
+					OR = {
+						government = proletarian_dictatorship
+						government = fascist_dictatorship
+						AND = {
+							OR = {
+								government = absolute_monarchy
+								government = prussian_constitutionalism
+								government = hms_government
+							}
+							OR = {
+								ruling_party_ideology = fascist
+								ruling_party_ideology = communist
+								ruling_party_ideology = reactionary
+							}
+						}
+					}
+				}
+			}
+		}
 	}
 	
 	incorporate_the_baltic_states_alternate = {
@@ -3070,7 +3106,7 @@ political_decisions = {
 			total_num_of_ports = 1
 			SCA = {
 				owns = 3668 #Laeso
-				owns = 3667 #Orust, Tj√∂rn & Hisingen
+				owns = 3667 #Orust, Tjˆrn & Hisingen
 				owns = 374 #Bornholm
 				owns = 331 #Gotland
 				#owns = 348 #Aland
@@ -3118,13 +3154,13 @@ political_decisions = {
 			total_num_of_ports = 1
 			OR = {
 				UBD = {
-					owns = 3563 #K√§rdla
-					owns = 353 #√ñsel
+					owns = 3563 #K‰rdla
+					owns = 353 #÷sel
 					owns = 358 #Ventspils
 				}
 				BBD = {
-					owns = 3563 #K√§rdla
-					owns = 353 #√ñsel
+					owns = 3563 #K‰rdla
+					owns = 353 #÷sel
 					owns = 358 #Ventspils
 				}
 			}
@@ -3908,7 +3944,7 @@ political_decisions = {
 						is_culture_group = baltic
 					}
 				}	
-				1785 = { change_province_name = "Svƒìtais Jƒìkabs" }		
+				1785 = { change_province_name = "Svetais Jekabs" }		
 				owner = { 
 					set_global_flag = baltic_renamed_gambia
 					clr_global_flag = german_renamed_gambia
@@ -3947,7 +3983,7 @@ political_decisions = {
 						NOT = { tag = WSF }
 					}
 				}
-				1785 = { change_province_name = "Swiƒôty Jakub" }	
+				1785 = { change_province_name = "Swiety Jakub" }	
 				owner = { 
 					set_global_flag = polish_renamed_gambia
 					clr_global_flag = baltic_renamed_gambia
@@ -4100,7 +4136,7 @@ political_decisions = {
 						is_culture_group = germanic
 					}
 				}
-				2237 = { change_province_name = "Trinit√§t" }	
+				2237 = { change_province_name = "Trinit‰t" }	
 				owner = { 
 					set_global_flag = german_renamed_trinidad
 					clr_global_flag = baltic_renamed_trinidad
@@ -4119,7 +4155,7 @@ political_decisions = {
 						is_culture_group = germanic
 					}
 				}
-				2238 = { change_province_name = "Neu-Kurl√§nd" }	
+				2238 = { change_province_name = "Neu-Kurl‰nd" }	
 				owner = { 
 					set_global_flag = german_renamed_tobago
 					clr_global_flag = baltic_renamed_tobago
@@ -4139,7 +4175,7 @@ political_decisions = {
 						is_culture_group = baltic
 					}
 				}	
-				2237 = { change_province_name = "Trƒ´svienƒ´ba" }		
+				2237 = { change_province_name = "Trisvieniba" }		
 				owner = { 
 					set_global_flag = baltic_renamed_trinidad
 					clr_global_flag = german_renamed_trinidad
@@ -4158,7 +4194,7 @@ political_decisions = {
 						is_culture_group = baltic
 					}
 				}
-				2238 = { change_province_name = "JaunƒÅ Kurija" }	
+				2238 = { change_province_name = "Jauna Kurija" }	
 				owner = { 
 					set_global_flag = baltic_renamed_tobago
 					clr_global_flag = german_renamed_tobago
@@ -4218,7 +4254,7 @@ political_decisions = {
 						NOT = { tag = WSF }
 					}
 				}
-				2237 = { change_province_name = "Tr√≥jca" }	
+				2237 = { change_province_name = "TrÛjca" }	
 				owner = { 
 					set_global_flag = polish_renamed_trinidad
 					clr_global_flag = baltic_renamed_trinidad
@@ -4238,7 +4274,7 @@ political_decisions = {
 						NOT = { tag = WSF }
 					}
 				}
-				2238 = { change_province_name = "Nowa Kuronia" }	
+				2238 = { change_province_name = "Nowa Kuronija" }	
 				owner = { 
 					set_global_flag = polish_renamed_tobago
 					clr_global_flag = german_renamed_tobago

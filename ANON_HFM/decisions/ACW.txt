@@ -140,22 +140,305 @@ political_decisions = {
 		}
 		
 		effect = {
-			any_pop = {
-				limit = {
-					has_pop_culture = cherokee
-					NOT = {
-						location = {
-							OR = {
-								province_id = 130
-								province_id = 131
+			random_list = {
+				60 = {
+					any_pop = {
+						limit = {
+							is_culture_group = native_american
+							location = {
+								region = USA_148 #Missouri
 							}
 						}
+						reduce_pop = 0.70
+						consciousness = 2
+						militancy = -1
+						move_pop = 130
 					}
 				}
-				reduce_pop = 0.80
-				consciousness = 2
-				militancy = -1
-				move_pop = 130
+				40 = {
+					any_pop = {
+						limit = {
+							is_culture_group = native_american
+							location = {
+								region = USA_148 #Missouri
+							}
+						}
+						reduce_pop = 0.80
+						consciousness = 2
+						militancy = -1
+						move_pop = 131
+					}
+				}
+			}
+			random_list = {
+				60 = {
+					any_pop = {
+						limit = {
+							is_culture_group = native_american
+							location = {
+								region = USA_194 #Mississippi
+							}
+						}
+						reduce_pop = 0.70
+						consciousness = 2
+						militancy = -1
+						move_pop = 130
+					}
+				}
+				40 = {
+					any_pop = {
+						limit = {
+							is_culture_group = native_american
+							location = {
+								region = USA_194 #Mississippi
+							}
+						}
+						reduce_pop = 0.80
+						consciousness = 2
+						militancy = -1
+						move_pop = 131
+					}
+				}
+			}
+			random_list = {
+				60 = {
+					any_pop = {
+						limit = {
+							is_culture_group = native_american
+							location = {
+								region = USA_196 #Alabama
+							}
+						}
+						reduce_pop = 0.70
+						consciousness = 2
+						militancy = -1
+						move_pop = 130
+					}
+				}
+				40 = {
+					any_pop = {
+						limit = {
+							is_culture_group = native_american
+							location = {
+								region = USA_196 #Alabama
+							}
+						}
+						reduce_pop = 0.80
+						consciousness = 2
+						militancy = -1
+						move_pop = 131
+					}
+				}
+			}
+			random_list = {
+				60 = {
+					any_pop = {
+						limit = {
+							is_culture_group = native_american
+							location = {
+								region = USA_200 #Florida
+							}
+						}
+						reduce_pop = 0.70
+						consciousness = 2
+						militancy = -1
+						move_pop = 130
+					}
+				}
+				40 = {
+					any_pop = {
+						limit = {
+							is_culture_group = native_american
+							location = {
+								region = USA_200 #Florida
+							}
+						}
+						reduce_pop = 0.80
+						consciousness = 2
+						militancy = -1
+						move_pop = 131
+					}
+				}
+			}
+			random_list = {
+				60 = {
+					any_pop = {
+						limit = {
+							is_culture_group = native_american
+							location = {
+								region = USA_201 #Georgia
+							}
+						}
+						reduce_pop = 0.70
+						consciousness = 2
+						militancy = -1
+						move_pop = 130
+					}
+				}
+				40 = {
+					any_pop = {
+						limit = {
+							is_culture_group = native_american
+							location = {
+								region = USA_201 #Georgia
+							}
+						}
+						reduce_pop = 0.80
+						consciousness = 2
+						militancy = -1
+						move_pop = 131
+					}
+				}
+			}
+			random_list = {
+				60 = {
+					any_pop = {
+						limit = {
+							is_culture_group = native_american
+							location = {
+								region = USA_205 #S. Carolina
+							}
+						}
+						reduce_pop = 0.70
+						consciousness = 2
+						militancy = -1
+						move_pop = 130
+					}
+				}
+				40 = {
+					any_pop = {
+						limit = {
+							is_culture_group = native_american
+							location = {
+								region = USA_205 #S. Carolina
+							}
+						}
+						reduce_pop = 0.80
+						consciousness = 2
+						militancy = -1
+						move_pop = 131
+					}
+				}
+			}
+			random_list = {
+				60 = {
+					any_pop = {
+						limit = {
+							is_culture_group = native_american
+							location = {
+								region = USA_2556 #N. Carolina
+							}
+						}
+						reduce_pop = 0.70
+						consciousness = 2
+						militancy = -1
+						move_pop = 130
+					}
+				}
+				40 = {
+					any_pop = {
+						limit = {
+							is_culture_group = native_american
+							location = {
+								region = USA_2556 #N. Carolina
+							}
+						}
+						reduce_pop = 0.80
+						consciousness = 2
+						militancy = -1
+						move_pop = 131
+					}
+				}
+			}
+			random_list = {
+				60 = {
+					any_pop = {
+						limit = {
+							is_culture_group = native_american
+							location = {
+								region = USA_139 #Louisiana
+							}
+						}
+						reduce_pop = 0.70
+						consciousness = 2
+						militancy = -1
+						move_pop = 130
+					}
+				}
+				40 = {
+					any_pop = {
+						limit = {
+							is_culture_group = native_american
+							location = {
+								region = USA_139 #Louisiana
+							}
+						}
+						reduce_pop = 0.80
+						consciousness = 2
+						militancy = -1
+						move_pop = 131
+					}
+				}
+			}
+			random_list = {
+				60 = {
+					any_pop = {
+						limit = {
+							is_culture_group = native_american
+							location = {
+								region = USA_211 #Virginia
+							}
+						}
+						reduce_pop = 0.70
+						consciousness = 2
+						militancy = -1
+						move_pop = 130
+					}
+				}
+				40 = {
+					any_pop = {
+						limit = {
+							is_culture_group = native_american
+							location = {
+								region = USA_211 #Virginia
+							}
+						}
+						reduce_pop = 0.80
+						consciousness = 2
+						militancy = -1
+						move_pop = 131
+					}
+				}
+			}
+			random_list = {
+				60 = {
+					any_pop = {
+						limit = {
+							is_culture_group = native_american
+							location = {
+								region = USA_218 #W. Virginia
+							}
+						}
+						reduce_pop = 0.70
+						consciousness = 2
+						militancy = -1
+						move_pop = 130
+					}
+				}
+				40 = {
+					any_pop = {
+						limit = {
+							is_culture_group = native_american
+							location = {
+								region = USA_218 #W. Virginia
+							}
+						}
+						reduce_pop = 0.80
+						consciousness = 2
+						militancy = -1
+						move_pop = 131
+					}
+				}
 			}
 			set_global_flag = marching_on_the_trail_of_tears
 		}
@@ -205,11 +488,7 @@ political_decisions = {
 		effect = {
 			any_pop = {
 				limit = {
-					OR = {
-						#ANON
-						is_culture_group = native_american
-						has_pop_culture = cherokee
-					}
+					is_culture_group = native_american
 				}
 				consciousness = 6
 				militancy = -2
@@ -1261,6 +1540,7 @@ political_decisions = {
 				is_culture_group = beneluxian
 				is_culture_group = east_slavic
 				is_culture_group = iberian
+				primary_culture = alaskan
 				#
 			}
 		}
@@ -1288,6 +1568,7 @@ political_decisions = {
 							capital_scope = { continent = indochina }
 							capital_scope = { continent = polynesia }
 							is_culture_group = east_slavic
+							primary_culture = alaskan
 						}
 					}
 				} 
@@ -1512,8 +1793,6 @@ political_decisions = {
 		effect = {
 			set_country_flag = 36_or_fight
 			badboy = 5
-			MEX_103 = { add_core = CSA }
-			MEX_100 = { add_core = CSA }
 			TEX_132 = { add_core = CSA }
 			TEX_133 = { add_core = CSA }
 			USA_129 = { add_core = CSA }
@@ -1526,8 +1805,80 @@ political_decisions = {
 			USA_196 = { add_core = CSA }
 			USA_194 = { add_core = CSA }
 			USA_139 = { add_core = CSA }
-			MEX_85 = { add_core = CSA }
+			MEX_85 = { add_core = CSA } # S. Cali
+			
 			96 = { add_core = CSA }
+			
+			100 = { add_core = CSA }
+			3396 = { add_core = CSA }
+			101 = { add_core = CSA }
+						
+			105 = { add_core = CSA }
+			3397 = { add_core = CSA }
+			2148 = { add_core = CSA }
+			
+			any_country = {
+				limit = {
+					OR = {
+						owns = 102
+						owns = 2662
+					}
+					OR = {
+						has_global_flag = historical_gadsden
+						has_global_flag = gadsden_bitch
+					}
+					NOT = { has_global_flag = gadsden_denied }
+				}
+				any_owned = {
+					limit = {
+						OR = {
+							province_id = 102
+							province_id = 2662
+						}
+					}
+					add_core = CSA
+				}
+			}
+			
+			# any_country = {
+				# limit = {
+					# OR = {
+						# owns = 2139
+						# owns = 2138
+						# owns = 102
+						# owns = 2662
+					# }
+					# has_global_flag = big_gadsden
+					# NOT = { has_global_flag = gadsden_denied }
+				# }
+				# any_owned = {
+					# limit = {
+						# province_id = 2139
+						# province_id = 2138
+						# province_id = 102
+						# province_id = 2662
+					# }
+					# add_core = CSA
+				# }
+			# }
+			
+			any_country = {
+				limit = {
+					has_global_flag = YUC_becomes_USA_state
+					any_owned_province = {
+						is_core = YUC
+						is_core = USA
+					}
+				}
+				any_owned = {
+					limit = {
+						is_core = YUC
+						is_core = USA
+					}
+					add_core = CSA
+				}
+			}
+			
 			any_neighbor_country = { limit = { any_owned_province = { is_core = THIS } } country_event = 441268 }
 		}
 		ai_will_do = { factor = 1 }
@@ -1722,7 +2073,13 @@ political_decisions = {
 				slavery = yes_slavery
 				slavery = freedom_of_womb
 			}
-			owns = 132
+			OR = {
+				owns = 132
+				AND = {
+					owns = 132
+					owns = 136
+				}
+			}
 			TEX = { exists = no }
 			NOT = {
 				has_country_flag = wilmot_proviso_providing
@@ -1744,16 +2101,110 @@ political_decisions = {
 			TEX = { all_core = { remove_core = TEX } }
 			TEX_132 = { add_core = TEX is_slave = yes add_core = CSA }
 			TEX_133 = { add_core = TEX is_slave = yes add_core = CSA }
-			MEX_100 = { is_slave = yes add_core = CSA }
-			MEX_103 = { is_slave = yes add_core = CSA }
+			# MEX_100 = { is_slave = yes add_core = CSA }
+			# MEX_103 = { is_slave = yes add_core = CSA }
 			USA_144 = { is_slave = yes add_core = CSA }
 			USA_148 = { is_slave = yes add_core = CSA }
 			USA_185 = { is_slave = yes add_core = CSA }
 			USA_211 = { is_slave = yes add_core = CSA }
 			USA_218 = { is_slave = yes add_core = CSA }
-			96 = { add_core = CSA }
-			102 = { add_core = CSA }
-			2662 = { add_core = CSA }
+			
+			any_country = {
+				limit = {
+					exists = yes
+					OR = {
+						owns = 96
+						
+						owns = 100
+						owns = 3396
+						owns = 101
+						
+						owns = 105
+						owns = 3397
+						owns = 2148
+					}
+					THIS = { has_country_flag = hasmanifestdestiny NOT = { has_country_flag = manifest_destiny_refuted } }
+				}
+				any_owned = {
+					limit = {
+						OR = {
+							province_id = 96
+							
+							province_id = 100
+							province_id = 3396
+							province_id = 101
+							
+							province_id = 105
+							province_id = 3397
+							province_id = 2148
+						}
+					}
+					add_core = CSA
+				}
+			}
+			any_country = {
+				limit = {
+					OR = {
+						owns = 102
+						owns = 2662
+					}
+					OR = {
+						has_global_flag = historical_gadsden
+						has_global_flag = gadsden_bitch
+					}
+					NOT = { has_global_flag = gadsden_denied }
+				}
+				any_owned = {
+					limit = {
+						OR = {
+							province_id = 102
+							province_id = 2662
+						}
+					}
+					add_core = CSA
+				}
+			}
+			# any_country = {
+				# limit = {
+					# OR = {
+						# owns = 2139
+						# owns = 2138
+						# owns = 102
+						# owns = 2662
+					# }
+					# has_global_flag = big_gadsden
+					# NOT = { has_global_flag = gadsden_denied }
+				# }
+				# any_owned = {
+					# limit = {
+						# OR = {
+							# province_id = 2139
+							# province_id = 2138
+							# province_id = 102
+							# province_id = 2662
+						# }
+					# }
+					# add_core = CSA
+				# }
+			# }
+			
+			any_country = {
+				limit = {
+					has_global_flag = YUC_becomes_USA_state
+					any_owned_province = {
+						is_core = YUC
+						is_core = USA
+					}
+				}
+				any_owned = {
+					limit = {
+						is_core = YUC
+						is_core = USA
+					}
+					add_core = CSA
+				}
+			}
+			
 			#
 			MEX_85 = { is_slave = no remove_core = CSA }
 			MEX_104 = { is_slave = no remove_core = CSA }

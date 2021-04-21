@@ -42,7 +42,8 @@ political_decisions = {
 					NOT = { has_province_modifier = central_ukraine_modifier }
 				}
 				trade_goods = coal
-				add_province_modifier = { name = central_ukraine_modifier duration = 18250 }
+				# add_province_modifier = { name = donbass_modifier duration = 18250 }
+				add_province_modifier = { name = donbass_modifier duration = 7300 }
 			}
 			any_owned = {
 				limit = {
@@ -50,7 +51,8 @@ political_decisions = {
 					NOT = { has_province_modifier = central_ukraine_modifier }
 				}
 				trade_goods = iron
-				add_province_modifier = { name = central_ukraine_modifier duration = 18250 }
+				# add_province_modifier = { name = donbass_modifier duration = 18250 }
+				add_province_modifier = { name = donbass_modifier duration = 7300 }
 			}
 			any_owned = {
 				limit = {
@@ -58,7 +60,8 @@ political_decisions = {
 					NOT = { has_province_modifier = central_ukraine_modifier }
 				}
 				trade_goods = lead
-				add_province_modifier = { name = central_ukraine_modifier duration = 18250 }
+				# add_province_modifier = { name = donbass_modifier duration = 18250 }
+				add_province_modifier = { name = donbass_modifier duration = 7300 }
 			}
 			any_owned = {
 				limit = {
@@ -66,7 +69,8 @@ political_decisions = {
 					NOT = { has_province_modifier = central_ukraine_modifier }
 				}
 				trade_goods = copper
-				add_province_modifier = { name = central_ukraine_modifier duration = 18250 }
+				# add_province_modifier = { name = donbass_modifier duration = 18250 }
+				add_province_modifier = { name = donbass_modifier duration = 7300 }
 			}
 		}
 	 	ai_will_do = { factor = 1 }
@@ -121,7 +125,8 @@ political_decisions = {
 					NOT = { has_province_modifier = donbass_modifier }
 				}
 				trade_goods = coal
-				add_province_modifier = { name = donbass_modifier duration = 18250 }
+				# add_province_modifier = { name = donbass_modifier duration = 18250 }
+				add_province_modifier = { name = donbass_modifier duration = 7300 }
 			}
 			any_owned = {
 				limit = {
@@ -130,7 +135,8 @@ political_decisions = {
 				}
 				change_province_name = "Yuzovka"
 				trade_goods = coal
-				add_province_modifier = { name = donbass_modifier duration = 18250 }
+				# add_province_modifier = { name = donbass_modifier duration = 18250 }
+				add_province_modifier = { name = donbass_modifier duration = 7300 }
 				add_province_modifier = { name = recently_built_city duration = 730 }
 			}
 		}

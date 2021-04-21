@@ -597,6 +597,7 @@
 			}
 			has_global_flag = 1843_greatmigration
 			NOT = { has_global_flag = champoeg_meetings }
+			NOT = { has_global_flag = anglo_oregon }
 		}
 		
 		mean_time_to_happen = { 
@@ -1336,7 +1337,13 @@ country_event = {
 							alliance_with = RUS
 							NOT = { tag = TUR }
 						}
+						AND = {
+							ai = no
+							NOT = { alliance_with = RUS }
+							relation = { who = RUS value = 50 }
+						}
 					}
+					relation = { who = RUS value = -25 }
 					exists = yes
 				}
 				set_country_flag = fort_ross_purchase_interest
@@ -1400,9 +1407,9 @@ country_event = {
 				any_owned_province = { is_core = RUS }
 				truce_with = RUS
 			}
-			relation = { who = RUS value = 0 }
 			#war = no
 			has_country_flag = fort_ross_purchase_interest
+			relation = { who = RUS value = -25 }
 			exists = yes
 		}
 		
@@ -4350,13 +4357,12 @@ country_event = {
 		}
 		
 		option = {
-			name = "EVTOPTA1100035"
+			name = "..."
 			random_owned = {
 				limit = { owner = { is_culture_group = east_slavic } }
 				owner = {
 					inherit = LSK
 				}
-			
 			}
 			ai_chance = {
 				factor = 100
@@ -5668,18 +5674,320 @@ country_event = {
 	}
 }
 
+country_event = {
+	id = 1100043
+	title = "EVTNAME1100043"
+	desc = "EVTDESC1100043"
+	picture = "fort_ross"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVT1100043OPTA"
+		prestige = -2.5
+		treasury = 25000
+		relation = { who = RUS value = -25 }
+	}
+}
+
+country_event = {
+	id = 1100044
+	title = "Territorial Organization of Hawaii"
+	desc = "Hawaii shall now be added to our Alyaskan Colony for better administration."
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "It must be done."
+		FROM = {
+			random_owned = {
+				limit = {
+					OR = {
+						province_id = 3305
+						province_id = 658
+						province_id = 2623
+						province_id = 3306
+					}
+					LSK = {
+						OR = {
+							vassal_of = FROM
+							substate_of = FROM
+						}
+					}
+				}
+				secede_province = LSK any_pop = { limit = { is_culture_group = oceanic } literacy = -0.99 }
+			}
+			random_owned = {
+				limit = {
+					province_id = 3351
+					LSK = {
+						OR = {
+							vassal_of = FROM
+							substate_of = FROM
+						}
+					}
+				}
+				secede_province = LSK any_pop = { limit = { is_culture_group = oceanic } literacy = -0.99 }
+			}
+			random_owned = {
+				limit = {
+					province_id = 3352
+					LSK = {
+						OR = {
+							vassal_of = FROM
+							substate_of = FROM
+						}
+					}
+				}
+				secede_province = LSK any_pop = { limit = { is_culture_group = oceanic } literacy = -0.99 }
+			}
+			random_owned = {
+				limit = {
+					province_id = 2526
+					LSK = {
+						OR = {
+							vassal_of = FROM
+							substate_of = FROM
+						}
+					}
+				}
+				secede_province = LSK any_pop = { limit = { is_culture_group = oceanic } literacy = -0.99 }
+			}
+			random_owned = {
+				limit = {
+					province_id = 2524
+					LSK = {
+						OR = {
+							vassal_of = FROM
+							substate_of = FROM
+						}
+					}
+				}
+				secede_province = LSK any_pop = { limit = { is_culture_group = oceanic } literacy = -0.99 }
+			}
+			random_owned = {
+				limit = {
+					province_id = 2523
+					LSK = {
+						OR = {
+							vassal_of = FROM
+							substate_of = FROM
+						}
+					}
+				}
+				secede_province = LSK any_pop = { limit = { is_culture_group = oceanic } literacy = -0.99 }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = 1100045
+	title = "EVTNAME1100045"
+	desc = "EVTDESC1100045"
+	picture = "fort_ross"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVT1100045OPTA"
+		random_owned = {
+			limit = { owner = { primary_culture = alaskan }	}
+			owner = {
+				add_country_modifier = {
+					name = alaskaification
+					duration = -1
+				}
+				any_pop = {
+					limit = {
+						has_pop_culture = alaskan
+						has_pop_religion = orthodox
+						location = {
+							OR = {
+								region = HAW_658
+								region = HAW_2524
+								region = TON_2540
+							}
+						}
+					}
+					reduce_pop = 1.25
+				}
+				any_pop = {
+					limit = {
+						is_culture_group = oceanic
+						location = {
+							OR = {
+								region = HAW_658
+								region = HAW_2524
+								region = TON_2540
+							}
+						}
+					}
+					reduce_pop = 0.85
+					consciousness = 7
+					militancy = 7
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = 1100046
+	title = "EVTNAME1100046"
+	desc = "EVTDESC1100046"
+	picture = "fort_ross"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVT1100046OPTA"
+		random_owned = {
+			limit = { owner = { primary_culture = alaskan }	}
+			owner = {
+				add_country_modifier = {
+					name = alaskaification
+					duration = -1
+				}
+				any_pop = {
+					limit = {
+						has_pop_culture = alaskan
+						has_pop_religion = orthodox
+						location = {
+							continent = north_america
+							NOT = {
+								OR = {
+									region = HAW_658
+									region = HAW_2524
+								}
+							}
+						}
+					}
+					reduce_pop = 1.15
+				}
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+						location = {
+							continent = north_america
+							NOT = {
+								OR = {
+									region = HAW_658
+									region = HAW_2524
+								}
+							}
+						}
+					}
+					reduce_pop = 0.5
+					consciousness = 5
+					militancy = 5
+				}
+			}
+		}
+	}
+}
+
+	# Oregon is auto-colonized by the anglos if USA doesn't exist (or goes to CAN or RPL if they're still around)
 	country_event = {
-		id = 1100043
-		title = "EVTNAME1100043"
-		desc = "EVTDESC1100043"
-		picture = "fort_ross"
+		id = 1100047
+		title = "EVTNAME1100047"
+		desc = "EVTDESC1100047"
+		fire_only_once = yes
+		trigger = {
+			owns = 78
+			owns = 79
+			owns = 81
+			NOT = { tag = USA }
+			year = 1843
+			OR = {
+				AND = {
+					tag = ENG
+					is_greater_power = yes
+				}
+				vassal_of = ENG
+				substate_of = ENG
+				in_sphere = ENG
+				
+			}
+			USA = {
+				OR = {
+					exists = no
+					vassal_of = ENG
+					in_sphere = ENG
+					any_owned_province = {
+						NOT = {
+							OR = {
+								region = USA_247 # New England
+								region = USA_243 # Massachusetts 
+								region = USA_219 # Maryland 
+							}
+						}
+					}
+				}
+			}
+			UOR = {
+				exists = no
+			}
+			CAS = {
+				exists = no
+			}
+			NOT = { has_global_flag = anglo_oregon }
+		}
 		
-		is_triggered_only = yes
+		mean_time_to_happen = { 
+			months = 2
+		}
 		
 		option = {
-			name = "EVT1100043OPTA"
-			prestige = -2.5
-			treasury = 25000
-			relation = { who = RUS value = -25 }
+			name = "EVTOPTA1100047"
+			set_global_flag = anglo_oregon
+			UOR = { all_core = { add_core = COL add_core = THIS remove_core = UOR } }
+			80 = { #Walla-Walla
+				life_rating = 15
+				secede_province = THIS
+			}
+			81 = { #Oregon City
+				change_province_name = "Portland"
+				life_rating = 15
+				secede_province = THIS
+			}
+			82 = { #Grande Ronde
+				change_province_name = "Baker City"
+				life_rating = 15
+				secede_province = THIS
+			}
+			83 = { #Fort Umpqua
+				change_province_name = "Elkton"
+				life_rating = 15
+				secede_province = THIS
+			}
+			91 = { #Boise
+				life_rating = 15
+				secede_province = THIS
+			}
+			92 = { #Kullyspell
+				life_rating = 15
+				secede_province = THIS
+			}
+			93 = { #Fort Hall
+				life_rating = 15
+				secede_province = THIS
+			}
+			111 = { #Fort Bonneville
+				life_rating = 15
+				secede_province = THIS
+			}
+			114 = { #Fort Owen
+				life_rating = 15
+				secede_province = THIS
+			}
+			3388 = { #Klamath
+				life_rating = 15
+				secede_province = THIS
+			}
+			3394 = { #Wasco
+				life_rating = 15
+				secede_province = THIS
+			}
 		}
 	}

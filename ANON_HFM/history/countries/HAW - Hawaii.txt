@@ -61,12 +61,14 @@ oob = "HAW_oob.txt"
 
 #ANON
 decision = HAW_rename_hawaii
-foreign_training = yes_foreign_training
 foreign_weapons = yes_foreign_weapons
-foreign_officers = yes_foreign_officers
 foreign_artillery = yes_foreign_artillery
-foreign_naval_officers = yes_foreign_naval_officers
 foreign_navies = yes_foreign_navies
+
+foreign_training = no_foreign_training
+foreign_officers = no_foreign_officers
+western_shipyards = no_western_shipyards
+foreign_naval_officers = no_foreign_naval_officers
 
 1861.1.1 = {
 	

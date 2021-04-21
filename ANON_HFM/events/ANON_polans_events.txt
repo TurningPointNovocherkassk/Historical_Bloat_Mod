@@ -9581,8 +9581,12 @@ country_event = {
 		set_country_flag = vasyl_eccentric
 		primary_culture = realukrainian
 		add_accepted_culture = polish
-		add_accepted_culture = ukrainian
-		add_accepted_culture = rusyn
+		remove_accepted_culture = ukrainian
+		remove_accepted_culture = rusyn
+		remove_accepted_culture = byelorussian
+		remove_accepted_culture = russophile
+		remove_accepted_culture = russian
+		religion = maronite
 		any_pop = {
 			limit = {
 				OR = {
@@ -9626,6 +9630,34 @@ country_event = {
 				}
 			}
 			add_province_modifier = { name = cultural_resurgence duration = 3650 }
+		}
+		any_country = {
+			limit = {
+				exists = no
+				OR = {
+					primary_culture = ukrainian
+					primary_culture = rusyn
+				}
+			}
+			primary_culture = realukrainian
+			remove_accepted_culture = ukrainian
+			remove_accepted_culture = rusyn
+		}
+		3593 = {
+			any_pop = {
+				limit = {
+					has_pop_culture = realukrainian
+				}
+				move_pop = 958
+			}
+		}
+		3687 = {
+			any_pop = {
+				limit = {
+					has_pop_culture = realukrainian
+				}
+				move_pop = 702
+			}
 		}
 		ai_chance = { factor = 100 }
 	}

@@ -1212,12 +1212,12 @@ political_decisions = {
 				primary_culture = llanero
 			}
 			owns = 3361
-			NOT = {	has_country_flag = colonia_tovar_founded	}
+			NOT = {	has_country_flag = colonia_tovar_founded }
 		}
 		
 		allow = {
 			war = no
-			year = 1843
+			# year = 1843
 		}
 		
 		effect = {
@@ -1234,7 +1234,7 @@ political_decisions = {
 			3361 = { #Maracay
 				add_province_modifier = {
 					name = colonia_tovar_founded
-					duration = -1
+					duration = 3650
 				}
 				add_core = T0V
 			}
