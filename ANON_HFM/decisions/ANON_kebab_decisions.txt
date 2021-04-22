@@ -490,11 +490,13 @@ political_decisions = {
 				is_culture_group = pan_greek
 				primary_culture = vlach
 				primary_culture = romanian
+				primary_culture = croat
+				primary_culture = slovene
 			}
 			OR = {
-				owns = 802
-				owns = 803
-				owns = 3621
+				owns = 802 # Pristina
+				owns = 803 # Prizren
+				owns = 3621 # Mitrovica
 			}
 			NOT = { has_global_flag = expel_albanians_kosovo }
 		}
@@ -509,6 +511,9 @@ political_decisions = {
 				ruling_party_ideology = fascist
 				ruling_party_ideology = anarcho_liberal
 			}
+			owns = 802 # Pristina
+			owns = 803 # Prizren
+			owns = 3621 # Mitrovica
 		}
 
 		effect = {
@@ -559,6 +564,13 @@ political_decisions = {
 			any_owned = {
 				limit = {
 					is_core = ALB
+					NOT = {
+						OR = {
+							province_id = 851
+							province_id = 849
+							# province_id = 852
+						}
+					}
 				}
 				remove_core = ALB
 			}
@@ -575,6 +587,8 @@ political_decisions = {
 				is_culture_group = pan_greek
 				primary_culture = vlach
 				primary_culture = romanian
+				primary_culture = croat
+				primary_culture = slovene
 			}
 			owns = 1780 #Debre - Debar - Tishit
 			NOT = { has_global_flag = expel_albanians_macedonia }
@@ -590,6 +604,7 @@ political_decisions = {
 				ruling_party_ideology = fascist
 				ruling_party_ideology = anarcho_liberal
 			}
+			owns = 1780 #Debre - Debar - Tishit
 		}
 
 		effect = {
@@ -620,6 +635,13 @@ political_decisions = {
 			any_owned = {
 				limit = {
 					is_core = ALB
+					NOT = {
+						OR = {
+							province_id = 851
+							province_id = 849
+							# province_id = 852
+						}
+					}
 				}
 				remove_core = ALB
 			}
@@ -636,6 +658,8 @@ political_decisions = {
 				is_culture_group = pan_greek
 				primary_culture = vlach
 				primary_culture = romanian
+				primary_culture = croat
+				primary_culture = slovene
 			}
 			owns = 824 #Yanya - Ioannina
 			NOT = { has_global_flag = expel_albanians_greece }
@@ -651,6 +675,7 @@ political_decisions = {
 				ruling_party_ideology = fascist
 				ruling_party_ideology = anarcho_liberal
 			}
+			owns = 824 #Yanya - Ioannina
 		}
 
 		effect = {
@@ -685,6 +710,13 @@ political_decisions = {
 			any_owned = {
 				limit = {
 					is_core = ALB
+					NOT = {
+						OR = {
+							province_id = 851
+							province_id = 849
+							# province_id = 852
+						}
+					}
 				}
 				remove_core = ALB
 			}
@@ -701,9 +733,14 @@ political_decisions = {
 				is_culture_group = pan_greek
 				primary_culture = vlach
 				primary_culture = romanian
+				primary_culture = croat
+				primary_culture = slovene
 			}
-			owns = 824 #Yanya - Ioannina
-			owns = 853 #Ergiri - Gjirokaster - Argyrokastron
+			OR = {
+				owns = 824 #Yanya - Ioannina
+				owns = 853 #Ergiri - Gjirokaster - Argyrokastron
+			}
+			has_global_flag = expel_albanians_greece
 			NOT = { has_global_flag = expel_albanians_n_epirus }
 		}
 
@@ -717,6 +754,8 @@ political_decisions = {
 				ruling_party_ideology = fascist
 				ruling_party_ideology = anarcho_liberal
 			}
+			owns = 824 #Yanya - Ioannina
+			owns = 853 #Ergiri - Gjirokaster - Argyrokastron
 		}
 
 		effect = {
@@ -762,6 +801,20 @@ political_decisions = {
 			any_owned = {
 				limit = {
 					is_core = ALB
+					OR = {
+						province_id = 824
+						province_id = 825
+						province_id = 837
+						province_id = 826
+						province_id = 827
+					}
+					NOT = {
+						OR = {
+							province_id = 851
+							province_id = 849
+							# province_id = 852
+						}
+					}
 				}
 				remove_core = ALB
 			}
@@ -781,6 +834,8 @@ political_decisions = {
 				is_culture_group = pan_greek
 				primary_culture = vlach
 				primary_culture = romanian
+				primary_culture = croat
+				primary_culture = slovene
 			}
 			owns = 800 #Podgorica - Ulcinj
 			NOT = { has_global_flag = expel_albanians_montenegro }
@@ -796,6 +851,7 @@ political_decisions = {
 				ruling_party_ideology = fascist
 				ruling_party_ideology = anarcho_liberal
 			}
+			owns = 800 #Podgorica - Ulcinj
 		}
 
 		effect = {
@@ -828,6 +884,19 @@ political_decisions = {
 			any_owned = {
 				limit = {
 					is_core = ALB
+					OR = {
+						province_id = 2583
+						province_id = 800
+						province_id = 2582
+						province_id = 850
+					}
+					NOT = {
+						OR = {
+							province_id = 851
+							province_id = 849
+							# province_id = 852
+						}
+					}
 				}
 				remove_core = ALB
 			}
@@ -847,9 +916,13 @@ political_decisions = {
 				is_culture_group = pan_greek
 				primary_culture = vlach
 				primary_culture = romanian
+				primary_culture = croat
+				primary_culture = slovene
 			}
-			owns = 2577 #Pljevlja
-			owns = 2569 #Niskic - Niksic
+			OR = {
+				owns = 2577 #Pljevlja
+				owns = 2569 #Niskic - Niksic
+			}
 			NOT = { has_global_flag = expel_bosniaks_montenegro }
 		}
 
@@ -863,6 +936,8 @@ political_decisions = {
 				ruling_party_ideology = fascist
 				ruling_party_ideology = anarcho_liberal
 			}
+			owns = 2577 #Pljevlja
+			owns = 2569 #Niskic - Niksic
 		}
 
 		effect = {
@@ -896,6 +971,15 @@ political_decisions = {
 				}
 				remove_core = BOS
 			}
+			804 = {
+				any_pop = {
+					limit = {
+						has_pop_culture = bosniak
+					}
+					move_pop = 787 #Foca
+				}
+				remove_core = BOS
+			}
 			any_pop = {
 				limit = {
 					has_pop_culture = bosniak
@@ -911,9 +995,14 @@ political_decisions = {
 			}
 			any_owned = {
 				limit = {
-					is_core = ALB
+					is_core = BOS
+					OR = {
+						province_id = 2583
+						province_id = 800
+						province_id = 2582
+					}
 				}
-				remove_core = ALB
+				remove_core = BOS
 			}
 		}
 
@@ -928,8 +1017,11 @@ political_decisions = {
 				is_culture_group = pan_greek
 				primary_culture = vlach
 				primary_culture = romanian
+				primary_culture = croat
+				primary_culture = slovene
 			}
 			owns = 804 # Novi Pazar
+			has_global_flag = expel_bosniaks_montenegro
 			NOT = { has_global_flag = expel_bosniaks_serbia }
 		}
 
@@ -949,24 +1041,13 @@ political_decisions = {
 			set_global_flag = expel_bosniaks_serbia
 			badboy = 0.5
 			prestige = 2
-			804 = {
-				any_pop = {
-					limit = {
-						has_pop_culture = bosniak
-					}
-					move_pop = 787 #Foca
-				}
-				remove_core = BOS
-			}
 			any_pop = {
 				limit = {
 					has_pop_culture = bosniak
 					location = {
 						OR = {
-							province_id = 798
-							province_id = 804
-							province_id = 799
-							province_id = 2577
+							region = SER_794 # N. Serbia
+							region = TUR_803 # S. Serbia
 						}
 					}
 				}
@@ -975,6 +1056,165 @@ political_decisions = {
 			any_owned = {
 				limit = {
 					is_core = BOS
+				}
+				remove_core = BOS
+			}
+		}
+
+		ai_will_do = { factor = 1 }
+	}
+	expel_bosniaks_croatia = {
+		potential = {
+			OR = {
+				primary_culture = serb
+				primary_culture = bulgarian
+				# primary_culture = montenegrin
+				is_culture_group = pan_greek
+				primary_culture = vlach
+				primary_culture = romanian
+				primary_culture = croat
+				primary_culture = slovene
+			}
+			OR = {
+				owns = 771 # Zagreb
+				owns = 772 # Sisak
+				owns = 777 # Pozega
+				owns = 780 # Split
+				owns = 782 # Dubrovnik
+				owns = 793 # Vukovar
+			}
+			NOT = { has_global_flag = expel_bosniaks_croatia }
+		}
+
+		allow = {
+			BOS = {
+				exists = no
+			}
+			is_vassal = no
+			OR = {
+				ruling_party_ideology = reactionary
+				ruling_party_ideology = fascist
+				ruling_party_ideology = anarcho_liberal
+			}
+			owns = 771 # Zagreb
+			owns = 772 # Sisak
+			owns = 777 # Pozega
+			owns = 793 # Vukovar
+			owns = 780 # Split
+			owns = 782 # Dubrovnik
+		}
+
+		effect = {
+			set_global_flag = expel_bosniaks_croatia
+			badboy = 0.25
+			prestige = 1
+			any_pop = {
+				limit = {
+					has_pop_culture = bosniak
+					location = {
+						OR = {
+							province_id = 771 # Zagreb
+							province_id = 772 # Sisak
+							province_id = 777 # Pozega
+							province_id = 793 # Vukovar
+							province_id = 780 # Split
+							province_id = 782 # Dubrovnik
+						}
+					}
+				}
+				move_pop = 783 # Sarajevo 
+			}
+			any_owned = {
+				limit = {
+					is_core = BOS
+					OR= {
+						region = AUS_771
+						region = AUS_777
+						region = AUS_780
+					}
+				}
+				remove_core = BOS
+			}
+		}
+
+		ai_will_do = { factor = 1 }
+	}
+	contain_bosniaks_sarajevo = {
+		potential = {
+			OR = {
+				primary_culture = serb
+				primary_culture = bulgarian
+				# primary_culture = montenegrin
+				is_culture_group = pan_greek
+				primary_culture = vlach
+				primary_culture = romanian
+				primary_culture = croat
+				primary_culture = slovene
+			}
+			OR = {
+				owns = 783 # Sarajevo
+				owns = 787 # Foca
+				owns = 789 # Livno
+				owns = 786 # Tuzla
+				owns = 785 # Banja Luka
+				owns = 784 # Bihac
+			}
+			OR = {
+				owns = 788 # Mostar
+				owns = 3636 # Neum
+				owns = 3637 # Herceg Novi
+				owns = 2569 # Niskic
+			}
+			has_global_flag = expel_bosniaks_montenegro
+			has_global_flag = expel_bosniaks_serbia
+			NOT = { has_global_flag = contain_bosniaks_sarajevo }
+		}
+
+		allow = {
+			BOS = {
+				exists = no
+			}
+			is_vassal = no
+			OR = {
+				ruling_party_ideology = reactionary
+				ruling_party_ideology = fascist
+				ruling_party_ideology = anarcho_liberal
+			}
+			owns = 783 # Sarajevo
+			owns = 787 # Foca
+			owns = 789 # Livno
+			owns = 786 # Tuzla
+			owns = 785 # Banja Luka
+			owns = 784 # Bihac
+			owns = 788 # Mostar
+			owns = 3636 # Neum
+			owns = 3637 # Herceg Novi
+			owns = 2569 # Niskic
+		}
+
+		effect = {
+			set_global_flag = contain_bosniaks_sarajevo
+			badboy = 0.5
+			prestige = 2
+			any_pop = {
+				limit = {
+					has_pop_culture = bosniak
+					NOT = {
+						location = {
+							OR = {
+								region = AUS_771 #Croatia
+								region = AUS_777 #Slavonia
+								region = AUS_780 #Dalmatia
+							}
+						}
+					}
+				}
+				move_pop = 783 # Sarajevo
+			}
+			any_owned = {
+				limit = {
+					is_core = BOS
+					NOT = { province_id = 783 } # Sarajevo 
 				}
 				remove_core = BOS
 			}
