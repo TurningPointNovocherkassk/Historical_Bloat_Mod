@@ -859,22 +859,26 @@ country_event = {
 		badboy = -5
 		any_owned = {
 			limit = {
-				is_core = BRZ
 				OR = {
 					province_id = 2401 #Marabitanas
 					province_id = 3371 #Macapiri
+					province_id = 3599 #Taracua
 				}
 			}
 			add_core = BRZ
 			secede_province = BRZ
 			remove_core = THIS
 			remove_core = CLM
+			remove_core = VNZ
 		}
 		relation = { who = BRZ value = 300 }
 		BRZ = {
 			country_event = 1000023
 		}
-		ai_chance = { factor = 90 }
+		ai_chance = {
+			factor = 90
+			modifier = { factor = 1.1 FROM = { relation = { who = THIS value = 150 } } }
+		}
 	}
 	
 	option = {
@@ -882,13 +886,14 @@ country_event = {
 		badboy = 1
 		2401 = { add_core = BRZ }
 		3371 = { add_core = BRZ }
+		3599 = { add_core = BRZ }
 		relation = { who = BRZ value = -400 }
 		BRZ = {
 			country_event = 1000024
 		}
 		ai_chance = {
 			factor = 10
-			modifier = { factor = 1.5 is_greater_power = yes }
+			modifier = { factor = 10 is_greater_power = yes }
 			modifier = { factor = 0 OR = { in_sphere = FROM vassal_of = FROM } }
 			modifier = { factor = 0 badboy = 0.95 }
 		}

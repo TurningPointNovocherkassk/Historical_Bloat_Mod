@@ -490,7 +490,7 @@ political_decisions = {
 			NOT = {
 				owns = 2401 #Marabitanas
 				owns = 3371 #Macapiri
-				owns = 3599 #Macapiri
+				owns = 3599 #Taracua
 			}
 			owns = 2403
 			owns = 2407
@@ -498,9 +498,21 @@ political_decisions = {
 		
 		allow = {
 			war = no
-			2401 = {
-				owner = {
-					NOT = { truce_with = THIS }
+			OR = {
+				2401 = {
+					owner = {
+						NOT = { truce_with = THIS }
+					}
+				}
+				3371 = {
+					owner = {
+						NOT = { truce_with = THIS }
+					}
+				}
+				3599 = {
+					owner = {
+						NOT = { truce_with = THIS }
+					}
 				}
 			}
 			2247 = { #Bogota
@@ -508,6 +520,8 @@ political_decisions = {
 					OR = {
 						is_vassal = no
 						vassal_of = THIS
+						in_sphere = THIS
+						relation = { who = THIS value = 100 }
 					}
 				}
 			}

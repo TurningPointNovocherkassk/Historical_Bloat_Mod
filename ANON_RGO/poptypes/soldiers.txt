@@ -1654,7 +1654,10 @@ ideologies = {
 		#ANON
 		modifier = {
 			factor = 4
-			has_pop_religion = jewish
+			OR = {
+				has_pop_religion = jewish
+				is_culture_group = jewish_cultures
+			}
 			OR = {
 				country = { is_culture_group = germanic }
 				country = { is_culture_group = beneluxian }
@@ -1680,7 +1683,10 @@ ideologies = {
 		}
 		modifier = {
 			factor = 8
-			has_pop_religion = jewish
+			OR = {
+				has_pop_religion = jewish
+				is_culture_group = jewish_cultures
+			}
 			OR = { 
 				country = { is_culture_group = east_slavic }
 				country = { is_culture_group = american_cultures }
@@ -1860,7 +1866,10 @@ ideologies = {
 		#ANON
 		modifier = {
 			factor = 3
-			has_pop_religion = jewish
+			OR = {
+				has_pop_religion = jewish
+				is_culture_group = jewish_cultures
+			}
 			OR = {
 				country = { is_culture_group = germanic }
 				country = { is_culture_group = beneluxian }
@@ -1886,7 +1895,10 @@ ideologies = {
 		}
 		modifier = {
 			factor = 6
-			has_pop_religion = jewish
+			OR = {
+				has_pop_religion = jewish
+				is_culture_group = jewish_cultures
+			}
 			OR = { 
 				country = { is_culture_group = east_slavic }
 				country = { is_culture_group = american_cultures }
