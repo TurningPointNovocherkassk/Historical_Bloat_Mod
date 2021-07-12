@@ -2804,16 +2804,15 @@ categories =  {
 	samarkand = {
 		movement_cost = 1.2
 		defence = 1
-		color = { 70 135 0 }
-		farm_rgo_size = -0.2
-		farm_rgo_eff = -0.2
+		color = { 135 70 0 }
+		farm_rgo_size = 0.15
+		farm_rgo_eff = 0.15
 		mine_rgo_size = 0.05
 		mine_rgo_eff = 0.0
-		supply_limit = 2
+		immigrant_attract = 0.05
+		supply_limit = 10
 		min_build_railroad = 1
 		combat_width = -0.33
-		attrition = 1.25
-		immigrant_attract = -0.35
 	}
 
 	isfahan = {
@@ -3825,16 +3824,30 @@ categories =  {
 	
 	sanmarino = {
 		movement_cost = 1.2
-		defence = 2
-		color = { 117 108 119 }
-		farm_rgo_size = 0.1
-		farm_rgo_eff = 0.1
-		mine_rgo_size = 0.1
+		defence = 1
+		color = { 135 70 0 }
+		farm_rgo_size = 0.15
+		farm_rgo_eff = 0.15
+		mine_rgo_size = 0.05
 		mine_rgo_eff = 0.0
-		supply_limit = 8
+		immigrant_attract = 0.05
+		supply_limit = 10
 		min_build_railroad = 1
-		immigrant_attract = 0.025
-		combat_width = -0.50
+		combat_width = -0.33
+	}
+	
+	benevento = {
+		movement_cost = 1.2
+		defence = 1
+		color = { 135 70 0 }
+		farm_rgo_size = 0.15
+		farm_rgo_eff = 0.15
+		mine_rgo_size = 0.05
+		mine_rgo_eff = 0.0
+		immigrant_attract = 0.05
+		supply_limit = 10
+		min_build_railroad = 1
+		combat_width = -0.33
 	}
 	
 	portsmouth = {
@@ -4461,17 +4474,16 @@ categories =  {
 		supply_limit = 4
 		immigrant_attract = -0.1
 	}
-	kokand = {
+	kokand = {		
 		movement_cost = 1.2
 		defence = 1
-		color = { 137 104 16 }
-		
-		farm_rgo_size = 0.0
-		farm_rgo_eff = 0.0
-		mine_rgo_size = 0.0
+		color = { 135 70 0 }
+		farm_rgo_size = 0.15
+		farm_rgo_eff = 0.15
+		mine_rgo_size = 0.05
 		mine_rgo_eff = 0.0
-		
-		supply_limit = 6
+		immigrant_attract = 0.05
+		supply_limit = 10
 		min_build_railroad = 1
 		combat_width = -0.33
 	}
@@ -5156,19 +5168,20 @@ categories =  {
 		supply_limit = 10
 	}
 	
-	adakaleh = {
+	adakaleh = { #river_island
 		movement_cost = 1.0
 		defence = 2
 		attrition = 1
 		color = { 210 155 10 }
 
-		farm_rgo_size = -0.5
+		farm_rgo_size = -0.95
 		farm_rgo_eff = 0.0
-		mine_rgo_size = -0.5
+		mine_rgo_size = -0.95
 		mine_rgo_eff = 0.0
 		supply_limit = 2
 		combat_width = -0.50
-		#immigrant_attract = -0.25
+		immigrant_attract = -0.5
+		assimilation_rate = -0.5
 	}
 	
 	fiume = {
@@ -5270,6 +5283,145 @@ categories =  {
 		min_build_railroad = 2
 		immigrant_attract = -0.25
 		combat_width = -0.50
+	}
+	
+	portelizabeth = {
+		movement_cost = 1.2
+		defence = 1
+		color = { 220 201 199 }
+		farm_rgo_size = 0.0
+		farm_rgo_eff = -0.15
+		mine_rgo_size = 0.5
+		mine_rgo_eff = 0.0
+		supply_limit = 4
+		min_build_railroad = 1
+		combat_width = -0.33
+		immigrant_attract = -0.1
+	}
+
+	durban = {
+		movement_cost = 1.2
+		defence = 1
+		color = { 220 201 199 }
+		farm_rgo_size = 0.0
+		farm_rgo_eff = -0.15
+		mine_rgo_size = 0.5
+		mine_rgo_eff = 0.0
+		supply_limit = 4
+		min_build_railroad = 1
+		combat_width = -0.33
+		immigrant_attract = -0.1
+	}
+
+	bloemfontein = {
+		movement_cost = 1.2
+		defence = 1
+		color = { 220 201 199 }
+		farm_rgo_size = 0.0
+		farm_rgo_eff = -0.15
+		mine_rgo_size = 0.5
+		mine_rgo_eff = 0.0
+		supply_limit = 4
+		min_build_railroad = 1
+		combat_width = -0.33
+		immigrant_attract = -0.1
+	}
+
+	pretoria = {
+		movement_cost = 1.2
+		defence = 1
+		color = { 220 201 199 }
+		farm_rgo_size = 0.0
+		farm_rgo_eff = -0.15
+		mine_rgo_size = 0.5
+		mine_rgo_eff = 0.0
+		supply_limit = 4
+		min_build_railroad = 1
+		combat_width = -0.33
+		immigrant_attract = -0.1
+	}
+
+	johannesburg = {
+		movement_cost = 1.2
+		defence = 1
+		color = { 220 201 199 }
+		farm_rgo_size = 0.0
+		farm_rgo_eff = -0.15
+		mine_rgo_size = 0.5
+		mine_rgo_eff = 0.0
+		supply_limit = 4
+		min_build_railroad = 1
+		combat_width = -0.33
+		immigrant_attract = -0.1
+	}
+
+	darchen = {
+		movement_cost = 2
+		defence = 2
+		attrition = 2.5
+		color = { 0 54 62 }
+		farm_rgo_size = 0.0
+		farm_rgo_eff = -0.25
+		mine_rgo_size = 0.05
+		mine_rgo_eff = 0.0
+		min_build_railroad = 3
+		min_build_fort = 1
+		immigrant_attract = -0.5
+		combat_width = -0.60
+	}
+
+	reykjavik = {
+		movement_cost = 1.1
+		color = { 235 235 235 }
+		farm_rgo_size = -0.8
+		farm_rgo_eff = -0.4
+		mine_rgo_size = 0.0
+		mine_rgo_eff = -0.2
+		min_build_naval_base = 4
+		min_build_railroad = 4
+		min_build_fort = 1
+		attrition = 2
+		immigrant_attract = -0.9
+	}
+
+	victoriafalls = {
+		movement_cost = 1.0
+		color = { 220 201 199 }
+		farm_rgo_size = 0.0
+		farm_rgo_eff = -0.15
+		mine_rgo_size = 0.0
+		mine_rgo_eff = 0.0
+		supply_limit = 4
+		immigrant_attract = -0.1
+	}
+
+	kilimanjaro = {
+		movement_cost = 1.2
+		defence = 1
+		color = { 220 201 199 }
+		farm_rgo_size = 0.0
+		farm_rgo_eff = -0.15
+		mine_rgo_size = 0.5
+		mine_rgo_eff = 0.0
+		supply_limit = 4
+		min_build_railroad = 1
+		combat_width = -0.33
+		immigrant_attract = -0.1
+	}
+	
+	cottbus = {
+		movement_cost = 1.2
+		defence = 0.75
+		color = { 86 71 146 }
+		farm_rgo_size = 0.1
+		farm_rgo_eff = 0.2
+		mine_rgo_size = 0.0
+		mine_rgo_eff = 0.0
+		supply_limit = 10
+		min_build_railroad = 2
+		combat_width = -0.20
+		
+		immigrant_attract = 0.1
 	}
 }
 
