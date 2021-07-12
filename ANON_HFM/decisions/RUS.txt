@@ -222,10 +222,22 @@ political_decisions = {
 		effect = {
 			any_pop = {
 				limit = {
-					has_pop_culture = ukrainian
+					OR = {
+						has_pop_culture = ukrainian
+						has_pop_culture = realukrainian
+						# has_pop_culture = byelorussian
+					}
 				}
 				militancy = 3
 				consciousness = -2
+			}
+			random_owned = {
+				limit = { owner = { accepted_culture = ukrainian } }
+				owner = { remove_accepted_culture = ukrainian }
+			}
+			random_owned = {
+				limit = { owner = { accepted_culture = realukrainian } }
+				owner = { remove_accepted_culture = realukrainian }
 			}
 			set_country_flag = ems_ukaz_dispatched
 		}
@@ -245,8 +257,16 @@ political_decisions = {
 					}
 				}
 			}
+			OR = {
+				neighbour = QNG
+				any_neighbor_country = {
+					OR = {
+						vassal_of = QNG
+						substate_of = QNG
+					}
+				}
+			}
 			QNG = {
-				neighbour = RUS
 				OR = {
 					has_global_flag = taiping_has_been_defeated
 					has_country_flag = arrow_incident
@@ -453,7 +473,14 @@ political_decisions = {
 				remove_core = QNG
 			}
 			1082 = { state_scope = { change_region_name = "Primorye" } }
-			1080 = { state_scope = { change_region_name = "Amur" } }
+            1080 = {
+				add_core = RUS
+				add_core = KAM
+				remove_core = CHI
+				remove_core = MCK
+				remove_core = QNG
+				state_scope = { change_region_name = "Amur" }
+			}
 			prestige = 5
 			set_global_flag = russian_vladivostok
 			clr_global_flag = japanese_enkaishu
@@ -836,8 +863,18 @@ political_decisions = {
 		
 		allow = {
 			BUK = {
-				exists = yes
 				NOT = { truce_with = THIS }
+				OR = {
+					any_neighbor_country  = {
+						OR = {
+							tag = THIS
+							vassal_of = THIS
+							substate_of = THIS
+						}
+					}
+					vassal_of = THIS
+					substate_of = THIS
+				}
 			}
 			# war = no
 		}
@@ -845,17 +882,30 @@ political_decisions = {
 		effect = {
 			set_global_flag = the_great_game_bukhara
 			badboy = 1
-			add_casus_belli = {
-				target = BUK
-				type = annex_core_country
-				months = 60
-			}
-			war = {
-				target = BUK
-				attacker_goal = { casus_belli = annex_core_country }
-				defender_goal = { casus_belli = status_quo }
-				call_ally = yes
+			random_owned = {
+				limit = {
+					owner = { is_our_vassal = BUK }
+				}
+				owner = { inherit = BUK }	
 			}	
+			random_owned = {
+				limit = {
+					owner = { NOT = { is_our_vassal = BUK } }
+				}
+				owner = {
+					add_casus_belli = {
+						target = BUK
+						type = annex_core_country
+						months = 60
+					}
+					war = {
+						target = BUK
+						attacker_goal = { casus_belli = annex_core_country }
+						defender_goal = { casus_belli = status_quo }
+						call_ally = yes
+					}	
+				}	
+			}
 		}
 		ai_will_do = {
 			factor = 1
@@ -900,8 +950,18 @@ political_decisions = {
 		
 		allow = {
 			KOK = {
-				exists = yes
 				NOT = { truce_with = THIS }
+				OR = {
+					any_neighbor_country  = {
+						OR = {
+							tag = THIS
+							vassal_of = THIS
+							substate_of = THIS
+						}
+					}
+					vassal_of = THIS
+					substate_of = THIS
+				}
 			}
 			# war = no
 		}
@@ -909,16 +969,29 @@ political_decisions = {
 		effect = {
 			set_global_flag = the_great_game_kokand
 			badboy = 1
-			add_casus_belli = {
-				target = KOK
-				type = annex_core_country
-				months = 60
-			}
-			war = {
-				target = KOK
-				attacker_goal = { casus_belli = annex_core_country }
-				defender_goal = { casus_belli = status_quo }
-				call_ally = yes
+			random_owned = {
+				limit = {
+					owner = { is_our_vassal = KOK }
+				}
+				owner = { inherit = KOK }
+			}	
+			random_owned = {
+				limit = {
+					owner = { NOT = { is_our_vassal = KOK } }
+				}
+				owner = {
+					add_casus_belli = {
+						target = KOK
+						type = annex_core_country
+						months = 60
+					}
+					war = {
+						target = KOK
+						attacker_goal = { casus_belli = annex_core_country }
+						defender_goal = { casus_belli = status_quo }
+						call_ally = yes
+					}	
+				}	
 			}
 			random_owned = {
 				limit = {
@@ -976,8 +1049,18 @@ political_decisions = {
 		
 		allow = {
 			KHI = {
-				exists = yes
 				NOT = { truce_with = THIS }
+				OR = {
+					any_neighbor_country  = {
+						OR = {
+							tag = THIS
+							vassal_of = THIS
+							substate_of = THIS
+						}
+					}
+					vassal_of = THIS
+					substate_of = THIS
+				}
 			}
 			# war = no
 		}
@@ -985,17 +1068,30 @@ political_decisions = {
 		effect = {
 			set_global_flag = the_great_game_khiva
 			badboy = 1
-			add_casus_belli = {
-				target = KHI
-				type = annex_core_country
-				months = 60
-			}
-			war = {
-				target = KHI
-				attacker_goal = { casus_belli = annex_core_country }
-				defender_goal = { casus_belli = status_quo }
-				call_ally = yes
+			random_owned = {
+				limit = {
+					owner = { is_our_vassal = KHI }
+				}
+				owner = { inherit = KHI }
 			}	
+			random_owned = {
+				limit = {
+					owner = { NOT = { is_our_vassal = KHI } }
+				}
+				owner = {
+					add_casus_belli = {
+						target = KHI
+						type = annex_core_country
+						months = 60
+					}
+					war = {
+						target = KHI
+						attacker_goal = { casus_belli = annex_core_country }
+						defender_goal = { casus_belli = status_quo }
+						call_ally = yes
+					}	
+				}	
+			}
 			random_owned = {
 				limit = {
 					3480 = { empty = yes }
@@ -1337,6 +1433,7 @@ political_decisions = {
 		
 		effect = {
 			set_country_flag = russification_of_the_baltic_states
+			remove_accepted_culture = baltic_german
 			remove_accepted_culture = volga_german
 			random_owned = {
 				limit = {
@@ -1400,15 +1497,16 @@ political_decisions = {
 			any_pop = {
 				limit = {
 					OR = {
-					has_pop_culture = estonian
-					has_pop_culture = latvian
-					has_pop_culture = north_german
-					has_pop_culture = volga_german
-					has_pop_culture = ashkenazi
+						has_pop_culture = estonian
+						has_pop_culture = latvian
+						has_pop_culture = north_german
+						has_pop_culture = volga_german
+						has_pop_culture = baltic_german
+						has_pop_culture = ashkenazi
 					}
 				}
-			consciousness = 5
-			militancy = 3
+				consciousness = 5
+				militancy = 3
 			}
 		}
 		ai_will_do = { factor = 1 }

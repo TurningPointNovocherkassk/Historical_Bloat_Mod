@@ -38,19 +38,19 @@ country_event = {
 		months = 12
 		modifier = {
 			factor = 0.8
-			war_exhaustion = 40
+			average_militancy = 4
 		}
 		modifier = {
 			factor = 0.8
-			war_exhaustion = 75
+			average_militancy = 5
 		}
 		modifier = {
 			factor = 0.8
-			average_militancy = 9
+			average_militancy = 6
 		}
 		modifier = {
 			factor = 0.5
-			revolt_percentage = 0.25
+			revolt_percentage = .25
 		}
 	}
 	option = {
@@ -64,6 +64,7 @@ country_event = {
 			owner = { remove_country_modifier = santa_ana_rule }
 		}
 		government = proletarian_dictatorship
+
 		political_reform = none_voting
 		political_reform = party_appointed
 		political_reform = no_meeting
@@ -121,19 +122,19 @@ country_event = {
 		months = 180
 		modifier = {
 			factor = 0.8
-			war_exhaustion = 40
+			average_militancy = 4
 		}
 		modifier = {
 			factor = 0.8
-			war_exhaustion = 75
+			average_militancy = 5
 		}
 		modifier = {
 			factor = 0.8
-			average_militancy = 9
+			average_militancy = 6
 		}
 		modifier = {
 			factor = 0.5
-			revolt_percentage = 0.25
+			revolt_percentage = .25
 		}
 		modifier = {
 			factor = 2
@@ -142,6 +143,10 @@ country_event = {
 		modifier = {
 			factor = 3
 			literacy = 0.5
+		}
+		modifier = {
+			factor = 4
+			literacy = 0.7
 		}
 		modifier = {
 			factor = 4
@@ -220,27 +225,28 @@ country_event = {
 	}
 	
 	mean_time_to_happen = {
-		months = 12
+		months = 24
 		modifier = {
 			factor = 0.8
-			war_exhaustion = 40
+			average_militancy = 4
 		}
 		modifier = {
 			factor = 0.8
-			war_exhaustion = 75
+			average_militancy = 5
 		}
 		modifier = {
 			factor = 0.8
-			average_militancy = 9
+			average_militancy = 6
 		}
 		modifier = {
 			factor = 0.5
-			revolt_percentage = 0.25
+			revolt_percentage = .25
 		}
 	}
 	major = yes
 	option = {
 		name = "EVTOPTA60020"
+		prestige_factor = -0.1
 		random_owned = {
 			limit = { owner = { has_country_modifier = regency_government } }
 			owner = { remove_country_modifier = regency_government }
@@ -386,7 +392,6 @@ country_event = {
 		clr_country_flag = interning_southern_african
 		clr_country_flag = animists_run
 		##
-		prestige_factor = -0.1
 		country_event = 800053
 	}
 }
@@ -430,19 +435,19 @@ country_event = {
 		months = 12
 		modifier = {
 			factor = 0.8
-			war_exhaustion = 40
+			average_militancy = 4
 		}
 		modifier = {
 			factor = 0.8
-			war_exhaustion = 75
+			average_militancy = 5
 		}
 		modifier = {
 			factor = 0.8
-			average_militancy = 9
+			average_militancy = 6
 		}
 		modifier = {
 			factor = 0.5
-			revolt_percentage = 0.25
+			revolt_percentage = .25
 		}
 	}
 	major = yes
@@ -644,6 +649,7 @@ country_event = {
 		election = yes
 		prestige_factor = -0.05
 		random_owned = { limit = { owner = { border_policy = closed_borders } } owner = { political_reform = open_borders } }
+		random_owned = { limit = { owner = { centralization = totalitarianism } } owner = { political_reform = unitary } }
 		#Genocide Cleanup
 		##Set Up Timer based on time the thing ran
 		random_owned = {
@@ -1933,10 +1939,13 @@ country_event = {
 			NOT = { tag = BAN }
 			sphere_owner = { neighbour = THIS }
 		}
-		OR = {
-			NOT = { tag = NEN }
-			has_country_flag = usstatehood_we_have_applied
-			USA = { ai = yes }
+		AND = {
+			OR = {
+				NOT = { tag = NEN }
+				has_country_flag = usstatehood_we_have_applied
+				USA = { ai = yes }
+			}
+			139 = { owned_by = USA }
 		}
 		NOT = {
 			tag = KUK
@@ -1974,7 +1983,7 @@ country_event = {
 		NOT = { has_country_flag = post_colonial_country }
 	}
 	
-	mean_time_to_happen = { months = 12 }
+	mean_time_to_happen = { months = 1 }
 	
 	option = {
 		name = "EVTOPTA60120"
@@ -2315,7 +2324,7 @@ country_event = {
 	title = "EVTNAME6016812"
 	desc = "EVTDESC6016812"
 	picture = "ironclad_warship"
-
+		
 	is_triggered_only = yes
 	
 	option = {
@@ -2362,6 +2371,7 @@ country_event = {
 		NOT = { tag = TPG }
 		NOT = { tag = MGL }
 		NOT = { tag = CSC }
+		NOT = { tag = DES }
 	}
 
 	mean_time_to_happen = { months = 1 }
@@ -2378,7 +2388,7 @@ country_event = {
 	id = 6016814
 	title = "EVTNAME6016814"
 	desc = "EVTDESC6016814"
-	
+		
 	is_triggered_only = yes
 
 	option = {
@@ -4022,33 +4032,34 @@ country_event = {
 	}
 }
 
-#Enable/Disable Splendid Isolation
-country_event = {
-	id = 6016815
-	title = "EVTNAME6016815"
-	desc = "EVTDESC6016815"
-	picture = "abraham_speech"
-	major = yes
+# #Enable/Disable Splendid Isolation
+# #superseded by cch.option-disable-splendid-isolation
+# country_event = {
+	# id = 6016815
+	# title = "EVTNAME6016815"
+	# desc = "EVTDESC6016815"
+	# picture = "abraham_speech"
+	# major = yes
 		
-	trigger = {
-		ai = no
-		NOT = { has_global_flag = isolation_setup }
-	}
+	# trigger = {
+		# ai = no
+		# NOT = { has_global_flag = isolation_setup }
+	# }
 	
-	fire_only_once = yes
-	mean_time_to_happen = { days = 1 }
+	# fire_only_once = yes
+	# mean_time_to_happen = { days = 1 }
 	
-	option = {
-		name = "EVT6016814OPTA"
-		set_global_flag = yes_isolation
-		set_global_flag = isolation_setup
-	}
+	# option = {
+		# name = "EVT6016814OPTA"
+		# set_global_flag = yes_isolation
+		# set_global_flag = isolation_setup
+	# }
 	
-	option = {
-		name = "EVT6016815OPTB"
-		set_global_flag = isolation_setup
-	}
-}
+	# option = {
+		# name = "EVT6016815OPTB"
+		# set_global_flag = isolation_setup
+	# }
+# }
 
 # #Non-core to state flip
 # country_event = {
@@ -4345,19 +4356,19 @@ country_event = {
 	}
 }
 
-#Imperialism CB
-	country_event = {
-	id = 6016817
-	title = "EVTNAME6016817"
-	desc = "EVTDESC6016817"
-	picture = "spanish_moroccan_war"
+# #Imperialism CB #triggered by warn_imperialism_cb_is_available decision in old versions.
+	# country_event = {
+	# id = 6016817
+	# title = "EVTNAME6016817"
+	# desc = "EVTDESC6016817"
+	# picture = "spanish_moroccan_war"
 	
-	is_triggered_only = yes
+	# is_triggered_only = yes
 	
-	option = {
-		name = "EVT6016817OPTA"
-	}
-}
+	# option = {
+		# name = "EVT6016817OPTA"
+	# }
+# }
 
 #Constitutional Crisis - Party Changed after elections
 country_event = {
@@ -4741,7 +4752,7 @@ country_event = {
 	option = {
 		name = "EVT6016819OPTA"
 		set_country_flag = ghost_country
-		add_country_modifier = { name = neutrality duration = -1 }
+		add_country_modifier = { name = neutrality_modifier duration = -1 }
 		political_reform = closed_borders
 		treasury = 1000
 		neutrality = yes
@@ -4785,7 +4796,7 @@ country_event = {
 
 	option = {
 		name = "EVT6016819OPTA"
-		add_country_modifier = { name = neutrality duration = -1 }
+		add_country_modifier = { name = neutrality_modifier duration = -1 }
 		political_reform = closed_borders
 		treasury = 1000
 		neutrality = yes
@@ -4879,6 +4890,23 @@ country_event = {
 	}
 }
 
+country_event = {
+	id = 4778727
+	title = "Modifier Cleanup"
+	desc = "If you're seeing this, something went wrong. This event should fix that!"
+	picture = "danishgovernment"
+	
+	trigger = {
+		war = no
+		has_country_modifier = disable_conquest_cb
+	}
+	
+	option = {
+		name = "Nice!"
+		remove_country_modifier = disable_conquest_cb
+	}
+}
+
 #Serf Cleanup
 country_event = {
 	id = 6016825
@@ -4915,7 +4943,7 @@ country_event = {
 	allow_multiple_instances = no
 
 	option = {
-		name = "EVT6016823OPTA"
+		name = "EVT6016825OPTA"
 		add_country_modifier = { name = law_changed_by_force duration = 365 }
 			random_owned = {
 				limit = {

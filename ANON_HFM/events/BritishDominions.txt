@@ -13,16 +13,20 @@ country_event = {
 		war = no
 		year = 1907
 		any_owned_province = { is_core = NEW }
-		NOT = { exists = NEW }
 		is_possible_vassal = NEW
+		NOT = {
+			exists = NEW
+			has_country_flag = NEW_independence_refused
+			has_country_flag = NEW_gave_independence
+		}
 	}
 
 	mean_time_to_happen = {
 		months = 6
-		modifier = {
-			factor = 10
-			has_country_flag = NEW_independence_refused
-		}
+		# modifier = {
+			# factor = 10
+			# has_country_flag = NEW_independence_refused
+		# }
 		modifier = {
 			factor = 0.8
 			any_state = {
@@ -51,6 +55,7 @@ country_event = {
 	option = {
 		name = "EVT44330OPTA"
 		clr_country_flag = NEW_independence_refused
+		set_country_flag = NEW_gave_independence
 		prestige = -10
 		badboy = -3
 		any_pop = {
@@ -178,6 +183,7 @@ country_event = {
 	option = {
 		name = "EVT44330OPTC"
 		clr_country_flag = NEW_independence_refused
+		set_country_flag = NEW_gave_independence
 		prestige = -10
 		badboy = -3
 		any_pop = {

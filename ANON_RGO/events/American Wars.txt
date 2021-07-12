@@ -14,10 +14,8 @@ country_event = {
 	option = {
 		name = "EVT44122OPTA"
 		prestige = 10
-		250 = { add_core = THIS secede_province = THIS }
-		250 = { remove_core = CAN }
-		158 = { remove_core = CAN }
-		250 = { remove_core = QUE }
+		250 = { remove_core = CAN remove_core = QUE add_core = THIS secede_province = THIS }
+		158 = { remove_core = CAN add_core = THIS secede_province = THIS }
 		69 = { remove_core = NEN }
 		relation = { who = ENG value = 100 }
 		ai_chance = { factor = 95 }
@@ -27,21 +25,10 @@ country_event = {
 		name = "EVT44122OPTB"
 		prestige = 15
 		badboy = 4
-		250 = { add_core = THIS }
-		249 = { add_core = THIS }
-		69 = { add_core = THIS }
-		158 = { add_core = USA }
-		158 = { add_core = ENG }
-		250 = { add_core = ENG }
-		249 = { add_core = ENG }
-		69 = { add_core = ENG }
-		158 = { add_core = CAN }
-		250 = { add_core = CAN }
-		249 = { add_core = CAN }
-		69 = { add_core = CAN }
-		250 = { add_core = MRU }
-		249 = { add_core = MRU }
-		69 = { add_core = MRU }
+		250 = { add_core = THIS add_core = ENG add_core = MRU add_core = CAN }
+		158 = { add_core = USA add_core = ENG add_core = CAN }
+		249 = { add_core = THIS add_core = ENG add_core = CAN add_core = MRU }
+		69 = { add_core = THIS add_core = ENG add_core = CAN add_core = MRU }
 		relation = {
 			who = ENG
 			value = -200
@@ -81,6 +68,10 @@ country_event = {
 					region = MEX_94
 					region = MEX_97
 					region = MEX_85
+					#ANON
+					region = MEX_104
+					region = TEX_133
+					#
 					region = USA_106
 					region = USA_111
 					region = USA_126
@@ -91,6 +82,9 @@ country_event = {
 					province_id = 104
 					province_id = 105
 					province_id = 2148
+					#ANON
+					province_id = 3396
+					province_id = 3397
 				}
 			}
 			remove_core = MEX
@@ -103,6 +97,10 @@ country_event = {
 					region = MEX_94
 					region = MEX_97
 					region = MEX_85
+					#ANON
+					region = MEX_104
+					region = TEX_133
+					#
 					region = USA_106
 					region = USA_111
 					region = USA_126
@@ -113,7 +111,24 @@ country_event = {
 					province_id = 104
 					province_id = 105
 					province_id = 2148
+					#ANON
+					province_id = 3396
+					province_id = 3397
 				}
+			}
+			secede_province = USA
+		}
+		all_core = {
+			limit = {
+				is_core = YUC
+				has_global_flag = YUC_becomes_USA_state
+			}
+			remove_core = MEX
+		}
+		any_owned = {
+			limit = {
+				is_core = YUC
+				has_global_flag = YUC_becomes_USA_state
 			}
 			secede_province = USA
 		}
@@ -176,7 +191,13 @@ country_event = {
 			}
 		}
 		any_pop = {
-			limit = { has_pop_culture = mexican }
+			limit = {
+				OR ={
+					has_pop_culture = mexican
+					has_pop_culture = norteno
+					has_pop_culture = californio
+				}
+			}
 			militancy = 6
 		}
 		ai_chance = {
@@ -217,27 +238,10 @@ country_event = {
 		set_country_flag = treaty_of_guadalupe_hidalgo
 		prestige = 20
 		
+		random_owned = { limit = { owner = { ai = no } } owner = { treasury = -100000 } }
 		random_owned = {
-			limit = {
-				owner = {
-					NOT = { money = 100000 }
-					check_variable = { which = owed_cash_money value = 9 }
-				} 
-			}
-			owner = { change_variable = { which = owed_cash_money value = 100 } }
-		}
-		random_owned = {
-			limit = {
-				owner = {
-					NOT = { money = 100000 }
-					NOT = { check_variable = { which = owed_cash_money value = 1 } }
-				} 
-			}
-			owner = { set_variable = { which = owed_cash_money value = 100 } }
-		}
-		random_owned = {
-			limit = { owner = { money = 100000 } }
-			owner = { treasury = -100000 }
+			limit = { owner = { ai = yes } }
+			owner = { set_variable = { which = owed_cash_money value = 100 } } 
 		}
 		
 		
@@ -427,7 +431,12 @@ country_event = {
 		money = -50000
 		FROM = {
 			any_owned = {
-				limit = { region = HAW_658 }
+				limit = {
+					OR = {
+						region = HAW_658
+						region = HAW_2524
+					}
+				}
 				secede_province = THIS
 			}
 		}
@@ -454,6 +463,25 @@ country_event = {
 			OR = {
 				owned_by = USA
 				owned_by = ENG
+				owned_by = UOR
+				AND = { 
+					owned_by = RPL
+					RPL = {
+						OR = {
+							vassal_of = ENG
+							substate_of = ENG
+						}
+					}
+				}
+				AND = { 
+					owned_by = CAN
+					CAN = {
+						OR = {
+							vassal_of = ENG
+							substate_of = ENG
+						}
+					}
+				}
 			}
 		}
 		21 = {
@@ -461,6 +489,25 @@ country_event = {
 			OR = {
 				owned_by = USA
 				owned_by = ENG
+				owned_by = UOR
+				AND = { 
+					owned_by = RPL
+					RPL = {
+						OR = {
+							vassal_of = ENG
+							substate_of = ENG
+						}
+					}
+				}
+				AND = { 
+					owned_by = CAN
+					CAN = {
+						OR = {
+							vassal_of = ENG
+							substate_of = ENG
+						}
+					}
+				}
 			}
 		}
 		NOT = {
@@ -473,18 +520,14 @@ country_event = {
 			NOT = { government = democracy }
 		}
 		COL = { exists = no }
-		any_owned_province = {
-			any_neighbor_province = {
-				OR = {
-					region = USA_91
-					region = USA_81
-				}
-			}
-		}
+		#ANON
+		has_global_flag = champoeg_meetings
+		NOT = { has_global_flag = anglo_oregon }
+		NOT = { has_global_flag = gringo_columbia }
 	}
 	
 	mean_time_to_happen = {
-		months = 12
+		months = 1
 		modifier = {
 			factor = 0.25
 			year = 1850
@@ -498,6 +541,13 @@ country_event = {
 		badboy = 5
 		COL = { all_core = { add_core = ENG } }
 		COL = { all_core = { add_core = USA } }
+		CAN_13 = { add_core = USA }
+		81 = { add_core = USA }
+		114 = { add_core = USA }
+		CAN_13 = { add_core = ENG }
+		#17 = { remove_core = USA remove_core = ENG }
+		18 = { remove_core = USA remove_core = ENG }
+		2629 = { remove_core = USA remove_core = ENG }
 		any_pop = {
 			dominant_issue = {
 				factor = 0.05
@@ -507,7 +557,7 @@ country_event = {
 		ai_chance = {
 			factor = 10
 			modifier = {
-				factor = 0.75
+				factor = 0.8
 				war_policy = anti_military
 			}
 			modifier = {
@@ -525,6 +575,10 @@ country_event = {
 			modifier = {
 				factor = 0.25
 				relation = { who = ENG value = 10 }
+			}
+			modifier = {
+				factor = 4
+				owns = 21
 			}
 			modifier = {
 				factor = 0.5
@@ -549,18 +603,21 @@ country_event = {
 			}
 		}
 		ai_chance = {
-			factor = 80
+			factor = 75
 			modifier = {
 				factor = 0.8
 				NOT = { relation = { who = ENG value = -50 } }
 			}
 			modifier = {
 				factor = 1.5
-				relation = { who = USA value = 100 }
-			}
-			modifier = {
-				factor = 1.5
-				ENG = { owns = 79 }
+				79 = {
+					OR = {
+						owned_by = ENG
+						owner = {
+							vassal_of = ENG
+						}
+					}
+				}
 			}
 			modifier = {
 				factor = 1.2
@@ -580,10 +637,18 @@ country_event = {
 			}
 		}
 		ai_chance = {
-			factor = 10
+			factor = 15
 			modifier = {
 				factor = 1.5
-				ENG = { owns = 79 }
+				79 = {
+					OR = {
+						owned_by = ENG
+						owner = {
+							vassal_of = ENG
+							war = no
+						}
+					}
+				}
 			}
 			modifier = {
 				factor = 0.8
@@ -606,30 +671,77 @@ country_event = {
 		badboy = -2
 		prestige = -10
 		USA = { country_event = 44152 }
-		CAN_13 = { add_core = ENG }
+		CAN_13 = { 
+			limit = {
+				empty = no
+			}
+			add_core = ENG
+			add_province_modifier = {
+				name = gateway_to_america
+				duration = 365
+			}
+		}
 		#CAN_18 = { add_core = ENG }
 		ENG_22 = { add_core = ENG }
 		USA_78 = {
 			remove_core = COL
 			remove_core = ENG
+			remove_core = CAN
+			remove_core = RPL
 		}
 		USA_81 = {
 			remove_core = COL
 			remove_core = ENG
+			remove_core = CAN
+			remove_core = RPL
 		}
 		USA_91 = {
 			remove_core = COL
 			remove_core = ENG
+			remove_core = CAN
+			remove_core = RPL
 		}
 		114 = {
 			remove_core = COL
+			remove_core = ENG
+			remove_core = CAN
+			remove_core = RPL
 		}
 		111 = {
 			remove_core = COL
-		}
-		CAN_13 = {
-			add_core = COL
+			remove_core = ENG
+			remove_core = CAN
 			remove_core = RPL
+		}
+		RPL = {
+			any_owned = {
+				limit = {
+					empty = no
+					region = CAN_13
+				}
+				add_core = COL
+				add_core = RPL
+			}
+		}
+		CAN = {
+			any_owned = {
+				limit = {
+					empty = no
+					region = CAN_13
+				}
+				add_core = COL
+				add_core = CAN
+			}
+		}
+		RPL = {
+			all_core = {
+				remove_core = ENG
+			}
+		}
+		CAN = {
+			all_core = {
+				remove_core = ENG
+			}
 		}
 		any_owned = {
 			limit = {
@@ -637,10 +749,19 @@ country_event = {
 					region = USA_78
 					region = USA_81
 					region = USA_91
+					region = USA_111
 				}
-				is_core = USA
+				#is_core = USA
 			}
-			secede_province = USA
+			#here add core USA instead of secede
+			#secede_province = USA
+			add_core = USA
+			remove_core = ENG
+			life_rating = 5
+			add_province_modifier = {
+				name = gateway_to_america
+				duration = 3650
+			}
 		}
 		ai_chance = {
 			factor = 95
@@ -649,12 +770,16 @@ country_event = {
 				NOT = { relation = { who = USA value = 0 } }
 			}
 			modifier = {
-				factor = 2
+				factor = 1.2
 				relation = { who = USA value = 100 }
 			}
 			modifier = {
 				factor = 0.8
 				war_policy = jingoism
+			}
+			modifier = {
+				factor = 1.5
+				USA = { owns = 21 }
 			}
 		}
 	}
@@ -664,6 +789,9 @@ country_event = {
 		badboy = 5
 		prestige = 10
 		COL = { all_core = { add_core = ENG } }
+		17 = { add_core = COL remove_core = RPL }
+		2629 = { remove_core = USA remove_core = ENG }
+		18 = { remove_core = USA remove_core = ENG }
 		leave_alliance = USA
 		USA = { country_event = 44153 }
 		ai_chance = {
@@ -673,11 +801,11 @@ country_event = {
 				alliance_with = USA
 			}
 			modifier = {
-				factor = 0.25
+				factor = 0.5
 				relation = { who = USA value = 100 }
 			}
 			modifier = {
-				factor = 1.5
+				factor = 2
 				NOT = { relation = { who = USA value = 0 } }
 			}
 			modifier = {
@@ -720,7 +848,92 @@ country_event = {
 			remove_core = USA
 			secede_province = ENG
 		}
-		COL = { all_core = { remove_core = ENG } }
+		RPL = {
+			any_pop = { 
+				limit = {
+					location = { 
+						province_id = 78
+					}
+					is_culture_group = native_american
+				}
+				reduce_pop = 0.1 
+			}
+			any_pop = { 
+				limit = {
+					location = { 
+						province_id = 79
+					}
+					is_culture_group = native_american
+				}
+				reduce_pop = 0.4 
+			}
+			any_pop = { 
+				limit = {
+					location = { 
+						province_id = 78
+					}
+					culture = yankee 
+				}
+				reduce_pop = 2.5
+			}	
+			any_owned = {
+				limit = {
+					OR = {
+						region = USA_78
+						province_id = 81
+						province_id = 114
+					}
+				}
+				remove_core = ENG
+				remove_core = COL
+				remove_core = CAN
+				#secede_province = USA
+				secede_province = UOR
+			}
+		}
+		CAN = {
+			any_pop = { 
+				limit = {
+					location = { 
+						province_id = 78
+					}
+					is_culture_group = native_american
+				}
+				reduce_pop = 0.1 
+			}
+			any_pop = { 
+				limit = {
+					location = { 
+						province_id = 79
+					}
+					is_culture_group = native_american
+				}
+				reduce_pop = 0.4 
+			}
+			any_pop = { 
+				limit = {
+					location = { 
+						province_id = 78
+					}
+					culture = yankee 
+				}
+				reduce_pop = 2.5
+			}	
+			any_owned = {
+				limit = {
+					OR = {
+						region = USA_78
+						province_id = 81
+						province_id = 114
+					}
+				}
+				remove_core = ENG
+				remove_core = COL
+				remove_core = CAN
+				#secede_province = USA
+				secede_province = UOR
+			}
+		}
 		any_pop = {
 			scaled_consciousness = {
 				issue = pacifism
@@ -748,16 +961,30 @@ country_event = {
 	
 	option = {
 		name = "EVT44153OPTA"
+		set_global_flag = america_cucked_oregon
 		prestige = -20
 		relation = { who = ENG value = -50 }
 		any_owned = {
 			limit = {
+				RPL = { exists = yes }
 				OR = {
 					is_core = COL
 					is_core = RPL
 				}
 			}
-			secede_province = ENG
+			secede_province = RPL
+			owner = { country_event = 1100047 }
+		}
+		any_owned = {
+			limit = {
+				RPL = { exists = no }
+				OR = {
+					is_core = COL
+					is_core = RPL
+				}
+			}
+			secede_province = CAN
+			owner = { country_event = 1100047 }
 		}
 		COL = { all_core = { remove_core = USA } }
 		any_pop = {
@@ -767,7 +994,7 @@ country_event = {
 			}
 		}
 		ai_chance = {
-			factor = 50
+			factor = 30
 			modifier = {
 				factor = 1.5
 				any_greater_power = { war_with = THIS }
@@ -781,15 +1008,25 @@ country_event = {
 	
 	option = {
 		name = "EVT44153OPTB"
+		set_global_flag = oregon_war_happened_1234
 		prestige = 5
 		relation = { who = ENG value = -100 }
 		COL = { all_core = { add_core = USA } }
 		COL = { all_core = { add_core = ENG } }
+		CAN_13 = { add_core = USA }
+		CAN_13 = { add_core = ENG }
+		UOR = { all_core = { add_core = ENG } }
+		UOR = { all_core = { add_core = ENG } }
+		2629 = { remove_core = USA remove_core = ENG }
+		18 = { remove_core = USA remove_core = ENG }
 		any_pop = {
 			scaled_consciousness = {
 				issue = jingoism
 				factor = -3
 			}
+		}
+		ENG = {
+			country_event = 44157
 		}
 		war = {
 			target = ENG
@@ -838,31 +1075,58 @@ country_event = {
 	
 	option = {
 		name = "EVT44154OPTA"
+		set_global_flag = USA_claimoregon
 		prestige = -20
 		USA = { country_event = 44155 }
 		relation = { who = USA value = 50 }
-		COL = { all_core = { remove_core = ENG } }
 		any_owned = {
-			limit = { is_core = COL }
-			secede_province = USA
-		}
-		USA_78 = {
+			limit = {
+				OR = {
+					is_core = COL 
+					is_core = USA
+					province_id = 17
+				}
+			}
+			#ANON
+			#secede_province = USA
+			secede_province = UOR
+			remove_core = RPL
+			remove_core = CAN
 			remove_core = ENG
-			remove_core = COL
 		}
-		USA_81 = {
-			remove_core = ENG
-			remove_core = COL
+		RPL = {
+			any_owned = {
+				limit = { 
+					OR = {
+						is_core = COL 
+						is_core = USA
+						province_id = 17
+					}
+				}
+				#ANON
+				#secede_province = USA
+				secede_province = UOR
+				remove_core = RPL
+				remove_core = CAN
+				remove_core = ENG
+			}
 		}
-		USA_91 = {
-			remove_core = ENG
-			remove_core = COL
-		}
-		114 = {
-			remove_core = COL
-		}
-		111 = {
-			remove_core = COL
+		CAN = {
+			any_owned = {
+				limit = { 
+					OR = {
+						is_core = COL 
+						is_core = USA
+						province_id = 17
+					}
+				}
+				#ANON
+				#secede_province = USA
+				secede_province = UOR
+				remove_core = RPL
+				remove_core = CAN
+				remove_core = ENG
+			}
 		}
 		COL = {
 			primary_culture = yankee
@@ -888,9 +1152,35 @@ country_event = {
 	
 	option = {
 		name = "EVT44154OPTB"
+		set_global_flag = USA_claimoregon
+		set_country_flag = oregon_war
 		prestige = 5
 		leave_alliance = USA
 		relation = { who = USA value = -200 }
+		RPL = {
+			any_owned = {
+				limit = {
+					OR = {
+						is_core = COL
+						province_id = 17
+					}
+				}
+				secede_province = ENG
+				add_core = ENG
+			}
+		}
+		CAN = {
+			any_owned = {
+				limit = {
+					OR = {
+						is_core = COL
+						province_id = 17
+					}
+				}
+				secede_province = ENG
+				add_core = ENG
+			}
+		}
 		war = {
 			target = USA
 			attacker_goal = {
@@ -938,7 +1228,55 @@ country_event = {
 	
 	option = {
 		name = "EVT44155OPTA"
+		set_global_flag = USA_claims_all_oregon
 		prestige = 25
+		any_country = {
+			limit = {
+				OR = {
+					vassal_of = ENG
+					substate_of = ENG
+					in_sphere = ENG
+				}
+			}
+			any_owned = {
+				limit = { 
+					is_core = COL 
+					NOT = { 
+						#province_id = 17
+						province_id = 2629
+						province_id = 18
+					}
+				}
+				add_core = USA
+				add_core = UOR
+				remove_core = RPL
+				remove_core = ENG
+				remove_core = COL
+				remove_core = CAN
+				secede_province = UOR
+				#secede_province = USA
+			}
+		}
+		#17 = { remove_core = USA }
+		2629 = { remove_core = USA }
+		18 = { remove_core = USA }
+		COL = { all_core = { remove_core = ENG } }
+		USA_78 = {
+			remove_core = ENG
+			remove_core = COL
+			add_core = USA
+			add_core = UOR
+		}
+		USA_81 = {
+			remove_core = ENG
+			remove_core = COL
+		}
+		USA_91 = {
+			remove_core = ENG
+			remove_core = COL
+		}
+		114 = { remove_core = COL }
+		111 = { remove_core = COL }
 		any_pop = {
 			scaled_consciousness = {
 				issue = jingoism
@@ -958,6 +1296,7 @@ country_event = {
 	
 	option = {
 		name = "EVT44156OPTA"
+		set_global_flag = oregon_split_columbia_river
 		prestige = 15
 		78 = { add_core = ENG }
 		79 = { add_core = ENG }
@@ -966,6 +1305,7 @@ country_event = {
 		USA_81 = {
 			add_core = USA
 			remove_core = COL
+			remove_core = ENG
 		}
 		USA_91 = {
 			add_core = USA
@@ -1051,11 +1391,29 @@ country_event = {
 	}
 }
 
+country_event = {
+	id = 44157
+	title = "EVTNAME44157" #UK Gets Colombia from HBC
+	desc = "EVTDESC44157"
+	picture = "treaty"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVT6044157OPTA"
+		RPL = {
+			any_owned = {
+				limit = { is_core = COL }
+				secede_province = ENG
+			}
+		}
+	}
+}
 
 country_event = { #Hawaii turns democratic, loses people to disease, change production to fruit (sugar)
-	id = 44157
-	title = "EVTNAME44157"
-	desc = "EVTDESC44157"
+	id = 44158
+	title = "EVTNAME44158"
+	desc = "EVTDESC44158"
 	picture = "fort_honolulu"
 	
 	fire_only_once = yes
@@ -1076,7 +1434,7 @@ country_event = { #Hawaii turns democratic, loses people to disease, change prod
 	
 	
 	option = {
-		name = "EVT44157OPTA"
+		name = "EVT44158OPTA"
 		prestige = 5
 		political_reform = free_press
 		political_reform = yes_meeting
@@ -1084,7 +1442,7 @@ country_event = { #Hawaii turns democratic, loses people to disease, change prod
 		political_reform = non_secret_ballots
 		political_reform = universal_weighted_voting
 		political_reform = all_voting_pops
-		government = hms_government
+		# government = hms_government
 		
 		3305 = { trade_goods = sugar }
 		any_pop = {

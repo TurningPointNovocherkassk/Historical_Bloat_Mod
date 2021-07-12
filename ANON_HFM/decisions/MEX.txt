@@ -139,7 +139,10 @@ political_decisions = {
 						tag = MXM
 						tag = M3X
 					}
-					NOT = { has_country_flag = treaty_of_guadalupe_hidalgo }
+					OR = {
+						NOT = { has_country_flag = treaty_of_guadalupe_hidalgo }
+						is_greater_power = yes
+					}
 				}
 				# tag = TEX
 				tag = DES
@@ -150,6 +153,7 @@ political_decisions = {
 					tag = CAS
 					has_country_flag = grosscascadiums_awaken
 				}
+				has_country_flag = bought_fort_ross
 			}
 			USA = { has_country_flag = hasmanifestdestiny }
 			NOT = { has_country_flag = manifest_destiny_refuted }
@@ -158,6 +162,7 @@ political_decisions = {
 		allow = {
 			war = no
 			NOT = { has_recently_lost_war = yes }
+			invention = manifest_destiny
 			OR = {
 				AND = {
 					OR = {
@@ -166,7 +171,6 @@ political_decisions = {
 						tag = M3X
 					}
 					is_greater_power = yes
-					invention = manifest_destiny
 				}
 				AND = {
 					OR = {
@@ -174,7 +178,6 @@ political_decisions = {
 						tag = CAS
 					}
 					is_greater_power = yes
-					invention = manifest_destiny
 					all_core = { owned_by = THIS }
 				}
 				AND = {
@@ -183,12 +186,18 @@ political_decisions = {
 						is_greater_power = yes
 						is_secondary_power = yes
 					}
-					invention = manifest_destiny
 					all_core = { owned_by = THIS }
 				}
 				AND = {
 					truce_with = USA
 					USA = { has_recently_lost_war = yes }
+				}
+				AND = {
+					has_country_flag = bought_fort_ross
+					OR = {
+						is_greater_power = yes
+						is_secondary_power = yes
+					}
 				}
 			}
 		}
@@ -228,6 +237,7 @@ political_decisions = {
 								is_core = DES
 								is_core = CAS
 								is_core = THIS
+								is_core = YUC
 							}
 							OR = {
 								is_core = USA
@@ -343,10 +353,35 @@ political_decisions = {
 					3399 = { add_core = THIS } #White River
 				}
 			}
+
+			random_owned = {
+				limit = {
+					owner = { OR = { tag = MEX tag = MXM tag = M3X } }
+					has_global_flag = YUC_becomes_USA_state
+				}
+				owner = {
+					MEX_2183 = { add_core = THIS } # Yucatan  
+					MEX_2184 = { add_core = THIS } # Campeche
+					MEX_3358 = { add_core = THIS } # East Yucatan/Quintana Roo
+				}
+			}
+			
+			random_owned = {
+				limit = {
+					owner = {
+						has_country_flag = bought_fort_ross
+					}
+				}
+				3390 = { add_core = THIS } # Ft. Ross  
+			}
 		}
 
 		ai_will_do = {
 			factor = 1
+			# modifier = {
+				# factor = 0
+				# has_country_flag = bought_fort_ross
+			# }
 		}
 
 	}

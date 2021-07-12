@@ -3,7 +3,7 @@ political_decisions = {
 		potential = {
 			tag = SWI
 			NOT = {
-				has_country_modifier = neutrality
+				has_country_modifier = neutrality_modifier
 				has_country_flag = abandoned_neutrality
 				has_country_flag = neutrality_violated
 			}	
@@ -15,7 +15,7 @@ political_decisions = {
 		
 		effect = {
 			add_country_modifier = {
-				name = neutrality
+				name = neutrality_modifier
 				duration = -1
 			}
 		}
@@ -27,11 +27,10 @@ political_decisions = {
 		}
 	}
 
-
 	abandon_neutrality = {
 		picture = declare_neutrality
 		potential = {
-			has_country_modifier = neutrality
+			has_country_modifier = neutrality_modifier
 			NOT = { has_country_flag = abandoned_neutrality }
 		}
 		
@@ -43,7 +42,7 @@ political_decisions = {
 			set_country_flag = abandoned_neutrality
 			prestige = -20
 			badboy = 5
-			remove_country_modifier = neutrality
+			remove_country_modifier = neutrality_modifier
 		}
 		
 		ai_will_do = {
@@ -68,12 +67,12 @@ political_decisions = {
 			ai = no
 			SWI = {
 				neighbour = THIS
-				has_country_modifier = neutrality
+				has_country_modifier = neutrality_modifier
 			}
 		}
 		
 		allow = {
-			SWI = { has_country_modifier = neutrality }
+			SWI = { has_country_modifier = neutrality_modifier }
 			war_policy = jingoism
 			NOT = {
 				is_sphere_leader_of = SWI
@@ -87,7 +86,7 @@ political_decisions = {
 			set_country_flag = swiss_neutrality_violator
 			SWI = {
 				set_country_flag = neutrality_violated
-				remove_country_modifier = neutrality
+				remove_country_modifier = neutrality_modifier
 				relation = { who = THIS value = -200 }
 			}
 			diplomatic_influence = { who = SWI value = -200 }
@@ -141,7 +140,7 @@ political_decisions = {
 	enforce_neutrality = {
 		picture = declare_neutrality
 		potential = {
-			has_country_modifier = neutrality
+			has_country_modifier = neutrality_modifier
 			ai = yes
 			NOT = { tag = BOH }
 			#ANON
@@ -181,7 +180,7 @@ political_decisions = {
 			ai = yes
 			exists = yes
 			SWI = {
-				has_country_modifier = neutrality
+				has_country_modifier = neutrality_modifier
 				ai = no
 				OR = {
 					any_greater_power = { military_access = SWI }

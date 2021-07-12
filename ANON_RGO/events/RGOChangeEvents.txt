@@ -1,4 +1,4 @@
-##########################################################################################
+#############################################
 #											#
 #        	Discovering New Mines			#
 #											#
@@ -2792,7 +2792,7 @@ province_event = {
 					province_id = 151   #Des Moines
 					province_id = 152   #Oskaloosa
 					province_id = 108   #Grand Junction
-					province_id = 109   #Aspen
+					#province_id = 109   #Aspen
 					province_id = 99    #Moab
 					province_id = 110   #Rock Springs
 					province_id = 953   #Stanislavov
@@ -3196,17 +3196,14 @@ country_event = {
 		1945 = { trade_goods = fruit } #Kano
 		
 		random_owned = {
-			limit = {
-				owner = {
-					NOT = { money = 200000 }
-					check_variable = { which = owed_cash_money value = 9 }
-				} 
-			}
-			owner = { change_variable = { which = owed_cash_money value = 200 } }
+			limit = { owner = { ai = no } }
+			owner = { treasury = -200000 }
 		}
+		
 		random_owned = {
 			limit = {
 				owner = {
+					ai = yes
 					NOT = { money = 200000 }
 					NOT = { check_variable = { which = owed_cash_money value = 1 } }
 				}
@@ -3214,7 +3211,17 @@ country_event = {
 			owner = { set_variable = { which = owed_cash_money value = 200 } }
 		}
 		random_owned = {
-			limit = { owner = { money = 200000 } }
+			limit = {
+				owner = {
+					ai = yes
+					NOT = { money = 200000 }
+					check_variable = { which = owed_cash_money value = 9 }
+				} 
+			}
+			owner = { change_variable = { which = owed_cash_money value = 200 } }
+		}
+		random_owned = {
+			limit = { owner = { ai = yes money = 200000 } }
 			owner = { treasury = -200000 }
 		}
 		
@@ -3672,17 +3679,14 @@ country_event = {
 		1886 = { trade_goods = iron } #Bo
 		
 		random_owned = {
-			limit = {
-				owner = {
-					NOT = { money = 100000 }
-					check_variable = { which = owed_cash_money value = 9 }
-				} 
-			}
-			owner = { change_variable = { which = owed_cash_money value = 100 } }
+			limit = { owner = { ai = no } }
+			owner = { treasury = -100000 }
 		}
+		
 		random_owned = {
 			limit = {
 				owner = {
+					ai = yes
 					NOT = { money = 100000 }
 					NOT = { check_variable = { which = owed_cash_money value = 1 } }
 				}
@@ -3690,7 +3694,17 @@ country_event = {
 			owner = { set_variable = { which = owed_cash_money value = 100 } }
 		}
 		random_owned = {
-			limit = { owner = { money = 100000 } }
+			limit = {
+				owner = {
+					ai = yes
+					NOT = { money = 100000 }
+					check_variable = { which = owed_cash_money value = 9 }
+				} 
+			}
+			owner = { change_variable = { which = owed_cash_money value = 100 } }
+		}
+		random_owned = {
+			limit = { owner = { ai = yes money = 100000 } }
 			owner = { treasury = -100000 }
 		}
 		
@@ -4254,6 +4268,7 @@ country_event = {
 	
 	option = {
 		name = "EVTOPTA199039" #Historical Option
+		1981 = { trade_goods = rubber }
 		1980 = { trade_goods = rubber }
 		1977 = { trade_goods = coffee }  #Brazzaville
 		1978 = { trade_goods = tropical_wood }
@@ -4264,6 +4279,7 @@ country_event = {
 	
 	option = {
 		name = "EVTOPTC199039" #Coffee Option
+		1981 = { trade_goods = rubber }
 		1980 = { trade_goods = tropical_wood }
 		1977 = { trade_goods = coffee }  #Brazzaville
 		1978 = { trade_goods = coffee }
@@ -4293,6 +4309,7 @@ country_event = {
 	
 	option = {
 		name = "EVTOPTC199048" #Rubber
+		1981 = { trade_goods = rubber }
 		1980 = { trade_goods = rubber }
 		1977 = { trade_goods = tropical_wood }  #Brazzaville
 		1978 = { trade_goods = tropical_wood }
@@ -4513,17 +4530,14 @@ country_event = {
 		2012 = { trade_goods = cotton }
 		
 		random_owned = {
-			limit = {
-				owner = {
-					NOT = { money = 100000 }
-					check_variable = { which = owed_cash_money value = 9 }
-				} 
-			}
-			owner = { change_variable = { which = owed_cash_money value = 100 } }
+			limit = { owner = { ai = no } }
+			owner = { treasury = -100000 }
 		}
+		
 		random_owned = {
 			limit = {
 				owner = {
+					ai = yes
 					NOT = { money = 100000 }
 					NOT = { check_variable = { which = owed_cash_money value = 1 } }
 				}
@@ -4531,7 +4545,17 @@ country_event = {
 			owner = { set_variable = { which = owed_cash_money value = 100 } }
 		}
 		random_owned = {
-			limit = { owner = { money = 100000 } }
+			limit = {
+				owner = {
+					ai = yes
+					NOT = { money = 100000 }
+					check_variable = { which = owed_cash_money value = 9 }
+				} 
+			}
+			owner = { change_variable = { which = owed_cash_money value = 100 } }
+		}
+		random_owned = {
+			limit = { owner = { ai = yes money = 100000 } }
 			owner = { treasury = -100000 }
 		}
 		
@@ -4920,6 +4944,7 @@ country_event = {
 	
 	option = {
 		name = "EVTOPTA199039" #Historical Option
+		1795 = { trade_goods = cotton } #Kayes
 		1797 = { trade_goods = cotton } #Kita
 		1794 = { trade_goods = cotton } #Bamako
 		1798 = { trade_goods = cotton } #Bougouni
@@ -4929,7 +4954,51 @@ country_event = {
 	}
 	
 	option = {
+		name = "EVTOPTB199053" #Gold
+		1795 = { trade_goods = cotton } #Kayes
+		1797 = { trade_goods = cotton } #Kita
+		1794 = { trade_goods = precious_metal } #Bamako
+		1798 = { trade_goods = cotton } #Bougouni
+		1799 = { trade_goods = cotton } #Sikasso
+		
+		random_owned = {
+			limit = { owner = { ai = no } }
+			owner = { treasury = -100000 }
+		}
+		
+		random_owned = {
+			limit = {
+				owner = {
+					ai = yes
+					NOT = { money = 100000 }
+					NOT = { check_variable = { which = owed_cash_money value = 1 } }
+				}
+			}
+			owner = { set_variable = { which = owed_cash_money value = 100 } }
+		}
+		random_owned = {
+			limit = {
+				owner = {
+					ai = yes
+					NOT = { money = 100000 }
+					check_variable = { which = owed_cash_money value = 9 }
+				} 
+			}
+			owner = { change_variable = { which = owed_cash_money value = 100 } }
+		}
+		random_owned = {
+			limit = { owner = { ai = yes money = 100000 } }
+			owner = { treasury = -100000 }
+		}
+		
+		ai_chance = {
+			factor = 10
+		}
+	}
+	
+	option = {
 		name = "EVTOPTD199053" #tobacco Option
+		1795 = { trade_goods = tobacco } #Kayes
 		1797 = { trade_goods = tobacco } #Kita
 		1794 = { trade_goods = tobacco } #Bamako
 		1798 = { trade_goods = cotton } #Bougouni
@@ -4959,6 +5028,7 @@ country_event = {
 	
 	option = {
 		name = "EVTOPTE199053" #coffee Option
+		1795 = { trade_goods = coffee } #Kayes
 		1797 = { trade_goods = coffee } #Kita
 		1794 = { trade_goods = coffee } #Bamako
 		1798 = { trade_goods = cotton } #Bougouni
@@ -5751,19 +5821,16 @@ country_event = {
 		1840 = { trade_goods = cotton }
 		1831 = { trade_goods = cotton }
 		1828 = { trade_goods = cotton }
-	
+		
 		random_owned = {
-			limit = {
-				owner = {
-					NOT = { money = 100000 }
-					check_variable = { which = owed_cash_money value = 9 }
-				} 
-			}
-			owner = { change_variable = { which = owed_cash_money value = 100 } }
+			limit = { owner = { ai = no } }
+			owner = { treasury = -100000 }
 		}
+		
 		random_owned = {
 			limit = {
 				owner = {
+					ai = yes
 					NOT = { money = 100000 }
 					NOT = { check_variable = { which = owed_cash_money value = 1 } }
 				}
@@ -5771,7 +5838,17 @@ country_event = {
 			owner = { set_variable = { which = owed_cash_money value = 100 } }
 		}
 		random_owned = {
-			limit = { owner = { money = 100000 } }
+			limit = {
+				owner = {
+					ai = yes
+					NOT = { money = 100000 }
+					check_variable = { which = owed_cash_money value = 9 }
+				} 
+			}
+			owner = { change_variable = { which = owed_cash_money value = 100 } }
+		}
+		random_owned = {
+			limit = { owner = { ai = yes money = 100000 } }
 			owner = { treasury = -100000 }
 		}
 		
@@ -5811,17 +5888,14 @@ country_event = {
 		1828 = { trade_goods = coffee }
 		
 		random_owned = {
-			limit = {
-				owner = {
-					NOT = { money = 100000 }
-					check_variable = { which = owed_cash_money value = 9 }
-				} 
-			}
-			owner = { change_variable = { which = owed_cash_money value = 100 } }
+			limit = { owner = { ai = no } }
+			owner = { treasury = -100000 }
 		}
+		
 		random_owned = {
 			limit = {
 				owner = {
+					ai = yes
 					NOT = { money = 100000 }
 					NOT = { check_variable = { which = owed_cash_money value = 1 } }
 				}
@@ -5829,7 +5903,17 @@ country_event = {
 			owner = { set_variable = { which = owed_cash_money value = 100 } }
 		}
 		random_owned = {
-			limit = { owner = { money = 100000 } }
+			limit = {
+				owner = {
+					ai = yes
+					NOT = { money = 100000 }
+					check_variable = { which = owed_cash_money value = 9 }
+				} 
+			}
+			owner = { change_variable = { which = owed_cash_money value = 100 } }
+		}
+		random_owned = {
+			limit = { owner = { ai = yes money = 100000 } }
 			owner = { treasury = -100000 }
 		}
 		
@@ -5869,17 +5953,14 @@ country_event = {
 		1828 = { trade_goods = tobacco }
 		
 		random_owned = {
-			limit = {
-				owner = {
-					NOT = { money = 100000 }
-					check_variable = { which = owed_cash_money value = 9 }
-				} 
-			}
-			owner = { change_variable = { which = owed_cash_money value = 100 } }
+			limit = { owner = { ai = no } }
+			owner = { treasury = -100000 }
 		}
+		
 		random_owned = {
 			limit = {
 				owner = {
+					ai = yes
 					NOT = { money = 100000 }
 					NOT = { check_variable = { which = owed_cash_money value = 1 } }
 				}
@@ -5887,7 +5968,17 @@ country_event = {
 			owner = { set_variable = { which = owed_cash_money value = 100 } }
 		}
 		random_owned = {
-			limit = { owner = { money = 100000 } }
+			limit = {
+				owner = {
+					ai = yes
+					NOT = { money = 100000 }
+					check_variable = { which = owed_cash_money value = 9 }
+				} 
+			}
+			owner = { change_variable = { which = owed_cash_money value = 100 } }
+		}
+		random_owned = {
+			limit = { owner = { ai = yes money = 100000 } }
 			owner = { treasury = -100000 }
 		}
 		
@@ -6050,6 +6141,7 @@ country_event = {
 		name = "EVTOPTA199039" #Historical Option
 		
 		1906 = { trade_goods = cotton } #Orodaro
+		1905 = { trade_goods = cotton } #Bobo Dioulasso
 		1901 = { trade_goods = cotton } #Wagadugu
 		1904 = { trade_goods = cotton } #Fada Ngourma
 		
@@ -6061,6 +6153,7 @@ country_event = {
 		
 		
 		1906 = { trade_goods = coffee } #Orodaro
+		1905 = { trade_goods = coffee } #Bobo Dioulasso
 		1901 = { trade_goods = coffee } #Wagadugu
 		1904 = { trade_goods = coffee } #Fada Ngourma
 		
@@ -6090,6 +6183,7 @@ country_event = {
 		name = "EVTOPTD199050" #tobacco Option
 		
 		1906 = { trade_goods = tobacco } #Orodaro
+		1905 = { trade_goods = tobacco } #Bobo Dioulasso
 		1901 = { trade_goods = tobacco } #Wagadugu
 		1904 = { trade_goods = tobacco } #Fada Ngourma
 		
@@ -6298,17 +6392,14 @@ country_event = {
 		1425 = { trade_goods = timber }
 		
 		random_owned = {
-			limit = {
-				owner = {
-					NOT = { money = 200000 }
-					check_variable = { which = owed_cash_money value = 9 }
-				} 
-			}
-			owner = { change_variable = { which = owed_cash_money value = 200 } }
+			limit = { owner = { ai = no } }
+			owner = { treasury = -200000 }
 		}
+		
 		random_owned = {
 			limit = {
 				owner = {
+					ai = yes
 					NOT = { money = 200000 }
 					NOT = { check_variable = { which = owed_cash_money value = 1 } }
 				}
@@ -6316,7 +6407,17 @@ country_event = {
 			owner = { set_variable = { which = owed_cash_money value = 200 } }
 		}
 		random_owned = {
-			limit = { owner = { money = 200000 } }
+			limit = {
+				owner = {
+					ai = yes
+					NOT = { money = 200000 }
+					check_variable = { which = owed_cash_money value = 9 }
+				} 
+			}
+			owner = { change_variable = { which = owed_cash_money value = 200 } }
+		}
+		random_owned = {
+			limit = { owner = { ai = yes money = 200000 } }
 			owner = { treasury = -200000 }
 		}
 		
@@ -6567,6 +6668,7 @@ country_event = {
 	option = {
 		name = "EVTOPTA199039" #Historical Option
 		
+		2115 = { trade_goods = coffee }
 		2121 = { trade_goods = coffee }
 		
 		2118 = { trade_goods = tropical_wood }
@@ -6574,19 +6676,24 @@ country_event = {
 		
 		2122 = { trade_goods = cotton }
 		
+		2116 = { trade_goods = iron }
+		
 		ai_chance = { factor = 80 }
 	}
 	
 	option = {
 		name = "EVTOPTB199049" #cotton Option
 		
+		2115 = { trade_goods = cotton }
 		2121 = { trade_goods = cotton }
 		
 		2118 = { trade_goods = tropical_wood }
 		2119 = { trade_goods = tropical_wood }
 		
 		2122 = { trade_goods = cotton }
-				
+		
+		2116 = { trade_goods = iron }
+		
 		ai_chance = {
 			factor = 10
 			modifier = {
@@ -6612,12 +6719,15 @@ country_event = {
 	option = {
 		name = "EVTOPTD199050" #tobacco Option
 		
+		2115 = { trade_goods = tobacco }
 		2121 = { trade_goods = tobacco }
 		
 		2118 = { trade_goods = tropical_wood }
 		2119 = { trade_goods = tropical_wood }
 		
 		2122 = { trade_goods = cotton }
+		
+		2116 = { trade_goods = iron }
 		
 		ai_chance = {
 			factor = 10
@@ -7654,7 +7764,7 @@ province_event = {
 	id = 199444
 	title = "EVTNAME199444" #Plantation Logic
 	desc = "EVTDESC199444"
-	
+		
 	trigger = {
 		is_colonial = yes
 		owned_by = THIS
@@ -7701,10 +7811,12 @@ province_event = {
 			modifier = {
 				factor = 0
 				OR = {
-					any_neighbor_country = {
-						any_owned_province = {
-							trade_goods = sugar
-							unemployment_by_type = { value = 0.05 type = farmers }
+					owner = {
+						any_neighbor_country = {
+							any_owned_province = {
+								trade_goods = sugar
+								unemployment_by_type = { value = 0.05 type = farmers }
+							}
 						}
 					}
 					any_greater_power = {
@@ -7729,10 +7841,12 @@ province_event = {
 			modifier = {
 				factor = 0
 				OR = {
-					any_neighbor_country = {
-						any_owned_province = {
-							trade_goods = coffee
-							unemployment_by_type = { value = 0.05 type = farmers }
+					owner = {
+						any_neighbor_country = {
+							any_owned_province = {
+								trade_goods = coffee
+								unemployment_by_type = { value = 0.05 type = farmers }
+							}
 						}
 					}
 					any_greater_power = {
@@ -7757,10 +7871,12 @@ province_event = {
 			modifier = {
 				factor = 0
 				OR = {
-					any_neighbor_country = {
-						any_owned_province = {
-							trade_goods = cotton
-							unemployment_by_type = { value = 0.05 type = farmers }
+					owner = {
+						any_neighbor_country = {
+							any_owned_province = {
+								trade_goods = cotton
+								unemployment_by_type = { value = 0.05 type = farmers }
+							}
 						}
 					}
 					any_greater_power = {
@@ -7785,10 +7901,12 @@ province_event = {
 			modifier = {
 				factor = 0
 				OR = {
-					any_neighbor_country = {
-						any_owned_province = {
-							trade_goods = spices
-							unemployment_by_type = { value = 0.05 type = farmers }
+					owner = {
+						any_neighbor_country = {
+							any_owned_province = {
+								trade_goods = spices
+								unemployment_by_type = { value = 0.05 type = farmers }
+							}
 						}
 					}
 					any_greater_power = {
@@ -7813,10 +7931,12 @@ province_event = {
 			modifier = {
 				factor = 0
 				OR = {
-					any_neighbor_country = {
-						any_owned_province = {
-							trade_goods = cocoa
-							unemployment_by_type = { value = 0.05 type = farmers }
+					owner = {
+						any_neighbor_country = {
+							any_owned_province = {
+								trade_goods = cocoa
+								unemployment_by_type = { value = 0.05 type = farmers }
+							}
 						}
 					}
 					any_greater_power = {
@@ -7841,10 +7961,12 @@ province_event = {
 			modifier = {
 				factor = 0
 				OR = {
-					any_neighbor_country = {
-						any_owned_province = {
-							trade_goods = tobacco
-							unemployment_by_type = { value = 0.05 type = farmers }
+					owner = {
+						any_neighbor_country = {
+							any_owned_province = {
+								trade_goods = tobacco
+								unemployment_by_type = { value = 0.05 type = farmers }
+							}
 						}
 					}
 					any_greater_power = {

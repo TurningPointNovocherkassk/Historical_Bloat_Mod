@@ -312,7 +312,11 @@ country_event = {
 	desc = "EVTDESC45106"
 	picture = "haiti_debts"
 	
-	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = { tag = HAI }
+	
+	mean_time_to_happen = { days = 3 }
 	
 	option = {
 		name = "EVT45106OPTA"
@@ -510,6 +514,125 @@ country_event = {
 					set_variable = { which = owed_cash_money value = 80 }
 				}
 				BOR = { treasury = 80000 }
+			}
+		}
+		
+		random_owned = {
+			limit = {
+				owner = {
+					tag = MEX
+					has_country_flag = mexico_didnt_pay_frog
+					NOT = { check_variable = { which = owed_cash_money value = 9 } }
+				}
+			}
+			owner = {
+				MEX = {
+					clr_country_flag = mexico_didnt_pay_frog
+					set_variable = { which = owed_cash_money value = 30 }
+				}
+				random_country = {
+					limit = {
+						exists = yes
+						OR = {
+							tag = FRA
+							tag = BOR
+						}
+						OR = {
+							has_country_flag = gave_mexico_aid_frog
+							has_country_flag = gave_mexico_money_frog
+						}
+					}
+					treasury = 30000
+					clr_country_flag = gave_mexico_aid_frog
+					clr_country_flag = gave_mexico_money_frog
+				}
+			}
+		}
+		random_owned = {
+			limit = {
+				owner = {
+					tag = MEX
+					has_country_flag = mexico_didnt_pay_spic
+					NOT = { check_variable = { which = owed_cash_money value = 9 } }
+				}
+			}
+			owner = {
+				MEX = {
+					clr_country_flag = mexico_didnt_pay_spic
+					set_variable = { which = owed_cash_money value = 30 }
+				}
+				random_country = {
+					limit = {
+						exists = yes
+						OR = {
+							tag = SPA
+							tag = SPC
+						}
+						OR = {
+							has_country_flag = gave_mexico_aid_spic
+							has_country_flag = gave_mexico_money_spic
+						}
+					}
+					treasury = 30000
+					clr_country_flag = gave_mexico_aid_spic
+					clr_country_flag = gave_mexico_money_spic
+				}
+			}
+		}
+		random_owned = {
+			limit = {
+				owner = {
+					tag = MEX
+					has_country_flag = mexico_didnt_pay_kike
+					NOT = { check_variable = { which = owed_cash_money value = 9 } }
+				}
+			}
+			owner = {
+				MEX = {
+					clr_country_flag = mexico_didnt_pay_kike
+					set_variable = { which = owed_cash_money value = 30 }
+				}
+				random_country = {
+					limit = {
+						exists = yes
+						tag = ENG
+						OR = {
+							has_country_flag = gave_mexico_aid_kike
+							has_country_flag = gave_mexico_money_kike
+						}
+					}
+					treasury = 30000
+					clr_country_flag = gave_mexico_aid_kike
+					clr_country_flag = gave_mexico_money_kike
+				}
+			}
+		}
+		random_owned = {
+			limit = {
+				owner = {
+					tag = MEX
+					has_country_flag = mexico_didnt_pay_random
+					NOT = { check_variable = { which = owed_cash_money value = 9 } }
+				}
+			}
+			owner = {
+				MEX = {
+					clr_country_flag = mexico_didnt_pay_random
+					set_variable = { which = owed_cash_money value = 30 }
+				}
+				random_country = {
+					limit = {
+						exists = yes
+						capital_scope = { continent = europe }
+						OR = {
+							has_country_flag = gave_mexico_aid_random
+							has_country_flag = gave_mexico_money_random
+						}
+					}
+					treasury = 30000
+					clr_country_flag = gave_mexico_aid_random
+					clr_country_flag = gave_mexico_money_random
+				}
 			}
 		}
 		

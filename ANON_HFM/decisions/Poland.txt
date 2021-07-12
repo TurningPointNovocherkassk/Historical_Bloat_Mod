@@ -16,16 +16,20 @@ political_decisions = {
 					}
 				}
 			}
-			NOT = { exists = POL }
-			NOT = { exists = HPL }
-			NOT = { has_country_flag = post_colonial_country }
-			NOT = { has_global_flag = paris_congress_to_be_held }
-			NOT = { has_country_flag = GLM_convention }
-			NOT = { has_country_flag = a_habsburg_on_the_throne_POL }
-			NOT = { tag = PLC }
-			NOT = { has_country_flag = became_plc }
-			NOT = { has_country_flag = the_commonwealth_3_nations }
-			NOT = { has_country_flag = stopped_poland_lithuania }
+			NOT = {
+				tag = PLC
+				exists = POL
+				exists = HPL
+				exists = PLC
+				government = provisional_government
+				has_country_flag = post_colonial_country
+				has_global_flag = paris_congress_to_be_held
+				has_country_flag = GLM_convention
+				has_country_flag = a_habsburg_on_the_throne_POL
+				has_country_flag = became_plc
+				has_country_flag = the_commonwealth_3_nations
+				has_country_flag = stopped_poland_lithuania
+			}
 		}
 
 		allow = {
@@ -44,7 +48,7 @@ political_decisions = {
 					exists = PZN PZN = { is_vassal = no }
 					exists = PML PML = { is_vassal = no }
 				}
-				AND = { 
+				AND = {
 					tag = CPL 
 					year = 1900
 				}
@@ -338,8 +342,15 @@ political_decisions = {
 
 		potential = {
 			primary_culture = polish
-			NOT = { owns = 706 }
-			NOT = { tag = PLC }
+			NOT = {
+				owns = 706
+				OR = {
+					tag = PLC
+					tag = PLR
+					tag = PRB
+					tag = PRC
+				}
+			}
 			any_neighbor_country = {
 				owns = 706
 				OR = {
@@ -349,10 +360,12 @@ political_decisions = {
 					tag = HPL
 				}
 			}
-			NOT = { has_country_flag = unite_with_poland }
-			NOT = { has_country_flag = post_colonial_country }
-			NOT = { has_country_flag = became_plc }
-			NOT = { has_country_flag = the_commonwealth_3_nations }
+			NOT = {
+				has_country_flag = unite_with_poland
+				has_country_flag = post_colonial_country
+				has_country_flag = became_plc
+				has_country_flag = the_commonwealth_3_nations
+			}
 		}
 
 		allow = {
@@ -364,7 +377,7 @@ political_decisions = {
 			OR = {
 				AND = {
 					OR = {
-						sphere_owner = { is_sphere_leader_of = POL }
+						sphere_owner = { is_sphere_leader_of = POL } #THIS' sphere_owner is also is_sphere_leader_of POL
 						part_of_sphere = no
 					}
 					POL = {
@@ -437,7 +450,10 @@ political_decisions = {
 						tag = HPL
 					}
 					exists = yes
-					owns = 706
+					OR = {
+						owns = 706 #Warsaw
+						owns = 703 #Krakow
+					}
 					ai = yes
 					THIS = { ai = yes }
 				}
@@ -481,7 +497,10 @@ political_decisions = {
 				limit = {
 					tag = PNC
 					exists = yes
-					owns = 706
+					OR = {
+						owns = 706
+						owns = 703
+					}
 					ai = yes
 					THIS = { ai = no }
 				}
@@ -523,7 +542,27 @@ political_decisions = {
 					owns = 706
 					ai = no
 				}
-				country_event = 60130
+				country_event = 60130 #Get Annexed CleanUp.txt
+			}
+			any_country = {
+				limit = {
+					OR = {
+						neighbour = THIS
+						neighbour = POL
+						neighbour = CPL
+						neighbour = PNC
+						neighbour = HPL
+						tag = RUS
+						tag = AUS
+						tag = KUK
+						tag = SGF
+						tag = PRU
+						tag = NGF
+						tag = GER
+					}
+					exists = yes
+				}
+				country_event = 666666121 #Notification about annexation
 			}
 		}
 

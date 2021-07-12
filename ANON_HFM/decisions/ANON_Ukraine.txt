@@ -42,8 +42,8 @@ political_decisions = {
 					NOT = { has_province_modifier = central_ukraine_modifier }
 				}
 				trade_goods = coal
-				# add_province_modifier = { name = donbass_modifier duration = 18250 }
-				add_province_modifier = { name = donbass_modifier duration = 7300 }
+				# add_province_modifier = { name = central_ukraine_modifier duration = 18250 }
+				add_province_modifier = { name = central_ukraine_modifier duration = 7300 }
 			}
 			any_owned = {
 				limit = {

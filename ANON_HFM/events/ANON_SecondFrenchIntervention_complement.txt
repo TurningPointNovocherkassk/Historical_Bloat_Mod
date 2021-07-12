@@ -1,0 +1,432 @@
+########################################################################################
+#Maximilian offers Juarez to join the Empire and to give him a seat.
+########################################################################################
+#Juarez refuses, but doesn't instigate war
+country_event = {
+	id = 11223000
+	title = "EVTNAME11223000"
+	desc = "EVTDESC11223000"
+	is_triggered_only = yes
+
+	option = {
+		name = "EVTOPTC11223000"
+		set_global_flag = juarez_nothing
+		relation = {
+			who = FROM
+			value = -50
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+#Juarez accepts
+country_event = {
+	id = 11223001
+	title = "EVTNAME11223000"
+	desc = "EVTDESC11223001"
+	is_triggered_only = yes
+
+	option = {
+		name = "EVTOPTC11223001"
+		set_global_flag = juarez_accepts
+		any_country = { limit = { war_with = THIS alliance_with = FROM } end_war = THIS }
+		any_country = { limit = { war_with = FROM alliance_with = THIS } end_war = FROM }
+		random_country = { limit = { tag = FROM war_with = THIS } end_war = THIS }
+		random_owned = { limit = { owner = { war_with = FROM } } owner = { end_war = FROM } }
+		government = hms_government
+		political_reform = federalism
+		political_reform = appointed
+		political_reform = wealth_weighted_voting
+		political_reform = harassment
+		political_reform = free_press
+		political_reform = non_socialist
+		political_reform = first_past_the_post
+		political_reform = non_secret_ballots
+		political_reform = culture_voting_only
+		ruling_party_ideology = liberal
+		inherit = MEX
+		prestige = 10
+		war_exhaustion = -40
+		MEX = { all_core = { remove_core = MEX } }
+		3333 = { secede_province = MEX }
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+#Juarez refuses, instigates war
+country_event = {
+	id = 11223002
+	title = "EVTNAME11223000"
+	desc = "EVTDESC11223002"
+	is_triggered_only = yes
+
+	option = {
+		name = "EVTOPTC11223002"
+		set_global_flag = juarez_breaktruce
+		war = {
+			attacker_goal = {
+				casus_belli = call_allies_cb
+			}
+			call_ally = yes
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+########################################################################################
+#The Confederate States intervention into Mexico.
+########################################################################################
+#Actual declaration of War against  Mexico
+country_event = {
+	id = 11223003
+	title = "EVTNAME11223003"
+	desc = "EVTDESC11223003"
+	is_triggered_only = yes
+
+	option = {
+		name = "EVTOPTC11223003"
+		relation = { who = CSA value = 400 }
+		create_alliance = CSA
+		military_access = CSA
+		war = {
+			attacker_goal = {
+				casus_belli = call_allies_cb
+			}
+			call_ally = yes
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+#Sending of supplies to Habsburg Mexico
+country_event = {
+	id = 11223004
+	title = "EVTNAME11223003"
+	desc = "EVTDESC11223004"
+	is_triggered_only = yes
+
+	option = {
+		name = "EVTOPTC11223004"
+		relation = {
+			who = FROM
+			value = 100
+		}
+		artillery = 15
+		canned_food = 75
+		small_arms = 30
+		ammunition = 75
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+#Sending of supplies to Habsburg Mexico - for USA and allies
+country_event = {
+	id = 11223005
+	title = "EVTNAME11223003"
+	desc = "EVTDESC11223005"
+	is_triggered_only = yes
+
+	option = {
+		name = "EVTOPTC11223005"
+		relation = {
+			who = CSA
+			value = -100
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+########################################################################################
+#US intervention into Mexico.
+########################################################################################
+#Actual declaration of War against France and Habsburg Mexico
+country_event = {
+	id = 11223006
+	title = "EVTNAME11223006"
+	desc = "EVTDESC11223006"
+	is_triggered_only = yes
+
+	option = {
+		name = "EVTOPTC11223006"
+		create_alliance = FROM
+		military_access = FROM
+		war = {
+			attacker_goal = {
+				casus_belli = call_allies_cb
+			}
+			call_ally = yes
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+#Actual declaration of War against France and Habsburg Mexico
+country_event = {
+	id = 11223007
+	title = "EVTNAME11223006"
+	desc = "EVTDESC11223007"
+	is_triggered_only = yes
+
+	option = {
+		name = "EVTOPTC11223007"
+		relation = {
+			who = FROM
+			value = 100
+		}
+		random_country = {
+			limit = {
+				tag = FROM
+				has_country_flag = USA_aid_MEX_true
+				NOT = { has_country_flag = USA_dickwaving_CSA_true }
+			}
+			THIS = {
+				artillery = 30
+				canned_food = 150
+				small_arms = 60
+				ammunition = 150
+			}
+		}
+		random_country = {
+			limit = {
+				tag = FROM
+				has_country_flag = USA_dickwaving_CSA_true
+			}
+			THIS = {
+				artillery = 15
+				ammunition = 75
+				small_arms = 30
+				canned_food = 75
+			}
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+#Actual declaration of War against France and Habsburg Mexico
+country_event = {
+	id = 11223008
+	title = "EVTNAME11223006"
+	desc = "EVTDESC11223008"
+	is_triggered_only = yes
+
+	option = {
+		name = "EVTOPTC11223008"
+		relation = {
+			who = FROM
+			value = -100
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+########################################################################################
+#Mexico has asked for aid and loans.
+########################################################################################
+#Money and Supplies from European GP
+country_event = {
+	id = 11223009
+	title = "EVTNAME11223009"
+	desc = "EVTDESC11223009"
+	is_triggered_only = yes
+
+	option = {
+		name = "EVTOPTC11223009"
+		random_country = {
+			limit = {
+				tag = FROM
+				OR = {
+					has_country_flag = gave_mexico_aid_frog
+					has_country_flag = gave_mexico_aid_spic
+					has_country_flag = gave_mexico_aid_kike
+					has_country_flag = gave_mexico_aid_random
+				}
+			}
+			relation = {
+				who = THIS
+				value = 25
+			}
+			THIS = {
+				treasury = 25000
+				small_arms = 10
+				ammunition = 10
+				canned_food = 10
+				artillery = 10
+				relation = {
+					who = FROM
+					value = 25
+				}
+			}
+		}
+		random_country = {
+			limit = {
+				tag = FROM
+				OR = {
+					has_country_flag = gave_mexico_money_frog
+					has_country_flag = gave_mexico_money_spic
+					has_country_flag = gave_mexico_money_kike
+					has_country_flag = gave_mexico_money_random
+				}
+			}
+			relation = {
+				who = THIS
+				value = 25
+			}
+			THIS = {
+				treasury = 25000
+				relation = {
+					who = FROM
+					value = 25
+				}
+			}
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+#No money and Supplies from European GP
+country_event = {
+	id = 11223010
+	title = "EVTNAME11223009"
+	desc = "EVTDESC11223010"
+	is_triggered_only = yes
+
+	option = {
+		name = "EVTOPTC11223010"
+		relation = {
+			who = FROM
+			value = -25
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+########################################################################################
+#Convention of London for France
+########################################################################################
+#Convention of London for Greater Powers and Spain, war
+country_event = {
+	id = 11223011
+	title = "EVTNAME1100070"
+	desc = "EVTDESC11223011"
+	is_triggered_only = yes
+
+	option = {
+		name = "EVTOPTA11223011"
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+#Convention of London for Greater Powers and Spain, no war
+country_event = {
+	id = 11223012
+	title = "EVTNAME1100070"
+	desc = "EVTDESC11223012"
+	is_triggered_only = yes
+
+	option = {
+		name = "EVTOPTA11223012"
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+#Convention of London Allies Leave Mexico
+country_event = {
+	id = 11223013
+	title = "EVTNAME11223013"
+	desc = "EVTDESC11223013"
+	is_triggered_only = yes
+
+	option = {
+		name = "EVTOPTA11223012"
+		relation = {
+			who = FROM
+			value = -25
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+########################################################################################
+#Liberals win in Mexico or Conservatives win but change back to MEX tag
+########################################################################################
+#no payback
+country_event = {
+	id = 11223014
+	title = "EVTNAME1100072"
+	desc = "EVTDESC11223014"
+	is_triggered_only = yes
+
+	option = {
+		name = "EVTOPTA11223014"
+		relation = {
+			who = FROM
+			value = -25
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+#yes payback
+country_event = {
+	id = 11223015
+	title = "EVTNAME1100072"
+	desc = "EVTDESC11223015"
+	is_triggered_only = yes
+
+	option = {
+		name = "EVTOPTA11223015"
+		relation = {
+			who = FROM
+			value = 25
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+########################################################################################
+#2nd French intervention
+########################################################################################
+#Stalemate in Reform War
+country_event = {
+	id = 11223016
+	title = "EVTNAME1100073"
+	desc = "EVTDESC11223016"
+	is_triggered_only = yes
+
+	option = {
+		name = "EVTOPTA11223016"
+		relation = {
+			who = FRA
+			value = -400
+		}
+		relation = {
+			who = BOR
+			value = -400
+		}
+		war = {
+			target = MXM
+			attacker_goal = { casus_belli = civil_war }
+			defender_goal = { casus_belli = civil_war }
+			call_ally = yes
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}

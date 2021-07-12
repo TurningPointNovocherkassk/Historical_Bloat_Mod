@@ -908,19 +908,19 @@ country_event = {
 
 
 #The Goldsmith Arbitration
-country_event = {
-	id = 300998
-	is_triggered_only = yes
+# country_event = {
+	# id = 300998
+	# is_triggered_only = yes
 
-	title = "EVTNAME300998"
-	desc = "EVTDESC300998"
-	picture = "deliberation"
+	# title = "EVTNAME300998"
+	# desc = "EVTDESC300998"
+	# picture = "deliberation"
 
-	option = {
-		name = "We should rush to establish ourselves"
-		3469 = { secede_province = PER }
-	}
-}
+	# option = {
+		# name = "We should rush to establish ourselves"
+		# 3469 = { secede_province = PER }
+	# }
+# }
 
 #Dominance asserted of Lengeh
 # country_event = {
@@ -942,22 +942,22 @@ country_event = {
 # }
 
 #Dominance asserted of Bushire
-country_event = {
-	id = 301002
-	is_triggered_only = yes
+# country_event = {
+	# id = 301002
+	# is_triggered_only = yes
 
-	title = "EVTNAME301002"
-	desc = "EVTDESC301002"
-	picture = "persia_bushehr"
+	# title = "EVTNAME301002"
+	# desc = "EVTDESC301002"
+	# picture = "persia_bushehr"
 
-	option = {
-		name = "It was worthless anyway!"
-		prestige = -1
-		1136 = {
-			secede_province = PER
-		}
-	}
-}
+	# option = {
+		# name = "It was worthless anyway!"
+		# prestige = -1
+		# 1136 = {
+			# secede_province = PER
+		# }
+	# }
+# }
 
 #The Bandar Abbas Lease
 # country_event = {

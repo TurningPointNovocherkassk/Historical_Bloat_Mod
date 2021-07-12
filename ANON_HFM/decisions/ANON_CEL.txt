@@ -1813,12 +1813,12 @@ political_decisions = {
 			###British - exeter###
 			random_owned = {
 				limit = {
-					province_id = 3368
+					province_id = 3268
 					owner = {
 						primary_culture = british
 					}
 				}
-				3368 = { change_province_name = "Exeter" }
+				3268 = { change_province_name = "Exeter" }
 				owner = { 
 					set_global_flag = british_renamed_exeter
 					clr_global_flag = cornish_renamed_exeter
@@ -1838,14 +1838,14 @@ political_decisions = {
 				}
 				299 = { change_province_name = "Aberplymm" }
 				owner = { 
-					set_global_flag = british_renamed_plymouth
-					clr_global_flag = cornish_renamed_plymouth
+					set_global_flag = cornish_renamed_plymouth
+					clr_global_flag = british_renamed_plymouth
 				}
 			}
 			###Cornish - exeter###
 			random_owned = {
 				limit = {
-					province_id = 3368
+					province_id = 3268
 					owner = {
 						OR = {
 							primary_culture = cornish
@@ -1853,10 +1853,10 @@ political_decisions = {
 						}	
 					}
 				}
-				3368 = { change_province_name = "Karesk" }
+				3268 = { change_province_name = "Karesk" }
 				owner = { 
-					set_global_flag = british_renamed_exeter
-					clr_global_flag = cornish_renamed_exeter
+					set_global_flag = cornish_renamed_exeter
+					clr_global_flag = british_renamed_exeter
 				}
 			}
 		}
@@ -1872,7 +1872,7 @@ political_decisions = {
 					primary_culture = french
 					OR = {
 						AND = { owns = 420 NOT = { has_global_flag = french_renamed_brittany } }
-						AND = { owns = 3268 NOT = { has_global_flag = french_renamed_nantes } }
+						AND = { owns = 423 NOT = { has_global_flag = french_renamed_nantes } }
 					}
 				}
 				AND = {
@@ -1882,7 +1882,7 @@ political_decisions = {
 					}
 					OR = {
 						AND = { owns = 420 NOT = { has_global_flag = breton_renamed_brittany } }
-						AND = { owns = 3268 NOT = { has_global_flag = breton_renamed_nantes } }
+						AND = { owns = 423 NOT = { has_global_flag = breton_renamed_nantes } }
 					}
 				}
 			}
@@ -2261,7 +2261,7 @@ political_decisions = {
 						}
 					}
 				}
-				2396 = { change_province_name = "Esquel" }
+				2397 = { change_province_name = "Esquel" }
 				owner = { 
 					set_global_flag = normal_renamed_esquel
 					clr_global_flag = welsh_renamed_esquel
@@ -2281,8 +2281,8 @@ political_decisions = {
 				}
 				2396 = { change_province_name = "Porth Madryn" }
 				owner = { 
-					set_global_flag = normal_renamed_rawson
-					clr_global_flag = welsh_renamed_rawson
+					set_global_flag = welsh_renamed_rawson
+					clr_global_flag = normal_renamed_rawson
 				}
 			}
 			###welsh - esquel###
@@ -2296,7 +2296,7 @@ political_decisions = {
 						}
 					}
 				}
-				2396 = { change_province_name = "Cwm Hyfryd" }
+				2397 = { change_province_name = "Cwm Hyfryd" }
 				owner = { 
 					set_global_flag = welsh_renamed_esquel
 					clr_global_flag = normal_renamed_esquel

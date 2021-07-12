@@ -28,14 +28,16 @@ political_decisions = {
 		allow = {
 			war = no
 			prestige = 45
-			nationalism_n_imperialism = 1
+			state_n_government = 1
 			OR = {
 				tag = DJA
 				AND = {
-					rank = 16
 					exists = DJA
 					DJA = { war = no }
-					relation = { who = DJA value = 50 }
+					relation = {
+						who = DJA
+						value = 50
+					}
 				}
 				DJA = {
 					all_core = {
@@ -49,10 +51,12 @@ political_decisions = {
 			OR = {
 				tag = SAK
 				AND = {
-					rank = 16
 					exists = SAK
 					SAK = { war = no }
-					relation = { who = SAK value = 50 }
+					relation = {
+						who = SAK
+						value = 50
+					}
 				}
 				SAK = {
 					all_core = {
@@ -66,10 +70,12 @@ political_decisions = {
 			OR = {
 				tag = ATJ
 				AND = {
-					rank = 16
 					exists = ATJ
 					ATJ = { war = no }
-					relation = { who = ATJ value = 50 }
+					relation = {
+						who = ATJ
+						value = 50
+					}
 				}
 				ATJ = {
 					all_core = {
@@ -83,10 +89,12 @@ political_decisions = {
 			OR = {
 				tag = SLW
 				AND = {
-					rank = 16
 					exists = SLW
 					SLW = { war = no }
-					relation = { who = SLW value = 50 }
+					relation = {
+						who = SLW
+						value = 50
+					}
 				}
 				SLW = {
 					all_core = {
@@ -100,10 +108,12 @@ political_decisions = {
 			OR = {
 				tag = JAV
 				AND = {
-					rank = 16
 					exists = JAV
 					JAV = { war = no }
-					relation = { who = JAV value = 50 }
+					relation = {
+						who = JAV
+						value = 50
+					}
 				}
 				JAV = {
 					all_core = {
@@ -117,10 +127,12 @@ political_decisions = {
 			OR = {
 				tag = BAL
 				AND = {
-					rank = 16
 					exists = BAL
 					BAL = { war = no }
-					relation = { who = BAL value = 50 }
+					relation = {
+						who = BAL
+						value = 50
+					}
 				}
 				BAL = {
 					all_core = {
@@ -194,15 +206,14 @@ political_decisions = {
 			any_owned = {
 				limit = { is_core = INO NOT = { province_id = 1446 } }
 					remove_core = JAV
-					remove_core = DJA
-					remove_core = SAK
-					remove_core = ATJ
-					remove_core = BAL
+					remove_core = DJA 
+					remove_core = SAK 
+					remove_core = ATJ 
+					remove_core = BAL 
 					remove_core = SLW
 					remove_core = MAL
 					remove_core = KLM
 					remove_core = LAN
-					remove_core = PNK
 					remove_core = KTI
 					remove_core = SUL
 					remove_core = BRU
@@ -214,7 +225,7 @@ political_decisions = {
 			factor = 1
 		}
 	}
-
+	
 	unite_malaya = {
 		picture = map_east_indies
 		potential = {
@@ -294,7 +305,6 @@ political_decisions = {
 			random_owned = { limit = { province_id = 2576 } add_core = MLY }
 			any_country = {
 				limit = {
-					exists = yes
 					OR = {
 						tag = JOH
 						tag = BRU
@@ -327,7 +337,6 @@ political_decisions = {
 				remove_core = SIA
 				remove_core = KLM
 				remove_core = LAN
-				remove_core = PNK
 			}
 			country_event = 199069
 		}
@@ -336,11 +345,10 @@ political_decisions = {
 			factor = 1
 		}
 	}
-
+	
 	create_malaya = {
 		picture = map_east_indies
 		potential = {
-			nationalism_n_imperialism = 1
 			OR = {
 				any_owned_province = {
 					OR = {
@@ -388,8 +396,8 @@ political_decisions = {
 
 		allow = {
 			war = no
-			machine_guns = 1
-			market_regulations = 1
+			is_greater_power = yes
+			revolution_n_counterrevolution = 1
 			JOH = {
 				all_core = {
 					OR = {
@@ -462,7 +470,6 @@ political_decisions = {
 
 		effect = {
 			set_global_flag = malaya_formed
-
 			prestige = 20
 			random_country = {
 				limit = {
@@ -506,34 +513,15 @@ political_decisions = {
 			}
 			any_country = {
 				limit = {
-					NOT = {
-						tag = JOH
-						tag = SLG
-						tag = PRK
-						tag = PHG
-					}
-					any_owned_province = {
-						OR = {
-							is_core = JOH
-							is_core = SLG
-							is_core = PRK
-							is_core = PHG
-						}
-					}
+					NOT = { tag = JOH }
+					any_owned_province = { is_core = JOH }
 					OR = {
 						in_sphere = THIS
 						vassal_of = THIS
 					}
 				}
 				any_owned = {
-					limit = {
-						OR = {
-							is_core = JOH
-							is_core = SLG
-							is_core = PRK
-							is_core = PHG
-						}
-					}
+					limit = { is_core = JOH }
 					secede_province = THIS
 				}
 			}
@@ -563,9 +551,8 @@ political_decisions = {
 			}
 			any_country = {
 				limit = {
-					exists = yes
 					OR = {
-						tag = BRU
+						#tag = BRU
 						tag = SWK
 						tag = KTI
 						tag = KLM
@@ -616,10 +603,8 @@ political_decisions = {
 				limit = { has_pop_culture = malay }
 				militancy = -6
 			}
-			MLY = {
-				tech_school = unciv_tech_school
-				set_country_flag = post_colonial_country
-			}
+			MLY = { tech_school = unciv_tech_school }
+			SGP = { tech_school = unciv_tech_school }
 			any_owned = {
 				limit = { is_core = MLY NOT = { province_id = 1393 } }
 				remove_core = SWK
@@ -628,7 +613,6 @@ political_decisions = {
 				remove_core = KTI
 				remove_core = KLM
 				remove_core = LAN
-				remove_core = PNK
 				remove_core = SAK
 				remove_core = ATJ
 				remove_core = DJA
@@ -637,7 +621,6 @@ political_decisions = {
 				remove_core = SLG
 			}
 			random_owned = { limit = { province_id = 2576 } add_core = MLY }
-			country_event = 199069
 		}
 
 		ai_will_do = {
@@ -646,44 +629,32 @@ political_decisions = {
 	}
 
 	sarawak_protectorate = {
-		picture = map_east_indies
+		picture = sarawak
 		potential = {
-			exists = yes
+			OR = {
+				tag = ENG
+				tag = EIC
+			}
+			is_greater_power = yes
+			exists = SWK
 			NOT = { has_global_flag = sarawak_protectorate }
 			nationalism_n_imperialism = 1
-			capital_scope = { continent = europe }
-			SWK = {
-				ai = yes
-				exists = yes
-			}
-			OR = {
-				is_greater_power = yes
-				is_secondary_power = yes
-			}
-			OR = {
-				owns = 1384
-				owns = 1425
-				owns = 1459
-			}
+			SWK = { ai = yes }
 		}
 
 		allow = {
 			year = 1888
 			SWK = {
+				has_country_modifier = white_rajah
 				war = no
-				in_sphere = THIS
+				OR = {
+					in_sphere = THIS
+					part_of_sphere = no
+				}
 				OR = {
 					government = absolute_monarchy
 					government = prussian_constitutionalism
 					government = hms_government
-				}
-			}
-			OR = {
-				tech_school = naval_tech_school
-				tech_school = japanese_tech_school
-				AND = {
-					owns = 1426
-					owns = 1425
 				}
 			}
 		}
@@ -691,26 +662,23 @@ political_decisions = {
 		effect = {
 			prestige = 5
 			set_global_flag = sarawak_protectorate
-			random = {
-				chance = 50
-				badboy = 1
-			}
-			SWK = {
-				civilized = no
-				tech_school = unciv_tech_school
-			}
-			inherit = SWK
+			SWK = { civilized = no government = colonial_company }
+			SWK = { annex_to = THIS }
+			SWK = { tech_school = unciv_tech_school }
 		}
 
 		ai_will_do = {
 			factor = 1
 		}
 	}
-
+	
 	north_borneo_company = {
 		picture = map_east_indies
 		potential = {
-			tag = ENG
+			OR = {
+				tag = ENG
+				tag = EIC
+			}
 			is_greater_power = yes
 			nationalism_n_imperialism = 1
 			NOT = { has_country_flag = north_borneo_company }
@@ -733,7 +701,7 @@ political_decisions = {
 				}
 			}
 		}
-
+		
 		allow = {
 			war = no
 			revolution_n_counterrevolution = 1
@@ -752,7 +720,7 @@ political_decisions = {
 				}
 			}
 		}
-
+		
 		effect = {
 			prestige = 5
 			set_country_flag = north_borneo_company
@@ -779,15 +747,14 @@ political_decisions = {
 				}
 			}
 		}
+		
+		ai_will_do = { factor = 1 }
 	}
-
+	
 	sulu_protectorate = {
 		picture = map_east_indies
 		potential = {
-			NOT = {
-				has_country_flag = the_sulu_protectorate
-				owns = 1397
-			}
+			NOT = { has_country_flag = the_sulu_protectorate }
 			OR = {
 				is_greater_power = yes
 				is_secondary_power = yes
@@ -796,6 +763,7 @@ political_decisions = {
 				exists = yes
 				ai = yes
 				civilized = no
+				NOT = { owns = 1397 }
 			}
 			OR = {
 				is_sphere_leader_of = SUL
@@ -805,7 +773,6 @@ political_decisions = {
 				any_owned_province = { is_core = PHL }
 				any_owned_province = { is_core = JOH }
 				any_owned_province = { is_core = BRU }
-				owns = 1384
 			}
 			any_owned_province = { has_building = naval_base }
 		}
@@ -815,40 +782,22 @@ political_decisions = {
 			SUL = {	war = no }
 			nationalism_n_imperialism = 1
 			OR = {
-				SUL = {
-					part_of_sphere = no
-					OR = {
-						neighbour = THIS
-						any_neighbor_country = { in_sphere = THIS }
-					}
-				}
 				AND = {
 					is_sphere_leader_of = SUL
-					SUL = { average_militancy = 3 }
 					OR = {
-						any_owned_province = { is_core = PHL }
-						any_owned_province = { is_core = JOH }
+						any_owned_province = { continent = asia }
+						any_owned_province = { continent = australia_new_zealand }
 					}
 				}
 				AND = {
-					SUL = {
-						part_of_sphere = no
-						average_militancy = 6
-					}
-					OR = {
-						any_owned_province = { is_core = PHL }
-						any_owned_province = { is_core = JOH }
-					}
+					any_owned_province = { is_core = PHL }
+					SUL = { part_of_sphere = no }
 				}
 			}
 		}
 
 		effect = {
 			prestige = 5
-			random = {
-				chance = 50
-				badboy = 1
-			}
 			inherit = SUL
 			SUL = { tech_school = unciv_tech_school }
 			set_country_flag = the_sulu_protectorate
@@ -856,7 +805,7 @@ political_decisions = {
 
 		ai_will_do = { factor = 1 }
 	}
-
+	
 	flores_sale = {
 		picture = map_east_indies
 		alert = no
@@ -874,25 +823,22 @@ political_decisions = {
 				owns = 1451
 			}
 		}
-
+		
 		allow = {
+			prestige = 5
 			nationalism_n_imperialism = 1
-			NOT = { 1445 = { owner = { has_country_modifier = in_bankrupcy } } }
-			OR = {
-				money = 100000
-				ai = yes
-			}
-			OR = {
-				NOT = { money = 10000 }
-				1445 = { owner = { relation = { who = POR value = -50 } } }
-				has_country_modifier = in_bankrupcy
+			1445 = {
+				owner = { 
+					relation = { who = POR value = 0 }
+					money = 50000
+				}
 			}
 		}
-
+		
 		effect = {
 			set_country_flag = flores_sale
-			1445 = {
-				owner = {
+			1445 = { 
+				owner = { 
 					country_event = 97125
 				}
 			}
@@ -901,34 +847,41 @@ political_decisions = {
 			factor = 1
 			modifier = {
 				factor = 0
-				NOT = { year = 1851 }
+				NOT = {
+					year = 1851
+				}
 			}
 			modifier = {
 				factor = 0
 				is_greater_power = yes
 			}
+			modifier = {
+				factor = 0
+				1445 = { 
+					owner = {
+						is_secondary_power = no
+						is_greater_power = no					
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				NET = {
+					NOT = {
+						owns = 1445
+					}
+				}
+			}			
 		}
 	}
-
+	
 	create_cambodian_protectorate = {
 		picture = unequal_treaty
 		potential = {
-			has_country_flag = created_my_indochina
-			OR = {
-				AND = {
-					capital_scope = { continent = europe }
-					NOT = {
-						tag = TUR
-						tag = RUS
-					}
-				}
-				primary_culture = japanese
-				tech_school = naval_tech_school
-			}
-			OR = {
-				is_secondary_power = yes
-				is_greater_power = yes
-			}
+			owns = 1380
+			is_greater_power = yes
+			capital_scope = { continent = europe }
+			NOT = { tag = TUR }
 			CAM = {
 				exists = yes
 				neighbour = THIS
@@ -937,7 +890,7 @@ political_decisions = {
 			}
 			NOT = { has_global_flag = created_cambodian_protectorate }
 		}
-
+		
 		allow = {
 			war = no
 			revolution_n_counterrevolution = 1
@@ -949,43 +902,26 @@ political_decisions = {
 				}
 				OR = {
 					is_vassal = no
-					vassal_of = THIS
+					in_sphere = THIS
 				}
 			}
 		}
-
+		
 		effect = {
 			set_global_flag = created_cambodian_protectorate
 			prestige = 10
-			random = {
-				chance = 50
-				badboy = 1
-			}
 			inherit = CAM
 			CAM = { tech_school = unciv_tech_school }
-			country_event = 199071
 		}
 	}
-
+	
 	create_laos_protectorate = {
 		picture = unequal_treaty
 		potential = {
-			has_country_flag = created_my_indochina
-			OR = {
-				AND = {
-					capital_scope = { continent = europe }
-					NOT = {
-						tag = TUR
-						tag = RUS
-					}
-				}
-				primary_culture = japanese
-				tech_school = naval_tech_school
-			}
-			OR = {
-				is_secondary_power = yes
-				is_greater_power = yes
-			}
+			is_greater_power = yes
+			capital_scope = { continent = europe }
+			NOT = { tag = TUR }
+			owns = 1369
 			OR = {
 				LUA = {
 					NOT = { has_country_flag = annexed_to_FRA }
@@ -1033,30 +969,16 @@ political_decisions = {
 					}
 				}
 			}
+			has_global_flag = berlin_conference
 		}
-
+		
 		allow = {
 			war = no
 			revolution_n_counterrevolution = 1
-			any_owned_province = {
-				any_neighbor_province = { region = LUA_1356 }
-				OR = {
-					is_core = DAI
-					is_core = SIA
-				}
-			}
 		}
-
+		
 		effect = {
 			prestige = 5
-			random = {
-				chance = 50
-				badboy = 1
-			}
-			random_owned = {
-				limit = { owner = { NOT = { has_country_flag = attempt_to_form_laos } } }
-				owner = { set_country_flag = attempt_to_form_laos }
-			}
 			any_neighbor_country = {
 				limit = {
 					ai = yes
@@ -1079,24 +1001,14 @@ political_decisions = {
 			}
 		}
 	}
-
+	
 	siamese_border_treaty = {
 		picture = unequal_treaty
 		potential = {
-			OR = {
-				AND = {
-					capital_scope = { continent = europe }
-					NOT = {
-						tag = TUR
-						tag = RUS
-					}
-				}
-				primary_culture = japanese
-				tech_school = naval_tech_school
-			}
 			is_greater_power = yes
+			capital_scope = { continent = europe }
+			NOT = { tag = TUR }
 			has_global_flag = berlin_conference
-			has_country_flag = created_my_indochina
 			SIA = {
 				neighbour = THIS
 				any_owned_province = {
@@ -1108,62 +1020,50 @@ political_decisions = {
 					}
 				}
 			}
+			owns = 1369
 			NOT = { has_country_flag = enacted_siamese_border_treaty }
 		}
-
+		
 		allow = {
-			war = no
+			NOT = { war_with = SIA }
 			SIA = { war = no }
-			revolution_n_counterrevolution = 1
-			blue_and_brown_water_schools = 1
+			invention = the_dark_continent
 		}
-
+		
 		effect = {
 			set_country_flag = enacted_siamese_border_treaty
-			random = {
-				chance = 50
-				badboy = 1
-			}
 			SIA = { country_event = 95652 }
 		}
 	}
-
+	
 	annex_champasak = {
 		picture = unequal_treaty
 		potential = {
 			is_greater_power = yes
-			has_country_flag = created_my_indochina
+			capital_scope = { continent = europe }
+			NOT = { tag = TUR }
+			has_global_flag = berlin_conference
 			owns = 1368
-			CHK = {
-				exists = yes
+			CHK = { exists = yes ai = yes vassal_of = SIA }
+			OR = {
+				AND = {
+					SIA = { ai = yes neighbour = THIS has_recently_lost_war = yes }
+					truce_with = SIA
+				}
 				ai = yes
-				vassal_of = SIA
 			}
-			SIA = { ai = yes }
 			NOT = { has_country_flag = champassak_annexed }
 		}
-
+		
 		allow = {
 			war = no
 			has_recently_lost_war = no
-			neighbour = SIA
-			OR = {
-				AND = {
-					truce_with = SIA
-					SIA = { has_recently_lost_war = yes }
-				}
-				SIA = { in_sphere = THIS }
-			}
 		}
-
+		
 		effect = {
 			set_country_flag = champassak_annexed
 			SIA = { release = CHK }
 			inherit = CHK
-			random = {
-				chance = 50
-				badboy = 1
-			}
 		}
 		ai_will_do = { factor = 1 }
 	}
@@ -1172,40 +1072,24 @@ political_decisions = {
 		picture = unequal_treaty
 		potential = {
 			is_greater_power = yes
+			capital_scope = { continent = europe }
+			NOT = { tag = TUR }
 			NOT = { has_country_flag = negotiate_unequal_treaty }
-			OR = {
-				AND = {
-					capital_scope = { continent = europe }
-					NOT = {
-						tag = TUR
-						tag = RUS
-					}
-				}
-				primary_culture = japanese
-				tech_school = naval_tech_school
-			}
+			NOT = { has_country_flag = tonkin_campaign }
 			DAI = {
 				capital = 1369
 				civilized = no
 				war_with = THIS
 				NOT = { has_country_flag = negotiate_unequal_treaty }
 				OR = {
-					owns = 1375 # Hue
+					owns = 1375 # Hué
 					owns = 1380 # Saigon
 				}
 			}
 		}
-
+		
 		allow = {
 			war_with = DAI
-			OR = {
-				AND = {
-					tag = FRA
-					state_n_government = 1
-				}
-				nationalism_n_imperialism = 1
-			}
-
 			DAI = {
 				OR = {
 					war_exhaustion = 40
@@ -1218,151 +1102,46 @@ political_decisions = {
 				war_exhaustion = 10
 			}
 		}
-
+		
 		effect = {
 			set_country_flag = negotiate_unequal_treaty
-			random = {
-				chance = 50
-				badboy = 1
-			}
 			DAI = {
 				set_country_flag = negotiate_unequal_treaty
 				country_event = 95655
 			}
 		}
-
+		
 		ai_will_do = {
 			factor = 1
 		}
 	}
-
-	form_french_indochina = {
-		picture = map_indochina
-		potential = {
-			NOT = {
-				primary_culture = lao
-				primary_culture = khmer
-				primary_culture = vietnamese
-				is_vassal = yes
-			}
-			any_owned_province = {
-				is_core = DAI
-				is_colonial = yes
-			}
-			NOT = { has_country_flag = created_my_indochina }
-		}
-
-		allow = {
-			OR = {
-				owns = 1380
-				owns = 1369
-			}
-			revolution_n_counterrevolution = 1
-		}
-
-		effect = {
-			set_country_flag = created_my_indochina
-			prestige = 10
-			any_neighbor_country = {
-				limit = {
-					OR = {
-						primary_culture = vietnamese
-						primary_culture = thai
-						primary_culture = lao
-						primary_culture = khmer
-					}
-					civilized = no
-					NOT = { alliance_with = THIS }
-				}
-				relation = { who = THIS value = -100 }
-			}
-			random_country = {
-				limit = {
-					tag = DAI
-					OR = {
-						AND = {
-							in_sphere = THIS
-							relation = { who = THIS value = 190 }
-						}
-						vassal_of = THIS
-					}
-				}
-				annex_to = THIS
-			}
-		}
-	}
-
+	
 	organize_laos = {
-		picture = form_laos
+		picture = unequal_treaty
 		potential = {
 			civilized = yes
 			NOT = {
+				exists = LUA
+				exists = WIA
+				exists = LXA
+				exists = CHK
 				has_global_flag = laos_organized
 				primary_culture = lao
 				primary_culture = vietnamese
 				primary_culture = khmer
 				primary_culture = thai
 			}
-			OR = {
-				1356 = {
-					OR = {
-						owned_by = THIS
-						owner = {
-							vassal_of = THIS
-							in_sphere = THIS
-						}
-					}
-				}
-				1357 = {
-					OR = {
-						owned_by = THIS
-						owner = {
-							vassal_of = THIS
-							in_sphere = THIS
-						}
-					}
-				}
-				1361 = {
-					OR = {
-						owned_by = THIS
-						owner = {
-							vassal_of = THIS
-							in_sphere = THIS
-						}
-					}
-				}
-				1362 = {
-					OR = {
-						owned_by = THIS
-						owner = {
-							vassal_of = THIS
-							in_sphere = THIS
-						}
-					}
-				}
-				1363 = {
-					OR = {
-						owned_by = THIS
-						owner = {
-							vassal_of = THIS
-							in_sphere = THIS
-						}
-					}
-				}
-			}
+			owns = 1356
 		}
-
+		
 		allow = {
 			war = no
 			revolution_n_counterrevolution = 1
-			1356 = { owned_by = THIS }
-			1357 = { owned_by = THIS }
-			1361 = { owned_by = THIS }
-			1362 = { owned_by = THIS }
-			1363 = { owned_by = THIS }
-			1360 = { owned_by = THIS }
+			owns = 1356
+			owns = 1357
+			owns = 1362
 		}
-
+		
 		effect = {
 			set_global_flag = laos_organized
 			prestige = 5
@@ -1384,6 +1163,13 @@ political_decisions = {
 					remove_core = CHK
 				}
 			}
+			any_owned = {
+				limit = { is_core = LXA }
+				add_province_modifier = {
+					name = colonial_exploitation
+					duration = 1095
+				}
+			}
 			LXA = {
 				set_country_flag = Luangprabang
 				government = democracy
@@ -1391,135 +1177,128 @@ political_decisions = {
 				all_core = { remove_core = SIA }
 				tech_school = unciv_tech_school
 			}
-			random_owned = {
-				limit = { owner = { NOT = { has_global_flag = rgo_change_in_laos } } }
-				owner = { country_event = 199070 }
-			}
 		}
 		ai_will_do = { factor = 1 }
 	}
-
+	
+	form_french_indochina = {
+		picture = map_east_indies
+		potential = {
+			primary_culture = french
+			1380 = {
+				owned_by = THIS
+				is_colonial = yes
+			}
+			1369 = {
+				owned_by = THIS
+				is_colonial = yes
+			}
+			DAI = { exists = no }
+			NOT = { has_country_flag = created_french_indochina }
+		}
+		
+		allow = {
+			owns = 1380
+			revolution_n_counterrevolution = 1
+		}
+		
+		effect = {
+			set_country_flag = created_french_indochina
+			prestige = 10
+			1380 = {
+				add_province_modifier = {
+					name = colonial_recruitment
+					duration = 1825
+				}
+			}
+			any_owned = {
+				limit = { region = DAI_1380 }
+				add_province_modifier = {
+					name = colonial_exploitation
+					duration = 1825
+				}
+			}
+			any_neighbor_country = {
+				limit = {
+					OR = {
+						primary_culture = vietnamese
+						primary_culture = thai
+						primary_culture = lao
+						primary_culture = khmer
+					}
+					civilized = no
+				}
+				relation = { who = THIS value = -100 }
+			}
+			DAI = { government = colonial_company }
+		}
+		
+		ai_will_do = { factor = 1 }
+	}
+	
 	form_laos = {
 		picture = form_laos
 		potential = {
 			primary_culture = lao
-			is_vassal = no
+			OR = {
+				owns = 1356
+				owns = 1357
+			}
 			NOT = { exists = LXA }
 			NOT = { has_country_flag = laos_formed }
 			NOT = { has_country_flag = post_colonial_country }
 		}
-
+		
 		allow = {
 			war = no
+			is_vassal = no
+			prestige = 30
+			num_of_cities = 4
 			OR = {
+				nationalism_n_imperialism = 1
 				AND = {
-					nationalism_n_imperialism = 1
-					OR = {
-						prestige = 30
-						rank = 16
-					}
+					owns = 1356
+					owns = 1357
+					owns = 1361
+					owns = 1362
+					owns = 1363
 				}
+				is_greater_power = yes
+				is_secondary_power = yes
 				AND = {
 					military_score = 40
 					prestige = 150
 				}
-				AND = {
-					1356 = {
-						OR = {
-							owned_by = THIS
-							owner = { vassal_of = THIS }
-						}
-					}
-					1357 = {
-						OR = {
-							owned_by = THIS
-							owner = { vassal_of = THIS }
-						}
-					}
-					1361 = {
-						OR = {
-							owned_by = THIS
-							owner = { vassal_of = THIS }
-						}
-					}
-					1362 = {
-						OR = {
-							owned_by = THIS
-							owner = { vassal_of = THIS }
-						}
-					}
-					1363 = {
-						OR = {
-							owned_by = THIS
-							owner = { vassal_of = THIS }
-						}
-					}
-				}
 			}
 		}
-
+		
 		effect = {
 			set_country_flag = laos_formed
+			any_owned = {
+				limit = { OR = { is_core = LUA is_core = CHK is_core = WIA } }
+				remove_core = LUA
+				remove_core = CHK
+				remove_core = WIA
+			}
+			LUA_1356 = { add_core = LXA }
+			random_owned = { limit = { owner = { ai = no } } owner = { 1358 = { add_core = LXA } 1359 = { add_core = LXA } } }
 			prestige = 10
 			change_tag = LXA
-			LUA_1356 = { add_core = LXA }
-			any_owned = { remove_core = LUA }
-			any_owned = { remove_core = CHK }
-			any_owned = { remove_core = WIA }
-			any_owned = { limit = { region = LUA_1356 } remove_core = SIA }
-			random_owned = {
-				limit = {
-					owner = {
-						OR = {
-							ai = no
-							owns = 1358
-							owns = 1359
-						}
-					}
-				}
-				owner = {
-					1358 = { add_core = LXA }
-					1359 = { add_core = LXA }
-				}
-			}
 			any_country = {
 				limit = {
-					ai = yes
-					exists = yes
-					primary_culture = lao
-					vassal_of = THIS
-				}
-				annex_to = THIS
-			}
-			any_country = {
-				limit = {
-					ai = yes
-					exists = yes
-					primary_culture = lao
-					in_sphere = THIS
-				}
-				annex_to = THIS
-			}
-			any_country = {
-				limit = {
-					exists = yes
-					primary_culture = lao
 					is_greater_power = no
 					is_vassal = no
 					relation = {
 						who = THIS
 						value = 5
 					}
-					NOT = {
+					NOT = { 
 						tag = THIS
 						truce_with = THIS
 					}
+					primary_culture = lao
 				}
 				country_event = 97120
-			}
-			random_owned = {
-				limit = { owner = { NOT = { has_global_flag = rgo_change_in_laos } } }
-				owner = { country_event = 199070 }
 			}
 		}
 		ai_will_do = {
@@ -1530,46 +1309,62 @@ political_decisions = {
 			}
 		}
 	}
-
-	organize_vietnam = {
+	
+	
+	introduce_coffee_in_vietnam = {
 		picture = vietnam_coffee
 		potential = {
-			civilized = yes
-			NOT = { has_country_flag = vietnam_organized }
-			any_owned_province = { is_core = DAI }
-		}
-
-		allow = {
-			war = no
-			DAI = {
-				all_core = {
-					OR = {
-						owned_by = THIS
-						province_id = 3496
-					}
+			capital_scope = { continent = europe }
+			OR = {
+				AND = {
+					owns = 1380
+					1380 = { NOT = { trade_goods = coffee } }
+				}
+				AND = {
+					owns = 1375
+					1375 = { NOT = { trade_goods = coffee } }
+				}
+				AND = {
+					owns = 2064
+					2064 = { NOT = { trade_goods = tea } }
+				}
+				AND = {
+					owns = 2054
+					2054 = { NOT = { trade_goods = coal } }
 				}
 			}
+			NOT = { has_country_flag = cashcrops_in_the_colonies }
+		}
+		
+		allow = {
+			war = no
 			OR = {
 				year = 1900
 				steam_turbine = 1
 			}
 		}
-
+		
 		effect = {
-			prestige = 5
-			set_country_flag = vietnam_organized
-			DAI = { tech_school = unciv_tech_school }
-			country_event = 199072
+			set_country_flag = cashcrops_in_the_colonies
+			random_owned = { limit = { province_id = 1380 NOT = { trade_goods = coffee } } trade_goods = coffee }
+			random_owned = { limit = { province_id = 1381 NOT = { trade_goods = coffee } } trade_goods = coffee }
+			random_owned = { limit = { province_id = 1375 NOT = { trade_goods = coffee } } trade_goods = coffee }
+			random_owned = { limit = { province_id = 1378 NOT = { trade_goods = tea } } trade_goods = tea }
+			random_owned = { limit = { province_id = 1377 NOT = { trade_goods = tea } } trade_goods = tea }
+			random_owned = { limit = { province_id = 1379 NOT = { trade_goods = tea } } trade_goods = tea }
+			random_owned = { limit = { province_id = 2064 NOT = { trade_goods = tea } } trade_goods = tea }
+			random_owned = { limit = { province_id = 2054 NOT = { trade_goods = coal } } trade_goods = coal }
 		}
 		ai_will_do = { factor = 1 }
 	}
-
-
+	
+	
 	rename_bismarck_islands = {
 		picture = bismarck_archipelago
 		potential = {
 			owns = 2537
 			owns = 1531
+			NOT = { tag = GER }
 			OR = {
 				AND = {
 					OR = {
@@ -1628,11 +1423,11 @@ political_decisions = {
 				}
 			}
 		}
-
+		
 		allow = {
 			war = no
 		}
-
+		
 		effect = {
 			prestige = 2
 			clr_global_flag = bismarck_islands_anglo
@@ -1647,7 +1442,7 @@ political_decisions = {
 			clr_global_flag = bismarck_islands_russian
 			clr_global_flag = bismarck_islands_scandinavian
 			clr_global_flag = wir_wollen_unseren_alten_kaiser_wilhelm_wiederhaben
-
+		
 			random_owned = {
 				limit = {
 					owner = {
@@ -1662,10 +1457,10 @@ political_decisions = {
 				2537 = { change_province_name = "New Britain" }
 				owner = { set_global_flag = bismarck_islands_anglo }
 			}
-
+			
 			random_owned = {
 				limit = {
-					owner = {
+					owner = { 
 						OR = {
 							is_culture_group = french
 							primary_culture = french_canadian
@@ -1676,7 +1471,7 @@ political_decisions = {
 				2537 = { change_province_name = "New Corsica" }
 				owner = { set_global_flag = bismarck_islands_french }
 			}
-
+			
 			random_owned = {
 				limit = {
 					owner = { is_culture_group = germanic }
@@ -1685,7 +1480,7 @@ political_decisions = {
 				2537 = { change_province_name = "Neu-Pommern" }
 				owner = { set_global_flag = bismarck_islands_german }
 			}
-
+			
 			random_owned = {
 				limit = {
 					owner = { is_culture_group = italian }
@@ -1694,7 +1489,7 @@ political_decisions = {
 				2537 = { change_province_name = "New Sicily" }
 				owner = { set_global_flag = bismarck_islands_italian }
 			}
-
+			
 			random_owned = {
 				limit = {
 					owner = { primary_culture = dutch }
@@ -1703,10 +1498,10 @@ political_decisions = {
 				2537 = { change_province_name = "New Holland" }
 				owner = { set_global_flag = bismarck_islands_dutch }
 			}
-
+			
 			random_owned = {
 				limit = {
-					owner = {
+					owner = { 
 						OR = {
 							primary_culture = wallonian
 							primary_culture = flemish
@@ -1717,10 +1512,10 @@ political_decisions = {
 				2537 = { change_province_name = "New Flanders" }
 				owner = { set_global_flag = bismarck_islands_belgian }
 			}
-
+			
 			random_owned = {
 				limit = {
-					owner = {
+					owner = { 
 						primary_culture = japanese
 					}
 				}
@@ -1728,10 +1523,10 @@ political_decisions = {
 				2537 = { change_province_name = "New Ezo" }
 				owner = { set_global_flag = bismarck_islands_japanese }
 			}
-
+			
 			random_owned = {
 				limit = {
-					owner = {
+					owner = { 
 						primary_culture = spanish
 					}
 				}
@@ -1739,10 +1534,10 @@ political_decisions = {
 				2537 = { change_province_name = "New Leon" }
 				owner = { set_global_flag = bismarck_islands_spanish }
 			}
-
+			
 			random_owned = {
 				limit = {
-					owner = {
+					owner = { 
 						primary_culture = portuguese
 					}
 				}
@@ -1750,10 +1545,10 @@ political_decisions = {
 				2537 = { change_province_name = "New Algarve" }
 				owner = { set_global_flag = bismarck_islands_portuguese }
 			}
-
+			
 			random_owned = {
 				limit = {
-					owner = {
+					owner = { 
 						primary_culture = russian
 					}
 				}
@@ -1764,7 +1559,7 @@ political_decisions = {
 
 			random_owned = {
 				limit = {
-					owner = {
+					owner = { 
 						is_culture_group = scandinavian
 					}
 				}
@@ -1772,64 +1567,11 @@ political_decisions = {
 				2537 = { change_province_name = "New Gotland" }
 				owner = { set_global_flag = bismarck_islands_scandinavian }
 			}
-
+			
 		}
-
+		
 		ai_will_do = {
-			factor = 1
-			modifier = { factor = 0 tag = GER }
-		}
-	}
-
-	create_vietnamese_protectorate = {
-		picture = unequal_treaty
-		potential = {
-			has_country_flag = created_my_indochina
-			OR = {
-				AND = {
-					capital_scope = { continent = europe }
-					NOT = {
-						tag = TUR
-						tag = RUS
-					}
-				}
-				primary_culture = japanese
-				tech_school = naval_tech_school
-			}
-			is_greater_power = yes
-			DAI = {
-				exists = yes
-				neighbour = THIS
-				civilized = no
-				ai = yes
-			}
-			NOT = { has_global_flag = created_vietnamese_protectorate }
-		}
-
-		allow = {
-			war = no
-			mass_politics = 1
-			DAI = {
-				war = no
-				OR = {
-					AND = {
-						in_sphere = THIS
-						is_vassal = no
-					}
-					vassal_of = THIS
-				}
-			}
-		}
-
-		effect = {
-			set_global_flag = created_vietnamese_protectorate
-			prestige = 10
-			random = {
-				chance = 50
-				badboy = 1
-			}
-			inherit = DAI
-			DAI = { tech_school = unciv_tech_school }
+			factor = 1 
 		}
 	}
 }

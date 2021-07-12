@@ -266,7 +266,7 @@ political_decisions = {
 				# OR = {
 					# nationalvalue = nv_liberty
 					# nationalvalue = nv_equality
-					# nationalvalue = nv_freedom
+					# nationalvalue = nv_liberty
 					# nationalvalue = nv_fraternity
 					# nationalvalue = nv_prosperity
 				# }
@@ -547,55 +547,55 @@ political_decisions = {
 		# }
 	# }
 
-	# silence_election_events = {
-		# picture = election_polls
-		# alert = no
-		# potential = {
-			# NOT = { vote_franschise = none_voting }
-			# NOT = {
-				# has_country_flag = silent_elections
-				# government = fascist_dictatorship
-				# government = proletarian_dictatorship
-				# government = presidential_dictatorship
-				# government = bourgeois_dictatorship
-				# government = absolute_monarchy
-			# }
-		# }
-		# allow = {
-			# election = no
-		# }
-		# effect = {
-			# set_country_flag = silent_elections
-		# }
-		# ai_will_do = {
-			# factor = 0
-		# }
-	# }
+	silence_election_events = {
+		picture = election_polls
+		alert = no
+		potential = {
+			NOT = { vote_franschise = none_voting }
+			NOT = {
+				has_country_flag = silent_elections
+				government = fascist_dictatorship
+				government = proletarian_dictatorship
+				government = presidential_dictatorship
+				government = bourgeois_dictatorship
+				government = absolute_monarchy
+			}
+		}
+		allow = {
+			election = no
+		}
+		effect = {
+			set_country_flag = silent_elections
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
 
-	# unsilence_election_events = {
-		# picture = election_polls
-		# alert = no
-		# potential = {
-			# NOT = { vote_franschise = none_voting }
-			# NOT = {
-				# government = fascist_dictatorship
-				# government = proletarian_dictatorship
-				# government = presidential_dictatorship
-				# government = bourgeois_dictatorship
-				# government = absolute_monarchy
-			# }
-			# has_country_flag = silent_elections
-		# }
-		# allow = {
-			# election = no
-		# }
-		# effect = {
-			# clr_country_flag = silent_elections
-		# }
-		# ai_will_do = {
-			# factor = 0
-		# }
-	# }
+	unsilence_election_events = {
+		picture = election_polls
+		alert = no
+		potential = {
+			NOT = { vote_franschise = none_voting }
+			NOT = {
+				government = fascist_dictatorship
+				government = proletarian_dictatorship
+				government = presidential_dictatorship
+				government = bourgeois_dictatorship
+				government = absolute_monarchy
+			}
+			has_country_flag = silent_elections
+		}
+		allow = {
+			election = no
+		}
+		effect = {
+			clr_country_flag = silent_elections
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
 
 	approach_for_liberation = {
 		picture = crusade
@@ -682,7 +682,7 @@ political_decisions = {
 				# NOT = {
 					# OR = {
 						# nationalvalue = nv_liberty
-						# nationalvalue = nv_freedom
+						# nationalvalue = nv_liberty
 					# }
 				# }
 				# AND = {
@@ -1052,7 +1052,7 @@ political_decisions = {
 				limit = { owner = { slavery = no_slavery } }
 				any_country = {
 					limit = { exists = no is_cultural_union = no capital_scope = { owned_by = THIS } }
-					political_reform = abolish_slavery
+					political_reform = no_slavery
 				}
 			}
 			random_owned = {
@@ -1260,10 +1260,10 @@ political_decisions = {
 		allow = {
 			war = no
 			NOT = {
-				OR = {
+				# OR = {
+					# nationalvalue = nv_liberty
 					nationalvalue = nv_liberty
-					nationalvalue = nv_freedom
-				}
+				# }
 			}
 			NOT = {
 				OR = {

@@ -16,8 +16,17 @@ country_event = {
 		ruling_party_ideology = communist
 		average_militancy = 3
 		OR = {
+			has_country_modifier = regency_government
+			average_militancy = 8
+			NOT = {
+				government = absolute_monarchy
+				government = prussian_constitutionalism
+				government = hms_government
+			}
+		}
+		OR = {
 			num_of_revolts = 1
-			national_provinces_occupied = .10
+			national_provinces_occupied = 0.10
 			is_disarmed = yes
 			communist = 20
 			socialist = 40
@@ -46,6 +55,14 @@ country_event = {
 	}
 	option = {
 		name = "EVTOPTA60000"
+		random_owned = {
+			limit = { owner = { has_country_modifier = regency_government } }
+			owner = { remove_country_modifier = regency_government }
+		}
+		random_owned = {
+			limit = { owner = { has_country_modifier = santa_ana_rule } }
+			owner = { remove_country_modifier = santa_ana_rule }
+		}
 		government = proletarian_dictatorship
 
 		political_reform = none_voting
@@ -83,6 +100,15 @@ country_event = {
 		government = democracy
 		ruling_party_ideology = reactionary
 		average_militancy = 3
+		OR = {
+			has_country_modifier = regency_government
+			average_militancy = 8
+			NOT = {
+				government = absolute_monarchy
+				government = prussian_constitutionalism
+				government = hms_government
+			}
+		}
 		OR = {
 			revolt_percentage = 0.10
 			national_provinces_occupied = 0.10
@@ -122,10 +148,22 @@ country_event = {
 			factor = 4
 			literacy = 0.7
 		}
+		modifier = {
+			factor = 4
+			nationalvalue = nv_liberty
+		}
 	}
 
 	option = {
 		name = "EVT60010OPTA"
+		random_owned = {
+			limit = { owner = { has_country_modifier = regency_government } }
+			owner = { remove_country_modifier = regency_government }
+		}
+		random_owned = {
+			limit = { owner = { has_country_modifier = santa_ana_rule } }
+			owner = { remove_country_modifier = santa_ana_rule }
+		}
 		clr_country_flag = communist_gov
 		clr_country_flag = absolute_monarchy_gov
 		clr_country_flag = semi_constitutional_monarchy_gov
@@ -169,6 +207,15 @@ country_event = {
 		ruling_party_ideology = anarcho_liberal
 		average_militancy = 3
 		OR = {
+			has_country_modifier = regency_government
+			average_militancy = 8
+			NOT = {
+				government = absolute_monarchy
+				government = prussian_constitutionalism
+				government = hms_government
+			}
+		}
+		OR = {
 			num_of_revolts = 1
 			national_provinces_occupied = .10
 			is_disarmed = yes
@@ -200,6 +247,14 @@ country_event = {
 	option = {
 		name = "EVTOPTA60020"
 		prestige_factor = -0.1
+		random_owned = {
+			limit = { owner = { has_country_modifier = regency_government } }
+			owner = { remove_country_modifier = regency_government }
+		}
+		random_owned = {
+			limit = { owner = { has_country_modifier = santa_ana_rule } }
+			owner = { remove_country_modifier = santa_ana_rule }
+		}
 		government = bourgeois_dictatorship
 		political_reform = none_voting
 		political_reform = party_appointed
@@ -213,11 +268,131 @@ country_event = {
 		social_reform = no_subsidies
 		social_reform = no_pensions
 		social_reform = no_health_care
-		clr_country_flag = everywhere_genocide_only
-		clr_country_flag = non_colonial_genocide_only
-		clr_country_flag = colonial_genocide_only
-		clr_country_flag = preparations_to_kill
-		remove_country_modifier = preparations_to_kill
+		#Genocide Cleanup
+		##Set Up Timer based on time the thing ran
+		random_owned = {
+			limit = { owner = { NOT = { check_variable = { which = evidence_count value = 2 } } } }
+			owner = { add_country_modifier = { name = law_changed_by_force duration = 1460 } }
+		}
+		random_owned = {
+			limit = { owner = { check_variable = { which = evidence_count value = 2 } } }
+			owner = { add_country_modifier = { name = law_changed_by_force duration = 1825 } }
+		}
+		random_owned = {
+			limit = { owner = { check_variable = { which = evidence_count value = 4 } } }
+			owner = { add_country_modifier = { name = law_changed_by_force duration = 2190 } }
+		}
+		random_owned = {
+			limit = { owner = { check_variable = { which = evidence_count value = 6 } } }
+			owner = { add_country_modifier = { name = law_changed_by_force duration = 2555 } }
+		}
+		random_owned = {
+			limit = { owner = { check_variable = { which = evidence_count value = 8 } } }
+			owner = { add_country_modifier = { name = law_changed_by_force duration = 2920 } }
+		}
+		random_owned = {
+			limit = { owner = { check_variable = { which = evidence_count value = 10 } } }
+			owner = { add_country_modifier = { name = law_changed_by_force duration = 3285 } } #9 years
+		}
+		##Clean Variables
+		set_variable = { which = evidence_count value = 0 }
+		set_variable = { which = slowdown_point value = 0 }
+		#Delete Modifiers
+		random_owned = {
+			limit = { owner = { has_country_modifier = interment_camps } }
+			owner = { remove_country_modifier = interment_camps }
+		}
+		#Delete Block
+		clr_country_flag = government_busy_with_something
+		#Flag for pops
+		clr_country_flag = internment_camps_open
+		#Place
+		clr_country_flag = interning_on_colonies
+		clr_country_flag = interning_on_homeland
+		clr_country_flag = interning_everywhere
+		#Who
+		clr_country_flag = interning_cultures
+		clr_country_flag = interning_religions
+		#Specific religions
+		clr_country_flag = interning_catholics
+		clr_country_flag = interning_protestants
+		clr_country_flag = interning_mormons
+		clr_country_flag = interning_orthodoxies
+		clr_country_flag = interning_coptics
+		clr_country_flag = interning_sunnis
+		clr_country_flag = interning_shiites
+		clr_country_flag = interning_ibadis
+		clr_country_flag = interning_druzi
+		clr_country_flag = interning_jewish
+		clr_country_flag = interning_yazidis
+		clr_country_flag = interning_mahayanas
+		clr_country_flag = interning_gelugpas
+		clr_country_flag = interning_theravadas
+		clr_country_flag = interning_hindus
+		clr_country_flag = interning_shintos
+		clr_country_flag = interning_sikhs
+		clr_country_flag = interning_animists
+		
+		clr_country_flag = interning_syriacs
+		clr_country_flag = interning_maronites
+		clr_country_flag = interning_bahais
+		clr_country_flag = interning_alawites
+		clr_country_flag = interning_alevis
+		clr_country_flag = interning_zoroastrians
+		clr_country_flag = interning_mandaeans
+		clr_country_flag = interning_confucians
+		
+		clr_country_flag = interning_anabaptists
+		clr_country_flag = interning_karaites
+		clr_country_flag = interning_samaritans
+		clr_country_flag = interning_ismailis
+		clr_country_flag = interning_zaydis
+		clr_country_flag = interning_jains
+		clr_country_flag = interning_atheists
+		#Specific Cultures
+		clr_country_flag = interning_germanics
+		clr_country_flag = interning_jewish_cultures
+		clr_country_flag = interning_beneluxian
+		clr_country_flag = interning_pan_swiss
+		clr_country_flag = interning_scandinavian
+		clr_country_flag = interning_british
+		clr_country_flag = interning_italian
+		clr_country_flag = interning_iberian
+		clr_country_flag = interning_french
+		clr_country_flag = interning_south_slavic
+		clr_country_flag = interning_pan_albanian
+		clr_country_flag = interning_pan_romanian
+		clr_country_flag = interning_hungarian_culture_group
+		clr_country_flag = interning_polish_culture_group
+		clr_country_flag = interning_czecho_slovak_culture_group
+		clr_country_flag = interning_east_slavic
+		clr_country_flag = interning_baltic
+		clr_country_flag = interning_levantine
+		clr_country_flag = interning_pan_greek
+		clr_country_flag = interning_turko_semitic
+		clr_country_flag = interning_caucasian
+		clr_country_flag = interning_arab
+		clr_country_flag = interning_iranian
+		clr_country_flag = interning_turanian
+		clr_country_flag = interning_central_asian
+		clr_country_flag = interning_south_asian
+		clr_country_flag = interning_indo_iranian
+		clr_country_flag = interning_southeast_asian
+		clr_country_flag = interning_east_asian
+		clr_country_flag = interning_far_east_asian
+		clr_country_flag = interning_oceanic
+		clr_country_flag = interning_native_american
+		clr_country_flag = interning_american_cultures
+		clr_country_flag = interning_neo_european_cultures
+		clr_country_flag = interning_latin_american_cultures
+		clr_country_flag = interning_african_diaspora_cultures
+		clr_country_flag = interning_west_african
+		clr_country_flag = interning_central_african
+		clr_country_flag = interning_east_african
+		clr_country_flag = interning_southern_african
+		clr_country_flag = animists_run
+		##
+		prestige_factor = -0.1
 		country_event = 800053
 	}
 }
@@ -240,6 +415,15 @@ country_event = {
 		ruling_party_ideology = fascist
 		average_militancy = 3
 		OR = {
+			has_country_modifier = regency_government
+			average_militancy = 8
+			NOT = {
+				government = absolute_monarchy
+				government = prussian_constitutionalism
+				government = hms_government
+			}
+		}
+		OR = {
 			num_of_revolts = 1
 			national_provinces_occupied = .10
 			is_disarmed = yes
@@ -252,24 +436,32 @@ country_event = {
 		months = 12
 		modifier = {
 			factor = 0.8
-			average_militancy = 4
+			war_exhaustion = 40
 		}
 		modifier = {
 			factor = 0.8
-			average_militancy = 5
+			war_exhaustion = 75
 		}
 		modifier = {
 			factor = 0.8
-			average_militancy = 6
+			average_militancy = 9
 		}
 		modifier = {
 			factor = 0.5
-			revolt_percentage = .25
+			revolt_percentage = 0.25
 		}
 	}
 	major = yes
 	option = {
 		name = "EVT60030OPTA"
+		random_owned = {
+			limit = { owner = { has_country_modifier = regency_government } }
+			owner = { remove_country_modifier = regency_government }
+		}
+		random_owned = {
+			limit = { owner = { has_country_modifier = santa_ana_rule } }
+			owner = { remove_country_modifier = santa_ana_rule }
+		}
 		government = fascist_dictatorship
 		political_reform = none_voting
 		political_reform = party_appointed
@@ -278,12 +470,131 @@ country_event = {
 		political_reform = state_controlled
 		political_reform = underground_parties
 		political_reform = culture_voting_only
-		clr_country_flag = everywhere_genocide_only
-		clr_country_flag = non_colonial_genocide_only
-		clr_country_flag = colonial_genocide_only
-		clr_country_flag = preparations_to_kill
-		remove_country_modifier = preparations_to_kill
-		prestige_factor = -0.05
+		#Genocide Cleanup
+		##Set Up Timer based on time the thing ran
+		random_owned = {
+			limit = { owner = { NOT = { check_variable = { which = evidence_count value = 2 } } } }
+			owner = { add_country_modifier = { name = law_changed_by_force duration = 1460 } }
+		}
+		random_owned = {
+			limit = { owner = { check_variable = { which = evidence_count value = 2 } } }
+			owner = { add_country_modifier = { name = law_changed_by_force duration = 1825 } }
+		}
+		random_owned = {
+			limit = { owner = { check_variable = { which = evidence_count value = 4 } } }
+			owner = { add_country_modifier = { name = law_changed_by_force duration = 2190 } }
+		}
+		random_owned = {
+			limit = { owner = { check_variable = { which = evidence_count value = 6 } } }
+			owner = { add_country_modifier = { name = law_changed_by_force duration = 2555 } }
+		}
+		random_owned = {
+			limit = { owner = { check_variable = { which = evidence_count value = 8 } } }
+			owner = { add_country_modifier = { name = law_changed_by_force duration = 2920 } }
+		}
+		random_owned = {
+			limit = { owner = { check_variable = { which = evidence_count value = 10 } } }
+			owner = { add_country_modifier = { name = law_changed_by_force duration = 3285 } } #9 years
+		}
+		##Clean Variables
+		set_variable = { which = evidence_count value = 0 }
+		set_variable = { which = slowdown_point value = 0 }
+		#Delete Modifiers
+		random_owned = {
+			limit = { owner = { has_country_modifier = interment_camps } }
+			owner = { remove_country_modifier = interment_camps }
+		}
+		#Delete Block
+		clr_country_flag = government_busy_with_something
+		#Flag for pops
+		clr_country_flag = internment_camps_open
+		#Place
+		clr_country_flag = interning_on_colonies
+		clr_country_flag = interning_on_homeland
+		clr_country_flag = interning_everywhere
+		#Who
+		clr_country_flag = interning_cultures
+		clr_country_flag = interning_religions
+		#Specific religions
+		clr_country_flag = interning_catholics
+		clr_country_flag = interning_protestants
+		clr_country_flag = interning_mormons
+		clr_country_flag = interning_orthodoxies
+		clr_country_flag = interning_coptics
+		clr_country_flag = interning_sunnis
+		clr_country_flag = interning_shiites
+		clr_country_flag = interning_ibadis
+		clr_country_flag = interning_druzi
+		clr_country_flag = interning_jewish
+		clr_country_flag = interning_yazidis
+		clr_country_flag = interning_mahayanas
+		clr_country_flag = interning_gelugpas
+		clr_country_flag = interning_theravadas
+		clr_country_flag = interning_hindus
+		clr_country_flag = interning_shintos
+		clr_country_flag = interning_sikhs
+		clr_country_flag = interning_animists
+		
+		clr_country_flag = interning_syriacs
+		clr_country_flag = interning_maronites
+		clr_country_flag = interning_bahais
+		clr_country_flag = interning_alawites
+		clr_country_flag = interning_alevis
+		clr_country_flag = interning_zoroastrians
+		clr_country_flag = interning_mandaeans
+		clr_country_flag = interning_confucians
+		
+		clr_country_flag = interning_anabaptists
+		clr_country_flag = interning_karaites
+		clr_country_flag = interning_samaritans
+		clr_country_flag = interning_ismailis
+		clr_country_flag = interning_zaydis
+		clr_country_flag = interning_jains
+		clr_country_flag = interning_atheists
+		#Specific Cultures
+		clr_country_flag = interning_germanics
+		clr_country_flag = interning_jewish_cultures
+		clr_country_flag = interning_beneluxian
+		clr_country_flag = interning_pan_swiss
+		clr_country_flag = interning_scandinavian
+		clr_country_flag = interning_british
+		clr_country_flag = interning_italian
+		clr_country_flag = interning_iberian
+		clr_country_flag = interning_french
+		clr_country_flag = interning_south_slavic
+		clr_country_flag = interning_pan_albanian
+		clr_country_flag = interning_pan_romanian
+		clr_country_flag = interning_hungarian_culture_group
+		clr_country_flag = interning_polish_culture_group
+		clr_country_flag = interning_czecho_slovak_culture_group
+		clr_country_flag = interning_east_slavic
+		clr_country_flag = interning_baltic
+		clr_country_flag = interning_levantine
+		clr_country_flag = interning_pan_greek
+		clr_country_flag = interning_turko_semitic
+		clr_country_flag = interning_caucasian
+		clr_country_flag = interning_arab
+		clr_country_flag = interning_iranian
+		clr_country_flag = interning_turanian
+		clr_country_flag = interning_central_asian
+		clr_country_flag = interning_south_asian
+		clr_country_flag = interning_indo_iranian
+		clr_country_flag = interning_southeast_asian
+		clr_country_flag = interning_east_asian
+		clr_country_flag = interning_far_east_asian
+		clr_country_flag = interning_oceanic
+		clr_country_flag = interning_native_american
+		clr_country_flag = interning_american_cultures
+		clr_country_flag = interning_neo_european_cultures
+		clr_country_flag = interning_latin_american_cultures
+		clr_country_flag = interning_african_diaspora_cultures
+		clr_country_flag = interning_west_african
+		clr_country_flag = interning_central_african
+		clr_country_flag = interning_east_african
+		clr_country_flag = interning_southern_african
+		clr_country_flag = animists_run
+		##
+		prestige_factor = -0.1
 		country_event = 800051
 	}
 }
@@ -318,11 +629,14 @@ country_event = {
 	major = yes
 	option = {
 		name = "EVTOPTA60050"
-		clr_country_flag = everywhere_genocide_only
-		clr_country_flag = non_colonial_genocide_only
-		clr_country_flag = colonial_genocide_only
-		clr_country_flag = preparations_to_kill
-		remove_country_modifier = preparations_to_kill
+		random_owned = {
+			limit = { owner = { has_country_modifier = regency_government } }
+			owner = { remove_country_modifier = regency_government }
+		}
+		random_owned = {
+			limit = { owner = { has_country_modifier = santa_ana_rule } }
+			owner = { remove_country_modifier = santa_ana_rule }
+		}
 		clr_country_flag = communist_gov
 		clr_country_flag = absolute_monarchy_gov
 		clr_country_flag = semi_constitutional_monarchy_gov
@@ -334,8 +648,132 @@ country_event = {
 		remove_country_modifier = fight_the_power
 		government = democracy
 		election = yes
+		prestige_factor = -0.05
 		random_owned = { limit = { owner = { border_policy = closed_borders } } owner = { political_reform = open_borders } }
-		random_owned = { limit = { owner = { centralization = totalitarianism } } owner = { political_reform = unitary } }
+		#Genocide Cleanup
+		##Set Up Timer based on time the thing ran
+		random_owned = {
+			limit = { owner = { NOT = { check_variable = { which = evidence_count value = 2 } } } }
+			owner = { add_country_modifier = { name = law_changed_by_force duration = 1460 } }
+		}
+		random_owned = {
+			limit = { owner = { check_variable = { which = evidence_count value = 2 } } }
+			owner = { add_country_modifier = { name = law_changed_by_force duration = 1825 } }
+		}
+		random_owned = {
+			limit = { owner = { check_variable = { which = evidence_count value = 4 } } }
+			owner = { add_country_modifier = { name = law_changed_by_force duration = 2190 } }
+		}
+		random_owned = {
+			limit = { owner = { check_variable = { which = evidence_count value = 6 } } }
+			owner = { add_country_modifier = { name = law_changed_by_force duration = 2555 } }
+		}
+		random_owned = {
+			limit = { owner = { check_variable = { which = evidence_count value = 8 } } }
+			owner = { add_country_modifier = { name = law_changed_by_force duration = 2920 } }
+		}
+		random_owned = {
+			limit = { owner = { check_variable = { which = evidence_count value = 10 } } }
+			owner = { add_country_modifier = { name = law_changed_by_force duration = 3285 } } #9 years
+		}
+		##Clean Variables
+		set_variable = { which = evidence_count value = 0 }
+		set_variable = { which = slowdown_point value = 0 }
+		#Delete Modifiers
+		random_owned = {
+			limit = { owner = { has_country_modifier = interment_camps } }
+			owner = { remove_country_modifier = interment_camps }
+		}
+		#Delete Block
+		clr_country_flag = government_busy_with_something
+		#Flag for pops
+		clr_country_flag = internment_camps_open
+		#Place
+		clr_country_flag = interning_on_colonies
+		clr_country_flag = interning_on_homeland
+		clr_country_flag = interning_everywhere
+		#Who
+		clr_country_flag = interning_cultures
+		clr_country_flag = interning_religions
+		#Specific religions
+		clr_country_flag = interning_catholics
+		clr_country_flag = interning_protestants
+		clr_country_flag = interning_mormons
+		clr_country_flag = interning_orthodoxies
+		clr_country_flag = interning_coptics
+		clr_country_flag = interning_sunnis
+		clr_country_flag = interning_shiites
+		clr_country_flag = interning_ibadis
+		clr_country_flag = interning_druzi
+		clr_country_flag = interning_jewish
+		clr_country_flag = interning_yazidis
+		clr_country_flag = interning_mahayanas
+		clr_country_flag = interning_gelugpas
+		clr_country_flag = interning_theravadas
+		clr_country_flag = interning_hindus
+		clr_country_flag = interning_shintos
+		clr_country_flag = interning_sikhs
+		clr_country_flag = interning_animists
+		
+		clr_country_flag = interning_syriacs
+		clr_country_flag = interning_maronites
+		clr_country_flag = interning_bahais
+		clr_country_flag = interning_alawites
+		clr_country_flag = interning_alevis
+		clr_country_flag = interning_zoroastrians
+		clr_country_flag = interning_mandaeans
+		clr_country_flag = interning_confucians
+		
+		clr_country_flag = interning_anabaptists
+		clr_country_flag = interning_karaites
+		clr_country_flag = interning_samaritans
+		clr_country_flag = interning_ismailis
+		clr_country_flag = interning_zaydis
+		clr_country_flag = interning_jains
+		clr_country_flag = interning_atheists
+		#Specific Cultures
+		clr_country_flag = interning_germanics
+		clr_country_flag = interning_jewish_cultures
+		clr_country_flag = interning_beneluxian
+		clr_country_flag = interning_pan_swiss
+		clr_country_flag = interning_scandinavian
+		clr_country_flag = interning_british
+		clr_country_flag = interning_italian
+		clr_country_flag = interning_iberian
+		clr_country_flag = interning_french
+		clr_country_flag = interning_south_slavic
+		clr_country_flag = interning_pan_albanian
+		clr_country_flag = interning_pan_romanian
+		clr_country_flag = interning_hungarian_culture_group
+		clr_country_flag = interning_polish_culture_group
+		clr_country_flag = interning_czecho_slovak_culture_group
+		clr_country_flag = interning_east_slavic
+		clr_country_flag = interning_baltic
+		clr_country_flag = interning_levantine
+		clr_country_flag = interning_pan_greek
+		clr_country_flag = interning_turko_semitic
+		clr_country_flag = interning_caucasian
+		clr_country_flag = interning_arab
+		clr_country_flag = interning_iranian
+		clr_country_flag = interning_turanian
+		clr_country_flag = interning_central_asian
+		clr_country_flag = interning_south_asian
+		clr_country_flag = interning_indo_iranian
+		clr_country_flag = interning_southeast_asian
+		clr_country_flag = interning_east_asian
+		clr_country_flag = interning_far_east_asian
+		clr_country_flag = interning_oceanic
+		clr_country_flag = interning_native_american
+		clr_country_flag = interning_american_cultures
+		clr_country_flag = interning_neo_european_cultures
+		clr_country_flag = interning_latin_american_cultures
+		clr_country_flag = interning_african_diaspora_cultures
+		clr_country_flag = interning_west_african
+		clr_country_flag = interning_central_african
+		clr_country_flag = interning_east_african
+		clr_country_flag = interning_southern_african
+		clr_country_flag = animists_run
+		##
 	}
 }
 
@@ -360,11 +798,6 @@ country_event = {
 	
 	option = {
 		name = "EVTOPTA60040"
-		clr_country_flag = everywhere_genocide_only
-		clr_country_flag = non_colonial_genocide_only
-		clr_country_flag = colonial_genocide_only
-		clr_country_flag = preparations_to_kill
-		remove_country_modifier = preparations_to_kill
 		clr_country_flag = communist_gov
 		set_country_flag = absolute_monarchy_gov
 		clr_country_flag = semi_constitutional_monarchy_gov
@@ -374,6 +807,130 @@ country_event = {
 		clr_country_flag = fascist_gov
 		clr_country_flag = anarcho_liberal_gov
 		government = absolute_monarchy
+		#Genocide Cleanup
+		##Set Up Timer based on time the thing ran
+		random_owned = {
+			limit = { owner = { NOT = { check_variable = { which = evidence_count value = 2 } } } }
+			owner = { add_country_modifier = { name = law_changed_by_force duration = 1460 } }
+		}
+		random_owned = {
+			limit = { owner = { check_variable = { which = evidence_count value = 2 } } }
+			owner = { add_country_modifier = { name = law_changed_by_force duration = 1825 } }
+		}
+		random_owned = {
+			limit = { owner = { check_variable = { which = evidence_count value = 4 } } }
+			owner = { add_country_modifier = { name = law_changed_by_force duration = 2190 } }
+		}
+		random_owned = {
+			limit = { owner = { check_variable = { which = evidence_count value = 6 } } }
+			owner = { add_country_modifier = { name = law_changed_by_force duration = 2555 } }
+		}
+		random_owned = {
+			limit = { owner = { check_variable = { which = evidence_count value = 8 } } }
+			owner = { add_country_modifier = { name = law_changed_by_force duration = 2920 } }
+		}
+		random_owned = {
+			limit = { owner = { check_variable = { which = evidence_count value = 10 } } }
+			owner = { add_country_modifier = { name = law_changed_by_force duration = 3285 } } #9 years
+		}
+		##Clean Variables
+		set_variable = { which = evidence_count value = 0 }
+		set_variable = { which = slowdown_point value = 0 }
+		#Delete Modifiers
+		random_owned = {
+			limit = { owner = { has_country_modifier = interment_camps } }
+			owner = { remove_country_modifier = interment_camps }
+		}
+		#Delete Block
+		clr_country_flag = government_busy_with_something
+		#Flag for pops
+		clr_country_flag = internment_camps_open
+		#Place
+		clr_country_flag = interning_on_colonies
+		clr_country_flag = interning_on_homeland
+		clr_country_flag = interning_everywhere
+		#Who
+		clr_country_flag = interning_cultures
+		clr_country_flag = interning_religions
+		#Specific religions
+		clr_country_flag = interning_catholics
+		clr_country_flag = interning_protestants
+		clr_country_flag = interning_mormons
+		clr_country_flag = interning_orthodoxies
+		clr_country_flag = interning_coptics
+		clr_country_flag = interning_sunnis
+		clr_country_flag = interning_shiites
+		clr_country_flag = interning_ibadis
+		clr_country_flag = interning_druzi
+		clr_country_flag = interning_jewish
+		clr_country_flag = interning_yazidis
+		clr_country_flag = interning_mahayanas
+		clr_country_flag = interning_gelugpas
+		clr_country_flag = interning_theravadas
+		clr_country_flag = interning_hindus
+		clr_country_flag = interning_shintos
+		clr_country_flag = interning_sikhs
+		clr_country_flag = interning_animists
+		
+		clr_country_flag = interning_syriacs
+		clr_country_flag = interning_maronites
+		clr_country_flag = interning_bahais
+		clr_country_flag = interning_alawites
+		clr_country_flag = interning_alevis
+		clr_country_flag = interning_zoroastrians
+		clr_country_flag = interning_mandaeans
+		clr_country_flag = interning_confucians
+		
+		clr_country_flag = interning_anabaptists
+		clr_country_flag = interning_karaites
+		clr_country_flag = interning_samaritans
+		clr_country_flag = interning_ismailis
+		clr_country_flag = interning_zaydis
+		clr_country_flag = interning_jains
+		clr_country_flag = interning_atheists
+		#Specific Cultures
+		clr_country_flag = interning_germanics
+		clr_country_flag = interning_jewish_cultures
+		clr_country_flag = interning_beneluxian
+		clr_country_flag = interning_pan_swiss
+		clr_country_flag = interning_scandinavian
+		clr_country_flag = interning_british
+		clr_country_flag = interning_italian
+		clr_country_flag = interning_iberian
+		clr_country_flag = interning_french
+		clr_country_flag = interning_south_slavic
+		clr_country_flag = interning_pan_albanian
+		clr_country_flag = interning_pan_romanian
+		clr_country_flag = interning_hungarian_culture_group
+		clr_country_flag = interning_polish_culture_group
+		clr_country_flag = interning_czecho_slovak_culture_group
+		clr_country_flag = interning_east_slavic
+		clr_country_flag = interning_baltic
+		clr_country_flag = interning_levantine
+		clr_country_flag = interning_pan_greek
+		clr_country_flag = interning_turko_semitic
+		clr_country_flag = interning_caucasian
+		clr_country_flag = interning_arab
+		clr_country_flag = interning_iranian
+		clr_country_flag = interning_turanian
+		clr_country_flag = interning_central_asian
+		clr_country_flag = interning_south_asian
+		clr_country_flag = interning_indo_iranian
+		clr_country_flag = interning_southeast_asian
+		clr_country_flag = interning_east_asian
+		clr_country_flag = interning_far_east_asian
+		clr_country_flag = interning_oceanic
+		clr_country_flag = interning_native_american
+		clr_country_flag = interning_american_cultures
+		clr_country_flag = interning_neo_european_cultures
+		clr_country_flag = interning_latin_american_cultures
+		clr_country_flag = interning_african_diaspora_cultures
+		clr_country_flag = interning_west_african
+		clr_country_flag = interning_central_african
+		clr_country_flag = interning_east_african
+		clr_country_flag = interning_southern_african
+		clr_country_flag = animists_run
+		##
 	}
 }
 
@@ -400,11 +957,6 @@ country_event = {
 	
 	option = {
 		name = "EVTNAME60060"
-		clr_country_flag = everywhere_genocide_only
-		clr_country_flag = non_colonial_genocide_only
-		clr_country_flag = colonial_genocide_only
-		clr_country_flag = preparations_to_kill
-		remove_country_modifier = preparations_to_kill
 		government = prussian_constitutionalism
 		random_owned = { limit = { owner = { border_policy = closed_borders } } owner = { political_reform = open_borders } }
 		clr_country_flag = communist_gov
@@ -415,6 +967,130 @@ country_event = {
 		clr_country_flag = presidential_dictatorship_gov
 		clr_country_flag = fascist_gov
 		clr_country_flag = anarcho_liberal_gov
+		#Genocide Cleanup
+		##Set Up Timer based on time the thing ran
+		random_owned = {
+			limit = { owner = { NOT = { check_variable = { which = evidence_count value = 2 } } } }
+			owner = { add_country_modifier = { name = law_changed_by_force duration = 1460 } }
+		}
+		random_owned = {
+			limit = { owner = { check_variable = { which = evidence_count value = 2 } } }
+			owner = { add_country_modifier = { name = law_changed_by_force duration = 1825 } }
+		}
+		random_owned = {
+			limit = { owner = { check_variable = { which = evidence_count value = 4 } } }
+			owner = { add_country_modifier = { name = law_changed_by_force duration = 2190 } }
+		}
+		random_owned = {
+			limit = { owner = { check_variable = { which = evidence_count value = 6 } } }
+			owner = { add_country_modifier = { name = law_changed_by_force duration = 2555 } }
+		}
+		random_owned = {
+			limit = { owner = { check_variable = { which = evidence_count value = 8 } } }
+			owner = { add_country_modifier = { name = law_changed_by_force duration = 2920 } }
+		}
+		random_owned = {
+			limit = { owner = { check_variable = { which = evidence_count value = 10 } } }
+			owner = { add_country_modifier = { name = law_changed_by_force duration = 3285 } } #9 years
+		}
+		##Clean Variables
+		set_variable = { which = evidence_count value = 0 }
+		set_variable = { which = slowdown_point value = 0 }
+		#Delete Modifiers
+		random_owned = {
+			limit = { owner = { has_country_modifier = interment_camps } }
+			owner = { remove_country_modifier = interment_camps }
+		}
+		#Delete Block
+		clr_country_flag = government_busy_with_something
+		#Flag for pops
+		clr_country_flag = internment_camps_open
+		#Place
+		clr_country_flag = interning_on_colonies
+		clr_country_flag = interning_on_homeland
+		clr_country_flag = interning_everywhere
+		#Who
+		clr_country_flag = interning_cultures
+		clr_country_flag = interning_religions
+		#Specific religions
+		clr_country_flag = interning_catholics
+		clr_country_flag = interning_protestants
+		clr_country_flag = interning_mormons
+		clr_country_flag = interning_orthodoxies
+		clr_country_flag = interning_coptics
+		clr_country_flag = interning_sunnis
+		clr_country_flag = interning_shiites
+		clr_country_flag = interning_ibadis
+		clr_country_flag = interning_druzi
+		clr_country_flag = interning_jewish
+		clr_country_flag = interning_yazidis
+		clr_country_flag = interning_mahayanas
+		clr_country_flag = interning_gelugpas
+		clr_country_flag = interning_theravadas
+		clr_country_flag = interning_hindus
+		clr_country_flag = interning_shintos
+		clr_country_flag = interning_sikhs
+		clr_country_flag = interning_animists
+		
+		clr_country_flag = interning_syriacs
+		clr_country_flag = interning_maronites
+		clr_country_flag = interning_bahais
+		clr_country_flag = interning_alawites
+		clr_country_flag = interning_alevis
+		clr_country_flag = interning_zoroastrians
+		clr_country_flag = interning_mandaeans
+		clr_country_flag = interning_confucians
+		
+		clr_country_flag = interning_anabaptists
+		clr_country_flag = interning_karaites
+		clr_country_flag = interning_samaritans
+		clr_country_flag = interning_ismailis
+		clr_country_flag = interning_zaydis
+		clr_country_flag = interning_jains
+		clr_country_flag = interning_atheists
+		#Specific Cultures
+		clr_country_flag = interning_germanics
+		clr_country_flag = interning_jewish_cultures
+		clr_country_flag = interning_beneluxian
+		clr_country_flag = interning_pan_swiss
+		clr_country_flag = interning_scandinavian
+		clr_country_flag = interning_british
+		clr_country_flag = interning_italian
+		clr_country_flag = interning_iberian
+		clr_country_flag = interning_french
+		clr_country_flag = interning_south_slavic
+		clr_country_flag = interning_pan_albanian
+		clr_country_flag = interning_pan_romanian
+		clr_country_flag = interning_hungarian_culture_group
+		clr_country_flag = interning_polish_culture_group
+		clr_country_flag = interning_czecho_slovak_culture_group
+		clr_country_flag = interning_east_slavic
+		clr_country_flag = interning_baltic
+		clr_country_flag = interning_levantine
+		clr_country_flag = interning_pan_greek
+		clr_country_flag = interning_turko_semitic
+		clr_country_flag = interning_caucasian
+		clr_country_flag = interning_arab
+		clr_country_flag = interning_iranian
+		clr_country_flag = interning_turanian
+		clr_country_flag = interning_central_asian
+		clr_country_flag = interning_south_asian
+		clr_country_flag = interning_indo_iranian
+		clr_country_flag = interning_southeast_asian
+		clr_country_flag = interning_east_asian
+		clr_country_flag = interning_far_east_asian
+		clr_country_flag = interning_oceanic
+		clr_country_flag = interning_native_american
+		clr_country_flag = interning_american_cultures
+		clr_country_flag = interning_neo_european_cultures
+		clr_country_flag = interning_latin_american_cultures
+		clr_country_flag = interning_african_diaspora_cultures
+		clr_country_flag = interning_west_african
+		clr_country_flag = interning_central_african
+		clr_country_flag = interning_east_african
+		clr_country_flag = interning_southern_african
+		clr_country_flag = animists_run
+		##
 	}
 }
 
@@ -448,11 +1124,6 @@ country_event = {
 	
 	option = {
 		name = "EVTOPTA60070"
-		clr_country_flag = everywhere_genocide_only
-		clr_country_flag = non_colonial_genocide_only
-		clr_country_flag = colonial_genocide_only
-		clr_country_flag = preparations_to_kill
-		remove_country_modifier = preparations_to_kill
 		clr_country_flag = communist_gov
 		clr_country_flag = absolute_monarchy_gov
 		clr_country_flag = semi_constitutional_monarchy_gov
@@ -463,6 +1134,130 @@ country_event = {
 		clr_country_flag = anarcho_liberal_gov
 		government = hms_government
 		random_owned = { limit = { owner = { border_policy = closed_borders } } owner = { political_reform = open_borders } }
+		#Genocide Cleanup
+		##Set Up Timer based on time the thing ran
+		random_owned = {
+			limit = { owner = { NOT = { check_variable = { which = evidence_count value = 2 } } } }
+			owner = { add_country_modifier = { name = law_changed_by_force duration = 1460 } }
+		}
+		random_owned = {
+			limit = { owner = { check_variable = { which = evidence_count value = 2 } } }
+			owner = { add_country_modifier = { name = law_changed_by_force duration = 1825 } }
+		}
+		random_owned = {
+			limit = { owner = { check_variable = { which = evidence_count value = 4 } } }
+			owner = { add_country_modifier = { name = law_changed_by_force duration = 2190 } }
+		}
+		random_owned = {
+			limit = { owner = { check_variable = { which = evidence_count value = 6 } } }
+			owner = { add_country_modifier = { name = law_changed_by_force duration = 2555 } }
+		}
+		random_owned = {
+			limit = { owner = { check_variable = { which = evidence_count value = 8 } } }
+			owner = { add_country_modifier = { name = law_changed_by_force duration = 2920 } }
+		}
+		random_owned = {
+			limit = { owner = { check_variable = { which = evidence_count value = 10 } } }
+			owner = { add_country_modifier = { name = law_changed_by_force duration = 3285 } } #9 years
+		}
+		##Clean Variables
+		set_variable = { which = evidence_count value = 0 }
+		set_variable = { which = slowdown_point value = 0 }
+		#Delete Modifiers
+		random_owned = {
+			limit = { owner = { has_country_modifier = interment_camps } }
+			owner = { remove_country_modifier = interment_camps }
+		}
+		#Delete Block
+		clr_country_flag = government_busy_with_something
+		#Flag for pops
+		clr_country_flag = internment_camps_open
+		#Place
+		clr_country_flag = interning_on_colonies
+		clr_country_flag = interning_on_homeland
+		clr_country_flag = interning_everywhere
+		#Who
+		clr_country_flag = interning_cultures
+		clr_country_flag = interning_religions
+		#Specific religions
+		clr_country_flag = interning_catholics
+		clr_country_flag = interning_protestants
+		clr_country_flag = interning_mormons
+		clr_country_flag = interning_orthodoxies
+		clr_country_flag = interning_coptics
+		clr_country_flag = interning_sunnis
+		clr_country_flag = interning_shiites
+		clr_country_flag = interning_ibadis
+		clr_country_flag = interning_druzi
+		clr_country_flag = interning_jewish
+		clr_country_flag = interning_yazidis
+		clr_country_flag = interning_mahayanas
+		clr_country_flag = interning_gelugpas
+		clr_country_flag = interning_theravadas
+		clr_country_flag = interning_hindus
+		clr_country_flag = interning_shintos
+		clr_country_flag = interning_sikhs
+		clr_country_flag = interning_animists
+		
+		clr_country_flag = interning_syriacs
+		clr_country_flag = interning_maronites
+		clr_country_flag = interning_bahais
+		clr_country_flag = interning_alawites
+		clr_country_flag = interning_alevis
+		clr_country_flag = interning_zoroastrians
+		clr_country_flag = interning_mandaeans
+		clr_country_flag = interning_confucians
+		
+		clr_country_flag = interning_anabaptists
+		clr_country_flag = interning_karaites
+		clr_country_flag = interning_samaritans
+		clr_country_flag = interning_ismailis
+		clr_country_flag = interning_zaydis
+		clr_country_flag = interning_jains
+		clr_country_flag = interning_atheists
+		#Specific Cultures
+		clr_country_flag = interning_germanics
+		clr_country_flag = interning_jewish_cultures
+		clr_country_flag = interning_beneluxian
+		clr_country_flag = interning_pan_swiss
+		clr_country_flag = interning_scandinavian
+		clr_country_flag = interning_british
+		clr_country_flag = interning_italian
+		clr_country_flag = interning_iberian
+		clr_country_flag = interning_french
+		clr_country_flag = interning_south_slavic
+		clr_country_flag = interning_pan_albanian
+		clr_country_flag = interning_pan_romanian
+		clr_country_flag = interning_hungarian_culture_group
+		clr_country_flag = interning_polish_culture_group
+		clr_country_flag = interning_czecho_slovak_culture_group
+		clr_country_flag = interning_east_slavic
+		clr_country_flag = interning_baltic
+		clr_country_flag = interning_levantine
+		clr_country_flag = interning_pan_greek
+		clr_country_flag = interning_turko_semitic
+		clr_country_flag = interning_caucasian
+		clr_country_flag = interning_arab
+		clr_country_flag = interning_iranian
+		clr_country_flag = interning_turanian
+		clr_country_flag = interning_central_asian
+		clr_country_flag = interning_south_asian
+		clr_country_flag = interning_indo_iranian
+		clr_country_flag = interning_southeast_asian
+		clr_country_flag = interning_east_asian
+		clr_country_flag = interning_far_east_asian
+		clr_country_flag = interning_oceanic
+		clr_country_flag = interning_native_american
+		clr_country_flag = interning_american_cultures
+		clr_country_flag = interning_neo_european_cultures
+		clr_country_flag = interning_latin_american_cultures
+		clr_country_flag = interning_african_diaspora_cultures
+		clr_country_flag = interning_west_african
+		clr_country_flag = interning_central_african
+		clr_country_flag = interning_east_african
+		clr_country_flag = interning_southern_african
+		clr_country_flag = animists_run
+		##
 	}
 }
 
@@ -504,11 +1299,130 @@ country_event = {
 		set_country_flag = presidential_dictatorship_gov
 		clr_country_flag = fascist_gov
 		clr_country_flag = anarcho_liberal_gov
-		clr_country_flag = everywhere_genocide_only
-		clr_country_flag = non_colonial_genocide_only
-		clr_country_flag = colonial_genocide_only
-		clr_country_flag = preparations_to_kill
-		remove_country_modifier = preparations_to_kill
+		#Genocide Cleanup
+		##Set Up Timer based on time the thing ran
+		random_owned = {
+			limit = { owner = { NOT = { check_variable = { which = evidence_count value = 2 } } } }
+			owner = { add_country_modifier = { name = law_changed_by_force duration = 1460 } }
+		}
+		random_owned = {
+			limit = { owner = { check_variable = { which = evidence_count value = 2 } } }
+			owner = { add_country_modifier = { name = law_changed_by_force duration = 1825 } }
+		}
+		random_owned = {
+			limit = { owner = { check_variable = { which = evidence_count value = 4 } } }
+			owner = { add_country_modifier = { name = law_changed_by_force duration = 2190 } }
+		}
+		random_owned = {
+			limit = { owner = { check_variable = { which = evidence_count value = 6 } } }
+			owner = { add_country_modifier = { name = law_changed_by_force duration = 2555 } }
+		}
+		random_owned = {
+			limit = { owner = { check_variable = { which = evidence_count value = 8 } } }
+			owner = { add_country_modifier = { name = law_changed_by_force duration = 2920 } }
+		}
+		random_owned = {
+			limit = { owner = { check_variable = { which = evidence_count value = 10 } } }
+			owner = { add_country_modifier = { name = law_changed_by_force duration = 3285 } } #9 years
+		}
+		##Clean Variables
+		set_variable = { which = evidence_count value = 0 }
+		set_variable = { which = slowdown_point value = 0 }
+		#Delete Modifiers
+		random_owned = {
+			limit = { owner = { has_country_modifier = interment_camps } }
+			owner = { remove_country_modifier = interment_camps }
+		}
+		#Delete Block
+		clr_country_flag = government_busy_with_something
+		#Flag for pops
+		clr_country_flag = internment_camps_open
+		#Place
+		clr_country_flag = interning_on_colonies
+		clr_country_flag = interning_on_homeland
+		clr_country_flag = interning_everywhere
+		#Who
+		clr_country_flag = interning_cultures
+		clr_country_flag = interning_religions
+		#Specific religions
+		clr_country_flag = interning_catholics
+		clr_country_flag = interning_protestants
+		clr_country_flag = interning_mormons
+		clr_country_flag = interning_orthodoxies
+		clr_country_flag = interning_coptics
+		clr_country_flag = interning_sunnis
+		clr_country_flag = interning_shiites
+		clr_country_flag = interning_ibadis
+		clr_country_flag = interning_druzi
+		clr_country_flag = interning_jewish
+		clr_country_flag = interning_yazidis
+		clr_country_flag = interning_mahayanas
+		clr_country_flag = interning_gelugpas
+		clr_country_flag = interning_theravadas
+		clr_country_flag = interning_hindus
+		clr_country_flag = interning_shintos
+		clr_country_flag = interning_sikhs
+		clr_country_flag = interning_animists
+		
+		clr_country_flag = interning_syriacs
+		clr_country_flag = interning_maronites
+		clr_country_flag = interning_bahais
+		clr_country_flag = interning_alawites
+		clr_country_flag = interning_alevis
+		clr_country_flag = interning_zoroastrians
+		clr_country_flag = interning_mandaeans
+		clr_country_flag = interning_confucians
+		
+		clr_country_flag = interning_anabaptists
+		clr_country_flag = interning_karaites
+		clr_country_flag = interning_samaritans
+		clr_country_flag = interning_ismailis
+		clr_country_flag = interning_zaydis
+		clr_country_flag = interning_jains
+		clr_country_flag = interning_atheists
+		#Specific Cultures
+		clr_country_flag = interning_germanics
+		clr_country_flag = interning_jewish_cultures
+		clr_country_flag = interning_beneluxian
+		clr_country_flag = interning_pan_swiss
+		clr_country_flag = interning_scandinavian
+		clr_country_flag = interning_british
+		clr_country_flag = interning_italian
+		clr_country_flag = interning_iberian
+		clr_country_flag = interning_french
+		clr_country_flag = interning_south_slavic
+		clr_country_flag = interning_pan_albanian
+		clr_country_flag = interning_pan_romanian
+		clr_country_flag = interning_hungarian_culture_group
+		clr_country_flag = interning_polish_culture_group
+		clr_country_flag = interning_czecho_slovak_culture_group
+		clr_country_flag = interning_east_slavic
+		clr_country_flag = interning_baltic
+		clr_country_flag = interning_levantine
+		clr_country_flag = interning_pan_greek
+		clr_country_flag = interning_turko_semitic
+		clr_country_flag = interning_caucasian
+		clr_country_flag = interning_arab
+		clr_country_flag = interning_iranian
+		clr_country_flag = interning_turanian
+		clr_country_flag = interning_central_asian
+		clr_country_flag = interning_south_asian
+		clr_country_flag = interning_indo_iranian
+		clr_country_flag = interning_southeast_asian
+		clr_country_flag = interning_east_asian
+		clr_country_flag = interning_far_east_asian
+		clr_country_flag = interning_oceanic
+		clr_country_flag = interning_native_american
+		clr_country_flag = interning_american_cultures
+		clr_country_flag = interning_neo_european_cultures
+		clr_country_flag = interning_latin_american_cultures
+		clr_country_flag = interning_african_diaspora_cultures
+		clr_country_flag = interning_west_african
+		clr_country_flag = interning_central_african
+		clr_country_flag = interning_east_african
+		clr_country_flag = interning_southern_african
+		clr_country_flag = animists_run
+		##
 	}
 }
 
@@ -545,11 +1459,130 @@ country_event = {
 		clr_country_flag = presidential_dictatorship_gov
 		clr_country_flag = fascist_gov
 		set_country_flag = anarcho_liberal_gov
-		clr_country_flag = everywhere_genocide_only
-		clr_country_flag = non_colonial_genocide_only
-		clr_country_flag = colonial_genocide_only
-		clr_country_flag = preparations_to_kill
-		remove_country_modifier = preparations_to_kill
+		#Genocide Cleanup
+		##Set Up Timer based on time the thing ran
+		random_owned = {
+			limit = { owner = { NOT = { check_variable = { which = evidence_count value = 2 } } } }
+			owner = { add_country_modifier = { name = law_changed_by_force duration = 1460 } }
+		}
+		random_owned = {
+			limit = { owner = { check_variable = { which = evidence_count value = 2 } } }
+			owner = { add_country_modifier = { name = law_changed_by_force duration = 1825 } }
+		}
+		random_owned = {
+			limit = { owner = { check_variable = { which = evidence_count value = 4 } } }
+			owner = { add_country_modifier = { name = law_changed_by_force duration = 2190 } }
+		}
+		random_owned = {
+			limit = { owner = { check_variable = { which = evidence_count value = 6 } } }
+			owner = { add_country_modifier = { name = law_changed_by_force duration = 2555 } }
+		}
+		random_owned = {
+			limit = { owner = { check_variable = { which = evidence_count value = 8 } } }
+			owner = { add_country_modifier = { name = law_changed_by_force duration = 2920 } }
+		}
+		random_owned = {
+			limit = { owner = { check_variable = { which = evidence_count value = 10 } } }
+			owner = { add_country_modifier = { name = law_changed_by_force duration = 3285 } } #9 years
+		}
+		##Clean Variables
+		set_variable = { which = evidence_count value = 0 }
+		set_variable = { which = slowdown_point value = 0 }
+		#Delete Modifiers
+		random_owned = {
+			limit = { owner = { has_country_modifier = interment_camps } }
+			owner = { remove_country_modifier = interment_camps }
+		}
+		#Delete Block
+		clr_country_flag = government_busy_with_something
+		#Flag for pops
+		clr_country_flag = internment_camps_open
+		#Place
+		clr_country_flag = interning_on_colonies
+		clr_country_flag = interning_on_homeland
+		clr_country_flag = interning_everywhere
+		#Who
+		clr_country_flag = interning_cultures
+		clr_country_flag = interning_religions
+		#Specific religions
+		clr_country_flag = interning_catholics
+		clr_country_flag = interning_protestants
+		clr_country_flag = interning_mormons
+		clr_country_flag = interning_orthodoxies
+		clr_country_flag = interning_coptics
+		clr_country_flag = interning_sunnis
+		clr_country_flag = interning_shiites
+		clr_country_flag = interning_ibadis
+		clr_country_flag = interning_druzi
+		clr_country_flag = interning_jewish
+		clr_country_flag = interning_yazidis
+		clr_country_flag = interning_mahayanas
+		clr_country_flag = interning_gelugpas
+		clr_country_flag = interning_theravadas
+		clr_country_flag = interning_hindus
+		clr_country_flag = interning_shintos
+		clr_country_flag = interning_sikhs
+		clr_country_flag = interning_animists
+		
+		clr_country_flag = interning_syriacs
+		clr_country_flag = interning_maronites
+		clr_country_flag = interning_bahais
+		clr_country_flag = interning_alawites
+		clr_country_flag = interning_alevis
+		clr_country_flag = interning_zoroastrians
+		clr_country_flag = interning_mandaeans
+		clr_country_flag = interning_confucians
+		
+		clr_country_flag = interning_anabaptists
+		clr_country_flag = interning_karaites
+		clr_country_flag = interning_samaritans
+		clr_country_flag = interning_ismailis
+		clr_country_flag = interning_zaydis
+		clr_country_flag = interning_jains
+		clr_country_flag = interning_atheists
+		#Specific Cultures
+		clr_country_flag = interning_germanics
+		clr_country_flag = interning_jewish_cultures
+		clr_country_flag = interning_beneluxian
+		clr_country_flag = interning_pan_swiss
+		clr_country_flag = interning_scandinavian
+		clr_country_flag = interning_british
+		clr_country_flag = interning_italian
+		clr_country_flag = interning_iberian
+		clr_country_flag = interning_french
+		clr_country_flag = interning_south_slavic
+		clr_country_flag = interning_pan_albanian
+		clr_country_flag = interning_pan_romanian
+		clr_country_flag = interning_hungarian_culture_group
+		clr_country_flag = interning_polish_culture_group
+		clr_country_flag = interning_czecho_slovak_culture_group
+		clr_country_flag = interning_east_slavic
+		clr_country_flag = interning_baltic
+		clr_country_flag = interning_levantine
+		clr_country_flag = interning_pan_greek
+		clr_country_flag = interning_turko_semitic
+		clr_country_flag = interning_caucasian
+		clr_country_flag = interning_arab
+		clr_country_flag = interning_iranian
+		clr_country_flag = interning_turanian
+		clr_country_flag = interning_central_asian
+		clr_country_flag = interning_south_asian
+		clr_country_flag = interning_indo_iranian
+		clr_country_flag = interning_southeast_asian
+		clr_country_flag = interning_east_asian
+		clr_country_flag = interning_far_east_asian
+		clr_country_flag = interning_oceanic
+		clr_country_flag = interning_native_american
+		clr_country_flag = interning_american_cultures
+		clr_country_flag = interning_neo_european_cultures
+		clr_country_flag = interning_latin_american_cultures
+		clr_country_flag = interning_african_diaspora_cultures
+		clr_country_flag = interning_west_african
+		clr_country_flag = interning_central_african
+		clr_country_flag = interning_east_african
+		clr_country_flag = interning_southern_african
+		clr_country_flag = animists_run
+		##
 	}
 }
 
@@ -586,11 +1619,130 @@ country_event = {
 		clr_country_flag = presidential_dictatorship_gov
 		clr_country_flag = fascist_gov
 		clr_country_flag = anarcho_liberal_gov
-		clr_country_flag = everywhere_genocide_only
-		clr_country_flag = non_colonial_genocide_only
-		clr_country_flag = colonial_genocide_only
-		clr_country_flag = preparations_to_kill
-		remove_country_modifier = preparations_to_kill
+		#Genocide Cleanup
+		##Set Up Timer based on time the thing ran
+		random_owned = {
+			limit = { owner = { NOT = { check_variable = { which = evidence_count value = 2 } } } }
+			owner = { add_country_modifier = { name = law_changed_by_force duration = 1460 } }
+		}
+		random_owned = {
+			limit = { owner = { check_variable = { which = evidence_count value = 2 } } }
+			owner = { add_country_modifier = { name = law_changed_by_force duration = 1825 } }
+		}
+		random_owned = {
+			limit = { owner = { check_variable = { which = evidence_count value = 4 } } }
+			owner = { add_country_modifier = { name = law_changed_by_force duration = 2190 } }
+		}
+		random_owned = {
+			limit = { owner = { check_variable = { which = evidence_count value = 6 } } }
+			owner = { add_country_modifier = { name = law_changed_by_force duration = 2555 } }
+		}
+		random_owned = {
+			limit = { owner = { check_variable = { which = evidence_count value = 8 } } }
+			owner = { add_country_modifier = { name = law_changed_by_force duration = 2920 } }
+		}
+		random_owned = {
+			limit = { owner = { check_variable = { which = evidence_count value = 10 } } }
+			owner = { add_country_modifier = { name = law_changed_by_force duration = 3285 } } #9 years
+		}
+		##Clean Variables
+		set_variable = { which = evidence_count value = 0 }
+		set_variable = { which = slowdown_point value = 0 }
+		#Delete Modifiers
+		random_owned = {
+			limit = { owner = { has_country_modifier = interment_camps } }
+			owner = { remove_country_modifier = interment_camps }
+		}
+		#Delete Block
+		clr_country_flag = government_busy_with_something
+		#Flag for pops
+		clr_country_flag = internment_camps_open
+		#Place
+		clr_country_flag = interning_on_colonies
+		clr_country_flag = interning_on_homeland
+		clr_country_flag = interning_everywhere
+		#Who
+		clr_country_flag = interning_cultures
+		clr_country_flag = interning_religions
+		#Specific religions
+		clr_country_flag = interning_catholics
+		clr_country_flag = interning_protestants
+		clr_country_flag = interning_mormons
+		clr_country_flag = interning_orthodoxies
+		clr_country_flag = interning_coptics
+		clr_country_flag = interning_sunnis
+		clr_country_flag = interning_shiites
+		clr_country_flag = interning_ibadis
+		clr_country_flag = interning_druzi
+		clr_country_flag = interning_jewish
+		clr_country_flag = interning_yazidis
+		clr_country_flag = interning_mahayanas
+		clr_country_flag = interning_gelugpas
+		clr_country_flag = interning_theravadas
+		clr_country_flag = interning_hindus
+		clr_country_flag = interning_shintos
+		clr_country_flag = interning_sikhs
+		clr_country_flag = interning_animists
+		
+		clr_country_flag = interning_syriacs
+		clr_country_flag = interning_maronites
+		clr_country_flag = interning_bahais
+		clr_country_flag = interning_alawites
+		clr_country_flag = interning_alevis
+		clr_country_flag = interning_zoroastrians
+		clr_country_flag = interning_mandaeans
+		clr_country_flag = interning_confucians
+		
+		clr_country_flag = interning_anabaptists
+		clr_country_flag = interning_karaites
+		clr_country_flag = interning_samaritans
+		clr_country_flag = interning_ismailis
+		clr_country_flag = interning_zaydis
+		clr_country_flag = interning_jains
+		clr_country_flag = interning_atheists
+		#Specific Cultures
+		clr_country_flag = interning_germanics
+		clr_country_flag = interning_jewish_cultures
+		clr_country_flag = interning_beneluxian
+		clr_country_flag = interning_pan_swiss
+		clr_country_flag = interning_scandinavian
+		clr_country_flag = interning_british
+		clr_country_flag = interning_italian
+		clr_country_flag = interning_iberian
+		clr_country_flag = interning_french
+		clr_country_flag = interning_south_slavic
+		clr_country_flag = interning_pan_albanian
+		clr_country_flag = interning_pan_romanian
+		clr_country_flag = interning_hungarian_culture_group
+		clr_country_flag = interning_polish_culture_group
+		clr_country_flag = interning_czecho_slovak_culture_group
+		clr_country_flag = interning_east_slavic
+		clr_country_flag = interning_baltic
+		clr_country_flag = interning_levantine
+		clr_country_flag = interning_pan_greek
+		clr_country_flag = interning_turko_semitic
+		clr_country_flag = interning_caucasian
+		clr_country_flag = interning_arab
+		clr_country_flag = interning_iranian
+		clr_country_flag = interning_turanian
+		clr_country_flag = interning_central_asian
+		clr_country_flag = interning_south_asian
+		clr_country_flag = interning_indo_iranian
+		clr_country_flag = interning_southeast_asian
+		clr_country_flag = interning_east_asian
+		clr_country_flag = interning_far_east_asian
+		clr_country_flag = interning_oceanic
+		clr_country_flag = interning_native_american
+		clr_country_flag = interning_american_cultures
+		clr_country_flag = interning_neo_european_cultures
+		clr_country_flag = interning_latin_american_cultures
+		clr_country_flag = interning_african_diaspora_cultures
+		clr_country_flag = interning_west_african
+		clr_country_flag = interning_central_african
+		clr_country_flag = interning_east_african
+		clr_country_flag = interning_southern_african
+		clr_country_flag = animists_run
+		##
 	}
 }
 
@@ -628,11 +1780,130 @@ country_event = {
 		clr_country_flag = presidential_dictatorship_gov
 		set_country_flag = fascist_gov
 		clr_country_flag = anarcho_liberal_gov
-		clr_country_flag = everywhere_genocide_only
-		clr_country_flag = non_colonial_genocide_only
-		clr_country_flag = colonial_genocide_only
-		clr_country_flag = preparations_to_kill
-		remove_country_modifier = preparations_to_kill
+		#Genocide Cleanup
+		##Set Up Timer based on time the thing ran
+		random_owned = {
+			limit = { owner = { NOT = { check_variable = { which = evidence_count value = 2 } } } }
+			owner = { add_country_modifier = { name = law_changed_by_force duration = 1460 } }
+		}
+		random_owned = {
+			limit = { owner = { check_variable = { which = evidence_count value = 2 } } }
+			owner = { add_country_modifier = { name = law_changed_by_force duration = 1825 } }
+		}
+		random_owned = {
+			limit = { owner = { check_variable = { which = evidence_count value = 4 } } }
+			owner = { add_country_modifier = { name = law_changed_by_force duration = 2190 } }
+		}
+		random_owned = {
+			limit = { owner = { check_variable = { which = evidence_count value = 6 } } }
+			owner = { add_country_modifier = { name = law_changed_by_force duration = 2555 } }
+		}
+		random_owned = {
+			limit = { owner = { check_variable = { which = evidence_count value = 8 } } }
+			owner = { add_country_modifier = { name = law_changed_by_force duration = 2920 } }
+		}
+		random_owned = {
+			limit = { owner = { check_variable = { which = evidence_count value = 10 } } }
+			owner = { add_country_modifier = { name = law_changed_by_force duration = 3285 } } #9 years
+		}
+		##Clean Variables
+		set_variable = { which = evidence_count value = 0 }
+		set_variable = { which = slowdown_point value = 0 }
+		#Delete Modifiers
+		random_owned = {
+			limit = { owner = { has_country_modifier = interment_camps } }
+			owner = { remove_country_modifier = interment_camps }
+		}
+		#Delete Block
+		clr_country_flag = government_busy_with_something
+		#Flag for pops
+		clr_country_flag = internment_camps_open
+		#Place
+		clr_country_flag = interning_on_colonies
+		clr_country_flag = interning_on_homeland
+		clr_country_flag = interning_everywhere
+		#Who
+		clr_country_flag = interning_cultures
+		clr_country_flag = interning_religions
+		#Specific religions
+		clr_country_flag = interning_catholics
+		clr_country_flag = interning_protestants
+		clr_country_flag = interning_mormons
+		clr_country_flag = interning_orthodoxies
+		clr_country_flag = interning_coptics
+		clr_country_flag = interning_sunnis
+		clr_country_flag = interning_shiites
+		clr_country_flag = interning_ibadis
+		clr_country_flag = interning_druzi
+		clr_country_flag = interning_jewish
+		clr_country_flag = interning_yazidis
+		clr_country_flag = interning_mahayanas
+		clr_country_flag = interning_gelugpas
+		clr_country_flag = interning_theravadas
+		clr_country_flag = interning_hindus
+		clr_country_flag = interning_shintos
+		clr_country_flag = interning_sikhs
+		clr_country_flag = interning_animists
+		
+		clr_country_flag = interning_syriacs
+		clr_country_flag = interning_maronites
+		clr_country_flag = interning_bahais
+		clr_country_flag = interning_alawites
+		clr_country_flag = interning_alevis
+		clr_country_flag = interning_zoroastrians
+		clr_country_flag = interning_mandaeans
+		clr_country_flag = interning_confucians
+		
+		clr_country_flag = interning_anabaptists
+		clr_country_flag = interning_karaites
+		clr_country_flag = interning_samaritans
+		clr_country_flag = interning_ismailis
+		clr_country_flag = interning_zaydis
+		clr_country_flag = interning_jains
+		clr_country_flag = interning_atheists
+		#Specific Cultures
+		clr_country_flag = interning_germanics
+		clr_country_flag = interning_jewish_cultures
+		clr_country_flag = interning_beneluxian
+		clr_country_flag = interning_pan_swiss
+		clr_country_flag = interning_scandinavian
+		clr_country_flag = interning_british
+		clr_country_flag = interning_italian
+		clr_country_flag = interning_iberian
+		clr_country_flag = interning_french
+		clr_country_flag = interning_south_slavic
+		clr_country_flag = interning_pan_albanian
+		clr_country_flag = interning_pan_romanian
+		clr_country_flag = interning_hungarian_culture_group
+		clr_country_flag = interning_polish_culture_group
+		clr_country_flag = interning_czecho_slovak_culture_group
+		clr_country_flag = interning_east_slavic
+		clr_country_flag = interning_baltic
+		clr_country_flag = interning_levantine
+		clr_country_flag = interning_pan_greek
+		clr_country_flag = interning_turko_semitic
+		clr_country_flag = interning_caucasian
+		clr_country_flag = interning_arab
+		clr_country_flag = interning_iranian
+		clr_country_flag = interning_turanian
+		clr_country_flag = interning_central_asian
+		clr_country_flag = interning_south_asian
+		clr_country_flag = interning_indo_iranian
+		clr_country_flag = interning_southeast_asian
+		clr_country_flag = interning_east_asian
+		clr_country_flag = interning_far_east_asian
+		clr_country_flag = interning_oceanic
+		clr_country_flag = interning_native_american
+		clr_country_flag = interning_american_cultures
+		clr_country_flag = interning_neo_european_cultures
+		clr_country_flag = interning_latin_american_cultures
+		clr_country_flag = interning_african_diaspora_cultures
+		clr_country_flag = interning_west_african
+		clr_country_flag = interning_central_african
+		clr_country_flag = interning_east_african
+		clr_country_flag = interning_southern_african
+		clr_country_flag = animists_run
+		##
 	}
 }
 
@@ -668,13 +1939,10 @@ country_event = {
 			NOT = { tag = BAN }
 			sphere_owner = { neighbour = THIS }
 		}
-		AND = {
-			OR = {
-				NOT = { tag = NEN }
-				has_country_flag = usstatehood_we_have_applied
-				USA = { ai = yes }
-			}
-			139 = { owned_by = USA }
+		OR = {
+			NOT = { tag = NEN }
+			has_country_flag = usstatehood_we_have_applied
+			USA = { ai = yes }
 		}
 		NOT = {
 			tag = KUK
@@ -686,6 +1954,9 @@ country_event = {
 			tag = UIL
 			tag = UNB
 			tag = UBD
+			tag = LVN
+			tag = KSM
+			tag = ESG
 			tag = INO
 			tag = IRE
 			tag = BRT
@@ -709,7 +1980,7 @@ country_event = {
 		NOT = { has_country_flag = post_colonial_country }
 	}
 	
-	mean_time_to_happen = { months = 1 }
+	mean_time_to_happen = { months = 12 }
 	
 	option = {
 		name = "EVTOPTA60120"
@@ -777,6 +2048,10 @@ country_event = {
 		OR = {
 			ruling_party_ideology = liberal
 			ruling_party_ideology = socialist
+			NOT = {
+				political_parties = underground_parties
+				vote_franschise = none_voting
+			}
 		}
 	}
 	
@@ -786,7 +2061,14 @@ country_event = {
 	
 	option = {
 		name = "EVTOPTA60140"
-		political_reform = appointed
+		random_owned = {
+			limit = { owner = { NOT = { government = democracy } } }
+			owner = { political_reform = appointed }
+		}
+		random_owned = {
+			limit = { owner = { government = democracy } }
+			owner = { political_reform = population_equal_weight }
+		}
 	}
 }
 
@@ -1039,17 +2321,28 @@ country_event = {
 	title = "EVTNAME6016812"
 	desc = "EVTDESC6016812"
 	picture = "ironclad_warship"
-		
+
 	is_triggered_only = yes
 	
 	option = {
 		name = "EVT6016812OPTA"
-		random_owned = { limit = { has_building = naval_base is_core = THIS } sub_unit = { type = ironclad value = current } }
-		random_owned = { limit = { owner = { civilized = no } } owner = { military_reform = yes_foreign_navies } }
-		add_country_modifier = { name = warship_commissioned duration = 120 }
+		random_owned = {
+			limit = {
+				has_building = naval_base
+				is_core = THIS
+			}
+			sub_unit = { type = ironclad value = current }
+		}
+		add_country_modifier = { name = warship_commissioned duration = 365 }
 		change_variable = { which = ironclad_commision value = 1 }
 		any_country = { limit = { exists = no has_country_flag = warship_commissioned } clr_country_flag = warship_commissioned }
 		clr_global_flag = warship_commission_being_fulfilled
+		random_owned = {
+			limit = {
+				owner = { flintlock_rifles = 1 }
+			}
+			owner = { activate_technology = flintlock_rifles }
+		}
 	}
 }
 
@@ -1074,6 +2367,7 @@ country_event = {
 		NOT = { tag = SUD }
 		NOT = { tag = TPG }
 		NOT = { tag = MGL }
+		NOT = { tag = CSC }
 	}
 
 	mean_time_to_happen = { months = 1 }
@@ -1090,7 +2384,7 @@ country_event = {
 	id = 6016814
 	title = "EVTNAME6016814"
 	desc = "EVTDESC6016814"
-		
+	
 	is_triggered_only = yes
 
 	option = {
@@ -2734,30 +4028,946 @@ country_event = {
 	}
 }
 
-#Enable/Disable Splendid Isolation
+# #Enable/Disable Splendid Isolation
+# #superseded by cch.option-disable-splendid-isolation
+# country_event = {
+	# id = 6016815
+	# title = "EVTNAME6016815"
+	# desc = "EVTDESC6016815"
+	# picture = "abraham_speech"
+	# major = yes
+		
+	# trigger = {
+		# ai = no
+		# NOT = { has_global_flag = isolation_setup }
+	# }
+	
+	# fire_only_once = yes
+	# mean_time_to_happen = { days = 1 }
+	
+	# option = {
+		# name = "EVT6016814OPTA"
+		# set_global_flag = yes_isolation
+		# set_global_flag = isolation_setup
+	# }
+	
+	# option = {
+		# name = "EVT6016815OPTB"
+		# set_global_flag = isolation_setup
+	# }
+# }
+
+# #Non-core to state flip
+# country_event = {
+	# id = 6016815
+	# title = "EVTNAME6016813"
+	# desc = "EVTDESC6016813"
+		
+	# is_triggered_only = yes
+	
+	# option = {
+		# name = "EVT6016813OPTA"
+		# civilized = no
+		# neutrality = yes
+		# annex_to = FROM
+	# }
+# }
+
+
+#The Long War
 country_event = {
-	id = 6016815
-	title = "EVTNAME6016815"
-	desc = "EVTDESC6016815"
-	picture = "abraham_speech"
-	major = yes
+	id = 6016816
+	title = "EVTNAME6016816"
+	desc = "EVTDESC6016816"
+	picture = "spanish_moroccan_war"
 		
 	trigger = {
 		ai = no
-		NOT = { has_global_flag = isolation_setup }
+		exists = yes
+		war = yes
+		NOT = { has_country_flag = in_great_war }
+		war_countries = {
+			#NOT = { any_greater_power = { alliance_with = THIS }
+			war_exhaustion = 75
+			is_vassal = no
+			OR = {
+				AND = {
+					ai = yes
+					NOT = { has_country_flag = in_great_war }
+					lost_national = 0.75
+					OR = {
+						capital_scope = {
+							controlled_by = THIS
+							province_control_days = 1825 #5 years
+						}
+						any_owned_province = {
+							controlled_by = THIS
+							province_control_days = 3650 #10 years
+						}
+					}
+				}
+				AND = {
+					ai = yes
+					NOT = { has_country_flag = in_great_war }
+					lost_national = 0.85
+					OR = {
+						capital_scope = {
+							controlled_by = THIS
+							province_control_days = 1643 #4.5 years
+						}
+						any_owned_province = {
+							controlled_by = THIS
+							province_control_days = 2920 #8 years
+						}
+					}
+				}
+				AND = {
+					ai = yes
+					NOT = { has_country_flag = in_great_war }
+					lost_national = 0.9
+					OR = {
+						capital_scope = {
+							controlled_by = THIS
+							province_control_days = 1460 #4 years
+						}
+						any_owned_province = {
+							controlled_by = THIS
+							province_control_days = 2190 #6 years
+						}
+					}
+				}
+				AND = {
+					NOT = { has_country_flag = in_great_war }
+					lost_national = 1
+					OR = {
+						capital_scope = {
+							controlled_by = THIS
+							province_control_days = 730 #2 years
+						}
+						any_owned_province = {
+							controlled_by = THIS
+							province_control_days = 1460 #4 years
+						}
+					}
+				}
+				AND = {
+					has_country_flag = in_great_war
+					national_provinces_occupied = 0.9
+					capital_scope = {
+						controlled_by  = THIS
+						province_control_days = 3650  #10 years
+					}
+				}
+			}
+		}
 	}
 	
-	fire_only_once = yes
-	mean_time_to_happen = { days = 1 }
-	
-	option = {
-		name = "EVT6016814OPTA"
-		set_global_flag = yes_isolation
-		set_global_flag = isolation_setup
+	mean_time_to_happen = {
+		months = 36
+		modifier = {
+			factor = 1.4
+			war_exhaustion = 25
+		}
+		modifier = {
+			factor = 1.4
+			war_exhaustion = 50
+		}
+		modifier = {
+			factor = 1.4
+			war_exhaustion = 75
+		}
+		
+		modifier = {
+			factor = 10
+			war_countries = { ai = no }
+		}
+		
+		modifier = {
+			factor = 0.8
+			war_countries = {
+				war_exhaustion = 90
+				is_vassal = no
+				OR = {
+					AND = {
+						NOT = { has_country_flag = in_great_war }
+						lost_national = 0.75
+						OR = {
+							capital_scope = {
+								controlled_by = THIS
+								province_control_days = 1825 #5 years
+							}
+							any_owned_province = {
+								controlled_by = THIS
+								province_control_days = 3650 #10 years
+							}
+						}
+					}
+					AND = {
+						NOT = { has_country_flag = in_great_war }
+						lost_national = 0.85
+						OR = {
+							capital_scope = {
+								controlled_by = THIS
+								province_control_days = 1643 #4.5 years
+							}
+							any_owned_province = {
+								controlled_by = THIS
+								province_control_days = 2920 #8 years
+							}
+						}
+					}
+					AND = {
+						NOT = { has_country_flag = in_great_war }
+						lost_national = 0.9
+						OR = {
+							capital_scope = {
+								controlled_by = THIS
+								province_control_days = 1460 #4 years
+							}
+							any_owned_province = {
+								controlled_by = THIS
+								province_control_days = 2190 #6 years
+							}
+						}
+					}
+					AND = {
+						NOT = { has_country_flag = in_great_war }
+						lost_national = 1
+						OR = {
+							capital_scope = {
+								controlled_by = THIS
+								province_control_days = 730 #2 years
+							}
+							any_owned_province = {
+								controlled_by = THIS
+								province_control_days = 1460 #4 years
+							}
+						}
+					}
+					AND = {
+						has_country_flag = in_great_war
+						national_provinces_occupied = 0.9
+						capital_scope = {
+							controlled_by  = THIS
+							province_control_days = 3650  #10 years
+						}
+					}
+				}
+			}
+		}
+		
+		modifier = {
+			factor = 0.8
+			war_countries = {
+				NOT = { military_score = 10 }
+				is_vassal = no
+				OR = {
+					AND = {
+						NOT = { has_country_flag = in_great_war }
+						lost_national = 0.75
+						OR = {
+							capital_scope = {
+								controlled_by = THIS
+								province_control_days = 1825 #5 years
+							}
+							any_owned_province = {
+								controlled_by = THIS
+								province_control_days = 3650 #10 years
+							}
+						}
+					}
+					AND = {
+						NOT = { has_country_flag = in_great_war }
+						lost_national = 0.85
+						OR = {
+							capital_scope = {
+								controlled_by = THIS
+								province_control_days = 1643 #4.5 years
+							}
+							any_owned_province = {
+								controlled_by = THIS
+								province_control_days = 2920 #8 years
+							}
+						}
+					}
+					AND = {
+						NOT = { has_country_flag = in_great_war }
+						lost_national = 0.9
+						OR = {
+							capital_scope = {
+								controlled_by = THIS
+								province_control_days = 1460 #4 years
+							}
+							any_owned_province = {
+								controlled_by = THIS
+								province_control_days = 2190 #6 years
+							}
+						}
+					}
+					AND = {
+						NOT = { has_country_flag = in_great_war }
+						lost_national = 1
+						OR = {
+							capital_scope = {
+								controlled_by = THIS
+								province_control_days = 730 #2 years
+							}
+							any_owned_province = {
+								controlled_by = THIS
+								province_control_days = 1460 #4 years
+							}
+						}
+					}
+					AND = {
+						has_country_flag = in_great_war
+						national_provinces_occupied = 0.8
+						capital_scope = {
+							controlled_by  = THIS
+							province_control_days = 3650  #10 years
+						}
+					}
+				}
+			}
+		}
 	}
 	
 	option = {
-		name = "EVT6016815OPTB"
-		set_global_flag = isolation_setup
+		name = "EVT6016816OPTA"
+		add_country_modifier = { name = the_long_war duration = 1095 }
+		move_issue_percentage = { 
+			from = anti_military 
+			to = pacifism
+			value = 0.25
+		}
+		move_issue_percentage = { 
+			from = pro_military 
+			to = anti_military
+			value = 0.25
+		}
+		move_issue_percentage = { 
+			from = jingoism 
+			to = pro_military
+			value = 0.25
+		}
+	}
+}
+
+#Imperialism CB
+	country_event = {
+	id = 6016817
+	title = "EVTNAME6016817"
+	desc = "EVTDESC6016817"
+	picture = "spanish_moroccan_war"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVT6016817OPTA"
+	}
+}
+
+#Constitutional Crisis - Party Changed after elections
+country_event = {
+	id = 6016818
+	title = "EVTNAME6016818"
+	desc = "EVTDESC6016818"
+	picture = "chartist_rally"
+
+	trigger = {
+		ai = no
+		OR = {
+			government = prussian_constitutionalism
+			government = hms_government
+		}
+		OR = {
+			AND = {
+				has_country_flag = conservative_party_in_power
+				NOT = { ruling_party_ideology = conservative }
+			}
+			AND = {
+				has_country_flag = liberal_party_in_power
+				NOT = { ruling_party_ideology = liberal }
+			}
+			AND = {
+				has_country_flag = reactionary_party_in_power
+				NOT = { ruling_party_ideology = reactionary }
+			}
+			AND = {
+				has_country_flag = socialist_party_in_power
+				NOT = { ruling_party_ideology = socialist }
+			}
+			AND = {
+				has_country_flag = communist_party_in_power
+				NOT = { ruling_party_ideology = communist }
+			}
+			AND = {
+				has_country_flag = fascist_party_in_power
+				NOT = { ruling_party_ideology = fascist }
+			}
+			AND = {
+				has_country_flag = anarcho_liberal_party_in_power
+				NOT = { ruling_party_ideology = anarcho_liberal }
+			}
+		}
+	}
+	
+	mean_time_to_happen = { months = 3 }
+	
+	option = {
+		name = "EVT6016818OPTA"
+		clr_country_flag = election_started
+		clr_country_flag = conservative_party_in_power
+		clr_country_flag = liberal_party_in_power
+		clr_country_flag = reactionary_party_in_power
+		clr_country_flag = socialist_party_in_power
+		clr_country_flag = communist_party_in_power
+		clr_country_flag = fascist_party_in_power
+		clr_country_flag = anarcho_liberal_party_in_power
+		add_country_modifier = { name = constitutional_crisis duration = 365 }
+		#Primary Culture Only Angry
+		random_owned = {
+			limit = {
+				owner = {
+					government = prussian_constitutionalism
+					citizens_rights = primary_culture_only
+				}
+			}
+			owner = {
+				prestige = -4
+				plurality = -4
+				any_pop = {
+					limit = { is_primary_culture = yes }
+					militancy = 2
+					consciousness = 3
+				}
+				any_pop = {
+					limit = { NOT = { is_primary_culture = yes } }
+					militancy = 1
+					consciousness = 4
+				}
+			}
+		}
+		random_owned = {
+			limit = {
+				owner = {
+					government = hms_government
+					citizens_rights = primary_culture_only
+				}
+			}
+			owner = {
+				prestige = -8
+				plurality = -8
+				any_pop = {
+					limit = { is_primary_culture = yes }
+					militancy = 3
+					consciousness = 4
+				}
+				any_pop = {
+					limit = { NOT = { is_primary_culture = yes } }
+					militancy = 2
+					consciousness = 8
+				}
+			}
+		}
+		#Accepted and Primary Angry
+		random_owned = {
+			limit = {
+				owner = {
+					government = prussian_constitutionalism
+					citizens_rights = culture_voting_only
+				}
+			}
+			owner = {
+				prestige = -4
+				plurality = -4
+				any_pop = {
+					limit = {
+						OR = {
+							is_primary_culture = yes
+							is_accepted_culture = yes
+						}
+					}
+					militancy = 2
+					consciousness = 3
+				}
+				any_pop = {
+					limit = {
+						NOT = {
+							is_primary_culture = yes
+							is_accepted_culture = yes
+						}
+					}
+					militancy = 1
+					consciousness = 4
+				}
+			}
+		}
+		random_owned = {
+			limit = {
+				owner = {
+					government = hms_government
+					citizens_rights = culture_voting_only
+				}
+			}
+			owner = {
+				prestige = -8
+				plurality = -8
+				any_pop = {
+					limit = {
+						OR = {
+							is_primary_culture = yes
+							is_accepted_culture = yes
+						}
+					}
+					militancy = 3
+					consciousness = 4
+				}
+				any_pop = {
+					limit = {
+						NOT = {
+							is_primary_culture = yes
+							is_accepted_culture = yes
+						}
+					}
+					militancy = 2
+					consciousness = 8
+				}
+			}
+		}
+		
+		
+		#Everyone Angry
+		random_owned = {
+			limit = {
+				owner = {
+					government = prussian_constitutionalism
+					citizens_rights = all_voting_pops
+				}
+			}
+			owner = {
+				prestige = -4
+				plurality = -4
+				any_pop = {
+					militancy = 2
+					consciousness = 3
+				}
+			}
+		}
+		random_owned = {
+			limit = {
+				owner = {
+					government = hms_government
+					citizens_rights = all_voting_pops
+				}
+			}
+			owner = {
+				prestige = -8
+				plurality = -8
+				any_pop = {
+					militancy = 3
+					consciousness = 4
+				}
+			}
+		}
+		
+		random_owned = {
+			limit = { owner = { ruling_party_ideology = conservative } }
+			owner = {
+				set_country_flag = conservative_party_in_power
+				any_pop = {
+					limit = {
+						OR = {
+							is_primary_culture = yes
+							is_accepted_culture = yes
+						}
+					}
+					scaled_militancy = {
+						ideology = conservative
+						factor = -4
+					}
+					scaled_consciousness = {
+						ideology = conservative
+						factor = -5
+					}
+				}
+			}
+		}
+		random_owned = {
+			limit = { owner = { ruling_party_ideology = liberal } }
+			owner = {
+				set_country_flag = liberal_party_in_power
+				any_pop = {
+					limit = {
+						OR = {
+							is_primary_culture = yes
+							is_accepted_culture = yes
+						}
+					}
+					scaled_militancy = {
+						ideology = liberal
+						factor = -4
+					}
+					scaled_consciousness = {
+						ideology = liberal
+						factor = -5
+					}
+				}
+			}
+		}
+		random_owned = {
+			limit = { owner = { ruling_party_ideology = reactionary } }
+			owner = {
+				set_country_flag = reactionary_party_in_power
+				any_pop = {
+					limit = {
+						OR = {
+							is_primary_culture = yes
+							is_accepted_culture = yes
+						}
+					}
+					scaled_militancy = {
+						ideology = reactionary
+						factor = -4
+					}
+					scaled_consciousness = {
+						ideology = reactionary
+						factor = -5
+					}
+				}
+			}
+		}
+		random_owned = {
+			limit = { owner = { ruling_party_ideology = socialist } }
+			owner = {
+				set_country_flag = socialist_party_in_power
+				any_pop = {
+					limit = {
+						OR = {
+							is_primary_culture = yes
+							is_accepted_culture = yes
+						}
+					}
+					scaled_militancy = {
+						ideology = socialist
+						factor = -4
+					}
+					scaled_consciousness = {
+						ideology = socialist
+						factor = -5
+					}
+				}
+			}
+		}
+		random_owned = {
+			limit = { owner = { ruling_party_ideology = communist } }
+			owner = {
+				set_country_flag = communist_party_in_power
+				any_pop = {
+					limit = {
+						OR = {
+							is_primary_culture = yes
+							is_accepted_culture = yes
+						}
+					}
+					scaled_militancy = {
+						ideology = communist
+						factor = -4
+					}
+					scaled_consciousness = {
+						ideology = communist
+						factor = -5
+					}
+				}
+			}
+		}
+		random_owned = {
+			limit = { owner = { ruling_party_ideology = fascist } }
+			owner = {
+				set_country_flag = fascist_party_in_power
+				any_pop = {
+					limit = {
+						OR = {
+							is_primary_culture = yes
+							is_accepted_culture = yes
+						}
+					}
+					scaled_militancy = {
+						ideology = fascist
+						factor = -4
+					}
+					scaled_consciousness = {
+						ideology = fascist
+						factor = -5
+					}
+				}
+			}
+		}
+		random_owned = {
+			limit = { owner = { ruling_party_ideology = anarcho_liberal } }
+			owner = {
+				set_country_flag = anarcho_liberal_party_in_power
+				any_pop = {
+					limit = {
+						OR = {
+							is_primary_culture = yes
+							is_accepted_culture = yes
+						}
+					}
+					scaled_militancy = {
+						ideology = anarcho_liberal
+						factor = -4
+					}
+					scaled_consciousness = {
+						ideology = anarcho_liberal
+						factor = -5
+					}
+				}
+			}
+		}
+	}
+}
+
+#Ghost Units Cleanup 2/2
+country_event = {
+	id = 6016819
+	title = "EVTNAME6016819"
+	desc = "EVTDESC6016819"
+
+	is_triggered_only = yes
+
+	immediate = {
+		political_reform = no_slavery
+		political_reform = debtors_prisons
+		FROM = {
+			random_owned = {
+				secede_province = THIS
+			}
+		}
+	}
+
+	option = {
+		name = "EVT6016819OPTA"
+		set_country_flag = ghost_country
+		add_country_modifier = { name = neutrality_modifier duration = -1 }
+		political_reform = closed_borders
+		treasury = 1000
+		neutrality = yes
+		any_country = {
+			limit = { war_with = THIS }
+			end_war = THIS
+		}
+		random_owned = {
+			limit = { owner = { civilized = no } }
+			owner = {
+				civilized = yes
+				set_country_flag = uncivilized_on_absorb
+			}
+		}
+	}
+}
+
+#Ghost Units Cleanup 1/2
+country_event = {
+	id = 6016821
+	title = "EVTNAME6016819"
+	desc = "EVTDESC6016819"
+
+	is_triggered_only = yes
+	
+	immediate = {
+		FROM = {
+			any_owned = {
+				limit = {
+					OR = {
+						province_id = 3584
+						province_id = 3585
+						province_id = 3586
+						province_id = 3587
+					}
+				}
+				secede_province = TMT
+			}
+		}
+	}
+
+	option = {
+		name = "EVT6016819OPTA"
+		add_country_modifier = { name = neutrality_modifier duration = -1 }
+		political_reform = closed_borders
+		treasury = 1000
+		neutrality = yes
+		any_country = {
+			limit = { war_with = THIS }
+			end_war = THIS
+		}
+		any_country = {
+			limit = {
+				exists = no
+				is_greater_power = no
+				has_country_flag = existing_country
+				capital_scope = { NOT = { province_control_days = 120 } }
+				OR = {
+					is_mobilised = yes
+					total_amount_of_ships = 1
+				}
+			}
+			country_event = 6016819
+		}
+	}
+}
+
+#Vassal Transfer During Unification - Overlord Gets Informed
+country_event = {
+	id = 6016822
+	title = "EVTNAME6016822"
+	desc = "EVTDESC6016822"
+	picture = "danishgovernment"
+
+	is_triggered_only = yes
+
+	option = {
+		name = "EVT6016822OPTA"
+		any_country = {
+			limit = {
+				exists = yes
+				vassal_of = FROM
+			}
+			country_event = 6016824
+		}
+		inherit = FROM
+	}
+}
+
+#Vassal Stolen CB - Vassal gets transferred to the new overlord - 2/2
+country_event = {
+	id = 6016823
+	title = "EVTNAME6016823"
+	desc = "EVTDESC6016823"
+	picture = "danishgovernment"
+
+	is_triggered_only = yes
+
+	option = {
+		name = "EVT6016823OPTA"
+		FROM = { create_vassal = THIS }
+	}
+}
+
+#Vassal Stolen CB - Guarantee there's vassal transfer without any funny behaviour - 1/2
+country_event = {
+	id = 6016824
+	title = "EVTNAME6016824"
+	desc = "EVTDESC6016824"
+	picture = "danishgovernment"
+
+	is_triggered_only = yes
+
+	option = {
+		name = "EVT6016824OPTA"
+		FROM = {
+			any_owned = {
+				limit = { is_core = THIS }
+				remove_core = THIS
+				add_province_modifier = { name = core_when_done duration = 30 }
+			}
+			any_pop = {
+				limit = {
+					is_primary_culture = no
+					NOT = {
+						is_accepted_culture = yes
+						is_primary_culture = THIS
+					}
+				}
+				militancy = 1
+				consciousness = 3
+			}
+			country_event = 6016823
+		}
+	}
+}
+
+#Serf Cleanup
+country_event = {
+	id = 6016825
+	title = "EVTNAME6016825"
+	desc = "EVTDESC6016825"
+	picture = "danishgovernment"
+
+	is_triggered_only = yes
+	
+	trigger = {
+		ai = yes
+		exists = yes
+		war = no
+		NOT = { has_country_modifier = law_changed_by_force }
+		OR = {
+			AND = {
+				NOT = { debt_law = serfdom }
+				any_owned_province = { has_pop_type = serfs }
+			}
+			any_neighbor_country = {
+				ai = no
+				exists = yes
+				NOT = { debt_law = serfdom }
+				any_owned_province = { has_pop_type = serfs }
+			}
+			any_greater_power = {
+				ai = no
+				NOT = { debt_law = serfdom }
+				any_owned_province = { has_pop_type = serfs }
+			}
+		}
+	}
+	
+	allow_multiple_instances = no
+
+	option = {
+		name = "EVT6016823OPTA"
+		add_country_modifier = { name = law_changed_by_force duration = 365 }
+			random_owned = {
+				limit = {
+					owner = {
+						any_owned_province = { has_pop_type = serfs }
+						NOT = { debt_law = serfdom }
+					}
+				}
+				owner = {
+					any_owned = {
+						limit = {
+							has_pop_type = serfs
+							has_pop_type = labourers
+						}
+						any_pop = { limit = { type = serfs } pop_type = labourers }
+					}
+					any_owned = {
+						limit = {
+							has_pop_type = serfs
+							has_pop_type = farmers
+						}
+						any_pop = { limit = { type = serfs } pop_type = farmers }
+					}
+				}
+			}
+			any_country = {
+				limit = {
+					exists = yes
+					any_owned_province = { has_pop_type = serfs }
+					NOT = { debt_law = serfdom }
+				}
+				any_owned = {
+					limit = {
+						has_pop_type = serfs
+						has_pop_type = labourers
+					}
+					any_pop = { limit = { type = serfs } pop_type = labourers }
+				}
+				any_owned = {
+					limit = {
+						has_pop_type = serfs
+						has_pop_type = farmers
+					}
+					any_pop = { limit = { type = serfs } pop_type = farmers }
+				}
+			}
 	}
 }

@@ -749,7 +749,7 @@ province_event = {
 			AND = {
 				owner = { has_country_flag = interning_atheists }
 				any_pop = {
-					has_pop_religion = atheist
+					has_pop_religion = atheism
 					NOT = {
 						is_primary_culture = yes
 						is_accepted_culture = yes

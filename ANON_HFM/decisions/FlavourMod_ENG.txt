@@ -1,28 +1,21 @@
 political_decisions = {
+    begin_pax_britannica = {
+        picture = "pax_britannica"
+        potential = {
+            tag = ENG
+            always = no
+        }
+        allow = {}
+        effect = {
+            add_country_modifier = {
+                name = pax_britannica
+                duration = 19710
+            }
+            set_country_flag = pax_britannica
 
-#ANON, changed ENG_254 to 254 255 265. added 3355 3356 to ric; added new regions to organize_west_indies
-
-	begin_pax_britannica = {
-		picture = "pax_britannica"
-		potential = { 
-			tag = ENG
-			year = 1836
-			has_global_flag = yes_isolation
-			NOT = {
-				has_country_flag = pax_britannica
-			}
-		}
-		allow = {
-			rank = 1
-		}
-		effect = {
-			add_country_modifier = {
-				name = pax_britannica
-				duration = 19710
-			}
-			set_country_flag = pax_britannica
-		}
-	}
+            set_global_flag = colonial_railroading_disabled
+        }
+    }
 
 	singapore_strategy = {
 		picture = "fortress_singapore"
@@ -634,6 +627,22 @@ political_decisions = {
 						vassal_of = IBR
 					}
 				}
+				M3X = {
+					#owns = 104
+					OR = {
+						vassal_of = SPA
+						vassal_of = SPC
+						vassal_of = IBR
+					}
+				}
+				MXM = {
+					#owns = 104
+					OR = {
+						vassal_of = SPA
+						vassal_of = SPC
+						vassal_of = IBR
+					}
+				}
 				VNS = {
 					#owns = 104
 					OR = {
@@ -673,6 +682,22 @@ political_decisions = {
 					OR = {
 						owns = 104
 						MEX = { 
+							OR = {
+								vassal_of = SPA
+								vassal_of = SPC
+								vassal_of = IBR
+							}
+							#owns = 104
+						}
+						M3X = { 
+							OR = {
+								vassal_of = SPA
+								vassal_of = SPC
+								vassal_of = IBR
+							}
+							#owns = 104
+						}
+						MXM = { 
 							OR = {
 								vassal_of = SPA
 								vassal_of = SPC

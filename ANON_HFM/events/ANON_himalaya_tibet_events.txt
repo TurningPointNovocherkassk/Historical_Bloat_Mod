@@ -1346,26 +1346,15 @@ country_event = {
 	desc = "EVTDESC777777032"
 	picture = "sikkim_bhutan"
 
-
 	is_triggered_only = yes
 
 	option = {
 		name = "EVT777777032OPTA" #colonial war
 		set_global_flag = sikkim_punitive_expedition
-		1252 = {
-			owner = {
-				war = {
-					target = SIK
-					attacker_goal = {
-						casus_belli = acquire_state
-						state_province_id = 1252
-					}
-					defender_goal = { casus_belli = status_quo }
-					call_ally = no
-				}
-			}
+		1251 = { #calcutta
+			owner = { set_country_flag = anglo_perfidy_in_sikkim }
 		}
-		1252 = {
+		1252 = { #Sikkim
 			owner = { country_event = 777777401 }
 		}
 		FROM = {
@@ -1465,11 +1454,26 @@ country_event = {
 	desc = "EVTDESC777777035"
 	picture = "sikkim_bhutan"
 
-
 	is_triggered_only = yes
 
 	option = {
 		name = "EVT777777035OPTA"
+		FROM = {
+			add_casus_belli = {
+				target = SIK
+				type = demand_concession_NI_casus_belli
+				months = 60
+			}
+			war = {
+				target = SIK
+				attacker_goal = {
+					casus_belli = acquire_state
+					state_province_id = 1252
+				}
+				defender_goal = { casus_belli = status_quo }
+				call_ally = no
+			}
+		}
 		ai_chance = {
 			factor = 100
 		}
@@ -1613,7 +1617,7 @@ country_event = {
 
 	id = 777777401
 	title = "The lease of Darjeeling"
-	desc = "We are compelled to giver Darjeeling back to Sikkim"
+	desc = "We are compelled to give Darjeeling back to Sikkim"
 	picture = "sikkim_bhutan"
 
 
@@ -1913,6 +1917,17 @@ country_event = {
 	option = {
 		name = "EVT777777049OPTA"
 		set_country_flag = lost_darjeeling
+		FROM = {
+			war = {
+				target = SIK
+				attacker_goal = {
+					casus_belli = acquire_state
+					state_province_id = 1252
+				}
+				defender_goal = { casus_belli = status_quo }
+				call_ally = no
+			}
+		}
 		ai_chance = {
 			factor = 100
 		}
@@ -2298,7 +2313,8 @@ country_event = {
 			country_event = { id = 777777060 days = 1 }
 		}
 		ai_chance = {
-			factor = 75
+			# factor = 75
+			factor = 100
 		}
 	}
 	option = {
@@ -2310,10 +2326,12 @@ country_event = {
 			target = BH7
 			attacker_goal = { casus_belli = civil_war }
 			defender_goal = { casus_belli = civil_war }
+			# call_ally = no
 			call_ally = yes
 		}
 		ai_chance = {
-			factor = 25
+			# factor = 25
+			factor = 0
 		}
 	}
 	option = {
@@ -2415,7 +2433,8 @@ country_event = {
 			target = BH0
 			attacker_goal = { casus_belli = civil_war }
 			defender_goal = { casus_belli = civil_war }
-			call_ally = yes
+			# call_ally = yes
+			call_ally = no
 		}
 		BH7 = { country_event = 777777063 } #BH7 decides if they join the war, Penlop of Paro's side, or Penlop of Punakha's side
 		ai_chance = {
@@ -2439,7 +2458,8 @@ country_event = {
 			target = BH0
 			attacker_goal = { casus_belli = civil_war }
 			defender_goal = { casus_belli = civil_war }
-			call_ally = yes
+			# call_ally = yes
+			call_ally = no
 		}
 		BH7 = { country_event = 777777063 } #BH7 decides if they join the war, Penlop of Paro's side, or Penlop of Punakha's side
 		change_tag_no_core_switch = BH0
@@ -3024,6 +3044,12 @@ country_event = {
 			personality = au_fait
 			background = natural_born_leader
 		}
+		any_pop = { # sorry bros but i must railroad
+			limit = {
+				type = soldiers
+			}
+			reduce_pop = 2
+		}
 		ai_chance = {
 			factor = 100
 		}
@@ -3036,8 +3062,11 @@ country_event = {
 	desc = "EVTDESC777777080"
 	picture = "bootan"
 
+	fire_only_once = yes
+
 	trigger = {
 		tag = BHU
+		exists = yes
 		has_global_flag = ugyen_wangchuck
 		NOT = { has_global_flag = 2nd_bhutan_civil_war_start }
 		NOT = { has_global_flag = 2nd_bhutan_civil_war_end }
@@ -3109,26 +3138,33 @@ country_event = {
 			defender_goal = { casus_belli = civil_war }
 			call_ally = no
 		}
-		THIS = {
-			limit = {
-				tag = BH7
-			}
-			war = {
-				target = BH3
-				attacker_goal = { casus_belli = civil_war }
-				defender_goal = { casus_belli = civil_war }
-				call_ally = no
+		random_owned = {
+			limit = { owner = { tag = BH7 } }
+			owner = {
+				set_country_flag = ANON_total_war_flag
+				any_pop = { # sorry bros but i must railroad
+					limit = {
+						type = soldiers
+					}
+					reduce_pop = 1.25
+				}
+				war = {
+					target = BH3
+					attacker_goal = { casus_belli = civil_war }
+					defender_goal = { casus_belli = civil_war }
+					call_ally = no
+				}
 			}
 		}
-		THIS = {
-			limit = {
-				tag = BH3
-			}
-			war = {
-				target = BH7
-				attacker_goal = { casus_belli = civil_war }
-				defender_goal = { casus_belli = civil_war }
-				call_ally = no
+		random_owned = {
+			limit = { owner = { tag = BH3 } }
+			owner = {
+				war = {
+					target = BH7
+					attacker_goal = { casus_belli = civil_war }
+					defender_goal = { casus_belli = civil_war }
+					call_ally = no
+				}
 			}
 		}
 		ai_chance = {
@@ -3150,32 +3186,57 @@ country_event = {
 	desc = "EVTDESC777777082"
 	picture = "bootan"
 
+	fire_only_once = yes
+
 	trigger = {
 		OR = {
-			tag = BH0
-			tag = BH3
-			tag = BH7
-		}
-		OR = {
 			AND = {
-				BH7 = { exists = yes }
-				BH0 = { exists = no all_core = { owned_by = THIS } }
-				BH3 = { exists = no all_core = { owned_by = THIS } }
+				tag = BH7
+				exists = yes
+				OR = {
+					AND = {
+						BH0 = { exists = no all_core = { owned_by = THIS } }
+						BH3 = { exists = no all_core = { owned_by = THIS } }
+					}
+					AND = {
+						ai = yes
+						OR = {
+							year = 1885 #canon year Wangchuck seized power
+							AND = {
+								truce_with = BH0
+								truce_with = BH3
+							}
+						}
+					}
+				}
+				NOT = {
+					war_with = BH0
+					war_with = BH3
+				}
 			}
 			AND = {
-				BH0 = { exists = yes }
-				BH3 = { exists = no all_core = { owned_by = THIS } }
-				BH7 = { exists = no all_core = { owned_by = THIS } }
-			}
-			AND = {
-				BH3 = { exists = yes }
+				tag = BH3
+				exists = yes
 				BH0 = { exists = no all_core = { owned_by = THIS } }
 				BH7 = { exists = no all_core = { owned_by = THIS } }
+				NOT = {
+					war_with = BH0
+					war_with = BH7
+				}
+			}
+			AND = {
+				tag = BH0
+				exists = yes
+				BH3 = { exists = no all_core = { owned_by = THIS } }
+				BH7 = { exists = no all_core = { owned_by = THIS } }
+				NOT = {
+					war_with = BH3
+					war_with = BH7
+				}
 			}
 		}
 		has_global_flag = 2nd_bhutan_civil_war_start
 		NOT = { has_global_flag = 2nd_bhutan_civil_war_end }
-		war = no
 	}
 
 	mean_time_to_happen = {
@@ -3981,11 +4042,23 @@ country_event = { #The Saitula Question
 	picture = "tibet_map"
 
 	trigger = {
-		NOT = { has_country_flag = settled_saitula_question }
-		NOT = { has_global_flag = signed_treaty_of_chushul_QNG }
-		KAS = { vassal_of = ENG }
+		OR = {
+			KAS = {
+				exists = yes
+				vassal_of = THIS
+			}
+			AND = {
+				owns = 3455 #Skardu
+				OR = {
+					is_vassal = no
+					is_substate = no
+				}
+			}
+		}
 		NOT = {
 			3453 = { owned_by = KAS }
+			has_global_flag = signed_treaty_of_chushul_QNG
+			has_country_flag = settled_saitula_question
 		}
 	}
 
@@ -3993,15 +4066,65 @@ country_event = { #The Saitula Question
 
 	option = {
 		name = "EVT777777404OPTA"
-		KAS = { country_event = 777777405 }
-		3453 = { add_core = HND }
+		random_country = {
+			limit = {
+				owns = 3455 #Skardu
+				OR = {
+					vassal_of = THIS
+					substate_of = THIS
+				}
+			}
+			country_event = 777777405
+		}
+		random_owned = {
+			limit = {
+				province_id = 3455 #Skardu
+				owner = {
+					OR = {
+						is_vassal = no
+						is_substate = no
+					}
+					NOT = { is_culture_group = central_asian }
+					OR = {
+						tag = EIC
+						tag = HND
+						tag = PAK
+						is_culture_group = south_asian
+						is_culture_group = indo_iranian
+					}
+				}
+			}
+			owner = { 3453 = { add_core = HND add_core = THIS secede_province = THIS } } 
+		}
+		random_owned = {
+			limit = {
+				province_id = 3455 #Skardu
+				owner = {
+					OR = {
+						is_vassal = no
+						is_substate = no
+					}
+					is_culture_group = central_asian
+					NOT = { 
+						OR = {
+							tag = EIC
+							tag = HND
+							tag = PAK
+							is_culture_group = south_asian
+							is_culture_group = indo_iranian
+						}
+					}
+				}
+			}
+			owner = { 3453 = { add_core = THIS secede_province = THIS } }
+		}
 		set_country_flag = settled_saitula_question
 	}
 
 	option = {
 		name = "EVT777777404OPTB"
 		set_country_flag = settled_saitula_question
-		3453 = { remove_core = HND }
+		3453 = { remove_core = HND remove_core = PAK }
 	}
 }
 
@@ -4015,7 +4138,7 @@ country_event = {
 
 	option = {
 		name = "EVT777777405OPTA"
-		3453 = { secede_province = KAS }
+		3453 = { add_core = HND secede_province = KAS }
 		ai_chance = { factor = 1 }
 	}
 }
@@ -4135,5 +4258,39 @@ country_event = {
 		}
 		name = "EVT777777409OPTA"
 		ai_chance = { factor = 100 }
+	}
+}
+
+country_event = {
+
+	id = 777777410
+	title = "The Conquest of Darjeeling"
+	desc = "Our overlords have conquered Darjeeling, its ownership shall be promptly transferred to us."
+	picture = "sikkim_bhutan"
+
+	trigger = {
+		OR = {
+			vassal_of = ENG
+			substate_of = ENG
+		}
+		overlord = {
+			owns = 1252
+			truce_with = SIK
+		}
+		1252 = { owned_by = ENG }
+		has_country_flag = anglo_perfidy_in_sikkim
+		NOT = {
+			owns = 1252 #Darjeeling
+			has_country_flag = darjeeling_perfidious_switcharoo
+		}
+	}
+	 
+	option = {
+		name = "Excellent."
+		set_country_flag = darjeeling_perfidious_switcharoo
+		1252 = { secede_province = THIS }
+		ai_chance = {
+			factor = 100
+		}
 	}
 }

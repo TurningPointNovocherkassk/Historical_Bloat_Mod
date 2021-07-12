@@ -7,7 +7,7 @@ montane_steppe;Dry Montane Grassland;;;;;;;;;;;;x
 savannahills;Savanna Hills;;;;;;;;;;;;x
 dryhills;Semidesert Hills;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
-samarkand;Semidesert Hills;;;;;;;;;;;;x
+samarkand;Farmland Hills;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 adakaleh;River Island;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
@@ -52,7 +52,6 @@ venice;Floodplain Farmlands;;;;;;;;x
 konigsberg;Floodplain Farmlands;;;;;;;;x
 kiev;Floodplain Farmlands;;;;;;;;x
 lutsk;Floodplain Farmlands;;;;;;;;x
-novocherkassk;Hilly Farmlands;;;;;;;;x
 rostov;Floodplain Farmlands;;;;;;;;x
 antwerp;Floodplain Farmlands;;;;;;;;x
 rotterdam;Floodplain Farmlands;;;;;;;;x
@@ -88,11 +87,11 @@ berlin;Forested Farmlands;;;;;;;;x
 dresden;Forested Farmlands;;;;;;;;x
 leipzig;Forested Farmlands;;;;;;;;x
 hanover;Forested Farmlands;;;;;;;;x
+cottbus;Forested Farmlands;;;;;;;;x
 braunschweig;Forested Farmlands;;;;;;;;x
 luxemburg;Forested Farmlands;;;;;;;;x
 liege;Forested Farmlands;;;;;;;;x
 namur;Forested Farmlands;;;;;;;;x
-nuremberg;Hilly Farmlands;;;;;;;;x
 breslau;Forested Farmlands;;;;;;;;x
 ottawa;Forested Farmlands;;;;;;;;x
 montreal;Forested Farmlands;;;;;;;;x
@@ -118,12 +117,9 @@ kharkov;Farmlands;;;;;;;;x
 larochelle;Forested Farmlands;;;;;;;;x
 bordeaux;Forested Farmlands;;;;;;;;x
 marseille;Forested Farmlands;;;;;;;;x
-zadar;Hilly Farmlands;;;;;;;;x
 pozan;Forested Farmlands;;;;;;;;x
 nagasaki;Farmlands;;;;;;;;x
 kassel;Farmlands;;;;;;;;x
-trieste;Urban;;;;;;;;x
-coruna;Hilly Farmlands;;;;;;;;x
 bahia;Farmlands;;;;;;;;x
 surat;Farmlands ;;;;;;;;x
 varna;Farmlands ;;;;;;;;x
@@ -132,6 +128,9 @@ meridayucatan;Jungle Farmlands;;;;;;;;x
 sansalvador;Jungle Farmlands;;;;;;;;x
 florence;Farmlands;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
+tangier;Urban;;;;;;;;x
+trieste;Urban;;;;;;;;x
+fiume;Urban;;;;;;;;x
 paris;Urban;;;;;;;;x
 cairo;Urban;;;;;;;;x
 sanfrancisco;Urban;;;;;;;;x
@@ -159,7 +158,6 @@ danzig;Urban;;;;;;;;x
 tblisi;Montane Farmlands;;;;;;;;x
 erivan;Montane Farmlands;;;;;;;;x
 andorra;Montane Farmlands;;;;;;;;x
-sanmarino;Montane Farmlands;;;;;;;;x
 caracas;Montane Farmlands;;;;;;;;;;;;;;;;;;;;;;;;x
 santiago;Montane Farmlands;;;;;;;;;;;;;;;;;;;;;;;;x
 quito;Montane Farmlands;;;;;;;;;;;;;;;;;;;;;;;;x
@@ -180,7 +178,6 @@ kerch;Grassland Hills;;;;;;;;x
 lyon;Grassland Hills;;;;;;;;x
 stuttgart;Grassland Hills;;;;;;;;x
 colombo;Savanna Hills;;;;;;;;x
-capetown;Hilly Farmlands;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 hainan;Montane Jungle;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
@@ -194,7 +191,7 @@ herat;Semidesert Hills ;;;;;;;;x
 kandahar;Desert Hills ;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 plymouth;Grassland Hills;;;;;;;;x
-kokand;Grassland Hills;;;;;;;;x
+kokand;Farmland Hills;;;;;;;;x
 ava;Grassland Hills ;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 grodno;Forested Farmlands;;;;;;;;x
@@ -205,8 +202,6 @@ easterisland;Grassland;;;;;;;;x
 dubrovnik;Grassland;;;;;;;;x
 asuncion;Savanna ;;;;;;;;x
 cluj;Grassland;;;;;;;;x
-iasi;Hilly Farmlands;;;;;;;;x
-adana;Hilly Farmlands;;;;;;;;x
 oaxaca;Dry Montane Forest;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 baku;Steppe;;;;;;;;x
@@ -216,7 +211,6 @@ jaipur;Steppe;;;;;;;;x
 Baku;Steppe;;;;;;;;x
 monterrey;Steppe;;;;;;;;x
 algiers;Steppe Hills;;;;;;;;x
-tangier;Urban;;;;;;;;x
 ahmedabad;Steppe ;;;;;;;;x
 turkestan;Steppe ;;;;;;;;x
 cetatea_alba;Steppe ;;;;;;;;x
@@ -248,6 +242,11 @@ iraklion;Dry Montane Forest;;;;;;;;x
 trabzon;Montane Forest;;;;;;;;x
 thimpu;Montane Forest;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
+benevento;Hilly Farmlands;;;;;;;;x
+iasi;Hilly Farmlands;;;;;;;;x
+adana;Hilly Farmlands;;;;;;;;x
+capetown;Hilly Farmlands;;;;;;;;x
+sanmarino;Hilly Farmlands;;;;;;;;x
 valenciavenezuela;Hilly Farmlands;;;;;;;;x
 munich;Hilly Farmlands;;;;;;;;x
 naples;Hilly Farmlands;;;;;;;;x
@@ -294,7 +293,12 @@ farmlandhills;Hilly Farmlands;;;;;;;;x
 azores;Hilly Farmlands;;;;;;;;x
 simla;Hilly Farmlands;;;;;;;;x
 jerusalem;Hilly Farmlands;;;;;;;;x
-fiume;Urban;;;;;;;;x
+stlouis;Hilly Farmlands;;;;;;;;x
+aleppo;Hilly Farmlands;;;;;;;;x
+novocherkassk;Hilly Farmlands;;;;;;;;x
+nuremberg;Hilly Farmlands;;;;;;;;x
+zadar;Hilly Farmlands;;;;;;;;x
+coruna;Hilly Farmlands;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 novoarkhangelesk;Taiga;;;;;;;;x
 stjohn;Taiga;;;;;;;;x
@@ -316,12 +320,10 @@ mombasa;Savanna ;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 tananarive;Montane Farmlands ;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
-stlouis;Hilly Farmlands;;;;;;;;x
 damascus;Dry Forest Hills;;;;;;;;x
 ankara;Steppe Hills;;;;;;;;x
 nicosia;Steppe Hills;;;;;;;;x
 tenerife;Dry Forest Hills;;;;;;;;x
-aleppo;Hilly Farmlands;;;;;;;;x
 antioch;Dry Montane Forest;;;;;;;;x
 konya;Steppe Hills;;;;;;;;x
 karachi;Floodplain Farmlands;;;;;;;;x
@@ -362,7 +364,16 @@ montane_jungle;Montane Jungle;;;;;;;;x
 altiplano;High Plateau;;;;;;;;x
 deserthills;Desert Hills;;;;;;;;x
 dryforest;Dry Forest;;;;;;;;x
-dry_forest_hills;Dry Forest Hills;;;;;;;;x  
-dry_forest_mountains;Dry Montane Forest;;;;;;;;x  
-foresthills;Forest Hills;;;;;;;;x  
+dry_forest_hills;Dry Forest Hills;;;;;;;;x
+dry_forest_mountains;Dry Montane Forest;;;;;;;;x
+foresthills;Forest Hills;;;;;;;;x
 junglehills;Jungle Hills;;;;;;;;x
+portelizabeth;Savanna Hills;;;;;;;;x
+durban;Savanna Hills;;;;;;;;x
+bloemfontein;Savanna Hills;;;;;;;;x
+johannesburg;Savanna Hills;;;;;;;;x
+pretoria;Savanna Hills;;;;;;;;x
+darchen;High Plateau;;;;;;;;x
+reykjavik;Tundra;;;;;;;;x
+victoriafalls;Savanna;;;;;;;;x
+kilimanjaro;Savanna Hills;;;;;;;;x

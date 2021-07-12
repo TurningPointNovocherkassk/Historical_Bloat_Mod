@@ -1,0 +1,343 @@
+# Knights Hospitaller Events
+# From id = 950000
+
+#Reconcile with Russia - offer received by Russia
+country_event = {
+	id = 950000
+	title = "kni_rus_reconcile_event_title"
+	desc = "kni_rus_reconcile_event_desc"
+	picture = "meeting3"
+	is_triggered_only = yes
+	option = {
+		name = "Yes"
+		prestige = 5
+		relation = {
+			who = KNI
+			value = 200
+		}
+		diplomatic_influence = {
+			who = KNI
+			value = 100
+		}
+		random_owned = { limit = { owner = { ai = no } } owner = { treasury = -1000 } }
+		random_owned = {
+			limit = { owner = { ai = yes } }
+			owner = { set_variable = { which = owed_cash_money value = 1 } } 
+		}
+		FROM = { country_event = 950001 }
+		ai_chance = {
+			factor = 99
+			modifier = {
+				factor = 0
+				NOT = { money = 1000 }
+			}
+		}
+	}
+	option = {
+		name = "No"
+		prestige = 5
+		badboy = 1
+		relation = {
+			who = KNI
+			value = -50
+		}
+		FROM = { country_event = 950002 }
+		ai_chance = { factor = 1 }
+	}
+}
+#Reconcile with Russia - offer accepted by Russia
+country_event = {
+	id = 950001
+	title = "kni_rus_reconcile_accepted_event_title"
+	desc = "kni_rus_reconcile_accepted_event_desc"
+	picture = "meeting3"
+	is_triggered_only = yes
+	option = {
+		name = "Huzzah"
+		treasury = 10000
+		random_owned = {
+			limit = {
+				is_core = KNI
+				is_capital = yes
+			}
+			add_province_modifier = { name = small_baby_boom duration = 1825 }
+		}
+		prestige = 10
+	}
+}
+#Reconcile with Russia - offer rejected by Russia
+country_event = {
+	id = 950002
+	title = "kni_rus_reconcile_rejected_event_title"
+	desc = "kni_rus_reconcile_rejected_event_desc"
+	picture = "meeting3"
+	is_triggered_only = yes
+	option = {
+		name = "Shame"
+		prestige = -5
+	}
+}
+#Buy Croix - offer received
+country_event = {
+	id = 950010
+	title = "kni_buy_event_title"
+	desc = "kni_buy_croix_event_desc"
+	picture = "meeting3"
+	is_triggered_only = yes
+	option = {
+		name = "Yes"
+		random_owned = {
+			limit = {
+				province_id = 2223
+			}
+			secede_province = FROM 
+			remove_core = THIS
+			add_core = FROM
+		}
+		relation = {
+			who = KNI
+			value = 50
+		}
+		treasury = 100000
+		FROM = { country_event = 950011 }
+	}
+	option = {
+		name = "No"
+		relation = {
+			who = KNI
+			value = -5
+		}
+		FROM = { country_event = 950012 }
+	}
+}
+#Buy Croix - offer accepted
+country_event = {
+	id = 950011
+	title = "kni_buy_accepted_event_title"
+	desc = "kni_buy_accepted_event_desc"
+	picture = "meeting3"
+	is_triggered_only = yes
+	option = {
+		name = "Huzzah"
+		random_owned = { limit = { owner = { ai = no } } owner = { treasury = -100000 } }
+		random_owned = {
+			limit = { owner = { ai = yes } }
+			owner = { set_variable = { which = owed_cash_money value = 100 } } 
+		}
+		prestige = 10
+	}
+}
+#Buy Croix - offer rejected
+country_event = {
+	id = 950012
+	title = "kni_buy_rejected_event_title"
+	desc = "kni_buy_rejected_event_desc"
+	picture = "meeting3"
+	is_triggered_only = yes
+	option = {
+		name = "Pity"
+		relation = {
+			who = FROM
+			value = -50
+		}
+		prestige = -5
+	}
+}
+#Buy Barth - offer received
+country_event = {
+	id = 950020
+	title = "kni_buy_event_title"
+	desc = "kni_buy_barth_event_desc"
+	picture = "meeting3"
+	is_triggered_only = yes
+	option = {
+		name = "Yes"
+		random_owned = {
+			limit = {
+				province_id = 3246
+			}
+			secede_province = FROM 
+			remove_core = THIS
+			add_core = FROM
+		}
+		relation = {
+			who = KNI
+			value = 50
+		}
+		treasury = 100000
+		FROM = { country_event = 950021 }
+	}
+	option = {
+		name = "No"
+		relation = {
+			who = KNI
+			value = -5
+		}
+		FROM = { country_event = 950022 }
+	}
+}
+#Buy Barth - offer accepted
+country_event = {
+	id = 950021
+	title = "kni_buy_accepted_event_title"
+	desc = "kni_buy_accepted_event_desc"
+	picture = "meeting3"
+	is_triggered_only = yes
+	option = {
+		name = "Huzzah"
+		random_owned = { limit = { owner = { ai = no } } owner = { treasury = -100000 } }
+		random_owned = {
+			limit = { owner = { ai = yes } }
+			owner = { set_variable = { which = owed_cash_money value = 100 } } 
+		}
+		prestige = 10
+	}
+}
+#Buy Barth - offer rejected
+country_event = {
+	id = 950022
+	title = "kni_buy_rejected_event_title"
+	desc = "kni_buy_rejected_event_desc"
+	picture = "meeting3"
+	is_triggered_only = yes
+	option = {
+		name = "Pity"
+		relation = {
+			who = FROM
+			value = -50
+		}
+		prestige = -5
+	}
+}
+#Buy Martin - offer received
+country_event = {
+	id = 950030
+	title = "kni_buy_event_title"
+	desc = "kni_buy_martin_event_desc"
+	picture = "meeting3"
+	is_triggered_only = yes
+	option = {
+		name = "Yes"
+		random_owned = {
+			limit = {
+				province_id = 45
+			}
+			secede_province = FROM 
+			remove_core = THIS
+			add_core = FROM
+		}
+		relation = {
+			who = KNI
+			value = 50
+		}
+		treasury = 100000
+		FROM = { country_event = 950031 }
+	}
+	option = {
+		name = "No"
+		relation = {
+			who = KNI
+			value = -5
+		}
+		FROM = { country_event = 950032 }
+	}
+}
+#Buy Martin - offer accepted
+country_event = {
+	id = 950031
+	title = "kni_buy_accepted_event_title"
+	desc = "kni_buy_accepted_event_desc"
+	picture = "meeting3"
+	is_triggered_only = yes
+	option = {
+		name = "Huzzah"
+		random_owned = { limit = { owner = { ai = no } } owner = { treasury = -100000 } }
+		random_owned = {
+			limit = { owner = { ai = yes } }
+			owner = { set_variable = { which = owed_cash_money value = 100 } } 
+		}
+		prestige = 10
+	}
+}
+#Buy Martin - offer rejected
+country_event = {
+	id = 950032
+	title = "kni_buy_rejected_event_title"
+	desc = "kni_buy_rejected_event_desc"
+	picture = "meeting3"
+	is_triggered_only = yes
+	option = {
+		name = "Pity"
+		relation = {
+			who = FROM
+			value = -50
+		}
+		prestige = -5
+	}
+}
+#Buy Kitts - offer received
+country_event = {
+	id = 950040
+	title = "kni_buy_event_title"
+	desc = "kni_buy_kitts_event_desc"
+	picture = "meeting3"
+	is_triggered_only = yes
+	option = {
+		name = "Yes"
+		random_owned = {
+			limit = {
+				province_id = 2227
+			}
+			secede_province = FROM 
+			remove_core = THIS
+			add_core = FROM
+		}
+		relation = {
+			who = KNI
+			value = 50
+		}
+		treasury = 100000
+		FROM = { country_event = 950041 }
+	}
+	option = {
+		name = "No"
+		relation = {
+			who = KNI
+			value = -5
+		}
+		FROM = { country_event = 950042 }
+	}
+}
+#Buy Kitts - offer accepted
+country_event = {
+	id = 950041
+	title = "kni_buy_accepted_event_title"
+	desc = "kni_buy_accepted_event_desc"
+	picture = "meeting3"
+	is_triggered_only = yes
+	option = {
+		name = "Huzzah"
+		random_owned = { limit = { owner = { ai = no } } owner = { treasury = -100000 } }
+		random_owned = {
+			limit = { owner = { ai = yes } }
+			owner = { set_variable = { which = owed_cash_money value = 100 } } 
+		}
+		prestige = 10
+	}
+}
+#Buy Kitts - offer rejected
+country_event = {
+	id = 950042
+	title = "kni_buy_rejected_event_title"
+	desc = "kni_buy_rejected_event_desc"
+	picture = "meeting3"
+	is_triggered_only = yes
+	option = {
+		name = "Pity"
+		relation = {
+			who = FROM
+			value = -50
+		}
+		prestige = -5
+	}
+}

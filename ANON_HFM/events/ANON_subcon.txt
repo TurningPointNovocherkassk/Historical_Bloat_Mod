@@ -1,0 +1,169 @@
+
+#General Napier's Expedition to Sindh
+country_event = {
+	id = 99933300
+	title = "EVTNAME99933300"
+	desc = "EVTDESC99933300"
+	picture = "napiers_expedition_to_sindh"
+
+	trigger = {
+		tag = ENG
+		war = no
+		has_country_flag = anglo_afghan_war
+		SIN = { exists = yes }
+		SIN = { is_vassal = no }
+	}
+
+	mean_time_to_happen = {
+		months = 12
+	}
+
+	option = {
+		name = "EVT99933300OPTA"
+		badboy = 2
+		relation = { who = SIN value = -400 }
+		diplomatic_influence = { who = SIN value = -400 }
+		war = {
+			target = SIN
+			attacker_goal = { casus_belli = conquest_any }
+			defender_goal = { casus_belli = status_quo }
+			call_ally = no
+		}
+		ENG = { country_event = 99933301 }
+		ai_chance = { factor = 100 }
+	}
+
+	option = {
+		name = "EVT99933300OPTB"
+		badboy = -1
+		relation = { who = SIN value = 50 }
+		ai_chance = { factor = 0 }
+	}
+}
+
+#Princely State of Khairpur
+country_event = {
+	id = 99933301
+	title = "EVTNAME99933301"
+	desc = "EVTDESC99933301"
+	picture = "napiers_expedition_to_sindh"
+
+	is_triggered_only = yes
+
+	option = {
+		name = "EVT99933301OPTA"
+		badboy = -0.5
+		SIN = { release = KHP }
+		create_vassal = KHP
+		diplomatic_influence = {
+			who = KHP
+			value = 400
+		}
+		ai_chance = { factor = 90 }
+	}
+
+	option = {
+		name = "EVT99933301OPTB"
+		ai_chance = { factor = 10 }
+	}
+}
+
+# #Fort William nerf (So W. Bengal doesn't become a state)
+# province_event = {
+	# id = 99933302
+	# title = "Fort William"
+	# desc = "Fort William, located in Calcutta, acts as the seat of the Bengal Presidency."
+	# picture = "deliberation"
+
+	# trigger = {
+		# province_id = 3263
+		# NOT = { has_province_modifier = fort_william_balance }
+		# owner = {
+			# capital_scope = { continent = europe }
+			# OR = { tag = ENG tag = ENL }
+			# EIC = { exists = yes }
+			# NOT = {
+				# owns = 1251
+				# owns = 1253
+				# owns = 3488
+			# }
+			# NOT = {
+				# is_culture_group = south_asian
+				# is_culture_group = indo_iranian
+				# is_culture_group = central_asian
+				# is_culture_group = southeast_asian
+				# is_culture_group = oceanic
+				# is_culture_group = turanian
+				# is_culture_group = iranian
+			# }
+		# }
+	# }
+
+	# option = {
+		# name = "EVT99933302OPTA"
+		# add_province_modifier = {
+			# name = fort_william_balance
+			# duration = -1
+		# }
+		# ai_chance = { factor = 100 }
+	# }
+# }
+# #Fort William nerf (So W. Bengal doesn't become a state)
+# province_event = {
+	# id = 99933303
+	# title = "Fort William"
+	# desc = "EVTDESC99933303"
+	# picture = "deliberation"
+
+	# trigger = {
+		# province_id = 3263
+		# has_province_modifier = fort_william_balance
+		# owner = {
+			# OR = {
+				# is_culture_group = south_asian
+				# is_culture_group = indo_iranian
+				# is_culture_group = central_asian
+				# is_culture_group = southeast_asian
+				# is_culture_group = oceanic
+				# is_culture_group = turanian
+				# is_culture_group = iranian
+				# AND = {
+					# tag = EIC
+					# exists = yes
+					# OR = { is_vassal = no is_substate = no }
+				# }
+				# AND = {
+					# capital_scope = { continent = europe }
+					# OR = { tag = ENG tag = ENL }
+					# EIC = { exists = no }
+					# owns = 1251
+					# owns = 1253
+					# owns = 3488
+				# }
+				# AND = {
+					# OR = {
+						# capital_scope = { continent = europe }
+						# AND = {
+							# capital_scope = { continent = oceania }
+							# is_culture_group = neo_european_cultures
+						# }
+						# capital_scope = { continent = north_america }
+						# capital_scope = { continent = south_america }
+					# }
+					# NOT = { OR = { tag = ENG tag = ENL } }
+					# NOT = {
+						# owns = 1251
+						# owns = 1253
+						# owns = 3488
+					# }
+				# }
+			# }
+		# }
+	# }
+
+	# option = {
+		# name = "EVT99933303OPTA"
+		# remove_province_modifier = fort_william_balance
+		# ai_chance = { factor = 100 }
+	# }
+# }

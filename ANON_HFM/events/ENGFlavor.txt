@@ -1972,14 +1972,14 @@ country_event = {
 
 	option = {
 		name = "EVT36950OPTA"
-		treasury = -35000
+		treasury = -55000
 		DEN = {
 			prestige = 5 
-			treasury = 35000
+			treasury = 55000
 		}
 		diplomatic_influence = { who = ASH value = -200 }
 		relation = { who = ASH value = -200 }
-		1907 = { secede_province = THIS remove_core = FROM }
+		1907 = { secede_province = THIS remove_core = DEN }
 		ai_chance = {
 			factor = 100
 		}
@@ -2100,7 +2100,7 @@ country_event = {
 	is_triggered_only = yes
 	
 	option = {
-		name = "EVT36960OPTA"
+		name = "EVT36960OPTA" #we accept and sell the gold coast
 		treasury = 10000
 		relation = { who = FROM value = 100 }
 		FROM = { country_event = 36961 }
@@ -2114,7 +2114,7 @@ country_event = {
 	}
 	
 	option = {
-		name = "EVT36960OPTB"
+		name = "EVT36960OPTB" #we refuse to sell the gold coast
 		relation = { who = FROM value = -50 }
 		FROM = { country_event = 36962 }
 		ai_chance = {
@@ -2490,14 +2490,14 @@ country_event = {
 	
 	option = {
 		name = "EVT37236OPTA"
-		random_owned = { limit = { owner = { ai = no } } owner = { treasury = -40000 } }
+		random_owned = { limit = { owner = { ai = no } } owner = { treasury = -400000 } }
 		random_owned = {
 			limit = { owner = { ai = yes NOT = { check_variable = { which = owed_cash_money value = 1 } } } }
-			owner = { set_variable = { which = owed_cash_money value = 40 } }
+			owner = { set_variable = { which = owed_cash_money value = 400 } }
 		}
 		random_owned = {
 			limit = { owner = { ai = yes check_variable = { which = owed_cash_money value = 9 } } }
-			owner = { change_variable = { which = owed_cash_money value = 40 } }
+			owner = { change_variable = { which = owed_cash_money value = 400 } }
 		}
 		random_list = {
 			50 = { add_country_modifier = { name =  bigben_construction duration = 2920 } }
@@ -2512,14 +2512,14 @@ country_event = {
 	
 	option = {
 		name = "EVT37236OPTB"
-		random_owned = { limit = { owner = { ai = no } } owner = { treasury = -30000 } }
+		random_owned = { limit = { owner = { ai = no } } owner = { treasury = -300000 } }
 		random_owned = {
 			limit = { owner = { ai = yes NOT = { check_variable = { which = owed_cash_money value = 1 } } } }
-			owner = { set_variable = { which = owed_cash_money value = 30 } }
+			owner = { set_variable = { which = owed_cash_money value = 300 } }
 		}
 		random_owned = {
 			limit = { owner = { ai = yes check_variable = { which = owed_cash_money value = 9 } } }
-			owner = { change_variable = { which = owed_cash_money value = 30 } }
+			owner = { change_variable = { which = owed_cash_money value = 300 } }
 		}
 		random_list = {
 			30 = { add_country_modifier = { name = bigben_construction duration = 2920 } }
@@ -2534,14 +2534,14 @@ country_event = {
 	
 	option = {
 		name = "EVT37236OPTC"
-		random_owned = { limit = { owner = { ai = no } } owner = { treasury = -20000 } }
+		random_owned = { limit = { owner = { ai = no } } owner = { treasury = -200000 } }
 		random_owned = {
 			limit = { owner = { ai = yes NOT = { check_variable = { which = owed_cash_money value = 1 } } } }
-			owner = { set_variable = { which = owed_cash_money value = 20 } }
+			owner = { set_variable = { which = owed_cash_money value = 200 } }
 		}
 		random_owned = {
 			limit = { owner = { ai = yes check_variable = { which = owed_cash_money value = 9 } } }
-			owner = { change_variable = { which = owed_cash_money value = 20 } }
+			owner = { change_variable = { which = owed_cash_money value = 200 } }
 		}
 		random_list = {
 			30 = { add_country_modifier = { name = bigben_construction duration = 2920 } }
@@ -2565,25 +2565,26 @@ country_event = {
 	fire_only_once = yes
 	
 	trigger = {
-	OR = {
-		tag = ENG
-		tag = ENL
+		OR = {
+			tag = ENG
+			tag = ENL
 		}
 		NOT = { has_country_modifier = bigben_construction }
 		has_country_flag = big_ben_construction	
-		}
+	}
 		
 	mean_time_to_happen = { days = 5 }
 	
 	option = {
 		name = "EVT3697001OPTA"
+		set_country_flag = big_ben_built
 		300 = {
-			set_province_flag = big_ben_built
+			add_core = U03
 			add_province_modifier = { name = the_big_ben duration = -1 }
-			}
-			prestige = 20
 		}
+		prestige = 20
 	}
+}
 	
 #country_event = {
 #
@@ -2681,6 +2682,13 @@ country_event = {
 		81 = { owned_by = THIS is_core = THIS is_core = COL }
 		82 = { owned_by = THIS is_core = THIS is_core = COL }
 		83 = { owned_by = THIS is_core = THIS is_core = COL }
+		# no idea what these are, look into it
+		# 3461 = { owned_by = THIS is_core = THIS is_core = COL }
+		# 3462 = { owned_by = THIS is_core = THIS is_core = COL }
+		# 3463 = { owned_by = THIS is_core = THIS is_core = COL }
+		# 3464 = { owned_by = THIS is_core = THIS is_core = COL }
+		# 3465 = { owned_by = THIS is_core = THIS is_core = COL }
+		# 3466 = { owned_by = THIS is_core = THIS is_core = COL }
 	}
 		
 	mean_time_to_happen = { days = 1 }
@@ -2788,7 +2796,7 @@ country_event = {
 				EIC = { vassal_of = ENG }
 			}
 		}
-		war = no
+		NOT = { any_greater_power = { war_with = ENG } }
 		NOT = { year = 1880 }
 		KAS = { exists = no }
 	}
@@ -3729,7 +3737,7 @@ country_event = {
 		random_owned = { limit = { owner = { has_country_flag = zaydi_country } } FROM = { religion = zaydi set_country_flag = zaydi_country } }
 		random_owned = { limit = { owner = { has_country_flag = jain_country } } FROM = { religion = jain set_country_flag = jain_country } }
 		random_owned = { limit = { owner = { has_country_flag = atheist_country } } FROM = { religion = atheism set_country_flag = atheist_country } }
-		random_owned = { limit = { owner = { has_country_flag = secular_country } } FROM = { religion = secularim set_country_flag = secular_country } }
+		random_owned = { limit = { owner = { has_country_flag = secular_country } } FROM = { religion = secularism set_country_flag = secular_country } }
 		
 		random_owned = { limit = { slavery = no_slavery } FROM = { political_reform = no_slavery } }
 		

@@ -1790,7 +1790,7 @@ assimilation_chance = {
 		factor = -0.35
 		country = {
 			has_country_flag = new_world_nation
-			has_country_flag = native_assimilation_enacted
+			has_country_flag = native_assimilation_act_flag
 		}
 		OR = {
 			is_culture_group = native_american
@@ -1818,7 +1818,7 @@ assimilation_chance = {
 		factor = -80
 		country = {
 			has_country_flag = new_world_nation
-			NOT = { has_country_flag = native_assimilation_enacted }
+			NOT = { has_country_flag = native_assimilation_act_flag }
 		}
 		OR = {
 			is_culture_group = native_american
@@ -1959,6 +1959,7 @@ conversion_chance = {
 		OR = {
 			country = { has_country_flag = colonia_tovar_founded }
 			country = { has_country_flag = vasyl_eccentric }
+			country = { has_country_flag = alyaska_volunteers_cossack }
 		}
 	}
 	

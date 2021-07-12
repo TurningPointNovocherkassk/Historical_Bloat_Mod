@@ -316,6 +316,10 @@ country_event = {
 			militancy = 1
 		}
 		any_pop = {
+			limit = { has_pop_culture = venetian }
+			militancy = 1
+		}
+		any_pop = {
 			limit = {
 				has_pop_culture = central_italian
 			}
@@ -358,7 +362,7 @@ country_event = {
 	major = yes
 
 	immediate = {
-	  end_war = LOM
+		end_war = LOM
 		casus_belli = {
 			target = SAR
 			type = acquire_state
@@ -434,12 +438,18 @@ country_event = {
 			factor = 20
 			modifier = {
 				factor = 0
-				AND = {
-					FRA = { ai = yes }
-					BOR = { ai = yes }
-					PRU = { ai = yes }
-					RUS = { ai = yes }
+				OR = {
+					AND = {
+						FRA = { exists = yes ai = yes }
+						BOR = { exists = no }
+					}
+					AND = {
+						FRA = { exists = no }
+						BOR = { exists = yes ai = yes }
+					}
 				}
+				PRU = { ai = yes }
+				RUS = { ai = yes }
 			}
 		}
 	}
@@ -591,9 +601,9 @@ country_event = {
 			}
 			any_state = {
 				  any_owned_province = {
-			  is_core = VEN
-			  culture = north_italian
-			  is_primary_culture = no
+					  is_core = VEN
+					  culture = venetian
+					  is_primary_culture = no
 				  }
 				  average_militancy = 5
 			}
@@ -606,7 +616,10 @@ country_event = {
 		modifier = {
 			factor = 1.5
 			any_pop = {
-				has_pop_culture = north_italian
+				OR = {
+					has_pop_culture = north_italian
+					has_pop_culture = venetian
+				}
 				is_accepted_culture = yes
 			}
 		}
@@ -668,12 +681,12 @@ country_event = {
 		any_pop = {
 			limit = {
 				location = { is_core = VEN }
-				has_pop_culture = north_italian
+				has_pop_culture = venetian
 			}
 			militancy = 1
 		}
 		any_owned = {
-			limit = { culture = north_italian }
+			limit = { OR = { culture = north_italian culture = venetian } }
 			add_province_modifier = {
 				name = nationalist_agitation
 				duration = 365
@@ -729,12 +742,12 @@ country_event = {
 		release_vassal = LOM
 		release_vassal = VEN
 		any_pop = {
-			limit = { has_pop_culture = north_italian }
+			limit = { OR = { has_pop_culture = north_italian has_pop_culture = venetian } }
 			militancy = -3
 		}
 		any_pop = {
 			limit = {
-				NOT = { has_pop_culture = north_italian }
+				NOT = { OR = { has_pop_culture = north_italian has_pop_culture = venetian } }
 				is_primary_culture = no
 			}
 			militancy = 1
@@ -842,7 +855,7 @@ country_event = {
 		any_pop = {
 			limit = {
 				location = { is_core = VEN }
-				has_pop_culture = north_italian
+				has_pop_culture = venetian
 			}
 			militancy = -10
 		}
@@ -997,6 +1010,7 @@ country_event = {
 				limit = {
 					OR = {
 						has_pop_culture = north_italian
+						has_pop_culture = venetian
 						has_pop_culture = south_italian
 						has_pop_culture = dalmatian
 						has_pop_culture = maltese
@@ -3655,7 +3669,7 @@ country_event = {
 country_event = {
 
 	id = 202065
-	major = yes
+	# major = yes
 
 	trigger = {
 		NOT = { year = 1848 }

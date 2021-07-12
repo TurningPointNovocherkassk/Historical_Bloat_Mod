@@ -28,6 +28,8 @@ greater_california = {
 		is_vassal = no
 		NOT = { truce_with = USA }
 		NOT = { truce_with = MEX }
+		NOT = { truce_with = M3X }
+		NOT = { truce_with = MXM }
 		NOT = { truce_with = DES }
 	}
 		
@@ -81,6 +83,8 @@ rancho = {
 	potential = {
 		OR = { 
 			tag = MEX
+			tag = M3X
+			tag = MXM
 			tag = CAL
 			tag = C4L
 		}
@@ -146,6 +150,14 @@ annex_california = {
 		war = no
 		OR = {
 			MEX = { 
+				has_recently_lost_war = yes
+				truce_with = THIS
+			}
+			M3X = { 
+				has_recently_lost_war = yes
+				truce_with = THIS
+			}
+			MXM = { 
 				has_recently_lost_war = yes
 				truce_with = THIS
 			}

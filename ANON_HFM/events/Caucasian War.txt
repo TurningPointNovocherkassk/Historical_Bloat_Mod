@@ -107,7 +107,6 @@ country_event = {
 					is_culture_group = turko_semitic
 					has_pop_culture = kurdish
 					has_pop_culture = tatar
-					has_pop_culture = circassian
 				}
 				location = { is_core = CIR }
 			}
@@ -128,7 +127,6 @@ country_event = {
 					is_culture_group = turko_semitic
 					has_pop_culture = kurdish
 					has_pop_culture = tatar
-					has_pop_culture = circassian
 				}
 				location = { is_core = CIR }
 			}
@@ -162,6 +160,30 @@ country_event = {
 					tag = TUR
 					tag = PER
 					tag = EGY
+					AND = {
+						NOT = {
+							OR = {
+								vassal_of = RUS
+								vassal_of = TCA
+								substate_of = RUS
+								substate_of = TCA
+							}
+							OR = {
+								religion = orthodox
+								religion = coptic
+								religion = nestorian
+								religion = apostolic
+								religion = maronite
+								religion = syriac
+							}
+						}
+						any_pop = {
+							OR = {
+								has_pop_culture = circassian
+								has_pop_culture = chechen
+							}
+						}
+					}
 				}
 			}
 			country_event = { id = 999999015 days = 125 }

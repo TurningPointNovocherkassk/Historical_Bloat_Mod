@@ -1,9 +1,11 @@
 ######SEARCH ANON
 political_decisions = {
 	liberty_enlightening_the_world = {
+		picture = statue_of_liberty_decision
 		potential = {
 			NOT = {
 				has_global_flag = statue_of_liberty_has_been_built
+				has_global_flag = statue_of_liberty_destroyed
 				has_global_flag = treaty_of_new_york
 			}
 			primary_culture = french
@@ -225,7 +227,7 @@ political_decisions = {
 			war = no
 			bessemer_process = 1
 			OR = {
-				money = 30000
+				money = 300001 #I actually converted the price in 1889 british pounds, it's ~304k
 				ai = yes
 			}
 		}

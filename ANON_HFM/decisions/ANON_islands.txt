@@ -824,7 +824,11 @@ political_decisions = {
 	annex_mexican_pacific_islands = {
 		picture = FRA_devils_island
 		potential = {
-			tag = MEX
+			OR = {
+				tag = MEX
+				tag = M3X
+				tag = MXM
+			}
 			3332 = { empty = yes }
 			3333 = { empty = yes }
 			NOT = { has_country_flag = annex_mexican_pacific_islands }

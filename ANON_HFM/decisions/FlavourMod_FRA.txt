@@ -546,6 +546,7 @@ political_decisions = {
 			random_country = {
 				limit = {
 					primary_culture = french
+					capital = 425
 					is_greater_power = yes
 					exists = yes
 				}
@@ -577,6 +578,7 @@ political_decisions = {
 			random_country = {
 				limit = {
 					primary_culture = french
+					capital = 425
 					is_greater_power = yes
 					exists = yes
 				}
@@ -810,7 +812,7 @@ political_decisions = {
 				limit = { province_id = 574 }
 				574 = { 
 					change_province_name = "Coblence"
-					state_scope = { change_region_name = "Sarre et Mont Tonnerre"  }
+					state_scope = { change_region_name = "Sarre et Mont-Tonnerre"  }
 				}
 				573 = { change_province_name = "Sarrebruck" }
 				owner = { set_global_flag = france_rename_prussian_pfalz }
@@ -873,7 +875,12 @@ political_decisions = {
 			}
 			random_owned = {
 				limit = { province_id = 394 }
-				394 = {  change_province_name = "Charleroi" }
+				394 = {
+					state_scope = {
+						change_region_name = "Wallonie"
+					}
+					change_province_name = "Charleroi"
+				}
 				owner = { 
 					set_global_flag = france_rename_charleroi
 					clr_global_flag = dutch_rename_charleroi
@@ -975,12 +982,21 @@ political_decisions = {
 			capital = 425
 			has_country_flag = 2nd_empire
 			has_country_modifier = louis_napoleon_iii
-			ITA = {
-				ai = yes
-				exists = yes
-				owns = 750 #Viterbo
-				NOT = { owns = 749 } #Rome
-			}
+            OR = {
+                ITA = {
+                    ai = yes
+                    exists = yes
+                    owns = 750 #Viterbo
+                    NOT = { owns = 749 } #Rome
+                }
+                ITF = {
+                    ai = yes
+                    exists = yes
+                    owns = 750 #Viterbo
+                    NOT = { owns = 749 } #Rome
+                    NOT = { owns = 3275 } #Rome
+                }
+            }
 			PAP = {
 				government = theocracy
 				ai = yes
@@ -996,6 +1012,7 @@ political_decisions = {
 		allow = {
 			NOT = { any_greater_power = { war_with = THIS } }
 			NOT = { war_with = ITA }
+			NOT = { war_with = ITF }
 			is_greater_power = yes
 		}
 		
@@ -1004,11 +1021,9 @@ political_decisions = {
 			BOR = { set_country_flag = the_roman_question }
 			prestige = 5
 			badboy = 1
-			create_vassal = PAP	
-			PAP = {
-				government = theocracy
-				secede_province = 3275
-			}
+			create_vassal = PAP
+			3275 = { secede_province = PAP }
+			PAP = { government = theocracy }
 			diplomatic_influence = {
 				who = PAP
 				value = 400

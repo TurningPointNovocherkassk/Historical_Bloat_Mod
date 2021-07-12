@@ -33,7 +33,7 @@ political_decisions = {
 			political_reform = no_trade_unions
 			political_reform = first_past_the_post
 			define_general = {
-				name = "Antonio L?pez de Santa Anna"
+				name = "Antonio López de Santa Anna"
 				personality = au_fait
 				background = natural_born_leader
 				prestige = 0.5
@@ -205,6 +205,47 @@ political_decisions = {
 		ai_will_do = { factor = 1 }
 	}
 
+	CSC_genocide = {
+		potential = {
+			tag = CSC
+			war = yes
+			YUC = {
+				any_core = {
+					controlled_by = THIS
+					NOT = { is_core = U04 }
+				}
+			}
+			has_global_flag = caste_war_begin
+			NOT = { has_global_flag = spencer_mariscal_treaty }
+		}
+
+		allow = {
+			war = yes
+		}
+
+		effect = {
+			any_country = {
+				limit = {
+					war_with = THIS
+					any_owned_province = { is_core = YUC }
+				}
+				any_owned = {
+					limit = {
+						is_core = YUC
+						controlled_by = THIS
+						NOT = { is_core = U04 }
+						NOT = { is_core = U06 }
+					}
+					add_core = U04
+				}
+			}
+			country_event = 1220072
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
 	MEX_YUC_annexation_1846 = {
 		potential = {
 			tag = MEX
@@ -498,6 +539,13 @@ political_decisions = {
 		potential = {
 			NOT = { has_global_flag = spencer_mariscal_treaty }
 			CSC = { exists = yes }
+			OR = {
+				owns = 2183 #Campeche
+				owns = 2184 #Merida
+				owns = 3358 #Valladolid
+			}
+			has_global_flag = caste_war_begin
+			capital_scope = { continent = north_america }
 		}
 
 		allow = {
@@ -522,6 +570,7 @@ political_decisions = {
 			modifier = {
 				factor = 0
 				NOT = { year = 1893 }
+				is_culture_group = latin_american_cultures
 			}
 		}
 

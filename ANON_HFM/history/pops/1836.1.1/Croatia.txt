@@ -123,31 +123,31 @@
 #Kastav
 3640 = {
 	
-	aristocrats = {
-		culture = south_german
-		religion = catholic
-		size = 100
-	}
-	clergymen = {
-		culture = south_german
-		religion = catholic
-		size = 75
-	}
-	artisans = {
-		culture = south_german
-		religion = catholic
-		size = 500
-	}
-	soldiers = {
-		culture = south_german
-		religion = catholic
-		size = 175
-	}
-	farmers = {
-		culture = south_german
-		religion = catholic
-		size = 750
-	}
+	# aristocrats = {
+		# culture = south_german
+		# religion = catholic
+		# size = 100
+	# }
+	# clergymen = {
+		# culture = south_german
+		# religion = catholic
+		# size = 75
+	# }
+	# artisans = {
+		# culture = south_german
+		# religion = catholic
+		# size = 500
+	# }
+	# soldiers = {
+		# culture = south_german
+		# religion = catholic
+		# size = 175
+	# }
+	# farmers = {
+		# culture = south_german
+		# religion = catholic
+		# size = 750
+	# }
 	
 	aristocrats = {
 		culture = dalmatian
@@ -584,31 +584,6 @@
 		religion = catholic
 		size = 15200
 	}
-
-	clergymen = {
-		culture = serb
-		religion = orthodox
-		size = 125
-	}
-
-	artisans = {
-		culture = serb
-		religion = orthodox
-		size = 600
-	}
-
-	soldiers = {
-		culture = serb
-		religion = orthodox
-		size = 150
-	}
-
-	serfs = {
-		culture = serb
-		religion = orthodox
-		size = 5563
-	}
-	
 	
 	bureaucrats = {
 		culture = south_german
@@ -633,19 +608,19 @@
 	farmers = {
 		culture = south_german
 		religion = catholic
-		size = 3250
+		size = 1250
 	}
 	
 	aristocrats = {
 		culture = hungarian
 		religion = catholic
-		size = 350
+		size = 100
 	}
 
 	bureaucrats = {
 		culture = hungarian
 		religion = catholic
-		size = 75
+		size = 50
 	}
 
 	clergymen = {
@@ -657,7 +632,7 @@
 	artisans = {
 		culture = hungarian
 		religion = catholic
-		size = 700
+		size = 100
 	}
 
 	soldiers = {
@@ -669,7 +644,7 @@
 	farmers = {
 		culture = hungarian
 		religion = catholic
-		size = 3250
+		size = 625
 	}
 }
 #Senj (96000/24000 POPS)
@@ -906,41 +881,37 @@
 		religion = catholic
 		size = 225
 	}
-
 	clergymen = {
 		culture = croat
 		religion = catholic
 		size = 200
 	}
-
 	artisans = {
 		culture = croat
 		religion = catholic
 		size = 1100
 	}
-
 	soldiers = {
 		culture = croat
 		religion = catholic
 		size = 200
 	}
-
 	farmers = {
 		culture = croat
 		religion = catholic
-		size = 10275
+		size = 9275
+	}
+	
+	serfs = {
+		culture = croat
+		religion = catholic
+		size = 7500
 	}
 	
 	farmers = {
 		culture = bosniak
 		religion = sunni
 		size = 100
-	}
-	
-	serfs = {
-		culture = croat
-		religion = catholic
-		size = 8000
 	}
 	
 	clergymen = {
@@ -961,7 +932,28 @@
 	serfs = {
 		culture = serb
 		religion = orthodox
-		size = 5000 
+		size = 4500 
+	}
+	
+	clergymen = {
+		culture = danube_german
+		religion = catholic
+		size = 100
+	}
+	artisans = {
+		culture = danube_german
+		religion = catholic
+		size = 750 
+	}
+	soldiers = {
+		culture = danube_german
+		religion = catholic
+		size = 150
+	}
+	farmers = {
+		culture = danube_german
+		religion = catholic
+		size = 1500
 	}
 }
 #Fiume (52000/13000 POPS)

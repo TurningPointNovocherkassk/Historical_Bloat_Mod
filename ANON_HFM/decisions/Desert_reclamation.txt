@@ -203,67 +203,67 @@ political_decisions = {
 		# }
 	# }
 
-	assert_bushehr = {
-		picture = bandar_bushehr
-		potential = {
-			tag = PER
-			owns = 1135
-			NOT = { owns = 1136 }
-			NOT = { has_country_flag = bushehr_asserted }
-		}
+	# assert_bushehr = {
+		# picture = bandar_bushehr
+		# potential = {
+			# tag = PER
+			# owns = 1135
+			# NOT = { owns = 1136 }
+			# NOT = { has_country_flag = bushehr_asserted }
+		# }
 
-		allow = {
-			war = no
-			NOT = { num_of_revolts = 1 }
-			NOT = { 1136 = { owner = { is_sphere_leader_of = PER } } }
-			OR = {
-				ai = yes
-				AND = {
-					relation = { who = RUS value = 100 }
-					relation = { who = TUR value = 100 }
-				}
-				part_of_sphere = yes
-			}
-			OR = {
-				civilized = yes
-				NOT = { admin_reform = no_admin_reform }
-				1136 = { average_militancy = 3 }
-			}
-		}
+		# allow = {
+			# war = no
+			# NOT = { num_of_revolts = 1 }
+			# NOT = { 1136 = { owner = { is_sphere_leader_of = PER } } }
+			# OR = {
+				# ai = yes
+				# AND = {
+					# relation = { who = RUS value = 100 }
+					# relation = { who = TUR value = 100 }
+				# }
+				# part_of_sphere = yes
+			# }
+			# OR = {
+				# civilized = yes
+				# NOT = { admin_reform = no_admin_reform }
+				# 1136 = { average_militancy = 3 }
+			# }
+		# }
 
-		effect = {
-			badboy = 1
-			set_country_flag = bushehr_asserted
-			1136 = {
-				owner = {
-					country_event = { id = 301002 days = 1 }
-				}
-			}
-			relation = {
-				who = ENG
-				value = -20
-			}
-			ENG = {
-				diplomatic_influence = {
-					who = PER
-					value = 30
-				}
-			}
-			RUS = {
-				diplomatic_influence = {
-					who = PER
-					value = -15
-				}
-			}
-		}
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 0
-				badboy = 0.6
-			}
-		}
-	}
+		# effect = {
+			# badboy = 1
+			# set_country_flag = bushehr_asserted
+			# 1136 = {
+				# owner = {
+					# country_event = { id = 301002 days = 1 }
+				# }
+			# }
+			# relation = {
+				# who = ENG
+				# value = -20
+			# }
+			# ENG = {
+				# diplomatic_influence = {
+					# who = PER
+					# value = 30
+				# }
+			# }
+			# RUS = {
+				# diplomatic_influence = {
+					# who = PER
+					# value = -15
+				# }
+			# }
+		# }
+		# ai_will_do = {
+			# factor = 1
+			# modifier = {
+				# factor = 0
+				# badboy = 0.6
+			# }
+		# }
+	# }
 
 	# renegotiate_abbas_lease = {
 			# picture = bandar_abbas
@@ -761,93 +761,93 @@ political_decisions = {
 		# }
 	# }
 
-	the_goldsmith_arbitration = {
-		picture = map_india
-		potential = {
-			tag = ENG
-			exists = KAL
-			NOT = { has_country_flag = goldsmith_arbitration }
-		}
+	# the_goldsmith_arbitration = {
+		# picture = map_india
+		# potential = {
+			# tag = ENG
+			# exists = KAL
+			# NOT = { has_country_flag = goldsmith_arbitration }
+		# }
 
-		allow = {
-			war = no
-			has_country_flag = gov_india
-			OR = {
-				KAL = {
-					part_of_sphere = no
-				}
-				is_sphere_leader_of = KAL
-			}
-			OR = {
-				AND = {
-					ai = yes
-					PER = {
-						ai = yes
-					}
-				}
-				relation = {
-					who = PER
-					value = 100
-				}
-				is_sphere_leader_of = PER
-			}
-		}
+		# allow = {
+			# war = no
+			# has_country_flag = gov_india
+			# OR = {
+				# KAL = {
+					# part_of_sphere = no
+				# }
+				# is_sphere_leader_of = KAL
+			# }
+			# OR = {
+				# AND = {
+					# ai = yes
+					# PER = {
+						# ai = yes
+					# }
+				# }
+				# relation = {
+					# who = PER
+					# value = 100
+				# }
+				# is_sphere_leader_of = PER
+			# }
+		# }
 
-		effect = {
-			PER = {
-				country_event = 300998
-			}
-			set_country_flag = goldsmith_arbitration
-			#KAL = {
-			#	release_vassal = MAK
-			#	# release_vassal = KAL
-			#	release_vassal = KHA
-			#}
-			war = {
-				target = KAL
-				attacker_goal = { casus_belli = make_puppet }
-				defender_goal = { casus_belli = status_quo }
-				call_ally = no
-			}
-			war = {
-				target = MAK
-				attacker_goal = { casus_belli = make_puppet }
-				defender_goal = { casus_belli = status_quo }
-				call_ally = no
-			}
-			war = {
-				target = LBE
-				attacker_goal = { casus_belli = make_puppet }
-				defender_goal = { casus_belli = status_quo }
-				call_ally = no
-			}
-			PER = {
-				any_owned = {
-					limit = { is_core = HND }
-					secede_province = ENG
-				}
-			}
-			# 1145 = {
-				# add_core = PER
+		# effect = {
+			# PER = {
+				# country_event = 300998
 			# }
-			# 2668 = {
-				# add_core = PER
+			# set_country_flag = goldsmith_arbitration
+			# #KAL = {
+			# #	release_vassal = MAK
+			# #	# release_vassal = KAL
+			# #	release_vassal = KHA
+			# #}
+			# war = {
+				# target = KAL
+				# attacker_goal = { casus_belli = make_puppet }
+				# defender_goal = { casus_belli = status_quo }
+				# call_ally = no
 			# }
-			#3469 = {
-			#	add_core = PER
-			#}
-		}
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 0
-				NOT = {
-					year = 1872
-					month = 6
-				}
-			}
-		}
-	}
+			# war = {
+				# target = MAK
+				# attacker_goal = { casus_belli = make_puppet }
+				# defender_goal = { casus_belli = status_quo }
+				# call_ally = no
+			# }
+			# war = {
+				# target = LBE
+				# attacker_goal = { casus_belli = make_puppet }
+				# defender_goal = { casus_belli = status_quo }
+				# call_ally = no
+			# }
+			# PER = {
+				# any_owned = {
+					# limit = { is_core = HND }
+					# secede_province = ENG
+				# }
+			# }
+			# # 1145 = {
+				# # add_core = PER
+			# # }
+			# # 2668 = {
+				# # add_core = PER
+			# # }
+			# #3469 = {
+			# #	add_core = PER
+			# #}
+		# }
+		# ai_will_do = {
+			# factor = 1
+			# modifier = {
+				# factor = 0
+				# NOT = {
+					# year = 1872
+					# month = 6
+				# }
+			# }
+		# }
+	# }
 	# monopolising_the_coromandel_coast = {
 		# picture = map_india
 		# potential = {

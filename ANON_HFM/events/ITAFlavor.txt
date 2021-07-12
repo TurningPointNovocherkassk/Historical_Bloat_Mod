@@ -1301,6 +1301,7 @@ country_event = {
 		add_accepted_culture = south_italian
 		add_accepted_culture = north_italian
 		add_accepted_culture = central_italian
+		add_accepted_culture = venetian
 		add_accepted_culture = sicilian
 		#add_accepted_culture = dalmatian
 		add_accepted_culture = insular
@@ -1475,7 +1476,7 @@ country_event = {
 		name = "EVTOPTA96172"
 		prestige = 15
 		war_exhaustion = -20
-		749 = { set_province_flag = fine_arts }
+		749 = { add_core = U03 }
 	}
 }
 

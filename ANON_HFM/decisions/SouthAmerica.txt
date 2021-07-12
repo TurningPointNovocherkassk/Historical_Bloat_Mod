@@ -314,6 +314,8 @@ political_decisions = {
 		potential = {
 			OR = {
 				tag = MEX
+				tag = M3X
+				tag = MXM
 				tag = UCA
 				tag = GUA
 			}
@@ -325,7 +327,7 @@ political_decisions = {
 			OR = {
 				YUC = { all_core = { owned_by = THIS is_core = THIS } }
 				CHP = { all_core = { owned_by = THIS is_core = THIS } }
-				AND = { tag = MEX 2181 = { owned_by = THIS is_core = LOS } 2182 = { owned_by = THIS is_core = LOS } }
+				AND = { OR = { tag = MEX tag = M3X tag = MXM } 2181 = { owned_by = THIS is_core = LOS } 2182 = { owned_by = THIS is_core = LOS } }
 				AND = { OR = { tag = UCA tag = GUA } 2187 = { owned_by = THIS is_core = LOS } }
 			}
 			year = 1860
@@ -358,7 +360,11 @@ political_decisions = {
 			random_owned = {
 				limit = {
 					owner = { 
-						tag = MEX
+						OR = {
+							tag = MEX
+							tag = M3X
+							tag = MXM
+						}
 						OR = {
 							2181 = { owned_by = THIS is_core = THIS is_core = LOS }
 							2182 = { owned_by = THIS is_core = THIS is_core = LOS }

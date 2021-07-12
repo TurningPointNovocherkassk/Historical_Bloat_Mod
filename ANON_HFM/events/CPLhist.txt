@@ -19,44 +19,52 @@ country_event = {
 			has_global_flag = treaty_of_paris_russia
 		}
 		OR = {
-			owns = 706
+			owns = 994 # St. Petersburg
+			owns = 1008 # Moscow
+			owns = 695 # Königsberg
+			owns = 549 # Berlin
+			owns = 619 # Vienna
+		}
+		OR = {
+			AND = {
+				owns = 706
+				CPL = { exists = no }
+			}
 			706 = {
 				owner = {
+					ai = yes
 					OR = {
-						vassal_of = RUS
-						substate_of = RUS
+						vassal_of = THIS
+						substate_of = THIS
 					}
 				}
 			}
-		}
-		NOT = { is_culture_group = polish_culture_group }
-		NOT = {
-			tag = POL
-			tag = KRA
-			tag = GLM
-			tag = CPL
-			tag = PZN
-			tag = PNC
-		}	
-		NOT = { accepted_culture = polish }
-		OR = {
-			CPL = {
-				OR = {
-					exists = no
-					is_substate = yes
-				}
-			}
-			is_our_vassal = CPL
 		}
 		OR = {
 			war_exhaustion = 40
 			AND = {
 				has_recently_lost_war = yes	
-				any_owned_province = {
-					pop_majority_culture = polish
-					OR = {
-						average_militancy = 2
-						average_consciousness = 4
+				OR = {
+					CPL = {
+						exists = yes
+						OR = {
+							vassal_of = THIS
+							substate_of = THIS
+						}
+						any_owned_province = {
+							pop_majority_culture = polish
+							OR = {
+								average_militancy = 2
+								average_consciousness = 4
+							}
+						}
+					}
+					any_owned_province = {
+						pop_majority_culture = polish
+						OR = {
+							average_militancy = 2
+							average_consciousness = 4
+						}
 					}
 				}
 			}
@@ -64,6 +72,20 @@ country_event = {
 				tag = RUS
 				has_country_flag = crimean_war
 				war = no 
+			}
+			CPL = {
+				exists = yes
+				OR = {
+					vassal_of = THIS
+					substate_of = THIS
+				}
+				any_owned_province = {
+					pop_majority_culture = polish
+					OR = {
+						average_militancy = 4
+						average_consciousness = 7
+					}
+				}
 			}
 			any_owned_province = {
 				pop_majority_culture = polish
@@ -73,8 +95,18 @@ country_event = {
 				}
 			}
 		}
-		# ANON
-		CPL = { ai = yes }
+		NOT = {
+			tag = POL
+			tag = KRA
+			tag = GLM
+			tag = CPL
+			tag = PZN
+			tag = PNC
+			OR = {
+				is_culture_group = polish_culture_group
+				accepted_culture = polish
+			}	
+		}	
 	}
 	
 	option = {
@@ -132,7 +164,20 @@ country_event = {
 						pop_type = capitalists
 					}
 				}
-				reduce_pop = 0.9
+				reduce_pop = 0.8
+			}
+			any_pop = {
+				limit = {
+					has_pop_culture = russophile
+					OR = {
+						pop_type = bureaucrats
+						pop_type = soldiers
+						pop_type = officers
+						pop_type = aristocrats
+						pop_type = capitalists
+					}
+				}
+				reduce_pop = 0.7
 			}
 		}
 		

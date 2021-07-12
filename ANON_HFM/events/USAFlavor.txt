@@ -1126,6 +1126,7 @@ country_event = {
 		#owns = 92
 		NOT = { has_global_flag = 1843_greatmigration }
 		NOT = { has_global_flag = anglo_oregon }
+		NOT = { has_global_flag = gringo_columbia }
 	}
 	
 	fire_only_once = yes
@@ -1654,7 +1655,7 @@ country_event = {
 				}
 				modifier = {
 					factor = 8.0
-					USA = { any_owned_province = { is_core = MEX } ai = no }
+					USA = { any_owned_province = { OR = { is_core = MEX is_core = M3X is_core = MXM } } ai = no }
 			}
 		}
 	}
@@ -1682,9 +1683,9 @@ country_event = {
 			owner = { change_variable = { which = owed_cash_money value = 100 } } 
 		}
 		
-		102 = { add_core = THIS add_core = CAL remove_core = MEX }
-		2662 = { add_core = THIS add_core = CAL remove_core = MEX }
-		MEX_2139 = { add_core = THIS add_core = CAL remove_core = MEX } #Baja
+		102 = { add_core = THIS add_core = CAL remove_core = MEX remove_core = M3X remove_core = MXM }
+		2662 = { add_core = THIS add_core = CAL remove_core = MEX remove_core = M3X remove_core = MXM }
+		MEX_2139 = { add_core = THIS add_core = CAL remove_core = MEX remove_core = M3X remove_core = MXM } #Baja
 		FROM = { any_owned = { limit = { is_core = THIS } secede_province = THIS } }
 		random_owned = { limit = { owner = { NOT = { slavery = no_slavery } } } MEX_2138 = { is_slave = yes } }
 		relation = { who = FROM value = 150 }
@@ -1722,8 +1723,8 @@ country_event = {
 			limit = { owner = { ai = yes } }
 			owner = { change_variable = { which = owed_cash_money value = 50 } } 
 		}
-		102 = { add_core = THIS secede_province = THIS remove_core = MEX }
-		2662 = { add_core = THIS secede_province = THIS remove_core = MEX }
+		102 = { add_core = THIS secede_province = THIS remove_core = MEX remove_core = M3X remove_core = MXM }
+		2662 = { add_core = THIS secede_province = THIS remove_core = MEX remove_core = M3X remove_core = MXM }
 		relation = { who = FROM value = 50 }
 		ai_chance = {
 			factor = 80
@@ -1762,8 +1763,8 @@ country_event = {
 			limit = { owner = { ai = yes } }
 			owner = { change_variable = { which = owed_cash_money value = 50 } } 
 		}
-		102 = { add_core = THIS secede_province = THIS remove_core = MEX }
-		2662 = { add_core = THIS secede_province = THIS remove_core = MEX }
+		102 = { add_core = THIS secede_province = THIS remove_core = MEX remove_core = M3X remove_core = MXM }
+		2662 = { add_core = THIS secede_province = THIS remove_core = MEX remove_core = M3X remove_core = MXM }
 		relation = { who = FROM value = 150 }
 		ai_chance = {
 			factor = 100

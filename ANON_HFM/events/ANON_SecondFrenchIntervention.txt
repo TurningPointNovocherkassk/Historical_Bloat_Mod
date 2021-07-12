@@ -21,98 +21,131 @@ country_event = {
 		MEX = { all_core = { add_core = M3X } }
 		set_global_flag = mexican_reform_war
 		MEX = { capital = 2162 }
-		}
+	}
 
 	option = {
 		name = "EVTOPTA1100050" #Pick Liberal Mexico
-		2172 = { secede_province = M3X }
-		2153 = { secede_province = M3X }
-		2154 = { secede_province = M3X }
-		2156 = { secede_province = M3X }
-		2157 = { secede_province = M3X }
-		2145 = { secede_province = M3X }
-		2144 = { secede_province = M3X }
-		2142 = { secede_province = M3X }
-		2143 = { secede_province = M3X }
-		2137 = { secede_province = M3X }
-		2140 = { secede_province = M3X }
-		2141 = { secede_province = M3X }
-		2159 = { secede_province = M3X }
-		2173 = { secede_province = M3X }
-		2175 = { secede_province = M3X }
-		2174 = { secede_province = M3X }
-		2176 = { secede_province = M3X }
-		2177 = { secede_province = M3X }
-		2178 = { secede_province = M3X }
-		3450 = { secede_province = M3X }
-		2181 = { secede_province = M3X }
-		2182 = { secede_province = M3X }
-		3424 = { secede_province = M3X }
-		3425 = { secede_province = M3X }
-		2165 = { secede_province = M3X }
-		3449 = { secede_province = M3X }
-		3444 = { secede_province = M3X }
-		3426 = { secede_province = M3X }
-		3443 = { secede_province = M3X }
-		3442 = { secede_province = M3X }
-		2184 = { secede_province = M3X }
-		2183 = { secede_province = M3X }
-		3359 = { secede_province = M3X }
-		3358 = { secede_province = M3X }
-		3635 = { secede_province = M3X }
-		3360 = { secede_province = M3X }
-		2185 = { secede_province = M3X }
-		3357 = { secede_province = M3X }
-		2189 = { secede_province = M3X }
+		any_owned = {
+			limit = {
+				OR = {
+					region = MEX_2172 #Mexico
+					region = MEX_2157 #Sinaloa
+					region = MEX_2142 #Chihuahua
+					region = MEX_2138 #Sonora
+					region = MEX_2177 #Oaxaca
+					region = MEX_2181 #Chiapas
+					region = MEX_2165 #Tabasco
+					region = UCA_2189 #Petén
+					region = MEX_2184 #Campeche
+					region = MEX_2183 #Yucatan
+					region = MEX_3358 #East Yucatan/Quintana Roo
+					province_id = 2153
+					province_id = 2154
+					province_id = 2159
+				}
+			}
+			secede_province = M3X
+		}
+		government = democracy
+		add_country_modifier = {
+			name = no_more_war
+			duration = 7
+		}
+		M3X = {
+			capital = 2172
+			government = provisional_government
+			ruling_party_ideology = conservative
+			nationalvalue = nv_order
+			political_reform = none_voting
+			political_reform = harassment
+			political_reform = appointed
+			political_reform = state_controlled
+			political_reform = mandatory_service
+			political_reform = state_press
+			political_reform = party_appointed
+			#
+			clr_country_flag = communist_gov
+			clr_country_flag = absolute_monarchy_gov
+			clr_country_flag = semi_constitutional_monarchy_gov
+			clr_country_flag = constitutional_monarchy_gov
+			clr_country_flag = democracy_gov
+			clr_country_flag = presidential_dictatorship_gov
+			clr_country_flag = fascist_gov
+			clr_country_flag = anarcho_liberal_gov
+			set_country_flag = provisional_gov
+			#
+			add_country_modifier = {
+				name = no_more_war
+				duration = 7
+			}
+			set_country_flag = ANON_total_war_flag
+		}
 		war = {
 			target = M3X
 			attacker_goal = { casus_belli = civil_war  }
 			defender_goal = { casus_belli = civil_war  }
 			call_ally = no
-			}
 		}
+		ai_chance = { factor = 100 }
+	}
 
 	option = {
 		name = "EVTOPTB1100050" #Pick Conservative Mexico
-		2172 = { secede_province = M3X }
-		2153 = { secede_province = M3X }
-		2154 = { secede_province = M3X }
-		2156 = { secede_province = M3X }
-		2157 = { secede_province = M3X }
-		2145 = { secede_province = M3X }
-		2144 = { secede_province = M3X }
-		2142 = { secede_province = M3X }
-		2143 = { secede_province = M3X }
-		2137 = { secede_province = M3X }
-		2140 = { secede_province = M3X }
-		2141 = { secede_province = M3X }
-		2159 = { secede_province = M3X }
-		2173 = { secede_province = M3X }
-		2175 = { secede_province = M3X }
-		2174 = { secede_province = M3X }
-		2176 = { secede_province = M3X }
-		2177 = { secede_province = M3X }
-		2178 = { secede_province = M3X }
-		3450 = { secede_province = M3X }
-		2181 = { secede_province = M3X }
-		3424 = { secede_province = M3X }
-		3425 = { secede_province = M3X }
-		2182 = { secede_province = M3X }
-		2165 = { secede_province = M3X }
-		3449 = { secede_province = M3X }
-		3444 = { secede_province = M3X }
-		3426 = { secede_province = M3X }
-		3443 = { secede_province = M3X }
-		3442 = { secede_province = M3X }
-		2184 = { secede_province = M3X }
-		2183 = { secede_province = M3X }
-		3359 = { secede_province = M3X }
-		3358 = { secede_province = M3X }
-		3635 = { secede_province = M3X }
-		3360 = { secede_province = M3X }
-		2185 = { secede_province = M3X }
-		3357 = { secede_province = M3X }
-		2189 = { secede_province = M3X }
+		any_owned = {
+			limit = {
+				OR = {
+					region = MEX_2172 #Mexico
+					region = MEX_2157 #Sinaloa
+					region = MEX_2142 #Chihuahua
+					region = MEX_2138 #Sonora
+					region = MEX_2177 #Oaxaca
+					region = MEX_2181 #Chiapas
+					region = MEX_2165 #Tabasco
+					region = UCA_2189 #Petén
+					region = MEX_2184 #Campeche
+					region = MEX_2183 #Yucatan
+					region = MEX_3358 #East Yucatan/Quintana Roo
+					province_id = 2153
+					province_id = 2154
+					province_id = 2159
+				}
+			}
+			secede_province = M3X
+		}
+		government = democracy
+		add_country_modifier = {
+			name = no_more_war
+			duration = 14
+		}
+		M3X = {
+			capital = 2172
+			government = provisional_government
+			ruling_party_ideology = conservative
+			nationalvalue = nv_order
+			political_reform = none_voting
+			political_reform = harassment
+			political_reform = appointed
+			political_reform = state_controlled
+			political_reform = mandatory_service
+			political_reform = state_press
+			political_reform = party_appointed
+			#
+			clr_country_flag = communist_gov
+			clr_country_flag = absolute_monarchy_gov
+			clr_country_flag = semi_constitutional_monarchy_gov
+			clr_country_flag = constitutional_monarchy_gov
+			clr_country_flag = democracy_gov
+			clr_country_flag = presidential_dictatorship_gov
+			clr_country_flag = fascist_gov
+			clr_country_flag = anarcho_liberal_gov
+			set_country_flag = provisional_gov
+			#
+			add_country_modifier = {
+				name = no_more_war
+				duration = 14
+			}
+			set_country_flag = ANON_total_war_flag
+		}
 		change_tag_no_core_switch = M3X
 		MEX = {
 			war = {
@@ -120,10 +153,11 @@ country_event = {
 				attacker_goal = { casus_belli = civil_war  }
 				defender_goal = { casus_belli = civil_war  }
 				call_ally = no
-				}
 			}
 		}
+		ai_chance = { factor = 0 }
 	}
+}
 
 #Getting PayDay Loans from European Powers
 country_event = {
@@ -131,91 +165,326 @@ country_event = {
 	title = "EVTNAME1100051"
 	desc = "EVTDESC1100051"
 	picture = "treaty_of_san_diego"
-
-	fire_only_once = yes
-
-	trigger = {
-		tag = MEX
-		has_global_flag = mexican_reform_war
-		NOT = { has_global_flag = conservatives_win }
-		}
-
+	
+	is_triggered_only = yes
+	
 	option = {
 		name = "EVTOPTA1100051" #Asking European Powers for some money
 		set_global_flag = mexico_asks_for_loans
-		ai_chance = { factor = 100 }
+		any_country = {
+			limit = {
+				NOT = { tag = MEX }
+				exists = yes
+				OR = {
+					AND = {
+						is_greater_power = yes
+						capital_scope = { continent = europe }
+					}
+					tag = SPA
+					tag = SPC
+				}
+				NOT = {
+					has_country_flag = gave_mexico_aid_frog
+					has_country_flag = gave_mexico_aid_spic
+					has_country_flag = gave_mexico_aid_kike
+					has_country_flag = gave_mexico_aid_random
+					#
+					has_country_flag = gave_mexico_money_frog
+					has_country_flag = gave_mexico_money_spic
+					has_country_flag = gave_mexico_money_kike
+					has_country_flag = gave_mexico_money_random
+					#
+					has_country_flag = no_aid_money_to_mexico
+				}
+			}
+			country_event = 1100052
 		}
+		ai_chance = { factor = 100 }
+	}
 
 	option = {
 		name = "EVTOPTB1100051"
 		set_global_flag = mexico_requests_US_aid
+		random_country = { limit = { owns = 2146 } country_event = 1100052 }
 		ai_chance = { factor = 0 }
-		}
+	}
 
 	option = {
 		name = "EVTOPTC1100051" #No Money
 		prestige = 20
 		ai_chance = { factor = 0 }
-		}
 	}
+}
 
 #Loans for Mexico
 country_event = {
-		id = 1100052
-		title = "EVTNAME1100052"
-		desc = "EVTDESC1100052"
-		picture = "treaty_of_san_diego"
-
-	trigger = {
-		NOT = { tag = MEX }
-		OR = {
-			is_greater_power = yes
-			tag = SPA
-			tag = SPC
-			}
-		has_global_flag = mexico_asks_for_loans
-		money = 150000
-		}
-
-	fire_only_once = yes
+	id = 1100052
+	title = "EVTNAME1100052"
+	desc = "EVTDESC1100052"
+	picture = "treaty_of_san_diego"
+	
+	is_triggered_only = yes
 
 	option = {
 		name = "EVTOPTA1100052" #Send Money and Supplies
-		THIS = {
-			treasury = -150000
-			ammunition = -50
-			small_arms = -25
-			artillery = -10
-			canned_food = -30
-			}
-		MEX = {
-			treasury = 150000
-			ammunition = 50
-			small_arms = 25
-			artillery = 10
-			canned_food = 30
-			}
-		THIS = { set_country_flag = gave_mexico_aid }
-		ai_chance = { factor = 20 }
+		random_owned = {
+			limit = { owner = { NOT = { check_variable = { which = owed_cash_money value = 1 } } } }
+			owner = { set_variable = { which = owed_cash_money value = 25 } }
 		}
+		random_owned = {
+			limit = { owner = { check_variable = { which = owed_cash_money value = 9 } } }
+			owner = { change_variable = { which = owed_cash_money value = 25 } }
+		}
+		random_owned = {
+			limit = { owner = { money = 25000 } }
+			owner = { treasury = -25000 }
+		}
+		random_owned = {
+			limit = { owner = { NOT = { check_variable = { which = owed_artillery value = 1 } } } }
+			owner = { set_variable = { which = owed_artillery value = 10 } }
+		}
+		random_owned = {
+			limit = { owner = { check_variable = { which = owed_artillery value = 1 } } }
+			owner = { change_variable = { which = owed_artillery value = 10 } }
+		}
+		random_owned = {
+			limit = { owner = { artillery = 10 } }
+			owner = { artillery = -10 }
+		}
+		random_owned = {
+			limit = { owner = { NOT = { check_variable = { which = owed_canned_food value = 1 } } } }
+			owner = { set_variable = { which = owed_canned_food value = 10 } }
+		}
+		random_owned = {
+			limit = { owner = { check_variable = { which = owed_canned_food value = 1 } } }
+			owner = { change_variable = { which = owed_canned_food value = 10 } }
+		}
+		random_owned = {
+			limit = { owner = { canned_food = 10 } }
+			owner = { canned_food = -10 }
+		}
+		random_owned = {
+			limit = { owner = { NOT = { check_variable = { which = owed_small_arms value = 1 } } } }
+			owner = { set_variable = { which = owed_small_arms value = 10 } }
+		}
+		random_owned = {
+			limit = { owner = { check_variable = { which = owed_small_arms value = 1 } } }
+			owner = { change_variable = { which = owed_small_arms value = 10 } }
+		}
+		random_owned = {
+			limit = { owner = { small_arms = 10 } }
+			owner = { small_arms = -10 }
+		}
+		random_owned = {
+			limit = { owner = { NOT = { check_variable = { which = owed_ammunition value = 1 } } } }
+			owner = { set_variable = { which = owed_ammunition value = 10 } }
+		}
+		random_owned = {
+			limit = { owner = { check_variable = { which = owed_ammunition value = 1 } } }
+			owner = { change_variable = { which = owed_ammunition value = 10 } }
+		}
+		random_owned = {
+			limit = { owner = { ammunition = 10 } }
+			owner = { ammunition = -10 }
+		}
+		random_owned = {
+			limit = {
+				owner = {
+					OR = {
+						tag = FRA
+						tag = BOR
+					}
+				}
+			}
+			owner = { set_country_flag = gave_mexico_aid_frog }
+		}
+		random_owned = {
+			limit = {
+				owner = {
+					OR = {
+						tag = SPA
+						tag = SPC
+					}
+				}
+			}
+			owner = { set_country_flag = gave_mexico_aid_spic }
+		}
+		random_owned = {
+			limit = {
+				owner = {
+					tag = ENG
+				}
+			}
+			owner = { set_country_flag = gave_mexico_aid_kike }
+		}
+		random_owned = {
+			limit = {
+				owner = {
+					NOT = {
+						OR = {
+							tag = FRA
+							tag = BOR
+							tag = ENG
+							tag = SPA
+							tag = SPC
+						}
+					}
+				}
+			}
+			owner = { set_country_flag = gave_mexico_aid_random }
+		}
+		MEX = {
+			random_list = { # Notification###
+				25 = { country_event = { id = 11223009 days = 2 } }
+				25 = { country_event = { id = 11223009 days = 5 } }
+				25 = { country_event = { id = 11223009 days = 7 } }
+				25 = { country_event = { id = 11223009 days = 10 } }
+			}
+		}
+		ai_chance = {
+			factor = 20
+			modifier = {
+				factor = 5
+				exists = yes
+				OR = {
+					tag = FRA
+					tag = BOR
+				}
+				money = 25001
+				small_arms = 10
+				ammunition = 10
+				canned_food = 10
+				artillery = 10
+			}
+		}
+	}
 
 	option = {
 		name = "EVTOPTB1100052" #Send Money
-		THIS = {
-			treasury = -150000
-			}
-		MEX = {
-			treasury = 150000
-			}
-		THIS = { set_country_flag = gave_mexico_money }
-		ai_chance = { factor = 70 }
+		random_owned = {
+			limit = { owner = { money = 25000 } }
+			owner = { treasury = -25000 }
 		}
-	option = {
-		name = "EVTOPTC1100052" #No Aid
-		THIS = { set_country_flag = no_aid_money_to_mexico }
-		ai_chance = { factor = 10 }
+		random_owned = {
+			limit = { owner = { NOT = { check_variable = { which = owed_cash_money value = 1 } } } }
+			owner = { set_variable = { which = owed_cash_money value = 25 } }
+		}
+		random_owned = {
+			limit = { owner = { check_variable = { which = owed_cash_money value = 9 } } }
+			owner = { change_variable = { which = owed_cash_money value = 25 } }
+		}
+		MEX = {
+			random_list = { # Notification###
+				25 = { country_event = { id = 11223009 days = 2 } }
+				25 = { country_event = { id = 11223009 days = 5 } }
+				25 = { country_event = { id = 11223009 days = 7 } }
+				25 = { country_event = { id = 11223009 days = 10 } }
+			}
+			treasury = 25000
+		}
+		random_owned = {
+			limit = {
+				owner = {
+					OR = {
+						tag = FRA
+						tag = BOR
+					}
+				}
+			}
+			owner = { set_country_flag = gave_mexico_money_frog }
+		}
+		random_owned = {
+			limit = {
+				owner = {
+					OR = {
+						tag = SPA
+						tag = SPC
+					}
+				}
+			}
+			owner = { set_country_flag = gave_mexico_money_spic }
+		}
+		random_owned = {
+			limit = {
+				owner = {
+					tag = ENG
+				}
+			}
+			owner = { set_country_flag = gave_mexico_money_kike }
+		}
+		random_owned = {
+			limit = {
+				owner = {
+					NOT = {
+						OR = {
+							tag = FRA
+							tag = BOR
+							tag = ENG
+							tag = SPA
+							tag = SPC
+						}
+					}
+				}
+			}
+			owner = { set_country_flag = gave_mexico_money_random }
+		}
+		ai_chance = {
+			factor = 70
+			modifier = {
+				factor = 1.43
+				exists = yes
+				OR = {
+					tag = SPA
+					tag = SPC
+					tag = ENG
+				}
+			}
 		}
 	}
+	option = {
+		name = "EVTOPTC1100052" #No Aid
+		set_country_flag = no_aid_money_to_mexico
+		MEX = {
+			random_list = { # Notification###
+				25 = { country_event = { id = 11223010 days = 2 } }
+				25 = { country_event = { id = 11223010 days = 5 } }
+				25 = { country_event = { id = 11223010 days = 7 } }
+				25 = { country_event = { id = 11223010 days = 10 } }
+			}
+		}
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 0
+				exists = yes
+				OR = {
+					tag = FRA
+					tag = BOR
+					tag = SPA
+					tag = SPC
+					tag = ENG
+				}
+			}
+			modifier = {
+				factor = 5
+				exists = yes
+				OR = {
+					tag = TUR
+					tag = RUS
+					tag = PRU
+					tag = NGF
+					tag = GER
+					tag = GCF
+					tag = AUS
+					tag = KUK
+					tag = SGF
+					tag = NET
+					tag = ITA
+				}
+			}
+		}
+	}
+}
 
 #Convention of London for Greater Powers and Spain
 country_event = {
@@ -224,60 +493,155 @@ country_event = {
 	desc = "EVTDESC1100053"
 	picture = "MEX_revolution"
 
-	fire_only_once = yes
-
-	trigger = {
-		NOT = { tag = FRA }
-		NOT = { tag = USA }
-		OR =  {
-			is_greater_power = yes
-			tag = SPA
-			tag = SPC
-			}
-		OR = {
-			has_country_flag = gave_mexico_aid
-			has_country_flag = gave_mexico_money
-			}
-		has_global_flag = mexico_didnt_pay
-		has_global_flag = convention_of_london
-		#has_global_flag = liberal_mexico_wins
-		has_global_flag = american_civil_war_has_happened
-		NOT = { exists = M3X }
-		}
+	is_triggered_only = yes
 
 	option = {
 		name = "EVTOPTA1100053" #Declare war for Money back
+		any_country = {
+			limit = {
+				OR = {
+					tag = FRA
+					tag = BOR
+				}
+			}
+			relation = {
+				who = THIS
+				value = 25
+			}
+			random_list = { # Notification###
+				25 = { country_event = { id = 11223011 days = 1 } }
+				25 = { country_event = { id = 11223011 days = 2 } }
+				25 = { country_event = { id = 11223011 days = 3 } }
+			}
+		}
 		THIS = {
 			war = {
 				target = MEX
 				attacker_goal = { casus_belli = war_reparations }
 				defender_goal = { casus_belli = status_quo }
 				call_ally = no
+			}
+		}
+		ai_chance = {
+			factor = 90
+			modifier = {
+				factor = 0
+				exists = yes
+				OR = {
+					tag = RUS
+					tag = PRU
+					tag = NGF
+					tag = GER
+					tag = GCF
+					tag = NET
+					tag = ITA
+					#
+					tag = BEL
+					tag = AUS
+					tag = KUK
+					tag = SGF
+					tag = TUR
+					tag = EGY
+					tag = CPL
+					tag = URP
+					tag = ROM
+					#
 				}
 			}
-
-		ai_chance = { factor = 100 }
 		}
+	}
 
 	option = {
 		name = "EVTOPTB1100053" #No War
-		THIS = {
-			prestige = -10
-			relation = {
-				who = MEX
-				value = 100
-				}
-			diplomatic_influence = {
-				who = MEX
-				value = 50
+		prestige = -10
+		relation = {
+			who = MEX
+			value = 100
+		}
+		diplomatic_influence = {
+			who = MEX
+			value = 50
+		}
+		any_country = {
+			limit = {
+				OR = {
+					tag = FRA
+					tag = BOR
 				}
 			}
-		ai_chance = { factor = 0 }
+			relation = {
+				who = THIS
+				value = -25
+			}
+			random_list = { # Notification###
+				25 = { country_event = { id = 11223012 days = 1 } }
+				25 = { country_event = { id = 11223012 days = 2 } }
+				25 = { country_event = { id = 11223012 days = 3 } }
+			}
 		}
-
+		random_owned = {
+			limit = {
+				owner = {
+					OR = {
+						has_country_flag = gave_mexico_aid_spic
+						has_country_flag = gave_mexico_money_spic
+					}
+				}
+			}
+			owner = {
+				clr_country_flag = gave_mexico_aid_spic
+				clr_country_flag = gave_mexico_money_spic
+				MEX = { clr_country_flag = mexico_didnt_pay_spic }
+			}
+		}
+		random_owned = {
+			limit = {
+				owner = {
+					OR = {
+						has_country_flag = gave_mexico_aid_kike
+						has_country_flag = gave_mexico_money_kike
+					}
+				}
+			}
+			owner = {
+				clr_country_flag = gave_mexico_aid_kike
+				clr_country_flag = gave_mexico_money_kike
+				MEX = { clr_country_flag = mexico_didnt_pay_kike }
+			}
+		}
+		random_owned = {
+			limit = {
+				owner = {
+					OR = {
+						has_country_flag = gave_mexico_aid_random
+						has_country_flag = gave_mexico_money_random
+					}
+				}
+			}
+			owner = {
+				clr_country_flag = gave_mexico_aid_random
+				clr_country_flag = gave_mexico_money_random
+				MEX = { clr_country_flag = mexico_didnt_pay_random}
+			}
+		}
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 0
+				exists = yes
+				OR = {
+					tag = FRA
+					tag = BOR
+					tag = SPA
+					tag = SPC
+					tag = ENG
+				}
+			}
+		}
 	}
+}
 
-#Convetion of London for France
+#Convention of London for France
 country_event = {
 	id = 1100070
 	title = "EVTNAME1100070"
@@ -287,57 +651,99 @@ country_event = {
 	fire_only_once = yes
 
 	trigger = {
-		tag = FRA
-		has_global_flag = mexico_didnt_pay
-		has_global_flag = american_civil_war_has_happened
-		NOT = { has_global_flag = conservatives_win }
-		#OR = {
-		#	has_country_flag = gave_mexico_aid
-		#	has_country_flag = gave_mexico_money
-		#	}
+		OR = {
+			tag = FRA
+			tag = BOR
 		}
+		MEX = { has_country_flag = mexico_didnt_pay_frog }
+		M3X = { exists = no }
+		OR = {
+			has_country_flag = gave_mexico_aid_frog
+			has_country_flag = gave_mexico_money_frog
+		}
+		NOT = { has_global_flag = conservatives_win }
+		NOT = { has_global_flag = convention_of_london }
+		has_global_flag = american_civil_war_has_happened
+	}
 
 	option = {
 		name = "EVTOPTA1100070" #Create the Maximilian Empire of Mexico
-		FRA = {
-			prestige = 20
-			set_global_flag = french_begins_intervention
-			set_global_flag = convention_of_london
+		prestige = 20
+		any_country = {
+			limit = {
+				OR =  {
+					AND = {
+						is_greater_power = yes
+						capital_scope = { continent = europe }
+						NOT = {
+							OR = {
+								tag = FRA
+								tag = BOR
+							}
+						}
+					}
+					tag = SPA
+					tag = SPC
+					tag = ENG
+				}
+				OR = {
+					AND = {
+						OR = {
+							has_country_flag = gave_mexico_aid_spic
+							has_country_flag = gave_mexico_money_spic
+						}
+						MEX = { has_country_flag = mexico_didnt_pay_spic }
+					}
+					AND = {
+						OR = {
+							has_country_flag = gave_mexico_aid_kike
+							has_country_flag = gave_mexico_money_kike
+						}
+						MEX = { has_country_flag = mexico_didnt_pay_kike }
+					}
+					AND = {
+						OR = {
+							has_country_flag = gave_mexico_aid_random
+							has_country_flag = gave_mexico_money_random
+						}
+						MEX = { has_country_flag = mexico_didnt_pay_random }
+					}
+				}
 			}
-		ai_chance = { factor = 100 }
+			country_event = 1100053
 		}
+		set_global_flag = french_begins_intervention
+		set_global_flag = convention_of_london
+		ai_chance = { factor = 100 }
+	}
 
 	option = {
 		name = "EVTOPTB1100070" #Declare war for Money back
-		FRA = {
-			war = {
-				target = MEX
-				attacker_goal = { casus_belli = war_reparations }
-				defender_goal = { casus_belli = status_quo }
-				call_ally = no
-				}
-			set_country_flag = mexican_payday_war
-			set_global_flag = convention_of_london
-			}
-		ai_chance = { factor = 0 }
+		war = {
+			target = MEX
+			attacker_goal = { casus_belli = war_reparations }
+			defender_goal = { casus_belli = status_quo }
+			call_ally = no
 		}
+		set_country_flag = mexican_payday_war
+		set_global_flag = convention_of_london
+		ai_chance = { factor = 0 }
+	}
 
 	option = {
 		name = "EVTOPTC1100070" #No War
-		FRA = {
-			prestige = -20
-			relation = {
-				who = MEX
-				value = 100
-				}
-			diplomatic_influence = {
-				who = MEX
-				value = 50
-				}
-			}
-		ai_chance = { factor = 0 }
+		prestige = -20
+		relation = {
+			who = MEX
+			value = 100
 		}
+		diplomatic_influence = {
+			who = MEX
+			value = 50
+		}
+		ai_chance = { factor = 0 }
 	}
+}
 
 #Convention of London Allies Leave Mexico
 country_event = {
@@ -353,42 +759,78 @@ country_event = {
 		has_country_flag = mexican_payday_war
 		has_global_flag = french_begins_intervention
 		exists = MXM
-		}
+	}
 
 	option = {
 		name = "EVTOPTA1100071" #Leave the War
-		THIS = {
-			end_war = MEX
-			prestige = 5
-			relation = {
-				who = MEX
-				value = 100
-				}
-			relation = {
-				who = FRA
-				value = -20
+		end_war = MEX
+		prestige = 5
+		relation = {
+			who = MEX
+			value = 100
+		}
+		relation = {
+			who = FRA
+			value = -25
+		}
+		relation = {
+			who = BOR
+			value = -25
+		}
+		any_country = {
+			limit = {
+				exists = yes
+				OR = {
+					tag = FRA
+					tag = BOR
 				}
 			}
-		ai_chance = { factor = 100 }
+			relation = {
+				who = THIS
+				value = -25
+			}
+			random_list = { # Notification###
+				25 = { country_event = { id = 11223013 days = 1 } }
+				25 = { country_event = { id = 11223013 days = 2 } }
+				25 = { country_event = { id = 11223013 days = 3 } }
+			}
 		}
+		ai_chance = { factor = 100 }
+	}
 	option = {
 		name = "EVTOPTB1100071" #We WILL have our shekels back
-		THIS = {
-			prestige = 20
-			relation = {
-				who = FRA
-				value = 50
-				}
-			relation = {
-				who = USA
-				value = -25
+		prestige = 20
+		relation = {
+			who = FRA
+			value = 50
+		}
+		relation = {
+			who = BOR
+			value = 50
+		}
+		any_country = {
+			limit = {
+				exists = yes
+				OR = {
+					tag = FRA
+					tag = BOR
 				}
 			}
-		ai_chance = { factor = 0 }
+			relation = {
+				who = THIS
+				value = 50
+			}
 		}
+		relation = {
+			who = USA
+			value = -25
+		}
+		ai_chance = { factor = 0 }
 	}
+}
 
 #Liberals win in Mexico or Conservatives win but change back to MEX tag
+#one pay back event per country loaned
 country_event = {
 	id = 1100072
 	title = "EVTNAME1100072"
@@ -399,40 +841,214 @@ country_event = {
 
 	trigger = {
 		tag = MEX
-		NOT = { exists = MXM }
-		NOT = { exists = M3X }
+		NOT = {
+			exists = MXM
+			exists = M3X
+		}
 		has_global_flag = mexican_reform_war
 		NOT = { has_global_flag = reform_war_stalemate }
-		}
+	}
 
-		immediate = {
-			government = democracy
-			ruling_party_ideology = liberal
-			political_reform = wealth_voting
-		}
+	immediate = {
+		government = democracy
+		ruling_party_ideology = liberal
+		political_reform = wealth_voting
+	}
 
 	option = {
 		name = "EVTOPTA1100072" #Don't Pay back the Money
 		M3X = { all_core = { remove_core = M3X } }
-		MEX = { capital = 2172 }
-		set_global_flag = mexico_didnt_pay
-		ai_chance = { factor = 1 }
+		capital = 2172
+		any_country = {
+			limit = {
+				OR = {
+					has_country_flag = gave_mexico_aid_frog
+					has_country_flag = gave_mexico_money_frog
+				}
+			}
+			country_event = 11223014 # Notification###
+			THIS = { set_country_flag = mexico_didnt_pay_frog }
 		}
+		any_country = {
+			limit = {
+				OR = {
+					has_country_flag = gave_mexico_aid_spic
+					has_country_flag = gave_mexico_money_spic
+				}
+			}
+			country_event = 11223014 # Notification###
+			THIS = { set_country_flag = mexico_didnt_pay_spic }
+		}
+		any_country = {
+			limit = {
+				OR = {
+					has_country_flag = gave_mexico_aid_kike
+					has_country_flag = gave_mexico_money_kike
+				}
+			}
+			country_event = 11223014 # Notification###
+			THIS = { set_country_flag = mexico_didnt_pay_kike }
+		}
+		any_country = {
+			limit = {
+				OR = {
+					has_country_flag = gave_mexico_aid_random
+					has_country_flag = gave_mexico_money_random
+				}
+			}
+			country_event = 11223014 # Notification###
+			THIS = { set_country_flag = mexico_didnt_pay_random }
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
 
 	option = {
 		name = "EVTOPTB1100072" #Pay back the money
 		any_country = {
 			limit = {
-				OR = { has_country_flag = gave_mexico_aid has_country_flag = gave_mexico_money }
+				OR = {
+					has_country_flag = gave_mexico_aid_frog
+					has_country_flag = gave_mexico_money_frog
 				}
-			treasury = 200000
-			MEX = { treasury = -200000 }
-			MEX = { capital = 2172 }
-			M3X = { all_core = { remove_core = M3X } }
+			}
+			treasury = 30000
+			country_event = 11223015 # Notification###
+			THIS = {
+				random_owned = {
+					limit = {
+						owner = {
+							NOT = { money = 30000 }
+							check_variable = { which = owed_cash_money value = 9 }
+						} 
+					}
+					owner = { change_variable = { which = owed_cash_money value = 30 } }
+				}
+				random_owned = {
+					limit = {
+						owner = {
+							NOT = { money = 30000 }
+							NOT = { check_variable = { which = owed_cash_money value = 1 } }
+						} 
+					}
+					owner = { set_variable = { which = owed_cash_money value = 1200 } }
+				}
+				random_owned = {
+					limit = { owner = { money = 30000 } }
+					owner = { treasury = -30000 }
+				}
 			}
 		}
-
+		any_country = {
+			limit = {
+				OR = {
+					has_country_flag = gave_mexico_aid_spic
+					has_country_flag = gave_mexico_money_spic
+				}
+			}
+			treasury = 30000
+			country_event = 11223015 # Notification###
+			THIS = {
+				random_owned = {
+					limit = {
+						owner = {
+							NOT = { money = 30000 }
+							check_variable = { which = owed_cash_money value = 9 }
+						} 
+					}
+					owner = { change_variable = { which = owed_cash_money value = 30 } }
+				}
+				random_owned = {
+					limit = {
+						owner = {
+							NOT = { money = 30000 }
+							NOT = { check_variable = { which = owed_cash_money value = 1 } }
+						} 
+					}
+					owner = { set_variable = { which = owed_cash_money value = 1200 } }
+				}
+				random_owned = {
+					limit = { owner = { money = 30000 } }
+					owner = { treasury = -30000 }
+				}
+			}
+		}
+		any_country = {
+			limit = {
+				OR = {
+					has_country_flag = gave_mexico_aid_kike
+					has_country_flag = gave_mexico_money_kike
+				}
+			}
+			treasury = 30000
+			country_event = 11223015 # Notification###
+			THIS = {
+				random_owned = {
+					limit = {
+						owner = {
+							NOT = { money = 30000 }
+							check_variable = { which = owed_cash_money value = 9 }
+						} 
+					}
+					owner = { change_variable = { which = owed_cash_money value = 30 } }
+				}
+				random_owned = {
+					limit = {
+						owner = {
+							NOT = { money = 30000 }
+							NOT = { check_variable = { which = owed_cash_money value = 1 } }
+						} 
+					}
+					owner = { set_variable = { which = owed_cash_money value = 1200 } }
+				}
+				random_owned = {
+					limit = { owner = { money = 30000 } }
+					owner = { treasury = -30000 }
+				}
+			}
+		}
+		any_country = {
+			limit = {
+				OR = {
+					has_country_flag = gave_mexico_aid_random
+					has_country_flag = gave_mexico_money_random
+				}
+			}
+			treasury = 30000
+			country_event = 11223015 # Notification###
+			THIS = {
+				random_owned = {
+					limit = {
+						owner = {
+							NOT = { money = 30000 }
+							check_variable = { which = owed_cash_money value = 9 }
+						} 
+					}
+					owner = { change_variable = { which = owed_cash_money value = 30 } }
+				}
+				random_owned = {
+					limit = {
+						owner = {
+							NOT = { money = 30000 }
+							NOT = { check_variable = { which = owed_cash_money value = 1 } }
+						} 
+					}
+					owner = { set_variable = { which = owed_cash_money value = 1200 } }
+				}
+				random_owned = {
+					limit = { owner = { money = 30000 } }
+					owner = { treasury = -30000 }
+				}
+			}
+		}
+		M3X = { all_core = { remove_core = M3X } }
+		capital = 2172
+		ai_chance = {
+			factor = 0
+		}
 	}
+}
 
 #Stalemate in Reform War
 country_event = {
@@ -449,52 +1065,82 @@ country_event = {
 		NOT = { has_global_flag = conservatives_win }
 		exists = MEX
 		has_global_flag = mexican_reform_war
-		#FRA = {
-		#	OR = {
-		#		has_country_flag = gave_mexico_aid
-		#		has_country_flag = gave_mexico_money
-		#		}
-		#	}
-		}
-
-	immediate = {
-		MEX = { all_core = { add_core = MXM } }
-		FRA = { create_alliance = MXM
-				relation = {
-					who = MXM
-					value = 400
-				}
-				diplomatic_influence = {
-					who = MXM
-					value = 400
+		OR = {
+			FRA = {
+				OR = {
+					has_country_flag = gave_mexico_aid_frog
+					has_country_flag = gave_mexico_money_frog
 				}
 			}
-		set_global_flag = second_french_intervetion
-		set_global_flag = reform_war_stalemate
-		M3X = { all_core = { remove_core = M3X } }
-		2172 = { secede_province = MXM }
-		change_tag_no_core_switch = MXM
-		#MXM = { inherit = M3X }
-		}
-
-	option = {
-		name = "EVTOPTA1100073"
-		change_tag_no_core_switch = MXM
-		#change_tag = MXM
-		#change_tag_no_core_switch = MXM
-		MXM = {
-			inherit = M3X
-			}
-		MEX = {
-			war = {
-				target = MXM
-				attacker_goal = { casus_belli = civil_war }
-				defender_goal = { casus_belli = civil_war }
-				call_ally = yes
+			BOR = {
+				OR = {
+					has_country_flag = gave_mexico_aid_frog
+					has_country_flag = gave_mexico_money_frog
 				}
 			}
 		}
 	}
+
+	immediate = {
+		MEX = { all_core = { add_core = MXM } }
+		2172 = { secede_province = MXM }
+		all_core = { remove_core = M3X }
+	}
+
+	option = {
+		name = "EVTOPTA1100073"
+		set_global_flag = second_french_intervetion
+		set_global_flag = reform_war_stalemate
+		inherit = M3X
+		change_tag_no_core_switch = MXM
+		government = absolute_monarchy
+		ruling_party_ideology = conservative
+		nationalvalue = nv_order
+		political_reform = none_voting
+		political_reform = harassment
+		political_reform = appointed
+		political_reform = state_controlled
+		political_reform = mandatory_service
+		political_reform = state_press
+		political_reform = party_appointed
+		political_reform = yes_meeting
+		#
+		set_country_flag = absolute_monarchy_gov
+		clr_country_flag = communist_gov
+		clr_country_flag = semi_constitutional_monarchy_gov
+		clr_country_flag = constitutional_monarchy_gov
+		clr_country_flag = democracy_gov
+		clr_country_flag = presidential_dictatorship_gov
+		clr_country_flag = fascist_gov
+		clr_country_flag = anarcho_liberal_gov
+		clr_country_flag = provisional_gov
+		any_country = {
+			limit = {
+				OR = {
+					tag = FRA
+					tag = BOR
+				}
+			}
+			create_alliance = MXM
+			relation = {
+				who = MXM
+				value = 400
+			}
+			diplomatic_influence = {
+				who = MXM
+				value = 400
+			}
+			diplomatic_influence = {
+				who = MEX
+				value = -400
+			}
+		}
+		MEX = {
+			all_core = { add_core = MXM }
+			country_event = 11223016 # Notification###
+		}
+	}
+}
 
 #Conservatives Win in Mexico
 country_event = {
@@ -507,16 +1153,26 @@ country_event = {
 
 	trigger = {
 		tag = M3X
-		NOT = { war_with = MEX }
-		#FRA = {
-		#	OR = {
-		#		has_country_flag = gave_mexico_aid
-		#		has_country_flag = gave_mexico_money
-		#		}
-		#	}
-		NOT = { exists = MEX }
-		has_global_flag = mexican_reform_war
+		NOT = {
+			war_with = MEX
+			exists = MEX
 		}
+		OR = {
+			FRA = {
+				OR = {
+					has_country_flag = gave_mexico_aid_frog
+					has_country_flag = gave_mexico_money_frog
+				}
+			}
+			BOR = {
+				OR = {
+					has_country_flag = gave_mexico_aid_frog
+					has_country_flag = gave_mexico_money_frog
+				}
+			}
+		}
+		has_global_flag = mexican_reform_war
+	}
 
 	immediate = { M3X = { all_core = { remove_core = M3X } } }
 
@@ -524,40 +1180,66 @@ country_event = {
 		name = "EVTOPTA1100074" #Become the Monarchy
 		MEX = { all_core = { add_core = MXM } }
 		2172 = { secede_province = MXM }
-		FRA = { create_alliance = MXM
-				relation = {
-					who = MXM
-					value = 400
-				}
-				diplomatic_influence = {
-					who = MXM
-					value = 400
-				}
-			}
 		set_global_flag = second_french_intervetion
-		#change_tag = MXM
-		change_tag_no_core_switch = MXM
 		MXM = { inherit = M3X }
 		3333 = { secede_province = M3X }
-		#MXM = { inherit = M3X }
-		MEX = { all_core = { remove_core = MEX } }
-		ai_chance = { factor = 50 }
+		# MEX = { all_core = { remove_core = MEX } } #Too OP
+		change_tag_no_core_switch = MXM
+		government = absolute_monarchy
+		ruling_party_ideology = conservative
+		nationalvalue = nv_order
+		political_reform = none_voting
+		political_reform = harassment
+		political_reform = appointed
+		political_reform = state_controlled
+		political_reform = mandatory_service
+		political_reform = state_press
+		political_reform = party_appointed
+		political_reform = yes_meeting
+		#
+		set_country_flag = absolute_monarchy_gov
+		clr_country_flag = communist_gov
+		clr_country_flag = semi_constitutional_monarchy_gov
+		clr_country_flag = constitutional_monarchy_gov
+		clr_country_flag = democracy_gov
+		clr_country_flag = presidential_dictatorship_gov
+		clr_country_flag = fascist_gov
+		clr_country_flag = anarcho_liberal_gov
+		clr_country_flag = provisional_gov
+		any_country = {
+			limit = {
+				OR = {
+					tag = FRA
+					tag = BOR
+				}
+			}
+			create_alliance = MXM
+			relation = {
+				who = MXM
+				value = 400
+			}
+			diplomatic_influence = {
+				who = MXM
+				value = 400
+			}
 		}
+		ai_chance = { factor = 50 }
+	}
 
 	option = {
 		name = "EVTOPTB1100074" #Stay as Mexico
-		#change_tag = MEX
 		change_tag_no_core_switch = MEX
 		MEX = { inherit = M3X }
 		capital = 2172
-		3333 = { secede_province = M3X }
-		#MEX = { inherit = M3X }
+		3333 = { secede_province = MEX }
 		government = presidential_dictatorship
 		ruling_party_ideology = conservative
 		set_global_flag = conservatives_win
-		ai_chance = { factor = 50 }
+		ai_chance = {
+			factor = 50
 		}
 	}
+}
 
 #2nd French Intervention of Mexico
 
@@ -575,28 +1257,40 @@ country_event = {
 		has_country_flag = pastry_war
 		has_global_flag = american_civil_war_has_happened
 		has_global_flag = french_begins_intervention
-		OR = {
-			USA = { war_with = CSA }
-			USA = { war_with = FSA }
+		USA = {
+			OR = {
+				war_with = CSA
+				war_with = FSA
 			}
+		}
 		#NOT = { has_global_flag = liberal_mexico_wins }
 		NOT = { has_global_flag = conservatives_win }
 	}
 
 	immediate = {
 		set_global_flag = second_french_intervetion
-		MEX = { capital = 2147 }
-		MEX = { all_core = { add_core = MXM } }
-		FRA = { create_alliance = MXM
-				relation = {
-					who = MXM
-					value = 400
+		MEX = {
+			capital = 2147
+			all_core = { add_core = MXM }
+		}
+		any_country = {
+			limit = {
+				OR = {
+					tag = FRA
+					tag = BOR
 				}
-				diplomatic_influence = {
-					who = MXM
-					value = 400
-				}
+				exists = yes
 			}
+			create_alliance = MXM
+			relation = {
+				who = MXM
+				value = 400
+			}
+			diplomatic_influence = {
+				who = MXM
+				value = 400
+			}
+		}
 	}
 
 	option = {
@@ -605,29 +1299,21 @@ country_event = {
 			consciousness = -2
 			militancy = -1
 		}
-		2172 = { secede_province = MXM }
-		2165 = { secede_province = MXM }
-		3449 = { secede_province = MXM }
-		2164 = { secede_province = MXM }
-		3441 = { secede_province = MXM }
-		2162 = { secede_province = MXM }
-		2163 = { secede_province = MXM }
-		2177 = { secede_province = MXM }
-		2178 = { secede_province = MXM }
-		2176 = { secede_province = MXM }
-		2175 = { secede_province = MXM }
-		2173 = { secede_province = MXM }
-		2174 = { secede_province = MXM }
-		2180 = { secede_province = MXM }
-		2179 = { secede_province = MXM }
-		2171 = { secede_province = MXM }
-		2170 = { secede_province = MXM }
-		2167 = { secede_province = MXM }
-		2166 = { secede_province = MXM }
-		2161 = { secede_province = MXM }
-		2168 = { secede_province = MXM }
-		2169 = { secede_province = MXM }
-		3425 = { secede_province = MXM }
+		any_country = { #test if this works
+			any_owned = {
+				limit = {
+					OR = {
+						region = MEX_2172 #Mexico
+						region = MEX_2165 #Tabasco
+						region = MEX_2159 #Veracruz
+						region = MEX_2177 #Oaxaca
+						region = MEX_2170 #Guerrero
+						region = MEX_2161 #Jalisco
+					}
+				}
+				secede_province = MXM
+			}
+		}
 		war = {
 			target = MXM
 			attacker_goal = { casus_belli = civil_war  }
@@ -642,29 +1328,21 @@ country_event = {
 			consciousness = -2
 			militancy = -1
 		}
-		2172 = { secede_province = MXM }
-		2165 = { secede_province = MXM }
-		3449 = { secede_province = MXM }
-		2164 = { secede_province = MXM }
-		3441 = { secede_province = MXM }
-		2162 = { secede_province = MXM }
-		2163 = { secede_province = MXM }
-		2177 = { secede_province = MXM }
-		2178 = { secede_province = MXM }
-		2176 = { secede_province = MXM }
-		2175 = { secede_province = MXM }
-		2173 = { secede_province = MXM }
-		2174 = { secede_province = MXM }
-		2180 = { secede_province = MXM }
-		2179 = { secede_province = MXM }
-		2171 = { secede_province = MXM }
-		2170 = { secede_province = MXM }
-		2167 = { secede_province = MXM }
-		2166 = { secede_province = MXM }
-		2161 = { secede_province = MXM }
-		2168 = { secede_province = MXM }
-		2169 = { secede_province = MXM }
-		3425 = { secede_province = MXM }
+		any_country = {
+			any_owned = {
+				limit = {
+					OR = {
+						region = MEX_2172 #Mexico
+						region = MEX_2165 #Tabasco
+						region = MEX_2159 #Veracruz
+						region = MEX_2177 #Oaxaca
+						region = MEX_2170 #Guerrero
+						region = MEX_2161 #Jalisco
+					}
+				}
+				secede_province = MXM
+			}
+		}
 
 		change_tag_no_core_switch = MXM
 
@@ -685,10 +1363,11 @@ country_event = {
 	id = 1100061
 	title = "EVTNAME1100061" #Execution of Emperor Maximilian
 	desc = "EVTDESC1100061"
-	#news = yes
-	#news_desc_long = "EVTDESC1100061"
-	#news_desc_medium = "EVTDESC1100061_NEWS_MEDIUM"
-	#news_desc_short = "EVTDESC1100061_NEWS_SHORT"
+	major = yes
+	news = yes
+	news_desc_long = "EVTDESC1100061"
+	news_desc_medium = "EVTDESC1100061_NEWS_MEDIUM"
+	news_desc_short = "EVTDESC1100061_NEWS_SHORT"
 	picture = "execution_of_emperor_maximillian"
 
 	fire_only_once = yes
@@ -698,68 +1377,99 @@ country_event = {
 		has_global_flag = second_french_intervetion
 		2172 = { controlled_by = MEX }
 		2143 = { controlled_by = MEX }
-		}
+		NOT = { has_global_flag = second_french_intervetion_lose }
+	}
 
 	option = {
 		name = "EVTOPTA1100061" #Executing Maximilian
-		MEX = {
-			inherit = MXM
-			MXM = { all_core = { remove_core = MXM } }
-			MEX = {	badboy = 5
-					capital = 2172
-					war_exhaustion = -20
-					prestige = 10
-					}
+		set_global_flag = second_french_intervetion_lose
+		inherit = MXM
+		MXM = { all_core = { remove_core = MXM } }
+		badboy = 5
+		capital = 2172
+		war_exhaustion = -20
+		prestige = 10
+		any_country = {
+			limit = {
+				exists = yes
+				OR = {
+					tag = FRA
+					tag = BOR
+					alliance_with = FRA
+					alliance_with = BOR
+				}
+				war_with = THIS
+			}
+			end_war = THIS
+		}
+		any_country = {
+			limit = {
+				exists = yes
+				alliance_with = THIS
+				OR = {
+					war_with = FRA
+					war_with = BOR
+				}
+			}
 			end_war = FRA
-
-			FRA = {
+			end_war = BOR
+		}
+		any_country = {
+			limit = {
+				exists = yes
+				OR = {
+					tag = FRA
+					tag = BOR
+				}
+			}
 			relation = {
 				who = THIS
 				value = -100
-				}
+			}
 			diplomatic_influence = {
 				who = THIS
 				value = -200
-				}
 			}
-
-			any_country = {
-				limit = {
-					is_greater_power = yes
-					NOT = {
-						OR = {
-							tag = USA
-							tag = FRA
-							#tag = BOR
-							}
-						}
-					}
-				relation = {
-					who = THIS
-					value = -50
-					}
-				diplomatic_influence = {
-					who = THIS
-					value = -100
-					}
-				}
-			}
-			ai_chance = { factor = 90 }
 		}
+		any_country = {
+			limit = {
+				capital_scope = { continent = europe }
+				OR = {
+					is_greater_power = yes
+					ruling_party_ideology = liberal
+					ruling_party_ideology = anarcho_liberal
+				}
+				NOT = {
+					OR = {
+						tag = FRA
+						tag = BOR
+					}
+				}
+			}
+			relation = {
+				who = THIS
+				value = -50
+			}
+			diplomatic_influence = {
+				who = THIS
+				value = -100
+			}
+		}
+		ai_chance = { factor = 90 }
+	}
 
 	option = {
 		name = "EVTOPTB1100061" #Sparing Maximilian
-		MEX = {
-			any_pop = {
-				consciousness = 3
-				militancy = 1
-				}
-			prestige = -10
-			war_exhaustion = 5
-			}
-		ai_chance = { factor = 10 }
+		set_global_flag = second_french_intervetion_lose
+		any_pop = {
+			consciousness = 3
+			militancy = 1
 		}
+		prestige = -10
+		war_exhaustion = 5
+		ai_chance = { factor = 10 }
 	}
+}
 
 #French Intervention is a success
 country_event = {
@@ -767,7 +1477,11 @@ country_event = {
 	title = "EVTNAME1100062"
 	desc = "EVTDESC1100062"
 	picture = "MEX_revolution"
-
+	major = yes
+	news = yes
+	news_desc_long = "EVTDESC1100062"
+	news_desc_medium = "EVTDESC1100062_NEWS_MEDIUM"
+	news_desc_short = "EVTDESC1100062_NEWS_SHORT"
 	fire_only_once = yes
 
 	trigger = {
@@ -775,34 +1489,37 @@ country_event = {
 		has_global_flag = second_french_intervetion
 		owns = 2147
 		owns = 2143
-		NOT = { war_with = MEX }
-		NOT = { war_with = USA }
-		NOT = { has_global_flag = juarez_accepts }
+		NOT = {
+			war_with = MEX
+			war_with = USA
+			has_global_flag = juarez_accepts
+			has_global_flag = MXM_winner
 		}
+	}
 
 	option = {
 		name = "EVTOPTA1100062"
-		MXM = {
-			any_pop = {
-				consciousness = 3
-				militancy = -1
-				}
-			prestige = 10
-			war_exhaustion = -10
-			USA = {
-				relation = {
-					who = THIS
-					value = -50
-					}
-				diplomatic_influence = {
-					who = THIS
-					value = -25
-					}
-				}
-			MEX = { all_core = { remove_core = MEX } }
+		set_global_flag = MXM_winner
+		any_pop = {
+			consciousness = 3
+			militancy = -1
+			}
+		prestige = 10
+		war_exhaustion = -10
+		any_country = {
+			limit = { owns = 2146 } #D.C
+			relation = {
+				who = THIS
+				value = -50
+			}
+			diplomatic_influence = {
+				who = THIS
+				value = -100
 			}
 		}
+		# MEX = { all_core = { remove_core = MEX } } #Too OP
 	}
+}
 
 #French Intervention is a failure. Maximilian is not executed however Republican Mexico still wins
 country_event = {
@@ -810,32 +1527,42 @@ country_event = {
 	title = "EVTNAME1100063"
 	desc = "EVTDESC1100063"
 	picture = "MEX_revolution"
-
+	major = yes
+	news = yes
+	news_desc_long = "EVTDESC1100063"
+	news_desc_medium = "EVTDESC1100063_NEWS_MEDIUM"
+	news_desc_short = "EVTDESC1100063_NEWS_SHORT"
 	fire_only_once = yes
 
 	trigger = {
 		tag = MEX
-		has_global_flag = second_french_intervetion
+		has_global_flag = second_french_intervetion_lose
 		owns = 2172
-		NOT = { war_with = MXM }
-		NOT = { war_with = FRA }
-		}
-
-	option = {
-		name = "EVTOPTA1100063"
-		MEX = {
-			any_pop = {
-				consciousness = -1
-				militancy = -2
-				}
-			prestige = 20
-			MXM = { all_core = { remove_core = MXM } }
-			MEX = { capital = 2172 }
+		NOT = {
+			war_with = MXM
+			OR = {
+				war_with = FRA
+				war_with = BOR
 			}
 		}
 	}
 
+	option = {
+		name = "EVTOPTA1100063"
+		prestige = 20
+		capital = 2172
+		any_pop = {
+			consciousness = -1
+			militancy = -2
+		}
+		MXM = { all_core = { remove_core = MXM } }
+	}
+}
+
 #USA invokes the Monroe Doctrine, CSA/FSA defeated
+
+#do a thing with call_ally like with vojvodina and serbia so burgers join the war AND have monroe active in case MXM wins somehow
+#remember to edit the new world nation tag in MXM so they get fucked by monroe
 country_event = {
 	id = 1100064
 	title = "EVTNAME1100064"
@@ -845,115 +1572,186 @@ country_event = {
 	fire_only_once = yes
 
 	trigger = {
-		tag = USA
-		NOT = { exists = CSA }
-		NOT = { exists = FSA }
+		OR = {
+			tag = USA
+			tag = FSA
+		}
+		OR = {
+			NOT ={
+				exists = CSA
+				exists = FSA
+			}
+			# truce_with = CSA
+			AND = {
+				exists = FSA
+				OR = {
+					truce_with = USA
+					USA = { exists = no }
+					FSA = { owns = 60 } #CSA Capital 
+				}
+			}
+		}
+		NOT = {
+			has_country_flag = USA_aid_MEX_true
+			has_country_flag = USA_aid_MEX_false
+			has_country_flag = USA_dickwaving_CSA_true
+			has_country_flag = USA_dickwaving_CSA_false
+			has_global_flag = CSA_intervenes
+		}
 		#year = 1860
 		has_global_flag = second_french_intervetion
 		has_global_flag = american_civil_war_has_happened
 		MEX = { war_with = MXM }
-		}
+	}
 
 	option = {
 		name = "EVTOPTA1100064" ## Actual declaration of War against France and Habsburg Mexico ##
-		USA = {
-			war = {
-					target = MXM
-					attacker_goal = { casus_belli = cut_down_to_size }
-					defender_goal = { casus_belli = status_quo }
-					call_ally = yes
-					}
-			}
-		USA = {
-			create_alliance = MEX
-				relation = {
-					who = MEX
-					value = 400
-					}
-				diplomatic_influence = {
-					who = MEX
-					value = 400
-					}
-			}
-		USA = {
-			any_pop = {
-				limit = {
+		set_country_flag = USA_aid_MEX_true
+		create_alliance = MEX
+		relation = { who = MEX value = 400 }
+		diplomatic_influence = { who = MEX value = 400 }
+		MEX = {
+			country_event = 11223006 # Notification###
+		}
+		any_pop = {
+			limit = {
 				OR = {
 					has_pop_culture = dixie
 					has_pop_culture = texan
-					}
 				}
-				consciousness = 3
-				militancy = 2
-				}
-			any_pop = {
-				limit = {
-					NOT = {
-						OR = {
-							has_pop_culture = dixie
-							has_pop_culture = texan
-							}
-						}
-					}
-				consciousness = 1.5
-				militancy = 1
-				}
-			war_exhaustion = 10
 			}
-		MEX = {
-			military_access = USA
-			}
-		ai_chance = { factor = 30 }
+			consciousness = 3
+			militancy = 2
 		}
+		any_pop = {
+			limit = {
+				NOT = {
+					OR = {
+						has_pop_culture = dixie
+						has_pop_culture = texan
+					}
+				}
+			}
+			consciousness = 1.5
+			militancy = 1
+		}
+		war_exhaustion = 10
+		ai_chance = {
+			factor = 30
+		}
+	}
 	option = {
 		name = "EVTOPTB1100064" ## Sending of supplies to Mexico
-		USA = {
-			ammunition = -500
-			small_arms = -250
-			artillery = -100
-			canned_food = -300
-			}
-		MEX = {
-			ammunition = 500
-			small_arms = 250
-			artillery = 100
-			canned_food = 300
-			}
-		USA = {
-			relation = {
-				who = MEX
-				value = 100
-				}
-			diplomatic_influence = {
-				who = MEX
-				value = 50
-				}
-			}
-		USA = {
-			relation = {
-				who = FRA
-				value = -50
-				}
-			relation = {
-				who = MXM
-				value = -100
-				}
-			}
-		ai_chance = { factor = 60 }
+		set_country_flag = USA_aid_MEX_true
+		random_owned = {
+			limit = { owner = { NOT = { check_variable = { which = owed_artillery value = 1 } } } }
+			owner = { set_variable = { which = owed_artillery value = 30 } }
 		}
+		random_owned = {
+			limit = { owner = { check_variable = { which = owed_artillery value = 1 } } }
+			owner = { change_variable = { which = owed_artillery value = 30 } }
+		}
+		random_owned = {
+			limit = { owner = { artillery = 30 } }
+			owner = { artillery = -30 }
+		}
+		random_owned = {
+			limit = { owner = { NOT = { check_variable = { which = owed_canned_food value = 1 } } } }
+			owner = { set_variable = { which = owed_canned_food value = 150 } }
+		}
+		random_owned = {
+			limit = { owner = { check_variable = { which = owed_canned_food value = 1 } } }
+			owner = { change_variable = { which = owed_canned_food value = 150 } }
+		}
+		random_owned = {
+			limit = { owner = { canned_food = 150 } }
+			owner = { canned_food = -150 }
+		}
+		random_owned = {
+			limit = { owner = { NOT = { check_variable = { which = owed_small_arms value = 1 } } } }
+			owner = { set_variable = { which = owed_small_arms value = 60 } }
+		}
+		random_owned = {
+			limit = { owner = { check_variable = { which = owed_small_arms value = 1 } } }
+			owner = { change_variable = { which = owed_small_arms value = 60 } }
+		}
+		random_owned = {
+			limit = { owner = { small_arms = 60 } }
+			owner = { small_arms = -60 }
+		}
+		random_owned = {
+			limit = { owner = { NOT = { check_variable = { which = owed_ammunition value = 1 } } } }
+			owner = { set_variable = { which = owed_ammunition value = 150 } }
+		}
+		random_owned = {
+			limit = { owner = { check_variable = { which = owed_ammunition value = 1 } } }
+			owner = { change_variable = { which = owed_ammunition value = 150 } }
+		}
+		random_owned = {
+			limit = { owner = { ammunition = 150 } }
+			owner = { ammunition = -150 }
+		}
+		relation = {
+			who = MEX
+			value = 100
+		}
+		diplomatic_influence = {
+			who = MEX
+			value = 50
+		}
+		relation = {
+			who = FRA
+			value = -50
+		}
+		relation = {
+			who = BOR
+			value = -50
+		}
+		relation = {
+			who = MXM
+			value = -100
+		}
+		diplomatic_influence = {
+			who = MXM
+			value = -100
+		}
+		MEX = {
+			country_event = 11223007 # Notification###
+		}
+		any_country = {
+			limit = {
+				OR ={
+					tag = CSA
+					alliance_with = CSA
+				}
+				exists = yes
+			}
+			country_event = 11223008 # Notification###
+		}
+		ai_chance = {
+			factor = 60
+			# modifier = {
+				# factor = 1.67
+				# ammunition = 50
+				# small_arms = 25
+				# artillery = 10
+				# canned_food = 30
+			# }
+		}
+	}
 	option = {
 		name = "EVTOPTC1100064" ## No aid rendered to Mexico
-		USA = {
-			any_pop = {
-				consciousness = -2
-				militancy = -1
-				}
-			war_exhaustion = -5
-			}
-		ai_chance = { factor = 10 }
+		set_country_flag = USA_aid_MEX_false
+		any_pop = {
+			consciousness = -2
+			militancy = -1
 		}
-
+		war_exhaustion = -5
+		ai_chance = {
+			factor = 10
+		}
 	}
+}
 
 #CSA Intervention
 country_event = {
@@ -966,95 +1764,181 @@ country_event = {
 
 	trigger = {
 		tag = CSA
+		OR = {
+			truce_with = USA
+			USA = { exists = no }
+			owns = 2146 #D.C
+		}
 		#year = 1863
+		MXM = {
+			war_with = MEX
+			# war_with = USA
+			NOT = { alliance_with = USA }
+		}
+		NOT = {
+			has_global_flag = CSA_intervenes
+			has_country_flag = CSA_aid_MXM_false
+		}
 		has_global_flag = second_french_intervetion
 		has_global_flag = american_civil_war_has_happened
-		MXM = { war_with = MEX }
-		NOT = { war_with = USA }
-		truce_with = USA
-		}
+		NOT = { has_global_flag = CSA_intervenes }
+	}
+	
 	option = {
 		name = "EVTOPTA1100065" ## Actual declaration of War against  Mexico ##
-		CSA = {
-			war = {
-					target = MEX
-					attacker_goal = { casus_belli = cut_down_to_size }
-					defender_goal = { casus_belli = status_quo }
-					call_ally = yes
-					}
-			}
-		CSA = {
-			create_alliance = MXM
-				relation = {
-					who = MXM
-					value = 400
-					}
-				diplomatic_influence = {
-					who = MXM
-					value = 400
-					}
-			create_alliance = FRA
-				relation = {
-					who = FRA
-					value = 400
-					}
-			}
-		prestige = 50
-		war_exhaustion = 10
-		MXM = { military_access = CSA }
 		set_global_flag = CSA_intervenes
-		ai_chance = { factor = 30 }
-		}
-	option = {
-		name = "EVTOPTB1100065" ## Sending of supplies to Habsburg Mexico
-		CSA = {
-			ammunition = -100
-			small_arms = -50
-			artillery = -20
-			canned_food = -60
-			}
-		MXM = {
-			ammunition = 100
-			small_arms = 50
-			artillery = 20
-			canned_food = 60
-			}
-		CSA = {
-			relation = {
-				who = MXM
-				value = 100
-				}
-			diplomatic_influence = {
-				who = MXM
-				value = 50
-				}
-			}
-		CSA = {
-			relation = {
-				who = FRA
-				value = 50
-				}
-			relation = {
-				who = MEX
-				value = -50
-				}
-			}
+		# prestige = 50 #too OP
 		prestige = 25
-		set_global_flag = CSA_intervenes
-		ai_chance = { factor = 40 }
-		}
-	option = {
-		name = "EVTOPTC1100065" ## No aid rendered to Habsburg Mexico
-		CSA = {
-			any_pop = {
-				consciousness = -2
-				militancy = -1
+		create_alliance = MXM
+		relation = { who = MXM value = 400 }
+		diplomatic_influence = { who = MXM value = 350 } #to prevent them from being automatically displaced from FRA/BOR sphere
+		any_country = {
+			limit = {
+				exists = yes
+				OR = {
+					tag = FRA
+					tag = BOR
 				}
-			war_exhaustion = -5
+				alliance_with = MXM
 			}
-		ai_chance = { factor = 30 }
+			relation = { who = THIS value = 400 }
+			create_alliance = THIS
+		}
+		relation = { who = FRA value = 400 }
+		relation = { who = BOR value = 400 }
+		MXM = {
+			country_event = 11223003 # Notification###
+		}
+		war_exhaustion = 10
+		ai_chance = {
+			factor = 30
+			#add cool mods
 		}
 	}
+	option = {
+		name = "EVTOPTB1100065" ## Sending of supplies to Habsburg Mexico
+		set_global_flag = CSA_intervenes
+		# prestige = 25 #too OP
+		prestige = 12.5
+		random_owned = {
+			limit = { owner = { NOT = { check_variable = { which = owed_artillery value = 1 } } } }
+			owner = { set_variable = { which = owed_artillery value = 15 } }
+		}
+		random_owned = {
+			limit = { owner = { check_variable = { which = owed_artillery value = 1 } } }
+			owner = { change_variable = { which = owed_artillery value = 15 } }
+		}
+		random_owned = {
+			limit = { owner = { artillery = 15 } }
+			owner = { artillery = -15 }
+		}
+		random_owned = {
+			limit = { owner = { NOT = { check_variable = { which = owed_canned_food value = 1 } } } }
+			owner = { set_variable = { which = owed_canned_food value = 75 } }
+		}
+		random_owned = {
+			limit = { owner = { check_variable = { which = owed_canned_food value = 1 } } }
+			owner = { change_variable = { which = owed_canned_food value = 75 } }
+		}
+		random_owned = {
+			limit = { owner = { canned_food = 75 } }
+			owner = { canned_food = -75 }
+		}
+		random_owned = {
+			limit = { owner = { NOT = { check_variable = { which = owed_small_arms value = 1 } } } }
+			owner = { set_variable = { which = owed_small_arms value = 30 } }
+		}
+		random_owned = {
+			limit = { owner = { check_variable = { which = owed_small_arms value = 1 } } }
+			owner = { change_variable = { which = owed_small_arms value = 30 } }
+		}
+		random_owned = {
+			limit = { owner = { small_arms = 30 } }
+			owner = { small_arms = -30 }
+		}
+		random_owned = {
+			limit = { owner = { NOT = { check_variable = { which = owed_ammunition value = 1 } } } }
+			owner = { set_variable = { which = owed_ammunition value = 75 } }
+		}
+		random_owned = {
+			limit = { owner = { check_variable = { which = owed_ammunition value = 1 } } }
+			owner = { change_variable = { which = owed_ammunition value = 75 } }
+		}
+		random_owned = {
+			limit = { owner = { ammunition = 75 } }
+			owner = { ammunition = -75 }
+		}
+		relation = {
+			who = MXM
+			value = 100
+		}
+		diplomatic_influence = {
+			who = MXM
+			value = 50
+		}
+		any_country = {
+			limit = {
+				exists = yes
+				OR = {
+					tag = FRA
+					tag = BOR
+				}
+			}
+			relation = {
+				who = THIS
+				value = 50
+			}
+		}
+		relation = {
+			who = FRA
+			value = 50
+		}
+		relation = {
+			who = BOR
+			value = 50
+		}
+		relation = {
+			who = MEX
+			value = -100
+		}
+		diplomatic_influence = {
+			who = MEX
+			value = -100
+		}
+		MXM = {
+			country_event = 11223004 # Notification###
+		}
+		any_country = {
+			limit = {
+				OR ={
+					tag = USA
+					tag = FSA
+					alliance_with = USA
+					alliance_with = FSA
+				}
+				exists = yes
+			}
+			country_event = 11223005 # Notification###
+		}
+		ai_chance = {
+			factor = 40
+			#add cool mods
+		}
+	}
+	option = {
+		name = "EVTOPTC1100065" ## No aid rendered to Habsburg Mexico
+		set_country_flag = CSA_aid_MXM_false
+		any_pop = {
+			consciousness = -2
+			militancy = -1
+		}
+		war_exhaustion = -7
+		ai_chance = {
+			factor = 30
+			#add cool mods
+		}
+	}
+}
 
 #USA aid options to Mexico in the event the CSA intervenes
 country_event = {
@@ -1071,135 +1955,184 @@ country_event = {
 		MEX = { war_with = MXM }
 		has_global_flag = CSA_intervenes
 		has_global_flag = second_french_intervetion
+		NOT = {
+			exists = FSA
+			has_country_flag = USA_aid_MEX_true
+			has_country_flag = USA_aid_MEX_false
+			has_country_flag = USA_dickwaving_CSA_true
+			has_country_flag = USA_dickwaving_CSA_false
 		}
+	}
 
 	option = {
 		name = "EVTOPTA1100066" #Supplies sent to Mexico
-		USA = {
-			ammunition = -250
-			small_arms = -125
-			artillery = -50
-			canned_food = -150
-			}
+		set_country_flag = USA_dickwaving_CSA_true
+		random_owned = {
+			limit = { owner = { NOT = { check_variable = { which = owed_artillery value = 1 } } } }
+			owner = { set_variable = { which = owed_artillery value = 15 } }
+		}
+		random_owned = {
+			limit = { owner = { check_variable = { which = owed_artillery value = 1 } } }
+			owner = { change_variable = { which = owed_artillery value = 15 } }
+		}
+		random_owned = {
+			limit = { owner = { artillery = 15 } }
+			owner = { artillery = -15 }
+		}
+		random_owned = {
+			limit = { owner = { NOT = { check_variable = { which = owed_canned_food value = 1 } } } }
+			owner = { set_variable = { which = owed_canned_food value = 75 } }
+		}
+		random_owned = {
+			limit = { owner = { check_variable = { which = owed_canned_food value = 1 } } }
+			owner = { change_variable = { which = owed_canned_food value = 75 } }
+		}
+		random_owned = {
+			limit = { owner = { canned_food = 75 } }
+			owner = { canned_food = -75 }
+		}
+		random_owned = {
+			limit = { owner = { NOT = { check_variable = { which = owed_small_arms value = 1 } } } }
+			owner = { set_variable = { which = owed_small_arms value = 30 } }
+		}
+		random_owned = {
+			limit = { owner = { check_variable = { which = owed_small_arms value = 1 } } }
+			owner = { change_variable = { which = owed_small_arms value = 30 } }
+		}
+		random_owned = {
+			limit = { owner = { small_arms = 30 } }
+			owner = { small_arms = -30 }
+		}
+		random_owned = {
+			limit = { owner = { NOT = { check_variable = { which = owed_ammunition value = 1 } } } }
+			owner = { set_variable = { which = owed_ammunition value = 75 } }
+		}
+		random_owned = {
+			limit = { owner = { check_variable = { which = owed_ammunition value = 1 } } }
+			owner = { change_variable = { which = owed_ammunition value = 75 } }
+		}
+		random_owned = {
+			limit = { owner = { ammunition = 75 } }
+			owner = { ammunition = -75 }
+		}
+		relation = {
+			who = MEX
+			value = 100
+		}
+		diplomatic_influence = {
+			who = MEX
+			value = 100
+		}
+		relation = {
+			who = FRA
+			value = -50
+		}
+		relation = {
+			who = BOR
+			value = -50
+		}
+		relation = {
+			who = CSA
+			value = -50
+		}
+		relation = {
+			who = MXM
+			value = -100
+		}
+		diplomatic_influence = {
+			who = MXM
+			value = -100
+		}
 		MEX = {
-			ammunition = 250
-			small_arms = 125
-			artillery = 50
-			canned_food = 150
-			}
-		USA = {
-			relation = {
-				who = MEX
-				value = 100
-				}
-			diplomatic_influence = {
-				who = MEX
-				value = 100
-				}
-			relation = {
-				who = MXM
-				value = -50
-				}
-			diplomatic_influence = {
-				who = MXM
-				value = -50
-				}
-			relation = {
-				who = FRA
-				value = -50
-				}
-			relation = {
-				who = CSA
-				value = -50
-				}
-			}
-		ai_chance = { factor = 60 }
+			country_event = 11223007 # Notification###
 		}
-	option = {
-		name = "EVTOPTB1100066" #Declaration of war against Habsburg Mexico with casus bellis against France and the CSA
-		USA = {
-			war = {
-					target = MXM
-					attacker_goal = { casus_belli = cut_down_to_size }
-					defender_goal = { casus_belli = status_quo }
-					call_ally = yes
-					}
-			}
-		USA = {
-			create_alliance = MEX
-				relation = {
-					who = MEX
-					value = 400
-					}
-				diplomatic_influence = {
-					who = MEX
-					value = 400
-					}
-			}
-		USA = {
-			relation = {
-				who = MEX
-				value = 400
-				}
-			diplomatic_influence = {
-				who = MEX
-				value = 400
-				}
-			relation = {
-				who = MXM
-				value = -200
-				}
-			diplomatic_influence = {
-				who = MXM
-				value = -200
-				}
-			relation = {
-				who = FRA
-				value = -150
-				}
-			relation = {
-				who = CSA
-				value = -150
-				}
-			}
-		USA = {
-			casus_belli = {
-				target = CSA
-				type = humiliate
-				months = 12
-				}
-			casus_belli = {
-				target = FRA
-				type = humiliate
-				months = 12
-				}
-			}
-		war_exhaustion = 15
-		prestige = 25
-		ai_chance = { factor = 10 }
-		}
-	option = {
-		name = "EVTOPTC1100066" #No aid is rendered, USA declares neutrality
-		USA = {
-			any_pop = {
-				consciousness = -2
-				militancy = -1
-				}
-			war_exhaustion = -10
-			}
-		USA = {
-			relation = {
-				who = CSA
-				value = 50
-				}
-			relation = {
-				who = MEX
-				value = -50
-				}
-			}
-		ai_chance = { factor = 30 }
+		ai_chance = {
+			factor = 60
 		}
 	}
+	option = {
+		name = "EVTOPTB1100066" #Declaration of war against Habsburg Mexico with casus belli against France and the CSA
+		set_country_flag = USA_dickwaving_CSA_true
+		create_alliance = MEX
+		relation = { who = MEX value = 400 }
+		diplomatic_influence = { who = MEX value = 400 }
+		war_exhaustion = 15
+		prestige = 25
+		MEX = {
+			country_event = 11223006 # Notification###
+		}
+		any_pop = {
+			limit = {
+				OR = {
+					has_pop_culture = dixie
+					has_pop_culture = texan
+				}
+			}
+			consciousness = 3
+			militancy = 2
+		}
+		any_pop = {
+			limit = {
+				NOT = {
+					OR = {
+						has_pop_culture = dixie
+						has_pop_culture = texan
+					}
+				}
+			}
+			consciousness = 1.5
+			militancy = 1
+		}
+		casus_belli = {
+			target = CSA
+			type = humiliate
+			months = 12
+		}
+		casus_belli = {
+			target = FRA
+			type = humiliate
+			months = 12
+		}
+		casus_belli = {
+			target = BOR
+			type = humiliate
+			months = 12
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
+	option = {
+		name = "EVTOPTC1100066" #No aid is rendered, USA declares neutrality
+		set_country_flag = USA_dickwaving_CSA_false
+		any_pop = {
+			consciousness = -2
+			militancy = -1
+		}
+		war_exhaustion = -10
+		relation = {
+			who = CSA
+			value = 50
+		}
+		relation = {
+			who = MXM
+			value = 50
+		}
+		relation = {
+			who = FRA
+			value = 50
+		}
+		relation = {
+			who = BOR
+			value = 50
+		}
+		relation = {
+			who = MEX
+			value = -50
+		}
+		ai_chance = { factor = 30 }
+	}
+}
 
 #Moving of the capital to El Paso de Norte
 country_event = {
@@ -1212,37 +2145,50 @@ country_event = {
 
 	trigger = {
 		tag = MEX
-		OR = {
-			2147 = { controlled_by = FRA }
-			2147 = { controlled_by = MXM }
-			}
-		has_global_flag = second_french_intervetion
 		war_with = MXM
+		2147 = {
+			OR = {
+				controlled_by = FRA
+				controlled_by = BOR
+				controlled_by = MXM
+				controller = { alliance_with = MXM }
+			}
+			province_control_days = 150
 		}
+		2143 = {
+			owned_by = THIS
+			controlled_by = THIS
+		}
+		NOT = {
+			capital = 2143
+			has_country_flag = capital_paso_norte
+		}
+		has_global_flag = second_french_intervetion
+	}
 
 	option = {
 		name = "EVTOPTA1100067" #Move capital to El Paso de Norte
-		MEX = {
-			capital = 2143
-			war_exhaustion = -20
-			prestige = -10
-		}
+		set_country_flag = capital_paso_norte
+		capital = 2143
+		war_exhaustion = -25
+		prestige = -10
 		USA = {
 			military_access = MEX
-			}
-		ai_chance = { factor = 90 }
 		}
+		ai_chance = {
+			factor = 100
+		}
+	}
 
 	option = {
 		name = "EVTOPTB1100067" #Don't Move Capital
-		MEX = {
-			prestige = 20
-			war_exhaustion = 5
-			}
-		ai_chance = { factor = 10 }
+		prestige = 5
+		war_exhaustion = 12.5
+		ai_chance = {
+			factor = 0
 		}
-
 	}
+}
 
 ##################################################################
 ###                Dos Mexicos Event Chain                     ###
@@ -1254,128 +2200,134 @@ country_event = {
 	title = "EVTNAME1100068"
 	desc = "EVTDESC1100068"
 	picture = "confederation"
-
-	fire_only_once = yes
-
-	trigger = {
-		tag = MEX
-		has_global_flag = second_french_intervetion
-		NOT = { war_with = MXM }
-		exists = MXM
-		}
-
+	is_triggered_only = yes
+	
 	option = {
 		name = "EVTOPTA1100068" #Juarez refuses, but doesn't instigate war
-		MEX = {
-			prestige = 15
-			relation = {
-				who = MXM
-				value = -50
-				}
-			}
-		ai_chance = { factor = 0 }
+		prestige = 15
+		relation = {
+			who = MXM
+			value = -50
 		}
+		MXM = {
+			country_event = 11223000 # Notification###
+		}
+		ai_chance = {
+			factor = 0
+			#cool mods
+		}
+	}
 
 	option = {
 		name = "EVTOPTB1100068" #Juarez accepts
-		#change_tag = MXM
-		change_tag_no_core_switch = MXM
-		#change_tag = MXM
-		MXM = {
-			government = hms_government
-			election = yes
-			ruling_party_ideology = liberal
-			inherit = MEX
-			prestige = 10
-			war_exhaustion = -20
-			political_reform = wealth_voting
-			political_reform = non_secret_ballots
-			political_reform = state_equal_weight
+		any_country = { limit = { war_with = THIS alliance_with = FROM } end_war = THIS }
+		any_country = { limit = { war_with = FROM alliance_with = THIS } end_war = FROM }
+		random_country = { limit = { tag = FROM war_with = THIS } end_war = THIS }
+		random_owned = { limit = { owner = { war_with = FROM } } owner = { end_war = FROM } }
+		random_owned = {
+			limit = { owner = { ai = no } }
+			owner = {
+				set_global_flag = juarez_accepts
+				change_tag_no_core_switch = MXM
+				government = hms_government
+				political_reform = federalism
+				political_reform = appointed
+				political_reform = wealth_weighted_voting
+				political_reform = harassment
+				political_reform = free_press
+				political_reform = non_socialist
+				political_reform = first_past_the_post
+				political_reform = non_secret_ballots
+				political_reform = culture_voting_only
+				ruling_party_ideology = liberal
+				prestige = 10
+				war_exhaustion = -40
+				# MEX = { all_core = { remove_core = MEX } } #Too OP
+				3333 = { secede_province = MEX }
 			}
-		MEX = { all_core = { remove_core = MEX } }
-		3333 = { secede_province = MEX }
-		set_global_flag = juarez_accepts
-		ai_chance = { factor = 10 }
 		}
+		random_owned = {
+			limit = { owner = { ai = yes } }
+			owner = { MXM = { country_event = 11223001 } } # Notification###
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
 
 	option = {
 		name = "EVTOPTC1100068" #Juarez refuses, instigates war
+		MXM = {
+			country_event = 11223002 # Notification###
+		}
 		MEX = {
 			prestige = 25
-			war = {
+			war = { #do condition which won't trigger a war if mex and mxm are already at war.
 				target = MXM
+				attacker_goal = { casus_belli = trucebreak_sp }
 				attacker_goal = { casus_belli = civil_war }
 				defender_goal = { casus_belli = civil_war }
 				call_ally = yes
 			}
 		}
-		FRA = { leave_alliance = MXM }
-		ai_chance = { factor = 90 }
+		ai_chance = {
+			factor = 90
+			#cool mods
 		}
 	}
+}
 
 #Clean Up Events because Victoria II is a fucking piece of shit
 country_event = {
-		id = 1100069
-		title = "EVTNAME1100069"
-		desc = "EVTDESC1100069"
-
-		#trigger
-
-		trigger = {
-			ai = yes
-			tag = M3X
-			capital = 3333
-			exists = MEX
-			has_global_flag = conservatives_win
-			}
-
-		option = {
-			name = "EVTOPTA1100069"
-			MEX = { inherit = M3X }
-			ai_chance = { factor = 100 }
-			}
-
+	id = 1100069
+	title = "EVTNAME1100069"
+	desc = "EVTDESC1100069"
+	trigger = {
+		ai = yes
+		tag = M3X
+		capital = 3333
+		exists = MEX
+		has_global_flag = conservatives_win
 	}
+	option = {
+		name = "EVTOPTA1100069"
+		MEX = { inherit = M3X }
+		ai_chance = { factor = 100 }
+	}
+}
 
 country_event = {
-		id = 1100075
-		title = "EVTNAME1100069"
-		desc = "EVTDESC1100069"
-
-
-		trigger = {
-			ai = yes
-			tag = MEX
-			capital = 3333
-			exists = MXM
-			has_global_flag = juarez_accepts
-			}
-
-		option = {
-			name = "EVTOPTA1100069"
-			MXM= { inherit = MEX }
-			ai_chance = { factor = 100 }
-			}
+	id = 1100075
+	title = "EVTNAME1100069"
+	desc = "EVTDESC1100069"
+	trigger = {
+		ai = yes
+		tag = MEX
+		capital = 3333
+		exists = MXM
+		has_global_flag = juarez_accepts
 	}
+	option = {
+		name = "EVTOPTA1100069"
+		MXM = { inherit = MEX }
+		ai_chance = { factor = 100 }
+	}
+}
 
 country_event = {
-		id = 1100076
-		title = "EVTNAME1100069"
-		desc = "EVTDESC1100069"
+	id = 1100076
+	title = "EVTNAME1100069"
+	desc = "EVTDESC1100069"
 
-
-		trigger = {
-			ai = yes
-			tag = M3X
-			capital = 3333
-			exists = MXM
-			}
-
-		option = {
-			name = "EVTOPTA1100069"
-			MXM = { inherit = M3X }
-			ai_chance = { factor = 100 }
-			}
-
+	trigger = {
+		ai = yes
+		tag = M3X
+		capital = 3333
+		exists = MXM
 	}
+	option = {
+		name = "EVTOPTA1100069"
+		MXM = { inherit = M3X }
+		ai_chance = { factor = 100 }
+	}
+}

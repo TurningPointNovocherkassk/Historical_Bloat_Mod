@@ -239,71 +239,71 @@ political_decisions = {
 		ai_will_do = { factor = 1 }
 	}
 	
-	#ANON
-	rename_texas_mexico = {
-		picture = all_texas
-		potential = {
-			OR = {
-				is_culture_group = latin_american_cultures
-				is_culture_group = iberian
-			}
-			NOT = { has_global_flag = rename_texas_mexico }
-			owns = 136
-		}
+	# #ANON
+	# rename_texas_mexico = {
+		# picture = all_texas
+		# potential = {
+			# OR = {
+				# is_culture_group = latin_american_cultures
+				# is_culture_group = iberian
+			# }
+			# NOT = { has_global_flag = rename_texas_mexico }
+			# owns = 136
+		# }
 		
-		allow = {
-			war = no
-		}
+		# allow = {
+			# war = no
+		# }
 		
-		effect = {
-			set_global_flag = rename_texas_mexico
-			clr_global_flag = rename_texas_usa
-			prestige = 2
-			136 = {
-				change_province_name = "El Paso"
-				state_scope = {
-					change_region_name = "Tejas del Oeste"
-				}
-			}
-			138 = { change_province_name = "Laredo" }
-			3401 = { change_province_name = "San Sabá" }
-			135 = { change_province_name = "Llano Estacado" }
+		# effect = {
+			# set_global_flag = rename_texas_mexico
+			# clr_global_flag = rename_texas_usa
+			# prestige = 2
+			# 136 = {
+				# change_province_name = "El Paso"
+				# state_scope = {
+					# change_region_name = "Tejas del Oeste"
+				# }
+			# }
+			# 138 = { change_province_name = "Laredo" }
+			# 3401 = { change_province_name = "San Sabá" }
+			# 135 = { change_province_name = "Llano Estacado" }
 			
-		}
-		ai_will_do = { factor = 1 }
-	}
+		# }
+		# ai_will_do = { factor = 1 }
+	# }
 	
-	#ANON
-	rename_texas_usa = {
-		picture = all_texas
-		potential = {
-			is_culture_group = american_cultures
-			NOT = { has_global_flag = rename_texas_usa }
-			has_global_flag = rename_texas_mexico
-			owns = 136
-		}
+	# #ANON
+	# rename_texas_usa = {
+		# picture = all_texas
+		# potential = {
+			# is_culture_group = american_cultures
+			# NOT = { has_global_flag = rename_texas_usa }
+			# has_global_flag = rename_texas_mexico
+			# owns = 136
+		# }
 		
-		allow = {
-			war = no
-		}
+		# allow = {
+			# war = no
+		# }
 		
-		effect = {
-			set_global_flag = rename_texas_usa
-			clr_global_flag = rename_texas_mexico
-			136 = {
-				change_province_name = "El Paso"
-				state_scope = {
-					change_region_name = "Trans-Pecos"
-				}
-			}
-			138 = { change_province_name = "Laredo" }
-			3401 = { change_province_name = "San Saba" }
-			135 = { change_province_name = "Llano Estacado" }
+		# effect = {
+			# set_global_flag = rename_texas_usa
+			# clr_global_flag = rename_texas_mexico
+			# 136 = {
+				# change_province_name = "El Paso"
+				# state_scope = {
+					# change_region_name = "Trans-Pecos"
+				# }
+			# }
+			# 138 = { change_province_name = "Laredo" }
+			# 3401 = { change_province_name = "San Saba" }
+			# 135 = { change_province_name = "Llano Estacado" }
 			
-			prestige = 2
-		}
-		ai_will_do = { factor = 1 }
-	}
+			# prestige = 2
+		# }
+		# ai_will_do = { factor = 1 }
+	# }
 	
 	mexican_american_war_alternate_treaty = {
 		picture = "manifest_destiny"
@@ -319,16 +319,18 @@ political_decisions = {
 			idealism = 1
 			state_n_government = 1
 			NOT = { truce_with = MEX }
+			NOT = { truce_with = M3X }
+			NOT = { truce_with = MXM }
 			NOT = { war_policy = pacifism }
 		}
 		
 		effect = {
 			set_country_flag = mexican_american_war_alternate_treaty
 			random_list = {
-				25 = { }
 				25 = { badboy = 1 }
 				25 = { badboy = 2 }
 				25 = { badboy = 3 }
+				25 = { badboy = 4 }
 			}
 			MEX_2149 = { add_core = USA }
 			MEX_2142 = { add_core = USA }
@@ -344,14 +346,22 @@ political_decisions = {
 			leave_alliance = MEX
 			random_country = {
 				limit = {
-					tag = MEX
+					OR = {
+						tag = MEX
+						tag = M3X
+						tag = MXM
+					}
 					vassal_of = THIS
 				}
 				THIS = { release_vassal = MEX }
 			}
 			random_country = {
 				limit = {
-					is_our_vassal = MEX
+					OR = {
+						is_our_vassal = MEX
+						is_our_vassal = M3X
+						is_our_vassal = MXM
+					}
 					NOT = { tag = THIS }
 				}
 				relation = { who = THIS value = -200 }

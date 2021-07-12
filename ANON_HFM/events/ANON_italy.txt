@@ -1,989 +1,1173 @@
 #Metternichian Italy, more coming soon
 country_event = { #French Response to Austrian Meddling
-  id = 777202000
-  title = "EVTNAME777202000"
-  desc = "EVTDESC777202000"
-  picture = "french_on_crimean_war"
+	id = 777202000
+	title = "EVTNAME777202000"
+	desc = "EVTDESC777202000"
+	picture = "french_on_crimean_war"
 
-  trigger = {
-    OR = {
-      tag = FRA
-      tag = BOR
-    }
-    war = no
-    has_global_flag = aus_dominate_italy
-    SAR = { vassal_of = AUS }
-    NOT = { has_country_flag = french_respond_aus_dominate_italy }
-  }
+	trigger = {
+		OR = {
+			tag = FRA
+			tag = BOR
+		}
+		war = no
+		has_global_flag = aus_dominate_italy
+		SAR = { vassal_of = AUS }
+		NOT = { has_country_flag = french_respond_aus_dominate_italy }
+	}
 
-  mean_time_to_happen = { days = 1 }
+	mean_time_to_happen = { days = 1 }
 
-  option = { #Demand withdrawl
-    name = "EVT777202000OPTA"
-    set_country_flag = french_respond_aus_dominate_italy
-    relation = {
-      who = AUS
-      value = -100
-    }
-    leave_alliance = AUS
-    AUS = { country_event = 777202001 }
-    ai_chance = { factor = 95 }
-  }
+	option = { #Demand withdrawal
+		name = "EVT777202000OPTA"
+		set_country_flag = french_respond_aus_dominate_italy
+		relation = {
+			who = AUS
+			value = -100
+		}
+		leave_alliance = AUS
+		AUS = { country_event = 777202001 }
+		ai_chance = { factor = 95 }
+	}
 
-  option = { #Demand Savoy and economic concessions
-    name = "EVT777202000OPTB"
-    relation = {
-      who = SAR
-      value = -100
-    }
-    set_country_flag = french_respond_aus_dominate_italy
-    set_global_flag = aus_dominate_italy_fra_claim_savoy
-    badboy = 8
-    leave_alliance = AUS
-    465 = { add_core = THIS }
-    466 = { add_core = THIS }
-    472 = { add_core = THIS }
-    AUS = { country_event = 777202001 }
-    ai_chance = { factor = 5 }
-  }
+	option = { #Demand Savoy and economic concessions
+		name = "EVT777202000OPTB"
+		relation = {
+			who = SAR
+			value = -100
+		}
+		set_country_flag = french_respond_aus_dominate_italy
+		set_global_flag = aus_dominate_italy_fra_claim_savoy
+		badboy = 8
+		leave_alliance = AUS
+		465 = { add_core = THIS }
+		466 = { add_core = THIS }
+		472 = { add_core = THIS }
+		AUS = { country_event = 777202001 }
+		ai_chance = { factor = 5 }
+	}
 
-  option = { #Concede
-    name = "EVT777202000OPTC"
-    set_global_flag = aus_italy_domination_confirmed
-    clr_global_flag = aus_dominate_italy_fra_vs_aus
-    clr_global_flag = aus_dominate_italy_frapru_vs_aus
-    clr_global_flag = aus_dominate_italy_frapru_vs_ausrus
-    set_country_flag = french_respond_aus_dominate_italy
-    prestige = -50
-    relation = {
-      who = AUS
-      value = 100
-    }
-    ai_chance = { factor = 0 }
-  }
+	option = { #Concede
+		name = "EVT777202000OPTC"
+		set_global_flag = aus_italy_domination_confirmed
+		clr_global_flag = aus_dominate_italy_fra_vs_aus
+		clr_global_flag = aus_dominate_italy_frapru_vs_aus
+		clr_global_flag = aus_dominate_italy_frapru_vs_ausrus
+		set_country_flag = french_respond_aus_dominate_italy
+		prestige = -50
+		relation = {
+			who = AUS
+			value = 100
+		}
+		ai_chance = { factor = 0 }
+	}
 }
 
 country_event = { #French demand Austrian withdrawl, Austria notified. Prussia threatens intervention
-  id = 777202001
-  title = "EVTNAME777202001"
-  desc = "EVTDESC777202001"
-  picture = "metternich_negotiating"
+	id = 777202001
+	title = "EVTNAME777202001"
+	desc = "EVTDESC777202001"
+	picture = "metternich_negotiating"
 
-  is_triggered_only = yes
+	is_triggered_only = yes
 
-  option = { #Stand our ground. The Russians have our backs
-    name = "EVT777202001OPTA"
-    RUS = {
-      country_event = {
-        id = 777202002
-        days = 30
-      }
-    }
-    ai_chance = { factor = 100 }
-  }
+	option = { #Stand our ground. The Russians have our backs
+		name = "EVT777202001OPTA"
+		RUS = {
+			country_event = {
+				id = 777202002
+				days = 30
+			}
+		}
+		ai_chance = { factor = 100 }
+	}
 
-  option = { #Okay...
-    name = "EVT777202001OPTB"
-    badboy = -3
-    release_vassal = SAR
-    prestige = -50
-    clr_global_flag = aus_dominate_italy
-    clr_global_flag = italy_federation_yes
-    set_global_flag = first_war_of_italian_independence_lost
-    random_country = {
-      limit = {
-        OR = {
-          tag = FRA
-          tag = BOR
-        }
-        exists = yes
-      }
-      country_event = 777202013
-    }
-    ai_chance = { factor = 0 }
-  }
+	option = { #Okay...
+		name = "EVT777202001OPTB"
+		badboy = -3
+		release_vassal = SAR
+		prestige = -50
+		clr_global_flag = aus_dominate_italy
+		clr_global_flag = italy_federation_yes
+		set_global_flag = first_war_of_italian_independence_lost
+		random_country = {
+			limit = {
+				OR = {
+					tag = FRA
+					tag = BOR
+				}
+				exists = yes
+			}
+			country_event = 777202013
+		}
+		ai_chance = { factor = 0 }
+	}
 }
 
 country_event = { #Russian response
-  id = 777202002
-  title = "EVTNAME777202002"
-  desc = "EVTDESC777202002"
-  picture = "metternich_negotiating"
+	id = 777202002
+	title = "EVTNAME777202002"
+	desc = "EVTDESC777202002"
+	picture = "metternich_negotiating"
 
-  is_triggered_only = yes
+	is_triggered_only = yes
 
-  option = { #We need Austria's support against the Turks, demand Prussian neutrality
-    name = "EVT777202002OPTA"
-    set_global_flag = aus_dominate_italy_russia_backed_austria
-    relation = {
-      who = AUS
-      value = 100
-    }
-    PRU = { country_event = 777202003 }
-    any_country = {
-      limit = {
-        alliance_with = RUS
-        is_greater_power = yes
-      }
-      leave_alliance = RUS
-      relation = {
-        who = RUS
-        value = 100
-      }
-    }
-    ai_chance = { factor = 100 }
-  }
+	option = { #We need Austria's support against the Turks, demand Prussian neutrality
+		name = "EVT777202002OPTA"
+		set_global_flag = aus_dominate_italy_russia_backed_austria
+		relation = {
+			who = AUS
+			value = 100
+		}
+		random_country = {
+			limit = {
+				OR = {
+					owns = 549 #Berlin
+					owns = 695 #Königsberg
+				}
+				primary_culture = north_german
+			}
+			country_event = 777202003
+		}
+		any_country = {
+			limit = {
+				alliance_with = RUS
+				is_greater_power = yes
+			}
+			leave_alliance = RUS
+			relation = {
+				who = RUS
+				value = 100
+			}
+		}
+		ai_chance = { factor = 100 }
+	}
 
-  option = { #We don't care
-    name = "EVT777202002OPTB"
-    PRU = { country_event = 777202004 }
-    ai_chance = { factor = 0 }
-  }
+	option = { #We don't care
+		name = "EVT777202002OPTB"
+		random_country = {
+			limit = {
+				OR = {
+					owns = 549 #Berlin
+					owns = 695 #Königsberg
+				}
+				primary_culture = north_german
+			}
+			country_event = 777202004
+		}
+		ai_chance = { factor = 0 }
+	}
 }
 
 country_event = { #Russia threatens us (Prussia)
-  id = 777202003
-  title = "EVTNAME777202003"
-  desc = "EVTDESC777202003"
-  picture = "metternich_negotiating"
+	id = 777202003
+	title = "EVTNAME777202003"
+	desc = "EVTDESC777202003"
+	picture = "metternich_negotiating"
 
-  is_triggered_only = yes
+	is_triggered_only = yes
 
-  option = { #Russia is scary and we hate France anyway, back off
-    name = "EVT777202003OPTA"
-    prestige = -10
-    set_global_flag = aus_dominate_italy_fra_vs_aus
-    random_country = {
-      limit = {
-        OR = {
-          tag = FRA
-          tag = BOR
-        }
-        exists = yes
-        NOT = { has_global_flag = aus_dominate_italy_fra_claim_savoy }
-      }
-      country_event = {
-        id = 777202005
-        days = 1
-      }
-      country_event = 777202016
-    }
-    AUS = { country_event = 777202016 }
-    random_country = {
-      limit = {
-        OR = {
-          tag = FRA
-          tag = BOR
-        }
-        exists = yes
-        has_global_flag = aus_dominate_italy_fra_claim_savoy
-      }
-      country_event = {
-        id = 777202007
-        days = 1
-      }
-      country_event = 777202016
-    }
-    AUS = { country_event = 777202016 }
-    ai_chance = { factor = 80 }
-  }
+	option = { #Russia is scary and we hate France anyway, back off
+		name = "EVT777202003OPTA"
+		prestige = -10
+		set_global_flag = aus_dominate_italy_fra_vs_aus
+		random_country = {
+			limit = {
+				OR = {
+					tag = FRA
+					tag = BOR
+				}
+				exists = yes
+				NOT = { has_global_flag = aus_dominate_italy_fra_claim_savoy }
+			}
+			country_event = {
+				id = 777202005
+				days = 1
+			}
+			country_event = 777202016
+		}
+		AUS = { country_event = 777202016 }
+		random_country = {
+			limit = {
+				OR = {
+					tag = FRA
+					tag = BOR
+				}
+				exists = yes
+				has_global_flag = aus_dominate_italy_fra_claim_savoy
+			}
+			country_event = {
+				id = 777202007
+				days = 1
+			}
+			country_event = 777202016
+		}
+		AUS = { country_event = 777202016 }
+		ai_chance = { factor = 80 }
+	}
 
-  option = { #We aren't afraid of them
-    name = "EVT777202003OPTB"
-    set_global_flag = aus_dominate_italy_frapru_vs_ausrus
-    random_country = {
-      limit = {
-        OR = {
-          tag = FRA
-          tag = BOR
-        }
-        exists = yes
-        NOT = { has_global_flag = aus_dominate_italy_fra_claim_savoy }
-      }
-      country_event = {
-        id = 777202005
-        days = 1
-      }
-      country_event = 777202018
-    }
-    AUS = { country_event = 777202018 }
-    random_country = {
-      limit = {
-        OR = {
-          tag = FRA
-          tag = BOR
-        }
-        exists = yes
-        has_global_flag = aus_dominate_italy_fra_claim_savoy
-      }
-      country_event = {
-        id = 777202007
-        days = 1
-      }
-      country_event = 777202018
-    }
-    AUS = { country_event = 777202018 }
-    ai_chance = { factor = 20 }
-  }
+	option = { #We aren't afraid of them
+		name = "EVT777202003OPTB"
+		set_global_flag = aus_dominate_italy_frapru_vs_ausrus
+		random_country = {
+			limit = {
+				OR = {
+					tag = FRA
+					tag = BOR
+				}
+				exists = yes
+				NOT = { has_global_flag = aus_dominate_italy_fra_claim_savoy }
+			}
+			country_event = {
+				id = 777202005
+				days = 1
+			}
+			country_event = 777202018
+		}
+		AUS = { country_event = 777202018 }
+		random_country = {
+			limit = {
+				OR = {
+					tag = FRA
+					tag = BOR
+				}
+				exists = yes
+				has_global_flag = aus_dominate_italy_fra_claim_savoy
+			}
+			country_event = {
+				id = 777202007
+				days = 1
+			}
+			country_event = 777202018
+		}
+		AUS = { country_event = 777202018 }
+		ai_chance = { factor = 20 }
+	}
 }
 
 country_event = { #Russia declares neutrality
-  id = 777202004
-  title = "EVTNAME777202004"
-  desc = "EVTDESC777202004"
-  picture = "metternich_negotiating"
+	id = 777202004
+	title = "EVTNAME777202004"
+	desc = "EVTDESC777202004"
+	picture = "metternich_negotiating"
 
-  is_triggered_only = yes
+	is_triggered_only = yes
 
-  option = { #To war!
-    name = "EVT777202004OPTA"
-    set_global_flag = aus_dominate_italy_frapru_vs_aus
-    random_country = {
-      limit = {
-        OR = {
-          tag = FRA
-          tag = BOR
-        }
-        exists = yes
-        NOT = { has_global_flag = aus_dominate_italy_fra_claim_savoy }
-      }
-      country_event = {
-        id = 777202005
-        days = 1
-      }
-      country_event = 777202017
-    }
-    AUS = { country_event = 777202017 }
-    random_country = {
-      limit = {
-        OR = {
-          tag = FRA
-          tag = BOR
-        }
-        exists = yes
-        has_global_flag = aus_dominate_italy_fra_claim_savoy
-      }
-      country_event = {
-        id = 777202007
-        days = 1
-      }
-      country_event = 777202017
-    }
-    AUS = { country_event = 777202017 }
-    ai_chance = { factor = 50 }
-  }
+	option = { #To war!
+		name = "EVT777202004OPTA"
+		set_global_flag = aus_dominate_italy_frapru_vs_aus
+		random_country = {
+			limit = {
+				OR = {
+					tag = FRA
+					tag = BOR
+				}
+				exists = yes
+				NOT = { has_global_flag = aus_dominate_italy_fra_claim_savoy }
+			}
+			country_event = {
+				id = 777202005
+				days = 1
+			}
+			country_event = 777202017
+		}
+		AUS = { country_event = 777202017 }
+		random_country = {
+			limit = {
+				OR = {
+					tag = FRA
+					tag = BOR
+				}
+				exists = yes
+				has_global_flag = aus_dominate_italy_fra_claim_savoy
+			}
+			country_event = {
+				id = 777202007
+				days = 1
+			}
+			country_event = 777202017
+		}
+		AUS = { country_event = 777202017 }
+		ai_chance = { factor = 50 }
+	}
 
-  option = { #We don't care either
-    name = "EVT777202004OPTB"
-    set_global_flag = aus_dominate_italy_fra_vs_aus
-    random_country = {
-      limit = {
-        OR = {
-          tag = FRA
-          tag = BOR
-        }
-        exists = yes
-        NOT = { has_global_flag = aus_dominate_italy_fra_claim_savoy }
-      }
-      country_event = {
-        id = 777202005
-        days = 1
-      }
-      country_event = 777202019
-    }
-    AUS = { country_event = 777202019 }
-    random_country = {
-      limit = {
-        OR = {
-          tag = FRA
-          tag = BOR
-        }
-        exists = yes
-        has_global_flag = aus_dominate_italy_fra_claim_savoy
-      }
-      country_event = {
-        id = 777202007
+	option = { #We don't care either
+		name = "EVT777202004OPTB"
+		set_global_flag = aus_dominate_italy_fra_vs_aus
+		random_country = {
+			limit = {
+				OR = {
+					tag = FRA
+					tag = BOR
+				}
+				exists = yes
+				NOT = { has_global_flag = aus_dominate_italy_fra_claim_savoy }
+			}
+			country_event = {
+				id = 777202005
+				days = 1
+			}
+			country_event = 777202019
+		}
+		AUS = { country_event = 777202019 }
+		random_country = {
+			limit = {
+				OR = {
+					tag = FRA
+					tag = BOR
+				}
+				exists = yes
+				has_global_flag = aus_dominate_italy_fra_claim_savoy
+			}
+			country_event = {
+				id = 777202007
 		days = 1
-      }
-      country_event = 777202019
-    }
-    AUS = { country_event = 777202019 }
-    ai_chance = { factor = 50 }
-  }
+			}
+			country_event = 777202019
+		}
+		AUS = { country_event = 777202019 }
+		ai_chance = { factor = 50 }
+	}
 }
 
 country_event = { #Russia & Prussia declare neutrality, enforced by Russia
-    id = 777202016
-    title = "EVTNAME777202016"
-    desc = "EVTDESC777202016"
-    picture = "metternich_negotiating"
+		id = 777202016
+		title = "EVTNAME777202016"
+		desc = "EVTDESC777202016"
+		picture = "metternich_negotiating"
 
-    is_triggered_only = yes
+		is_triggered_only = yes
 
-    option = {
-      name = "EVT777202016OPTA"
-      ai_chance = { factor = 100 }
-    }
+		option = {
+			name = "EVT777202016OPTA"
+			ai_chance = { factor = 100 }
+		}
 }
 
 country_event = { #Russia declares neutrality, Prussia backs us
-  id = 777202017
-  title = "EVTNAME777202017"
-  desc = "EVTDESC777202017"
-  picture = "metternich_negotiating"
+	id = 777202017
+	title = "EVTNAME777202017"
+	desc = "EVTDESC777202017"
+	picture = "metternich_negotiating"
 
-  is_triggered_only = yes
+	is_triggered_only = yes
 
-  option = {
-    name = "EVT777202017OPTA"
-    ai_chance = { factor = 100 }
-  }
+	option = {
+		name = "EVT777202017OPTA"
+		ai_chance = { factor = 100 }
+	}
 }
 
 country_event = { #Russia & Prussia take sides
-  id = 777202018
-  title = "EVTNAME777202018"
-  desc = "EVTDESC777202018"
-  picture = "metternich_negotiating"
+	id = 777202018
+	title = "EVTNAME777202018"
+	desc = "EVTDESC777202018"
+	picture = "metternich_negotiating"
 
-  is_triggered_only = yes
+	is_triggered_only = yes
 
-  option = {
-    name = "EVT777202018OPTA"
-    ai_chance = { factor = 100 }
-  }
+	option = {
+		name = "EVT777202018OPTA"
+		ai_chance = { factor = 100 }
+	}
 }
 
 country_event = { #Russia & Prussia declare neutrality voluntarily
-  id = 777202019
-  title = "EVTNAME777202019"
-  desc = "EVTDESC777202019"
-  picture = "metternich_negotiating"
+	id = 777202019
+	title = "EVTNAME777202019"
+	desc = "EVTDESC777202019"
+	picture = "metternich_negotiating"
 
-  is_triggered_only = yes
+	is_triggered_only = yes
 
-  option = {
-    name = "EVT777202019OPTA"
-    ai_chance = { factor = 100 }
-  }
+	option = {
+		name = "EVT777202019OPTA"
+		ai_chance = { factor = 100 }
+	}
 }
 
 country_event = { #France - last chance to negotiate (hasn't claimed Savoy)
-  id = 777202005
-  title = "EVTNAME777202005"
-  desc = "EVTDESC777202005"
-  picture = "metternich_negotiating"
+	id = 777202005
+	title = "EVTNAME777202005"
+	desc = "EVTDESC777202005"
+	picture = "metternich_negotiating"
 
-  is_triggered_only = yes
+	is_triggered_only = yes
 
-  option = { #Demand Savoy and economic concessions in Sardinia-Piedmont
-    name = "EVT777202005OPTA"
-    relation = {
-      who = SAR
-      value = -100
-    }
-    465 = { add_core = THIS }
-    466 = { add_core = THIS }
-    472 = { add_core = THIS }
-    set_global_flag = aus_dominate_italy_fra_claim_savoy
-    badboy = 8
-    AUS = { country_event = 777202008 }
-    ai_chance = { factor = 95 }
-  }
+	option = { #Demand Savoy and economic concessions in Sardinia-Piedmont
+		name = "EVT777202005OPTA"
+		relation = {
+			who = SAR
+			value = -100
+		}
+		465 = { add_core = THIS }
+		466 = { add_core = THIS }
+		472 = { add_core = THIS }
+		set_global_flag = aus_dominate_italy_fra_claim_savoy
+		badboy = 8
+		AUS = { country_event = 777202008 }
+		ai_chance = { factor = 95 }
+	}
 
-  option = { #Demand withdrawl (original demand)
-    name = "EVT777202005OPTB"
-    ai_chance = {
-      factor = 5
-      modifier = {
-        factor = 0
-        has_global_flag = aus_dominate_italy_frapru_vs_aus
-      }
-    }
-    AUS = { country_event = 777202009 }
-  }
+	option = { #Demand withdrawl (original demand)
+		name = "EVT777202005OPTB"
+		ai_chance = {
+			factor = 5
+			modifier = {
+				factor = 0
+				has_global_flag = aus_dominate_italy_frapru_vs_aus
+			}
+		}
+		AUS = { country_event = 777202009 }
+	}
 
-  option = { #Concede
-    name = "EVT777202005OPTC"
-    set_global_flag = aus_italy_domination_confirmed
-    clr_global_flag = aus_dominate_italy_fra_vs_aus
-    clr_global_flag = aus_dominate_italy_frapru_vs_aus
-    clr_global_flag = aus_dominate_italy_frapru_vs_ausrus
-    prestige = -50
-    relation = {
-      who = AUS
-      value = 100
-    }
-    AUS = { country_event = 777202010 }
-    ai_chance = { factor = 0 }
-  }
+	option = { #Concede
+		name = "EVT777202005OPTC"
+		set_global_flag = aus_italy_domination_confirmed
+		clr_global_flag = aus_dominate_italy_fra_vs_aus
+		clr_global_flag = aus_dominate_italy_frapru_vs_aus
+		clr_global_flag = aus_dominate_italy_frapru_vs_ausrus
+		prestige = -50
+		relation = {
+			who = AUS
+			value = 100
+		}
+		AUS = { country_event = 777202010 }
+		ai_chance = { factor = 0 }
+	}
 }
 
 country_event = { #France - Last chance to negotiate (has claimed Savoy)
-  id = 777202007
-  title = "EVTNAME777202007"
-  desc = "EVTDESC777202007"
-  picture = "metternich_negotiating"
+	id = 777202007
+	title = "EVTNAME777202007"
+	desc = "EVTDESC777202007"
+	picture = "metternich_negotiating"
 
-  is_triggered_only = yes
+	is_triggered_only = yes
 
-  option = { #Demand Savoy and economic concessions in Sardinia-Piedmont (original demand)
-    name = "EVT777202007OPTA"
-    AUS = { country_event = 777202008 }
-    ai_chance = { factor = 95 }
-  }
+	option = { #Demand Savoy and economic concessions in Sardinia-Piedmont (original demand)
+		name = "EVT777202007OPTA"
+		AUS = { country_event = 777202008 }
+		ai_chance = { factor = 95 }
+	}
 
-  option = { #Demand withdrawl
-    name = "EVT777202007OPTB"
-    badboy = -5
-    465 = { remove_core = FRA remove_core = BOR }
-    466 = { remove_core = FRA remove_core = BOR }
-    472 = { remove_core = FRA remove_core = BOR }
-    clr_global_flag = aus_dominate_italy_fra_claim_savoy
-    AUS = { country_event = 777202009 }
-    ai_chance = {
-      factor = 5
-      modifier = {
-        factor = 0
-        has_global_flag = aus_dominate_italy_frapru_vs_aus
-      }
-    }
-  }
+	option = { #Demand withdrawl
+		name = "EVT777202007OPTB"
+		badboy = -5
+		465 = { remove_core = FRA remove_core = BOR }
+		466 = { remove_core = FRA remove_core = BOR }
+		472 = { remove_core = FRA remove_core = BOR }
+		clr_global_flag = aus_dominate_italy_fra_claim_savoy
+		AUS = { country_event = 777202009 }
+		ai_chance = {
+			factor = 5
+			modifier = {
+				factor = 0
+				has_global_flag = aus_dominate_italy_frapru_vs_aus
+			}
+		}
+	}
 
-  option = { #Concede
-    name = "EVT777202007OPTC"
-    badboy = -5
-    465 = { remove_core = FRA remove_core = BOR }
-    466 = { remove_core = FRA remove_core = BOR }
-    472 = { remove_core = FRA remove_core = BOR }
-    clr_global_flag = aus_dominate_italy_fra_claim_savoy
-    set_global_flag = aus_italy_domination_confirmed
-    clr_global_flag = aus_dominate_italy_fra_vs_aus
-    clr_global_flag = aus_dominate_italy_frapru_vs_aus
-    clr_global_flag = aus_dominate_italy_frapru_vs_ausrus
-    prestige = -50
-    relation = {
-      who = AUS
-      value = 100
-    }
-    AUS = { country_event = 777202010 }
-    ai_chance = { factor = 0 }
-  }
+	option = { #Concede
+		name = "EVT777202007OPTC"
+		badboy = -5
+		465 = { remove_core = FRA remove_core = BOR }
+		466 = { remove_core = FRA remove_core = BOR }
+		472 = { remove_core = FRA remove_core = BOR }
+		clr_global_flag = aus_dominate_italy_fra_claim_savoy
+		set_global_flag = aus_italy_domination_confirmed
+		clr_global_flag = aus_dominate_italy_fra_vs_aus
+		clr_global_flag = aus_dominate_italy_frapru_vs_aus
+		clr_global_flag = aus_dominate_italy_frapru_vs_ausrus
+		prestige = -50
+		relation = {
+			who = AUS
+			value = 100
+		}
+		AUS = { country_event = 777202010 }
+		ai_chance = { factor = 0 }
+	}
 }
 
 country_event = { #Austria announces Italian Federation
-  id = 777202006
-  title = "EVTNAME777202006"
-  desc = "EVTDESC777202006"
-  picture = "italian_peninsula"
+	id = 777202006
+	title = "EVTNAME777202006"
+	desc = "EVTDESC777202006"
+	picture = "italian_peninsula"
 
-  trigger = {
-    tag = AUS
-    has_global_flag = aus_dominate_italy
-    war = no
-    is_our_vassal = SAR
-    NOT = { has_global_flag = italy_federation_yes }
-    NOT = { has_global_flag = italy_federation_no }
-  }
+	trigger = {
+		tag = AUS
+		has_global_flag = aus_dominate_italy
+		war = no
+		is_our_vassal = SAR
+		NOT = { has_global_flag = italy_federation_yes }
+		NOT = { has_global_flag = italy_federation_no }
+	}
 
-  mean_time_to_happen = { days = 5 }
+	mean_time_to_happen = { days = 5 }
 
-  option = { #Begin Federation Project
-    name = "EVT777202006OPTA"
-    badboy = 4
-    set_global_flag = italy_federation_yes
-    any_country = {
-      limit = {
-        is_culture_group = italian
-      }
-      relation = {
-        who = AUS
-        value = 50
-      }
-    }
-    diplomatic_influence = {
-      who = SIC
-      value = 100
-    }
-    diplomatic_influence = {
-      who = PAP
-      value = 50
-    }
-    ai_chance = { factor = 100 }
-  }
+	option = { #Begin Federation Project
+		name = "EVT777202006OPTA"
+		badboy = 4
+		set_global_flag = italy_federation_yes
+		any_country = {
+			limit = {
+				is_culture_group = italian
+			}
+			relation = {
+				who = AUS
+				value = 50
+			}
+		}
+		diplomatic_influence = {
+			who = SIC
+			value = 100
+		}
+		diplomatic_influence = {
+			who = PAP
+			value = 50
+		}
+		ai_chance = { factor = 100 }
+	}
 
-  option = { #No
-    name = "EVT777202006OPTB"
-    badboy = -2
-    set_global_flag = italy_federation_no
-    any_country = {
-      limit = {
-        is_culture_group = italian
-      }
-      relation = {
-        who = AUS
-        value = -50
-      }
-    }
-    ai_chance = { factor = 0 }
-  }
+	option = { #No
+		name = "EVT777202006OPTB"
+		badboy = -2
+		set_global_flag = italy_federation_no
+		any_country = {
+			limit = {
+				is_culture_group = italian
+			}
+			relation = {
+				who = AUS
+				value = -50
+			}
+		}
+		ai_chance = { factor = 0 }
+	}
 }
 
 country_event = { #Savoy & Economic conessions demanded
-  id = 777202008
-  title = "EVTNAME777202008"
-  desc = "EVTDESC777202008"
-  picture = "metternich_negotiating"
+	id = 777202008
+	title = "EVTNAME777202008"
+	desc = "EVTDESC777202008"
+	picture = "metternich_negotiating"
 
-  is_triggered_only = yes
+	is_triggered_only = yes
 
-  immediate = {
-    FRA = {
-      diplomatic_influence = {
-        who = PAP
-        value = -200
-      }
-    }
-    BOR = {
-      diplomatic_influence = {
-        who = PAP
-        value = -200
-      }
-    }
-  }
+	immediate = {
+		FRA = {
+			diplomatic_influence = {
+				who = PAP
+				value = -200
+			}
+		}
+		BOR = {
+			diplomatic_influence = {
+				who = PAP
+				value = -200
+			}
+		}
+	}
 
-  option = { #War!
-    name = "EVT777202008OPTA"
-    any_country = {
-      limit = {
-        OR = {
-          alliance_with = FRA
-          alliance_with = BOR
-        }
-      }
-      leave_alliance = FRA
-      leave_alliance = BOR
-      relation = {
-        who = FRA
-        value = 100
-      }
-      relation = {
-        who = BOR
-        value = 100
-      }
-    }
-    any_country = {
-      limit = {
-        alliance_with = AUS
-      }
-      leave_alliance = AUS
-      relation = {
-        who = AUS
-        value = 100
-      }
-    }
-    random_country = {
-      limit = {
-        OR = {
-          tag = FRA
-          tag = BOR
-        }
-        OR = {
-          has_global_flag = aus_dominate_italy_frapru_vs_aus
-          has_global_flag = aus_dominate_italy_frapru_vs_ausrus
-        }
-      }
-      create_alliance = PRU
-      relation = {
-        who = PRU
-        value = 400
-      }
-    }
-    random_country = {
-      limit = {
-        tag = RUS
-        exists = yes
-        has_global_flag = aus_dominate_italy_frapru_vs_ausrus
-      }
-      create_alliance = AUS
-      relation = {
-        who = AUS
-        value = 400
-      }
-    }
-    any_country = {
-      limit = {
-        is_culture_group = italian
-      }
-      country_event = 777202011
-      create_alliance = AUS
-    }
-    random_country = {
-      limit = {
-        OR = {
-          tag = FRA
-          tag = BOR
-        }
-        exists = yes
-      }
-      war = {
-        target = AUS
-        attacker_goal = { casus_belli = cut_down_to_size }
-        defender_goal = { casus_belli = cut_down_to_size }
-        call_ally = yes
-      }
-    }
-  }
+	option = { #War!
+		name = "EVT777202008OPTA"
+		any_country = {
+			limit = {
+				OR = {
+					alliance_with = FRA
+					alliance_with = BOR
+				}
+			}
+			leave_alliance = FRA
+			leave_alliance = BOR
+			relation = {
+				who = FRA
+				value = 100
+			}
+			relation = {
+				who = BOR
+				value = 100
+			}
+		}
+		any_country = {
+			limit = {
+				alliance_with = AUS
+			}
+			leave_alliance = AUS
+			relation = {
+				who = AUS
+				value = 100
+			}
+		}
+		random_country = {
+			limit = {
+				OR = {
+					tag = FRA
+					tag = BOR
+				}
+				OR = {
+					has_global_flag = aus_dominate_italy_frapru_vs_aus
+					has_global_flag = aus_dominate_italy_frapru_vs_ausrus
+				}
+			}
+			random_owned = {
+				limit = {
+					owner = { neighbour = PRU }
+				}
+				owner = { 
+					create_alliance = PRU
+					relation = {
+						who = PRU
+						value = 400
+					}
+				}
+			}
+			random_owned = {
+				limit = {
+					owner = { neighbour = NGF }
+				}
+				owner = { 
+					create_alliance = NGF
+					relation = {
+						who = NGF
+						value = 400
+					}
+				}
+			}
+			random_owned = {
+				limit = {
+					owner = { neighbour = GCF }
+				}
+				owner = { 
+					create_alliance = GCF
+					relation = {
+						who = GCF
+						value = 400
+					}
+				}
+			}
+			random_owned = {
+				limit = {
+					owner = { neighbour = GER }
+				}
+				owner = { 
+					create_alliance = GER
+					relation = {
+						who = GER
+						value = 400
+					}
+				}
+			}
+		}
+		random_country = {
+			limit = {
+				tag = RUS
+				exists = yes
+				has_global_flag = aus_dominate_italy_frapru_vs_ausrus
+			}
+			create_alliance = AUS
+			relation = {
+				who = AUS
+				value = 400
+			}
+		}
+		any_country = {
+			limit = {
+				is_culture_group = italian
+			}
+			country_event = 777202011
+			create_alliance = AUS
+		}
+		random_country = {
+			limit = {
+				OR = {
+					tag = FRA
+					tag = BOR
+				}
+				exists = yes
+			}
+			war = {
+				target = AUS
+				attacker_goal = { casus_belli = cut_down_to_size }
+				defender_goal = { casus_belli = cut_down_to_size }
+				call_ally = yes
+			}
+		}
+	}
 
-  option = { #Okay...
-    name = "EVT777202008OPTB"
-    badboy = -3
-    release_vassal = SAR
-    prestige = -50
-    clr_global_flag = aus_dominate_italy
-    clr_global_flag = italy_federation_yes
-    set_global_flag = first_war_of_italian_independence_lost
-    any_country = {
-      limit = {
-        is_culture_group = italian
-      }
-      country_event = 777202012
-    }
-    random_country = {
-      limit = {
-        OR = {
-          tag = FRA
-          tag = BOR
-        }
-        exists = yes
-      }
-      country_event = 777202013
-    }
-    FRA = {
-      diplomatic_influence = {
-        who = PAP
-        value = 200
-      }
-    }
-    BOR = {
-      diplomatic_influence = {
-        who = PAP
-        value = 200
-      }
-    }
-    ai_chance = { factor = 0 }
-  }
+	option = { #Okay...
+		name = "EVT777202008OPTB"
+		badboy = -3
+		release_vassal = SAR
+		prestige = -50
+		clr_global_flag = aus_dominate_italy
+		clr_global_flag = italy_federation_yes
+		set_global_flag = first_war_of_italian_independence_lost
+		any_country = {
+			limit = {
+				is_culture_group = italian
+			}
+			country_event = 777202012
+		}
+		random_country = {
+			limit = {
+				OR = {
+					tag = FRA
+					tag = BOR
+				}
+				exists = yes
+			}
+			country_event = 777202013
+		}
+		FRA = {
+			diplomatic_influence = {
+				who = PAP
+				value = 200
+			}
+		}
+		BOR = {
+			diplomatic_influence = {
+				who = PAP
+				value = 200
+			}
+		}
+		ai_chance = { factor = 0 }
+	}
 }
 
 country_event = { #Withdrawl demanded
-  id = 777202009
-  title = "EVTNAME777202009"
-  desc = "EVTDESC777202009"
-  picture = "metternich_negotiating"
+	id = 777202009
+	title = "EVTNAME777202009"
+	desc = "EVTDESC777202009"
+	picture = "metternich_negotiating"
 
-  is_triggered_only = yes
+	is_triggered_only = yes
 
-  immediate = {
-    FRA = {
-      diplomatic_influence = {
-        who = PAP
-        value = -200
-      }
-    }
-    BOR = {
-      diplomatic_influence = {
-        who = PAP
-        value = -200
-      }
-    }
-  }
+	immediate = {
+		random_country = {
+			limit = {
+				exists = yes
+				OR = {
+					tag = FRA
+					tag = BOR
+				}
+			}
+			diplomatic_influence = {
+				who = PAP
+				value = -200
+			}
+		}
+	}
 
-  option = { #War!
-    name = "EVT777202009OPTA"
-    any_country = {
-      limit = {
-        OR = {
-          alliance_with = FRA
-          alliance_with = BOR
-        }
-        NOT = {
-          is_culture_group = italian
-        }
-      }
-      leave_alliance = FRA
-      leave_alliance = BOR
-      relation = {
-        who = FRA
-        value = 100
-      }
-      relation = {
-        who = BOR
-        value = 100
-      }
-    }
-    any_country = {
-      limit = {
-        alliance_with = AUS
-        NOT = { is_culture_group = italian }
-      }
-      leave_alliance = AUS
-      relation = {
-        who = AUS
-        value = 100
-      }
-    }
-    random_country = {
-      limit = {
-        OR = {
-          tag = FRA
-          tag = BOR
-        }
-        OR = {
-          has_global_flag = aus_dominate_italy_frapru_vs_aus
-          has_global_flag = aus_dominate_italy_frapru_vs_ausrus
-        }
-      }
-      create_alliance = PRU
-      relation = {
-        who = PRU
-        value = 400
-      }
-    }
-    random_country = {
-      limit = {
-        tag = RUS
-        exists = yes
-        has_global_flag = aus_dominate_italy_frapru_vs_ausrus
-      }
-      create_alliance = AUS
-      relation = {
-        who = AUS
-        value = 400
-      }
-    }
-    random_country = {
-      limit = {
-        OR = {
-          tag = FRA
-          tag = BOR
-        }
-        exists = yes
-      }
-      war = {
-        target = AUS
-        attacker_goal = { casus_belli = cut_down_to_size }
-        defender_goal = { casus_belli = cut_down_to_size }
-        call_ally = yes
-      }
-    }
-  }
+	option = { #War!
+		name = "EVT777202009OPTA"
+		any_country = {
+			limit = {
+				OR = {
+					alliance_with = FRA
+					alliance_with = BOR
+				}
+				NOT = {
+					is_culture_group = italian
+				}
+			}
+			leave_alliance = FRA
+			leave_alliance = BOR
+			relation = {
+				who = FRA
+				value = 100
+			}
+			relation = {
+				who = BOR
+				value = 100
+			}
+		}
+		any_country = {
+			limit = {
+				alliance_with = AUS
+				NOT = { is_culture_group = italian }
+			}
+			leave_alliance = AUS
+			relation = {
+				who = AUS
+				value = 100
+			}
+		}
+		random_country = {
+			limit = {
+				OR = {
+					tag = FRA
+					tag = BOR
+				}
+				OR = {
+					has_global_flag = aus_dominate_italy_frapru_vs_aus
+					has_global_flag = aus_dominate_italy_frapru_vs_ausrus
+				}
+			}
+			random_owned = {
+				limit = {
+					owner = { neighbour = PRU }
+				}
+				owner = { 
+					create_alliance = PRU
+					relation = {
+						who = PRU
+						value = 400
+					}
+				}
+			}
+			random_owned = {
+				limit = {
+					owner = { neighbour = NGF }
+				}
+				owner = { 
+					create_alliance = NGF
+					relation = {
+						who = NGF
+						value = 400
+					}
+				}
+			}
+			random_owned = {
+				limit = {
+					owner = { neighbour = GCF }
+				}
+				owner = { 
+					create_alliance = GCF
+					relation = {
+						who = GCF
+						value = 400
+					}
+				}
+			}
+			random_owned = {
+				limit = {
+					owner = { neighbour = GER }
+				}
+				owner = { 
+					create_alliance = GER
+					relation = {
+						who = GER
+						value = 400
+					}
+				}
+			}
+		}
+		random_country = {
+			limit = {
+				tag = RUS
+				exists = yes
+				has_global_flag = aus_dominate_italy_frapru_vs_ausrus
+			}
+			create_alliance = AUS
+			relation = {
+				who = AUS
+				value = 400
+			}
+		}
+		random_country = {
+			limit = {
+				OR = {
+					tag = FRA
+					tag = BOR
+				}
+				exists = yes
+			}
+			war = {
+				target = AUS
+				attacker_goal = { casus_belli = cut_down_to_size }
+				defender_goal = { casus_belli = cut_down_to_size }
+				call_ally = yes
+			}
+		}
+	}
 
-  option = { #Okay...
-    name = "EVT777202009OPTB"
-    badboy = -3
-    release_vassal = SAR
-    prestige = -50
-    clr_global_flag = aus_dominate_italy
-    clr_global_flag = italy_federation_yes
-    set_global_flag = first_war_of_italian_independence_lost
-    any_country = {
-      limit = {
-        is_culture_group = italian
-      }
-      country_event = 777202012
-    }
-    random_country = {
-      limit = {
-        OR = {
-          tag = FRA
-          tag = BOR
-        }
-        exists = yes
-      }
-      country_event = 777202013
-    }
+	option = { #Okay...
+		name = "EVT777202009OPTB"
+		badboy = -3
+		release_vassal = SAR
+		prestige = -50
+		clr_global_flag = aus_dominate_italy
+		clr_global_flag = italy_federation_yes
+		set_global_flag = first_war_of_italian_independence_lost
+		any_country = {
+			limit = {
+				is_culture_group = italian
+			}
+			country_event = 777202012
+		}
+		random_country = {
+			limit = {
+				OR = {
+					tag = FRA
+					tag = BOR
+				}
+				exists = yes
+			}
+			country_event = 777202013
+		}
 
-    FRA = {
-      diplomatic_influence = {
-        who = PAP
-        value = 200
-      }
-    }
-    BOR = {
-      diplomatic_influence = {
-        who = PAP
-        value = 200
-      }
-    }
-    ai_chance = { factor = 0 }
-  }
+		FRA = {
+			diplomatic_influence = {
+				who = PAP
+				value = 200
+			}
+		}
+		BOR = {
+			diplomatic_influence = {
+				who = PAP
+				value = 200
+			}
+		}
+		ai_chance = { factor = 0 }
+	}
 }
 
 country_event = { #They concede lmao
-  id = 777202010
-  title = "EVTNAME777202010"
-  desc = "EVTDESC777202010"
-  picture = "italian_peninsula"
+	id = 777202010
+	title = "EVTNAME777202010"
+	desc = "EVTDESC777202010"
+	picture = "italian_peninsula"
 
-  is_triggered_only = yes
+	is_triggered_only = yes
 
-  option = {
-    name = "EVT777202010OPTA"
-    any_country = {
-      limit = {
-        is_culture_group = italian
-      }
-      country_event = 777202011
-    }
-  }
+	option = {
+		name = "EVT777202010OPTA"
+		any_country = {
+			limit = {
+				is_culture_group = italian
+			}
+			country_event = 777202011
+		}
+	}
 }
 
 country_event = { #Give influence in Italy
-  id = 777202011
-  title = "EVTNAME777202011"
-  desc = "EVTDESC777202011"
-  picture = "metternich_negotiating"
+	id = 777202011
+	title = "EVTNAME777202011"
+	desc = "EVTDESC777202011"
+	picture = "metternich_negotiating"
 
-  is_triggered_only = yes
+	is_triggered_only = yes
 
-  option = {
-    name = "EVT777202011OPTA"
-    FROM = {
-      diplomatic_influence = {
-        who = THIS
-        value = 400
-      }
-    }
-    relation = {
-      who = FROM
-      value = 400
-    }
-    ai_chance = { factor = 100 }
-  }
+	option = {
+		name = "EVT777202011OPTA"
+		FROM = {
+			diplomatic_influence = {
+				who = THIS
+				value = 400
+			}
+		}
+		relation = {
+			who = FROM
+			value = 400
+		}
+		ai_chance = { factor = 100 }
+	}
 }
 
 country_event = { #Lose influence in Italy
-  id = 777202012
-  title = "EVTNAME777202012"
-  desc = "EVTDESC777202012"
-  picture = "metternich_negotiating"
+	id = 777202012
+	title = "EVTNAME777202012"
+	desc = "EVTDESC777202012"
+	picture = "metternich_negotiating"
 
-  is_triggered_only = yes
+	is_triggered_only = yes
 
-  option = {
-    name = "EVT777202012OPTA"
-    FROM = {
-      diplomatic_influence = {
-        who = THIS
-        value = -100
-      }
-    }
-    relation = {
-      who = FROM
-      value = -100
-    }
-  ai_chance = { factor = 100 }
-  }
+	option = {
+		name = "EVT777202012OPTA"
+		FROM = {
+			diplomatic_influence = {
+				who = THIS
+				value = -100
+			}
+		}
+		relation = {
+			who = FROM
+			value = -100
+		}
+	ai_chance = { factor = 100 }
+	}
 }
 
 country_event = { #French diplomatic victory
-  id = 777202013
-  title = "EVTNAME777202013"
-  desc = "EVTDESC777202013"
-  picture = "italian_peninsula"
+	id = 777202013
+	title = "EVTNAME777202013"
+	desc = "EVTDESC777202013"
+	picture = "italian_peninsula"
 
-  is_triggered_only = yes
+	is_triggered_only = yes
 
-  option = {
-    name = "EVT777202013OPTA"
-    THIS = {
-      all_core = {
-        limit = { owned_by = SAR }
-        secede_province = THIS
-      }
-    }
-    diplomatic_influence = {
-      who = SAR
-      value = 400
-    }
-    relation = {
-      who = SAR
-      value = 400
-    }
-    ai_chance = { factor = 100 }
-  }
+	option = {
+		name = "EVT777202013OPTA"
+		THIS = {
+			all_core = {
+				limit = { owned_by = SAR }
+				secede_province = THIS
+			}
+		}
+		diplomatic_influence = {
+			who = SAR
+			value = 400
+		}
+		relation = {
+			who = SAR
+			value = 400
+		}
+		ai_chance = { factor = 100 }
+	}
 }
 
 country_event = { #Sardinia Gaining Corsica
-  id = 777202014
-  title = "EVTNAME777202014"
-  desc = "EVTDESC777202014"
-  picture = "italian_peninsula"
+	id = 777202014
+	title = "EVTNAME777202014"
+	desc = "EVTDESC777202014"
+	picture = "italian_peninsula"
 
-  is_triggered_only = yes
+	is_triggered_only = yes
 
-  option = {
-    name = "EVT777202014OPTA"
-    473 = { secede_province = THIS add_core = THIS add_core = SRD add_core = ITA }
-  }
+	option = {
+		name = "EVT777202014OPTA"
+		473 = { secede_province = THIS add_core = THIS add_core = SRD add_core = ITA }
+	}
 }
 
 country_event = { #Federation Solidifies
-  id = 777202020
-  title = "EVTNAME777202020"
-  desc = "EVTDESC777202020"
-  picture = "italian_peninsula"
+	id = 777202020
+	title = "EVTNAME777202020"
+	desc = "EVTDESC777202020"
+	picture = "italian_peninsula"
 
-  trigger = {
-    tag = ITF
-    year = 1865
-    OR = {
-      SIC = { exists = yes }
-      SRD = { exists = yes }
-      PAP = { exists = yes }
-    }
-  }
+	trigger = {
+		tag = ITF
+		year = 1865
+		is_vassal = yes
+		overlord = { exists = yes OR = { tag = AUS tag = KUK tag = DNB tag = SGF tag = GER } }
+		OR = {
+			SIC = { exists = yes is_vassal = yes overlord = { exists = yes OR = { tag = AUS tag = KUK tag = DNB tag = SGF AND = { tag = GER has_country_flag = austrian_greater_germany } } } }
+			SRD = { exists = yes is_vassal = yes overlord = { exists = yes OR = { tag = AUS tag = KUK tag = DNB tag = SGF AND = { tag = GER has_country_flag = austrian_greater_germany } } } }
+			PAP = { exists = yes is_vassal = yes overlord = { exists = yes OR = { tag = AUS tag = KUK tag = DNB tag = SGF AND = { tag = GER has_country_flag = austrian_greater_germany } } } }
+		}
+		war = no
+	}
 
-  mean_time_to_happen = { months = 12 }
+	mean_time_to_happen = { months = 12 }
 
-  option = {
-    name = "EVT777202020OPTA"
-    SIC = {
-      all_core = { add_core = ITF remove_core = SIC remove_core = SYC }
-      annex_to = THIS
-    }
-    SRD = {
-      all_core = { add_core = ITF remove_core = SIC remove_core = CRS }
-      annex_to = THIS
-    }
-    PAP = {
-      all_core = { add_core = ITF remove_core = PAP remove_core = BNT remove_core = POO }
-      annex_to = THIS
-    }
-    random_country = {
-      limit = {
-        OR = {
-          tag = AUS
-          tag = KUK
-          tag = DNB
-        }
-        exists = yes
-      }
-      country_event = 777202021
-    }
-    ai_chance = { factor = 1 }
-  }
+	option = {
+		name = "EVT777202020OPTA"
+		political_reform = federalism
+		any_country = {
+			limit = {
+				# OR = { tag = SIC tag = SRD tag = PAP }
+				NOT = { tag = THIS }
+				OR = {
+					primary_culture = north_italian
+					primary_culture = central_italian
+					primary_culture = south_italian
+					primary_culture = venetian
+					primary_culture = sicilian
+					primary_culture = insular
+					tag = MNC
+				}
+				exists = yes
+				is_vassal = yes
+				overlord = { exists = yes OR = { tag = AUS tag = KUK tag = DNB tag = SGF tag = GER } }
+			}
+			all_core = { add_core = ITF }
+			annex_to = THIS
+		}
+		random_country = {
+			limit = {
+				OR = {
+					tag = AUS
+					tag = KUK
+					tag = DNB
+					tag = SGF
+					tag = GER
+				}
+				exists = yes
+				is_our_vassal = ITF
+			}
+			country_event = 777202021
+		}
+		ai_chance = { factor = 1 }
+	}
 }
 
 country_event = {
-  id = 777202021
-  title = "EVTNAME777202021"
-  desc = "EVTDESC777202021"
-  picture = "italian_peninsula"
+	id = 777202021
+	title = "EVTNAME777202021"
+	desc = "EVTDESC777202021"
+	picture = "italian_peninsula"
 
-  is_triggered_only = yes
+	is_triggered_only = yes
 
-  option = {
-    name = "EVT777202021OPTA"
-  }
+	option = {
+		name = "EVT777202021OPTA"
+		FROM = {
+			capital = 749
+			any_country = {
+				limit = {
+					OR = {
+						tag = ITA 
+						tag = PAR 
+						tag = SAR
+						tag = LUC
+						tag = MOD
+						tag = TUS
+						tag = RMG
+						tag = T4V
+						tag = LOM
+						tag = VEN
+						tag = SRD
+						tag = SIC
+						tag = SYC
+						tag = BNT
+						tag = POO
+					}
+				}
+				all_core = {
+					remove_core = ITA 
+					remove_core = PAR 
+					remove_core = SAR
+					remove_core = LUC
+					remove_core = MOD
+					remove_core = TUS
+					remove_core = RMG
+					remove_core = T4V
+					remove_core = LOM
+					remove_core = VEN
+					remove_core = SRD
+					remove_core = SIC
+					remove_core = SYC
+					remove_core = BNT
+					remove_core = POO
+				}
+			}
+			any_owned = {
+				limit = { is_core = CRS }
+				remove_core = CRS
+			}
+			any_owned = {
+				limit = { is_core = MNC }
+				remove_core = MNC
+			}
+			any_owned = {
+				limit = { is_core = SMR }
+				remove_core = SMR
+			}
+			any_owned = {
+				limit = { is_core = T4V }
+				remove_core = T4V
+			}
+			any_owned = {
+				limit = {
+					is_core = PAP
+					NOT = { province_id = 3275 }
+				}
+				remove_core = PAP
+			}
+		}
+	}
 }

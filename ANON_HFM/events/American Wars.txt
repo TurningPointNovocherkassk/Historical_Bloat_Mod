@@ -14,11 +14,8 @@ country_event = {
 	option = {
 		name = "EVT44122OPTA"
 		prestige = 10
-		250 = { add_core = THIS secede_province = THIS }
-		158 = { add_core = USA secede_province = USA }
-		250 = { remove_core = CAN }
-		158 = { remove_core = CAN }
-		250 = { remove_core = QUE }
+		250 = { remove_core = CAN remove_core = QUE add_core = THIS secede_province = THIS }
+		158 = { remove_core = CAN add_core = THIS secede_province = THIS }
 		69 = { remove_core = NEN }
 		relation = { who = ENG value = 100 }
 		ai_chance = { factor = 95 }
@@ -28,21 +25,10 @@ country_event = {
 		name = "EVT44122OPTB"
 		prestige = 15
 		badboy = 4
-		250 = { add_core = THIS }
-		249 = { add_core = THIS }
-		69 = { add_core = THIS }
-		158 = { add_core = USA }
-		158 = { add_core = ENG }
-		250 = { add_core = ENG }
-		249 = { add_core = ENG }
-		69 = { add_core = ENG }
-		158 = { add_core = CAN }
-		250 = { add_core = CAN }
-		249 = { add_core = CAN }
-		69 = { add_core = CAN }
-		250 = { add_core = MRU }
-		249 = { add_core = MRU }
-		69 = { add_core = MRU }
+		250 = { add_core = THIS add_core = ENG add_core = MRU add_core = CAN }
+		158 = { add_core = USA add_core = ENG add_core = CAN }
+		249 = { add_core = THIS add_core = ENG add_core = CAN add_core = MRU }
+		69 = { add_core = THIS add_core = ENG add_core = CAN add_core = MRU }
 		relation = {
 			who = ENG
 			value = -200
@@ -132,6 +118,20 @@ country_event = {
 			}
 			secede_province = USA
 		}
+		all_core = {
+			limit = {
+				is_core = YUC
+				has_global_flag = YUC_becomes_USA_state
+			}
+			remove_core = MEX
+		}
+		any_owned = {
+			limit = {
+				is_core = YUC
+				has_global_flag = YUC_becomes_USA_state
+			}
+			secede_province = USA
+		}
 		MEX = { money = 100000 }
 		country_event = 44128
 		
@@ -179,15 +179,25 @@ country_event = {
 		relation = { who = MEX value = -200 }
 		diplomatic_influence = { who = MEX value = -400 }
 		leave_alliance = MEX
-		war = {
-			target = MEX
-			attacker_goal = {
-				casus_belli = acquire_all_cores
-				country = USA
-			}
-		}
+        war = {
+            target = MEX
+            attacker_goal = {
+                casus_belli = cut_down_to_size_no_infamy
+                country = USA
+            }
+            defender_goal = {
+                casus_belli = cut_down_to_size_no_infamy
+                country = MEX
+            }
+        }
 		any_pop = {
-			limit = { has_pop_culture = mexican }
+			limit = {
+				OR ={
+					has_pop_culture = mexican
+					has_pop_culture = norteno
+					has_pop_culture = californio
+				}
+			}
 			militancy = 6
 		}
 		ai_chance = {
@@ -513,6 +523,7 @@ country_event = {
 		#ANON
 		has_global_flag = champoeg_meetings
 		NOT = { has_global_flag = anglo_oregon }
+		NOT = { has_global_flag = gringo_columbia }
 	}
 	
 	mean_time_to_happen = {
@@ -950,6 +961,7 @@ country_event = {
 	
 	option = {
 		name = "EVT44153OPTA"
+		set_global_flag = america_cucked_oregon
 		prestige = -20
 		relation = { who = ENG value = -50 }
 		any_owned = {
@@ -961,7 +973,7 @@ country_event = {
 				}
 			}
 			secede_province = RPL
-			country_event = 1100047
+			owner = { country_event = 1100047 }
 		}
 		any_owned = {
 			limit = {
@@ -972,7 +984,7 @@ country_event = {
 				}
 			}
 			secede_province = CAN
-			country_event = 1100047
+			owner = { country_event = 1100047 }
 		}
 		COL = { all_core = { remove_core = USA } }
 		any_pop = {
@@ -1216,8 +1228,16 @@ country_event = {
 	
 	option = {
 		name = "EVT44155OPTA"
+		set_global_flag = USA_claims_all_oregon
 		prestige = 25
-		RPL = {
+		any_country = {
+			limit = {
+				OR = {
+					vassal_of = ENG
+					substate_of = ENG
+					in_sphere = ENG
+				}
+			}
 			any_owned = {
 				limit = { 
 					is_core = COL 

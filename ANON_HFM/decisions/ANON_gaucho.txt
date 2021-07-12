@@ -284,7 +284,27 @@ political_decisions = {
 		}
 		ai_will_do = { factor = 1 }
 	}
-	rename_RGS_gaucho = {
+	
+	build_aracaju = {
+		picture = build_aracaju
+		potential = {
+			tag = BRZ
+			year = 1855
+			NOT = { has_country_flag = aracaju_built }
+		}
+		allow = {
+			money = 5001
+		}
+		effect = {	
+			set_country_flag = aracaju_built
+			treasury = -5000
+			2435 = {
+				change_province_name = "Aracaju"
+				add_province_modifier = { name = recently_built_city duration = 365 }
+			}
+		}
+	}       
+        rename_RGS_gaucho = {
 		picture = gtfo
 		potential = {
 			OR = {

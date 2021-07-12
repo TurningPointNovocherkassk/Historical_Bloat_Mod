@@ -13,7 +13,10 @@ country_event = {
 	fire_only_once = yes
 	
 	trigger = {
-		tag = MEX
+		OR = {
+			tag = MEX
+			tag = M3X
+		}
 		year = 1909
 		war = no
 		NOT = {
@@ -88,7 +91,10 @@ country_event = {
 		clr_country_flag = communist_party_in_power
 		clr_country_flag = fascist_party_in_power
 		clr_country_flag = anarcho_liberal_party_in_power
-		
+		random_owned = {
+			limit = { owner = { tag = M3X } }
+			owner = { change_tag = MEX }
+		}
 		add_country_modifier = {
 			name = national_confusion
 			duration = 365
@@ -258,8 +264,19 @@ country_event = {
 	desc = "EVTDESC44805"
 	picture = "antonio_lopez_de_santa_ana"
 
-	is_triggered_only = yes
+	trigger = {
+		tag = MEX
+		government = presidential_dictatorship
+		NOT = {
+			has_country_flag = mexico_1836_set_up
+			year = 1860
+		}
+	}
 
+	mean_time_to_happen = {
+		days = 1
+	}
+	
 	option = {
 		name = "EVT44805OPTA"
 		set_country_flag = mexico_1836_set_up
@@ -328,7 +345,10 @@ province_event = {
 	
 	trigger = {
 		owner = {
-			tag = MEX
+			OR = {
+				tag = MEX
+				tag = M3X
+			}
 			government = presidential_dictatorship
 			has_country_modifier = fight_the_power
 		}
@@ -815,9 +835,15 @@ country_event = {
 					province_id = 2148
 					province_id = 3396
 					province_id = 3397
+					AND = {
+						is_core = YUC
+						has_global_flag = YUC_becomes_USA_state
+					}
 				}
 			}
 			remove_core = MEX
+			remove_core = M3X
+			remove_core = MXM
 		}
 		any_owned = {
 			limit = {
@@ -841,6 +867,10 @@ country_event = {
 					province_id = 2148
 					province_id = 3396
 					province_id = 3397
+					AND = {
+						is_core = YUC
+						has_global_flag = YUC_becomes_USA_state
+					}
 				}
 			}
 			secede_province = USA
@@ -902,7 +932,16 @@ country_event = {
 			limit = { owner = { money = 100000 } }
 			owner = { treasury = -100000 }
 		}
-		any_owned = { limit = { is_core = MEX } secede_province = MEX }
+		any_owned = {
+			limit = {
+				is_core = MEX
+				NOT = {
+					is_core = YUC
+					has_global_flag = YUC_becomes_USA_state
+				}
+			}
+			secede_province = MEX
+		}
 		diplomatic_influence = {
 			who = FROM
 			value = -50
@@ -998,7 +1037,10 @@ country_event = {
 	fire_only_once = yes
 
 	trigger = {
-		tag = MEX
+		OR = {
+			tag = MEX
+			tag = M3X
+		}
 		war = no
 		ai = yes
 		government = democracy
@@ -1379,7 +1421,11 @@ country_event = {
 	picture = "MEX_victorio"
 
 	trigger = {
-		tag = MEX
+		OR = {
+			tag = MEX
+			tag = M3X
+			tag = MXM
+		}
 		year = 1880
 		owns = 2400
 	}

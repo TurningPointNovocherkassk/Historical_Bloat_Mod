@@ -1,6 +1,44 @@
 ########SEARCH FOR ANON
 
 political_decisions = {
+    cch.option-enable-extra-colonial-conquests = {
+        picture = starting_options
+        alert = no
+        potential = {
+            ai = no
+            has_country_flag = country_looking_through_options
+            NOT = { year = 1837 }
+            has_global_flag = colonial_railroading_disabled
+        }
+        allow = {}
+        effect = {
+            clr_global_flag = colonial_railroading_disabled
+        }
+    }
+
+    cch.option-disable-splendid-isolation = {
+        picture = starting_options
+        alert = no
+        potential = {
+            ai = no
+            has_country_flag = country_looking_through_options
+            NOT = { year = 1837 }
+            NOT = { has_global_flag = splendid_isolation_disabled }
+        }
+        allow = {}
+        effect = {
+            set_global_flag = splendid_isolation_disabled
+
+            remove_country_modifier = pax_britannica
+            clr_country_flag = pax_britannica
+
+            any_country = {
+                remove_country_modifier = pax_britannica
+                clr_country_flag = pax_britannica
+            }
+        }
+    }
+
 	
 	option_disable_anarcho_liberals = {
 		alert = no
@@ -19,6 +57,25 @@ political_decisions = {
 		}
 		ai_will_do = { factor = 0 }
 	}
+
+    unlock_crisis_in_1870 = {
+        picture = starting_options
+        alert = no
+        potential = {
+            ai = no
+            has_country_flag = country_looking_through_options
+            NOT = { year = 1837 }
+            NOT = { has_global_flag = unlock_crisis_in_1870 }
+        }
+
+        allow = {
+        }
+
+        effect = {
+            set_global_flag = unlock_crisis_in_1870
+        }
+        ai_will_do = { factor = 0 }
+    }
 	
 	option_disable_hpm_crisis = {
 		picture = starting_options
@@ -189,6 +246,7 @@ political_decisions = {
 	}
 	
 	#option_spawn_eic = {
+		#picture = starting_options
 		#alert = no
 		#potential = {
 			#ai = no
@@ -204,6 +262,8 @@ political_decisions = {
 			#set_global_flag = eic_spawned
 			#ENG = { country_event = 9990016 }
 		#}
+		
+		#ai_will_do = { factor = 0 }
 	#}
 
 ###Disable Starting Party Loyalty
@@ -212,18 +272,10 @@ political_decisions = {
 		picture = starting_options
 		alert = no
 		potential = {
+			ai = no
+			has_country_flag = country_looking_through_options
+			NOT = { year = 1837 }
 			NOT = { has_global_flag = party_loyalty_eliminated }
-			OR = {
-				AND = {
-					ai = no
-					has_country_flag = country_looking_through_options
-					NOT = { year = 1837 }
-				}
-				AND = {
-					ai = yes
-					year = 1841
-				}
-			}
 		}
 		
 		allow = {
@@ -235,64 +287,6 @@ political_decisions = {
 		}
 		
 		ai_will_do = { factor = 1 }
-	}
-	
-	###Disable Mobilization bug fix
-
-	option_disable_mobilization_bug = {
-		picture = starting_options
-		alert = no
-		potential = {
-			ai = no
-			has_country_flag = country_looking_through_options
-			NOT = { year = 1837 }
-			NOT = { has_global_flag = disabled_mobilization_fix }
-		}
-		
-		allow = {
-		}
-		
-		effect = {
-			set_global_flag = disabled_mobilization_fix
-		}
-		
-		ai_will_do = { factor = 0 }
-	}
-	
-###Localized Names
-
-	option_localized_names = {
-		picture = starting_options
-		alert = no
-		potential = {
-			ai = no
-			has_country_flag = country_looking_through_options
-			NOT = { year = 1837 }
-			NOT = { has_global_flag = localized_province_names }
-		}
-		
-		allow = {
-		}
-		
-		effect = {
-			set_global_flag = localized_province_names
-			#Italy
-			720 = { change_province_name = "Torino" }
-			724 = { change_province_name = "Genova" }
-			726 = { change_province_name = "Milano" }
-			729 = { change_province_name = "Venezia" }
-			731 = { change_province_name = "Padova" }
-			744 = { change_province_name = "Firenze" }
-			745 = { change_province_name = "Livorno" }
-			749 = { change_province_name = "Roma" }
-			754 = { change_province_name = "Napoli" }
-			387 = { change_province_name = "Brussel" }
-			388 = { change_province_name = "Brugge" }
-			389 = { change_province_name = "Gent" }
-			390 = { change_province_name = "Antwerpen" }
-		}
-		
-		ai_will_do = { factor = 0 }
 	}
 	
 ####Disable Trade Policy setting
@@ -314,6 +308,62 @@ political_decisions = {
 		}
 		
 		ai_will_do = { factor = 0 }
+	}
+	
+	option_spectator = {
+		picture = starting_options
+		alert = no
+		potential = {
+			ai = no
+			has_country_flag = country_looking_through_options
+			NOT = { year = 1837 }
+			NOT = { has_country_flag = spectator }
+		}
+		
+		allow = {
+		}
+		
+		effect = {
+			set_country_flag = spectator
+		}
+	}
+	
+	enable_debug_decision = {
+		picture = starting_options
+		alert = no
+		potential = {
+			ai = no
+			has_global_flag = looking_through_options
+			NOT = { year = 1837 }
+			NOT = { has_country_flag = enable_debug_decision }
+		}
+		
+		allow = { }
+		
+		effect = { set_country_flag = enable_debug_decision }
+	}
+	
+	disable_microstates = {
+		picture = starting_options
+		alert = no
+		potential = {
+			ai = no
+			has_global_flag = looking_through_options
+			NOT = { year = 1837 }
+			NOT = { has_global_flag = disable_microstates }
+		}
+		allow = { }
+		effect = {
+			set_global_flag = disable_microstates
+			3251 = { remove_core = MNC add_core = SAR add_core = ITA }
+			SAR = { inherit = MNC }
+			3252 = { remove_core = ADO remove_core = CAT add_core = FRA }
+			FRA = { inherit = ADO }
+			3253 = { remove_core = LIE add_core = AUS }
+			AUS = { inherit = LIE }
+			3266 = { remove_core = SMR add_core = PAP add_core = ITA }
+			PAP = { inherit = SMR }
+		}
 	}
 	
 ###Setup Decisions
@@ -595,7 +645,7 @@ political_decisions = {
 			}
 			
 			any_pop = {
-				limit = { has_pop_culture = north_italian }
+				limit = { has_pop_culture = italo_diaspora }
 				literacy = 0.3
 			}
 			
@@ -949,6 +999,8 @@ political_decisions = {
 					NOT = { has_pop_religion = sunni } 
 					OR = {
 						has_pop_culture = north_italian
+						has_pop_culture = dalmatian
+						has_pop_culture = italo_diaspora
 						has_pop_culture = ashkenazi
 						has_pop_culture = sephardic 
 						has_pop_culture = mizrahi 
@@ -980,7 +1032,7 @@ political_decisions = {
 						has_pop_culture = armenian
 			
 						# ANON
-						has_pop_culture = montenegrin
+						# has_pop_culture = montenegrin
 					} 
 				}
 				literacy = 0.03
@@ -988,7 +1040,7 @@ political_decisions = {
 			
 			any_pop = { limit = { has_pop_culture = ukrainian } literacy = 0.02 }
 			
-			any_pop = { limit = { has_pop_culture = greek } literacy = 0.07 }
+			any_pop = { limit = { is_culture_group = pan_greek } literacy = 0.07 }
 			
 			# ANON
 			any_pop = { limit = { has_pop_culture = assyrian } literacy = 0.07 }
@@ -1072,16 +1124,16 @@ political_decisions = {
 				#add_core = ANT
 			}
 			TUR_863 = {
-				add_core = ANT
+				#add_core = ANT
 			}
 			TUR_869 = {
-				add_core = ANT
+				#add_core = ANT
 			}
 			881 = {
-				add_core = ANT
+				#add_core = ANT
 			}
 			880 = { 
-				add_core = ANT
+				#add_core = ANT
 			}
 			
 			TUR_809 = {
@@ -1089,8 +1141,8 @@ political_decisions = {
 			}
 			diplomatic_influence = { who = SAM value = 400 }
 			SAM = {
-				any_pop = { limit = { culture = greek } literacy = 0.07 }
-				any_pop = { limit = { culture = turkish } literacy = 0.1 } 
+				any_pop = { limit = { is_culture_group = pan_greek } literacy = 0.07 }
+				any_pop = { limit = { has_pop_culture = turkish } literacy = 0.1 } 
 			}
 			#ANON
 			888 = {
@@ -1113,6 +1165,9 @@ political_decisions = {
 		}
 		
 		effect = {
+			#ANON
+			SOK = { inherit = ADW }
+			KBO = { inherit = BRM }
 			any_pop = {
 				limit = { OR = { has_pop_culture = turkish has_pop_culture = circassian has_pop_culture = chechen } }
 				literacy = 0.02
@@ -1129,7 +1184,7 @@ political_decisions = {
 			any_pop = { limit = { has_pop_religion = catholic NOT = { has_pop_culture = assyrian} } literacy = 0.01 }
 			
 			# ANON
-			any_pop = { limit = { OR = { has_pop_culture = greek has_pop_culture = armenian has_pop_culture = copt has_pop_culture = assyrian } } literacy = 0.07 }
+			any_pop = { limit = { OR = { is_culture_group = pan_greek is_culture_group = caucasian is_culture_group = levantine } } literacy = 0.07 }
 		}
 	}
 	
@@ -1148,12 +1203,9 @@ political_decisions = {
 			any_pop = {
 				limit = {
 					OR = {
-						has_pop_culture = turkish 
+						is_culture_group = turko_semitic
+						is_culture_group = caucasian  
 						has_pop_culture = persian 
-						has_pop_culture = azerbaijani 
-						has_pop_culture = circassian 
-						has_pop_culture = chechen 
-						has_pop_culture = armenian
 					} 
 				}
 				literacy = 0.02
@@ -1169,7 +1221,7 @@ political_decisions = {
 			
 			any_pop = { limit = { is_culture_group = arab } literacy = 0.01 }
 			any_pop = { limit = { has_pop_religion = catholic NOT = { has_pop_culture = assyrian } } literacy = 0.01 }
-			any_pop = { limit = { has_pop_culture = greek } literacy = 0.07 }
+			any_pop = { limit = { is_culture_group = pan_greek } literacy = 0.07 }
 			
 			# ANON
 			any_pop = { limit = { has_pop_culture = assyrian } literacy = 0.07 }
@@ -1208,7 +1260,7 @@ political_decisions = {
 			
 			any_pop = { limit = { is_culture_group = arab } literacy = 0.01 }
 			any_pop = { limit = { has_pop_religion = catholic NOT = { has_pop_culture = assyrian } } literacy = 0.25 }
-			any_pop = { limit = { has_pop_culture = greek } literacy = 0.1 }
+			any_pop = { limit = { is_culture_group = pan_greek } literacy = 0.1 }
 			
 			# ANON
 			any_pop = { limit = { has_pop_culture = mandaic } literacy = 0.25 }
@@ -1217,12 +1269,12 @@ political_decisions = {
 			any_country = {
 				limit = {
 					OR = {
-						is_primary_culture = kurdish
-						is_primary_culture = peninsular
-						is_primary_culture = bedouin
-						is_primary_culture = mashriqi
-						is_primary_culture = maghrebi
-						is_primary_culture = berber
+						primary_culture = kurdish
+						primary_culture = peninsular
+						primary_culture = bedouin
+						primary_culture = mashriqi
+						primary_culture = maghrebi
+						primary_culture = berber
 					}
 				}
 				# ANON
@@ -1273,7 +1325,7 @@ political_decisions = {
 				
 				any_pop = { limit = { is_culture_group = arab } literacy = 0.01 }
 				any_pop = { limit = { has_pop_religion = catholic NOT = { has_pop_culture = assyrian } } literacy = 0.25 }
-				any_pop = { limit = { has_pop_culture = greek } literacy = 0.1 }
+				any_pop = { limit = { is_culture_group = pan_greek } literacy = 0.1 }
 				
 				# ANON
 				any_pop = { limit = { has_pop_culture = mandaic } literacy = 0.25 }
@@ -1282,12 +1334,12 @@ political_decisions = {
 				any_country = {
 					limit = {
 						OR = {
-							is_primary_culture = kurdish
-							is_primary_culture = peninsular
-							is_primary_culture = bedouin
-							is_primary_culture = mashriqi
-							is_primary_culture = maghrebi
-							is_primary_culture = berber
+							primary_culture = kurdish
+							primary_culture = peninsular
+							primary_culture = bedouin
+							primary_culture = mashriqi
+							primary_culture = maghrebi
+							primary_culture = berber
 						}
 					}
 					# ANON
@@ -1334,22 +1386,27 @@ political_decisions = {
 		
 		effect = {
 			treasury = 25000
-			1008 = { set_province_flag = moscow_city }
+			1008 = { set_province_flag = moscow_city add_core = U03 }
 			1008 = { any_pop = { literacy = 0.1 } }
 			994 = { any_pop = { literacy = 0.1 } }
+			
 			any_pop = { limit = { has_pop_culture = ashkenazi } literacy = 0.54 }
 			any_pop = { limit = { has_pop_culture = volga_german } literacy = 0.4 }
+			any_pop = { limit = { has_pop_culture = baltic_german } literacy = 0.4 }
 			any_pop = { limit = { has_pop_culture = south_italian } literacy = 0.15 }
+			any_pop = { limit = { has_pop_culture = italo_diaspora } literacy = 0.15 }
 			any_pop = { limit = { has_pop_culture = mongol } literacy = 0.01 }
 			
 			# ANON
+			2630 = { change_province_name = "Vostochnaya" }
+			2599 = { change_province_name = "Tsentralnaya" }
+			#POL = { all_core = { remove_core = POL } }
 			any_pop = { limit = { has_pop_culture = ossetian } literacy = 0.01 }
 			any_pop = { limit = { has_pop_culture = persian } literacy = 0.15 }
 			any_pop = { limit = { has_pop_culture = peninsular location = { is_core = DAG }	} literacy = 0.54 }
 			any_pop = { limit = { has_pop_culture = sephardic } literacy = 0.54 }
 			any_pop = { limit = { has_pop_culture = mizrahi } literacy = 0.54 }
 			any_pop = { limit = { has_pop_culture = dagestani } militancy = 6 consciousness = 6 }
-			
 			any_pop = {
 				limit = {
 					NOT = { has_pop_religion = orthodox }
@@ -1380,6 +1437,7 @@ political_decisions = {
 						has_pop_culture = estonian
 						has_pop_culture = latvian
 						has_pop_culture = volga_german
+						has_pop_culture = baltic_german
 						has_pop_culture = finnish
 					} 
 				}
@@ -1390,7 +1448,7 @@ political_decisions = {
 			any_pop = { limit = { OR = { has_pop_culture = polish has_pop_culture = lithuanian has_pop_culture = cossack } } literacy = 0.19 }
 			
 			any_pop = { limit = { OR = { has_pop_culture = romanian has_pop_culture = serb has_pop_culture = bulgarian } } literacy = 0.03 }
-			any_pop = { limit = { OR = { has_pop_culture = greek has_pop_culture = south_italian has_pop_culture = armenian } } literacy = 0.07 }
+			any_pop = { limit = { OR = { is_culture_group = pan_greek is_culture_group = italian has_pop_culture = armenian } } literacy = 0.07 }
 			any_pop = { limit = { has_pop_culture = swedish } literacy = 0.79 }
 			any_pop = {
 				limit = {
@@ -1410,6 +1468,28 @@ political_decisions = {
 					}
 				}
 				literacy = -0.02
+			}
+
+			any_owned = {
+				limit = {
+					OR = {
+						province_id = 1016
+						province_id = 3650
+						province_id = 949
+						province_id = 942
+						province_id = 940
+						province_id = 937
+						province_id = 3649
+						province_id = 3280
+						province_id = 678
+						province_id = 3417
+						province_id = 1019
+						province_id = 977
+						province_id = 1017
+						province_id = 3657
+					}
+				}
+				remove_core = UKR
 			}
 
 			serfs = {
@@ -1484,7 +1564,8 @@ political_decisions = {
 			241 = { trade_goods = grain }
 			3344 = { trade_goods = fish }
 			983 = { remove_core = KRL }
-			
+			2587 = { remove_core = KRL }
+			3685 = { trade_goods = lead }
 			3621 = { trade_goods = lead }
 			3629 = { trade_goods = lead }
 			2250 = { trade_goods = lead }
@@ -1518,7 +1599,7 @@ political_decisions = {
 			2076 = { trade_goods = lead }
 			1001 = { trade_goods = lead }
 			228 = { trade_goods = lead }
-			963 = { trade_goods = lead }
+			#963 = { trade_goods = lead }
 			1090 = { trade_goods = lead }
 			1046 = { trade_goods = lead }
 			541 = { trade_goods = lead }
@@ -1569,7 +1650,7 @@ political_decisions = {
 			1744 = { trade_goods = lead }
 			1771 = { trade_goods = lead }
 			608 = { trade_goods = lead }
-			2665 = { trade_goods = lead }
+			# 2665 = { trade_goods = lead }
 			616 = { trade_goods = lead }
 			1985 = { trade_goods = lead }
 			1701 = { trade_goods = lead }
@@ -1577,7 +1658,7 @@ political_decisions = {
 			3632 = { trade_goods = copper }
 			3633 = { trade_goods = copper }
 			3630 = { trade_goods = copper }
-			936 = { trade_goods = copper }
+			3575 = { trade_goods = copper }
 			1067 = { trade_goods = copper }
 			3493 = { trade_goods = copper }
 			1757 = { trade_goods = copper }
@@ -1615,7 +1696,7 @@ political_decisions = {
 			164 = { trade_goods = copper }
 			163 = { trade_goods = copper }
 			238 = { trade_goods = copper }
-			1018 = { trade_goods = copper }
+			#1018 = { trade_goods = copper }
 			319 = { trade_goods = copper }
 			2064 = { trade_goods = copper }
 			2323 = { trade_goods = copper }
@@ -1657,6 +1738,7 @@ political_decisions = {
 			2256 = { trade_goods = copper }
 			2248 = { trade_goods = copper }
 			
+			3675 = { trade_goods = spices }
 			649 = { trade_goods = spices }
 			1342 = { trade_goods = spices }
 			1520 = { trade_goods = spices }
@@ -1715,6 +1797,11 @@ political_decisions = {
 			2531 = { trade_goods = spices }
 			1137 = { trade_goods = spices }
 			
+			1239 = { trade_goods = sugar }
+			3460 = { trade_goods = sugar }
+			1244 = { trade_goods = sugar }
+			3676 = { trade_goods = sugar }
+			3676 = { trade_goods = sugar }
 			2270 = { trade_goods = sugar }
 			3610 = { trade_goods = sugar }
 			3352 = { trade_goods = sugar }
@@ -1732,7 +1819,6 @@ political_decisions = {
 			3358 = { trade_goods = sugar }
 			2184 = { trade_goods = sugar }
 			3346 = { trade_goods = sugar }
-			3341 = { trade_goods = sugar }
 			1751 = { trade_goods = sugar }
 			2432 = { trade_goods = sugar }
 			2213 = { trade_goods = sugar }
@@ -1807,6 +1893,7 @@ political_decisions = {
 			2427 = { trade_goods = sugar }
 			2426 = { trade_goods = sugar }
 			
+			3635 = { trade_goods = cocoa }
 			3599 = { trade_goods = cocoa }
 			2174 = { trade_goods = cocoa }
 			2446 = { trade_goods = cocoa }
@@ -1867,7 +1954,7 @@ political_decisions = {
 			1444 = { trade_goods = sea_oil }
 			1458 = { trade_goods = sea_oil }
 			1464 = { trade_goods = sea_oil }
-			2637 = { trade_goods = sea_oil }
+			# 2637 = { trade_goods = sea_oil }
 			2634 = { trade_goods = sea_oil }
 			1072 = { trade_goods = sea_oil }
 			1073 = { trade_goods = sea_oil }
@@ -1885,9 +1972,9 @@ political_decisions = {
 			2 = { trade_goods = furs }
 			17 = { trade_goods = furs }
 			6 = { trade_goods = furs }
-			8 = { trade_goods = furs }
+			# 8 = { trade_goods = furs }
 			7 = { trade_goods = furs }
-			10 = { trade_goods = furs }
+			# 10 = { trade_goods = furs }
 			2598 = { trade_goods = furs }
 			15 = { trade_goods = furs }
 			13 = { trade_goods = furs }
@@ -1921,10 +2008,10 @@ political_decisions = {
 			2644 = { trade_goods = furs }
 			2618 = { trade_goods = furs }
 			2620 = { trade_goods = furs }
-			2638 = { trade_goods = furs }
-			2639 = { trade_goods = furs }
+			# 2638 = { trade_goods = furs }
+			# 2639 = { trade_goods = furs }
 			2660 = { trade_goods = furs }
-			2622 = { trade_goods = furs }
+			# 2622 = { trade_goods = furs }
 			2661 = { trade_goods = furs }
 			2666 = { trade_goods = furs }
 			2633 = { trade_goods = furs }
@@ -1937,7 +2024,7 @@ political_decisions = {
 			2652 = { trade_goods = furs }
 			2668 = { trade_goods = furs }
 			2653 = { trade_goods = furs }
-			2643 = { trade_goods = furs }
+			# 2643 = { trade_goods = furs }
 			2667 = { trade_goods = furs }
 			2672 = { trade_goods = furs }
 			2621 = { trade_goods = furs }
@@ -2000,7 +2087,7 @@ political_decisions = {
 		}
 		
 		effect = {
-			any_pop = { limit = { location = { is_core = VEN } has_pop_culture = north_italian } literacy = 0.2 }
+			any_pop = { limit = { location = { is_core = VEN } OR = { has_pop_culture = north_italian has_pop_culture = venetian } } literacy = 0.2 }
 			any_pop = {
 				limit = {
 					location = { 
@@ -2011,7 +2098,11 @@ political_decisions = {
 							province_id = 735
 						}
 					}
-					has_pop_culture = north_italian
+					OR = {
+						has_pop_culture = north_italian
+						has_pop_culture = venetian
+						has_pop_culture = dalmatian
+					}
 				}
 				literacy = 0.3
 			}
@@ -2025,15 +2116,25 @@ political_decisions = {
 							province_id = 735
 						}
 					}
-					has_pop_culture = north_italian
+					OR = {
+						has_pop_culture = north_italian
+						has_pop_culture = venetian
+						has_pop_culture = dalmatian
+					}
 				}
 				literacy = 0.35
 			}
 			
 			#AUS_612 = { any_pop = { literacy = 0.1 } }
 			#AUS_734 = { any_pop = { limit = { has_pop_culture = south_german } literacy = 0.1 } }
+			any_pop = { limit = { has_pop_culture = volga_german } literacy = 0.5 }
 			any_pop = { limit = { has_pop_culture = siebenburger } literacy = 0.5 }
+			any_pop = { limit = { has_pop_culture = carpathian_german } literacy = 0.5 }
+			any_pop = { limit = { has_pop_culture = danube_german } literacy = 0.5 }
 			any_pop = { limit = { has_pop_religion = protestant NOT = { has_pop_culture = siebenburger } literacy = 0.05 } }
+			any_pop = { limit = { has_pop_religion = protestant NOT = { has_pop_culture = volga_german } literacy = 0.05 } }
+			any_pop = { limit = { has_pop_religion = protestant NOT = { has_pop_culture = carpathian_german } literacy = 0.05 } }
+			any_pop = { limit = { has_pop_religion = protestant NOT = { has_pop_culture = danube_german } literacy = 0.05 } }
 			any_pop = { limit = { has_pop_culture = czech } literacy = 0.37 }
 			any_pop = { limit = { location = { OR = { province_id = 628 province_id = 619 } } literacy = 0.08 } }
 			any_pop = { limit = { OR = { has_pop_culture = romanian has_pop_culture = serb has_pop_culture = ukrainian } } literacy = -0.07 }
@@ -2046,6 +2147,12 @@ political_decisions = {
 			any_pop = { limit = { has_pop_culture = dalmatian } literacy = 0.35 }
 			any_pop = { limit = { has_pop_culture = south_german } literacy = 0.25 }
 			any_pop = { limit = { OR = { has_pop_culture = ashkenazi has_pop_culture = sephardic has_pop_culture = mizrahi } } literacy = 0.65 }
+			# GLM = { all_core = { add_core = AUS } }
+			# BKV = { all_core = { add_core = AUS } }
+			any_owned = {
+				limit = { region = PRU_684 }
+				remove_core = GLM
+			}
 			#
 			
 			any_pop = {
@@ -2248,11 +2355,12 @@ political_decisions = {
 		
 		effect = {
 			any_pop = { limit = { has_pop_culture = volga_german } literacy = 0.2 }
+			any_pop = { limit = { has_pop_culture = baltic_german } literacy = 0.2 }
 			any_pop = { limit = { has_pop_culture = swedish } literacy = 0.79 }
 			any_pop = { limit = { has_pop_culture = russian } literacy = -0.46 }
 			any_pop = { limit = { OR = { has_pop_culture = polish has_pop_culture = lithuanian } } literacy = 0.19 }
 			any_pop = { limit = { has_pop_culture = ashkenazi } literacy = 0.49 }
-			any_pop = { limit = { has_pop_culture = ugrian } literacy = 0.49 }
+			any_pop = { limit = { has_pop_culture = estonian } literacy = 0.49 }
 		}
 	}
 	
@@ -2334,7 +2442,7 @@ political_decisions = {
 		}
 		
 		effect = {
-			any_pop = { limit = { has_pop_culture = greek } literacy = 0.05 }
+			any_pop = { limit = { is_culture_group = pan_greek } literacy = 0.05 }
 			any_pop = { limit = { has_pop_culture = kurdish } literacy = -0.01 }
 			
 			#ANON
@@ -2345,7 +2453,7 @@ political_decisions = {
 			
 			#ANON
 			MIG = {
-				any_pop = { limit = { has_pop_culture = greek } literacy = 0.05 }
+				any_pop = { limit = { is_culture_group = pan_greek } literacy = 0.05 }
 				any_pop = { limit = { has_pop_culture = sephardic } literacy = 0.54 }
 				any_pop = { limit = { has_pop_culture = mizrahi } literacy = 0.54 }
 				any_pop = { limit = { has_pop_culture = abkhazian NOT = { OR = { has_pop_religion = sunni has_pop_religion = animist } } } literacy = 0.02 }
@@ -2390,10 +2498,29 @@ political_decisions = {
 				}
 				literacy = 0.05
 			}
+			any_country = {
+				limit = { primary_culture = malagasy }
+				any_pop = { limit = { has_pop_culture = malagasy has_pop_religion = catholic NOT = { OR = { type = farmers type = labourers type = slaves } type = soldiers } } literacy = 0.3 }
+				any_pop = { limit = { has_pop_culture = malagasy has_pop_religion = protestant NOT = { OR = { type = farmers type = labourers type = slaves type = soldiers } } } literacy = 0.3 }
+				any_pop = { limit = { has_pop_culture = malagasy has_pop_religion = sunni NOT = { OR = { type = farmers type = labourers type = slaves type = soldiers } } } literacy = 0.4 }
+			}
+			any_country = {
+				limit = {
+					OR = {
+						tag = CM0
+						tag = CM1
+						tag = CM2
+						tag = CM3
+						tag = CM4
+					}
+				}
+				any_pop = { limit = { has_pop_religion = sunni NOT = { OR = { type = farmers type = labourers type = slaves type = soldiers } } } literacy = 0.3 }
+			}
 			any_pop = { limit = { has_pop_culture = flemish } literacy = 0.39 }
 			any_pop = { limit = { has_pop_culture = breton } literacy = -0.1 }
 			any_pop = { limit = { has_pop_culture = south_german } literacy = 0.54 }
 			any_pop = { limit = { has_pop_culture = north_italian } literacy = 0.24 }
+			any_pop = { limit = { has_pop_culture = italo_diaspora } literacy = 0.24 }
 			any_pop = { limit = { has_pop_culture = anglo_canadian } literacy = 0.44 }
 			any_pop = { limit = { has_pop_culture = afro_antillean } literacy = 0.01 }
 			any_pop = { limit = { has_pop_culture = basque } literacy = 0.19 }
@@ -2493,7 +2620,19 @@ political_decisions = {
 			relation = { who = BUK value = -25 }
 			relation = { who = KAZ value = -25 }
 			relation = { who = KOK value = -25 }
-			any_country = { limit = { capital_scope = {continent = africa } NOT = { tag = MOR } } relation = { who = USA value = -25 } }
+			any_country = {
+				limit = {
+					OR = {
+						capital_scope = { continent = africa }
+						capital_scope = { continent = west_africa }
+						capital_scope = { continent = central_africa }
+						capital_scope = { continent = east_africa }
+						capital_scope = { continent = south_west_africa }
+					}
+					NOT = { tag = MOR }
+				}
+				relation = { who = USA value = -25 }
+			}
 			relation = { who = MOR value = -25 }
 			1887 = { any_pop = { literacy = -0.99 } }
 			1888 = { any_pop = { literacy = -0.99 } }
@@ -2580,6 +2719,10 @@ political_decisions = {
 		}
 		
 		effect = {
+			add_country_modifier = {
+				name = regency_government
+				duration = -1
+			}
 			any_pop = { limit = { has_pop_culture = french } literacy = 0.4 }
 			2435 = { any_pop = { limit = { is_primary_culture = yes } literacy = 0.11 } }
 			BRZ_2462 = { any_pop = { limit = { is_primary_culture = yes } literacy = 0.05 } }
@@ -2808,7 +2951,7 @@ political_decisions = {
 		}
 		
 		effect = {
-			any_pop = { limit = { culture = ashkenazi } literacy = 0.70 }
+			any_pop = { limit = { has_pop_culture = ashkenazi } literacy = 0.70 }
 		}
 	}
 
@@ -2908,7 +3051,16 @@ political_decisions = {
 				activate_technology = flintlock_rifles
 				activate_technology = post_napoleonic_thought
 				activate_technology = post_nelsonian_thought
-			
+				#Venezuela
+				add_country_modifier = {
+					name = america_new_world
+					duration = 3650
+				}
+			}
+			#Venezuela
+			add_country_modifier = {
+				name = america_new_world
+				duration = 3650
 			}
 			ZLA = { all_core = { remove_core = ZLA } }
 		}
@@ -3409,25 +3561,26 @@ political_decisions = {
 			#################Class Literacy Setup######################
 			
 			#################Provinces Setup######################
-			2509 = { add_province_modifier = { name = province_small_immigration_boom duration = 10950 } }	#Auckland, NZ
-			46 = { add_province_modifier = { name = province_small_immigration_boom duration = 10950 } }		#Toronto, CA
-			56 = { add_province_modifier = { name = province_small_immigration_boom duration = 7300 } }		#Kingston, CA
-			58 = { add_province_modifier = { name = province_small_immigration_boom duration = 10950 } }		#Montreal, CA
-			65 = { add_province_modifier = { name = province_small_immigration_boom duration = 10950 } }		#Quebec City,CA
-			2476 = { add_province_modifier = { name = province_small_immigration_boom duration = 3650 } }	#Kingston, CA
-			2477 = { add_province_modifier = { name = province_small_immigration_boom duration = 7300 } }	#Melbourne, AU
-			2479 = { add_province_modifier = { name = province_small_immigration_boom duration = 7300 } }	#Sale, AU
-			2472 = { add_province_modifier = { name = province_small_immigration_boom duration = 7300 } }	#Eden, AU
-			2468 = { add_province_modifier = { name = province_small_immigration_boom duration = 3650 } }	#Sydney, AU
-			2469 = { add_province_modifier = { name = province_small_immigration_boom duration = 7300 } }	#Newcastle, AU
-			2470 = { add_province_modifier = { name = province_small_immigration_boom duration = 7300 } }	#Port Macquarie, AU
-			2483 = { add_province_modifier = { name = province_small_immigration_boom duration = 7300 } }	#Brisbane, AU
-			2482 = { add_province_modifier = { name = province_small_immigration_boom duration = 3650 } }	#Tasmania, AU
-			2484 = { add_province_modifier = { name = province_small_immigration_boom duration = 7300 } }	#Gladstone, AU
-			2491 = { add_province_modifier = { name = province_small_immigration_boom duration = 7300 } }	#Adelaide, AU
+			2509 = { add_province_modifier = { name = small_immigration_boom duration = 10950 } }	#Auckland, NZ
+			46 = { add_province_modifier = { name = small_immigration_boom duration = 10950 } }		#Toronto, CA
+			56 = { add_province_modifier = { name = small_immigration_boom duration = 7300 } }		#Kingston, CA
+			58 = { add_province_modifier = { name = small_immigration_boom duration = 10950 } }		#Montreal, CA
+			65 = { add_province_modifier = { name = small_immigration_boom duration = 10950 } }		#Quebec City,CA
+			2476 = { add_province_modifier = { name = small_immigration_boom duration = 3650 } }	#Kingston, CA
+			2477 = { add_province_modifier = { name = small_immigration_boom duration = 7300 } }	#Melbourne, AU
+			2479 = { add_province_modifier = { name = small_immigration_boom duration = 7300 } }	#Sale, AU
+			2472 = { add_province_modifier = { name = small_immigration_boom duration = 7300 } }	#Eden, AU
+			2468 = { add_province_modifier = { name = small_immigration_boom duration = 3650 } }	#Sydney, AU
+			2469 = { add_province_modifier = { name = small_immigration_boom duration = 7300 } }	#Newcastle, AU
+			2470 = { add_province_modifier = { name = small_immigration_boom duration = 7300 } }	#Port Macquarie, AU
+			2483 = { add_province_modifier = { name = small_immigration_boom duration = 7300 } }	#Brisbane, AU
+			2482 = { add_province_modifier = { name = small_immigration_boom duration = 3650 } }	#Tasmania, AU
+			2484 = { add_province_modifier = { name = small_immigration_boom duration = 7300 } }	#Gladstone, AU
+			2491 = { add_province_modifier = { name = small_immigration_boom duration = 7300 } }	#Adelaide, AU
 			372 = { add_province_modifier = { name = sound_dues_toll duration = -1 } } #Copenhagen
-			2172 = { set_province_flag = mexico_city }
-			1616 = { set_province_flag = summer_palace }
+			2172 = { set_province_flag = mexico_city add_core = U03 }
+			1616 = { set_province_flag = summer_palace add_core = U03 }
+			860 = { set_province_flag = hagia_sophia add_core = U03 }
 			#################Provinces Setup######################
 			
 			#################Hawaii Setup######################
@@ -3573,24 +3726,6 @@ political_decisions = {
 			}
 			#################Japan Setup######################
 			
-			#################Qing Setup######################
-			QNG = {
-				add_country_modifier = { name = global_baby_boom duration = 1065 }
-				add_country_modifier = { name = uncivilized_isolationism duration = -1 }
-				remove_country_modifier = western_influences
-				set_country_flag = mandate
-				any_pop = {
-					limit = { type = bureaucrats }
-					literacy = 0.05
-				}
-				any_pop = {
-					limit = { type = aristocrats }
-					literacy = 0.06
-				}
-			}
-			#################Qing Setup######################
-			
-			
 			#################Ethiopia Setup######################
 			any_country = {
 				limit = {
@@ -3656,7 +3791,6 @@ political_decisions = {
 				603 = { aristocrats  = { money = 12000 } }
 				any_pop = { limit = { has_pop_religion = protestant } ideology = { factor = 0.5 value = liberal } }
 				any_pop = { limit = { has_pop_religion = catholic } ideology = { factor = 0.5 value = conservative } }
-				add_country_modifier = { name = freedom_of_religion duration = -1 }
 			}
 
 			#################Setup SWI######################
@@ -3796,39 +3930,21 @@ political_decisions = {
 			#################Slaves and Serfs  Pops Setup######################
 			serfs = { militancy = -9 consciousness = -9 literacy = -0.99 }
 			slaves = { literacy = -0.99 }
-			any_pop = { limit = { has_pop_culture = gypsy } literacy = -0.99 }
 			any_country = {
-				limit = {
-					exists = yes
-					has_pop_type = serfs
-				}
+				limit = { exists = yes has_pop_type = serfs }
 				serfs = { militancy = -9 consciousness = -9 literacy = -0.99 }
 			}
 			any_country = {
-				limit = {
-					exists = yes
-					has_pop_type = slaves
-				}
+				limit = { exists = yes has_pop_type = slaves }
 				slaves = { literacy = -0.99 }
 			}
-			any_country = {
-				limit = { exists = yes }
-				any_pop = {
-					limit = { has_pop_culture = gypsy }
-					literacy = -0.99
-				}
-			}
+			any_pop = { limit = { has_pop_culture = gypsy } literacy = -0.99 }
+			any_country = { limit = { exists = yes } any_pop = { limit = { has_pop_culture = gypsy } literacy = -0.99 } }
 			#################Slaves and Serfs  Pops Setup######################
 			
 			#################Romanian Pops Setup######################
 			any_country = {
-				limit = {
-					exists = yes
-					OR = {
-						tag = MOL
-						tag = WAL
-					}
-				}
+				limit = { exists = yes OR = { tag = MOL tag = WAL } }
 				any_pop = {
 					limit = { OR = { has_pop_culture = ashkenazi has_pop_culture = sephardic  has_pop_culture = mizrahi  } }
 					literacy = 0.3
@@ -3837,7 +3953,7 @@ political_decisions = {
 			WAL_665 = { add_province_modifier = { name = small_baby_boom duration = 2555 } }
 			MOL_673 = { add_province_modifier = { name = small_baby_boom duration = 2555 } }
 			
-			SER_794 = { add_province_modifier = { name = small_baby_boom duration = 3650 } }
+			SER_794 = { add_province_modifier = { name = baby_boom duration = 3650 } }
 			#################Romanian Pops Setup######################
 			
 			#################Italian Swiss Pops Setup######################
@@ -3866,12 +3982,7 @@ political_decisions = {
 			#################Italian Swiss Pops Setup######################
 			
 			#################Government Flags Setup######################
-			any_country = {
-				limit = {
-					government = absolute_monarchy
-					NOT = { has_country_flag = absolute_monarchy_gov }
-					exists = yes
-				}
+			any_country = { limit = { government = absolute_monarchy NOT = { has_country_flag = absolute_monarchy_gov } exists = yes }
 				clr_country_flag = communist_gov
 				set_country_flag = absolute_monarchy_gov
 				clr_country_flag = semi_constitutional_monarchy_gov
@@ -3882,12 +3993,7 @@ political_decisions = {
 				clr_country_flag = anarcho_liberal_gov
 			}
 			
-			any_country = {
-				limit = {
-					government = hms_government
-					NOT = { has_country_flag = constitutional_monarchy_gov }
-					exists = yes
-				}
+			any_country = { limit = { government = hms_government NOT = { has_country_flag = constitutional_monarchy_gov } exists = yes }
 				clr_country_flag = communist_gov
 				clr_country_flag = absolute_monarchy_gov
 				clr_country_flag = semi_constitutional_monarchy_gov
@@ -3898,12 +4004,7 @@ political_decisions = {
 				clr_country_flag = anarcho_liberal_gov
 			}
 			
-			any_country = {
-				limit = {
-					government = democracy
-					NOT = { has_country_flag = democracy_gov }
-					exists = yes
-				}
+			any_country = { limit = { government = democracy NOT = { has_country_flag = democracy_gov } exists = yes }
 				clr_country_flag = communist_gov
 				clr_country_flag = absolute_monarchy_gov
 				clr_country_flag = semi_constitutional_monarchy_gov
@@ -3914,12 +4015,7 @@ political_decisions = {
 				clr_country_flag = anarcho_liberal_gov
 			}
 			
-			any_country = {
-				limit = {
-					government = presidential_dictatorship
-					NOT = { has_country_flag = presidential_dictatorship_gov }
-					exists = yes
-				}
+			any_country = { limit = { government = presidential_dictatorship NOT = { has_country_flag = presidential_dictatorship_gov } exists = yes }
 				clr_country_flag = communist_gov
 				clr_country_flag = absolute_monarchy_gov
 				clr_country_flag = semi_constitutional_monarchy_gov
@@ -3930,12 +4026,7 @@ political_decisions = {
 				clr_country_flag = anarcho_liberal_gov
 			}
 			
-			any_country = {
-				limit = {
-					government = prussian_constitutionalism
-					NOT = { has_country_flag = semi_constitutional_monarchy_gov }
-					exists = yes
-				}
+			any_country = { limit = { government = prussian_constitutionalism NOT = { has_country_flag = semi_constitutional_monarchy_gov } exists = yes }
 				clr_country_flag = communist_gov
 				clr_country_flag = absolute_monarchy_gov
 				set_country_flag = semi_constitutional_monarchy_gov
@@ -3964,6 +4055,11 @@ political_decisions = {
 						has_country_flag = sunni_country
 						has_country_flag = shiite_country
 						has_country_flag = ibadi_country
+						has_country_flag = alevi_country
+						has_country_flag = zaydi_country
+						has_country_flag = ismaili_country
+						has_country_flag = druze_country
+						has_country_flag = alawite_country
 					}
 					any_owned_province = {
 						any_pop = {
@@ -3984,16 +4080,22 @@ political_decisions = {
 								has_pop_religion = sikh
 								has_pop_religion = animist
 								#ANON
-								has_pop_religion = coptic
-								has_pop_religion = coptic
-								has_pop_religion = syriac
+
 								has_pop_religion = syriac
 								has_pop_religion = bahai
-								has_pop_religion = alawite
-								has_pop_religion = alevi
 								has_pop_religion = zoroastrian
 								has_pop_religion = mandaean
 								has_pop_religion = confucian
+								
+								has_pop_religion = maronite
+								has_pop_religion = nestorian
+								has_pop_religion = jain
+								has_pop_religion = karaite
+								has_pop_religion = samaritan
+								has_pop_religion = anabaptist
+								has_pop_religion = secularism
+								has_pop_religion = atheism
+								
 							}
 						}
 					}
@@ -4001,43 +4103,19 @@ political_decisions = {
 				add_country_modifier = { name = jizya duration = -1 }
 			}
 			
-			any_country = {
-				limit = {
-					exists = yes
-					civilized = no
-					foreign_weapons = yes_foreign_weapons
-					NOT = { has_country_flag = using_foreign_weapons }
-				}
+			any_country = { limit = { exists = yes civilized = no foreign_weapons = yes_foreign_weapons NOT = { has_country_flag = using_foreign_weapons } }
 				set_country_flag = using_foreign_weapons
 			}
 			
-			any_country = {
-				limit = {
-					exists = yes
-					civilized = no
-					foreign_artillery = yes_foreign_artillery
-					NOT = { has_country_flag = using_foreign_artillery }
-				}
+			any_country = { limit = { exists = yes civilized = no foreign_artillery = yes_foreign_artillery NOT = { has_country_flag = using_foreign_artillery } }
 				set_country_flag = using_foreign_artillery
 			}
 			
-			any_country = {
-				limit = {
-					exists = yes
-					civilized = no
-					foreign_navies = yes_foreign_navies
-					NOT = { has_country_flag = using_foreign_ships }
-				}
+			any_country = { limit = { exists = yes civilized = no foreign_navies = yes_foreign_navies NOT = { has_country_flag = using_foreign_ships } }
 				set_country_flag = using_foreign_ships
 			}
 			
-			any_country = {
-				limit = {
-					exists = yes
-					civilized = no
-					western_shipyards = yes_western_shipyards
-					NOT = { has_country_flag = using_foreign_shipyards }
-				}
+			any_country = { limit = { exists = yes civilized = no western_shipyards = yes_western_shipyards NOT = { has_country_flag = using_foreign_shipyards } }
 				set_country_flag = using_foreign_shipyards
 			}
 			
@@ -4090,9 +4168,9 @@ political_decisions = {
 				limit = {
 					exists = yes
 					is_greater_power = yes
-					NOT = { is_our_vassal = NEH }
+					NOT = { is_our_vassal = NCT }
 				}
-				diplomatic_influence = { who = NEH value = -400 }
+				diplomatic_influence = { who = NCT value = -400 }
 			}
 
 			MEX = { add_country_modifier = { name = fight_the_power duration = 3650 } }
@@ -4162,10 +4240,16 @@ political_decisions = {
 		}
 		
 		effect = {
+			#ANON
+			SOK = { inherit = ADW }
+			KBO = { inherit = BRM }
 			any_pop = {
 				limit = {
-					location = { is_core = LEB }
-					has_pop_religion = shiite
+					location = { is_core = LBN }
+					OR = {
+						has_pop_religion = shiite
+						has_pop_religion = druze
+					}
 				}
 				militancy = 5
 			}
@@ -4176,125 +4260,19 @@ political_decisions = {
 						has_pop_religion = orthodox
 						
 						# ANON
+						has_pop_religion = maronite
+							
 						has_pop_religion = syriac
-						has_pop_religion = syriac
-						has_pop_religion = coptic
+							
 						has_pop_religion = druze
 						has_pop_religion = coptic
-						has_pop_religion = coptic
+						
+						has_pop_religion = nestorian
+							
 					}
 				}
 				literacy = 0.25 
 			}
-		#	913 = { #Beirut
-		#		any_pop = {
-		#			limit = { 
-		#				OR = {
-		#					has_pop_religion = catholic
-		#					has_pop_religion = orthodox
-		#					
-		#					# ANON
-		#					has_pop_religion = syriac
-		#					has_pop_religion = syriac
-		#					has_pop_religion = coptic
-		#					has_pop_religion = druze
-		#				}
-		#			}
-		#			literacy = 0.20 
-		#		} 
-		#	}
-		#	912 = { #Baalbeck
-		#		any_pop = {
-		#			limit = {
-		#				has_pop_religion = shiite
-		#			}
-		#			militancy = 5
-		#		}
-		#		any_pop = {
-		#			limit = { 
-		#				OR = {
-		#					has_pop_religion = catholic
-		#					has_pop_religion = orthodox
-		#					
-		#					# ANON
-		#					has_pop_religion = syriac
-		#					has_pop_religion = syriac
-		#					has_pop_religion = coptic
-		#					has_pop_religion = druze
-		#				}
-		#			}
-		#			literacy = 0.20 
-		#		} 
-		#	}
-		#	915 = { #Sidon
-		#		any_pop = {
-		#			limit = {
-		#				has_pop_religion = shiite
-		#			}
-		#			militancy = 5
-		#		}
-		#		any_pop = {
-		#			limit = { 
-		#				OR = {
-		#					has_pop_religion = catholic
-		#					has_pop_religion = orthodox
-		#					
-		#					# ANON
-		#					has_pop_religion = syriac
-		#					has_pop_religion = syriac
-		#					has_pop_religion = coptic
-		#					has_pop_religion = druze
-		#				}
-		#			}
-		#			literacy = 0.20 
-		#		} 
-		#	}
-		#	914 = { #Trablos
-		#		any_pop = {
-		#			limit = {
-		#				has_pop_religion = shiite
-		#			}
-		#			militancy = 5
-		#		}
-		#		any_pop = {
-		#			limit = { 
-		#				OR = {
-		#					has_pop_religion = catholic
-		#					has_pop_religion = orthodox
-		#					
-		#					# ANON
-		#					has_pop_religion = syriac
-		#					has_pop_religion = syriac
-		#					has_pop_religion = coptic
-		#					has_pop_religion = druze
-		#				}
-		#			}
-		#			literacy = 0.20 
-		#		} 
-		#	}
-		#	916 = { #Acre
-		#		any_pop = {
-		#			limit = {
-		#				has_pop_religion = shiite
-		#			}
-		#			militancy = 5
-		#		}
-		#		any_pop = {
-		#			limit = { 
-		#				OR = {
-		#					has_pop_religion = catholic
-		#					has_pop_religion = orthodox
-		#					
-		#					# ANON
-		#					has_pop_religion = syriac
-		#					has_pop_religion = syriac
-		#					has_pop_religion = coptic
-		#					has_pop_religion = druze
-		#				}
-		#			}
-		#			literacy = 0.20 
-		#		} 
-		#	}
 		}
 	}
 
@@ -4326,6 +4304,34 @@ political_decisions = {
 			LAN = {
 				government = presidential_dictatorship
 			}
+			#ANON
+			any_country = {
+				limit = {
+					NOT = { tag = LAN }
+					OR = {
+						primary_culture = beifaren
+						primary_culture = nanfaren
+						primary_culture = hakka
+						primary_culture = hanhui
+						tag = CHI
+						tag = QNG
+						tag = TPG
+						tag = KMT
+						tag = XBI
+						tag = SXI
+						tag = MCK
+						tag = HUI
+						tag = HNN
+						tag = SZC
+						tag = YNN
+						tag = GXI
+						tag = GNG
+						tag = GMJ
+						tag = FJN
+					}
+				}
+			}
+			set_country_flag = is_chinese_nation
 		}
 	}
 	
@@ -4642,7 +4648,7 @@ political_decisions = {
 					literacy = 0.25
 				}
 			}
-			XNG = {
+			XIN = {
 				any_pop = {
 					limit = {
 						OR = { has_pop_culture = tibetan has_pop_culture = east_tibetan has_pop_culture = west_tibetan has_pop_culture = south_tibetan }
@@ -4738,55 +4744,4 @@ political_decisions = {
 			set_country_flag = spectator
 		}
 	}
-
-	
-	pick_AI_personality = {
-		picture = constantinople
-		potential = {
-			ai = yes
-			year = 1837
-			month = 8
-			NOT = { month = 10 }
-			NOT = {
-				has_country_modifier = picking_personality
-				has_country_flag = ghost_country
-				tag = TMT
-			}
-		}
-		
-		allow = {
-		}
-		
-		effect = {
-			random = {
-				chance = 10
-				remove_country_modifier = malevolent_ai
-				remove_country_modifier = benefactor_ai
-				remove_country_modifier = coward_ai
-				add_country_modifier = { name = benefactor_ai duration = 8030 }
-			}
-			random = {
-				chance = 10
-				remove_country_modifier = malevolent_ai
-				remove_country_modifier = benefactor_ai
-				remove_country_modifier = coward_ai
-				add_country_modifier = { name = malevolent_ai duration = 8030 }
-			}
-			random = {
-				chance = 10
-				remove_country_modifier = malevolent_ai
-				remove_country_modifier = benefactor_ai
-				remove_country_modifier = coward_ai
-				add_country_modifier = { name = coward_ai duration = 8030 }
-			}
-			random_list = {
-				20 = { add_country_modifier = { name = picking_personality duration = 7300 } }
-				20 = { add_country_modifier = { name = picking_personality duration = 9125 } }
-				20 = { add_country_modifier = { name = picking_personality duration = 8030 } }
-				20 = { add_country_modifier = { name = picking_personality duration = 10220 } }
-				20 = { add_country_modifier = { name = picking_personality duration = 10950 } }
-			}
-		}
-	}
 }
-

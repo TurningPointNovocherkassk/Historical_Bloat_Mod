@@ -70,6 +70,7 @@ political_decisions = {
 			NOT = { tag = KOR }
 			NOT = { has_country_flag = clean_up_unciv_monarchy }
 			NOT = { has_country_flag = clean_up_colonial_government }
+			NOT = { has_country_modifier = colony_to_be_annexed }
 		}
 		
 		allow = {
@@ -428,6 +429,7 @@ political_decisions = {
 					has_country_flag = dominion_gov
 				}
 			}
+			NOT = { has_country_modifier = colony_to_be_annexed }
 		}
 		
 		allow = {

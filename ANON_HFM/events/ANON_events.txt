@@ -435,8 +435,8 @@ country_event = {
 		prestige = -10
 		ai_chance = {
 			factor = 40
-			modifier = { factor = 100 war = yes }
-			modifier = { factor = 100 money = 0 }
+			# modifier = { factor = 100 war = yes }
+			modifier = { factor = 100 NOT = { money = 1 } }
 		}
 	}
 	
@@ -678,7 +678,6 @@ country_event = {
 	picture = "federal_1"
 	major = yes
 	is_triggered_only = yes
-	fire_only_once = yes
 
 	immediate = {
 		clr_country_flag = venezuelan_federal_war_prep
@@ -988,7 +987,6 @@ country_event = {
 	picture = "federal_1"
 	major = yes
 	is_triggered_only = yes
-	fire_only_once = yes
 
 	immediate = {
 		set_global_flag = venezuelan_federal_war_has_happened3
@@ -1742,8 +1740,8 @@ country_event = {
 			diplomatic_influence = { who = SVA value = -100 }
 			relation = { who = MIG value = -200 }
 			diplomatic_influence = { who = MIG value = -100 }
-			relation = { who = GUR value = -200 }
-			diplomatic_influence = { who = GUR value = -100 }
+			relation = { who = GIA value = -200 }
+			diplomatic_influence = { who = GIA value = -100 }
 			relation = { who = ABK value = -200 }
 			diplomatic_influence = { who = ABK value = -100 }
 			relation = { who = IME value = -200 }
@@ -1800,8 +1798,8 @@ country_event = {
 			diplomatic_influence = { who = SVA value = -100 }
 			relation = { who = MIG value = -200 }
 			diplomatic_influence = { who = MIG value = -100 }
-			relation = { who = GUR value = -200 }
-			diplomatic_influence = { who = GUR value = -100 }
+			relation = { who = GIA value = -200 }
+			diplomatic_influence = { who = GIA value = -100 }
 			relation = { who = ABK value = -200 }
 			diplomatic_influence = { who = ABK value = -100 }
 			relation = { who = IME value = -200 }
@@ -1854,8 +1852,8 @@ country_event = {
 			diplomatic_influence = { who = SVA value = -100 }
 			relation = { who = MIG value = -200 }
 			diplomatic_influence = { who = MIG value = -100 }
-			relation = { who = GUR value = -200 }
-			diplomatic_influence = { who = GUR value = -100 }
+			relation = { who = GIA value = -200 }
+			diplomatic_influence = { who = GIA value = -100 }
 			relation = { who = ABK value = -200 }
 			diplomatic_influence = { who = ABK value = -100 }
 			relation = { who = IME value = -200 }
@@ -1908,8 +1906,8 @@ country_event = {
 			diplomatic_influence = { who = SVA value = -100 }
 			relation = { who = MIG value = -200 }
 			diplomatic_influence = { who = MIG value = -100 }
-			relation = { who = GUR value = -200 }
-			diplomatic_influence = { who = GUR value = -100 }
+			relation = { who = GIA value = -200 }
+			diplomatic_influence = { who = GIA value = -100 }
 			relation = { who = ABK value = -200 }
 			diplomatic_influence = { who = ABK value = -100 }
 			relation = { who = IME value = -200 }
@@ -1962,8 +1960,8 @@ country_event = {
 			diplomatic_influence = { who = SVA value = -100 }
 			relation = { who = MIG value = -200 }
 			diplomatic_influence = { who = MIG value = -100 }
-			relation = { who = GUR value = -200 }
-			diplomatic_influence = { who = GUR value = -100 }
+			relation = { who = GIA value = -200 }
+			diplomatic_influence = { who = GIA value = -100 }
 			relation = { who = ABK value = -200 }
 			diplomatic_influence = { who = ABK value = -100 }
 			relation = { who = IME value = -200 }
@@ -2029,9 +2027,9 @@ country_event = {
 		}
 		any_owned = {
 			limit = {
-				is_core = GUR
+				is_core = GIA
 			}
-			secede_province = GUR
+			secede_province = GIA
 		}
 		any_owned = {
 			limit = {
@@ -3308,30 +3306,30 @@ country_event = {
 ###########################################
 # USA statehood event
 
-	country_event = {
-		id = 100038
-		title = "EVTNAME100038"
-		desc = "EVTDESC100038"
-		picture = "administration"
+	# country_event = {
+		# id = 100038
+		# title = "EVTNAME100038"
+		# desc = "EVTDESC100038"
+		# picture = "administration"
 		
-		is_triggered_only = yes
+		# is_triggered_only = yes
 		
-		option = {
-			name = "EVTOPTA100038"
-			set_country_flag = usstatehood_we_have_applied
-			add_country_modifier = { name = USA_statehood duration = 60 }
-			USA = {
-				country_event = { id = 16400 days = 60 }
-				war_exhaustion = -20
-			}
-			ai_chance = { factor = 70 }
-		}
-		option = {
-			name = "EVTOPTB100038"
-			set_country_flag = usstatehood_we_have_refused
-			ai_chance = { factor = 30 }
-		}
-	}
+		# option = {
+			# name = "EVTOPTA100038"
+			# set_country_flag = usstatehood_we_have_applied
+			# add_country_modifier = { name = USA_statehood duration = 60 }
+			# USA = {
+				# country_event = { id = 16400 days = 60 }
+				# war_exhaustion = -20
+			# }
+			# ai_chance = { factor = 70 }
+		# }
+		# option = {
+			# name = "EVTOPTB100038"
+			# set_country_flag = usstatehood_we_have_refused
+			# ai_chance = { factor = 30 }
+		# }
+	# }
 ##################################################
 #The Kosovo Population Exchange
 country_event = {
@@ -3878,7 +3876,11 @@ country_event = {
 				factor = 5
 				modifier = {
 					factor = 100
-					SER = { ai = no }
+					OR = {
+						SER = { ai = no }
+						MON = { ai = no }
+						YUG = { ai = no }
+					}
 				}
 			}
 		}
@@ -3928,6 +3930,11 @@ country_event = {
 					OR = {
 						tag = SER
 						tag = YUG
+						AND = {
+							primary_culture = serb
+							NOT = { tag = VOJ }
+							ai = no
+						}
 					}
 				}
 				country_event = 100048
@@ -3995,6 +4002,11 @@ country_event = {
 					OR = {
 						tag = SER
 						tag = YUG
+						AND = {
+							primary_culture = serb
+							NOT = { tag = VOJ }
+							ai = no
+						}
 					}
 					OR = {
 						is_vassal = no
@@ -4009,6 +4021,11 @@ country_event = {
 					OR = {
 						tag = SER
 						tag = YUG
+						AND = {
+							primary_culture = serb
+							NOT = { tag = VOJ }
+							ai = no
+						}
 					}
 					OR = {
 						vassal_of = TUR
@@ -4041,6 +4058,11 @@ country_event = {
 					OR = {
 						tag = SER
 						tag = YUG
+						AND = {
+							primary_culture = serb
+							NOT = { tag = VOJ }
+							ai = no
+						}
 					}
 				}
 				country_event = 100051
@@ -4262,11 +4284,18 @@ country_event = {
 			OR = {
 				tag = YUG
 				tag = SER
+				AND = {
+					primary_culture = serb
+					NOT = { tag = VOJ }
+					ai = no
+					owns = 794 #Belgrade
+				}
 			}
 			HUN = { exists = yes }
 			OR = { 
 				YUG = { exists = yes }
 				SER = { exists = yes }
+				794 = { owner = { primary_culture = serb } } #Belgrade
 			}
 			any_owned_province = {
 				OR = {
@@ -4294,6 +4323,7 @@ country_event = {
 					OR = {
 						owner = { tag = SER }
 						owner = { tag = YUG }
+						owner = { primary_culture = serb owns = 794 }
 					}
 					OR = {
 						province_id = 640
@@ -4321,11 +4351,18 @@ country_event = {
 			OR = {
 				tag = YUG
 				tag = SER
+				AND = {
+					primary_culture = serb
+					NOT = { tag = VOJ }
+					ai = no
+					owns = 794 #Belgrade
+				}
 			}
 			AUS = { exists = yes }
 			OR = { 
 				YUG = { exists = yes }
 				SER = { exists = yes }
+				794 = { owner = { primary_culture = serb } } #Belgrade
 			}
 			any_owned_province = {
 				OR = {
@@ -4353,6 +4390,7 @@ country_event = {
 					OR = {
 						owner = { tag = SER }
 						owner = { tag = YUG }
+						owner = { primary_culture = serb owns = 794 }
 					}
 					OR = {
 						province_id = 640
@@ -4380,11 +4418,18 @@ country_event = {
 			OR = {
 				tag = YUG
 				tag = SER
+				AND = {
+					primary_culture = serb
+					NOT = { tag = VOJ }
+					ai = no
+					owns = 794 #Belgrade
+				}
 			}
 			KUK = { exists = yes }
 			OR = { 
 				YUG = { exists = yes }
 				SER = { exists = yes }
+				794 = { owner = { primary_culture = serb } } #Belgrade
 			}
 			any_owned_province = {
 				OR = {
@@ -4412,6 +4457,7 @@ country_event = {
 					OR = {
 						owner = { tag = SER }
 						owner = { tag = YUG }
+						owner = { primary_culture = serb owns = 794 }
 					}
 					OR = {
 						province_id = 640
@@ -4439,6 +4485,12 @@ country_event = {
 			OR = {
 				tag = YUG
 				tag = SER
+				AND = {
+					primary_culture = serb
+					NOT = { tag = VOJ }
+					ai = no
+					owns = 794 #Belgrade
+				}
 			}
 			ROM = {
 				exists = yes
@@ -4447,6 +4499,7 @@ country_event = {
 			OR = { 
 				YUG = { exists = yes }
 				SER = { exists = yes }
+				794 = { owner = { primary_culture = serb } } #Belgrade
 			}
 			any_owned_province = {
 				region = AUS_652
@@ -4470,6 +4523,7 @@ country_event = {
 					OR = {
 						owner = { tag = SER }
 						owner = { tag = YUG }
+						owner = { primary_culture = serb owns = 794 }
 					}
 					OR = {
 						province_id = 652
@@ -4530,6 +4584,4262 @@ country_event = {
 			
 			FROM = { release_vassal = THIS }
 			
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+	country_event = {
+		id = 100060
+		title = "EVTNAME100060"
+		desc = "EVTDESC100060"
+		is_triggered_only = yes
+		
+		option = {
+			name = "EVTOPTA100060"
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+	#failsafe for zemene mesafint's claim_negusa_nagast
+	country_event = {
+		id = 100061
+		title = "Zemene Mesafint"
+		desc = "Our current enemies are no longer a threat, thus the ongoing war is forfeited."
+		picture = "battle_of_magdala"
+		
+		trigger = {
+			exists = yes
+			OR = {
+				primary_culture = amhara
+				primary_culture = tigray
+			}
+			OR = {
+				AND = {
+					war_with = GON
+					GON = {
+						exists = no
+						any_core = { is_core = THIS }
+					}
+				}
+				AND = {
+					war_with = SHW
+					SHW = {
+						exists = no
+						any_core = { is_core = THIS }
+					}
+				}
+				AND = {
+					war_with = TIG
+					TIG = {
+						exists = no
+						any_core = { is_core = THIS }
+					}
+				}
+			}
+		}
+		
+		option = {
+			name = "Very well."
+			random_owned = {
+				limit = {
+					owner = {
+						war_with = GON
+						GON = { exists = no }
+					}
+				}
+				owner = {
+					end_war = GON
+					any_country = {
+						limit = {
+							alliance_with = GON
+							war_with = THIS
+						}
+						end_war = THIS
+					}
+					any_country = {
+						limit = {
+							war_with = GON
+							alliance_with = THIS
+						}
+						end_war = GON
+					}
+				}
+			}
+			random_owned = {
+				limit = {
+					owner = {
+						war_with = SHW
+						SHW = { exists = no }
+					}
+				}
+				owner = {
+					end_war = SHW
+					any_country = {
+						limit = {
+							alliance_with = SHW
+							war_with = THIS
+						}
+						end_war = THIS
+					}
+					any_country = {
+						limit = {
+							war_with = SHW
+							alliance_with = THIS
+						}
+						end_war = SHW
+					}
+				}
+			}
+			random_owned = {
+				limit = {
+					owner = {
+						war_with = TIG
+						TIG = { exists = no }
+					}
+				}
+				owner = {
+					end_war = TIG
+					any_country = {
+						limit = {
+							alliance_with = TIG
+							war_with = THIS
+						}
+						end_war = THIS
+					}
+					any_country = {
+						limit = {
+							war_with = TIG
+							alliance_with = THIS
+						}
+						end_war = TIG
+					}
+				}
+			}
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+	#failsafe for ft. ross' (3390) buyer losing the province after USA declares manifest destiny.
+	#do another one for when manifest destiny is refuted, they regain cores.
+	country_event = {
+		id = 100062
+		title = "The Loss of Ft. Ross"
+		desc = "We have lost Ft. Ross to the Americans and due to their international status, our claims in the former colony have been forfeited."
+		trigger = {
+			exists = yes
+			3390 = {
+				is_core = THIS
+				NOT = { owned_by = THIS }
+				owner = { has_country_flag = hasmanifestdestiny }
+			}
+			has_country_flag = bought_fort_ross
+			NOT = { has_country_flag = manifest_destiny_refuted } 
+		}
+		
+		option = {
+			name = "Damn them"
+			3390 = { remove_core = THIS }
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+	#claim_the_north vassal province transfer
+	country_event = {
+		id = 100063
+		title = "The Great North"
+		desc = "Our vassal shall now be granted cores on the newly-acquired Yukon Colony."
+		is_triggered_only = yes
+		
+		immediate = {
+			#6
+			random_owned = { #anglo
+				limit = {
+					province_id = 6
+					owner = { OR = { tag = ENG tag = ENL tag = CAN tag = RPL } }
+					27 = { is_core = CAN }
+				}
+				add_core = CAN
+			}
+			random_owned = { #anglo
+				limit = {
+					province_id = 6
+					owner = { OR = { tag = ENG tag = ENL tag = CAN tag = RPL } }
+					27 = { is_core = RPL }
+				}
+				add_core = RPL
+			}
+			random_owned = { #slav
+				limit = {
+					province_id = 6
+					owner = { OR = { is_culture_group = east_slavic primary_culture = alaskan } }
+					any_neighbor_province = { OR = { is_core = LSK is_core = THIS } }
+				}
+				add_core = LSK
+				add_core = THIS
+			}
+			random_owned = { #gringo-cascadian
+				limit = {
+					province_id = 6
+					owner = { OR = { tag = CAS tag = UOR tag = JEF is_culture_group = american_cultures } }
+					any_neighbor_province = { OR = { is_core = LSK is_core = THIS } }
+				}
+				add_core = LSK
+				add_core = THIS
+			}
+			random_owned = { #spic
+				limit = {
+					province_id = 6
+					owner = { is_culture_group = latin_american_cultures }
+					any_neighbor_province = { OR = { is_core = LSK is_core = THIS } }
+				}
+				add_core = LSK
+				add_core = THIS
+			}
+			random_owned = { #iberian
+				limit = {
+					province_id = 6
+					owner = { is_culture_group = iberian }
+					any_neighbor_province = { OR = { is_core = LSK is_core = VNS is_core = THIS } }
+				}
+				add_core = LSK
+				add_core = VNS
+				add_core = THIS
+			}
+			random_owned = { #japanese
+				limit = {
+					province_id = 6
+					owner = { OR = { primary_culture = japanese primary_culture = ryukyuan } }
+					any_neighbor_province = { OR = { is_core = LSK is_core = THIS } }
+				}
+				add_core = LSK
+				add_core = THIS
+			}
+			random_owned = { #germanic
+				limit = {
+					province_id = 6
+					owner = { is_culture_group = germanic }
+					any_neighbor_province = { OR = { is_core = LSK is_core = THIS } }
+				}
+				add_core = LSK
+				add_core = THIS
+			}
+			#7
+			random_owned = { #anglo
+				limit = {
+					province_id = 7
+					owner = { OR = { tag = ENG tag = ENL tag = CAN tag = RPL } }
+					27 = { is_core = CAN }
+				}
+				add_core = CAN
+			}
+			random_owned = { #anglo
+				limit = {
+					province_id = 7
+					owner = { OR = { tag = ENG tag = ENL tag = CAN tag = RPL } }
+					27 = { is_core = RPL }
+				}
+				add_core = RPL
+			}
+			random_owned = { #slav
+				limit = {
+					province_id = 7
+					owner = { OR = { is_culture_group = east_slavic primary_culture = alaskan } }
+					OR = {
+						2630 = { OR = { is_core = LSK is_core = THIS } }
+						2599 = { OR = { is_core = LSK is_core = THIS } }
+					}
+				}
+				add_core = LSK
+				add_core = THIS
+			}
+			random_owned = { #gringo-cascadian
+				limit = {
+					province_id = 7
+					owner = { OR = { tag = CAS tag = UOR tag = JEF is_culture_group = american_cultures } }
+					OR = {
+						17 = { OR = { is_core = LSK is_core = THIS } }
+						2630 = { OR = { is_core = LSK is_core = THIS } }
+						2599 = { OR = { is_core = LSK is_core = THIS } }
+					}
+				}
+				add_core = LSK
+				add_core = THIS
+			}
+			random_owned = { #spic
+				limit = {
+					province_id = 7
+					owner = { is_culture_group = latin_american_cultures }
+					OR = {
+						17 = { OR = { is_core = LSK is_core = THIS } }
+						2630 = { OR = { is_core = LSK is_core = THIS } }
+						2599 = { OR = { is_core = LSK is_core = THIS } }
+					}
+				}
+				add_core = LSK
+				add_core = THIS
+			}
+			random_owned = { #iberian
+				limit = {
+					province_id = 7
+					owner = { is_culture_group = iberian }
+					OR = {
+						17 = { OR = { is_core = LSK is_core = VNS is_core = THIS } }
+						2630 = { OR = { is_core = LSK is_core = VNS is_core = THIS } }
+						2599 = { OR = { is_core = LSK is_core = VNS is_core = THIS } }
+					}
+				}
+				add_core = LSK
+				add_core = VNS
+				add_core = THIS
+			}
+			random_owned = { #japanese
+				limit = {
+					province_id = 7
+					owner = { OR = { primary_culture = japanese primary_culture = ryukyuan } }
+					OR = {
+						17 = { OR = { is_core = LSK is_core = THIS } }
+						2630 = { OR = { is_core = LSK is_core = THIS } }
+						2599 = { OR = { is_core = LSK is_core = THIS } }
+					}
+				}
+				add_core = LSK
+				add_core = THIS
+			}
+			random_owned = { #germanic
+				limit = {
+					province_id = 7
+					owner = { is_culture_group = germanic }
+					OR = {
+						17 = { OR = { is_core = LSK is_core = THIS } }
+						2630 = { OR = { is_core = LSK is_core = THIS } }
+						2599 = { OR = { is_core = LSK is_core = THIS } }
+					}
+				}
+				add_core = LSK
+				add_core = THIS
+			}
+			#8
+			random_owned = { #anglo
+				limit = {
+					province_id = 8
+					owner = { OR = { tag = ENG tag = ENL tag = CAN tag = RPL } }
+					27 = { is_core = CAN }
+				}
+				add_core = CAN
+			}
+			random_owned = { #anglo
+				limit = {
+					province_id = 8
+					owner = { OR = { tag = ENG tag = ENL tag = CAN tag = RPL } }
+					27 = { is_core = RPL }
+				}
+				add_core = RPL
+			}
+			random_owned = { #slav
+				limit = {
+					province_id = 8
+					owner = { OR = { is_culture_group = east_slavic primary_culture = alaskan } }
+					OR = {
+						6 = { OR = { is_core = LSK is_core = THIS } }
+						17 = { OR = { is_core = LSK is_core = THIS } }
+						2630 = { OR = { is_core = LSK is_core = THIS } }
+						2599 = { OR = { is_core = LSK is_core = THIS } }
+					}
+				}
+				add_core = LSK
+				add_core = THIS
+			}
+			random_owned = { #gringo-cascadian
+				limit = {
+					province_id = 8
+					owner = { OR = { tag = CAS tag = UOR tag = JEF is_culture_group = american_cultures } }
+					OR = {
+						6 = { OR = { is_core = LSK is_core = THIS } }
+						17 = { OR = { is_core = LSK is_core = THIS } }
+						2630 = { OR = { is_core = LSK is_core = THIS } }
+						2599 = { OR = { is_core = LSK is_core = THIS } }
+					}
+				}
+				add_core = LSK
+				add_core = THIS
+			}
+			random_owned = { #spic
+				limit = {
+					province_id = 8
+					owner = { is_culture_group = latin_american_cultures }
+					OR = {
+						6 = { OR = { is_core = LSK is_core = THIS } }
+						17 = { OR = { is_core = LSK is_core = THIS } }
+						2630 = { OR = { is_core = LSK is_core = THIS } }
+						2599 = { OR = { is_core = LSK is_core = THIS } }
+					}
+				}
+				add_core = LSK
+				add_core = THIS
+			}
+			random_owned = { #iberian
+				limit = {
+					province_id = 8
+					owner = { is_culture_group = iberian }
+					OR = {
+						6 = { OR = { is_core = LSK is_core = VNS is_core = THIS } }
+						17 = { OR = { is_core = LSK is_core = VNS is_core = THIS } }
+						2630 = { OR = { is_core = LSK is_core = VNS is_core = THIS } }
+						2599 = { OR = { is_core = LSK is_core = VNS is_core = THIS } }
+					}
+				}
+				add_core = LSK
+				add_core = VNS
+				add_core = THIS
+			}
+			random_owned = { #japanese
+				limit = {
+					province_id = 8
+					owner = { OR = { primary_culture = japanese primary_culture = ryukyuan } }
+					OR = {
+						6 = { OR = { is_core = LSK is_core = THIS } }
+						17 = { OR = { is_core = LSK is_core = THIS } }
+						2630 = { OR = { is_core = LSK is_core = THIS } }
+						2599 = { OR = { is_core = LSK is_core = THIS } }
+					}
+				}
+				add_core = LSK
+				add_core = THIS
+			}
+			random_owned = { #germanic
+				limit = {
+					province_id = 8
+					owner = { is_culture_group = germanic }
+					OR = {
+						6 = { OR = { is_core = LSK is_core = THIS } }
+						17 = { OR = { is_core = LSK is_core = THIS } }
+						2630 = { OR = { is_core = LSK is_core = THIS } }
+						2599 = { OR = { is_core = LSK is_core = THIS } }
+					}
+				}
+				add_core = LSK
+				add_core = THIS
+			}
+			#2629
+			random_owned = { #anglo
+				limit = {
+					province_id = 2629
+					owner = { OR = { tag = ENG tag = ENL tag = CAN tag = RPL } }
+					27 = { is_core = CAN }
+					13 = { NOT = { is_core = COL } }
+				}
+				add_core = CAN
+			}
+			random_owned = { #anglo
+				limit = {
+					province_id = 2629
+					owner = { OR = { tag = ENG tag = ENL tag = CAN tag = RPL } }
+					27 = { is_core = RPL }
+					13 = { NOT = { is_core = COL } }
+				}
+				add_core = RPL
+			}
+			random_owned = { #anglo
+				limit = {
+					province_id = 2629
+					owner = { OR = { tag = ENG tag = ENL tag = CAN tag = RPL } }
+					27 = { is_core = CAN }
+					13 = { is_core = COL }
+				}
+				add_core = COL
+				add_core = CAN
+			}
+			random_owned = { #anglo
+				limit = {
+					province_id = 2629
+					owner = { OR = { tag = ENG tag = ENL tag = CAN tag = RPL } }
+					27 = { is_core = RPL }
+					13 = { is_core = COL }
+				}
+				add_core = COL
+				add_core = RPL
+			}
+			random_owned = { #slav
+				limit = {
+					province_id = 2629
+					owner = { OR = { is_culture_group = east_slavic primary_culture = alaskan } }
+					OR = {
+						6 = { OR = { is_core = LSK is_core = THIS } }
+						17 = { OR = { is_core = LSK is_core = THIS } }
+						2630 = { OR = { is_core = LSK is_core = THIS } }
+						2599 = { OR = { is_core = LSK is_core = THIS } }
+					}
+				}
+				add_core = LSK
+				add_core = THIS
+			}
+			random_owned = { #gringo-cascadian
+				limit = {
+					province_id = 2629
+					owner = { OR = { tag = CAS tag = UOR tag = JEF is_culture_group = american_cultures } }
+					OR = {
+						6 = { OR = { is_core = LSK is_core = THIS } }
+						17 = { OR = { is_core = LSK is_core = THIS } }
+						2630 = { OR = { is_core = LSK is_core = THIS } }
+						2599 = { OR = { is_core = LSK is_core = THIS } }
+					}
+				}
+				add_core = LSK
+				add_core = THIS
+			}
+			random_owned = { #spic
+				limit = {
+					province_id = 2629
+					owner = { is_culture_group = latin_american_cultures }
+					OR = {
+						6 = { OR = { is_core = LSK is_core = THIS } }
+						17 = { OR = { is_core = LSK is_core = THIS } }
+						2630 = { OR = { is_core = LSK is_core = THIS } }
+						2599 = { OR = { is_core = LSK is_core = THIS } }
+					}
+				}
+				add_core = LSK
+				add_core = THIS
+			}
+			random_owned = { #iberian
+				limit = {
+					province_id = 2629
+					owner = { is_culture_group = iberian }
+					OR = {
+						6 = { OR = { is_core = LSK is_core = VNS is_core = THIS } }
+						17 = { OR = { is_core = LSK is_core = VNS is_core = THIS } }
+						2630 = { OR = { is_core = LSK is_core = VNS is_core = THIS } }
+						2599 = { OR = { is_core = LSK is_core = VNS is_core = THIS } }
+					}
+				}
+				add_core = LSK
+				add_core = VNS
+				add_core = THIS
+			}
+			random_owned = { #japanese
+				limit = {
+					province_id = 2629
+					owner = { OR = { primary_culture = japanese primary_culture = ryukyuan } }
+					OR = {
+						6 = { OR = { is_core = LSK is_core = THIS } }
+						17 = { OR = { is_core = LSK is_core = THIS } }
+						2630 = { OR = { is_core = LSK is_core = THIS } }
+						2599 = { OR = { is_core = LSK is_core = THIS } }
+					}
+				}
+				add_core = LSK
+				add_core = THIS
+			}
+			random_owned = { #germanic
+				limit = {
+					province_id = 2629
+					owner = { is_culture_group = germanic }
+					OR = {
+						6 = { OR = { is_core = LSK is_core = THIS } }
+						17 = { OR = { is_core = LSK is_core = THIS } }
+						2630 = { OR = { is_core = LSK is_core = THIS } }
+						2599 = { OR = { is_core = LSK is_core = THIS } }
+					}
+				}
+				add_core = LSK
+				add_core = THIS
+			}
+		}
+		option = {
+			name = "..."
+			random_country = {
+				limit = {
+					OR = {
+						tag = CAN
+						tag = RPL
+						tag = LSK
+						tag = VNS
+					}
+					exists = yes
+					OR = {
+						vassal_of = THIS
+						substate_of = THIS
+					}
+					OR = {
+						owns = 27
+						owns = 1
+						AND = {
+							owns = 17
+							NOT = { tag = COL }
+						}
+					}
+				}
+				country_event = 100064
+			}
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+	#claim_the_north vassal province transfer
+	country_event = {
+		id = 100064
+		title = "The Great North"
+		desc = "Our Overlords shall now proceed to transfer us the newly-acquired Yukon Colony."
+		is_triggered_only = yes
+		
+		option = {
+			name = "..."
+			FROM = {
+				any_owned = {
+					limit = {
+						OR = {
+							province_id = 6
+							province_id = 7
+							province_id = 8
+							province_id = 2629
+						}
+						owner = {
+							OR = {
+								tag = ENG
+								tag = ENL
+							}
+							THIS = {
+								exists = yes
+								OR = {
+									vassal_of = FROM
+									substate_of = FROM
+								}
+							}
+							CAN = { exists = no }
+						}
+						is_core = RPL
+					}
+					secede_province = RPL
+				}
+				any_owned = {
+					limit = {
+						OR = {
+							province_id = 6
+							province_id = 7
+							province_id = 8
+							province_id = 2629
+						}
+						owner = {
+							OR = {
+								tag = ENG
+								tag = ENL
+							}
+							THIS = {
+								exists = yes
+								OR = {
+									vassal_of = FROM
+									substate_of = FROM
+								}
+							}
+							RPL = { exists = no }
+						}
+						is_core = CAN
+					}
+					secede_province = CAN
+				}
+				any_owned = {
+					limit = {
+						OR = {
+							province_id = 6
+							province_id = 7
+							province_id = 8
+							province_id = 2629
+						}
+						owner = {
+							NOT = {
+								tag = LSK
+								has_country_flag = alaska_annexed
+							}
+							THIS = {
+								exists = yes
+								OR = {
+									vassal_of = FROM
+									substate_of = FROM
+								}
+							}
+						}
+						is_core = LSK
+					}
+					secede_province = LSK
+				}
+				any_owned = {
+					limit = {
+						OR = {
+							province_id = 6
+							province_id = 7
+							province_id = 8
+							province_id = 2629
+						}
+						owner = {
+							NOT = { tag = VNS }
+							THIS = {
+								exists = yes
+								OR = {
+									vassal_of = FROM
+									substate_of = FROM
+								}
+							}
+						}
+						is_core = VNS
+					}
+					secede_province = VNS
+				}
+			}
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+	#failsafe giving puna de atacama to chile in case they didn't annex that shit during the war of the pacific
+	country_event = {
+		id = 100065
+		title = "Territorial Claims"
+		desc = "We have won the War of the Pacific and as such we are entitled to territorial transfers."
+		trigger = {
+			exists = yes
+			tag = CHL
+			has_global_flag = war_of_the_pacific
+			OR = {
+				PEU = {
+					any_owned_province = {
+						is_core = CHL
+					}
+					exists = yes
+					has_recently_lost_war = yes
+					truce_with = CHL
+					NOT = { has_country_flag = peru_pacific_shuffle } 
+				}
+				SPU = {
+					any_owned_province = {
+						is_core = CHL
+					}
+					exists = yes
+					has_recently_lost_war = yes
+					truce_with = CHL
+					NOT = { has_country_flag = speru_pacific_shuffle } 
+				}
+				BOL = {
+					any_owned_province = {
+						is_core = CHL
+					}
+					exists = yes
+					has_recently_lost_war = yes
+					truce_with = CHL
+					NOT = { has_country_flag = bolivia_pacific_shuffle }
+				}
+				PBC = {
+					any_owned_province = {
+						is_core = CHL
+					}
+					exists = yes
+					has_recently_lost_war = yes
+					truce_with = CHL
+					NOT = { has_country_flag = PBC_pacific_shuffle }
+				}
+			}
+			NOT = {
+				OR = {
+					has_country_flag = peru_pacific_shuffle
+					has_country_flag = speru_pacific_shuffle
+					has_country_flag = bolivia_pacific_shuffle
+					has_country_flag = PBC_pacific_shuffle
+				}
+			}
+		}
+		
+		option = {
+			name = "Excellent."
+			any_country = {
+				limit = {
+					OR = {
+						tag = PEU
+						tag = SPU
+						tag = BOL
+						tag = PBC
+					}
+					exists = yes
+					has_recently_lost_war = yes
+					truce_with = CHL
+					any_owned_province = {
+						is_core = CHL
+						OR = {
+							region = PEU_2303 #arequipa
+							region = BOL_2309 #antofagasta
+							region = BOL_2370 #puna
+						}
+					}
+					NOT = {
+						OR = {
+							has_country_flag = peru_pacific_shuffle
+							has_country_flag = speru_pacific_shuffle
+							has_country_flag = bolivia_pacific_shuffle
+							has_country_flag = PBC_pacific_shuffle
+						}
+					}
+				}
+				any_owned = {
+					limit = {
+						owner = {
+							tag = PEU
+							exists = yes
+							has_recently_lost_war = yes
+							truce_with = CHL
+						}
+						is_core = CHL
+						OR = {
+							region = PEU_2303 #arequipa
+							region = BOL_2309 #antofagasta
+							region = BOL_2370 #puna
+						}
+					}
+					secede_province = CHL
+					owner = {
+						set_country_flag = peru_pacific_shuffle
+						CHL = { set_country_flag = peru_pacific_shuffle }
+					}
+				}
+				any_owned = {
+					limit = {
+						owner = {
+							tag = SPU
+							exists = yes
+							has_recently_lost_war = yes
+							truce_with = CHL
+						}
+						is_core = CHL
+						OR = {
+							region = PEU_2303 #arequipa
+							region = BOL_2309 #antofagasta
+							region = BOL_2370 #puna
+						}
+					}
+					secede_province = CHL
+					owner = {
+						set_country_flag = speru_pacific_shuffle
+						CHL = { set_country_flag = speru_pacific_shuffle }
+					}
+				}
+				any_owned = {
+					limit = {
+						owner = {
+							tag = BOL
+							exists = yes
+							has_recently_lost_war = yes
+							truce_with = CHL
+						}
+						is_core = CHL
+						OR = {
+							region = PEU_2303 #arequipa
+							region = BOL_2309 #antofagasta
+							region = BOL_2370 #puna
+						}
+					}
+					secede_province = CHL
+					owner = {
+						set_country_flag = bolivia_pacific_shuffle
+						CHL = { set_country_flag = bolivia_pacific_shuffle }
+					}
+				}
+				any_owned = {
+					limit = {
+						owner = {
+							tag = PBC
+							exists = yes
+							has_recently_lost_war = yes
+							truce_with = CHL
+						}
+						is_core = CHL
+						OR = {
+							region = PEU_2303 #arequipa
+							region = BOL_2309 #antofagasta
+							region = BOL_2370 #puna
+						}
+					}
+					secede_province = CHL
+					owner = {
+						set_country_flag = PBC_pacific_shuffle
+						CHL = { set_country_flag = PBC_pacific_shuffle }
+					}
+				}
+			}
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+	#failsafe for VNZ - FVZ federalism war.
+	country_event = {
+		id = 100066
+		title = "Venezuelan Federal War Failsafe"
+		desc = "You shouldn't get this event as the player"
+		allow_multiple_instances = no
+		trigger = {
+			ai = yes
+			exists = yes
+			OR = {
+				AND = {
+					tag = VNZ
+					OR = {
+						AND = {
+							FVZ = { ai = yes exists = yes NOT = { truce_with = VNZ } has_global_flag = venezuelan_federal_war_has_happened2 }
+							NOT = { has_global_flag = federal_war_failsafez }
+						}
+						AND = {
+							ZLA = { ai = yes exists = yes NOT = { truce_with = VNZ } has_global_flag = venezuelan_federal_war_has_happened3 }
+							NOT = { has_global_flag = federal_war_failsafe }
+						}
+					}
+				}
+				AND = {
+					tag = FVZ
+					has_global_flag = venezuelan_federal_war_has_happened2
+					NOT = { has_global_flag = federal_war_failsafe }
+					VNZ = { ai = yes exists = yes NOT = { truce_with = FVZ } }
+				}
+			}
+			NOT = { has_global_flag = venezuelan_federal_war_averted }
+		}
+		option = {
+			name = "..."
+			random_owned = {
+				limit = {
+					owner = {
+						tag = VNZ
+						NOT = { has_global_flag = federal_war_failsafe }
+						FVZ = {
+							ai = yes
+							exists = yes
+							NOT = { truce_with = VNZ }
+							has_global_flag = venezuelan_federal_war_has_happened2
+						}
+					}
+				}
+				owner = {
+					set_global_flag = federal_war_failsafe
+					war = {
+						target = FVZ
+						attacker_goal = { casus_belli = civil_war }
+						defender_goal = { casus_belli = civil_war }
+						call_ally = no
+					}
+				}
+			}
+			random_owned = {
+				limit = {
+					owner = {
+						tag = FVZ
+						NOT = { has_global_flag = federal_war_failsafe }
+						VNZ = {
+							exists = yes
+							ai = yes
+							NOT = { truce_with = FVZ }
+							has_global_flag = venezuelan_federal_war_has_happened2
+						}
+					}
+				}
+				owner = {
+					set_global_flag = federal_war_failsafe
+					war = {
+						target = VNZ
+						attacker_goal = { casus_belli = civil_war }
+						defender_goal = { casus_belli = civil_war }
+						call_ally = no
+					}
+				}
+			}
+			random_owned = {
+				limit = {
+					owner = {
+						tag = VNZ
+						NOT = { has_global_flag = federal_war_failsafez }
+						ZLA = {
+							exists = yes
+							ai = yes
+							NOT = { truce_with = ZLA }
+							has_global_flag = venezuelan_federal_war_has_happened3
+						}
+					}
+				}
+				owner = {
+					set_global_flag = federal_war_failsafez
+					war = {
+						target = ZLA
+						attacker_goal = { casus_belli = civil_war }
+						defender_goal = { casus_belli = civil_war }
+						call_ally = no
+					}
+				}
+			}
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+	#genociding injuns upon taking the native_removal_act_policy from segregation.txt
+	province_event = {
+		id = 100067
+		title = "EVTNAME100067"
+		desc = "EVTDESC100067"
+		
+		trigger = {
+			owner = { has_country_modifier = native_removal_act_policy }
+			owned_by = THIS
+			controlled_by = THIS
+			NOT = { is_core = U05 }
+			any_pop = {
+				OR = { is_culture_group = native_american is_culture_group = oceanic }
+				NOT = {
+					is_primary_culture = yes
+					is_accepted_culture = yes
+				}
+			}
+			#State Requirements
+			OR = {
+				#High - Level 1 - State primary/accepted majority
+				state_scope = {
+					OR = {
+						is_accepted_culture = yes
+						is_primary_culture = yes
+					}
+					has_national_minority = yes
+				}
+				#Medium - Level 2 - State NOT primary/accepted majority, any province in the state HAS primary/accepted majority
+				state_scope = {
+					is_primary_culture = no
+					is_accepted_culture = no
+					any_owned_province = {
+						OR = {
+							is_primary_culture = yes
+							is_accepted_culture = yes
+						}
+					}
+				}
+				#Low - Level 3 - State NOT primary/accepted majority, NO province in state HAS primary/accepted majority (if no pops present at all, need soldiers to be eligible)
+				state_scope = {
+					is_primary_culture = no
+					is_accepted_culture = no
+					NOT = {
+						any_owned_province = {
+							OR = {
+								is_primary_culture = yes
+								is_accepted_culture = yes
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		mean_time_to_happen = {
+			# months = 400
+			days = 1
+			modifier = {
+				factor = 0.8
+				is_core = THIS
+			}
+			modifier = {
+				factor = 0.8
+				state_scope = {
+					OR = {
+						is_accepted_culture = yes
+						is_primary_culture = yes
+					}
+				}
+			}
+			modifier = {
+				factor = 0.8
+				OR = {
+					AND = {
+						owner = { ruling_party_ideology = anarcho_liberal }
+						state_scope = { pop_majority_ideology = anarcho_liberal }
+					}
+					AND = {
+						owner = { ruling_party_ideology = reactionary }
+						state_scope = { pop_majority_ideology = reactionary }
+					}
+					AND = {
+						owner = { ruling_party_ideology = fascist }
+						state_scope = { pop_majority_ideology = fascist }
+					}
+					AND = {
+						owner = { ruling_party_ideology = communist }
+						state_scope = { pop_majority_ideology = communist }
+					}
+				}
+			}
+			modifier = {
+				factor = 0.9
+				owner = { military_spending = 0.95 }
+			}
+			modifier = {
+				factor = 0.9
+				owner = { administration_spending = 0.95 }
+			}
+			modifier = {
+				factor = 0.9
+				owner = { electricity = 1 }
+			}
+			modifier = {
+				factor = 0.9
+				owner = { psychoanalysis = 1 }
+			}
+			modifier = {
+				factor = 0.8
+				owner = { invention = the_police_state }
+			}
+			modifier = {
+				factor = 0.7
+				owner = { great_war_experience = 1 }
+			}
+			modifier = {
+				factor = 0.9
+				country_units_in_province = THIS
+			}
+			#300%
+			modifier = {
+				factor = 0.5
+				owner = { has_country_modifier = totalitarian_system }
+			}
+			#350%
+			###Special
+			modifier = {
+				factor = 0.9
+				has_building = railroad
+				owner = { steel_railroad = 1 }
+			}
+			#-360%
+			modifier = {
+				factor = 0.8
+				owner = { NOT = { military_spending = 0.5 } }
+			}
+			modifier = {
+				factor = 0.8
+				owner = { NOT = { administration_spending = 0.5 } }
+			}
+			modifier = {
+				factor = 1.2
+				state_scope = {
+					NOT = {
+						any_owned_province = {
+							OR = {
+								is_primary_culture = yes
+								is_accepted_culture = yes
+							}
+						}
+					}
+				}
+			}
+			modifier = {
+				factor = 1.4
+				state_scope = {
+					is_primary_culture = no
+					is_accepted_culture = no
+					NOT = {
+						any_owned_province = {
+							any_pop = {
+								OR = {
+									is_accepted_culture = yes
+									is_primary_culture = yes
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+		option = {
+			name = "EVT100067OPTA"
+			state_scope = {
+				any_owned = {
+					add_province_modifier = { name = depopulation_kraut duration = 1095 }
+					add_core = U05
+				}
+			}
+			
+			#Removing in a majority state
+			random_pop = {
+				limit = {
+					OR = { is_culture_group = native_american is_culture_group = oceanic }
+					location = {
+						owner = { has_country_modifier = native_removal_act_policy }
+						state_scope = {
+							OR = {
+								is_accepted_culture = yes
+								is_primary_culture = yes
+							}
+							has_national_minority = yes
+						}
+					}
+				}
+				location = {
+					state_scope = {
+						any_pop = {
+							limit = {
+								is_primary_culture = no
+								is_accepted_culture = no
+								OR = { is_culture_group = native_american is_culture_group = oceanic }
+							}
+							random_list = {
+								30 = { reduce_pop = 0.35 }
+								25 = { reduce_pop = 0.25 }
+								20 = { reduce_pop = 0.15 }
+								15 = { reduce_pop = 0.05 }
+								10 = { reduce_pop = 0 }
+							}
+						}
+					}
+				}
+			}
+			
+			#Removing in a minority state
+			random_pop = {
+				limit = {
+					OR = { is_culture_group = native_american is_culture_group = oceanic }
+					location = {
+						owner = { has_country_modifier = native_removal_act_policy }
+						state_scope = {
+							is_primary_culture = no
+							is_accepted_culture = no
+							any_owned_province = {
+								OR = {
+									is_primary_culture = yes
+									is_accepted_culture = yes
+								}
+							}
+						}
+					}
+				}
+				location = {
+					state_scope = {
+						any_pop = {
+							limit = {
+								is_primary_culture = no
+								is_accepted_culture = no
+								OR = { is_culture_group = native_american is_culture_group = oceanic }
+							}
+							random_list = {
+								30 = { reduce_pop = 0.35 }
+								25 = { reduce_pop = 0.25 }
+								20 = { reduce_pop = 0.15 }
+								15 = { reduce_pop = 0.05 }
+								10 = { reduce_pop = 0 }
+							}
+						}
+					}
+				}
+			}
+			
+			#Removing in a no-presence state
+			random_pop = {
+				limit = {
+					OR = { is_culture_group = native_american is_culture_group = oceanic }
+					location = {
+						owner = { has_country_modifier = native_removal_act_policy }
+						state_scope = {
+							is_primary_culture = no
+							is_accepted_culture = no
+							NOT = {
+								any_owned_province = {
+									OR = {
+										is_primary_culture = yes
+										is_accepted_culture = yes
+									}
+								}
+							}
+						}
+					}
+				}
+				location = {
+					state_scope = {
+						any_pop = {
+							limit = {
+								is_primary_culture = no
+								is_accepted_culture = no
+								OR = { is_culture_group = native_american is_culture_group = oceanic }
+							}
+							random_list = {
+								30 = { reduce_pop = 0.35 }
+								25 = { reduce_pop = 0.25 }
+								20 = { reduce_pop = 0.15 }
+								15 = { reduce_pop = 0.05 }
+								10 = { reduce_pop = 0 }
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	#cleanup setting vassal variables from segregation.txt
+	country_event = {
+		id = 100068
+		title = "Our Liege's policy toward Natives"
+		desc = "Our Liege has adopted a new policy toward natives."
+		is_triggered_only = yes
+		
+		option = {
+			name = "..."
+			random_owned = {
+				limit = {
+					owner = { overlord = { has_country_flag = native_protection_act_enacted } }
+				}
+				owner = {
+					overlord = {
+						change_variable  = {
+							which = vassal_native_protection
+							value = 1
+						}
+						set_variable = {
+							which = vassal_native_assimilation
+							value = 0
+						}
+						set_variable = {
+							which = vassal_native_removal
+							value = 0
+						}
+					}
+				}
+			}
+			random_owned = {
+				limit = {
+					owner = { overlord = { has_country_modifier = native_assimilation_act_policy } }
+				}
+				owner = {
+					overlord = {
+						change_variable  = {
+							which = vassal_native_assimilation
+							value = 1
+						}
+						set_variable = {
+							which = vassal_native_protection
+							value = 0
+						}
+						set_variable = {
+							which = vassal_native_removal
+							value = 0
+						}
+					}
+				}
+			}
+			random_owned = {
+				limit = {
+					owner = { overlord = { has_country_modifier = native_removal_act_policy } }
+				}
+				owner = {
+					overlord = {
+						change_variable  = {
+							which = vassal_native_removal
+							value = 1
+						}
+						set_variable = {
+							which = vassal_native_protection
+							value = 0
+						}
+						set_variable = {
+							which = vassal_native_assimilation
+							value = 0
+						}
+					}
+				}
+			}
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+	#failsafe to remove all U05 cores & native_assimilation_act_policy country flag after native_removal_act_policy modifier ends
+	country_event = {
+		id = 100069
+		title = "Native Policy Ends"
+		desc = "Our policy towards the Natives of this continent has come to an end."
+		trigger = {
+			OR = {
+				AND = {
+					any_owned_province = {
+						is_core = U05
+					}
+					NOT = { has_country_modifier = native_removal_act_policy }
+				}
+				AND = {
+					has_country_flag = native_assimilation_act_flag
+					NOT = { has_country_modifier = native_assimilation_act_policy }
+				}
+			}
+		}
+	
+		mean_time_to_happen = {
+			months = 1
+			modifier = {
+				factor = 0.1
+				OR = {
+					is_vassal = yes
+					is_substate = yes
+				}
+			}
+		}
+		
+		option = {
+			name = "..."
+			any_owned = {
+				limit = {
+					is_core = U05
+				}
+				remove_core = U05
+			}
+			random_owned = {
+				limit = {
+					owner = { has_country_flag = native_assimilation_act_flag }
+				}
+				owner = { clr_country_flag = native_assimilation_act_flag }
+			}
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+
+	#ANON, failsafe in case iconic monuments lose their respective province modifiers
+	country_event = {
+		id = 100070
+		title = "EVTNAME100070" 
+		desc = "EVTDESC100070"
+		trigger = {
+			OR = {
+				AND = {
+					owns = 425
+					425 = { is_core = U03 NOT = { has_province_modifier = the_eiffel_tower } }
+					NOT = { has_global_flag = eiffel_tower_destroyed }
+				}
+				AND = {
+					owns = 300
+					300 = { is_core = U03 NOT = { has_province_modifier = the_big_ben } }
+					NOT = { has_global_flag = bigben_destroyed }
+				}
+				AND = {
+					owns = 232
+					300 = { is_core = U03 NOT = { has_province_modifier = the_statue_of_liberty } }
+					NOT = { has_global_flag = statue_of_liberty_destroyed }
+				}
+			}
+		}
+		
+		option = {
+			name = "EVT100070OPTA"
+			random_owned = {
+				limit = {
+					province_id = 425
+					is_core = U03
+					NOT = { has_province_modifier = the_eiffel_tower }
+				}
+				add_province_modifier = { name = the_eiffel_tower duration = -1 }
+			}
+			random_owned = {
+				limit = {
+					province_id = 300
+					is_core = U03
+					NOT = { has_province_modifier = the_big_ben }
+				}
+				add_province_modifier = { name = the_big_ben duration = -1 }
+			}
+			random_owned = {
+				limit = {
+					province_id = 232
+					is_core = U03
+					NOT = { has_province_modifier = the_statue_of_liberty }
+				}
+				add_province_modifier = { name = the_statue_of_liberty duration = -1 }
+			}
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+
+	#cleanup event for suspend_political_powers
+	country_event = {
+		id = 100071
+		title = "EVTNAME100071" 
+		desc = "EVTDESC100071"
+		trigger = {
+			has_country_flag = pol_sus_flag
+			NOT = { has_country_modifier = rights_suspended }
+		}
+		
+		option = {
+			name = "EVT100071OPTA"
+			clr_country_flag = pol_sus_flag
+			random_owned = {
+				limit = {
+					owner = {
+						has_country_flag = pol_sus_conservative
+						NOT = { has_country_flag = pol_sus_presidential_dictatorship }
+					}
+				}
+				owner = {
+					ruling_party_ideology = conservative
+					clr_country_flag = pol_sus_conservative
+					clr_country_flag = pol_sus_reactionary
+					clr_country_flag = pol_sus_liberal
+					clr_country_flag = pol_sus_anarcho_liberal
+					clr_country_flag = pol_sus_socialist
+					clr_country_flag = pol_sus_communist
+					clr_country_flag = pol_sus_fascist
+				}
+			}
+			random_owned = {
+				limit = {
+					owner = {
+						has_country_flag = pol_sus_reactionary
+						NOT = { has_country_flag = pol_sus_presidential_dictatorship }
+					}
+				}
+				owner = {
+					ruling_party_ideology = reactionary
+					clr_country_flag = pol_sus_conservative
+					clr_country_flag = pol_sus_reactionary
+					clr_country_flag = pol_sus_liberal
+					clr_country_flag = pol_sus_anarcho_liberal
+					clr_country_flag = pol_sus_socialist
+					clr_country_flag = pol_sus_communist
+					clr_country_flag = pol_sus_fascist
+				}
+			}
+			random_owned = {
+				limit = {
+					owner = { has_country_flag = pol_sus_liberal }
+				}
+				owner = {
+					ruling_party_ideology = liberal
+					clr_country_flag = pol_sus_conservative
+					clr_country_flag = pol_sus_reactionary
+					clr_country_flag = pol_sus_liberal
+					clr_country_flag = pol_sus_anarcho_liberal
+					clr_country_flag = pol_sus_socialist
+					clr_country_flag = pol_sus_communist
+					clr_country_flag = pol_sus_fascist
+				}
+			}
+			random_owned = {
+				limit = {
+					owner = { has_country_flag = pol_sus_anarcho_liberal }
+				}
+				owner = {
+					ruling_party_ideology = anarcho_liberal
+					clr_country_flag = pol_sus_conservative
+					clr_country_flag = pol_sus_reactionary
+					clr_country_flag = pol_sus_liberal
+					clr_country_flag = pol_sus_anarcho_liberal
+					clr_country_flag = pol_sus_socialist
+					clr_country_flag = pol_sus_communist
+					clr_country_flag = pol_sus_fascist
+				}
+			}
+			random_owned = {
+				limit = {
+					owner = {
+						has_country_flag = pol_sus_socialist
+						NOT = { has_country_flag = pol_sus_presidential_dictatorship }
+					}
+				}
+				owner = {
+					ruling_party_ideology = socialist
+					clr_country_flag = pol_sus_conservative
+					clr_country_flag = pol_sus_reactionary
+					clr_country_flag = pol_sus_liberal
+					clr_country_flag = pol_sus_anarcho_liberal
+					clr_country_flag = pol_sus_socialist
+					clr_country_flag = pol_sus_communist
+					clr_country_flag = pol_sus_fascist
+				}
+			}
+			random_owned = {
+				limit = {
+					owner = {
+						has_country_flag = pol_sus_communist
+						NOT = { has_country_flag = pol_sus_proletarian_dictatorship }
+					}
+				}
+				owner = {
+					government = proletarian_dictatorship
+					ruling_party_ideology = communist
+					upper_house = {
+						ideology = communist
+						value = 1
+					}
+					clr_country_flag = pol_sus_conservative
+					clr_country_flag = pol_sus_reactionary
+					clr_country_flag = pol_sus_liberal
+					clr_country_flag = pol_sus_anarcho_liberal
+					clr_country_flag = pol_sus_socialist
+					clr_country_flag = pol_sus_communist
+					clr_country_flag = pol_sus_fascist
+				}
+			}
+			random_owned = {
+				limit = {
+					owner = {
+						has_country_flag = pol_sus_fascist
+						NOT = { has_country_flag = pol_sus_fascist_dictatorship }
+					}
+				}
+				owner = {
+					government = fascist_dictatorship
+					ruling_party_ideology = fascist
+					upper_house = {
+						ideology = fascist
+						value = 1
+					}
+					clr_country_flag = pol_sus_conservative
+					clr_country_flag = pol_sus_reactionary
+					clr_country_flag = pol_sus_liberal
+					clr_country_flag = pol_sus_anarcho_liberal
+					clr_country_flag = pol_sus_socialist
+					clr_country_flag = pol_sus_communist
+					clr_country_flag = pol_sus_fascist
+				}
+			}
+			random_owned = {
+				limit = {
+					owner = {
+						has_country_flag = pol_sus_presidential_dictatorship
+						has_country_flag = pol_sus_conservative
+					}
+				}
+				owner = {
+					government = presidential_dictatorship
+					ruling_party_ideology = conservative
+					upper_house = {
+						ideology = conservative
+						value = 1
+					}
+					clr_country_flag = pol_sus_presidential_dictatorship
+					clr_country_flag = pol_sus_proletarian_dictatorship
+					clr_country_flag = pol_sus_fascist_dictatorship
+					clr_country_flag = pol_sus_provisional_government
+					clr_country_flag = pol_sus_theocracy
+					clr_country_flag = pol_sus_tibetandual
+					clr_country_flag = pol_sus_absolute_monarchy
+					clr_country_flag = pol_sus_conservative
+					clr_country_flag = pol_sus_reactionary
+					clr_country_flag = pol_sus_liberal
+					clr_country_flag = pol_sus_anarcho_liberal
+					clr_country_flag = pol_sus_socialist
+					clr_country_flag = pol_sus_communist
+					clr_country_flag = pol_sus_fascist
+				}
+			}
+			random_owned = {
+				limit = {
+					owner = {
+						has_country_flag = pol_sus_presidential_dictatorship
+						has_country_flag = pol_sus_reactionary
+					}
+				}
+				owner = {
+					government = presidential_dictatorship
+					ruling_party_ideology = reactionary
+					upper_house = {
+						ideology = reactionary
+						value = 1
+					}
+					clr_country_flag = pol_sus_presidential_dictatorship
+					clr_country_flag = pol_sus_proletarian_dictatorship
+					clr_country_flag = pol_sus_fascist_dictatorship
+					clr_country_flag = pol_sus_provisional_government
+					clr_country_flag = pol_sus_theocracy
+					clr_country_flag = pol_sus_tibetandual
+					clr_country_flag = pol_sus_absolute_monarchy
+					clr_country_flag = pol_sus_conservative
+					clr_country_flag = pol_sus_reactionary
+					clr_country_flag = pol_sus_liberal
+					clr_country_flag = pol_sus_anarcho_liberal
+					clr_country_flag = pol_sus_socialist
+					clr_country_flag = pol_sus_communist
+					clr_country_flag = pol_sus_fascist
+				}
+			}
+			random_owned = {
+				limit = {
+					owner = {
+						has_country_flag = pol_sus_presidential_dictatorship
+						has_country_flag = pol_sus_socialist
+					}
+				}
+				owner = {
+					government = presidential_dictatorship
+					ruling_party_ideology = socialist
+					upper_house = {
+						ideology = socialist
+						value = 1
+					}
+					clr_country_flag = pol_sus_presidential_dictatorship
+					clr_country_flag = pol_sus_proletarian_dictatorship
+					clr_country_flag = pol_sus_fascist_dictatorship
+					clr_country_flag = pol_sus_provisional_government
+					clr_country_flag = pol_sus_theocracy
+					clr_country_flag = pol_sus_tibetandual
+					clr_country_flag = pol_sus_absolute_monarchy
+					clr_country_flag = pol_sus_conservative
+					clr_country_flag = pol_sus_reactionary
+					clr_country_flag = pol_sus_liberal
+					clr_country_flag = pol_sus_anarcho_liberal
+					clr_country_flag = pol_sus_socialist
+					clr_country_flag = pol_sus_communist
+					clr_country_flag = pol_sus_fascist
+				}
+			}
+			random_owned = {
+				limit = {
+					owner = {
+						has_country_flag = pol_sus_proletarian_dictatorship
+						has_country_flag = pol_sus_communist
+					}
+				}
+				owner = {
+					government = proletarian_dictatorship
+					ruling_party_ideology = communist
+					upper_house = {
+						ideology = communist
+						value = 1
+					}
+					clr_country_flag = pol_sus_presidential_dictatorship
+					clr_country_flag = pol_sus_proletarian_dictatorship
+					clr_country_flag = pol_sus_fascist_dictatorship
+					clr_country_flag = pol_sus_provisional_government
+					clr_country_flag = pol_sus_theocracy
+					clr_country_flag = pol_sus_tibetandual
+					clr_country_flag = pol_sus_absolute_monarchy
+					clr_country_flag = pol_sus_conservative
+					clr_country_flag = pol_sus_reactionary
+					clr_country_flag = pol_sus_liberal
+					clr_country_flag = pol_sus_anarcho_liberal
+					clr_country_flag = pol_sus_socialist
+					clr_country_flag = pol_sus_communist
+					clr_country_flag = pol_sus_fascist
+				}
+			}
+			random_owned = {
+				limit = {
+					owner = {
+						has_country_flag = pol_sus_fascist_dictatorship
+						has_country_flag = pol_sus_fascist
+					}
+				}
+				owner = {
+					government = fascist_dictatorship
+					ruling_party_ideology = fascist
+					upper_house = {
+						ideology = fascist
+						value = 1
+					}
+					clr_country_flag = pol_sus_presidential_dictatorship
+					clr_country_flag = pol_sus_proletarian_dictatorship
+					clr_country_flag = pol_sus_fascist_dictatorship
+					clr_country_flag = pol_sus_provisional_government
+					clr_country_flag = pol_sus_theocracy
+					clr_country_flag = pol_sus_tibetandual
+					clr_country_flag = pol_sus_absolute_monarchy
+					clr_country_flag = pol_sus_conservative
+					clr_country_flag = pol_sus_reactionary
+					clr_country_flag = pol_sus_liberal
+					clr_country_flag = pol_sus_anarcho_liberal
+					clr_country_flag = pol_sus_socialist
+					clr_country_flag = pol_sus_communist
+					clr_country_flag = pol_sus_fascist
+				}
+			}
+			random_owned = {
+				limit = {
+					owner = { has_country_flag = pol_sus_provisional_government }
+				}
+				owner = {
+					government = provisional_government
+					clr_country_flag = pol_sus_presidential_dictatorship
+					clr_country_flag = pol_sus_proletarian_dictatorship
+					clr_country_flag = pol_sus_fascist_dictatorship
+					clr_country_flag = pol_sus_provisional_government
+					clr_country_flag = pol_sus_theocracy
+					clr_country_flag = pol_sus_tibetandual
+					clr_country_flag = pol_sus_absolute_monarchy
+				}
+			}
+			random_owned = {
+				limit = {
+					owner = { has_country_flag = pol_sus_theocracy }
+				}
+				owner = {
+					government = theocracy
+					clr_country_flag = pol_sus_presidential_dictatorship
+					clr_country_flag = pol_sus_proletarian_dictatorship
+					clr_country_flag = pol_sus_fascist_dictatorship
+					clr_country_flag = pol_sus_provisional_government
+					clr_country_flag = pol_sus_theocracy
+					clr_country_flag = pol_sus_tibetandual
+					clr_country_flag = pol_sus_absolute_monarchy
+				}
+			}
+			random_owned = {
+				limit = {
+					owner = { has_country_flag = pol_sus_tibetandual }
+				}
+				owner = {
+					government = tibetandual
+					clr_country_flag = pol_sus_presidential_dictatorship
+					clr_country_flag = pol_sus_proletarian_dictatorship
+					clr_country_flag = pol_sus_fascist_dictatorship
+					clr_country_flag = pol_sus_provisional_government
+					clr_country_flag = pol_sus_theocracy
+					clr_country_flag = pol_sus_tibetandual
+					clr_country_flag = pol_sus_absolute_monarchy
+				}
+			}
+			random_owned = {
+				limit = {
+					owner = { has_country_flag = pol_sus_absolute_monarchy }
+				}
+				owner = {
+					government = absolute_monarchy
+					clr_country_flag = pol_sus_presidential_dictatorship
+					clr_country_flag = pol_sus_proletarian_dictatorship
+					clr_country_flag = pol_sus_fascist_dictatorship
+					clr_country_flag = pol_sus_provisional_government
+					clr_country_flag = pol_sus_theocracy
+					clr_country_flag = pol_sus_tibetandual
+					clr_country_flag = pol_sus_absolute_monarchy
+				}
+			}
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+	
+	#USA GW dismantling, X is granted Y as a colony.
+	#Note: Ft. Ross not granted to AI due to bullshit reasons
+	country_event = {
+		id = 100072
+		title = "EVTNAME100072"
+		desc = "EVTDESC100072"
+		is_triggered_only = yes
+		
+		option = {
+			name = "EVT100072OPTA"
+			random_owned = { #Player Liberia
+				limit = { owner = { has_country_flag = LIB_GW_PLAYER_granted } }
+				owner = {
+					clr_country_flag = LIB_GW_PLAYER_granted
+					FROM = {
+						any_owned = {
+							limit = { OR = { is_core = LIB region = ENG_1887 } }
+							secede_province = THIS
+						}
+					}
+					random_country = {
+						limit = {
+							exists = yes
+							tag = LIB
+							OR = { vassal_of = FROM in_sphere = FROM }
+						}
+						annex_to = THIS
+					}
+					any_country = {
+						limit = { 
+							NOT = { tag = THIS }
+							NOT = { tag = LIB }
+							OR = { substate_of = FROM vassal_of = FROM in_sphere = FROM }
+							any_owned_province = { OR = { is_core = LIB region = ENG_1887 } }
+						}
+						any_owned = {
+							limit = { OR = { is_core = LIB region = ENG_1887 } }
+							secede_province = THIS
+						}
+					}
+				}
+			}
+			random_owned = { #Player Hawaii
+				limit = { owner = { has_country_flag = HAW_GW_PLAYER_granted } }
+				owner = {
+					clr_country_flag = HAW_GW_PLAYER_granted
+					FROM = {
+						any_owned = {
+							limit = { OR = { region = HAW_658 region = HAW_2524 province_id = 3351 continent = polynesia } has_province_modifier = ANON_coring }
+							remove_province_modifier = ANON_coring
+							add_core = THIS
+						}
+						any_owned = {
+							limit = { OR = { region = HAW_658 region = HAW_2524 province_id = 3351 continent = polynesia } }
+							secede_province = THIS
+						}
+					}
+					random_country = {
+						limit = {
+							exists = yes
+							tag = HAW
+							OR = { vassal_of = FROM in_sphere = FROM }
+						}
+						all_core = { add_core = THIS }
+						annex_to = THIS
+					}
+					any_country = {
+						limit = { 
+							NOT = { tag = THIS }
+							NOT = { tag = HAW }
+							OR = { substate_of = FROM vassal_of = FROM in_sphere = FROM }
+							any_owned_province = { OR = { region = HAW_658 region = HAW_2524 province_id = 3351 continent = polynesia } }
+						}
+						any_owned = {
+							limit = { OR = { region = HAW_658 region = HAW_2524 province_id = 3351 continent = polynesia } }
+							secede_province = THIS
+						}
+					}
+				}
+			}
+			random_owned = { #Player Alaska
+				limit = { owner = { has_country_flag = LSK_GW_PLAYER_granted } }
+				owner = {
+					clr_country_flag = LSK_GW_PLAYER_granted
+					FROM = {
+						any_owned = {
+							limit = { OR = { is_core = LSK region = USA_1 province_id = 3390 } has_province_modifier = ANON_coring }
+							remove_province_modifier = ANON_coring
+							add_core = THIS
+						}
+						any_owned = {
+							limit = { OR = { is_core = LSK region = USA_1 province_id = 3390 } }
+							secede_province = THIS
+						}
+					}
+					random_country = {
+						limit = {
+							exists = yes
+							tag = LSK
+							OR = { vassal_of = FROM in_sphere = FROM }
+						}
+						all_core = { add_core = THIS }
+						annex_to = THIS
+					}
+					any_country = {
+						limit = { 
+							NOT = { tag = THIS }
+							NOT = { tag = LSK }
+							OR = { substate_of = FROM vassal_of = FROM in_sphere = FROM }
+							any_owned_province = { OR = { is_core = LSK region = USA_1 province_id = 3390 } }
+						}
+						any_owned = {
+							limit = { OR = { is_core = LSK region = USA_1 province_id = 3390 } }
+							secede_province = THIS
+						}
+					}
+				}
+			}
+			random_owned = { #AI Alaska, 34% chance of being given back to Russia if no player fought GW
+				limit = { owner = { has_country_flag = LSK_GW_AI_granted } }
+				owner = {
+					clr_country_flag = LSK_GW_AI_granted
+					FROM = {
+						any_owned = {
+							limit = { OR = { is_core = LSK region = USA_1 } has_province_modifier = ANON_coring }
+							remove_province_modifier = ANON_coring
+							add_core = THIS
+						}
+						any_owned = {
+							limit = { OR = { is_core = LSK region = USA_1 } }
+							secede_province = THIS
+						}
+					}
+					random_country = {
+						limit = {
+							exists = yes
+							tag = LSK
+							OR = { vassal_of = FROM in_sphere = FROM }
+						}
+						all_core = { add_core = THIS }
+						annex_to = THIS
+					}
+					any_country = {
+						limit = { 
+							NOT = { tag = THIS }
+							NOT = { tag = LSK }
+							OR = { substate_of = FROM vassal_of = FROM in_sphere = FROM }
+							any_owned_province = { OR = { is_core = LSK region = USA_1 } }
+						}
+						any_owned = {
+							limit = { OR = { is_core = LSK region = USA_1 } }
+							secede_province = THIS
+						}
+					}
+				}
+			}
+			random_owned = { #VNS burgerclaims
+				limit = { owner = { has_country_flag = burgerclaims_GW_granted } }
+				owner = {
+					clr_country_flag = burgerclaims_GW_granted
+					FROM = {
+						any_owned = {
+							limit = { OR = { is_core = VNS region = USA_1 region = USA_200 province_id = 197 province_id = 194 province_id = 140 is_core = UOR region = USA_81 region = USA_78 region = USA_91 province_id = 111 province_id = 114 } has_province_modifier = ANON_coring }
+							remove_province_modifier = ANON_coring
+							add_core = THIS
+							add_core = MEX
+						}
+						any_state = {
+							limit = {
+								owner = { any_owned_province = { is_core = THIS } }
+							}
+							any_owned = {
+								limit = {
+									is_core = THIS
+									is_capital = no
+								}
+								secede_province = THIS
+							}
+						}
+					}
+					random_country = {
+						limit = {
+							exists = yes
+							tag = UOR
+							OR = { vassal_of = FROM in_sphere = FROM }
+						}
+						all_core = { add_core = THIS add_core = MEX }
+						annex_to = THIS
+					}
+					random_country = {
+						limit = {
+							exists = yes
+							tag = LSK
+							OR = { vassal_of = FROM in_sphere = FROM }
+						}
+						all_core = { add_core = THIS add_core = MEX }
+						annex_to = THIS
+					}
+					random_country = {
+						limit = {
+							exists = yes
+							tag = CAL
+							OR = { vassal_of = FROM in_sphere = FROM }
+						}
+						all_core = { add_core = THIS add_core = MEX }
+						annex_to = THIS
+					}
+					random_country = {
+						limit = {
+							exists = yes
+							tag = C4L
+							OR = { vassal_of = FROM in_sphere = FROM }
+						}
+						all_core = { add_core = THIS add_core = MEX }
+						annex_to = THIS
+					}
+					random_country = {
+						limit = {
+							exists = yes
+							tag = DES
+							OR = { vassal_of = FROM in_sphere = FROM }
+						}
+						all_core = { add_core = THIS add_core = MEX }
+						annex_to = THIS
+					}
+					random_country = {
+						limit = {
+							exists = yes
+							tag = TEX
+							OR = { vassal_of = FROM in_sphere = FROM }
+						}
+						all_core = { add_core = THIS add_core = MEX }
+						annex_to = THIS
+					}
+					any_country = {
+						limit = { 
+							NOT = { tag = THIS }
+							NOT = { tag = UOR }
+							NOT = { tag = LSK }
+							NOT = { tag = CAL }
+							NOT = { tag = C4L }
+							NOT = { tag = DES }
+							NOT = { tag = TEX }
+							OR = { substate_of = FROM vassal_of = FROM in_sphere = FROM }
+							any_owned_province = { OR = { is_core = VNS region = USA_1 region = USA_200 province_id = 197 province_id = 194 province_id = 140 is_core = UOR region = USA_81 region = USA_78 region = USA_91 province_id = 111 province_id = 114 } }
+						}
+						any_owned = {
+							limit = { OR = { is_core = VNS region = USA_1 region = USA_200 province_id = 197 province_id = 194 province_id = 140 is_core = UOR region = USA_81 region = USA_78 region = USA_91 province_id = 111 province_id = 114 } }
+							secede_province = THIS
+						}
+					}
+				}
+			}
+			random_owned = { #Player Philippines
+				limit = { owner = { has_country_flag = PHL_GW_PLAYER_granted } }
+				owner = {
+					clr_country_flag = PHL_GW_PLAYER_granted
+					FROM = {
+						# any_owned = {
+							# limit = { OR = { is_core = LSK region = USA_1 province_id = 3390 } has_province_modifier = ANON_coring }
+							# remove_province_modifier = ANON_coring
+							# add_core = THIS
+						# }
+						any_owned = {
+							limit = { OR = { is_core = PHL region = SPA_1455 region = SPA_1459 region = SPA_1463 province_id = 2517 } }
+							secede_province = THIS
+						}
+					}
+					random_country = {
+						limit = {
+							exists = yes
+							tag = PHL
+							OR = { vassal_of = FROM in_sphere = FROM }
+						}
+						all_core = { add_core = THIS }
+						annex_to = THIS
+					}
+					any_country = {
+						limit = { 
+							NOT = { tag = THIS }
+							NOT = { tag = PHL }
+							OR = { substate_of = FROM vassal_of = FROM in_sphere = FROM }
+							any_owned_province = { OR = { is_core = PHL region = SPA_1455 region = SPA_1459 region = SPA_1463 province_id = 2517 } }
+						}
+						any_owned = {
+							limit = { OR = { is_core = PHL region = SPA_1455 region = SPA_1459 region = SPA_1463 province_id = 2517 } }
+							secede_province = THIS
+						}
+					}
+				}
+			}
+			random_owned = { #AI Philippines, 80% chance of being given back to Spain if no player fought GW
+				limit = { owner = { has_country_flag = PHL_GW_AI_granted } }
+				owner = {
+					clr_country_flag = PHL_GW_AI_granted
+					FROM = {
+						# any_owned = {
+							# limit = { OR = { is_core = PHL region = SPA_1455 region = SPA_1459 region = SPA_1463 province_id = 2517 } }
+							# remove_province_modifier = ANON_coring
+							# add_core = THIS
+						# }
+						any_owned = {
+							limit = { OR = { is_core = PHL region = SPA_1455 region = SPA_1459 region = SPA_1463 province_id = 2517 } }
+							secede_province = THIS
+						}
+					}
+					random_country = {
+						limit = {
+							exists = yes
+							tag = PHL
+							OR = { vassal_of = FROM in_sphere = FROM }
+						}
+						all_core = { add_core = THIS }
+						annex_to = THIS
+					}
+					any_country = {
+						limit = { 
+							NOT = { tag = THIS }
+							NOT = { tag = PHL }
+							OR = { substate_of = FROM vassal_of = FROM in_sphere = FROM }
+							any_owned_province = { OR = { is_core = PHL region = SPA_1455 region = SPA_1459 region = SPA_1463 province_id = 2517 } }
+						}
+						any_owned = {
+							limit = { OR = { is_core = PHL region = SPA_1455 region = SPA_1459 region = SPA_1463 province_id = 2517 } }
+							secede_province = THIS
+						}
+					}
+				}
+			}
+			random_owned = { #Player Cuba
+				limit = { owner = { has_country_flag = CUB_GW_granted } }
+				owner = {
+					clr_country_flag = CUB_GW_granted
+					FROM = {
+						any_owned = {
+							limit = { OR = { is_core = CUB region = SPA_2209 region = SPA_2211 } }
+							secede_province = THIS
+						}
+					}
+					random_country = {
+						limit = {
+							exists = yes
+							tag = CUB
+							OR = { vassal_of = FROM in_sphere = FROM }
+						}
+						all_core = { add_core = THIS }
+						annex_to = THIS
+					}
+					any_country = {
+						limit = { 
+							NOT = { tag = THIS }
+							NOT = { tag = CUB }
+							OR = { substate_of = FROM vassal_of = FROM in_sphere = FROM }
+							any_owned_province = { OR = { is_core = CUB region = SPA_2209 region = SPA_2211 } }
+						}
+						any_owned = {
+							limit = { OR = { is_core = CUB region = SPA_2209 region = SPA_2211 } }
+							secede_province = THIS
+						}
+					}
+				}
+			}
+			random_owned = { #AI Cuba, 34% chance of being given back to Spain if no player fought GW
+				limit = { owner = { has_country_flag = CUB_GW_AI_granted } }
+				owner = {
+					clr_country_flag = CUB_GW_AI_granted
+					FROM = {
+						# any_owned = {
+							# limit = { OR = { is_core = CUB region = SPA_2209 region = SPA_2211 } }
+							# remove_province_modifier = ANON_coring
+							# add_core = THIS
+						# }
+						any_owned = {
+							limit = { OR = { is_core = CUB region = SPA_2209 region = SPA_2211 } }
+							secede_province = THIS
+						}
+					}
+					random_country = {
+						limit = {
+							exists = yes
+							tag = CUB
+							OR = { vassal_of = FROM in_sphere = FROM }
+						}
+						all_core = { add_core = THIS }
+						annex_to = THIS
+					}
+					any_country = {
+						limit = { 
+							NOT = { tag = THIS }
+							NOT = { tag = CUB }
+							OR = { substate_of = FROM vassal_of = FROM in_sphere = FROM }
+							any_owned_province = { OR = { is_core = CUB region = SPA_2209 region = SPA_2211 } }
+						}
+						any_owned = {
+							limit = { OR = { is_core = CUB region = SPA_2209 region = SPA_2211 } }
+							secede_province = THIS
+						}
+					}
+				}
+			}
+			random_owned = { #Puerto Rico PAPIIIIII
+				limit = { owner = { has_country_flag = PRI_GW_PLAYER_granted } }
+				owner = {
+					clr_country_flag = PRI_GW_PLAYER_granted
+					FROM = {
+						any_owned = {
+							limit = { OR = { is_core = PRI province_id = 2222 province_id = 2223 } }
+							secede_province = THIS
+						}
+					}
+					random_country = {
+						limit = {
+							exists = yes
+							tag = PRI
+							OR = { vassal_of = FROM in_sphere = FROM }
+						}
+						all_core = { add_core = THIS }
+						annex_to = THIS
+					}
+					any_country = {
+						limit = { 
+							NOT = { tag = THIS }
+							NOT = { tag = PRI }
+							OR = { substate_of = FROM vassal_of = FROM in_sphere = FROM }
+							any_owned_province = { OR = { is_core = PRI province_id = 2222 province_id = 2223 } }
+						}
+						any_owned = {
+							limit = { OR = { is_core = PRI province_id = 2222 province_id = 2223 } }
+							secede_province = THIS
+						}
+					}
+				}
+			}
+			random_owned = { #AI Puerto Rico, 34% chance of being given back to Spain if no player fought GW
+				limit = { owner = { has_country_flag = PRI_GW_AI_granted } }
+				owner = {
+					clr_country_flag = PRI_GW_AI_granted
+					FROM = {
+						# any_owned = {
+							# limit = { OR = { is_core = PRI province_id = 2222 province_id = 2223 } }
+							# remove_province_modifier = ANON_coring
+							# add_core = THIS
+						# }
+						any_owned = {
+							limit = { OR = { is_core = PRI province_id = 2222 province_id = 2223 } }
+							secede_province = THIS
+						}
+					}
+					random_country = {
+						limit = {
+							exists = yes
+							tag = PRI
+							OR = { vassal_of = FROM in_sphere = FROM }
+						}
+						all_core = { add_core = THIS }
+						annex_to = THIS
+					}
+					any_country = {
+						limit = { 
+							NOT = { tag = THIS }
+							NOT = { tag = PRI }
+							OR = { substate_of = FROM vassal_of = FROM in_sphere = FROM }
+							any_owned_province = { OR = { is_core = PRI province_id = 2222 province_id = 2223 } }
+						}
+						any_owned = {
+							limit = { OR = { is_core = PRI province_id = 2222 province_id = 2223 } }
+							secede_province = THIS
+						}
+					}
+				}
+			}
+			random_owned = { #Player MEX Oregon
+				limit = { owner = { has_country_flag = UOR_GW_PLAYER_granted } }
+				owner = {
+					clr_country_flag = UOR_GW_PLAYER_granted
+					FROM = {
+						any_owned = {
+							limit = { OR = { is_core = UOR region = USA_81 region = USA_78 region = USA_91 province_id = 111 province_id = 114 } has_province_modifier = ANON_coring }
+							remove_province_modifier = ANON_coring
+							add_core = THIS
+						}
+						any_owned = {
+							limit = { OR = { is_core = UOR region = USA_81 region = USA_78 region = USA_91 province_id = 111 province_id = 114 } }
+							secede_province = THIS
+						}
+					}
+					random_country = {
+						limit = {
+							exists = yes
+							tag = UOR
+							OR = { vassal_of = FROM in_sphere = FROM }
+						}
+						all_core = { add_core = THIS }
+						annex_to = THIS
+					}
+					any_country = {
+						limit = { 
+							NOT = { tag = THIS }
+							NOT = { tag = UOR }
+							OR = { substate_of = FROM vassal_of = FROM in_sphere = FROM }
+							any_owned_province = { OR = { is_core = UOR region = USA_81 region = USA_78 region = USA_91 province_id = 111 province_id = 114 } }
+						}
+						any_owned = {
+							limit = { OR = { is_core = UOR region = USA_81 region = USA_78 region = USA_91 province_id = 111 province_id = 114 } }
+							secede_province = THIS
+						}
+					}
+				}
+			}
+			random_owned = { #Player FRA/BOR Louisiana
+				limit = { owner = { has_country_flag = ULA_GW_PLAYER_granted } }
+				owner = {
+					clr_country_flag = ULA_GW_PLAYER_granted
+					add_accepted_culture = cajun
+					FROM = {
+						any_owned = {
+							limit = {
+								OR = { is_core = ULA region = USA_139 region = USA_116 region = USA_118 region = USA_121 region = USA_124 region = USA_126 region = USA_129 region = USA_158 region = USA_148 region = USA_144 region = USA_151 province_id = 3395 province_id = 112 province_id = 106 }
+								NOT = { OR = { province_id = 114 province_id = 128 province_id = 129 } }
+							}
+							remove_province_modifier = ANON_coring
+							add_core = ULA
+							add_core = THIS 
+						}
+						any_owned = {
+							limit = {
+								OR = { is_core = ULA region = USA_139 region = USA_116 region = USA_118 region = USA_121 region = USA_124 region = USA_126 region = USA_129 region = USA_158 region = USA_148 region = USA_144 region = USA_151 province_id = 3395 province_id = 112 province_id = 106 }
+								NOT = { OR = { province_id = 114 province_id = 128 province_id = 129 } }
+							}
+							secede_province = THIS
+						}
+					}
+					random_country = {
+						limit = {
+							exists = yes
+							tag = ULA
+							OR = { vassal_of = FROM in_sphere = FROM }
+						}
+						all_core = { add_core = THIS }
+						annex_to = THIS
+					}
+					any_country = {
+						limit = { 
+							NOT = { tag = THIS }
+							NOT = { tag = ULA }
+							OR = { substate_of = FROM vassal_of = FROM in_sphere = FROM }
+							any_owned_province = { OR = { is_core = ULA region = USA_139 region = USA_116 region = USA_118 region = USA_121 region = USA_124 region = USA_126 region = USA_129 region = USA_158 region = USA_148 region = USA_144 region = USA_151 province_id = 3395 province_id = 112 province_id = 106 } }
+						}
+						any_owned = {
+							limit = {
+								OR = { is_core = ULA region = USA_139 region = USA_116 region = USA_118 region = USA_121 region = USA_124 region = USA_126 region = USA_129 region = USA_158 region = USA_148 region = USA_144 region = USA_151 province_id = 3395 province_id = 112 province_id = 106 }
+								NOT = { OR = { province_id = 114 province_id = 128 province_id = 129 } }
+							}
+							secede_province = THIS
+						}
+					}
+				}
+			}
+			random_owned = { #if owner of Copenhagen has a truce, secede all Schleswig-Holstein
+				limit = { owner = { has_country_flag = SWH_GW_granted } }
+				owner = {
+					clr_country_flag = SWH_GW_granted
+					FROM = {
+						any_owned = {
+							limit = { OR = { is_core = SCH is_core = HOL is_core = SWH region = HOL_369 region = SCH_370 } has_province_modifier = ANON_coring }
+							remove_province_modifier = ANON_coring
+							add_core = DEN
+							add_core = THIS
+						}
+						any_owned = {
+							limit = { OR = { is_core = SCH is_core = HOL is_core = SWH region = HOL_369 region = SCH_370 } }
+							secede_province = THIS
+						}
+					}
+					any_country = {
+						limit = {
+							exists = yes
+							OR = { tag = SCH tag = HOL tag = SWH }
+							OR = { vassal_of = FROM in_sphere = FROM }
+						}
+						all_core = { add_core = DEN add_core = THIS }
+						annex_to = THIS
+					}
+					any_country = {
+						limit = { 
+							NOT = { tag = THIS }
+							NOT = { tag = SCH }
+							NOT = { tag = HOL }
+							NOT = { tag = SWH }
+							OR = { substate_of = FROM vassal_of = FROM in_sphere = FROM }
+							any_owned_province = { OR = { is_core = SCH is_core = HOL is_core = SWH region = HOL_369 region = SCH_370 } }
+						}
+						any_owned = {
+							limit = { OR = { is_core = SCH is_core = HOL is_core = SWH region = HOL_369 region = SCH_370 } }
+							secede_province = THIS
+						}
+					}
+				}
+			}
+			random_owned = { #if owner of Copenhagen doesn't have a truce, Schleswig is seceded at 80% chance, ANON
+				limit = { owner = { has_country_flag = SCH_GW_granted } }
+				owner = {
+					clr_country_flag = SCH_GW_granted
+					FROM = {
+						any_owned = {
+							limit = { OR = { is_core = SCH is_core = SWH region = SCH_370 } has_province_modifier = ANON_coring }
+							remove_province_modifier = ANON_coring
+							add_core = DEN
+							add_core = THIS
+						}
+						any_owned = {
+							limit = { OR = { is_core = SCH is_core = SWH region = SCH_370 } }
+							secede_province = THIS
+						}
+					}
+					any_country = {
+						limit = {
+							exists = yes
+							OR = { tag = SCH tag = SWH }
+							OR = { vassal_of = FROM in_sphere = FROM }
+						}
+						all_core = { add_core = DEN add_core = THIS }
+						annex_to = THIS
+					}
+					any_country = {
+						limit = { 
+							NOT = { tag = THIS }
+							NOT = { tag = SCH }
+							NOT = { tag = SWH }
+							OR = { substate_of = FROM vassal_of = FROM in_sphere = FROM }
+							any_owned_province = { OR = { is_core = SCH is_core = SWH region = SCH_370 } }
+						}
+						any_owned = {
+							limit = { OR = { is_core = SCH is_core = SWH region = SCH_370 } }
+							secede_province = THIS
+						}
+					}
+				}
+			}
+			random_owned = { #if owner of Paris has a truce and owns any RHI cores, secede RHI to FRA and remove GER cores. ANON
+				limit = { owner = { has_country_flag = RHI_GW_granted } }
+				owner = {
+					clr_country_flag = RHI_GW_granted
+					FROM = {
+						any_owned = {
+							limit = { OR = { is_core = RHI region = PRU_581 region = PRU_575 region = PRU_578 } has_province_modifier = ANON_coring }
+							remove_province_modifier = ANON_coring
+							add_core = THIS
+						}
+						any_owned = {
+							limit = { OR = { is_core = RHI region = PRU_581 region = PRU_575 region = PRU_578 } }
+							secede_province = THIS
+						}
+					}
+					any_country = {
+						limit = {
+							exists = yes
+							tag = RHI
+							OR = { vassal_of = FROM in_sphere = FROM }
+						}
+						all_core = {
+							add_core = THIS
+							remove_core = GER
+							remove_core = GCF
+							remove_core = NGF
+							remove_core = SGF
+							remove_core = PRU
+						}
+						annex_to = THIS
+					}
+					any_country = {
+						limit = { 
+							NOT = { tag = THIS }
+							NOT = { tag = RHI }
+							OR = { substate_of = FROM vassal_of = FROM in_sphere = FROM }
+							any_owned_province = { OR = { is_core = RHI region = PRU_581 region = PRU_575 region = PRU_578 } }
+						}
+						any_owned = {
+							limit = { OR = { is_core = RHI region = PRU_581 region = PRU_575 region = PRU_578 } }
+							secede_province = THIS
+						}
+					}
+					RHI = { all_core = { remove_core = GER remove_core = GCF remove_core = NGF remove_core = SGF remove_core = PRU } }
+				}
+			}
+			random_owned = { #if AUS/KUK has a truce, secede Bavaria. ANON
+				limit = { owner = { has_country_flag = BAV_GW_granted } }
+				owner = {
+					clr_country_flag = BAV_GW_granted
+					FROM = {
+						any_owned = {
+							limit = { OR = { is_core = BAV region = BAV_599 region = BAV_595 } NOT = { province_id = 571 } has_province_modifier = ANON_coring }
+							remove_province_modifier = ANON_coring
+							add_core = THIS
+						}
+						any_owned = {
+							limit = { OR = { is_core = BAV region = BAV_599 region = BAV_595 } NOT = { province_id = 571 } }
+							secede_province = THIS
+						}
+					}
+					any_country = {
+						limit = {
+							exists = yes
+							tag = BAV
+							OR = { vassal_of = FROM in_sphere = FROM }
+						}
+						all_core = {
+							add_core = THIS
+							remove_core = GER
+							remove_core = GCF
+							remove_core = NGF
+							remove_core = SGF
+							remove_core = PRU
+						}
+						annex_to = THIS
+					}
+					any_country = {
+						limit = { 
+							NOT = { tag = THIS }
+							NOT = { tag = BAV }
+							OR = { substate_of = FROM vassal_of = FROM in_sphere = FROM }
+							any_owned_province = { OR = { is_core = BAV region = BAV_599 region = BAV_595 } NOT = { province_id = 571 } }
+						}
+						any_owned = {
+							limit = { OR = { is_core = BAV region = BAV_599 region = BAV_595 } NOT = { province_id = 571 } }
+							secede_province = THIS
+						}
+					}
+					BAV = { all_core = { remove_core = GER remove_core = GCF remove_core = NGF remove_core = SGF remove_core = PRU } }
+				}
+			}
+			random_owned = { #if GP Polish Country, Austria, Austria-Hungary or Danube Federation have a truce, secede Silesia. ANON
+				limit = { owner = { has_country_flag = SLS_GW_granted } }
+				owner = {
+					clr_country_flag = SLS_GW_granted
+					FROM = {
+						any_owned = {
+							limit = { OR = { is_core = SLS region = PRU_682 region = PRU_684 } NOT = { province_id = 687 } has_province_modifier = ANON_coring }
+							remove_province_modifier = ANON_coring
+							add_core = THIS
+						}
+						any_owned = {
+							limit = { OR = { is_core = SLS region = PRU_682 region = PRU_684 } NOT = { province_id = 687 } }
+							secede_province = THIS
+						}
+					}
+					any_country = {
+						limit = {
+							exists = yes
+							tag = SLS
+							OR = { vassal_of = FROM in_sphere = FROM }
+						}
+						all_core = {
+							add_core = THIS
+							remove_core = GER
+							remove_core = GCF
+							remove_core = NGF
+							remove_core = SGF
+							remove_core = PRU
+						}
+						annex_to = THIS
+					}
+					any_country = {
+						limit = { 
+							NOT = { tag = THIS }
+							NOT = { tag = SLS }
+							OR = { substate_of = FROM vassal_of = FROM in_sphere = FROM }
+							any_owned_province = { OR = { is_core = SLS region = PRU_682 region = PRU_684 } NOT = { province_id = 687 } }
+						}
+						any_owned = {
+							limit = { OR = { is_core = SLS region = PRU_682 region = PRU_684 } NOT = { province_id = 687 } }
+							secede_province = THIS
+						}
+					}
+					SLS = { all_core = { remove_core = GER remove_core = GCF remove_core = NGF remove_core = SGF remove_core = PRU } }
+				}
+			}
+			random_owned = { #If Poland exists, seceded Posen and Westpreussen. ANON
+				limit = { owner = { has_country_flag = POL_GW_granted } }
+				owner = {
+					clr_country_flag = POL_GW_granted
+					FROM = {
+						any_owned = {
+							limit = { OR = { is_core = POL is_core = PZN is_core = PML region = PRU_690 region = PRU_701 } NOT = { province_id = 690 } has_province_modifier = ANON_coring }
+							remove_province_modifier = ANON_coring
+							add_core = THIS
+						}
+						any_owned = {
+							limit = { OR = { is_core = POL is_core = PZN is_core = PML region = PRU_690 region = PRU_701 } NOT = { province_id = 690 } }
+							secede_province = THIS
+						}
+					}
+					any_country = {
+						limit = {
+							exists = yes
+							OR = { tag = PZN tag = PML }
+							OR = { vassal_of = FROM in_sphere = FROM }
+						}
+						all_core = {
+							add_core = THIS
+							remove_core = GER
+							remove_core = GCF
+							remove_core = NGF
+							remove_core = SGF
+							remove_core = PRU
+						}
+						annex_to = THIS
+					}
+					any_country = {
+						limit = { 
+							NOT = { tag = THIS }
+							NOT = { tag = PZN }
+							NOT = { tag = PML }
+							OR = { substate_of = FROM vassal_of = FROM in_sphere = FROM }
+							any_owned_province = { OR = { is_core = POL is_core = PZN is_core = PML region = PRU_690 region = PRU_701 } NOT = { province_id = 690 } }
+						}
+						any_owned = {
+							limit = { OR = { is_core = POL is_core = PZN is_core = PML region = PRU_690 region = PRU_701 } NOT = { province_id = 690 } }
+							secede_province = THIS
+						}
+					}
+					POL = { all_core = { remove_core = GER remove_core = GCF remove_core = NGF remove_core = SGF remove_core = PRU } }
+				}
+			}
+			random_owned = { #If Lithuania exists, Lithuania Minor is seceded. ANON
+				limit = { owner = { has_country_flag = MML_GW_granted } }
+				owner = {
+					clr_country_flag = MML_GW_granted
+					FROM = {
+						any_owned = {
+							limit = { OR = { is_core = MML province_id = 698 province_id = 3576 province_id = 697 province_id = 3573 } has_province_modifier = ANON_coring }
+							remove_province_modifier = ANON_coring
+							add_core = THIS
+						}
+						any_owned = {
+							limit = { OR = { is_core = MML province_id = 698 province_id = 3576 province_id = 697 province_id = 3573 } }
+							secede_province = THIS
+						}
+					}
+					any_country = {
+						limit = {
+							exists = yes
+							tag = MML
+							OR = { vassal_of = FROM in_sphere = FROM }
+						}
+						all_core = {
+							add_core = THIS
+							remove_core = GER
+							remove_core = GCF
+							remove_core = NGF
+							remove_core = SGF
+							remove_core = PRU
+						}
+						annex_to = THIS
+					}
+					any_country = {
+						limit = { 
+							NOT = { tag = THIS }
+							NOT = { tag = MML }
+							OR = { substate_of = FROM vassal_of = FROM in_sphere = FROM }
+							any_owned_province = { OR = { is_core = MML province_id = 698 province_id = 3576 province_id = 697 province_id = 3573 } }
+						}
+						any_owned = {
+							limit = { OR = { is_core = MML province_id = 698 province_id = 3576 province_id = 697 province_id = 3573 } }
+							secede_province = THIS
+						}
+					}
+					MML = { all_core = { remove_core = GER remove_core = GCF remove_core = NGF remove_core = SGF remove_core = PRU } }
+				}
+			}
+			random_owned = { #If Romania in truce, the Tisza line is seceded. ANON
+				limit = { owner = { has_country_flag = ROM_GW_granted } }
+				owner = {
+					clr_country_flag = ROM_GW_granted
+					FROM = {
+						any_owned = {
+							limit = { OR = { is_core = ROM region = AUS_652 region = AUS_950 region = AUS_663 province_id = 3655 province_id = 649 province_id = 650 province_id = 648 province_id = 950 } has_province_modifier = ANON_coring }
+							remove_province_modifier = ANON_coring
+							add_core = THIS
+						}
+						any_owned = {
+							limit = { OR = { is_core = ROM region = AUS_652 region = AUS_950 region = AUS_663 province_id = 3655 province_id = 649 province_id = 650 province_id = 648 province_id = 950 } }
+							secede_province = THIS
+						}
+					}
+					any_country = {
+						limit = {
+							exists = yes
+							tag = BKV
+							OR = { vassal_of = FROM in_sphere = FROM }
+						}
+						all_core = {
+							add_core = THIS
+							remove_core = GER
+							remove_core = GCF
+							remove_core = NGF
+							remove_core = SGF
+							remove_core = PRU
+						}
+						annex_to = THIS
+					}
+					any_country = {
+						limit = { 
+							NOT = { tag = THIS }
+							NOT = { tag = BKV }
+							OR = { substate_of = FROM vassal_of = FROM in_sphere = FROM }
+							any_owned_province = { OR = { is_core = ROM region = AUS_652 region = AUS_950 region = AUS_663 province_id = 3655 province_id = 649 province_id = 650 province_id = 648 province_id = 950 } }
+						}
+						any_owned = {
+							limit = { OR = { is_core = ROM region = AUS_652 region = AUS_950 region = AUS_663 province_id = 3655 province_id = 649 province_id = 650 province_id = 648 province_id = 950 } }
+							secede_province = THIS
+						}
+					}
+					ROM = { all_core = { remove_core = GER remove_core = SGF remove_core = AUS remove_core = KUK remove_core = DNB } }
+				}
+			}
+			random_owned = { #If Yugoslavia is in the truce, all of its cores, Banat, Vojvodina, Baranya, Villach and Fiume are seceded. ANON
+				limit = { owner = { has_country_flag = YUG_GW_granted } }
+				owner = {
+					clr_country_flag = YUG_GW_granted
+					FROM = {
+						any_owned = {
+							limit = { OR = { is_core = VOJ is_core = CRO is_core = BOS is_core = SLO is_core = SER is_core = MON is_core = RGU is_core = FIU region = AUS_640 region = AUS_652 region = AUS_2538 region = AUS_777 region = AUS_771 region = AUS_768 region = AUS_780 region = AUS_778 region = AUS_770 region = AUS_736 region = TUR_3636 region = TUR_788 region = SER_794 region = MON_2582 province_id = 3625 } has_province_modifier = ANON_coring }
+							remove_province_modifier = ANON_coring
+							add_core = THIS
+						}
+						any_owned = {
+							limit = { OR = { is_core = VOJ is_core = CRO is_core = BOS is_core = SLO is_core = SER is_core = MON is_core = RGU is_core = FIU region = AUS_640 region = AUS_652 region = AUS_2538 region = AUS_777 region = AUS_771 region = AUS_768 region = AUS_780 region = AUS_778 region = AUS_770 region = AUS_736 region = TUR_3636 region = TUR_788 region = SER_794 region = MON_2582 province_id = 3625 } }
+							secede_province = THIS
+						}
+					}
+					any_country = {
+						limit = {
+							exists = yes
+							OR = { tag = VOJ tag = CRO tag = BOS tag = SLO tag = SER tag = MON tag = RGU tag = FIU }
+							OR = { vassal_of = FROM in_sphere = FROM }
+						}
+						all_core = {
+							add_core = THIS
+							remove_core = GER
+							remove_core = SGF
+							remove_core = AUS
+							remove_core = KUK
+							remove_core = DNB
+						}
+						annex_to = THIS
+					}
+					any_country = {
+						limit = { 
+							NOT = { tag = THIS }
+							NOT = { tag = VOJ }
+							NOT = { tag = CRO }
+							NOT = { tag = BOS }
+							NOT = { tag = SLO }
+							NOT = { tag = SER }
+							NOT = { tag = MON }
+							NOT = { tag = RGU }
+							NOT = { tag = FIU }
+							OR = { substate_of = FROM vassal_of = FROM in_sphere = FROM }
+							any_owned_province = { OR = { is_core = VOJ is_core = CRO is_core = BOS is_core = SLO is_core = SER is_core = MON is_core = RGU is_core = FIU region = AUS_640 region = AUS_652 region = AUS_2538 region = AUS_777 region = AUS_771 region = AUS_768 region = AUS_780 region = AUS_778 region = AUS_770 region = AUS_736 region = TUR_3636 region = TUR_788 region = SER_794 region = MON_2582 province_id = 3625 } }
+						}
+						any_owned = {
+							limit = { OR = { is_core = VOJ is_core = CRO is_core = BOS is_core = SLO is_core = SER is_core = MON is_core = RGU is_core = FIU region = AUS_640 region = AUS_652 region = AUS_2538 region = AUS_777 region = AUS_771 region = AUS_768 region = AUS_780 region = AUS_778 region = AUS_770 region = AUS_736 region = TUR_3636 region = TUR_788 region = SER_794 region = MON_2582 province_id = 3625 } }
+							secede_province = THIS
+						}
+					}
+					YUG = { all_core = { remove_core = GER remove_core = SGF remove_core = AUS remove_core = KUK remove_core = DNB } }
+				}
+			}
+			random_owned = { #If Poland exists, all of its cores, Silesia and Galicia are seceded. ANON
+				limit = { owner = { has_country_flag = POL_GW_granted } }
+				owner = {
+					clr_country_flag = POL_GW_granted
+					FROM = {
+						any_owned = {
+							limit = { OR = { is_core = POL is_core = GLM is_core = KRA is_core = SLS region = AUS_702 region = PRU_684 } NOT = { province_id = 689 province_id = 688 province_id = 704 province_id = 3564 province_id = 951 province_id = 3653 province_id = 702 province_id = 952 province_id = 953 province_id = 3655 province_id = 3661 province_id = 662 } has_province_modifier = ANON_coring }
+							remove_province_modifier = ANON_coring
+							add_core = THIS
+						}
+						any_owned = {
+							limit = { OR = { is_core = POL is_core = GLM is_core = KRA is_core = SLS region = AUS_702 region = PRU_684 } NOT = { province_id = 689 province_id = 688 province_id = 704 province_id = 3564 province_id = 951 province_id = 3653 province_id = 702 province_id = 952 province_id = 953 province_id = 3655 province_id = 3661 province_id = 662 } }
+							secede_province = THIS
+						}
+					}
+					any_country = {
+						limit = {
+							exists = yes
+							OR = { tag = GLM tag = KRA tag = SLS }
+							OR = { vassal_of = FROM in_sphere = FROM }
+						}
+						all_core = {
+							add_core = THIS
+							remove_core = GER
+							remove_core = SGF
+							remove_core = AUS
+							remove_core = KUK
+							remove_core = DNB
+						}
+						annex_to = THIS
+					}
+					any_country = {
+						limit = { 
+							NOT = { tag = THIS }
+							NOT = { tag = GLM }
+							NOT = { tag = KRA }
+							NOT = { tag = SLS }
+							OR = { substate_of = FROM vassal_of = FROM in_sphere = FROM }
+							any_owned_province = { OR = { is_core = POL is_core = GLM is_core = KRA is_core = SLS region = AUS_702 region = PRU_684 } NOT = { province_id = 689 province_id = 688 province_id = 704 province_id = 3564 province_id = 951 province_id = 3653 province_id = 702 province_id = 952 province_id = 953 province_id = 3655 province_id = 3661 province_id = 662 } }
+						}
+						any_owned = {
+							limit = { OR = { is_core = POL is_core = GLM is_core = KRA is_core = SLS region = AUS_702 region = PRU_684 } NOT = { province_id = 689 province_id = 688 province_id = 704 province_id = 3564 province_id = 951 province_id = 3653 province_id = 702 province_id = 952 province_id = 953 province_id = 3655 province_id = 3661 province_id = 662 } }
+							secede_province = THIS
+						}
+					}
+					POL = { all_core = { remove_core = GER remove_core = SGF remove_core = AUS remove_core = KUK remove_core = DNB } }
+				}
+			}
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+	#USA GW dismantling, Hawaii is freed if player wasn't involved in the truce.
+	country_event = {
+		id = 100073
+		title = "EVTNAME100073"
+		desc = "EVTDESC100073"
+
+		is_triggered_only = yes
+		
+		option = {
+			name = "EVT100073OPTA"
+			set_country_flag = HAW_GW_released
+			FROM = {
+				any_owned = {
+					limit = { OR = { region = HAW_658 region = HAW_2524 province_id = 3351 continent = polynesia } has_province_modifier = ANON_coring }
+					remove_province_modifier = ANON_coring
+					add_core = THIS
+				}
+				any_owned = {
+					limit = { OR = { region = HAW_658 region = HAW_2524 province_id = 3351 continent = polynesia } }
+					secede_province = THIS
+				}
+				diplomatic_influence = {
+					who = THIS
+					value = -400
+				}
+				relation = {
+					who = THIS
+					value = -400
+				}
+			}
+			any_country = {
+				limit = {
+					NOT = { tag = THIS }
+					OR = { substate_of = FROM vassal_of = FROM in_sphere = FROM }
+					any_owned_province = { OR = { region = HAW_658 region = HAW_2524 province_id = 3351 continent = polynesia } }
+				}
+				any_owned = {
+					limit = { OR = { region = HAW_658 region = HAW_2524 province_id = 3351 continent = polynesia } }
+					secede_province = THIS
+				}
+			}
+			#
+			primary_culture = hawaiian
+			add_accepted_culture = polynesian
+			remove_accepted_culture = yankee
+			remove_accepted_culture = dixie
+			remove_accepted_culture = texan
+			remove_accepted_culture = cajun
+			religion = protestant
+			tech_school = traditional_academic
+			government = prussian_constitutionalism
+			election = yes
+			civilized = yes
+			political_reform = no_slavery
+			political_reform = appointed
+			political_reform = wealth_voting
+			political_reform = yes_meeting
+			political_reform = free_press
+			political_reform = all_trade_unions
+			political_reform = first_past_the_post
+			political_reform = non_secret_ballots
+			political_reform = open_borders
+			political_reform = culture_voting_only
+			political_reform = serfdom
+			political_reform = settlement
+			centralization = federalism
+			#
+			any_country = {
+				limit = {
+					is_greater_power = yes
+					OR = {
+						neighbour = THIS
+						is_culture_group = THIS
+						AND = {
+							truce_with = FROM
+							OR = {
+								has_country_modifier = great_war
+								has_country_modifier = great_war2
+								has_country_modifier = great_war3
+								has_country_flag = in_great_war
+							}
+						}
+					}
+				}
+				diplomatic_influence = { who = THIS value = 100 }
+			}
+			any_pop = {
+				limit = { is_primary_culture = yes }
+				consciousness = -4
+				militancy = -4
+			}
+			any_pop = {
+				limit = { is_culture_group = american_cultures }
+				militancy = 4
+			}
+		}
+	}
+	
+	#USA GW dismantling, Alaska is freed if player wasn't involved in the truce. 66% chance of happening
+	#Ft. Ross not granted due to bullshit reasons
+	country_event = {
+		id = 100074
+		title = "EVTNAME100073"
+		desc = "EVTDESC100073"
+		is_triggered_only = yes
+		
+		option = {
+			name = "EVT100073OPTA"
+			set_country_flag = LSK_GW_released
+			FROM = {
+				any_owned = {
+					limit = { OR = { is_core = LSK region = USA_1 } has_province_modifier = ANON_coring }
+					remove_province_modifier = ANON_coring
+					add_core = THIS
+				}
+				any_owned = {
+					limit = { OR = { is_core = LSK region = USA_1 } }
+					secede_province = THIS
+				}
+				diplomatic_influence = {
+					who = THIS
+					value = -400
+				}
+				relation = {
+					who = THIS
+					value = -400
+				}
+			}
+			any_country = {
+				limit = {
+					NOT = { tag = THIS }
+					OR = { substate_of = FROM vassal_of = FROM in_sphere = FROM }
+					any_owned_province = { OR = { is_core = LSK region = USA_1 } }
+				}
+				any_owned = {
+					limit = { OR = { is_core = LSK region = USA_1 } }
+					secede_province = THIS
+				}
+			}
+			#
+			primary_culture = alaskan
+			add_accepted_culture = russian
+			remove_accepted_culture = yankee
+			remove_accepted_culture = dixie
+			remove_accepted_culture = texan
+			remove_accepted_culture = cajun
+			religion = orthodox
+			government = bourgeois_dictatorship
+			ruling_party_ideology = anarcho_liberal
+			tech_school = traditional_academic
+			civilized = yes
+			#
+			political_reform = no_slavery
+			political_reform = none_voting
+			political_reform = party_appointed
+			political_reform = first_past_the_post
+			political_reform = yes_meeting
+			political_reform = censored_press
+			political_reform = state_controlled
+			political_reform = harassment
+			political_reform = four_year_draft
+			political_reform = culture_voting_only
+			political_reform = serfdom
+			political_reform = open_borders
+			political_reform = settlement
+			political_reform = federalism
+			#
+			social_reform = no_minimum_wage
+			social_reform = no_work_hour_limit
+			social_reform = no_safety
+			social_reform = no_subsidies
+			social_reform = no_pensions
+			social_reform = no_health_care
+			social_reform = no_schools
+			social_reform = colonial_transportation
+			social_reform = child_labor_legal
+			#
+			any_country = {
+				limit = {
+					is_greater_power = yes
+					OR = {
+						neighbour = THIS
+						is_culture_group = THIS
+						AND = {
+							truce_with = FROM
+							OR = {
+								has_country_modifier = great_war
+								has_country_modifier = great_war2
+								has_country_modifier = great_war3
+								has_country_flag = in_great_war
+							}
+						}
+					}
+				}
+				diplomatic_influence = { who = THIS value = 100 }
+			}
+			any_pop = {
+				limit = { is_primary_culture = yes }
+				consciousness = -4
+				militancy = -4
+			}
+			any_pop = {
+				limit = { is_culture_group = american_cultures }
+				militancy = 4
+			}
+			country_event = 1100045
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+	
+	#USA GW dismantling, return cores to Viceroyalty of New Spain, if GP SPA/SPC/IBR has a VNS vassal.
+	#Notification event.
+	country_event = {
+		id = 100075
+		title = "EVTNAME100075"
+		desc = "EVTDESC100075"
+		is_triggered_only = yes
+		
+		option = {
+			name = "EVT100075OPTA"
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+	
+	#USA GW dismantling, Philippines is freed if player wasn't involved in the truce. 20% chance of happening
+	#Given Marianas also
+	country_event = {
+		id = 100076
+		title = "EVTNAME100073"
+		desc = "EVTDESC100073"
+		is_triggered_only = yes
+		
+		option = {
+			name = "EVT100073OPTA"
+			set_country_flag = PHL_GW_released
+			random_owned = {
+				limit = { owner = { vassal_of = FROM } }
+				owner = { FROM = { release_vassal = THIS } }
+			}
+			FROM = {
+				any_owned = {
+					limit = { OR = { is_core = PHL region = SPA_1455 region = SPA_1459 region = SPA_1463 province_id = 2517 } }
+					remove_province_modifier = ANON_coring
+					add_core = THIS
+				}
+				any_owned = {
+					limit = { OR = { is_core = PHL region = SPA_1455 region = SPA_1459 region = SPA_1463 province_id = 2517 } }
+					secede_province = THIS
+				}
+				diplomatic_influence = {
+					who = THIS
+					value = -400
+				}
+				relation = {
+					who = THIS
+					value = -400
+				}
+			}
+			any_country = {
+				limit = { 
+					NOT = { tag = THIS }
+					OR = { substate_of = FROM vassal_of = FROM in_sphere = FROM }
+					any_owned_province = { OR = { is_core = PHL region = SPA_1455 region = SPA_1459 region = SPA_1463 province_id = 2517 } }
+				}
+				any_owned = {
+					limit = { OR = { is_core = PHL region = SPA_1455 region = SPA_1459 region = SPA_1463 province_id = 2517 } }
+					secede_province = THIS
+				}
+			}
+			#
+			primary_culture = filipino
+			add_accepted_culture = asian_minor
+			remove_accepted_culture = yankee
+			remove_accepted_culture = dixie
+			remove_accepted_culture = texan
+			remove_accepted_culture = cajun
+			religion = catholic
+			tech_school = traditional_academic
+			government = prussian_constitutionalism
+			election = yes
+			civilized = yes
+			political_reform = no_slavery
+			political_reform = appointed
+			political_reform = wealth_voting
+			political_reform = yes_meeting
+			political_reform = free_press
+			political_reform = all_trade_unions
+			political_reform = first_past_the_post
+			political_reform = non_secret_ballots
+			political_reform = open_borders
+			political_reform = culture_voting_only
+			political_reform = serfdom
+			political_reform = settlement
+			political_reform = federalism
+			#
+			any_country = {
+				limit = {
+					is_greater_power = yes
+					OR = {
+						neighbour = THIS
+						is_culture_group = THIS
+						AND = {
+							truce_with = FROM
+							OR = {
+								has_country_modifier = great_war
+								has_country_modifier = great_war2
+								has_country_modifier = great_war3
+								has_country_flag = in_great_war
+							}
+						}
+					}
+				}
+				diplomatic_influence = { who = THIS value = 100 }
+			}
+			any_pop = {
+				limit = { is_primary_culture = yes }
+				consciousness = -4
+				militancy = -4
+			}
+			any_pop = {
+				limit = { is_culture_group = american_cultures }
+				militancy = 4
+			}
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+	
+	#USA GW dismantling, Cuba is freed if player wasn't involved in the truce. 66% chance of happening
+	country_event = {
+		id = 100077
+		title = "EVTNAME100073"
+		desc = "EVTDESC100073"
+		is_triggered_only = yes
+		
+		option = {
+			name = "EVT100073OPTA"
+			set_country_flag = CUB_GW_released
+			random_owned = {
+				limit = { owner = { vassal_of = FROM } }
+				owner = { FROM = { release_vassal = THIS } }
+			}
+			FROM = {
+				any_owned = {
+					limit = { OR = { is_core = CUB region = SPA_2209 region = SPA_2211 } }
+					remove_province_modifier = ANON_coring
+					add_core = THIS
+				}
+				any_owned = {
+					limit = { OR = { is_core = CUB region = SPA_2209 region = SPA_2211 } }
+					secede_province = THIS
+				}
+				diplomatic_influence = {
+					who = THIS
+					value = -400
+				}
+				relation = {
+					who = THIS
+					value = -400
+				}
+			}
+			any_country = {
+				limit = { 
+					NOT = { tag = THIS }
+					OR = { substate_of = FROM vassal_of = FROM in_sphere = FROM }
+					any_owned_province = { OR = { is_core = CUB region = SPA_2209 region = SPA_2211 } }
+				}
+				any_owned = {
+					limit = { OR = { is_core = CUB region = SPA_2209 region = SPA_2211 } }
+					secede_province = THIS
+				}
+			}
+			#
+			primary_culture = caribeno
+			remove_accepted_culture = yankee
+			remove_accepted_culture = dixie
+			remove_accepted_culture = texan
+			remove_accepted_culture = cajun
+			religion = catholic
+			tech_school = traditional_academic
+			government = prussian_constitutionalism
+			election = yes
+			civilized = yes
+			political_reform = no_slavery
+			political_reform = appointed
+			political_reform = wealth_voting
+			political_reform = yes_meeting
+			political_reform = free_press
+			political_reform = all_trade_unions
+			political_reform = first_past_the_post
+			political_reform = non_secret_ballots
+			political_reform = open_borders
+			political_reform = culture_voting_only
+			political_reform = serfdom
+			political_reform = settlement
+			political_reform = unitary
+			#
+			any_country = {
+				limit = {
+					is_greater_power = yes
+					OR = {
+						neighbour = THIS
+						is_culture_group = THIS
+						AND = {
+							truce_with = FROM
+							OR = {
+								has_country_modifier = great_war
+								has_country_modifier = great_war2
+								has_country_modifier = great_war3
+								has_country_flag = in_great_war
+							}
+						}
+					}
+				}
+				diplomatic_influence = { who = THIS value = 100 }
+			}
+			any_pop = {
+				limit = { is_primary_culture = yes }
+				consciousness = -4
+				militancy = -4
+			}
+			any_pop = {
+				limit = { is_culture_group = american_cultures }
+				militancy = 4
+			}
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+	
+	#USA GW dismantling, Puerto Rico is freed if player wasn't involved in the truce. 66% chance of happening
+	#Given Virgin Islands also
+	country_event = {
+		id = 100078
+		title = "EVTNAME100073"
+		desc = "EVTDESC100073"
+		is_triggered_only = yes
+		
+		option = {
+			name = "EVT100073OPTA"
+			set_country_flag = PRI_GW_released
+			random_owned = {
+				limit = { owner = { vassal_of = FROM } }
+				owner = { FROM = { release_vassal = THIS } }
+			}
+			FROM = {
+				any_owned = {
+					limit = { OR = { is_core = PRI province_id = 2222 province_id = 2223 } }
+					remove_province_modifier = ANON_coring
+					add_core = THIS
+				}
+				any_owned = {
+					limit = { OR = { is_core = PRI province_id = 2222 province_id = 2223 } }
+					secede_province = THIS
+				}
+				diplomatic_influence = {
+					who = THIS
+					value = -400
+				}
+				relation = {
+					who = THIS
+					value = -400
+				}
+			}
+			any_country = {
+				limit = { 
+					NOT = { tag = THIS }
+					OR = { substate_of = FROM vassal_of = FROM in_sphere = FROM }
+					any_owned_province = { OR = { is_core = PRI province_id = 2222 province_id = 2223 } }
+				}
+				any_owned = {
+					limit = { OR = { is_core = PRI province_id = 2222 province_id = 2223 } }
+					secede_province = THIS
+				}
+			}
+			#
+			primary_culture = caribeno
+			remove_accepted_culture = yankee
+			remove_accepted_culture = dixie
+			remove_accepted_culture = texan
+			remove_accepted_culture = cajun
+			religion = catholic
+			tech_school = traditional_academic
+			government = prussian_constitutionalism
+			election = yes
+			civilized = yes
+			political_reform = no_slavery
+			political_reform = appointed
+			political_reform = wealth_voting
+			political_reform = yes_meeting
+			political_reform = free_press
+			political_reform = all_trade_unions
+			political_reform = first_past_the_post
+			political_reform = non_secret_ballots
+			political_reform = open_borders
+			political_reform = culture_voting_only
+			political_reform = serfdom
+			political_reform = settlement
+			political_reform = unitary
+			#
+			any_country = {
+				limit = {
+					is_greater_power = yes
+					OR = {
+						neighbour = THIS
+						is_culture_group = THIS
+						AND = {
+							truce_with = FROM
+							OR = {
+								has_country_modifier = great_war
+								has_country_modifier = great_war2
+								has_country_modifier = great_war3
+								has_country_flag = in_great_war
+							}
+						}
+					}
+				}
+				diplomatic_influence = { who = THIS value = 100 }
+			}
+			any_pop = {
+				limit = { is_primary_culture = yes }
+				consciousness = -4
+				militancy = -4
+			}
+			any_pop = {
+				limit = { is_culture_group = american_cultures }
+				militancy = 4
+			}
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+	
+	#USA GW dismantling, Oregon is freed if player MEX wasn't involved in the truce. 100% chance of happening
+	country_event = {
+		id = 100079
+		title = "EVTNAME100073"
+		desc = "EVTDESC100073"
+		is_triggered_only = yes
+		
+		option = {
+			name = "EVT100073OPTA"
+			set_country_flag = UOR_GW_released
+			random_owned = {
+				limit = { owner = { vassal_of = FROM } }
+				owner = { FROM = { release_vassal = THIS } }
+			}
+			FROM = {
+				any_owned = {
+					limit = { OR = { is_core = UOR region = USA_81 region = USA_78 region = USA_91 province_id = 111 province_id = 114 } }
+					remove_province_modifier = ANON_coring
+					add_core = THIS
+				}
+				any_owned = {
+					limit = { OR = { is_core = UOR region = USA_81 region = USA_78 region = USA_91 province_id = 111 province_id = 114 } }
+					secede_province = THIS
+				}
+				diplomatic_influence = {
+					who = THIS
+					value = -400
+				}
+				relation = {
+					who = THIS
+					value = -400
+				}
+			}
+			any_country = {
+				limit = { 
+					NOT = { tag = THIS }
+					OR = { substate_of = FROM vassal_of = FROM in_sphere = FROM }
+					any_owned_province = { OR = { is_core = UOR region = USA_81 region = USA_78 region = USA_91 province_id = 111 province_id = 114 } }
+				}
+				any_owned = {
+					limit = { OR = { is_core = UOR region = USA_81 region = USA_78 region = USA_91 province_id = 111 province_id = 114 } }
+					secede_province = THIS
+				}
+			}
+			#
+			primary_culture = cascadian
+			remove_accepted_culture = yankee
+			remove_accepted_culture = dixie
+			remove_accepted_culture = texan
+			remove_accepted_culture = cajun
+			remove_accepted_culture = french_canadian
+			remove_accepted_culture = anglo_canadian
+			religion = protestant
+			tech_school = traditional_academic
+			government = democracy
+			election = yes
+			civilized = yes
+			political_reform = no_slavery
+			political_reform = state_equal_weight
+			political_reform = landed_voting
+			political_reform = yes_meeting
+			political_reform = free_press
+			political_reform = no_trade_unions
+			political_reform = first_past_the_post
+			political_reform = non_secret_ballots
+			political_reform = open_borders
+			political_reform = culture_voting_only
+			political_reform = settlement
+			political_reform = federalism
+			#
+			any_country = {
+				limit = {
+					is_greater_power = yes
+					OR = {
+						neighbour = THIS
+						is_culture_group = THIS
+						AND = {
+							truce_with = FROM
+							OR = {
+								has_country_modifier = great_war
+								has_country_modifier = great_war2
+								has_country_modifier = great_war3
+								has_country_flag = in_great_war
+							}
+						}
+					}
+				}
+				diplomatic_influence = { who = THIS value = 100 }
+			}
+			any_pop = {
+				limit = { is_primary_culture = yes }
+				consciousness = -4
+				militancy = -4
+			}
+			any_pop = {
+				limit = { is_culture_group = american_cultures }
+				militancy = 4
+			}
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+	
+	#USA GW dismantling, return cores to ENG/CAN/RPL/COL, if GP ENG/CAN/RPL/COL has a vassal owning 13.
+	#Notification event.
+	country_event = {
+		id = 100080
+		title = "EVTNAME100080"
+		desc = "EVTDESC100080"
+		is_triggered_only = yes
+		
+		option = {
+			name = "EVT100079OPTA"
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+	
+	#USA GW dismantling, Deseret is freed if player [spain or mex] wasn't involved in the truce. 100% chance of happening
+	country_event = {
+		id = 100081
+		title = "EVTNAME100073"
+		desc = "EVTDESC100073"
+		is_triggered_only = yes
+		
+		option = {
+			name = "EVT100073OPTA"
+			set_country_flag = DES_GW_released
+			random_owned = {
+				limit = { owner = { vassal_of = FROM } }
+				owner = { FROM = { release_vassal = THIS } }
+			}
+			FROM = {
+				any_owned = {
+					limit = { OR = { is_core = DES region = MEX_97 region = MEX_94 region = MEX_100 province_id = 110 province_id = 3399 province_id = 108 province_id = 3397 province_id = 2148 province_id = 2662 } }
+					remove_province_modifier = ANON_coring
+					add_core = THIS
+				}
+				any_owned = {
+					limit = { OR = { is_core = DES region = MEX_97 region = MEX_94 region = MEX_100 province_id = 110 province_id = 3399 province_id = 108 province_id = 3397 province_id = 2148 province_id = 2662 } }
+					secede_province = THIS
+				}
+				diplomatic_influence = {
+					who = THIS
+					value = -400
+				}
+				relation = {
+					who = THIS
+					value = -400
+				}
+			}
+			any_country = {
+				limit = { 
+					NOT = { tag = THIS }
+					OR = { substate_of = FROM vassal_of = FROM in_sphere = FROM }
+					any_owned_province = { OR = { is_core = DES region = MEX_97 region = MEX_94 region = MEX_100 province_id = 110 province_id = 3399 province_id = 108 province_id = 3397 province_id = 2148 province_id = 2662 } }
+				}
+				any_owned = {
+					limit = { OR = { is_core = DES region = MEX_97 region = MEX_94 region = MEX_100 province_id = 110 province_id = 3399 province_id = 108 province_id = 3397 province_id = 2148 province_id = 2662 } }
+					secede_province = THIS
+				}
+			}
+			#
+			primary_culture = mormon_culture
+			remove_accepted_culture = yankee
+			remove_accepted_culture = dixie
+			remove_accepted_culture = texan
+			remove_accepted_culture = cajun
+			religion = mormon
+			tech_school = traditional_academic
+			government = theocracy
+			civilized = yes
+			political_reform = no_slavery
+			political_reform = appointed
+			political_reform = none_voting
+			political_reform = yes_meeting
+			political_reform = free_press
+			political_reform = all_trade_unions
+			political_reform = first_past_the_post
+			political_reform = gerrymandering
+			political_reform = settlement
+			political_reform = unitary
+			#
+			any_country = {
+				limit = {
+					is_greater_power = yes
+					OR = {
+						neighbour = THIS
+						is_culture_group = THIS
+						AND = {
+							truce_with = FROM
+							OR = {
+								has_country_modifier = great_war
+								has_country_modifier = great_war2
+								has_country_modifier = great_war3
+								has_country_flag = in_great_war
+							}
+						}
+					}
+				}
+				diplomatic_influence = { who = THIS value = 100 }
+			}
+			any_pop = {
+				limit = { is_primary_culture = yes }
+				consciousness = -4
+				militancy = -4
+			}
+			any_pop = {
+				limit = { is_culture_group = american_cultures }
+				militancy = 4
+			}
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+	
+	#USA GW dismantling, California is freed if player [spain or mex] wasn't involved in the truce. 100% chance of happening
+	country_event = {
+		id = 100082
+		title = "EVTNAME100073"
+		desc = "EVTDESC100073"
+		is_triggered_only = yes
+		
+		option = {
+			name = "EVT100073OPTA"
+			set_country_flag = CAL_GW_released
+			random_owned = {
+				limit = { owner = { vassal_of = FROM } }
+				owner = { FROM = { release_vassal = THIS } }
+			}
+			FROM = {
+				any_owned = {
+					limit = { OR = { is_core = CAL region = MEX_85 region = MEX_104 region = MEX_2139 } }
+					remove_province_modifier = ANON_coring
+					add_core = THIS
+				}
+				any_owned = {
+					limit = { OR = { is_core = CAL region = MEX_85 region = MEX_104 region = MEX_2139 } }
+					secede_province = THIS
+				}
+				diplomatic_influence = {
+					who = THIS
+					value = -400
+				}
+				relation = {
+					who = THIS
+					value = -400
+				}
+			}
+			any_country = {
+				limit = { 
+					NOT = { tag = THIS }
+					OR = { substate_of = FROM vassal_of = FROM in_sphere = FROM }
+					any_owned_province = { OR = { is_core = CAL region = MEX_85 region = MEX_104 region = MEX_2139 } }
+				}
+				any_owned = {
+					limit = { OR = { is_core = CAL region = MEX_85 region = MEX_104 region = MEX_2139 } }
+					secede_province = THIS
+				}
+			}
+			#
+			primary_culture = californian
+			remove_accepted_culture = yankee
+			remove_accepted_culture = dixie
+			remove_accepted_culture = texan
+			remove_accepted_culture = cajun
+			religion = protestant
+			tech_school = traditional_academic
+			nationalvalue = nv_liberty
+			government = democracy
+			civilized = yes
+			election = yes
+			political_reform = no_slavery
+			political_reform = state_equal_weight
+			political_reform = universal_weighted_voting
+			political_reform = yes_meeting
+			political_reform = free_press
+			political_reform = all_trade_unions
+			political_reform = first_past_the_post
+			political_reform = gerrymandering
+			political_reform = settlement
+			political_reform = unitary
+			#
+			any_country = {
+				limit = {
+					is_greater_power = yes
+					OR = {
+						neighbour = THIS
+						is_culture_group = THIS
+						AND = {
+							truce_with = FROM
+							OR = {
+								has_country_modifier = great_war
+								has_country_modifier = great_war2
+								has_country_modifier = great_war3
+								has_country_flag = in_great_war
+							}
+						}
+					}
+				}
+				diplomatic_influence = { who = THIS value = 100 }
+			}
+			any_pop = {
+				limit = { is_primary_culture = yes }
+				consciousness = -4
+				militancy = -4
+			}
+			any_pop = {
+				limit = { is_culture_group = american_cultures }
+				militancy = 4
+			}
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+	
+	#USA GW dismantling, Texas is freed if player [spain or mex] wasn't involved in the truce. 100% chance of happening
+	country_event = {
+		id = 100083
+		title = "EVTNAME100073"
+		desc = "EVTDESC100073"
+		is_triggered_only = yes
+		
+		option = {
+			name = "EVT100073OPTA"
+			set_country_flag = TEX_GW_released
+			random_owned = {
+				limit = { owner = { vassal_of = FROM } }
+				owner = { FROM = { release_vassal = THIS } }
+			}
+			FROM = {
+				any_owned = {
+					limit = { OR = { is_core = TEX region = TEX_133 region = TEX_132 province_id = 105 province_id = 129 province_id = 128 province_id = 103 province_id = 109 province_id = 3398 province_id = 107 } }
+					remove_province_modifier = ANON_coring
+					add_core = THIS
+				}
+				any_owned = {
+					limit = { OR = { is_core = TEX region = TEX_133 region = TEX_132 province_id = 105 province_id = 129 province_id = 128 province_id = 103 province_id = 109 province_id = 3398 province_id = 107 } }
+					secede_province = THIS
+				}
+				diplomatic_influence = {
+					who = THIS
+					value = -400
+				}
+				relation = {
+					who = THIS
+					value = -400
+				}
+			}
+			any_country = {
+				limit = { 
+					NOT = { tag = THIS }
+					OR = { substate_of = FROM vassal_of = FROM in_sphere = FROM }
+					any_owned_province = { OR = { is_core = TEX region = TEX_133 region = TEX_132 province_id = 105 province_id = 129 province_id = 128 province_id = 103 province_id = 109 province_id = 3398 province_id = 107 } }
+				}
+				any_owned = {
+					limit = { OR = { is_core = TEX region = TEX_133 region = TEX_132 province_id = 105 province_id = 129 province_id = 128 province_id = 103 province_id = 109 province_id = 3398 province_id = 107 } }
+					secede_province = THIS
+				}
+			}
+			#
+			primary_culture = texan
+			add_accepted_culture = dixie
+			add_accepted_culture = cajun
+			remove_accepted_culture = yankee
+			religion = protestant
+			tech_school = traditional_academic
+			nationalvalue = nv_liberty
+			government = democracy
+			civilized = yes
+			election = yes
+			political_reform = yes_slavery
+			political_reform = state_equal_weight
+			political_reform = wealth_weighted_voting
+			political_reform = yes_meeting
+			political_reform = state_press
+			political_reform = no_trade_unions
+			political_reform = first_past_the_post
+			political_reform = gerrymandering
+			political_reform = settlement
+			political_reform = unitary
+
+			#
+			any_country = {
+				limit = {
+					is_greater_power = yes
+					OR = {
+						neighbour = THIS
+						is_culture_group = THIS
+						AND = {
+							truce_with = FROM
+							OR = {
+								has_country_modifier = great_war
+								has_country_modifier = great_war2
+								has_country_modifier = great_war3
+								has_country_flag = in_great_war
+							}
+						}
+					}
+				}
+				diplomatic_influence = { who = THIS value = 100 }
+			}
+			any_pop = {
+				limit = { is_primary_culture = yes }
+				consciousness = -4
+				militancy = -4
+			}
+			any_pop = {
+				limit = { is_culture_group = american_cultures }
+				militancy = 4
+			}
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+	#USA GW dismantling, Louisiana is freed if player FRA/BOR wasn't involved in the truce. 100% chance of happening
+	country_event = {
+		id = 100084
+		title = "EVTNAME100073"
+		desc = "EVTULAC100073"
+		is_triggered_only = yes
+		
+		option = {
+			name = "EVT100073OPTA"
+			set_country_flag = ULA_GW_released
+			random_owned = {
+				limit = { owner = { vassal_of = FROM } }
+				owner = { FROM = { release_vassal = THIS } }
+			}
+			FROM = {
+				any_owned = {
+					limit = {
+						OR = { is_core = ULA region = USA_139 region = USA_116 region = USA_118 region = USA_121 region = USA_124 region = USA_126 region = USA_129 region = USA_158 region = USA_148 region = USA_144 region = USA_151 province_id = 3395 province_id = 112 province_id = 106 }
+						NOT = { OR = { province_id = 114 province_id = 128 province_id = 129 } }
+					}
+					remove_province_modifier = ANON_coring
+					add_core = THIS
+				}
+				any_owned = {
+					limit = {
+						OR = { is_core = ULA region = USA_139 region = USA_116 region = USA_118 region = USA_121 region = USA_124 region = USA_126 region = USA_129 region = USA_158 region = USA_148 region = USA_144 region = USA_151 province_id = 3395 province_id = 112 province_id = 106 }
+						NOT = { OR = { province_id = 114 province_id = 128 province_id = 129 } }
+					}
+					secede_province = THIS
+				}
+				diplomatic_influence = {
+					who = THIS
+					value = -400
+				}
+				relation = {
+					who = THIS
+					value = -400
+				}
+			}
+			any_country = {
+				limit = { 
+					NOT = { tag = THIS }
+					OR = { substate_of = FROM vassal_of = FROM in_sphere = FROM }
+					any_owned_province = {
+						OR = { is_core = ULA region = USA_139 region = USA_116 region = USA_118 region = USA_121 region = USA_124 region = USA_126 region = USA_129 region = USA_158 region = USA_148 region = USA_144 region = USA_151 province_id = 3395 province_id = 112 province_id = 106 }
+						NOT = { OR = { province_id = 114 province_id = 128 province_id = 129 } }
+					}
+				}
+				any_owned = {
+					limit = {
+						OR = { is_core = ULA region = USA_139 region = USA_116 region = USA_118 region = USA_121 region = USA_124 region = USA_126 region = USA_129 region = USA_158 region = USA_148 region = USA_144 region = USA_151 province_id = 3395 province_id = 112 province_id = 106 }
+						NOT = { OR = { province_id = 114 province_id = 128 province_id = 129 } }
+					}
+					secede_province = THIS
+				}
+			}
+			#
+			primary_culture = louisianan
+			add_accepted_culture = cajun
+			add_accepted_culture = french
+			add_accepted_culture = french_canadian
+			remove_accepted_culture = yankee
+			remove_accepted_culture = dixie
+			remove_accepted_culture = texan
+			religion = catholic
+			capital = 146
+			tech_school = traditional_academic
+			nationalvalue = nv_equality
+			government = democracy
+			civilized = yes
+			election = yes
+			political_reform = no_slavery
+			political_reform = appointed
+			political_reform = wealth_voting
+			political_reform = yes_meeting
+			political_reform = censored_press
+			political_reform = non_socialist
+			political_reform = first_past_the_post
+			political_reform = culture_voting_only
+			political_reform = gerrymandering
+			political_reform = open_borders
+			political_reform = settlement
+			political_reform = unitary
+			#
+			any_country = {
+				limit = {
+					is_greater_power = yes
+					OR = {
+						neighbour = THIS
+						is_culture_group = THIS
+						AND = {
+							truce_with = FROM
+							OR = {
+								has_country_modifier = great_war
+								has_country_modifier = great_war2
+								has_country_modifier = great_war3
+								has_country_flag = in_great_war
+							}
+						}
+					}
+				}
+				diplomatic_influence = { who = THIS value = 100 }
+			}
+			any_pop = {
+				limit = { is_primary_culture = yes }
+				consciousness = -4
+				militancy = -4
+			}
+			any_pop = {
+				limit = { is_culture_group = american_cultures }
+				militancy = 4
+			}
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+	#Germany GW dismantling, if owner of Copenhagen doesn't have a truce, Schleswig-Holstein is released at 20% chance, ANON
+	country_event = {
+		id = 100085
+		title = "EVTNAME100073"
+		desc = "EVTDESC100073"
+
+		is_triggered_only = yes
+		
+		option = {
+			name = "EVT100073OPTA"
+			set_country_flag = SWH_GW_released
+			random_owned = {
+				limit = { owner = { vassal_of = FROM } }
+				owner = { FROM = { release_vassal = THIS } }
+			}
+			any_country = {
+				limit = {
+					NOT = { tag = THIS }
+					exists = yes
+					OR = { tag = SCH tag = HOL }
+					OR = { vassal_of = FROM in_sphere = FROM }
+				}
+				annex_to = THIS
+			}
+			FROM = {
+				any_owned = {
+					limit = { OR = { is_core = SCH is_core = HOL is_core = SWH region = HOL_369 region = SCH_370 } has_province_modifier = ANON_coring }
+					remove_province_modifier = ANON_coring
+					add_core = THIS
+				}
+				any_owned = {
+					limit = { OR = { is_core = SCH is_core = HOL is_core = SWH region = HOL_369 region = SCH_370 } }
+					secede_province = THIS
+				}
+				diplomatic_influence = {
+					who = THIS
+					value = -400
+				}
+				relation = {
+					who = THIS
+					value = -400
+				}
+			}
+			any_country = {
+				limit = { 
+					NOT = { tag = THIS }
+					OR = { substate_of = FROM vassal_of = FROM in_sphere = FROM }
+					any_owned_province = { OR = { is_core = SCH is_core = HOL is_core = SWH region = HOL_369 region = SCH_370 } }
+				}
+				any_owned = {
+					limit = { OR = { is_core = SCH is_core = HOL is_core = SWH region = HOL_369 region = SCH_370 } }
+					secede_province = THIS
+				}
+			}
+			primary_culture = danish
+			add_accepted_culture = north_german
+			religion = protestant
+			#
+			any_country = {
+				limit = {
+					is_greater_power = yes
+					OR = {
+						neighbour = THIS
+						is_culture_group = THIS
+						AND = {
+							truce_with = FROM
+							OR = {
+								has_country_modifier = great_war
+								has_country_modifier = great_war2
+								has_country_modifier = great_war3
+								has_country_flag = in_great_war
+							}
+						}
+					}
+				}
+				diplomatic_influence = { who = THIS value = 100 }
+			}
+			any_pop = {
+				limit = { is_primary_culture = yes }
+				consciousness = -4
+				militancy = -4
+			}
+			any_pop = {
+				limit = { is_culture_group = germanic }
+				militancy = 4
+			}
+		}
+	}
+	#Austria GW dismantling, Ruthenia is released it if no player Poland, Russia or Ukraine fought GW. ANON
+	country_event = {
+		id = 100086
+		title = "EVTNAME100073"
+		desc = "EVTDESC100073"
+
+		is_triggered_only = yes
+		
+		option = {
+			name = "EVT100073OPTA"
+			set_country_flag = RUT_GW_released
+			random_owned = {
+				limit = { owner = { vassal_of = FROM } }
+				owner = { FROM = { release_vassal = THIS } }
+			}
+			FROM = {
+				any_owned = {
+					limit = { OR = { is_core = RUT region = AUS_662 province_id = 3661 } NOT = { region = AUS_663 region = AUS_950 region = AUS_702 } has_province_modifier = ANON_coring }
+					remove_province_modifier = ANON_coring
+					add_core = THIS
+				}
+				any_owned = {
+					limit = { OR = { is_core = RUT region = AUS_662 province_id = 3661 } NOT = { region = AUS_663 region = AUS_950 region = AUS_702 } }
+					secede_province = THIS
+				}
+				diplomatic_influence = {
+					who = THIS
+					value = -400
+				}
+				relation = {
+					who = THIS
+					value = -400
+				}
+			}
+			any_country = {
+				limit = { 
+					NOT = { tag = THIS }
+					OR = { substate_of = FROM vassal_of = FROM in_sphere = FROM }
+					any_owned_province = { OR = { is_core = RUT region = AUS_662 province_id = 3661 } NOT = { region = AUS_663 region = AUS_950 region = AUS_702 } }
+				}
+				any_owned = {
+					limit = { OR = { is_core = RUT region = AUS_662 province_id = 3661 } NOT = { region = AUS_663 region = AUS_950 region = AUS_702 } }
+					secede_province = THIS
+				}
+			}
+			primary_culture = realukrainian
+			add_accepted_culture = rusyn
+			remove_accepted_culture = ukrainian
+			remove_accepted_culture = russophile
+			religion = maronite
+			tech_school = traditional_academic
+			civilized = yes
+			ruling_party_ideology = liberal
+			government = democracy
+			political_reform = appointed
+			political_reform = no_slavery
+			political_reform = state_equal_weight
+			political_reform = landed_voting
+			political_reform = yes_meeting
+			political_reform = free_press
+			political_reform = all_trade_unions
+			political_reform = first_past_the_post
+			political_reform = non_secret_ballots
+			political_reform = open_borders
+			political_reform = culture_voting_only
+			political_reform = peonage
+			#
+			any_country = {
+				limit = {
+					is_greater_power = yes
+					OR = {
+						neighbour = THIS
+						is_culture_group = THIS
+						AND = {
+							truce_with = FROM
+							OR = {
+								has_country_modifier = great_war
+								has_country_modifier = great_war2
+								has_country_modifier = great_war3
+								has_country_flag = in_great_war
+							}
+						}
+					}
+				}
+				diplomatic_influence = { who = THIS value = 100 }
+			}
+			any_pop = {
+				limit = { is_primary_culture = yes }
+				consciousness = -4
+				militancy = -4
+			}
+			any_pop = {
+				limit = { has_pop_culture = polish }
+				militancy = 4
+			}
+		}
+	}
+	#Austria GW dismantling, Carpatho-Ruthenia is released it if no player Poland, Russia or Ukraine fought GW. ANON
+	country_event = {
+		id = 100087
+		title = "EVTNAME100073"
+		desc = "EVTDESC100073"
+
+		is_triggered_only = yes
+		
+		option = {
+			name = "EVT100073OPTA"
+			set_country_flag = CPU_GW_released
+			random_owned = {
+				limit = { owner = { vassal_of = FROM } }
+				owner = { FROM = { release_vassal = THIS } }
+			}
+			FROM = {
+				any_owned = {
+					limit = { OR = { province_id = 704 province_id = 3654 } has_province_modifier = ANON_coring }
+					remove_province_modifier = ANON_coring
+					add_core = THIS
+				}
+				any_owned = {
+					limit = { OR = { province_id = 704 province_id = 3654 } }
+					secede_province = THIS
+				}
+				diplomatic_influence = {
+					who = THIS
+					value = -400
+				}
+				relation = {
+					who = THIS
+					value = -400
+				}
+			}
+			any_country = {
+				limit = {
+					OR = { substate_of = FROM vassal_of = FROM in_sphere = FROM }
+					any_owned_province = { OR = { province_id = 704 province_id = 3654 } }
+				}
+				any_owned = {
+					limit = { OR = { province_id = 704 province_id = 3654 } }
+					secede_province = THIS
+				}
+			}
+			primary_culture = rusyn
+			remove_accepted_culture = ukrainian
+			remove_accepted_culture = realukrainian
+			remove_accepted_culture = russophile
+			religion = maronite
+			tech_school = traditional_academic
+			civilized = yes
+			election = yes
+			government = democracy
+			political_reform = appointed
+			political_reform = no_slavery
+			political_reform = state_equal_weight
+			political_reform = landed_voting
+			political_reform = yes_meeting
+			political_reform = free_press
+			political_reform = all_trade_unions
+			political_reform = first_past_the_post
+			political_reform = non_secret_ballots
+			political_reform = open_borders
+			political_reform = primary_culture_only
+			political_reform = peonage
+			#
+			any_country = {
+				limit = {
+					is_greater_power = yes
+					OR = {
+						neighbour = THIS
+						is_culture_group = THIS
+						AND = {
+							truce_with = FROM
+							OR = {
+								has_country_modifier = great_war
+								has_country_modifier = great_war2
+								has_country_modifier = great_war3
+								has_country_flag = in_great_war
+							}
+						}
+					}
+				}
+				diplomatic_influence = { who = THIS value = 100 }
+			}
+			any_pop = {
+				limit = { is_primary_culture = yes }
+				consciousness = -4
+				militancy = -4
+			}
+			any_pop = {
+				limit = { has_pop_culture = polish }
+				militancy = 4
+			}
+		}
+	}
+	
+	#Failsafe in case Venezuela owns 2532, leaving a Brazilian 3379/3380 exclave
+	country_event = {
+		id = 100088
+		title = "$COUNTRY_ADJ$ Roraima!"
+		desc = "Substantial territories have been gained in Roraima!"
+	
+		trigger = {
+			exists = yes
+			owns = 2532 #Roraima
+			OR = {
+				owns = 3596
+				owns = 2242
+			}
+			BRZ = {
+				OR = {
+					owns = 3379
+					owns = 3380
+				}
+				NOT = { owns = 2532 }
+			}
+			3373 = { owner = { NOT = { primary_culture = brazilian } } }
+			NOT = { primary_culture = brazilian }
+			NOT = { has_country_flag = roraima_failsafe }
+		}
+		
+		option = {
+			name = "Great!"
+			set_country_flag = roraima_failsafe
+			BRZ = {
+				any_owned = {
+					limit = {
+						OR = {
+							province_id = 3379
+							province_id = 3380
+						}
+					}
+					secede_province = THIS
+				}
+			}
 			ai_chance = {
 				factor = 100
 			}

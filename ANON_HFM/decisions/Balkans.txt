@@ -646,19 +646,23 @@ political_decisions = {
 			3295 = { add_core = YUG }
 			2538 = { add_core = YUG }
 			791 = { add_core = YUG }
+			3620 = { add_core = YUG }
 			random_owned = {
 				limit = { owner = { accepted_culture = dalmatian } }
 				owner = { remove_accepted_culture = dalmatian }
 			}
-			random_owned = {
-				limit = { owner = { NOT = { government = theocracy } } }
-				owner = {
-					add_accepted_culture = serb
-					add_accepted_culture = croat
-					add_accepted_culture = slovene
-					# add_accepted_culture = montenegrin
-				}
-			}
+			# random_owned = {
+				# limit = { owner = { NOT = { government = theocracy } } }
+				# owner = {
+					# add_accepted_culture = serb
+					# add_accepted_culture = croat
+					# add_accepted_culture = slovene
+					# # add_accepted_culture = montenegrin
+				# }
+			# }
+			add_accepted_culture = serb
+			add_accepted_culture = croat
+			add_accepted_culture = slovene
 			change_tag = YUG
 			any_country = {
 				limit = {
@@ -870,14 +874,33 @@ political_decisions = {
 				tag = YUG
 				YUG = { in_sphere = THIS }
 			}
-			NOT = { has_global_flag = albania_in_yugoslavia }
+			NOT = {
+				has_global_flag = albania_in_yugoslavia
+				YUG = {
+					any_owned_province = {
+						region = TUR_853 #Albania
+					}
+				}
+			}
 		}
 		
 		allow = {
 			war = no
 			OR = {
-				ALB = { vassal_of = THIS }
-				ALB = { all_core = { OR = { owned_by = THIS owner = { in_sphere = THIS war = no } } } }
+				ALB = {
+					vassal_of = THIS
+				}
+				ALB = {
+					all_core = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								in_sphere = THIS
+								war = no
+							}
+						}
+					}
+				}
 			}
 		}
 		

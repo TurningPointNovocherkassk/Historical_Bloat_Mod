@@ -11,9 +11,9 @@ political_decisions = {
 			money = 40000
 		}
 
-		effect = {
+		effect = { 
            	treasury = -80000
-            prestige = 15
+            prestige = 15                   
             political_reform = free_press
             set_country_flag = accademia_della_crusca
         }
@@ -33,14 +33,14 @@ political_decisions = {
 			owns = 472
 			OR = {
 				AUS = {
-					OR = {
+					OR = { 
 						AND = {
 							owns = 726
 							owns = 727
 							owns = 728
 						}
 						AND = {
-							NOT = {
+							NOT = { 
 								owns = 726
 								owns = 727
 								owns = 728
@@ -53,13 +53,13 @@ political_decisions = {
 				}
 				KUK = {
 					OR = {
-						AND = {
+						AND = { 
 							owns = 726
 							owns = 727
 							owns = 728
 						}
 						AND = {
-							NOT = {
+							NOT = { 
 								owns = 726
 								owns = 727
 								owns = 728
@@ -101,23 +101,23 @@ political_decisions = {
 				NOT = { num_of_revolts = 1 }
 				NOT = { truce_with = AUS }
 				NOT = { truce_with = KUK }
-			}
+			}			
 		}
-
+		
 		effect = {
 			set_country_flag = plombieres
 			set_global_flag = plombieres
 			AUS_726 = { add_core = THIS }
 			random_country = {
 				limit = {
-					OR = {
-						AND = {
+					OR = { 
+						AND = { 
 							owns = 726
 							owns = 727
 							owns = 728
 						}
-						AND = {
-							NOT = {
+						AND = { 
+							NOT = { 
 								owns = 726
 								owns = 727
 								owns = 728
@@ -135,7 +135,7 @@ political_decisions = {
 			}
 			FRA = { country_event = 90038 }
 		}
-
+		
 		ai_will_do = {
 			factor = 1
 			modifier = {
@@ -148,16 +148,16 @@ political_decisions = {
 	cavours_diplomacy = {
 		potential = {
 			OR = {
-				AND = {
+				AND = { 
 					tag = ITA
 					NOT = { exists = SAR }
 					NOT = { exists = SVY }
 				}
-				AND = {
+				AND = { 
 					tag = SAR
 					NOT = { exists = ITA }
 				}
-				AND = {
+				AND = { 
 					tag = SVY
 					NOT = { exists = ITA }
 				}
@@ -170,7 +170,7 @@ political_decisions = {
 			owns = 472
 			exists = FRA
 		}
-
+		
 		allow = {
 			relation = {
 				who = FRA
@@ -180,7 +180,7 @@ political_decisions = {
 			owns = 727
 			owns = 728
 		}
-
+		
 		effect = {
 			set_country_flag = cavour_has_done_his
 			leave_alliance = FRA
@@ -328,7 +328,7 @@ political_decisions = {
 			}
 		}
 	}
-
+	
 	award_order_of_st_francis = {
 		picture = award_order_of_st_francis
 		potential = {
@@ -340,7 +340,7 @@ political_decisions = {
 		allow = {
 			prestige = 25
 		}
-
+		
 		effect = {
 			years_of_research = 0.2
 			prestige = 2
@@ -354,7 +354,7 @@ political_decisions = {
 				tag = SAR
 				tag = SVY
 			}
-			OR = {
+			OR = { 
 				government = absolute_monarchy
 				government = prussian_constitutionalism
 			}
@@ -366,7 +366,7 @@ political_decisions = {
 		}
 
 		allow = {
-			OR = {
+			OR = { 
 				average_militancy = 2
 				average_consciousness = 5
 				num_of_revolts = 1
@@ -390,9 +390,9 @@ political_decisions = {
 						ideology = conservative
 						factor = -6
 					}
-					scaled_militancy = {
+					scaled_militancy = { 
 						ideology = reactionary
-						factor = 3
+						factor = 3   
 					}
 				}
 			}
@@ -418,11 +418,11 @@ political_decisions = {
 			year = 1858
 			owns = 741
 		}
-
+		
 		allow = {
 			idealism = 1
 		}
-
+		
 		effect = {
 			prestige = 15
 			badboy = 1
@@ -434,10 +434,10 @@ political_decisions = {
 			}
 			set_country_flag = edgardo_mortara
 		}
-
+		
 		ai_will_do = { factor = 1 }
 	}
-
+	
 	the_first_vatican_council = {
 		potential = {
 			tag = PAP
@@ -463,7 +463,7 @@ political_decisions = {
 			}
 			set_country_flag = first_vatican_council_held
 		}
-
+		
 		ai_will_do = { factor = 1 }
 	}
 
@@ -514,14 +514,13 @@ political_decisions = {
 				}
 				any_pop = {
 					limit = {
-						OR = {
-							has_pop_culture = north_italian
-							has_pop_culture = south_italian
-							has_pop_culture = central_italian
-							has_pop_culture = sicilian
-							has_pop_culture = dalmatian
-							has_pop_culture = insular
-							#has_pop_culture = maltese
+						is_culture_group = italian #ANON
+						NOT = {
+							OR ={
+								has_pop_culture = maltese
+								has_pop_culture = italo_diaspora
+								has_pop_culture = dalmatian
+							}
 						}
 					}
 					consciousness = 5
@@ -604,185 +603,271 @@ political_decisions = {
 				remove_core = BNT
 			}
 		}
-
+		
 		ai_will_do = { factor = 1 }
 	}
 
-	italia_irredenta = {
-		picture = italia_irredenta
-		potential = {
-			tag = ITA
-			OR = {
-				AND = { owns = 727 NOT = { has_global_flag = italian_claimed_venetia } } #Lombardy
-				AND = {
-					owns = 729 #Venice
-					NOT = { has_global_flag = italian_claimed_south_tirol }
-					OR = {
-						AND = {
-							ai = no
-							nationalism_n_imperialism = 1
-						}
-						mass_politics = 1
-						great_wars_enabled = yes
-						734 = { #Trient
-							owner = {
-								NOT = { is_culture_group = italian }
-								OR = {
-									is_greater_power = no
-									is_disarmed = yes
-								}
-							}
-						}
-					}
-				}
+    italia_irredenta = {
+        picture = italia_irredenta
 
-				#Aosta
-				AND = {
-					721 = { NOT = { is_core = ITA } } #Aosta
-					OR = {
-						ai = no
-						mass_politics = 1
-						great_wars_enabled = yes
-						721 = { #Trient
-							owner = {
-								NOT = { is_culture_group = italian }
-								OR = {
-									is_greater_power = no
-									is_disarmed = yes
-								}
-								NOT = { truce_with = THIS }
-							}
-						}
-					}
-					NOT = { has_global_flag = italian_reclaim_aosta }
-				}
+        potential = {
+            tag = ITA
 
-				#Savoie
-				AND = {
-					465 = { NOT = { is_core = ITA } } #Savoia
-					OR = {
-						NOT = { has_global_flag = plombieres }
-						AND = {
-							ai = no
-							revolution_n_counterrevolution = 1
-						}
-						465 = { #Savoia
-							owner = {
-								NOT = { is_culture_group = italian }
-								OR = {
-									is_greater_power = no
-									has_global_flag = france_dismantled
-									has_country_flag = in_great_war
-								}
-								NOT = { truce_with = THIS }
-							}
-						}
-					}
-					NOT = { has_global_flag = italian_reclaim_savoia }
-				}
-			}
-		}
+            OR = {
+                AND = {
+                    # Bergamo
+                    owns = 727
 
-		allow = {
-			invention = national_fraternity
-			is_greater_power = yes
-			OR = {
-				729 = { NOT = { is_core = ITA } } #Venice
-				736 = { NOT = { is_core = ITA } } #Triest
-				734 = { NOT = { is_core = ITA } } #Trient
-				721 = { NOT = { is_core = ITA } } #Aosta
-				465 = { NOT = { is_core = ITA } } #Savoia
-			}
-		}
+                    NOT = { has_global_flag = italian_claimed_venetia }
+                }
 
-		effect = {
-			#Claim Venetia
-			random_owned = {
-				limit = {
-					province_id = 727 #Lombardy
-				}
-				AUS_729 = { add_core = ITA }
-				owner = { set_global_flag = italian_claimed_venetia }
-			}
+                AND = {
+                    # Venice
+                    owns = 729
 
-			#Claim Trieste & South Tirol
-			random_owned = {
-				limit = {
-					province_id = 729 #Venetia
-					owner = {
-						OR = {
-							AND = {
-								ai = no
-								nationalism_n_imperialism = 1
-							}
-							mass_politics = 1
-							great_wars_enabled = yes
-							734 = { #Trient
-								owner = {
-									NOT = { is_culture_group = italian }
-									OR = {
-										is_greater_power = no
-										is_disarmed = yes
-									}
-								}
-							}
-						}
-					}
-				}
-				AUS_734 = { add_core = ITA remove_core = TST }
-				AUS_736 = { add_core = ITA }
-				AUS_770 = { add_core = ITA }
-				AUS_778 = { add_core = ITA }
-				AUS_733 = { add_core = ITA }
-				owner = { set_global_flag = italian_claimed_venetia }
-			}
+                    NOT = { has_global_flag = italian_claimed_south_tirol }
 
-			#Claim Savoia
-			random_owned = {
-				limit = {
-					owner = {
-						is_culture_group = italian
-						OR = {
-							NOT = { has_global_flag = plombieres }
-							has_global_flag = the_treaty_of_milan
-							has_global_flag = france_dismantled
-							has_country_flag = in_great_war
-							AND = {
-								ai = no
-								nationalism_n_imperialism = 1
-							}
-						}
-						NOT = {
-							truce_with = FRA
-							truce_with = BOR
-						}
-					}
-				}
-				465 = { add_core = ITA }
-				466 = { add_core = ITA }
-				472 = { add_core = ITA }
-			}
+                    OR = {
+                        AND = {
+                            ai = no
+                            nationalism_n_imperialism = 1
+                        }
 
-			#Claim Aosta
-			random_owned = {
-				limit = {
-					owner = {
-						is_culture_group = italian
-						has_global_flag = the_treaty_of_milan
-						NOT = {
-							truce_with = FRA
-							truce_with = BOR
-						}
-					}
-				}
-				721 = { add_core = ITA }
-			}
-		}
+                        mass_politics = 1
 
-		ai_will_do = {
-			factor = 1
-		}
-	}
+                        great_wars_enabled = yes
+
+                        # Trento
+                        734 = {
+                            owner = {
+                                NOT = { is_culture_group = italian }
+                                OR = {
+                                    is_greater_power = no
+                                    is_disarmed = yes
+                                }
+                            }
+                        }
+                    }
+                }
+
+                AND = {
+                    NOT = { has_global_flag = italian_reclaim_aosta }
+
+                    # Aosta
+                    721 = { NOT = { is_core = ITA } }
+
+                    OR = {
+                        ai = no
+
+                        mass_politics = 1
+
+                        great_wars_enabled = yes
+
+                        # Aosta
+                        721 = {
+                            owner = {
+                                NOT = { is_culture_group = italian }
+
+                                OR = {
+                                    is_greater_power = no
+                                    is_disarmed = yes
+                                }
+
+                                NOT = { truce_with = THIS }
+                            }
+                        }
+                    }
+                }
+
+                AND = {
+                    NOT = { has_global_flag = italian_reclaim_savoia }
+
+                    # Savoia
+                    465 = { NOT = { is_core = ITA } }
+
+                    OR = {
+                        NOT = { has_global_flag = plombieres }
+
+                        AND = {
+                            ai = no
+                            revolution_n_counterrevolution = 1
+                        }
+
+                        465 = {
+                            owner = {
+                                NOT = { is_culture_group = italian }
+                                OR = {
+                                    is_greater_power = no
+                                    has_global_flag = france_dismantled
+                                    has_country_flag = in_great_war
+                                }
+                                NOT = { truce_with = THIS }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        allow = {
+            is_greater_power = yes
+            war = no
+
+            invention = national_fraternity
+
+            OR = {
+                729 = { NOT = { is_core = ITA } } # Venice
+                736 = { NOT = { is_core = ITA } } # Trieste
+                734 = { NOT = { is_core = ITA } } # Trento
+                721 = { NOT = { is_core = ITA } } # Aosta
+                465 = { NOT = { is_core = ITA } } # Savoia
+            }
+        }
+
+        effect = {
+            # Claim Venetia
+            random_owned = {
+                limit = {
+                    # Bergamo
+                    province_id = 727
+
+                    NOT = { has_global_flag = italian_claimed_venetia }
+                }
+
+                owner = {
+                    set_global_flag = italian_claimed_venetia
+
+                    AUS_729 = { add_core = THIS }
+                }
+            }
+
+            # Claim Trieste & South Tirol
+            random_owned = {
+                limit = {
+                    # Venice
+                    province_id = 729
+
+                    owner = {
+                        NOT = { has_global_flag = italian_claimed_south_tirol }
+
+                        OR = {
+                            AND = {
+                                ai = no
+                                nationalism_n_imperialism = 1
+                            }
+
+                            mass_politics = 1
+
+                            great_wars_enabled = yes
+
+                            # Trento
+                            734 = {
+                                owner = {
+                                    NOT = { is_culture_group = italian }
+                                    OR = {
+                                        is_greater_power = no
+                                        is_disarmed = yes
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                owner = {
+                    set_global_flag = italian_claimed_south_tirol
+
+                    AUS_734 = { add_core = ITA remove_core = TST }
+                    AUS_736 = { add_core = ITA }
+                }
+            }
+
+            # Claim Savoia
+            random_owned = {
+                limit = {
+                    owner = {
+                        NOT = { has_global_flag = italian_reclaim_savoia }
+
+                        # Savoia
+                        465 = { NOT = { is_core = ITA } }
+
+                        OR = {
+                            NOT = { has_global_flag = plombieres }
+
+                            AND = {
+                                ai = no
+                                revolution_n_counterrevolution = 1
+                            }
+
+                            465 = {
+                                owner = {
+                                    NOT = { is_culture_group = italian }
+                                    OR = {
+                                        is_greater_power = no
+                                        has_global_flag = france_dismantled
+                                        has_country_flag = in_great_war
+                                    }
+                                    NOT = { truce_with = THIS }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                owner = {
+                    set_global_flag = italian_reclaim_savoia
+
+                    465 = { add_core = ITA }
+                    466 = { add_core = ITA }
+                    472 = { add_core = ITA }
+                }
+            }
+
+            # Claim Aosta
+            random_owned = {
+                limit = {
+                    owner = {
+                        NOT = { has_global_flag = italian_reclaim_aosta }
+
+                        # Aosta
+                        721 = { NOT = { is_core = ITA } }
+
+                        OR = {
+                            ai = no
+
+                            mass_politics = 1
+
+                            great_wars_enabled = yes
+
+                            # Aosta
+                            721 = {
+                                owner = {
+                                    NOT = { is_culture_group = italian }
+
+                                    OR = {
+                                        is_greater_power = no
+                                        is_disarmed = yes
+                                    }
+
+                                    NOT = { truce_with = THIS }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                owner = {
+                    set_global_flag = italian_reclaim_aosta
+
+                    721 = { add_core = ITA }
+                }
+            }
+        }
+
+        ai_will_do = {
+            factor = 1
+        }
+    }
 
 	war_italian_independence = {
 		potential = {
@@ -793,7 +878,7 @@ political_decisions = {
 			ai = yes
 			NOT = {
 				exists = ITA
-				has_global_flag = war_italian_independence
+				has_country_flag = war_italian_independence
 			}
 			OR = {
 				AUS = {
@@ -840,7 +925,7 @@ political_decisions = {
 		}
 
 		effect = {
-			set_global_flag = war_italian_independence
+			set_country_flag = war_italian_independence
 			any_pop = {
 				limit = { is_primary_culture = yes }
 				militancy = -2
@@ -919,7 +1004,7 @@ political_decisions = {
 				create_alliance = THIS
 			}
 		}
-
+		
 		ai_will_do = { factor = 1 }
 	}
 
@@ -933,7 +1018,7 @@ political_decisions = {
 				has_global_flag = garibaldi_redshirts
 			}
 		}
-
+		
 		allow = {
 			war = no
 			OR = {
@@ -985,14 +1070,13 @@ political_decisions = {
 				}
 				any_pop = {
 					limit = {
-						OR = {
-							has_pop_culture = north_italian
-							has_pop_culture = south_italian
-							has_pop_culture = central_italian
-							has_pop_culture = sicilian
-							has_pop_culture = dalmatian
-							has_pop_culture = insular
-							#has_pop_culture = maltese
+						is_culture_group = italian #ANON
+						NOT = {
+							OR ={
+								has_pop_culture = maltese
+								has_pop_culture = italo_diaspora
+								has_pop_culture = dalmatian
+							}
 						}
 					}
 					consciousness = 2
@@ -1004,7 +1088,7 @@ political_decisions = {
 				}
 			}
 		}
-
+		
 		ai_will_do = { factor = 1 }
 	}
 
@@ -1033,14 +1117,13 @@ political_decisions = {
 			all_core = { add_core = ITA }
 			any_pop = {
 				limit = {
-					OR = {
-							has_pop_culture = north_italian
-							has_pop_culture = south_italian
-							has_pop_culture = central_italian
-							has_pop_culture = sicilian
+					is_culture_group = italian #ANON
+					NOT = {
+						OR ={
+							has_pop_culture = maltese
+							has_pop_culture = italo_diaspora
 							has_pop_culture = dalmatian
-							has_pop_culture = insular
-							#has_pop_culture = maltese
+						}
 					}
 				}
 				militancy = -4
@@ -1068,7 +1151,7 @@ political_decisions = {
 				}
 			}
 		}
-
+		
 		ai_will_do = { factor = 1 }
 	}
 
@@ -1124,7 +1207,7 @@ political_decisions = {
 						owner = { capital = 744 }
 					}
 					change_tag = TUS
-				}
+				}	
 			}
 			random_country = {
 				limit = {
@@ -1139,7 +1222,7 @@ political_decisions = {
 			factor = 1
 		}
 	}
-
+	
 	treaty_of_ouchy = {
 		picture = treaty_signing
 		potential = {
@@ -1147,7 +1230,7 @@ political_decisions = {
 			has_country_flag = guerra_di_libia
 			NOT = { has_country_flag = treaty_of_ouchy }
 		}
-
+		
 		allow = {
 			war = no
 			owns = 1731
@@ -1157,7 +1240,7 @@ political_decisions = {
 				any_owned_province = { OR =  { is_core = TRI is_core = CYR } }
 			}
 		}
-
+		
 		effect = {
 			set_country_flag = treaty_of_ouchy
 			prestige = 10
@@ -1175,7 +1258,7 @@ political_decisions = {
 				}
 			}
 			random_state = {
-				limit = {
+				limit = { 
 					any_owned_province = { is_core = TUR }
 				}
 				any_owned = {
@@ -1188,21 +1271,21 @@ political_decisions = {
 				value = 100
 			}
 		}
-
+		
 		ai_will_do = {
 			factor = 1
 		}
 	}
-
+	
 	perfect_fusion = {
 		picture = perfect_fusion
 		potential = {
 			tag = SAR
 			NOT = { has_country_flag = perfect_fusion }
 		}
-
+		
 		allow = {
-			OR = {
+			OR = { 
 				state_n_government = 1
 				year = 1847
 			}
@@ -1218,11 +1301,11 @@ political_decisions = {
 			}
 			SRD = { all_core = { owned_by = THIS } }
 		}
-
+		
 		effect = {
-			add_accepted_culture = insular
+			add_accepted_culture = insular #ANON
 			plurality = 5
-			SRD = {
+			SRD = { 
 				all_core = {
 					any_pop = { consciousness = 3 militancy = -9 }
 					remove_core = SRD
@@ -1231,10 +1314,10 @@ political_decisions = {
 			any_pop = { scaled_militancy = { factor = 3 ideology = reactionary  } }
 			set_country_flag = perfect_fusion
 		}
-
+		
 		ai_will_do = { factor = 1 }
 	}
-
+	
 	become_savoy = {
 		potential = {
 			tag = SAR
@@ -1327,14 +1410,14 @@ political_decisions = {
 
 		ai_will_do = { factor = 1 }
 	}
-
+	
 	conquest_of_the_adriatic = {
 	picture = conquest_adriatic
 		potential = {
 			tag = ITA
 			NOT = { has_country_flag = conquest_adriatic_happened }
 		}
-
+		
 		allow = {
 			is_greater_power = yes
 			nationalism_n_imperialism = 1
@@ -1346,26 +1429,28 @@ political_decisions = {
 				war_policy = jingoism
 			}
 		}
-
+		
 		effect = {
 			badboy = 2
 			set_country_flag = conquest_adriatic_happened
 			AUS_780 = { add_core = ITA } #Dalmatia
 			#ANON
 			AUS_736 = { add_core = ITA } #Istria
-			AUS_778 = { add_core = ITA }
-			2582 = { add_core = ITA }
-			3643 = { add_core = ITA }
-			3636 = { add_core = ITA }
-			3637 = { add_core = ITA }
+			AUS_778 = { add_core = ITA } #Carnaro/Fiume
+			MON_2582 = { add_core = ITA } #Montenegro
+			AUS_770 = { add_core = ITA } #South Küstenland
+			AUS_736 = { add_core = ITA } #North Küstenland/Istria
+			3643 = { add_core = ITA } #Bakar
+			3636 = { add_core = ITA } #Neum
+			3637 = { add_core = ITA } #Herceg Novi
 			add_accepted_culture = dalmatian
 		}
-
+		
 		ai_will_do = {
 			factor = 1
 		}
 	}
-
+	
 	reclaim_italian_lands = {
 	picture = reclaim_italian_lands
 		potential = {
@@ -1373,7 +1458,7 @@ political_decisions = {
 			NOT = { has_country_flag = reclaim_italian_lands }
 			has_country_flag = conquest_adriatic_happened
 		}
-
+		
 		allow = {
 			is_greater_power = yes
 			OR = {
@@ -1384,27 +1469,23 @@ political_decisions = {
 				war_policy = jingoism
 			}
 		}
-
+		
 		effect = {
 			badboy = 10
 			set_country_flag = reclaim_italian_lands
 			add_accepted_culture = maltese
-			SAR_466 = { add_core = ITA }
-			826	= { add_core = ITA }
-			827	= { add_core = ITA }
-			852 = { add_core = ITA }
-			853 = { add_core = ITA }
-			854 = { add_core = ITA }
-			473 = { add_core = ITA }
-			3644 = { add_core = ITA }
-			850 = { add_core = ITA }
+			# SAR_466 = { add_core = ITA } #Savoia
+			ION_826	= { add_core = ITA } #Ionian Islands
+			TUR_853 = { add_core = ITA } #albania
+			854 = { add_core = ITA } #Malta
+			473 = { add_core = ITA } #Corsica
 		}
-
+		
 		ai_will_do = {
 			factor = 1
 		}
 	}
-
+	
 	fatherland_altar = {
 	picture = build_vittoriano
 		potential = {
@@ -1419,12 +1500,12 @@ political_decisions = {
 			}
 			NOT = { has_country_flag = vittoriano_built }
 		}
-
+		
 		allow = {
 			money = 10000
 			realism = 1
 		}
-
+		
 		effect = {
 			treasury = -10000
 			prestige = 20
@@ -1457,11 +1538,11 @@ political_decisions = {
 				}
 			}
 		}
-
+		
 		ai_will_do = { factor = 1 }
 	}
-
-
+	
+	
 	abolish_italian_minors = {
 		picture = law_of_guarantees
 		potential = {
@@ -1536,15 +1617,15 @@ political_decisions = {
 			}
 		}
 		ai_will_do = {
-			factor = 1
+			factor = 1 
 			modifier = {
 				factor = 0
 				badboy = 0.9
 			}
 		}
 	}
-
-
+	
+	
 #Appoint Camillo Benso Cavour
 	appoint_camillo_cavour = {
 		picture = SAR_appoint_camillo_cavour
@@ -1568,7 +1649,7 @@ political_decisions = {
 		effect = {
 			set_country_flag = camillo_cavour_appointed
 			add_country_modifier = { name = camillo_cavour duration = 3650 }
-
+		
 			any_pop = {
 				limit = { is_culture_group = italian }
 				militancy = -1
@@ -1576,5 +1657,5 @@ political_decisions = {
 			}
 		}
 	}
-
+	
 }

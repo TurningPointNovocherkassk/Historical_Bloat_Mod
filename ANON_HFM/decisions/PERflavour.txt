@@ -1,96 +1,96 @@
 political_decisions = {
-	establish_the_dar_al_funun = {
-		potential = {
-			tag = PER
-			NOT = { has_country_flag = dar_al_funun_built }
-		}
+	# establish_the_dar_al_funun = { #already in Persia.txt
+		# potential = {
+			# tag = PER
+			# NOT = { has_country_flag = dar_al_funun_built }
+		# }
 		
-		allow = {
-			OR = {
-				literacy = 0.12
-				AND = {
-					has_country_modifier = great_reformer
-					literacy = 0.08
-				}
-				AND = {
-					has_country_modifier = visionary_thinker
-					literacy = 0.05
-				}
-				AND = {
-					has_country_modifier = visionary_thinker
-					ai = yes
-				}
-			}
-			war = no
-		}
+		# allow = {
+			# OR = {
+				# literacy = 0.12
+				# AND = {
+					# has_country_modifier = great_reformer
+					# literacy = 0.08
+				# }
+				# AND = {
+					# has_country_modifier = visionary_thinker
+					# literacy = 0.05
+				# }
+				# AND = {
+					# has_country_modifier = visionary_thinker
+					# ai = yes
+				# }
+			# }
+			# war = no
+		# }
 		
-		effect = {
-			set_country_flag = dar_al_funun_built
-			random_owned = {
-				limit = {
-					owner = {
-						civilized = no
-						NOT = { research_reform = yes_research_reform }
-					}
-				}
-				owner = {
-					research_reform = yes_research_reform
-					any_pop = {
-						ideology = {
-							value = liberal
-							factor = 0.03
-						}
-						consciousness = 0.5
-						scaled_militancy = {
-							ideology = liberal
-							factor = -10
-						}
-						scaled_militancy = {
-							ideology = reactionary
-							factor = 3
-						}
-					}
-				}
-			}
-			add_country_modifier = {
-				name = dar_al_funun
-				duration = 3650
-			}
-			capital_scope = {
-				add_province_modifier = {
-					name = dar_al_funun
-					duration = -1
-				}
-				any_pop = {
-					literacy = 0.05
-				}
-			}
-			any_greater_power = {
-				limit = {
-					capital_scope = {
-						continent = europe
-					}
-					NOT = {
-						tag = ENG
-						tag = RUS
-						tag = TUR						
-					}
-					relation = {
-						who = PER
-						value = -20
-					}
-				}
-				relation = {
-					who = PER
-					value = 25
-				}
-				random_owned = {
-					limit = { is_capital = yes }
-					province_event = 190370
-				}
-			}
-		}
-	}
+		# effect = {
+			# set_country_flag = dar_al_funun_built
+			# random_owned = {
+				# limit = {
+					# owner = {
+						# civilized = no
+						# NOT = { research_reform = yes_research_reform }
+					# }
+				# }
+				# owner = {
+					# research_reform = yes_research_reform
+					# any_pop = {
+						# ideology = {
+							# value = liberal
+							# factor = 0.03
+						# }
+						# consciousness = 0.5
+						# scaled_militancy = {
+							# ideology = liberal
+							# factor = -10
+						# }
+						# scaled_militancy = {
+							# ideology = reactionary
+							# factor = 3
+						# }
+					# }
+				# }
+			# }
+			# add_country_modifier = {
+				# name = dar_al_funun
+				# duration = 3650
+			# }
+			# capital_scope = {
+				# add_province_modifier = {
+					# name = dar_al_funun
+					# duration = -1
+				# }
+				# any_pop = {
+					# literacy = 0.05
+				# }
+			# }
+			# any_greater_power = {
+				# limit = {
+					# capital_scope = {
+						# continent = europe
+					# }
+					# NOT = {
+						# tag = ENG
+						# tag = RUS
+						# tag = TUR						
+					# }
+					# relation = {
+						# who = PER
+						# value = -20
+					# }
+				# }
+				# relation = {
+					# who = PER
+					# value = 25
+				# }
+				# random_owned = {
+					# limit = { is_capital = yes }
+					# province_event = 190370
+				# }
+			# }
+		# }
+	# }
 	# Decision - Naser al-Din's expedition to Europe, 1870s, increases prestige + adds research
 	per_expedition_to_europe = {
 		picture = "decision_eurotrip"
@@ -417,7 +417,7 @@ political_decisions = {
 		picture = decision_paris_treaty
 		potential = {
 			tag = PER
-			has_country_flag = anglo_persian_war
+			has_country_flag = anglo_persian_war_alternate
 		}
 		
 		allow = {
@@ -426,7 +426,7 @@ political_decisions = {
 		}
 		
 		effect = {
-			clr_country_flag = anglo_persian_war
+			clr_country_flag = anglo_persian_war_alternate
 			prestige = -15
 			war_exhaustion = 5
 			release = HER
@@ -443,32 +443,34 @@ political_decisions = {
 					remove_core = PER
 				}
 			}
-			#any_owned = {
-			#	limit = {
-			#		is_core = KDH
-			#		NOT = {
-			#			is_core = HER
-			#		}
-			#	}
-			#	secede_province = KDH
-			#}
-			#any_owned = {
-			#	limit = {
-			#		OR = {
-			#			is_core = TAJ
-			#			is_core = KNZ
-			#			is_core = HZJ
-			#			is_core = AFG
-			#		}
-			#		NOT = {
-			#			OR = {
-			#				is_core = HER
-			#				is_core = KDH
-			#			}					
-			#		}
-			#	}
-			#	secede_province = AFG
-			#}
+			# any_owned = {
+				# limit = {
+					# is_core = KDH
+					# NOT = {
+						# is_core = HER
+					# }
+				# }
+				# secede_province = KDH
+			# }
+			any_owned = {
+				limit = {
+					OR = {
+						is_core = TAJ
+						is_core = BDK
+						is_core = KUN
+						is_core = HAZ
+						is_core = AFG
+					}
+					# NOT = {
+						# OR = {
+							# is_core = HER
+							# is_core = KDH #doesn't exist in my mod
+						# }					
+					# }
+					NOT = { is_core = HER }		
+				}
+				secede_province = AFG
+			}
 			any_country = {
 				limit = {
 					war_with = PER
@@ -489,21 +491,26 @@ political_decisions = {
 					remove_core = PER
 				}
 			}
-			#KDH = {
-			#	any_owned = {
-			#		remove_core = PER
-			#	}
-			#}
-			#HZJ = {
-			#	any_owned = {
-			#		remove_core = PER
-			#	}
-			#}
-			#KNZ = {
-			#	any_owned = {
-			#		remove_core = PER
-			#	}
-			#}		
+			# KDH = {
+				# any_owned = {
+					# remove_core = PER
+				# }
+			# }
+			HAZ = {
+				any_owned = {
+					remove_core = PER
+				}
+			}
+			KUN = {
+				any_owned = {
+					remove_core = PER
+				}
+			}	
+			BDK = {
+				any_owned = {
+					remove_core = PER
+				}
+			}		
 		}
 		ai_will_do = {
 			factor = 1

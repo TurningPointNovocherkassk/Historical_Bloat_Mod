@@ -94,7 +94,7 @@ country_event = {
 					truce_with = THIS
 				}
 			}
-			DIR = {
+			DHR = {
 				exists = yes
 				civilized = no
 				is_vassal = no
@@ -425,7 +425,7 @@ country_event = {
 			
 			casus_belli = SWT
 			casus_belli = KHP
-			casus_belli = DIR
+			casus_belli = DHR
 			casus_belli = NAR
 			
 			war_with = SIN
@@ -449,7 +449,7 @@ country_event = {
 			
 			war_with = SWT
 			war_with = KHP
-			war_with = DIR
+			war_with = DHR
 			war_with = NAR
 		}
 	}
@@ -522,7 +522,7 @@ country_event = {
 					
 					tag = SWT
 					tag = KHP
-					tag = DIR
+					tag = DHR
 					tag = NAR
 					AND = {
 						tag = AFG
@@ -595,7 +595,7 @@ country_event = {
 					tag = WKH
 					tag = SWT
 					tag = KHP
-					tag = DIR
+					tag = DHR
 					tag = NAR
 					AND = {
 						tag = AFG
@@ -795,7 +795,7 @@ country_event = {
 					tag = J02
 					tag = SWT
 					tag = KHP
-					tag = DIR
+					tag = DHR
 					tag = NAR
 					AND = {
 						tag = AFG
@@ -875,10 +875,10 @@ country_event = {
 			tag = J00
 			tag = J01
 			tag = J02
-					tag = SWT
-					tag = KHP
-					tag = DIR
-					tag = NAR
+			tag = SWT
+			tag = KHP
+			tag = DHR
+			tag = NAR
 			AND = {
 				tag = PNJ
 				has_country_flag = ranjit_singh_dead
@@ -1014,10 +1014,10 @@ country_event = {
 				tag = J00
 				tag = J01
 				tag = J02
-					tag = SWT
-					tag = KHP
-					tag = DIR
-					tag = NAR
+				tag = SWT
+				tag = KHP
+				tag = DHR
+				tag = NAR
 			}
 		}
 	}
@@ -1212,6 +1212,7 @@ country_event = {
 			primary_culture = kazak
 		}
 		NOT = { has_country_flag = no_russian_doctrine }
+		NOT = { has_country_modifier = colony_to_be_annexed }
 	}
 	
 	mean_time_to_happen = {

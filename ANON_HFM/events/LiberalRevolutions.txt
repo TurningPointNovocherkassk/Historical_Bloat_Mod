@@ -3683,6 +3683,13 @@ country_event = {
 		}
 		any_pop = {
 			limit = {
+				has_pop_culture = venetian
+				location = { is_core = ITA }
+			}
+			militancy = 8
+		}
+		any_pop = {
+			limit = {
 				has_pop_culture = south_italian
 				location = { is_core = ITA }
 			}
@@ -3826,8 +3833,12 @@ country_event = {
 				OR = {
 					is_core = SLV
 					is_core = ROM
+					is_core = SIE
+					is_core = WAL
+					is_core = MOL
 					is_core = SER
 					is_core = CRO
+					is_core = VOJ
 				}
 			}
 			remove_province_modifier = nationalist_agitation
@@ -3860,14 +3871,23 @@ country_event = {
 		any_pop = {
 			limit = {
 				has_pop_culture = romanian
-				location = { is_core = ROM }
+				OR = {
+					location = { is_core = ROM }
+					location = { is_core = SIE }
+					location = { is_core = WAL }
+					location = { is_core = MOL }
+				}
 			}
 			militancy = 6
 		}
 		any_pop = {
 			limit = {
 				has_pop_culture = polish
-				location = { is_core = POL }
+				OR = {
+					location = { is_core = POL }
+					location = { is_core = GLM }
+					location = { is_core = KRA }
+				}
 			}
 			militancy = 6
 		}
@@ -3899,14 +3919,23 @@ country_event = {
 		any_pop = {
 			limit = {
 				has_pop_culture = romanian
-				location = { is_core = ROM }
+				OR = {
+					location = { is_core = ROM }
+					location = { is_core = SIE }
+					location = { is_core = WAL }
+					location = { is_core = MOL }
+				}
 			}
 			militancy = 8
 		}
 		any_pop = {
 			limit = {
 				has_pop_culture = polish
-				location = { is_core = POL }
+				OR = {
+					location = { is_core = POL }
+					location = { is_core = GLM }
+					location = { is_core = KRA }
+				}
 			}
 			militancy = 8
 		}
@@ -3914,7 +3943,12 @@ country_event = {
 			limit = {
 				OR = {
 					is_core = POL
+					is_core = GLM
+					is_core = KRA
 					is_core = ROM
+					is_core = SIE
+					is_core = WAL
+					is_core = MOL
 				}
 			}
 			add_province_modifier = {

@@ -35,7 +35,6 @@ CUN		= "countries/Cunani.txt"
 AR1		= "countries/Arauca.txt"
 PRO		= "countries/Provence.txt"
 IKO		= "countries/Ikonion.txt"
-LUS		= "countries/Lusatia.txt"
 ACH		= "countries/Antioch.txt"
 ALE		= "countries/Alexandria.txt"
 LAZ		= "countries/Lazistan.txt"
@@ -69,7 +68,6 @@ NSC		= "countries/Nova Scotia.txt"
 PEI		= "countries/Prince Edward.txt"
 INF		= "countries/Irish Newfoundland.txt"
 YWL		= "countries/The Welsh Colony.txt"
-PWL		= "countries/Pre Welsh Colony.txt"
 
 SUR		= "countries/Suriname.txt"
 FGU		= "countries/Guyane.txt"
@@ -84,7 +82,6 @@ D4N		= "countries/Dutch Antilles.txt"
 C4R		= "countries/NOTCARICOM.txt"
 
 T0V		= "countries/Tovar Colony.txt"
-T0B		= "countries/Pre Tovar Colony.txt"
 
 BND		= "countries/Banda Oriental.txt"
 
@@ -120,17 +117,22 @@ KHR		= "countries/Khorasan.txt"
 KBH		= "countries/Cooch Behar.txt"
 
 NAR		= "countries/Nagar.txt"
-DIR		= "countries/Dhir.txt"
+DHR		= "countries/Dhir.txt"
 SWT		= "countries/Swat.txt"
 KHP		= "countries/Khaipur.txt"
 GLN		= "countries/Gilan.txt"
 
+NYC		="countries/New York.txt"
+
+#Random Euro
 VOJ		= "countries/Vojvodina.txt"
 PNC		= "countries/Polish National Committee.txt"
 
 KSM		= "countries/Kurland-Semigallia.txt"
 LVN		= "countries/Livonia.txt"
 ESG		= "countries/Esthonia.txt"
+
+AQU		= "countries/Aquileia.txt"
 
 #Cursed Habsburg
 HPL		= "countries/Habsburg Poland.txt"
@@ -145,6 +147,8 @@ MSR		= "countries/Masuria.txt"
 
 CPU		= "countries/Carpatho-Ruthenia.txt"
 BBD		= "countries/Baltic-Baltic Duchy.txt"
+
+#Africa
 
 M1D		= "countries/Boina.txt"
 M2D		= "countries/Antankarana.txt"
@@ -194,7 +198,7 @@ M4N		= "countries/Isle of Man.txt"
 KER		= "countries/Cornwall.txt"
 CEL		= "countries/Celtic Union.txt"
 #Georgia
-GUR		= "countries/Guria.txt"
+GIA		= "countries/Guria.txt"
 IME		= "countries/Imereti.txt"
 KKH		= "countries/Kakheti.txt"
 KRT		= "countries/Kartli.txt"
@@ -235,6 +239,17 @@ T9B		= "countries/Derge.txt"
 Y0B		= "countries/Kokang.txt"
 #Y1B		= "countries/Mengshi.txt" #Merged into Shan States
 #Y2B		= "countries/Chiang Hung.txt" #Merged into Shan States
+
+#Somewhat Legit Countries
+KNI     = "countries/Knights.txt"
+
+#ANON utility tags
+U01		= "countries/Utility Goods.txt"
+U02		= "countries/Utility Canals.txt"
+U03		= "countries/Utility Monuments.txt"
+U04		= "countries/Utility Events.txt"
+U05		= "countries/Utility Population.txt"
+U06		= "countries/Utility Events 2.txt"
 
 ###France Mod###
 NZF		="countries/French New Zealand.txt"

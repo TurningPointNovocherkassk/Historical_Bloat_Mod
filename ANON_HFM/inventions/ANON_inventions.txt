@@ -47,12 +47,16 @@ ANON_total_war = {
 				tag = TPG
 				ai = no
 			}
-			tag = CSA
+			AND = {
+				tag = LSK
+				has_global_flag = war_with_LSK
+			}
+			tag = CSA #
 			tag = FVZ
 			tag = VEN
 			tag = LOM
-			tag = CAL
-			tag = C4L
+			tag = CAL #
+			tag = C4L #
 			tag = JLA
 			tag = IRE
 			tag = PNC
@@ -66,9 +70,26 @@ ANON_total_war = {
 			tag = CSC
 			tag = T4B
 			tag = VOJ
+			tag = M3X
+			tag = MXM
+			AND = {
+				tag = DES
+				OR = {
+					has_global_flag = mormons_rejected_chihuahua
+					has_global_flag = mormons_rejected_columbia
+				}
+			}
 			AND = {
 				tag = YNN
 				has_global_flag = panthay_rebellion
+			}
+			AND = {
+				tag = BH7
+				has_global_flag = 2nd_bhutan_civil_war_start
+			}
+			AND = {
+				tag = HER
+				has_country_flag = herat_question
 			}
 		}
 	}
@@ -189,4 +210,3 @@ kerosene = {
 		factory_goods_output = { fuel = 0.2 }
 	}
 }
-

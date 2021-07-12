@@ -749,12 +749,25 @@ country_event = {
 	
 	trigger = {
 		tag = MEX
-		NOT = { has_global_flag = ayutla_revolution }
-		NOT = { has_global_flag = ayutla_revolution_end }
+		OR = {
+			has_global_flag = historical_gadsden
+			has_global_flag = gadsden_bitch
+		}
+		NOT = {
+			has_global_flag = ayutla_revolution
+			has_global_flag = ayutla_revolution_end
+		}
+		NOT = { has_global_flag = gadsden_denied }
 		OR = {
 			has_global_flag = santa_anna_dictatorship
 			ruling_party_ideology = conservative
 			ruling_party_ideology = reactionary
+		}
+		NOT = {
+			OR = {
+				vote_franschise = universal_weighted_voting
+				vote_franschise = universal_voting
+			}
 		}
 		year = 1854
 		NOT = { year = 1857 }
@@ -859,20 +872,20 @@ province_event = {
 			any_owned = { add_province_modifier = { name = ayutla_sympathies duration = 3650 } }
 			rich_strata = {
 				consciousness = 3
-				ideology = { value = conservative factor = 0.25 }
-				ideology = { value = reactionary factor = 0.125 }
+				ideology = { value = conservative factor = 0.08 }
+				ideology = { value = reactionary factor = 0.04 }
 			}
 			middle_strata = {
 				consciousness = 1.5
 				militancy = 1.5
-				ideology = { value = liberal factor = 0.125 }
-				ideology = { value = anarcho_liberal factor = 0.06 }
+				ideology = { value = liberal factor = 0.03 }
+				ideology = { value = anarcho_liberal factor = 0.02 }
 			}
 			poor_strata = {
 				consciousness = 3
 				militancy = 3
-				ideology = { value = liberal factor = 0.25 }
-				ideology = { value = anarcho_liberal factor = 0.125 }
+				ideology = { value = liberal factor = 0.08 }
+				ideology = { value = anarcho_liberal factor = 0.04 }
 			}
 		}
 	}
@@ -920,6 +933,7 @@ country_event = {
 		political_reform = appointed
 		political_reform = free_press
 		political_reform = yes_meeting
+		political_reform = state_controlled
 		any_pop = {
 			scaled_militancy = {
 				ideology = liberal
@@ -2392,7 +2406,7 @@ country_event = {
 		name = "EVT1220045OPTA"
 		USA = { country_event = { id = 1220046 days = 15 } }
 		ai_chance = {
-			factor = 75
+			factor = 85
 		}	
 	}
 	option = { # Request Annexation
@@ -2400,11 +2414,30 @@ country_event = {
 		prestige = -5
 		USA = { country_event = { id = 1220049 days = 15 } }
 		ai_chance = {
-			factor = 25
+			factor = 15
 			modifier = {
 				factor = 100
 				USA = {
 					ai = no
+				}
+			}
+			modifier = {
+				factor = 5.67
+				MEX = {
+					OR = {
+						war_exhaustion = 60
+						unemployment = 0.4
+						ruling_party_ideology = socialist
+						ruling_party_ideology = communist
+						ruling_party_ideology = reactionary
+					}
+					NOT = {
+						OR = {
+							centralization = federalism
+							centralization = confederalism
+							centralization = regionalism
+						}
+					}
 				}
 			}
 		}	
@@ -2520,7 +2553,7 @@ country_event = {
 		ai_chance = {
 			factor = 15 # James Knox Polk likes this, though
 			modifier = {
-				factor = 1.66
+				factor = 1.5
 				USA = {
 					war_with = MEX
 				}
@@ -2537,13 +2570,6 @@ country_event = {
 					OR = {
 						ruling_party_ideology = conservative
 						ruling_party_ideology = reactionary
-					}
-				}
-			}
-			modifier = {
-				factor = 1.5
-				USA = {
-					OR = {
 						upper_house = {
 							ideology = conservative
 							value = 0.5
@@ -3347,52 +3373,100 @@ country_event = {
 	}
 }
 # CSC genocides non-mayans, notification for YUC or whoever owns the province
+# doesn't work, province events can't be given to controllers. make a decision instead; cleanse every province/state occupied by CSC
 province_event = {
 	id = 1220072
 	title = "EVTNAME1220072"
 	desc = "EVTDESC1220072"
+	is_triggered_only = yes
 	
-	trigger = {
-		is_core = YUC
-		NOT = { owned_by = CSC }
-		controller = {
-			tag = CSC
-			OR = {
-				war_with = MEX
-				war_with = YUC
-				war_with = USA
+	option = {
+		name = "EVT1220072OPTA"
+		any_country = {
+			limit = {
+				war_with = THIS
+				any_owned_province = { is_core = YUC }
+			}
+			any_owned = {
+				limit = {
+					is_core = U04
+					is_core = YUC
+					controlled_by = THIS
+					NOT = { is_core = U06 }
+				}
+				any_pop = {
+					limit = { NOT = { is_culture_group = native_american } }
+					random_list = {
+						30 = { reduce_pop = 0.35 }
+						25 = { reduce_pop = 0.30 }
+						20 = { reduce_pop = 0.25 }
+						15 = { reduce_pop = 0.10 }
+						10 = { reduce_pop = 0.05 }
+					}
+					random_list = {
+						30 = { money = -25 }
+						25 = { money = -50 }
+						20 = { money = -75 }
+						15 = { money = -100 }
+						10 = { money = -125 }
+					}
+					militancy = 5
+					consciousness = 5
+				}
+				add_province_modifier = { name = war_torn duration = 730 }
+				remove_core = U04
+				add_core = U06
+				owner = { country_event = 1220073 }
 			}
 		}
-	}
-	
-	mean_time_to_happen = { days = 1 }
-	
-	option = { # 
-		name = "EVT1220072OPTA"
 		any_pop = {
 			limit = {
-				NOT = { culture = mayan }
+				culture = mayan
+				OR = {
+					type = soldiers
+					type = officers
+				}
 			}
 			random_list = {
-				25 = { reduce_pop = 0.80 }
-				25 = { reduce_pop = 0.75 }
-				25 = { reduce_pop = 0.70 }
-				25 = { reduce_pop = 0.65 }
+				30 = { money = 25 }
+				25 = { money = 50 }
+				20 = { money = 75 }
+				15 = { money = 100 }
+				10 = { money = 125 }
 			}
-			militancy = 5
-			consciousness = 5
+			militancy = -2
+			consciousness = -2
 		}
-		owner = { country_event = 1220073 }
+		badboy = 0.11
 		ai_chance = {
 			factor = 100
 		}	
 	}
-	option = { # 
+	option = {
 		name = "EVT1220072OPTB"
+		any_country = {
+			limit = {
+				war_with = THIS
+				any_owned_province = { is_core = YUC }
+			}
+			any_owned = {
+				limit = {
+					is_core = U04
+					is_core = YUC
+					controlled_by = THIS
+					NOT = { is_core = U06 }
+				}
+				remove_core = U04
+				add_core = U06
+			}
+		}
 		any_pop = {
 			limit = {
 				culture = mayan
-				type = soldiers
+				OR = {
+					type = soldiers
+					type = officers
+				}
 			}
 			militancy = 2
 			consciousness = 2
@@ -3422,6 +3496,31 @@ country_event = {
 	title = "EVTNAME1220074"
 	desc = "EVTDESC1220074"
 	is_triggered_only = yes
+	
+	immediate = {
+		any_country = {
+			limit = {
+				any_owned_province = {
+					is_core = YUC
+					OR = {
+						is_core = U04
+						is_core = U06
+					}
+				}
+			}
+			any_owned = {
+				limit = {
+					is_core = YUC
+					OR = {
+						is_core = U04
+						is_core = U06
+					}
+				}
+				remove_core = U04
+				remove_core = U06
+			}
+		}
+	}
 	
 	option = { # In order to stop recognizing CSC, ENG needs Mexico to renounce all claims in Belize
 		name = "EVT1220074OPTA"
@@ -3578,6 +3677,7 @@ country_event = {
 	
 	option = { # 
 		name = "Good."
+		set_country_flag = USA_YUC_failsafe_1
 		any_country = {
 			limit = {
 				is_greater_power = no
@@ -3625,6 +3725,7 @@ country_event = {
 		}
 		NOT = { has_global_flag = caste_war_begin }
 	}
+	fire_only_once = yes
 	
 	option = { # 
 		name = "Good."
@@ -3654,5 +3755,66 @@ country_event = {
 		}	
 	}
 }
+
+# Failsafe for YUC becoming USA state AFTER the guadalupe hidalgo treaty and not owning any YUC provinces
+# Make something to accept Yucatecos
+country_event = {
+	id = 1220083
+	title = "Yucatan Border Normalization"
+	desc = "Provinces have passed under our direct control"
+	picture = "treaty"
+	fire_only_once = yes
+	
+	trigger = {
+		OR = {
+			tag = USA
+			tag = CSA
+			tag = FSA
+		}
+		exists = yes
+		any_core = {
+			is_core = YUC
+			OR = {
+				owned_by = MEX
+				owned_by = M3X
+				owned_by = MXM
+			}
+		}
+		has_country_flag = treaty_of_guadalupe_hidalgo
+		has_global_flag = YUC_becomes_USA_state
+		NOT = { has_country_flag = YUC_USA_failsafe }
+	}
+	
+	option = {
+		name = "Good."
+		set_country_flag = YUC_USA_failsafe
+		any_country = {
+			limit = {
+				OR = {
+					tag = MEX
+					tag = M3X
+					tag = MXM
+				}
+				any_owned_province = {
+					is_core = YUC
+					NOT = { owned_by = THIS }
+				}
+			}
+			all_core = {
+				limit = { is_core = YUC }
+				remove_core = MEX
+				remove_core = M3X
+				remove_core = MXM
+			}
+			any_owned = {
+				limit = { is_core = YUC }
+				secede_province = THIS
+			}
+		}
+		ai_chance = {
+			factor = 100
+		}	
+	}
+}
 # Do Tabasco secessions and YUC-T4B union (when tabasco secedes, check if santa elena peten belongs to MEX, if it doesn't, secede carmelita to honduras)
-# Also do Yaqui Wars
+# Also do Yaqui Wars, remember the cossack guy from the yaqui wars

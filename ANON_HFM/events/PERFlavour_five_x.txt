@@ -3828,7 +3828,7 @@ country_event = {
 					}
 				}
 			}
-			civilized = no
+			# civilized = no
 			NOT = {
 				has_country_flag = herat_question
 			}
@@ -3864,7 +3864,7 @@ country_event = {
 	option = {
 		name = "We are not slaves to Persia"
 		set_country_flag = herat_question
-		PER = { 
+		PER = {
 			set_country_flag = herat_question
 			country_event = {
 				id = 190350
@@ -3943,7 +3943,7 @@ country_event = {
 			exists = no
 		}
 		civilized = no
-		NOT = { 
+		NOT = {
 			#admin_reform = yes_admin_reform
 			has_country_flag = herat_question
 		}
@@ -3985,6 +3985,7 @@ country_event = {
 				days = 5
 			}
 			set_country_flag = herat_question
+			set_country_flag = ANON_total_war_flag
 		}
 		casus_belli ={
 			target = HER
@@ -4276,7 +4277,7 @@ country_event = {
 	
 	option = {
 		name = "The betrayal!"
-		set_country_flag = anglo_persian_war
+		set_country_flag = anglo_persian_war_alternate
 	}
 }
 
@@ -6026,7 +6027,7 @@ province_event = {
 			factor = 99
 			modifier = {
 				factor = 0.01
-				NOT = { money = 10000 }
+				owner = { NOT = { money = 10000 } }
 			}
 		}
 	}
@@ -6042,7 +6043,7 @@ province_event = {
 			factor = 1
 			modifier = {
 				factor = 50
-				NOT = { money = 10000 }
+				owner = { NOT = { money = 10000 } }
 			}
 		}
 	}

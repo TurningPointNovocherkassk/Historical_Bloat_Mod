@@ -1075,25 +1075,7 @@
 	serfs = {
 		culture = gypsy
 		religion = catholic
-		size = 2000
-	}
-
-	aristocrats = {
-		culture = hungarian
-		religion = catholic
-		size = 100  
-	}
-
-	bureaucrats = {
-		culture = hungarian
-		religion = catholic
-		size = 100  
-	}
-
-	officers = {
-		culture = hungarian
-		religion = catholic
-		size = 75   
+		size = 3000
 	}
 
 	clergymen = {
@@ -1101,47 +1083,35 @@
 		religion = catholic
 		size = 75  
 	}
-
 	artisans = {
 		culture = hungarian
 		religion = catholic
-		size = 750
+		size = 450
 	}
-
 	soldiers = {
 		culture = hungarian
 		religion = catholic
 		size = 135  
 	}
-
 	farmers = {
 		culture = hungarian
 		religion = catholic
-		size = 1500   
+		size = 1025   
 	}
-
 	clergymen = {
 		culture = hungarian
 		religion = protestant
-		size = 85
+		size = 75
 	}
-
 	artisans = {
 		culture = hungarian
 		religion = protestant
-		size = 750
+		size = 300
 	}
-
-	soldiers = {
-		culture = hungarian
-		religion = protestant
-		size = 100  
-	}
-
 	farmers = {
 		culture = hungarian
 		religion = protestant
-		size = 2025    
+		size = 750    
 	}
 
 	clergymen = {
@@ -1169,43 +1139,43 @@
 	}
 
 	aristocrats = {
-		culture = carpathian_german
+		culture = south_german #carpathian_german
 		religion = catholic
 		size = 1250  
 	}
 
 	bureaucrats = {
-		culture = carpathian_german
+		culture = south_german #carpathian_german
 		religion = catholic
 		size = 725
 	}
 
 	officers = {
-		culture = carpathian_german
+		culture = south_german #carpathian_german
 		religion = catholic
 		size = 150 
 	}
 
 	clergymen = {
-		culture = carpathian_german
+		culture = south_german #carpathian_german
 		religion = catholic
 		size = 150 
 	}
 
 	artisans = {
-		culture = carpathian_german
+		culture = south_german #carpathian_german
 		religion = catholic
 		size = 5100
 	}
 
 	soldiers = {
-		culture = carpathian_german
+		culture = south_german #carpathian_german
 		religion = catholic
 		size = 175  
 	}
 
 	farmers = {
-		culture = carpathian_german
+		culture = south_german #carpathian_german
 		religion = catholic
 		size = 13000  
 	}
@@ -1225,6 +1195,6 @@
 	artisans = {
 		culture = ashkenazi
 		religion = jewish
-		size = 2000
+		size = 3000
 	}
 }

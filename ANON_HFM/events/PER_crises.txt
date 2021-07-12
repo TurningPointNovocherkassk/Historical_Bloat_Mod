@@ -155,7 +155,7 @@ province_event = {
 							has_pop_religion = sunni
 							has_pop_religion = ibadi
 						}					
-					}			
+					}
 				}
 				consciousness = 1
 			}
@@ -285,9 +285,11 @@ country_event = {
 				limit = {
 					has_province_modifier = futile
 				}
-				province_event = {
-					id = 301113
-					days = 5
+				owner = {
+					country_event = {
+						id = 301113
+						days = 5
+					}
 				}
 			}
 		
@@ -311,9 +313,11 @@ country_event = {
 				limit = {
 					has_province_modifier = futile
 				}
-				province_event = {
-					id = 301112
-					days = 5
+				owner = {
+					country_event = {
+						id = 301112
+						days = 5
+					}
 				}
 			}
 		
@@ -335,7 +339,7 @@ country_event = {
 }
 
 #Russia returned the Armenian
-province_event = {
+country_event = {
 	id = 301112
 	title = "EVTNAME301112"
 	desc = "EVTDESC301112"
@@ -352,6 +356,7 @@ province_event = {
 					has_pop_religion = sunni
 					has_pop_religion = ibadi
 				}
+				location = { has_province_modifier = futile }	
 			}
 			ideology = {
 				factor = -0.01
@@ -360,28 +365,26 @@ province_event = {
 			militancy = -2
 			consciousness = -2
 		}
-		owner = {
-			prestige = 5
-			any_pop = {
-				limit = {
-					OR = {
-						has_pop_religion = shiite
-						has_pop_religion = sunni
-						has_pop_religion = ibadi
-					}
+		prestige = 5
+		any_pop = {
+			limit = {
+				OR = {
+					has_pop_religion = shiite
+					has_pop_religion = sunni
+					has_pop_religion = ibadi
 				}
-				consciousness = -1
 			}
-			change_variable = {
-				which = persian_ulama
-				value = 3
-			}
+			consciousness = -1
+		}
+		change_variable = {
+			which = persian_ulama
+			value = 3
 		}
 	}
 }
 
 #Russia did not return the Armenian
-province_event = {
+country_event = {
 	id = 301113
 	title = "EVTNAME301113"
 	desc = "EVTDESC301113"
@@ -399,17 +402,16 @@ province_event = {
 		}
 		any_pop = {
 			limit = {
-				has_pop_religion = shiite	
+				has_pop_religion = shiite
+				location = { has_province_modifier = futile }
 			}
 			reduce_pop = 0.95
 			consciousness = 3
 			militancy = -2
 		}
-		owner = {
-			change_variable = {
-				which = persian_ulama
-				value = -1
-			}
+		change_variable = {
+			which = persian_ulama
+			value = -1
 		}
 		ai_chance = {
 			factor = 35
@@ -491,6 +493,7 @@ province_event = {
 					has_pop_religion = sunni
 					has_pop_religion = ibadi
 				}
+				location = { NOT = { has_province_modifier = futile } }	
 			}
 			ideology = {
 				factor = -0.025
@@ -505,28 +508,27 @@ province_event = {
 				ideology = reactionary
 			}
 		}
-		owner = {
-			any_pop = {
-				limit = {
-					OR = {
-						has_pop_religion = shiite
-						has_pop_religion = sunni
-						has_pop_religion = ibadi
-					}
+		any_pop = {
+			limit = {
+				OR = {
+					has_pop_religion = shiite
+					has_pop_religion = sunni
+					has_pop_religion = ibadi
 				}
-				scaled_militancy = {
-					factor = 2
-					ideology = reactionary
-				}
-				scaled_consciousness = {
-					factor = 1
-					ideology = reactionary
-				}
+				location = { has_province_modifier = futile }
 			}
-			change_variable = {
-				which = persian_ulama
-				value = -2
+			scaled_militancy = {
+				factor = 2
+				ideology = reactionary
 			}
+			scaled_consciousness = {
+				factor = 1
+				ideology = reactionary
+			}
+		}
+		change_variable = {
+			which = persian_ulama
+			value = -2
 		}
 		
 		ai_chance = {
@@ -598,9 +600,11 @@ country_event = {
 				limit = {
 					has_province_modifier = futile
 				}
-				province_event = {
-					id = 301116
-					days = 5
+				owner = {
+					country_event = {
+						id = 301116
+						days = 5
+					}
 				}
 			}
 		
@@ -655,9 +659,11 @@ country_event = {
 				limit = {
 					has_province_modifier = futile
 				}
-				province_event = {
-					id = 301117
-					days = 5
+				owner = {
+					country_event = {
+						id = 301117
+						days = 5
+					}
 				}
 			}
 		
@@ -679,7 +685,8 @@ country_event = {
 }
 
 #Another Russo-Persian War
-province_event = {
+# province_event = {
+country_event = {
 	id = 301116
 	title = "EVTNAME301116"
 	desc = "EVTDESC301116"
@@ -689,18 +696,17 @@ province_event = {
 	
 	option = {
 		name = "What could we possibly have done differently?"
-		owner = {
-			prestige = -10
-			change_variable = {
-				which = persian_ulama
-				value = -5
-			}
+		prestige = -10
+		change_variable = {
+			which = persian_ulama
+			value = -5
 		}
 	}
 }
 
 #Another Russo-Persian War
-province_event = {
+# province_event = {
+country_event = {
 	id = 301117
 	title = "EVTNAME301117"
 	desc = "EVTDESC301117"
@@ -716,14 +722,13 @@ province_event = {
 	
 	option = {
 		name = "Perhaps the $FROMCOUNTRY_ADJ$s aren't as fearsome as we thought?"
-		owner = {
-			any_pop = {
-				consciousness = -1
-			}
-			change_variable = {
-				which = persian_ulama
-				value = 1
-			}
+		any_pop = {
+			limit = { location = { has_province_modifier = futile } }
+			consciousness = -1
+		}
+		change_variable = {
+			which = persian_ulama
+			value = 1
 		}
 	}
 }

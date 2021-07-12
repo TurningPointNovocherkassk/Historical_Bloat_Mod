@@ -25,37 +25,37 @@ political_decisions = {
 	# }
 
 
-	younghusband_expedition = {
-		picture = gtfo
-		potential = {
-			tag = ENG
-			neighbour = TIB
-			has_global_flag = 1st_bhutan_civil_war_end
-			NOT = { has_global_flag = younghusband_expedition }
-		}
+	# younghusband_expedition = {
+		# picture = gtfo
+		# potential = {
+			# tag = ENG
+			# neighbour = TIB
+			# has_global_flag = 1st_bhutan_civil_war_end
+			# NOT = { has_global_flag = younghusband_expedition }
+		# }
 
-		allow = {
-			war = no
-			year = 9999
-		}
+		# allow = {
+			# war = no
+			# year = 9999
+		# }
 
-		effect = {
-			set_global_flag = younghusband_expedition
-			any_country = {
-				limit = {
-					OR = {
-						tag = QNG
-						tag = TIB
-					}
-				}
-				country_event = 1
-			}
-		}
+		# effect = {
+			# set_global_flag = younghusband_expedition
+			# any_country = {
+				# limit = {
+					# OR = {
+						# tag = QNG
+						# tag = TIB
+					# }
+				# }
+				# country_event = 1
+			# }
+		# }
 
-		ai_will_do = {
-			factor = 1
-		}
-	}
+		# ai_will_do = {
+			# factor = 1
+		# }
+	# }
 
 	ENG_calcutta_convention = {
 		picture = gtfo
@@ -295,7 +295,7 @@ political_decisions = {
 		}
 
 		allow = {
-			war = no
+			BHU = { war = no }
 		}
 
 		effect = {
@@ -354,7 +354,7 @@ political_decisions = {
 			set_country_flag = bhutanese_raid_sepoy
 			prestige = 5
 			random_list = {
-				20 = {
+				5 = {
 					treasury = 40000
 					regular_clothes = 300
 					canned_food = 200
@@ -364,9 +364,11 @@ political_decisions = {
 					explosives = 50
 					wine = 200
 					liquor = 200
+					wool = 250
+					grain = 250
 				}
-				30 = {
-					treasury = 20000
+				20 = {
+					treasury = 30000
 					regular_clothes = 200
 					canned_food = 100
 					ammunition = 100
@@ -375,9 +377,11 @@ political_decisions = {
 					explosives = 35
 					wine = 100
 					liquor = 100
+					wool = 125
+					grain = 125
 				}
-				50 = {
-					treasury = 10000
+				30 = {
+					treasury = 15000
 					regular_clothes = 100
 					canned_food = 75
 					ammunition = 75
@@ -386,9 +390,41 @@ political_decisions = {
 					explosives = 25
 					wine = 75
 					liquor = 75
+					wool = 100
+					grain = 100
+				}
+				45 = {
+					treasury = 10000
+					regular_clothes = 75
+					canned_food = 50
+					ammunition = 50
+					small_arms = 25
+					artillery = 12
+					explosives = 12
+					wine = 50
+					liquor = 50
+					wool = 75
+					grain = 75
 				}
 			}
-			EIC = {
+			any_country = {
+				limit = {
+					OR = {
+						tag = EIC
+						tag = ENG
+						tag = KBH
+						AND = {
+							neighbour = THIS
+							OR = {
+								vassal_of = ENG
+								substate_of = ENG
+								vassal_of = EIC
+								substate_of = EIC
+							}
+						}
+					}
+				}
+				country_event = 777777058
 				any_owned = {
 					limit = {
 						OR = {
@@ -404,60 +440,6 @@ political_decisions = {
 					}
 					add_province_modifier = { name = bhutanese_raids duration = 730 }
 				}
-				country_event = 777777058
-			}
-			KBH = {
-				any_owned = {
-					limit = {
-						OR = {
-							province_id = 3503
-							province_id = 3502
-							province_id = 3552
-							province_id = 1258
-							province_id = 3551
-							province_id = 3542
-							province_id = 1252
-							province_id = 1328
-						}
-					}
-					add_province_modifier = { name = bhutanese_raids duration = 730 }
-				}
-				country_event = 777777058
-			}
-			#SIK = {
-			#	any_owned = {
-			#		limit = {
-			#			OR = {
-			#				province_id = 3503
-			#				province_id = 3502
-			#				province_id = 3552
-			#				province_id = 1258
-			#				province_id = 3551
-			#				province_id = 3542
-			#				province_id = 1252
-			#				province_id = 1328
-			#			}
-			#		}
-			#		add_province_modifier = { name = bhutanese_raids duration = 730 }
-			#	}
-			#}
-			ENG = {
-				any_owned = {
-					limit = {
-						OR = {
-							province_id = 3503
-							province_id = 3502
-							province_id = 3552
-							province_id = 1258
-							province_id = 3551
-							province_id = 3542
-							province_id = 1252
-							province_id = 1328
-						}
-					}
-					add_province_modifier = { name = bhutanese_raids duration = 730 }
-				}
-				country_event = 777777058
 			}
 		}
 		ai_will_do = {
@@ -487,7 +469,6 @@ political_decisions = {
 		}
 
 		allow = {
-			war = no
 			3552 = {
 				owned_by = BHU
 			}
@@ -520,13 +501,20 @@ political_decisions = {
 	british_retaliation_sikkim = {
 		picture = gtfo
 		potential = {
-			tag = ENG
+			OR = {
+				tag = EIC
+				tag = ENG
+			}
 			has_global_flag = sikkim_raids_darjeeling
 			NOT = { has_global_flag = british_retaliation_sikkim }
 		}
 
 		allow = {
-			war = no
+			# war = no
+			OR = {
+				is_vassal = no
+				is_substate = no
+			}
 			1252 = {
 				OR = {
 					owned_by = ENG

@@ -100,8 +100,7 @@ country_event = {
 		name = "EVT97050OPTA"
 		set_country_flag = fight_the_PBC
 		leave_alliance = PBC
-		2371 = { add_core = ARC } #Yavi
-		2315 = { add_core = ARC } #Tarija
+		BOL_2315 = { add_core = ARC } #Tarija
 		2369 = { add_core = BOL add_core = PBC } #Jujuy
 		2368 = { add_core = BOL add_core = PBC } #Salta
 		any_pop = {
@@ -552,7 +551,6 @@ country_event = {
 	desc = "EVTDESC97076"
 	picture = "BurkeandWills"
 	
-	fire_only_once = yes
 	is_triggered_only = yes
 	
 	option = {
@@ -608,12 +606,12 @@ country_event = {
 			add_core = THIS
 			secede_province = THIS
 		}
-		2401 = { #Marabitanas
-			add_core = THIS
-		}
-		3371 = { #Macapiri
-			add_core = THIS
-		}
+		# 2401 = { #Marabitanas
+			# add_core = THIS
+		# }
+		# 3371 = { #Macapiri
+			# add_core = THIS
+		# }
 		any_country = {
 			limit = {
 				NOT = { tag = THIS }
@@ -738,8 +736,7 @@ country_event = {
 		}
 		2369 = { remove_core = BOL remove_core = PBC } #Jujuy
 		2368 = { remove_core = BOL remove_core = PBC } #Salta
-		2315 = { remove_core = ARC remove_core = ARG remove_core = THIS } #Tarija
-		2371 = { remove_core = ARC remove_core = ARG remove_core = THIS } #Yavi
+		BOL_2315 = { remove_core = ARC remove_core = ARG remove_core = THIS } #Tarija
 		FROM = { country_event = 4661008 }
 		relation = { who = BOL value = 25 }
 		FROM = { any_owned = { limit = { is_core = THIS } secede_province = THIS } }
@@ -750,15 +747,14 @@ country_event = {
 	option = {
 		name = "EVTOPT4661007B"
 		badboy = 5
-		2315 = { add_core = ARC add_core = THIS } #Tarija
-		2371 = { add_core = ARC add_core = THIS } #Yavi
+		BOL_2315 = { add_core = ARC add_core = THIS } #Tarija
 		relation = {
 			who = FROM
 			value = -300
 			}
 		ai_chance = { factor = 0.02 }
-		}
 	}
+}
 		
 country_event = {
 	id = 4661008
@@ -781,8 +777,8 @@ country_event = {
 			secede_province = FROM
 		}
 		FROM = { any_owned = { limit = { is_core = THIS } secede_province = THIS } }
-		}
 	}
+}
 
 #PBC picks a Capital
 country_event = {
@@ -925,7 +921,7 @@ country_event = {
 			add_core = THIS
 			add_core = BOL
 			add_core = PEU
-			remove_core = FROM
+			remove_core = BRZ
 			secede_province = THIS
 			infrastructure = 1	
 		}

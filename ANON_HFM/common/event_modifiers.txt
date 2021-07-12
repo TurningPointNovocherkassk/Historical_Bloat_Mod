@@ -136,6 +136,8 @@ the_long_war = {
 	# icon = 14
 # }
 
+called_eic = {}
+
 homeland_productive_year = {
 	farm_RGO_eff = 0.25
 	pop_militancy_modifier = -0.01
@@ -579,6 +581,15 @@ reconstruction = {
 	pop_consciousness_modifier = 0.05
 	pop_militancy_modifier = 0.02
 	icon = 17
+}
+
+reconstruction_FSA = {
+    assimilation_rate = 0.20
+    life_rating = -0.1
+    immigrant_attract = 0.05
+    pop_consciousness_modifier = 0.05
+    pop_militancy_modifier = 0.02
+    icon = 17
 }
 
 divided_society = {
@@ -1723,8 +1734,8 @@ international_negotiations = {
 
 the_statue_of_liberty = {
 	prestige = 0.01
-	global_immigrant_attract = 0.5	#100%
-	global_assimilation_rate = 0.5
+	immigrant_attract = 0.5	#100%
+	assimilation_rate = 0.5
 	icon = 15
 }
 
@@ -3099,13 +3110,56 @@ louis_napoleon_iii = {
 }
 
 ### Neutrality ###
-neutrality = {
+neutrality_modifier = {
 	max_military_spending = -0.10
 	leadership_modifier = -0.7
 	diplomatic_points_modifier = -0.3
 	prestige = -1.5
 	global_immigrant_attract = 0.2
 	icon = 7
+}
+
+### Collectivisation ###
+
+collectivisation = {
+	local_RGO_output = 0.5
+	local_RGO_throughput = 0.5
+	poor_income_modifier = 2.5
+	# middle_everyday_needs = 0.2
+	middle_everyday_needs = 0.4
+	# rich_everyday_needs = 0.4
+	rich_everyday_needs = 0.8
+	icon = 13
+}
+
+five_year_plan = {
+    suppression_points_modifier = 0.25
+    factory_throughput = 0.75
+    poor_income_modifier = 1.25
+    education_efficiency_modifier = 5.0
+    rgo_output = 0.5
+    global_population_growth = 0.01
+    global_pop_militancy_modifier = 0.01
+    icon = 11
+}
+rights_suspended = {
+    global_pop_consciousness_modifier = -0.05
+    global_pop_militancy_modifier = -0.05
+    icon = 3
+}
+
+merchant_marine = {
+    import_cost = 0.50
+    icon = 15
+}
+
+craftsmen_fix_cooldown = {
+    icon = 12
+}
+###Latin Monetary Union###
+latin_monetary_union = {
+    tax_efficiency = 0.05
+    icon = 9
 }
 
 ### NV Changes ###
@@ -3603,14 +3657,15 @@ rama_v = {
 ###HFM EIC Modifiers###
 
 eic_balance = {
-	max_tax = 0.75
-	administrative_efficiency_modifier = 0.25
-	research_points_modifier = -2.55
-	leadership_modifier = 4
-	supply_consumption = -0.3
-	tax_efficiency = -0.05
-	import_cost = -0.25
-	icon = 7
+    max_tax = 0.75
+    administrative_efficiency_modifier = 0.25
+    research_points_modifier = -2.55
+    leadership_modifier = 4
+    supply_consumption = 0.25
+    min_military_spending = 0.5
+    tax_efficiency = -0.025
+    import_cost = -0.25
+    icon = 7
 }
 
 eic_balance2 = {
@@ -3799,11 +3854,11 @@ jews_taxes_in_advance = {
 }
 angostura_iron = {
 	icon = 11
-	local_rgo_throughput = 0.25
-	local_rgo_output = 0.15
-	local_factory_input = 0.25
-	local_factory_throughput = 0.25
+	local_RGO_output = 0.15
+	local_RGO_throughput = 0.25
 	local_factory_output = 0.15
+	local_factory_throughput = 0.25
+	local_artisan_output = 0.15
 }
 #Hawaii -Anon
 hawaii_missionary_schools = {
@@ -4114,7 +4169,7 @@ donbass_modifier = {
 	
 jewish_polygamy = {
 	population_growth = 0.005
-	icon = 19
+	icon = 17
 }
 
 volga_don_canal_construction = {
@@ -4396,6 +4451,15 @@ russian_protectionism = {
 	icon = 9
 }
 
+southern_neighbours = {
+    global_immigrant_attract = 0.15
+    global_assimilation_rate = -0.15
+    global_pop_consciousness_modifier = 0.02
+    badboy = -0.02
+    prestige = 0.02
+    icon = 7
+}
+
 ######################### STEPPE WOLFE
 steppe_wolfe = {
 	research_points_modifier = 0.5
@@ -4412,6 +4476,13 @@ turkish_women = {
 }
 ######################### GSG general
 
+state_atheism = {
+	global_pop_militancy_modifier = 0.05
+	global_pop_consciousness_modifier = 0.05
+	global_immigrant_attract = -0.25
+	global_assimilation_rate = -0.125
+	icon = 5
+}
 
 kebabbies_wait = {
 	icon = 20
@@ -4432,6 +4503,22 @@ quilombo_presence = {
 	assimilation_rate = -0.1
 	icon = 20
 }	
+
+regency_modifier = {
+    prestige = -0.01
+    core_pop_consciousness_modifier = 0.02
+    core_pop_militancy_modifier = 0.02
+    diplomatic_points_modifier = -0.25
+    icon = 6
+}
+
+dom_pedro_ii = {
+    core_pop_militancy_modifier = -0.02
+    diplomatic_points_modifier = 0.2
+    research_points_modifier = 0.1
+    education_efficiency_modifier = 0.05
+    icon = 5
+}
 
 progressive_society_csa = {
 	pop_consciousness_modifier = 0.05
@@ -4459,3 +4546,24 @@ tax_reforms = {
 	tax_efficiency = 0.05
 	icon = 9
 }
+
+# CCH
+
+cch.recent-call-to-arms = {
+    icon = 15
+}
+
+#cleanup stuff ANON
+
+ANON_coring = {
+	icon = 17
+}
+
+# # fort william stuff
+
+# fort_william_balance = {
+	# immigrant_attract = -50 #5k
+	# assimilation_rate = -50 #5k
+	# population_growth = -50 #5k
+	# icon = 20
+# }

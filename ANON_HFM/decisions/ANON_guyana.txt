@@ -15,9 +15,22 @@ political_decisions = {
 			owns = 2243 #Pomaron
 			owns = 3373 #Rupununi
 			OR = {
-				primary_culture = north_andean
+				AND = {
+					primary_culture = north_andean
+					NOT = { OR = { tag = VNZ tag = FVZ tag = USV tag = GCO } }
+				}
+				AND = {
+					primary_culture = north_andean
+					OR = {
+						AND = { tag = VNZ FVZ = { exists = no } USV = { exists = no } GCO = { exists = no } }
+						AND = { tag = FVZ VNZ = { exists = no } USV = { exists = no } GCO = { exists = no } }
+						AND = { tag = USV VNZ = { exists = no } FVZ = { exists = no } GCO = { exists = no } }
+						AND = { tag = GCO VNZ = { exists = no } FVZ = { exists = no } USV = { exists = no } }
+					}
+				}
 				primary_culture = llanero
 			}
+			exists = yes
 		}
 		allow = {
 			OR = {
@@ -53,9 +66,22 @@ political_decisions = {
 			owns = 2237 #Trinidad
 			owns = 2238 #Tobago
 			OR = {
-				primary_culture = north_andean
+				AND = {
+					primary_culture = north_andean
+					NOT = { OR = { tag = VNZ tag = FVZ tag = USV tag = GCO } }
+				}
+				AND = {
+					primary_culture = north_andean
+					OR = {
+						AND = { tag = VNZ FVZ = { exists = no } USV = { exists = no } GCO = { exists = no } }
+						AND = { tag = FVZ VNZ = { exists = no } USV = { exists = no } GCO = { exists = no } }
+						AND = { tag = USV VNZ = { exists = no } FVZ = { exists = no } GCO = { exists = no } }
+						AND = { tag = GCO VNZ = { exists = no } FVZ = { exists = no } USV = { exists = no } }
+					}
+				}
 				primary_culture = llanero
 			}
+			exists = yes
 		}
 		allow = {
 			OR = {
@@ -92,6 +118,7 @@ political_decisions = {
 				owns = 2240 #Paramaribo
 				owns = 2245 #Apetina
 			}
+			exists = yes
 		}
 		allow = {
 			early_railroad = 1
@@ -115,6 +142,7 @@ political_decisions = {
 				owns = 2240 #Paramaribo
 				owns = 2245 #Apetina
 			}
+			exists = yes
 		}
 		allow = {
 			early_railroad = 1
@@ -141,6 +169,7 @@ political_decisions = {
 				owns = 2240 #Paramaribo
 				owns = 2245 #Apetina
 			}
+			exists = yes
 		}
 		allow = {
 			early_railroad = 1
@@ -168,6 +197,7 @@ political_decisions = {
 				is_greater_power = yes
 				is_secondary_power = yes
 			}
+			exists = yes
 		}
 		allow = {
 			war = no
@@ -289,6 +319,7 @@ political_decisions = {
 				ai = yes
 			}
 			BRZ = { ai = yes }
+			exists = yes
 		}
 		allow = {
 			war = no
@@ -316,6 +347,7 @@ political_decisions = {
 				vassal_of = THIS
 				in_sphere = THIS
 			}
+			exists = yes
 		}
 		allow = {
 			invention = the_dark_continent
@@ -352,6 +384,7 @@ political_decisions = {
 			}
 			prestige = 70
 			military_score = 30
+			exists = yes
 		}
 		allow = {
 			war = no
@@ -404,6 +437,7 @@ political_decisions = {
 			
 			prestige = 70
 			military_score = 30
+			exists = yes
 		}
 		allow = {
 			war = no
@@ -437,6 +471,7 @@ political_decisions = {
 	OTHER_guyana_purchase = { #Not as a North Andean of Llanero country, this decision is only for Spain (Nueva Granada Viceroyalty) or any country that has puppeted GCO/VNZ
 		picture = guyanas_2
 		potential = {
+			exists = yes
 			OR = {
 				2243 = { #Pomaron
 					NOT = {
@@ -521,6 +556,7 @@ political_decisions = {
 	VNZ_found_el_callao = {
 		picture = venezuelan_guyana
 		potential = {
+			exists = yes
 			OR = {
 				primary_culture = north_andean
 				primary_culture = llanero
@@ -551,6 +587,7 @@ political_decisions = {
 	VNZ_found_santa_elena_uairen = {
 		picture = venezuelan_guyana
 		potential = {
+			exists = yes
 			OR = {
 				primary_culture = north_andean
 				primary_culture = llanero
@@ -588,6 +625,7 @@ political_decisions = {
 	lawa_tapahoni_question = {
 		picture = french_guyane
 		potential = {
+			exists = yes
 			OR = {
 				tag = NET
 				tag = FRA
@@ -652,6 +690,7 @@ political_decisions = {
 	marouini_question = {
 		picture = french_guyane
 		potential = {
+			exists = yes
 			OR = {
 				tag = NET
 				tag = FRA
@@ -722,8 +761,21 @@ political_decisions = {
 	VNZ_declare_border_essequibo = {
 		picture = venezuelan_guyana
 		potential = {
+			exists = yes
 			OR = {
-				primary_culture = north_andean
+				AND = {
+					primary_culture = north_andean
+					NOT = { OR = { tag = VNZ tag = FVZ tag = USV tag = GCO } }
+				}
+				AND = {
+					primary_culture = north_andean
+					OR = {
+						AND = { tag = VNZ FVZ = { exists = no } USV = { exists = no } GCO = { exists = no } }
+						AND = { tag = FVZ VNZ = { exists = no } USV = { exists = no } GCO = { exists = no } }
+						AND = { tag = USV VNZ = { exists = no } FVZ = { exists = no } GCO = { exists = no } }
+						AND = { tag = GCO VNZ = { exists = no } FVZ = { exists = no } USV = { exists = no } }
+					}
+				}
 				primary_culture = llanero
 			}
 			owns = 2242
@@ -777,8 +829,21 @@ political_decisions = {
 	1850_VNZ_ENG_treaty = {
 		picture = guyanas_2
 		potential = {
+			exists = yes
 			OR = {
-				primary_culture = north_andean
+				AND = {
+					primary_culture = north_andean
+					NOT = { OR = { tag = VNZ tag = FVZ tag = USV tag = GCO } }
+				}
+				AND = {
+					primary_culture = north_andean
+					OR = {
+						AND = { tag = VNZ FVZ = { exists = no } USV = { exists = no } GCO = { exists = no } }
+						AND = { tag = FVZ VNZ = { exists = no } USV = { exists = no } GCO = { exists = no } }
+						AND = { tag = USV VNZ = { exists = no } FVZ = { exists = no } GCO = { exists = no } }
+						AND = { tag = GCO VNZ = { exists = no } FVZ = { exists = no } USV = { exists = no } }
+					}
+				}
 				primary_culture = llanero
 			}
 			owns = 2242
@@ -818,6 +883,7 @@ political_decisions = {
 	ENG_extend_schomburgk = {
 		picture = orinoco_delta
 		potential = {
+			exists = yes
 			OR = {
 				tag = ENG
 				tag = ENL
@@ -857,6 +923,7 @@ political_decisions = {
 	ENG_declare_schomburgk_frontier = {
 		picture = guyanas_2
 		potential = {
+			exists = yes
 			OR = {
 				tag = ENG
 				tag = ENL
@@ -902,16 +969,29 @@ political_decisions = {
 	VNZ_ENG_cease_incursion = {
 		picture = venezuelan_guyana
 		potential = {
+			exists = yes
 			OR = {
-				primary_culture = north_andean
+				AND = {
+					primary_culture = north_andean
+					NOT = { OR = { tag = VNZ tag = FVZ tag = USV tag = GCO } }
+				}
+				AND = {
+					primary_culture = north_andean
+					OR = {
+						AND = { tag = VNZ FVZ = { exists = no } USV = { exists = no } GCO = { exists = no } }
+						AND = { tag = FVZ VNZ = { exists = no } USV = { exists = no } GCO = { exists = no } }
+						AND = { tag = USV VNZ = { exists = no } FVZ = { exists = no } GCO = { exists = no } }
+						AND = { tag = GCO VNZ = { exists = no } FVZ = { exists = no } USV = { exists = no } }
+					}
+				}
 				primary_culture = llanero
 			}
+			owns = 2264
 			OR = {
 				owns = 2242
 				owns = 3381
 				owns = 2275
 				owns = 3596
-				owns = 2264
 			}
 			has_global_flag = ENG_declare_schomburgk_frontier
 			NOT = { has_global_flag = VNZ_ENG_cease_incursion }
@@ -976,6 +1056,7 @@ political_decisions = {
 	ENG_guasipati_incursion = {
 		picture = guyanas_2
 		potential = {
+			exists = yes
 			OR = {
 				tag = ENG
 				tag = ENL
@@ -1058,16 +1139,29 @@ political_decisions = {
 	VNZ_expel_brits_guyana = {
 		picture = venezuelan_guyana
 		potential = {
+			exists = yes
 			OR = {
-				primary_culture = north_andean
+				AND = {
+					primary_culture = north_andean
+					NOT = { OR = { tag = VNZ tag = FVZ tag = USV tag = GCO } }
+				}
+				AND = {
+					primary_culture = north_andean
+					OR = {
+						AND = { tag = VNZ FVZ = { exists = no } USV = { exists = no } GCO = { exists = no } }
+						AND = { tag = FVZ VNZ = { exists = no } USV = { exists = no } GCO = { exists = no } }
+						AND = { tag = USV VNZ = { exists = no } FVZ = { exists = no } GCO = { exists = no } }
+						AND = { tag = GCO VNZ = { exists = no } FVZ = { exists = no } USV = { exists = no } }
+					}
+				}
 				primary_culture = llanero
 			}
+			owns = 2264
 			OR = {
 				owns = 2242
 				owns = 3381
 				owns = 2275
 				owns = 3596
-				owns = 2264
 			}
 			OR = {
 				has_global_flag = ENG_extend_schomburgk
@@ -1132,16 +1226,29 @@ political_decisions = {
 	VNZ_ask_USA_mediation = {
 		picture = venezuelan_guyana
 		potential = {
+			exists = yes
 			OR = {
-				primary_culture = north_andean
+				AND = {
+					primary_culture = north_andean
+					NOT = { OR = { tag = VNZ tag = FVZ tag = USV tag = GCO } }
+				}
+				AND = {
+					primary_culture = north_andean
+					OR = {
+						AND = { tag = VNZ FVZ = { exists = no } USV = { exists = no } GCO = { exists = no } }
+						AND = { tag = FVZ VNZ = { exists = no } USV = { exists = no } GCO = { exists = no } }
+						AND = { tag = USV VNZ = { exists = no } FVZ = { exists = no } GCO = { exists = no } }
+						AND = { tag = GCO VNZ = { exists = no } FVZ = { exists = no } USV = { exists = no } }
+					}
+				}
 				primary_culture = llanero
 			}
 			ai = no
+			owns = 2264
 			OR = {
 				owns = 2242
 				owns = 3381
 				owns = 2275
-				owns = 2264
 				owns = 3596
 			}
 			OR = {
@@ -1222,16 +1329,29 @@ political_decisions = {
 	VNZ_ask_USA_mediation_2 = {
 		picture = venezuelan_guyana
 		potential = {
+			exists = yes
 			OR = {
-				primary_culture = north_andean
+				AND = {
+					primary_culture = north_andean
+					NOT = { OR = { tag = VNZ tag = FVZ tag = USV tag = GCO } }
+				}
+				AND = {
+					primary_culture = north_andean
+					OR = {
+						AND = { tag = VNZ FVZ = { exists = no } USV = { exists = no } GCO = { exists = no } }
+						AND = { tag = FVZ VNZ = { exists = no } USV = { exists = no } GCO = { exists = no } }
+						AND = { tag = USV VNZ = { exists = no } FVZ = { exists = no } GCO = { exists = no } }
+						AND = { tag = GCO VNZ = { exists = no } FVZ = { exists = no } USV = { exists = no } }
+					}
+				}
 				primary_culture = llanero
 			}
 			ai = yes
+			owns = 2264
 			OR = {
 				owns = 2242
 				owns = 3381
 				owns = 2275
-				owns = 2264
 				owns = 3596
 			}
 			OR = {
@@ -1395,16 +1515,29 @@ political_decisions = {
 	VNZ_William_L_Scruggs = {
 		picture = william_l_scruggs
 		potential = {
+			exists = yes
 			OR = {
-				primary_culture = north_andean
+				AND = {
+					primary_culture = north_andean
+					NOT = { OR = { tag = VNZ tag = FVZ tag = USV tag = GCO } }
+				}
+				AND = {
+					primary_culture = north_andean
+					OR = {
+						AND = { tag = VNZ FVZ = { exists = no } USV = { exists = no } GCO = { exists = no } }
+						AND = { tag = FVZ VNZ = { exists = no } USV = { exists = no } GCO = { exists = no } }
+						AND = { tag = USV VNZ = { exists = no } FVZ = { exists = no } GCO = { exists = no } }
+						AND = { tag = GCO VNZ = { exists = no } FVZ = { exists = no } USV = { exists = no } }
+					}
+				}
 				primary_culture = llanero
 			}
+			owns = 2264
 			OR = {
 				owns = 2242
 				owns = 3381
 				owns = 2275
 				owns = 3596
-				owns = 2264
 			}
 			OR = {
 				has_global_flag = schomburgks_line
@@ -1455,8 +1588,21 @@ political_decisions = {
 	BRZ_ENG_pirara_question = {
 		picture = guyanas_2
 		potential = {
+			exists = yes
 			OR = {
-				primary_culture = north_andean
+				AND = {
+					primary_culture = north_andean
+					NOT = { OR = { tag = VNZ tag = FVZ tag = USV tag = GCO } }
+				}
+				AND = {
+					primary_culture = north_andean
+					OR = {
+						AND = { tag = VNZ FVZ = { exists = no } USV = { exists = no } GCO = { exists = no } }
+						AND = { tag = FVZ VNZ = { exists = no } USV = { exists = no } GCO = { exists = no } }
+						AND = { tag = USV VNZ = { exists = no } FVZ = { exists = no } GCO = { exists = no } }
+						AND = { tag = GCO VNZ = { exists = no } FVZ = { exists = no } USV = { exists = no } }
+					}
+				}
 				primary_culture = llanero
 				primary_culture = brazilian
 			}
@@ -1554,8 +1700,21 @@ political_decisions = {
 	tripartite_alliance_schomburgk = {
 		picture = guyanas_2
 		potential = {
+			exists = yes
 			OR = {
-				primary_culture = north_andean
+				AND = {
+					primary_culture = north_andean
+					NOT = { OR = { tag = VNZ tag = FVZ tag = USV tag = GCO } }
+				}
+				AND = {
+					primary_culture = north_andean
+					OR = {
+						AND = { tag = VNZ FVZ = { exists = no } USV = { exists = no } GCO = { exists = no } }
+						AND = { tag = FVZ VNZ = { exists = no } USV = { exists = no } GCO = { exists = no } }
+						AND = { tag = USV VNZ = { exists = no } FVZ = { exists = no } GCO = { exists = no } }
+						AND = { tag = GCO VNZ = { exists = no } FVZ = { exists = no } USV = { exists = no } }
+					}
+				}
 				primary_culture = llanero
 				primary_culture = brazilian
 				primary_culture = dutch
@@ -1674,7 +1833,19 @@ political_decisions = {
 			OR = {
 				AND = {
 					OR = {
-						primary_culture = north_andean
+						AND = {
+							primary_culture = north_andean
+							NOT = { OR = { tag = VNZ tag = FVZ tag = USV tag = GCO } }
+						}
+						AND = {
+							primary_culture = north_andean
+							OR = {
+								AND = { tag = VNZ FVZ = { exists = no } USV = { exists = no } GCO = { exists = no } }
+								AND = { tag = FVZ VNZ = { exists = no } USV = { exists = no } GCO = { exists = no } }
+								AND = { tag = USV VNZ = { exists = no } FVZ = { exists = no } GCO = { exists = no } }
+								AND = { tag = GCO VNZ = { exists = no } FVZ = { exists = no } USV = { exists = no } }
+							}
+						}
 						primary_culture = llanero
 					}
 					OR = {
@@ -1732,7 +1903,19 @@ political_decisions = {
 					2264 = {
 						owner = {
 							OR = {
-								primary_culture = north_andean
+								AND = {
+									primary_culture = north_andean
+									NOT = { OR = { tag = VNZ tag = FVZ tag = USV tag = GCO } }
+								}
+								AND = {
+									primary_culture = north_andean
+									OR = {
+										AND = { tag = VNZ FVZ = { exists = no } USV = { exists = no } GCO = { exists = no } }
+										AND = { tag = FVZ VNZ = { exists = no } USV = { exists = no } GCO = { exists = no } }
+										AND = { tag = USV VNZ = { exists = no } FVZ = { exists = no } GCO = { exists = no } }
+										AND = { tag = GCO VNZ = { exists = no } FVZ = { exists = no } USV = { exists = no } }
+									}
+								}
 								primary_culture = llanero
 							}
 							OR = {
@@ -1804,7 +1987,19 @@ political_decisions = {
 					2264 = {
 						owner = {
 							OR = {
-								primary_culture = north_andean
+								AND = {
+									primary_culture = north_andean
+									NOT = { OR = { tag = VNZ tag = FVZ tag = USV tag = GCO } }
+								}
+								AND = {
+									primary_culture = north_andean
+									OR = {
+										AND = { tag = VNZ FVZ = { exists = no } USV = { exists = no } GCO = { exists = no } }
+										AND = { tag = FVZ VNZ = { exists = no } USV = { exists = no } GCO = { exists = no } }
+										AND = { tag = USV VNZ = { exists = no } FVZ = { exists = no } GCO = { exists = no } }
+										AND = { tag = GCO VNZ = { exists = no } FVZ = { exists = no } USV = { exists = no } }
+									}
+								}
 								primary_culture = llanero
 							}
 							OR = {
@@ -1850,6 +2045,7 @@ political_decisions = {
 	tripartite_alliance_schomburgk_2 = {
 		picture = guyanas_2
 		potential = {
+			exists = yes
 			has_global_flag = tripartite_alliance_schomburgk
 			NOT = { has_global_flag = tripartite_alliance_schomburgk_2 }
 			has_country_flag = VNZ_BRZ_NET_leader
@@ -1973,6 +2169,7 @@ political_decisions = {
 	tripartite_alliance_schomburgk_3 = {
 		picture = guyanas_2
 		potential = {
+			exists = yes
 			has_global_flag = tripartite_alliance_schomburgk_2
 			NOT = { has_global_flag = tripartite_alliance_schomburgk_3 }
 			USA = { has_country_flag = VNZ_BRZ_NET_USA }
@@ -2075,8 +2272,21 @@ political_decisions = {
 	VNZ_pain_in_the_ass = {
 		picture = venezuelan_guyana
 		potential = {
+			exists = yes
 			OR = {
-				primary_culture = north_andean
+				AND = {
+					primary_culture = north_andean
+					NOT = { OR = { tag = VNZ tag = FVZ tag = USV tag = GCO } }
+				}
+				AND = {
+					primary_culture = north_andean
+					OR = {
+						AND = { tag = VNZ FVZ = { exists = no } USV = { exists = no } GCO = { exists = no } }
+						AND = { tag = FVZ VNZ = { exists = no } USV = { exists = no } GCO = { exists = no } }
+						AND = { tag = USV VNZ = { exists = no } FVZ = { exists = no } GCO = { exists = no } }
+						AND = { tag = GCO VNZ = { exists = no } FVZ = { exists = no } USV = { exists = no } }
+					}
+				}
 				primary_culture = llanero
 			}
 			owns = 2242 #Esequibo
@@ -2217,6 +2427,7 @@ political_decisions = {
 	ENG_VNZ_problem = {
 		picture = guyanas_2
 		potential = {
+			exists = yes
 			OR = {
 				tag = ENG
 				tag = ENL
@@ -2272,8 +2483,21 @@ political_decisions = {
 	USA_VNZ_treaty = { #USA recognizes VNZ as a rising power. Willing to help against ENG's encroachment
 		picture = venezuelan_guyana
 		potential = {
+			exists = yes
 			OR = {
-				primary_culture = north_andean
+				AND = {
+					primary_culture = north_andean
+					NOT = { OR = { tag = VNZ tag = FVZ tag = USV tag = GCO } }
+				}
+				AND = {
+					primary_culture = north_andean
+					OR = {
+						AND = { tag = VNZ FVZ = { exists = no } USV = { exists = no } GCO = { exists = no } }
+						AND = { tag = FVZ VNZ = { exists = no } USV = { exists = no } GCO = { exists = no } }
+						AND = { tag = USV VNZ = { exists = no } FVZ = { exists = no } GCO = { exists = no } }
+						AND = { tag = GCO VNZ = { exists = no } FVZ = { exists = no } USV = { exists = no } }
+					}
+				}
 				primary_culture = llanero
 			}
 			owns = 2242 #Esequibo
@@ -2352,11 +2576,24 @@ political_decisions = {
 	VNZ_ENG_war = {
 		picture = venezuelan_guyana
 		potential = {
+			exists = yes
 			tag = USA
 			2264 = { #Caracas
 				owner = {
 					OR = {
-						primary_culture = north_andean
+						AND = {
+							primary_culture = north_andean
+							NOT = { OR = { tag = VNZ tag = FVZ tag = USV tag = GCO } }
+						}
+						AND = {
+							primary_culture = north_andean
+							OR = {
+								AND = { tag = VNZ FVZ = { exists = no } USV = { exists = no } GCO = { exists = no } }
+								AND = { tag = FVZ VNZ = { exists = no } USV = { exists = no } GCO = { exists = no } }
+								AND = { tag = USV VNZ = { exists = no } FVZ = { exists = no } GCO = { exists = no } }
+								AND = { tag = GCO VNZ = { exists = no } FVZ = { exists = no } USV = { exists = no } }
+							}
+						}
 						primary_culture = llanero
 					}
 					owns = 2242 #Esequibo
@@ -2384,7 +2621,19 @@ political_decisions = {
 			2264 = { #Caracas
 				owner = {
 					OR = {
-						primary_culture = north_andean
+						AND = {
+							primary_culture = north_andean
+							NOT = { OR = { tag = VNZ tag = FVZ tag = USV tag = GCO } }
+						}
+						AND = {
+							primary_culture = north_andean
+							OR = {
+								AND = { tag = VNZ FVZ = { exists = no } USV = { exists = no } GCO = { exists = no } }
+								AND = { tag = FVZ VNZ = { exists = no } USV = { exists = no } GCO = { exists = no } }
+								AND = { tag = USV VNZ = { exists = no } FVZ = { exists = no } GCO = { exists = no } }
+								AND = { tag = GCO VNZ = { exists = no } FVZ = { exists = no } USV = { exists = no } }
+							}
+						}
 						primary_culture = llanero
 					}
 					owns = 2242 #Esequibo
@@ -2460,11 +2709,24 @@ political_decisions = {
 	VNZ_treaty_of_caracas = {
 		picture = treaty_signing
 		potential = {
+			exists = yes
 			has_global_flag = ENG_extend_schomburgk
 			has_global_flag = ENG_VNZ_problem
 			#is_greater_power = no
 			OR = {
-				primary_culture = north_andean
+				AND = {
+					primary_culture = north_andean
+					NOT = { OR = { tag = VNZ tag = FVZ tag = USV tag = GCO } }
+				}
+				AND = {
+					primary_culture = north_andean
+					OR = {
+						AND = { tag = VNZ FVZ = { exists = no } USV = { exists = no } GCO = { exists = no } }
+						AND = { tag = FVZ VNZ = { exists = no } USV = { exists = no } GCO = { exists = no } }
+						AND = { tag = USV VNZ = { exists = no } FVZ = { exists = no } GCO = { exists = no } }
+						AND = { tag = GCO VNZ = { exists = no } FVZ = { exists = no } USV = { exists = no } }
+					}
+				}
 				primary_culture = llanero
 			}
 			OR = {
@@ -2578,6 +2840,7 @@ political_decisions = {
 	VNZ_vassal_of_ENG_resolution = {
 		picture = guyanas_2
 		potential = {
+			exists = yes
 			OR = {
 				tag = ENG
 				tag = ENL
@@ -2593,7 +2856,19 @@ political_decisions = {
 			2264 = { #caracas
 				owner = {
 					OR = {
-						primary_culture = north_andean
+						AND = {
+							primary_culture = north_andean
+							NOT = { OR = { tag = VNZ tag = FVZ tag = USV tag = GCO } }
+						}
+						AND = {
+							primary_culture = north_andean
+							OR = {
+								AND = { tag = VNZ FVZ = { exists = no } USV = { exists = no } GCO = { exists = no } }
+								AND = { tag = FVZ VNZ = { exists = no } USV = { exists = no } GCO = { exists = no } }
+								AND = { tag = USV VNZ = { exists = no } FVZ = { exists = no } GCO = { exists = no } }
+								AND = { tag = GCO VNZ = { exists = no } FVZ = { exists = no } USV = { exists = no } }
+							}
+						}
 						primary_culture = llanero
 					}
 					owns = 2242 #Esequibo
@@ -2674,6 +2949,7 @@ political_decisions = {
 	BRZ_vassal_of_ENG_resolution = {
 		picture = guyanas_2
 		potential = {
+			exists = yes
 			OR = {
 				tag = ENG
 				tag = ENL
@@ -2748,6 +3024,7 @@ political_decisions = {
 	UGU_primary_culture = {
 		picture = guyanas_1
 		potential = {
+			exists = yes
 			tag = UGU
 			NOT = { has_country_flag = UGU_primary_culture }
 			NOT = { has_country_flag = UGU_primary_culture_selected }
@@ -2765,6 +3042,7 @@ political_decisions = {
 	UGU_religion = {
 		picture = guyanas_1
 		potential = {
+			exists = yes
 			tag = UGU
 			NOT = { has_country_flag = UGU_religion }
 			has_country_flag = UGU_primary_culture_selected
@@ -2783,6 +3061,7 @@ political_decisions = {
 	reform_UGU_outside = {
 		picture = guyanas_1
 		potential = {
+			exists = yes
 			is_greater_power = yes
 			#is_culture_group = latin_american_cultures
 			NOT = { has_country_flag = post_colonial_country }
@@ -3029,6 +3308,7 @@ political_decisions = {
 	UGU_by_sword = {
 		picture = guyanas_1
 		potential = {
+			exists = yes
 			OR = {
 				tag = GUY
 				tag = SUR
@@ -3068,6 +3348,7 @@ political_decisions = {
 	form_UGU = {
 		picture = guyanas_1
 		potential = {
+			exists = yes
 			OR = {
 				tag = GUY
 				tag = SUR
@@ -3181,6 +3462,7 @@ political_decisions = {
 	UGU_claim_guayana = {
 		picture = guyanas_1
 		potential = {
+			exists = yes
 			tag = UGU
 			NOT = {	has_country_flag = UGU_claim_guayana }
 		}
@@ -3229,6 +3511,7 @@ political_decisions = {
 	indentured_indians_british = {
 		picture = map_india
 		potential = {
+			exists = yes
 			NOT = { has_global_flag = indentured_indians_british }
 			OR = {
 				tag = ENG
@@ -3529,6 +3812,7 @@ political_decisions = {
 	indentured_indians_dutch = {
 		picture = map_india
 		potential = {
+			exists = yes
 			has_global_flag = indentured_indians_british
 			NOT = { has_global_flag = indentured_indians_dutch }
 			OR = {
@@ -3596,6 +3880,7 @@ political_decisions = {
 	indentured_javans_dutch = {
 		picture = java_map
 		potential = {
+			exists = yes
 			has_global_flag = indentured_indians_dutch
 			NOT = { has_global_flag = indentured_javans_dutch }
 			tag = NET
@@ -3646,6 +3931,7 @@ political_decisions = {
 	indentured_indians_french = {
 		picture = map_india
 		potential = {
+			exists = yes
 			has_global_flag = indentured_indians_british
 			NOT = { has_global_flag = indentured_indians_french }
 			OR = {
@@ -3932,6 +4218,7 @@ political_decisions = {
 	indentured_indians_SA = {
 		picture = map_india
 		potential = {
+			exists = yes
 			has_global_flag = indentured_indians_british
 			NOT = { has_global_flag = indentured_indians_SA }
 			OR = {
@@ -4029,6 +4316,7 @@ political_decisions = {
 	indentured_indians_fiji = {
 		picture = map_india
 		potential = {
+			exists = yes
 			has_global_flag = indentured_indians_british
 			NOT = { has_global_flag = indentured_indians_fiji }
 			OR = {

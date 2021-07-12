@@ -75,6 +75,7 @@ test_naval = {
 			is_culture_group = beneluxian
 			primary_culture = british
 			primary_culture = north_italian
+			primary_culture = venetian
 			is_culture_group = iberian
 			is_culture_group = french
 			primary_culture = russian
@@ -85,6 +86,9 @@ test_naval = {
 			is_greater_power = yes
 			is_secondary_power = yes
 		}
+	}
+	chance = {
+		base = 100
 	}
 	effect = {
 		navy_base = { build_time = -25 }

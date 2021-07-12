@@ -1,13 +1,13 @@
 political_decisions = {
 
-create_the_golden_circle = {
+	create_the_golden_circle = {
 		#picture = the_golden_circle
 		potential = {
 			tag = CSA
 			exists = MXM
 			NOT = { exists = MEX }
 			slavery = yes_slavery
-			}
+		}
 		
 		allow = {
 			war = no
@@ -21,11 +21,11 @@ create_the_golden_circle = {
 					OR = {
 						owned_by = THIS
 						owner = { in_sphere = THIS }
-						}
 					}
 				}
 			}
-	
+		}
+		
 		effect = {
 			CSA = { all_core = { add_core = KGC } }
 			MXM = { all_core = { add_core = KGC } }
@@ -38,36 +38,34 @@ create_the_golden_circle = {
 				relation = {
 					who = USA
 					value = -100
-					}
+				}
 				relation = {
 					who = FRA
 					value = -100
-					}
+				}
 				add_accepted_culture = mexican
 				add_accepted_culture = norteno
 				add_accepted_culture = yucateco
 				add_accepted_culture = spanish #To Be replaced with criollo
-				}
 			}
-		
+		}
 		ai_will_do = { factor = 1 }
-		
 	}
-	
-claim_central_america_golden_circle = {
-	
+		
+	claim_central_america_golden_circle = {
+		
 		potential = {
 			tag = KGC
 			slavery = yes_slavery
 			NOT = { has_global_flag = golden_circle_claims_central_america }
-			}
+		}
 		
 		allow = {
 			war = no
 			is_greater_power = yes
 			prestige = 100
 			has_unclaimed_cores = no
-			}
+		}
 			
 		effect = {
 			GUA = { all_core = { add_core = KGC } }
@@ -80,27 +78,27 @@ claim_central_america_golden_circle = {
 			badboy = 10
 			prestige = 10
 			relation = {
-					who = USA
-					value = -100
-					}
-		set_global_flag = golden_circle_claims_central_america
+				who = USA
+				value = -100
 			}
+			set_global_flag = golden_circle_claims_central_america
+		}
 		ai_will_do = { factor = 1 }
 	}
-	
-claim_north_colombia_golden_circle = {
+		
+	claim_north_colombia_golden_circle = {
 		potential = {
 			tag = KGC
 			slavery = yes_slavery
 			NOT = { has_global_flag = golden_circle_claims_north_colombia }
-			}
+		}
 		
 		allow = {
 			war = no
 			is_greater_power = yes
 			prestige = 150
 			has_unclaimed_cores = no
-			}
+		}
 		
 		effect = {
 			badboy = 10
@@ -119,218 +117,292 @@ claim_north_colombia_golden_circle = {
 			CLM_3297 = { add_core = KGC }
 			set_global_flag = golden_circle_claims_north_colombia
 			relation = {
-					who = USA
-					value = -100
-					}
-			prestige = 10
+				who = USA
+				value = -100
 			}
+			prestige = 10
+		}
 		ai_will_do = { factor = 1 }
 	}
 
-claim_the_antilles_golden_circle = {
-	
-	potential = {
-		tag = KGC
-		slavery = yes_slavery
-		NOT = { has_global_flag = golden_circle_claims_the_antilles }
+	claim_the_antilles_golden_circle = {
+		
+		potential = {
+			tag = KGC
+			slavery = yes_slavery
+			NOT = { has_global_flag = golden_circle_claims_the_antilles }
 		}
 		
-	allow = {
-		war = no
-		is_greater_power = yes
-		prestige = 100
-		has_unclaimed_cores = no
+		allow = {
+			war = no
+			is_greater_power = yes
+			prestige = 100
+			has_unclaimed_cores = no
 		}
-	
-	effect = {
-		badboy = 5
-		ENG_2224 = { add_core = KGC }
-		ENG_2228 = { add_core = KGC }
-		set_global_flag = golden_circle_claims_the_antilles
-		relation = {
-			who = ENG
-			value = -50
+		
+		effect = {
+			badboy = 5
+			ENG_2224 = { add_core = KGC }
+			ENG_2228 = { add_core = KGC }
+			set_global_flag = golden_circle_claims_the_antilles
+			relation = {
+				who = ENG
+				value = -50
 			}
-		relation = {
-			who = NET
-			value = -50
+			relation = {
+				who = NET
+				value = -50
 			}
-		relation = {
-			who = USA
-			value = -100
+			relation = {
+				who = USA
+				value = -100
 			}
-		relation = {
-			who = FRA
-			value = -50
+			relation = {
+				who = FRA
+				value = -50
 			}
-		relation = {
-			who = SPA
-			value = -50
+			relation = {
+				who = SPA
+				value = -50
 			}
-		relation = {
-			who = SPC
-			value = -50
+			relation = {
+				who = SPC
+				value = -50
 			}
 		}	
-	ai_will_do = { factor = 1 }
+		ai_will_do = { factor = 1 }
 	}
 	
-claim_the_caribbeans_golden_circle = {
-	
-	potential = {
-		tag = KGC
-		slavery = yes_slavery
-		NOT = { has_global_flag = golden_circle_claims_caribbeans }
+	claim_the_caribbeans_golden_circle = {
+		
+		potential = {
+			tag = KGC
+			slavery = yes_slavery
+			NOT = { has_global_flag = golden_circle_claims_caribbeans }
 		}
 		
-	allow = {
-		war = no
-		is_greater_power = yes
-		prestige = 100
-		has_unclaimed_cores = no
-		}
-	
-	effect = {
-		ENG_2219 = { add_core = KGC }
-		ENG_203 = { add_core = KGC }
-		badboy = 5
-		set_global_flag = golden_circle_claims_caribbeans
-		relation = {
-			who = ENG
-			value = -100
-			}
-		relation = {
-			who = USA
-			value = -100
-			}
-		}
-	ai_will_do = { factor = 1 }
-	}
-
-claim_cuba_golden_circle = {
-	
-	potential = {
-		tag = KGC
-		slavery = yes_slavery
-		NOT = { has_global_flag = golden_circle_claims_cuba }
-		NOT = { any_core = { is_core = CUB } }
-		}
-	
-	allow = {
-		war = no
-		is_greater_power = yes
-		has_unclaimed_cores = no
-		prestige = 50
+		allow = {
+			war = no
+			is_greater_power = yes
+			prestige = 100
+			has_unclaimed_cores = no
 		}
 		
-	effect = {
-		SPA_2209 = { add_core = KGC }
-		SPA_2211 = { add_core = KGC }
-		badboy = 2.5
-		set_global_flag = golden_circle_claims_cuba
-		relation = {
-			who = SPA
-			value = -100
+		effect = {
+			ENG_2219 = { add_core = KGC }
+			ENG_203 = { add_core = KGC }
+			badboy = 5
+			set_global_flag = golden_circle_claims_caribbeans
+			relation = {
+				who = ENG
+				value = -100
 			}
-		relation = {
-			who = SPC
-			value = -100
+			relation = {
+				who = USA
+				value = -100
 			}
 		}
-	ai_will_do = { factor = 1 }
+		ai_will_do = { factor = 1 }
 	}
 
-claim_hispaniola_golden_circle = {
-	
-	potential = {
-		tag = KGC
-		slavery = yes_slavery
-		NOT = { has_global_flag = golden_circle_claims_hispaniola }
+	claim_cuba_golden_circle = {
+		
+		potential = {
+			tag = KGC
+			slavery = yes_slavery
+			NOT = { has_global_flag = golden_circle_claims_cuba }
+			NOT = { any_core = { is_core = CUB } }
 		}
-	
-	allow = {
-		war = no
-		is_greater_power = yes
-		has_unclaimed_cores = no
-		prestige = 50
+		
+		allow = {
+			war = no
+			is_greater_power = yes
+			has_unclaimed_cores = no
+			prestige = 50
 		}
-	
-	effect = {
-		HAI_2213 = { add_core = KGC }
-		badboy = 2.5
-		set_global_flag = golden_circle_claims_hispaniola
-		relation = {
-			who = USA
-			value = -50
+		
+		effect = {
+			SPA_2209 = { add_core = KGC }
+			SPA_2211 = { add_core = KGC }
+			badboy = 2.5
+			set_global_flag = golden_circle_claims_cuba
+			relation = {
+				who = SPA
+				value = -100
+			}
+			relation = {
+				who = SPC
+				value = -100
+			}
+		}
+		ai_will_do = { factor = 1 }
+	}
+
+	claim_hispaniola_golden_circle = {
+		
+		potential = {
+			tag = KGC
+			slavery = yes_slavery
+			NOT = { has_global_flag = golden_circle_claims_hispaniola }
+		}
+		
+		allow = {
+			war = no
+			is_greater_power = yes
+			has_unclaimed_cores = no
+			prestige = 50
+		}
+		
+		effect = {
+			HAI_2213 = { add_core = KGC }
+			badboy = 2.5
+			set_global_flag = golden_circle_claims_hispaniola
+			relation = {
+				who = USA
+				value = -50
 			}
 		}	
-	ai_will_do = { factor = 1 }
+		ai_will_do = { factor = 1 }
 	}
-	
-gain_conservative_mexico_generals = {
-	potential = {
-		OR = { 
+		
+	gain_conservative_mexico_generals = {
+		potential = {
+			OR = {
+				tag = MXM
+				tag = M3X
+			}
+			NOT = { has_country_flag = gain_conservative_generals }
+		}
+		
+		allow = {
+			war_with = MEX
+		}
+		
+		effect = {
+			define_general = {
+				name = "Tomás Mejía"
+				personality = confident
+				background = cavalry_school
+			}
+			define_general = {
+				name = "Miguel Miramón"
+				personality = disciplined
+				background = war_college
+			}
+			define_general = {
+				name = "Leonardo Márquez"
+				personality = vicious
+				background = natural_born_leader
+			}
+			define_general = {
+				name = "Félix María Zuloaga"
+				personality = diplomatic
+				background = engineer
+			}
+			set_country_flag = gain_conservative_generals
+		}
+		ai_will_do = { factor = 1 }
+	}
+
+	encourage_immigration_to_habsburg_mexico = {
+		potential = {
 			tag = MXM
-			tag = M3X
-			}
-		NOT = { has_country_flag = gain_conservative_generals }
-		}
-	
-	allow = {
-		war_with = MEX
-		}
-	
-	effect = {
-		define_general = {
-			name = "Tomás Mejía"
-			personality = confident
-			background = cavalry_school
-			}
-		define_general = {
-			name = "Miguel Miramón"
-			personality = disciplined
-			background = war_college
-			}
-		define_general = {
-			name = "Leonardo Márquez"
-			personality = vicious
-			background = natural_born_leader
-			}
-		set_country_flag = gain_conservative_generals
-		}
-	
-	ai_will_do = { factor = 1 }
-	}
-
-encourage_immigration_to_habsburg_mexico = {
-	potential = {
-		tag = MXM
-		NOT = { exists = MEX exists = M3X }
-		NOT = { has_country_flag = encouraged_immigration }
-		}
-	
-	allow = {
-		war = no
-		NOT = { war_exhaustion = 25 }
-		NOT = { unemployment = 0.25 } #0.1/10% was too low
-		#citizenship_policy = full_citizenship
-		border_policy = open_borders
-		money = 100000
+			NOT = { exists = MEX exists = M3X }
+			NOT = { has_country_flag = encouraged_immigration }
 		}
 		
-	effect = {
-		treasury = -100000
-		add_country_modifier = {
-			name = land_of_opportunity
-			duration = 1095
-			}
-		set_country_flag = encouraged_immigration
+		allow = {
+			war = no
+			NOT = { war_exhaustion = 25 }
+			NOT = { unemployment = 0.25 } #0.1/10% was too low
+			#citizenship_policy = full_citizenship
+			border_policy = open_borders
+			money = 100000
 		}
-	
-	ai_will_do = {
+		
+		effect = {
+			treasury = -100000
+			add_country_modifier = {
+				name = land_of_opportunity
+				duration = 1095
+			}
+			set_country_flag = encouraged_immigration
+		}
+		ai_will_do = { factor = 1 }
+	}
+
+	MXM_opportunity_for_enanito_juarez = {
+		potential = {
+			tag = MXM
+			has_global_flag = second_french_intervetion
+			exists = MEX
+			NOT = { has_global_flag = MXM_opportunity }
+		}
+		
+		allow = {
+			OR = {
+				NOT = { war_with = MEX }
+				truce_with = MEX
+				AND = {
+					war_with = MEX #REMEMBER TO ADD END_WAR WITH THIS in a random_owned in 1100068
+					MEX = {
+						OR = {
+							AND = {
+								OR = {
+									capital_scope = { controlled_by = THIS }
+									capital_scope = { controlled_by = FRA }
+									capital_scope = { controlled_by = BOR }
+									capital_scope = { controller = { war_with = MEX alliance_with = THIS } }
+								}
+								national_provinces_occupied = .75
+							}
+							AND = {
+								NOT = {
+								OR = {
+									capital_scope = { controlled_by = THIS }
+									capital_scope = { controlled_by = FRA }
+									capital_scope = { controlled_by = BOR }
+									capital_scope = { controller = { war_with = MEX alliance_with = THIS } }
+								}
+								}
+								national_provinces_occupied = .50
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		effect = {
+			set_global_flag = MXM_opportunity
+			prestige = 5
+			MEX = { country_event = 1100068 }
+		}
+		
+		ai_will_do = {
 		factor = 1
 		}
-	
 	}
 	
+	MEX_asks_loans_1 = {
+		potential = {
+			tag = MEX
+			has_global_flag = mexican_reform_war
+			NOT = { has_global_flag = MEX_asks_loans_1 }
+			NOT = { has_global_flag = conservatives_win }
+		}
+		
+		allow = {
+		
+		}
+		
+		effect = {
+			set_global_flag = MEX_asks_loans_1
+			country_event = 1100051
+		}
+		
+		ai_will_do = {
+		factor = 1
+		}
+	}
 }

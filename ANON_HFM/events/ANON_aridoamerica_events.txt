@@ -107,6 +107,17 @@
 					name = america_new_world
 					duration = 5475
 				}
+				government = presidential_dictatorship
+				political_reform = appointed
+				political_reform = none_voting
+				political_reform = yes_meeting
+				political_reform = state_press
+				political_reform = no_trade_unions
+				political_reform = first_past_the_post
+				political_reform = harassment
+				political_reform = open_borders
+				political_reform = settlement
+				political_reform = unitary
 			}
 			ai_chance = {
 				factor = 100
@@ -178,6 +189,17 @@
 					name = america_new_world
 					duration = 5475
 				}
+				government = presidential_dictatorship
+				political_reform = appointed
+				political_reform = none_voting
+				political_reform = yes_meeting
+				political_reform = state_press
+				political_reform = no_trade_unions
+				political_reform = first_past_the_post
+				political_reform = harassment
+				political_reform = open_borders
+				political_reform = settlement
+				political_reform = unitary
 			}
 			change_tag_no_core_switch = C4L
 			ai_chance = {
@@ -229,6 +251,21 @@
 					consciousness = 3
 				}
 				add_province_modifier = { name = political_tensions duration = 1825 }
+			}
+			C4L = {
+				government = dominion
+				political_reform = appointed
+				political_reform = landed_voting
+				political_reform = yes_meeting
+				political_reform = censored_press
+				political_reform = no_trade_unions
+				political_reform = first_past_the_post
+				political_reform = harassment
+				political_reform = culture_voting_only
+				political_reform = open_borders
+				political_reform = settlement
+				political_reform = unitary
+				#
 			}
 			ai_chance = {
 				factor = 100
@@ -1452,8 +1489,8 @@
 			war = no
 			NOT = {
 				OR = {
-					has_country_flag = houston_capital
-					has_country_flag = not_houston_capital
+					has_global_flag = houston_capital
+					has_global_flag = not_houston_capital
 				}
 			}
 			year = 1837
@@ -1465,7 +1502,7 @@
 		
 		option = {
 			name = "EVTOPTA1110026"
-			set_country_flag = houston_capital
+			set_global_flag = houston_capital
 			capital = 132
 			132 = {
 				change_province_name = "Houston"
@@ -1476,7 +1513,7 @@
 		}
 		option = {
 			name = "EVTOPTB1110026"
-			set_country_flag = not_houston_capital
+			set_global_flag = not_houston_capital
 			ai_chance = { factor = 0 }
 		}
 	}
@@ -2443,9 +2480,6 @@
 					has_country_flag = TEX_coup_refuse
 				}
 			}
-		}
-		mean_time_to_happen = {
-			months = 1
 		}
 		
 		option = {
@@ -3876,6 +3910,7 @@
 		immediate = {
 			set_global_flag = mormon_exodus
 			any_country = {
+				limit = { NOT = { tag = THIS } }
 				any_pop = {
 					limit = {
 						has_pop_religion = mormon
@@ -3885,7 +3920,6 @@
 									province_id = 166
 									province_id = 150
 									province_id = 146
-									
 									province_id = 149
 									province_id = 167
 									province_id = 152
@@ -3899,251 +3933,154 @@
 					move_pop = 97
 				}
 			}
-			any_country = {
-				any_pop = {
-					limit = {
-						has_pop_religion = mormon
+			any_pop = {
+				limit = {
+					has_pop_religion = mormon
+					NOT = {
 						location = {
-							province_id = 166 #5950
+							OR = {
+								province_id = 166
+								province_id = 150
+								province_id = 146
+								province_id = 149
+								province_id = 167
+								province_id = 152
+								province_id = 168
+							}
 						}
 					}
+				}
+				dominant_issue = { value = moralism factor = 0.5 }
+				consciousness = 5
+				move_pop = 97
+			}
+			166 = { #5950
+				any_pop = {
+					limit = { has_pop_religion = mormon }
 					dominant_issue = { value = moralism factor = 0.5 }
 					consciousness = 5
 					move_pop = 97
 				}
 			}
-			any_country = {
+			150 = { #1750
 				any_pop = {
-					limit = {
-						has_pop_religion = mormon
-						location = {
-							province_id = 150 #1750
-						}
-					}
+					limit = { has_pop_religion = mormon }
 					dominant_issue = { value = moralism factor = 0.5 }
 					consciousness = 5
 					move_pop = 98
 				}
 			}
-			any_country = {
+			146 = { #1250
 				any_pop = {
-					limit = {
-						has_pop_religion = mormon
-						location = {
-							province_id = 146 #1250
-						}
-					}
+					limit = { has_pop_religion = mormon }
 					dominant_issue = { value = moralism factor = 0.5 }
 					consciousness = 5
 					move_pop = 99
 				}
 			}
-			any_country = {
+			149 = { #1750
 				any_pop = {
-					limit = {
-						has_pop_religion = mormon
-						location = {
-							province_id = 149 #1750
-						}
-					}
+					limit = { has_pop_religion = mormon }
 					dominant_issue = { value = moralism factor = 0.5 }
 					consciousness = 5
 					move_pop = 96
 				}
 			}
-			any_country = {
+			167 = { #1275
 				any_pop = {
-					limit = {
-						has_pop_religion = mormon
-						location = {
-							province_id = 167 #1275
-						}
-					}
+					limit = { has_pop_religion = mormon }
 					dominant_issue = { value = moralism factor = 0.5 }
 					consciousness = 5
 					move_pop = 95
 				}
 			}
-			any_country = {
+			152 = { #1070
 				any_pop = {
-					limit = {
-						has_pop_religion = mormon
-						location = {
-							province_id = 152 #1070
-						}
-					}
+					limit = { has_pop_religion = mormon }
 					dominant_issue = { value = moralism factor = 0.5 }
 					consciousness = 5
 					move_pop = 94
 				}
 			}
-			any_country = {
+			168 = { #2700
 				any_pop = {
-					limit = {
-						has_pop_religion = mormon
-						location = {
-							province_id = 168 #2700
-						}
-					}
+					limit = { has_pop_religion = mormon }
 					dominant_issue = { value = moralism factor = 0.5 }
 					consciousness = 5
 					move_pop = 3393
 				}
 			}
-			#############################
-				any_pop = {
-					limit = {
-						has_pop_religion = mormon
-						location = {
-							province_id = 166 #5950
-						}
-					}
-					dominant_issue = { value = moralism factor = 0.5 }
-					consciousness = 5
-					move_pop = 97
-				}
-				any_pop = {
-					limit = {
-						has_pop_religion = mormon
-						location = {
-							province_id = 150 #1750
-						}
-					}
-					dominant_issue = { value = moralism factor = 0.5 }
-					consciousness = 5
-					move_pop = 98
-				}
-				any_pop = {
-					limit = {
-						has_pop_religion = mormon
-						location = {
-							province_id = 146 #1250
-						}
-					}
-					dominant_issue = { value = moralism factor = 0.5 }
-					consciousness = 5
-					move_pop = 99
-				}
-				any_pop = {
-					limit = {
-						has_pop_religion = mormon
-						location = {
-							province_id = 149 #1750
-						}
-					}
-					dominant_issue = { value = moralism factor = 0.5 }
-					consciousness = 5
-					move_pop = 96
-				}
-				any_pop = {
-					limit = {
-						has_pop_religion = mormon
-						location = {
-							province_id = 167 #1275
-						}
-					}
-					dominant_issue = { value = moralism factor = 0.5 }
-					consciousness = 5
-					move_pop = 95
-				}
-				any_pop = {
-					limit = {
-						has_pop_religion = mormon
-						location = {
-							province_id = 152 #1070
-						}
-					}
-					dominant_issue = { value = moralism factor = 0.5 }
-					consciousness = 5
-					move_pop = 94
-				}
-				any_pop = {
-					limit = {
-						has_pop_religion = mormon
-						location = {
-							province_id = 168 #2700
-						}
-					}
-					dominant_issue = { value = moralism factor = 0.5 }
-					consciousness = 5
-					move_pop = 3393
-				}
 		}
 		
 		option = {
 			name = "EVTOPTA1110054"
 			set_global_flag = mormons_welcomed
-			any_country = {
-				any_owned = {
-					limit = {
-						OR = {
-							province_id = 97
-							province_id = 98
-							province_id = 99
-						}
-					}
-					add_province_modifier = { name = home_of_the_mormons duration = 10950 }
-					any_pop = {
-						limit = { is_culture_group = native_american }
-						reduce_pop = 0.25
-					}
+			97 = {
+				add_province_modifier = { name = home_of_the_mormons duration = 10950 }
+				any_pop = {
+					limit = { is_culture_group = native_american }
+					reduce_pop = 0.25
 				}
 			}
-			any_country = {
-				any_owned = {
-					limit = {
-						OR = {
-							province_id = 96
-							province_id = 95
-							province_id = 94
-							province_id = 3393
-						}
-					}
-					add_province_modifier = { name = home_of_the_mormons duration = 5475 }
-					any_pop = {
-						limit = { is_culture_group = native_american }
-						reduce_pop = 0.25
-					}
+			98 = {
+				add_province_modifier = { name = home_of_the_mormons duration = 10950 }
+				any_pop = {
+					limit = { is_culture_group = native_american }
+					reduce_pop = 0.25
 				}
 			}
-			################################
-				any_owned = {
-					limit = {
-						OR = {
-							province_id = 97
-							province_id = 98
-							province_id = 99
-						}
-					}
-					add_province_modifier = { name = home_of_the_mormons duration = 10950 }
-					any_pop = {
-						limit = { is_culture_group = native_american }
-						reduce_pop = 0.25
-					}
+			99 = {
+				add_province_modifier = { name = home_of_the_mormons duration = 10950 }
+				any_pop = {
+					limit = { is_culture_group = native_american }
+					reduce_pop = 0.25
 				}
-				any_owned = {
-					limit = {
-						OR = {
-							province_id = 96
-							province_id = 95
-							province_id = 94
-							province_id = 3393
-						}
-					}
-					add_province_modifier = { name = home_of_the_mormons duration = 5475 }
-					any_pop = {
-						limit = { is_culture_group = native_american }
-						reduce_pop = 0.25
-					}
+			}
+			96 = {
+				add_province_modifier = { name = home_of_the_mormons duration = 5475 }
+				any_pop = {
+					limit = { is_culture_group = native_american }
+					reduce_pop = 0.25
 				}
+			}
+			95 = {
+				add_province_modifier = { name = home_of_the_mormons duration = 5475 }
+				any_pop = {
+					limit = { is_culture_group = native_american }
+					reduce_pop = 0.25
+				}
+			}
+			94 = {
+				add_province_modifier = { name = home_of_the_mormons duration = 5475 }
+				any_pop = {
+					limit = { is_culture_group = native_american }
+					reduce_pop = 0.25
+				}
+			}
+			3393 = {
+				add_province_modifier = { name = home_of_the_mormons duration = 5475 }
+				any_pop = {
+					limit = { is_culture_group = native_american }
+					reduce_pop = 0.25
+				}
+			}
+			#Utah
 			MEX_94 = { add_core = DES }
+			#Nevada
 			MEX_97 = { add_core = DES }
-			88 = { add_core = DES }
-			89 = { add_core = DES }
-			90 = { add_core = DES }
-			100 = { add_core = DES }
+			#Arizona
 			101 = { add_core = DES }
+			100 = { add_core = DES }
 			3396 = { add_core = DES }
+			#Colorado
+			110 = { add_core = DES }
+			3399 = { add_core = DES }
+			#N. Mex.
+			3397 = { add_core = DES }
+			2148 = { add_core = DES }
+			#S. Cali.
+			88 = { add_core = DES }
+			90 = { add_core = DES }
 			ai_chance = { factor = 90 }
 		}
 		option = {
@@ -4270,207 +4207,111 @@
 					move_pop = 2140
 				}
 			}
-			any_country = {
+			97 = { #5950
 				any_pop = {
-					limit = {
-						has_pop_religion = mormon
-						location = {
-							province_id = 97 #5950
-						}
-					}
+					limit = { has_pop_religion = mormon type = soldiers }
+					consciousness = 5
+					reduce_pop = 2
+					move_pop = 2140
+				}
+				any_pop = {
+					limit = { has_pop_religion = mormon NOT = { type = soldiers } }
 					dominant_issue = { value = moralism factor = 0.5 }
 					consciousness = 5
 					reduce_pop = 0.95
 					move_pop = 2140
 				}
 			}
-			any_country = {
+			98 = { #1750
 				any_pop = {
-					limit = {
-						has_pop_religion = mormon
-						location = {
-							province_id = 98 #1750
-						}
-					}
+					limit = { has_pop_religion = mormon type = soldiers }
+					consciousness = 5
+					reduce_pop = 2
+					move_pop = 2141
+				}
+				any_pop = {
+					limit = { has_pop_religion = mormon NOT = { type = soldiers } }
 					dominant_issue = { value = moralism factor = 0.5 }
 					consciousness = 5
 					reduce_pop = 0.95
 					move_pop = 2141
 				}
 			}
-			any_country = {
+			99 = { #1250
 				any_pop = {
-					limit = {
-						has_pop_religion = mormon
-						location = {
-							province_id = 99 #1250
-						}
-					}
+					limit = { has_pop_religion = mormon type = soldiers }
+					consciousness = 5
+					reduce_pop = 2
+					move_pop = 2137
+				}
+				any_pop = {
+					limit = { has_pop_religion = mormon NOT = { type = soldiers } }
 					dominant_issue = { value = moralism factor = 0.5 }
 					consciousness = 5
 					reduce_pop = 0.95
 					move_pop = 2137
 				}
 			}
-			any_country = {
+			96 = { #1750
 				any_pop = {
-					limit = {
-						has_pop_religion = mormon
-						location = {
-							province_id = 96 #1750
-						}
-					}
+					limit = { has_pop_religion = mormon type = soldiers }
+					consciousness = 5
+					reduce_pop = 2
+					move_pop = 2145
+				}
+				any_pop = {
+					limit = { has_pop_religion = mormon NOT = { type = soldiers } }
 					dominant_issue = { value = moralism factor = 0.5 }
 					consciousness = 5
 					reduce_pop = 0.95
 					move_pop = 2145
 				}
 			}
-			any_country = {
+			95 = { #1275
 				any_pop = {
-					limit = {
-						has_pop_religion = mormon
-						location = {
-							province_id = 95 #1275
-						}
-					}
+					limit = { has_pop_religion = mormon type = soldiers }
+					consciousness = 5
+					reduce_pop = 2
+					move_pop = 2144
+				}
+				any_pop = {
+					limit = { has_pop_religion = mormon NOT = { type = soldiers } }
 					dominant_issue = { value = moralism factor = 0.5 }
 					consciousness = 5
 					reduce_pop = 0.95
 					move_pop = 2144
 				}
 			}
-			any_country = {
+			94 = { #1070
 				any_pop = {
-					limit = {
-						has_pop_religion = mormon
-						location = {
-							province_id = 94 #1070
-						}
-					}
+					limit = { has_pop_religion = mormon type = soldiers }
+					consciousness = 5
+					reduce_pop = 2
+					move_pop = 2143
+				}
+				any_pop = {
+					limit = { has_pop_religion = mormon NOT = { type = soldiers } }
 					dominant_issue = { value = moralism factor = 0.5 }
 					consciousness = 5
 					reduce_pop = 0.95
 					move_pop = 2143
 				}
 			}
-			any_country = {
+			3393 = { #2700
 				any_pop = {
-					limit = {
-						has_pop_religion = mormon
-						location = {
-							province_id = 3393 #2700
-						}
-					}
+					limit = { has_pop_religion = mormon type = soldiers }
+					consciousness = 5
+					reduce_pop = 2
+					move_pop = 2142
+				}
+				any_pop = {
+					limit = { has_pop_religion = mormon NOT = { type = soldiers } }
 					dominant_issue = { value = moralism factor = 0.5 }
 					consciousness = 5
 					reduce_pop = 0.95
 					move_pop = 2142
 				}
 			}
-			
-			any_country = {
-				any_pop = {
-					limit = {
-						has_pop_religion = mormon
-						type = soldiers
-					}
-					reduce_pop = 2
-				}
-			}
-			###############################################
-				any_pop = {
-					limit = {
-						has_pop_religion = mormon
-						location = {
-							province_id = 97 #5950
-						}
-					}
-					dominant_issue = { value = moralism factor = 0.5 }
-					consciousness = 5
-					reduce_pop = 0.95
-					move_pop = 2140
-				}
-				any_pop = {
-					limit = {
-						has_pop_religion = mormon
-						location = {
-							province_id = 98 #1750
-						}
-					}
-					dominant_issue = { value = moralism factor = 0.5 }
-					consciousness = 5
-					reduce_pop = 0.95
-					move_pop = 2141
-				}
-				any_pop = {
-					limit = {
-						has_pop_religion = mormon
-						location = {
-							province_id = 99 #1250
-						}
-					}
-					dominant_issue = { value = moralism factor = 0.5 }
-					consciousness = 5
-					reduce_pop = 0.95
-					move_pop = 2137
-				}
-				any_pop = {
-					limit = {
-						has_pop_religion = mormon
-						location = {
-							province_id = 96 #1750
-						}
-					}
-					dominant_issue = { value = moralism factor = 0.5 }
-					consciousness = 5
-					reduce_pop = 0.95
-					move_pop = 2145
-				}
-				any_pop = {
-					limit = {
-						has_pop_religion = mormon
-						location = {
-							province_id = 95 #1275
-						}
-					}
-					dominant_issue = { value = moralism factor = 0.5 }
-					consciousness = 5
-					reduce_pop = 0.95
-					move_pop = 2144
-				}
-				any_pop = {
-					limit = {
-						has_pop_religion = mormon
-						location = {
-							province_id = 94 #1070
-						}
-					}
-					dominant_issue = { value = moralism factor = 0.5 }
-					consciousness = 5
-					reduce_pop = 0.95
-					move_pop = 2143
-				}
-				any_pop = {
-					limit = {
-						has_pop_religion = mormon
-						location = {
-							province_id = 3393 #2700
-						}
-					}
-					dominant_issue = { value = moralism factor = 0.5 }
-					consciousness = 5
-					reduce_pop = 0.95
-					move_pop = 2142
-				}
-				any_pop = {
-					limit = {
-						has_pop_religion = mormon
-						type = soldiers
-					}
-					reduce_pop = 2
-				}
-			#########################
 			MEX_2138 = { add_core = DES }
 			MEX_2142 = { add_core = DES }
 		}
@@ -4481,20 +4322,11 @@
 			any_country = {
 				any_owned = {
 					limit = {
-						OR = {
-							region = MEX_2138
-							region = MEX_2142
-						}
+						NOT = { OR = { region = MEX_2138 region = MEX_2142 } }
+						is_core = DES
 					}
-					add_province_modifier = { name = home_of_the_mormons duration = 10950 }
-					#add_province_modifier = { name = nationalist_agitation duration = 1095 }
-					any_pop = {
-						limit = { is_culture_group = native_american }
-						reduce_pop = 0.25
-					}
+					remove_core = DES
 				}
-			}
-			#############################
 				any_owned = {
 					limit = {
 						OR = {
@@ -4503,20 +4335,30 @@
 						}
 					}
 					add_province_modifier = { name = home_of_the_mormons duration = 10950 }
-					#add_province_modifier = { name = nationalist_agitation duration = 1095 }
 					any_pop = {
 						limit = { is_culture_group = native_american }
 						reduce_pop = 0.25
 					}
 				}
+			}
 			DES = { capital = 2140 government = theocracy }
 			ai_chance = { factor = 90 }
 		}
 		option = {
 			name = "EVTOPTB1110055"
 			set_global_flag = mormons_rejected_chihuahua
-			release_vassal = DES
+			any_country = {
+				any_owned = {
+					limit = {
+						NOT = { OR = { region = MEX_2138 region = MEX_2142 } }
+						is_core = DES
+					}
+					remove_core = DES
+				}
+			}
+			release = DES
 			DES = {
+				set_country_flag = ANON_total_war_flag
 				capital = 2140
 				government = theocracy
 				relation = {
@@ -4536,6 +4378,16 @@
 						limit = { is_culture_group = native_american }
 						reduce_pop = 0.25
 					}
+				}
+				war = {
+					target = THIS
+					attacker_goal = {
+						casus_belli = become_independent
+					}
+					 defender_goal = {
+						casus_belli = annex_core_country
+					}
+					call_ally = no
 				}
 			}
 			relation = {
@@ -4583,207 +4435,111 @@
 					move_pop = 17
 				}
 			}
-			any_country = {
+			97 = {
 				any_pop = {
-					limit = {
-						has_pop_religion = mormon
-						location = {
-							province_id = 97 #5950
-						}
-					}
+					limit = { has_pop_religion = mormon type = soldiers }
+					consciousness = 5
+					reduce_pop = 2
+					move_pop = 13
+				}
+				any_pop = {
+					limit = { has_pop_religion = mormon NOT = { type = soldiers } }
 					dominant_issue = { value = moralism factor = 0.5 }
 					consciousness = 5
 					reduce_pop = 0.95
 					move_pop = 13
 				}
 			}
-			any_country = {
+			98 = {
 				any_pop = {
-					limit = {
-						has_pop_religion = mormon
-						location = {
-							province_id = 98 #1750
-						}
-					}
+					limit = { has_pop_religion = mormon type = soldiers }
+					consciousness = 5
+					reduce_pop = 2
+					move_pop = 21
+				}
+				any_pop = {
+					limit = { has_pop_religion = mormon NOT = { type = soldiers } }
 					dominant_issue = { value = moralism factor = 0.5 }
 					consciousness = 5
 					reduce_pop = 0.95
 					move_pop = 21
 				}
 			}
-			any_country = {
+			99 = {
 				any_pop = {
-					limit = {
-						has_pop_religion = mormon
-						location = {
-							province_id = 99 #1250
-						}
-					}
+					limit = { has_pop_religion = mormon type = soldiers }
+					consciousness = 5
+					reduce_pop = 2
+					move_pop = 19
+				}
+				any_pop = {
+					limit = { has_pop_religion = mormon NOT = { type = soldiers } }
 					dominant_issue = { value = moralism factor = 0.5 }
 					consciousness = 5
 					reduce_pop = 0.95
 					move_pop = 19
 				}
 			}
-			any_country = {
+			96 = {
 				any_pop = {
-					limit = {
-						has_pop_religion = mormon
-						location = {
-							province_id = 96 #1750
-						}
-					}
+					limit = { has_pop_religion = mormon type = soldiers }
+					consciousness = 5
+					reduce_pop = 2
+					move_pop = 20
+				}
+				any_pop = {
+					limit = { has_pop_religion = mormon NOT = { type = soldiers } }
 					dominant_issue = { value = moralism factor = 0.5 }
 					consciousness = 5
 					reduce_pop = 0.95
 					move_pop = 20
 				}
 			}
-			any_country = {
+			95 = {
 				any_pop = {
-					limit = {
-						has_pop_religion = mormon
-						location = {
-							province_id = 95 #1275
-						}
-					}
+					limit = { has_pop_religion = mormon type = soldiers }
+					consciousness = 5
+					reduce_pop = 2
+					move_pop = 16
+				}
+				any_pop = {
+					limit = { has_pop_religion = mormon NOT = { type = soldiers } }
 					dominant_issue = { value = moralism factor = 0.5 }
 					consciousness = 5
 					reduce_pop = 0.95
 					move_pop = 16
 				}
 			}
-			any_country = {
+			94 = {
 				any_pop = {
-					limit = {
-						has_pop_religion = mormon
-						location = {
-							province_id = 94 #1070
-						}
-					}
+					limit = { has_pop_religion = mormon type = soldiers }
+					consciousness = 5
+					reduce_pop = 2
+					move_pop = 15
+				}
+				any_pop = {
+					limit = { has_pop_religion = mormon NOT = { type = soldiers } }
 					dominant_issue = { value = moralism factor = 0.5 }
 					consciousness = 5
-					reduce_pop = 0.95
+					reduce_pop = 2
 					move_pop = 15
 				}
 			}
-			any_country = {
+			3393 = {
 				any_pop = {
-					limit = {
-						has_pop_religion = mormon
-						location = {
-							province_id = 3393 #2700
-						}
-					}
+					limit = { has_pop_religion = mormon type = soldiers }
+					consciousness = 5
+					reduce_pop = 2
+					move_pop = 14
+				}
+				any_pop = {
+					limit = { has_pop_religion = mormon NOT = { type = soldiers } }
 					dominant_issue = { value = moralism factor = 0.5 }
 					consciousness = 5
 					reduce_pop = 0.95
 					move_pop = 14
 				}
 			}
-			
-			any_country = {
-				any_pop = {
-					limit = {
-						has_pop_religion = mormon
-						type = soldiers
-					}
-					reduce_pop = 2
-				}
-			}
-			#############################
-				any_pop = {
-					limit = {
-						has_pop_religion = mormon
-						location = {
-							province_id = 97 #5950
-						}
-					}
-					dominant_issue = { value = moralism factor = 0.5 }
-					consciousness = 5
-					reduce_pop = 0.95
-					move_pop = 13
-				}
-				any_pop = {
-					limit = {
-						has_pop_religion = mormon
-						location = {
-							province_id = 98 #1750
-						}
-					}
-					dominant_issue = { value = moralism factor = 0.5 }
-					consciousness = 5
-					reduce_pop = 0.95
-					move_pop = 21
-				}
-				any_pop = {
-					limit = {
-						has_pop_religion = mormon
-						location = {
-							province_id = 99 #1250
-						}
-					}
-					dominant_issue = { value = moralism factor = 0.5 }
-					consciousness = 5
-					reduce_pop = 0.95
-					move_pop = 19
-				}
-				any_pop = {
-					limit = {
-						has_pop_religion = mormon
-						location = {
-							province_id = 96 #1750
-						}
-					}
-					dominant_issue = { value = moralism factor = 0.5 }
-					consciousness = 5
-					reduce_pop = 0.95
-					move_pop = 20
-				}
-				any_pop = {
-					limit = {
-						has_pop_religion = mormon
-						location = {
-							province_id = 95 #1275
-						}
-					}
-					dominant_issue = { value = moralism factor = 0.5 }
-					consciousness = 5
-					reduce_pop = 0.95
-					move_pop = 16
-				}
-				any_pop = {
-					limit = {
-						has_pop_religion = mormon
-						location = {
-							province_id = 94 #1070
-						}
-					}
-					dominant_issue = { value = moralism factor = 0.5 }
-					consciousness = 5
-					reduce_pop = 0.95
-					move_pop = 15
-				}
-				any_pop = {
-					limit = {
-						has_pop_religion = mormon
-						location = {
-							province_id = 3393 #2700
-						}
-					}
-					dominant_issue = { value = moralism factor = 0.5 }
-					consciousness = 5
-					reduce_pop = 0.95
-					move_pop = 14
-				}
-				any_pop = {
-					limit = {
-						has_pop_religion = mormon
-						type = soldiers
-					}
-					reduce_pop = 2
-				}
-			#############################
 			CAN_13 = { add_core = DES }
 		}
 		
@@ -4793,18 +4549,11 @@
 			any_country = {
 				any_owned = {
 					limit = {
-						region = CAN_13
-						has_pop_religion = mormon
+						NOT = { region = CAN_13 }
+						is_core = DES
 					}
-					add_province_modifier = { name = home_of_the_mormons duration = 10950 }
-					#add_province_modifier = { name = nationalist_agitation duration = 1095 }
-					any_pop = {
-						limit = { is_culture_group = native_american }
-						reduce_pop = 0.25
-					}
+					remove_core = DES
 				}
-			}
-			#############################
 				any_owned = {
 					limit = {
 						region = CAN_13
@@ -4817,12 +4566,22 @@
 						reduce_pop = 0.25
 					}
 				}
+			}
 			DES = { capital = 13 government = theocracy }
 			ai_chance = { factor = 90 }
 		}
 		option = {
 			name = "EVTOPTB1110056"
 			set_global_flag = mormons_rejected_columbia
+			any_country = {
+				any_owned = {
+					limit = {
+						NOT = { region = CAN_13 }
+						is_core = DES
+					}
+					remove_core = DES
+				}
+			}
 			release_vassal = DES
 			DES = {
 				capital = 13
@@ -4842,6 +4601,16 @@
 						limit = { is_culture_group = native_american }
 						reduce_pop = 0.25
 					}
+				}
+				war = {
+					target = THIS
+					attacker_goal = {
+						casus_belli = become_independent
+					}
+					 defender_goal = {
+						casus_belli = annex_core_country
+					}
+					call_ally = no
 				}
 			}
 			relation = {
@@ -4898,8 +4667,26 @@
 				any_pop = {
 					limit = {
 						has_pop_religion = mormon
+						type = soldiers
 						location = {
-							province_id = 97 #5950
+							OR = {
+								province_id = 96
+								province_id = 97
+							}
+						}
+					}
+					consciousness = 5
+					reduce_pop = 2
+					move_pop = 658
+				}
+				any_pop = {
+					limit = {
+						has_pop_religion = mormon
+						location = {
+							OR = {
+								province_id = 96
+								province_id = 97
+							}
 						}
 					}
 					dominant_issue = { value = moralism factor = 0.5 }
@@ -4908,203 +4695,93 @@
 					move_pop = 658
 				}
 			}
-			any_country = {
-				any_pop = {
-					limit = {
-						has_pop_religion = mormon
-						location = {
-							province_id = 98 #1750
-						}
-					}
-					dominant_issue = { value = moralism factor = 0.5 }
-					consciousness = 5
-					reduce_pop = 0.80
-					move_pop = 3305
-				}
-			}
-			any_country = {
-				any_pop = {
-					limit = {
-						has_pop_religion = mormon
-						location = {
-							province_id = 99 #1250
-						}
-					}
-					dominant_issue = { value = moralism factor = 0.5 }
-					consciousness = 5
-					reduce_pop = 0.80
-					move_pop = 3306
-				}
-			}
-			any_country = {
-				any_pop = {
-					limit = {
-						has_pop_religion = mormon
-						location = {
-							province_id = 96 #1750
-						}
-					}
-					dominant_issue = { value = moralism factor = 0.5 }
-					consciousness = 5
-					reduce_pop = 0.80
-					move_pop = 658
-				}
-			}
-			any_country = {
-				any_pop = {
-					limit = {
-						has_pop_religion = mormon
-						location = {
-							province_id = 95 #1275
-						}
-					}
-					dominant_issue = { value = moralism factor = 0.5 }
-					consciousness = 5
-					reduce_pop = 0.80
-					move_pop = 3305
-				}
-			}
-			any_country = {
-				any_pop = {
-					limit = {
-						has_pop_religion = mormon
-						location = {
-							province_id = 94 #1070
-						}
-					}
-					dominant_issue = { value = moralism factor = 0.5 }
-					consciousness = 5
-					reduce_pop = 0.80
-					move_pop = 3305
-				}
-			}
-			any_country = {
-				any_pop = {
-					limit = {
-						has_pop_religion = mormon
-						location = {
-							province_id = 3393 #2700
-						}
-					}
-					dominant_issue = { value = moralism factor = 0.5 }
-					consciousness = 5
-					reduce_pop = 0.80
-					move_pop = 3306
-				}
-			}
-			
 			any_country = {
 				any_pop = {
 					limit = {
 						has_pop_religion = mormon
 						type = soldiers
+						location = {
+							OR = {
+								province_id = 94
+								province_id = 95
+								province_id = 98
+							}
+						}
 					}
+					consciousness = 5
 					reduce_pop = 2
+					move_pop = 3305
+				}
+				any_pop = {
+					limit = {
+						has_pop_religion = mormon
+						location = {
+							OR = {
+								province_id = 94
+								province_id = 95
+								province_id = 98
+							}
+						}
+					}
+					dominant_issue = { value = moralism factor = 0.5 }
+					consciousness = 5
+					reduce_pop = 0.80
+					move_pop = 3305
 				}
 			}
-			#############################
-				any_pop = {
-					limit = {
-						has_pop_religion = mormon
-						location = {
-							province_id = 97 #5950
-						}
-					}
-					dominant_issue = { value = moralism factor = 0.5 }
-					consciousness = 5
-					reduce_pop = 0.80
-					move_pop = 658
-				}
-				any_pop = {
-					limit = {
-						has_pop_religion = mormon
-						location = {
-							province_id = 98 #1750
-						}
-					}
-					dominant_issue = { value = moralism factor = 0.5 }
-					consciousness = 5
-					reduce_pop = 0.80
-					move_pop = 3305
-				}
-				any_pop = {
-					limit = {
-						has_pop_religion = mormon
-						location = {
-							province_id = 99 #1250
-						}
-					}
-					dominant_issue = { value = moralism factor = 0.5 }
-					consciousness = 5
-					reduce_pop = 0.80
-					move_pop = 3306
-				}
-				any_pop = {
-					limit = {
-						has_pop_religion = mormon
-						location = {
-							province_id = 96 #1750
-						}
-					}
-					dominant_issue = { value = moralism factor = 0.5 }
-					consciousness = 5
-					reduce_pop = 0.80
-					move_pop = 658
-				}
-				any_pop = {
-					limit = {
-						has_pop_religion = mormon
-						location = {
-							province_id = 95 #1275
-						}
-					}
-					dominant_issue = { value = moralism factor = 0.5 }
-					consciousness = 5
-					reduce_pop = 0.80
-					move_pop = 3305
-				}
-				any_pop = {
-					limit = {
-						has_pop_religion = mormon
-						location = {
-							province_id = 94 #1070
-						}
-					}
-					dominant_issue = { value = moralism factor = 0.5 }
-					consciousness = 5
-					reduce_pop = 0.80
-					move_pop = 3305
-				}
-				any_pop = {
-					limit = {
-						has_pop_religion = mormon
-						location = {
-							province_id = 3393 #2700
-						}
-					}
-					dominant_issue = { value = moralism factor = 0.5 }
-					consciousness = 5
-					reduce_pop = 0.80
-					move_pop = 3306
-				}
+			any_country = {
 				any_pop = {
 					limit = {
 						has_pop_religion = mormon
 						type = soldiers
+						location = {
+							OR = {
+								province_id = 99
+								province_id = 3393
+							}
+						}
 					}
+					consciousness = 5
 					reduce_pop = 2
+					move_pop = 3306
 				}
-			#############################
+				any_pop = {
+					limit = {
+						has_pop_religion = mormon
+						location = {
+							OR = {
+								province_id = 99
+								province_id = 3393
+							}
+						}
+					}
+					dominant_issue = { value = moralism factor = 0.5 }
+					consciousness = 5
+					reduce_pop = 0.80
+					move_pop = 3306
+				}
+			}
+			HAW_658 = { add_core = DES add_core = HAW }
+			HAW_2524 = { add_core = DES add_core = HAW }
+			3351 = { add_core = DES add_core = HAW }
 		}
 			
 		option = {
-			name = "EVTOPTB1110057"
-			set_global_flag = mormons_take_over_hawaii
-			HAW_658 = { add_core = DES add_core = HAW }
+			name = "EVTOPTA1110057"
+			any_country = {
+				any_owned = {
+					limit = {
+						NOT = { OR = { region = HAW_658 region = HAW_2524 } }
+						is_core = DES
+					}
+					remove_core = DES
+				}
+			}
 			HAW = { annex_to = DES }
 			3305 = {
 				sub_unit = { type = clipper_transport value = current }
 				sub_unit = { type = clipper_transport value = current }
+				sub_unit = { type = frigate value = current }
 			}
 			DES = {
 				capital = 3305
@@ -5112,28 +4789,7 @@
 				government = theocracy
 				remove_accepted_culture = yankee
 				remove_accepted_culture = dixie
-				badboy = 5
-				any_owned = {
-					limit = {
-						region = HAW_658
-						OR = {
-							has_pop_religion = mormon
-							has_pop_culture = polynesian
-							has_pop_culture = hawaiian
-						}
-					}
-					add_province_modifier = { name = home_of_the_mormons duration = 10950 }
-					add_province_modifier = { name = nationalist_agitation duration = 1095 }
-					any_pop = {
-						limit = { is_culture_group = oceanic }
-						random_list = {
-							25 = { reduce_pop = 0.65 }
-							25 = { reduce_pop = 0.7 }
-							25 = { reduce_pop = 0.75 }
-							25 = { reduce_pop = 0.8 }
-						}
-					}
-				}
+				country_event = 1110066
 			}
 			ai_chance = { factor = 100 }
 		}
@@ -5639,6 +5295,52 @@
 			set_country_flag = C4L_annex_cons_1824_no
 			prestige = -50
 			release = C4L
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+#############################
+# Deseret continuation
+	country_event = {
+		id = 1110066
+		title = "A Homeland at last!" 
+		desc = "After a strenuous journey, we have managed to conquer our promised land!" 
+		picture = "mormon_exodus"
+		is_triggered_only = yes
+
+		option = {
+			name = "Hurray!"
+			2623 = { secede_province = DES }
+			2526 = { secede_province = DES }
+			2524 = { secede_province = DES }
+			3352 = { secede_province = DES }
+			3351 = { secede_province = DES }
+			any_owned = {
+				limit = {
+					OR = {
+						region = HAW_658
+						region = HAW_2524
+						province_id = 3351
+					}
+					OR = {
+						has_pop_religion = mormon
+						has_pop_culture = polynesian
+						has_pop_culture = hawaiian
+					}
+				}
+				add_province_modifier = { name = home_of_the_mormons duration = 10950 }
+				add_province_modifier = { name = nationalist_agitation duration = 1095 }
+				any_pop = {
+					limit = { is_culture_group = oceanic }
+					random_list = {
+						25 = { reduce_pop = 0.65 }
+						25 = { reduce_pop = 0.7 }
+						25 = { reduce_pop = 0.75 }
+						25 = { reduce_pop = 0.8 }
+					}
+				}
+			}
 			ai_chance = {
 				factor = 100
 			}

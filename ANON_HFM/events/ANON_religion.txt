@@ -1,0 +1,376 @@
+
+#government with atheism policy switches to atheist religion (loltheirony)
+country_event = {
+	id = 79796000
+	title = "EVTNAME79796000"
+	desc = "EVTDESC79796000"
+	picture = "News"
+
+	trigger = {
+		religious_policy = pro_atheism
+		NOT = { religion = atheism }
+		invention = secularization
+	}
+
+	option = {
+		name = "EVT79796000OPTA"
+		religion = atheism
+		set_country_flag = atheism_country
+		ai_chance = { factor = 100 }
+	}
+}
+#government with secularism policy switches to secularism religion (loltheirony)
+country_event = {
+	id = 79796001
+	title = "EVTNAME79796001"
+	desc = "EVTDESC79796001"
+	picture = "News"
+
+	trigger = {
+		religious_policy = secularized
+		NOT = { religion = secularism }
+		invention = secularization
+	}
+
+	option = {
+		name = "EVT79796001OPTA"
+		religion = secularism
+		set_country_flag = secularism_country
+		ai_chance = { factor = 100 }
+	}
+}
+#government with not atheism or secularism policy switches back (loltheirony)
+country_event = {
+	id = 79796002
+	title = "EVTNAME79796002"
+	desc = "EVTDESC79796002"
+	picture = "News"
+
+	trigger = {
+		OR = {
+			AND = {
+				religion = secularism
+				NOT = { religious_policy = secularized }
+			}
+			AND = {
+				religion = atheism
+				NOT = { religious_policy = pro_atheism }
+			}
+		}
+	}
+
+	option = {
+		name = "EVT79796002OPTA"
+		random_owned = {
+			limit = {
+				owner = { has_country_flag = catholic_country }
+			}
+			owner = { religion = catholic }
+		}
+		random_owned = {
+			limit = {
+				owner = { has_country_flag = protestant_country }
+			}
+			owner = { religion = protestant }
+		}
+		random_owned = {
+			limit = {
+				owner = { has_country_flag = mormon_country }
+			}
+			owner = { religion = mormon }
+		}
+		random_owned = {
+			limit = {
+				owner = { has_country_flag = orthodox_country }
+			}
+			owner = { religion = orthodox }
+		}
+		random_owned = {
+			limit = {
+				owner = { has_country_flag = coptic_country }
+			}
+			owner = { religion = coptic }
+		}
+		random_owned = {
+			limit = {
+				owner = { has_country_flag = nestorian_country }
+			}
+			owner = { religion = nestorian }
+		}
+		random_owned = {
+			limit = {
+				owner = { has_country_flag = apostolic_country }
+			}
+			owner = { religion = apostolic }
+		}
+		random_owned = {
+			limit = {
+				owner = { has_country_flag = maronite_country }
+			}
+			owner = { religion = maronite }
+		}
+		random_owned = {
+			limit = {
+				owner = { has_country_flag = syriac_country }
+			}
+			owner = { religion = syriac }
+		}
+		random_owned = {
+			limit = {
+				owner = { has_country_flag = anabaptist_country }
+			}
+			owner = { religion = anabaptist }
+		}
+		random_owned = {
+			limit = {
+				owner = { has_country_flag = sunni_country }
+			}
+			owner = { religion = sunni }
+		}
+		random_owned = {
+			limit = {
+				owner = { has_country_flag = shiite_country }
+			}
+			owner = { religion = shiite }
+		}
+		random_owned = {
+			limit = {
+				owner = { has_country_flag = ibadi_country }
+			}
+			owner = { religion = ibadi }
+		}
+		random_owned = {
+			limit = {
+				owner = { has_country_flag = druze_country }
+			}
+			owner = { religion = druze }
+		}
+		random_owned = {
+			limit = {
+				owner = { has_country_flag = bahai_country }
+			}
+			owner = { religion = bahai }
+		}
+		random_owned = {
+			limit = {
+				owner = { has_country_flag = alawite_country }
+			}
+			owner = { religion = alawite }
+		}
+		random_owned = {
+			limit = {
+				owner = { has_country_flag = alevi_country }
+			}
+			owner = { religion = alevi }
+		}
+		random_owned = {
+			limit = {
+				owner = { has_country_flag = ismaili_country }
+			}
+			owner = { religion = ismaili }
+		}
+		random_owned = {
+			limit = {
+				owner = { has_country_flag = zaydi_country }
+			}
+			owner = { religion = zaydi }
+		}
+		random_owned = {
+			limit = {
+				owner = { has_country_flag = jewish_country }
+			}
+			owner = { religion = jewish }
+		}
+		random_owned = {
+			limit = {
+				owner = { has_country_flag = karaite_country }
+			}
+			owner = { religion = karaite }
+		}
+		random_owned = {
+			limit = {
+				owner = { has_country_flag = samaritan_country }
+			}
+			owner = { religion = samaritan }
+		}
+		random_owned = {
+			limit = {
+				owner = { has_country_flag = yazidi_country }
+			}
+			owner = { religion = yazidi }
+		}
+		random_owned = {
+			limit = {
+				owner = { has_country_flag = zoroastrian_country }
+			}
+			owner = { religion = zoroastrian }
+		}
+		random_owned = {
+			limit = {
+				owner = { has_country_flag = mandaean_country }
+			}
+			owner = { religion = mandaean }
+		}
+		random_owned = {
+			limit = {
+				owner = { has_country_flag = mahayana_country }
+			}
+			owner = { religion = mahayana }
+		}
+		random_owned = {
+			limit = {
+				owner = { has_country_flag = gelugpa_country }
+			}
+			owner = { religion = gelugpa }
+		}
+		random_owned = {
+			limit = {
+				owner = { has_country_flag = theravada_country }
+			}
+			owner = { religion = theravada }
+		}
+		random_owned = {
+			limit = {
+				owner = { has_country_flag = hindu_country }
+			}
+			owner = { religion = hindu }
+		}
+		random_owned = {
+			limit = {
+				owner = { has_country_flag = shinto_country }
+			}
+			owner = { religion = shinto }
+		}
+		random_owned = {
+			limit = {
+				owner = { has_country_flag = sikh_country }
+			}
+			owner = { religion = sikh }
+		}
+		random_owned = {
+			limit = {
+				owner = { has_country_flag = confucian_country }
+			}
+			owner = { religion = confucian }
+		}
+		random_owned = {
+			limit = {
+				owner = { has_country_flag = jain_country }
+			}
+			owner = { religion = jain }
+		}
+		random_owned = {
+			limit = {
+				owner = { has_country_flag = animist_country }
+			}
+			owner = { religion = animist }
+		}
+		random_owned = {
+			limit = {
+				owner = { has_country_flag = atheism_country }
+			}
+			owner = { religion = atheism }
+		}
+		random_owned = {
+			limit = {
+				owner = { has_country_flag = secularism_country }
+			}
+			owner = { religion = secularism }
+		}
+		#
+		random_owned = {
+			limit = {
+				owner = { has_country_flag = atheism_country }
+			}
+			owner = { clr_country_flag = atheism_country }
+		}
+		random_owned = {
+			limit = {
+				owner = { has_country_flag = secularism_country }
+			}
+			owner = { clr_country_flag = secularism_country }
+		}
+		#
+		ai_chance = { factor = 100 }
+	}
+}
+#eligible governments get the freedom_of_religion flag, useful for several in-game mechanics
+country_event = {
+	id = 79796003
+	title = "EVTNAME79796003"
+	desc = "EVTDESC79796003"
+	picture = "News"
+
+	trigger = {
+		NOT = {
+			OR = {
+				tag = SWI
+				tag = NET
+			}
+		}
+		OR = {
+			religion = secularism
+			AND = {
+				religion = atheism
+				NOT = { ruling_party_ideology = communist }
+			}
+		}
+		NOT = { has_country_flag = freedom_of_religion }
+	}
+
+	option = {
+		name = "EVT79796000OPTA"
+		prestige = 5
+		set_country_flag = freedom_of_religion
+		ai_chance = { factor = 100 }
+	}
+}
+#eligible governments lose the freedom_of_religion flag, useful for several in-game mechanics
+country_event = {
+	id = 79796004
+	title = "EVTNAME79796004"
+	desc = "EVTDESC79796004"
+	picture = "News"
+
+	trigger = {
+		has_country_flag = freedom_of_religion
+		OR = {
+			NOT = { religion = secularism }
+			AND = {
+				NOT = {
+					OR = {
+						tag = SWI
+						tag = NET
+					}
+				}
+				religion = atheism
+				NOT = { ruling_party_ideology = communist }
+			}
+			AND = {
+				OR = {
+					tag = SWI
+					tag = NET
+				}
+				has_country_modifier = freedom_of_religion
+				NOT = {
+					OR = {
+						religious_policy = pro_atheism
+						religious_policy = secularized
+						religious_policy = pluralism
+					}
+				}
+			}
+		}
+	}
+
+	option = {
+		name = "EVT79796000OPTA"
+		prestige = -5
+		clr_country_flag = freedom_of_religion
+		random_owned = {
+			limit = { owner = { OR = { tag = SWI tag = NET } } }
+			owner = { remove_country_modifier = freedom_of_religion }
+		}
+		ai_chance = { factor = 100 }
+	}
+}

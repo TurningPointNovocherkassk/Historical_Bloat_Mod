@@ -70,6 +70,13 @@ country_migration_target = {
 	factor = 1
 	
 	#ANON
+    modifier = {
+        factor = 5.0
+        THIS = { has_pop_culture = french }
+        is_culture_group = french
+        has_country_flag = settle_french
+    }
+	
 	modifier = {
 		factor = 10.0
 		THIS = { has_pop_religion = jewish }

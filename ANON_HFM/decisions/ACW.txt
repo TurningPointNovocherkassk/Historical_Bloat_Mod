@@ -20,6 +20,7 @@ political_decisions = {
 					}
 				}
 				tag = CAL
+				tag = UOR
 				AND = {
 					tag = LSK
 					NOT = {
@@ -38,17 +39,15 @@ political_decisions = {
 				part_of_sphere = no
 				in_sphere = USA
 			}
-			#ai = yes
+			ai = yes
 			government = democracy
 			NOT = {
-				OR = {
-					has_country_flag = usstatehood_we_have_applied
-					has_country_flag = usstatehood_we_have_refused
-					has_country_flag = apply_for_USA_statehood
-					has_global_flag = liberate_big_texas
-					has_global_flag = TEX_created
-					has_country_flag = aridoamerica_alliance
-				}
+				has_country_flag = usstatehood_we_have_applied
+				has_country_flag = usstatehood_we_have_refused
+				has_country_flag = apply_for_USA_statehood
+				has_global_flag = liberate_big_texas
+				has_global_flag = TEX_created
+				has_country_flag = aridoamerica_alliance
 			}
 		}
 		allow = {
@@ -65,8 +64,13 @@ political_decisions = {
 			}
 		}
 		effect = {
-			set_country_flag = apply_for_USA_statehood
-			country_event = 100038
+			# set_country_flag = apply_for_USA_statehood
+			# country_event = 100038
+			set_country_flag = usstatehood_we_have_applied
+			USA = {
+				country_event = 16400
+				war_exhaustion = -20
+			}
 		}
 		ai_will_do = {
 			factor = 1
@@ -1061,13 +1065,13 @@ political_decisions = {
 							target = USA
 							type = acquire_state
 							months = 30
-							}
+						}
 						add_casus_belli = {
 							target = USA
 							type = acquire_state
 							months = 30
-							}
 						}
+					}
 				}
 			}
 			SPC = {
@@ -1634,6 +1638,8 @@ political_decisions = {
 						tag = CAN
 						tag = ENG
 						tag = MEX
+						tag = M3X
+						tag = MXM
 						tag = ARD
 						tag = JAP
 						tag = CAS
@@ -1663,6 +1669,7 @@ political_decisions = {
 				limit = { tag = USA }
 				relation = { who = THIS value = 50 }
 			}
+			LSK = { country_event = 1100049 }
 		}
 		ai_will_do = { factor = 1 }
 	}
@@ -1760,10 +1767,27 @@ political_decisions = {
 			is_vassal = no
 			NOT = { has_country_flag = 36_or_fight }
 			any_neighbor_country = { has_country_flag = hasmanifestdestiny }
-			MEX = {
-				OR = {
-					NOT = { has_country_flag = manifest_destiny_refuted }
-					NOT = { is_greater_power = yes }
+			OR = {
+				MEX = {
+					exists = yes
+					OR = {
+						NOT = { has_country_flag = manifest_destiny_refuted }
+						NOT = { is_greater_power = yes }
+					}
+				}
+				M3X = {
+					exists = yes
+					OR = {
+						NOT = { has_country_flag = manifest_destiny_refuted }
+						NOT = { is_greater_power = yes }
+					}
+				}
+				MXM = {
+					exists = yes
+					OR = {
+						NOT = { has_country_flag = manifest_destiny_refuted }
+						NOT = { is_greater_power = yes }
+					}
 				}
 			}
 		}
@@ -1771,12 +1795,16 @@ political_decisions = {
 		allow = {
 			war = no
 			is_vassal = no
-			NOT = { truce_with = USA }
-			NOT = { truce_with = MEX }
 			NOT = {
+				truce_with = USA
+				truce_with = MEX
+				truce_with = M3X
+				truce_with = MXM
 				OR = {
 					in_sphere = USA
 					in_sphere = MEX
+					in_sphere = M3X
+					in_sphere = MXM
 				}
 			}
 			invention = manifest_destiny
@@ -1864,7 +1892,7 @@ political_decisions = {
 			
 			any_country = {
 				limit = {
-					has_global_flag = YUC_becomes_USA_state
+					has_country_flag = YUC_becomes_USA_state
 					any_owned_province = {
 						is_core = YUC
 						is_core = USA
@@ -1942,10 +1970,14 @@ political_decisions = {
 		effect = {
 			set_global_flag = lone_star_state
 			badboy = 1
+			prestige = 5
 			relation = { who = MEX value = -100 }
+			relation = { who = M3X value = -100 }
+			relation = { who = MXM value = -100 }
 			#########################
 			#ANON
 			TEX_132 = { add_core = TEX } #Texas
+			TEX_133 = { add_core = TEX } #Texas
 			105 = { add_core = TEX } #Santa Fe
 			129 = { add_core = TEX } #Guymon
 			128 = { add_core = TEX } #Hugoton
@@ -1961,20 +1993,29 @@ political_decisions = {
 	gadsden_purchase = {
 	picture = gadsden
 		potential = {
-			NOT = { owns = 102 }
-			102 = { NOT = { is_core = THIS } }
-			102 = { owner = { NOT = { OR = { primary_culture = yankee primary_culture = dixie primary_culture = texan } } } }
+			NOT = {
+				owns = 102
+				owns = 2662
+			}
+			102 = {
+				NOT = { is_core = THIS }
+				owner = { NOT = { OR = { primary_culture = yankee primary_culture = dixie primary_culture = texan } } }
+			}
+			2662 = {
+				NOT = { is_core = THIS }
+				owner = { NOT = { OR = { primary_culture = yankee primary_culture = dixie primary_culture = texan } } }
+			}
 			is_culture_group = american_cultures
-			NOT = { has_country_flag = gadsden_negotiations }
-			90 = { owned_by = THIS NOT = { is_core = MEX } }
-			100 = { owned_by = THIS NOT = { is_core = MEX } }
-			104 = { owned_by = THIS NOT = { is_core = MEX } }
-			105 = { owned_by = THIS NOT = { is_core = MEX } }
+			90 = { owned_by = THIS NOT = { OR = { is_core = MEX is_core = M3X is_core = MXM } } }
+			100 = { owned_by = THIS NOT = { OR = { is_core = MEX is_core = M3X is_core = MXM } } }
+			104 = { owned_by = THIS NOT = { OR = { is_core = MEX is_core = M3X is_core = MXM } } }
+			105 = { owned_by = THIS NOT = { OR = { is_core = MEX is_core = M3X is_core = MXM } } }
 			NOT = { check_variable = { which = owed_cash_money value = 1 } }
+			NOT = { has_country_flag = gadsden_negotiations }
 		}
 		
 		allow = {
-			NOT = { any_owned_province = { is_core = MEX } }
+			NOT = { any_owned_province = { OR = { is_core = MEX is_core = M3X is_core = MXM } } }
 			102 = { owner = { NOT = { truce_with = THIS } } NOT = { owned_by = THIS } }
 			2662 = { owner = { NOT = { truce_with = THIS } } NOT = { owned_by = THIS } }
 			war = no
@@ -2190,7 +2231,7 @@ political_decisions = {
 			
 			any_country = {
 				limit = {
-					has_global_flag = YUC_becomes_USA_state
+					has_country_flag = YUC_becomes_USA_state
 					any_owned_province = {
 						is_core = YUC
 						is_core = USA

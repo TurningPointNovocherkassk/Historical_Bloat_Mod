@@ -292,8 +292,9 @@ country_event = {
 	option = {
 		name = "EVT97556OPTA"
 		prestige = 2
-		2191 = { add_core = UCA }
-		2192 = { add_core = UCA }
+		# 2191 = { add_core = UCA }
+		# 2192 = { add_core = UCA }
+		ELS = { all_core = { add_core = UCA } }
 	}
 }
 
@@ -326,12 +327,12 @@ country_event = {
 			controlled_by = THIS
 			NOT = { average_militancy = 2 }
 		}
-		2196 = {
-			NOT = { is_core = UCA }
-			owned_by = THIS
-			controlled_by = THIS
-			NOT = { average_militancy = 2 }
-		}
+		# 2196 = { #Controlled by Moskitos
+			# NOT = { is_core = UCA }
+			# owned_by = THIS
+			# controlled_by = THIS
+			# NOT = { average_militancy = 2 }
+		# }
 	}
 	
 	mean_time_to_happen = {
@@ -341,10 +342,11 @@ country_event = {
 	option = {
 		name = "EVT97556OPTA"
 		prestige = 5
-		2193 = { add_core = UCA }
-		2194 = { add_core = UCA }
-		2195 = { add_core = UCA }
-		2196 = { add_core = UCA }
+		# 2193 = { add_core = UCA }
+		# 2194 = { add_core = UCA }
+		# 2195 = { add_core = UCA }
+		# # 2196 = { add_core = UCA }
+		HON = { all_core = { add_core = UCA } }
 	}
 }
 
@@ -386,10 +388,11 @@ country_event = {
 	option = {
 		name = "EVT97556OPTA"
 		prestige = 5
-		2197 = { add_core = UCA }
-		2198 = { add_core = UCA }
-		2199 = { add_core = UCA }
-		2200 = { add_core = UCA }
+		# 2197 = { add_core = UCA }
+		# 2198 = { add_core = UCA }
+		# 2199 = { add_core = UCA }
+		# 2200 = { add_core = UCA }
+		NIC = { all_core = { add_core = UCA } }
 	}
 }
 
@@ -416,12 +419,12 @@ country_event = {
 			controlled_by = THIS
 			NOT = { average_militancy = 2 }
 		}
-		2203 = {
-			NOT = { is_core = UCA }
-			owned_by = THIS
-			controlled_by = THIS
-			NOT = { average_militancy = 2 }
-		}
+		# 2203 = { #Controlled by Moskitos/Colombia
+			# NOT = { is_core = UCA }
+			# owned_by = THIS
+			# controlled_by = THIS
+			# NOT = { average_militancy = 2 }
+		# }
 	}
 	
 	mean_time_to_happen = {
@@ -431,9 +434,10 @@ country_event = {
 	option = {
 		name = "EVT97556OPTA"
 		prestige = 2
-		2201 = { add_core = UCA }
-		2202 = { add_core = UCA }
-		2203 = { add_core = UCA }
+		# 2201 = { add_core = UCA }
+		# 2202 = { add_core = UCA }
+		# # 2203 = { add_core = UCA }
+		COS = { all_core = { add_core = UCA } }
 	}
 }
 

@@ -357,7 +357,6 @@
 						}
 					}
 				}
-				
 			}
 		}
 		option = {
@@ -457,7 +456,6 @@
 		desc = "EVTDESC1100003"
 		picture = "cascadia_1"
 		is_triggered_only = yes
-		fire_only_once = yes
 
 		option = {
 			name = "EVTOPTA1100003" #Issue the ultimatum to ENG
@@ -483,74 +481,10 @@
 		desc = "EVTDESC1100004"
 		picture = "cascadia_1"
 		is_triggered_only = yes
-		fire_only_once = yes
 
 		option = {
 			name = "EVTOPTA1100004"
-			6 = {
-				add_core = FROM
-				add_core = LSK
-				remove_core = RPL
-				remove_core = CAN
-				secede_province = FROM
-			}
-			17 = {
-				add_core = FROM
-				add_core = LSK
-				remove_core = RPL
-				remove_core = CAN
-				secede_province = FROM
-			}
-			2599 = {
-				add_core = FROM
-				add_core = LSK
-				remove_core = RPL
-				remove_core = CAN
-				secede_province = FROM
-			}
-			2630 = {
-				add_core = FROM
-				add_core = LSK
-				remove_core = RPL
-				remove_core = CAN
-				secede_province = FROM
-			}
-			7 = {
-				add_core = FROM
-				add_core = LSK
-				remove_core = RPL
-				remove_core = CAN
-				secede_province = FROM
-			}
-			# 8 = {
-				# add_core = FROM
-				# add_core = LSK
-				# remove_core = RPL
-				# remove_core = CAN
-				# secede_province = FROM
-			# }
-			2629 = {
-				add_core = FROM
-				add_core = LSK
-				remove_core = RPL
-				remove_core = CAN
-				secede_province = FROM
-			}
-			FROM = {
-				any_owned = {
-					limit = {
-						owner = {
-							OR ={
-								is_sphere_leader_of = LSK
-								is_our_vassal = LSK
-								LSK = { substate_of = FROM }
-							}
-						}
-						is_core = LSK
-					}
-					secede_province = LSK
-				}
-			}
+			FROM = { country_event = 11111109 }
 			relation = { who = FROM value = 20 }
 			prestige = -20
 			ai_chance = {
@@ -559,15 +493,572 @@
 		}
 		option = {
 			name = "EVTOPTB1100004"
+			FROM = { country_event = 11111110 }
 			relation = { who = FROM value = -200 }
-			FROM = {
-				add_casus_belli = {
-					target = ENG
-					type = place_in_the_sun
-					months = 12
-				}
-			}
 			prestige = 15
+			ai_chance = {
+				factor = 10
+			}
+		}
+	}
+	
+	country_event = { #notification
+		id = 11111109
+		title = "EVTNAME11111109"
+		desc = "EVTDESC11111109"
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = "EVTOPTA11111109"
+			6 = {
+				secede_province = THIS
+				remove_core = RPL
+				remove_core = CAN
+				remove_core = ENG
+				remove_core = ENL
+				remove_core = COL
+			}
+			random_owned = { #slav
+				limit = {
+					province_id = 6
+					owner = { OR = { is_culture_group = east_slavic primary_culture = alaskan } }
+					any_neighbor_province = { is_core = LSK }
+				}
+				add_core = LSK
+				add_core = THIS
+			}
+			random_owned = { #gringo-cascadian
+				limit = {
+					province_id = 6
+					owner = { OR = { tag = CAS tag = UOR tag = JEF is_culture_group = american_cultures } }
+					any_neighbor_province = { is_core = LSK }
+				}
+				add_core = LSK
+				add_core = THIS
+			}
+			random_owned = { #spic
+				limit = {
+					province_id = 6
+					owner = { is_culture_group = latin_american_cultures }
+					any_neighbor_province = { is_core = THIS }
+				}
+				add_core = LSK
+				add_core = THIS
+			}
+			random_owned = { #iberian
+				limit = {
+					province_id = 6
+					owner = { is_culture_group = iberian }
+					any_neighbor_province = { is_core = VNS }
+				}
+				add_core = LSK
+				add_core = VNS
+				add_core = THIS
+			}
+			random_owned = { #japanese
+				limit = {
+					province_id = 6
+					owner = { OR = { primary_culture = japanese primary_culture = ryukyuan } }
+					any_neighbor_province = { is_core = THIS }
+				}
+				add_core = LSK
+				add_core = THIS
+			}
+			random_owned = { #germanic
+				limit = {
+					province_id = 6
+					owner = { is_culture_group = germanic }
+					any_neighbor_province = { is_core = THIS }
+				}
+				add_core = LSK
+				add_core = THIS
+			}
+			7 = {
+				secede_province = THIS
+				remove_core = RPL
+				remove_core = CAN
+				remove_core = ENG
+				remove_core = ENL
+				remove_core = COL
+			}
+			random_owned = { #slav
+				limit = {
+					province_id = 7
+					owner = { OR = { is_culture_group = east_slavic primary_culture = alaskan } }
+					any_neighbor_province = { is_core = LSK }
+				}
+				add_core = LSK
+				add_core = THIS
+			}
+			random_owned = { #gringo-cascadian
+				limit = {
+					province_id = 7
+					owner = { OR = { tag = CAS tag = UOR tag = JEF is_culture_group = american_cultures } }
+					any_neighbor_province = { is_core = LSK }
+				}
+				add_core = LSK
+				add_core = THIS
+			}
+			random_owned = { #spic
+				limit = {
+					province_id = 7
+					owner = { is_culture_group = latin_american_cultures }
+					any_neighbor_province = { is_core = THIS }
+				}
+				add_core = LSK
+				add_core = THIS
+			}
+			random_owned = { #iberian
+				limit = {
+					province_id = 7
+					owner = { is_culture_group = iberian }
+					any_neighbor_province = { is_core = VNS }
+				}
+				add_core = LSK
+				add_core = VNS
+				add_core = THIS
+			}
+			random_owned = { #japanese
+				limit = {
+					province_id = 7
+					owner = { OR = { primary_culture = japanese primary_culture = ryukyuan } }
+					any_neighbor_province = { is_core = THIS }
+				}
+				add_core = LSK
+				add_core = THIS
+			}
+			random_owned = { #germanic
+				limit = {
+					province_id = 7
+					owner = { is_culture_group = germanic }
+					any_neighbor_province = { is_core = THIS }
+				}
+				add_core = LSK
+				add_core = THIS
+			}
+			8 = {
+				secede_province = THIS
+				remove_core = RPL
+				remove_core = CAN
+				remove_core = ENG
+				remove_core = ENL
+				remove_core = COL
+			}
+			random_owned = { #slav
+				limit = {
+					province_id = 8
+					owner = { OR = { is_culture_group = east_slavic primary_culture = alaskan } }
+					any_neighbor_province = { is_core = LSK }
+				}
+				add_core = LSK
+				add_core = THIS
+			}
+			random_owned = { #gringo-cascadian
+				limit = {
+					province_id = 8
+					owner = { OR = { tag = CAS tag = UOR tag = JEF is_culture_group = american_cultures } }
+					any_neighbor_province = { is_core = LSK }
+				}
+				add_core = LSK
+				add_core = THIS
+			}
+			random_owned = { #spic
+				limit = {
+					province_id = 8
+					owner = { is_culture_group = latin_american_cultures }
+					any_neighbor_province = { is_core = THIS }
+				}
+				add_core = LSK
+				add_core = THIS
+			}
+			random_owned = { #iberian
+				limit = {
+					province_id = 8
+					owner = { is_culture_group = iberian }
+					any_neighbor_province = { is_core = VNS }
+				}
+				add_core = LSK
+				add_core = VNS
+				add_core = THIS
+			}
+			random_owned = { #japanese
+				limit = {
+					province_id = 8
+					owner = { OR = { primary_culture = japanese primary_culture = ryukyuan } }
+					any_neighbor_province = { is_core = THIS }
+				}
+				add_core = LSK
+				add_core = THIS
+			}
+			random_owned = { #germanic
+				limit = {
+					province_id = 8
+					owner = { is_culture_group = germanic }
+					any_neighbor_province = { is_core = THIS }
+				}
+				add_core = LSK
+				add_core = THIS
+			}
+			17 = {
+				secede_province = THIS
+				remove_core = RPL
+				remove_core = CAN
+				remove_core = ENG
+				remove_core = ENL
+				remove_core = COL
+			}
+			random_owned = { #slav
+				limit = {
+					province_id = 17
+					owner = { OR = { is_culture_group = east_slavic primary_culture = alaskan } }
+					any_neighbor_province = { is_core = LSK }
+				}
+				add_core = LSK
+				add_core = THIS
+			}
+			random_owned = { #gringo-cascadian
+				limit = {
+					province_id = 17
+					owner = { OR = { tag = CAS tag = UOR tag = JEF is_culture_group = american_cultures } }
+					any_neighbor_province = { is_core = LSK }
+				}
+				add_core = LSK
+				add_core = THIS
+			}
+			random_owned = { #spic
+				limit = {
+					province_id = 17
+					owner = { is_culture_group = latin_american_cultures }
+					any_neighbor_province = { is_core = THIS }
+				}
+				add_core = LSK
+				add_core = THIS
+			}
+			random_owned = { #iberian
+				limit = {
+					province_id = 17
+					owner = { is_culture_group = iberian }
+					any_neighbor_province = { is_core = VNS }
+				}
+				add_core = LSK
+				add_core = VNS
+				add_core = THIS
+			}
+			random_owned = { #japanese
+				limit = {
+					province_id = 17
+					owner = { OR = { primary_culture = japanese primary_culture = ryukyuan } }
+					any_neighbor_province = { is_core = THIS }
+				}
+				add_core = LSK
+				add_core = THIS
+			}
+			random_owned = { #germanic
+				limit = {
+					province_id = 17
+					owner = { is_culture_group = germanic }
+					any_neighbor_province = { is_core = THIS }
+				}
+				add_core = LSK
+				add_core = THIS
+			}
+			2599 = {
+				secede_province = THIS
+				remove_core = RPL
+				remove_core = CAN
+				remove_core = ENG
+				remove_core = ENL
+				remove_core = COL
+			}
+			random_owned = { #slav
+				limit = {
+					province_id = 2599
+					owner = { OR = { is_culture_group = east_slavic primary_culture = alaskan } }
+					any_neighbor_province = { is_core = LSK }
+				}
+				add_core = LSK
+				add_core = THIS
+			}
+			random_owned = { #gringo-cascadian
+				limit = {
+					province_id = 2599
+					owner = { OR = { tag = CAS tag = UOR tag = JEF is_culture_group = american_cultures } }
+					any_neighbor_province = { is_core = LSK }
+				}
+				add_core = LSK
+				add_core = THIS
+			}
+			random_owned = { #spic
+				limit = {
+					province_id = 2599
+					owner = { is_culture_group = latin_american_cultures }
+					any_neighbor_province = { is_core = THIS }
+				}
+				add_core = LSK
+				add_core = THIS
+			}
+			random_owned = { #iberian
+				limit = {
+					province_id = 2599
+					owner = { is_culture_group = iberian }
+					any_neighbor_province = { is_core = VNS }
+				}
+				add_core = LSK
+				add_core = VNS
+				add_core = THIS
+			}
+			random_owned = { #japanese
+				limit = {
+					province_id = 2599
+					owner = { OR = { primary_culture = japanese primary_culture = ryukyuan } }
+					any_neighbor_province = { is_core = THIS }
+				}
+				add_core = LSK
+				add_core = THIS
+			}
+			random_owned = { #germanic
+				limit = {
+					province_id = 2599
+					owner = { is_culture_group = germanic }
+					any_neighbor_province = { is_core = THIS }
+				}
+				add_core = LSK
+				add_core = THIS
+			}
+			2629 = {
+				secede_province = THIS
+				remove_core = RPL
+				remove_core = CAN
+				remove_core = ENG
+				remove_core = ENL
+				remove_core = COL
+			}
+			random_owned = { #slav
+				limit = {
+					province_id = 2629
+					owner = { OR = { is_culture_group = east_slavic primary_culture = alaskan } }
+					any_neighbor_province = { is_core = LSK }
+				}
+				add_core = LSK
+				add_core = THIS
+			}
+			random_owned = { #gringo-cascadian
+				limit = {
+					province_id = 2629
+					owner = { OR = { tag = CAS tag = UOR tag = JEF is_culture_group = american_cultures } }
+					any_neighbor_province = { is_core = LSK }
+				}
+				add_core = LSK
+				add_core = THIS
+			}
+			random_owned = { #spic
+				limit = {
+					province_id = 2629
+					owner = { is_culture_group = latin_american_cultures }
+					any_neighbor_province = { is_core = THIS }
+				}
+				add_core = LSK
+				add_core = THIS
+			}
+			random_owned = { #iberian
+				limit = {
+					province_id = 2629
+					owner = { is_culture_group = iberian }
+					any_neighbor_province = { is_core = VNS }
+				}
+				add_core = LSK
+				add_core = VNS
+				add_core = THIS
+			}
+			random_owned = { #japanese
+				limit = {
+					province_id = 2629
+					owner = { OR = { primary_culture = japanese primary_culture = ryukyuan } }
+					any_neighbor_province = { is_core = THIS }
+				}
+				add_core = LSK
+				add_core = THIS
+			}
+			random_owned = { #germanic
+				limit = {
+					province_id = 2629
+					owner = { is_culture_group = germanic }
+					any_neighbor_province = { is_core = THIS }
+				}
+				add_core = LSK
+				add_core = THIS
+			}
+			2630 = {
+				secede_province = THIS
+				remove_core = RPL
+				remove_core = CAN
+				remove_core = ENG
+				remove_core = ENL
+				remove_core = COL
+			}
+			random_owned = { #slav
+				limit = {
+					province_id = 2630
+					owner = { OR = { is_culture_group = east_slavic primary_culture = alaskan } }
+					any_neighbor_province = { is_core = LSK }
+				}
+				add_core = LSK
+				add_core = THIS
+			}
+			random_owned = { #gringo-cascadian
+				limit = {
+					province_id = 2630
+					owner = { OR = { tag = CAS tag = UOR tag = JEF is_culture_group = american_cultures } }
+					any_neighbor_province = { is_core = LSK }
+				}
+				add_core = LSK
+				add_core = THIS
+			}
+			random_owned = { #spic
+				limit = {
+					province_id = 2630
+					owner = { is_culture_group = latin_american_cultures }
+					any_neighbor_province = { is_core = THIS }
+				}
+				add_core = LSK
+				add_core = THIS
+			}
+			random_owned = { #iberian
+				limit = {
+					province_id = 2630
+					owner = { is_culture_group = iberian }
+					any_neighbor_province = { is_core = VNS }
+				}
+				add_core = LSK
+				add_core = VNS
+				add_core = THIS
+			}
+			random_owned = { #japanese
+				limit = {
+					province_id = 2630
+					owner = { OR = { primary_culture = japanese primary_culture = ryukyuan } }
+					any_neighbor_province = { is_core = THIS }
+				}
+				add_core = LSK
+				add_core = THIS
+			}
+			random_owned = { #germanic
+				limit = {
+					province_id = 2630
+					owner = { is_culture_group = germanic }
+					any_neighbor_province = { is_core = THIS }
+				}
+				add_core = LSK
+				add_core = THIS
+			}
+			any_owned = {
+				limit = {
+					OR = {
+						province_id = 6
+						province_id = 7
+						province_id = 8
+						province_id = 17
+						province_id = 2599
+						province_id = 2629
+						province_id = 2630
+					}
+					owner = {
+						NOT = {
+							tag = LSK
+							has_country_flag = alaska_annexed
+						}
+						LSK = {
+							exists = yes
+							OR = {
+								vassal_of = THIS
+								substate_of = THIS
+							}
+						}
+					}
+					is_core = LSK
+				}
+				secede_province = LSK
+			}
+			any_owned = {
+				limit = {
+					OR = {
+						province_id = 6
+						province_id = 7
+						province_id = 8
+						province_id = 17
+						province_id = 2599
+						province_id = 2629
+						province_id = 2630
+					}
+					owner = {
+						NOT = {
+							tag = VNS
+						}
+						VNS = {
+							exists = yes
+							OR = {
+								vassal_of = THIS
+								substate_of = THIS
+							}
+						}
+					}
+					is_core = VNS
+				}
+				secede_province = VNS
+			}
+		}
+	}
+	
+	country_event = { #notification
+		id = 11111110
+		title = "EVTNAME11111110"
+		desc = "EVTDESC11111110"
+		picture = "cascadia_1"
+		is_triggered_only = yes
+
+		option = {
+			name = "EVTOPTA11111110"
+			relation = { who = FROM value = -200 }
+			add_casus_belli = {
+				target = FROM
+				type = place_in_the_sun
+				months = 12
+			}
+			add_casus_belli = {
+				target = FROM
+				type = place_in_the_sun
+				months = 12
+			}
+			ai_chance = {
+				factor = 90
+			}
+		}
+		option = {
+			name = "EVTOPTA11111110"
+			relation = { who = FROM value = -200 }
+			add_casus_belli = {
+				target = FROM
+				type = place_in_the_sun
+				months = 12
+			}
+			add_casus_belli = {
+				target = FROM
+				type = place_in_the_sun
+				months = 12
+			}
+			war = {
+				target = FROM
+				attacker_goal = {
+					casus_belli = place_in_the_sun
+					state_province_id = 6
+				}
+				attacker_goal = {
+					casus_belli = place_in_the_sun
+					state_province_id = 13
+				}
+				call_ally = yes
+			}
 			ai_chance = {
 				factor = 10
 			}
@@ -598,6 +1089,7 @@
 			has_global_flag = 1843_greatmigration
 			NOT = { has_global_flag = champoeg_meetings }
 			NOT = { has_global_flag = anglo_oregon }
+			NOT = { has_global_flag = gringo_columbia }
 		}
 		
 		mean_time_to_happen = { 
@@ -1298,12 +1790,21 @@ country_event = {
 							substate_of = RUS
 						}
 					}
+					civilized = yes
 					OR = {
 						is_greater_power = yes
 						is_secondary_power = yes
 						owns = 104 #SanFran
 						owns = 3253 #Liechtensteinin
-						104 = { owner = { vassal_of = MEX } }
+						104 = {
+							owner = {
+								OR = {
+									vassal_of = MEX
+									vassal_of = M3X
+									vassal_of = MXM
+								}
+							}
+						}
 					}
 					OR = {
 						tag = USA
@@ -1317,13 +1818,8 @@ country_event = {
 						tag = CAL
 						tag = C4L
 						tag = LIE
-						AND = {
-							OR = {
-								primary_culture = japanese
-								primary_culture = ryukyuan
-							}
-							civilized = yes
-						}
+						primary_culture = japanese
+						primary_culture = ryukyuan
 						has_country_flag = aridoamerica_alliance_leader
 						AND = {
 							OR = {
@@ -1458,16 +1954,12 @@ country_event = {
 				modifier = {
 					factor = 100
 					OR = {
-						AND = {
-							OR = {
-								tag = MEX
-								tag = MXM
-								tag = M3X
-								tag = CAL
-								tag = C4L
-								tag = ARD
-							}
-						}
+						tag = MEX
+						tag = MXM
+						tag = M3X
+						tag = CAL
+						tag = C4L
+						tag = ARD
 						ai = no
 					}
 				}
@@ -1558,6 +2050,7 @@ country_event = {
 							substate_of = RUS
 						}
 					}
+					civilized = yes
 					NOT = { has_country_flag = refused_fort_ross }
 					OR = {
 						is_greater_power = yes
@@ -1577,13 +2070,8 @@ country_event = {
 						tag = CAL
 						tag = C4L
 						tag = LIE
-						AND = {
-							OR = {
-								primary_culture = japanese
-								primary_culture = ryukyuan
-							}
-							civilized = yes
-						}
+						primary_culture = japanese
+						primary_culture = ryukyuan
 						has_country_flag = aridoamerica_alliance_leader
 						AND = {
 							OR = {
@@ -3079,9 +3567,36 @@ country_event = {
 						province_id = 2262 #Animas
 						province_id = 2148 #Albuquerque
 					}
+					MEX = { exists = yes }
 				}
 				remove_core = THIS
 				add_core = MEX
+			}
+			any_owned = {
+				limit = {
+					OR = {
+						province_id = 102 #Tucson
+						province_id = 100 #Phoenix
+						province_id = 2262 #Animas
+						province_id = 2148 #Albuquerque
+					}
+					M3X = { exists = yes }
+				}
+				remove_core = THIS
+				add_core = M3X
+			}
+			any_owned = {
+				limit = {
+					OR = {
+						province_id = 102 #Tucson
+						province_id = 100 #Phoenix
+						province_id = 2262 #Animas
+						province_id = 2148 #Albuquerque
+					}
+					MXM = { exists = yes }
+				}
+				remove_core = THIS
+				add_core = MXM
 			}
 			random_country = {
 				limit = {
@@ -3110,7 +3625,15 @@ country_event = {
 				relation = { who = MEX value = 400 }
 				diplomatic_influence = { who = MEX value = 400 }
 			}
-			MEX = {
+			random_country = {
+				limit = {
+					exists = yes
+					OR = {
+						tag = MEX
+						tag = M3X
+						tag = MXM
+					}
+				}
 				relation = { who = THIS value = -100 }
 				diplomatic_influence = { who = THIS value = -400 }
 			}
@@ -3130,8 +3653,33 @@ country_event = {
 						province_id = 2262 #Animas
 						province_id = 2148 #Albuquerque
 					}
+					MEX = { exists = yes }
 				}
 				add_core = MEX
+			}
+			any_owned = {
+				limit = {
+					OR = {
+						province_id = 102 #Tucson
+						province_id = 100 #Phoenix
+						province_id = 2262 #Animas
+						province_id = 2148 #Albuquerque
+					}
+					M3X = { exists = yes }
+				}
+				add_core = M3X
+			}
+			any_owned = {
+				limit = {
+					OR = {
+						province_id = 102 #Tucson
+						province_id = 100 #Phoenix
+						province_id = 2262 #Animas
+						province_id = 2148 #Albuquerque
+					}
+					MXM = { exists = yes }
+				}
+				add_core = MXM
 			}
 			casus_belli ={
 				target = FROM
@@ -3165,7 +3713,15 @@ country_event = {
 				relation = { who = MEX value = 400 }
 				diplomatic_influence = { who = MEX value = 400 }
 			}
-			MEX = {
+			random_country = {
+				limit = {
+					exists = yes
+					OR = {
+						tag = MEX
+						tag = M3X
+						tag = MXM
+					}
+				}
 				relation = { who = THIS value = -400 }
 				diplomatic_influence = { who = THIS value = -400 }
 			}
@@ -3191,8 +3747,16 @@ country_event = {
 					secede_province = THIS
 				}
 				any_owned = {
-					limit = { is_core = MEX }
+					limit = { is_core = MEX MEX = { exists = yes } }
 					secede_province = MEX
+				}
+				any_owned = {
+					limit = { is_core = M3X M3X = { exists = yes } }
+					secede_province = M3X
+				}
+				any_owned = {
+					limit = { is_core = MXM MXM = { exists = yes } }
+					secede_province = MXM
 				}
 				relation = { who = THIS value = 200 }
 				diplomatic_influence = { who = THIS value = 50 }
@@ -3230,8 +3794,16 @@ country_event = {
 					secede_province = THIS
 				}
 				any_owned = {
-					limit = { is_core = MEX }
+					limit = { is_core = MEX MEX = { exists = yes } }
 					secede_province = MEX
+				}
+				any_owned = {
+					limit = { is_core = M3X M3X = { exists = yes } }
+					secede_province = M3X
+				}
+				any_owned = {
+					limit = { is_core = MXM MXM = { exists = yes } }
+					secede_province = MXM
 				}
 				casus_belli = {
 					target = THIS
@@ -3344,7 +3916,6 @@ country_event = {
 		desc = "EVTDESC1100031"
 		picture = "mormon_exodus"
 		
-		fire_only_once = yes
 		is_triggered_only = yes
 	
 		option = {
@@ -3820,7 +4391,6 @@ country_event = {
 		desc = "EVTDESC1100034"
 		picture = "mormon_exodus"
 		is_triggered_only = yes
-		fire_only_once = yes
 
 		immediate = {
 			any_owned = {
@@ -5792,6 +6362,10 @@ country_event = {
 	option = {
 		name = "EVT1100045OPTA"
 		random_owned = {
+			limit = { owner = { has_country_flag = LSK_GW_released } }
+			owner = { 1 = { assimilate = yes } 3391 = { assimilate = yes } }
+		}
+		random_owned = {
 			limit = { owner = { primary_culture = alaskan }	}
 			owner = {
 				add_country_modifier = {
@@ -5887,7 +6461,7 @@ country_event = {
 	}
 }
 
-	# Oregon is auto-colonized by the anglos if USA doesn't exist (or goes to CAN or RPL if they're still around)
+	# Oregon is auto-colonized by the anglos if USA doesn't exists (or goes to CAN or RPL if they're still around)
 	country_event = {
 		id = 1100047
 		title = "EVTNAME1100047"
@@ -5898,7 +6472,6 @@ country_event = {
 			owns = 79
 			owns = 81
 			NOT = { tag = USA }
-			year = 1849
 			OR = {
 				AND = {
 					tag = ENG
@@ -5907,22 +6480,30 @@ country_event = {
 				}
 				AND = {
 					OR = {
-						vassal_of = ENG
-						substate_of = ENG
-						in_sphere = ENG
+						tag = CAN
+						tag = RPL
+						tag = COL
 					}
-					has_global_flag = oregon_war_happened_1234
-				}
-				AND = {
 					OR = {
 						vassal_of = ENG
 						substate_of = ENG
 						in_sphere = ENG
-						AND = {
-							tag = ENG
-							is_greater_power = yes
-						}
 					}
+					overlord = { is_greater_power = yes }
+					has_global_flag = oregon_war_happened_1234
+				}
+				AND = {
+					OR = {
+						tag = CAN
+						tag = RPL
+						tag = COL
+					}
+					OR = {
+						vassal_of = ENG
+						substate_of = ENG
+						in_sphere = ENG
+					}
+					overlord = { is_greater_power = yes }
 					NOT = { has_global_flag = oregon_war_happened_1234 }
 				}
 			}
@@ -5934,19 +6515,11 @@ country_event = {
 					AND = {
 						OR = {
 							truce_with = ENG
+							truce_with = ENL
 							truce_with = THIS
 						}
 						has_recently_lost_war = yes
 					}
-					# any_owned_province = {
-						# NOT = {
-							# OR = {
-								# region = USA_247 # New England
-								# region = USA_243 # Massachusetts 
-								# region = USA_219 # Maryland 
-							# }
-						# }
-					# }
 				}
 			}
 			UOR = {
@@ -5956,7 +6529,9 @@ country_event = {
 				exists = no
 			}
 			NOT = { has_global_flag = oregon_split_columbia_river }
+			NOT = { has_global_flag = USA_claims_all_oregon }
 			NOT = { has_global_flag = anglo_oregon }
+			NOT = { has_global_flag = gringo_columbia }
 		}
 		
 		mean_time_to_happen = { 
@@ -5967,52 +6542,777 @@ country_event = {
 			name = "EVTOPTA1100047"
 			set_global_flag = anglo_oregon
 			UOR = { all_core = { add_core = COL add_core = THIS remove_core = USA remove_core = UOR } }
+			COL = { all_core = { add_core = COL add_core = THIS remove_core = USA remove_core = UOR } }
+			country_event = 1100048
+		}
+	}
+
+	country_event = {
+		id = 1100048
+		title = "EVTNAME1100047"
+		desc = "EVTDESC1100047"
+		
+		is_triggered_only = yes
+		
+		immediate = {
 			80 = { #Walla-Walla
-				life_rating = 15
 				secede_province = THIS
 			}
 			81 = { #Oregon City
 				change_province_name = "Portland"
-				life_rating = 15
 				secede_province = THIS
 			}
 			82 = { #Grande Ronde
 				change_province_name = "Baker City"
-				life_rating = 15
 				secede_province = THIS
 			}
 			83 = { #Fort Umpqua
 				change_province_name = "Elkton"
-				life_rating = 15
 				secede_province = THIS
 			}
 			91 = { #Boise
-				life_rating = 15
 				secede_province = THIS
 			}
 			92 = { #Kullyspell
-				life_rating = 15
 				secede_province = THIS
 			}
 			93 = { #Fort Hall
-				life_rating = 15
 				secede_province = THIS
 			}
 			111 = { #Fort Bonneville
-				life_rating = 15
 				secede_province = THIS
 			}
 			114 = { #Fort Owen
-				life_rating = 15
 				secede_province = THIS
 			}
 			3388 = { #Klamath
-				life_rating = 15
 				secede_province = THIS
 			}
 			3394 = { #Wasco
-				life_rating = 15
 				secede_province = THIS
 			}
 		}
+		
+		option = {
+			name = "EVTOPTA1100047"
+			any_owned = {
+				limit = {
+					OR = {
+						province_id = 80
+						province_id = 81
+						province_id = 82
+						province_id = 83
+						province_id = 91
+						province_id = 92
+						province_id = 93
+						province_id = 111
+						province_id = 114
+						province_id = 3388
+						province_id = 3394
+					}
+					NOT = { life_rating = 21 }
+				}
+				life_rating = 15
+			}
+		}
 	}
+		
+	# Oregon is auto-colonized by the gringos if ENG loses the oregon war
+	country_event = {
+		id = 11111107
+		title = "EVTNAME11111107"
+		desc = "EVTDESC11111107"
+		fire_only_once = yes
+		trigger = {
+			owns = 78
+			owns = 79
+			owns = 81
+			NOT = {
+				OR = {
+					tag = ENG
+					tag = ENL
+					vassal_of = ENG
+					vassal_of = ENL
+					substate_of = ENG
+					substate_of = ENL
+				}
+			}
+			OR = {
+				AND = {
+					OR = {
+						capital_scope = { continent = north_america }
+						capital_scope = { continent = south_america }
+					}
+					is_greater_power = yes
+					has_global_flag = oregon_war_happened_1234
+				}
+				AND = {
+					OR = {
+						capital_scope = { continent = north_america }
+						capital_scope = { continent = south_america }
+					}
+					OR = {
+						vassal_of = USA
+						vassal_of = FSA
+						vassal_of = CSA
+						substate_of = USA
+						substate_of = FSA
+						substate_of = CSA
+						in_sphere = USA
+						in_sphere = FSA
+						in_sphere = CSA
+					}
+					overlord = { is_greater_power = yes }
+					has_global_flag = oregon_war_happened_1234
+				}
+				AND = {
+					OR = {
+						capital_scope = { continent = north_america }
+						capital_scope = { continent = south_america }
+					}
+					OR = {
+						vassal_of = USA
+						vassal_of = FSA
+						vassal_of = CSA
+						substate_of = USA
+						substate_of = FSA
+						substate_of = CSA
+						in_sphere = USA
+						in_sphere = FSA
+						in_sphere = CSA
+					}
+					overlord = { is_greater_power = yes }
+					NOT = { has_global_flag = oregon_war_happened_1234 }
+				}
+			}
+			OR = {
+				CAN = {
+					OR = {
+						exists = no
+						vassal_of = THIS
+						in_sphere = THIS
+						AND = {
+							truce_with = THIS
+							has_recently_lost_war = yes
+						}
+					}
+				}
+				RPL = {
+					OR = {
+						exists = no
+						vassal_of = THIS
+						in_sphere = THIS
+						AND = {
+							truce_with = THIS
+							has_recently_lost_war = yes
+						}
+					}
+				}
+				COL = {
+					OR = {
+						exists = no
+						vassal_of = THIS
+						in_sphere = THIS
+						AND = {
+							truce_with = THIS
+							has_recently_lost_war = yes
+						}
+					}
+				}
+			}
+			NOT = { has_global_flag = oregon_split_columbia_river }
+			NOT = { has_global_flag = USA_claims_all_oregon }
+			NOT = { has_global_flag = anglo_oregon }
+			NOT = { has_global_flag = gringo_columbia }
+		}
+		
+		mean_time_to_happen = { 
+			months = 2
+		}
+		
+		option = {
+			name = "EVTOPTA11111107"
+			set_global_flag = gringo_columbia
+			COL = { all_core = { add_core = UOR add_core = THIS remove_core = ENG remove_core = COL remove_core = CAN remove_core = RPL } }
+			UOR = { all_core = { add_core = THIS remove_core = ENG remove_core = COL remove_core = CAN remove_core = RPL } }
+			country_event = 11111108
+		}
+	}
+	
+	country_event = {
+		id = 11111108
+		title = "EVTNAME11111107"
+		desc = "EVTDESC11111107"
+		
+		is_triggered_only = yes
+		
+		immediate = {
+			14 = { #Vancouver Island
+				secede_province = THIS
+			}
+			13 = { #Vancouver City
+				secede_province = THIS
+			}
+			20 = { #Kelowna
+				secede_province = THIS
+			}
+			21 = { #Vernon
+				secede_province = THIS
+			}
+			15 = { #Prince Rupert
+				secede_province = THIS
+			}
+			16 = { #Glenora
+				secede_province = THIS
+			}
+			19 = { #Prince George
+				secede_province = THIS
+			}
+			17 = { #Atlin
+				secede_province = THIS
+			}
+			80 = { #Walla-Walla
+				secede_province = THIS
+			}
+			81 = { #Oregon City
+				change_province_name = "Portland"
+				secede_province = THIS
+			}
+			82 = { #Grande Ronde
+				change_province_name = "Baker City"
+				secede_province = THIS
+			}
+			83 = { #Fort Umpqua
+				change_province_name = "Elkton"
+				secede_province = THIS
+			}
+			91 = { #Boise
+				secede_province = THIS
+			}
+			92 = { #Kullyspell
+				secede_province = THIS
+			}
+			93 = { #Fort Hall
+				secede_province = THIS
+			}
+			111 = { #Fort Bonneville
+				secede_province = THIS
+			}
+			114 = { #Fort Owen
+				secede_province = THIS
+			}
+			3388 = { #Klamath
+				secede_province = THIS
+			}
+			3394 = { #Wasco
+				secede_province = THIS
+			}
+		}
+		
+		option = {
+			name = "EVTOPTA11111107"
+			any_owned = {
+				limit = {
+					OR = {
+						province_id = 13
+						province_id = 14
+						province_id = 15
+						province_id = 16
+						province_id = 17
+						province_id = 19
+						province_id = 20
+						province_id = 21
+					}
+					NOT = { life_rating = 21 }
+				}
+				life_rating = 10
+			}
+			any_owned = {
+				limit = {
+					OR = {
+						province_id = 80
+						province_id = 81
+						province_id = 82
+						province_id = 83
+						province_id = 91
+						province_id = 92
+						province_id = 93
+						province_id = 111
+						province_id = 114
+						province_id = 3388
+						province_id = 3394
+					}
+					NOT = { life_rating = 21 }
+				}
+				life_rating = 15
+			}
+		}
+	}
+	
+################################################################
+#
+#		LSK independence struggle
+#
+#
+################################################################
+
+	country_event = { #Notification event for Alaska about the Alaska Sale
+		id = 1100049
+		title = "The End of the Russian-American Company"
+		desc = "EVTDESC1100049"
+		picture = "alaska"
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = "Let's see them try it!"
+			set_country_flag = ANON_total_war_flag
+			define_admiral = {
+				name = "Dmitry Maksutov"
+				personality = resourceful
+				background = artillerist
+			}
+			RUS = {
+				any_owned = {
+					limit = {
+						is_core = LSK
+						is_overseas = yes
+					}
+					secede_province = THIS
+				}
+				country_event = 11111100
+			}
+			any_pop = {
+				limit = {
+					OR = {
+						is_primary_culture = no
+						is_accepted_culture = no
+					}
+					NOT = {
+						OR = {
+							has_pop_culture = yankee
+							has_pop_culture = anglo_canadian
+							has_pop_culture = french_canadian
+						}
+					}
+				}
+				militancy = 4
+			}
+			any_pop = {
+				limit = {
+					OR = {
+						is_primary_culture = yes
+						is_accepted_culture = yes
+					}
+				}
+				militancy = -9
+			}
+			ai_chance = {
+				factor = 5
+				modifier = {
+					factor = 20
+					OR = {
+						AND = {
+							OR = {
+								706 = { # Warsaw
+									owner = {
+										OR = {
+											alliance_with = RUS
+											vassal_of = RUS
+											substate_of = RUS
+											in_sphere = RUS
+										}
+										is_core = 706
+										NOT = { controls = 706 }
+									}
+								}
+								354 = {
+									owner = { # Riga
+										OR = {
+											alliance_with = RUS
+											vassal_of = RUS
+											substate_of = RUS
+											in_sphere = RUS
+										}
+										is_core = 354
+										NOT = { controls = 354 }
+									}
+								}
+								349 = {
+									owner = { # Reval
+										OR = {
+											alliance_with = RUS
+											vassal_of = RUS
+											substate_of = RUS
+											in_sphere = RUS
+										}
+										is_core = 349
+										NOT = { controls = 349 }
+									}
+								}
+								360 = {
+									owner = { # Vilnius
+										OR = {
+											alliance_with = RUS
+											vassal_of = RUS
+											substate_of = RUS
+											in_sphere = RUS
+										}
+										is_core = 360
+										NOT = { controls = 360 }
+									}
+								}
+								361 = {
+									owner = { # Kaunas
+										OR = {
+											alliance_with = RUS
+											vassal_of = RUS
+											substate_of = RUS
+											in_sphere = RUS
+										}
+										is_core = 361
+										NOT = { controls = 361 }
+									}
+								}
+								718 = {
+									owner = { # Minsk
+										OR = {
+											alliance_with = RUS
+											vassal_of = RUS
+											substate_of = RUS
+											in_sphere = RUS
+										}
+										is_core = 718
+										NOT = { controls = 718 }
+									}
+								}
+								958 = {
+									owner = { # Kiev
+										OR = {
+											alliance_with = RUS
+											vassal_of = RUS
+											substate_of = RUS
+											in_sphere = RUS
+										}
+										is_core = 958
+										NOT = { controls = 958 }
+									}
+								}
+							}
+							RUS = { war_exhaustion = 50 }
+						}
+						RUS = {
+							OR = {
+								AND = {
+									NOT = {
+										OR = {
+											controls = 706 # Warsaw
+											controls = 354 # Riga
+											controls = 349 # Reval/Tallin
+											controls = 360 # Vilnius
+											controls = 361 # Kaunas
+											controls = 718 # Minsk
+											controls = 958 # Kiev
+										}
+									}
+									war_exhaustion = 50
+								}
+								AND = {
+									NOT = { controls = 1082 } # Haishenwai 
+									has_global_flag = convention_of_peking
+									war_exhaustion = 40
+								}
+								AND = {
+									controls = 1074 # Petropavlovsk
+									controls = 1086 # Pogobi
+									war_exhaustion = 40
+								}
+								war_exhaustion = 100
+							}
+						}
+					}
+				}
+			}
+		}
+		option = {
+			name = "We will abide by their wishes."
+			FROM = {
+				country_event = 11111101
+			}
+			ai_chance = {
+				factor = 90
+			}
+		}
+	}
+
+##################################################################################
+#		1100050+ have been used by dick's second french intervention.
+##################################################################################
+
+	country_event = {
+		id = 11111100
+		title = "EVTNAME11111100"
+		desc = "EVTDESC11111100"
+		picture = "deliberation"
+		major = yes
+		is_triggered_only = yes
+		
+		option = {
+			name = "EVT11111100OPTA"
+			# badboy = -10
+			release_vassal = LSK
+			diplomatic_influence = {
+				who = LSK
+				value = -400
+			}
+			leave_alliance = LSK
+			war = {
+				target = LSK
+				attacker_goal = {
+					casus_belli = civil_war
+				}
+				defender_goal = {
+					casus_belli = status_quo
+				}
+					call_ally = yes
+			}
+			set_global_flag = war_with_LSK
+		}
+	}
+
+	country_event = {
+		id = 11111101
+		title = "EVTNAME11111101"
+		desc = "EVTDESC11111101"
+		picture = "deliberation"
+		
+		major = yes
+		is_triggered_only = yes
+		
+		option = {
+			name = "EVT11111101OPTA"
+			LSK = {
+				country_event = 11111103
+			}
+		}
+	}
+
+	country_event = {
+		id = 11111102
+		title = "EVTNAME11111102"
+		desc = "EVTDESC11111102"
+		picture = "alaska"
+		major = yes
+		
+		trigger = {
+			tag = LSK
+			has_global_flag = war_with_LSK
+			war = no
+			is_vassal = no
+		}
+		
+		fire_only_once = yes
+		
+		mean_time_to_happen = {
+			days = 1
+		}
+		
+		option = {
+			name = "Long Live Alyaska!"
+			prestige = 25
+			tech_school = traditional_academic
+			government = bourgeois_dictatorship
+			ruling_party_ideology = anarcho_liberal
+			vote_franschise = none_voting
+			RUS = {
+				prestige = -100
+				release_vassal = LSK
+				diplomatic_influence = {
+					who = LSK
+					value = -400
+				}
+				any_owned = {
+					limit = {
+						is_core = LSK
+						is_overseas = yes
+					}
+					secede_province = LSK
+				}
+			}
+			any_pop = {
+				limit = { 
+					OR = {
+						culture = alaskan
+						culture = russian
+					}
+					NOT = { type = soldiers }
+				}
+				reduce_pop = 1.5
+				militancy = -10
+				consciousness = -10
+			}
+			any_pop = {
+				limit = { 
+					OR = {
+						culture = alaskan
+						culture = russian
+					}
+					type = soldiers
+				}
+				militancy = -10
+				consciousness = -10
+				reduce_pop = 3
+			}
+			set_global_flag = LSK_independence
+		}
+	}
+
+	country_event = {
+		id = 11111103
+		title = "EVTNAME11111101"
+		desc = "EVTDESC11111101"
+		picture = "deliberation"
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = "EVT1100051OPTA"
+			any_owned = {
+				secede_province = RUS
+			}
+			RUS = {
+				inherit = THIS
+			}
+		}
+	}
+
+	country_event = { # Alaskan Volunteers - Cossacks
+		id = 11111104
+		title = "EVTNAME11111104"
+		desc = "EVTDESC11111104"
+		picture = "alaska"
+		
+		trigger = {
+			tag = LSK
+			war_with = RUS
+			is_vassal = no
+			has_global_flag = war_with_LSK
+			NOT = { has_country_flag = alyaska_volunteers_cossack }
+		}
+		
+		fire_only_once = yes
+		
+		mean_time_to_happen = {
+			months = 1
+		}
+		
+		option = {
+			name = "EVT11111104OPTA"
+			set_country_flag = alyaska_volunteers_cossack
+			add_accepted_culture = cossack
+			define_general = {
+				name = "Nazariy Chornynsky"
+				personality = audacious
+				background = adventurer
+			}
+			3593 = {
+				any_pop = {
+					limit = {
+						has_pop_culture = cossack
+						pop_type = soldiers
+					}
+					move_pop = 3391 # Kadyak
+				}
+			}
+			3391 = {
+				sub_unit = { type = steam_transport value = current }
+				sub_unit = { type = frigate value = current }
+				sub_unit = { type = frigate value = current }
+				sub_unit = { type = frigate value = current }
+				sub_unit = { type = ironclad value = current }
+			}
+			prestige = 5
+		}
+	}
+
+	country_event = { # Alaskan Volunteers - Yankee
+		id = 11111105
+		title = "EVTNAME11111105"
+		desc = "EVTDESC11111105"
+		picture = "alaska"
+		
+		trigger = {
+			tag = LSK
+			war_with = RUS
+			is_vassal = no
+			has_global_flag = war_with_LSK
+			NOT = { has_country_flag = alyaska_volunteers_yankee }
+			relation = { who = USA value = 10 }
+		}
+		
+		fire_only_once = yes
+		
+		mean_time_to_happen = {
+			months = 3
+		}
+		
+		option = {
+			name = "EVT11111105OPTA"
+			set_country_flag = alyaska_volunteers_yankee
+			#gibe some cool ships too and admiral Dmitry Petrovich Maksutov (alaska's last governor)
+			#do an ancap-style uk and usa pls help uwu decision
+			3593 = {
+				any_pop = {
+					limit = {
+						has_pop_culture = yankee
+						pop_type = soldiers
+					}
+					move_pop = 1 # Sitka
+				}
+			}
+			prestige = 5
+		}
+	}
+
+	country_event = { # Alaskan Volunteers - Canadian
+		id = 11111106
+		title = "EVTNAME11111106"
+		desc = "EVTDESC11111106"
+		picture = "alaska"
+		
+		trigger = {
+			tag = LSK
+			war_with = RUS
+			is_vassal = no
+			has_global_flag = war_with_LSK
+			NOT = { has_country_flag = alyaska_volunteers_canadian }
+			relation = { who = ENG value = 10 }
+		}
+		
+		fire_only_once = yes
+		
+		mean_time_to_happen = {
+			months = 2
+		}
+		
+		option = {
+			name = "EVT11111106OPTA"
+			set_country_flag = alyaska_volunteers_canadian
+			#gibe some cool ships too and admiral Dmitry Petrovich Maksutov (alaska's last governor)
+			#do an ancap-style uk and usa pls help uwu decision
+			3593 = {
+				any_pop = {
+					limit = {
+						has_pop_culture = anglo_canadian
+						pop_type = soldiers
+					}
+					move_pop = 1 # Sitka
+				}
+			}
+			prestige = 5
+		}
+	}
+	
+#############################################
+#	11111107 - 11111110 already in use	#
+#############################################

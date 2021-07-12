@@ -143,6 +143,25 @@ fascist_group = {
             # }
         # }
     }
+    Executive = {
+        color = { 112 41 99 }
+
+        add_political_reform = {
+            base = 1
+        }
+
+        remove_political_reform = {
+            base = 1
+        }
+
+        add_social_reform = {
+            base = 1
+        }
+
+        remove_social_reform = {
+            base = 1
+        }
+    }
 }	
 
 conservative_group = {
@@ -445,7 +464,6 @@ liberal_group = {
 	
 	liberal = {
 		color = { 255 255 0 }
-		
 		
 		add_political_reform = {
 			base = 1

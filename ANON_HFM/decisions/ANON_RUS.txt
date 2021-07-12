@@ -1,0 +1,163 @@
+political_decisions = {
+			
+	poles_accepted_culture = {
+		picture = become_poland
+		potential = {
+			is_culture_group = east_slavic
+			any_owned_province = {
+				is_core = POL
+			}
+			OR = {
+				government = democracy
+				government = prussian_constitutionalism
+				government = hms_government
+				government = absolute_monarchy
+			}
+			OR = {
+				has_global_flag = panslavism
+				has_global_flag = establish_panslavism
+			}
+			NOT = { has_global_flag = poles_accepted_culture }
+		}
+		
+		allow = {
+			war = no
+			mass_politics = 1
+			OR = {
+				AND = {
+					OR = {
+						government = democracy
+						government = prussian_constitutionalism
+						government = hms_government
+					}
+					OR = {
+						ruling_party_ideology = liberal
+						ruling_party_ideology = socialist
+						ruling_party_ideology = reactionary
+					}
+				}
+				AND = {
+					government = absolute_monarchy
+					ruling_party_ideology = reactionary
+				}
+			}
+		}
+		
+		effect = {
+			set_global_flag = poles_accepted_culture
+			add_accepted_culture = polish
+			any_pop = {
+				limit = { is_accepted_culture = no }
+				militancy = 3
+				consciousness = 5
+			}
+			any_pop = {
+				limit = { has_pop_culture = polish }
+				militancy = -3
+				consciousness = -5
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				government = absolute_monarchy
+				ruling_party_ideology = reactionary
+			}
+		}
+	}
+	armenians_accepted_culture = {
+		picture = form_transcaucasia
+		potential = {
+			is_culture_group = east_slavic
+			any_owned_province = {
+				is_core = ARM
+			}
+			OR = {
+				government = democracy
+				government = prussian_constitutionalism
+				government = hms_government
+			}
+			NOT = { has_global_flag = armenians_accepted_culture }
+		}
+		
+		allow = {
+			war = no
+			mass_politics = 1
+			OR = {
+				government = democracy
+				government = prussian_constitutionalism
+				government = hms_government
+			}
+			OR = {
+				ruling_party_ideology = liberal
+				ruling_party_ideology = socialist
+			}
+		}
+		
+		effect = {
+			set_global_flag = armenians_accepted_culture
+			add_accepted_culture = armenian
+			any_pop = {
+				limit = { is_accepted_culture = no }
+				militancy = 4
+				consciousness = 6
+			}
+			any_pop = {
+				limit = { has_pop_culture = armenian }
+				militancy = 4
+				consciousness = 6
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	georgians_accepted_culture = {
+		picture = form_transcaucasia
+		potential = {
+			is_culture_group = east_slavic
+			any_owned_province = {
+				is_core = GEO
+			}
+			OR = {
+				government = democracy
+				government = prussian_constitutionalism
+				government = hms_government
+			}
+			NOT = { has_global_flag = georgians_accepted_culture }
+		}
+		
+		allow = {
+			war = no
+			mass_politics = 1
+			OR = {
+				government = democracy
+				government = prussian_constitutionalism
+				government = hms_government
+			}
+			OR = {
+				ruling_party_ideology = liberal
+				ruling_party_ideology = socialist
+			}
+		}
+		
+		effect = {
+			set_global_flag = georgians_accepted_culture
+			add_accepted_culture = georgian
+			any_pop = {
+				limit = { is_accepted_culture = no }
+				militancy = 4
+				consciousness = 6
+			}
+			any_pop = {
+				limit = { has_pop_culture = georgian }
+				militancy = 4
+				consciousness = 6
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

@@ -128,6 +128,7 @@ country_event = {
 		1755 = {
 			trade_goods = precious_goods
 			set_province_flag = suez_canal
+			add_core = U02
 			any_pop = {
 			limit = { OR = { pop_type = labourers pop_type = farmers } }
 			random_list = {
@@ -269,7 +270,7 @@ country_event = {
 		owns = 1755
 		NOT = {
 			#war_policy = pacifism
-			has_country_modifier = neutrality
+			has_country_modifier = neutrality_modifier
 			has_country_flag = suez_egypt_intervention
 		}
 		EGY = {
@@ -292,6 +293,7 @@ country_event = {
 				}
 				average_militancy = 7
 			}
+            NOT = { has_country_modifier = colony_to_be_annexed }
 		}
 	}
 	
@@ -464,7 +466,7 @@ country_event = {
 		name = "EVT36977OPTA"
 		clr_global_flag = kiel_canal_construction
 		enable_canal = 1
-		369 = { set_province_flag = kiel_canal }
+		369 = { add_core = U02 set_province_flag = kiel_canal }
 		prestige = 5
 	}
 }
@@ -595,6 +597,7 @@ country_event = {
 		clr_global_flag = panama_canal_construction
 			1723 = { 
 				trade_goods = precious_goods
+				add_core = U02
 				set_province_flag = panama_canal
 				any_pop = {
 				limit = { OR = { pop_type = labourers pop_type = farmers } }

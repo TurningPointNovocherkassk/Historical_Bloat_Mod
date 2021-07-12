@@ -79,6 +79,8 @@ country_event = {
 		days = 10
 	}
 	
+	immediate = { remove_accepted_culture = ashkenazi clr_country_flag = embraced_jews }
+	
 	option = {
 		name = "EVT31510OPTA"
 		set_country_flag = austrian_destiny
@@ -157,10 +159,67 @@ country_event = {
 		}
 		any_owned = {
 			limit = {
-				is_core = KRA
+				OR = {
+					is_core = BKV
+					is_core = KRA
+					AND = {
+						is_core = GLM
+						NOT = { is_core = SLS }
+					}
+					AND = {
+						OR = {
+							is_core = LOM
+							is_core = ITF
+						}
+						NOT = {
+							OR = {
+								region = AUS_734
+								province_id = 736
+								region = AUS_770
+							}
+						}
+					}
+					AND = {
+						OR = {
+							is_core = CRO
+							is_core = HUN
+						}
+						NOT = {
+							OR = {
+								province_id = 736
+								region = AUS_770
+								region = AUS_778
+							}
+						}
+					}
+				}
 			}
 			remove_core = THIS
+			remove_core = GER
 		}
+		any_owned = {
+			limit = {
+				OR = {
+					province_id = 736 #Trieste
+					region = AUS_770 #South Küstenland
+					region = AUS_778 #Fiume/Carnaro
+					region = PRU_684 #Upper Silesia
+					region = AUS_768 #Slovenia
+				}
+			}
+			remove_core = CRO
+			remove_core = HUN
+			remove_core = GLM
+			remove_core = LOM
+			add_core = THIS
+			add_core = GER
+		}
+		AUS_777 = { add_core = CRO add_core = HUN }
+		AUS_780 = { add_core = CRO add_core = HUN }
+		3636 = { add_core = CRO add_core = HUN }
+		3637 = { add_core = CRO add_core = HUN }
+		2582 = { add_core = CRO add_core = HUN }
+		624 = { add_core = THIS add_core = GER remove_core = HUN }
 		all_core = {
 			add_core = GER
 		}
@@ -174,100 +233,17 @@ country_event = {
 			consciousness = 5
 			militancy = 5
 		}
-		random_owned = {
-			limit = {
-				province_id = 647
-			}
-			SIE = {
-				primary_culture = siebenburger
-				#primary_culture = volga_german
-				add_accepted_culture = romanian
-				add_accepted_culture = south_german
-				#ANON
-				add_accepted_culture = danube_german
-				add_accepted_culture = carpathian_german
-				add_accepted_culture = baltic_german
-				add_accepted_culture = volga_german
-				#
-			}
-		}
-		#ANON
-		random_owned = {
-			limit = {
-				province_id = 3295
-			}
-			add_core = BAN
-		}
-		#
-		random_owned = {
-			limit = {
-				province_id = 2538
-			}
-			add_core = BAN
-		}
-		random_owned = {
-			limit = {
-				province_id = 791
-			}
-			add_core = BAN
-		}
-		random_owned = {
-			limit = {
-				province_id = 653
-			}
-			BAN = {
-				add_accepted_culture = romanian
-			}
-		}
 		any_country = {
 			limit = {
 				OR = {
-					tag = BAN
-					tag = SIE
-					#ANON
-					tag = TSX
-				}
-				any_core = {
-					owned_by = THIS
-					NOT = { is_core = GER }
-					is_colonial = no
-				}
-				exists = no
-			}
-			country_event = 31511
-		}
-		any_country = {
-			limit = {
-				NOT = { is_culture_group = germanic }
-				NOT = { tag = HUN }
-				NOT = { tag = SLV }
-				NOT = { is_culture_group = south_slavic }
-				NOT = { is_culture_group = italian }
-				NOT = { is_culture_group = pan_romanian }
-				NOT = { primary_culture = ukrainian }
-				OR = {
-					NOT = { primary_culture = polish }
-					tag = KRA
-				}
-				NOT = { tag = BKV }
-				NOT = { tag = CRO }
-				any_core = {
-					owned_by = THIS
-					NOT = { is_core = GER }
-					is_colonial = no
-				}
-				exists = no
-				is_cultural_union = no
-			}
-			country_event = 31511
-		}
-		any_country = {
-			limit = {
-				tag = HUN
-				any_core = {
-					owned_by = THIS
-					NOT = { is_core = GER }
-					is_colonial = no
+					tag = HUN
+					tag = GLM
+					tag = BKV
+					AND = {
+						tag = LOM
+						ITF = { exists = no }
+						NOT = { has_global_flag = austrian_outside_italy }
+					}
 				}
 				exists = no
 				is_cultural_union = no
@@ -327,11 +303,69 @@ country_event = {
 		set_country_flag = austrian_destiny
 		set_country_flag = austrian_greater_germany
 		badboy = 10
-		624 = { remove_core = HUN }
-		all_core = {
+		624 = { add_core = THIS add_core = GER remove_core = HUN }
+		AUS_777 = { add_core = CRO add_core = HUN }
+		AUS_780 = { add_core = CRO add_core = HUN }
+		3636 = { add_core = CRO add_core = HUN }
+		3637 = { add_core = CRO add_core = HUN }
+		2582 = { add_core = CRO add_core = HUN }
+		any_owned = {
 			limit = {
-				NOT = { is_core = HUN }
+				OR = {
+					is_core = BKV
+					is_core = KRA
+					AND = {
+						is_core = GLM
+						NOT = { is_core = SLS }
+					}
+					AND = {
+						OR = {
+							is_core = LOM
+							is_core = ITF
+						}
+						NOT = {
+							OR = {
+								region = AUS_734
+								province_id = 736
+								region = AUS_770
+							}
+						}
+					}
+					AND = {
+						OR = {
+							is_core = CRO
+							is_core = HUN
+						}
+						NOT = {
+							OR = {
+								province_id = 736
+								region = AUS_770
+								region = AUS_778
+							}
+						}
+					}
+				}
 			}
+			remove_core = THIS
+			remove_core = GER
+		}
+		any_owned = {
+			limit = {
+				OR = {
+					province_id = 736 #Trieste
+					region = AUS_770 #South Küstenland
+					region = AUS_778 #Fiume/Carnaro
+					region = PRU_684 #Upper Silesia
+					region = AUS_768 #Slovenia
+				}
+			}
+			remove_core = HUN
+			remove_core = GLM
+			remove_core = LOM
+			add_core = THIS
+			add_core = GER
+		}
+		all_core = {
 			add_core = GER
 		}
 		any_pop = {
@@ -345,25 +379,15 @@ country_event = {
 		}
 		any_country = {
 			limit = {
-				NOT = { is_culture_group = germanic }
-				NOT = { tag = HUN }
-				any_core = {
-					owned_by = THIS
-					NOT = { is_core = GER }
-					is_colonial = no
-				}
-				exists = no
-				is_cultural_union = no
-			}
-			country_event = 31512
-		}
-		any_country = {
-			limit = {
-				tag = HUN
-				any_core = {
-					owned_by = THIS
-					NOT = { is_core = GER }
-					is_colonial = no
+				OR = {
+					tag = HUN
+					tag = GLM
+					tag = BKV
+					AND = {
+						tag = LOM
+						ITF = { exists = no }
+						NOT = { has_global_flag = austrian_outside_italy }
+					}
 				}
 				exists = no
 				is_cultural_union = no
@@ -445,8 +469,7 @@ country_event = {
 	
 	is_triggered_only = yes
 	
-	option = {
-		name = "EVT31511OPTA"
+	immediate = {
 		FROM = {
 			any_owned = {
 				limit = {
@@ -466,6 +489,34 @@ country_event = {
 			relation = {
 				who = THIS
 				value = 100
+			}
+		}
+	}
+	
+	option = {
+		name = "EVT31511OPTA"
+		government = colonial_company
+		random_owned = {
+			limit = { owner = { tag = HUN } }
+			owner = {
+				add_accepted_culture = south_german
+				add_accepted_culture = siebenburger
+				add_accepted_culture = danube_german
+				add_accepted_culture = carpathian_german
+			}
+		}
+		random_owned = {
+			limit = { owner = { tag = GLM } }
+			owner = {
+				add_accepted_culture = carpathian_german
+				add_accepted_culture = ukrainian
+				add_accepted_culture = rusyn
+			}
+		}
+		random_owned = {
+			limit = { owner = { tag = LOM } }
+			owner = {
+				add_accepted_culture = south_german
 			}
 		}
 		any_country = {
@@ -502,8 +553,7 @@ country_event = {
 
 	is_triggered_only = yes
 	
-	option = {
-		name = "EVT31511OPTA"
+	immediate = {
 		FROM = {
 			any_owned = {
 				limit = {
@@ -524,6 +574,10 @@ country_event = {
 				value = 200
 			}
 		}
+	}
+	
+	option = {
+		name = "EVT31511OPTA"
 		any_country = {
 			limit = {
 				is_greater_power = yes

@@ -1385,14 +1385,14 @@ country_event = {
 	
 	option = {
 		name = "EVT37236OPTA"
-		random_owned = { limit = { owner = { ai = no } } owner = { treasury = -40000 } }
+		random_owned = { limit = { owner = { ai = no } } owner = { treasury = -400000 } }
 		random_owned = {
 			limit = { owner = { ai = yes NOT = { check_variable = { which = owed_cash_money value = 1 } } } }
-			owner = { set_variable = { which = owed_cash_money value = 40 } }
+			owner = { set_variable = { which = owed_cash_money value = 400 } }
 		}
 		random_owned = {
 			limit = { owner = { ai = yes check_variable = { which = owed_cash_money value = 9 } } }
-			owner = { change_variable = { which = owed_cash_money value = 40 } }
+			owner = { change_variable = { which = owed_cash_money value = 400 } }
 		}
 		random_list = {
 			50 = { add_country_modifier = { name = eiffel_tower_construction duration = 600 } }
@@ -1407,14 +1407,14 @@ country_event = {
 	
 	option = {
 		name = "EVT37236OPTB"
-		random_owned = { limit = { owner = { ai = no } } owner = { treasury = -30000 } }
+		random_owned = { limit = { owner = { ai = no } } owner = { treasury = -300000 } }
 		random_owned = {
 			limit = { owner = { ai = yes NOT = { check_variable = { which = owed_cash_money value = 1 } } } }
-			owner = { set_variable = { which = owed_cash_money value = 30 } }
+			owner = { set_variable = { which = owed_cash_money value = 300 } }
 		}
 		random_owned = {
 			limit = { owner = { ai = yes check_variable = { which = owed_cash_money value = 9 } } }
-			owner = { change_variable = { which = owed_cash_money value = 30 } }
+			owner = { change_variable = { which = owed_cash_money value = 300 } }
 		}
 		random_list = {
 			30 = { add_country_modifier = { name = eiffel_tower_construction duration = 600 } }
@@ -1429,14 +1429,14 @@ country_event = {
 	
 	option = {
 		name = "EVT37236OPTC"
-		random_owned = { limit = { owner = { ai = no } } owner = { treasury = -20000 } }
+		random_owned = { limit = { owner = { ai = no } } owner = { treasury = -200000 } }
 		random_owned = {
 			limit = { owner = { ai = yes NOT = { check_variable = { which = owed_cash_money value = 1 } } } }
-			owner = { set_variable = { which = owed_cash_money value = 20 } }
+			owner = { set_variable = { which = owed_cash_money value = 200 } }
 		}
 		random_owned = {
 			limit = { owner = { ai = yes check_variable = { which = owed_cash_money value = 9 } } }
-			owner = { change_variable = { which = owed_cash_money value = 20 } }
+			owner = { change_variable = { which = owed_cash_money value = 200 } }
 		}
 		random_list = {
 			30 = { add_country_modifier = { name = eiffel_tower_construction duration = 600 } }
@@ -1474,7 +1474,7 @@ country_event = {
 		name = "EVT37237OPTA"
 		set_country_flag = eiffel_tower_built
 		425 = {
-				set_province_flag = eiffel_tower_built
+				add_core = U03
 				add_province_modifier = {
 					name = the_eiffel_tower
 					duration = -1

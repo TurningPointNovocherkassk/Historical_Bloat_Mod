@@ -3661,8 +3661,11 @@ province_event = {
 	
 	trigger = {
 		continent = north_america
-		NOT = { is_core = CSA }
-		NOT = { has_province_flag = secessionist_sentiment }
+        NOT = {
+            is_core = CSA
+            # state_id = 184
+        }
+		is_core = USA
 		OR = {
 			#state_id = 131
 			#state_id = 136
@@ -3685,10 +3688,7 @@ province_event = {
 			#state_id = 146
 			#province_id = 96
 			
-			AND = {
-				is_core = USA
-				state_scope = { is_slave = yes }
-			}
+			state_scope = { is_slave = yes }
 			
 			state_id = 131
 			state_id = 136
@@ -3913,7 +3913,6 @@ province_event = {
 						state_id = 129
 					}
 				}
-				set_province_flag = secessionist_sentiment
 				add_core = CSA
 			}
 			any_pop = {
@@ -3944,7 +3943,6 @@ province_event = {
 					}
 					has_global_flag = YUC_becomes_USA_state
 				}
-				set_province_flag = secessionist_sentiment
 				add_core = CSA
 			}
 			any_pop = {
@@ -4024,7 +4022,6 @@ province_event = {
 					}
 					NOT = { has_global_flag = gadsden_denied }
 				}
-				set_province_flag = secessionist_sentiment
 				add_core = CSA
 				any_pop = {
 					limit = {
@@ -4060,7 +4057,6 @@ province_event = {
 						province_id = 96
 					}
 				}
-				set_province_flag = secessionist_sentiment
 				add_core = CSA
 				any_pop = {
 					limit = {

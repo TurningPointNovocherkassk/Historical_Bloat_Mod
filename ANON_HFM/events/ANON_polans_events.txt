@@ -1265,7 +1265,7 @@ country_event = {
 			has_global_flag = paris_congress_to_be_held
 			has_country_flag = will_not_hold_congress
 			has_country_flag = hosting_paris_congress
-			has_country_modifier = neutrality
+			has_country_modifier = neutrality_modifier
 			OR = {
 				tag = PRU
 				tag = NGF
@@ -1784,7 +1784,7 @@ country_event = {
 			modifier = {
 				factor = 0
 				OR = {
-					has_country_modifier = neutrality
+					has_country_modifier = neutrality_modifier
 					has_country_flag = polish_chimpout_voted_neutral
 				}
 			}
@@ -1883,7 +1883,7 @@ country_event = {
 			modifier = {
 				factor = 0
 				OR = {
-					has_country_modifier = neutrality
+					has_country_modifier = neutrality_modifier
 					has_country_flag = polish_chimpout_voted_neutral
 				}
 			}
@@ -1898,7 +1898,7 @@ country_event = {
 			modifier = {
 				factor = 10
 				OR = {
-					has_country_modifier = neutrality
+					has_country_modifier = neutrality_modifier
 					has_country_flag = polish_chimpout_voted_neutral
 				}
 			}
@@ -3751,7 +3751,7 @@ country_event = {
 			tag = KRA
 			tag = PZN
 		}
-		ai = no
+		# ai = no
 		NOT = { tag = PNC }
 		NOT = { has_global_flag = form_PNC }
 		OR = {
@@ -3888,24 +3888,20 @@ country_event = {
 		tag = PNC
 		government = provisional_government
 		NOT = {
-			OR = {
-				war_with = PRU
-				war_with = NGF
-				war_with = GER
-				war_with = GCF
-				war_with = AUS
-				war_with = KUK
-				war_with = SGF
-				war_with = RUS
-			}
+			war_with = PRU
+			war_with = NGF
+			war_with = GER
+			war_with = GCF
+			war_with = AUS
+			war_with = KUK
+			war_with = SGF
+			war_with = RUS
 			has_country_flag = a_habsburg_on_the_throne_POL
-			OR = {
-				has_country_flag = polans_republic
-				has_country_flag = polans_noble_republic
-				has_country_flag = polans_socialist_autocracy
-				has_country_flag = polans_ancap_autocracy
-				has_country_flag = polans_absolutist
-			}
+			has_country_flag = polans_republic
+			has_country_flag = polans_noble_republic
+			has_country_flag = polans_socialist_autocracy
+			has_country_flag = polans_ancap_autocracy
+			has_country_flag = polans_absolutist
 		}
 		has_global_flag = paris_congress_held
 	}
@@ -7149,7 +7145,7 @@ country_event = {
 			modifier = {
 				factor = 0
 				OR = {
-					has_country_modifier = neutrality
+					has_country_modifier = neutrality_modifier
 					has_country_flag = czech_chimpout_voted_neutral
 				}
 			}
@@ -7234,7 +7230,7 @@ country_event = {
 			modifier = {
 				factor = 0
 				OR = {
-					has_country_modifier = neutrality
+					has_country_modifier = neutrality_modifier
 					has_country_flag = czech_chimpout_voted_neutral
 				}
 			}
@@ -7249,7 +7245,7 @@ country_event = {
 			modifier = {
 				factor = 10
 				OR = {
-					has_country_modifier = neutrality
+					has_country_modifier = neutrality_modifier
 					has_country_flag = czech_chimpout_voted_neutral
 				}
 			}
@@ -8435,7 +8431,7 @@ country_event = {
 	trigger = {
 		tag = PRC
 		BOH = {
-			has_country_modifier = neutrality
+			has_country_modifier = neutrality_modifier
 			exists = yes
 		}
 	}
@@ -8466,7 +8462,7 @@ country_event = {
 	picture = "bohemia_event"
 	trigger = {
 		tag = BOH
-		has_country_modifier = neutrality
+		has_country_modifier = neutrality_modifier
 		ai = no
 		OR = {
 			any_greater_power = { military_access = BOH }
@@ -8816,7 +8812,7 @@ country_event = {
 	option = {
 		name = "EVT666666077OPTA" #debt slavery, become their vassals.
 		PRC = { country_event = 666666078 }
-		remove_country_modifier = neutrality
+		remove_country_modifier = neutrality_modifier
 		prestige = -50
 		ai_chance = {
 			factor = 95
@@ -9887,6 +9883,8 @@ country_event = {
 	desc = "EVTDESC98400"
 	picture = "jews"
 	
+	fire_only_once = yes
+	
 	trigger = {
 		tag = ISR
 		war = no
@@ -9922,6 +9920,7 @@ country_event = {
 		3674 = { change_province_name = "Zion" }
 		3673 = { change_province_name = "New Nazareth" }
 		any_country = {
+			limit = { NOT = { tag = THIS } }
 			any_owned = {
 				limit = {
 					any_pop = {
@@ -9966,7 +9965,7 @@ province_event = {
 		has_global_flag = israel_crimea
 		has_province_modifier = jewish_diaspora
 		owner = {
-			NOT = { border_policy = closed_borders }
+			NOT = { border_policy = closed_borders tag = ISR }
 			war = no
 		}
 		ISR = {
@@ -10079,7 +10078,7 @@ province_event = {
 		has_global_flag = israel_crimea
 		has_province_modifier = jewish_diaspora
 		owner = {
-			NOT = { border_policy = closed_borders }
+			NOT = { border_policy = closed_borders tag = ISR }
 			war = no
 		}
 		ISR = {
@@ -10192,7 +10191,7 @@ province_event = {
 		has_global_flag = israel_crimea
 		has_province_modifier = jewish_diaspora
 		owner = {
-			NOT = { border_policy = closed_borders }
+			NOT = { border_policy = closed_borders tag = ISR }
 			war = no
 		}
 		ISR = {
@@ -10305,7 +10304,7 @@ province_event = {
 		has_global_flag = israel_crimea
 		has_province_modifier = jewish_diaspora
 		owner = {
-			NOT = { border_policy = closed_borders }
+			NOT = { border_policy = closed_borders tag = ISR }
 			war = no
 		}
 		ISR = {
@@ -10418,7 +10417,7 @@ province_event = {
 		has_global_flag = israel_crimea
 		has_province_modifier = jewish_diaspora
 		owner = {
-			NOT = { border_policy = closed_borders }
+			NOT = { border_policy = closed_borders tag = ISR }
 			war = no
 		}
 		ISR = {
@@ -10531,7 +10530,7 @@ province_event = {
 		has_global_flag = israel_crimea
 		has_province_modifier = jewish_diaspora
 		owner = {
-			NOT = { border_policy = closed_borders }
+			NOT = { border_policy = closed_borders tag = ISR }
 			war = no
 		}
 		ISR = {
@@ -10644,7 +10643,7 @@ province_event = {
 		has_global_flag = israel_crimea
 		has_province_modifier = jewish_diaspora
 		owner = {
-			NOT = { border_policy = closed_borders }
+			NOT = { border_policy = closed_borders tag = ISR }
 			war = no
 		}
 		ISR = {
@@ -10768,7 +10767,7 @@ province_event = {
 		}
 		has_province_modifier = jewish_diaspora_karaite
 		owner = {
-			NOT = { border_policy = closed_borders }
+			NOT = { border_policy = closed_borders tag = ISR }
 			war = no
 		}
 		ISR = {
@@ -11056,7 +11055,7 @@ province_event = {
 		}
 		has_province_modifier = jewish_diaspora_samaritan
 		owner = {
-			NOT = { border_policy = closed_borders }
+			NOT = { border_policy = closed_borders tag = ISR }
 			war = no
 		}
 		ISR = {
@@ -11913,6 +11912,20 @@ country_event = {
 			type = place_in_the_sun
 			months = 120
 		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+country_event = { #notification for country joining poland
+	id = 666666121
+	title = "EVTNAME666666121"
+	desc = "EVTDESC666666121"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVT666666121OPTA"
 		ai_chance = {
 			factor = 100
 		}

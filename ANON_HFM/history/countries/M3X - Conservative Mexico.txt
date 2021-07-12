@@ -15,7 +15,7 @@ prestige = 3
 
 # Political reforms
 slavery = no_slavery
-upper_house_composition = appointed
+upper_house_composition = party_appointed
 vote_franschise = none_voting
 public_meetings = yes_meeting
 press_rights = state_press
@@ -57,19 +57,6 @@ upper_house = {
 }
 
 set_country_flag = new_world_nation
-#ANON
-decision = spic_rename_newmexico
-decision = spic_rename_arizona
-decision = spic_rename_california_south
-decision = spic_rename_california_north
-decision = spic_rename_nevada
-decision = spic_rename_utah
-decision = spic_rename_wyoming
-decision = spic_rename_colorado
-decision = spic_rename_oklahoma
-decision = spic_rename_kansas
-decision = SPA_rename_carsoncity
-decision = rename_texas_mexico
 
 # Technologies
 post_napoleonic_thought = 1

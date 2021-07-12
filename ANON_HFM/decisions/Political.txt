@@ -2037,4 +2037,315 @@ political_decisions = {
 		
 		ai_will_do = { factor = 1 }
 	}
+    five_year_plan = {
+        picture = five_year_plan
+        potential = {
+            government = proletarian_dictatorship
+            NOT = { has_country_modifier = five_year_plan }
+            NOT = { has_country_flag = five_year_plan }
+        }
+
+        allow = {
+            government = proletarian_dictatorship
+            NOT = { ruling_party_ideology = socialist }
+            state_n_government = 1
+            war = no
+        }
+
+        effect = {
+            prestige = 5
+            add_country_modifier = { name = five_year_plan duration = 1825 }
+            set_country_flag = five_year_plan
+        }
+        ai_will_do = { factor = 1 }
+    }
+    suspend_political_powers = {
+        picture = pol_sus
+        potential = {
+            has_country_flag = government_decisions_on
+			NOT = { has_country_flag = pol_sus_flag }
+        }
+
+        allow = {
+			NOT = { has_country_modifier = rights_suspended }
+            OR = {
+				average_militancy = 6
+				AND = {
+					OR = {
+						government = presidential_dictatorship
+						government = proletarian_dictatorship
+						government = fascist_dictatorship
+						government = provisional_government
+					}
+					average_militancy = 1
+				}
+				AND = {
+					OR = {
+						government = tibetandual
+						government = theocracy
+					}
+					average_militancy = 2
+				}
+				AND = {
+					OR = {
+						government = absolute_monarchy
+						government = prussian_constitutionalism
+						government = french_bourbon
+					}
+					average_militancy = 3
+				}
+			}
+        }
+
+        effect = {
+			set_country_flag = pol_sus_flag
+            add_country_modifier = {
+                name = rights_suspended
+                duration = 1095
+            }
+            upper_house = {
+				ideology = Executive
+				value = 1
+            }
+            any_pop = {
+				militancy = 3
+            }
+			random_owned = { #cleanup event give back upper house composition.
+				limit = {
+					owner = { ruling_party_ideology = conservative }
+				}
+				owner = {
+					set_country_flag = pol_sus_conservative
+					clr_country_flag = pol_sus_reactionary
+					clr_country_flag = pol_sus_liberal
+					clr_country_flag = pol_sus_anarcho_liberal
+					clr_country_flag = pol_sus_socialist
+					clr_country_flag = pol_sus_communist
+					clr_country_flag = pol_sus_fascist
+				}
+			}
+			random_owned = {
+				limit = {
+					owner = { ruling_party_ideology = reactionary }
+				}
+				owner = {
+					set_country_flag = pol_sus_reactionary
+					clr_country_flag = pol_sus_conservative
+					clr_country_flag = pol_sus_liberal
+					clr_country_flag = pol_sus_anarcho_liberal
+					clr_country_flag = pol_sus_socialist
+					clr_country_flag = pol_sus_communist
+					clr_country_flag = pol_sus_fascist
+				}
+			}
+			random_owned = {
+				limit = {
+					owner = { ruling_party_ideology = liberal }
+				}
+				owner = {
+					set_country_flag = pol_sus_liberal
+					clr_country_flag = pol_sus_conservative
+					clr_country_flag = pol_sus_reactionary
+					clr_country_flag = pol_sus_anarcho_liberal
+					clr_country_flag = pol_sus_socialist
+					clr_country_flag = pol_sus_communist
+					clr_country_flag = pol_sus_fascist
+				}
+			}
+			random_owned = {
+				limit = {
+					owner = { ruling_party_ideology = anarcho_liberal }
+				}
+				owner = {
+					set_country_flag = pol_sus_anarcho_liberal
+					clr_country_flag = pol_sus_conservative
+					clr_country_flag = pol_sus_reactionary
+					clr_country_flag = pol_sus_liberal
+					clr_country_flag = pol_sus_socialist
+					clr_country_flag = pol_sus_communist
+					clr_country_flag = pol_sus_fascist
+				}
+			}
+			random_owned = {
+				limit = {
+					owner = { ruling_party_ideology = socialist }
+				}
+				owner = {
+					set_country_flag = pol_sus_socialist
+					clr_country_flag = pol_sus_conservative
+					clr_country_flag = pol_sus_reactionary
+					clr_country_flag = pol_sus_liberal
+					clr_country_flag = pol_sus_anarcho_liberal
+					clr_country_flag = pol_sus_communist
+					clr_country_flag = pol_sus_fascist
+				}
+			}
+			random_owned = {
+				limit = {
+					owner = { ruling_party_ideology = communist }
+				}
+				owner = {
+					set_country_flag = pol_sus_communist
+					clr_country_flag = pol_sus_conservative
+					clr_country_flag = pol_sus_reactionary
+					clr_country_flag = pol_sus_liberal
+					clr_country_flag = pol_sus_anarcho_liberal
+					clr_country_flag = pol_sus_socialist
+					clr_country_flag = pol_sus_fascist
+				}
+			}
+			random_owned = {
+				limit = {
+					owner = { ruling_party_ideology = fascist }
+				}
+				owner = {
+					set_country_flag = pol_sus_fascist
+					clr_country_flag = pol_sus_conservative
+					clr_country_flag = pol_sus_reactionary
+					clr_country_flag = pol_sus_liberal
+					clr_country_flag = pol_sus_anarcho_liberal
+					clr_country_flag = pol_sus_socialist
+					clr_country_flag = pol_sus_communist
+				}
+			}
+			random_owned = {
+				limit = {
+					owner = { government = presidential_dictatorship }
+				}
+				owner = {
+					set_country_flag = pol_sus_presidential_dictatorship
+					clr_country_flag = pol_sus_proletarian_dictatorship
+					clr_country_flag = pol_sus_fascist_dictatorship
+					clr_country_flag = pol_sus_provisional_government
+					clr_country_flag = pol_sus_theocracy
+					clr_country_flag = pol_sus_tibetandual
+					clr_country_flag = pol_sus_absolute_monarchy
+				}
+			}
+			random_owned = {
+				limit = {
+					owner = { government = proletarian_dictatorship }
+				}
+				owner = {
+					set_country_flag = pol_sus_proletarian_dictatorship
+					clr_country_flag = pol_sus_presidential_dictatorship
+					clr_country_flag = pol_sus_fascist_dictatorship
+					clr_country_flag = pol_sus_provisional_government
+					clr_country_flag = pol_sus_theocracy
+					clr_country_flag = pol_sus_tibetandual
+					clr_country_flag = pol_sus_absolute_monarchy
+				}
+			}
+			random_owned = {
+				limit = {
+					owner = { government = fascist_dictatorship }
+				}
+				owner = {
+					set_country_flag = pol_sus_fascist_dictatorship
+					clr_country_flag = pol_sus_proletarian_dictatorship
+					clr_country_flag = pol_sus_presidential_dictatorship
+					clr_country_flag = pol_sus_provisional_government
+					clr_country_flag = pol_sus_theocracy
+					clr_country_flag = pol_sus_tibetandual
+					clr_country_flag = pol_sus_absolute_monarchy
+				}
+			}
+			random_owned = {
+				limit = {
+					owner = { government = provisional_government }
+				}
+				owner = {
+					set_country_flag = pol_sus_provisional_government
+					clr_country_flag = pol_sus_proletarian_dictatorship
+					clr_country_flag = pol_sus_fascist_dictatorship
+					clr_country_flag = pol_sus_presidential_dictatorship
+					clr_country_flag = pol_sus_theocracy
+					clr_country_flag = pol_sus_tibetandual
+					clr_country_flag = pol_sus_absolute_monarchy
+				}
+			}
+			random_owned = {
+				limit = {
+					owner = { government = theocracy }
+				}
+				owner = {
+					set_country_flag = pol_sus_theocracy
+					clr_country_flag = pol_sus_proletarian_dictatorship
+					clr_country_flag = pol_sus_fascist_dictatorship
+					clr_country_flag = pol_sus_provisional_government
+					clr_country_flag = pol_sus_presidential_dictatorship
+					clr_country_flag = pol_sus_tibetandual
+					clr_country_flag = pol_sus_absolute_monarchy
+				}
+			}
+			random_owned = {
+				limit = {
+					owner = { government = tibetandual }
+				}
+				owner = {
+					set_country_flag = pol_sus_tibetandual
+					clr_country_flag = pol_sus_proletarian_dictatorship
+					clr_country_flag = pol_sus_fascist_dictatorship
+					clr_country_flag = pol_sus_provisional_government
+					clr_country_flag = pol_sus_theocracy
+					clr_country_flag = pol_sus_presidential_dictatorship
+					clr_country_flag = pol_sus_absolute_monarchy
+				}
+			}
+			random_owned = {
+				limit = {
+					owner = { government = absolute_monarchy }
+				}
+				owner = {
+					set_country_flag = pol_sus_absolute_monarchy
+					clr_country_flag = pol_sus_proletarian_dictatorship
+					clr_country_flag = pol_sus_fascist_dictatorship
+					clr_country_flag = pol_sus_provisional_government
+					clr_country_flag = pol_sus_theocracy
+					clr_country_flag = pol_sus_presidential_dictatorship
+					clr_country_flag = pol_sus_tibetandual
+				}
+			}
+        }
+        ai_will_do = {
+			factor = 0
+			# giving such powers to the AI is dangerous.
+            # modifier = {
+                # factor = 1
+                # average_militancy = 6
+            # }
+        }
+    }
+    merchant_marine = {
+        picture = merchant_marine
+        potential = {
+        war = yes
+        has_country_flag = government_decisions_on
+        any_owned_province = { has_building = naval_base is_core = THIS }
+        NOT = { has_country_modifier = merchant_marine }
+        }
+        allow = {
+            money = 200000
+            any_owned_province = { has_building = naval_base is_blockaded = no controlled_by = THIS is_core = THIS }
+            OR = { ai = no is_mobilised = yes any_owned_province = { is_overseas = yes NOT = { controlled_by = THIS } } }
+            steamers = 1
+        }
+        effect = {
+            money = -150000
+            any_owned = { limit = { is_core = THIS is_blockaded = no controlled_by = THIS has_building = naval_base } sub_unit = { type = steam_transport value = current } }
+
+            any_owned = { limit = { is_core = THIS is_blockaded = no controlled_by = THIS has_building = naval_base } sub_unit = { type = steam_transport value = current } }
+
+            any_owned = { limit = { is_core = THIS is_blockaded = no controlled_by = THIS has_building = naval_base } sub_unit = { type = steam_transport value = current } }
+
+            any_owned = { limit = { is_core = THIS is_blockaded = no controlled_by = THIS has_building = naval_base } sub_unit = { type = steam_transport value = current } }
+
+            any_owned = { limit = { is_core = THIS is_blockaded = no controlled_by = THIS has_building = naval_base } sub_unit = { type = steam_transport value = current } }
+
+            add_country_modifier = { name = merchant_marine duration = 3650 }
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
 }

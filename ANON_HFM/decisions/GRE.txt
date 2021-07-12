@@ -270,6 +270,10 @@ political_decisions = {
 			factor = 1
 			modifier = {
 				factor = 0
+				tag = ALE
+			}
+			modifier = {
+				factor = 0
 				government = fascist_dictatorship
 				GRE = {
 					NOT = { government = fascist_dictatorship }

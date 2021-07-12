@@ -60,6 +60,7 @@ political_decisions = {
 				militancy = 2
 			}
 			set_global_flag = reconquista
+			set_country_flag = declared_reconquista
 		}
 
 		ai_will_do = {
@@ -76,7 +77,7 @@ political_decisions = {
 			}
 			UCA = {
 				exists = yes
-				num_of_revolts = 1
+				# num_of_revolts = 1
 			}
 			NOT = { has_country_flag = reconquista_frca }
 		}
@@ -85,6 +86,7 @@ political_decisions = {
 			is_greater_power = yes
 			war = no
 			war_policy = jingoism
+			UCA = { NOT = { vassal_of = THIS } }
 		}
 
 		effect = {
@@ -180,23 +182,54 @@ political_decisions = {
 
 		allow = {
 			war = no
-			MEX = {
-				OR = { 
-					all_core = {
-						OR = {
-							MEX = { 
-								vassal_of = THIS
-							}
+			OR ={
+				MEX = {
+					OR = { 
+						vassal_of = THIS
+						all_core = {
 							OR = {
 								owned_by = THIS
 								owner = {
-									in_sphere = THIS
-									vassal_of = THIS
+									OR = {
+										in_sphere = THIS
+										vassal_of = THIS
+									}
 								}
 							}
 						}
 					}
-					vassal_of = THIS
+				}
+				M3X = {
+					OR = { 
+						vassal_of = THIS
+						all_core = {
+							OR = {
+								owned_by = THIS
+								owner = {
+									OR = {
+										in_sphere = THIS
+										vassal_of = THIS
+									}
+								}
+							}
+						}
+					}
+				}
+				MXM = {
+					OR = { 
+						vassal_of = THIS
+						all_core = {
+							OR = {
+								owned_by = THIS
+								owner = {
+									OR = {
+										in_sphere = THIS
+										vassal_of = THIS
+									}
+								}
+							}
+						}
+					}
 				}
 			}
 			OR = {
@@ -207,8 +240,10 @@ political_decisions = {
 					OR = {
 						owned_by = THIS
 						owner = {
-							in_sphere = THIS
-							vassal_of = THIS
+							OR = {
+								in_sphere = THIS
+								vassal_of = THIS
+							}
 						}
 					}
 				}
@@ -216,8 +251,10 @@ political_decisions = {
 					OR = {
 						owned_by = THIS
 						owner = {
-							in_sphere = THIS
-							vassal_of = THIS
+							OR = {
+								in_sphere = THIS
+								vassal_of = THIS
+							}
 						}
 					}
 				}
@@ -225,8 +262,10 @@ political_decisions = {
 					OR = {
 						owned_by = THIS
 						owner = {
-							in_sphere = THIS
-							vassal_of = THIS
+							OR = {
+								in_sphere = THIS
+								vassal_of = THIS
+							}
 						}
 					}
 				}
@@ -234,8 +273,10 @@ political_decisions = {
 					OR = {
 						owned_by = THIS
 						owner = {
-							in_sphere = THIS
-							vassal_of = THIS
+							OR = {
+								in_sphere = THIS
+								vassal_of = THIS
+							}
 						}
 					}
 				}
@@ -243,8 +284,10 @@ political_decisions = {
 					OR = {
 						owned_by = THIS
 						owner = {
-							in_sphere = THIS
-							vassal_of = THIS
+							OR = {
+								in_sphere = THIS
+								vassal_of = THIS
+							}
 						}
 					}
 				}
@@ -255,6 +298,17 @@ political_decisions = {
 			prestige = 5
 			MEX = {
 				government = democracy
+				all_core = {
+					add_core = VNS
+				}
+			}
+			M3X = {
+				government = democracy
+				all_core = {
+					add_core = VNS
+				}
+			}
+			MXM = {
 				all_core = {
 					add_core = VNS
 				}
@@ -294,37 +348,58 @@ political_decisions = {
 			#Core Removal
 			3317 = { remove_core = VNS } #Bocas del Toro, Moskito
 			#LEBENSRAUM		
-			TEX_132 = { add_core = VNS } #Texas
-			MEX_103 = { add_core = VNS } #New Mexico
-			MEX_100 = { add_core = VNS } #Arizona
-			MEX_85 = { add_core = VNS } #California
-			MEX_104 = { add_core = VNS } #California
-			MEX_94 = { add_core = VNS } #Nevada
-			MEX_97 = { add_core = VNS } #Utah
-			110 = { add_core = VNS } #Rock Springs
-			107 = { add_core = VNS } #Riverside
-			108 = { add_core = VNS } #Grand Junction
-			109 = { add_core = VNS } #Aspen
-			103 = { add_core = VNS } #Pueblo
-			128 = { add_core = VNS } #Hugoton
-			129 = { add_core = VNS } #Guymon
-			3398 = { add_core = MEX } #Warm Springs
-			3399 = { add_core = MEX } #White River
+			TEX_132 = { add_core = VNS add_core = MEX } #E. Texas
+			TEX_133 = { add_core = VNS add_core = MEX } #W. Texas
+			MEX_103 = { add_core = VNS add_core = MEX } #New Mexico
+			MEX_100 = { add_core = VNS add_core = MEX } #Arizona
+			MEX_85 = { add_core = VNS add_core = MEX } #California
+			MEX_104 = { add_core = VNS add_core = MEX } #California
+			MEX_94 = { add_core = VNS add_core = MEX } #Nevada
+			MEX_97 = { add_core = VNS add_core = MEX } #Utah
+			110 = { add_core = VNS add_core = MEX } #Rock Springs
+			107 = { add_core = VNS add_core = MEX } #Riverside
+			108 = { add_core = VNS add_core = MEX } #Grand Junction
+			109 = { add_core = VNS add_core = MEX } #Aspen
+			103 = { add_core = VNS add_core = MEX } #Pueblo
+			128 = { add_core = VNS add_core = MEX } #Hugoton
+			129 = { add_core = VNS add_core = MEX } #Guymon
+			3398 = { add_core = VNS add_core = MEX } #Warm Springs
+			3399 = { add_core = VNS add_core = MEX } #White River
 			#Mexico
-			MEX_2138 = { add_core = VNS } #Sonora
+			MEX_2138 = { add_core = VNS add_core = MEX } #Sonora
 			#Central America
-			2200 = { add_core = VNS } #Bluefields, Moskito
-			3319 = { add_core = VNS } #Greytown, Moskito
-			2203 = { add_core = VNS } #Limon, Moskito	
+			2200 = { add_core = VNS add_core = MEX } #Bluefields, Moskito
+			3319 = { add_core = VNS add_core = MEX } #Greytown, Moskito
+			2203 = { add_core = VNS add_core = MEX } #Limon, Moskito	
 			#
 			
-			inherit = HON
-			inherit = NIC
-			inherit = GUA
-			inherit = ELS
-			inherit = COS
-			inherit = UCA
-			inherit = MEX
+			any_country = {
+				limit = {
+					OR = {
+						tag = HON
+						tag = NIC
+						tag = GUA
+						tag = ELS
+						tag = COS
+						tag = UCA
+						tag = MEX
+						tag = M3X
+						tag = MXM
+					}
+					all_core = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								OR = {
+									in_sphere = THIS
+									vassal_of = THIS
+								}
+							}
+						}
+					}
+				}
+				annex_to = THIS
+			}
 			release_vassal = VNS
 			relation = {
 				who = VNS
@@ -337,10 +412,10 @@ political_decisions = {
 			VNS = {
 				set_country_flag = post_colonial_country
 				government = colonial_company
+				add_accepted_culture = mexican
 				add_accepted_culture = yucateco
 				add_accepted_culture = norteno
 				add_accepted_culture = californio
-				add_accepted_culture = mexican
 				add_accepted_culture = central_american
 			}
 			create_alliance = VNS
@@ -376,8 +451,10 @@ political_decisions = {
 						OR = {
 							owned_by = THIS
 							owner = {
-								in_sphere = THIS
-								vassal_of = THIS
+								OR = {
+									in_sphere = THIS
+									vassal_of = THIS
+								}
 								war = no
 								is_greater_power = no
 							}
@@ -392,8 +469,10 @@ political_decisions = {
 						OR = {
 							owned_by = THIS
 							owner = {
-								in_sphere = THIS
-								vassal_of = THIS
+								OR = {
+									in_sphere = THIS
+									vassal_of = THIS
+								}
 								war = no
 								is_greater_power = no
 							}
@@ -408,8 +487,46 @@ political_decisions = {
 						OR = {
 							owned_by = THIS
 							owner = {
-								in_sphere = THIS
-								vassal_of = THIS
+								OR = {
+									in_sphere = THIS
+									vassal_of = THIS
+								}
+								war = no
+								is_greater_power = no
+							}
+						}
+					}
+				}
+			}
+			USV = {
+				OR = {
+					vassal_of = THIS
+					all_core = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								OR = {
+									in_sphere = THIS
+									vassal_of = THIS
+								}
+								war = no
+								is_greater_power = no
+							}
+						}
+					}
+				}
+			}
+			PNM = {
+				OR = {
+					vassal_of = THIS
+					all_core = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								OR = {
+									in_sphere = THIS
+									vassal_of = THIS
+								}
 								war = no
 								is_greater_power = no
 							}
@@ -440,6 +557,12 @@ political_decisions = {
 					add_core = VNG
 				}
 			}
+			PNM = {
+				government = democracy
+				all_core = {
+					add_core = VNG
+				}
+			}
 			
 			#ANON; I'll try to emulate the original territories of the Viceroyalty of New Granada, which didn't include any Central American claims or territories,
 			#except for Bocas del Toro.
@@ -465,8 +588,26 @@ political_decisions = {
 			2243 = { add_core = VNG } #Essequibo
 			#
 			
-			inherit = VNZ
-			inherit = ECU
+			any_country = {
+				limit = {
+					OR = {
+						primary_culture = north_andean
+						tag = PNM
+					}
+					all_core = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								OR = {
+									in_sphere = THIS
+									vassal_of = THIS
+								}
+							}
+						}
+					}
+				}
+				annex_to = THIS
+			}
 			
 			release_vassal = VNG
 			relation = {
@@ -514,8 +655,10 @@ political_decisions = {
 						OR = {
 							owned_by = THIS
 							owner = {
-								in_sphere = THIS
-								vassal_of = THIS
+								OR = {
+									in_sphere = THIS
+									vassal_of = THIS
+								}
 								war = no
 								is_greater_power = no
 							}
@@ -530,8 +673,10 @@ political_decisions = {
 						OR = {
 							owned_by = THIS
 							owner = {
-								in_sphere = THIS
-								vassal_of = THIS
+								OR = {
+									in_sphere = THIS
+									vassal_of = THIS
+								}
 								war = no
 								is_greater_power = no
 							}
@@ -577,8 +722,27 @@ political_decisions = {
 			2280 = { add_core = VOP } #Guayaquil
 			#
 			
-			inherit = BOL
-			inherit = PEU
+			any_country = {
+				limit = {
+					OR = {
+						tag = BOL
+						tag = PEU
+						tag = PBC
+					}
+					all_core = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								OR = {
+									in_sphere = THIS
+									vassal_of = THIS
+								}
+							}
+						}
+					}
+				}
+				annex_to = THIS
+			}
 			
 			release_vassal = VOP
 			relation = {
@@ -626,8 +790,10 @@ political_decisions = {
 						OR = {
 							owned_by = THIS
 							owner = {
-								in_sphere = THIS
-								vassal_of = THIS
+								OR = {
+									in_sphere = THIS
+									vassal_of = THIS
+								}
 								war = no
 								is_greater_power = no
 							}
@@ -693,8 +859,10 @@ political_decisions = {
 							OR = {
 								owned_by = THIS
 								owner = {
-									in_sphere = THIS
-									vassal_of = THIS
+									OR = {
+										in_sphere = THIS
+										vassal_of = THIS
+									}
 									war = no
 									is_greater_power = no
 								}
@@ -709,8 +877,10 @@ political_decisions = {
 							OR = {
 								owned_by = THIS
 								owner = {
-									in_sphere = THIS
-									vassal_of = THIS
+									OR = {
+										in_sphere = THIS
+										vassal_of = THIS
+									}
 									war = no
 									is_greater_power = no
 								}
@@ -726,8 +896,10 @@ political_decisions = {
 						OR = {
 							owned_by = THIS
 							owner = {
-								in_sphere = THIS
-								vassal_of = THIS
+								OR = {
+									in_sphere = THIS
+									vassal_of = THIS
+								}
 								war = no
 								is_greater_power = no
 							}
@@ -742,8 +914,10 @@ political_decisions = {
 						OR = {
 							owned_by = THIS
 							owner = {
-								in_sphere = THIS
-								vassal_of = THIS
+								OR = {
+									in_sphere = THIS
+									vassal_of = THIS
+								}
 								war = no
 								is_greater_power = no
 							}
@@ -792,10 +966,28 @@ political_decisions = {
 			2420 = { add_core = VLP } #Iguatemi
 			#
 			
-			inherit = PRG
-			inherit = ARG
-			inherit = URU
-			inherit = ARC
+			any_country = {
+				limit = {
+					OR = {
+						tag = PRG
+						tag = ARG
+						tag = URU
+						tag = ARC
+					}
+					all_core = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								OR = {
+									in_sphere = THIS
+									vassal_of = THIS
+								}
+							}
+						}
+					}
+				}
+				annex_to = THIS
+			}
 			release_vassal = VLP
 			relation = {
 				who = VLP

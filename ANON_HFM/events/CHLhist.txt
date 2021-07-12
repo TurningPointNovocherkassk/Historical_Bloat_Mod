@@ -301,6 +301,7 @@ country_event = {
 				any_owned_province = {
 					OR = {
 						region = BOL_2309 #Antofagasta region
+						region = BOL_2370 #Puna de Atacama
 						province_id = 2578 #Tacna
 					}
 				}
@@ -315,6 +316,7 @@ country_event = {
 				limit = {
 					OR = {
 						region = BOL_2309
+						region = BOL_2370
 						province_id = 2578
 					}
 				}
@@ -327,6 +329,7 @@ country_event = {
 				any_owned_province = {
 					OR = {
 						region = BOL_2309
+						region = BOL_2370
 						province_id = 2578
 					}
 				}

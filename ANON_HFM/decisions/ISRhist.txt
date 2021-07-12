@@ -606,22 +606,22 @@ political_decisions = {
 					}
 				}
 			}
-			1087 = {
-				OR = {
-					owned_by = THIS
-					owner = {
-						in_sphere = THIS
-					}
-				}
-			}
-			1089 = {
-				OR = {
-					owned_by = THIS
-					owner = {
-						in_sphere = THIS
-					}
-				}
-			}
+			# 1087 = {
+				# OR = {
+					# owned_by = THIS
+					# owner = {
+						# in_sphere = THIS
+					# }
+				# }
+			# }
+			# 1089 = {
+				# OR = {
+					# owned_by = THIS
+					# owner = {
+						# in_sphere = THIS
+					# }
+				# }
+			# }
 		}
 		allow = {
 			is_greater_power = yes
@@ -629,8 +629,8 @@ political_decisions = {
 		}
 		effect = {
 			JAP_1088 = { add_core = ISR }
-			1087 = { add_core = ISR }
-			1089 = { add_core = ISR }
+			# 1087 = { add_core = ISR }
+			# 1089 = { add_core = ISR }
 			prestige = 10
 			set_global_flag = israel_has_her_cores
 			set_global_flag = israel_japan
@@ -640,7 +640,11 @@ political_decisions = {
 			factor = 1
 			modifier = {
 				factor = 0
-				tag = JAP
+				OR = {
+					primary_culture = japanese
+					primary_culture = ryukyuan
+					primary_culture = ainu
+				}
 			}
 		}
 	}

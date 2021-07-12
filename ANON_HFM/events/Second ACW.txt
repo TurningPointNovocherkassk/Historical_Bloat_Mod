@@ -119,6 +119,8 @@ province_event = {
 						NOT = { owned_by = ENG }
 						NOT = { owned_by = CAN }
 						NOT = { owned_by = MEX }
+						NOT = { owned_by = M3X }
+						NOT = { owned_by = MXM }
 					}
 				}
 			}
@@ -174,6 +176,8 @@ province_event = {
 				NOT = { owned_by = ENG }
 				NOT = { owned_by = CAN }
 				NOT = { owned_by = MEX }
+				NOT = { owned_by = M3X }
+				NOT = { owned_by = MXM }
 			}
 		}
 		modifier = {
@@ -2293,10 +2297,18 @@ country_event = {
 		any_owned = {
 			limit = {
 				OR = {
-					region = TEX_132 #Texas
-					region = TEX_133 #Texas
+					region = TEX_132 #East Texas
+					region = TEX_133 #West Texas
+					province_id = 105 #Santa Fe
+					province_id = 129 #Guymon
+					province_id = 128 #Hugoton
+					province_id = 103 #Pueblo
+					province_id = 109 #Aspen
+					province_id = 3398 #Warm Springs
+					province_id = 107 #Riverside
 				}
 			}
+			add_core = TEX
 			change_controller = THIS
 			secede_province = TEX
 		}

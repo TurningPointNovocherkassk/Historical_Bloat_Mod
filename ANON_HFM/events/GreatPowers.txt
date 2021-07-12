@@ -503,7 +503,6 @@ province_event = {
 			is_greater_power = yes
 		}
 		is_colonial = yes
-		is_overseas = yes
 		NOT = {
 			life_rating = 25
 			has_global_flag = botanical_expedition_in_progress
@@ -1254,6 +1253,7 @@ country_event = {
 	picture = "administration"
 	
 	is_triggered_only = yes
+	major = yes
 	
 	option = {
 		name = "EVT19200OPTA"
@@ -1269,12 +1269,13 @@ country_event = {
 			months = 24
 		}
 		ai_chance = {
-			factor = 20
+			factor = 5
 		}
 	}
 	
 	option = {
 		name = "EVT19200OPTB"
+		set_global_flag = franco_prussian_war_has_begun
 		prestige = -10
 		leave_alliance = FROM
 		casus_belli = {
@@ -1282,15 +1283,27 @@ country_event = {
 			type = cut_down_to_size
 			months = 24
 		}
+		any_country = {
+			limit = {
+				exists = yes
+				alliance_with = THIS
+				is_vassal = no
+			}
+			leave_alliance = THIS
+		}
 		war = {
 			target = FROM
 			attacker_goal = {
 				casus_belli = cut_down_to_size
 			}
-			call_ally = no
+			defender_goal = { 
+				casus_belli = unification_casus_belli
+				state_province_id = 412
+			}
+			call_ally = yes
 		}
 		ai_chance = {
-			factor = 80
+			factor = 95
 			modifier = {
 				factor = 0.5
 				num_of_revolts = 1
@@ -1322,20 +1335,30 @@ country_event = {
 	
 	option = {
 		name = "EVTOPTA19300"
+		set_country_flag = statue_of_liberty_built
 		prestige = 5
 		relation = {
 			who = FROM
 			value = 100
 		}
+		# add_country_modifier = {
+			# name = the_statue_of_liberty
+			# duration = -1
+		# }
 		add_country_modifier = {
-			name = the_statue_of_liberty
-			duration = 3650
+			name = america_new_world
+			duration = 10950
 		}
 		232 = {
 			add_province_modifier = {
-				name = gateway_to_america
-				duration = 1825
+				name = the_statue_of_liberty
+				duration = -1
 			}
+			# add_province_modifier = {
+				# name = gateway_to_america
+				# duration = 1825
+			# }
+			add_core = U03
 		}
 	}
 }
@@ -1507,7 +1530,7 @@ country_event = {
 				badboy = 0.88
 				war_exhaustion = 10
 				war_policy = pacifism
-				has_country_modifier = neutrality
+				has_country_modifier = neutrality_modifier
 				has_country_flag = in_great_war
 				has_country_modifier = no_more_war
 				any_owned_province = { is_core = THIS }
@@ -1517,7 +1540,7 @@ country_event = {
 			badboy = 0.92
 			war_exhaustion = 10
 			war_policy = pacifism
-			has_country_modifier = neutrality
+			has_country_modifier = neutrality_modifier
 			has_country_flag = in_great_war
 			has_country_modifier = no_more_war
 		}
@@ -1745,6 +1768,29 @@ country_event = {
 			}
 		}
 	}
+}
+
+country_event = {
+    id = 19369
+    title = "Our New Puppet"
+    desc = "Our previous war has given us a new satellite!"
+    picture = "Celebration"
+
+    is_triggered_only = yes
+
+    option = {
+        name = "Good"
+
+        any_country = {
+            limit = {
+                exists = yes
+                NOT = { has_country_flag = existing_country }
+                is_vassal = no
+                in_sphere = THIS
+            }
+            country_event = 19370
+        }
+    }
 }
 
 #Event for a country that has been puppeted by CB
@@ -2326,6 +2372,54 @@ country_event = {
 				duration = 1825
 			}
 		}
+		#1st Anglo-Sikh War
+		random_owned = {
+			limit = {
+				is_core = KAS
+				owner = {
+					civilized = no
+					tag = PNJ
+					truce_with = ENG
+				}
+			}
+			owner = {
+				any_owned = {
+					limit = { is_core = KAS }
+					secede_province = ENG
+				}
+			}
+		}
+		#2nd Anglo-Sikh War
+		random_owned = {
+			limit = {
+				is_core = PNJ
+				owner = {
+					civilized = no
+					tag = PNJ
+					truce_with = ENG
+					has_global_flag = 2_anglo_sikh_war
+				}
+			}
+			PNJ = { annex_to = ENG }
+		}
+		
+		#Gaining Chitral from Afghanistan
+		random_owned = {
+			limit = {
+				is_core = CRL
+				owner = {
+					civilized = no
+					tag = AFG
+					truce_with = ENG
+				}
+			}
+			owner = {
+				any_owned = {
+					limit = { is_core = CRL }
+					secede_province = ENG
+				}
+			}
+		}
 		#Give back cores now that the puppet is made. made to avoid a bug with creating vassals.
 		any_owned = {
 			limit = { has_province_modifier = core_when_done }
@@ -2342,7 +2436,7 @@ country_event = {
 	picture = "deliberation"
 	
 	trigger = {
-		has_country_modifier = neutrality
+		has_country_modifier = neutrality_modifier
 		NOT = {
 			badboy = 1
 			is_greater_power = yes
@@ -2375,7 +2469,7 @@ country_event = {
 		name = "EVT81002212OPTB"
 		set_country_flag = abandoned_neutrality
 		prestige = -20
-		remove_country_modifier = neutrality
+		remove_country_modifier = neutrality_modifier
 		ai_chance = {
 			factor = 0
 		}
@@ -2534,6 +2628,7 @@ country_event = {
 		
 	option = {
 		name = "EVTOPTA81002216"
+		set_global_flag = tangier_protocol_succeeded
 		prestige = 10
 		random_owned = {
 			limit = { owner = { has_country_flag = agreed_to_tangier_protocol } province_id = 1686 } 
@@ -2570,8 +2665,13 @@ country_event = {
 			remove_country_modifier = uncivilized_isolationism
 			remove_country_modifier = trade_restrictions
 			remove_country_modifier = sayings_of_the_dutch
+			remove_country_modifier = western_presence
 			remove_country_modifier = rangaku
 			remove_country_modifier = sakoku
+			remove_country_modifier = isolationist_foreign_naval_officers
+			remove_country_modifier = isolationist_foreign_naval_schools
+			remove_country_modifier = isolationist_foreign_officers
+			remove_country_modifier = isolationist_foreign_training
 			clr_country_flag = using_foreign_weapons
 			clr_country_flag = using_foreign_artillery
 			clr_country_flag = using_foreign_ships
@@ -2593,6 +2693,8 @@ country_event = {
 				remove_province_modifier = foreign_smugglers
 				remove_province_modifier = foreign_trading_post
 				remove_province_modifier = local_opium_habit
+				remove_province_modifier = european_military_mission
+				remove_province_modifier = legation_quarter
 				remove_province_modifier = kettler_denkmal
 				remove_province_modifier = extraterritoriality_granted
 				remove_province_modifier = boxer_presence
@@ -2713,6 +2815,7 @@ country_event = {
 	option = {
 		name = "EVTOPTA810003" #We will abolish the sound dues
 		badboy = -2
+		prestige = -40
 		372 = { trade_goods = grain remove_province_modifier = sound_dues_toll }
 		set_global_flag = sound_dues_abolished
 		treasury = 300000
@@ -2738,7 +2841,7 @@ country_event = {
 	option = {
 		name = "EVTOPTB810003" #We will NOT abolish the sound dues
 		badboy = 3
-		prestige = 10
+		prestige = 40
 		set_global_flag = sound_dues_resisted
 		FROM = { country_event = { id = 810007 days = 7 } }
 		
@@ -2771,32 +2874,13 @@ country_event = {
 	
 	option = {
 		name = "EVTOPTA810004" #We will pay our part
-		prestige = 2
-		
-		random_owned = {
-			limit = {
-				owner = {
-					NOT = { money = 100000 }
-					check_variable = { which = owed_cash_money value = 9 }
-				} 
-			}
-			owner = { change_variable = { which = owed_cash_money value = 100 } }
-		}
-		random_owned = {
-			limit = {
-				owner = {
-					NOT = { money = 100000 }
-					NOT = { check_variable = { which = owed_cash_money value = 1 } }
-				} 
-			}
-			owner = { set_variable = { which = owed_cash_money value = 100 } }
-		}
-		random_owned = {
-			limit = { owner = { money = 100000 } }
-			owner = { treasury = -100000 }
-		}
-		
+		prestige = 30
 		diplomatic_influence = { who = FROM value = 50 }
+		random_owned = { limit = { owner = { ai = no } } owner = { treasury = -100000 } }
+		random_owned = {
+			limit = { owner = { ai = yes } }
+			owner = { change_variable = { which = owed_cash_money value = 100 } } 
+		}
 		
 		random_country = {
 			limit = {
@@ -2846,35 +2930,18 @@ country_event = {
 	
 	option = {
 		name = "EVTOPTB810004" #We will pay everything
-		prestige = 5
+		prestige = 100
 		diplomatic_influence = { who = FROM value = 200 }
+		random_owned = { limit = { owner = { ai = no } } owner = { treasury = -300000 } }
 		random_owned = {
-			limit = {
-				owner = {
-					NOT = { money = 300000 }
-					check_variable = { which = owed_cash_money value = 9 }
-				} 
-			}
-			owner = { change_variable = { which = owed_cash_money value = 300 } }
-		}
-		random_owned = {
-			limit = {
-				owner = {
-					NOT = { money = 300000 }
-					NOT = { check_variable = { which = owed_cash_money value = 1 } }
-				} 
-			}
-			owner = { set_variable = { which = owed_cash_money value = 300 } }
-		}
-		random_owned = {
-			limit = { owner = { money = 300000 } }
-			owner = { treasury = -300000 }
+			limit = { owner = { ai = yes } }
+			owner = { change_variable = { which = owed_cash_money value = 300 } } 
 		}
 		ai_chance = {
 			factor = 30
 			modifier = {
 				factor = 0
-				NOT = { money = 300000 }
+				NOT = { money = 200000 }
 			}
 		}
 	}
@@ -2891,36 +2958,29 @@ country_event = {
 	
 	option = {
 		name = "EVTOPTA810005" #We will pay our part
-		prestige = 2
+		prestige = 30
+		random_owned = { limit = { owner = { ai = no } } owner = { treasury = -100000 } }
 		random_owned = {
-			limit = {
-				owner = {
-					NOT = { money = 100000 }
-					check_variable = { which = owed_cash_money value = 9 }
-				} 
-			}
-			owner = { change_variable = { which = owed_cash_money value = 100 } }
+			limit = { owner = { ai = yes } }
+			owner = { change_variable = { which = owed_cash_money value = 100 } } 
 		}
-		random_owned = {
-			limit = {
-				owner = {
-					NOT = { money = 100000 }
-					NOT = { check_variable = { which = owed_cash_money value = 1 } }
-				} 
-			}
-			owner = { set_variable = { which = owed_cash_money value = 100 } }
-		}
-		random_owned = {
-			limit = { owner = { money = 100000 } }
-			owner = { treasury = -100000 }
-		}
-		
 		random_list = {
 			50 = { FROM = { country_event = { id = 810008 days = 7 } } }
 			50 = { FROM = { country_event = { id = 810008 days = 8 } } }
 		}
 		
 		ai_chance = { factor = 90 }
+	}
+	
+	option = {
+		name = "EVTOPTB810005" #We will pay in installments
+		prestige = 20
+		set_variable = { which = owed_cash_money value = 100 }
+		random_list = {
+			50 = { FROM = { country_event = { id = 810008 days = 7 } } }
+			50 = { FROM = { country_event = { id = 810008 days = 8 } } }
+		}
+		ai_chance = { factor = 0 }
 	}
 	
 	option = {
@@ -2954,31 +3014,29 @@ country_event = {
 	
 	option = {
 		name = "EVTOPTA810006" #We will pay their part
-		prestige = 3
+		prestige = 30
+		casus_belli = { target = FROM type = war_reparations months = 48 } relation = { who = FROM value = -150 }
+		random_owned = { limit = { owner = { ai = no } } owner = { treasury = -100000 } }
+		random_owned = {
+			limit = { owner = { ai = yes } }
+			owner = { change_variable = { which = owed_cash_money value = 100 } } 
+		}
+		ai_chance = { factor = 100 }
+	}
+	
+	option = {
+		name = "EVTOPTB810006" #We will pay their part in installments
+		prestige = 20
 		casus_belli = { target = FROM type = war_reparations months = 48 } relation = { who = FROM value = -150 }
 		random_owned = {
-			limit = {
-				owner = {
-					NOT = { money = 100000 }
-					check_variable = { which = owed_cash_money value = 9 }
-				} 
-			}
-			owner = { change_variable = { which = owed_cash_money value = 100 } }
-		}
-		random_owned = {
-			limit = {
-				owner = {
-					NOT = { money = 100000 }
-					NOT = { check_variable = { which = owed_cash_money value = 1 } }
-				} 
-			}
+			limit = { owner = { NOT = { check_variable = { which = owed_cash_money value = 1 } } } }
 			owner = { set_variable = { which = owed_cash_money value = 100 } }
 		}
 		random_owned = {
-			limit = { owner = { money = 100000 } }
-			owner = { treasury = -100000 }
+			limit = { owner = { check_variable = { which = owed_cash_money value = 9 } } }
+			owner = { change_variable = { which = owed_cash_money value = 100 } }
 		}
-		ai_chance = { factor = 100 }
+		ai_chance = { factor = 0 }
 	}
 	
 	option = {
@@ -3000,7 +3058,7 @@ country_event = {
 	is_triggered_only = yes
 	
 	option = {
-		name = "EVTOPTA810007"
+		name = "EVTOPTA810007" #We will pay their part
 		relation = { who = FROM value = -300 }
 		diplomatic_influence = { who = FROM value = -300 }
 		casus_belli = { target = FROM type = cut_down_to_size months = 36 }

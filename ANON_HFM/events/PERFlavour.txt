@@ -1,31 +1,31 @@
-#Goldsmith Arbitration
-#country_event = {
-#	id = 300999
-#	is_triggered_only = yes
-#
-#	title = "the_goldsmith_arbitration"
-#	desc = "EVTDESC300998"
-#	picture = "persia_throne"
-#
-#	option = {
-#		name = "Damn"
-#		any_pop = {
-#			limit = {
-#				has_pop_culture = kurdish
-#			}
-#			militancy = 3
-#		}
-#		any_owned = {
-#			limit = {
-#				is_core = KDS
-#			}
-#			add_province_modifier = {
-#				name = nationalist_agitation
-#				duration = 1000
-#			}
-#		}
-#	}
-#}
+# Goldsmith Arbitration
+# country_event = {
+	# id = 300999
+	# is_triggered_only = yes
+
+	# title = "the_goldsmith_arbitration"
+	# desc = "EVTDESC300998"
+	# picture = "persia_throne"
+
+	# option = {
+		# name = "Damn"
+		# any_pop = {
+			# limit = {
+				# has_pop_culture = kurdish
+			# }
+			# militancy = 3
+		# }
+		# any_owned = {
+			# limit = {
+				# is_core = KDS
+			# }
+			# add_province_modifier = {
+				# name = nationalist_agitation
+				# duration = 1000
+			# }
+		# }
+	# }
+# }
 
 #Sheikh Ubeydullah Uprising
 country_event = {
@@ -209,143 +209,143 @@ country_event = {
 	}
 }
 
-#The End of the Durrani Empire
-#country_event = {
-#	id = 301011
-#
-#	trigger = {
-#		tag = AFG
-#		year = 1823
-#		OR = { government = theocracy government = theocracy2 government = theocracy3 }
-#	}
-#
-#	mean_time_to_happen = {
-#		months = 30
-#		modifier = {
-#			factor = 0.5
-#			year = 1825
-#		}
-#		modifier = {
-#			factor = 0.5
-#			year = 1828
-#		}
-#		modifier = {
-#			factor = 0.2
-#			year = 1830
-#		}
-#	}
-#
-#	title = "EVTNAME301011"
-#	desc = "EVTDESC301011"
-#	picture = "dost_mohammad_khan"
-#	fire_only_once = yes
-#
-#	news = yes
-#	news_title = NEWS_EVTNAME301011_title
-#	news_desc_short = NEWS_EVTDESC301011_short
-#	news_desc_medium = NEWS_EVTDESC301011_medium
-#	news_desc_long = NEWS_EVTDESC301011_long
-#
-#
-#	option = {
-#		name = "Long live the Emir!"
-#		government = absolute_monarchy
-#		1223 = { add_core = AFG }
-#		any_country = {
-#			limit = {
-#				vassal_of = THIS
-#			}
-#			country_event = { id = 301012 days = 2 }
-#		}
-#	}
-#}
+# The End of the Durrani Empire
+# country_event = {
+	# id = 301011
 
-#The End of the Durrani Empire
-#country_event = {
-#	id = 301012
-#	is_triggered_only = yes
-#	allow_multiple_instances = yes
-#
-#	title = "EVTNAME301012"
-#	desc = "EVTDESC301012"
-#	picture = "dost_mohammad_khan"
-#
-#	option = {
-#		name = "Long live the Emir!"
-#		any_owned = {
-#			remove_core = AFG
-#		}
-#		relation = {
-#			who = AFG
-#			value = 100
-#		}
-#		ai_chance = {
-#			factor = 5
-#			modifier = {
-#				factor = 2
-#				tag = KDH
-#			}
-#			modifier = {
-#				factor = 0.2
-#				tag = HRT
-#			}
-#			modifier = {
-#				factor = 0.2
-#				tag = KNZ
-#			}
-#		}
-#	}
-#	option = {
-#		name = "As long as he doesn't interfere to much..."
-#		relation = {
-#			who = AFG
-#			value = 25
-#		}
-#		any_owned = {
-#			remove_core = AFG
-#		}
-#		create_alliance = AFG
-#		AFG = {
-#			release_vassal = THIS
-#		}
-#		ai_chance = {
-#			factor = 10
-#			modifier = {
-#				factor = 3
-#				tag = HZJ
-#			}
-#		}
-#	}
-#	option = {
-#		name = "Independence at last!"
-#		prestige = 1
-#		AFG = {
-#			release_vassal = THIS
-#		}
-#		any_owned = {
-#			remove_core = AFG
-#		}
-#		relation = {
-#			who = AFG
-#			value = -25
-#		}
-#		ai_chance = {
-#			factor = 45
-#			modifier = {
-#				factor = 5
-#				tag = KNZ
-#			}
-#			modifier = {
-#				factor = 3
-#				tag = HRT
-#			}
-#			modifier = {
-#				factor = 5
-#				tag = TAJ
-#			}
-#		}
-#	}
-#}
+	# trigger = {
+		# tag = AFG
+		# year = 1823
+		# OR = { government = theocracy government = theocracy2 government = theocracy3 }
+	# }
+
+	# mean_time_to_happen = {
+		# months = 30
+		# modifier = {
+			# factor = 0.5
+			# year = 1825
+		# }
+		# modifier = {
+			# factor = 0.5
+			# year = 1828
+		# }
+		# modifier = {
+			# factor = 0.2
+			# year = 1830
+		# }
+	# }
+
+	# title = "EVTNAME301011"
+	# desc = "EVTDESC301011"
+	# picture = "dost_mohammad_khan"
+	# fire_only_once = yes
+
+	# news = yes
+	# news_title = NEWS_EVTNAME301011_title
+	# news_desc_short = NEWS_EVTDESC301011_short
+	# news_desc_medium = NEWS_EVTDESC301011_medium
+	# news_desc_long = NEWS_EVTDESC301011_long
+
+
+	# option = {
+		# name = "Long live the Emir!"
+		# government = absolute_monarchy
+		# 1223 = { add_core = AFG }
+		# any_country = {
+			# limit = {
+				# vassal_of = THIS
+			# }
+			# country_event = { id = 301012 days = 2 }
+		# }
+	# }
+# }
+
+# The End of the Durrani Empire
+# country_event = {
+	# id = 301012
+	# is_triggered_only = yes
+	# allow_multiple_instances = yes
+
+	# title = "EVTNAME301012"
+	# desc = "EVTDESC301012"
+	# picture = "dost_mohammad_khan"
+
+	# option = {
+		# name = "Long live the Emir!"
+		# any_owned = {
+			# remove_core = AFG
+		# }
+		# relation = {
+			# who = AFG
+			# value = 100
+		# }
+		# ai_chance = {
+			# factor = 5
+			# modifier = {
+				# factor = 2
+				# tag = KDH
+			# }
+			# modifier = {
+				# factor = 0.2
+				# tag = HRT
+			# }
+			# modifier = {
+				# factor = 0.2
+				# tag = KNZ
+			# }
+		# }
+	# }
+	# option = {
+		# name = "As long as he doesn't interfere to much..."
+		# relation = {
+			# who = AFG
+			# value = 25
+		# }
+		# any_owned = {
+			# remove_core = AFG
+		# }
+		# create_alliance = AFG
+		# AFG = {
+			# release_vassal = THIS
+		# }
+		# ai_chance = {
+			# factor = 10
+			# modifier = {
+				# factor = 3
+				# tag = HZJ
+			# }
+		# }
+	# }
+	# option = {
+		# name = "Independence at last!"
+		# prestige = 1
+		# AFG = {
+			# release_vassal = THIS
+		# }
+		# any_owned = {
+			# remove_core = AFG
+		# }
+		# relation = {
+			# who = AFG
+			# value = -25
+		# }
+		# ai_chance = {
+			# factor = 45
+			# modifier = {
+				# factor = 5
+				# tag = KNZ
+			# }
+			# modifier = {
+				# factor = 3
+				# tag = HRT
+			# }
+			# modifier = {
+				# factor = 5
+				# tag = TAJ
+			# }
+		# }
+	# }
+# }
 
 #The Turkmen of Merv
 country_event = {
@@ -427,733 +427,733 @@ country_event = {
 	}
 }
 
-#The Treaty of Shiraz
-#country_event = {
-#	id = 301015
-#
-#	trigger = {
-#		tag = PER
-#		year = 1821
-#	}
-#
-#	mean_time_to_happen = {
-#		months = 12
-#	}
-#
-#	title = "EVTNAME301015"
-#	desc = "EVTDESC301015"
-#	picture = "muscat"
-#	fire_only_once = yes
-#
-#	option = {
-#		name = "We will maintain our claim to Bahrain"
-#		BHR = {
-#			country_event = 301016
-#		}
-#		1162 = {
-#			add_core = PER
-#		}
-#		relation = {
-#			who = BHR
-#			value = -100
-#		}
-#		relation = {
-#			who = ENG
-#			value = -25
-#		}
-#		ENG = {
-#			diplomatic_influence = {
-#				who = PER
-#				value = -25
-#			}
-#		}
-#		ai_chance = {
-#			factor = 70
-#		}
-#	}
-#	option = {
-#		name = "We will not maintain our claim to Bahrain"
-#		BHR = {
-#			country_event = 301016
-#		}
-#		1162 = {
-#			remove_core = PER
-#		}
-#		relation = {
-#			who = BHR
-#			value = 75
-#		}
-#		relation = {
-#			who = ENG
-#			value = 25
-#		}
-#		ENG = {
-#			diplomatic_influence = {
-#				who = PER
-#				value = 15
-#			}
-#		}
-#		ai_chance = {
-#			factor = 30
-#		}
-#	}
-#}
+# The Treaty of Shiraz
+# country_event = {
+	# id = 301015
 
-#The Treaty of Shiraz - Bahrain
-#country_event = {
-#	id = 301016
-#	is_triggered_only = yes
-#
-#	title = "EVTNAME301015"
-#	desc = "EVTDESC301016"
-#	picture = "muscat"
-#
-#	option = {
-#		name = "We will strengthen our ties of friendship with the British Crown"
-#		relation = {
-#			who = ENG
-#			value = 50
-#		}
-#		ENG = {
-#			diplomatic_influence = {
-#				who = BHR
-#				value = 75
-#			}
-#		}
-#		ai_chance = {
-#			factor = 60
-#			modifier = {
-#				factor = 0.1
-#				OMA = {
-#					ai = no
-#				}
-#			}
-#		}
-#	}
-#	option = {
-#		name = "We will strengthen our ties of friendship with the Sultan of Oman"
-#		OMA = {
-#			country_event = 301017
-#			create_vassal = BHR
-#		}
-#		relation = {
-#			who = OMA
-#			value = 75
-#		}
-#		relation = {
-#			who = ENG
-#			value = -25
-#		}
-#		ENG = {
-#			diplomatic_influence = {
-#				who = BHR
-#				value = -100
-#			}
-#		}
-#		ai_chance = {
-#			factor = 30
-#			modifier = {
-#				factor = 3
-#				OMA = {
-#					ai = no
-#				}
-#			}
-#		}
-#	}
-#	option = {
-#		name = "We will go at it alone"
-#		prestige = 2
-#		relation = {
-#			who = ENG
-#			value = -25
-#		}
-#		ENG = {
-#			diplomatic_influence = {
-#				who = BHR
-#				value = -100
-#			}
-#		}
-#		ai_chance = {
-#			factor = 10
-#		}
-#	}
-#}
+	# trigger = {
+		# tag = PER
+		# year = 1821
+	# }
 
-#The Treaty of Shiraz - Oman
-#country_event = {
-#	id = 301017
-#	is_triggered_only = yes
-#
-#	title = "EVTNAME301015"
-#	desc = "EVTDESC301017"
-#	picture = "muscat"
-#
-#	option = {
-#		name = "Wonderful!"
-#		prestige = 2
-#		ai_chance = {
-#			factor = 90
-#		}
-#	}
-#	option = {
-#		name = "We have no interest in the Sultanate of Bahrain"
-#		release_vassal = BHR
-#		relation = {
-#			who = BHR
-#			value = -125
-#		}
-#		ai_chance = {
-#			factor = 10
-#		}
-#	}
-#}
+	# mean_time_to_happen = {
+		# months = 12
+	# }
 
-#Incident at the Russian Legation
-#country_event = {
-#	id = 301020
-#	fire_only_once = yes
-#
-#	trigger = {
-#		tag = PER
-#		has_country_flag = turkmenchay_treaty
-#		NOT = { year = 1840 }
-#	}
-#
-#	fire_only_once = yes
-#
-#	mean_time_to_happen = {
-#		months = 8
-#		modifier = {
-#			factor = 0.4
-#			average_militancy = 3
-#		}
-#		modifier = {
-#			factor = 0.4
-#			average_consciousness = 3
-#		}
-#		modifier = {
-#			factor = 0.2
-#			alliance_with = RUS
-#		}
-#		modifier = {
-#			factor = 0.2
-#			in_sphere = RUS
-#		}
-#	}
-#
-#	title = "EVTNAME301020"
-#	desc = "EVTDESC301020"
-#	picture = "persia_tehran"
-#
-#	option = {
-#		name = "Demand the eunuch to be returned"
-#		prestige = 2
-#		1121 = {
-#			any_pop = {
-#				scaled_militancy = {
-#					factor = -1
-#					ideology = reactionary
-#				}
-#			}
-#		}
-#		RUS = {
-#			country_event = { id = 301021 days = 10 }
-#			diplomatic_influence = {
-#				who = PER
-#				value = -25
-#			}
-#		}
-#		relation = {
-#			who = RUS
-#			value = -10
-#		}
-#		ai_chance = {
-#			factor = 65
-#		}
-#	}
-#	option = {
-#		name = "Calm the crowd down"
-#		prestige = -5
-#		1121 = {
-#			any_pop = {
-#				scaled_consciousness = {
-#					factor = 2
-#					ideology = reactionary
-#				}
-#				scaled_militancy = {
-#					factor = 4
-#					ideology = reactionary
-#				}
-#			}
-#		}
-#		any_pop = {
-#			consciousness = 1
-#			ideology = {
-#				factor = 0.05
-#				value = reactionary
-#			}
-#			scaled_militancy = {
-#				factor = 2
-#				ideology = reactionary
-#			}
-#		}
-#		RUS = {
-#			diplomatic_influence = {
-#				who = PER
-#				value = 15
-#			}
-#		}
-#		relation = {
-#			who = RUS
-#			value = 10
-#		}
-#		ai_chance = {
-#			factor = 35
-#			modifier = {
-#				factor = 0
-#				average_militancy = 4
-#			}
-#			modifier = {
-#				factor = 0
-#				num_of_revolts = 3
-#			}
-#		}
-#	}
-#}
-#
-#Incident at the Russian Legation
-#country_event = {
-#	id = 301021
-#	is_triggered_only = yes
-#
-#	title = "EVTNAME301021"
-#	desc = "EVTDESC301021"
-#	picture = "alexander_griboyedov"
-#
-#	option = {
-#		name = "The Persians will hear of this!"
-#		PER = {
-#			country_event = { id = 301022 days = 10 }
-#		}
-#		relation = {
-#			who = PER
-#			value = -25
-#		}
-#		ai_chance = {
-#			factor = 45
-#			modifier = {
-#				factor = 1.5
-#				num_of_revolts = 2
-#			}
-#		}
-#	}
-#	option = {
-#		name = "Perhaps it is time for a little, victorious war"
-#		set_country_flag = the_war_drums
-#		PER = {
-#			country_event = { id = 301023 days = 10 }
-#		}
-#		badboy = 4
-#		prestige = 2
-#		any_pop = {
-#			limit = {
-#				OR = {
-#					type = officers
-#					type = aristocrats
-#				}
-#				OR = {
-#					is_primary_culture = yes
-#					is_accepted_culture = yes
-#				}
-#			}
-#			consciousness = -1
-#			militancy = -1
-#		}
-#		relation = {
-#			who = PER
-#			value = -30
-#		}
-#		ai_chance = {
-#			factor = 45
-#			modifier = {
-#				factor = 1.5
-#				NOT = { num_of_revolts = 5 }
-#			}
-#			modifier = {
-#				factor = 1.5
-#				NOT = { average_militancy = 3 }
-#			}
-#			modifier = {
-#				factor = 0
-#				war = yes
-#			}
-#			modifier = {
-#				factor = 0
-#				badboy = 0.6
-#			}
-#		}
-#	}
-#	option = {
-#		name = "Let's not loose *our* head over this"
-#		PER = {
-#			country_event = { id = 301031 days = 10 }
-#		}
-#		prestige = -5
-#		any_pop = {
-#			limit = {
-#				type = officers
-#				OR = {
-#					is_primary_culture = yes
-#					is_accepted_culture = yes
-#				}
-#			}
-#			consciousness = 2
-#			militancy = 2
-#		}
-#		any_pop = {
-#			limit = {
-#				type = aristocrats
-#				OR = {
-#					is_primary_culture = yes
-#					is_accepted_culture = yes
-#				}
-#			}
-#			consciousness = 3
-#			militancy = 1
-#		}
-#		badboy = -2
-#		diplomatic_influence = {
-#			who = PER
-#			value = -25
-#		}
-#
-#		ai_chance = {
-#			factor = 10
-#			modifier = {
-#				factor = 100
-#				any_greater_power = {
-#					war_with = RUS
-#				}
-#			}
-#			modifier = {
-#				factor = 5
-#				badboy = 0.6
-#			}
-#		}
-#	}
-#}
+	# title = "EVTNAME301015"
+	# desc = "EVTDESC301015"
+	# picture = "muscat"
+	# fire_only_once = yes
 
-#The Death of Alexander Griboyedov, 1
-#country_event = {
-#	id = 301022
-#	is_triggered_only = yes
-#
-#	title = "EVTNAME301022"
-#	desc = "EVTDESC301022"
-#	picture = "persia_dark"
-#
-#	option = {
-#		name = "Gifts! Gifts solve all the world's problems"
-#		RUS = {
-#			country_event = { id = 301025 days = 10 }
-#			diplomatic_influence = {
-#				who = PER
-#				value = 15
-#			}
-#		}
-#		prestige = -2
-#		any_pop = {
-#			scaled_militancy = {
-#				factor = 2
-#				ideology = reactionary
-#			}
-#		}
-#		aristocrats = {
-#			consciousness = 2
-#		}
-#		ai_chance = {
-#			factor = 60
-#		}
-#	}
-#
-#	option = {
-#		name = "Heads. Spikes. Walls."
-#		RUS = {
-#			country_event = { id = 301024 days = 10 }
-#			diplomatic_influence = {
-#				who = PER
-#				value = 25
-#			}
-#		}
-#		ENG = {
-#			diplomatic_influence = {
-#				who = PER
-#				value = -15
-#			}
-#		}
-#		1121 = {
-#			clergymen = {
-#				reduce_pop = 0.80
-#			}
-#			any_pop = {
-#				ideology = {
-#					factor = -0.03
-#					value = reactionary
-#				}
-#				scaled_militancy = {
-#					factor = 4
-#					ideology = reactionary
-#				}
-#			}
-#		}
-#		clergymen = {
-#			reduce_pop = 0.90
-#			consciousness = 5
-#		}
-#		any_pop = {
-#			ideology = {
-#				factor = -0.02
-#				value = reactionary
-#			}
-#			scaled_militancy = {
-#				factor = 2
-#				ideology = reactionary
-#			}
-#		}
-#		ai_chance = {
-#			factor = 20
-#		}
-#	}
-#	option = {
-#		name = "We will not bow to the Russians!"
-#		RUS = {
-#			country_event = { id = 301026 days = 10 }
-#			diplomatic_influence = {
-#				who = PER
-#				value = -30
-#			}
-#		}
-#		relation = {
-#			who = RUS
-#			value = -25
-#		}
-#		prestige = 1
-#		any_pop = {
-#			scaled_militancy = {
-#				factor = -2
-#				ideology = reactionary
-#			}
-#		}
-#		ai_chance = {
-#			factor = 10
-#			modifier = {
-#				RUS = { war = yes }
-#				factor = 5
-#			}
-#		}
-#	}
-#}
+	# option = {
+		# name = "We will maintain our claim to Bahrain"
+		# BHR = {
+			# country_event = 301016
+		# }
+		# 1162 = {
+			# add_core = PER
+		# }
+		# relation = {
+			# who = BHR
+			# value = -100
+		# }
+		# relation = {
+			# who = ENG
+			# value = -25
+		# }
+		# ENG = {
+			# diplomatic_influence = {
+				# who = PER
+				# value = -25
+			# }
+		# }
+		# ai_chance = {
+			# factor = 70
+		# }
+	# }
+	# option = {
+		# name = "We will not maintain our claim to Bahrain"
+		# BHR = {
+			# country_event = 301016
+		# }
+		# 1162 = {
+			# remove_core = PER
+		# }
+		# relation = {
+			# who = BHR
+			# value = 75
+		# }
+		# relation = {
+			# who = ENG
+			# value = 25
+		# }
+		# ENG = {
+			# diplomatic_influence = {
+				# who = PER
+				# value = 15
+			# }
+		# }
+		# ai_chance = {
+			# factor = 30
+		# }
+	# }
+# }
 
-#The Death of Alexander Griboyedov, 2
-#country_event = {
-#	id = 301023
-#	is_triggered_only = yes
-#
-#	title = "EVTNAME301022"
-#	desc = "EVTDESC301023"
-#	picture = "persia_dark"
-#
-#	option = {
-#		name = "Gifts! Gifts solve all the world's problems"
-#		RUS = {
-#			country_event = { id = 301025 days = 10 }
-#			diplomatic_influence = {
-#				who = PER
-#				value = 20
-#			}
-#		}
-#		prestige = -2
-#		any_pop = {
-#			scaled_militancy = {
-#				factor = 2
-#				ideology = reactionary
-#			}
-#		}
-#		aristocrats = {
-#			consciousness = 2
-#		}
-#		ai_chance = {
-#			factor = 25
-#		}
-#	}
-#
-#	option = {
-#		name = "Concessions! Please the Russians with concessions! [Azerbaijan -> Russian sphereling]"
-#		RUS = {
-#			country_event = { id = 301030 days = 10 }
-#			diplomatic_influence = {
-#				who = PER
-#				value = 30
-#			}
-#		}
-#		any_pop = {
-#			ideology = {
-#				factor = 0.05
-#				value = reactionary
-#			}
-#			scaled_militancy = {
-#				factor = 3
-#				ideology = reactionary
-#			}
-#		}
-#		ai_chance = {
-#			factor = 25
-#		}
-#	}
-#	option = {
-#		name = "Perhaps the British will help...?"
-#		ENG = {
-#			country_event = { id = 301032 days = 5 }
-#			diplomatic_influence = {
-#				who = PER
-#				value = 15
-#			}
-#		}
-#		any_pop = {
-#			ideology = {
-#				factor = 0.02
-#				value = reactionary
-#			}
-#			scaled_militancy = {
-#				factor = 1
-#				ideology = reactionary
-#			}
-#		}
-#		ai_chance = {
-#			factor = 45
-#		}
-#	}
-#	option = {
-#		name = "We will not bow to the Russians!"
-#		RUS = {
-#			country_event = { id = 301026 days = 10 }
-#			diplomatic_influence = {
-#				who = PER
-#				value = -25
-#			}
-#		}
-#		relation = {
-#			who = RUS
-#			value = -20
-#		}
-#		prestige = 2
-#		any_pop = {
-#			ideology = {
-#				factor = -0.01
-#				value = reactionary
-#			}
-#			scaled_militancy = {
-#				factor = -2
-#				ideology = reactionary
-#			}
-#		}
-#		ai_chance = {
-#			factor = 10
-#			modifier = {
-#				RUS = { war = yes }
-#				factor = 5
-#			}
-#		}
-#	}
-#}
+# The Treaty of Shiraz - Bahrain
+# country_event = {
+	# id = 301016
+	# is_triggered_only = yes
 
-#A Cleaning in Tehran
-#country_event = {
-#	id = 301024
-#	is_triggered_only = yes
-#
-#	title = "EVTNAME301024"
-#	desc = "EVTDESC301024"
-#	picture = "alexander_griboyedov"
-#
-#	option = {
-#		name = "Offer the Shah all the 'help' he needs"
-#		PER = {
-#			country_event = { id = 301027 days = 10 }
-#		}
-#		relation = {
-#			who = PER
-#			value = 10
-#		}
-#		ai_chance = {
-#			factor = 60
-#		}
-#	}
-#	option = {
-#		name = "We are satisfied by how the Shah handled the situation"
-#		PER = {
-#			country_event = { id = 301028 days = 10 }
-#		}
-#		relation = {
-#			who = PER
-#			value = 30
-#		}
-#		ai_chance = {
-#			factor = 40
-#		}
-#	}
-#}
+	# title = "EVTNAME301015"
+	# desc = "EVTDESC301016"
+	# picture = "muscat"
 
-#The Shah Diamond
-#country_event = {
-#	id = 301025
-#	is_triggered_only = yes
-#
-#	title = "EVTNAME301025"
-#	desc = "EVTDESC301025"
-#	picture = "shah_diamond"
-#
-#	option = {
-#		name = "This will do nicely"
-#		clr_country_flag = the_war_drums
-#		PER = {
-#			country_event = { id = 301028 days = 10 }
-#		}
-#		prestige = 2
-#		relation = {
-#			who = PER
-#			value = 30
-#		}
-#		diplomatic_influence = {
-#			value = 5
-#			who = PER
-#		}
-#		ai_chance = {
-#			factor = 90
-#			modifier = {
-#				factor = 0.5
-#				has_country_flag = the_war_drums
-#			}
-#		}
-#	}
-#	option = {
-#		name = "A diamond? Land is what we are after!"
-#		PER = {
-#			country_event = { id = 301036 days = 10 }
-#		}
-#		ai_chance = {
-#			factor = 10
-#			modifier = {
-#				factor = 0
-#				war = yes
-#			}
-#			modifier = {
-#				factor = 5
-#				has_country_flag = the_war_drums
-#			}
-#		}
-#	}
-#}
+	# option = {
+		# name = "We will strengthen our ties of friendship with the British Crown"
+		# relation = {
+			# who = ENG
+			# value = 50
+		# }
+		# ENG = {
+			# diplomatic_influence = {
+				# who = BHR
+				# value = 75
+			# }
+		# }
+		# ai_chance = {
+			# factor = 60
+			# modifier = {
+				# factor = 0.1
+				# OMA = {
+					# ai = no
+				# }
+			# }
+		# }
+	# }
+	# option = {
+		# name = "We will strengthen our ties of friendship with the Sultan of Oman"
+		# OMA = {
+			# country_event = 301017
+			# create_vassal = BHR
+		# }
+		# relation = {
+			# who = OMA
+			# value = 75
+		# }
+		# relation = {
+			# who = ENG
+			# value = -25
+		# }
+		# ENG = {
+			# diplomatic_influence = {
+				# who = BHR
+				# value = -100
+			# }
+		# }
+		# ai_chance = {
+			# factor = 30
+			# modifier = {
+				# factor = 3
+				# OMA = {
+					# ai = no
+				# }
+			# }
+		# }
+	# }
+	# option = {
+		# name = "We will go at it alone"
+		# prestige = 2
+		# relation = {
+			# who = ENG
+			# value = -25
+		# }
+		# ENG = {
+			# diplomatic_influence = {
+				# who = BHR
+				# value = -100
+			# }
+		# }
+		# ai_chance = {
+			# factor = 10
+		# }
+	# }
+# }
+
+# The Treaty of Shiraz - Oman
+# country_event = {
+	# id = 301017
+	# is_triggered_only = yes
+
+	# title = "EVTNAME301015"
+	# desc = "EVTDESC301017"
+	# picture = "muscat"
+
+	# option = {
+		# name = "Wonderful!"
+		# prestige = 2
+		# ai_chance = {
+			# factor = 90
+		# }
+	# }
+	# option = {
+		# name = "We have no interest in the Sultanate of Bahrain"
+		# release_vassal = BHR
+		# relation = {
+			# who = BHR
+			# value = -125
+		# }
+		# ai_chance = {
+			# factor = 10
+		# }
+	# }
+# }
+
+# Incident at the Russian Legation
+# country_event = {
+	# id = 301020
+	# fire_only_once = yes
+
+	# trigger = {
+		# tag = PER
+		# has_country_flag = turkmenchay_treaty
+		# NOT = { year = 1840 }
+	# }
+
+	# fire_only_once = yes
+
+	# mean_time_to_happen = {
+		# months = 8
+		# modifier = {
+			# factor = 0.4
+			# average_militancy = 3
+		# }
+		# modifier = {
+			# factor = 0.4
+			# average_consciousness = 3
+		# }
+		# modifier = {
+			# factor = 0.2
+			# alliance_with = RUS
+		# }
+		# modifier = {
+			# factor = 0.2
+			# in_sphere = RUS
+		# }
+	# }
+
+	# title = "EVTNAME301020"
+	# desc = "EVTDESC301020"
+	# picture = "persia_tehran"
+
+	# option = {
+		# name = "Demand the eunuch to be returned"
+		# prestige = 2
+		# 1121 = {
+			# any_pop = {
+				# scaled_militancy = {
+					# factor = -1
+					# ideology = reactionary
+				# }
+			# }
+		# }
+		# RUS = {
+			# country_event = { id = 301021 days = 10 }
+			# diplomatic_influence = {
+				# who = PER
+				# value = -25
+			# }
+		# }
+		# relation = {
+			# who = RUS
+			# value = -10
+		# }
+		# ai_chance = {
+			# factor = 65
+		# }
+	# }
+	# option = {
+		# name = "Calm the crowd down"
+		# prestige = -5
+		# 1121 = {
+			# any_pop = {
+				# scaled_consciousness = {
+					# factor = 2
+					# ideology = reactionary
+				# }
+				# scaled_militancy = {
+					# factor = 4
+					# ideology = reactionary
+				# }
+			# }
+		# }
+		# any_pop = {
+			# consciousness = 1
+			# ideology = {
+				# factor = 0.05
+				# value = reactionary
+			# }
+			# scaled_militancy = {
+				# factor = 2
+				# ideology = reactionary
+			# }
+		# }
+		# RUS = {
+			# diplomatic_influence = {
+				# who = PER
+				# value = 15
+			# }
+		# }
+		# relation = {
+			# who = RUS
+			# value = 10
+		# }
+		# ai_chance = {
+			# factor = 35
+			# modifier = {
+				# factor = 0
+				# average_militancy = 4
+			# }
+			# modifier = {
+				# factor = 0
+				# num_of_revolts = 3
+			# }
+		# }
+	# }
+# }
+
+# Incident at the Russian Legation
+# country_event = {
+	# id = 301021
+	# is_triggered_only = yes
+
+	# title = "EVTNAME301021"
+	# desc = "EVTDESC301021"
+	# picture = "alexander_griboyedov"
+
+	# option = {
+		# name = "The Persians will hear of this!"
+		# PER = {
+			# country_event = { id = 301022 days = 10 }
+		# }
+		# relation = {
+			# who = PER
+			# value = -25
+		# }
+		# ai_chance = {
+			# factor = 45
+			# modifier = {
+				# factor = 1.5
+				# num_of_revolts = 2
+			# }
+		# }
+	# }
+	# option = {
+		# name = "Perhaps it is time for a little, victorious war"
+		# set_country_flag = the_war_drums
+		# PER = {
+			# country_event = { id = 301023 days = 10 }
+		# }
+		# badboy = 4
+		# prestige = 2
+		# any_pop = {
+			# limit = {
+				# OR = {
+					# type = officers
+					# type = aristocrats
+				# }
+				# OR = {
+					# is_primary_culture = yes
+					# is_accepted_culture = yes
+				# }
+			# }
+			# consciousness = -1
+			# militancy = -1
+		# }
+		# relation = {
+			# who = PER
+			# value = -30
+		# }
+		# ai_chance = {
+			# factor = 45
+			# modifier = {
+				# factor = 1.5
+				# NOT = { num_of_revolts = 5 }
+			# }
+			# modifier = {
+				# factor = 1.5
+				# NOT = { average_militancy = 3 }
+			# }
+			# modifier = {
+				# factor = 0
+				# war = yes
+			# }
+			# modifier = {
+				# factor = 0
+				# badboy = 0.6
+			# }
+		# }
+	# }
+	# option = {
+		# name = "Let's not loose *our* head over this"
+		# PER = {
+			# country_event = { id = 301031 days = 10 }
+		# }
+		# prestige = -5
+		# any_pop = {
+			# limit = {
+				# type = officers
+				# OR = {
+					# is_primary_culture = yes
+					# is_accepted_culture = yes
+				# }
+			# }
+			# consciousness = 2
+			# militancy = 2
+		# }
+		# any_pop = {
+			# limit = {
+				# type = aristocrats
+				# OR = {
+					# is_primary_culture = yes
+					# is_accepted_culture = yes
+				# }
+			# }
+			# consciousness = 3
+			# militancy = 1
+		# }
+		# badboy = -2
+		# diplomatic_influence = {
+			# who = PER
+			# value = -25
+		# }
+
+		# ai_chance = {
+			# factor = 10
+			# modifier = {
+				# factor = 100
+				# any_greater_power = {
+					# war_with = RUS
+				# }
+			# }
+			# modifier = {
+				# factor = 5
+				# badboy = 0.6
+			# }
+		# }
+	# }
+# }
+
+# The Death of Alexander Griboyedov, 1
+# country_event = {
+	# id = 301022
+	# is_triggered_only = yes
+
+	# title = "EVTNAME301022"
+	# desc = "EVTDESC301022"
+	# picture = "persia_dark"
+
+	# option = {
+		# name = "Gifts! Gifts solve all the world's problems"
+		# RUS = {
+			# country_event = { id = 301025 days = 10 }
+			# diplomatic_influence = {
+				# who = PER
+				# value = 15
+			# }
+		# }
+		# prestige = -2
+		# any_pop = {
+			# scaled_militancy = {
+				# factor = 2
+				# ideology = reactionary
+			# }
+		# }
+		# aristocrats = {
+			# consciousness = 2
+		# }
+		# ai_chance = {
+			# factor = 60
+		# }
+	# }
+
+	# option = {
+		# name = "Heads. Spikes. Walls."
+		# RUS = {
+			# country_event = { id = 301024 days = 10 }
+			# diplomatic_influence = {
+				# who = PER
+				# value = 25
+			# }
+		# }
+		# ENG = {
+			# diplomatic_influence = {
+				# who = PER
+				# value = -15
+			# }
+		# }
+		# 1121 = {
+			# clergymen = {
+				# reduce_pop = 0.80
+			# }
+			# any_pop = {
+				# ideology = {
+					# factor = -0.03
+					# value = reactionary
+				# }
+				# scaled_militancy = {
+					# factor = 4
+					# ideology = reactionary
+				# }
+			# }
+		# }
+		# clergymen = {
+			# reduce_pop = 0.90
+			# consciousness = 5
+		# }
+		# any_pop = {
+			# ideology = {
+				# factor = -0.02
+				# value = reactionary
+			# }
+			# scaled_militancy = {
+				# factor = 2
+				# ideology = reactionary
+			# }
+		# }
+		# ai_chance = {
+			# factor = 20
+		# }
+	# }
+	# option = {
+		# name = "We will not bow to the Russians!"
+		# RUS = {
+			# country_event = { id = 301026 days = 10 }
+			# diplomatic_influence = {
+				# who = PER
+				# value = -30
+			# }
+		# }
+		# relation = {
+			# who = RUS
+			# value = -25
+		# }
+		# prestige = 1
+		# any_pop = {
+			# scaled_militancy = {
+				# factor = -2
+				# ideology = reactionary
+			# }
+		# }
+		# ai_chance = {
+			# factor = 10
+			# modifier = {
+				# RUS = { war = yes }
+				# factor = 5
+			# }
+		# }
+	# }
+# }
+
+# The Death of Alexander Griboyedov, 2
+# country_event = {
+	# id = 301023
+	# is_triggered_only = yes
+
+	# title = "EVTNAME301022"
+	# desc = "EVTDESC301023"
+	# picture = "persia_dark"
+
+	# option = {
+		# name = "Gifts! Gifts solve all the world's problems"
+		# RUS = {
+			# country_event = { id = 301025 days = 10 }
+			# diplomatic_influence = {
+				# who = PER
+				# value = 20
+			# }
+		# }
+		# prestige = -2
+		# any_pop = {
+			# scaled_militancy = {
+				# factor = 2
+				# ideology = reactionary
+			# }
+		# }
+		# aristocrats = {
+			# consciousness = 2
+		# }
+		# ai_chance = {
+			# factor = 25
+		# }
+	# }
+
+	# option = {
+		# name = "Concessions! Please the Russians with concessions! [Azerbaijan -> Russian sphereling]"
+		# RUS = {
+			# country_event = { id = 301030 days = 10 }
+			# diplomatic_influence = {
+				# who = PER
+				# value = 30
+			# }
+		# }
+		# any_pop = {
+			# ideology = {
+				# factor = 0.05
+				# value = reactionary
+			# }
+			# scaled_militancy = {
+				# factor = 3
+				# ideology = reactionary
+			# }
+		# }
+		# ai_chance = {
+			# factor = 25
+		# }
+	# }
+	# option = {
+		# name = "Perhaps the British will help...?"
+		# ENG = {
+			# country_event = { id = 301032 days = 5 }
+			# diplomatic_influence = {
+				# who = PER
+				# value = 15
+			# }
+		# }
+		# any_pop = {
+			# ideology = {
+				# factor = 0.02
+				# value = reactionary
+			# }
+			# scaled_militancy = {
+				# factor = 1
+				# ideology = reactionary
+			# }
+		# }
+		# ai_chance = {
+			# factor = 45
+		# }
+	# }
+	# option = {
+		# name = "We will not bow to the Russians!"
+		# RUS = {
+			# country_event = { id = 301026 days = 10 }
+			# diplomatic_influence = {
+				# who = PER
+				# value = -25
+			# }
+		# }
+		# relation = {
+			# who = RUS
+			# value = -20
+		# }
+		# prestige = 2
+		# any_pop = {
+			# ideology = {
+				# factor = -0.01
+				# value = reactionary
+			# }
+			# scaled_militancy = {
+				# factor = -2
+				# ideology = reactionary
+			# }
+		# }
+		# ai_chance = {
+			# factor = 10
+			# modifier = {
+				# RUS = { war = yes }
+				# factor = 5
+			# }
+		# }
+	# }
+# }
+
+# A Cleaning in Tehran
+# country_event = {
+	# id = 301024
+	# is_triggered_only = yes
+
+	# title = "EVTNAME301024"
+	# desc = "EVTDESC301024"
+	# picture = "alexander_griboyedov"
+
+	# option = {
+		# name = "Offer the Shah all the 'help' he needs"
+		# PER = {
+			# country_event = { id = 301027 days = 10 }
+		# }
+		# relation = {
+			# who = PER
+			# value = 10
+		# }
+		# ai_chance = {
+			# factor = 60
+		# }
+	# }
+	# option = {
+		# name = "We are satisfied by how the Shah handled the situation"
+		# PER = {
+			# country_event = { id = 301028 days = 10 }
+		# }
+		# relation = {
+			# who = PER
+			# value = 30
+		# }
+		# ai_chance = {
+			# factor = 40
+		# }
+	# }
+# }
+
+# The Shah Diamond
+# country_event = {
+	# id = 301025
+	# is_triggered_only = yes
+
+	# title = "EVTNAME301025"
+	# desc = "EVTDESC301025"
+	# picture = "shah_diamond"
+
+	# option = {
+		# name = "This will do nicely"
+		# clr_country_flag = the_war_drums
+		# PER = {
+			# country_event = { id = 301028 days = 10 }
+		# }
+		# prestige = 2
+		# relation = {
+			# who = PER
+			# value = 30
+		# }
+		# diplomatic_influence = {
+			# value = 5
+			# who = PER
+		# }
+		# ai_chance = {
+			# factor = 90
+			# modifier = {
+				# factor = 0.5
+				# has_country_flag = the_war_drums
+			# }
+		# }
+	# }
+	# option = {
+		# name = "A diamond? Land is what we are after!"
+		# PER = {
+			# country_event = { id = 301036 days = 10 }
+		# }
+		# ai_chance = {
+			# factor = 10
+			# modifier = {
+				# factor = 0
+				# war = yes
+			# }
+			# modifier = {
+				# factor = 5
+				# has_country_flag = the_war_drums
+			# }
+		# }
+	# }
+# }
 
 # #A Defiant Persia
 # country_event = {
@@ -1245,445 +1245,445 @@ country_event = {
 	# }
 # }
 
-#A Russian Advisor
-#country_event = {
-#	id = 301027
-#	is_triggered_only = yes
-#
-#	title = "EVTNAME301027"
-#	desc = "EVTDESC301027"
-#	picture = "persia_tehran"
-#
-#	option = {
-#		name = "Yes please"
-#		RUS = {
-#			country_event = { id = 301029 days = 10 }
-#			diplomatic_influence = {
-#				who = PER
-#				value = 25
-#			}
-#		}
-#		ENG = {
-#			diplomatic_influence = {
-#				who = PER
-#				value = -15
-#			}
-#		}
-#		relation = {
-#			who = RUS
-#			value = 35
-#		}
-#		add_country_modifier = {
-#			name = western_influences
-#			duration = -1
-#		}
-#		research_points = 1500
-#		any_pop = {
-#			ideology = {
-#				factor = 0.01
-#				value = reactionary
-#			}
-#			scaled_militancy = {
-#				factor = 2
-#				ideology = reactionary
-#			}
-#		}
-#		clergymen = {
-#			ideology = {
-#				factor = 0.02
-#				value = reactionary
-#			}
-#		}
-#		aristocrats = {
-#			ideology = {
-#				factor = 0.01
-#				value = reactionary
-#			}
-#		}
-#		ai_chance = {
-#			factor = 40
-#			modifier = {
-#				factor = 0.2
-#				average_militancy = 3
-#			}
-#		}
-#	}
-#	option = {
-#		name = "It feels like an infringement of our sovereignty"
-#		RUS = {
-#			country_event = { id = 301026 days = 10 }
-#		}
-#		ai_chance = {
-#			factor = 60
-#		}
-#	}
-#}
+# A Russian Advisor
+# country_event = {
+	# id = 301027
+	# is_triggered_only = yes
 
-#The End to the Legation Crisis
-#country_event = {
-#	id = 301028
-#	is_triggered_only = yes
-#
-#	title = "EVTNAME301028"
-#	desc = "EVTDESC301028"
-#	picture = "persia_tehran"
-#
-#	option = {
-#		name = "Good"
-#		relation = {
-#			who = RUS
-#			value = 35
-#		}
-#	}
-#}
+	# title = "EVTNAME301027"
+	# desc = "EVTDESC301027"
+	# picture = "persia_tehran"
 
-#A Russian Advisor - Russia
-#country_event = {
-#	id = 301029
-#	is_triggered_only = yes
-#
-#	title = "EVTNAME301027"
-#	desc = "EVTDESC301029"
-#	picture = "persia_tehran"
-#
-#	option = {
-#		name = "Our influence grows"
-#		diplomatic_influence = {
-#			who = PER
-#			value = 25
-#		}
-#		relation = {
-#			who = PER
-#			value = 15
-#		}
-#		any_pop = {
-#			limit = {
-#				OR = {
-#					type = officers
-#					type = aristocrats
-#				}
-#				OR = {
-#					is_primary_culture = yes
-#					is_accepted_culture = yes
-#				}
-#			}
-#			consciousness = -1
-#			militancy = -1
-#		}
-#	}
-#}
+	# option = {
+		# name = "Yes please"
+		# RUS = {
+			# country_event = { id = 301029 days = 10 }
+			# diplomatic_influence = {
+				# who = PER
+				# value = 25
+			# }
+		# }
+		# ENG = {
+			# diplomatic_influence = {
+				# who = PER
+				# value = -15
+			# }
+		# }
+		# relation = {
+			# who = RUS
+			# value = 35
+		# }
+		# add_country_modifier = {
+			# name = western_influences
+			# duration = -1
+		# }
+		# research_points = 1500
+		# any_pop = {
+			# ideology = {
+				# factor = 0.01
+				# value = reactionary
+			# }
+			# scaled_militancy = {
+				# factor = 2
+				# ideology = reactionary
+			# }
+		# }
+		# clergymen = {
+			# ideology = {
+				# factor = 0.02
+				# value = reactionary
+			# }
+		# }
+		# aristocrats = {
+			# ideology = {
+				# factor = 0.01
+				# value = reactionary
+			# }
+		# }
+		# ai_chance = {
+			# factor = 40
+			# modifier = {
+				# factor = 0.2
+				# average_militancy = 3
+			# }
+		# }
+	# }
+	# option = {
+		# name = "It feels like an infringement of our sovereignty"
+		# RUS = {
+			# country_event = { id = 301026 days = 10 }
+		# }
+		# ai_chance = {
+			# factor = 60
+		# }
+	# }
+# }
 
+# The End to the Legation Crisis
+# country_event = {
+	# id = 301028
+	# is_triggered_only = yes
 
-#A Concession?
-#country_event = {
-#	id = 301030
-#	is_triggered_only = yes
-#
-#	title = "EVTNAME301030"
-#	desc = "EVTDESC301030"
-#	picture = "persia_tehran"
-#
-#	option = {
-#		name = "We Russians are know for our magnanimity..."
-#		prestige = 10
-#		PER = {
-#			country_event = { id = 301028 days = 10 }
-#			any_owned = {
-#				limit = {
-#					OR = {
-#						region = RUS_1102
-#						region = RUS_1098
-#						region = PER_1112
-#					}
-#				}
-#				secede_province = AZB
-#			}
-#			create_vassal = AZB
-#		}
-#		diplomatic_influence = {
-#			who = AZB
-#			value = 400
-#		}
-#		any_pop = {
-#			limit = {
-#				OR = {
-#					type = officers
-#					type = aristocrats
-#				}
-#				OR = {
-#					is_primary_culture = yes
-#					is_accepted_culture = yes
-#				}
-#			}
-#			consciousness = -2
-#			militancy = -2
-#		}
-#		ai_chance = {
-#			factor = 90
-#			modifier = {
-#				factor = 2
-#				has_country_flag = the_war_drums
-#			}
-#		}
-#	}
-#	option = {
-#		name = "Keeping the Caucasus in line is difficult enough as it is..."
-#		PER = {
-#			country_event = { id = 301028 days = 10 }
-#		}
-#		any_pop = {
-#			limit = {
-#				OR = {
-#					type = officers
-#					type = aristocrats
-#				}
-#				OR = {
-#					is_primary_culture = yes
-#					is_accepted_culture = yes
-#				}
-#			}
-#			consciousness = -1
-#			militancy = -1
-#		}
-#		ai_chance = {
-#			factor = 10
-#			modifier = {
-#				factor = 0
-#				has_country_flag = the_war_drums
-#			}
-#		}
-#	}
-#}
+	# title = "EVTNAME301028"
+	# desc = "EVTDESC301028"
+	# picture = "persia_tehran"
 
-#The Death of Alexander Griboyedov, 3
-#country_event = {
-#	id = 301031
-#	is_triggered_only = yes
-#
-#	title = "EVTNAME301022"
-#	desc = "EVTDESC301031"
-#	picture = "persia_dark"
-#
-#	option = {
-#		name = "A close shave"
-#		relation = {
-#			who = RUS
-#			value = 5
-#		}
-#	}
-#}
+	# option = {
+		# name = "Good"
+		# relation = {
+			# who = RUS
+			# value = 35
+		# }
+	# }
+# }
 
-#A Persian Adventure
-#country_event = {
-#	id = 301032
-#	is_triggered_only = yes
-#
-#	title = "EVTNAME301032"
-#	desc = "EVTDESC301032"
-#	picture = "persia_tehran"
-#
-#	option = {
-#		name = "We're ready for a Persian adventure"
-#		PER = {
-#			country_event = { id = 301034 days = 10 }
-#		}
-#		diplomatic_influence = {
-#			who = PER
-#			value = 100
-#		}
-#		relation = {
-#			who = RUS
-#			value = -25
-#		}
-#		ai_chance = {
-#			factor = 20
-#		}
-#	}
-#	option = {
-#		name = "It isn't our fault the Shah can't control the rabble"
-#		PER = {
-#			country_event = { id = 301035 days = 5 }
-#		}
-#		diplomatic_influence = {
-#			who = PER
-#			value = -25
-#		}
-#		ai_chance = {
-#			factor = 60
-#		}
-#	}
-#}
+# A Russian Advisor - Russia
+# country_event = {
+	# id = 301029
+	# is_triggered_only = yes
 
-#British Support
-#country_event = {
-#	id = 301034
-#	is_triggered_only = yes
-#
-#	title = "EVTNAME301034"
-#	desc = "EVTDESC301034"
-#	picture = "persia_tehran"
-#
-#	option = {
-#		name = "Good"
-#		RUS = { clr_country_flag = the_war_drums }
-#	}
-#}
+	# title = "EVTNAME301027"
+	# desc = "EVTDESC301029"
+	# picture = "persia_tehran"
 
-#British Rejection
-#country_event = {
-#	id = 301035
-#	is_triggered_only = yes
-#
-#	title = "EVTNAME301035"
-#	desc = "EVTDESC301035"
-#	picture = "persia_tehran"
-#
-#	option = {
-#		name = "Concessions! Offer the Russians Concessions! [Offer Azerbaijan]"
-#		RUS = {
-#			country_event = { id = 301030 days = 10 }
-#		}
-#		ai_chance = {
-#			factor = 65
-#		}
-#	}
-#
-#	option = {
-#		name = "Then we stand alone!"
-#		RUS = {
-#			country_event = { id = 301026 days = 10 }
-#		}
-#		ai_chance = {
-#			factor = 35
-#		}
-#	}
-#}
-
-#The Russian Hunger
-#country_event = {
-#	id = 301036
-#	is_triggered_only = yes
-#
-#	title = "EVTNAME301036"
-#	desc = "EVTDESC301036"
-#	picture = "persia_tehran"
-#
-#	option = {
-#		name = "Land! Please the Russians with land! [Offer Azerbaijan]"
-#		RUS = {
-#			country_event = { id = 301037 days = 10 }
-#		}
-#		ai_chance = {
-#			factor = 80
-#		}
-#	}
-#
-#	option = {
-#		name = "We will not bow to the Russians!"
-#		RUS = {
-#			country_event = { id = 301026 days = 10 }
-#		}
-#		ai_chance = {
-#			factor = 20
-#		}
-#	}
-#}
-
-#A Concession?
-#country_event = {
-#	id = 301037
-#	is_triggered_only = yes
-#
-#	title = "EVTNAME301037"
-#	desc = "EVTDESC301037"
-#	picture = "persia_tehran"
-#
-#	option = {
-#		name = "We Russians are know for our magnanimity..."
-#		prestige = 10
-#		PER = {
-#			country_event = { id = 301028 days = 10 }
-#			any_owned = {
-#				limit = {
-#					OR = {
-#						region = RUS_1102
-#						region = RUS_1098
-#						region = PER_1112
-#					}
-#				}
-#				secede_province = AZB
-#			}
-#		}
-#		create_vassal = AZB
-#		any_pop = {
-#			limit = {
-#				type = officers
-#				OR = {
-#					is_primary_culture = yes
-#					is_accepted_culture = yes
-#				}
-#			}
-#			consciousness = -2
-#			militancy = -2
-#		}
-#		any_pop = {
-#			limit = {
-#					type = aristocrats
-#				OR = {
-#					is_primary_culture = yes
-#					is_accepted_culture = yes
-#				}
-#			}
-#			consciousness = -2
-#			militancy = -1
-#		}
-#		ai_chance = {
-#			factor = 90
-#			modifier = {
-#				factor = 2
-#				has_country_flag = the_war_drums
-#			}
-#		}
-#	}
-#	option = {
-#		name = "Keeping the Caucasus in line is difficult enough as it is..."
-#		PER = {
-#			country_event = { id = 301028 days = 10 }
-#		}
-#		any_pop = {
-#			limit = {
-#				type = officers
-#				OR = {
-#					is_primary_culture = yes
-#					is_accepted_culture = yes
-#				}
-#			}
-#			consciousness = 2
-#			militancy = 2
-#		}
-#		any_pop = {
-#			limit = {
-#				type = aristocrats
-#				OR = {
-#					is_primary_culture = yes
-#					is_accepted_culture = yes
-#				}
-#			}
-#			consciousness = 2
-#			militancy = 1
-#		}
-#		ai_chance = {
-#			factor = 10
-#			modifier = {
-#				factor = 0
-#				has_country_flag = the_war_drums
-#			}
-#		}
-#	}
-#}
+	# option = {
+		# name = "Our influence grows"
+		# diplomatic_influence = {
+			# who = PER
+			# value = 25
+		# }
+		# relation = {
+			# who = PER
+			# value = 15
+		# }
+		# any_pop = {
+			# limit = {
+				# OR = {
+					# type = officers
+					# type = aristocrats
+				# }
+				# OR = {
+					# is_primary_culture = yes
+					# is_accepted_culture = yes
+				# }
+			# }
+			# consciousness = -1
+			# militancy = -1
+		# }
+	# }
+# }
 
 
-#A Turkish Adventure
+# A Concession?
+# country_event = {
+	# id = 301030
+	# is_triggered_only = yes
+
+	# title = "EVTNAME301030"
+	# desc = "EVTDESC301030"
+	# picture = "persia_tehran"
+
+	# option = {
+		# name = "We Russians are know for our magnanimity..."
+		# prestige = 10
+		# PER = {
+			# country_event = { id = 301028 days = 10 }
+			# any_owned = {
+				# limit = {
+					# OR = {
+						# region = RUS_1102
+						# region = RUS_1098
+						# region = PER_1112
+					# }
+				# }
+				# secede_province = AZB
+			# }
+			# create_vassal = AZB
+		# }
+		# diplomatic_influence = {
+			# who = AZB
+			# value = 400
+		# }
+		# any_pop = {
+			# limit = {
+				# OR = {
+					# type = officers
+					# type = aristocrats
+				# }
+				# OR = {
+					# is_primary_culture = yes
+					# is_accepted_culture = yes
+				# }
+			# }
+			# consciousness = -2
+			# militancy = -2
+		# }
+		# ai_chance = {
+			# factor = 90
+			# modifier = {
+				# factor = 2
+				# has_country_flag = the_war_drums
+			# }
+		# }
+	# }
+	# option = {
+		# name = "Keeping the Caucasus in line is difficult enough as it is..."
+		# PER = {
+			# country_event = { id = 301028 days = 10 }
+		# }
+		# any_pop = {
+			# limit = {
+				# OR = {
+					# type = officers
+					# type = aristocrats
+				# }
+				# OR = {
+					# is_primary_culture = yes
+					# is_accepted_culture = yes
+				# }
+			# }
+			# consciousness = -1
+			# militancy = -1
+		# }
+		# ai_chance = {
+			# factor = 10
+			# modifier = {
+				# factor = 0
+				# has_country_flag = the_war_drums
+			# }
+		# }
+	# }
+# }
+
+# The Death of Alexander Griboyedov, 3
+# country_event = {
+	# id = 301031
+	# is_triggered_only = yes
+
+	# title = "EVTNAME301022"
+	# desc = "EVTDESC301031"
+	# picture = "persia_dark"
+
+	# option = {
+		# name = "A close shave"
+		# relation = {
+			# who = RUS
+			# value = 5
+		# }
+	# }
+# }
+
+# A Persian Adventure
+# country_event = {
+	# id = 301032
+	# is_triggered_only = yes
+
+	# title = "EVTNAME301032"
+	# desc = "EVTDESC301032"
+	# picture = "persia_tehran"
+
+	# option = {
+		# name = "We're ready for a Persian adventure"
+		# PER = {
+			# country_event = { id = 301034 days = 10 }
+		# }
+		# diplomatic_influence = {
+			# who = PER
+			# value = 100
+		# }
+		# relation = {
+			# who = RUS
+			# value = -25
+		# }
+		# ai_chance = {
+			# factor = 20
+		# }
+	# }
+	# option = {
+		# name = "It isn't our fault the Shah can't control the rabble"
+		# PER = {
+			# country_event = { id = 301035 days = 5 }
+		# }
+		# diplomatic_influence = {
+			# who = PER
+			# value = -25
+		# }
+		# ai_chance = {
+			# factor = 60
+		# }
+	# }
+# }
+
+# British Support
+# country_event = {
+	# id = 301034
+	# is_triggered_only = yes
+
+	# title = "EVTNAME301034"
+	# desc = "EVTDESC301034"
+	# picture = "persia_tehran"
+
+	# option = {
+		# name = "Good"
+		# RUS = { clr_country_flag = the_war_drums }
+	# }
+# }
+
+# British Rejection
+# country_event = {
+	# id = 301035
+	# is_triggered_only = yes
+
+	# title = "EVTNAME301035"
+	# desc = "EVTDESC301035"
+	# picture = "persia_tehran"
+
+	# option = {
+		# name = "Concessions! Offer the Russians Concessions! [Offer Azerbaijan]"
+		# RUS = {
+			# country_event = { id = 301030 days = 10 }
+		# }
+		# ai_chance = {
+			# factor = 65
+		# }
+	# }
+
+	# option = {
+		# name = "Then we stand alone!"
+		# RUS = {
+			# country_event = { id = 301026 days = 10 }
+		# }
+		# ai_chance = {
+			# factor = 35
+		# }
+	# }
+# }
+
+# The Russian Hunger
+# country_event = {
+	# id = 301036
+	# is_triggered_only = yes
+
+	# title = "EVTNAME301036"
+	# desc = "EVTDESC301036"
+	# picture = "persia_tehran"
+
+	# option = {
+		# name = "Land! Please the Russians with land! [Offer Azerbaijan]"
+		# RUS = {
+			# country_event = { id = 301037 days = 10 }
+		# }
+		# ai_chance = {
+			# factor = 80
+		# }
+	# }
+
+	# option = {
+		# name = "We will not bow to the Russians!"
+		# RUS = {
+			# country_event = { id = 301026 days = 10 }
+		# }
+		# ai_chance = {
+			# factor = 20
+		# }
+	# }
+# }
+
+# A Concession?
+# country_event = {
+	# id = 301037
+	# is_triggered_only = yes
+
+	# title = "EVTNAME301037"
+	# desc = "EVTDESC301037"
+	# picture = "persia_tehran"
+
+	# option = {
+		# name = "We Russians are know for our magnanimity..."
+		# prestige = 10
+		# PER = {
+			# country_event = { id = 301028 days = 10 }
+			# any_owned = {
+				# limit = {
+					# OR = {
+						# region = RUS_1102
+						# region = RUS_1098
+						# region = PER_1112
+					# }
+				# }
+				# secede_province = AZB
+			# }
+		# }
+		# create_vassal = AZB
+		# any_pop = {
+			# limit = {
+				# type = officers
+				# OR = {
+					# is_primary_culture = yes
+					# is_accepted_culture = yes
+				# }
+			# }
+			# consciousness = -2
+			# militancy = -2
+		# }
+		# any_pop = {
+			# limit = {
+					# type = aristocrats
+				# OR = {
+					# is_primary_culture = yes
+					# is_accepted_culture = yes
+				# }
+			# }
+			# consciousness = -2
+			# militancy = -1
+		# }
+		# ai_chance = {
+			# factor = 90
+			# modifier = {
+				# factor = 2
+				# has_country_flag = the_war_drums
+			# }
+		# }
+	# }
+	# option = {
+		# name = "Keeping the Caucasus in line is difficult enough as it is..."
+		# PER = {
+			# country_event = { id = 301028 days = 10 }
+		# }
+		# any_pop = {
+			# limit = {
+				# type = officers
+				# OR = {
+					# is_primary_culture = yes
+					# is_accepted_culture = yes
+				# }
+			# }
+			# consciousness = 2
+			# militancy = 2
+		# }
+		# any_pop = {
+			# limit = {
+				# type = aristocrats
+				# OR = {
+					# is_primary_culture = yes
+					# is_accepted_culture = yes
+				# }
+			# }
+			# consciousness = 2
+			# militancy = 1
+		# }
+		# ai_chance = {
+			# factor = 10
+			# modifier = {
+				# factor = 0
+				# has_country_flag = the_war_drums
+			# }
+		# }
+	# }
+# }
+
+
+# A Turkish Adventure
 # country_event = {
 	# id = 301040
 
@@ -1749,37 +1749,37 @@ country_event = {
 			# factor = 100
 		# }
 	# }
-	#option = {
-	#	name = "War is a needless distraction."
-	#	set_country_flag = a_turkish_adventure
-	#	prestige = -10
-	#	any_pop = {
-	#		limit = {
-	#			has_pop_culture = kurdish
-	#		}
-	#		militancy = 2
-	#	}
-	#	RUS = {
-	#		diplomatic_influence = {
-	#			who = PER
-	#			value = -15
-	#		}
-	#	}
-	#	relation = {
-	#		who = RUS
-	#		value = -25
-	#	}
-	#	PER_1112 = {
-	#		add_province_modifier = {
-	#			name = nationalist_agitation
-	#			duration = 948
-	#		}
-	#	}
-	#	ai_chance = {
-	#		factor = 1
-	#	}
-	#}
-#}
+	# option = {
+		# name = "War is a needless distraction."
+		# set_country_flag = a_turkish_adventure
+		# prestige = -10
+		# any_pop = {
+			# limit = {
+				# has_pop_culture = kurdish
+			# }
+			# militancy = 2
+		# }
+		# RUS = {
+			# diplomatic_influence = {
+				# who = PER
+				# value = -15
+			# }
+		# }
+		# relation = {
+			# who = RUS
+			# value = -25
+		# }
+		# PER_1112 = {
+			# add_province_modifier = {
+				# name = nationalist_agitation
+				# duration = 948
+			# }
+		# }
+		# ai_chance = {
+			# factor = 1
+		# }
+	# }
+# }
 
 #The Persian War
 # country_event = {

@@ -43,7 +43,15 @@ political_decisions = {
 				diplomatic_influence = { who = THIS value = -200 }
 				leave_alliance = THIS
 			}
-			MEX = {
+			random_country = {
+				limit = {
+					exists = yes
+					OR = {
+						tag = MEX
+						tag = M3X
+						tag = MXM
+					}
+				}
 				leave_alliance = THIS
 				relation = { who = THIS value = -50 }
 			}
@@ -234,18 +242,19 @@ political_decisions = {
 		}
 
 		allow = {
-			OR = {
-				GUA = { exists = yes }
-				NIC = { exists = yes }
-				ELS = { exists = yes }
-				COS = { exists = yes }
-				HON = { exists = yes }
-			}
 			GUA = {
 				OR = {
-					in_sphere = THIS
-					vassal_of = THIS
-					ai = no
+					AND = {
+						exists = yes
+						OR = {
+							in_sphere = THIS
+							vassal_of = THIS
+						}
+					}
+					AND = {
+						ai = no
+						exists = yes
+					}
 					all_core = {
 						OR = {
 							owned_by = THIS
@@ -269,9 +278,17 @@ political_decisions = {
 			}
 			NIC = {
 				OR = {
-					in_sphere = THIS
-					vassal_of = THIS
-					ai = no
+					AND = {
+						exists = yes
+						OR = {
+							in_sphere = THIS
+							vassal_of = THIS
+						}
+					}
+					AND = {
+						ai = no
+						exists = yes
+					}
 					all_core = {
 						OR = {
 							owned_by = THIS
@@ -289,9 +306,17 @@ political_decisions = {
 			}
 			ELS = {
 				OR = {
-					in_sphere = THIS
-					vassal_of = THIS
-					ai = no
+					AND = {
+						exists = yes
+						OR = {
+							in_sphere = THIS
+							vassal_of = THIS
+						}
+					}
+					AND = {
+						ai = no
+						exists = yes
+					}
 					all_core = {
 						OR = {
 							owned_by = THIS
@@ -309,9 +334,17 @@ political_decisions = {
 			}
 			COS = {
 				OR = {
-					in_sphere = THIS
-					vassal_of = THIS
-					ai = no
+					AND = {
+						exists = yes
+						OR = {
+							in_sphere = THIS
+							vassal_of = THIS
+						}
+					}
+					AND = {
+						ai = no
+						exists = yes
+					}
 					all_core = {
 						OR = {
 							owned_by = THIS
@@ -329,9 +362,17 @@ political_decisions = {
 			}
 			HON = {
 				OR = {
-					in_sphere = THIS
-					vassal_of = THIS
-					ai = no
+					AND = {
+						exists = yes
+						OR = {
+							in_sphere = THIS
+							vassal_of = THIS
+						}
+					}
+					AND = {
+						ai = no
+						exists = yes
+					}
 					all_core = {
 						OR = {
 							owned_by = THIS
@@ -356,9 +397,25 @@ political_decisions = {
 				limit = {
 					primary_culture = central_american
 					NOT = { tag = THIS }
-					in_sphere = THIS
+					OR = {
+						in_sphere = THIS
+						vassal_of = THIS
+					}
 				}
 				annex_to = THIS
+			}
+			random_country = {
+				limit = {
+					primary_culture = central_american
+					NOT = { tag = THIS }
+					OR = {
+						in_sphere = THIS
+						vassal_of = THIS
+					}
+					exists = yes
+					ai = no
+				}
+				country_event = 11101
 			}
 			UCA_2186 = { add_core = UCA } #Guatemala
 			UCA_2191 = { add_core = UCA } #El Salvador
@@ -384,6 +441,7 @@ political_decisions = {
 			release_vassal = UCA
 			create_alliance = UCA
 			create_vassal = UCA
+			UCA = { political_reform = federalism }
 			relation = {
 				who = UCA
 				value = 100

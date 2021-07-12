@@ -13,6 +13,7 @@ political_decisions = {
 					tag = RUS
 				}
 			}
+			NOT = { has_country_flag = russia_pls_help_uwu }
 		}
 
 		allow = {
@@ -31,8 +32,76 @@ political_decisions = {
 		}
 
 		effect = {
+			set_country_flag = russia_pls_help_uwu
 			RUS = {
 				country_event = 7979000
+			}
+		}
+		ai_will_do = { factor = 1 }
+	}	
+	
+	#remember you can only get help from ONE gp, remember USA's monroe doctrine. maybe make this an event?
+	
+	england_pls_help_uwu = {
+		picture = map_alaska
+		potential = {
+			tag = LSK
+			is_vassal = no
+			has_global_flag = war_with_LSK
+			NOT = { has_country_flag = england_pls_help_uwu }
+			NOT = { has_country_flag = usa_pls_help_uwu }
+		}
+
+		allow = {
+			RUS = { war_with = THIS }
+			relation = { who = ENG value = 25 }
+			OR = {
+				any_neighbor_country = {
+					OR = {
+						tag = RPL
+						tag = COL
+						tag = CAN
+					}
+					OR = {
+						vassal_of = ENG
+						substate_of = ENG
+						in_sphere = ENG
+					}
+				}
+				any_neighbor_country = {
+					tag = ENG
+				}
+			}
+		}
+
+		effect = {
+			set_country_flag = england_pls_help_uwu
+			RUS = {
+				country_event = 7979000
+			}
+		}
+		ai_will_do = { factor = 1 }
+	}	
+
+	usa_pls_help_uwu = {
+		picture = map_alaska
+		potential = {
+			tag = LSK
+			is_vassal = no
+			has_global_flag = war_with_LSK
+			NOT = { has_country_flag = usa_pls_help_uwu }
+			NOT = { has_country_flag = england_pls_help_uwu }
+		}
+
+		allow = {
+			RUS = { war_with = THIS }
+			relation = { who = USA value = 25 }
+		}
+
+		effect = {
+			set_country_flag = usa_pls_help_uwu
+			RUS = {
+				country_event = 7979003
 			}
 		}
 		ai_will_do = { factor = 1 }

@@ -214,8 +214,10 @@ political_decisions = {
 			factor = 1
 			modifier = {
 				factor = 0
-				tag = NEW
-				vassal_of = ENG
+				OR = {
+					tag = NEW
+					is_vassal = yes
+				}
 			}
 		}
 	}
@@ -278,7 +280,7 @@ political_decisions = {
 				}
 				infrastructure = 1
 			}
-			random_owned = { limit = { owner = { primary_culture = anglo_canadian } } 13 = { change_province_name = "Vancouver" } }
+			13 = { change_province_name = "Vancouver" }
 		}
 		ai_will_do = { factor = 1 }
 	}
@@ -517,28 +519,156 @@ political_decisions = {
 	claim_the_north = {
 		picture = whistlestop_tour
 		potential = {
-			owns = 17
 			OR = {
-				tag = ENG
-				tag = CAN
-				primary_culture = anglo_canadian
-			}
-			OR = {
-				6 = { empty = yes }
-				7 = { empty = yes }
-				8 = { empty = yes }
-			}
-			OR = {
-				2630 = { empty = no }
-				2599 = { empty = no }
+				AND = {
+					OR = {
+						tag = ENG
+						tag = CAN
+						primary_culture = anglo_canadian
+					}
+					17 = {
+						owner = {
+							OR = {
+								vassal_of = THIS
+								substate_of = THIS
+							}
+						}
+					}
+				}
+				AND = {
+					OR = {
+						is_culture_group = east_slavic
+						primary_culture = alaskan
+						primary_culture = japanese
+						primary_culture = ryukyuan
+						is_culture_group = germanic
+					}
+					OR = {
+						2630 = {
+							owner = {
+								OR = {
+									vassal_of = THIS
+									substate_of = THIS
+								}
+							}
+						}
+						2599 = {
+							owner = {
+								OR = {
+									vassal_of = THIS
+									substate_of = THIS
+								}
+							}
+						}
+					}
+				}
+				AND = {
+					OR = {
+						is_culture_group = american_cultures
+						tag = CAS
+						tag = UOR
+						tag = JEF
+						is_culture_group = iberian
+						is_culture_group = latin_american_cultures
+					}
+					OR = {
+						17 = {
+							owner = {
+								OR = {
+									vassal_of = THIS
+									substate_of = THIS
+								}
+							}
+						}
+						2630 = {
+							owner = {
+								OR = {
+									vassal_of = THIS
+									substate_of = THIS
+								}
+							}
+						}
+						2599 = {
+							owner = {
+								OR = {
+									vassal_of = THIS
+									substate_of = THIS
+								}
+							}
+						}
+					}
+				}
 			}
 		}
 		
 		allow = {
+			OR = {
+				6 = {
+					empty = yes
+					any_neighbor_province = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								OR = {
+									vassal_of = THIS
+									substate_of = THIS
+								}
+							}
+						}
+					}
+				}
+				7 = {
+					empty = yes
+					any_neighbor_province = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								OR = {
+									vassal_of = THIS
+									substate_of = THIS
+								}
+							}
+						}
+					}
+				}
+				8 = {
+					empty = yes
+					any_neighbor_province = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								OR = {
+									vassal_of = THIS
+									substate_of = THIS
+								}
+							}
+						}
+					}
+				}
+				2629 = {
+					empty = yes
+					any_neighbor_province = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								OR = {
+									vassal_of = THIS
+									substate_of = THIS
+								}
+							}
+						}
+					}
+				}
+			}
+			invention = mission_to_civilize
+			invention = colonial_negotiations
 		}
 		
 		effect = {
 			6 = {
+				limit = {
+					empty = yes
+				}
 				secede_province = THIS
 				any_pop = {
 					limit = {
@@ -548,6 +678,9 @@ political_decisions = {
 				}
 			}
 			7 = {
+				limit = {
+					empty = yes
+				}
 				secede_province = THIS
 				any_pop = {
 					limit = {
@@ -557,6 +690,21 @@ political_decisions = {
 				}
 			}
 			8 = {
+				limit = {
+					empty = yes
+				}
+				secede_province = THIS
+				any_pop = {
+					limit = {
+						is_culture_group = native_american
+					}
+					literacy = -0.99
+				}
+			}
+			2629 = {
+				limit = {
+					empty = yes
+				}
 				secede_province = THIS
 				any_pop = {
 					limit = {
@@ -567,45 +715,57 @@ political_decisions = {
 			}
 			random_owned = {
 				limit = {
-					province_id = 7
-					any_neighbor_province = { is_core = CAN }
+					owner = {
+						OR = {
+							AND = {
+								OR = {
+									tag = ENG
+									tag = ENL
+								}
+								OR = {
+									RPL = {
+										exists = yes
+										OR = {
+											vassal_of = THIS
+											substate_of = THIS
+										}
+									}
+									CAN = {
+										exists = yes
+										OR = {
+											vassal_of = THIS
+											substate_of = THIS
+										}
+									}
+								}
+							}
+							AND = {
+								NOT = {
+									tag = LSK
+									has_country_flag = alaska_annexed
+								}
+								LSK = {
+									exists = yes
+									OR = {
+										vassal_of = THIS
+										substate_of = THIS
+									}
+								}
+							}
+							AND = {
+								NOT = { tag = VNS }
+								VNS = {
+									exists = yes
+									OR = {
+										vassal_of = THIS
+										substate_of = THIS
+									}
+								}
+							}
+						}
+					}
 				}
-				add_core = CAN
-			}
-			random_owned = {
-				limit = {
-					province_id = 7
-					any_neighbor_province = { is_core = RPL }
-				}
-				add_core = RPL
-			}
-			random_owned = {
-				limit = {
-					province_id = 8
-					any_neighbor_province = { is_core = CAN }
-				}
-				add_core = CAN
-			}
-			random_owned = {
-				limit = {
-					province_id = 8
-					any_neighbor_province = { is_core = RPL }
-				}
-				add_core = RPL
-			}
-			random_owned = {
-				limit = {
-					province_id = 6
-					any_neighbor_province = { is_core = CAN }
-				}
-				add_core = CAN
-			}
-			random_owned = {
-				limit = {
-					province_id = 6
-					any_neighbor_province = { is_core = RPL }
-				}
-				add_core = RPL
+				owner = { country_event = 100063 }
 			}
 		}
 		ai_will_do = { factor = 1 }
@@ -631,37 +791,32 @@ political_decisions = {
 				life_rating = 5 
 				add_province_modifier = {
 					name = recently_built_city
-					duration = 730
+					duration = 1450
 				}
 			}
 		}
 		ai_will_do = { factor = 1 }
 	}
 	
-	#ANON
 	alaskan_frontier = {
 		picture = fort_selkirk
 		potential = {
+			tag = ENG
 			OR = {
-				AND = { 
-					owns = 17
-					tag = ENG
-				}
+				owns = 17
 				AND = {
 					tag = ENG
 					RPL = {
-						vassal_of = ENG
+						OR = {
+							vassal_of = ENG
+							substate_of = ENG
+						}
 						owns = 17
 					}
 				}
 			}
-			OR = {
-				6 = { empty = yes }
-				2629 = { empty = yes }
-				18 = { empty = yes }
-				7 = { empty = yes }
-				8 = { empty = yes }
-			}
+			6 = { empty = yes }
+			NOT = { has_country_flag = alaskan_frontier_taken }
 		}
 		
 		allow = {
@@ -670,26 +825,16 @@ political_decisions = {
 		}
 		
 		effect = {
+			set_country_flag = alaskan_frontier_taken
 			6 = {
 				secede_province = THIS
 				add_core = RPL
-				change_province_name = "Fort Selkirk"
 			}
-			2629 = {
-				secede_province = THIS
-				add_core = RPL
-			}
-			18 = {
-				secede_province = THIS
-				add_core = RPL
-			}
-			7 = {
-				secede_province = THIS
-				add_core = RPL
-			}
-			8 = {
-				secede_province = THIS
-				add_core = RPL
+			any_owned = {
+				limit = {
+					is_core = RPL
+				}
+				secede_province = RPL
 			}
 		}
 		ai_will_do = { factor = 1 }

@@ -66,7 +66,7 @@ political_decisions = {
 			random_country = {
 				limit = {
 					tag = AUS
-					has_global_flag = italian_federation
+					has_global_flag = austrian_outside_italy
 					is_our_vassal = ITF
 				}
 				VEN = {
@@ -84,6 +84,7 @@ political_decisions = {
 						has_pop_culture = croat
 						has_pop_culture = slovene
 						has_pop_culture = north_italian
+						has_pop_culture = venetian
 						has_pop_culture = dalmatian
 						has_pop_culture = polish
 						has_pop_culture = romanian
@@ -277,7 +278,10 @@ political_decisions = {
 		}
 
 		allow = {
-			NOT = { war_with = AUS }
+			NOT = {
+				war_with = AUS
+				has_country_modifier = no_more_war
+			}
 		}
 
 		effect = {
@@ -412,7 +416,8 @@ political_decisions = {
 			#
 			AUS = {
 				prestige = 25
-				create_vassal = HUN
+				# create_vassal = HUN
+				inherit = HUN
 				any_pop = {
 					scaled_militancy = {
 						ideology = liberal
@@ -867,8 +872,6 @@ political_decisions = {
 		}
 	}
 
-
-
 	embrace_czech_minority = {
 		picture = embrace_minority
 		potential = {
@@ -1182,7 +1185,10 @@ political_decisions = {
 					AND = {
 						OR = {
 							primary_culture = north_italian
+							primary_culture = venetian
 							primary_culture = south_italian
+							primary_culture = dalmatian
+							primary_culture = central_italian
 						}
 						owns = 730
 						owns = 728

@@ -333,7 +333,8 @@ PROV3607;El Carmen;;;;;;;;;x
 PROV3608;Muitaco;;;;;;;;;x
 PROV3609;Lake Maracaibo;;;;;;;;;x
 PROV3610;Cabimas;;;;;;;;;x
-PROV3611;Pueblo Bello de Santa Marta;;;;;;;;;x
+#PROV3611;Pueblo Bello de Santa Marta;;;;;;;;;x
+PROV3611;San Sebastián;;;;;;;;;x
 PROV3612;Ciénaga;;;;;;;;;x
 PROV3613;Bocas del Rosario;;;;;;;;;x
 PROV3614;Sinamaica;;;;;;;;;x
@@ -342,7 +343,8 @@ PROV3616;Mocoa;;;;;;;;;x
 PROV3617;Santa Bárbara;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 PROV3618;Tabor;;;;;;;;;x
-PROV3619;Uherské Hradište;;;;;;;;;x
+#PROV3619;Uherské Hradište;;;;;;;;;x
+PROV3619;Kremsier;;;;;;;;;x
 PROV3620;Beli Manastir;;;;;;;;;x
 PROV3621;Kosovska Mitrovica;;;;;;;;;x
 PROV3622;Khotyn;;;;;;;;;x
@@ -440,6 +442,8 @@ AUS_636;Eastern Slovakia;;;;;;;;;x
 AUS_733;Friuli;;;;;;;;;x
 ION_826;Ionian Islands;;;;;;;;;x
 TUR_3636;Herzegovina;;;;;;;;;x
+TUR_3631;Ada Kaleh;;;;;;;;;x
+ENG_3263;Eastern Hugli;;;;;;;;;x
 AUS_736;Trieste;;;;;;;;;x
 AUS_770;Istria;;;;;;;;;x
 AUS_778;Carnaro;;;;;;;;;x
@@ -497,6 +501,8 @@ RUS_361;Kaunas;;;;;;;;;x
 RUS_362;Marijampole;;;;;;;;;x
 RUS_1006;Pskov;;;;;;;;;x
 RUS_945;Vitebsk;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+PROV1077;Shcheglovsk;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 KOK_1195;Ferghana;;;;;;;;;x
 KHI_1191;Khiva;;;;;;;;;x
@@ -743,6 +749,8 @@ PROV276;Bangor;Bangor;Bangor;;Bangor;;;;;;;x;;x;;;;;;;;;;;;;;
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 MEX_2177;Oaxaca;Oaxaca;Oaxaca;;Oaxaca;;;;;;;x;;x;;;;;;;;;;;;;;
 NET_2235;Leeward Antilles;Leeward Antilles;Leeward Antilles;;Leeward Antilles;;;;;;;x;;x;;;;;;;;;;;;;;
+ENG_2224;Northern Lesser Antilles;;;;;;;;;;;x;;x;;;;;;;;;;;;;;
+ENG_2228;Southern Lesser Antilles;;;;;;;;;;;x;;x;;;;;;;;;;;;;;
 ENG_2219;The Bahamas;The Bahamas;The Bahamas;;The Bahamas;;;;;;;x;;x;;;;;;;;;;;;;;
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 SPA_2209;Western Cuba;Western Cuba;Western Cuba;;Western Cuba;;;;;;;x;;x;;;;;;;;;;;;;;
@@ -860,6 +868,7 @@ ossetian;Ossetian;;;;;;;;;;;;;;;;;;;;;;;;x
 manx;Manx;;;;;;;;;;;;;;;;;;;;;;;;x
 cornish;Cornish;;;;;;;;;;;;;;;;;;;;;;;;x
 dalmatian;Italo-Dalmatian;;;;;;;;;;;;;;;;;;;;;;;;x
+venetian;Venetian;;;;;;;;;;;;;;;;;;;;;;;;x
 georgian;Kartvelian;;;;;;;;;;;;;;;;;;;;;;;;x
 #avaral;Avaral;;;;;;;;;;;;;;;;;;;;;;;;x
 #lezgin;Lezgin;;;;;;;;;;;;;;;;;;;;;;;;x
@@ -906,6 +915,9 @@ carpathian_german;Carpatian German;;;;;;;;;;;;;;;;;;;;;;;;x
 danube_german;Danube Swabian;;;;;;;;;;;;;;;;;;;;;;;;x
 baltic_german;Baltic German;;;;;;;;;;;;;;;;;;;;;;;;x
 romansh;Rhaetian;;;;;;;;;;;;;;;;;;;;;;;;x
+szekely;Siculi;;;;;;;;;;;;;;;;;;;;;;;;x
+jasz;Jassy;;;;;;;;;;;;;;;;;;;;;;;;x
+kunok;Cuman;;;;;;;;;;;;;;;;;;;;;;;;x
 ryukyuan;Ryukyuan;;;;;;;;;;;;;;;;;;;;;;;;x
 faroese;Faroese;;;;;;;;;;;;;;;;;;;;;;;;x
 canarian;Canarian;;;;;;;;;;;;;;;;;;;;;;;;x
@@ -915,8 +927,8 @@ californio;Californio;;;;;;;;;;;;;;;;;;;;x
 yucateco;Yucateco;;;;;;;;;;;;;;;;;;;;x
 norteno;Norteño;;;;;;;;;;;;;;;;;;;;x
 karelian;Karelian;;;;;;;;;;;;;;;;;;;;x
-tati;Caspian;;;;;;;;;;;;;;;;;;;;x
-luri;Lur;;;;;;;;;;;;;;;;;;;;x
+tati;Caspian Iranian;;;;;;;;;;;;;;;;;;;;x
+luri;Luristani;;;;;;;;;;;;;;;;;;;;x
 turkic_minor;Turkic Minor;;;;;;;;;;;;;x
 sephardic;Sephardi;;;;;;;;;;;;;x
 mizrahi;Mizrahi;;;;;;;;;;;;;x
@@ -937,7 +949,7 @@ levantine_greek;Levantine Greek;;;;;;;;;;;;;x
 italiot;Italiot Greek;;;;;;;;;;;;;x
 pan_greek;Hellenic;;;;;;;;;;;;;x
 karamanli;Karamanli;;;;;;;;;;;;;x
-yoruk;Yörük;;;;;;;;;;;;;x
+yoruk;Yoruk;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 alaskan;Alyaskan;;;;;;;;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
@@ -1035,34 +1047,45 @@ EVT1100046OPTA;Hurray!;;;;;;;;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
-UBD_colonial_company;Baltische Gouvernement;;;;;;;;;;;;;;;;;;;;;;x,,,
+#UBD_colonial_company;Baltische Gouvernement;;;;;;;;;;;;;;;;;;;;;;x,,,
+UBD_colonial_company;Baltic Governorate;;;;;;;;;;;;;;;;;;;;;;x,,,
+TCA_colonial_company;Caucasus Viceroyalty;;;;;;;;;;;;;;;;;;;;;;x,,,
+TCA_colonial_company_ADJ;Caucasian;;;;;;;;;;;;;;;;;;;;;;x,,,
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
-KSM;Kurländ-Semgallen;;;;;;;;;;;;;;;;;;;;;;x,,,
-KSM_ADJ;Kurländischer;;;;;;;;;;;;;;;;;;;;;;x,,,
-KSM_colonial_company;Kurländisches Gouvernement;;;;;;;;;;;;;;;;;;;;;;x,,,
-KSM_absolute_monarchy;Kurländ-Semgallen;;;;;;;;;;;;;;;;;;;;;;x,,,
-KSM_prussian_constitutionalism;Kurländ-Semgallen;;;;;;;;;;;;;;;;;;;;;;x,,,
-KSM_hms_government;Kurländ-Semgallen;;;;;;;;;;;;;;;;;;;;;;x,,,
+#KSM;Kurländ-Semgallen;;;;;;;;;;;;;;;;;;;;;;x,,,
+KSM;Courland-Semigallia;;;;;;;;;;;;;;;;;;;;;;x,,,
+#KSM_ADJ;Kurländischer;;;;;;;;;;;;;;;;;;;;;;x,,,
+KSM_ADJ;Curonian-Semigallian;;;;;;;;;;;;;;;;;;;;;;x,,,
+#KSM_colonial_company;Kurländisches Gouvernement;;;;;;;;;;;;;;;;;;;;;;x,,,
+KSM_colonial_company;Courland Governorate;;;;;;;;;;;;;;;;;;;;;;x,,,
+KSM_absolute_monarchy;Courland-Semigallia;;;;;;;;;;;;;;;;;;;;;;x,,,
+KSM_prussian_constitutionalism;Courland-Semigallia;;;;;;;;;;;;;;;;;;;;;;x,,,
+KSM_hms_government;Courland-Semigallia;;;;;;;;;;;;;;;;;;;;;;x,,,
 KSM_democracy;Republic of Courland;;;;;;;;;;;;;;;;;;;;;;x,,,
 KSM_fascist_dictatorship;Courland-Semigallia Republic;;;;;;;;;;;;;;;;;;;;;;x,,,
 KSM_proletarian_dictatorship;Curonian Socialist Republic;;;;;;;;;;;;;;;;;;;;;;x,,,
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
-LVN;Livländ;;;;;;;;;;;;;;;;;;;;;;x,,,
+LVN;Livonia;;;;;;;;;;;;;;;;;;;;;;x,,,
+#LVN;Livländ;;;;;;;;;;;;;;;;;;;;;;x,,,
 LVN_ADJ;Livländischer;;;;;;;;;;;;;;;;;;;;;;x,,,
-LVN_colonial_company;Livländisches Gouvernement;;;;;;;;;;;;;;;;;;;;;;x,,,
-LVN_absolute_monarchy;Livländ;;;;;;;;;;;;;;;;;;;;;;x,,,
-LVN_prussian_constitutionalism;Livländ;;;;;;;;;;;;;;;;;;;;;;x,,,
-LVN_hms_government;Livländ;;;;;;;;;;;;;;;;;;;;;;x,,,
+LVN_ADJ;Livländischer;;;;;;;;;;;;;;;;;;;;;;x,,,
+#LVN_colonial_company;Livländisches Gouvernement;;;;;;;;;;;;;;;;;;;;;;x,,,
+LVN_colonial_company;Livonian Governorate;;;;;;;;;;;;;;;;;;;;;;x,,,
+LVN_absolute_monarchy;Livonia;;;;;;;;;;;;;;;;;;;;;;x,,,
+LVN_prussian_constitutionalism;Livonia;;;;;;;;;;;;;;;;;;;;;;x,,,
+LVN_hms_government;Livonia;;;;;;;;;;;;;;;;;;;;;;x,,,
 LVN_democracy;Republic of Livonia;;;;;;;;;;;;;;;;;;;;;;x,,,
 LVN_fascist_dictatorship;Livonian Republic;;;;;;;;;;;;;;;;;;;;;;x,,,
 LVN_proletarian_dictatorship;Livonian Socialist Republic;;;;;;;;;;;;;;;;;;;;;;x,,,
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
-ESG;Esthländ;;;;;;;;;;;;;;;;;;;;;;x,,,
-ESG_ADJ;Esthländischer;;;;;;;;;;;;;;;;;;;;;;x,,,
-ESG_colonial_company;Esthländisches Gouvernement;;;;;;;;;;;;;;;;;;;;;;x,,,
-ESG_absolute_monarchy;Esthländ;;;;;;;;;;;;;;;;;;;;;;x,,,
-ESG_prussian_constitutionalism;Esthländ;;;;;;;;;;;;;;;;;;;;;;x,,,
-ESG_hms_government;Esthländ;;;;;;;;;;;;;;;;;;;;;;x,,,
+ESG;Esthonia;;;;;;;;;;;;;;;;;;;;;;x,,,
+#ESG_ADJ;Esthländischer;;;;;;;;;;;;;;;;;;;;;;x,,,
+ESG_ADJ;Esthonian;;;;;;;;;;;;;;;;;;;;;;x,,,
+#ESG_colonial_company;Esthländisches Gouvernement;;;;;;;;;;;;;;;;;;;;;;x,,,
+ESG_colonial_company;Esthonian Governorate;;;;;;;;;;;;;;;;;;;;;;x,,,
+ESG_absolute_monarchy;Esthonia;;;;;;;;;;;;;;;;;;;;;;x,,,
+ESG_prussian_constitutionalism;Esthonia;;;;;;;;;;;;;;;;;;;;;;x,,,
+ESG_hms_government;Esthonia;;;;;;;;;;;;;;;;;;;;;;x,,,
 ESG_democracy;Republic of Esthonia;;;;;;;;;;;;;;;;;;;;;;x,,,
 ESG_fascist_dictatorship;Esthonian Republic;;;;;;;;;;;;;;;;;;;;;;x,,,
 ESG_proletarian_dictatorship;Esthonian Socialist Republic;;;;;;;;;;;;;;;;;;;;;;x,,,
@@ -1182,6 +1205,21 @@ PLR_proletarian_dictatorship;P.L.R. Commune;;;;;;;;;;;;;;;;;;;;;;x,,,
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
+acquire_vassal_cores_title;Demand cores back from vassal;;;;;;;;;;;;x
+acquire_vassal_cores_desc;A Vassal Nation is currently holding territories which are rightfully ours, it is time to claim them.;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+EVTNAME1000114;The demands of $FROMCOUNTRY$!;;;;;;;;;;;;x
+EVTDESC1000114;Our $FROMCOUNTRY_ADJ$ Overlord demands we hand over each and every one of their cored territories in our nation. What shall we do?;;;;;;;;;;;;x
+EVT1000114OPTA;Simply hand them over.;;;;;;;;;;;;x
+EVT1000114OPTB;Never again shall they toy with out nation!;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+EVTNAME1000115;The demands of $COUNTRY$, the $FROMCOUNTRY$ response. ;;;;;;;;;;;;x
+EVTDESC1000115;Due to our demands, our $FROMCOUNTRY_ADJ$ vassal has decided to stage a little rebellion.;;;;;;;;;;;;x
+EVT1000114OPTB;Then to war it is!;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 POL_colonial_company;Kingdom of Poland;;;;;;;;;;;;;;;;;;;;;;x,,,
 HPL_colonial_company;Kingdom of Poland;;;;;;;;;;;;;;;;;;;;;;x,,,
@@ -1277,8 +1315,8 @@ EVTDESC666666045_NEWS_SHORT;No longer masters of Prussia, the Kingdom of Prussia
 german_question_title;The German Question;;;;;;;;;x
 german_question_desc;In the $COUNTRY_ADJ$'s upper house there exists a minority of hardliners who can all agree on one thing: Germans have no place in $COUNTRY$. For this very reason they have drafted several propositions for the $MONARCHTITLE$ to review, they mostly deal with the destiny of Germans living in the nation. ;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
-depopulation_kraut;German Depopulation;;;;;;;;;x
-depopulation_kraut_desc; ;;;;;;;;;x
+depopulation_kraut;Depopulation;;;;;;;;;x
+depopulation_kraut_desc;This province has been cleansed of those we consider undesirables;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 polonization_modifier;Polonization;;;;;;;;;x
 polonization_modifier_desc; ;;;;;;;;;x
@@ -1547,6 +1585,9 @@ EVTDESC666666086_NEWS_LONG;Horrible news have struck the nation of $COUNTRY$: Th
 EVTDESC666666086_NEWS_MEDIUM;Horrible news have struck the nation of $COUNTRY$: Their monarch, Karol I Ferdynand Habsburg-Lotarynscy, has passed away. The Royal Physician has declared it was due to a stroke, possibly caused by stress. The young heir Karol Stefan Habsburg-Lotarynscy, of 14 years of age, shall inherit the throne…;;;;;;;;;x
 EVTDESC666666086_NEWS_SHORT;Horrible news have struck the nation of $COUNTRY$: Their monarch, Karol I Ferdynand Habsburg-Lotarynscy, has passed away. The young heir Karol Stefan Habsburg-Lotarynscy, of 14 years of age, shall inherit the throne…;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
+form_baluchistan_agency_title;Form the Baluchistan Agency;;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+form_baluchistan_agency_desc;The Baluchi states must be collected into a single state, one which will far better serve our needs in $COUNTRY_ADJ$ India.;;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
 EVTNAME666666087;The Coronation of Karol II Stefan;;;;;;;;;x
 EVTDESC666666087;In the year of our Lord $YEAR$, the young King Karol Stefan has finally come of age, hereby ending the regency period which started four years ago. Happy Birthday, my lord, we must now decide how lavish your Coronation Ceremony -which shall double as your birthday celebration- will be.;;;;;;;;;x
 EVT666666087OPTA;Astonishingly lavish.;;;;;;;;;x
@@ -1808,6 +1849,29 @@ EVTNAME666666120;The Gambian Purchase - The $FROMCOUNTRY_ADJ$ Response;;;;;;;;;x
 EVTDESC666666120;Government officials have come back from $FROMCOUNTRY$ with bad news! They have refused to sell the Colony of Gambia!;;;;;;;;;x
 EVT666666120OPTA;Curses!;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
+EVTNAME100060;Russian Intervention in Hungary!;;;;;;;;;x
+EVTDESC100060;Due to several different factors concerning the rise of nationalist movements within their empire, the Russians have decided to aid us in our struggle against the Hungarians as a way to send a clear message to any would-be revolutionaries.;;;;;;;;;x
+EVTOPTA100060;Excellent!;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+native_assimilation_act_flag;Native Assimilation;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+EVTNAME100067;Native Removal in $PROVINCENAME$;;;;;;;;;x
+EVTDESC100067;All provinces belonging to this region shall undergo a process of systematic ethnic cleansing.;;;;;;;;;x
+EVT100067OPTA;Just as planned.;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+enforce_native_status_title;Enforce our Native Policies on all vassals.;;;;;;;;;x
+enforce_native_status_desc;If true international cooperation is to be achieved, all nations under our suzerainty must adopt the same policy we took on the natives of this continent… But for this plan to come into fruition, we must subsidize its adoption in order to mitigate the economic impact it shall inevitably carry. \n\n§YNOTE: This decision will deduct an amount of ¤ and incur in an infamy penalty based on the type of policy taken and the number of nations under your suzerainty:§W \n§R-Native Protection will deduct 10,000¤ and lower infamy by 1, both multiplied by the number of eligible vassals and substates.§W \n§R-Native Assimilation will deduct 100,000¤ and raise infamy by 0.5, both multiplied by the number of eligible vassals and substates.§W \n§R-Native Removal will deduct 50,000¤ and raise infamy by 1.25, both multiplied by the number of eligible vassals and substates.§W;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+vassal_native_protection;Vassals Protecting Natives;;;;;;;;;x
+vassal_native_assimilation;Vassals Assimilating Natives;;;;;;;;;x
+vassal_native_removal;Vassals Suppressing Natives;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+native_protection_act_enacted;Native Protection Act;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+EVTNAME666666121;Polish Union;;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
+EVTDESC666666121;Now that a Polish nation has been reborn, $FROMCOUNTRY$ has decided to join them!.;;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,
+EVT666666121OPTA;…;;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
 integrate_substates_madagascar_title;Consolidate Imerina rule throughout Madagascar;;;;;;;;;x
 integrate_substates_madagascar_desc;The time has come for the proper integration of all our conquered territories, consolidating our rule throughout the Island of Madagascar and better positioning ourselves for a final campaign against Antankarana to the north. It shall be done.;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
@@ -1897,7 +1961,7 @@ EVT61610017OPTA;They will make a fine addition.;;;;;;;;;x
 EVT61610017OPTB;Let them go, we want no trouble with America.;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 EVTNAME61610018;American Ship Captured!;;;;;;;;;x
-EVTDESC61610018;The Maria, an American Whaling Ship, has been captured by the Islanders of Johanna in the Comoros off the coast of Africa. The American Sailors have been enslaved and the ship has been dismantled by the local Sultan's Harbor Master... Luckily, there is an American Ship sailing nearby, the Dale, which can act under our permission. Several hardliners in the senate are calling for an Expedition to Johanna in order to free our citizens and extract reparations -of about 15,000¤- from the local Sultan.;;;;;;;;;x
+EVTDESC61610018;The Maria, an American Whaling Ship, has been captured by the Islanders of Johanna in the Comoros off the coast of Africa. The American Sailors have been enslaved and the ship has been dismantled by the local Sultan's Harbor Master… Luckily, there is an American Ship sailing nearby, the Dale, which can act under our permission. Several hardliners in the senate are calling for an Expedition to Johanna in order to free our citizens and extract reparations -of about 15,000¤- from the local Sultan.;;;;;;;;;x
 EVT61610018OPTA;It must be done!;;;;;;;;;x
 EVT61610018OPTB;We have no time for this.;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
@@ -1910,7 +1974,7 @@ EVTNAME61610020;Gunboat Diplomacy in $FROMCOUNTRY$!;;;;;;;;;x
 EVTDESC61610020;The Sultan of Johanna has refused to meet our demands, they are keeping the American Sailors in chains. The senate is furious, with some hardliners even suggesting the occupation and eventual pacification of the islanders!;;;;;;;;;x
 EVT61610020OPTA;Then we must fight for their freedom!;;;;;;;;;x
 EVT61610020OPTB;We must civilize these savages!;;;;;;;;;x
-EVT61610020OPTC;We have other matters to attend...;;;;;;;;;x
+EVT61610020OPTC;We have other matters to attend…;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 EVTNAME61610021;Gunboat Diplomacy in $FROMCOUNTRY$!;;;;;;;;;x
 EVTDESC61610021;The Sultan of Johanna has somehow managed to meet our demands, the American Sailors are now free and safe.;;;;;;;;;x
@@ -1938,7 +2002,7 @@ the_lambert_charter_ANON_title;The Lambert Charter;;;;;;;;;x
 the_lambert_charter_ANON_desc;Mr. Lambert, naturalized $COUNTRY_ADJ$ citizen and avid entrepreneur, has been pushing for several reforms in the Merina Kingdom of Madagascar, the most notorious of which is the eponymous charter which gives $COUNTRY$ the exclusive right to exploit all minerals, forests and unoccupied land in Madagascar in exchange for a 10% royalty payable to the Merina monarchy. If the Malagasy accept these conditions, our influence in their court would vastly increase, pushing away any British interlopers.;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 end_the_merina_monarchy_ANON_title;An End to the Merina Monarchy;;;;;;;;;x
-end_the_merina_monarchy_ANON_desc;It is high time we lay claim on the Island of Madagascar before anyone else does. By establishing a protectorate over the Merina Kingdom, we can secure the whole island... And if the Merina refuse, we can always use force.;;;;;;;;;x
+end_the_merina_monarchy_ANON_desc;It is high time we lay claim on the Island of Madagascar before anyone else does. By establishing a protectorate over the Merina Kingdom, we can secure the whole island… And if the Merina refuse, we can always use force.;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 EVTNAME61610025;The Lambert Charter;;;;;;;;;x
 EVTDESC61610025;Mr. Lambert, naturalized $FROMCOUNTRY_ADJ$ citizen and avid entrepreneur, has been of great influence in the $COUNTRY_ADJ$ court, up to the point of proposing several several reforms, the most notorious of which is the eponymous charter which gives $COUNTRY$ the exclusive right to exploit all minerals, forests and unoccupied land in Madagascar in exchange for a 10% royalty for us. If we accept his proposal, $FROMCOUNTRY_ADJ$ influence in our court would vastly increase but likewise will our local industry and relations with them.;;;;;;;;;x
@@ -1995,7 +2059,7 @@ EVTOPTH8181001;Introduce cocoa to the local farmers.;;;;;;;;;x
 EVTOPTZ8181001;Leave Madagascar as it is.;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 jean_laborde_reforms_title;Jean Laborde, the Engineer.;;;;;;;;;x
-jean_laborde_reforms_desc;Jean Laborde, a French national currently residing in Antananarivo, has recently visited the Merina Court in search for sponsorship. Being a more than capable Engineer, he excels in the fields of metal casting, smithing, gun smithing and general production of goods such as cement, glass and explosives. He could become quite the asset for our nation if we were to hire him as our Chief Engineer... Although he demands quite the hefty payment for his services, Mr. Laborde assures his skill and knowledge is unmatched by anyone in the Island of Madagascar.;;;;;;;;;x
+jean_laborde_reforms_desc;Jean Laborde, a French national currently residing in Antananarivo, has recently visited the Merina Court in search for sponsorship. Being a more than capable Engineer, he excels in the fields of metal casting, smithing, gun smithing and general production of goods such as cement, glass and explosives. He could become quite the asset for our nation if we were to hire him as our Chief Engineer… Although he demands quite the hefty payment for his services, Mr. Laborde assures his skill and knowledge is unmatched by anyone in the Island of Madagascar.;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 colonial_exploitation;Colonial Exploitation;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
@@ -2169,14 +2233,14 @@ NAR_democracy;Republic of Nagar;;;;;;;;;;;;;;;;;;;;;;x,,,
 NAR_fascist_dictatorship;Free Nagar Republic;;;;;;;;;;;;;;;;;;;;;;x,,,
 NAR_proletarian_dictatorship;Nagar Socialist Republic;;;;;;;;;;;;;;;;;;;;;;x,,,
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
-DIR;Dhir;;;;;;;;;;;;;;;;;;;;;;x,,,
-DIR_ADJ;Dhir;;;;;;;;;;;;;;;;;;;;;;x,,,
-DIR_absolute_monarchy;Dhir;;;;;;;;;;;;;;;;;;;;;;x,,,
-DIR_prussian_constitutionalism;Dhir;;;;;;;;;;;;;;;;;;;;;;x,,,
-DIR_hms_government;Dhir;;;;;;;;;;;;;;;;;;;;;;x,,,
-DIR_democracy;Republic of Dhir;;;;;;;;;;;;;;;;;;;;;;x,,,
-DIR_fascist_dictatorship;Free Dhir Republic;;;;;;;;;;;;;;;;;;;;;;x,,,
-DIR_proletarian_dictatorship;Dhir Socialist Republic;;;;;;;;;;;;;;;;;;;;;;x,,,
+DHR;Dhir;;;;;;;;;;;;;;;;;;;;;;x,,,
+DHR_ADJ;Dhir;;;;;;;;;;;;;;;;;;;;;;x,,,
+DHR_absolute_monarchy;Dhir;;;;;;;;;;;;;;;;;;;;;;x,,,
+DHR_prussian_constitutionalism;Dhir;;;;;;;;;;;;;;;;;;;;;;x,,,
+DHR_hms_government;Dhir;;;;;;;;;;;;;;;;;;;;;;x,,,
+DHR_democracy;Republic of Dhir;;;;;;;;;;;;;;;;;;;;;;x,,,
+DHR_fascist_dictatorship;Free Dhir Republic;;;;;;;;;;;;;;;;;;;;;;x,,,
+DHR_proletarian_dictatorship;Dhir Socialist Republic;;;;;;;;;;;;;;;;;;;;;;x,,,
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 SWT;Swat;;;;;;;;;;;;;;;;;;;;;;x,,,
 SWT_ADJ;Swati;;;;;;;;;;;;;;;;;;;;;;x,,,
@@ -2504,6 +2568,53 @@ CM4_proletarian_dictatorship;Socialist Republic of Itsandra;;;;;;;;;;;;;;;;;;;;;
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 NYE_theocracy;Zaydi;;;;;;;;;;;;;;;;;;;;;;x,,,
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
+NYC;Manhattan;;;;;;;;;;;;;x
+NYC_ADJ;Manhattanite;;;;;;;;;;;;;x
+NYC_democracy;Free City of Tri-Insula;;;;;;;;;;;;;x
+NYC_democracy_ADJ;New Yorker;;;;;;;;;;;;;x
+NYC_proletarian_dictatorship;Manhattan Commune;;;;;;;;;;;;;;x
+NYC_fascist_dictatorship;Gotham;;;;;;;;;;;;;x
+NYC_fascist_dictatorship_ADJ;Gothamite;;;;;;;;;;;;;x
+NYC_absolute_monarchy;The Empire State;;;;;;;;;;;;;x
+NYC_absolute_monarchy_ADJ;New Yorker;;;;;;;;;;;;;x
+NYC_prussian_constitutionalism;The Empire State;;;;;;;;;;;;;x
+NYC_prussian_constitutionalism_ADJ;New Yorker;;;;;;;;;;;;;x
+NYC_bourgeois_dictatorship;Free City of Tri-Insula;;;;;;;;;;;;;;;;;;;;x
+NYC_bourgeois_dictatorship_ADJ;New Yorker;;;;;;;;;;;;;;;;;;;;x
+NYC_hms_government;Free City of Tri-Insula;;;;;;;;;;;;;x
+NYC_hms_government_ADJ;New Yorker;;;;;;;;;;;;;x
+NYC_theocracy;Diocese of New York;;;;;;;;;;;;;x
+NYC_theocracy_ADJ;New Yorker;;;;;;;;;;;;;x
+NYC_colonial_company;New York;;;;;;;;;;;;;x
+NYC_colonial_company_ADJ;New Yorker;;;;;;;;;;;;;x
+NYC_dominion;New York;;;;;;;;;;;;;x
+NYC_dominion_ADJ;New Yorker;;;;;;;;;;;;;x
+NYC_liberal;Tammany Hall;;;;;;;;;;;;;x;;;;
+NYC_conservative;Reunionists;;;;;;;;;;;;;x;;;;
+NYC_socialist;Socialist Party of New York;;;;;;;;;;;;;x;;;;
+NYC_reactionary;The Know Nothings;;;;;;;;;;;;;x;;;;
+NYC_anarcho_liberal;New Liberty Party;;;;;;;;;;;;;x;;;;
+NYC_communist;Communist Party of New York;;;;;;;;;;;;;x;;;;
+NYC_fascist;Order of United Gothamites;;;;;;;;;;;;;x;;;;
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+AQU;Friuli;;;;;;;;;;;;x
+AQU_ADJ;Friulian;;;;;;;;;;;;x
+AQU_theocracy;Patriarchate of Aquileia;;;;;;;;;;;;x
+AQU_theocracy_ADJ;Aquileian;;;;;;;;;;;;x
+AQU_democracy;Republic of Friuli;;;;;;;;;;;;x
+AQU_absolute_monarchy;Friuli;;;;;;;;;;;;x
+AQU_hms_government;Friuli;;;;;;;;;;;;x
+AQU_prussian_constitutionalism;Friuli;;;;;;;;;;;;x
+AQU_fascist_dictatorship;Patria del Friul;;;;;;;;;;;;;;;;;;;;;;x,,,
+AQU_proletarian_dictatorship;Democratic Republic of Friuli;;;;;;;;;;;;;;;;;;;;;;x,,,
+AQU_conservative;Lega Furlan;;;;;;;;;;;;;x
+AQU_liberal;Moviment pal Friûl;;;;;;;;;;;;;x
+AQU_reactionary;The Patriarchal Faction;;;;;;;;;;;;;x
+AQU_anarcho_liberal;Pat pe Autonomie;;;;;;;;;;;;;x
+AQU_socialist;Convergence pal Friûl;;;;;;;;;;;;;x
+AQU_communist;Partît Communista Furlan;;;;;;;;;;;;;x
+AQU_fascist;Front Furlan;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
 ALT;Altai;;;;;;;;;;;;x
 ALT_democracy;Altai Republic;;;;;;;;;;;;x
 ALT_absolute_monarchy;Altai Uriankhai;;;;;;;;;;;;x
@@ -2513,7 +2624,7 @@ ALT_ADJ;Altaic;;;;;;;;;;;;x
 ALT_conservative;The Conservatives;Faction royale;Königsfraktion;;;;;;;;;;;x
 ALT_liberal;The Liberals;Faction libérale;Die liberale Fraktion;;;;;;;;;;;x
 ALT_reactionary;The Khanate Faction;Faction nationaliste;Die nationalistische Fraktion;;;;;;;;;;;x
-ALT_anarcho_liberal;The Libertains;Faction radicale;Die radikale Fraktion;;;;;;;;;;;x
+ALT_anarcho_liberal;The Libertarians;Faction radicale;Die radikale Fraktion;;;;;;;;;;;x
 ALT_socialist;The Socialists;Faction socialiste;Die sozialistische Fraktion;;;;;;;;;;;x
 ALT_communist;The Communists;Faction communiste;Die kommunistische Fraktion;;;;;;;;;;;x
 ALT_fascist;The Mongolian Faction;Faction fasciste;Die faschistische Fraktion;;;;;;;;;;;x
@@ -2668,6 +2779,7 @@ georgians_accepted_culture_desc;The Georgians who inhabit Transcaucasia have pro
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 CPL_colonial_company;Congress Poland;;;;;;;;;;;;;x
+CPL_dominion;Congress Poland;;;;;;;;;;;;;x
 CPL_conservative;Rada Administracyjna;;;;;;;;;;;;;x
 CPL_liberal;Liberal Party;;;;;;;;;;;;;;;;;;x
 CPL_socialist;Polish Democratic Society;;;;;;;;;;;;;;;;;;x
@@ -3045,17 +3157,33 @@ LBE_ADJ;Lasbeli;;;;;;;;;;;;;;;;;;;;;;;;x
 IKO;Ikonion;;;;;;;;;;;;;;;;;;;;;;;;x
 IKO_ADJ;Ikonian;;;;;;;;;;;;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
-LUS;Lusatia;;;;;;;;;;;;;;;;;;;;;;;;x
-LUS_ADJ;Lusatian;;;;;;;;;;;;;;;;;;;;;;;;x
-LUS_proletarian_dictatorship;Socialist Republic of Lusatia;;;;;;;;;x
-LUS_presidential_dictatorship;Republic of Lusatia;;;;;;;;;x
-LUS_bourgeois_dictatorship;Republic of Lusatia;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+LUZ;Sorbia;;;;;;;;;;;;;;;;;;;;;;;;x
+LUZ_ADJ;Sorbian;;;;;;;;;;;;;;;;;;;;;;;;x
+LUS_proletarian_dictatorship;Socialist Republic of Sorbia;;;;;;;;;x
+LUS_presidential_dictatorship;Sorbia;;;;;;;;;x
+LUS_bourgeois_dictatorship;Lusatia;;;;;;;;;x
 LUS_fascist_dictatorship;United Corporatist Lusatia;;;;;;;;;x
-LUS_absolute_monarchy;Lusatia;;;;;;;;;x
-LUS_prussian_constitutionalism;Lusatia;;;;;;;;;x
-LUS_hms_government;Lusatia;;;;;;;;;x
-LUS_democracy;Lusatia;;;;;;;;;x
+LUS_absolute_monarchy;Sorbia;;;;;;;;;x
+LUS_prussian_constitutionalism;Sorbia;;;;;;;;;x
+LUS_hms_government;Sorbia;;;;;;;;;x
+LUS_democracy;Sorbia;;;;;;;;;x
 LUS_colonial_company;Margraviate of Lusatia;;;;;;;;;x
+LUZ_conservative;Lužiska Alianca;;;;;;;;;;;;;;;;;;;;;;;;x
+LUZ_liberal;Serbska Ludowa Strona;;;;;;;;;;;;;;;;;;;;;;;;x
+LUZ_socialist;Socialdemokratiski Zwjazk Serbskeje;;;;;;;;;;;;;;;;;;;;;;;;x
+LUZ_reactionary;Mila Lužiska;;;;;;;;;;;;;;;;;;;;;;;;x
+LUZ_anarcho_liberal;Zwjazk Lužiskeje;;;;;;;;;;;;;;;;;;;;;;;;x
+LUZ_communist;Mila Pristajenja Serbska;;;;;;;;;;;;;;;;;;;;;;;;x
+LUZ_fascist;Módryskie Košle;;;;;;;;;;;;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+lusatian_awakening_title;The Lusatian National Awakening ;;;;;;;;;;;;;x
+lusatian_awakening_desc;Lusatians have been, without any doubt, the most oppressed of all the Slavic peoples. Our lands have been under German control for as long as even our great-grandfathers remember, and while we may have been slowly colonized over the last centuries, the current one has been the worst for us so far, as the newly-unified German nation has sent all of their colonists swarming into what little remained of our land, trying to rid us of our very own heritage. But now that we have finally been freed from the German yoke, our culture is going to be oppressed no more! This new century will be the age of the Lusatian awakening, and our culture and language will flourish anew! For Lusatia!;;;;;;;;;;;;;x
+reclaim_sorbia_title;The Sorbian lands ;;;;;;;;;;;;;x
+reclaim_sorbia_desc;The Sorbian people used to live in the area that is now east Germany, stretching from the Ore Mountains to the Baltic Sea. Yet, the German invasion has almost ridden the lands of White Serbia of all Slavic presence if not for the land we now call "Lusatia". The German kings of old invaded our native land during the Wendish Crusade with the so-called "intent" to Christianize our pagan ancestors, but their real ambition was soon revealed to genocide our people and replace them with their own kin. Now that the Sorbian Blueshirts have taken over the country, our nationalist government has sworn an oath to reclaim what is rightfully ours, to avenge our ancestors and make the Teutonic scum pay for what they've done. The Sorbian people shall no longer be restricted to an ounce of what their land was, the Sorbian people will have its revenge! Slava!;;;;;;;;;;;;;x
+proclaim_sorbia_title;A Slavic Triumph ;;;;;;;;;;;;;x
+proclaim_sorbia_desc;It is finally over. After years of intense fighting, our armies, alongside our allies', have marched past the German capital and deep into the Teuton beast's territories, going further than our ancestors have ever been. Many of our bloodkin have perished in our great war against our mortal enemy, but their sacrifice wasn't in vain, for we have finally reclaimed the lands of the White Serbs! They will rest easy in their graves, knowing that their descendants will be speaking Sorbian in Sorbian schools in Sorbian-named cities! While we have to keep guard against our now-defeated foe, we may finally begin the process of de-germanization of our ancestral land. For each Sorbian that perished in the war, one thousand Germans will suffer their same fate if not worse. Sorbia will prevail forevermore, Never to be oppressed by the foreigners ever again!;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 ACH;Antioch;;;;;;;;;;;;;;;;;;;;x
 ACH_ADJ;Antiochene;;;;;;;;;;;;;;;;;;;;x
@@ -3073,8 +3201,8 @@ LAZ_ADJ;Laz;;;;;;;;;;;;;;;;;;;;x
 KSH;Kashubia;;;;;;;;;;;;;;;;;;;;x
 KSH_ADJ;Kashubian;;;;;;;;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
-GUR;Guria;;;;;;;;;;;;;;;;;;;;;;;;x
-GUR_ADJ;Gurian;;;;;;;;;;;;;;;;;;;;;;;;x
+GIA;Guria;;;;;;;;;;;;;;;;;;;;;;;;x
+GIA_ADJ;Gurian;;;;;;;;;;;;;;;;;;;;;;;;x
 IME;Imereti;;;;;;;;;;;;;;;;;;;;;;;;x
 IME_ADJ;Imeretian;;;;;;;;;;;;;;;;;;;;;;;;x
 SMA;Samtskhe;;;;;;;;;;;;;;;;;;;;;;;;x
@@ -3446,8 +3574,8 @@ JEF_prussian_constitutionalism;Kingdom of Jefferson;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 MXM_liberal;Partido Monarchista Liberal;;;;;;;;;;;;;x
 MXM_socialist;Partido Revolucionario de los y las Trabajadores;;;;;;;;;;;;;x
-MXM_communist;Partido Communista de Mexico;;;;;;;;;;;;;x
-MXM_anarcho_liberal;Partido Hacendados de Mexico;;;;;;;;;;;;;x
+MXM_communist;Partido Communista de México;;;;;;;;;;;;;x
+MXM_anarcho_liberal;Partido Hacendados de México;;;;;;;;;;;;;x
 MXM_fascist;Union Nacional Sinarquista;;;;;;;;;;;;;x
 MXM;The Mexican Empire;;;;;;;;;;;;;x
 MXM_ADJ;Mexican;;;;;;;;;;;;;x
@@ -3471,7 +3599,9 @@ KGC_fascist_dictatorship;The Golden Circle;;;;;;;;;;;;;;;;;;;;x
 KGC_absolute_monarchy;The Golden Circle Empire;;;;;;;;;;;;;x
 KGC_prussian_constitutionalism;The Golden Circle Empire;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
+M3X;Conservative Mexico;;;;;;;;;;;;;x
 M3X_ADJ;Mexican;;;;;;;;;;;;;x
+M3X_provisional_government;Consevative Government of México;;;;;;;;;;;;;x
 M3X_hms_government;Empire of México;;;;;;;;;;;;;x
 M3X_prussian_constitutionalism;Empire of México;;;;;;;;;;;;;x
 M3X_absolute_monarchy;Empire of México;;;;;;;;;;;;;x
@@ -3519,8 +3649,8 @@ zaydi;Zaydi;;;;;;;;;;;;;;;;;;;;;;;;x
 ismaili;Ismaili;;;;;;;;;;;;;;;;;;;;;;;;x
 anabaptist;Anabaptist;;;;;;;;;;;;;;;;;;;;;;;;x
 atheism;Atheist;;;;;;;;;;;;;;;;;;;;;;;;x
-secularim;Secular;;;;;;;;;;;;;;;;;;;;;;;;x
-control_religion;-;;;;;;;;;;;;;;;;;;;;;;;;x
+secularism;Secularized;;;;;;;;;;;;;;;;;;;;;;;;x
+control_religion;---;;;;;;;;;;;;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 Orthodox;Eastern Orthodox;;;;;;;;;;;;;;;;;;;;;;;;x
 coptic;Oriental Orthodox;;;;;;;;;;;;;;;;;;;;;;;;x
@@ -3685,7 +3815,7 @@ KHM_ADJ;Khemetic;;;;;;;;;;;;;;;;;;;;x
 KHM_democracy;Khemit;;;;;;;;;;;;;;;;;;;;x
 KHM_theocracy;Coptic Metropolitanate;;;;;;;;;;;;;;;;;;;;x
 KHM_presidential_dictatorship;Coptic Republic of Khemit;;;;;;;;;;;;;;;;;;;;x
-KHM_bourgeois_dictatorship;Coptic Republic of Khemit;;;;;;;;;;;;;;;;;;;;x
+KHM_bourgeois_dictatorship;Democratic Republic of Khemit;;;;;;;;;;;;;;;;;;;;x
 KHM_proletarian_dictatorship;Socialist Republic of Khemit;;;;;;;;;;;;;;;;;;;;x
 KHM_fascist_dictatorship;Coptic Republic of Khemit;;;;;;;;;;;;;;;;;;;;x
 KHM_absolute_monarchy;Khemit;;;;;;;;;;;;;x
@@ -3837,9 +3967,16 @@ NSC_fascist_dictatorship_adj;Albannaich;;;;;;;;;;;;;x
 PEI;Prince Edward Island;;;;;;;;;;;;;x
 PEI_ADJ;Edwardian;;;;;;;;;;;;;x
 YWL;Y Wladfa;;;;;;;;;;;;;x
-YWL_ADJ;Patagonian Welsh;;;;;;;;;;;;;x
+YWL_ADJ;Welsh;;;;;;;;;;;;;x
+YWL_colonial_company;Colonia Galesa;;;;;;;;;;;;;x
+YWL_colonial_company_ADJ;Welsh;;;;;;;;;;;;;x
+YWL_dominion;Colonia Galesa;;;;;;;;;;;;;x
+YWL_dominion_ADJ;Welsh;;;;;;;;;;;;;x
 PWL;Y Wladfa;;;;;;;;;;;;;x
 PWL_ADJ;Welsh;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+rename_rawson_title;Rename Rawson ;;;;;;;;;;;;;x
+rename_rawson_desc;Rawson is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
@@ -4009,10 +4146,6 @@ slavonia_rename_byz_title;Rename Slavonia ;;;;;;;;;;;;;x
 slavonia_rename_byz_desc;Slavonia is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;x
 croatia_rename_byz_title;Rename Croatia ;;;;;;;;;;;;;x
 croatia_rename_byz_desc;Croatia is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;x
-slovene_rename_byz_title;Rename Slovenia ;;;;;;;;;;;;;x
-slovene_rename_byz_desc;Slovenia is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;x
-vojvodina_rename_byz_title;Rename Vojvodina ;;;;;;;;;;;;;x
-vojvodina_rename_byz_desc;Vojvodina is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 #EVTOPTD4435;The one about the Turks living in our Homeland. (If aplicable);;;;;;;;;;;;;x
 #claim_greater_greece_title;Claim Greater Greece ;;;;;;;;;;;;;x
@@ -4030,6 +4163,9 @@ claim_nmacedonia_desc;With the completion of the Megali Idea, the glorious Greek
 claim_antioch_title;Claim Antiocheia and Kilikia ;;;;;;;;;;;;;x
 claim_antioch_desc;With the completion of the Megali Idea, the glorious Greek state is once again strong in the world's view. Perhaps this prestige and legitimacy could be used for yet another demonstration of shameless irredentism… Our Greek brothers living abroad in Antiocheia and Kilikia have grown restless, desiring unification to form an even Greater Greece! ;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+rename_slovenia_title;Rename Slovenia ;;;;;;;;;;;;;x
+rename_slovenia_desc;Slovenia is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
@@ -4284,10 +4420,6 @@ greek_rename_dalmatia_desc;Dalmatia is rightfully $COUNTRY_ADJ$, and should use 
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 normal_rename_dalmatia_title;Rename Dalmatia ;;;;;;;;;;;;;x
 normal_rename_dalmatia_desc;Dalmatia is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names. ;;;;;;;;;;;;;x
-greek_rename_istria_title;Rename Istria ;;;;;;;;;;;;;x
-greek_rename_istria_desc;Istria is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names. ;;;;;;;;;;;;;x
-normal_rename_istria_title;Rename Istria ;;;;;;;;;;;;;x
-normal_rename_istria_desc;Istria is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names. ;;;;;;;;;;;;;x
 greek_rename_friuli_title;Rename Friuli ;;;;;;;;;;;;;x
 greek_rename_friuli_desc;Friuli is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names. ;;;;;;;;;;;;;x
 normal_rename_friuli_title;Rename Friuli ;;;;;;;;;;;;;x
@@ -4386,7 +4518,7 @@ claim_la_guajira_desc;Part of the Guajira Peninsula has been part of our State s
 change_capital_FVZ_title;Move the Capital to Caracas;;;;;;;;;;;;;x
 change_capital_FVZ_desc;We own Caracas, the original capital of Venezuela. Should it become the capital once again? ;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
-kraut_military_academy_title;Build a Military Academy for the encouragement of Prussian Military Traditions ;;;;;;;;;;;;;x
+kraut_military_academy_title;Encouraging Prussian Military Traditions ;;;;;;;;;;;;;x
 kraut_military_academy_desc;Constant wars, order and a martially-oriented culture are what define the Prussians better. If we so wish for our armies to become a power to be reckoned with, we must ask for the aid of those who have mastered the art of war: The Germans. ;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 #Events;;;;;;;;;;;;;;;;;;;;;;;;;x
@@ -4705,6 +4837,7 @@ EVTNAME1999999000;A Welsh colony in Patagonia.;;;;;;;;;;;;;x
 EVTDESC1999999000;In $YEAR$, Welsh professor, preacher and nationalist Michael D. Jones, after having spent some time in the United Stated, approached the $COUNTRY_ADJ$ government in order to propose a new "Little Wales beyond Wales", a Welsh-Speaking colony far away from the influence of the English Language. The Patagonia was chosen for its isolation and the fact that our government had offered them a hundred square miles of land along the Chubut River in exchange for settling the still-unconquered land in the name of $COUNTRY$. Shall the $COUNTRY_ADJ$ government grant the request to put Michael D. Jones and his Company in control of a large tract of land in the area known as Lower Chubut for the settling of Welsh Immigrants?;;;;;;;;;;;;;x
 EVTOPT1999999000A;By all means, authorize it!;;;;;;;;;;;;;x
 EVTOPT1999999000B;Turn those damned British spies away.;;;;;;;;;;;;;x
+EVTOPT1999999000C;By all means, authorize it! §Y(Play as)§W;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 EVTNAME1999999001;The Welsh settlement of Esquel.;;;;;;;;;;;;;x
 EVTDESC1999999001;As the settelements of Y Wladfa grow and prosper, in $YEAR$several Welsh Entrepreneurs have approached the $COUNTRY_ADJ$ government once more, this time proposing the colonization of the Andean Piedmont further inland to the west, in the area locally known as Esquel.;;;;;;;;;;;;;x
@@ -4882,7 +5015,7 @@ expel_azeris_GEO_title;Expel the Azeris ;;;;;;;;;;;;;x
 expel_azeris_GEO_desc;The time has come to expel the Azeri Turks from our lands once and for all. ;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 modernize_venenavy_title;The Naval doctrines of Minister Manuel Ezequiel Bruzual ;;;;;;;;;;;;;x
-modernize_venenavy_desc;Manuel Ezequiel Bruzual, Minister of the Navy, has proposed the adoption of several changes to our naval doctrines, mainly the transition from old wind-propelled vessels to the way of the future: Steamer ships. With the help of the Naval Great Powers, Minister Manuel Ezequiel Bruzual has acquired several steamer boats for our navy, along with the logistics and the know-how for these brand new contraptions. ;;;;;;;;;;;;;x
+modernize_venenavy_desc;Manuel Ezequiel Bruzual, Navy Minister, has proposed the adoption of several changes to our naval doctrines, mainly the transition from old wind-propelled vessels to the way of the future: Steamer ships. With the help of the Naval Great Powers, Minister Manuel Ezequiel Bruzual shall acquire several steamer boats for our navy, along with the logistics and the know-how for these brand new contraptions. ;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 abolish_veneslavery_title;Abolish Slavery ;;;;;;;;;;;;;x
 abolish_veneslavery_desc;In $YEAR$, slavery was abolished in $COUNTRY$. It was a long and gradual process which took almost decades to reach completion… Thus as decreed by the $MONARCHTITLE$, slavery shall be outlawed in Venezuela. All former masters shall be paid a small monetary remuneration for each freed slave. ;;;;;;;;;;;;;x
@@ -4958,11 +5091,8 @@ claim_provence_ITALIA_desc;While we had hoped to have no quarrels with France, w
 reverse_treaty_of_milan_title;The Treaty of Turin ($YEAR$) ;;;;;;;;;;;;;x
 reverse_treaty_of_milan_desc;Now that the French have been defeated, their claims on Piemonte have been nullified. ;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
-italian_renamed_provence_title;Rename Provence ;;;;;;;;;;;;;x
-italian_renamed_provence_desc;Provence is rightfully $COUNTRY_ADJ$, and should use Italian names. ;;;;;;;;;;;;;x
-#;;;;;;;;;;;;;;;;;;;;;;;;;x
-french_renamed_provence_title;Rename Provence ;;;;;;;;;;;;;x
-french_renamed_provence_desc;Provence is rightfully $COUNTRY_ADJ$, and should use French names. ;;;;;;;;;;;;;x
+rename_provence_title;Rename Provence ;;;;;;;;;;;;;x
+rename_provence_desc;Provence is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names. ;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 RPL_colonial_company;The Hudson's Bay Company;;;;;;;;;;;;x
@@ -5068,6 +5198,7 @@ GLM_fascist;Obóz Narodowo-Radykalny;;;;;;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 #PZN_colonial_company;Großherzogtum Posen;;;;;;;;;;;;;x
 PZN_colonial_company;Posen;;;;;;;;;;;;;x
+PZN_dominion;Posen;;;;;;;;;;;;;x
 PZN_conservative;Provinziallandtag;;;;;;;;;;;;;;;;;;x
 PZN_liberal;Polnische Partei;;;;;;;;;;;;;;;;;;x
 PZN_socialist;Towarzystwo Demokratyczne Polskie;;;;;;;;;;;;;;;;;;x
@@ -5376,25 +5507,31 @@ EVTDESC999999020;Our friendly Great Power has turned away the gift!;;;;;;;;;;;;;
 EVTOPT999999020A;Curse them!;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 expel_albanians_kosovo_title;Expel the Albanians from Kosovo;;;;;;;;;;;;;x
-expel_albanians_kosovo_desc;Due to the ethnic and religious tensions rising amongst our newly-acquired territories in Kosovo, we could issue a decree of expulsion for every Albanian living there, denying them as well of any claims in our territories. They are an unimportant ethnicity, so the International Community will most likely not pay us any mind.;;;;;;;;;;;;;x
+expel_albanians_kosovo_desc;Due to the ethnic and religious tensions rising amongst our newly-acquired territories in Kosovo, we could issue a decree of expulsion for every Albanian living in the region, denying them as well of any claims in our territories. They are an unimportant ethnicity, so the International Community will most likely not pay us any mind.;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 expel_albanians_macedonia_title;Expel the Albanians from Northern Macedonia;;;;;;;;;;;;;x
-expel_albanians_macedonia_desc;Due to the ethnic and religious tensions rising amongst our newly-acquired territories in Northern Macedonia, we could issue a decree of expulsion for every Albanian living there, denying them as well of any claims in our territories. They are an unimportant ethnicity, so the International Community will most likely not pay us any mind.;;;;;;;;;;;;;x
+expel_albanians_macedonia_desc;Due to the ethnic and religious tensions rising amongst our newly-acquired territories in Northern Macedonia, we could issue a decree of expulsion for every Albanian living in the region, denying them as well of any claims in our territories. They are an unimportant ethnicity, so the International Community will most likely not pay us any mind.;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 expel_albanians_greece_title;Expel the Albanians from Thessalia;;;;;;;;;;;;;x
-expel_albanians_greece_desc;Due to the ethnic and religious tensions rising amongst our newly-acquired territories in Thessalia, we could issue a decree of expulsion for every Albanian living there, denying them as well of any claims in our territories. They are an unimportant ethnicity, so the International Community will most likely not pay us any mind.;;;;;;;;;;;;;x
+expel_albanians_greece_desc;Due to the ethnic and religious tensions rising amongst our newly-acquired territories in Thessalia, we could issue a decree of expulsion for every Albanian living in the region, denying them as well of any claims in our territories. They are an unimportant ethnicity, so the International Community will most likely not pay us any mind.;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 expel_albanians_n_epirus_title;Expel the Albanians from Northern Epirus;;;;;;;;;;;;;x
-expel_albanians_n_epirus_desc;Due to the ethnic and religious tensions rising amongst our newly-acquired territories in Northern Epirus, we could issue a decree of expulsion for every Albanian living there, denying them as well of any claims in our territories. They are an unimportant ethnicity, so the International Community will most likely not pay us any mind.;;;;;;;;;;;;;x
+expel_albanians_n_epirus_desc;Due to the ethnic and religious tensions rising amongst our newly-acquired territories in Northern Epirus, we could issue a decree of expulsion for every Albanian living in the region, denying them as well of any claims in our territories. They are an unimportant ethnicity, so the International Community will most likely not pay us any mind.;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 expel_albanians_montenegro_title;Expel the Albanians from Montenegro;;;;;;;;;;;;;x
-expel_albanians_montenegro_desc;Due to the ethnic and religious tensions rising amongst our newly-acquired territories in Montenegro, we could issue a decree of expulsion for every Albanian living there, denying them as well of any claims in our territories. They are an unimportant ethnicity, so the International Community will most likely not pay us any mind.;;;;;;;;;;;;;x
+expel_albanians_montenegro_desc;Due to the ethnic and religious tensions rising amongst our newly-acquired territories in Montenegro, we could issue a decree of expulsion for every Albanian living in the region, denying them as well of any claims in our territories. They are an unimportant ethnicity, so the International Community will most likely not pay us any mind.;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
-expel_bosniaks_montenegro_title;Expel the Bosniaks from Montenegro;;;;;;;;;;;;;x
-expel_bosniaks_montenegro_desc;Due to the ethnic and religious tensions rising amongst our newly-acquired territories in Montenegro, we could issue a decree of expulsion for every Bosniak living there, denying them as well of any claims in our territories. They are an unimportant ethnicity, so the International Community will most likely not pay us any mind.;;;;;;;;;;;;;x
+expel_bosniaks_montenegro_title;Expel the Bosniaks from Montenegro and Sandzhak;;;;;;;;;;;;;x
+expel_bosniaks_montenegro_desc;Due to the ethnic and religious tensions rising amongst our newly-acquired territories in Montenegro and Sandzhak, we could issue a decree of expulsion for every Bosniak living in the region, denying them as well of any claims in our territories. They are an unimportant ethnicity, so the International Community will most likely not pay us any mind.;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 expel_bosniaks_serbia_title;Expel the Bosniaks from Southern Serbia;;;;;;;;;;;;;x
-expel_bosniaks_serbia_desc;Due to the ethnic and religious tensions rising amongst our newly-acquired territories in Southern Serbia, we could issue a decree of expulsion for every Bosniak living there, denying them as well of any claims in our territories. They are an unimportant ethnicity, so the International Community will most likely not pay us any mind.;;;;;;;;;;;;;x
+expel_bosniaks_serbia_desc;Due to the ethnic and religious tensions rising amongst our newly-acquired territories in Southern Serbia, we could issue a decree of expulsion for every Bosniak living in the region, denying them as well of any claims in our territories. They are an unimportant ethnicity, so the International Community will most likely not pay us any mind.;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+expel_bosniaks_croatia_title;Expel the Bosniaks from Croatia, Slavonia and Dalmatia;;;;;;;;;;;;;x
+expel_bosniaks_croatia_desc;Due to the ethnic and religious tensions rising amongst our newly-acquired territories in Croatia, Slavonia and Dalmatia, we could issue a decree of expulsion for every Bosniak living in the region, denying them as well of any claims in our territories. They are an unimportant ethnicity, so the International Community will most likely not pay us any mind.;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+contain_bosniaks_sarajevo_title;Expel the Bosniaks to Sarajevo;;;;;;;;;;;;;x
+contain_bosniaks_sarajevo_desc;Due to the ethnic and religious tensions rising amongst our newly-acquired territories in Bosnia, we could issue a decree of expulsion for every Bosniak living in the region. Sarajevo shall be their containment area as they already are a sizable minority in the province. They are an unimportant ethnicity, so the International Community will most likely not pay us any mind.;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
@@ -6016,24 +6153,26 @@ JAP_rename_whitehorse_desc;Whitehorse is rightfully $COUNTRY_ADJ$, and should us
 rename_ftross_title;Rename Fort Ross ;;;;;;;;;;;;;x
 rename_ftross_desc;Fort Ross is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names. ;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
-USA_rename_fort_ross_title;Rename Fort Ross ;;;;;;;;;;;;;x
-USA_rename_fort_ross_desc;Fort Ross is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names. ;;;;;;;;;;;;;x
+rename_cali_title;Rename California ;;;;;;;;;;;;;x
+rename_cali_desc;California is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names. ;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
-RUS_rename_fort_ross_title;Rename Fort Ross ;;;;;;;;;;;;;x
-RUS_rename_fort_ross_desc;Fort Ross is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names. ;;;;;;;;;;;;;x
+rename_alaskayukon_title;Rename the Northwest ;;;;;;;;;;;;;x
+rename_alaskayukon_desc;Several Northwestern Territories have come under $COUNTRY_ADJ$ rule, and should use $COUNTRY_ADJ$ names. ;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
-SPA_rename_fort_ross_title;Rename Fort Ross ;;;;;;;;;;;;;x
-SPA_rename_fort_ross_desc;Fort Ross is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names. ;;;;;;;;;;;;;x
+rename_hawaii_title;Rename the Central Pacific ;;;;;;;;;;;;;x
+rename_hawaii_desc;Several Central Pacific Territories have come under $COUNTRY_ADJ$ rule, and should use $COUNTRY_ADJ$ names. ;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
-JAP_rename_fort_ross_title;Rename Fort Ross ;;;;;;;;;;;;;x
-JAP_rename_fort_ross_desc;Fort Ross is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names. ;;;;;;;;;;;;;x
+rename_texas_title;Rename Texas ;;;;;;;;;;;;;x
+rename_texas_desc;Texas is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names. ;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
-CAS_rename_n_california;Southern Jefferson ;;;;;;;;;;;;;x
-CAS_rename_n_california_desc;Southern Jefferson is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names. ;;;;;;;;;;;;;x
+rename_manifestdestiny_title;Rename the North American Claims ;;;;;;;;;;;;;x
+rename_manifestdestiny_desc;Several territories in North America are rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names. ;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
-SPA_rename_n_california;Northern California ;;;;;;;;;;;;;x
-SPA_rename_n_california_desc;Northern California is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names. ;;;;;;;;;;;;;x
+rename_cascadia_title;Rename the Northern Rockies ;;;;;;;;;;;;;x
+rename_cascadia_desc;Several territories in the Northern Rockies are rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names. ;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
+inner_alaska_title;The Alyaskan Hinterlands;;;;;;;;;;;;;x
+inner_alaska_desc;The vast Alyaskan Hinterlands have long been on the rim of our control. We need to cement our claim in the area.;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 the_alaskan_question_title;The Alaskan Question ;;;;;;;;;;;;;x
 the_alaskan_question_desc;With Alaska secured under $COUNTRY_ADJ$ dominion, a heated debate has ensued in $CAPITAL$ concerning the legal status of the original Russian settlers from the former colony of Alaska, their destiny shall be decided in the upcoming hours… ;;;;;;;;;;;;;x
@@ -6046,18 +6185,27 @@ EVTOPT1100002B;All $COUNTRY_ADJ$s must share a common culture, there is no room 
 reorganize_cascadian_territories_title;A Federalist model for Cascadia ;;;;;;;;;;;;;x
 reorganize_cascadian_territories_desc;The $COUNTRY_ADJ$ Nation has finally been consolidated and our old unitary model of governance makes it nigh-impossible to properly manage the vast expanses of land comprising our country. A heated debate has ensued in $CAPITAL$ and after several days of deliberations, our Statesmen have come to the conclusion that Cascadia must follow a federalist model in which every state shall possess a certain degree of autonomy… Our nation must also be restructured in order for this model to work and three states have been proposed: The State of Jefferson shall be the southernmost state, named in honor of US President Thomas Jefferson who facilitated the expedition of Lewis & Clark in the territories which became $COUNTRY$ and comprised of our holdings in Northern California and Southwestern Oregon. The State of Oregon, comprising the territories between the 42nd and 49th parallels, sans those belonging to Jefferson. And the state of Columbia, comprised of the territories between the 49th and the infamous 54°40' parallels. With this new model, $COUNTRY_ADJ$shall enjoy a greater degree of autonomy, which translates in more settlers and more towns and cities founded in our nation.;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
-CAS_from_whitehorse_and_down_title;Whitehorse and Down ;;;;;;;;;;;;;x
+CAS_from_whitehorse_and_down_title;From Whitehorse to the 54° 40’ parallel;;;;;;;;;;;;;x
 CAS_from_whitehorse_and_down_desc;With the acquisition of Alaska many in $COUNTRY$ are calling for the immediate annexation of all territories south of the Yukon River. Those in favor of the idea claim that it is our destiny to establish a contiguous federation north of the 54°40' parallel. A heated debate has ensued and now $COUNTRY$ must decide what to do… ;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
-EVTNAME1100003;Whitehorse and Down ;;;;;;;;;;;;;x
+EVTNAME1100003;From Whitehorse to the 54° 40’ parallel;;;;;;;;;;;;;x
 EVTDESC1100003;With the acquisition of Alaska many in $COUNTRY$ are calling for the immediate annexation of all territories south of the Yukon River. Those in favor of the idea claim that it is our destiny to establish a contiguous federation north of the 54°40' parallel. If we follow through with this demand we can rest assured that the British will not be happy.;;;;;;;;;;;;;x
 EVTOPTA1100003;Manifest Destiny is the way forward! ;;;;;;;;;;;;;x
 EVTOPTB1100003;Not worth our time. ;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
-EVTNAME1100004;Whitehorse and Down ;;;;;;;;;;;;;x
+EVTNAME1100004;From Whitehorse to the 54° 40’ parallel;;;;;;;;;;;;;x
 EVTDESC1100004;The $FROMCOUNTRY_ADJ$ have issued us an ultimatum. They are demanding we renounce and secede all our possessions along the Yukon River and down the continental divide to the $FROMCOUNTRY_ADJ$'s newly acquired Alaskan territories. Refusing would most definitely mean a costly war in North America over more sparsely populated territory. ;;;;;;;;;;;;;x
 EVTOPTA1100004;Might as well. ;;;;;;;;;;;;;x
 EVTOPTB1100004;The $FROMCOUNTRY_ADJ$s will not dictate our colonial holdings. ;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+EVTNAME11111109;From Whitehorse to the 54° 40’ parallel - The $FROMCOUNTRY_ADJ$ Response ;;;;;;;;;;;;;x
+EVTDESC11111109;The $FROMCOUNTRY_ADJ$ have accepted our demands and shall promptly secede all claimed territories ;;;;;;;;;;;;;x
+EVTOPTA11111109;Great! ;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+EVTNAME11111110;From Whitehorse to the 54° 40’ parallel - The $FROMCOUNTRY_ADJ$ Response ;;;;;;;;;;;;;x
+EVTDESC11111110;The $FROMCOUNTRY_ADJ$ have refused to accepted our demands stating that we shall not dictate their colonial holdings!;;;;;;;;;;;;;x
+EVTOPTA11111110;We shall eventually take them by force. ;;;;;;;;;;;;;x
+EVTOPTB11111110;Onwards to relinquish our claims! ;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 klondike_gold_rush;Klondike Gold Rush;;;;;;;;;;;;x
 alaska_gold_rush;Alaskan Gold Rush;;;;;;;;;;;;x
@@ -6142,49 +6290,8 @@ EVT1100017OPTB;Alyaska is not for sale! ;;;;;;;;;;;;x
 developing_fort_ross;Developing Krepost Ross ;;;;;;;;;;;;x
 developing_fort_ross;As one of the southernmost $COUNTRY_ADJ$ holdings in North America, Fort Ross is of extreme importance due to its proximity to the San Francisco Bay, so much that several entrepreneurs have proposed building a proper city in the area, which will be styled after the city of Sevastopol in Crimea. The old settlement is in dire need for investment and plans have been laid already, all we need is some money for the final investment so Fort Ross can capitalize from the aftermath of the Californian Gold Rush. ;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
-SPA_rename_carsoncity_title;Rename Tahoe ;;;;;;;;;;;;;x
-SPA_rename_carsoncity_desc;Tahoe is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;x
-CAS_rename_carsoncity_title;Rename Tahoe ;;;;;;;;;;;;;x
-CAS_rename_carsoncity_desc;Tahoe is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;x
-RUS_rename_carsoncity_title;Tahoe is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;x
-RUS_rename_carsoncity_desc;Tahoe is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;x
-JAP_rename_carsoncity_title;Tahoe is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;x
-JAP_rename_carsoncity_desc;Tahoe is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;x
-#;;;;;;;;;;;;;;;;;;;;;;;;;x
 RUS_claims_north_america_title;$COUNTRY_ADJ$ claims in North America ;;;;;;;;;;;;;x
 RUS_claims_north_america_desc;Russia originally claimed a vast strip of land along the coast of the North American Pacific Coast, from British Columbia to Northern California, but said claims were forgotten ever since the  Adams-Onís Treaty of 1819. With the consolidation of $COUNTRY$’s position in the Americas, it would be wise to renovate these claims, much against the USA and Britain’s wishes… it is our destiny.;;;;;;;;;;;;;x
-#;;;;;;;;;;;;;;;;;;;;;;;;;x
-EVTDESC1100044;We hear word from the Motherland that they are willing to sell their Alaskan colony as they deem it unprofitable and hard to defend, and with the growing hostilities with the British, the sentiment has grown among the investors and the Tsar himself… \n\n Our Homeland, sold to foreigners, just imagine our fate going back to trading pelts in Siberia or Kamchatka to places where we are unwelcomed like China or Japan. This thought has sparked an outrage among some of the colonists who wish to maintain their status quo and their hard-earned properties and serfdom. What shall we do, my governor? ;;;;;;;;;;;;x
-#;;;;;;;;;;;;;;;;;;;;;;;;;x
-EVTNAME1100045;The Russian-American Company Refuses;;;;;;;;;;;;x
-EVTDESC1100045;The Russian American Company, run by fools as always has refused to the changing of hands of their holdings, for the good of the common man we must remove them by force.;;;;;;;;;;;;x
-#;;;;;;;;;;;;;;;;;;;;;;;;;x
-EVTNAME1100046;The End of the Russian Colonization of the Americas;;;;;;;;;;;;x
-EVTDESC1100046;As Russia seeks for a suitable buyer for her Alyaskan colonies, another chapter in the annals of history has been finished. Disheartened, Alyaskans begin to wonder what does the future have in store for them.;;;;;;;;;;;;x
-EVT1100046OPTA;Such is life…;;;;;;;;;;;;x
-#;;;;;;;;;;;;;;;;;;;;;;;;;x
-EVTNAME1100047;The End of the Russian-American Company;;;;;;;;;;;;x
-EVTDESC1100047;The Russian-American Company has defeated the Russian government and has asserted their rule of Alyaska an independent state. The company has restyled itself as a Bourgeois Dictatorship with the former Governor of Alyaska styling himself as the 'Honourable First Among Equals' and ruling with a triumvirate of company excecutives.EVT1100046OPTA;Such is life…;;;;;;;;;;;;x
-#;;;;;;;;;;;;;;;;;;;;;;;;;x
-RUS_rename_ncali_title;Rename Northern California;;;;;;;;;;;;;x
-RUS_rename_ncali_desc;Northern California is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;x
-ENG_rename_ncali_title;Rename Northern California;;;;;;;;;;;;;x
-ENG_rename_ncali_desc;Northern California is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;x
-#;;;;;;;;;;;;;;;;;;;;;;;;;x
-RUS_rename_oregon_title;Rename Oregon;;;;;;;;;;;;;x
-RUS_rename_oregon_desc;Oregon is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;x
-ENG_rename_oregon_title;Rename Oregon;;;;;;;;;;;;;x
-ENG_rename_oregon_desc;Oregon is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;x
-#;;;;;;;;;;;;;;;;;;;;;;;;;x
-RUS_rename_washington_title;Rename Washington;;;;;;;;;;;;;x
-RUS_rename_washington_desc;Washington is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;x
-ENG_rename_washington_title;Rename Washington;;;;;;;;;;;;;x
-ENG_rename_washington_desc;Washington is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;x
-#;;;;;;;;;;;;;;;;;;;;;;;;;x
-RUS_rename_columbia_title;Rename Columbia;;;;;;;;;;;;;x
-RUS_rename_columbia_desc;Columbia is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;x
-ENG_rename_columbia_title;Rename Columbia;;;;;;;;;;;;;x
-ENG_rename_columbia_desc;Columbia is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 LSK;Alyaska;;;;;;;;;;;;;;;;;;;;;;;;x
 LSK_ADJ;Alaskan;;;;;;;;;;;;;;;;;;;;;;;;x
@@ -6221,28 +6328,6 @@ EVTNAME1100018;The Hawaiian Question ;;;;;;;;;;;;;;;;;;;;x
 EVTDESC1100018;With Hawaii secured under $COUNTRY_ADJ$ dominion, a heated debate has ensued in $CAPITAL$ concerning the legal status of the natives of said islands. Several dignitaries, both $COUNTRY_ADJ$ and Hawaiian in origin, have proposed the recognition of Hawaiians, as well as their language and customs, as part of $COUNTRY$, arguing that they will facilitate the settling as well as exploitation of the vast natural resources found in Hawaii… Their origins are also very similar to ours: Settlers and adventurers seeking greater freedom that parted to the unknown and carved their new homes from the untamed wilderness, they are also Christian in faith, which can be deemed as a plus depending who we ask. Both proponents and opponents have been arguing for hours and neither side seems to reach consensus… Ultimately, it is your duty as the $MONARCHTITLE$ of $COUNTRY$ to make the final decision concerning the Hawaiians, for the Islands of Hawaii will nevertheless become a State of our Federation. ;;;;;;;;;;;;;;;;;;;;x
 EVTOPT1100018A;Hawaiians shall become a part of our nation! ;;;;;;;;;;;;;;;;;;;;x
 EVTOPT1100018B;Unwashed savages in our $COUNTRY$? Are you out of your mind? ;;;;;;;;;;;;;;;;;;;;x
-#;;;;;;;;;;;;;;;;;;;;;;;;;x
-RUS_rename_hawaii_title;Rename the Hawaiian Islands;;;;;;;;;;;;;;;;;;;;x
-RUS_rename_hawaii_desc;The Hawaiian Islands are rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;;;;;;;;x
-normal_rename_hawaii_title;Rename the Hawaiian Islands;;;;;;;;;;;;;;;;;;;;x
-normal_rename_hawaii_desc;The Hawaiian Islands are rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;;;;;;;;x
-HAW_rename_hawaii_title;Rename the Hawaiian Islands;;;;;;;;;;;;;;;;;;;;x
-HAW_rename_hawaii_desc;The Hawaiian Islands are rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;;;;;;;;x
-#;;;;;;;;;;;;;;;;;;;;;;;;;x
-RUS_rename_central_pacific_title;Rename the Central Pacific Islands;;;;;;;;;;;;;;;;;;;;x
-RUS_rename_central_pacific_desc;The Central Pacific Islands are rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;;;;;;;;x
-normal_rename_central_pacific_title;Rename the Central Pacific Islands;;;;;;;;;;;;;;;;;;;;x
-normal_rename_central_pacific_desc;The Central Pacific Islands are rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;;;;;;;;x
-HAW_rename_central_pacific_title;Rename the Central Pacific Islands;;;;;;;;;;;;;;;;;;;;x
-HAW_rename_central_pacific_desc;The Central Pacific Islands are rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;;;;;;;;x
-#;;;;;;;;;;;;;;;;;;;;;;;;;x
-RUS_rename_south_line_title;Rename the Southern Line Islands;;;;;;;;;;;;;;;;;;;;x
-RUS_rename_south_line_desc;The Southern Line Islands are rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;;;;;;;;x
-normal_rename_south_line_title;Rename the Southern Line Islands;;;;;;;;;;;;;;;;;;;;x
-normal_rename_south_line_desc;The Southern Line Islands are rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;;;;;;;;x
-HAW_rename_south_line_title;Rename the Southern Line Islands;;;;;;;;;;;;;;;;;;;;x
-HAW_rename_south_line_desc;The Southern Line Islands are rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;;;;;;;;x
-#;;;;;;;;;;;;;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 grosscascadiums_awaken_title;The Cascadian Destiny ;;;;;;;;;;;;;;;;;;;;x
 grosscascadiums_awaken_desc;The destiny of Cascadia is to bring civilization to all the Rockies.  From the Aleutian Islands to the southernmost point of Baja California shall our great nation extend, open for European Settlers from far and wide… Let the Forests of Cascadia sprout on the most inhospitable corners of our continent, it is our destiny! ;;;;;;;;;;;;;;;;;;;;x
@@ -6377,41 +6462,7 @@ EVT1100035OPTA;Opa! ;;;;;;;;;;;;;;;;;;;;x
 SPA_claim_nutca_title;Repel the Nootka Conventions and the Adams–Onís Treaty ;;;;;;;;;;;;;;;;;;;;x
 SPA_claim_nutca_desc;The Nootka Conventions were a series of treaties signed in the late 18th century between the Kingdom of Spain and the Kingdom of Great Britain, signed in the 1790s, which averted a war between the two empires over overlapping claims to portions of the Pacific Northwest coast of North America. The third and last one, The Convention for the Mutual Abandonment of Nootka, called for the mutual abandonment of Nootka Sound. Britain and Spain were both free to use Nootka Sound as a port and erect temporary structures… And the Adams–Onís Treaty was a treaty between the United States and Spain in 1819 that ceded Florida to the U.S. and defined the boundary between the U.S. and New Spain. It settled a standing border dispute between the two countries and was considered a triumph of American diplomacy. It came in the midst of increasing tensions related to Spain's territorial boundaries in North America against the United States and Great Britain in the aftermath of the American Revolution; it also came during the Latin American wars of independence. Seeing as the British clearly broke their end of the deal, and the Americans have attempted to rip our territories away, $COUNTRY$ is in position to repel these dreadful treaties and restore their claims over the region… It is our destiny. ;;;;;;;;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
-spic_rename_oregon_title;Rename Oregon;;;;;;;;;;;;;;;;;;;;x
-spic_rename_oregon_desc;Oregon is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;;;;;;;;x
-#;;;;;;;;;;;;;;;;;;;;;;;;;x
-normal_rename_oregon_title;Rename Oregon;;;;;;;;;;;;;;;;;;;;x
-normal_rename_oregon_desc;Oregon is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;;;;;;;;x
-#;;;;;;;;;;;;;;;;;;;;;;;;;x
-spic_rename_washington_title;Rename Washington;;;;;;;;;;;;;;;;;;;;x
-spic_rename_washington_desc;Washington is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;;;;;;;;x
-#;;;;;;;;;;;;;;;;;;;;;;;;;x
-normal_rename_washington_title;Rename Washington;;;;;;;;;;;;;;;;;;;;x
-normal_rename_washington_desc;Washington is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;;;;;;;;x
-#;;;;;;;;;;;;;;;;;;;;;;;;;x
-spic_rename_columbia_title;Rename Columbia;;;;;;;;;;;;;;;;;;;;x
-spic_rename_columbia_desc;Columbia is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;;;;;;;;x
-#;;;;;;;;;;;;;;;;;;;;;;;;;x
-normal_rename_columbia_title;Rename Columbia;;;;;;;;;;;;;;;;;;;;x
-normal_rename_columbia_desc;Columbia is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;;;;;;;;x
-#;;;;;;;;;;;;;;;;;;;;;;;;;x
-spic_rename_idaho_title;Rename Idaho;;;;;;;;;;;;;;;;;;;;x
-spic_rename_idaho_desc;Idaho is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;;;;;;;;x
-#;;;;;;;;;;;;;;;;;;;;;;;;;x
-normal_rename_idaho_title;Rename Idaho;;;;;;;;;;;;;;;;;;;;x
-normal_rename_idaho_desc;Idaho is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;;;;;;;;x
-#;;;;;;;;;;;;;;;;;;;;;;;;;x
-spic_rename_montana_title;Rename Montana;;;;;;;;;;;;;;;;;;;;x
-spic_rename_montana_desc;Montana is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;;;;;;;;x
-#;;;;;;;;;;;;;;;;;;;;;;;;;x
-normal_rename_montana_title;Rename Montana;;;;;;;;;;;;;;;;;;;;x
-normal_rename_montana_desc;Montana is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;;;;;;;;x
-#;;;;;;;;;;;;;;;;;;;;;;;;;x
-spic_rename_wyoming_2_title;Rename Wyoming;;;;;;;;;;;;;;;;;;;;x
-spic_rename_wyoming_2_desc;Wyoming is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;;;;;;;;x
-#;;;;;;;;;;;;;;;;;;;;;;;;;x
-normal_rename_wyoming_2_title;Rename Wyoming;;;;;;;;;;;;;;;;;;;;x
-normal_rename_wyoming_2_desc;Wyoming is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;;;;;;;;x
+bought_fort_ross;Buyer of Ft. Ross.;;;;;;;;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 liberate_big_texas_title;The Liberation of Texas ;;;;;;;;;;;;;;;;;;;;x
 liberate_big_texas_desc;Envoys from the so-called 'Texan Resistance' have recently contacted our top politicians, pleading for aid to liberate their nation from American yoke. They deeply regret having requested statehood and now they wish to strike a deal with us: A treaty of friendship and mutual cooperation if we help them regain their freedom. Shall we sign it? ;;;;;;;;;;;;;;;;;;;;x
@@ -6698,12 +6749,6 @@ TEX_socialist;Industrial Worker's Party;;;;;;;;;;;;;x
 TEX_communist;Communist Party;;;;;;;;;;;;;x
 TEX_fascist;National Democratic Party;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
-rename_texas_mexico_2_title;Rename Tejas del Este;;;;;;;;;;;;;x
-rename_texas_mexico_2_desc;Now that Tejas is back under our rightful control, we should officially rename the region and its provinces to more fitting names.;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-#;;;;;;;;;;;;;;;;;;;;;;;;;x
-rename_texas_usa_2_title;Rename Texas ;;;;;;;;;;;;;x
-rename_texas_usa_2_desc;Now that Texas is back under our rightful control, we should officially rename the region and its provinces to more fitting names.;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-#;;;;;;;;;;;;;;;;;;;;;;;;;x
 move_capital_133_title;A New Capital for Texas!;;;;;;;;;;;;;x
 move_capital_133_desc;After Vice President Mirabeau B. Lamar visited the area around Waterloo during a buffalo-hunting expedition in $YEAR$, he proposed that the republic's capital, then located in Houston, be relocated to an area situated on the north bank of the Colorado River. He also proposed that the name Waterloo should be changed to Austin, in honor of Stephen F. Austin, the first secretary of state and the father of our great nation.;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
@@ -6949,7 +6994,7 @@ EVTNAME1110057;The Mormon Exodus;;;;;;;;;;;;;x
 EVTDESC1110057;Disgruntled by not being allowed to remain in the Salt Lake Valley, the adventurous Mormons have undergone yet another exodus, this time to the faraway Islands of Hawaii. My liege, this is disastrous, the Mormons are taking over our islands! There is nothing we can do about it other than hoping they are benevolent to our people…;;;;;;;;;;;;;x
 EVTOPTA1110057;How disastrous!;;;;;;;;;;;;;x
 EVTNAME1110057_NEWS_TITLE;The Mormon Exodus;;;;;;;;;;;;;x
-EVTNAME1110057_NEWS_LONG;Disgruntled by not being allowed to remain in the Salt Lake Valley, the adventurous Mormons have undergone yet another exodus, this time to the faraway Islands of Hawaii, where they have taken over the archipelago and declared it the sovereign state of Deseret. When or how did they obtain the copious ammount of money needed to move the Mormon migrants accross the sea remains a mystery, but one this is certain: The Mormons arrived in Hawaii with the intention of staying there. The natives are by no means happy and the sudden influx of migrants have brought many diseases and racial tensions, which have decimated the Hawaiians.;;;;;;;;;;;;;x
+EVTNAME1110057_NEWS_LONG;Disgruntled by not being allowed to remain in the Salt Lake Valley, the adventurous Mormons have undergone yet another exodus, this time to the faraway Islands of Hawaii, where they have taken over the archipelago and declared it the sovereign state of Deseret. When or how did they obtain the copious amount of money needed to move the Mormon migrants accross the sea remains a mystery, but one this is certain: The Mormons arrived in Hawaii with the intention of staying there. The natives are by no means happy and the sudden influx of migrants have brought many diseases and racial tensions, which have decimated the Hawaiians.;;;;;;;;;;;;;x
 EVTNAME1110057_NEWS_MEDIUM;Disgruntled by not being allowed to remain in the Salt Lake Valley, the adventurous Mormons have undergone yet another exodus, this time to the faraway Islands of Hawaii, where they have taken over the archipelago and declared it the sovereign state of Deseret.;;;;;;;;;;;;;x
 EVTNAME1110057_NEWS_SHORT;Disgruntled by not being allowed to remain in the Salt Lake Valley, the adventurous Mormons have undergone yet another exodus, this time to the faraway Islands of Hawaii.;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
@@ -6961,10 +7006,10 @@ EVTDESC1110058;Our top politicians have signed a bill which will turns us into a
 EVTOPTA1110058;Hurray?;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 claim_aridoamerica_title;Claim Aridoamerica;;;;;;;;;;;;;x
-claim_aridoamerica_desc;Aridoamerica, a concept that has been debated among intellectual circles in $COUNTRY$, denotes an ecological and cultural region spanning all of the former Northern Mexico. Because of the relatively hard conditions in this dubbed 'Aridoamerican' area, the peoples living there have developed distinct cultures of substinence farming and free-range ranching. While our languages might be different, our cultures are in the end very similar, giving our top philosophers the idea of a united Aridoamerican county. We are in position to make such ideas into fruition, uniting the hardy peoples of this arid paradise into one country…;;;;;;;;;;;;;x
+claim_aridoamerica_desc;Aridoamerica, a concept that has been debated among intellectual circles in $COUNTRY$, denotes an ecological and cultural region spanning all of the former Northern Mexico. Because of the relatively hard conditions in this dubbed 'Aridoamerican' area, the peoples living there have developed distinct cultures of subsistence farming and free-range ranching. While our languages might be different, our cultures are in the end very similar, giving our top philosophers the idea of a united Aridoamerican county. We are in position to make such ideas into fruition, uniting the hardy peoples of this arid paradise into one country…;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 form_aridoamerica_title;Form Aridoamerica;;;;;;;;;;;;;x
-form_aridoamerica_desc;Aridoamerica, a concept that has been debated among intellectual circles in $COUNTRY$, denotes an ecological and cultural region spanning all of the former Northern Mexico. Because of the relatively hard conditions in this dubbed 'Aridoamerican' area, the peoples living there have developed distinct cultures of substinence farming and free-range ranching. While our languages might be different, our cultures are in the end very similar, giving our top philosophers the idea of a united Aridoamerican county. After having claimed the states which comprise the proposed Aridoamerica, we are in a very favorable position to become a new real, a place for the hardy peoples of Aridoamerica to call home.;;;;;;;;;;;;;x
+form_aridoamerica_desc;Aridoamerica, a concept that has been debated among intellectual circles in $COUNTRY$, denotes an ecological and cultural region spanning all of the former Northern Mexico. Because of the relatively hard conditions in this dubbed 'Aridoamerican' area, the peoples living there have developed distinct cultures of subsistence farming and free-range ranching. While our languages might be different, our cultures are in the end very similar, giving our top philosophers the idea of a united Aridoamerican county. After having claimed the states which comprise the proposed Aridoamerica, we are in a very favorable position to become a new real, a place for the hardy peoples of Aridoamerica to call home.;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 ARD_primary_culture_title;A Main Culture for our Realm.;;;;;;;;;;;;;x
 ARD_primary_culture_desc;We must choose a culture representing our union!;;;;;;;;;;;;;x
@@ -7059,6 +7104,25 @@ chibchan;Chibchan;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 claim_TEX_RGR_TRG_title;Claim Texas-Rio Grande;;;;;;;;;;;;;x
 claim_TEX_RGR_TRG_desc;The territories which comprise the republics of Texas and Rio Grande could easily be claimed, and united by sword if needed be.;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+OCC;Occitania;Occitanie;Occitania;;Occitania;;;;;;;;;x
+OCC_ADJ;Occitan;Occitain;Occitanisch;;Occitano;;;;;;;;;x
+OCC_reactionary;Partit Reiau-Alo;Partit Reiau-Alo;Partit Reiau-Alo;;Partit Reiau-Alo;;;;;;;;;;;x
+OCC_liberal;Partit de lo Nacioun Ã“ucitano;Partit de lo Nacioun Ã“ucitano;Partit de lo Nacioun Ã“ucitano;;;;;;;;;;;x
+OCC_conservative;Partit Counservadouro;Partit Counservadouro;Partit Counservadouro;;Partit Counservadouro;;;;;;;;;;;x
+OCC_socialist;Partit Soucialisto;Partit Soucialisto;Partit Soucialisto;;Partit Soucialisto;;;;;;;;;;;x
+OCC_anarcho_liberal;Partit Anarquisto;Partit Anarquisto;Partit Anarquisto;;Partit Anarquisto;;;;;;;;;;;x
+OCC_communist;Partit Comunisto;Partit Comunisto;Partit Comunisto;;Partit Comunisto;;;;;;;;;;;x
+OCC_fascist;Partit Faissisto;Partit Faissisto;Partit Faissisto;;Partit Faissisto;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
@@ -7397,17 +7461,17 @@ EVTNAME1000070;The Suez Canal, a response from $FROMCOUNTRY$;;;;;;;;;x
 EVTDESC1000070;$FROMCOUNTRY$ states that it is not in their best interest to allow $COUNTRY_ADJ$ meddling in their sovereign territories.;;;;;;;;;x
 EVT1000070OPTA;Curse them!;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
-build_panama_canal_title;Build Panama Canal;Construire le canal de Panama;Panamakanal bauen;;Construir el Canal de Panamá;;;;;;;;;x
-build_panama_canal_desc;Proposals for a Canal across the Panama Isthmus probably date back to the first discovery of the area. Nowhere is the strip of land that unites the North and South American continents thinner than here, and, with the aid of modern engineering, we could shorten the travel time between the Atlantic and The Pacific by several days by building it. All that remains is to obtain permission from the owners of Panama.;Les propositions de construction d'un canal à travers le détroit de Panama remontent probablement à la première découverte de la région. Nulle part ailleurs une bande de terre reliant les continents nord et sud américains n'est aussi étroite qu'à cet endroit et, grâce à l'ingénierie moderne, nous pourrions raccourcir de plusieurs jours les voyages entre les océans Atlantique et Pacifique.;Die Vorschläge für den Bau eines Kanals durch den Isthmus von Panama reichen wahrscheinlich bis zur Entdeckung des Gebiets zurück. Nirgendwo ist die Landverbindung zwischen dem nord- und südamerikanischen Kontinent dünner als hier, und durch den Einsatz modernen Ingenieurswissen könnten wir die Fahrzeit vom Atlantik in den Pazifik um mehrere Tage reduzieren.;;Las propuestas de construcción de un canal a través del Istmo de Panamá probablemente se remonten al primer descubrimiento del área. Se trata del lugar donde la franja de tierra que une los continentes del norte y el sur de América es más fina y, con la ayuda de la ingeniería moderna, podemos recortar en varios días la duración del viaje entre el Atlántico y el Pacífico.;;;;;;;;;x
+build_panama_canal_title;Build Panama Canal;;;;;;;;;;;;;x
+build_panama_canal_desc;Proposals for a Canal across the Panama Isthmus probably date back to the first discovery of the area. Nowhere is the strip of land that unites the North and South American continents thinner than here, and, with the aid of modern engineering, we could shorten the travel time between the Atlantic and The Pacific by several days by building it. All that remains is to obtain permission from the owners of Panama.;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
-EVTNAME1000072;The Panama Canal;;;;;;;;;x
-EVTDESC1000072;A diplomat, as well as several entrepreneurs from $FROMCOUNTRY$, have come to $COUNTRY$ wish a proposition: Establishing a canal through the Panama Isthmus which will join the Pacific and Atlantic Oceans, as well as performing a wonderful feat of modern engineering which will bring much prestige to $COUNTRY$. They wish to obtain a land concession on Balboa so the planning and construction of said canal can be started. My $MONARCHTITLE$, what shall we do about this?;;;;;;;;;x
-EVT1000072OPTA;Very well, we shall concede permission.;;;;;;;;;x
-EVT1000072OPTB;It is not in our best interest.;;;;;;;;;x
+EVTNAME1000071;The Panama Canal;;;;;;;;;x
+EVTDESC1000071;A diplomat, as well as several entrepreneurs from $FROMCOUNTRY$, have come to $COUNTRY$ wish a proposition: Establishing a canal through the Panama Isthmus which will join the Pacific and Atlantic Oceans, as well as performing a wonderful feat of modern engineering which will bring much prestige to $COUNTRY$. They wish to obtain a land concession on Balboa so the planning and construction of said canal can be started. My $MONARCHTITLE$, what shall we do about this?;;;;;;;;;x
+EVT1000071OPTA;Very well, we shall concede permission.;;;;;;;;;x
+EVT1000071OPTB;It is not in our best interest.;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
-EVTNAME1000073;The Panama Canal, a response from $FROMCOUNTRY$;;;;;;;;;x
-EVTDESC1000073;$FROMCOUNTRY$ states that it is not in their best interest to allow $COUNTRY_ADJ$ meddling in their sovereign territories.;;;;;;;;;x
-EVT1000073OPTA;Curse them!;;;;;;;;;x
+EVTNAME1000072;The Panama Canal, a response from $FROMCOUNTRY$;;;;;;;;;x
+EVTDESC1000072;$FROMCOUNTRY$ states that it is not in their best interest to allow $COUNTRY_ADJ$ meddling in their sovereign territories.;;;;;;;;;x
+EVT1000072OPTA;Curse them!;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
@@ -7421,11 +7485,12 @@ volga_don_canal_desc;Building a canal which will link the Black Sea with the Cas
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 volga_don_canal_construction;Volga-Don Canal Under Construction;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
-EVTNAME1000073;Construction of the Volga-Don Canal;;;;;;;;;x
-EVTDESC1000073;Today we will start building the Canal to access the Caspian Sea. Our engineers are ready and a series of surveys of the area of the canal were done. The only thing left to do before we start the construction is define the budget of this colossal project. \n \n This promises to be one massive undertaking and when finished it will be, without a doubt, one of the biggest human achievements for decades to come.;;;;;;;;;x
-EVT1000073PTA;Allow them to have as much money as they need.;;;;;;;;;x
-EVT1000073PTB;Invest a little more than they asked for.;;;;;;;;;x
-EVT1000073PTC;Give them as much as they asked for.;;;;;;;;;x
+EVTNAME1000073;Construction of the Volga-Don Canal;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,
+EVTNAME1000073;Today we will start building the Canal to access the Caspian Sea. Our engineers are ready and a series of surveys of the area of the canal were done. The only thing left to do before we start the construction is define the budget of this colossal project. \n \n This promises to be one massive undertaking and when finished it will be, without a doubt, one of the biggest human achievements for decades to come.;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,
+EVT1000073PTA;Allow them to have as much money as they need. §R((Pay or owe 125 thousand ¤)§W;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,
+EVT1000073OPTB;Invest a little more than they asked for. §R(Pay or owe 95 thousand ¤)§W;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,
+EVT1000073OPTC;Give them as much as they asked for. §R(Pay or owe 75 thousand ¤)§W;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 EVTNAME1000074;The Construction of the Volga-Don Canal is Finished;;;;;;;;;x
 EVTDESC1000074;The canal took years and thousands of workers to be built but today on $YEAR$, the canal was officially opened by the $COUNTRY_ADJ$ ruler for transiting from Rostov-on-Don to Astrakhan. The next day, a ceremony was held in Astrakhan where the $COUNTRY_ADJ$ ruler laid the final stone.;;;;;;;;;x
@@ -7442,7 +7507,7 @@ EVTNAME1000075;The Volga-Don Canal;;;;;;;;;x
 EVTDESC1000075;A diplomat, as well as several entrepreneurs from $FROMCOUNTRY$, have come to $COUNTRY$ wish a proposition: Establishing a canal through the Volga-Don Portage which will join the Black and Caspian Seas, as well as performing a wonderful feat of modern engineering which will bring much prestige to $COUNTRY$. They wish to obtain a land concession on Tsaritsyn so the planning and construction of said canal can be started. My $MONARCHTITLE$, what shall we do about this?;;;;;;;;;x
 EVT1000075OPTA;Very well, we shall concede permission.;;;;;;;;;x
 EVT1000075OPTB;It is not in our best interest.;;;;;;;;;x
-#;;;;;;;;;;;;;;;;;;;;;;;;;x
+;;;;;;;;;;;;;;;;;;;;;;;;;x
 EVTNAME1000076;The Volga-Don Canal, a response from $FROMCOUNTRY$;;;;;;;;;x
 EVTDESC1000076;$FROMCOUNTRY$ states that it is not in their best interest to allow $COUNTRY_ADJ$ meddling in their sovereign territories.;;;;;;;;;x
 EVT1000076OPTA;Curse them!;;;;;;;;;x
@@ -7551,38 +7616,17 @@ claim_rub_al_khali_desc;The Rub' Al-Khali, or the Empty Quarter, lies untouched 
 rename_palanga_title;Rename Palanga ;;;;;;;;;;;;;x
 rename_palanga_desc;Palanga is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
-rename_belimanastir_title;Rename Manastir ;;;;;;;;;;;;;x
-rename_belimanastir_desc;Manastir is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;x
-#;;;;;;;;;;;;;;;;;;;;;;;;;x
 rename_budjak_title;Rename Budjak ;;;;;;;;;;;;;x
 rename_budjak_desc;Budjak is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
-rename_hunbanat_title;Rename Northern Banatia ;;;;;;;;;;;;;x
-rename_hunbanat_desc;Northern Banatia is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;x
-#;;;;;;;;;;;;;;;;;;;;;;;;;x
-rename_serbanat_title;Rename Western Banatia ;;;;;;;;;;;;;x
-rename_serbanat_desc;Western Banatia is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;x
-#;;;;;;;;;;;;;;;;;;;;;;;;;x
-rename_rombanat_title;Rename Eastern Banatia ;;;;;;;;;;;;;x
-rename_rombanat_desc;Eastern Banatia is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;x
-#;;;;;;;;;;;;;;;;;;;;;;;;;x
-rename_baranya_title;Rename Baranya ;;;;;;;;;;;;;x
-rename_baranya_desc;Baranya is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;x
+rename_pannonia_title;Rename the Territories Located in Pannonia ;;;;;;;;;;;;;x
+rename_pannonia_desc;The Territories Located in Pannonia are rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 rename_moravia_title;Rename Moravia ;;;;;;;;;;;;;x
 rename_moravia_desc;Moravia is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
-rename_murska_title;Rename Olšnica ;;;;;;;;;;;;;x
-rename_murska_desc;Olšnica is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;x
-#;;;;;;;;;;;;;;;;;;;;;;;;;x
 rename_syrmia_title;Rename Syrmia ;;;;;;;;;;;;;x
 rename_syrmia_desc;Syrmia is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;x
-#;;;;;;;;;;;;;;;;;;;;;;;;;x
-rename_istria_title;Rename Sudküstenland ;;;;;;;;;;;;;x
-rename_istria_desc;Sudküstenland is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;x
-#;;;;;;;;;;;;;;;;;;;;;;;;;x
-rename_fiume_title;Rename Carnaro ;;;;;;;;;;;;;x
-rename_fiume_desc;Carnaro is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 rename_madagascar_title;Rename Madagascar ;;;;;;;;;;;;;x
 rename_madagascar_desc;Madagascar is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;x
@@ -7602,53 +7646,14 @@ rename_auschwitz_desc;Auschwitz is rightfully $COUNTRY_ADJ$, and should use $COU
 rename_bielsko_title;Rename Bielsko ;;;;;;;;;;;;;x
 rename_bielsko_desc;Bielsko is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
-rename_eastern_slovakia_title;Rename Eastern Slovakia ;;;;;;;;;;;;;x
-rename_eastern_slovakia_desc;Eastern Slovakia is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;x
-#;;;;;;;;;;;;;;;;;;;;;;;;;x
-rename_preshov_title;Rename Preshov ;;;;;;;;;;;;;x
-rename_preshov_desc;Preshov is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;x
-#;;;;;;;;;;;;;;;;;;;;;;;;;x
 rename_vukovar_title;Rename Vukovar ;;;;;;;;;;;;;x
 rename_vukovar_desc;Vukovar is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
-rename_lugoj_title;Rename Lugoj ;;;;;;;;;;;;;x
-rename_lugoj_desc;Lugoj is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;x
+rename_dalmatia_title;Rename Dalmatia ;;;;;;;;;;;;;x
+rename_dalmatia_desc;Dalmatia is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
-rename_baja_title;Rename Baja ;;;;;;;;;;;;;x
-rename_baja_desc;Baja is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;x
-#;;;;;;;;;;;;;;;;;;;;;;;;;x
-rename_mohacs_title;Rename Mohacs ;;;;;;;;;;;;;x
-rename_mohacs_desc;Mohacs is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;x
-#;;;;;;;;;;;;;;;;;;;;;;;;;x
-rename_gradisca_title;Rename Gradisca ;;;;;;;;;;;;;x
-rename_gradisca_desc;Gradisca is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;x
-#;;;;;;;;;;;;;;;;;;;;;;;;;x
-rename_koper_title;Rename Koper ;;;;;;;;;;;;;x
-rename_koper_desc;Koper is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;x
-#;;;;;;;;;;;;;;;;;;;;;;;;;x
-rename_bakar_title;Rename Bakar ;;;;;;;;;;;;;x
-rename_bakar_desc;Bakar is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;x
-#;;;;;;;;;;;;;;;;;;;;;;;;;x
-rename_sushak_title;Rename Sušak ;;;;;;;;;;;;;x
-rename_sushak_desc;Sušak is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;x
-#;;;;;;;;;;;;;;;;;;;;;;;;;x
-rename_kastav_title;Rename Kastav ;;;;;;;;;;;;;x
-rename_kastav_desc;Kastav is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;x
-#;;;;;;;;;;;;;;;;;;;;;;;;;x
-rename_korcula_title;Rename Korcula ;;;;;;;;;;;;;x
-rename_korcula_desc;Korcula is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;x
-#;;;;;;;;;;;;;;;;;;;;;;;;;x
-rename_hercegnovi_title;Rename Herceg Novi ;;;;;;;;;;;;;x
-rename_hercegnovi_desc;Herceg Novi is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;x
-#;;;;;;;;;;;;;;;;;;;;;;;;;x
-rename_postojna_title;Rename Postojna ;;;;;;;;;;;;;x
-rename_postojna_desc;Postojna is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;x
-#;;;;;;;;;;;;;;;;;;;;;;;;;x
-rename_trieste_title;Rename Trieste ;;;;;;;;;;;;;x
-rename_trieste_desc;Trieste is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;x
-#;;;;;;;;;;;;;;;;;;;;;;;;;x
-rename_gorz_title;Rename Gorizia ;;;;;;;;;;;;;x
-rename_gorz_desc;Gorizia is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;x
+rename_AUS_littoral_title;Rename North-Eastern Adriatic Littoral ;;;;;;;;;;;;;x
+rename_AUS_littoral_desc;The North-Eastern Adriatic Littoral is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 rename_udine_title;Rename Udine ;;;;;;;;;;;;;x
 rename_udine_desc;Udine is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;x
@@ -7659,20 +7664,8 @@ rename_chelm_desc;Chelm is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ
 rename_tolmezzo_title;Rename Tolmezzo ;;;;;;;;;;;;;x
 rename_tolmezzo_desc;Tolmezzo is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
-rename_eisenstadt_title;Rename Eisenstadt ;;;;;;;;;;;;;x
-rename_eisenstadt_desc;Eisenstadt is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;x
-#;;;;;;;;;;;;;;;;;;;;;;;;;x
 rename_villach_title;Rename Villach ;;;;;;;;;;;;;x
 rename_villach_desc;Villach is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;x
-#;;;;;;;;;;;;;;;;;;;;;;;;;x
-rename_ungvar_title;Rename Ungvar ;;;;;;;;;;;;;x
-rename_ungvar_desc;Ungvar is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;x
-#;;;;;;;;;;;;;;;;;;;;;;;;;x
-rename_khust_title;Rename Transcarpatia ;;;;;;;;;;;;;x
-rename_khust_desc;Transcarpatia is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;x
-#;;;;;;;;;;;;;;;;;;;;;;;;;x
-rename_svaliava_title;Rename Svaliava ;;;;;;;;;;;;;x
-rename_svaliava_desc;Svaliava is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 rename_suceava_title;Rename Bukovina ;;;;;;;;;;;;;x
 rename_suceava_desc;Bukovina is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;x
@@ -7982,7 +7975,7 @@ EVT777777031OPTB;No, we have no use for such backwater country. ;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 EVTNAME777777032;The lease of Darjeeling;;;;;;;;;;;;;x
 EVTDESC777777032;In 1835 the Governor General of the East India Company acquired the hill tracts of Darjeeling, leased by the Chogyal of $COUNTRY$, to build a sanitorium for their sick residents. The Chogyal of Sikkim desires his lease back, shall we give it to him? Due to a legal loophole in our contract, we can press colonial claims on the area even if we give it back. ;;;;;;;;;;;;;x
-EVT777777032OPTA;Then give it back, we'll take it by force.  ;;;;;;;;;;;;;x
+EVT777777032OPTA;Then give it back, we shall legally take it by force.  ;;;;;;;;;;;;;x
 EVT777777032OPTB;Just give it back, I don't care. ;;;;;;;;;;;;;x
 EVT777777032OPTC;Never, it's ours now… ;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
@@ -8494,6 +8487,27 @@ EVTNAME1100047;The Colonization of the Southern Columbia District;;;;;;;;;;;;;;;
 EVTDESC1100047;The Southern Columbia District shall now fall in our hands as no other country has claims on it. ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 EVTOPTA1100047;Hurray!;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
+EVTNAME11111107;The Colonization of the Northern Oregon Territory;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+EVTDESC11111107;The Northern Oregon Territory shall now fall in our hands as no other country has claims on it. ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+EVTOPTA11111107;Hurray!;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+EVTDESC1100049;We hear word from the Motherland that they are willing to sell their Alaskan colony as they deem it unprofitable and hard to defend, and with the growing hostilities with the British, the sentiment has grown among the investors and the Tsar himself… \n\n Our Homeland, sold to foreigners, just imagine our fate going back to trading pelts in Siberia or Kamchatka to places where we are unwelcomed like China or Japan. This thought has sparked an outrage among some of the colonists who wish to maintain their status quo and their hard-earned properties and serfdom. What shall we do, my governor? ;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+EVTNAME11111100;The Russian-American Company Refuses;;;;;;;;;;;;x
+EVTDESC11111100;The Russian American Company, run by fools as always has refused to the changing of hands of their holdings, for the good of the common man we must remove them by force.;;;;;;;;;;;;x
+EVT11111100OPTA;They shall pay for this betrayal!;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+EVTNAME11111101;The End of the Russian Colonization of the Americas;;;;;;;;;;;;x
+EVTDESC11111101;As Russia seeks for a suitable buyer for her Alyaskan colonies, another chapter in the annals of history has been finished. Disheartened, Alyaskans begin to wonder what does the future have in store for them.;;;;;;;;;;;;x
+EVT11111101OPTA;Such is life…;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+EVTNAME11111102;The End of the Russian-American Company;;;;;;;;;;;;x
+EVTDESC11111102;The Russian-American Company has defeated the Russian government and has asserted their rule of Alyaska an independent state. The company has restyled itself as a Bourgeois Dictatorship with the former Governor of Alyaska styling himself as the 'Honourable First Among Equals' and ruling with a triumvirate of company excecutives.
+EVT11111102OPTA;Such is life…;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+build_aracaju_title;Build Aracaju;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+build_aracaju_desc;"In 1855 the capital of the Province of Sergipe was transferred from São Cristóvão to Aracaju located on the coast. The city planning became known as ""Quadrado de Pirro"" because it was similar to a chess board";;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+PROV2435;São Cristóvão;;;;;;;;;;;;;;;;;;;x;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
@@ -8894,23 +8908,26 @@ EVTNAME1220071;Secessionist Alliance - The $FROMCOUNTRY$ response ;;;;;;;;;;;;x
 EVTDESC1220071;$FROMCOUNTRY$ has refused to forge an alliance.;;;;;;;;;;;;x
 EVT1220071OPTA;Curses!;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
-EVTNAME1220072;The occupation of $PROVINCENAME$ ;;;;;;;;;;;;x
-EVTDESC1220072;Soldiers occupying $PROVINCENAME$ have begun looting and performing morally questionable acts upon the non-Mayan populace as an act of vengeance, going as far as committing rape and murder. Shall we stop them?;;;;;;;;;;;;x
+EVTNAME1220072;The occupation of Yucatan ;;;;;;;;;;;;x
+EVTDESC1220072;Soldiers occupying Yucatecan provinces have begun looting and performing questionable acts upon the non-Mayan populace, going as far as committing rape and murder, all in the name of vengeance. Shall we stop them?;;;;;;;;;;;;x
 EVT1220072OPTA;Our thirst for vengeance must be quenched!;;;;;;;;;;;;x
 EVT1220072OPTB;We cannot lose our minds over this!;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+CSC_genocide_title;The Maya Occupation;;;;;;;;;;;;x
+CSC_genocide_desc;As the Caste War rages on, we have inevitably occupied another enemy province, which brings us and our soldiers to take a very important decision: The spoils of war and the thirst for vengeance. ;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 EVTNAME1220073;The Maya Occupation ;;;;;;;;;;;;x
 EVTDESC1220073;Mayan soldiers are committing atrocities across the latest province they've managed to occupy.;;;;;;;;;;;;x
 EVT1220073OPTA;They must be stopped!;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 spencer_mariscal_treaty_title;The Spencer-Mariscal Treaty;;;;;;;;;;;;x
-spencer_mariscal_treaty_desc;The Spencer-Mariscal Treaty is a proposition drafted by the $COUNTRY_ADJ$ Government to the British Empire which consists in a reduction of arms trafficking to the Maya-controlled territories of Chan Santa Cruz in exchange of strengthening bilateral relations between our nations. By sending it to the British Empire, we could only hope they ratify it so the Maya hostilities in Yucatan can die down. ;;;;;;;;;;;;x
+spencer_mariscal_treaty_desc;The Spencer-Mariscal Treaty drafted by the $COUNTRY_ADJ$ Government to the British Empire consists in a proposed ban of arms trafficking from British Honduras to the Maya-controlled territories of Chan Santa Cruz, as well as a plea to condemn the Maya Revolt in order to strengthen the bilateral relations between our nations. By this treaty, we hope the support Mayas obtain from British Merchants and Landlords in Belize ceases, further weakening their rebellion. ;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 EVTNAME1220074;The Spencer-Mariscal Treaty ;;;;;;;;;;;;x
 EVTDESC1220074;The $FROMCOUNTRY$s wish to ratify a proposition made to "strengthen the bilateral relations between our two nations" by reducing, or even ceasing, the supply of armaments to the Maya territories of Chan Santa Cruz. Of course we cannot simply give in and ratify the treaty, as strengthening the bilateral relations of our two nations is hardly a payoff for that. \n \n Indeed we should demand something more so we can equal the loss of our Mayan friends at Chan Santa Cruz, some of our politicians have proposed that In order to stop recognizing the Chan Santa Cruz, $COUNTRY$ needs $FROMCOUNTRY$ to renounce all claims in Belize.;;;;;;;;;;;;x
 EVT1220074OPTA;It is legitimately fair that they renounce to Belize.;;;;;;;;;;;;x
 EVT1220074OPTB;We cannot simply give up Chan Santa Cruz…;;;;;;;;;;;;x
-EVT1220074OPTC;Simply stop funding the rebels… This is too much trouble;;;;;;;;;;;;x
+EVT1220074OPTC;Simply stop funding the rebels… This is too much trouble.;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 EVTNAME1220075;The Spencer-Mariscal Treaty - The $FROMCOUNTRY_ADJ$ Response;;;;;;;;;;;;x
 EVTDESC1220075;$FROMCOUNTRY$ wishes to ratify the treaty, but in order to do so, we must first renounce to all claims on their Belize colony.;;;;;;;;;;;;x
@@ -8992,9 +9009,30 @@ EVT1220090OPTB; ;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
+assert_qeshm_title;Assert Dominance over Qeshm;;;;;;;;;;;;x
+assert_qeshm_desc;For too long have foreign powers controlled the strategic island of Qeshm. It is time to restore order and our prestige!;;;;;;;;;;;;x
+EVTNAME999999025;$FROMCOUNTRY$ Asserts Dominance over Qeshm;;;;;;;;;;;;x
+EVTDESC999999025;Qeshm, the strategically located Gulf Island belonging to $FROMCOUNTRY$. Home to our Naval Base and centre of $COUNTRY_ADJ$ economic interest in the region. While the island was not officially $COUNTRY_ADJ$, in light of our economic and diplomatic presence there and the lack of $FROMCOUNTRY_ADJ$ authority, the general held opinion was that it might as well have been. Recent changes in the $FROMCOUNTRY_ADJ$ administration, however, have given them sufficient influence in the region to reassert their authority over the island.;;;;;;;;;;;;x
+EVT999999025OPTA;It was worthless anyway!;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+neutrality_modifier;Political Neutrality;;;;;;;;;;;;;x,,,,
+neutrality_modifier_desc;Our country deliberately takes no sides. We do not go to war, even against those the world universally reviles, and thus expect that no one shall go to war against us. This means we will likely never achieve recognition as a 'mover and shaker', but it also protects us. We shall not abandon our principles for the sake of power and influence.;;;;;;;;;;;;;x,
+EVTDESC10229_NEWS_LONG;With the $COUNTRY_ADJ$ people seemingly ready to break down the government’s doors, demanding constitutional reform, the $COUNTRY_ADJ$ Kaiser has pondered the wisdom in perhaps giving it to them. Some moderate reforms, allowing the masses their vote but retaining ultimate power for the $COUNTRY_ADJ$ aristocracy and the Kaiser, should please them enough to dispel this rabble… or so he appears to assume.;;;;;;;;;;;;x,,,,
+EVTDESC10229_NEWS_MEDIUM;With the $COUNTRY_ADJ$ people seemingly ready to break down the government’s doors, demanding constitutional reform, the $COUNTRY_ADJ$ Kaiser has pondered the wisdom in perhaps giving them at least some moderate freedoms to appease them.;;;;;;;;;;;;x,,,,,,
+EVTDESC10229_NEWS_SHORT;With the $COUNTRY_ADJ$ people demanding constitutional reform, the $COUNTRY_ADJ$ Kaiser has pondered the wisdom in perhaps giving them at least some moderate freedoms to appease them.;;;;;;;;;;;;x,,,,,,,
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
+end_war_nec_title;End Wars with Non-Existent Countries;;;;;;;;;;;;;
+end_war_nec_desc;This decision serves to end wars with non-existent nations should you find yourself at war with one.;;;;;;;;;;;;;
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
+craftsmen_fix_desc;Fix the craftsmen bug. This is when you have a province that has craftsmen of a non-accepted culture and none of an accepted culture. It forces all promoting pops to become the culture of the craftsmen.;;;;;;;;;;;;;
+craftsmen_fix_title;Craftsmen bug fix;;;;;;;;;;;;;
+craftsmen_fix_cooldown;Craftsmen Fix Cooldown;;;;;;;;;;;;;
+craftsmen_fix_cooldown_desc;Craftsmen Fix Cooldown is 10 years.;;;;;;;;;;;;;
+EVTNAME9999901;Craftsmen Exploit Salvage (Part 1);;;;;;;;;;;;;
+EVTDESC9999901;This event converts all non-core/non-accepted craftsmen into farmers if they are on your cores. Part 2 will spawn in 3 days, be sure to select this option FIRST.;;;;;;;;;;;;;
+EVTNAME9999902;Craftsmen Exploit Salvage (Part 2);;;;;;;;;;;;;
+EVTDESC9999902;This event converts all 100% unemployed farmers into laborers.;;;;;;;;;;;;;
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
@@ -9051,6 +9089,98 @@ intern_jain_desc;"The first main goal of the $COUNTRY_ADJ$ measures must be stri
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 intern_atheist_title;Article 3: Atheist Internment Camps;;;;;;;;;;;;;;;x
 intern_atheist_desc;"The first main goal of the $COUNTRY_ADJ$ measures must be strict segregation of the Atheists from the rest of the population. In the execution of this, first of all, is the seizing of the Atheist population by the introduction of a registration order and similar appropriate measures. All rights of freedom for Atheists are to be withdrawn. They are to be placed in internment camps and at the same time are to be separated according to sexes. These internment camps can be placed under the supervision of their own Atheist self-government with Atheist officials. The guarding of the boundaries between the internment camps and the outer world, is, however, the duty of the Police."\n\n§YAdds 6 points to the "slowdown" scale. Starting at 4 points, every 2 points will decrease speed by 20%.;;;;;;;;;;;;;;;;;;x;;;;;;;;;;;;;;x;;;;;;;;;;;;;;x;;;;;;;;;;;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+U01;Utility - Goods;;;;;;;;;;;;;x
+U01_ADJ;Utility - Goods;;;;;;;;;;;;;x
+U02;Utility - Canals;;;;;;;;;;;;;x
+U02_ADJ;Utility - Canals;;;;;;;;;;;;;x
+U03;Utility - Monuments;;;;;;;;;;;;;x
+U03_ADJ;Utility - Monuments;;;;;;;;;;;;;x
+U04;Utility - Events I;;;;;;;;;;;;;x
+U04_ADJ;Utility - Events I;;;;;;;;;;;;;x
+#U05;Utility - Native Suppression;;;;;;;;;;;;;x
+U05;Utility - Pop Manipulation;;;;;;;;;;;;;x
+U05_ADJ;Utility - Population;;;;;;;;;;;;;x
+U06;Utility - Events II;;;;;;;;;;;;;x
+U06_ADJ;Utility - Events II;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+utility_culture;Utility;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+EVTNAME100070;Iconic Monument;;;;;;;;;;;;;x
+EVTDESC100070;We are in possession of an Iconic Monument, truly a feat of $COUNTRY_ADJ$ ingenuity!;;;;;;;;;;;;;x
+EVT100070OPTA;Hurray!;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+destroy_statue_of_liberty_title;Destroy the Statue of Liberty;;;;;;;;;;;;;;;x
+destroy_statue_of_liberty_desc;By giving the order for our troops occupying New York to destroy the Statue of Liberty we can deal a huge blow to our enemy's prestige and make it so it's more likely for the war to end sooner. This will be seen as an incredible act of aggression, however, and will forever damage our relations with them and some of our citizens, as well as their citizens, will be extremely angry by such heinous act against one of their national monuments.;;;;;;;;;;;;;X,,,,,,,,,,,,,,
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+EVTNAME152009876;The Destruction of the Statue of Liberty;;;;;;;;;;;;;;;x
+EVTDESC152009876;Heavy street fighting erupts in the cramped streets of Manhattan as $FROMCOUNTRY_ADJ$ gunboats blockade the Upper Bay. Artillery is moved to the Port of New York, past improvised barriers while infantry runs away from the harbor and move systematically from building to building, block by block, fighting a running battle against armed irregulars. The Brooklyn Bridge is demolished by $FROMCOUNTRY_ADJ$ engineers while the batteries in the Port of New York set their sights on the Statue of Liberty. For several minutes the city is taken by the fog of war after which a deafening silence befalls... Then, suddenly, a single detonation breaks the stillness, followed by $FROMCOUNTRY_ADJ$ soldiers who shout excitedly as they watch the head of Lady Liberty blow up while several other batteries purposely miss their marks, hitting the city's skyline on the other side of the bay. \n \n Fires rage out of control in the city, lighting up the sky as fighting in the inner city continues well into the early hours of the morning. At Ellis Island, once the fires have subsided, soldiers hoist the $FROMCOUNTRY_ADJ$ flag in what is left of the statue's podium, and turn to see the sun rising behind the smoldering ruins in the horizon. New York is lost.;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,
+EVT152009876OPTA;A dark day for $COUNTRY$.;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+EVTNAME79796000;An Atheist Society;;;;;;;;;;;;;x
+EVTDESC79796000;True to our party's religious policy, the nation of $COUNTRY$ shall embrace Atheism.;;;;;;;;;;;;;x
+EVT79796000OPTA;...;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+EVTNAME79796001;Secularism in $COUNTRY$;;;;;;;;;;;;;x
+EVTDESC79796001;True to our party's religious policy, the nation of $COUNTRY$ shall accept all the faiths of its inhabitants.;;;;;;;;;;;;;x
+EVT79796001OPTA;...;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+EVTNAME79796002;Religious Policy in $COUNTRY$;;;;;;;;;;;;;x
+EVTDESC79796002;The nation of $COUNTRY$ shall now ensure the adoption of its ruling party's religious policy.;;;;;;;;;;;;;x
+EVT79796002OPTA;...;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+EVTNAME79796003;Religious Freedom in $COUNTRY$;;;;;;;;;;;;;x
+EVTDESC79796003;Our nation is known as a bastion of Secularism and Religious Freedom.;;;;;;;;;;;;;x
+EVT79796003OPTA;Great!;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+EVTNAME79796003;Religious Freedom in $COUNTRY$;;;;;;;;;;;;;x
+EVTDESC79796003;Our nation is no longer seen as the bastion of Religious Freedom it once was.;;;;;;;;;;;;;x
+EVT79796003OPTA;Perhaps it is for the best.;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+suspend_political_powers_title;Suspend Political Rights;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+EVTNAME100071;Political Rights Restored in $COUNTRY$;;;;;;;;;;;;;x
+EVTDESC100071;Political rights have been restored, but the effects of our decisions shall forever shape the future of $COUNTRY$.;;;;;;;;;;;;;;;;;;;;;;;;;;x
+EVT100071OPTA;...;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+EVTNAME100072;Dismantling the $FROMCOUNTRY_ADJ$ Menace.;;;;;;;;;;;;;x
+EVTDESC100072;$FROMCOUNTRY$ has finally agreed to our terms for peace, in which we have been granted some of their territories.;;;;;;;;;;;;;x
+EVT100072OPTA;Such is the price for peace.;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+EVTNAME100073;Dismantling the $FROMCOUNTRY_ADJ$ Menace.;;;;;;;;;;;;;x
+EVTDESC100073;Peace finally reached $FROMCOUNTRY$, and the Great Powers who defeated them have finally granted us our much deserved freedom.;;;;;;;;;;;;;x
+EVT100073OPTA;Hurray!;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+EVTNAME100075;Manifest Destiny Refuted;;;;;;;;;;;;;x
+EVTDESC100075;$FROMCOUNTRY$ has finally agreed to our terms for peace, in which our colony of Nueva España has been granted some of their stolen territories.;;;;;;;;;;;;;x
+EVT100075OPTA;Such is the price for peace.;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+EVTNAME100080;Manifest Destiny Refuted;;;;;;;;;;;;;x
+EVTDESC100080;$FROMCOUNTRY$ has finally agreed to our terms for peace, in which our colony in Columbia has been granted some of their stolen territories.;;;;;;;;;;;;;x
+EVT100080OPTA;Such is the price for peace.;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+conquest_of_the_desert_gallegos_title;Rio Gallegos Secured;;;;;;;;;;;;;x
+conquest_of_the_desert_1_title;Pampas Secured;;;;;;;;;;;;;x
+conquest_of_the_desert_2_title;Patagonia Oriental Secured;;;;;;;;;;;;;x
+occupation_of_araucania_punta_arenas_title;Punta Arenas Secured;;;;;;;;;;;;;x
+occupation_of_araucania_1_title;Patagonia Occidental Secured;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
@@ -9290,17 +9420,25 @@ EVTOPTA1100060;Viva la Republica!;;;;;;;;;;;;x
 EVTOPTB1100060;Viva la Monarquia!;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 EVTNAME1100061;The Capture and Trial of Emperor Maximilian;;;;;;;;;;;;x
-EVTDESC1100061;Emperor Maximilian of the Mexican Empire has been captured by Republican forces with the help of the bribed Colonel Miguel Lopez sabotaging an attempt to escape the siege of Mexico City. Crowned heads of Europe and prominent liberals like Victor Hugo and Giuseppe Garibaldi has plead with President Juarez to spare Maximilian's life.;;;;;;;;;;;;x
+EVTDESC1100061;Emperor Maximilian I of the Mexican Empire has been captured by Republican forces aided by a bribed Imperial colonel, Miguel Lopez, who had sabotaged an attempt made by the emperor to escape from the besieged Mexico City. Monarchs of Europe and prominent liberal leaders, such as Victor Hugo and Giuseppe Garibaldi, have appealed to the Mexican President Benito Juarez to spare the life of Emperor Maximilian.;;;;;;;;;;;;x
+EVTDESC1100061_NEWS_MEDIUM;Emperor Maximilian I of the Mexican Empire has been captured by Republican forces sabotaging an attempt made by the Emperor to escape from the besieged Mexico City. European monarchs and prominent liberals alike have appealed to President Juarez to spare Maximilian's life.;;;;;;;;;;;;x
+EVTDESC1100061_NEWS_SHORT;Emperor Maximilian of Mexico has been captured by Republican forces in an attempt to escape the besieged Mexico City. European monarchs and prominent liberals alike have appealed to President Juarez to spare Maximilian's life.;;;;;;;;;;;;x
 EVTOPTA1100061;Mexico will not tolerate a government imposed by foreign powers. Maximilian will be sentenced to death.;;;;;;;;;;;;x
 EVTOPTB1100061;Emperor Maximilian will be spared.;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 EVTNAME1100062;The Second French Intervention has been a success!;;;;;;;;;;;;x
-EVTDESC1100062;The Mexican Empire and France have successfully defeated Republican forces.;;;;;;;;;;;;x
-EVTOPTA1100062;Viva el Rey de Mexico!;;;;;;;;;;;;x
+EVTDESC1100062;The Mexican Conservatives and France have successfully defeated Republican forces, installing Emperor Fernando Maximiliano José María de Habsburgo-Lorena, Maximiliano I, on the Mexican Throne.;;;;;;;;;;;;x
+EVTOPTA1100062;Viva el Emperador de todo México!;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+EVTDESC1100062_NEWS_MEDIUM;The Mexican Conservatives and France have successfully defeated Republican forces, installing Emperor Maximiliano I de Habsburgo-Lorena on the Mexican Throne.;;;;;;;;;;;;x
+EVTDESC1100062_NEWS_SHORT;The Mexican Conservatives and France successfully defeated the Republican forces, installing Emperor Maximiliano I on the Throne.;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 EVTNAME1100063;The Second French Intervention has failed!;;;;;;;;;;;;x
-EVTDESC1100063;The Mexican Republic has successfully defeated Monarchist Forces and the Second French Empire.;;;;;;;;;;;;x
+EVTDESC1100063;The Mexican Republic has successfully defeated Monarchist Forces and the Second French Empire in their struggle to install a Habsburg Monarch as the Emperor of Mexico. Ferdinand Maximilian von Habsburg-Lothringen, pretender to the Mexican Throne, has been exiled in France, never to set foot on Mexico ever again.;;;;;;;;;;;;x
 EVTOPTA1100063;Viva Mexico y la Republica!;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+EVTDESC1100063_NEWS_MEDIUM;The Mexican Republicans have successfully defeated Monarchists and the French Empire in their struggle to install a Habsburg Monarch as ruler of Mexico. Ferdinand Maximilian von Habsburg-Lothringen, pretender to the Throne, has been exiled in France;;;;;;;;;;;;x
+EVTDESC1100063_NEWS_SHORT;Mexican Republicans have successfully defeated the French Empire in their struggle to install a Monarch as ruler of Mexico. The pretender Ferdinand Maximilian von Habsburg-Lothringen has been exiled in France.;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 EVTNAME1100064;US intervention into Mexico.;;;;;;;;;;;;x
 EVTDESC1100064;The Civil War is behind us, however there is the question of the French intervening in Mexico and setting a monarchist puppet state. This is a direct violation of the Monroe Doctrine, how should we respond?;;;;;;;;;;;;x
@@ -9308,33 +9446,71 @@ EVTOPTA1100064;The US will not tolerate any European power intervening in the Am
 EVTOPTB1100064;The US cannot afford to go into another war, send supplies.;;;;;;;;;;;;x
 EVTOPTC1100064;The Mexican government are on their own.;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
+EVTNAME11223006;$FROMCOUNTRY_ADJ$ intervention into Mexico.;;;;;;;;;;;;x
+EVTDESC11223006;The United States of America wishes to lend a hand in our struggle by forging an alliance, as the French intervening in our nation is in direct violation of the Monroe Doctrine. Their armed forces are mobilizing as we speak, ready to attack Mexico.;;;;;;;;;;;;x
+EVTOPTA11223006;Hurray!;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+EVTDESC11223007;$FROMCOUNTRY$ wishes to lend a hand in our struggle by sending supplies for our people and under different circumstances, they would have provided us with military aid.;;;;;;;;;;;;x
+EVTOPTA11223007;Great!;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+EVTDESC11223008;$FROMCOUNTRY$ is sending aid to President Benito Juarez in his struggle against Imperial Forces!;;;;;;;;;;;;x
+EVTOPTA11223008;Curse them!;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
 EVTNAME1100065;The Confederate States intervention into Mexico.;;;;;;;;;;;;x
 EVTDESC1100065;The Empire of Mexico was an important trading partner during our fight for independence against the Northern States, helping in shipping cotton past the Yankee blockades. Should we lend a hand and create a stronger alliance with the Empire of Mexico?;;;;;;;;;;;;x
 EVTOPTA1100065;Mobilize the armed forces and declare war against Mexico.;;;;;;;;;;;;x
 EVTOPTB1100065;Send supplies to the Empire of Mexico.;;;;;;;;;;;;x
 EVTOPTC1100065;Emperor Maximilian is on his own.;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
+EVTNAME11223003;The Confederate States intervention into Mexico.;;;;;;;;;;;;x
+EVTDESC11223003;The Confederate States of America wishes to lend a hand in our struggle by forging an alliance, they consider us an important trading partner, especially during their fight for independence against the Northern States when we helped in shipping cotton past the Yankee blockades. Their armed forces are mobilizing as we speak, ready to attack Mexico.;;;;;;;;;;;;x
+EVTOPTA11223003;Hurray!;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+EVTDESC11223004;The Confederate States of America wishes to lend a hand in our struggle by sending supplies for our people, they consider us an important trading partner and under different circumstances, they would have provided us with military aid.;;;;;;;;;;;;x
+EVTOPTA11223004;Great!;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+EVTDESC11223005;The Confederate States of America is sending aid to Emperor Maximilian in his struggle against Mexican Forces!;;;;;;;;;;;;x
+EVTOPTA11223005;Curse them!;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
 EVTNAME1100066;The Confederate States has intervened in Mexico!;;;;;;;;;;;;x
 EVTDESC1100066;The Confederate States has intervened in Mexico, what should we do?;;;;;;;;;;;;x
 EVTOPTA1100066;Send supplies to Mexico immediately.;;;;;;;;;;;;x
-EVTOPTB1100066;Declare war against the Empire of Mexico. Mexico will not be surplanted by a monarchy.;;;;;;;;;;;;x
+EVTOPTB1100066;Declare war against the Empire of Mexico. Mexico will not be supplanted by a monarchy.;;;;;;;;;;;;x
 EVTOPTC1100066;The US declares neutrality in this conflict.;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
-EVTNAME1100067;The Republican capital of Monterey has been captured by Monarchist forces!;;;;;;;;;;;;x
-EVTDESC1100067;The Republican capital of Monterey has been capture by Monarchist forces. Should we move the capital closer to the United States in El Paso de Norte?;;;;;;;;;;;;x
+EVTNAME1100067;The Republican capital of Monterrey has been captured by Monarchist forces!;;;;;;;;;;;;x
+EVTDESC1100067;The Republican capital of Monterrey has been capture by Monarchist forces. Should we move the capital closer to the United States in El Paso de Norte?;;;;;;;;;;;;x
 EVTOPTA1100067;Move the capital!;;;;;;;;;;;;x
 EVTOPTB1100067;We don't need to move the capital, we can retake Monterey back!;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
-EVTNAME1100068;The Emperor of Mexico offers President Juarez and liberals to join the Empire of Mexico.;;;;;;;;;;;;x
+MXM_opportunity_for_enanito_juarez_title;An Offer to Benito Juarez.;;;;;;;;;x
+MXM_opportunity_for_enanito_juarez_desc;A solution to the ongoing conflict with the Republican Rebels has been brought to our court: The adoption of most, if not all, policies previously demanded by the Liberal rebels, as well as a constitution for our Monarchy, and the installment of President Benito Juarez as Prime Minister of the Mexican Empire. Indeed this meets all the liberal demands, however, they might not be so willing to accept what they perceive as a "Government imposed by a foreign power."\n\nNevertheless it is worth a try.;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+EVTNAME1100068;The Emperor's Proposition.;;;;;;;;;;;;x
 EVTDESC1100068;Emperor Maximilian has offered amnesty for Republican forces and President Benito Juarez the role of prime minister.;;;;;;;;;;;;x
 EVTOPTA1100068;Mexico will remain a Republic!;;;;;;;;;;;;x
 EVTOPTB1100068;With liberals in control the Mexican Empire can be reformed.;;;;;;;;;;;;x
-EVTOPTC1100068;Mexico will never accept a government ruled by foreigners!;;;;;;;;;;;;x
+EVTOPTC1100068;Mexico will never accept a Government imposed by a foreign power!;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
-EVTNAME1100050;La Guerra de Reforma.;;;;;;;;;;;;x
+EVTNAME11223000;An Offer to Benito Juarez.;;;;;;;;;x
+EVTDESC11223000;Speaking for the Government of the Mexican Republic, President Benito Juarez has declined our proposition, stating that Mexico shall remain a Republic and will not recognize a government imposed by a foreign power.;;;;;;;;;x
+EVTOPTC11223000;Very well.;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+EVTNAME11223000;An Offer to Benito Juarez.;;;;;;;;;x
+EVTDESC11223001;Speaking for the Government of the Mexican Republic, President Benito Juarez has accepted our proposition, wishing to put an end to the ongoing bloodshed that has plagued this nation for so many decades.;;;;;;;;;x
+EVTOPTC11223001;Excellent! Viva Mexico! Viva el Emperador!;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+EVTNAME11223000;An Offer to Benito Juarez.;;;;;;;;;x
+EVTDESC11223001;Speaking for the Government of the Mexican Republic, President Benito Juarez has declined our proposition. Liberal forces have begun attacking our men once again, emphasizing their repudiation towards our government and the Emperor himself.;;;;;;;;;x
+EVTOPTC11223001;Then they shall know no peace.;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+EVTNAME1100050;La Guerra de la Reforma.;;;;;;;;;;;;x
 EVTDESC1100050;After the Liberals ousted Santa Ana under the Plan of Ayutla, Liberals believed that the Roman Catholic Church and Mexican military were the root of Mexico's problems. Reforms suppressing the Roman Catholic Church and seperating Church and State angered the Catholic clergy and the Conservative military, leading to a coup d'etat led by Félix Zuloaga, thus beginning the Reform War.;;;;;;;;;;;;x
 EVTOPTA1100050;Uphold the Constitution of 1857!;;;;;;;;;;;;x
 EVTOPTB1100050;Proceed with the Plan of Tacubaya.;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+MEX_asks_loans_1_title;Consider obtaining loans from the Great Powers.;;;;;;;;;;;;x
+MEX_asks_loans_1_desc;The Reform War is costing Mexico money, should we ask the Great Powers for loans and supplies? No matter who wins, the debt must be paid.;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 EVTNAME1100051;Get loans and supplies from the Great Powers.;;;;;;;;;;;;x
 EVTDESC1100051;The Reform War is costing Mexico money, should we ask the Great Powers for loans and supplies? No matter who wins, the debt must be paid.;;;;;;;;;;;;x
@@ -9348,8 +9524,15 @@ EVTOPTA1100052;Give them supplies and a loan.;;;;;;;;;;;;x
 EVTOPTB1100052;Give them a loan.;;;;;;;;;;;;x
 EVTOPTC1100052;Mexico is on their own.;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
+EVTNAME11223009;Loans from the Great Powers.;;;;;;;;;;;;x
+EVTDESC11223009;$FROMCOUNTRY$ has decided to grant us a loan!;;;;;;;;;;;;x
+EVTOPTC11223009;Great!;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+EVTDESC11223010;$FROMCOUNTRY$ has decided to not grant us a loan!;;;;;;;;;;;;x
+EVTOPTC11223010;Curses!;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
 EVTNAME1100053;Convention of London.;;;;;;;;;;;;x
-EVTDESC1100053;Mexico has concluded their civil war, however refused to pay back their debt after the war as was agreed on. France has proposed a treaty with other debt holders for an expedition to regain our debt, should we agree to it?;;;;;;;;;;;;x
+EVTDESC1100053;Mexico has concluded their civil war, however they refused to pay back their debt after the war as was agreed on. France has proposed a treaty with other debt holders for an expedition to regain our debt, should we agree to it?;;;;;;;;;;;;x
 EVTOPTA1100053;Agree to the Convention and declare war against Mexico.;;;;;;;;;;;;x
 EVTOPTB1100053;We won't be a part of the expedition.;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
@@ -9359,19 +9542,37 @@ EVTOPTA1100070;We should establish the puppet monarch.;;;;;;;;;;;;x
 EVTOPTB1100070;We won't establish a puppet monarch.;;;;;;;;;;;;x
 EVTOPTC1100070;The Mexicans can pay back the loan when they can.;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
+EVTDESC11223011;$FROMCOUNTRY$ has decided to join us in our struggle against Mexico!;;;;;;;;;;;;x
+EVTOPTA11223011;Très Bien!;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+EVTDESC11223012;$FROMCOUNTRY$ has decided not to join us in our struggle against Mexico!;;;;;;;;;;;;x
+EVTOPTA11223012;Salopard!;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
 EVTNAME1100071;The Maximilian Affair.;;;;;;;;;;;;x
 EVTDESC1100071;France has made unreasonable demands against the Mexican government and is attempting to turn Mexico into a puppet state with Maximilian as the puppet monarch, how should we respond?;;;;;;;;;;;;x
 EVTOPTA1100071;Sign a treaty with Mexico and end the war.;;;;;;;;;;;;x
 EVTOPTB1100071;We WILL have our money back.;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
-EVTNAME1100072;The Reform War is over.;;;;;;;;;;;;x
-EVTDESC1100072;The Reform War is over, should we pay back our debitors?;;;;;;;;;;;;x
+EVTNAME11223013;The Maximilian Affair, $FROMCOUNTRY$'s notification.;;;;;;;;;;;;x
+EVTDESC11223013;$FROMCOUNTRY$ has decided abandon us in our struggle against Mexico, deeming our demands unreasonable and outright illegal!;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+EVTNAME1100072;The end of the Reform War.;;;;;;;;;;;;x
+EVTDESC1100072;The Reform War is over, should we pay back our debtors?;;;;;;;;;;;;x
 EVTOPTA1100072;No, put a hold on paying back the debt.;;;;;;;;;;;;x
 EVTOPTB1100072;Pay them back.;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
-EVTNAME1100073;The Reform War has ended, but we are in a stalemate.;;;;;;;;;;;;x
+EVTDESC11223014;The Mexican Reform War is over, however, the winner has refused to pay the debt owed to $COUNTRY$!;;;;;;;;;;;;x
+EVTOPTA11223014;Shameless people!;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+EVTDESC11223015;The Mexican Reform War is over, and the winner has decided to pay the debt owed to $COUNTRY$!;;;;;;;;;;;;x
+EVTOPTA11223015;Who would've thought?!;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+EVTNAME1100073;A Stalemate in the Reform War.;;;;;;;;;;;;x
 EVTDESC1100073;We couldn't beat the Juarez government, however we can get help from the French. We can have our European-style monarchy.;;;;;;;;;;;;x
 EVTOPTA1100073;Viva la monarquia!;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+EVTDESC11223016;Conservative forces have decided to betray our founding fathers: They have accepted French military aid in exchange of becoming their monarchist puppet!;;;;;;;;;;;;x
+EVTOPTA11223016;How could they betray their nation?!;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 EVTNAME1100074;The Reform War is over.;;;;;;;;;;;;x
 EVTDESC1100074;The Reform War is over, and the Liberals have been defeated. Should we become a monarchy ruled by Maximilian or should we keep Félix Zuloaga as president?;;;;;;;;;;;;x
@@ -9396,15 +9597,27 @@ create_the_golden_circle_desc;The Knights of the Golden Circle advocated even be
 jewish_country_accept_karaite;Israel Embraces Karaites;;;;;;;;;;;;x
 jewish_country_accept_samaritan;Israel Embraces Samaritans;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
-EVTNAME99205;General Napier's Expedition to Sindh;;;;;;;;;;;;x
-EVTDESC99205;In 1842, General Charles Napier, veteran of the Peninsular war was appointed commander-in-chief of British India. He was tasked with quelling insurrections from Muslim leaders in India in the wake of the Anglo-Afghan war. Under orders to put down Muslim rebels, he instead conquered the state of Sindh for the Bombay presidency. It was said that following this adventure he dispatched a letter to his superiors with the single word, "Peccavi" (Latin for "I have sinned");;;;;;;;;;;;x
-EVT99205OPTA;Conquer them!;;;;;;;;;;;;x
-EVT99205OPTB;It would be wrong if we were to have Sindh;;;;;;;;;;;;x
+baluchistan_goldsmid_arbitration_title;The Goldsmith Arbitration of Baluchistan;;;;;;;x;;;;
+baluchistan_goldsmid_arbitration_desc;Over the past few years we've steadily been increasing our influence in the tribal lands of Baluchistan. In doing so we've come into conflict with Persia, who claim the region belongs to them. While Persia is in no position to resist us, it might be best to settle the question of whom Baluchistan belongs to through international arbitration.;;;;;;;;;;;;x
+HFM_GOLDSMID_ARBITRATION_title;;The Goldsmith Arbitration of Baluchistan;;;;;;;x;;;;
+HFM_GOLDSMID_ARBITRATION_desc;Baluchistan consists of numerous more or less independent tribes who are loosely confederated under one Great Khan. But even though the Baluchis have never accepted any central authority, we've always considered them to be part of our empire. Recent British efforts however have greatly increased their influence in the region.\n\nTo settle the matter as to whom Baluchistan belongs for once and all, an independent arbitration committee has been called. It has ruled that Zahedan and Shahtun belong in the Persian sphere of influence, while the rest belongs to the British Raj.;;;;;;;;;;;;;x
+EVTOPTA992031;Very well, it is fair enough.;;;;;;;x;;;;
+EVTOPTB992031;The entirety of Balochistan belongs to $COUNTRY$.;;;;;;;x;;;;
+EVTDESC999999023;$FROMCOUNTRY$ has accepted the arbitration.;;;;;;;x;;;;
+EVT999999023OPTA;Great!;;;;;;;x;;;;
+EVTDESC999999024;$FROMCOUNTRY$ has refused the arbitration, stating that the entirety of Balochistan belongs to them.;;;;;;;x;;;;
+EVT999999024OPTA;We shall get it one way or another!;;;;;;;x;;;;
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+EVTNAME99933300;General Napier's Expedition to Sindh;;;;;;;;;;;;x
+EVTDESC99933300;In 1842, General Charles Napier, veteran of the Peninsular war was appointed commander-in-chief of British India. He was tasked with quelling insurrections from Muslim leaders in India in the wake of the Anglo-Afghan war. Under orders to put down Muslim rebels, he instead conquered the state of Sindh for the Bombay presidency. It was said that following this adventure he dispatched a letter to his superiors with the single word, "Peccavi" (Latin for "I have sinned");;;;;;;;;;;;x
+EVT99933300OPTA;Conquer them!;;;;;;;;;;;;x
+EVT99933300OPTB;It would be wrong if we were to have Sindh;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
 EVTNAME777777403;The Sino-Sikh War;;;;;;;;;;;;x
-EVTDESC777777403;The Dogras, under Sikh suzerainty, and the Tibetans, under Qing suzerainty, are embroiled in war over the mountainous regions controlling the pashmina wool trade. We profited from the Dogras' conquest of Ladakh, as it redirected pashmina trade towards our territories, but any further conquest will harm us. Fortunately, we hold much sway among the Sikhs, suzerains of the Dogras. We can send a dispatch to Lahore demanding their withdrawal. Alternatively, we could support them in exchange for favourable trade deals. Our decision will likely decide the outcome of this conflict.;;;;;;;;;;;;x
-EVTOPT777777403A;We will support the Dogras;;;;;;;;;;;;x
-EVTOPT777777403B;Demand a withdrawal of Dogra forces;;;;;;;;;;;;x
-EVTOPT777777403C;The Dogras do not know their limits. We will force them to cede territory to Tibet.;;;;;;;;;;;;x
+EVTDESC777777403;The Doghras, under Sikh suzerainty, and the Tibetans, under Qing suzerainty, are embroiled in war over the mountainous regions controlling the pashmina wool trade. We profited from the Doghras' conquest of Ladakh, as it redirected pashmina trade towards our territories, but any further conquest will harm us. Fortunately, we hold much sway among the Sikhs, suzerains of the Doghras. We can send a dispatch to Lahore demanding their withdrawal. Alternatively, we could support them in exchange for favourable trade deals. Our decision will likely decide the outcome of this conflict.;;;;;;;;;;;;x
+EVTOPT777777403A;We will support the Doghras;;;;;;;;;;;;x
+EVTOPT777777403B;Demand a withdrawal of Doghra forces;;;;;;;;;;;;x
+EVTOPT777777403C;The Doghras do not know their limits. We will force them to cede territory to Tibet.;;;;;;;;;;;;x
 EVTNAME777777058;Raiders from Bhutan;;;;;;;;;;;;x
 EVTDESC777777058;The Bhutanese, taking advantage of the chaos of the Sepoy Rebellion, are raiding vast swathes of our territory in India!;;;;;;;;;;;;x
 EVT777777058OPTA;Damn!;;;;;;;;;;;;x
@@ -9419,12 +9632,12 @@ EVT777777104OPTA;Hopefully they will not invade us again;;;;;;;;;;;;x
 EVTNAME777777105;The Calcutta Convention;;;;;;;;;;;;;x
 EVTDESC777777105;The British have forced us to sign a settlement formalising the border between Sikkim and Tibet;;;;;;;;;;;;;x
 EVT777777105OPTA;We have not lost too much, thankfully;;;;;;;;;;;;;x
-EVTNAME777777404;The Xaidulla Question;;;;;;;;;;;;x
-EVTDESC777777404;The Dorga in control of Kashmir previously held ambitions on the town of Xaidulla, known as Saitula in Chinese. The administration of Xinjiang considers that its frontier lies at the Kilian range, while our administration presently considers the frontier of India to lie at the Karakoram range. As the town lies between these two ranges, it is not legally claimed by anyone. While there is little of value there, we could take it, as we do have the capacity to administer it...;;;;;;;;;;;;x
+EVTNAME777777404;The Shahidullah Question;;;;;;;;;;;;x
+EVTDESC777777404;The Doghra in control of Kashmir previously held ambitions on the town of Shahidullah, known as Saitula in Chinese. The administration of Xinjiang considers that its frontier lies at the Kilian range, while our administration presently considers the frontier of India to lie at the Karakoram range. As the town lies between these two ranges, it is not legally claimed by anyone. While there is little of value there, we could take it, as we do have the capacity to administer it…;;;;;;;;;;;;x
 EVT777777404OPTA;Well, we might as well;;;;;;;;;;;;x
 EVT777777404OPTB;Worthless land that will only complicate our frontier;;;;;;;;;;;;;x
-EVTNAME777777405;The Xaidulla Question;;;;;;;;;;;;x
-EVTDESC777777405;The British administration in Calcutta has given us the green light to occupy the previously unclaimed town of Xaidulla;;;;;;;;;;;;x
+EVTNAME777777405;The Shahidullah Question;;;;;;;;;;;;x
+EVTDESC777777405;The British administration in Calcutta has given us the green light to occupy the previously unclaimed town of Shahidullah;;;;;;;;;;;;x
 EVT777777405OPTA;We accept the territory;;;;;;;;;;;;x
 lockhart_mission_title;Lockhart Mission;;;;;;;;;;;;x
 lockhart_mission_desc;The administration in Calcutta warns us of a potential invasion through the Hindu Kush. We will send Sir William Alexander Lockhart to the state of Chitral to survey the mountains and negotiate with the ruler of Chitral, the Mehtar. The Mehtar is a respectable, sensible man. We have no doubt he will aid us.;;;;;;;;;;;;x
@@ -9443,10 +9656,10 @@ EVT777777408OPTA;They are no threat to us;;;;;;;;;;;;x
 EVTNAME777777409;The Mehtar is Cooperative;;;;;;;;;;;;x
 EVTDESC777777409;The Lockhart mission is a success, the Mehtar subjected himself to us as a princely state.;;;;;;;;;;;;x
 EVT777777409OPTA;Peace rules the day;;;;;;;;;;;;x
-EVTNAME99206;Princely State of Khairpur;;;;;;;;;;;;x
-EVTDESC99206;The country of Sindh is ruled as a confederacy between four branches of the Talpur dynasty, each controlling a portion of Sindh. The ruler of Khairpur seeks to collaborate with us to protect his domain. We could accede to a treaty establishing Khairpur as a princely state of India. This may ease the burden of our Indian administration.;;;;;;;;;;;;x
-EVT99206OPTA;Our administration is overburdened. We accept;;;;;;;;;;;;x
-EVT99206OPTB;This is unnecessary;;;;;;;;;;;;x
+EVTNAME99933301;Princely State of Khairpur;;;;;;;;;;;;x
+EVTDESC99933301;The country of Sindh is ruled as a confederacy between four branches of the Talpur dynasty, each controlling a portion of Sindh. The ruler of Khairpur seeks to collaborate with us to protect his domain. We could accede to a treaty establishing Khairpur as a princely state of India. This may ease the burden of our Indian administration.;;;;;;;;;;;;x
+EVT99933301OPTA;Our administration is overburdened. We accept;;;;;;;;;;;;x
+EVT99933301OPTB;This is unnecessary;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 rom_claim_ada_kaleh_title;Claim Ada Kaleh;;;;;;;;;;;;x
 rom_claim_ada_kaleh_desc;We have captured the Danubian island of Ada Kaleh from the Turks. Our sovereignty over the island is unquestionable.;;;;;;;;;;;;x
@@ -9466,7 +9679,7 @@ treaty_of_annecy_fra_desc;We have successfully contained Austrian ambitions in t
 treaty_of_annecy_aus_title;Treaty of Annecy ($YEAR$);;;;;;;;;;;;x
 treaty_of_annecy_aus_desc;Following a string of defeats at the hands of us and our Italian allies, the French have sued for peace. We can force them to sign a treaty recognising our sphere of influence over the Italian peninsula, and proceed with our plans.;;;;;;;;;;;;x
 EVTNAME777202000;Austrian Manoeuvres in Italy;;;;;;;;;;;;x
-EVTDESC777202000;Austria has been conducting significant manoeuvres in the buffer state of Sardinia-Piedmont, ostensibly to suppress Italian nationalists. This is an extremely aggressive act, as Austrian forces have begun conducting operations in the Alpine passes bordering our nation. For the sake of our national security, we must remove the Austrians from Piedmont. Or... we could take it further, and secure the majority French territories of Savoy, while we have the opportunity to.;;;;;;;;;;;;x
+EVTDESC777202000;Austria has been conducting significant manoeuvres in the buffer state of Sardinia-Piedmont, ostensibly to suppress Italian nationalists. This is an extremely aggressive act, as Austrian forces have begun conducting operations in the Alpine passes bordering our nation. For the sake of our national security, we must remove the Austrians from Piedmont. Or… we could take it further, and secure the majority French territories of Savoy, while we have the opportunity to.;;;;;;;;;;;;x
 EVT777202000OPTA;Demand their withdrawal;;;;;;;;;;;;x
 EVT777202000OPTB;Demand Savoy and other concessions;;;;;;;;;;;;x
 EVT777202000OPTC;We have other concerns;;;;;;;;;;;;x
@@ -9479,7 +9692,7 @@ EVTDESC777202002;The Austrians recently occupied the Kingdom of Sardinia-Piedmon
 EVT777202002OPTA;We will need Austria's support. Tell the Prussians that this war is not theirs;;;;;;;;;;;;x
 EVT777202002OPTB;We don't care about Sardinia-Piedmont;;;;;;;;;;;;x
 EVTNAME777202003;Russia Demands our Neutrality;;;;;;;;;;;;x
-EVTDESC777202003;The King has received a telegram from the Tsar in Russia demanding our neutrality in the Piedmont crisis. They say that their neutrality is conditional upon our neutrality. We were considering an intervention against Austria, to preserve the balance of power. But a war against Austria and Russia could devastate our country even if we won. We hate the French anyway... it may be best to withdraw.;;;;;;;;;;;;x
+EVTDESC777202003;The King has received a telegram from the Tsar in Russia demanding our neutrality in the Piedmont crisis. They say that their neutrality is conditional upon our neutrality. We were considering an intervention against Austria, to preserve the balance of power. But a war against Austria and Russia could devastate our country even if we won. We hate the French anyway… it may be best to withdraw.;;;;;;;;;;;;x
 EVT777202003OPTA;We cannot risk national devastation. Especially not over French interests;;;;;;;;;;;;x
 EVT777202003OPTB;We must fight to preserve the balance of power, or be swallowed up;;;;;;;;;;;;x
 EVTNAME777202004;Russia Declares Neutrality;;;;;;;;;;;;x
@@ -9499,12 +9712,12 @@ EVTNAME777202019;Russia and Prussia Declare Full Neutrality;;;;;;;;;;;;;x
 EVTDESC777202019;After much deliberation, the states of Russia and Prussia have both chosen to declare full neutrality in the Piedmont crisis.;;;;;;;;;;;;;x
 EVT777202019OPTA;It will be one against one;;;;;;;;;;;;;x
 EVTNAME777202005;The Piedmont Crisis;;;;;;;;;;;;;x
-EVTDESC777202005;Tensions over the occupation of Piedmont have reached a boiling point. The time has come to make our decision. We can issue an ultimatum, potentially including further demands, or silently withdraw... though the latter will not be good for our prestige.;;;;;;;;;;;;;x
+EVTDESC777202005;Tensions over the occupation of Piedmont have reached a boiling point. The time has come to make our decision. We can issue an ultimatum, potentially including further demands, or silently withdraw… though the latter will not be good for our prestige.;;;;;;;;;;;;;x
 EVT777202005OPTA;Demand Francophone Savoy and further concessions in Sardinia-Piedmont;;;;;;;;;;;;;x
 EVT777202005OPTB;Demand a withdrawal of Austrian forces, as we did in our initial declaration;;;;;;;;;;;;;x
 EVT777202005OPTC;Withdraw from this crisis. Piedmont will hurt the Austrians more than it will help them;;;;;;;;;;;;;x
 EVTNAME777202007;The Piedmont Crisis;;;;;;;;;;;;;x
-EVTDESC777202007;Tensions over the occupation of Piedmont have reached a boiling point. The time has come to make our decision. We can issue an ultimatum with our original demands for Savoy and concessions, issue a reduced ultimatum in hopes that they back down or silently withdraw... though the latter will not be good for our prestige.;;;;;;;;;;;;;x
+EVTDESC777202007;Tensions over the occupation of Piedmont have reached a boiling point. The time has come to make our decision. We can issue an ultimatum with our original demands for Savoy and concessions, issue a reduced ultimatum in hopes that they back down or silently withdraw… though the latter will not be good for our prestige.;;;;;;;;;;;;;x
 EVT777202007OPTA;Savoy is rightfully French and if they do not turn it over we shall enforce our rights;;;;;;;;;;;;;x
 EVT777202007OPTB;We can take Savoy another time. Our national security is what matters now.;;;;;;;;;;;;;x
 EVT777202007OPTC;Withdraw from this crisis. Piedmont will hurt the Austrians more than it will help them;;;;;;;;;;;;;x
@@ -9535,15 +9748,19 @@ EVT777202013OPTA;We could've beaten them anyway;;;;;;;;;;;;;x
 EVTNAME777202014;The Treaty of Annecy;;;;;;;;;;;;;x
 EVTDESC777202014;By the treaty of Annecy we have gained Corsica from the French;;;;;;;;;;;;;x
 EVT777020014OPTA;Perhaps the Habsburgs aren't so bad after all;;;;;;;;;;;;;x
+NORMAL_CUT_DOWN_TO_SIZE_WAR_NAME_FRA_AUS;The Great Italian War;;;;;;;;;;;;;x
+AGRESSION_CUT_DOWN_TO_SIZE_WAR_NAME_FRA_AUS;The Great Italian War;;;;;;;;;;;;;x
 ITF;Italy;;;;;;;;;;;;;x
 ITF_ADJ;Italian;;;;;;;;;;;;;x
 ITF_democracy;The Italian Federation;;;;;;;;;;;;;x
 ITF_proletarian_dictatorship;The People's Union of Italy;;;;;;;;;;;;;;x
 ITF_fascist_dictatorship;The Italian State;;;;;;;;;;;;;x
-ITF_absolute_monarchy;The Italian Empire;;;;;;;;;;;;;x
-ITF_prussian_constitutionalism;The Italian Empire;;;;;;;;;;;;;x
-ITF_hms_government;The Italian Empire;;;;;;;;;;;;;x
+ITF_absolute_monarchy;The Italian Federation;;;;;;;;;;;;;x
+ITF_prussian_constitutionalism;The Italian Federation;;;;;;;;;;;;;x
+ITF_hms_government;The Italian Federation;;;;;;;;;;;;;x
 ITF_theocracy;The Italian Federation;;;;;;;;;;;;;x
+ITF_colonial_company;The Italian Federation;;;;;;;;;;;;;x
+ITF_dominion;The Italian Federation;;;;;;;;;;;;;x
 ITF_reactionary;Fazione Monarchica;Restorationiste;Ristorazionista;;Restauracionistas;;;;;;;;;;;;;;x
 ITF_conservative;La Destra;;;;;;;;;;;;;;x
 ITF_conservative_2;Partito Liberale Italiano;;;;;;;;;;;;;;x
@@ -9582,6 +9799,27 @@ EVTNAME44158;Foreign Influence in Hawaii;;;;;;;;;;;;;;;x
 EVTDESC44158;When the American missionaries first came to our shores in the 1820's, few could foresee what their activity would lead to. They spread their religion, helped our people read and write, and brought with them their families and other outsiders that settled in $COUNTRY$. $CAPITAL$ became an important port for trade, frequently visited by Europeans during their voyages through the pacific, and the monarchy gained access to luxury items and technologies our people never dreamt of. But with the good came the bad: diseases previously unknown spread and devastated the population, growing interests in the Pacific led to a French Admiral sacking $CAPITAL$, the introduction of private property for the plantation of sugar led to competition between foreigners and Hawaiians and the American growing influence culminated in pressure for reforms, leading to sweeping changes to the Hawaiian monarchy. More foreigners arrive as the Hawaiians decline and the Great Powers from overseas set their eyes on Hawaii.;;;;;;;;;;;;;;;x
 EVTDESC44158;When the American missionaries first came to our shores in the 1820's, few could foresee what their activity would lead to. They spread their religion, helped our people read and write, and brought with them their families and other outsiders that settled in $COUNTRY$. $CAPITAL$ became an important port for trade, frequently visited by Europeans during their voyages through the pacific, and the monarchy gained access to luxury items and technologies our people never dreamt of. But with the good came the bad: diseases previously unknown spread and devastated the population, growing interests in the Pacific led to a French Admiral sacking $CAPITAL$, the introduction of private property for the plantation of sugar led to competition between foreigners and Hawaiians and the American growing influence culminated in pressure for reforms, leading to sweeping changes to the Hawaiian monarchy. More foreigners arrive as the Hawaiians decline and the Great Powers from overseas set their eyes on Hawaii.;;;;;;;;;;;;;;;x
 EVT44158OPTA;What does the future hold for the $COUNTRY_ADJ$ people?;;;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+integrate_qatar_trucial_states_desc;The Trucial States were a group of sheikdoms in the south eastern Persian Gulf, previously known to the British as the 'Pirate Coast', which were signatories to treaties (hence 'trucial') with the British government. These treaties established an informal protectorate by Great Britain and the sheikdoms, or emirates, were a British protectorate. Now, our protectorate over them and over Qatar raised the possibility of centralizing our protection even more by adding the sultan of Qatar to the pact.;;;;;;;;;;;;;;;x
+EVTDESC202001;In $YEAR$ revolutionary riots broke out in numerous places of Italy, as well in many other parts of Europe. Charles Albert in Piedmont  had been forced to make concessions to the democrats. With Vienna itself in revolt, both Milan  and Venice, the main cities of the Kingdom of Lombardy-Venetia, under Austrian rule, revolted. The situation was favorable for Sardinia, which would see the full support of the lombard patriots in Milan. The Kingdom decided to exploit the moment, and attacked the weakened Austria in her Italian possessions. After a plebiscite, Milan was annexed by Sardinia, and a combined army beat the Austrians at Pastrengo. The War of Italian Independence had begun.\n\n§RThe latter option will unlock the path to dominate the peninsula.§W;;;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x

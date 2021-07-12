@@ -32,7 +32,6 @@ country_event = {
 		invention = colonial_negotiations
 		has_global_flag = berlin_conference
 		total_pops = 2000000
-		has_global_flag = berlin_conference
 		is_disarmed = no
 		money = 75001
 		num_of_ports = 3
@@ -42,6 +41,7 @@ country_event = {
 		NOT = { war_exhaustion = 5 }
 		NOT = { has_country_flag = german_new_guinea_company }
 		NOT = { invention = the_dark_continent }
+		NOT = { has_global_flag = colonial_railroading_disabled }
 	}
 	
 	mean_time_to_happen = {
@@ -358,9 +358,7 @@ country_event = {
 		}
 		
 		random_owned = {
-			limit = {
-				province_id = 3275
-			}
+			limit = { province_id = 3275 }
 			THIS = { release = PAP }
 			PAP = { government = theocracy }
 		}

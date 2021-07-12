@@ -1,0 +1,148 @@
+political_decisions = {
+
+    lusatian_awakening = {
+	      picture = cisinski
+		  potential = {
+			tag = LUZ
+			NOT = { has_country_flag = lusatian_awakening }
+		}
+		
+		allow = {
+			war = no
+			nationalism_n_imperialism = 1
+			552 = { has_building = railroad }
+			money = 10001
+		}
+		
+		effect = {
+			treasury = -10000
+			set_country_flag = lusatian_awakening
+			add_country_modifier = { name = total_reform duration = 3650 }
+			any_owned = { add_province_modifier = { name = small_baby_boom duration = 1825 } }
+			random_owned = {
+				limit = {
+					province_id = 552
+					NOT = { life_rating = 40 }
+				}
+				life_rating = 5
+				add_province_modifier = { name = recently_built_city duration = 1825 }
+			}
+			any_pop = {
+				limit = { is_culture_group = germanic } 
+				# reduce_pop = 0.80
+				militancy = 5
+				consciousness = 5
+			}
+			any_pop = {
+				limit = { has_pop_culture = sorbian } 
+				# reduce_pop = 1.20
+				militancy = -9
+				consciousness = -9
+			}
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	reclaim_sorbia = {
+		picture = reclaim_sorbia
+		potential = {
+			tag = LUZ
+			NOT = { has_country_flag = claimed_sorbia }
+		}
+		
+		allow = {
+			war = no
+			is_vassal = no
+			invention = manifest_destiny
+			all_core = { owned_by = THIS }
+			OR = {
+				government = fascist_dictatorship
+				AND = {
+					war_policy = jingoism
+					military_score = 20
+				}
+			}
+		}
+		
+		effect = {
+			add_accepted_culture = kashubian
+			set_country_flag = claimed_sorbia
+			random_list = {
+				33 = { badboy = 10 }
+				33 = { badboy = 15 }
+				33 = { badboy = 12.5 }
+			}
+			PRU_549 = { add_core = LUZ }
+			PRU_546 = { add_core = LUZ }
+            PRU_544 = { add_core = LUZ }
+			PRU_553 = { add_core = LUZ }
+			PRU_554 = { add_core = LUZ }
+			SAX_558 = { add_core = LUZ }
+		}
+		ai_will_do = { factor = 1 }
+	}
+	# proclaim_sorbia = {
+		# picture = lusatia
+		# potential = {
+			# tag = LUZ
+			# has_country_flag = claimed_sorbia
+		# }
+		
+		# allow = {
+			# war = no
+			# LUZ = {
+				# all_core = {
+					# owned_by = THIS
+				# }
+			# }
+		# }
+		
+		# effect = {
+			# all_core =  {
+				# add_core = SOR
+				# remove_core = LUZ
+			# }
+			# prestige = 20
+			# random_list = {
+				# 25 = {
+					# any_pop = {
+						# limit = { is_culture_group = germanic } 
+						# reduce_pop = 0.80
+						# militancy = 8
+					# }
+					# badboy = 6
+				# }
+				# 25 = {
+					# any_pop = {
+						# limit = { is_culture_group = germanic } 
+						# reduce_pop = 0.60
+						# militancy = 8
+					# }
+					# badboy = 12
+				# }
+				# 25 = {
+					# any_pop = {
+						# limit = { is_culture_group = germanic } 
+						# reduce_pop = 0.40
+						# militancy = 8
+					# }
+					# badboy = 18
+				# }
+				# 25 = {
+					# any_pop = {
+						# limit = { is_culture_group = germanic } 
+						# reduce_pop = 0.20
+						# militancy = 8
+					# }
+					# badboy = 24
+				# }
+			# }
+			# any_pop = {
+				# limit = { has_pop_culture = sorbian } 
+				# reduce_pop = 1.40
+			# }
+			# change_tag = SOR
+		# }
+		# ai_will_do = { factor = 1 }
+	# }
+}

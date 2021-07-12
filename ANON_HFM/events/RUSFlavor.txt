@@ -322,6 +322,7 @@ country_event = {
 				substate_of = RUS
 			}
 		}
+		civilized = yes
 		OR = {
 			tag = USA
 			tag = CAN
@@ -330,13 +331,8 @@ country_event = {
 			tag = MXM
 			tag = M3X
 			tag = ARD
-			AND = {
-				OR = {
-					primary_culture = japanese
-					primary_culture = ryukyuan
-				}
-				civilized = yes
-			}
+			primary_culture = japanese
+			primary_culture = ryukyuan
 			tag = CAS
 			tag = CAL
 			tag = C4L
@@ -513,6 +509,7 @@ country_event = {
 			limit = {
 				NOT = { tag = RUS }
 				NOT = { has_country_flag = refused_alaska }
+				civilized = yes
 				OR = {
 					is_greater_power = yes
 					is_secondary_power = yes
@@ -527,13 +524,8 @@ country_event = {
 					tag = MXM
 					tag = M3X
 					tag = ARD
-					AND = {
-						OR = {
-							primary_culture = japanese
-							primary_culture = ryukyuan
-						}
-						civilized = yes
-					}
+					primary_culture = japanese
+					primary_culture = ryukyuan
 					tag = CAS
 					tag = CAL
 					tag = C4L
@@ -576,7 +568,7 @@ country_event = {
 		set_global_flag = alaska_sale_refuse
 		prestige = -10
 		USA_1 = { add_core = RUS }
-		amy_owned = {
+		any_owned = {
 			limit = {
 				province_id = 3390
 			}
@@ -846,8 +838,8 @@ country_event = {
 		random_owned = { limit = { owner = { has_country_flag = ismaili_country } } LSK = { religion = ismaili set_country_flag = ismaili_country } }
 		random_owned = { limit = { owner = { has_country_flag = zaydi_country } } LSK = { religion = zaydi set_country_flag = zaydi_country } }
 		random_owned = { limit = { owner = { has_country_flag = jain_country } } LSK = { religion = jain set_country_flag = jain_country } }
-		random_owned = { limit = { owner = { has_country_flag = atheist_country } } LSK = { religion = atheist set_country_flag = atheist_country } }
-		random_owned = { limit = { owner = { has_country_flag = secular_country } } LSK = { religion = secular set_country_flag = secular_country } }
+		random_owned = { limit = { owner = { has_country_flag = atheist_country } } LSK = { religion = atheism set_country_flag = atheist_country } }
+		random_owned = { limit = { owner = { has_country_flag = secular_country } } LSK = { religion = secularism set_country_flag = secular_country } }
 	}
 }
 
@@ -1296,6 +1288,7 @@ country_event = {
 				}
 			}
 		}
+		AUS = { country_event = 100060 }
 		ai_chance = {
 			factor = 90
 			modifier = {

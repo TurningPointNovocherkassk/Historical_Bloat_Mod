@@ -1,79 +1,5 @@
 political_decisions = {
-	
-	rename_texas_mexico_2 = {
-		picture = all_texas
-		potential = {
-			OR = {
-				is_culture_group = latin_american_cultures
-				is_culture_group = iberian
-			}
-			TEX = { 
-				all_core = {
-					owned_by = THIS
-				}
-			}
-			NOT = { has_global_flag = rename_texas_mexico_2 }
-			owns = 133
-		}
 		
-		allow = {
-			war = no
-		}
-		
-		effect = {
-			set_global_flag = rename_texas_mexico_2
-			clr_global_flag = rename_texas_usa_2
-			prestige = 2
-			43 = { change_province_name = "Río Rojo" }
-			132 = { change_province_name = "Punto de Morgan" }
-			133 = {
-				change_province_name = "San Javier"
-				state_scope = {
-					change_region_name = "Tejas del Este"
-				}
-			}
-			134 = { change_province_name = "San Ángelo" }
-			137 = { change_province_name = "San Antonio" }
-			3402 = { change_province_name = "Matagorda" }
-			3403 = { change_province_name = "Orcoquisac" }
-			
-		}
-		ai_will_do = { factor = 1 }
-	}
-	rename_texas_usa_2 = {
-		picture = all_texas
-		potential = {
-			is_culture_group = american_cultures
-			NOT = { has_global_flag = rename_texas_usa_2 }
-			has_global_flag = rename_texas_mexico_2
-			owns = 133
-		}
-		
-		allow = {
-			war = no
-		}
-		
-		effect = {
-			set_global_flag = rename_texas_usa_2
-			clr_global_flag = rename_texas_mexico_2
-			43 = { change_province_name = "Dallas" }
-			132 = { change_province_name = "Houston" }
-			133 = {
-				change_province_name = "Austin"
-				state_scope = {
-					change_region_name = "Texas"
-				}
-			}
-			134 = { change_province_name = "Abilene" }
-			137 = { change_province_name = "San Antonio" }
-			3402 = { change_province_name = "Matagorda" }
-			3403 = { change_province_name = "Beaumont" }
-			
-			prestige = 2
-		}
-		ai_will_do = { factor = 1 }
-	}
-	
 	californio_claims = {
 	picture = alta_california
 		potential = {
@@ -96,7 +22,16 @@ political_decisions = {
 		effect = {
 			set_country_flag = californio_claims
 			badboy = 1
-			relation = { who = MEX value = -100 }
+			random_country = {
+				limit = {
+					OR = {
+						tag = MEX
+						tag = M3X
+						tag = MXM
+					}
+				}
+				relation = { who = THIS value = -100 }
+			}
 			MEX_94 = { add_core = C4L }
 			MEX_97 = { add_core = C4L }
 			110 = { add_core = C4L }
@@ -111,7 +46,7 @@ political_decisions = {
 		ai_will_do = { factor = 1 }
 	}
 	riogrande_claims = {
-	picture = rio_grande
+		picture = rio_grande
 		potential = {
 			tag = TRG
 			NOT = { has_global_flag = riogrande_claims }
@@ -133,7 +68,16 @@ political_decisions = {
 		effect = {
 			set_global_flag = riogrande_claims
 			badboy = 1
-			relation = { who = MEX value = -100 }
+			random_country = {
+				limit = {
+					OR = {
+						tag = MEX
+						tag = M3X
+						tag = MXM
+					}
+				}
+				relation = { who = THIS value = -100 }
+			}
 			MEX_2142 = { add_core = TRG }
 			2153 = { add_core = TRG }
 			2158 = { add_core = TRG }
@@ -146,7 +90,7 @@ political_decisions = {
 		ai_will_do = { factor = 1 }
 	}
 	real_riogrande_claims = {
-	picture = rio_grande
+		picture = rio_grande
 		potential = {
 			tag = RGR
 			NOT = { has_global_flag = riogrande_claims }
@@ -168,7 +112,16 @@ political_decisions = {
 		effect = {
 			set_global_flag = real_riogrande_claims
 			badboy = 1
-			relation = { who = MEX value = -100 }
+			random_country = {
+				limit = {
+					OR = {
+						tag = MEX
+						tag = M3X
+						tag = MXM
+					}
+				}
+				relation = { who = THIS value = -100 }
+			}
 			MEX_2142 = { add_core = RGR }
 			2153 = { add_core = RGR }
 			2158 = { add_core = RGR }
@@ -189,8 +142,8 @@ political_decisions = {
 			owns = 133
 			year = 1839
 			OR = {
-				has_country_flag = houston_capital
-				has_country_flag = not_houston_capital
+				has_global_flag = houston_capital
+				has_global_flag = not_houston_capital
 			}
 		}
 		
@@ -267,7 +220,7 @@ political_decisions = {
 					tag = DES
 					NOT = {
 						OR = {
-							has_global_flag = mormons_take_over_hawaii
+							has_global_flag = mormon_hawaii
 							has_global_flag = mormon_columbia
 						}
 					}
@@ -294,7 +247,16 @@ political_decisions = {
 					exists = yes
 					ai = yes
 					NOT = {
-						vassal_of = MEX
+						OR = {
+							vassal_of = MEX
+							substate_of = MEX
+							
+							vassal_of = M3X
+							substate_of = M3X
+							
+							vassal_of = MXM
+							substate_of = MXM
+						}
 						OR = {
 							has_country_flag = aridoamerica_alliance
 							has_country_flag = aridoamerica_alliance_refuse
@@ -306,7 +268,16 @@ political_decisions = {
 					exists = yes
 					ai = yes
 					NOT = {
-						vassal_of = MEX
+						OR = {
+							vassal_of = MEX
+							substate_of = MEX
+							
+							vassal_of = M3X
+							substate_of = M3X
+							
+							vassal_of = MXM
+							substate_of = MXM
+						}
 						OR = {
 							has_country_flag = aridoamerica_alliance
 							has_country_flag = aridoamerica_alliance_refuse
@@ -318,7 +289,16 @@ political_decisions = {
 					exists = yes
 					ai = yes
 					NOT = {
-						vassal_of = MEX
+						OR = {
+							vassal_of = MEX
+							substate_of = MEX
+							
+							vassal_of = M3X
+							substate_of = M3X
+							
+							vassal_of = MXM
+							substate_of = MXM
+						}
 						OR = {
 							has_country_flag = aridoamerica_alliance
 							has_country_flag = aridoamerica_alliance_refuse
@@ -330,7 +310,16 @@ political_decisions = {
 					exists = yes
 					ai = yes
 					NOT = {
-						vassal_of = MEX
+						OR = {
+							vassal_of = MEX
+							substate_of = MEX
+							
+							vassal_of = M3X
+							substate_of = M3X
+							
+							vassal_of = MXM
+							substate_of = MXM
+						}
 						OR = {
 							has_country_flag = aridoamerica_alliance
 							has_country_flag = aridoamerica_alliance_refuse
@@ -342,7 +331,16 @@ political_decisions = {
 					exists = yes
 					ai = yes
 					NOT = {
-						vassal_of = MEX
+						OR = {
+							vassal_of = MEX
+							substate_of = MEX
+							
+							vassal_of = M3X
+							substate_of = M3X
+							
+							vassal_of = MXM
+							substate_of = MXM
+						}
 						OR = {
 							has_country_flag = aridoamerica_alliance
 							has_country_flag = aridoamerica_alliance_refuse
@@ -354,7 +352,16 @@ political_decisions = {
 					exists = yes
 					ai = yes
 					NOT = {
-						vassal_of = MEX
+						OR = {
+							vassal_of = MEX
+							substate_of = MEX
+							
+							vassal_of = M3X
+							substate_of = M3X
+							
+							vassal_of = MXM
+							substate_of = MXM
+						}
 						OR = {
 							has_country_flag = aridoamerica_alliance
 							has_country_flag = aridoamerica_alliance_refuse
@@ -366,7 +373,16 @@ political_decisions = {
 					exists = yes
 					ai = yes
 					NOT = {
-						vassal_of = MEX
+						OR = {
+							vassal_of = MEX
+							substate_of = MEX
+							
+							vassal_of = M3X
+							substate_of = M3X
+							
+							vassal_of = MXM
+							substate_of = MXM
+						}
 						OR = {
 							has_country_flag = aridoamerica_alliance
 							has_country_flag = aridoamerica_alliance_refuse
@@ -378,7 +394,16 @@ political_decisions = {
 					exists = yes
 					ai = yes
 					NOT = {
-						vassal_of = MEX
+						OR = {
+							vassal_of = MEX
+							substate_of = MEX
+							
+							vassal_of = M3X
+							substate_of = M3X
+							
+							vassal_of = MXM
+							substate_of = MXM
+						}
 						OR = {
 							has_country_flag = aridoamerica_alliance
 							has_country_flag = aridoamerica_alliance_refuse
@@ -409,7 +434,16 @@ political_decisions = {
 					}
 					exists = yes
 					NOT = {
-						vassal_of = MEX
+						OR = {
+							vassal_of = MEX
+							substate_of = MEX
+							
+							vassal_of = M3X
+							substate_of = M3X
+							
+							vassal_of = MXM
+							substate_of = MXM
+						}
 						has_country_flag = aridoamerica_alliance
 					}
 				}
@@ -1335,10 +1369,14 @@ political_decisions = {
 				limit = {
 					OR = {
 						is_core = MEX
+						is_core = M3X
+						is_core = MXM
 						is_core = USA
 					}
 				}
 				remove_core = MEX
+				remove_core = M3X
+				remove_core = MXM
 				remove_core = USA
 			}
 			any_owned = { #Texas State

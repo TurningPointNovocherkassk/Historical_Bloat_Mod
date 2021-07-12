@@ -46,8 +46,10 @@ political_decisions = {
 					}
 				}
 				AND = {
-					tag = ISR
-					tag = TUR
+					OR = {
+						tag = ISR
+						tag = TUR
+					}
 				}
 			}
 		}

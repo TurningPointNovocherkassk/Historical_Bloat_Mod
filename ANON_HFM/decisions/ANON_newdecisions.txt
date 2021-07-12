@@ -2,6 +2,35 @@ political_decisions = {
 
 #####################################################	
 
+	#Acquire vassal and sphereling cores
+	acquire_vassal_cores = {
+		potential = {
+			is_greater_power = yes
+			has_unclaimed_cores = yes
+			NOT = { num_of_vassals = 1 }
+		}
+		
+		allow = {
+			war = no
+			any_core = { owner = { vassal_of = THIS NOT = { diplomatic_influence = { who = THIS value = 175 } tag = YWL } } }
+		}
+		
+		effect = {
+			any_country = {
+				limit = {
+					any_owned_province = { is_core = THIS }
+					vassal_of = THIS
+					NOT = { diplomatic_influence = { who = THIS value = 175 } }
+				}
+				country_event = 1000114
+				overlord = { badboy = 2 }
+			}
+		}
+		ai_will_do = { factor = 0 }
+	}
+
+#####################################################	
+
 	#Puna de Atacama dispute:
 	#argentina claims Tarija and Yavi after war of the pacific
 	#1889 secret treaty (Quirno Costa-Vaca Guzmán Treaty) between argentina and bolivia, bolivia gives puna de atacama (owned by CHL) to ARG in exchange of tarija and yavi
@@ -54,9 +83,9 @@ political_decisions = {
 				}
 			}
 			has_global_flag = war_of_the_pacific
+			has_country_flag = barros_gutierrez_treaty
 			NOT = { has_global_flag = buchanan_arbitration }
 			NOT = { has_global_flag = altbuchanan_arbitration }
-			year = 1898
 		}
 		allow = {
 			war = no
@@ -86,6 +115,10 @@ political_decisions = {
 		}
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { year = 1898 }
+			}
 		}
 	}
 	buchanan_arbitration = {
@@ -115,9 +148,9 @@ political_decisions = {
 				}
 			}
 			has_global_flag = war_of_the_pacific
+			has_country_flag = barros_gutierrez_treaty
 			NOT = { has_global_flag = buchanan_arbitration }
 			NOT = { has_global_flag = altbuchanan_arbitration }
-			year = 1898
 		}
 		allow = {
 			war = no
@@ -147,6 +180,10 @@ political_decisions = {
 		}
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { year = 1898 }
+			}
 		}
 	}
 	rocha_cano_protocol = {
@@ -195,7 +232,6 @@ political_decisions = {
 					is_core = PBC
 				}
 			}
-			year = 1896
 		}
 		effect = {
 			set_country_flag = rocha_cano_protocol
@@ -207,6 +243,10 @@ political_decisions = {
 		}
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { year = 1896 }
+			}
 		}
 	}
 	barros_gutierrez_treaty = {
@@ -248,7 +288,6 @@ political_decisions = {
 			}
 			owns = 2308 #Arica
 			owns = 2578 #Tacna
-			year = 1895
 		}
 		effect = {
 			set_country_flag = barros_gutierrez_treaty
@@ -260,6 +299,10 @@ political_decisions = {
 		}
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { year = 1895 }
+			}
 		}
 	}
 	costa_guzman_secret_treaty = {
@@ -286,7 +329,7 @@ political_decisions = {
 					is_core = THIS
 				}
 			}
-			2315 = { #Yavi
+			3385 = { #Yavi
 				OR = {
 					is_core = ARC
 					is_core = ARG
@@ -298,22 +341,25 @@ political_decisions = {
 		}
 		allow = {
 			war = no
-			any_core = {
-				region = BOL_2370 #Puna de Atacama
-				NOT = {
-					OR = {
-						owned_by = ARC
-						owned_by = ARG
-						owned_by = THIS
-					}
-					OR = {
-						owned_by = BOL
-						owned_by = PBC
+			2310 = {
+				owner = {
+					any_core = {
+						region = BOL_2370 #Puna de Atacama
+						NOT = {
+							OR = {
+								owned_by = ARC
+								owned_by = ARG
+								owned_by = THIS
+							}
+							OR = {
+								owned_by = BOL
+								owned_by = PBC
+							}
+						}
+						owned_by = CHL
 					}
 				}
-				owned_by = CHL
 			}
-			year = 1889
 		}
 		effect = {
 			set_country_flag = costa_guzman_secret_treaty
@@ -325,6 +371,10 @@ political_decisions = {
 		}
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { year = 1889 }
+			}
 		}
 	}
 	ARG_claims_tarija = {
@@ -335,10 +385,10 @@ political_decisions = {
 			2371 = { #Tarija
 				NOT = { owned_by = THIS }
 				NOT = { is_core = THIS }
-				owner = {
-					has_recently_lost_war = yes
-					truce_with = CHL
-				}
+				# owner = {
+					# has_recently_lost_war = yes
+					# truce_with = CHL
+				# }
 			}
 			2315 = { #Yavi
 				NOT = { owned_by = THIS }
@@ -354,13 +404,12 @@ political_decisions = {
 		}
 		effect = {
 			set_country_flag = ARG_claims_tarija
+			BOL_2315 = { add_core = THIS }
 			2371 = {
-				add_core = THIS
 				owner = {
 					country_event = 1000034
 				}
 			}
-			2315 = { add_core = THIS }
 		}
 		ai_will_do = {
 			factor = 1
@@ -485,7 +534,6 @@ political_decisions = {
 		}
 		
 		allow = {
-			year = 1867
 			2549 = {
 				owner = {
 					OR = {
@@ -519,6 +567,10 @@ political_decisions = {
 		
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { year = 1867 }
+			}
 		}
 	}
 
@@ -752,40 +804,40 @@ political_decisions = {
 #		}
 #	}
 
-	volga_don_canal = {
-		picture = build_kiel_canal
-		news = yes
-		news_desc_long = "volga_don_canal_NEWS_LONG"
-		news_desc_medium = "volga_don_canal_NEWS_MEDIUM"
-		news_desc_short = "volga_don_canal_NEWS_SHORT"
+	# volga_don_canal = {
+		# picture = build_kiel_canal
+		# news = yes
+		# news_desc_long = "volga_don_canal_NEWS_LONG"
+		# news_desc_medium = "volga_don_canal_NEWS_MEDIUM"
+		# news_desc_short = "volga_don_canal_NEWS_SHORT"
 		
-		potential = {
-			NOT = { has_global_flag = volga_don_under_construction }
-			NOT = { is_canal_enabled = 7 }
-			owns = 1039
-			is_greater_power = yes
-			interchangeable_parts = 1
-		}
+		# potential = {
+			# NOT = { has_global_flag = volga_don_under_construction }
+			# NOT = { is_canal_enabled = 7 }
+			# owns = 1039
+			# is_greater_power = yes
+			# interchangeable_parts = 1
+		# }
 		
-		allow = {
-			invention = machine_tools
-			invention = nitroglycerin
-			iron_steamers = 1
-			money = 75000
-		}
-		effect = {
-			set_global_flag = volga_don_under_construction
-			1039 = { secede_province = THIS }
-			country_event = 1000073
-		}
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 0
-				NOT = { year = 1948 }
-			}
-		}
-	}
+		# allow = {
+			# invention = machine_tools
+			# invention = nitroglycerin
+			# iron_steamers = 1
+			# money = 75000
+		# }
+		# effect = {
+			# set_global_flag = volga_don_under_construction
+			# 1039 = { secede_province = THIS }
+			# country_event = 1000073
+		# }
+		# ai_will_do = {
+			# factor = 1
+			# modifier = {
+				# factor = 0
+				# NOT = { year = 1948 }
+			# }
+		# }
+	# }
 	volga_don_canal_alternate = {
 		picture = build_kiel_canal
 		news = yes
@@ -808,16 +860,22 @@ political_decisions = {
 			invention = machine_tools
 			invention = nitroglycerin
 			iron_steamers = 1
-			money = 75000
+			OR = {
+				AND = {
+					money = 75000
+					NOT = { money = 125000 }
+				}
+				money = 125000
+			}
 		}
-		effect = {			
+		effect = {
 			set_country_flag = build_volga_don_canal
 			random_country = {
 				limit = {
 					NOT = { tag = THIS }
 					owns = 1039
 				}
-				country_event = 1000073
+				country_event = 1000075
 			}
 			
 			random_owned = {
@@ -828,7 +886,7 @@ political_decisions = {
 					}
 				}
 				owner = {
-					country_event = 36978
+					country_event = 1000073
 				}
 			}
 		}

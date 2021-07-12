@@ -193,7 +193,27 @@ country_event = {
 				has_recently_lost_war = yes
 			}
 			NOT = { exists = BEL }
-			NOT = { rank = 1 }
+			OR = {
+				AND = {
+					NOT = { rank = 1 }
+					RUS = { ai = no }
+					OR = {
+						AND = {
+							has_global_flag = crimea_has_happened
+							has_global_flag = treaty_of_paris_russia
+						}
+						AND = {
+							has_global_flag = great_eastern_crisis
+							has_global_flag = dismantle_ottomans
+						}
+						year = 1855
+					}
+				}
+				AND = {
+					NOT = { rank = 1 }
+					RUS = { ai = yes }
+				}
+			}
 			has_global_flag = EIC_independence
 		}
 	}
@@ -935,8 +955,10 @@ province_event = {
 	trigger = {
 		capital_scope = { continent = europe }
 		is_greater_power = yes
-		owns = 2033
-		owns = 2026
+		owner = {
+			owns = 2033
+			owns = 2026
+		}
 		has_global_flag = berlin_conference
 		has_global_flag = kenya_organized
 	}
@@ -945,26 +967,28 @@ province_event = {
 	
 	option = {
 		name = "EVT99107OPT"
-		any_owned = {
-			limit = {
-				is_core = KNY
-				NOT = { terrain = savanna }
-			}
-			add_province_modifier = {
-				name = small_immigration_boom
-				duration = 3650
-			}
-			add_province_modifier = {
-				name = colonial_exploitation
-				duration = -1
-			}
-			any_pop = {
+		owner = {
+			any_owned = {
 				limit = {
-					is_primary_culture = no
-					is_accepted_culture = no
+					is_core = KNY
+					NOT = { terrain = savanna }
 				}
-				militancy = 3
-				consciousness = 3
+				add_province_modifier = {
+					name = small_immigration_boom
+					duration = 3650
+				}
+				add_province_modifier = {
+					name = colonial_exploitation
+					duration = -1
+				}
+				any_pop = {
+					limit = {
+						is_primary_culture = no
+						is_accepted_culture = no
+					}
+					militancy = 3
+					consciousness = 3
+				}	
 			}	
 		}
 		ai_chance = { factor = 1 }

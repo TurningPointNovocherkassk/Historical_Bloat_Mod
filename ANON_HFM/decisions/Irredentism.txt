@@ -494,7 +494,6 @@ political_decisions = {
 						owns = 3502
 						owns = 3542
 						owns = 3488
-						owns = 3488
 						owns = 3551
 					}
 				}
@@ -1057,7 +1056,11 @@ political_decisions = {
 		}
 
 		allow = {
-			war_with = MEX
+			OR = {
+				war_with = MEX
+				war_with = M3X
+				war_with = MXM
+			}
 		}
 
 		effect = {
@@ -1088,7 +1091,11 @@ political_decisions = {
 		}
 
 		allow = {
-			war_with = MEX
+			OR = {
+				war_with = MEX
+				war_with = M3X
+				war_with = MXM
+			}
 		}
 
 		effect = {
@@ -1136,19 +1143,29 @@ political_decisions = {
 			#ANON
 			MEX_94 = { add_core = DES } #Nevada
 			MEX_100 = { add_core = DES } #Arizona
-			87 = { add_core = DES } #Monterrey
-			88 = { add_core = DES } #San Bernardino
-			89 = { add_core = DES } #Los Angeles
-			90 = { add_core = DES } #San Diego
+			MEX_104 = { add_core = DES } #North Cali
+			MEX_85 = { add_core = DES } #South Cali
+			MEX_2139 = { add_core = DES } #Baja Cali
+			###puerto peñasco province would be here if it existed
+			USA_81 = { add_core = DES } #Oregon
+			#
 			3397 = { add_core = DES } #Taos
 			2148 = { add_core = DES } #Albuquerque
 			2662 = { add_core = DES } #Animas
+			#
 			108 = { add_core = DES } #Grand Junction
 			109 = { add_core = DES } #Aspen
 			3399 = { add_core = DES } #White River
 			3398 = { add_core = DES } #Warm Springs
+			#
 			107 = { add_core = DES } #Riverside
 			110 = { add_core = DES } #Rock Springs
+			#
+			91 = { add_core = DES } #Boise
+			93 = { add_core = DES } #Pocatello
+			111 = { add_core = DES } #Cody
+			3395 = { add_core = DES } #South Pass
+			113 = { add_core = DES } #Bozeman
 			#####################################
 			set_country_flag = deseret_claims
 		}
@@ -1411,6 +1428,7 @@ political_decisions = {
 			795 = { add_core = ROM }
 			3623 = { add_core = ROM }
 			3624 = { add_core = ROM }
+			3630 = { add_core = ROM }
 		}
 		ai_will_do = { factor = 1 }
 	}

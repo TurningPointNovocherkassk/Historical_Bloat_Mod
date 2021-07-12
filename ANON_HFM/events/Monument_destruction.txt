@@ -1,0 +1,143 @@
+country_event = {
+	id = 152009874
+	title = "EVTNAME152009874" 
+	desc = "EVTDESC152009874"
+	major = yes
+	
+	is_triggered_only = yes
+	
+	immediate = { 425 = { remove_core = U03 } }
+	
+	option = {
+		name = "EVT152009874OPTA"
+		prestige_factor = -0.1
+		war_exhaustion = 30
+		any_pop = { limit = { is_culture_group = THIS } militancy = 2 consciousness = 4 }
+		relation = { who = FROM value = -400 }
+		FROM = {
+		any_pop = {
+			scaled_consciousness = { factor = 2 ideology = liberal }
+			scaled_consciousness = { factor = 2 ideology = socialist }
+		}
+		any_pop = { limit = { is_culture_group = THIS } militancy = 4 consciousness = 6 } }
+		425 = {
+			add_province_modifier = { name = war_torn duration = 720 }
+			remove_province_modifier = the_eiffel_tower
+		}
+		any_pop = {
+			random_list = {
+				50 = { dominant_issue = { value = jingoism factor = 0.25 } }
+				50 = { dominant_issue = { value = pacifism factor = 0.25 } }
+			}
+		}
+		425 = {
+			any_pop = {
+				random_list = {
+					34 = { reduce_pop = 0.90 }
+					33 = { reduce_pop = 0.85 }
+					33 = { reduce_pop = 0.80 }
+				}
+			}
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+	
+country_event = {
+	id = 152009875
+	title = "EVTNAME152009875" 
+	desc = "EVTDESC152009875"
+	major = yes
+	
+	is_triggered_only = yes
+	
+	immediate = { 300 = { remove_core = U03 } }
+	
+	option = {
+		name = "EVT152009874OPTA"
+		prestige_factor = -0.1
+		war_exhaustion = 30
+		any_pop = { limit = { OR = { is_primary_culture = yes is_accepted_culture = yes } } militancy = 2 consciousness = 4 }
+		relation = { who = FROM value = -400 }
+		FROM = {
+			any_pop = {
+				scaled_consciousness = { factor = 2 ideology = liberal }
+				scaled_consciousness = { factor = 2 ideology = socialist }
+			}
+			any_pop = { limit = { has_pop_culture = british } militancy = 4 consciousness = 6 }
+		}
+		300 = {
+			add_province_modifier = { name = war_torn duration = 720 }
+			remove_province_modifier = the_big_ben
+			any_pop = {
+				random_list = {
+					34 = { reduce_pop = 0.90 }
+					33 = { reduce_pop = 0.85 }
+					33 = { reduce_pop = 0.80 }
+				}
+			}
+		}
+		any_pop = {
+			random_list = {
+				50 = { dominant_issue = { value = jingoism factor = 0.25 } }
+				50 = { dominant_issue = { value = pacifism factor = 0.25 } }
+			}
+		}
+		300 = { change_controller = FROM }
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = 152009876
+	title = "EVTNAME152009876" 
+	desc = "EVTDESC152009876"
+	picture = "statue_of_liberty"
+	major = yes
+	
+	is_triggered_only = yes
+	
+	immediate = { 232 = { remove_core = U03 } }
+	
+	option = {
+		name = "EVT152009876OPTA"
+		prestige_factor = -0.1
+		war_exhaustion = 40
+		any_pop = { limit = { is_culture_group = THIS } militancy = 2 consciousness = 4 }
+		relation = { who = FROM value = -400 }
+		FROM = {
+			any_pop = {
+				scaled_consciousness = { factor = 2 ideology = liberal }
+				scaled_consciousness = { factor = 2 ideology = socialist }
+			}
+			any_pop = { limit = { is_culture_group = THIS } militancy = 4 consciousness = 6 }
+		}
+		232 = {
+			add_province_modifier = { name = war_torn duration = 720 }
+			remove_province_modifier = the_statue_of_liberty
+		}
+		any_pop = {
+			random_list = {
+				50 = { dominant_issue = { value = jingoism factor = 0.25 } }
+				50 = { dominant_issue = { value = pacifism factor = 0.25 } }
+			}
+		}
+		232 = {
+			any_pop = {
+				random_list = {
+					34 = { reduce_pop = 0.90 }
+					33 = { reduce_pop = 0.85 }
+					33 = { reduce_pop = 0.80 }
+				}
+			}
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+	

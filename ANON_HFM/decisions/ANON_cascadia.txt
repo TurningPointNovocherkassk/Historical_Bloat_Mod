@@ -1624,7 +1624,13 @@ political_decisions = {
 	CAS_baja_purchase = {
 		picture = baja_california
 		potential = {
-			NOT = { tag = MEX }
+			NOT = {
+				OR = {
+					tag = MEX
+					tag = M3X
+					tag = MXM
+				}
+			}
 			NOT = { has_country_flag = CAS_baja_purchase }
 			2139 = {
 				is_core = THIS
@@ -1691,6 +1697,8 @@ political_decisions = {
 					}
 				}
 				remove_core = MEX
+				remove_core = M3X
+				remove_core = MXM
 				remove_core = SON
 				add_core = CAL
 				add_core = CAS
@@ -2045,297 +2053,6 @@ political_decisions = {
 		ai_will_do = { factor = 1 }
 	}
 	
-	RUS_rename_ncali = {
-		picture = gtfo
-		potential = {
-			OR = {
-				is_culture_group = east_slavic
-				primary_culture = alaskan
-			}
-			has_country_flag = RUS_claims_north_america
-			owns = 3308
-			owns = 3307
-			owns = 3389
-			NOT = { has_global_flag = RUS_rename_ncali }
-		}
-		
-		allow = {
-			war = no
-		}
-		
-		effect = {
-			set_global_flag = RUS_rename_ncali
-			clr_global_flag = ENG_rename_ncali
-			3308 = {
-				change_province_name = "Svyataya Troitsa" 
-				state_scope = {
-					change_region_name = "Kaliforniya"
-				}
-			}  
-			3307 = { change_province_name = "Modokov" }
-			3389 = { change_province_name = "Tekhama" }
-		}
-		ai_will_do = { factor = 1 }
-	}
-	
-	ENG_rename_ncali = {
-		picture = gtfo
-		potential = {
-			NOT = {
-				OR = {
-					is_culture_group = east_slavic
-					is_culture_group = iberian
-					is_culture_group = latin_american_cultures
-					primary_culture = alaskan
-				}
-			}
-			OR = {
-				RUS = {	has_country_flag = RUS_claims_north_america	}
-				LSK = {	has_country_flag = RUS_claims_north_america	}
-			}
-			owns = 3308
-			owns = 3307
-			owns = 3389
-			NOT = { has_global_flag = ENG_rename_ncali }
-			has_global_flag = RUS_rename_ncali
-		}
-		
-		allow = {
-			war = no
-		}
-		
-		effect = {
-			set_global_flag = ENG_rename_ncali
-			clr_global_flag = RUS_rename_ncali
-			3308 = {
-				change_province_name = "Trinity" 
-				state_scope = {
-					change_region_name = "Northern California"
-				}
-			}  
-			3307 = { change_province_name = "Modoc" }
-			3389 = { change_province_name = "Tehama" }
-		}
-		ai_will_do = { factor = 1 }
-	}
-	
-	RUS_rename_oregon = {
-		picture = gtfo
-		potential = {
-			OR = {
-				is_culture_group = east_slavic
-				primary_culture = alaskan
-			}
-			has_country_flag = RUS_claims_north_america
-			owns = 81
-			NOT = { has_global_flag = RUS_rename_oregon }
-		}
-		
-		allow = {
-			war = no
-		}
-		
-		effect = {
-			set_global_flag = RUS_rename_oregon
-			clr_global_flag = ENG_rename_oregon
-			81 = {
-				change_province_name = "Novorenburg" 
-				state_scope = {
-					change_region_name = "Nizhnyaya Kolumbiya"
-				}
-			}  
-			3394 = { change_province_name = "Waskov" }
-			83 = { change_province_name = "Yevgeniygrad" }
-			3388 = { change_province_name = "Klamatovsk" }
-		}
-		ai_will_do = { factor = 1 }
-	}
-	
-	ENG_rename_oregon = {
-		picture = gtfo
-		potential = {
-			NOT = {
-				OR = {
-					is_culture_group = east_slavic
-					is_culture_group = iberian
-					is_culture_group = latin_american_cultures
-					primary_culture = alaskan
-				}
-			}
-			OR = {
-				RUS = {	has_country_flag = RUS_claims_north_america	}
-				LSK = {	has_country_flag = RUS_claims_north_america	}
-			}
-			owns = 81
-			NOT = { has_global_flag = ENG_rename_oregon }
-			has_global_flag = RUS_rename_oregon
-		}
-		
-		allow = {
-			war = no
-		}
-		
-		effect = {
-			set_global_flag = ENG_rename_oregon
-			clr_global_flag = RUS_rename_oregon
-			81 = {
-				change_province_name = "Portland" 
-				state_scope = {
-					change_region_name = "Oregon"
-				}
-			}  
-			3394 = { change_province_name = "Wasco" }
-			83 = { change_province_name = "Eugene" }
-			3388 = { change_province_name = "Klamath" }
-		}
-		ai_will_do = { factor = 1 }
-	}
-	
-	RUS_rename_washington = {
-		picture = gtfo
-		potential = {
-			OR = {
-				is_culture_group = east_slavic
-				primary_culture = alaskan
-			}
-			has_country_flag = RUS_claims_north_america
-			owns = 78
-			NOT = { has_global_flag = RUS_rename_washington }
-		}
-		
-		allow = {
-			war = no
-		}
-		
-		effect = {
-			set_global_flag = RUS_rename_washington
-			clr_global_flag = ENG_rename_washington
-			78 = {
-				change_province_name = "Siettlskaya" 
-				state_scope = {
-					change_region_name = "Tsentral'naya Kolumbiya"
-				}
-			}  
-			79 = { change_province_name = "Olimpiypol" }
-		}
-		ai_will_do = { factor = 1 }
-	}
-	
-	ENG_rename_washington = {
-		picture = gtfo
-		potential = {
-			NOT = {
-				OR = {
-					is_culture_group = east_slavic
-					is_culture_group = iberian
-					is_culture_group = latin_american_cultures
-					primary_culture = alaskan
-				}
-			}
-			OR = {
-				RUS = {	has_country_flag = RUS_claims_north_america	}
-				LSK = {	has_country_flag = RUS_claims_north_america	}
-			}
-			owns = 78
-			NOT = { has_global_flag = ENG_rename_washington }
-			has_global_flag = RUS_rename_washington
-		}
-		
-		allow = {
-			war = no
-		}
-		
-		effect = {
-			set_global_flag = ENG_rename_washington
-			clr_global_flag = RUS_rename_washington
-			78 = {
-				change_province_name = "Seattle" 
-				state_scope = {
-					change_region_name = "Washington"
-				}
-			}  
-			79 = { change_province_name = "Olympia" }
-		}
-		ai_will_do = { factor = 1 }
-	}
-	
-	RUS_rename_columbia = {
-		picture = gtfo
-		potential = {
-			OR = {
-				is_culture_group = east_slavic
-				primary_culture = alaskan
-			}
-			has_country_flag = RUS_claims_north_america
-			owns = 13
-			NOT = { has_global_flag = RUS_rename_columbia }
-		}
-		
-		allow = {
-			war = no
-		}
-		
-		effect = {
-			set_global_flag = RUS_rename_columbia
-			clr_global_flag = ENG_rename_columbia
-			13 = {
-				#change_province_name = "Novomoskva" 
-				change_province_name = "Vladikaskadiya" 
-				state_scope = {
-					change_region_name = "Verkhnyaya Kolumbiya"
-				}
-			}  
-			14 = { change_province_name = "Novoekaterinburg" }
-			15 = { change_province_name = "Velikii Kniaz Sent-Aleksandr" }
-			16 = { change_province_name = "Glenosrky" }
-			19 = { change_province_name = "Dolinygor" }
-			20 = { change_province_name = "Ukunakov" }
-		}
-		ai_will_do = { factor = 1 }
-	}
-	
-	ENG_rename_columbia = {
-		picture = gtfo
-		potential = {
-			NOT = {
-				OR = {
-					is_culture_group = east_slavic
-					is_culture_group = iberian
-					is_culture_group = latin_american_cultures
-					primary_culture = alaskan
-				}
-			}
-			OR = {
-				RUS = {	has_country_flag = RUS_claims_north_america	}
-				LSK = {	has_country_flag = RUS_claims_north_america	}
-			}
-			owns = 13
-			NOT = { has_global_flag = ENG_rename_columbia }
-			has_global_flag = RUS_rename_columbia
-		}
-		
-		allow = {
-			war = no
-		}
-		
-		effect = {
-			set_global_flag = ENG_rename_columbia
-			clr_global_flag = RUS_rename_columbia
-			13 = {
-				change_province_name = "Vancouver" 
-				state_scope = {
-					change_region_name = "Columbia"
-				}
-			}  
-			14 = { change_province_name = "Victoria" }
-			15 = { change_province_name = "Prince Rupert" }
-			16 = { change_province_name = "Glenora" }
-			19 = { change_province_name = "Valemount" }
-			20 = { change_province_name = "Okanagan" }
-		}
-		ai_will_do = { factor = 1 }
-	}
-	
 	RUS_claims_north_america = {
 		picture = map_alaska
 		potential = {
@@ -2501,113 +2218,6 @@ political_decisions = {
 		}
 	}
 	
-	SPA_rename_carsoncity = {
-		picture = gtfo
-		potential = {
-			OR = {
-				is_culture_group = latin_american_cultures
-				is_culture_group = iberian
-			}
-			owns = 3393
-			NOT = { has_global_flag = SPA_rename_carsoncity }
-		}
-		
-		allow = {
-			war = no
-		}
-		
-		effect = {
-			set_global_flag = SPA_rename_carsoncity
-			clr_global_flag = JAP_rename_carsoncity
-			clr_global_flag = CAS_rename_carsoncity
-			clr_global_flag = RUS_rename_carsoncity
-			3392 = { change_province_name = "Lago Tajoe" }
-			3393 = { change_province_name = "Tajoe" }
-		}
-		ai_will_do = { factor = 1 }
-	}
-	
-	CAS_rename_carsoncity = {
-		picture = gtfo
-		potential = {
-			OR = {
-				is_culture_group = american_cultures
-				primary_culture = cascadian
-			}
-			owns = 3393
-			NOT = { has_global_flag = CAS_rename_carsoncity }
-			has_global_flag = american_frontier
-		}
-		
-		allow = {
-			war = no
-		}
-		
-		effect = {
-			set_global_flag = CAS_rename_carsoncity
-			clr_global_flag = JAP_rename_carsoncity
-			clr_global_flag = SPA_rename_carsoncity
-			clr_global_flag = RUS_rename_carsoncity
-			3392 = { change_province_name = "Lake Tahoe" }
-			3393 = { change_province_name = "Carson City" }
-		}
-		ai_will_do = { factor = 1 }
-	}
-	
-	RUS_rename_carsoncity = {
-		picture = gtfo
-		potential = {
-			OR = {
-				is_culture_group = east_slavic
-				primary_culture = alaskan
-			}
-			owns = 3393
-			NOT = { has_global_flag = RUS_rename_carsoncity }
-			has_global_flag = american_frontier
-		}
-		
-		allow = {
-			war = no
-		}
-		
-		effect = {
-			set_global_flag = RUS_rename_carsoncity
-			clr_global_flag = JAP_rename_carsoncity
-			clr_global_flag = CAS_rename_carsoncity
-			clr_global_flag = SPA_rename_carsoncity
-			3392 = { change_province_name = "Ozero Takho" }
-			3393 = { change_province_name = "Takhoev" }
-		}
-		ai_will_do = { factor = 1 }
-	}
-	
-	JAP_rename_carsoncity = {
-		picture = gtfo
-		potential = {
-			OR = {
-				primary_culture = japanese
-				primary_culture = ryukyuan
-			}
-			owns = 3393
-			NOT = { has_global_flag = JAP_rename_carsoncity }
-			has_global_flag = american_frontier
-		}
-		
-		allow = {
-			war = no
-		}
-		
-		effect = {
-			set_global_flag = JAP_rename_carsoncity
-			clr_global_flag = RUS_rename_carsoncity
-			clr_global_flag = CAS_rename_carsoncity
-			clr_global_flag = SPA_rename_carsoncity
-			3392 = { change_province_name = "Taho Mizuumi" }
-			3393 = { change_province_name = "Taho" }
-		}
-		ai_will_do = { factor = 1 }
-	}
-	
 	developing_fort_ross = {
 		picture = krepost_ross
 		potential = {
@@ -2731,228 +2341,6 @@ political_decisions = {
 			}
 		}
 	}
-		
-	rename_ftross = {
-		picture = gtfo
-		potential = {
-			OR = {
-				AND = {
-					OR = {
-						is_culture_group = american_cultures
-						AND = {
-							is_culture_group = neo_european_cultures
-							NOT = { primary_culture = alaskan }
-						}
-					}
-					owns = 3390
-					NOT = { has_global_flag = american_rename_ftross }
-				}
-				AND = {
-					OR = {
-						is_culture_group = east_slavic
-						primary_culture = alaskan
-					}
-					owns = 3390
-					NOT = { has_global_flag = slavic_rename_ftross }
-				}
-				AND = {
-					OR = {
-						is_culture_group = iberian
-						is_culture_group = latin_american_cultures
-					}
-					owns = 3390
-					NOT = { has_global_flag = iberoamerican_rename_ftross }
-				}
-				AND = {
-					OR = {
-						primary_culture = japanese
-						primary_culture = ryukyuan
-					}
-					owns = 3390
-					NOT = { has_global_flag = japanese_rename_ftross }
-				}
-				AND = {
-					is_culture_group = germanic
-					owns = 3390
-					NOT = { has_global_flag = germanic_rename_ftross }
-				}
-			}
-		}
-		
-		allow = {
-			#war = no
-		}
-		
-		effect = {			
-			###american###
-			random_owned = {
-				limit = {
-					province_id = 3390
-					owner = {
-						OR = {
-							is_culture_group = american_cultures
-							AND = {
-								is_culture_group = neo_european_cultures
-								NOT = { primary_culture = alaskan }
-							}
-						}
-					}
-				}
-				3390 = { change_province_name = "Fort Ross" }
-				owner = { 
-					set_global_flag = american_rename_ftross
-					clr_global_flag = slavic_rename_ftross
-					clr_global_flag = iberoamerican_rename_ftross 
-					clr_global_flag = japanese_rename_ftross 
-					clr_global_flag = germanic_rename_ftross 
-				}
-			}
-			
-			###slavic###
-			random_owned = {
-				limit = {
-					province_id = 3390
-					owner = {
-						OR = {
-							is_culture_group = east_slavic
-							primary_culture = alaskan
-						}
-					}
-				}
-				3390 = { change_province_name = "Krepost' Ross'" }
-				owner = { 
-					set_global_flag = slavic_rename_ftross
-					clr_global_flag = american_rename_ftross
-					clr_global_flag = iberoamerican_rename_ftross 
-					clr_global_flag = japanese_rename_ftross 
-					clr_global_flag = germanic_rename_ftross 
-				}
-			}
-			
-			###iberoamerican###
-			random_owned = {
-				limit = {
-					province_id = 3390
-					owner = {
-						OR = {
-							is_culture_group = iberian
-							is_culture_group = latin_american_cultures
-						}
-					}
-				}
-				3390 = { change_province_name = "Fuerte Ruso" }
-				owner = { 
-					set_global_flag = iberoamerican_rename_ftross
-					clr_global_flag = slavic_rename_ftross
-					clr_global_flag = american_rename_ftross
-					clr_global_flag = japanese_rename_ftross
-					clr_global_flag = germanic_rename_ftross
-				}
-			}
-			
-			###japanese###
-			random_owned = {
-				limit = {
-					province_id = 3390
-					owner = {
-						OR = {
-							primary_culture = japanese
-							primary_culture = ryukyuan
-						}
-					}
-				}
-				3390 = { change_province_name = "Toride-Roshiajin" }
-				owner = { 
-					set_global_flag = japanese_rename_ftross
-					clr_global_flag = slavic_rename_ftross
-					clr_global_flag = american_rename_ftross
-					clr_global_flag = iberoamerican_rename_ftross
-					clr_global_flag = germanic_rename_ftross
-				}
-			}
-			
-			###japanese###
-			random_owned = {
-				limit = {
-					province_id = 3390
-					owner = {
-						is_culture_group = germanic
-					}
-				}
-				3390 = { change_province_name = "Festung Roß" }
-				owner = { 
-					set_global_flag = germanic_rename_ftross
-					clr_global_flag = japanese_rename_ftross
-					clr_global_flag = slavic_rename_ftross
-					clr_global_flag = american_rename_ftross
-					clr_global_flag = iberoamerican_rename_ftross
-				}
-			}
-		}
-		ai_will_do = { factor = 1 }
-	}
-	
-	CAS_rename_n_california = {
-		picture = gtfo
-		potential = {
-			OR = {
-				tag = UOR
-				tag = JEF
-				tag = COL
-				tag = CAS
-			}
-			has_country_flag = claim_cascadia
-			owns = 3308
-			owns = 3307
-			owns = 3389
-			NOT = { has_global_flag = CAS_rename_n_california }
-		}
-		
-		allow = {
-			war = no
-		}
-		
-		effect = {
-			set_global_flag = CAS_rename_n_california
-			clr_global_flag = SPA_rename_n_california
-			3308 = { change_province_name = "Trinity" }
-			3307 = { change_province_name = "Modoc" }
-			3389 = { change_province_name = "Tehama" }
-		}
-		ai_will_do = { factor = 1 }
-	}
-	SPA_rename_n_california = {
-		picture = gtfo
-		potential = {
-			OR = {
-				is_culture_group = latin_american_cultures
-				is_culture_group = iberian
-			}
-			OR = {
-				UOR = { has_country_flag = claim_cascadia }
-				JEF = { has_country_flag = claim_cascadia }
-				CAS = { has_country_flag = claim_cascadia }
-				COL = { has_country_flag = claim_cascadia }
-			}
-			owns = 3308
-			owns = 3307
-			owns = 3389
-			NOT = { has_global_flag = SPA_rename_n_california }
-		}
-		
-		allow = {
-			war = no
-		}
-		
-		effect = {
-			set_global_flag = SPA_rename_n_california
-			clr_global_flag = CAS_rename_n_california
-			3308 = { change_province_name = "Santísima Trinidad" }
-			3307 = { change_province_name = "Quebrada Honda" }
-			3389 = { change_province_name = "Tejama" }
-		}
-		ai_will_do = { factor = 1 }
-	}
 	
 	CAS_from_whitehorse_and_down = {
 		picture = map_alaska
@@ -2990,6 +2378,7 @@ political_decisions = {
 						has_country_flag = manifest_destiny_refuted
 					}
 				}
+				is_culture_group = germanic
 			}
 			1 = {
 				OR = {
@@ -3077,6 +2466,10 @@ political_decisions = {
 							has_country_flag = manifest_destiny_refuted
 						}
 					}
+					is_greater_power = yes
+				}
+				AND = {
+					is_culture_group = germanic
 					is_greater_power = yes
 				}
 			}
@@ -3194,373 +2587,7 @@ political_decisions = {
 		}
 		ai_will_do = { factor = 1 }
 	}
-	
-	CAS_rename_whitehorse = {
-		picture = map_alaska
-		potential = {
-			OR = {
-				tag = CAS
-				tag = UOR
-				tag = JEF
-				AND = {
-					tag = COL
-					primary_culture = cascadian
-				}
-				is_culture_group = american_cultures
-			}
-			owns = 6
-			NOT = { has_global_flag = CAS_rename_whitehorse }
-		}
 		
-		allow = {
-			war = no
-		}
-		
-		effect = {
-			set_global_flag = CAS_rename_whitehorse
-			clr_global_flag = SPA_rename_whitehorse
-			clr_global_flag = RUS_rename_whitehorse
-			clr_global_flag = JAP_rename_whitehorse
-			6 = { change_province_name = "Whitehorse" }
-			17 = { change_province_name = "Stikine" }
-			7 = { change_province_name = "Dawson" }
-			# 8 = { change_province_name = "Ross River" }
-			2629 = { change_province_name = "Fort Nelson" }
-		}
-		ai_will_do = { factor = 1 }
-	}
-	SPA_rename_whitehorse = {
-		picture = map_alaska
-		potential = {
-			OR = {
-				is_culture_group = iberian
-				is_culture_group = latin_american_cultures
-			}
-			owns = 6
-			NOT = { has_global_flag = SPA_rename_whitehorse }
-		}
-		
-		allow = {
-			war = no
-		}
-		
-		effect = {
-			set_global_flag = SPA_rename_whitehorse
-			clr_global_flag = CAS_rename_whitehorse
-			clr_global_flag = RUS_rename_whitehorse
-			clr_global_flag = JAP_rename_whitehorse
-			6 = { change_province_name = "Caballo Blanco" }
-			#17 = { change_province_name = "Buena Esperanza" }
-			17 = { change_province_name = "Estajín" }
-			7 = { change_province_name = "San David" }
-			# 8 = { change_province_name = "Rio Rosario" }
-			2629 = { change_province_name = "Fuerte Gutiérrez" }
-		}
-		ai_will_do = { factor = 1 }
-	}
-	RUS_rename_whitehorse = {
-		picture = map_alaska
-		potential = {
-			OR = {
-				is_culture_group = east_slavic
-				primary_culture = alaskan
-			}
-			owns = 6
-			NOT = { has_global_flag = RUS_rename_whitehorse }
-		}
-		
-		allow = {
-			war = no
-		}
-		
-		effect = {
-			set_global_flag = RUS_rename_whitehorse
-			clr_global_flag = CAS_rename_whitehorse
-			clr_global_flag = SPA_rename_whitehorse
-			clr_global_flag = JAP_rename_whitehorse
-			6 = { change_province_name = "Belyikon'sk" }
-			17 = { change_province_name = "Shtakhin" }
-			7 = { change_province_name = "Svyatoy David" }
-			# 8 = { change_province_name = "Reka Ross'" }
-			2629 = { change_province_name = "Krepost Potemkin" }
-		}
-		ai_will_do = { factor = 1 }
-	}
-	JAP_rename_whitehorse = {
-		picture = map_alaska
-		potential = {
-			OR = {
-				primary_culture = japanese
-				primary_culture = ryukyuan
-			}
-			owns = 6
-			owns = 17
-			NOT = { has_global_flag = JAP_rename_whitehorse }
-		}
-		
-		allow = {
-			war = no
-		}
-		
-		effect = {
-			set_global_flag = JAP_rename_whitehorse
-			clr_global_flag = CAS_rename_whitehorse
-			clr_global_flag = SPA_rename_whitehorse
-			clr_global_flag = RUS_rename_whitehorse
-			6 = { change_province_name = "Hakuba" }
-			17 = { change_province_name = "Kibou" }
-			7 = { change_province_name = "Sutakiin" }
-			# 8 = { change_province_name = "Kasuka" } #Kaska Dena
-			2629 = { change_province_name = "Toride-Katsu" } #In honor of Katsu Kaishu
-		}
-		ai_will_do = { factor = 1 }
-	}
-	
-	CAS_rename_alaska = {
-		picture = map_alaska
-		potential = {
-			OR = {
-				tag = CAS
-				tag = UOR
-				tag = JEF
-				AND = {
-					tag = COL
-					primary_culture = cascadian
-				}
-			}
-			owns = 1
-			NOT = { has_global_flag = CAS_rename_alaska }
-		}
-		
-		allow = {
-			war = no
-		}
-		
-		effect = {
-			set_global_flag = CAS_rename_alaska
-			clr_global_flag = SPA_rename_alaska
-			clr_global_flag = USA_rename_alaska
-			clr_global_flag = RUS_rename_alaska
-			clr_global_flag = JAP_rename_alaska
-			clr_global_flag = GER_rename_alaska
-			1 = {
-				change_province_name = "New Archangel" 
-				state_scope = {
-					change_region_name = "Alaska"
-				}
-			}  
-			2 = { change_province_name = "St. Dionysius" }
-			3 = { change_province_name = "Fort St. Nicholas" }
-			4 = { change_province_name = "Port Valdez" }
-			5 = { change_province_name = "Unalaska" }
-			2630 = { change_province_name = "Tanacross" }
-			2599 = { change_province_name = "Fort Yukon" }
-			2631 = { change_province_name = "St. Michael" }
-			3391 = { change_province_name = "St. Paul's Harbor" }
-		}
-		ai_will_do = { factor = 1 }
-	}
-	SPA_rename_alaska = {
-		picture = map_alaska
-		potential = {
-			OR = {
-				is_culture_group = iberian
-				is_culture_group = latin_american_cultures
-			}
-			owns = 1
-			NOT = { has_global_flag = SPA_rename_alaska }
-		}
-		
-		allow = {
-			war = no
-		}
-		
-		effect = {
-			set_global_flag = SPA_rename_alaska
-			clr_global_flag = CAS_rename_alaska
-			clr_global_flag = USA_rename_alaska
-			clr_global_flag = RUS_rename_alaska
-			clr_global_flag = JAP_rename_alaska
-			clr_global_flag = GER_rename_alaska
-			1 = {
-				change_province_name = "Los Remedios" 
-				state_scope = {
-					change_region_name = "Alasca"
-				}
-			}  
-			2 = { change_province_name = "Revillagigedo" }
-			3 = { change_province_name = "Fuerte San Nicolás" }
-			4 = { change_province_name = "Puerto Valdés" }
-			5 = { change_province_name = "Puerto Holandés" }
-			2630 = { change_province_name = "Tanána" }
-			2599 = { change_province_name = "Fuerte Yucón" }
-			2631 = { change_province_name = "San Miguel" }
-			3391 = { change_province_name = "Puerto San Pablo" }
-		}
-		ai_will_do = { factor = 1 }
-	}
-	USA_rename_alaska = {
-		picture = map_alaska
-		potential = {
-			is_culture_group = american_cultures
-			NOT = {
-				OR = {
-					tag = CAS
-					tag = UOR
-					tag = JEF
-					AND = {
-						tag = COL
-						primary_culture = cascadian
-					}
-				}
-			}
-			owns = 1
-			NOT = { has_global_flag = USA_rename_alaska }
-		}
-		
-		allow = {
-			war = no
-		}
-		
-		effect = {
-			set_global_flag = USA_rename_alaska
-			clr_global_flag = CAS_rename_alaska
-			clr_global_flag = SPA_rename_alaska
-			clr_global_flag = RUS_rename_alaska
-			clr_global_flag = JAP_rename_alaska
-			clr_global_flag = GER_rename_alaska
-			1 = {
-				change_province_name = "Sitka" 
-				state_scope = {
-					change_region_name = "Alaska"
-				}
-			}  
-			2 = { change_province_name = "Juneau" }
-			3 = { change_province_name = "Kenai" }
-			4 = { change_province_name = "Valdez" }
-			5 = { change_province_name = "Dutch Harbor" }
-			2630 = { change_province_name = "Tanacross" }
-			2599 = { change_province_name = "Fort Yukon" }
-			2631 = { change_province_name = "Unalakleet" }
-			3391 = { change_province_name = "Kodiak" }
-		}
-		ai_will_do = { factor = 1 }
-	}
-	RUS_rename_alaska = {
-		picture = map_alaska
-		potential = {
-			OR = {
-				is_culture_group = east_slavic
-				primary_culture = alaskan
-			}
-			owns = 1
-			NOT = { has_global_flag = RUS_rename_alaska }
-		}
-		
-		allow = {
-			war = no
-		}
-		
-		effect = {
-			set_global_flag = RUS_rename_alaska
-			clr_global_flag = CAS_rename_alaska
-			clr_global_flag = SPA_rename_alaska
-			clr_global_flag = USA_rename_alaska
-			clr_global_flag = JAP_rename_alaska
-			clr_global_flag = GER_rename_alaska
-			1 = {
-				change_province_name = "Novoarkhangelsk" 
-				state_scope = {
-					change_region_name = "Alyaska"
-				}
-			}  
-			2 = { change_province_name = "Sent-Dionisiy" }
-			3 = { change_province_name = "Fort-Nikolayevskaya" }
-			4 = { change_province_name = "Nikolayevsk" }
-			5 = { change_province_name = "Unalyaska" }
-			2630 = { change_province_name = "Vostochnaya" }
-			2599 = { change_province_name = "Tsentralnaya" }
-			2631 = { change_province_name = "Sent-Maykl" }
-			3391 = { change_province_name = "Svyato-Pavlovskoy Gavani" }
-		}
-		ai_will_do = { factor = 1 }
-	}
-	JAP_rename_alaska = {
-		picture = map_alaska
-		potential = {
-			OR = {
-				primary_culture = japanese
-				primary_culture = ryukyuan
-			}
-			owns = 1
-			NOT = { has_global_flag = JAP_rename_alaska }
-		}
-		
-		allow = {
-			war = no
-		}
-		
-		effect = {
-			set_global_flag = JAP_rename_alaska
-			clr_global_flag = CAS_rename_alaska
-			clr_global_flag = SPA_rename_alaska
-			clr_global_flag = USA_rename_alaska
-			clr_global_flag = RUS_rename_alaska
-			clr_global_flag = GER_rename_alaska
-			1 = {
-				change_province_name = "Dai Tenshi" 
-				state_scope = {
-					change_region_name = "Hokushima"
-				}
-			}  
-			2 = { change_province_name = "Jionisosu" }
-			3 = { change_province_name = "Toride-Nikorasu" }
-			4 = { change_province_name = "Buarudesu" }
-			5 = { change_province_name = "Yunarasuka" }
-			2630 = { change_province_name = "Tanana" }
-			2599 = { change_province_name = "Toride-Yuukon" }
-			2631 = { change_province_name = "Unarakuriito" }
-			3391 = { change_province_name = "Koodiiakku" }
-		}
-		ai_will_do = { factor = 1 }
-	}
-	GER_rename_alaska = {
-		picture = map_alaska
-		potential = {
-			is_culture_group = germanic
-			owns = 1
-			NOT = { has_global_flag = GER_rename_alaska }
-		}
-		
-		allow = {
-			war = no
-		}
-		
-		effect = {
-			set_global_flag = GER_rename_alaska
-			clr_global_flag = CAS_rename_alaska
-			clr_global_flag = SPA_rename_alaska
-			clr_global_flag = USA_rename_alaska
-			clr_global_flag = RUS_rename_alaska
-			clr_global_flag = JAP_rename_alaska
-			1 = {
-				change_province_name = "Neue Erzengel" 
-				state_scope = {
-					change_region_name = "Alaska"
-				}
-			}  
-			2 = { change_province_name = "Sankt Dionysios" }
-			3 = { change_province_name = "Sankt Nikolaus" }
-			4 = { change_province_name = "Waldezhafen" }
-			5 = { change_province_name = "Holländischer Hafen" }
-			2630 = { change_province_name = "Tanaquerung" }
-			2599 = { change_province_name = "Festung Yukon" }
-			2631 = { change_province_name = "Sankt Michael" }
-			3391 = { change_province_name = "Sankt Paul" }
-		}
-		ai_will_do = { factor = 1 }
-	}
-	
 	cascadian_identity = { #gibe assimilation bonus
 		picture = cascadia_bioregion
 		potential = {
@@ -3856,9 +2883,13 @@ political_decisions = {
 			#85 = { #Sonoma, California
 			#	add_core = CAS
 			#}
-			add_accepted_culture = anglo_canadian
-			add_accepted_culture = french_canadian
-			primary_culture = yankee
+			primary_culture = cascadian
+			remove_accepted_culture = yankee
+			remove_accepted_culture = dixie
+			remove_accepted_culture = texan
+			remove_accepted_culture = cajun
+			remove_accepted_culture = french_canadian
+			remove_accepted_culture = anglo_canadian
 			change_tag = CAS
 		}
 		
@@ -4018,7 +3049,10 @@ political_decisions = {
 			}
 			has_global_flag = fort_ross_sale_refuse
 			has_country_flag = refused_alaska
-			NOT = { has_country_flag = alaska_purchase_completed }
+			NOT = {
+				has_country_flag = alaska_purchase_completed
+				has_country_flag = alaska_annexed
+			}
 			OR = {
 				has_global_flag = acw_war_started
 				year = 1870
@@ -4050,6 +3084,7 @@ political_decisions = {
 		}
 
 		effect = {
+			set_country_flag = alaska_annexed
 			prestige = 5
 			any_country = {
 				limit = {
@@ -4072,6 +3107,79 @@ political_decisions = {
 			}
 		}
 		ai_will_do = { factor = 1 }
+	}
+	
+	inner_alaska = {
+		picture = fort_selkirk
+		potential = {
+			exists = yes
+			OR = {
+				is_culture_group = east_slavic
+				primary_culture = alaskan
+			}
+			OR = {
+				owns = 1
+				LSK = {
+					OR = {
+						vassal_of = THIS
+						substate_of = THIS
+					}
+					owns = 1
+				}
+			}
+			2630 = { empty = yes }
+			2599 = { empty = yes }
+		}
+		
+		allow = {
+			war = no
+			OR = {
+				invention = mission_to_civilize
+				ENG = { has_country_flag = alaskan_frontier_taken }
+			}
+		}
+		
+		effect = {
+			2630 = {
+				secede_province = THIS
+				add_core = LSK
+				add_core = THIS
+			}
+			2599 = {
+				secede_province = THIS
+				add_core = LSK
+				add_core = THIS
+			}
+			any_owned = {
+				limit = {
+					owner = {
+						NOT = {
+							tag = LSK
+							has_country_flag = alaska_annexed
+						}
+						LSK = {
+							exists = yes
+							OR = {
+								vassal_of = THIS
+								substate_of = THIS
+							}
+						}
+					}
+					is_core = LSK
+				}
+				secede_province = LSK
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				OR = {
+					LSK = { ai = no }
+					RUS = { ai = no }
+				}
+			}
+		}
 	}
 
 }

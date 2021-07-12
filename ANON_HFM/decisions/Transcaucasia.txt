@@ -12,7 +12,7 @@ political_decisions = {
 				
 				tag = ME5
 				
-				tag = GUR
+				tag = GIA
 				tag = IME
 				tag = KKH
 				tag = KRT
@@ -86,7 +86,7 @@ political_decisions = {
 			TUR_885 = { add_core = TCA }
 			add_accepted_culture = georgian
 			add_accepted_culture = armenian
-			add_accepted_culture = azerbaijani
+			# add_accepted_culture = azerbaijani
 			change_tag = TCA
 			any_country = {
 				limit = {
@@ -140,7 +140,7 @@ political_decisions = {
 				
 				tag = ME5
 				
-				tag = GUR
+				tag = GIA
 				tag = IME
 				tag = KKH
 				tag = KRT
@@ -175,7 +175,7 @@ political_decisions = {
 					}
 					OR = {
 						is_sphere_leader_of = GEO
-						is_sphere_leader_of = GUR
+						is_sphere_leader_of = GIA
 						is_sphere_leader_of = IME
 						is_sphere_leader_of = KKH
 						is_sphere_leader_of = KRT
@@ -244,7 +244,7 @@ political_decisions = {
 						tag = AZB
 						tag = ARM
 						tag = ME5
-						tag = GUR
+						tag = GIA
 						tag = IME
 						tag = KKH
 						tag = KRT
@@ -285,7 +285,7 @@ political_decisions = {
 							is_core = AZB
 							is_core = ARM
 							is_core = ME5
-							is_core = GUR
+							is_core = GIA
 							is_core = IME
 							is_core = KKH
 							is_core = KRT

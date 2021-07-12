@@ -1,0 +1,78 @@
+
+# mobilization #
+#military_staff_system
+mob1 = {
+	limit = { military_staff_system = 1 }
+	chance = {
+		base = 5	
+	}
+	effect = {
+		mobilisation_economy_impact = 0.2
+	}
+}
+mob2 = {
+	limit = { military_plans = 1 }
+	chance = {
+		base = 2
+		modifier = {
+			factor = 1
+			invention = telegraph_coordination
+		}
+		modifier = {
+			factor = 2
+			strategic_mobility = 1
+		}	
+	}
+	effect = {
+		mobilisation_economy_impact = 0.1
+	}
+}
+mob3 = {
+	limit = { military_plans = 1 }
+	chance = {
+		base = 2
+		modifier = {
+			factor = 2
+			invention = mob2
+		}	
+	}
+	effect = {
+		mobilisation_economy_impact = 0.1
+	}
+}
+#military_statistics
+mob4 = {
+	limit = { military_statistics = 1 }
+	chance = {
+		base = 3
+		modifier = {
+			factor = 2
+			military_staff_system = 1
+		}
+		modifier = {
+			factor = 2
+			army_professionalism = 1
+		}
+	}
+	effect = {
+		mobilisation_economy_impact = 0.1
+	}	
+}
+#military_logistics
+mob5 = {
+	limit = { military_logistics = 1 }
+	chance = {
+		base = 0
+		modifier = {
+			factor = 2
+			experimental_railroad = 1
+		}
+		modifier = {
+			factor = 3
+			early_railroad = 1
+		}	
+	}
+	effect = {
+		mobilisation_economy_impact = 0.2
+	}
+}

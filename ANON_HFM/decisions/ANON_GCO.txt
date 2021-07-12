@@ -165,9 +165,17 @@ political_decisions = {
 		allow = {
 			CLM = {
 				OR = {
-					in_sphere = THIS
-					vassal_of = THIS
-					ai = no
+					AND = {
+						exists = yes
+						OR = {
+							in_sphere = THIS
+							vassal_of = THIS
+						}
+					}
+					AND = {
+						ai = no
+						exists = yes
+					}
 					all_core = {
 						OR = {
 							owned_by = THIS
@@ -185,9 +193,17 @@ political_decisions = {
 			}
 			ECU = {
 				OR = {
-					in_sphere = THIS
-					vassal_of = THIS
-					ai = no
+					AND = {
+						exists = yes
+						OR = {
+							in_sphere = THIS
+							vassal_of = THIS
+						}
+					}
+					AND = {
+						ai = no
+						exists = yes
+					}
 					all_core = {
 						OR = {
 							owned_by = THIS
@@ -206,9 +222,17 @@ political_decisions = {
 			OR = {
 				VNZ = {
 					OR = {
-						in_sphere = THIS
-						vassal_of = THIS
-						ai = no
+						AND = {
+							exists = yes
+							OR = {
+								in_sphere = THIS
+								vassal_of = THIS
+							}
+						}
+						AND = {
+							ai = no
+							exists = yes
+						}
 						all_core = {
 							OR = {
 								owned_by = THIS
@@ -226,9 +250,17 @@ political_decisions = {
 				}
 				FVZ = {
 					OR = {
-						in_sphere = THIS
-						vassal_of = THIS
-						ai = no
+						AND = {
+							exists = yes
+							OR = {
+								in_sphere = THIS
+								vassal_of = THIS
+							}
+						}
+						AND = {
+							ai = no
+							exists = yes
+						}
 						all_core = {
 							OR = {
 								owned_by = THIS
@@ -246,9 +278,17 @@ political_decisions = {
 				}
 				USV = {
 					OR = {
-						in_sphere = THIS
-						vassal_of = THIS
-						ai = no
+						AND = {
+							exists = yes
+							OR = {
+								in_sphere = THIS
+								vassal_of = THIS
+							}
+						}
+						AND = {
+							ai = no
+							exists = yes
+						}
 						all_core = {
 							OR = {
 								owned_by = THIS
@@ -272,6 +312,19 @@ political_decisions = {
 			any_country = {
 				limit = {
 					OR = {
+						tag = VNZ
+						tag = FVZ
+						tag = USV
+						tag = CLM
+						tag = ECU
+						tag = PNM
+					}
+				}
+				all_core = { add_core = GCO }
+			}
+			any_country = {
+				limit = {
+					OR = {
 						primary_culture = north_andean
 						primary_culture = llanero
 						AND = {
@@ -284,21 +337,29 @@ political_decisions = {
 						in_sphere = THIS
 						vassal_of = THIS
 					}
+					exists = yes
 				}
 				annex_to = THIS
 			}
-			any_country = {
+			random_country = {
 				limit = {
 					OR = {
-						tag = VNZ
-						tag = FVZ
-						tag = USV
-						tag = CLM
-						tag = ECU
-						tag = PNM
+						primary_culture = north_andean
+						primary_culture = llanero
+						AND = {
+							tag = PNM
+							primary_culture = central_american
+						}
 					}
+					NOT = { tag = THIS }
+					OR = {
+						in_sphere = THIS
+						vassal_of = THIS
+					}
+					exists = yes
+					ai = no
 				}
-				all_core = { add_core = GCO }
+				country_event = 11101
 			}
 			#Guyana
 			2243 = { add_core = GCO }
@@ -312,6 +373,7 @@ political_decisions = {
 			3371 = { add_core = GCO }
 			#Mosquitos coast
 			UCA_2200 = { add_core = GCO }
+			PNM = { all_core = { add_core = GCO } }
 			any_owned = {
 				limit = {
 					is_core = GCO
@@ -322,6 +384,7 @@ political_decisions = {
 			release_vassal = GCO
 			create_alliance = GCO
 			create_vassal = GCO
+			GCO = { political_reform = federalism }
 			relation = {
 				who = GCO
 				value = 100
@@ -398,17 +461,31 @@ political_decisions = {
 				is_greater_power = yes
 			}
 			is_culture_group = latin_american_cultures
-			owns = 1723
+			OR = {
+				owns = 1723
+				owns = 2204
+			}
 			is_greater_power = no
 			war = no
 		}
 		allow = {
 			year = 1846
+			OR = {
+				owns = 1723
+				owns = 2204
+			}
 		}
 		effect = {
 			set_global_flag = mallarino_bidlack
-			1723 = { infrastructure = 1 }
-			2204 = { infrastructure = 1 }
+			any_owned = {
+				limit = {
+					OR = {
+						province_id = 1723 #Panama Canal
+						province_id = 2204 #Panama City
+					}
+				}
+				infrastructure = 1
+			}
 			USA = {
 				relation = {
 					who = THIS
@@ -1217,7 +1294,7 @@ political_decisions = {
 		
 		allow = {
 			war = no
-			# year = 1843
+			year = 1843
 		}
 		
 		effect = {
@@ -1229,7 +1306,6 @@ political_decisions = {
 					}
 					move_pop = 3361
 				}
-				# remove_core = T0B
 			}
 			3361 = { #Maracay
 				add_province_modifier = {

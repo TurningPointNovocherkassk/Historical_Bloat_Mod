@@ -1,7 +1,6 @@
 political_decisions = {
 
 	lateran_pacts = {
-
 		potential = {
 			tag = ITA
 			PAP = {
@@ -18,7 +17,6 @@ political_decisions = {
 			}
 			NOT = { has_country_flag = released_PAP }
 		}
-
 		allow = {
 			tag = ITA
 			PAP = {
@@ -33,7 +31,6 @@ political_decisions = {
 			NOT = { has_country_flag = released_PAP }
 			war = no
 		}
-
 		effect = {
 			set_country_flag = released_PAP
 			any_owned = {
@@ -111,196 +108,154 @@ political_decisions = {
 
 		ai_will_do = { factor = 1 }
 	}
-
-
-	italian_renamed_provence = {
-		picture = gtfo
-		potential = {
-		is_culture_group = italian
-		owns = 467
-		NOT = { has_global_flag = italian_renamed_provence }
-		}
-
-		allow = {
-			war = no
-		}
-
-		effect = {
-			random_owned = {
-				limit = {
-					province_id = 467
-				}
-				467 = {
-					change_province_name = "Marsiglia"
-					state_scope = { change_region_name = "Provenza" }
-				}
-				468 = { change_province_name = "Avignone" }
-				469 = { change_province_name = "Digno" }
-				470 = { change_province_name = "Tolone" }
-				471 = { change_province_name = "Foro di Giulio" }
-				owner = {
-					set_global_flag = italian_renamed_provence
-					clr_global_flag = french_renamed_provence
-				}
-			}
-		}
-		ai_will_do = { factor = 1 }
-	}
-
-	french_renamed_provence = {
-		picture = gtfo
-		potential = {
-			primary_culture = french
-			owns = 467
-			has_global_flag = french_renamed_provence
-		}
-
-		allow = {
-			war = no
-		}
-
-		effect = {
-			random_owned = {
-				limit = {
-					province_id = 467
-				}
-				467 = {
-					change_province_name = "Marseille"
-					state_scope = { change_region_name = "Provence" }
-				}
-				468 = { change_province_name = "Avignon" }
-				469 = { change_province_name = "Digne" }
-				470 = { change_province_name = "Toulon" }
-				471 = { change_province_name = "Frejus" }
-				owner = {
-					set_global_flag = french_renamed_provence
-					clr_global_flag = italian_renamed_provence
-				}
-			}
-		}
-		ai_will_do = { factor = 1 }
-	}
+	
 	federate_italian_states = {
-    picture = italian_islands
-    potential = {
+		picture = italian_islands
+		potential = {
+            OR = {
+                tag = AUS
+                tag = KUK
+                tag = DNB
+                tag = SGF
+				AND = {
+					tag = GER
+					has_country_flag = austrian_greater_germany
+				}
+            }
+            is_greater_power = yes
+            NOT = { exists = ITA }
+            NOT = {  has_country_flag = austrian_outside_italy  }
+            OR = {
+                any_owned_province = { is_core = ITA }
+                SAR = { in_sphere = THIS }
+                SIC = { in_sphere = THIS }
+                PAP = { in_sphere = THIS }
+                TUS = { in_sphere = THIS }
+                MOD = { in_sphere = THIS }
+                PAR = { in_sphere = THIS }
+                LUC = { in_sphere = THIS }
+                LOM = { in_sphere = THIS }
+                VEN = { in_sphere = THIS }
+            }
 			has_global_flag = italy_federation_yes
-      OR = {
-        tag = AUS
-        tag = KUK
-      }
-      is_greater_power = yes
-      NOT = { exists = ITA }
-      NOT = { has_global_flag = italian_federation }
-      OR = {
-        any_owned_province = { is_core = ITA }
-        SAR = { in_sphere = THIS }
-        SIC = { in_sphere = THIS }
-        PAP = { in_sphere = THIS }
-        TUS = { in_sphere = THIS }
-        MOD = { in_sphere = THIS }
-        PAR = { in_sphere = THIS }
-        LUC = { in_sphere = THIS }
-        LOM = { in_sphere = THIS }
-        VEN = { in_sphere = THIS }
-      }
-    }
-    allow = {
+		}
+		
+		allow = {
 			has_global_flag = aus_italy_domination_confirmed
-      war = no
-      ITA = {
-        all_core = {
-          OR = {
-            OR = {
-              owned_by = THIS
-              owner = { in_sphere = THIS }
-            }
-            NOT = {
-              OR = {
-                culture = north_italian
-                culture = south_italian
-								culture = central_italian
-								culture = sicilian
-								culture = insular
-              }
-            }
-          }
-        }
-      }
-      VEN = {
-        all_core = {
-          OR = {
-            OR = {
-              owned_by = THIS
-              owner = { in_sphere = THIS }
-            }
-            NOT = {
-              OR = {
-                culture = north_italian
-                culture = south_italian
-              }
-            }
-          }
-        }
-      }
-    }
-    effect = {
-			set_global_flag = italian_federation
-      prestige = 10
-      any_country = {
-        limit = {
-          OR = {
-            primary_culture = north_italian
+			war = no
+			ITA = {
+				all_core = {
+					OR = {
+						owned_by = THIS
+						owner = {
+							OR = {
+								in_sphere = THIS
+								vassal_of = THIS
+								substate_of = THIS
+							}
+							war = no
+							is_greater_power = no
+						}
+					}
+				}
+			}
+			VEN = {
+				all_core = {
+					OR = {
+						owned_by = THIS
+						owner = {
+							OR = {
+								in_sphere = THIS
+								vassal_of = THIS
+								substate_of = THIS
+							}
+							war = no
+							is_greater_power = no
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			set_global_flag = austrian_outside_italy
+			prestige = 10
+            badboy = 5
+			any_country = {
+				limit = {
+                    in_sphere = THIS
+					OR = {
+						primary_culture = north_italian
 						primary_culture = central_italian
-            primary_culture = south_italian
+						primary_culture = south_italian
+						primary_culture = venetian
 						primary_culture = sicilian
 						primary_culture = insular
 						tag = MNC
-          }
-        }
-        annex_to = THIS
-      }
-      VEN = { all_core = { remove_core = LOM } }
-      SRD = { all_core = { remove_core = SAR } }
-      PAR = { all_core = { add_core = ITF remove_core = PAR } }
-      SAR = { all_core = { add_core = ITF remove_core = SAR } }
-      LUC = { all_core = { add_core = ITF remove_core = LUC } }
-      MOD = { all_core = { add_core = ITF remove_core = MOD } }
-      TUS = { all_core = { add_core = ITF remove_core = TUS } }
-      RMG = { all_core = { add_core = ITF remove_core = PAP remove_core = RMG } }
-			T4V = { all_core = { add_core = SRD remove_core = T4V } }
-			MNC = { all_core = { add_core = ITF remove_core = MNC } }
-			SMR = { all_core = { add_core = ITF remove_core = SMR } }
-			LOM = { all_core = { add_core = ITF remove_core = LOM } }
-      release_vassal = ITF
+					}
+				}
+				annex_to = THIS
+			}
+			VEN = { all_core = { remove_core = LOM } }
+			SRD = { all_core = { remove_core = SAR } }
+			LOM = { all_core = { add_core = ITF } }
+			PAR = { all_core = { add_core = ITF } }
+			SAR = { all_core = { add_core = ITF } }
+			LUC = { all_core = { add_core = ITF } }
+			MOD = { all_core = { add_core = ITF } }
+			TUS = { all_core = { add_core = ITF } }
+			RMG = { all_core = { add_core = ITF remove_core = PAP } }
+			T4V = { all_core = { add_core = SRD } }
+			MNC = { all_core = { add_core = ITF } }
+			SMR = { all_core = { add_core = ITF } }
+			any_owned = {
+				limit = {
+					OR = {
+						is_core = ITF
+						is_core = PAP
+						is_core = SIC
+						is_core = SRD
+					}
+					is_core = THIS
+				}
+				remove_core = ITF
+				remove_core = ITA
+				remove_core = PAP
+				remove_core = SIC
+				remove_core = SRD
+			}
+			release_vassal = ITF
 			release_vassal = PAP
-      release_vassal = SIC
-      release_vassal = SRD
-      PAP = { government = theocracy }
-      create_alliance = ITF
-      create_alliance = SIC
-      create_alliance = SRD
-      create_alliance = PAP
-      diplomatic_influence = {
-        who = SIC
-        value = 400
-      }
-      diplomatic_influence = {
-        who = ITF
-        value = 400
-      }
-      diplomatic_influence = {
-        who = PAP
-        value = 400
-      }
-      diplomatic_influence = {
-        who = SRD
-        value = 400
-      }
-    }
-    ai_will_do = {
-      factor = 1
-    }
-  }
+			release_vassal = SIC
+			release_vassal = SRD
+			PAP = { government = theocracy }
+			ITF = { government = colonial_company political_reform = federalism }
+			SIC = { government = colonial_company }
+			SRD = { government = colonial_company }
+			create_alliance = ITF
+			create_alliance = SIC
+			create_alliance = SRD
+			create_alliance = PAP
+			diplomatic_influence = {
+				who = SIC
+				value = 400
+			}
+			diplomatic_influence = {
+				who = ITF
+				value = 400
+			}
+			diplomatic_influence = {
+				who = PAP
+				value = 400
+			}
+			diplomatic_influence = {
+				who = SRD
+				value = 400
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
 
 	treaty_of_annecy_fra = {
 		picture = italian_islands
@@ -340,8 +295,8 @@ political_decisions = {
 			create_vassal = SAR
 			create_vassal = LOM
 			465 = { add_core = THIS secede_province = THIS }
-      466 = { add_core = THIS secede_province = THIS }
-      472 = { add_core = THIS secede_province = THIS }
+			466 = { add_core = THIS secede_province = THIS }
+			472 = { add_core = THIS secede_province = THIS }
 			any_country = {
 				limit = {
 					is_culture_group = italian
@@ -416,12 +371,61 @@ political_decisions = {
 						tag = BOR
 					}
 					exists = yes
-					alliance_with = PRU
+					OR = {
+						alliance_with = PRU
+						alliance_with = NGF
+						alliance_with = GCF
+						alliance_with = GER
+					}
 				}
-				leave_alliance = PRU
-				relation = {
-					who = PRU
-					value = -200
+				#
+				random_owned = {
+					limit = {
+						owner = { neighbour = PRU }
+					}
+					owner = {
+						leave_alliance = PRU
+						relation = {
+							who = PRU
+							value = -200
+						}
+					}
+				}
+				random_owned = {
+					limit = {
+						owner = { neighbour = NGF }
+					}
+					owner = {
+						leave_alliance = NGF
+						relation = {
+							who = NGF
+							value = -200
+						}
+					}
+				}
+				random_owned = {
+					limit = {
+						owner = { neighbour = GCF }
+					}
+					owner = {
+						leave_alliance = GCF
+						relation = {
+							who = GCF
+							value = -200
+						}
+					}
+				}
+				random_owned = {
+					limit = {
+						owner = { neighbour = GER }
+					}
+					owner = {
+						leave_alliance = GER
+						relation = {
+							who = GER
+							value = -200
+						}
+					}
 				}
 			}
 			create_vassal = ALS

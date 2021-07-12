@@ -881,6 +881,10 @@ country_event = {
 					primary_culture = peninsular
 					primary_culture = bedouin
 					primary_culture = misri
+					primary_culture = maures
+					primary_culture = sudanese
+					primary_culture = somali
+					primary_culture = swahili
 				}
 				NOT = { tag = THIS }
 			}
@@ -915,7 +919,61 @@ country_event = {
 				}
 			}
 		}
-		PER_1132 = { remove_core = ARU }
+		PER_1132 = { add_core = ARU } #Arabistan
+		EGY_1758 = { add_core = ARU } #Egyptian Desert
+		EGY_1834 = { add_core = ARU } #Dongola
+		ENG_1825 = { add_core = ARU } #Chad
+		NEJ_1161 = { add_core = ARU } #Empty Quarter
+		1811 = { add_core = ARU } #Maradi
+		1815 = { add_core = ARU } #Zinder
+		1816 = { add_core = ARU } #Kufe
+		SOK_1945 = { add_core = ARU } #Kano
+		ENG_1818 = { add_core = ARU } #Waddai
+		1964 = { add_core = ARU } #Maroua
+		1971 = { add_core = ARU } #Ndele
+		EGY_1842 = { add_core = ARU } #Darfur
+		ENG_1844 = { add_core = ARU } #Sudd
+		ETH_1865 = { add_core = ARU } #Hararghe
+		ENG_1848 = { add_core = ARU } #Eritrea
+		SOM_1868 = { add_core = ARU } #S. Somaliland
+		SOM_1872 = { add_core = ARU } #N. Somaliland
+		# Swahili
+		2031 = { add_core = ARU } #Wajir
+		2025 = { add_core = ARU } #Marsabit
+		2032 = { add_core = ARU } #Garissa
+		2029 = { add_core = ARU } #Mombasa
+		2033 = { add_core = ARU } #Voi
+		2037 = { add_core = ARU } #Tanga
+		2048 = { add_core = ARU } #Zanzibar
+		2036 = { add_core = ARU } #Dar Es Salaam
+		2038 = { add_core = ARU } #Kilwa
+		2039 = { add_core = ARU } #Lindi
+		FRA_2124 = { add_core = ARU } #Comoros
+		# Omani ambitions in Madagascar
+		2121 = { add_core = ARU } #Mahajanga
+		3677 = { add_core = ARU } #Hellville
+		2120 = { add_core = ARU } #Antsiranana
+		3675 = { add_core = ARU } #Sambava
+		3676 = { add_core = ARU } #Sainte-Marie
+		# Omani coast
+		1136 = { add_core = ARU } #Bushire
+		3481 = { add_core = ARU } #Ganaveh
+		1138 = { add_core = ARU } #Kangan
+		1141 = { add_core = ARU } #Lengeh
+		1142 = { add_core = ARU } #Bandar Abbas
+		1071 = { add_core = ARU } #Qeshm
+		1145 = { add_core = ARU } #Jask
+		1146 = { add_core = ARU } #Chabahar
+		2640 = { add_core = ARU } #Gwadar
+		#
+		894 = { add_core = ARU } #Adana
+		898 = { add_core = ARU } #Antep
+		899 = { add_core = ARU } #Urfa
+		3436 = { add_core = ARU } #Mardin
+		2414 = { add_core = ARU } #Cizre - Jezira
+		892 = { add_core = ARU } #Hakkari
+		1119 = { add_core = ARU } #Ilam
+		#
 		any_country = {
 			limit = {
 				exists = yes
@@ -925,6 +983,9 @@ country_event = {
 					primary_culture = peninsular
 					primary_culture = bedouin
 					primary_culture = misri
+					primary_culture = berber
+					primary_culture = maures
+					primary_culture = sudanese
 				}
 				OR = {
 					in_sphere = THIS

@@ -332,13 +332,11 @@ political_decisions = {
 			GLM = { all_core = { add_core = WSF } }
 			CPL = { all_core = { add_core = WSF } }
 			PML = { all_core = { add_core = WSF } }
-			SLS = { all_core = { add_core = WSF } }
-			LUS = { all_core = { add_core = WSF } }
+			LUZ = { all_core = { add_core = WSF } }
 			KSH = { all_core = { add_core = WSF } }
 			any_country = {
 				limit = {
 					OR = {
-						tag = SLS
 						tag = PZN
 						tag = POL
 						tag = CZH
@@ -349,7 +347,7 @@ political_decisions = {
 						tag = BOH
 						tag = SLV
 						tag = SLS
-						tag = LUS
+						tag = LUZ
 						tag = KSH
 					}
 					ai = yes

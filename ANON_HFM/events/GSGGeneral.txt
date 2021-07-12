@@ -42,66 +42,68 @@ country_event = {
 	}
 }
 
-country_event = {
-	id = 188110
-	title = "The End of Slavery"
-	desc = "Once, we may have made slavery he centrepiece of our country, but those times have passed, and we now sever all our attachments to those detestable pieces of our history."
-	picture = "slaves_freed"
+# country_event = {
+	# id = 188110
+	# title = "The End of Slavery"
+	# desc = "Once, we may have made slavery he centrepiece of our country, but those times have passed, and we now sever all our attachments to those detestable pieces of our history."
+	# picture = "slaves_freed"
 	
-	trigger = {
-		OR = {
-			slavery = abolish_slavery
-			AND = {
-				slavery = no_slavery
-				OR = {
-					has_country_modifier = slavery_timer
-					any_owned_province = {
-						OR = {
-							has_province_modifier = quilombo_presence
-							has_province_modifier = progressive_society_csa
-							has_province_modifier = marxist_slaves
-							has_province_modifier = immigrant_workers_csa
-						}
-				 	}
-				}
-			}
-		}
-	}
-	
-	mean_time_to_happen = {
-		days = 14
-	}
-	
-	option = {
-		name = "Slavery is no more, for the good of our nation!"
-		prestige = 1
-		badboy = -1
-		# any_pop = {
-			# limit = {
-				# pop_type = slaves_factory
+	# trigger = {
+		# OR = {
+			# slavery = no_slavery
+			# AND = {
+				# slavery = no_slavery
+				# OR = {
+					# has_country_modifier = slavery_timer
+					# any_owned_province = {
+						# OR = {
+							# has_province_modifier = quilombo_presence
+							# has_province_modifier = progressive_society_csa
+							# has_province_modifier = marxist_slaves
+							# has_province_modifier = immigrant_workers_csa
+						# }
+				 	# }
+				# }
 			# }
-			# pop_type = craftsmen
 		# }
-		random_owned = {
-			limit = {
-				owner = {
-					slavery = abolish_slavery
-				}
-			}
-			owner = {
-				political_reform = no_slavery
-				set_country_flag = abolished_slavery
-			}
-		}
-		remove_country_modifier = slavery_timer
-		any_owned = {
-			remove_province_modifier = quilombo_presence
-			remove_province_modifier = progressive_society_csa
-			remove_province_modifier = marxist_slaves
-			remove_province_modifier = immigrant_workers_csa
-		}
-	}
-}
+	# }
+	
+	# mean_time_to_happen = {
+		# days = 14
+	# }
+	
+	# option = {
+		# name = "Slavery is no more, for the good of our nation!"
+		# prestige = 1
+		# badboy = -1
+		# # any_pop = {
+			# # limit = {
+				# # pop_type = slaves_factory
+			# # }
+			# # pop_type = craftsmen
+		# # }
+		# random_owned = {
+			# limit = {
+				# owner = {
+					# slavery = no_slavery
+				# }
+			# }
+			# owner = {
+				# political_reform = no_slavery
+				# set_country_flag = abolished_slavery
+			# }
+		# }
+		# remove_country_modifier = slavery_timer
+		# clr_country_flag = the_slavery_debate
+		# remove_country_modifier = the_slavery_debate
+		# any_owned = {
+			# remove_province_modifier = quilombo_presence
+			# remove_province_modifier = progressive_society_csa
+			# remove_province_modifier = marxist_slaves
+			# remove_province_modifier = immigrant_workers_csa
+		# }
+	# }
+# }
 
 country_event = {
 	id = 2037706
@@ -1029,6 +1031,8 @@ country_event = {
 						tag = HAN
 						tag = HEK
 						tag = MEX
+						tag = M3X
+						tag = MXM
 						tag = NET
 						tag = PNJ
 						tag = PRU
@@ -1241,8 +1245,8 @@ country_event = {
 country_event = {
 	
 	id = 99199977
-	title = "Istanbul"
-	desc = "Istanbul has been under our control for half a decade, it's past time she earned herself a new name."
+	title = "Constantinople"
+	desc = "Constantinople has been under our control for half a decade, it's past time she earned herself a new name."
 	picture = "bazaar"
 	
 	trigger = {
@@ -1319,7 +1323,7 @@ country_event = {
 	option = {
 		name = "Constantinople would be better for integrating the local orthodox population."
 		860 = {
-			change_province_name = "Constantinople"
+			change_province_name = "Konstantinoúpolis"
 		}
 		860 = {
 			any_pop = {

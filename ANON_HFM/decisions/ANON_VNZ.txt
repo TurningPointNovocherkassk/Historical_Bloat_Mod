@@ -4,31 +4,8 @@ political_decisions = {
 		picture = abolish_slavery_romania
 		potential = {
 			OR = {
-				OR = {
-					AND = {
-						primary_culture = north_andean
-						NOT = {
-							OR = {
-								tag = ECU
-								tag = CLM
-								tag = VNZ
-							}
-						}
-					}
-					primary_culture = llanero
-				}
-				AND = {
-					tag = ECU
-					year = 1851
-				}
-				AND = {
-					tag = CLM
-					year = 1851
-				}
-				AND = {
-					tag = VNZ
-					year = 1854
-				}
+				primary_culture = llanero
+				primary_culture = north_andean
 			}
 			OR = {
 				slavery = yes_slavery
@@ -41,7 +18,11 @@ political_decisions = {
 			war = no
 		}
 		effect = {
-			treasury = -25000
+			random_owned = { limit = { owner = { ai = no } } owner = { treasury = -25000 } }
+			random_owned = {
+				limit = { owner = { ai = yes } }
+				owner = { set_variable = { which = owed_cash_money value = 25 } } 
+			}
 			political_reform = no_slavery
 			any_pop = {
 				limit = {
@@ -51,33 +32,33 @@ political_decisions = {
 					}
 				}
 				scaled_consciousness = {
-					factor = -8
+					factor = -4
 					issue = no_slavery
 				}
 				scaled_militancy = {
-					factor = -8
+					factor = -4
 					issue = no_slavery
 				}
 				scaled_consciousness = {
-					factor = 8
+					factor = 4
 					issue = freedom_of_womb
 				}
 				scaled_militancy = {
-					factor = 8
+					factor = 4
 					issue = freedom_of_womb
 				}
 				scaled_consciousness = {
-					factor = 8
+					factor = 4
 					issue = yes_slavery
 				}
 				scaled_militancy = {
-					factor = 8
+					factor = 4
 					issue = yes_slavery
 				}
 			}
 			any_pop = {
 				limit = {
-					has_pop_culture = afro_caribeno
+					is_culture_group = african_diaspora_cultures
 				}
 				consciousness = 5
 				militancy = -5
@@ -85,17 +66,16 @@ political_decisions = {
 		}	
 		ai_will_do = {
 			factor = 1
-			#modifier = {
-			#	factor = 0
-			#	NOT = { ruling_party_ideology = liberal }
-			#}
 			modifier = {
 				factor = 0
 				NOT = { upper_house = { ideology = liberal value = 0.3 } }
 			}
 			modifier = {
 				factor = 0
-				NOT = { money = 25001 }
+				OR = {
+					AND = { OR = { tag = ECU tag = CLM } NOT = { year = 1851 } }
+					AND = { tag = VNZ NOT = { year = 1854 } }
+				}
 			}
 		}
 	}
@@ -110,34 +90,49 @@ political_decisions = {
 				tag = GCO
 				tag = ZLA
 			}
-			NOT = {	has_country_flag = modernize_venenavy	}
-			NOT = {
-				invention = steamer_transports
-				invention = commerce_raiders
-			}
+			NOT = {	has_country_flag = modernize_venenavy }
 		}
 		
 		allow = {
-			year = 1860
-			money = 15001
+			NOT = { iron_steamers = 1 }
+			OR = {
+				money = 25001
+				ai = yes
+			}
+			war = no
 		}
 		
 		effect = {
 			set_country_flag = modernize_venenavy
-			treasury = -15000
-			activate_technology = steamers
-			activate_technology = iron_steamers
-			activate_technology = battleship_column_doctrine
-			activate_technology = raider_group_doctrine 
-			any_owned = {
+			random_owned = { limit = { owner = { ai = no } } owner = { treasury = -25000 } }
+			random_owned = {
+				limit = { owner = { ai = yes } }
+				owner = { set_variable = { which = owed_cash_money value = 25 } } 
+			}
+			random_owned = {
+				limit = { owner = { NOT = { steamers = 1 } } }
+				owner = { activate_technology = steamers }
+			}
+			random_owned = {
+				limit = { owner = { NOT = { battleship_column_doctrine = 1 } } }
+				owner = { activate_technology = battleship_column_doctrine }
+			}
+			random_owned = {
+				limit = { owner = { NOT = { iron_steamers = 1 } } }
+				owner = { activate_technology = iron_steamers }
+			}
+			random_owned = {
+				limit = { owner = { NOT = { raider_group_doctrine = 1 } } }
+				owner = { activate_technology = raider_group_doctrine }
+			}
+			random_owned = {
 				limit = {
-					owned_by = THIS
-					#is_capital = yes
+					is_state_capital = yes
 					port = yes
-					is_overseas = no
-					is_colonial = no
+					has_building = naval_base
 					controlled_by = THIS
 				}
+				owner = { add_country_modifier = { name = naval_school duration = 7300 } }
 				sub_unit = { type = steam_transport value = current }
 				sub_unit = { type = steam_transport value = current }
 				sub_unit = { type = steam_transport value = current }
@@ -147,11 +142,13 @@ political_decisions = {
 				sub_unit = { type = commerce_raider value = current }
 				sub_unit = { type = commerce_raider value = current }
 			}
-			#steamer_transports = yes
-			#commerce_raiders = yes
 		}
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { year = 1860 }
+			}
 		}
 	}
 	
@@ -260,8 +257,6 @@ political_decisions = {
 				tag = CHL
 			}
 			NOT = {	has_country_flag = kraut_military_academy	}
-			year = 1895
-			war = no
 		}
 		
 		allow = {
@@ -270,31 +265,21 @@ political_decisions = {
 				war_policy = pro_military
 			}
 			war = no
+			549 = { 
+				owner = {
+					relation = {
+						who = THIS
+						value = 150
+					}
+				}
+			}
 			OR = {
-				PRU = {
-					relation = {
-						who = THIS
-						value = 150
-					}
+				AND = {
+					money = 25001
+					breech_loaded_rifles = 1
+					army_professionalism = 1
 				}
-				NGF = {
-					relation = {
-						who = THIS
-						value = 150
-					}
-				}
-				SGF = {
-					relation = {
-						who = THIS
-						value = 150
-					}
-				}
-				GER = {
-					relation = {
-						who = THIS
-						value = 150
-					}
-				}
+				ai = yes
 			}
 		}
 		
@@ -304,10 +289,19 @@ political_decisions = {
 				name = encouraging_kraut_military_traditions
 				duration = -1
 			}
+			random_owned = { limit = { owner = { ai = no } } owner = { treasury = -25000 } }
+			random_owned = {
+				limit = { owner = { ai = yes } }
+				owner = { set_variable = { which = owed_cash_money value = 25 } } 
+			}
 		}
 
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { year = 1895 }
+			}
 		}
 	}
 	
@@ -394,20 +388,15 @@ political_decisions = {
 					add_core = USV
 				}
 			}
+			all_core = {
+				remove_core = FVZ
+				remove_core = VNZ
+			}
 			random_country = {
 				limit = {
 					exists = yes
-					tag = FVZ
-				}
-				all_core = {
-					remove_core = FVZ
-					remove_core = VNZ
-				}
-			}
-			ZLA = {
-				limit = {
-					exists = yes
 					ai = yes
+					tag = ZLA
 				}
 				all_core = { secede_province = USV }
 			}

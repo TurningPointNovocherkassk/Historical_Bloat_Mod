@@ -1,0 +1,284 @@
+political_decisions = {
+ 
+    organize_comoros = {
+        picture = map_comoros
+        potential = {
+            OR = {
+                has_country_flag = organize_colony_decisions
+                ai = yes
+            }
+            civilized = yes
+            NOT = {
+                exists = CMS
+                has_global_flag = comoros_organized
+                capital_scope = {
+					continent = africa
+					continent = west_africa
+					continent = central_africa
+					continent = east_africa
+					continent = south_west_africa
+                }
+            }
+			OR = {
+				owns = 2124
+				owns = 2123
+				owns = 3681
+			}
+        }
+
+        allow = {
+			war = no
+			revolution_n_counterrevolution = 1
+			owns = 2124
+			owns = 2123
+			owns = 3681
+        }
+
+        effect = {
+            set_global_flag = comoros_organized
+            prestige = 5
+            set_country_flag = comoros_master
+            country_event = 199066
+			
+			CM0 = { all_core = { remove_core = CM0 add_core = CMS } }
+			CM1 = { all_core = { remove_core = CM1 add_core = CMS } }
+			CM2 = { all_core = { remove_core = CM2 add_core = CMS } }
+			CM3 = { all_core = { remove_core = CM3 add_core = CMS } }
+			CM4 = { all_core = { remove_core = CM4 add_core = CMS } }
+			
+			any_owned = {
+				limit = { is_core = CMS }
+				add_province_modifier = {
+					name = colonial_exploitation
+					duration = 1095
+				}
+			}
+
+            CMS = {
+                set_country_flag = post_colonial_country
+                primary_culture = THIS
+				add_accepted_culture = malagasy
+				add_accepted_culture = swahili
+				add_accepted_culture = lacustrine_bantu
+                tech_school = unciv_tech_school # HPM 0.4.5.2 port: use old HFM tech school name
+                clr_country_flag = sunni_country
+                clr_country_flag = shiite_country
+                clr_country_flag = ibadi_country
+                clr_country_flag = catholic_country
+                clr_country_flag = protestant_country
+                clr_country_flag = mormon_country
+                clr_country_flag = orthodox_country
+                clr_country_flag = coptic_country
+                clr_country_flag = jewish_country
+                clr_country_flag = yazidi_country
+                clr_country_flag = mahayana_country
+                clr_country_flag = gelugpa_country
+                clr_country_flag = theravada_country
+                clr_country_flag = hindu_country
+                clr_country_flag = shinto_country
+                clr_country_flag = sikh_country
+                clr_country_flag = animist_country
+				###################################
+                clr_country_flag = nestorian_country
+                clr_country_flag = apostolic_country
+                clr_country_flag = maronite_country
+                clr_country_flag = syriac_country
+                clr_country_flag = anabaptist_country
+                clr_country_flag = druze_country
+                clr_country_flag = bahai_country
+                clr_country_flag = alawite_country
+                clr_country_flag = alevi_country
+                clr_country_flag = ismaili_country
+                clr_country_flag = zaydi_country
+                clr_country_flag = karaite_country
+                clr_country_flag = samaritan_country
+                clr_country_flag = zoroastrian_country
+                clr_country_flag = mandaean_country
+                clr_country_flag = confucian_country
+                clr_country_flag = jain_country
+                clr_country_flag = secularism_country
+                clr_country_flag = atheism_country
+            }
+            random_owned = { limit = { owner = { primary_culture = french } } CMS = { government = colonial_company } }
+            random_owned = { limit = { owner = { has_country_flag = catholic_country } } CMS = { religion = catholic set_country_flag = catholic_country } }
+            random_owned = {
+                limit = { owner = { has_country_flag = protestant_country } }
+                CMS = { religion = protestant set_country_flag = protestant_country }
+            }
+            random_owned = { limit = { owner = { has_country_flag = orthodox_country } } CMS = { religion = orthodox set_country_flag = orthodox_country } }
+            random_owned = { limit = { owner = { has_country_flag = mormon_country } } CMS = { religion = mormon set_country_flag = mormon_country } }
+            random_owned = { limit = { owner = { has_country_flag = coptic_country } } CMS = { religion = coptic set_country_flag = coptic_country } }
+            random_owned = { limit = { owner = { has_country_flag = sunni_country } } CMS = { religion = sunni set_country_flag = sunni_country } }
+            random_owned = { limit = { owner = { has_country_flag = shiite_country } } CMS = { religion = shiite set_country_flag = shiite_country } }
+            random_owned = { limit = { owner = { has_country_flag = shinto_country } } CMS = { religion = shinto set_country_flag = shinto_country } }
+            random_owned = { limit = { owner = { has_country_flag = mahayana_country } } CMS = { religion = mahayana set_country_flag = mahayana_country } }
+            random_owned = { limit = { owner = { has_country_flag = gelugpa_country } } CMS = { religion = gelugpa set_country_flag = gelugpa_country } }
+            random_owned = { limit = { owner = { has_country_flag = theravada_country } } CMS = { religion = theravada set_country_flag = theravada_country } }
+            random_owned = { limit = { owner = { has_country_flag = hindu_country } } CMS = { religion = hindu set_country_flag = hindu_country } }
+            random_owned = { limit = { owner = { has_country_flag = sikh_country } } CMS = { religion = sikh set_country_flag = sikh_country } }
+            random_owned = { limit = { owner = { has_country_flag = jewish_country } } CMS = { religion = jewish set_country_flag = jewish_country } }
+            random_owned = { limit = { owner = { has_country_flag = ibadi_country } } CMS = { religion = ibadi set_country_flag = ibadi_country } }
+            random_owned = { limit = { owner = { has_country_flag = yazidi_country } } CMS = { religion = yazidi set_country_flag = yazidi_country } }
+			
+			########################################################
+            random_owned = { limit = { owner = { has_country_flag = nestorian_country } } CMS = { religion =  nestorian set_country_flag = nestorian_country } }
+            random_owned = { limit = { owner = { has_country_flag = apostolic_country } } CMS = { religion = apostolic set_country_flag = apostolic_country } }
+            random_owned = { limit = { owner = { has_country_flag = maronite_country } } CMS = { religion = maronite set_country_flag = maronite_country } }
+            random_owned = { limit = { owner = { has_country_flag = syriac_country } } CMS = { religion = syriac set_country_flag = syriac_country } }
+            random_owned = { limit = { owner = { has_country_flag = anabaptist_country } } CMS = { religion = anabaptist set_country_flag = anabaptist_country } }
+            random_owned = { limit = { owner = { has_country_flag = druze_country } } CMS = { religion = druze set_country_flag = druze_country } }
+            random_owned = { limit = { owner = { has_country_flag = bahai_country } } CMS = { religion = bahai set_country_flag = bahai_country } }
+            random_owned = { limit = { owner = { has_country_flag = alawite_country } } CMS = { religion = alawite set_country_flag = alawite_country } }
+            random_owned = { limit = { owner = { has_country_flag = alevi_country } } CMS = { religion = alevi set_country_flag = alevi_country } }
+            random_owned = { limit = { owner = { has_country_flag = ismaili_country } } CMS = { religion = ismaili set_country_flag = ismaili_country } }
+            random_owned = { limit = { owner = { has_country_flag = zaydi_country } } CMS = { religion = zaydi set_country_flag = zaydi_country } }
+            random_owned = { limit = { owner = { has_country_flag = karaite_country } } CMS = { religion = karaite set_country_flag = karaite_country } }
+            random_owned = { limit = { owner = { has_country_flag = samaritan_country } } CMS = { religion = samaritan set_country_flag = samaritan_country } }
+            random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } CMS = { religion = zoroastrian set_country_flag = zoroastrian_country } }
+            random_owned = { limit = { owner = { has_country_flag = mandaean_country } } CMS = { religion = mandaean set_country_flag = mandaean_country } }
+            random_owned = { limit = { owner = { has_country_flag = confucian_country } } CMS = { religion = confucian set_country_flag = confucian_country } }
+            random_owned = { limit = { owner = { has_country_flag = jain_country } } CMS = { religion = jain set_country_flag = jain_country } }
+            random_owned = { limit = { owner = { has_country_flag = secularism_country } } CMS = { religion = secularism set_country_flag = secularism_country } }
+            random_owned = { limit = { owner = { has_country_flag = atheism_country } } CMS = { religion = atheism set_country_flag = atheism_country } }
+			########################################################
+        }
+    }
+
+    reorganize_comoros = {
+        picture = map_comoros
+        potential = {
+            OR = {
+                has_country_flag = organize_colony_decisions
+                ai = yes
+            }
+            civilized = yes
+            has_global_flag = comoros_organized
+			owns = 2124
+			owns = 2123
+			owns = 3681
+            CMS = {
+                exists = no
+                NOT = { is_culture_group = THIS }
+            }
+            NOT = { capital_scope = { continent = africa } }
+			capital_scope = {
+				continent = africa
+				continent = west_africa
+				continent = central_africa
+				continent = east_africa
+				continent = south_west_africa
+            }
+        }
+
+        allow = {
+			war = no
+			revolution_n_counterrevolution = 1
+			owns = 2124
+			owns = 2123
+			owns = 3681
+        }
+
+        effect = {			
+            prestige = 3
+
+            any_country = {
+                limit = { has_country_flag = comoros_master }
+                clr_country_flag = comoros_master
+            }
+            set_country_flag = comoros_master
+			
+			any_owned = {
+				limit = { is_core = CMS }
+				add_province_modifier = {
+					name = colonial_exploitation
+					duration = 1095
+				}
+			}
+
+            country_event = 199066
+
+            CMS = {
+                primary_culture = THIS
+                clr_country_flag = sunni_country
+                clr_country_flag = shiite_country
+                clr_country_flag = ibadi_country
+                clr_country_flag = catholic_country
+                clr_country_flag = protestant_country
+                clr_country_flag = mormon_country
+                clr_country_flag = orthodox_country
+                clr_country_flag = coptic_country
+                clr_country_flag = jewish_country
+                clr_country_flag = yazidi_country
+                clr_country_flag = mahayana_country
+                clr_country_flag = gelugpa_country
+                clr_country_flag = theravada_country
+                clr_country_flag = hindu_country
+                clr_country_flag = shinto_country
+                clr_country_flag = sikh_country
+                clr_country_flag = animist_country
+				###################################
+                clr_country_flag = nestorian_country
+                clr_country_flag = apostolic_country
+                clr_country_flag = maronite_country
+                clr_country_flag = syriac_country
+                clr_country_flag = anabaptist_country
+                clr_country_flag = druze_country
+                clr_country_flag = bahai_country
+                clr_country_flag = alawite_country
+                clr_country_flag = alevi_country
+                clr_country_flag = ismaili_country
+                clr_country_flag = zaydi_country
+                clr_country_flag = karaite_country
+                clr_country_flag = samaritan_country
+                clr_country_flag = zoroastrian_country
+                clr_country_flag = mandaean_country
+                clr_country_flag = confucian_country
+                clr_country_flag = jain_country
+                clr_country_flag = secularism_country
+                clr_country_flag = atheism_country
+            }
+
+            random_owned = { limit = { owner = { has_country_flag = catholic_country } } CMS = { religion = catholic set_country_flag = catholic_country } }
+            random_owned = {
+                limit = { owner = { has_country_flag = protestant_country } }
+                CMS = { religion = protestant set_country_flag = protestant_country }
+            }
+            random_owned = { limit = { owner = { has_country_flag = orthodox_country } } CMS = { religion = orthodox set_country_flag = orthodox_country } }
+            random_owned = { limit = { owner = { has_country_flag = mormon_country } } CMS = { religion = mormon set_country_flag = mormon_country } }
+            random_owned = { limit = { owner = { has_country_flag = coptic_country } } CMS = { religion = coptic set_country_flag = coptic_country } }
+            random_owned = { limit = { owner = { has_country_flag = sunni_country } } CMS = { religion = sunni set_country_flag = sunni_country } }
+            random_owned = { limit = { owner = { has_country_flag = shiite_country } } CMS = { religion = shiite set_country_flag = shiite_country } }
+            random_owned = { limit = { owner = { has_country_flag = shinto_country } } CMS = { religion = shinto set_country_flag = shinto_country } }
+            random_owned = { limit = { owner = { has_country_flag = mahayana_country } } CMS = { religion = mahayana set_country_flag = mahayana_country } }
+            random_owned = { limit = { owner = { has_country_flag = gelugpa_country } } CMS = { religion = gelugpa set_country_flag = gelugpa_country } }
+            random_owned = { limit = { owner = { has_country_flag = theravada_country } } CMS = { religion = theravada set_country_flag = theravada_country } }
+            random_owned = { limit = { owner = { has_country_flag = hindu_country } } CMS = { religion = hindu set_country_flag = hindu_country } }
+            random_owned = { limit = { owner = { has_country_flag = sikh_country } } CMS = { religion = sikh set_country_flag = sikh_country } }
+            random_owned = { limit = { owner = { has_country_flag = jewish_country } } CMS = { religion = jewish set_country_flag = jewish_country } }
+            random_owned = { limit = { owner = { has_country_flag = ibadi_country } } CMS = { religion = ibadi set_country_flag = ibadi_country } }
+            random_owned = { limit = { owner = { has_country_flag = yazidi_country } } CMS = { religion = yazidi set_country_flag = yazidi_country } }
+			
+			########################################################
+            random_owned = { limit = { owner = { has_country_flag = nestorian_country } } CMS = { religion =  nestorian set_country_flag = nestorian_country } }
+            random_owned = { limit = { owner = { has_country_flag = apostolic_country } } CMS = { religion = apostolic set_country_flag = apostolic_country } }
+            random_owned = { limit = { owner = { has_country_flag = maronite_country } } CMS = { religion = maronite set_country_flag = maronite_country } }
+            random_owned = { limit = { owner = { has_country_flag = syriac_country } } CMS = { religion = syriac set_country_flag = syriac_country } }
+            random_owned = { limit = { owner = { has_country_flag = anabaptist_country } } CMS = { religion = anabaptist set_country_flag = anabaptist_country } }
+            random_owned = { limit = { owner = { has_country_flag = druze_country } } CMS = { religion = druze set_country_flag = druze_country } }
+            random_owned = { limit = { owner = { has_country_flag = bahai_country } } CMS = { religion = bahai set_country_flag = bahai_country } }
+            random_owned = { limit = { owner = { has_country_flag = alawite_country } } CMS = { religion = alawite set_country_flag = alawite_country } }
+            random_owned = { limit = { owner = { has_country_flag = alevi_country } } CMS = { religion = alevi set_country_flag = alevi_country } }
+            random_owned = { limit = { owner = { has_country_flag = ismaili_country } } CMS = { religion = ismaili set_country_flag = ismaili_country } }
+            random_owned = { limit = { owner = { has_country_flag = zaydi_country } } CMS = { religion = zaydi set_country_flag = zaydi_country } }
+            random_owned = { limit = { owner = { has_country_flag = karaite_country } } CMS = { religion = karaite set_country_flag = karaite_country } }
+            random_owned = { limit = { owner = { has_country_flag = samaritan_country } } CMS = { religion = samaritan set_country_flag = samaritan_country } }
+            random_owned = { limit = { owner = { has_country_flag = zoroastrian_country } } CMS = { religion = zoroastrian set_country_flag = zoroastrian_country } }
+            random_owned = { limit = { owner = { has_country_flag = mandaean_country } } CMS = { religion = mandaean set_country_flag = mandaean_country } }
+            random_owned = { limit = { owner = { has_country_flag = confucian_country } } CMS = { religion = confucian set_country_flag = confucian_country } }
+            random_owned = { limit = { owner = { has_country_flag = jain_country } } CMS = { religion = jain set_country_flag = jain_country } }
+            random_owned = { limit = { owner = { has_country_flag = secularism_country } } CMS = { religion = secularism set_country_flag = secularism_country } }
+            random_owned = { limit = { owner = { has_country_flag = atheism_country } } CMS = { religion = atheism set_country_flag = atheism_country } }
+			########################################################
+        }
+    }
+}

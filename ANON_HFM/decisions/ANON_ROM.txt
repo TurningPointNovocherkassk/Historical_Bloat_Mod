@@ -1,0 +1,74 @@
+political_decisions = {
+	
+	claim_podolia = {
+		picture = gtfo
+		potential = {
+			tag = ROM
+			OR = {
+				government = fascist_dictatorship
+				AND = {
+					war_policy = jingoism
+					military_score = 30
+				}
+			}
+			has_country_flag = claimed_transnitria
+			has_country_flag = claimed_kolomiya
+			NOT = { has_country_flag = claimed_podolia }
+		}
+		
+		allow = {
+			war = no
+			is_vassal = no
+			nationalism_n_imperialism = 1
+			MOL_676 = { owned_by = THIS }
+			3279 = { owned_by = THIS }
+			3655 = { owned_by = THIS }
+		}
+		
+		effect = {
+			set_country_flag = claimed_podolia
+			random_list = {
+				34 = { badboy = 3 }
+				33 = { badboy = 4 }
+				33 = { badboy = 5 }
+			}
+			3662 = { add_core = ROM }
+			3661 = { add_core = ROM }
+		}
+		ai_will_do = { factor = 1 }
+	}
+
+	claim_kolomiya = {
+		picture = colomeea_stamp
+		potential = {
+			tag = ROM
+			OR = {
+				government = fascist_dictatorship
+				AND = {
+					war_policy = jingoism
+					military_score = 30
+				}
+			}
+			NOT = { has_country_flag = claimed_kolomiya }
+		}
+		
+		allow = {
+			war = no
+			is_vassal = no
+			nationalism_n_imperialism = 1
+			AUS_663 = { owned_by = THIS }
+		}
+		
+		effect = {
+			set_country_flag = claimed_kolomiya
+			random_list = {
+				34 = { badboy = 2 }
+				33 = { badboy = 2.5 }
+				33 = { badboy = 3 }
+			}
+			3655 = { add_core = ROM }
+		}
+		ai_will_do = { factor = 1 }
+	}
+
+}

@@ -21,12 +21,7 @@ political_decisions = {
 	vesuvius_observatory = {
 		picture = "vesuvius_observatory"
 		potential = {
-			754 = {
-				OR = {
-					owned_by = THIS
-					owner = { vassal_of = THIS }
-				}
-			}
+			owns = 754
 			NOT = { has_country_flag = vesuvius_observatory_build }
 		}
 
@@ -41,7 +36,7 @@ political_decisions = {
 		    years_of_research = 0.08
 			set_country_flag = vesuvius_observatory_build
 		}
-
+		
 		ai_will_do = {
 			factor = 1
 		}
@@ -54,12 +49,7 @@ political_decisions = {
 	pompeji_fiorelli = {
 		picture = pompeji_fiorelli
 		potential = {
-			754 = {
-				OR = {
-					owned_by = THIS
-					owner = { vassal_of = THIS }
-				}
-			}
+			owns = 754
 			NOT = { has_country_flag = fiorelli }
 		}
 
@@ -93,20 +83,20 @@ political_decisions = {
 			has_global_flag = italian_claimed_venetia
 			NOT = { has_country_flag = italian_islands_claimed }
 		}
-
+		
 		allow = {
-			is_greater_power = yes
+			is_greater_power = yes			
 			ITA = { all_core = { owned_by = THIS } }
 			revolution_n_counterrevolution = 1
 			prestige = 150
 			military_score = 100
-			OR = {
+			OR = { 
 				ruling_party_ideology = reactionary
 				ruling_party_ideology = conservative
 				ruling_party_ideology = fascist
 			}
 		}
-
+		
 		effect = {
 			set_country_flag = italian_islands_claimed
 			prestige = 10
@@ -115,7 +105,7 @@ political_decisions = {
 			473 = { add_core = ITA } #Corsica
 			826 = { add_core = ITA } #Corfu
 			827 = { add_core = ITA } #Zante
-
+                        
 			any_country = {
 				limit = {
 					OR = {
@@ -130,7 +120,7 @@ political_decisions = {
 				}
 			}
 		}
-
+		
 		ai_will_do = {
 			factor = 1
 		}
@@ -147,7 +137,7 @@ political_decisions = {
 			year = 1919
 			NOT = { has_country_flag = porco_rosso }
 		}
-
+		
 		allow = {
 			aeronautics = 1
 			industrial_score = 50
@@ -156,14 +146,14 @@ political_decisions = {
 					has_building = aeroplane_factory
 				}
 			}
-             OR = {
+             OR = { 
 					ruling_party_ideology = reactionary
 					ruling_party_ideology = conservative
 					ruling_party_ideology = fascist
 					ruling_party_ideology = communist
 			}
 		}
-
+		
 		effect = {
 			set_country_flag = porco_rosso
 			prestige = 5
@@ -171,16 +161,12 @@ political_decisions = {
 				militancy = -1
 			}
 		}
-
+		
 		ai_will_do = {
 			factor = 1
 		}
 	}
-
-##########################################
-# Rename Dalmatia & South-Tyrol/Trentino #
-##########################################
-
+	
 	#ANON
 	italian_trentino = {
 		picture = "italian_trentino"
@@ -193,11 +179,11 @@ political_decisions = {
 				has_global_flag = italy_has_renamed_trentino
 			}
 		}
-
+		
 		allow = {
 			revolution_n_counterrevolution = 1
 		}
-
+		
 		effect = {
 			734 = {
 				change_province_name = "Trento"
@@ -205,14 +191,14 @@ political_decisions = {
 			735 = {
 				change_province_name = "Bolzano"
 				state_scope = {
-					change_region_name = "Trentino Alto-Adige"
+					change_region_name = "Trentino-Alto Adige"
 				}
 			}
 
 			prestige = 5
 			set_global_flag = italy_has_renamed_trentino
 		}
-
+		
 		ai_will_do = {
 			factor = 1
 		}
@@ -229,11 +215,11 @@ political_decisions = {
 			owns = 734 #Trient
 			owns = 735 #Bozen
 		}
-
+		
 		allow = {
 			nationalism_n_imperialism = 1
 		}
-
+		
 		effect = {
 			734 = {
 				change_province_name = "Trient"
@@ -246,7 +232,7 @@ political_decisions = {
 			}
 			clr_global_flag = italy_has_renamed_trentino
 		}
-
+		
 		ai_will_do = {
 			factor = 1
 		}
@@ -263,18 +249,18 @@ political_decisions = {
 			owns = 726
 			NOT = { has_country_flag = shopping_in_milan }
 		}
-
+		
 		allow = {
 			money = 45001
 		}
-
+		
 		effect = {
 			treasury = -45000
 			set_country_flag = shopping_in_milan
 			prestige = 5
 			726 = { life_rating = 5 }
 		}
-
+		
 		ai_will_do = {
 			factor = 1
 		}
@@ -299,7 +285,7 @@ political_decisions = {
 		allow = {
 			ideological_thought = 1
 		}
-
+		
 		effect = {
 			prestige = 5
 			government = democracy
@@ -307,7 +293,7 @@ political_decisions = {
 			political_reform = yes_meeting
 			political_reform = censored_press
 		}
-
+		
 		ai_will_do = {
 			factor = 1
 		}
@@ -323,7 +309,7 @@ political_decisions = {
 			NOT = { has_country_flag = venetian_ambition }
 			tag = VEN
 		}
-
+		
 		allow = {
 			is_greater_power = yes
 			romanticism = 1
@@ -336,7 +322,7 @@ political_decisions = {
 				ruling_party_ideology = fascist
 			}
 		}
-
+		
 		effect = {
 			  set_country_flag = venetian_ambition
 			  prestige = 30
@@ -367,11 +353,11 @@ political_decisions = {
 			tag = MOD
 			NOT = { has_country_flag = codificazione_estense_si }
 		}
-
+		
 		allow = {
 			state_n_government = 1
 		}
-
+		
 		effect = {
 			prestige = 5
 			years_of_research = 0.05
@@ -380,7 +366,7 @@ political_decisions = {
 			}
 			set_country_flag = codificazione_estense_si
 		}
-
+		
 		ai_will_do = {
 			factor = 1
 		}
@@ -397,7 +383,7 @@ political_decisions = {
 			ai = yes
 			NOT = { has_country_flag = roman_republic_joins }
 		}
-
+		
 		allow = {
 			government = democracy
 			exists = ITA
@@ -410,7 +396,7 @@ political_decisions = {
 				}
 			}
 		}
-
+		
 		effect = {
 			any_pop = {
 				militancy = -1
@@ -418,7 +404,7 @@ political_decisions = {
 			annex_to = ITA
 			set_country_flag = roman_republic_joins
 		}
-
+		
 		ai_will_do = {
 			factor = 1
 		}

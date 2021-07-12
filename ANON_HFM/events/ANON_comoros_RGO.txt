@@ -8,7 +8,7 @@ province_event = {
 	trigger = {
 		owned_by = THIS
 		controlled_by = THIS
-		is_canal_enabled = 2
+		has_global_flag = suez_inauguration
 		OR = {
 			province_id = 2124
 			province_id = 2123
@@ -44,17 +44,21 @@ province_event = {
 			modifier = {
 				factor = 0
 				OR = {
+					owner = {
 					any_neighbor_country = {
 						any_owned_province = {
 							trade_goods = coffee
 							unemployment_by_type = { value = 0.05 type = farmers }
 						}
 					}
+					}
+					owner = {
 					any_greater_power = {
 						any_owned_province = {
 							trade_goods = coffee
 							unemployment_by_type = { value = 0.05 type = farmers }
 						}
+					}
 					}
 				}
 			}
@@ -72,17 +76,21 @@ province_event = {
 			modifier = {
 				factor = 0
 				OR = {
+					owner = {
 					any_neighbor_country = {
 						any_owned_province = {
 							trade_goods = cotton
 							unemployment_by_type = { value = 0.05 type = farmers }
 						}
 					}
+					}
+					owner = {
 					any_greater_power = {
 						any_owned_province = {
 							trade_goods = cotton
 							unemployment_by_type = { value = 0.05 type = farmers }
 						}
+					}
 					}
 				}
 			}
@@ -100,17 +108,21 @@ province_event = {
 			modifier = {
 				factor = 0
 				OR = {
+					owner = {
 					any_neighbor_country = {
 						any_owned_province = {
 							trade_goods = tobacco
 							unemployment_by_type = { value = 0.05 type = farmers }
 						}
 					}
+					}
+					owner = {
 					any_greater_power = {
 						any_owned_province = {
 							trade_goods = tobacco
 							unemployment_by_type = { value = 0.05 type = farmers }
 						}
+					}
 					}
 				}
 			}
@@ -128,17 +140,21 @@ province_event = {
 			modifier = {
 				factor = 0
 				OR = {
+					owner = {
 					any_neighbor_country = {
 						any_owned_province = {
 							trade_goods = fruit
 							unemployment_by_type = { value = 0.05 type = farmers }
 						}
 					}
+					}
+					owner = {
 					any_greater_power = {
 						any_owned_province = {
 							trade_goods = fruit
 							unemployment_by_type = { value = 0.05 type = farmers }
 						}
+					}
 					}
 				}
 			}

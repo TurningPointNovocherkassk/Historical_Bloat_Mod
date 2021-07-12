@@ -47,11 +47,17 @@ country_event = {
 	
 	trigger = {
 		government = colonial_company
-		is_vassal = yes
+		OR = {
+			is_vassal = yes
+			is_substate = yes
+		}
 		NOT = { vote_franschise = none_voting }		
 		civilized = yes	
 		#ANON
-		NOT = { tag = PZN }
+		NOT = {
+			tag = PZN
+			tag = CPL
+		}
 		#
 	}
 	

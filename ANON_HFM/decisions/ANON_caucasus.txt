@@ -47,7 +47,7 @@ political_decisions = {
 		}
 		effect = {
 			set_country_flag = claim_imereti_clay_sword
-			GUR = { all_core = { add_core = THIS } }
+			GIA = { all_core = { add_core = THIS } }
 			MIG = { all_core = { add_core = THIS } }
 			ABK = { all_core = { add_core = THIS } }
 			SVA = { all_core = { add_core = THIS } }
@@ -1836,7 +1836,7 @@ political_decisions = {
 			KRT = { all_core = { add_core = THIS } }
 			KKH = { all_core = { add_core = THIS } }
 			IME = { all_core = { add_core = THIS } }
-			GUR = { all_core = { add_core = THIS } }
+			GIA = { all_core = { add_core = THIS } }
 			SMA = { all_core = { add_core = THIS } }
 			SVA = { all_core = { add_core = THIS } }
 			MIG = { all_core = { add_core = THIS } }
@@ -1905,7 +1905,7 @@ political_decisions = {
 					}
 				}
 			}
-			GUR = {
+			GIA = {
 				OR = {
 					in_sphere = THIS
 					vassal_of = THIS
@@ -2017,7 +2017,7 @@ political_decisions = {
 			KRT = { all_core = { remove_core = KRT } }
 			KKH = { all_core = { remove_core = KKH } }
 			IME = { all_core = { remove_core = IME } }
-			GUR = { all_core = { remove_core = GUR } }
+			GIA = { all_core = { remove_core = GIA } }
 			SMA = { all_core = { remove_core = SMA } }
 			SVA = { all_core = { remove_core = SVA } }
 			MIG = { all_core = { remove_core = MIG } }
@@ -2081,7 +2081,7 @@ political_decisions = {
 				tag = A2Z
 				tag = A3Z
 			}
-			NOT = { exists = AZB }
+			NOT = { exists = AZB exists = TCA }
 		}
 
 		allow = {
@@ -2253,7 +2253,7 @@ political_decisions = {
 			change_tag = AZB
 		}
 
-		ai_will_do = { factor = 1 }
+		ai_will_do = { factor = 0 }
 	}
 	
 	reform_georgia_outside = {
@@ -2262,7 +2262,7 @@ political_decisions = {
 			is_greater_power = yes
 			NOT = {
 				OR = {
-					tag = GUR
+					tag = GIA
 					tag = IME
 					tag = KKH
 					tag = KRT
@@ -2272,7 +2272,7 @@ political_decisions = {
 					tag = KKK
 				}
 			}
-			NOT = { exists = GEO }
+			NOT = { exists = GEO exists = TCA }
 			NOT = { has_global_flag = reform_georgia_outside }
 		}
 
@@ -2337,7 +2337,7 @@ political_decisions = {
 					}
 				}
 			}
-			GUR = {
+			GIA = {
 				OR = {
 					in_sphere = THIS
 					vassal_of = THIS
@@ -2481,7 +2481,7 @@ political_decisions = {
 			}
 		}
 
-		ai_will_do = { factor = 1 }
+		ai_will_do = { factor = 0 }
 	}
 	
 	reform_azerbaijan_outside = {
@@ -2505,7 +2505,7 @@ political_decisions = {
 					tag = A3Z
 				}
 			}
-			NOT = { exists = AZB }
+			NOT = { exists = AZB exists = TCA  }
 			NOT = { has_global_flag = reform_azerbaijan_outside }
 		}
 
@@ -2736,7 +2736,7 @@ political_decisions = {
 			}
 		}
 
-		ai_will_do = { factor = 1 }
+		ai_will_do = { factor = 0 }
 	}
 	
 		
