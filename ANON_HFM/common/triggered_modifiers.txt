@@ -1440,7 +1440,7 @@ classless_society_modifier = {
 	}
 	min_social_spending = 0.5
 	education_efficiency_modifier = 0.2
-	global_immigrant_attract = 0.35
+	global_immigrant_attract = -0.35
 	suppression_points_modifier = 0.2
 	non_accepted_pop_militancy_modifier = -0.02
 	political_reform_desire = -0.1
@@ -1644,24 +1644,24 @@ help_ai_late = {
 	education_efficiency_modifier = 0.25
 }
 
-help_ai_free_trade = {
-	trigger = {
-		ai = yes
-		trade_policy = free_trade
-	}
-	icon = 9
-	max_tariff = 0.25
-	min_tariff = 1.25
-}
+# help_ai_free_trade = {
+	# trigger = {
+		# ai = yes
+		# trade_policy = free_trade
+	# }
+	# icon = 9
+	# max_tariff = 0.25
+	# min_tariff = 1.25
+# }
 
-help_ai_protectionism = {
-	trigger = {
-		ai = yes
-		trade_policy = protectionism
-	}
-	icon = 9
-	min_tariff = 0.75
-}
+# help_ai_protectionism = {
+	# trigger = {
+		# ai = yes
+		# trade_policy = protectionism
+	# }
+	# icon = 9
+	# min_tariff = 0.75
+# }
 
 disable_loans = {
 	trigger = {
@@ -2605,6 +2605,7 @@ badboy6 = {
 
 great_power_immigration = {
 	trigger = {
+		ai = no
 		is_greater_power = yes
 		capital_scope = {
 			OR = {
@@ -2634,135 +2635,135 @@ sphereling_tax_bonus = {
 
 ########## AI SCRIPTS ##########
 
-help_ai_literacy = {
-	trigger = {
-		ai = yes
-		NOT = { has_country_flag = jan_mayen }
-		civilized = yes
-		OR = {
-			 has_country_flag = is_austria
-			NOT = {
-				primary_culture = south_german
-			}
-		}
-	}
-	icon = 9
-	education_efficiency_modifier = 0.35
-}
+# help_ai_literacy = {
+	# trigger = {
+		# ai = yes
+		# NOT = { has_country_flag = jan_mayen }
+		# civilized = yes
+		# OR = {
+			 # has_country_flag = is_austria
+			# NOT = {
+				# primary_culture = south_german
+			# }
+		# }
+	# }
+	# icon = 9
+	# education_efficiency_modifier = 0.35
+# }
 
-help_ai_admin = {
-	trigger = {
-		ai = yes
-		NOT = { has_country_flag = jan_mayen }
-		NOT = { has_country_flag = is_chinese_nation }
-		OR = {
-			 has_country_flag = is_austria
-			NOT = {
-				primary_culture = mexican
-				primary_culture = south_german
-			}
-		}
-		NOT = { has_country_flag = south_italian }
-	}
-	icon = 9
-	administrative_efficiency_modifier = 0.5
-}
+# help_ai_admin = {
+	# trigger = {
+		# ai = yes
+		# NOT = { has_country_flag = jan_mayen }
+		# NOT = { has_country_flag = is_chinese_nation }
+		# OR = {
+			 # has_country_flag = is_austria
+			# NOT = {
+				# primary_culture = mexican
+				# primary_culture = south_german
+			# }
+		# }
+		# NOT = { has_country_flag = south_italian }
+	# }
+	# icon = 9
+	# administrative_efficiency_modifier = 0.5
+# }
 
-help_ai_tax = {
-	trigger = {
-		ai = yes
-		NOT = { has_country_flag = jan_mayen }
-	}
-	icon = 9
-	min_tax = 0.99
-}
+# help_ai_tax = {
+	# trigger = {
+		# ai = yes
+		# NOT = { has_country_flag = jan_mayen }
+	# }
+	# icon = 9
+	# min_tax = 0.99
+# }
 
-help_ai_tariffs = {
-	trigger = {
-		ai = yes
-		NOT = { has_country_flag = jan_mayen }
-	}
-	icon = 9
-	min_tariff = 0.5
-}
+# help_ai_tariffs = {
+	# trigger = {
+		# ai = yes
+		# NOT = { has_country_flag = jan_mayen }
+	# }
+	# icon = 9
+	# min_tariff = 0.5
+# }
 
-help_ai_social1 = {
-	trigger = {
-		ai = yes
-		money = 1000000
-		year = 1850
-	}
-	icon = 9
-	min_social_spending = 0.25
-}
+# help_ai_social1 = {
+	# trigger = {
+		# ai = yes
+		# money = 1000000
+		# year = 1850
+	# }
+	# icon = 9
+	# min_social_spending = 0.25
+# }
 
-help_ai_social2 = {
-	trigger = {
-		ai = yes
-		money = 2000000
-		year = 1865
-	}
-	icon = 9
-	min_social_spending = 0.25
-}
+# help_ai_social2 = {
+	# trigger = {
+		# ai = yes
+		# money = 2000000
+		# year = 1865
+	# }
+	# icon = 9
+	# min_social_spending = 0.25
+# }
 
-help_ai_social3 = {
-	trigger = {
-		ai = yes
-		money = 4000000
-		year = 1880
-	}
-	icon = 9
-	min_social_spending = 0.25
-}
+# help_ai_social3 = {
+	# trigger = {
+		# ai = yes
+		# money = 4000000
+		# year = 1880
+	# }
+	# icon = 9
+	# min_social_spending = 0.25
+# }
 
-help_ai_social4 = {
-	trigger = {
-		ai = yes
-		money = 8000000
-		year = 1895
-	}
-	icon = 9
-	min_social_spending = 0.25
-}
+# help_ai_social4 = {
+	# trigger = {
+		# ai = yes
+		# money = 8000000
+		# year = 1895
+	# }
+	# icon = 9
+	# min_social_spending = 0.25
+# }
 
-help_ai_military1 = {
-	trigger = {
-		ai = yes
-		money = 5000000
-		NOT = {
-			OR = {
-				war_policy = anti_military
-				war_policy = pacifism
-			}
-		}
-	}
-	icon = 9
-	min_military_spending = 0.8
-}
+# help_ai_military1 = {
+	# trigger = {
+		# ai = yes
+		# money = 5000000
+		# NOT = {
+			# OR = {
+				# war_policy = anti_military
+				# war_policy = pacifism
+			# }
+		# }
+	# }
+	# icon = 9
+	# min_military_spending = 0.8
+# }
 
-help_ai_military2 = {
-	trigger = {
-		ai = yes
-		money = 5000000
-		war_policy = anti_military
-	}
-	icon = 9
-	min_military_spending = 0.8
-	max_military_spending = 0.1
-}
+# help_ai_military2 = {
+	# trigger = {
+		# ai = yes
+		# money = 5000000
+		# war_policy = anti_military
+	# }
+	# icon = 9
+	# min_military_spending = 0.8
+	# max_military_spending = 0.1
+# }
 
 
-help_ai_military3 = {
-	trigger = {
-		ai = yes
-		money = 5000000
-		war_policy = pacifism
-	}
-	icon = 9
-	min_military_spending = 0.8
-	max_military_spending = 0.2
-}
+# help_ai_military3 = {
+	# trigger = {
+		# ai = yes
+		# money = 5000000
+		# war_policy = pacifism
+	# }
+	# icon = 9
+	# min_military_spending = 0.8
+	# max_military_spending = 0.2
+# }
 
 
 ########## REVANCHISM ##########
