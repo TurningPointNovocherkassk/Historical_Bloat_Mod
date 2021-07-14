@@ -5982,7 +5982,7 @@ country_event = {
 			modifier = {
 				factor = 0.1
 				NOT = {
-				 money = 7500
+					money = 7500
 				}
 			}
 		}
@@ -6002,48 +6002,48 @@ country_event = {
 }
 
 #Reaction event for GPs to the Dar al-Funun
-province_event = {
+country_event = {
 	id = 190370
 	title = "EVTNAME190370"
 	desc = "EVTDESC190370"
-	
 	is_triggered_only = yes
-	allow_multiple_instances = yes
 	
 	option = {
 		name = "Bring back some souvenirs!"
-		clergymen = {
-			reduce_pop = 0.99
-		}
-		owner = {
-			treasury = -5000
-			prestige = 1
-			diplomatic_influence = {
-				who = PER
-				value = 15
+		random_owned = {
+			limit = { is_capital = yes }
+			any_pop = {
+				limit = {
+					type = clergymen
+				}
+				reduce_pop = 0.99
 			}
+		}
+		treasury = -2500
+		prestige = 1
+		diplomatic_influence = {
+			who = PER
+			value = 15
 		}
 		ai_chance = {
 			factor = 99
 			modifier = {
 				factor = 0.01
-				owner = { NOT = { money = 10000 } }
+				owner = { NOT = { money = 2500 } }
 			}
 		}
 	}
 	option = {
-		name = "And help *civilise* them?!"
-		owner = {
-			relation = {
-				who = PER
-				value = -30
-			}
+		name = "And help *civilize* them?!"
+		relation = {
+			who = PER
+			value = -30
 		}
 		ai_chance = {
 			factor = 1
 			modifier = {
 				factor = 50
-				owner = { NOT = { money = 10000 } }
+				owner = { NOT = { money = 2500 } }
 			}
 		}
 	}

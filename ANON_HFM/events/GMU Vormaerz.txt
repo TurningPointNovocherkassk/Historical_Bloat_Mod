@@ -208,7 +208,28 @@ country_event = {
 		ENG = { country_event = 200010 }
 		any_country = {
 			limit = {
-				is_culture_group = germanic
+				OR = {
+					AND = {
+						is_culture_group = germanic
+						NOT = {
+							primary_culture = baltic_german
+							primary_culture = volga_german
+							primary_culture = siebenburger
+							primary_culture = danube_german
+							primary_culture = carpathian_german
+						}
+					}
+					AND = {
+						OR = {
+							primary_culture = baltic_german
+							primary_culture = volga_german
+							primary_culture = siebenburger
+							primary_culture = danube_german
+							primary_culture = carpathian_german
+						}
+						ai = no
+					}
+				}
 				NOT = {
 					tag = THIS
 				}
@@ -575,7 +596,28 @@ country_event = {
 
 	trigger = {
 		NOT = { year = 1848 }
-		is_culture_group = germanic
+		OR = {
+			AND = {
+				is_culture_group = germanic
+				NOT = {
+					primary_culture = baltic_german
+					primary_culture = volga_german
+					primary_culture = siebenburger
+					primary_culture = danube_german
+					primary_culture = carpathian_german
+				}
+			}
+			AND = {
+				OR = {
+					primary_culture = baltic_german
+					primary_culture = volga_german
+					primary_culture = siebenburger
+					primary_culture = danube_german
+					primary_culture = carpathian_german
+				}
+				ai = no
+			}
+		}
 		NOT = { has_country_flag = liberal_revolution_fired }
 		NOT = { has_country_flag = vormaerz }
 

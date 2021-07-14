@@ -4474,10 +4474,8 @@ greek_rename_cyrenaica_title;Rename Cyrenaica ;;;;;;;;;;;;;x
 greek_rename_cyrenaica_desc;Cyrenaica is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;x
 normal_rename_cyrenaica_title;Rename Cyrenaica ;;;;;;;;;;;;;x
 normal_rename_cyrenaica_desc;Cyrenaica is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;x
-german_rename_estonia_title;Rename Estonia ;;;;;;;;;;;;;x
-german_rename_estonia;Estonia is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;x
-estonian_rename_estonia_title;Rename Estonia ;;;;;;;;;;;;;x
-estonian_rename_estonia;Estonia is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;x
+estonia_rename_title;Rename Estonia ;;;;;;;;;;;;;x
+estonia_rename_desc;Estonia is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;x
 german_rename_latvia_title;Rename Latvia ;;;;;;;;;;;;;x
 german_rename_latvia;Latvia is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;x
 latvian_rename_latvia_title;Rename Latvia ;;;;;;;;;;;;;x
@@ -7150,10 +7148,10 @@ eastkarelia_rename_title;Rename Karelia;;;;;;;;;;;;;x
 eastkarelia_rename_desc;Karelia is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;x
 viipuri_rename_title;Rename Vyborg;;;;;;;;;;;;;x
 viipuri_rename_desc;Vyborg is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;x
-northern_norway_rename_title;Rename Northern Norway;;;;;;;;;;;;;x
-northern_norway_rename_desc;Northern Norway is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;x
-northern_sweden_rename_title;Rename Sweden Norway;;;;;;;;;;;;;x
-northern_sweden_rename_desc;Northern Sweden is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;x
+northern_norway_rename_title;Rename the $COUNTRY_ADJ$ North;;;;;;;;;;;;;x
+northern_norway_rename_desc;Northern $COUNTRY$ is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;x
+northern_sweden_rename_title;Rename the $COUNTRY_ADJ$ North;;;;;;;;;;;;;x
+northern_sweden_rename_desc;Northern $COUNTRY$ is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 rename_laukkai_title;Rename Laukkai;;;;;;;;;;;;;x
@@ -9128,12 +9126,12 @@ EVTNAME152009876;The Destruction of the Statue of Liberty;;;;;;;;;;;;;;;x
 EVTDESC152009876;Heavy street fighting erupts in the cramped streets of Manhattan as $FROMCOUNTRY_ADJ$ gunboats blockade the Upper Bay. Artillery is moved to the Port of New York, past improvised barriers while infantry runs away from the harbor and move systematically from building to building, block by block, fighting a running battle against armed irregulars. The Brooklyn Bridge is demolished by $FROMCOUNTRY_ADJ$ engineers while the batteries in the Port of New York set their sights on the Statue of Liberty. For several minutes the city is taken by the fog of war after which a deafening silence befalls... Then, suddenly, a single detonation breaks the stillness, followed by $FROMCOUNTRY_ADJ$ soldiers who shout excitedly as they watch the head of Lady Liberty blow up while several other batteries purposely miss their marks, hitting the city's skyline on the other side of the bay. \n \n Fires rage out of control in the city, lighting up the sky as fighting in the inner city continues well into the early hours of the morning. At Ellis Island, once the fires have subsided, soldiers hoist the $FROMCOUNTRY_ADJ$ flag in what is left of the statue's podium, and turn to see the sun rising behind the smoldering ruins in the horizon. New York is lost.;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,
 EVT152009876OPTA;A dark day for $COUNTRY$.;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
-EVTNAME79796000;An Atheist Society;;;;;;;;;;;;;x
-EVTDESC79796000;True to our party's religious policy, the nation of $COUNTRY$ shall embrace Atheism.;;;;;;;;;;;;;x
+EVTNAME79796000;Atheism in $COUNTRY$;;;;;;;;;;;;;x
+EVTDESC79796000;True to our party's religious policy, the government of $COUNTRY$ shall embrace Atheism.;;;;;;;;;;;;;x
 EVT79796000OPTA;...;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 EVTNAME79796001;Secularism in $COUNTRY$;;;;;;;;;;;;;x
-EVTDESC79796001;True to our party's religious policy, the nation of $COUNTRY$ shall accept all the faiths of its inhabitants.;;;;;;;;;;;;;x
+EVTDESC79796001;True to our party's religious policy, the government of $COUNTRY$ shall make no distinction between all the faiths of its inhabitants.;;;;;;;;;;;;;x
 EVT79796001OPTA;...;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 EVTNAME79796002;Religious Policy in $COUNTRY$;;;;;;;;;;;;;x

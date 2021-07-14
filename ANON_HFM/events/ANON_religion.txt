@@ -8,13 +8,15 @@ country_event = {
 
 	trigger = {
 		religious_policy = pro_atheism
-		NOT = { religion = atheism }
+		NOT = { has_country_flag = atheism_country }
+		# NOT = { religion = atheism } #This is not a valid condition for countries, only works for pops
 		invention = secularization
 	}
 
 	option = {
 		name = "EVT79796000OPTA"
 		religion = atheism
+		clr_country_flag = secularism_country
 		set_country_flag = atheism_country
 		ai_chance = { factor = 100 }
 	}
@@ -28,13 +30,15 @@ country_event = {
 
 	trigger = {
 		religious_policy = secularized
-		NOT = { religion = secularism }
+		NOT = { has_country_flag = secularism_country }
+		# NOT = { religion = secularism } #This is not a valid condition for countries, only works for pops
 		invention = secularization
 	}
 
 	option = {
 		name = "EVT79796001OPTA"
 		religion = secularism
+		clr_country_flag = atheism_country
 		set_country_flag = secularism_country
 		ai_chance = { factor = 100 }
 	}
@@ -49,11 +53,17 @@ country_event = {
 	trigger = {
 		OR = {
 			AND = {
-				religion = secularism
+				# OR = {
+					# religion = secularism #This is not a valid condition for countries, only works for pops
+					has_country_flag = secularism_country
+				# }
 				NOT = { religious_policy = secularized }
 			}
 			AND = {
-				religion = atheism
+				# OR = {
+					# religion = atheism #This is not a valid condition for countries, only works for pops
+					has_country_flag = atheism_country
+				# }
 				NOT = { religious_policy = pro_atheism }
 			}
 		}
@@ -265,18 +275,18 @@ country_event = {
 			}
 			owner = { religion = animist }
 		}
-		random_owned = {
-			limit = {
-				owner = { has_country_flag = atheism_country }
-			}
-			owner = { religion = atheism }
-		}
-		random_owned = {
-			limit = {
-				owner = { has_country_flag = secularism_country }
-			}
-			owner = { religion = secularism }
-		}
+		# random_owned = {
+			# limit = {
+				# owner = { has_country_flag = atheism_country }
+			# }
+			# owner = { religion = atheism }
+		# }
+		# random_owned = {
+			# limit = {
+				# owner = { has_country_flag = secularism_country }
+			# }
+			# owner = { religion = secularism }
+		# }
 		#
 		random_owned = {
 			limit = {

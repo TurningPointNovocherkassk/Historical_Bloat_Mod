@@ -839,16 +839,6 @@ political_decisions = {
 			}
 			tag = RUS
 			has_global_flag = crimea_has_happened
-			OR = {
-				AND = {
-					ai = yes
-					year = 1868
-				}
-				AND = {
-					ai = no
-					nationalism_n_imperialism = 1
-				}
-			}
 			BUK = {
 				civilized = no
 				ai = yes
@@ -862,6 +852,10 @@ political_decisions = {
 		}
 		
 		allow = {
+			OR = {
+				ai = yes
+				nationalism_n_imperialism = 1
+			}
 			BUK = {
 				NOT = { truce_with = THIS }
 				OR = {
@@ -909,6 +903,10 @@ political_decisions = {
 		}
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { year = 1868 }
+			}
 		}
 	}
 
@@ -926,16 +924,6 @@ political_decisions = {
 			}
 			tag = RUS
 			has_global_flag = crimea_has_happened
-			OR = {
-				AND = {
-					ai = yes
-					year = 1865
-				}
-				AND = {
-					ai = no
-					# nationalism_n_imperialism = 1
-				}
-			}
 			KOK = {
 				civilized = no
 				ai = yes
@@ -949,6 +937,10 @@ political_decisions = {
 		}
 		
 		allow = {
+			OR = {
+				ai = yes
+				nationalism_n_imperialism = 1
+			}
 			KOK = {
 				NOT = { truce_with = THIS }
 				OR = {
@@ -1009,6 +1001,10 @@ political_decisions = {
 		}
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { year = 1865 }
+			}
 		}
 	}
 
@@ -1026,16 +1022,6 @@ political_decisions = {
 			}
 			tag = RUS
 			has_global_flag = crimea_has_happened
-			OR = {
-				AND = {
-					ai = yes
-					year = 1873
-				}
-				AND = {
-					ai = no
-					nationalism_n_imperialism = 1
-				}
-			}
 			KHI = {
 				civilized = no
 				ai = yes
@@ -1049,6 +1035,10 @@ political_decisions = {
 		}
 		
 		allow = {
+			OR = {
+				ai = yes
+				nationalism_n_imperialism = 1
+			}
 			KHI = {
 				NOT = { truce_with = THIS }
 				OR = {
@@ -1104,6 +1094,10 @@ political_decisions = {
 		}
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { year = 1873 }
+			}
 		}
 	}
 	
@@ -1404,19 +1398,11 @@ political_decisions = {
 			tag = RUS
 			NOT = { has_country_flag = russification_of_the_baltic_states }
 			OR = {
-				is_our_vassal = UBD
+				UBD = { exists = yes }
 				AND = {
-					is_our_vassal = LVN
-					is_our_vassal = KSM
-					is_our_vassal = ESG
-				}
-			}
-			OR = {
-				UBD = { ai = yes }
-				AND = {
-					LVN = { ai = yes }
-					KSM = { ai = yes }
-					ESG = { ai = yes }
+					LVN = { exists = yes }
+					KSM = { exists = yes }
+					ESG = { exists = yes }
 				}
 			}
 		}
@@ -1424,6 +1410,15 @@ political_decisions = {
 		allow = {
 			war = no
 			OR = {
+				UBD = { exists = yes OR = { vassal_of = THIS substate_of = THIS in_sphere = THIS } }
+				AND = {
+					LVN = { exists = yes OR = { vassal_of = THIS substate_of = THIS in_sphere = THIS } }
+					KSM = { exists = yes OR = { vassal_of = THIS substate_of = THIS in_sphere = THIS } }
+					ESG = { exists = yes OR = { vassal_of = THIS substate_of = THIS in_sphere = THIS } }
+				}
+			}
+			OR = {
+				ai = yes
 				revolution_n_counterrevolution = 1
 				great_wars_enabled = yes
 				GCF = { exists = yes }
@@ -1436,61 +1431,152 @@ political_decisions = {
 			set_country_flag = russification_of_the_baltic_states
 			remove_accepted_culture = baltic_german
 			remove_accepted_culture = volga_german
-			random_owned = {
+			random_country = {
 				limit = {
-					owner = {
-						is_sphere_leader_of = UBD
-						primary_culture = russian
+					tag = UBD
+					exists = yes
+					ai = yes 
+					OR = {
+						vassal_of = THIS
+						substate_of = THIS
 					}
+					overlord = { is_culture_group = east_slavic }
 				}
-				UBD = { 
-					remove_accepted_culture = russian
-					clr_country_flag = ubd_substate
-					#all_core = { remove_core = UBD }
-					government = absolute_monarchy
-				}	
-				owner = {
-					release = UBD
-					inherit = UBD
-				}	
-			}	
-			random_owned = {
+				overlord = { release_vassal = UBD }
+				remove_accepted_culture = russian
+				clr_country_flag = ubd_substate
+				#all_core = { remove_core = UBD }
+				government = absolute_monarchy
+				overlord = { inherit = UBD }
+					
+			}
+			random_country = {
 				limit = {
-					owner = {
-						is_sphere_leader_of = LVN
-						is_sphere_leader_of = KSM
-						is_sphere_leader_of = ESG
-						primary_culture = russian
+					tag = UBD
+					exists = yes
+					ai = no 
+					OR = {
+						vassal_of = THIS
+						substate_of = THIS
 					}
+					overlord = { is_culture_group = east_slavic }
 				}
-				LVN = { 
-					remove_accepted_culture = russian
-					clr_country_flag = ubd_substate
-					#all_core = { remove_core = LVN }
-					government = absolute_monarchy
-				}	
-				KSM = { 
-					remove_accepted_culture = russian
-					clr_country_flag = ubd_substate
-					#all_core = { remove_core = KSM }
-					government = absolute_monarchy
-				}	
-				ESG = { 
-					remove_accepted_culture = russian
-					clr_country_flag = ubd_substate
-					#all_core = { remove_core = ESG }
-					government = absolute_monarchy
-				}	
-				owner = {
-					release = LVN
-					release = KSM
-					release = ESG
-					inherit = LVN
-					inherit = KSM
-					inherit = ESG
-				}	
-			}	
-			1037 = { 
+				overlord = { release_vassal = UBD }
+				remove_accepted_culture = russian
+				remove_accepted_culture = russophile
+				government = absolute_monarchy
+				clr_country_flag = ubd_substate
+				country_event = 11101
+			}
+			random_country = {
+				limit = {
+					tag = LVN
+					exists = yes
+					ai = yes 
+					OR = {
+						vassal_of = THIS
+						substate_of = THIS
+					}
+					overlord = { is_culture_group = east_slavic }
+				}
+				overlord = { release_vassal = LVN }
+				remove_accepted_culture = russian
+				clr_country_flag = ubd_substate
+				#all_core = { remove_core = LVN }
+				government = absolute_monarchy
+				overlord = { inherit = LVN }
+			}
+			random_country = {
+				limit = {
+					tag = LVN
+					exists = yes
+					ai = no 
+					OR = {
+						vassal_of = THIS
+						substate_of = THIS
+					}
+					overlord = { is_culture_group = east_slavic }
+				}
+				overlord = { release_vassal = LVN }
+				remove_accepted_culture = russian
+				remove_accepted_culture = russophile
+				government = absolute_monarchy
+				clr_country_flag = ubd_substate
+				country_event = 11101
+			}
+			random_country = {
+				limit = {
+					tag = KSM
+					exists = yes
+					ai = yes 
+					OR = {
+						vassal_of = THIS
+						substate_of = THIS
+					}
+					overlord = { is_culture_group = east_slavic }
+				}
+				overlord = { release_vassal = KSM }
+				remove_accepted_culture = russian
+				clr_country_flag = ubd_substate
+				#all_core = { remove_core = KSM }
+				government = absolute_monarchy
+				overlord = { inherit = KSM }
+			}
+			random_country = {
+				limit = {
+					tag = KSM
+					exists = yes
+					ai = no 
+					OR = {
+						vassal_of = THIS
+						substate_of = THIS
+					}
+					overlord = { is_culture_group = east_slavic }
+				}
+				overlord = { release_vassal = KSM }
+				remove_accepted_culture = russian
+				remove_accepted_culture = russophile
+				government = absolute_monarchy
+				clr_country_flag = ubd_substate
+				country_event = 11101
+			}
+			random_country = {
+				limit = {
+					tag = ESG
+					exists = yes
+					ai = yes 
+					OR = {
+						vassal_of = THIS
+						substate_of = THIS
+					}
+					overlord = { is_culture_group = east_slavic }
+				}
+				overlord = { release_vassal = ESG }
+				remove_accepted_culture = russian
+				clr_country_flag = ubd_substate
+				#all_core = { remove_core = ESG }
+				government = absolute_monarchy
+				overlord = { inherit = ESG }
+			}
+			random_country = {
+				limit = {
+					tag = ESG
+					exists = yes
+					ai = no 
+					OR = {
+						vassal_of = THIS
+						substate_of = THIS
+					}
+					overlord = { is_culture_group = east_slavic }
+				}
+				overlord = { release_vassal = ESG }
+				remove_accepted_culture = russian
+				remove_accepted_culture = russophile
+				government = absolute_monarchy
+				clr_country_flag = ubd_substate
+				country_event = 11101
+			}
+			1037 = {
 				add_core = VLG
 				add_province_modifier = { name = russoification duration = -1 }
 			}
@@ -1510,7 +1596,13 @@ political_decisions = {
 				militancy = 3
 			}
 		}
-		ai_will_do = { factor = 1 }
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { year = 1881 }
+			}
+		}
 	}
 	
 	establish_caucasus_viceroyalty = {
@@ -1835,12 +1927,12 @@ political_decisions = {
 			
 			random_country = {
 				limit = { is_our_vassal = TNT }
-				release = TNT
+				release_vassal = TNT
 				casus_belli = { target = RUS type = liberate_country months = 60 }
 			}
 			random_country = {
 				limit = { is_our_vassal = ALT }
-				release = TNT
+				release_vassal = TNT
 				casus_belli = { target = RUS type = liberate_country months = 60 }
 			}
 			

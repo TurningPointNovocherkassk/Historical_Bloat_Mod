@@ -55,33 +55,46 @@ political_decisions = {
 				# government = hms_government
 			# }
 			tag = PER
-			exists = AHW
-			AHW = {
-				civilized = no
-				ai = yes
-			}
+			AHW = { exists = yes civilized = no }
 			# has_recently_lost_war = no
 			NOT = { has_country_flag = abolish_arabistan }
 		}
 
 		allow = {
-			AHW = {
-				OR = {
-					in_sphere = PER
-					vassal_of = PER
-					substate_of = PER
-				}
-			}
+			AHW = { exists = yes OR = { vassal_of = THIS substate_of = THIS in_sphere = THIS } }
 			OR = {
-				year = 1925
-				post_napoleonic_thought = 1
+				ai = yes
+				admin_reform = yes_admin_reform
 				civilization_progress = 0.75
+				civilized = yes
 			}
 		}
 
 		effect = {
-			inherit = AHW
 			prestige = 15
+			random_country = {
+				limit = {
+					tag = AHW
+					OR = {
+						vassal_of = THIS
+						substate_of = THIS
+					}
+					ai = yes
+				}
+				inherit = AHW
+			}
+			random_country = {
+				limit = {
+					tag = AHW
+					OR = {
+						vassal_of = THIS
+						substate_of = THIS
+					}
+					ai = no
+				}
+				overlord = { release_vassal = AHW }
+				country_event = 11101
+			}
 			any_owned = {
 				limit = {
 					is_core = AHW

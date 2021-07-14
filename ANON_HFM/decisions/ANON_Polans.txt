@@ -1959,16 +1959,17 @@ political_decisions = {
 		picture = annex_united_baltic_duchy
 		potential = {
 			OR = {
-				AND = {
-					is_culture_group = germanic
-					NOT = {
-						OR = {
-							tag = AUS
-							tag = KUK
-							# tag = DNB
-						}
-					}
-				}
+				tag = GER #only united germans can stfu
+				# AND = {
+					# is_culture_group = germanic
+					# NOT = {
+						# OR = {
+							# tag = AUS
+							# tag = KUK
+							# # tag = DNB
+						# }
+					# }
+				# }
 				is_culture_group = polish_culture_group
 				is_culture_group = baltic
 				is_culture_group = scandinavian
@@ -2124,24 +2125,18 @@ political_decisions = {
 			factor = 1
 			modifier = {
 				factor = 0
-				NOT = {
-					relation = { who = RUS value = 25 }
-					OR = {
-						government = proletarian_dictatorship
-						government = fascist_dictatorship
-						AND = {
-							OR = {
-								government = absolute_monarchy
-								government = prussian_constitutionalism
-								government = hms_government
-							}
-							OR = {
-								ruling_party_ideology = fascist
-								ruling_party_ideology = communist
-								ruling_party_ideology = reactionary
-							}
-						}
-					}
+				relation = { who = RUS value = 25 }
+				OR = {
+					government = absolute_monarchy
+					government = prussian_constitutionalism
+					government = hms_government
+					government = democracy
+				}
+				OR = {
+					ruling_party_ideology = conservative
+					ruling_party_ideology = socialist
+					ruling_party_ideology = liberal
+					ruling_party_ideology = anarcho_liberal
 				}
 			}
 		}
