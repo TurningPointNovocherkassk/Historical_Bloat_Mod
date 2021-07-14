@@ -1266,19 +1266,51 @@ country_event = {
 			has_country_flag = will_not_hold_congress
 			has_country_flag = hosting_paris_congress
 			has_country_modifier = neutrality_modifier
-			OR = {
-				tag = PRU
-				tag = NGF
-				tag = GER
-				tag = GCF
-				tag = AUS
-				tag = KUK
-				tag = SGF
-				tag = RUS
-			}
+			tag = PRU
+			tag = NGF
+			tag = GER
+			tag = GCF
+			tag = AUS
+			tag = KUK
+			tag = SGF
+			tag = RUS
+			tag = SIC
+			tag = SAR
+			tag = PAP
 		}
-		is_greater_power = yes
+		OR = {
+			is_greater_power = yes
+			is_secondary_power = yes
+			tag = BEL
+			tag = NET
+			tag = SPA
+			tag = SPC
+			tag = POR
+			tag = DEN
+			tag = SWE
+			tag = BAV
+		}
+		OR = {
+			is_vassal = no
+			is_substate = no
+		}
 		capital_scope = { continent = europe }
+		NOT = {
+			war_with = PNC
+			tag = THIS
+			tag = PNC
+			tag = PRU
+			tag = NGF
+			tag = GER
+			tag = GCF
+			tag = AUS
+			tag = KUK
+			tag = SGF
+			tag = RUS
+			tag = SIC
+			tag = SAR
+			tag = PAP
+		}
 		OR = {
 			has_country_flag = polish_chimpout_voted_support_POL
 			has_country_flag = polish_chimpout_voted_condemn_GP
@@ -1345,60 +1377,53 @@ country_event = {
 				value = 0
 			}
 			country_event = 666666016
-			add_country_modifier = { name = no_more_war duration = 1095 }
+			add_country_modifier = { name = no_more_war duration = 1825 }
 		}
 		any_country = {
 			limit = {
-				NOT = {
-					OR = {
-						tag = PRU
-						tag = NGF
-						tag = GER
-						tag = GCF
-						tag = AUS
-						tag = KUK
-						tag = SGF
-						tag = RUS
-					}
+				OR = {
+					tag = PRU
+					tag = NGF
+					tag = GER
+					tag = GCF
+					tag = AUS
+					tag = KUK
+					tag = SGF
+					is_greater_power = yes
 				}
-				exists = yes
-				war_with = PNC
-			}
-			end_war = PNC
-			#relation = { who = PNC value = 400 }
-		}
-		any_country = {
-			limit = {
-				# OR = {
-					# tag = PRU
-					# tag = NGF
-					# tag = GER
-					# tag = GCF
-					# tag = AUS
-					# tag = KUK
-					# tag = SGF
-				# }
-				is_greater_power = yes
 				any_core = { is_core = PNC }
-				war_with = PNC
 				exists = yes
 			}
 			country_event = 666666015
-			add_country_modifier = { name = no_more_war duration = 1095 }
+			add_country_modifier = { name = no_more_war duration = 1825 }
 			set_country_flag = for_congress_paris
-			end_war = PNC
 		}
 		RUS = {
 			country_event = 666666015
-			add_country_modifier = { name = no_more_war duration = 1095 }
+			add_country_modifier = { name = no_more_war duration = 1825 }
 			set_country_flag = for_congress_paris
-			end_war = PNC
 		}
 		any_country = {
 			limit = {
-				is_greater_power = yes
+				OR = {
+					is_greater_power = yes
+					is_secondary_power = yes
+					tag = BEL
+					tag = NET
+					tag = SPA
+					tag = SPC
+					tag = POR
+					tag = DEN
+					tag = SWE
+					tag = BAV
+				}
+				OR = {
+					is_vassal = no
+					is_substate = no
+				}
 				capital_scope = { continent = europe }
 				NOT = {
+					war_with = PNC
 					tag = THIS
 					tag = PNC
 					tag = PRU
@@ -1409,6 +1434,9 @@ country_event = {
 					tag = KUK
 					tag = SGF
 					tag = RUS
+					tag = SIC
+					tag = SAR
+					tag = PAP
 				}
 			}
 			country_event = 666666017
@@ -1649,6 +1677,10 @@ country_event = {
 
 	option = {
 		name = "EVT666666015OPTA"
+		any_country = { limit = { war_with = THIS alliance_with = PNC } end_war = THIS }
+		any_country = { limit = { war_with = PNC alliance_with = THIS } end_war = PNC }
+		PNC = { end_war = THIS }
+		end_war = PNC
 		country_event = { id = 666666017 days = 30 }
 		any_owned = {
 			limit = {
@@ -6783,7 +6815,7 @@ country_event = {
 				value = 0
 			}
 			country_event = 666666056
-			add_country_modifier = { name = no_more_war duration = 1095 }
+			add_country_modifier = { name = no_more_war duration = 1825 }
 		}
 		any_country = {
 			limit = {
@@ -6813,28 +6845,49 @@ country_event = {
 					tag = KUK
 					tag = SGF
 				}
+				exists = yes
 				war_with = BOH
 			}
 			country_event = 666666055
 			#relation = { who = BOH value = 400 }
 			#diplomatic_influence = { who = BOH value = 300 }
-			add_country_modifier = { name = no_more_war duration = 1095 }
+			add_country_modifier = { name = no_more_war duration = 1825 }
 			set_country_flag = for_congress_warsaw
-			end_war = BOH
 		}
 		any_country = {
 			limit = {
-				is_greater_power = yes
+				OR = {
+					is_greater_power = yes
+					is_secondary_power = yes
+					tag = BEL
+					tag = NET
+					tag = SPA
+					tag = SPC
+					tag = POR
+					tag = DEN
+					tag = SWE
+					tag = BAV
+				}
+				OR = {
+					is_vassal = no
+					is_substate = no
+				}
 				capital_scope = { continent = europe }
 				NOT = {
+					war_with = BOH
 					tag = THIS
-					tag = BOH
+					tag = PNC
+					tag = PRU
+					tag = NGF
 					tag = GER
 					tag = GCF
 					tag = AUS
 					tag = KUK
 					tag = SGF
-					tag = DNB
+					tag = RUS
+					tag = SIC
+					tag = SAR
+					tag = PAP
 				}
 			}
 			country_event = 666666057
@@ -7040,6 +7093,10 @@ country_event = {
 
 	option = {
 		name = "EVT666666055OPTA"
+		any_country = { limit = { war_with = THIS alliance_with = BOH } end_war = THIS }
+		any_country = { limit = { war_with = BOH alliance_with = THIS } end_war = BOH }
+		BOH = { end_war = THIS }
+		end_war = BOH
 		country_event = 666666057
 	}
 }
