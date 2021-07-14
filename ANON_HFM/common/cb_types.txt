@@ -8089,20 +8089,20 @@ acquire_substate_region = {
                 }
             }
             number_of_states = 1
-            any_owned_province = {
-                not = { is_core = THIS }
-                is_colonial = no
-            }
+            # any_owned_province = {
+               # not = { is_core = THIS }
+               # is_colonial = no
+            # }
         }
     }
 
     allowed_substate_regions = {
-        is_colonial = no
-        #owner = { NOT = { in_sphere = THIS } }
-        any_owned_province = {
-            not = {    is_core = THIS }
-            is_colonial = no
-        }
+		# is_colonial = no
+        owner = { NOT = { in_sphere = THIS } }
+		# any_owned_province = {
+			# not = { is_core = THIS }
+			# is_colonial = no
+		# }
         OR = {
             AND = {
                 THIS = { total_amount_of_ships = 5 }
