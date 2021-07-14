@@ -884,12 +884,6 @@ political_decisions = {
 			badboy = 1
 			random_owned = {
 				limit = {
-					owner = { is_our_vassal = BUK }
-				}
-				owner = { inherit = BUK }	
-			}	
-			random_owned = {
-				limit = {
 					owner = { NOT = { is_our_vassal = BUK } }
 				}
 				owner = {
@@ -906,6 +900,12 @@ political_decisions = {
 					}	
 				}	
 			}
+			random_owned = {
+				limit = {
+					owner = { is_our_vassal = BUK }
+				}
+				owner = { inherit = BUK }	
+			}	
 		}
 		ai_will_do = {
 			factor = 1
@@ -933,7 +933,7 @@ political_decisions = {
 				}
 				AND = {
 					ai = no
-					nationalism_n_imperialism = 1
+					# nationalism_n_imperialism = 1
 				}
 			}
 			KOK = {
@@ -969,12 +969,7 @@ political_decisions = {
 		effect = {
 			set_global_flag = the_great_game_kokand
 			badboy = 1
-			random_owned = {
-				limit = {
-					owner = { is_our_vassal = KOK }
-				}
-				owner = { inherit = KOK }
-			}	
+			
 			random_owned = {
 				limit = {
 					owner = { NOT = { is_our_vassal = KOK } }
@@ -993,6 +988,12 @@ political_decisions = {
 					}	
 				}	
 			}
+			random_owned = {
+				limit = {
+					owner = { is_our_vassal = KOK }
+				}
+				owner = { inherit = KOK }
+			}	
 			random_owned = {
 				limit = {
 					OR = {
@@ -1070,12 +1071,6 @@ political_decisions = {
 			badboy = 1
 			random_owned = {
 				limit = {
-					owner = { is_our_vassal = KHI }
-				}
-				owner = { inherit = KHI }
-			}	
-			random_owned = {
-				limit = {
 					owner = { NOT = { is_our_vassal = KHI } }
 				}
 				owner = {
@@ -1092,6 +1087,12 @@ political_decisions = {
 					}	
 				}	
 			}
+			random_owned = {
+				limit = {
+					owner = { is_our_vassal = KHI }
+				}
+				owner = { inherit = KHI }
+			}	
 			random_owned = {
 				limit = {
 					3480 = { empty = yes }

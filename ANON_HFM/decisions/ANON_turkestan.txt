@@ -274,12 +274,6 @@ political_decisions = {
 			badboy = 1
 			random_owned = {
 				limit = {
-					owner = { is_our_vassal = WKH }
-				}
-				owner = { inherit = WKH }
-			}	
-			random_owned = {
-				limit = {
 					owner = { NOT = { is_our_vassal = WKH } }
 				}
 				owner = {
@@ -296,6 +290,12 @@ political_decisions = {
 					}	
 				}	
 			}
+			random_owned = {
+				limit = {
+					owner = { is_our_vassal = WKH }
+				}
+				owner = { inherit = WKH }
+			}	
 		}
 		ai_will_do = {
 			factor = 1
@@ -350,12 +350,6 @@ political_decisions = {
 			badboy = 5
 			random_owned = {
 				limit = {
-					owner = { is_our_vassal = BUR }
-				}
-				owner = { inherit = BUR }
-			}	
-			random_owned = {
-				limit = {
 					owner = { NOT = { is_our_vassal = BUR } }
 				}
 				owner = {
@@ -372,6 +366,12 @@ political_decisions = {
 					}	
 				}	
 			}
+			random_owned = {
+				limit = {
+					owner = { is_our_vassal = BUR }
+				}
+				owner = { inherit = BUR }
+			}	
 		}
 		ai_will_do = {
 			factor = 0
@@ -425,12 +425,6 @@ political_decisions = {
 			badboy = 5
 			random_owned = {
 				limit = {
-					owner = { is_our_vassal = TIB }
-				}
-				owner = { inherit = TIB }
-			}	
-			random_owned = {
-				limit = {
 					owner = { NOT = { is_our_vassal = TIB } }
 				}
 				owner = {
@@ -447,6 +441,12 @@ political_decisions = {
 					}	
 				}	
 			}
+			random_owned = {
+				limit = {
+					owner = { is_our_vassal = TIB }
+				}
+				owner = { inherit = TIB }
+			}	
 		}
 		ai_will_do = {
 			factor = 0
@@ -504,12 +504,6 @@ political_decisions = {
 			badboy = 2.5
 			random_owned = {
 				limit = {
-					owner = { is_our_vassal = UYG }
-				}
-				owner = { inherit = UYG }
-			}	
-			random_owned = {
-				limit = {
 					owner = { NOT = { is_our_vassal = UYG } }
 				}
 				owner = {
@@ -526,6 +520,12 @@ political_decisions = {
 					}	
 				}	
 			}
+			random_owned = {
+				limit = {
+					owner = { is_our_vassal = UYG }
+				}
+				owner = { inherit = UYG }
+			}	
 		}
 		ai_will_do = {
 			factor = 0
@@ -1156,12 +1156,6 @@ political_decisions = {
 			badboy = 1
 			random_owned = {
 				limit = {
-					owner = { is_our_vassal = TKM }
-				}
-				owner = { inherit = TKM }
-			}	
-			random_owned = {
-				limit = {
 					owner = { NOT = { is_our_vassal = TKM } }
 				}
 				owner = {
@@ -1178,6 +1172,12 @@ political_decisions = {
 					}	
 				}	
 			}
+			random_owned = {
+				limit = {
+					owner = { is_our_vassal = TKM }
+				}
+				owner = { inherit = TKM }
+			}	
 		}
 		ai_will_do = {
 			factor = 1
@@ -1242,12 +1242,6 @@ political_decisions = {
 			badboy = 1
 			random_owned = {
 				limit = {
-					owner = { is_our_vassal = DWZ }
-				}
-				owner = { inherit = DWZ }
-			}	
-			random_owned = {
-				limit = {
 					owner = { NOT = { is_our_vassal = DWZ } }
 				}
 				owner = {
@@ -1264,6 +1258,12 @@ political_decisions = {
 					}	
 				}	
 			}
+			random_owned = {
+				limit = {
+					owner = { is_our_vassal = DWZ }
+				}
+				owner = { inherit = DWZ }
+			}	
 		}
 		ai_will_do = {
 			factor = 1
@@ -1332,12 +1332,6 @@ political_decisions = {
 			badboy = 1
 			random_owned = {
 				limit = {
-					owner = { is_our_vassal = J01 }
-				}
-				owner = { inherit = J01 }
-			}	
-			random_owned = {
-				limit = {
 					owner = { NOT = { is_our_vassal = J01 } }
 				}
 				owner = {
@@ -1354,6 +1348,12 @@ political_decisions = {
 					}
 				}	
 			}
+			random_owned = {
+				limit = {
+					owner = { is_our_vassal = J01 }
+				}
+				owner = { inherit = J01 }
+			}	
 			random_owned = {
 				limit = {
 					OR = {

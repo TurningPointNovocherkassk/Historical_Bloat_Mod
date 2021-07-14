@@ -1553,7 +1553,7 @@ country_event = {
 }
 
 
-################## DEMOCRACIES LIBERAL##########################
+################## PARLIAMENTARY DEMOCRACIES LIBERAL##########################
 
 
 country_event = {
@@ -1593,18 +1593,20 @@ country_event = {
             has_country_flag = minister_found
 
         }
-        OR = {
+        # OR = {
             has_country_flag = liberal_election_win
-            has_country_flag = anarcho_liberal_win
-        }
-        OR = {
-			government = federal_democracy
+            # has_country_flag = anarcho_liberal_win
+        # }
+        # OR = {
 			# government = parliamentary_republic
 			# government = constitutional_empire
             government = hms_government
+        # }
+		NOT = {
+			government = federal_democracy
             government = democracy
             government = bourgeois_dictatorship
-        }
+		}
     }
 
     mean_time_to_happen = {
@@ -2262,7 +2264,7 @@ country_event = {
 
 
 
-################## DEMOCRACIES TORY##########################
+################## PARLIAMENTARY DEMOCRACIES TORY##########################
 
 
 country_event = {
@@ -2306,13 +2308,16 @@ country_event = {
             has_country_flag = fascist_election_win
             has_country_flag = reactionary_election_win
         }
-        OR = {
-			government = federal_democracy
-			# government = constitutional_empire
+        # OR = {
 			# government = parliamentary_republic
+			# government = constitutional_empire
             government = hms_government
+        # }
+		NOT = {
+			government = federal_democracy
             government = democracy
-        }
+            government = bourgeois_dictatorship
+		}
     }
 
     mean_time_to_happen = {
@@ -2969,7 +2974,7 @@ country_event = {
 }
 
 
-################## DEMOCRACIES SOCIALIST##########################
+################## PARLIAMENTARY DEMOCRACIES SOCIALIST##########################
 
 
 country_event = {
@@ -3012,13 +3017,16 @@ country_event = {
             has_country_flag = socialist_election_win
             has_country_flag = communist_election_win
         }
-        OR = {
+        # OR = {
 			# government = parliamentary_republic
-			government = federal_democracy
 			# government = constitutional_empire
             government = hms_government
+        # }
+		NOT = {
+			government = federal_democracy
             government = democracy
-        }
+            government = bourgeois_dictatorship
+		}
     }
 
     mean_time_to_happen = {
@@ -3682,6 +3690,9 @@ country_event = {
     trigger = {
 		ai = no
         NOT = {
+			government = federal_democracy
+            government = democracy
+            government = bourgeois_dictatorship
             government = proletarian_dictatorship
             government = presidential_dictatorship
             government = fascist_dictatorship
@@ -3746,12 +3757,15 @@ country_event = {
 
 country_event = {
     id = 100080124
-    title = "Prime Minister Committed!"
+    title = "Prime Minister Retired"
     desc = "After he declared Thursdays to be Compulsory Pie-wearing day, our Prime Minister has been 'retired'..."
     picture = "danishgovernment"
     trigger = {
 		ai = no
         NOT = {
+			government = federal_democracy
+            government = democracy
+            government = bourgeois_dictatorship
             government = proletarian_dictatorship
             government = presidential_dictatorship
             government = fascist_dictatorship
@@ -3841,5 +3855,2213 @@ country_event = {
             name = power_vacuum
             duration = 365
         }
+    }
+}
+
+################## PRESIDENTIAL DEMOCRACIES LIBERAL##########################
+
+
+country_event = {
+    id = 100080126
+    title = "President Elected"
+    desc = "A new President has been elected."
+    picture = "danishgovernment"
+    trigger = {
+		ai = no
+        NOT = {
+            has_country_modifier = expert_diplomat
+            has_country_modifier = successful_industrialist
+            has_country_modifier = ivory_tower_intellectual
+            has_country_modifier = man_of_the_people
+            has_country_modifier = landed_gentleman
+            has_country_modifier = military_man
+            has_country_modifier = lord_admiral
+            has_country_modifier = raving_loon
+            has_country_modifier = luddite
+            has_country_modifier = great_statesman
+            has_country_modifier = backroom_boy
+            has_country_modifier = great_reformer
+            has_country_modifier = gauche_buffoon
+            has_country_modifier = administrative_genius
+            has_country_modifier = visionary_thinker
+            has_country_modifier = competent_placeholder
+            has_country_modifier = imperious_autocrat
+            has_country_modifier = prince_of_terror
+            has_country_modifier = efficient_sociopath
+            has_country_modifier = pig_headed_isolationist
+            has_country_modifier = ambitious_union_boss
+            has_country_modifier = dour_economist
+            has_country_modifier = otto_von_bismarck
+            has_country_modifier = louis_napoleon_iii
+            has_country_modifier = dom_pedro_ii
+            has_country_modifier = power_vacuum
+            has_country_flag = minister_found
+
+        }
+        OR = {
+            has_country_flag = liberal_election_win
+            has_country_flag = anarcho_liberal_win
+        }
+        OR = {
+			government = federal_democracy
+            government = democracy
+            government = bourgeois_dictatorship
+        }
+    }
+
+    mean_time_to_happen = {
+        days = 14
+    }
+
+    immediate = {
+        set_country_flag = minister_found
+    }
+
+    option = {
+        name = "I hope they're a good one..."
+        random_list = {
+			4.5 = {
+				remove_country_modifier = expert_diplomat
+				remove_country_modifier = successful_industrialist
+				remove_country_modifier = ivory_tower_intellectual
+				remove_country_modifier = man_of_the_people
+				remove_country_modifier = landed_gentleman
+				remove_country_modifier = military_man
+				remove_country_modifier = lord_admiral
+				remove_country_modifier = raving_loon
+				remove_country_modifier = luddite
+				remove_country_modifier = great_statesman
+				remove_country_modifier = backroom_boy
+				remove_country_modifier = great_reformer
+				remove_country_modifier = gauche_buffoon
+				remove_country_modifier = administrative_genius
+				remove_country_modifier = visionary_thinker
+				remove_country_modifier = competent_placeholder
+				remove_country_modifier = imperious_autocrat
+				remove_country_modifier = prince_of_terror
+				remove_country_modifier = efficient_sociopath
+				remove_country_modifier = pig_headed_isolationist
+				remove_country_modifier = ambitious_union_boss
+				remove_country_modifier = dour_economist
+				add_country_modifier = {
+					name = expert_diplomat
+					duration = 3650
+				}
+				clr_country_flag = minister_found
+			}
+			4.5 = {
+				remove_country_modifier = expert_diplomat
+				remove_country_modifier = successful_industrialist
+				remove_country_modifier = ivory_tower_intellectual
+				remove_country_modifier = man_of_the_people
+				remove_country_modifier = landed_gentleman
+				remove_country_modifier = military_man
+				remove_country_modifier = lord_admiral
+				remove_country_modifier = raving_loon
+				remove_country_modifier = luddite
+				remove_country_modifier = great_statesman
+				remove_country_modifier = backroom_boy
+				remove_country_modifier = great_reformer
+				remove_country_modifier = gauche_buffoon
+				remove_country_modifier = administrative_genius
+				remove_country_modifier = visionary_thinker
+				remove_country_modifier = competent_placeholder
+				remove_country_modifier = imperious_autocrat
+				remove_country_modifier = prince_of_terror
+				remove_country_modifier = efficient_sociopath
+				remove_country_modifier = pig_headed_isolationist
+				remove_country_modifier = ambitious_union_boss
+				remove_country_modifier = dour_economist
+				add_country_modifier = {
+					name = successful_industrialist
+					duration = 3650
+				}
+				clr_country_flag = minister_found
+			}
+			4.5 = {
+				remove_country_modifier = expert_diplomat
+				remove_country_modifier = successful_industrialist
+				remove_country_modifier = ivory_tower_intellectual
+				remove_country_modifier = man_of_the_people
+				remove_country_modifier = landed_gentleman
+				remove_country_modifier = military_man
+				remove_country_modifier = lord_admiral
+				remove_country_modifier = raving_loon
+				remove_country_modifier = luddite
+				remove_country_modifier = great_statesman
+				remove_country_modifier = backroom_boy
+				remove_country_modifier = great_reformer
+				remove_country_modifier = gauche_buffoon
+				remove_country_modifier = administrative_genius
+				remove_country_modifier = visionary_thinker
+				remove_country_modifier = competent_placeholder
+				remove_country_modifier = imperious_autocrat
+				remove_country_modifier = prince_of_terror
+				remove_country_modifier = efficient_sociopath
+				remove_country_modifier = pig_headed_isolationist
+				remove_country_modifier = ambitious_union_boss
+				remove_country_modifier = dour_economist
+				add_country_modifier = {
+					name = ivory_tower_intellectual
+					duration = 3650
+				}
+				clr_country_flag = minister_found
+			}
+			4.5 = {
+				remove_country_modifier = expert_diplomat
+				remove_country_modifier = successful_industrialist
+				remove_country_modifier = ivory_tower_intellectual
+				remove_country_modifier = man_of_the_people
+				remove_country_modifier = landed_gentleman
+				remove_country_modifier = military_man
+				remove_country_modifier = lord_admiral
+				remove_country_modifier = raving_loon
+				remove_country_modifier = luddite
+				remove_country_modifier = great_statesman
+				remove_country_modifier = backroom_boy
+				remove_country_modifier = great_reformer
+				remove_country_modifier = gauche_buffoon
+				remove_country_modifier = administrative_genius
+				remove_country_modifier = visionary_thinker
+				remove_country_modifier = competent_placeholder
+				remove_country_modifier = imperious_autocrat
+				remove_country_modifier = prince_of_terror
+				remove_country_modifier = efficient_sociopath
+				remove_country_modifier = pig_headed_isolationist
+				remove_country_modifier = ambitious_union_boss
+				remove_country_modifier = dour_economist
+				add_country_modifier = {
+					name = man_of_the_people
+					duration = 3650
+				}
+				clr_country_flag = minister_found
+			}
+			4.5 = {
+				remove_country_modifier = expert_diplomat
+				remove_country_modifier = successful_industrialist
+				remove_country_modifier = ivory_tower_intellectual
+				remove_country_modifier = man_of_the_people
+				remove_country_modifier = landed_gentleman
+				remove_country_modifier = military_man
+				remove_country_modifier = lord_admiral
+				remove_country_modifier = raving_loon
+				remove_country_modifier = luddite
+				remove_country_modifier = great_statesman
+				remove_country_modifier = backroom_boy
+				remove_country_modifier = great_reformer
+				remove_country_modifier = gauche_buffoon
+				remove_country_modifier = administrative_genius
+				remove_country_modifier = visionary_thinker
+				remove_country_modifier = competent_placeholder
+				remove_country_modifier = imperious_autocrat
+				remove_country_modifier = prince_of_terror
+				remove_country_modifier = efficient_sociopath
+				remove_country_modifier = pig_headed_isolationist
+				remove_country_modifier = ambitious_union_boss
+				remove_country_modifier = dour_economist
+				add_country_modifier = {
+					name = landed_gentleman
+					duration = 3650
+				}
+				clr_country_flag = minister_found
+			}
+			4.5 = {
+				remove_country_modifier = expert_diplomat
+				remove_country_modifier = successful_industrialist
+				remove_country_modifier = ivory_tower_intellectual
+				remove_country_modifier = man_of_the_people
+				remove_country_modifier = landed_gentleman
+				remove_country_modifier = military_man
+				remove_country_modifier = lord_admiral
+				remove_country_modifier = raving_loon
+				remove_country_modifier = luddite
+				remove_country_modifier = great_statesman
+				remove_country_modifier = backroom_boy
+				remove_country_modifier = great_reformer
+				remove_country_modifier = gauche_buffoon
+				remove_country_modifier = administrative_genius
+				remove_country_modifier = visionary_thinker
+				remove_country_modifier = competent_placeholder
+				remove_country_modifier = imperious_autocrat
+				remove_country_modifier = prince_of_terror
+				remove_country_modifier = efficient_sociopath
+				remove_country_modifier = pig_headed_isolationist
+				remove_country_modifier = ambitious_union_boss
+				remove_country_modifier = dour_economist
+				add_country_modifier = {
+					name = military_man
+					duration = 3650
+				}
+				clr_country_flag = minister_found
+			}
+			4.5 = {
+				remove_country_modifier = expert_diplomat
+				remove_country_modifier = successful_industrialist
+				remove_country_modifier = ivory_tower_intellectual
+				remove_country_modifier = man_of_the_people
+				remove_country_modifier = landed_gentleman
+				remove_country_modifier = military_man
+				remove_country_modifier = lord_admiral
+				remove_country_modifier = raving_loon
+				remove_country_modifier = luddite
+				remove_country_modifier = great_statesman
+				remove_country_modifier = backroom_boy
+				remove_country_modifier = great_reformer
+				remove_country_modifier = gauche_buffoon
+				remove_country_modifier = administrative_genius
+				remove_country_modifier = visionary_thinker
+				remove_country_modifier = competent_placeholder
+				remove_country_modifier = imperious_autocrat
+				remove_country_modifier = prince_of_terror
+				remove_country_modifier = efficient_sociopath
+				remove_country_modifier = pig_headed_isolationist
+				remove_country_modifier = ambitious_union_boss
+				remove_country_modifier = dour_economist
+				add_country_modifier = {
+					name = lord_admiral
+					duration = 3650
+				}
+				clr_country_flag = minister_found
+			}
+			4.5 = {
+				remove_country_modifier = expert_diplomat
+				remove_country_modifier = successful_industrialist
+				remove_country_modifier = ivory_tower_intellectual
+				remove_country_modifier = man_of_the_people
+				remove_country_modifier = landed_gentleman
+				remove_country_modifier = military_man
+				remove_country_modifier = lord_admiral
+				remove_country_modifier = raving_loon
+				remove_country_modifier = luddite
+				remove_country_modifier = great_statesman
+				remove_country_modifier = backroom_boy
+				remove_country_modifier = great_reformer
+				remove_country_modifier = gauche_buffoon
+				remove_country_modifier = administrative_genius
+				remove_country_modifier = visionary_thinker
+				remove_country_modifier = competent_placeholder
+				remove_country_modifier = imperious_autocrat
+				remove_country_modifier = prince_of_terror
+				remove_country_modifier = efficient_sociopath
+				remove_country_modifier = pig_headed_isolationist
+				remove_country_modifier = ambitious_union_boss
+				remove_country_modifier = dour_economist
+				add_country_modifier = {
+					name = raving_loon
+					duration = 3650
+				}
+				clr_country_flag = minister_found
+			}
+			4.5 = {
+				remove_country_modifier = expert_diplomat
+				remove_country_modifier = successful_industrialist
+				remove_country_modifier = ivory_tower_intellectual
+				remove_country_modifier = man_of_the_people
+				remove_country_modifier = landed_gentleman
+				remove_country_modifier = military_man
+				remove_country_modifier = lord_admiral
+				remove_country_modifier = raving_loon
+				remove_country_modifier = luddite
+				remove_country_modifier = great_statesman
+				remove_country_modifier = backroom_boy
+				remove_country_modifier = great_reformer
+				remove_country_modifier = gauche_buffoon
+				remove_country_modifier = administrative_genius
+				remove_country_modifier = visionary_thinker
+				remove_country_modifier = competent_placeholder
+				remove_country_modifier = imperious_autocrat
+				remove_country_modifier = prince_of_terror
+				remove_country_modifier = efficient_sociopath
+				remove_country_modifier = pig_headed_isolationist
+				remove_country_modifier = ambitious_union_boss
+				remove_country_modifier = dour_economist
+				add_country_modifier = {
+					name = luddite
+					duration = 3650
+				}
+				clr_country_flag = minister_found
+			}
+			4.5 = {
+				remove_country_modifier = expert_diplomat
+				remove_country_modifier = successful_industrialist
+				remove_country_modifier = ivory_tower_intellectual
+				remove_country_modifier = man_of_the_people
+				remove_country_modifier = landed_gentleman
+				remove_country_modifier = military_man
+				remove_country_modifier = lord_admiral
+				remove_country_modifier = raving_loon
+				remove_country_modifier = luddite
+				remove_country_modifier = great_statesman
+				remove_country_modifier = backroom_boy
+				remove_country_modifier = great_reformer
+				remove_country_modifier = gauche_buffoon
+				remove_country_modifier = administrative_genius
+				remove_country_modifier = visionary_thinker
+				remove_country_modifier = competent_placeholder
+				remove_country_modifier = imperious_autocrat
+				remove_country_modifier = prince_of_terror
+				remove_country_modifier = efficient_sociopath
+				remove_country_modifier = pig_headed_isolationist
+				remove_country_modifier = ambitious_union_boss
+				remove_country_modifier = dour_economist
+				add_country_modifier = {
+					name = great_statesman
+					duration = 3650
+				}
+				clr_country_flag = minister_found
+			}
+			4.5 = {
+				remove_country_modifier = expert_diplomat
+				remove_country_modifier = successful_industrialist
+				remove_country_modifier = ivory_tower_intellectual
+				remove_country_modifier = man_of_the_people
+				remove_country_modifier = landed_gentleman
+				remove_country_modifier = military_man
+				remove_country_modifier = lord_admiral
+				remove_country_modifier = raving_loon
+				remove_country_modifier = luddite
+				remove_country_modifier = great_statesman
+				remove_country_modifier = backroom_boy
+				remove_country_modifier = great_reformer
+				remove_country_modifier = gauche_buffoon
+				remove_country_modifier = administrative_genius
+				remove_country_modifier = visionary_thinker
+				remove_country_modifier = competent_placeholder
+				remove_country_modifier = imperious_autocrat
+				remove_country_modifier = prince_of_terror
+				remove_country_modifier = efficient_sociopath
+				remove_country_modifier = pig_headed_isolationist
+				remove_country_modifier = ambitious_union_boss
+				remove_country_modifier = dour_economist
+				add_country_modifier = {
+					name = backroom_boy
+					duration = 3650
+				}
+				clr_country_flag = minister_found
+			}
+			4.5 = {
+				remove_country_modifier = expert_diplomat
+				remove_country_modifier = successful_industrialist
+				remove_country_modifier = ivory_tower_intellectual
+				remove_country_modifier = man_of_the_people
+				remove_country_modifier = landed_gentleman
+				remove_country_modifier = military_man
+				remove_country_modifier = lord_admiral
+				remove_country_modifier = raving_loon
+				remove_country_modifier = luddite
+				remove_country_modifier = great_statesman
+				remove_country_modifier = backroom_boy
+				remove_country_modifier = great_reformer
+				remove_country_modifier = gauche_buffoon
+				remove_country_modifier = administrative_genius
+				remove_country_modifier = visionary_thinker
+				remove_country_modifier = competent_placeholder
+				remove_country_modifier = imperious_autocrat
+				remove_country_modifier = prince_of_terror
+				remove_country_modifier = efficient_sociopath
+				remove_country_modifier = pig_headed_isolationist
+				remove_country_modifier = ambitious_union_boss
+				remove_country_modifier = dour_economist
+				add_country_modifier = {
+					name = great_reformer
+					duration = 3650
+				}
+				clr_country_flag = minister_found
+			}
+			4.5 = {
+				remove_country_modifier = expert_diplomat
+				remove_country_modifier = successful_industrialist
+				remove_country_modifier = ivory_tower_intellectual
+				remove_country_modifier = man_of_the_people
+				remove_country_modifier = landed_gentleman
+				remove_country_modifier = military_man
+				remove_country_modifier = lord_admiral
+				remove_country_modifier = raving_loon
+				remove_country_modifier = luddite
+				remove_country_modifier = great_statesman
+				remove_country_modifier = backroom_boy
+				remove_country_modifier = great_reformer
+				remove_country_modifier = gauche_buffoon
+				remove_country_modifier = administrative_genius
+				remove_country_modifier = visionary_thinker
+				remove_country_modifier = competent_placeholder
+				remove_country_modifier = imperious_autocrat
+				remove_country_modifier = prince_of_terror
+				remove_country_modifier = efficient_sociopath
+				remove_country_modifier = pig_headed_isolationist
+				remove_country_modifier = ambitious_union_boss
+				remove_country_modifier = dour_economist
+				add_country_modifier = {
+					name = gauche_buffoon
+					duration = 3650
+				}
+				clr_country_flag = minister_found
+			}
+			4.5 = {
+				remove_country_modifier = expert_diplomat
+				remove_country_modifier = successful_industrialist
+				remove_country_modifier = ivory_tower_intellectual
+				remove_country_modifier = man_of_the_people
+				remove_country_modifier = landed_gentleman
+				remove_country_modifier = military_man
+				remove_country_modifier = lord_admiral
+				remove_country_modifier = raving_loon
+				remove_country_modifier = luddite
+				remove_country_modifier = great_statesman
+				remove_country_modifier = backroom_boy
+				remove_country_modifier = great_reformer
+				remove_country_modifier = gauche_buffoon
+				remove_country_modifier = administrative_genius
+				remove_country_modifier = visionary_thinker
+				remove_country_modifier = competent_placeholder
+				remove_country_modifier = imperious_autocrat
+				remove_country_modifier = prince_of_terror
+				remove_country_modifier = efficient_sociopath
+				remove_country_modifier = pig_headed_isolationist
+				remove_country_modifier = ambitious_union_boss
+				remove_country_modifier = dour_economist
+				add_country_modifier = {
+					name = administrative_genius
+					duration = 3650
+				}
+				clr_country_flag = minister_found
+			}
+			4.5 = {
+				remove_country_modifier = expert_diplomat
+				remove_country_modifier = successful_industrialist
+				remove_country_modifier = ivory_tower_intellectual
+				remove_country_modifier = man_of_the_people
+				remove_country_modifier = landed_gentleman
+				remove_country_modifier = military_man
+				remove_country_modifier = lord_admiral
+				remove_country_modifier = raving_loon
+				remove_country_modifier = luddite
+				remove_country_modifier = great_statesman
+				remove_country_modifier = backroom_boy
+				remove_country_modifier = great_reformer
+				remove_country_modifier = gauche_buffoon
+				remove_country_modifier = administrative_genius
+				remove_country_modifier = visionary_thinker
+				remove_country_modifier = competent_placeholder
+				remove_country_modifier = imperious_autocrat
+				remove_country_modifier = prince_of_terror
+				remove_country_modifier = efficient_sociopath
+				remove_country_modifier = pig_headed_isolationist
+				remove_country_modifier = ambitious_union_boss
+				remove_country_modifier = dour_economist
+				add_country_modifier = {
+					name = visionary_thinker
+					duration = 3650
+				}
+				clr_country_flag = minister_found
+			}
+			4.5 = {
+				remove_country_modifier = expert_diplomat
+				remove_country_modifier = successful_industrialist
+				remove_country_modifier = ivory_tower_intellectual
+				remove_country_modifier = man_of_the_people
+				remove_country_modifier = landed_gentleman
+				remove_country_modifier = military_man
+				remove_country_modifier = lord_admiral
+				remove_country_modifier = raving_loon
+				remove_country_modifier = luddite
+				remove_country_modifier = great_statesman
+				remove_country_modifier = backroom_boy
+				remove_country_modifier = great_reformer
+				remove_country_modifier = gauche_buffoon
+				remove_country_modifier = administrative_genius
+				remove_country_modifier = visionary_thinker
+				remove_country_modifier = competent_placeholder
+				remove_country_modifier = imperious_autocrat
+				remove_country_modifier = prince_of_terror
+				remove_country_modifier = efficient_sociopath
+				remove_country_modifier = pig_headed_isolationist
+				remove_country_modifier = ambitious_union_boss
+				remove_country_modifier = dour_economist
+				add_country_modifier = {
+					name = competent_placeholder
+					duration = 3650
+				}
+				clr_country_flag = minister_found
+			}
+			4.5 = {
+				remove_country_modifier = expert_diplomat
+				remove_country_modifier = successful_industrialist
+				remove_country_modifier = ivory_tower_intellectual
+				remove_country_modifier = man_of_the_people
+				remove_country_modifier = landed_gentleman
+				remove_country_modifier = military_man
+				remove_country_modifier = lord_admiral
+				remove_country_modifier = raving_loon
+				remove_country_modifier = luddite
+				remove_country_modifier = great_statesman
+				remove_country_modifier = backroom_boy
+				remove_country_modifier = great_reformer
+				remove_country_modifier = gauche_buffoon
+				remove_country_modifier = administrative_genius
+				remove_country_modifier = visionary_thinker
+				remove_country_modifier = competent_placeholder
+				remove_country_modifier = imperious_autocrat
+				remove_country_modifier = prince_of_terror
+				remove_country_modifier = efficient_sociopath
+				remove_country_modifier = pig_headed_isolationist
+				remove_country_modifier = ambitious_union_boss
+				remove_country_modifier = dour_economist
+				add_country_modifier = {
+					name = imperious_autocrat
+					duration = 3650
+				}
+				clr_country_flag = minister_found
+			}
+			4.5 = {
+				remove_country_modifier = expert_diplomat
+				remove_country_modifier = successful_industrialist
+				remove_country_modifier = ivory_tower_intellectual
+				remove_country_modifier = man_of_the_people
+				remove_country_modifier = landed_gentleman
+				remove_country_modifier = military_man
+				remove_country_modifier = lord_admiral
+				remove_country_modifier = raving_loon
+				remove_country_modifier = luddite
+				remove_country_modifier = great_statesman
+				remove_country_modifier = backroom_boy
+				remove_country_modifier = great_reformer
+				remove_country_modifier = gauche_buffoon
+				remove_country_modifier = administrative_genius
+				remove_country_modifier = visionary_thinker
+				remove_country_modifier = competent_placeholder
+				remove_country_modifier = imperious_autocrat
+				remove_country_modifier = prince_of_terror
+				remove_country_modifier = efficient_sociopath
+				remove_country_modifier = pig_headed_isolationist
+				remove_country_modifier = ambitious_union_boss
+				remove_country_modifier = dour_economist
+				add_country_modifier = {
+					name = prince_of_terror
+					duration = 3650
+				}
+				clr_country_flag = minister_found
+			}
+			4.5 = {
+				remove_country_modifier = expert_diplomat
+				remove_country_modifier = successful_industrialist
+				remove_country_modifier = ivory_tower_intellectual
+				remove_country_modifier = man_of_the_people
+				remove_country_modifier = landed_gentleman
+				remove_country_modifier = military_man
+				remove_country_modifier = lord_admiral
+				remove_country_modifier = raving_loon
+				remove_country_modifier = luddite
+				remove_country_modifier = great_statesman
+				remove_country_modifier = backroom_boy
+				remove_country_modifier = great_reformer
+				remove_country_modifier = gauche_buffoon
+				remove_country_modifier = administrative_genius
+				remove_country_modifier = visionary_thinker
+				remove_country_modifier = competent_placeholder
+				remove_country_modifier = imperious_autocrat
+				remove_country_modifier = prince_of_terror
+				remove_country_modifier = efficient_sociopath
+				remove_country_modifier = pig_headed_isolationist
+				remove_country_modifier = ambitious_union_boss
+				remove_country_modifier = dour_economist
+				add_country_modifier = {
+					name = efficient_sociopath
+					duration = 3650
+				}
+				clr_country_flag = minister_found
+			}
+			4.5 = {
+				remove_country_modifier = expert_diplomat
+				remove_country_modifier = successful_industrialist
+				remove_country_modifier = ivory_tower_intellectual
+				remove_country_modifier = man_of_the_people
+				remove_country_modifier = landed_gentleman
+				remove_country_modifier = military_man
+				remove_country_modifier = lord_admiral
+				remove_country_modifier = raving_loon
+				remove_country_modifier = luddite
+				remove_country_modifier = great_statesman
+				remove_country_modifier = backroom_boy
+				remove_country_modifier = great_reformer
+				remove_country_modifier = gauche_buffoon
+				remove_country_modifier = administrative_genius
+				remove_country_modifier = visionary_thinker
+				remove_country_modifier = competent_placeholder
+				remove_country_modifier = imperious_autocrat
+				remove_country_modifier = prince_of_terror
+				remove_country_modifier = efficient_sociopath
+				remove_country_modifier = pig_headed_isolationist
+				remove_country_modifier = ambitious_union_boss
+				remove_country_modifier = dour_economist
+				add_country_modifier = {
+					name = pig_headed_isolationist
+					duration = 3650
+				}
+				clr_country_flag = minister_found
+			}
+			4.5 = {
+				remove_country_modifier = expert_diplomat
+				remove_country_modifier = successful_industrialist
+				remove_country_modifier = ivory_tower_intellectual
+				remove_country_modifier = man_of_the_people
+				remove_country_modifier = landed_gentleman
+				remove_country_modifier = military_man
+				remove_country_modifier = lord_admiral
+				remove_country_modifier = raving_loon
+				remove_country_modifier = luddite
+				remove_country_modifier = great_statesman
+				remove_country_modifier = backroom_boy
+				remove_country_modifier = great_reformer
+				remove_country_modifier = gauche_buffoon
+				remove_country_modifier = administrative_genius
+				remove_country_modifier = visionary_thinker
+				remove_country_modifier = competent_placeholder
+				remove_country_modifier = imperious_autocrat
+				remove_country_modifier = prince_of_terror
+				remove_country_modifier = efficient_sociopath
+				remove_country_modifier = pig_headed_isolationist
+				remove_country_modifier = ambitious_union_boss
+				remove_country_modifier = dour_economist
+				add_country_modifier = {
+					name = ambitious_union_boss
+					duration = 3650
+				}
+				clr_country_flag = minister_found
+			}
+			4.5 = {
+				remove_country_modifier = expert_diplomat
+				remove_country_modifier = successful_industrialist
+				remove_country_modifier = ivory_tower_intellectual
+				remove_country_modifier = man_of_the_people
+				remove_country_modifier = landed_gentleman
+				remove_country_modifier = military_man
+				remove_country_modifier = lord_admiral
+				remove_country_modifier = raving_loon
+				remove_country_modifier = luddite
+				remove_country_modifier = great_statesman
+				remove_country_modifier = backroom_boy
+				remove_country_modifier = great_reformer
+				remove_country_modifier = gauche_buffoon
+				remove_country_modifier = administrative_genius
+				remove_country_modifier = visionary_thinker
+				remove_country_modifier = competent_placeholder
+				remove_country_modifier = imperious_autocrat
+				remove_country_modifier = prince_of_terror
+				remove_country_modifier = efficient_sociopath
+				remove_country_modifier = pig_headed_isolationist
+				remove_country_modifier = ambitious_union_boss
+				remove_country_modifier = dour_economist
+				add_country_modifier = {
+					name = dour_economist
+					duration = 3650
+				}
+				clr_country_flag = minister_found
+			}
+		}
+    }
+}
+
+
+
+################## PRESIDENTIAL DEMOCRACIES TORY##########################
+
+
+country_event = {
+    id = 100080127
+    title = "President Elected"
+    desc = "A new President has been elected."
+    picture = "danishgovernment"
+    trigger = {
+		ai = no
+        NOT = {
+            has_country_modifier = expert_diplomat
+            has_country_modifier = successful_industrialist
+            has_country_modifier = ivory_tower_intellectual
+            has_country_modifier = man_of_the_people
+            has_country_modifier = landed_gentleman
+            has_country_modifier = military_man
+            has_country_modifier = lord_admiral
+            has_country_modifier = raving_loon
+            has_country_modifier = luddite
+            has_country_modifier = great_statesman
+            has_country_modifier = backroom_boy
+            has_country_modifier = great_reformer
+            has_country_modifier = gauche_buffoon
+            has_country_modifier = administrative_genius
+            has_country_modifier = visionary_thinker
+            has_country_modifier = competent_placeholder
+            has_country_modifier = imperious_autocrat
+            has_country_modifier = prince_of_terror
+            has_country_modifier = efficient_sociopath
+            has_country_modifier = pig_headed_isolationist
+            has_country_modifier = ambitious_union_boss
+            has_country_modifier = dour_economist
+            has_country_modifier = otto_von_bismarck
+            has_country_modifier = louis_napoleon_iii
+            has_country_modifier = dom_pedro_ii
+            has_country_modifier = power_vacuum
+            has_country_flag = minister_found
+        }
+        OR = {
+            has_country_flag = tory_election_win
+            has_country_flag = fascist_election_win
+            has_country_flag = reactionary_election_win
+        }
+        OR = {
+			government = federal_democracy
+            government = democracy
+        }
+    }
+
+    mean_time_to_happen = {
+        days = 14
+    }
+
+    immediate = {
+        set_country_flag = minister_found
+    }
+
+    option = {
+        name = "I hope they're a good one..."
+        random_list = {
+			4.5 = {
+				remove_country_modifier = expert_diplomat
+				remove_country_modifier = successful_industrialist
+				remove_country_modifier = ivory_tower_intellectual
+				remove_country_modifier = man_of_the_people
+				remove_country_modifier = landed_gentleman
+				remove_country_modifier = military_man
+				remove_country_modifier = lord_admiral
+				remove_country_modifier = raving_loon
+				remove_country_modifier = luddite
+				remove_country_modifier = great_statesman
+				remove_country_modifier = backroom_boy
+				remove_country_modifier = great_reformer
+				remove_country_modifier = gauche_buffoon
+				remove_country_modifier = administrative_genius
+				remove_country_modifier = visionary_thinker
+				remove_country_modifier = competent_placeholder
+				remove_country_modifier = imperious_autocrat
+				remove_country_modifier = prince_of_terror
+				remove_country_modifier = efficient_sociopath
+				remove_country_modifier = pig_headed_isolationist
+				remove_country_modifier = ambitious_union_boss
+				remove_country_modifier = dour_economist
+				add_country_modifier = {
+					name = expert_diplomat
+					duration = 3650
+				}
+				clr_country_flag = minister_found
+			}
+			4.5 = {
+				remove_country_modifier = expert_diplomat
+				remove_country_modifier = successful_industrialist
+				remove_country_modifier = ivory_tower_intellectual
+				remove_country_modifier = man_of_the_people
+				remove_country_modifier = landed_gentleman
+				remove_country_modifier = military_man
+				remove_country_modifier = lord_admiral
+				remove_country_modifier = raving_loon
+				remove_country_modifier = luddite
+				remove_country_modifier = great_statesman
+				remove_country_modifier = backroom_boy
+				remove_country_modifier = great_reformer
+				remove_country_modifier = gauche_buffoon
+				remove_country_modifier = administrative_genius
+				remove_country_modifier = visionary_thinker
+				remove_country_modifier = competent_placeholder
+				remove_country_modifier = imperious_autocrat
+				remove_country_modifier = prince_of_terror
+				remove_country_modifier = efficient_sociopath
+				remove_country_modifier = pig_headed_isolationist
+				remove_country_modifier = ambitious_union_boss
+				remove_country_modifier = dour_economist
+				add_country_modifier = {
+					name = successful_industrialist
+					duration = 3650
+				}
+				clr_country_flag = minister_found
+			}
+			4.5 = {
+				remove_country_modifier = expert_diplomat
+				remove_country_modifier = successful_industrialist
+				remove_country_modifier = ivory_tower_intellectual
+				remove_country_modifier = man_of_the_people
+				remove_country_modifier = landed_gentleman
+				remove_country_modifier = military_man
+				remove_country_modifier = lord_admiral
+				remove_country_modifier = raving_loon
+				remove_country_modifier = luddite
+				remove_country_modifier = great_statesman
+				remove_country_modifier = backroom_boy
+				remove_country_modifier = great_reformer
+				remove_country_modifier = gauche_buffoon
+				remove_country_modifier = administrative_genius
+				remove_country_modifier = visionary_thinker
+				remove_country_modifier = competent_placeholder
+				remove_country_modifier = imperious_autocrat
+				remove_country_modifier = prince_of_terror
+				remove_country_modifier = efficient_sociopath
+				remove_country_modifier = pig_headed_isolationist
+				remove_country_modifier = ambitious_union_boss
+				remove_country_modifier = dour_economist
+				add_country_modifier = {
+					name = ivory_tower_intellectual
+					duration = 3650
+				}
+				clr_country_flag = minister_found
+			}
+			4.5 = {
+				remove_country_modifier = expert_diplomat
+				remove_country_modifier = successful_industrialist
+				remove_country_modifier = ivory_tower_intellectual
+				remove_country_modifier = man_of_the_people
+				remove_country_modifier = landed_gentleman
+				remove_country_modifier = military_man
+				remove_country_modifier = lord_admiral
+				remove_country_modifier = raving_loon
+				remove_country_modifier = luddite
+				remove_country_modifier = great_statesman
+				remove_country_modifier = backroom_boy
+				remove_country_modifier = great_reformer
+				remove_country_modifier = gauche_buffoon
+				remove_country_modifier = administrative_genius
+				remove_country_modifier = visionary_thinker
+				remove_country_modifier = competent_placeholder
+				remove_country_modifier = imperious_autocrat
+				remove_country_modifier = prince_of_terror
+				remove_country_modifier = efficient_sociopath
+				remove_country_modifier = pig_headed_isolationist
+				remove_country_modifier = ambitious_union_boss
+				remove_country_modifier = dour_economist
+				add_country_modifier = {
+					name = man_of_the_people
+					duration = 3650
+				}
+				clr_country_flag = minister_found
+			}
+			4.5 = {
+				remove_country_modifier = expert_diplomat
+				remove_country_modifier = successful_industrialist
+				remove_country_modifier = ivory_tower_intellectual
+				remove_country_modifier = man_of_the_people
+				remove_country_modifier = landed_gentleman
+				remove_country_modifier = military_man
+				remove_country_modifier = lord_admiral
+				remove_country_modifier = raving_loon
+				remove_country_modifier = luddite
+				remove_country_modifier = great_statesman
+				remove_country_modifier = backroom_boy
+				remove_country_modifier = great_reformer
+				remove_country_modifier = gauche_buffoon
+				remove_country_modifier = administrative_genius
+				remove_country_modifier = visionary_thinker
+				remove_country_modifier = competent_placeholder
+				remove_country_modifier = imperious_autocrat
+				remove_country_modifier = prince_of_terror
+				remove_country_modifier = efficient_sociopath
+				remove_country_modifier = pig_headed_isolationist
+				remove_country_modifier = ambitious_union_boss
+				remove_country_modifier = dour_economist
+				add_country_modifier = {
+					name = landed_gentleman
+					duration = 3650
+				}
+				clr_country_flag = minister_found
+			}
+			4.5 = {
+				remove_country_modifier = expert_diplomat
+				remove_country_modifier = successful_industrialist
+				remove_country_modifier = ivory_tower_intellectual
+				remove_country_modifier = man_of_the_people
+				remove_country_modifier = landed_gentleman
+				remove_country_modifier = military_man
+				remove_country_modifier = lord_admiral
+				remove_country_modifier = raving_loon
+				remove_country_modifier = luddite
+				remove_country_modifier = great_statesman
+				remove_country_modifier = backroom_boy
+				remove_country_modifier = great_reformer
+				remove_country_modifier = gauche_buffoon
+				remove_country_modifier = administrative_genius
+				remove_country_modifier = visionary_thinker
+				remove_country_modifier = competent_placeholder
+				remove_country_modifier = imperious_autocrat
+				remove_country_modifier = prince_of_terror
+				remove_country_modifier = efficient_sociopath
+				remove_country_modifier = pig_headed_isolationist
+				remove_country_modifier = ambitious_union_boss
+				remove_country_modifier = dour_economist
+				add_country_modifier = {
+					name = military_man
+					duration = 3650
+				}
+				clr_country_flag = minister_found
+			}
+			4.5 = {
+				remove_country_modifier = expert_diplomat
+				remove_country_modifier = successful_industrialist
+				remove_country_modifier = ivory_tower_intellectual
+				remove_country_modifier = man_of_the_people
+				remove_country_modifier = landed_gentleman
+				remove_country_modifier = military_man
+				remove_country_modifier = lord_admiral
+				remove_country_modifier = raving_loon
+				remove_country_modifier = luddite
+				remove_country_modifier = great_statesman
+				remove_country_modifier = backroom_boy
+				remove_country_modifier = great_reformer
+				remove_country_modifier = gauche_buffoon
+				remove_country_modifier = administrative_genius
+				remove_country_modifier = visionary_thinker
+				remove_country_modifier = competent_placeholder
+				remove_country_modifier = imperious_autocrat
+				remove_country_modifier = prince_of_terror
+				remove_country_modifier = efficient_sociopath
+				remove_country_modifier = pig_headed_isolationist
+				remove_country_modifier = ambitious_union_boss
+				remove_country_modifier = dour_economist
+				add_country_modifier = {
+					name = lord_admiral
+					duration = 3650
+				}
+				clr_country_flag = minister_found
+			}
+			4.5 = {
+				remove_country_modifier = expert_diplomat
+				remove_country_modifier = successful_industrialist
+				remove_country_modifier = ivory_tower_intellectual
+				remove_country_modifier = man_of_the_people
+				remove_country_modifier = landed_gentleman
+				remove_country_modifier = military_man
+				remove_country_modifier = lord_admiral
+				remove_country_modifier = raving_loon
+				remove_country_modifier = luddite
+				remove_country_modifier = great_statesman
+				remove_country_modifier = backroom_boy
+				remove_country_modifier = great_reformer
+				remove_country_modifier = gauche_buffoon
+				remove_country_modifier = administrative_genius
+				remove_country_modifier = visionary_thinker
+				remove_country_modifier = competent_placeholder
+				remove_country_modifier = imperious_autocrat
+				remove_country_modifier = prince_of_terror
+				remove_country_modifier = efficient_sociopath
+				remove_country_modifier = pig_headed_isolationist
+				remove_country_modifier = ambitious_union_boss
+				remove_country_modifier = dour_economist
+				add_country_modifier = {
+					name = raving_loon
+					duration = 3650
+				}
+				clr_country_flag = minister_found
+			}
+			4.5 = {
+				remove_country_modifier = expert_diplomat
+				remove_country_modifier = successful_industrialist
+				remove_country_modifier = ivory_tower_intellectual
+				remove_country_modifier = man_of_the_people
+				remove_country_modifier = landed_gentleman
+				remove_country_modifier = military_man
+				remove_country_modifier = lord_admiral
+				remove_country_modifier = raving_loon
+				remove_country_modifier = luddite
+				remove_country_modifier = great_statesman
+				remove_country_modifier = backroom_boy
+				remove_country_modifier = great_reformer
+				remove_country_modifier = gauche_buffoon
+				remove_country_modifier = administrative_genius
+				remove_country_modifier = visionary_thinker
+				remove_country_modifier = competent_placeholder
+				remove_country_modifier = imperious_autocrat
+				remove_country_modifier = prince_of_terror
+				remove_country_modifier = efficient_sociopath
+				remove_country_modifier = pig_headed_isolationist
+				remove_country_modifier = ambitious_union_boss
+				remove_country_modifier = dour_economist
+				add_country_modifier = {
+					name = luddite
+					duration = 3650
+				}
+				clr_country_flag = minister_found
+			}
+			4.5 = {
+				remove_country_modifier = expert_diplomat
+				remove_country_modifier = successful_industrialist
+				remove_country_modifier = ivory_tower_intellectual
+				remove_country_modifier = man_of_the_people
+				remove_country_modifier = landed_gentleman
+				remove_country_modifier = military_man
+				remove_country_modifier = lord_admiral
+				remove_country_modifier = raving_loon
+				remove_country_modifier = luddite
+				remove_country_modifier = great_statesman
+				remove_country_modifier = backroom_boy
+				remove_country_modifier = great_reformer
+				remove_country_modifier = gauche_buffoon
+				remove_country_modifier = administrative_genius
+				remove_country_modifier = visionary_thinker
+				remove_country_modifier = competent_placeholder
+				remove_country_modifier = imperious_autocrat
+				remove_country_modifier = prince_of_terror
+				remove_country_modifier = efficient_sociopath
+				remove_country_modifier = pig_headed_isolationist
+				remove_country_modifier = ambitious_union_boss
+				remove_country_modifier = dour_economist
+				add_country_modifier = {
+					name = great_statesman
+					duration = 3650
+				}
+				clr_country_flag = minister_found
+			}
+			4.5 = {
+				remove_country_modifier = expert_diplomat
+				remove_country_modifier = successful_industrialist
+				remove_country_modifier = ivory_tower_intellectual
+				remove_country_modifier = man_of_the_people
+				remove_country_modifier = landed_gentleman
+				remove_country_modifier = military_man
+				remove_country_modifier = lord_admiral
+				remove_country_modifier = raving_loon
+				remove_country_modifier = luddite
+				remove_country_modifier = great_statesman
+				remove_country_modifier = backroom_boy
+				remove_country_modifier = great_reformer
+				remove_country_modifier = gauche_buffoon
+				remove_country_modifier = administrative_genius
+				remove_country_modifier = visionary_thinker
+				remove_country_modifier = competent_placeholder
+				remove_country_modifier = imperious_autocrat
+				remove_country_modifier = prince_of_terror
+				remove_country_modifier = efficient_sociopath
+				remove_country_modifier = pig_headed_isolationist
+				remove_country_modifier = ambitious_union_boss
+				remove_country_modifier = dour_economist
+				add_country_modifier = {
+					name = backroom_boy
+					duration = 3650
+				}
+				clr_country_flag = minister_found
+			}
+			4.5 = {
+				remove_country_modifier = expert_diplomat
+				remove_country_modifier = successful_industrialist
+				remove_country_modifier = ivory_tower_intellectual
+				remove_country_modifier = man_of_the_people
+				remove_country_modifier = landed_gentleman
+				remove_country_modifier = military_man
+				remove_country_modifier = lord_admiral
+				remove_country_modifier = raving_loon
+				remove_country_modifier = luddite
+				remove_country_modifier = great_statesman
+				remove_country_modifier = backroom_boy
+				remove_country_modifier = great_reformer
+				remove_country_modifier = gauche_buffoon
+				remove_country_modifier = administrative_genius
+				remove_country_modifier = visionary_thinker
+				remove_country_modifier = competent_placeholder
+				remove_country_modifier = imperious_autocrat
+				remove_country_modifier = prince_of_terror
+				remove_country_modifier = efficient_sociopath
+				remove_country_modifier = pig_headed_isolationist
+				remove_country_modifier = ambitious_union_boss
+				remove_country_modifier = dour_economist
+				add_country_modifier = {
+					name = great_reformer
+					duration = 3650
+				}
+				clr_country_flag = minister_found
+			}
+			4.5 = {
+				remove_country_modifier = expert_diplomat
+				remove_country_modifier = successful_industrialist
+				remove_country_modifier = ivory_tower_intellectual
+				remove_country_modifier = man_of_the_people
+				remove_country_modifier = landed_gentleman
+				remove_country_modifier = military_man
+				remove_country_modifier = lord_admiral
+				remove_country_modifier = raving_loon
+				remove_country_modifier = luddite
+				remove_country_modifier = great_statesman
+				remove_country_modifier = backroom_boy
+				remove_country_modifier = great_reformer
+				remove_country_modifier = gauche_buffoon
+				remove_country_modifier = administrative_genius
+				remove_country_modifier = visionary_thinker
+				remove_country_modifier = competent_placeholder
+				remove_country_modifier = imperious_autocrat
+				remove_country_modifier = prince_of_terror
+				remove_country_modifier = efficient_sociopath
+				remove_country_modifier = pig_headed_isolationist
+				remove_country_modifier = ambitious_union_boss
+				remove_country_modifier = dour_economist
+				add_country_modifier = {
+					name = gauche_buffoon
+					duration = 3650
+				}
+				clr_country_flag = minister_found
+			}
+			4.5 = {
+				remove_country_modifier = expert_diplomat
+				remove_country_modifier = successful_industrialist
+				remove_country_modifier = ivory_tower_intellectual
+				remove_country_modifier = man_of_the_people
+				remove_country_modifier = landed_gentleman
+				remove_country_modifier = military_man
+				remove_country_modifier = lord_admiral
+				remove_country_modifier = raving_loon
+				remove_country_modifier = luddite
+				remove_country_modifier = great_statesman
+				remove_country_modifier = backroom_boy
+				remove_country_modifier = great_reformer
+				remove_country_modifier = gauche_buffoon
+				remove_country_modifier = administrative_genius
+				remove_country_modifier = visionary_thinker
+				remove_country_modifier = competent_placeholder
+				remove_country_modifier = imperious_autocrat
+				remove_country_modifier = prince_of_terror
+				remove_country_modifier = efficient_sociopath
+				remove_country_modifier = pig_headed_isolationist
+				remove_country_modifier = ambitious_union_boss
+				remove_country_modifier = dour_economist
+				add_country_modifier = {
+					name = administrative_genius
+					duration = 3650
+				}
+				clr_country_flag = minister_found
+			}
+			4.5 = {
+				remove_country_modifier = expert_diplomat
+				remove_country_modifier = successful_industrialist
+				remove_country_modifier = ivory_tower_intellectual
+				remove_country_modifier = man_of_the_people
+				remove_country_modifier = landed_gentleman
+				remove_country_modifier = military_man
+				remove_country_modifier = lord_admiral
+				remove_country_modifier = raving_loon
+				remove_country_modifier = luddite
+				remove_country_modifier = great_statesman
+				remove_country_modifier = backroom_boy
+				remove_country_modifier = great_reformer
+				remove_country_modifier = gauche_buffoon
+				remove_country_modifier = administrative_genius
+				remove_country_modifier = visionary_thinker
+				remove_country_modifier = competent_placeholder
+				remove_country_modifier = imperious_autocrat
+				remove_country_modifier = prince_of_terror
+				remove_country_modifier = efficient_sociopath
+				remove_country_modifier = pig_headed_isolationist
+				remove_country_modifier = ambitious_union_boss
+				remove_country_modifier = dour_economist
+				add_country_modifier = {
+					name = visionary_thinker
+					duration = 3650
+				}
+				clr_country_flag = minister_found
+			}
+			4.5 = {
+				remove_country_modifier = expert_diplomat
+				remove_country_modifier = successful_industrialist
+				remove_country_modifier = ivory_tower_intellectual
+				remove_country_modifier = man_of_the_people
+				remove_country_modifier = landed_gentleman
+				remove_country_modifier = military_man
+				remove_country_modifier = lord_admiral
+				remove_country_modifier = raving_loon
+				remove_country_modifier = luddite
+				remove_country_modifier = great_statesman
+				remove_country_modifier = backroom_boy
+				remove_country_modifier = great_reformer
+				remove_country_modifier = gauche_buffoon
+				remove_country_modifier = administrative_genius
+				remove_country_modifier = visionary_thinker
+				remove_country_modifier = competent_placeholder
+				remove_country_modifier = imperious_autocrat
+				remove_country_modifier = prince_of_terror
+				remove_country_modifier = efficient_sociopath
+				remove_country_modifier = pig_headed_isolationist
+				remove_country_modifier = ambitious_union_boss
+				remove_country_modifier = dour_economist
+				add_country_modifier = {
+					name = competent_placeholder
+					duration = 3650
+				}
+				clr_country_flag = minister_found
+			}
+			4.5 = {
+				remove_country_modifier = expert_diplomat
+				remove_country_modifier = successful_industrialist
+				remove_country_modifier = ivory_tower_intellectual
+				remove_country_modifier = man_of_the_people
+				remove_country_modifier = landed_gentleman
+				remove_country_modifier = military_man
+				remove_country_modifier = lord_admiral
+				remove_country_modifier = raving_loon
+				remove_country_modifier = luddite
+				remove_country_modifier = great_statesman
+				remove_country_modifier = backroom_boy
+				remove_country_modifier = great_reformer
+				remove_country_modifier = gauche_buffoon
+				remove_country_modifier = administrative_genius
+				remove_country_modifier = visionary_thinker
+				remove_country_modifier = competent_placeholder
+				remove_country_modifier = imperious_autocrat
+				remove_country_modifier = prince_of_terror
+				remove_country_modifier = efficient_sociopath
+				remove_country_modifier = pig_headed_isolationist
+				remove_country_modifier = ambitious_union_boss
+				remove_country_modifier = dour_economist
+				add_country_modifier = {
+					name = imperious_autocrat
+					duration = 3650
+				}
+				clr_country_flag = minister_found
+			}
+			4.5 = {
+				remove_country_modifier = expert_diplomat
+				remove_country_modifier = successful_industrialist
+				remove_country_modifier = ivory_tower_intellectual
+				remove_country_modifier = man_of_the_people
+				remove_country_modifier = landed_gentleman
+				remove_country_modifier = military_man
+				remove_country_modifier = lord_admiral
+				remove_country_modifier = raving_loon
+				remove_country_modifier = luddite
+				remove_country_modifier = great_statesman
+				remove_country_modifier = backroom_boy
+				remove_country_modifier = great_reformer
+				remove_country_modifier = gauche_buffoon
+				remove_country_modifier = administrative_genius
+				remove_country_modifier = visionary_thinker
+				remove_country_modifier = competent_placeholder
+				remove_country_modifier = imperious_autocrat
+				remove_country_modifier = prince_of_terror
+				remove_country_modifier = efficient_sociopath
+				remove_country_modifier = pig_headed_isolationist
+				remove_country_modifier = ambitious_union_boss
+				remove_country_modifier = dour_economist
+				add_country_modifier = {
+					name = prince_of_terror
+					duration = 3650
+				}
+				clr_country_flag = minister_found
+			}
+			4.5 = {
+				remove_country_modifier = expert_diplomat
+				remove_country_modifier = successful_industrialist
+				remove_country_modifier = ivory_tower_intellectual
+				remove_country_modifier = man_of_the_people
+				remove_country_modifier = landed_gentleman
+				remove_country_modifier = military_man
+				remove_country_modifier = lord_admiral
+				remove_country_modifier = raving_loon
+				remove_country_modifier = luddite
+				remove_country_modifier = great_statesman
+				remove_country_modifier = backroom_boy
+				remove_country_modifier = great_reformer
+				remove_country_modifier = gauche_buffoon
+				remove_country_modifier = administrative_genius
+				remove_country_modifier = visionary_thinker
+				remove_country_modifier = competent_placeholder
+				remove_country_modifier = imperious_autocrat
+				remove_country_modifier = prince_of_terror
+				remove_country_modifier = efficient_sociopath
+				remove_country_modifier = pig_headed_isolationist
+				remove_country_modifier = ambitious_union_boss
+				remove_country_modifier = dour_economist
+				add_country_modifier = {
+					name = efficient_sociopath
+					duration = 3650
+				}
+				clr_country_flag = minister_found
+			}
+			4.5 = {
+				remove_country_modifier = expert_diplomat
+				remove_country_modifier = successful_industrialist
+				remove_country_modifier = ivory_tower_intellectual
+				remove_country_modifier = man_of_the_people
+				remove_country_modifier = landed_gentleman
+				remove_country_modifier = military_man
+				remove_country_modifier = lord_admiral
+				remove_country_modifier = raving_loon
+				remove_country_modifier = luddite
+				remove_country_modifier = great_statesman
+				remove_country_modifier = backroom_boy
+				remove_country_modifier = great_reformer
+				remove_country_modifier = gauche_buffoon
+				remove_country_modifier = administrative_genius
+				remove_country_modifier = visionary_thinker
+				remove_country_modifier = competent_placeholder
+				remove_country_modifier = imperious_autocrat
+				remove_country_modifier = prince_of_terror
+				remove_country_modifier = efficient_sociopath
+				remove_country_modifier = pig_headed_isolationist
+				remove_country_modifier = ambitious_union_boss
+				remove_country_modifier = dour_economist
+				add_country_modifier = {
+					name = pig_headed_isolationist
+					duration = 3650
+				}
+				clr_country_flag = minister_found
+			}
+			4.5 = {
+				remove_country_modifier = expert_diplomat
+				remove_country_modifier = successful_industrialist
+				remove_country_modifier = ivory_tower_intellectual
+				remove_country_modifier = man_of_the_people
+				remove_country_modifier = landed_gentleman
+				remove_country_modifier = military_man
+				remove_country_modifier = lord_admiral
+				remove_country_modifier = raving_loon
+				remove_country_modifier = luddite
+				remove_country_modifier = great_statesman
+				remove_country_modifier = backroom_boy
+				remove_country_modifier = great_reformer
+				remove_country_modifier = gauche_buffoon
+				remove_country_modifier = administrative_genius
+				remove_country_modifier = visionary_thinker
+				remove_country_modifier = competent_placeholder
+				remove_country_modifier = imperious_autocrat
+				remove_country_modifier = prince_of_terror
+				remove_country_modifier = efficient_sociopath
+				remove_country_modifier = pig_headed_isolationist
+				remove_country_modifier = ambitious_union_boss
+				remove_country_modifier = dour_economist
+				add_country_modifier = {
+					name = ambitious_union_boss
+					duration = 3650
+				}
+				clr_country_flag = minister_found
+			}
+			4.5 = {
+				remove_country_modifier = expert_diplomat
+				remove_country_modifier = successful_industrialist
+				remove_country_modifier = ivory_tower_intellectual
+				remove_country_modifier = man_of_the_people
+				remove_country_modifier = landed_gentleman
+				remove_country_modifier = military_man
+				remove_country_modifier = lord_admiral
+				remove_country_modifier = raving_loon
+				remove_country_modifier = luddite
+				remove_country_modifier = great_statesman
+				remove_country_modifier = backroom_boy
+				remove_country_modifier = great_reformer
+				remove_country_modifier = gauche_buffoon
+				remove_country_modifier = administrative_genius
+				remove_country_modifier = visionary_thinker
+				remove_country_modifier = competent_placeholder
+				remove_country_modifier = imperious_autocrat
+				remove_country_modifier = prince_of_terror
+				remove_country_modifier = efficient_sociopath
+				remove_country_modifier = pig_headed_isolationist
+				remove_country_modifier = ambitious_union_boss
+				remove_country_modifier = dour_economist
+				add_country_modifier = {
+					name = dour_economist
+					duration = 3650
+				}
+				clr_country_flag = minister_found
+			}
+		}
+    }
+}
+
+
+################## PRESIDENTIAL DEMOCRACIES SOCIALIST##########################
+
+
+country_event = {
+    id = 100080128
+    title = "President Elected"
+    desc = "A new President has been elected."
+    picture = "danishgovernment"
+    trigger = {
+		ai = no
+        NOT = {
+            has_country_modifier = expert_diplomat
+            has_country_modifier = successful_industrialist
+            has_country_modifier = ivory_tower_intellectual
+            has_country_modifier = man_of_the_people
+            has_country_modifier = landed_gentleman
+            has_country_modifier = military_man
+            has_country_modifier = lord_admiral
+            has_country_modifier = raving_loon
+            has_country_modifier = luddite
+            has_country_modifier = great_statesman
+            has_country_modifier = backroom_boy
+            has_country_modifier = great_reformer
+            has_country_modifier = gauche_buffoon
+            has_country_modifier = administrative_genius
+            has_country_modifier = visionary_thinker
+            has_country_modifier = competent_placeholder
+            has_country_modifier = imperious_autocrat
+            has_country_modifier = prince_of_terror
+            has_country_modifier = efficient_sociopath
+            has_country_modifier = pig_headed_isolationist
+            has_country_modifier = ambitious_union_boss
+            has_country_modifier = dour_economist
+            has_country_modifier = otto_von_bismarck
+            has_country_modifier = louis_napoleon_iii
+            has_country_modifier = dom_pedro_ii
+            has_country_modifier = power_vacuum
+            has_country_flag = minister_found
+        }
+        OR = {
+            has_country_flag = socialist_election_win
+            has_country_flag = communist_election_win
+        }
+        OR = {
+			government = federal_democracy
+            government = democracy
+        }
+    }
+
+    mean_time_to_happen = {
+        days = 14
+    }
+
+    immediate = {
+        set_country_flag = minister_found
+    }
+
+    option = {
+        name = "I hope they're a good one..."
+        random_list = {
+			4.5 = {
+				remove_country_modifier = expert_diplomat
+				remove_country_modifier = successful_industrialist
+				remove_country_modifier = ivory_tower_intellectual
+				remove_country_modifier = man_of_the_people
+				remove_country_modifier = landed_gentleman
+				remove_country_modifier = military_man
+				remove_country_modifier = lord_admiral
+				remove_country_modifier = raving_loon
+				remove_country_modifier = luddite
+				remove_country_modifier = great_statesman
+				remove_country_modifier = backroom_boy
+				remove_country_modifier = great_reformer
+				remove_country_modifier = gauche_buffoon
+				remove_country_modifier = administrative_genius
+				remove_country_modifier = visionary_thinker
+				remove_country_modifier = competent_placeholder
+				remove_country_modifier = imperious_autocrat
+				remove_country_modifier = prince_of_terror
+				remove_country_modifier = efficient_sociopath
+				remove_country_modifier = pig_headed_isolationist
+				remove_country_modifier = ambitious_union_boss
+				remove_country_modifier = dour_economist
+				add_country_modifier = {
+					name = expert_diplomat
+					duration = 3650
+				}
+				clr_country_flag = minister_found
+			}
+			4.5 = {
+				remove_country_modifier = expert_diplomat
+				remove_country_modifier = successful_industrialist
+				remove_country_modifier = ivory_tower_intellectual
+				remove_country_modifier = man_of_the_people
+				remove_country_modifier = landed_gentleman
+				remove_country_modifier = military_man
+				remove_country_modifier = lord_admiral
+				remove_country_modifier = raving_loon
+				remove_country_modifier = luddite
+				remove_country_modifier = great_statesman
+				remove_country_modifier = backroom_boy
+				remove_country_modifier = great_reformer
+				remove_country_modifier = gauche_buffoon
+				remove_country_modifier = administrative_genius
+				remove_country_modifier = visionary_thinker
+				remove_country_modifier = competent_placeholder
+				remove_country_modifier = imperious_autocrat
+				remove_country_modifier = prince_of_terror
+				remove_country_modifier = efficient_sociopath
+				remove_country_modifier = pig_headed_isolationist
+				remove_country_modifier = ambitious_union_boss
+				remove_country_modifier = dour_economist
+				add_country_modifier = {
+					name = successful_industrialist
+					duration = 3650
+				}
+				clr_country_flag = minister_found
+			}
+			4.5 = {
+				remove_country_modifier = expert_diplomat
+				remove_country_modifier = successful_industrialist
+				remove_country_modifier = ivory_tower_intellectual
+				remove_country_modifier = man_of_the_people
+				remove_country_modifier = landed_gentleman
+				remove_country_modifier = military_man
+				remove_country_modifier = lord_admiral
+				remove_country_modifier = raving_loon
+				remove_country_modifier = luddite
+				remove_country_modifier = great_statesman
+				remove_country_modifier = backroom_boy
+				remove_country_modifier = great_reformer
+				remove_country_modifier = gauche_buffoon
+				remove_country_modifier = administrative_genius
+				remove_country_modifier = visionary_thinker
+				remove_country_modifier = competent_placeholder
+				remove_country_modifier = imperious_autocrat
+				remove_country_modifier = prince_of_terror
+				remove_country_modifier = efficient_sociopath
+				remove_country_modifier = pig_headed_isolationist
+				remove_country_modifier = ambitious_union_boss
+				remove_country_modifier = dour_economist
+				add_country_modifier = {
+					name = ivory_tower_intellectual
+					duration = 3650
+				}
+				clr_country_flag = minister_found
+			}
+			4.5 = {
+				remove_country_modifier = expert_diplomat
+				remove_country_modifier = successful_industrialist
+				remove_country_modifier = ivory_tower_intellectual
+				remove_country_modifier = man_of_the_people
+				remove_country_modifier = landed_gentleman
+				remove_country_modifier = military_man
+				remove_country_modifier = lord_admiral
+				remove_country_modifier = raving_loon
+				remove_country_modifier = luddite
+				remove_country_modifier = great_statesman
+				remove_country_modifier = backroom_boy
+				remove_country_modifier = great_reformer
+				remove_country_modifier = gauche_buffoon
+				remove_country_modifier = administrative_genius
+				remove_country_modifier = visionary_thinker
+				remove_country_modifier = competent_placeholder
+				remove_country_modifier = imperious_autocrat
+				remove_country_modifier = prince_of_terror
+				remove_country_modifier = efficient_sociopath
+				remove_country_modifier = pig_headed_isolationist
+				remove_country_modifier = ambitious_union_boss
+				remove_country_modifier = dour_economist
+				add_country_modifier = {
+					name = man_of_the_people
+					duration = 3650
+				}
+				clr_country_flag = minister_found
+			}
+			4.5 = {
+				remove_country_modifier = expert_diplomat
+				remove_country_modifier = successful_industrialist
+				remove_country_modifier = ivory_tower_intellectual
+				remove_country_modifier = man_of_the_people
+				remove_country_modifier = landed_gentleman
+				remove_country_modifier = military_man
+				remove_country_modifier = lord_admiral
+				remove_country_modifier = raving_loon
+				remove_country_modifier = luddite
+				remove_country_modifier = great_statesman
+				remove_country_modifier = backroom_boy
+				remove_country_modifier = great_reformer
+				remove_country_modifier = gauche_buffoon
+				remove_country_modifier = administrative_genius
+				remove_country_modifier = visionary_thinker
+				remove_country_modifier = competent_placeholder
+				remove_country_modifier = imperious_autocrat
+				remove_country_modifier = prince_of_terror
+				remove_country_modifier = efficient_sociopath
+				remove_country_modifier = pig_headed_isolationist
+				remove_country_modifier = ambitious_union_boss
+				remove_country_modifier = dour_economist
+				add_country_modifier = {
+					name = landed_gentleman
+					duration = 3650
+				}
+				clr_country_flag = minister_found
+			}
+			4.5 = {
+				remove_country_modifier = expert_diplomat
+				remove_country_modifier = successful_industrialist
+				remove_country_modifier = ivory_tower_intellectual
+				remove_country_modifier = man_of_the_people
+				remove_country_modifier = landed_gentleman
+				remove_country_modifier = military_man
+				remove_country_modifier = lord_admiral
+				remove_country_modifier = raving_loon
+				remove_country_modifier = luddite
+				remove_country_modifier = great_statesman
+				remove_country_modifier = backroom_boy
+				remove_country_modifier = great_reformer
+				remove_country_modifier = gauche_buffoon
+				remove_country_modifier = administrative_genius
+				remove_country_modifier = visionary_thinker
+				remove_country_modifier = competent_placeholder
+				remove_country_modifier = imperious_autocrat
+				remove_country_modifier = prince_of_terror
+				remove_country_modifier = efficient_sociopath
+				remove_country_modifier = pig_headed_isolationist
+				remove_country_modifier = ambitious_union_boss
+				remove_country_modifier = dour_economist
+				add_country_modifier = {
+					name = military_man
+					duration = 3650
+				}
+				clr_country_flag = minister_found
+			}
+			4.5 = {
+				remove_country_modifier = expert_diplomat
+				remove_country_modifier = successful_industrialist
+				remove_country_modifier = ivory_tower_intellectual
+				remove_country_modifier = man_of_the_people
+				remove_country_modifier = landed_gentleman
+				remove_country_modifier = military_man
+				remove_country_modifier = lord_admiral
+				remove_country_modifier = raving_loon
+				remove_country_modifier = luddite
+				remove_country_modifier = great_statesman
+				remove_country_modifier = backroom_boy
+				remove_country_modifier = great_reformer
+				remove_country_modifier = gauche_buffoon
+				remove_country_modifier = administrative_genius
+				remove_country_modifier = visionary_thinker
+				remove_country_modifier = competent_placeholder
+				remove_country_modifier = imperious_autocrat
+				remove_country_modifier = prince_of_terror
+				remove_country_modifier = efficient_sociopath
+				remove_country_modifier = pig_headed_isolationist
+				remove_country_modifier = ambitious_union_boss
+				remove_country_modifier = dour_economist
+				add_country_modifier = {
+					name = lord_admiral
+					duration = 3650
+				}
+				clr_country_flag = minister_found
+			}
+			4.5 = {
+				remove_country_modifier = expert_diplomat
+				remove_country_modifier = successful_industrialist
+				remove_country_modifier = ivory_tower_intellectual
+				remove_country_modifier = man_of_the_people
+				remove_country_modifier = landed_gentleman
+				remove_country_modifier = military_man
+				remove_country_modifier = lord_admiral
+				remove_country_modifier = raving_loon
+				remove_country_modifier = luddite
+				remove_country_modifier = great_statesman
+				remove_country_modifier = backroom_boy
+				remove_country_modifier = great_reformer
+				remove_country_modifier = gauche_buffoon
+				remove_country_modifier = administrative_genius
+				remove_country_modifier = visionary_thinker
+				remove_country_modifier = competent_placeholder
+				remove_country_modifier = imperious_autocrat
+				remove_country_modifier = prince_of_terror
+				remove_country_modifier = efficient_sociopath
+				remove_country_modifier = pig_headed_isolationist
+				remove_country_modifier = ambitious_union_boss
+				remove_country_modifier = dour_economist
+				add_country_modifier = {
+					name = raving_loon
+					duration = 3650
+				}
+				clr_country_flag = minister_found
+			}
+			4.5 = {
+				remove_country_modifier = expert_diplomat
+				remove_country_modifier = successful_industrialist
+				remove_country_modifier = ivory_tower_intellectual
+				remove_country_modifier = man_of_the_people
+				remove_country_modifier = landed_gentleman
+				remove_country_modifier = military_man
+				remove_country_modifier = lord_admiral
+				remove_country_modifier = raving_loon
+				remove_country_modifier = luddite
+				remove_country_modifier = great_statesman
+				remove_country_modifier = backroom_boy
+				remove_country_modifier = great_reformer
+				remove_country_modifier = gauche_buffoon
+				remove_country_modifier = administrative_genius
+				remove_country_modifier = visionary_thinker
+				remove_country_modifier = competent_placeholder
+				remove_country_modifier = imperious_autocrat
+				remove_country_modifier = prince_of_terror
+				remove_country_modifier = efficient_sociopath
+				remove_country_modifier = pig_headed_isolationist
+				remove_country_modifier = ambitious_union_boss
+				remove_country_modifier = dour_economist
+				add_country_modifier = {
+					name = luddite
+					duration = 3650
+				}
+				clr_country_flag = minister_found
+			}
+			4.5 = {
+				remove_country_modifier = expert_diplomat
+				remove_country_modifier = successful_industrialist
+				remove_country_modifier = ivory_tower_intellectual
+				remove_country_modifier = man_of_the_people
+				remove_country_modifier = landed_gentleman
+				remove_country_modifier = military_man
+				remove_country_modifier = lord_admiral
+				remove_country_modifier = raving_loon
+				remove_country_modifier = luddite
+				remove_country_modifier = great_statesman
+				remove_country_modifier = backroom_boy
+				remove_country_modifier = great_reformer
+				remove_country_modifier = gauche_buffoon
+				remove_country_modifier = administrative_genius
+				remove_country_modifier = visionary_thinker
+				remove_country_modifier = competent_placeholder
+				remove_country_modifier = imperious_autocrat
+				remove_country_modifier = prince_of_terror
+				remove_country_modifier = efficient_sociopath
+				remove_country_modifier = pig_headed_isolationist
+				remove_country_modifier = ambitious_union_boss
+				remove_country_modifier = dour_economist
+				add_country_modifier = {
+					name = great_statesman
+					duration = 3650
+				}
+				clr_country_flag = minister_found
+			}
+			4.5 = {
+				remove_country_modifier = expert_diplomat
+				remove_country_modifier = successful_industrialist
+				remove_country_modifier = ivory_tower_intellectual
+				remove_country_modifier = man_of_the_people
+				remove_country_modifier = landed_gentleman
+				remove_country_modifier = military_man
+				remove_country_modifier = lord_admiral
+				remove_country_modifier = raving_loon
+				remove_country_modifier = luddite
+				remove_country_modifier = great_statesman
+				remove_country_modifier = backroom_boy
+				remove_country_modifier = great_reformer
+				remove_country_modifier = gauche_buffoon
+				remove_country_modifier = administrative_genius
+				remove_country_modifier = visionary_thinker
+				remove_country_modifier = competent_placeholder
+				remove_country_modifier = imperious_autocrat
+				remove_country_modifier = prince_of_terror
+				remove_country_modifier = efficient_sociopath
+				remove_country_modifier = pig_headed_isolationist
+				remove_country_modifier = ambitious_union_boss
+				remove_country_modifier = dour_economist
+				add_country_modifier = {
+					name = backroom_boy
+					duration = 3650
+				}
+				clr_country_flag = minister_found
+			}
+			4.5 = {
+				remove_country_modifier = expert_diplomat
+				remove_country_modifier = successful_industrialist
+				remove_country_modifier = ivory_tower_intellectual
+				remove_country_modifier = man_of_the_people
+				remove_country_modifier = landed_gentleman
+				remove_country_modifier = military_man
+				remove_country_modifier = lord_admiral
+				remove_country_modifier = raving_loon
+				remove_country_modifier = luddite
+				remove_country_modifier = great_statesman
+				remove_country_modifier = backroom_boy
+				remove_country_modifier = great_reformer
+				remove_country_modifier = gauche_buffoon
+				remove_country_modifier = administrative_genius
+				remove_country_modifier = visionary_thinker
+				remove_country_modifier = competent_placeholder
+				remove_country_modifier = imperious_autocrat
+				remove_country_modifier = prince_of_terror
+				remove_country_modifier = efficient_sociopath
+				remove_country_modifier = pig_headed_isolationist
+				remove_country_modifier = ambitious_union_boss
+				remove_country_modifier = dour_economist
+				add_country_modifier = {
+					name = great_reformer
+					duration = 3650
+				}
+				clr_country_flag = minister_found
+			}
+			4.5 = {
+				remove_country_modifier = expert_diplomat
+				remove_country_modifier = successful_industrialist
+				remove_country_modifier = ivory_tower_intellectual
+				remove_country_modifier = man_of_the_people
+				remove_country_modifier = landed_gentleman
+				remove_country_modifier = military_man
+				remove_country_modifier = lord_admiral
+				remove_country_modifier = raving_loon
+				remove_country_modifier = luddite
+				remove_country_modifier = great_statesman
+				remove_country_modifier = backroom_boy
+				remove_country_modifier = great_reformer
+				remove_country_modifier = gauche_buffoon
+				remove_country_modifier = administrative_genius
+				remove_country_modifier = visionary_thinker
+				remove_country_modifier = competent_placeholder
+				remove_country_modifier = imperious_autocrat
+				remove_country_modifier = prince_of_terror
+				remove_country_modifier = efficient_sociopath
+				remove_country_modifier = pig_headed_isolationist
+				remove_country_modifier = ambitious_union_boss
+				remove_country_modifier = dour_economist
+				add_country_modifier = {
+					name = gauche_buffoon
+					duration = 3650
+				}
+				clr_country_flag = minister_found
+			}
+			4.5 = {
+				remove_country_modifier = expert_diplomat
+				remove_country_modifier = successful_industrialist
+				remove_country_modifier = ivory_tower_intellectual
+				remove_country_modifier = man_of_the_people
+				remove_country_modifier = landed_gentleman
+				remove_country_modifier = military_man
+				remove_country_modifier = lord_admiral
+				remove_country_modifier = raving_loon
+				remove_country_modifier = luddite
+				remove_country_modifier = great_statesman
+				remove_country_modifier = backroom_boy
+				remove_country_modifier = great_reformer
+				remove_country_modifier = gauche_buffoon
+				remove_country_modifier = administrative_genius
+				remove_country_modifier = visionary_thinker
+				remove_country_modifier = competent_placeholder
+				remove_country_modifier = imperious_autocrat
+				remove_country_modifier = prince_of_terror
+				remove_country_modifier = efficient_sociopath
+				remove_country_modifier = pig_headed_isolationist
+				remove_country_modifier = ambitious_union_boss
+				remove_country_modifier = dour_economist
+				add_country_modifier = {
+					name = administrative_genius
+					duration = 3650
+				}
+				clr_country_flag = minister_found
+			}
+			4.5 = {
+				remove_country_modifier = expert_diplomat
+				remove_country_modifier = successful_industrialist
+				remove_country_modifier = ivory_tower_intellectual
+				remove_country_modifier = man_of_the_people
+				remove_country_modifier = landed_gentleman
+				remove_country_modifier = military_man
+				remove_country_modifier = lord_admiral
+				remove_country_modifier = raving_loon
+				remove_country_modifier = luddite
+				remove_country_modifier = great_statesman
+				remove_country_modifier = backroom_boy
+				remove_country_modifier = great_reformer
+				remove_country_modifier = gauche_buffoon
+				remove_country_modifier = administrative_genius
+				remove_country_modifier = visionary_thinker
+				remove_country_modifier = competent_placeholder
+				remove_country_modifier = imperious_autocrat
+				remove_country_modifier = prince_of_terror
+				remove_country_modifier = efficient_sociopath
+				remove_country_modifier = pig_headed_isolationist
+				remove_country_modifier = ambitious_union_boss
+				remove_country_modifier = dour_economist
+				add_country_modifier = {
+					name = visionary_thinker
+					duration = 3650
+				}
+				clr_country_flag = minister_found
+			}
+			4.5 = {
+				remove_country_modifier = expert_diplomat
+				remove_country_modifier = successful_industrialist
+				remove_country_modifier = ivory_tower_intellectual
+				remove_country_modifier = man_of_the_people
+				remove_country_modifier = landed_gentleman
+				remove_country_modifier = military_man
+				remove_country_modifier = lord_admiral
+				remove_country_modifier = raving_loon
+				remove_country_modifier = luddite
+				remove_country_modifier = great_statesman
+				remove_country_modifier = backroom_boy
+				remove_country_modifier = great_reformer
+				remove_country_modifier = gauche_buffoon
+				remove_country_modifier = administrative_genius
+				remove_country_modifier = visionary_thinker
+				remove_country_modifier = competent_placeholder
+				remove_country_modifier = imperious_autocrat
+				remove_country_modifier = prince_of_terror
+				remove_country_modifier = efficient_sociopath
+				remove_country_modifier = pig_headed_isolationist
+				remove_country_modifier = ambitious_union_boss
+				remove_country_modifier = dour_economist
+				add_country_modifier = {
+					name = competent_placeholder
+					duration = 3650
+				}
+				clr_country_flag = minister_found
+			}
+			4.5 = {
+				remove_country_modifier = expert_diplomat
+				remove_country_modifier = successful_industrialist
+				remove_country_modifier = ivory_tower_intellectual
+				remove_country_modifier = man_of_the_people
+				remove_country_modifier = landed_gentleman
+				remove_country_modifier = military_man
+				remove_country_modifier = lord_admiral
+				remove_country_modifier = raving_loon
+				remove_country_modifier = luddite
+				remove_country_modifier = great_statesman
+				remove_country_modifier = backroom_boy
+				remove_country_modifier = great_reformer
+				remove_country_modifier = gauche_buffoon
+				remove_country_modifier = administrative_genius
+				remove_country_modifier = visionary_thinker
+				remove_country_modifier = competent_placeholder
+				remove_country_modifier = imperious_autocrat
+				remove_country_modifier = prince_of_terror
+				remove_country_modifier = efficient_sociopath
+				remove_country_modifier = pig_headed_isolationist
+				remove_country_modifier = ambitious_union_boss
+				remove_country_modifier = dour_economist
+				add_country_modifier = {
+					name = imperious_autocrat
+					duration = 3650
+				}
+				clr_country_flag = minister_found
+			}
+			4.5 = {
+				remove_country_modifier = expert_diplomat
+				remove_country_modifier = successful_industrialist
+				remove_country_modifier = ivory_tower_intellectual
+				remove_country_modifier = man_of_the_people
+				remove_country_modifier = landed_gentleman
+				remove_country_modifier = military_man
+				remove_country_modifier = lord_admiral
+				remove_country_modifier = raving_loon
+				remove_country_modifier = luddite
+				remove_country_modifier = great_statesman
+				remove_country_modifier = backroom_boy
+				remove_country_modifier = great_reformer
+				remove_country_modifier = gauche_buffoon
+				remove_country_modifier = administrative_genius
+				remove_country_modifier = visionary_thinker
+				remove_country_modifier = competent_placeholder
+				remove_country_modifier = imperious_autocrat
+				remove_country_modifier = prince_of_terror
+				remove_country_modifier = efficient_sociopath
+				remove_country_modifier = pig_headed_isolationist
+				remove_country_modifier = ambitious_union_boss
+				remove_country_modifier = dour_economist
+				add_country_modifier = {
+					name = prince_of_terror
+					duration = 3650
+				}
+				clr_country_flag = minister_found
+			}
+			4.5 = {
+				remove_country_modifier = expert_diplomat
+				remove_country_modifier = successful_industrialist
+				remove_country_modifier = ivory_tower_intellectual
+				remove_country_modifier = man_of_the_people
+				remove_country_modifier = landed_gentleman
+				remove_country_modifier = military_man
+				remove_country_modifier = lord_admiral
+				remove_country_modifier = raving_loon
+				remove_country_modifier = luddite
+				remove_country_modifier = great_statesman
+				remove_country_modifier = backroom_boy
+				remove_country_modifier = great_reformer
+				remove_country_modifier = gauche_buffoon
+				remove_country_modifier = administrative_genius
+				remove_country_modifier = visionary_thinker
+				remove_country_modifier = competent_placeholder
+				remove_country_modifier = imperious_autocrat
+				remove_country_modifier = prince_of_terror
+				remove_country_modifier = efficient_sociopath
+				remove_country_modifier = pig_headed_isolationist
+				remove_country_modifier = ambitious_union_boss
+				remove_country_modifier = dour_economist
+				add_country_modifier = {
+					name = efficient_sociopath
+					duration = 3650
+				}
+				clr_country_flag = minister_found
+			}
+			4.5 = {
+				remove_country_modifier = expert_diplomat
+				remove_country_modifier = successful_industrialist
+				remove_country_modifier = ivory_tower_intellectual
+				remove_country_modifier = man_of_the_people
+				remove_country_modifier = landed_gentleman
+				remove_country_modifier = military_man
+				remove_country_modifier = lord_admiral
+				remove_country_modifier = raving_loon
+				remove_country_modifier = luddite
+				remove_country_modifier = great_statesman
+				remove_country_modifier = backroom_boy
+				remove_country_modifier = great_reformer
+				remove_country_modifier = gauche_buffoon
+				remove_country_modifier = administrative_genius
+				remove_country_modifier = visionary_thinker
+				remove_country_modifier = competent_placeholder
+				remove_country_modifier = imperious_autocrat
+				remove_country_modifier = prince_of_terror
+				remove_country_modifier = efficient_sociopath
+				remove_country_modifier = pig_headed_isolationist
+				remove_country_modifier = ambitious_union_boss
+				remove_country_modifier = dour_economist
+				add_country_modifier = {
+					name = pig_headed_isolationist
+					duration = 3650
+				}
+				clr_country_flag = minister_found
+			}
+			4.5 = {
+				remove_country_modifier = expert_diplomat
+				remove_country_modifier = successful_industrialist
+				remove_country_modifier = ivory_tower_intellectual
+				remove_country_modifier = man_of_the_people
+				remove_country_modifier = landed_gentleman
+				remove_country_modifier = military_man
+				remove_country_modifier = lord_admiral
+				remove_country_modifier = raving_loon
+				remove_country_modifier = luddite
+				remove_country_modifier = great_statesman
+				remove_country_modifier = backroom_boy
+				remove_country_modifier = great_reformer
+				remove_country_modifier = gauche_buffoon
+				remove_country_modifier = administrative_genius
+				remove_country_modifier = visionary_thinker
+				remove_country_modifier = competent_placeholder
+				remove_country_modifier = imperious_autocrat
+				remove_country_modifier = prince_of_terror
+				remove_country_modifier = efficient_sociopath
+				remove_country_modifier = pig_headed_isolationist
+				remove_country_modifier = ambitious_union_boss
+				remove_country_modifier = dour_economist
+				add_country_modifier = {
+					name = ambitious_union_boss
+					duration = 3650
+				}
+				clr_country_flag = minister_found
+			}
+			4.5 = {
+				remove_country_modifier = expert_diplomat
+				remove_country_modifier = successful_industrialist
+				remove_country_modifier = ivory_tower_intellectual
+				remove_country_modifier = man_of_the_people
+				remove_country_modifier = landed_gentleman
+				remove_country_modifier = military_man
+				remove_country_modifier = lord_admiral
+				remove_country_modifier = raving_loon
+				remove_country_modifier = luddite
+				remove_country_modifier = great_statesman
+				remove_country_modifier = backroom_boy
+				remove_country_modifier = great_reformer
+				remove_country_modifier = gauche_buffoon
+				remove_country_modifier = administrative_genius
+				remove_country_modifier = visionary_thinker
+				remove_country_modifier = competent_placeholder
+				remove_country_modifier = imperious_autocrat
+				remove_country_modifier = prince_of_terror
+				remove_country_modifier = efficient_sociopath
+				remove_country_modifier = pig_headed_isolationist
+				remove_country_modifier = ambitious_union_boss
+				remove_country_modifier = dour_economist
+				add_country_modifier = {
+					name = dour_economist
+					duration = 3650
+				}
+				clr_country_flag = minister_found
+			}
+		}
+    }
+}
+
+country_event = {
+    id = 100080129
+    title = "President Dies in Office!"
+    desc = "Our hardworking President was found dead at his desk this morning."
+    picture = "danishgovernment"
+    trigger = {
+		ai = no
+        OR = {
+			government = federal_democracy
+            government = democracy
+            government = bourgeois_dictatorship
+        }
+        OR = {
+            has_country_modifier = expert_diplomat
+            has_country_modifier = successful_industrialist
+            has_country_modifier = ivory_tower_intellectual
+            has_country_modifier = man_of_the_people
+            has_country_modifier = landed_gentleman
+            has_country_modifier = military_man
+            has_country_modifier = lord_admiral
+            has_country_modifier = raving_loon
+            has_country_modifier = luddite
+            has_country_modifier = great_statesman
+            has_country_modifier = backroom_boy
+            has_country_modifier = great_reformer
+            has_country_modifier = gauche_buffoon
+            has_country_modifier = administrative_genius
+            has_country_modifier = visionary_thinker
+            has_country_modifier = competent_placeholder
+            has_country_modifier = imperious_autocrat
+            has_country_modifier = prince_of_terror
+            has_country_modifier = efficient_sociopath
+            has_country_modifier = pig_headed_isolationist
+            has_country_modifier = ambitious_union_boss
+            has_country_modifier = dour_economist
+         }
+
+    }
+
+    mean_time_to_happen = {
+        months = 1200
+    }
+
+    option = {
+        name = "He will be sorely missed."
+        remove_country_modifier = expert_diplomat
+        remove_country_modifier = successful_industrialist
+        remove_country_modifier = ivory_tower_intellectual
+        remove_country_modifier = man_of_the_people
+        remove_country_modifier = landed_gentleman
+        remove_country_modifier = military_man
+        remove_country_modifier = lord_admiral
+        remove_country_modifier = raving_loon
+        remove_country_modifier = luddite
+        remove_country_modifier = great_statesman
+        remove_country_modifier = backroom_boy
+        remove_country_modifier = great_reformer
+        remove_country_modifier = gauche_buffoon
+        remove_country_modifier = administrative_genius
+        remove_country_modifier = visionary_thinker
+        remove_country_modifier = competent_placeholder
+        remove_country_modifier = imperious_autocrat
+        remove_country_modifier = prince_of_terror
+        remove_country_modifier = efficient_sociopath
+        remove_country_modifier = pig_headed_isolationist
+        remove_country_modifier = ambitious_union_boss
+        remove_country_modifier = dour_economist
+    }
+}
+
+country_event = {
+    id = 100080130
+    title = "President Outsed!"
+    desc = "After he declared Thursdays to be Compulsory Pie-wearing day, our President has been 'retired'..."
+    picture = "danishgovernment"
+    trigger = {
+		ai = no
+        OR = {
+			government = federal_democracy
+            government = democracy
+            government = bourgeois_dictatorship
+        }
+        has_country_modifier = raving_loon
+    }
+
+    mean_time_to_happen = {
+        months = 120
+    }
+
+    option = {
+        name = "He will be sorely missed."
+        prestige = -10
+        remove_country_modifier = raving_loon
     }
 }

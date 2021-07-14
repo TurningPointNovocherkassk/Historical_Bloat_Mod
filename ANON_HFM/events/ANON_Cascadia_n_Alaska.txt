@@ -6628,14 +6628,12 @@ country_event = {
 			owns = 79
 			owns = 81
 			NOT = {
-				OR = {
-					tag = ENG
-					tag = ENL
-					vassal_of = ENG
-					vassal_of = ENL
-					substate_of = ENG
-					substate_of = ENL
-				}
+				tag = ENG
+				tag = ENL
+				vassal_of = ENG
+				vassal_of = ENL
+				substate_of = ENG
+				substate_of = ENL
 			}
 			OR = {
 				AND = {
@@ -6644,7 +6642,11 @@ country_event = {
 						capital_scope = { continent = south_america }
 					}
 					is_greater_power = yes
-					has_global_flag = oregon_war_happened_1234
+					OR = {
+						has_global_flag = oregon_war_happened_1234
+						has_global_flag = USA_claimoregon
+						has_global_flag = USA_claims_all_oregon
+					}
 				}
 				AND = {
 					OR = {
@@ -6663,7 +6665,11 @@ country_event = {
 						in_sphere = CSA
 					}
 					overlord = { is_greater_power = yes }
-					has_global_flag = oregon_war_happened_1234
+					OR = {
+						has_global_flag = oregon_war_happened_1234
+						has_global_flag = USA_claimoregon
+						has_global_flag = USA_claims_all_oregon
+					}
 				}
 				AND = {
 					OR = {
@@ -6683,6 +6689,8 @@ country_event = {
 					}
 					overlord = { is_greater_power = yes }
 					NOT = { has_global_flag = oregon_war_happened_1234 }
+					NOT = { has_country_flag = USA_claimoregon }
+					NOT = { has_global_flag = USA_claims_all_oregon }
 				}
 			}
 			OR = {
@@ -6721,7 +6729,7 @@ country_event = {
 				}
 			}
 			NOT = { has_global_flag = oregon_split_columbia_river }
-			NOT = { has_global_flag = USA_claims_all_oregon }
+			# NOT = { has_global_flag = USA_claims_all_oregon }
 			NOT = { has_global_flag = anglo_oregon }
 			NOT = { has_global_flag = gringo_columbia }
 		}
@@ -6735,6 +6743,8 @@ country_event = {
 			set_global_flag = gringo_columbia
 			COL = { all_core = { add_core = UOR add_core = THIS remove_core = ENG remove_core = COL remove_core = CAN remove_core = RPL } }
 			UOR = { all_core = { add_core = THIS remove_core = ENG remove_core = COL remove_core = CAN remove_core = RPL } }
+			2629 = { add_core = THIS remove_core = ENG remove_core = COL remove_core = CAN remove_core = RPL }
+			18 = { add_core = THIS remove_core = ENG remove_core = COL remove_core = CAN remove_core = RPL }
 			country_event = 11111108
 		}
 	}

@@ -132,6 +132,7 @@ political_decisions = {
 		picture = manifest_destiny
 		potential = {
 			exists = yes
+			NOT = { tag = USA }
 			OR = {
 				AND = {
 					OR = {

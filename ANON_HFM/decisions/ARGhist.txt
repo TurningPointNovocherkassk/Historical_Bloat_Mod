@@ -59,15 +59,27 @@ political_decisions = {
 					has_global_flag = conquest_of_the_desert_1
 					NOT = {
 						has_global_flag = conquest_of_the_desert_2
+						has_global_flag = conquest_of_the_desert_rawson
 					}
 					OR = {
 						2392 = { empty = yes }
 						2394 = { empty = yes }
-						2396 = { empty = yes }
-						2396 = { owner = { tag = YWL vassal_of = THIS } }
 						2397 = { empty = yes }
 						2398 = { empty = yes }
 						2400 = { empty = yes }
+					}
+				}
+				AND = {
+					has_global_flag = conquest_of_the_desert_gallegos
+					has_global_flag = conquest_of_the_desert_1
+					has_global_flag = conquest_of_the_desert_2
+					NOT = {
+						has_global_flag = conquest_of_the_desert_rawson 
+					}
+					OR = {
+						2396 = { empty = yes }
+						2396 = { owner = { NOT = { tag = THIS vassal_of = THIS } } }
+						2396 = { owner = { vassal_of = THIS } }
 					}
 				}
 			}
@@ -76,29 +88,68 @@ political_decisions = {
 			war = no
 			OR = {
 				is_greater_power = yes
-				ai = yes
 				AND = { #Rio Gallegos
-					invention = expansionism
+					OR = {
+						invention = expansionism
+						AND = {
+							ai = yes
+							year = 1878
+						}
+					}
 					NOT = {
 						has_global_flag = conquest_of_the_desert_gallegos 
 						has_global_flag = conquest_of_the_desert_1 
 						has_global_flag = conquest_of_the_desert_2 
+						has_global_flag = conquest_of_the_desert_rawson 
 					}
 				}
 				AND = { #Calfucura
-					machine_guns = 1
+					OR = {
+						machine_guns = 1
+						AND = {
+							ai = yes
+							year = 1879
+						}
+					}
 					has_global_flag = conquest_of_the_desert_gallegos 
 					NOT = {
 						has_global_flag = conquest_of_the_desert_1 
 						has_global_flag = conquest_of_the_desert_2 
+						has_global_flag = conquest_of_the_desert_rawson 
 					}
 				}
-				AND = { #Patagonia
-					invention = mission_to_civilize
+				AND = { #Patagonia Este
+					OR = {
+						invention = mission_to_civilize
+						AND = {
+							ai = yes
+							year = 1881
+						}
+					}
 					has_global_flag = conquest_of_the_desert_gallegos 
 					has_global_flag = conquest_of_the_desert_1 
 					NOT = {
 						has_global_flag = conquest_of_the_desert_2 
+						has_global_flag = conquest_of_the_desert_rawson 
+					}
+				}
+				AND = { #Rawson
+					OR = {
+						invention = mission_to_civilize
+						AND = {
+							ai = yes
+							year = 1881
+						}
+					}
+					OR = {
+						2396 = { owner = { NOT = { tag = THIS vassal_of = THIS war_with = THIS truce_with = THIS } } }
+						2396 = { owner = { vassal_of = THIS } }
+					}
+					has_global_flag = conquest_of_the_desert_gallegos
+					has_global_flag = conquest_of_the_desert_1
+					has_global_flag = conquest_of_the_desert_2
+					NOT = {
+						has_global_flag = conquest_of_the_desert_rawson 
 					}
 				}
 			}
@@ -108,39 +159,176 @@ political_decisions = {
 			random_owned = {
 				limit = {
 					owner = {
-						invention = mission_to_civilize
+						OR = {
+							invention = mission_to_civilize
+							AND = {
+								ai = yes
+								year = 1881
+							}
+						}
+						has_country_flag = y_wladfa_accepted
 						has_global_flag = conquest_of_the_desert_gallegos
 						has_global_flag = conquest_of_the_desert_1
-						NOT = { has_global_flag = conquest_of_the_desert_2 }
+						has_global_flag = conquest_of_the_desert_2
+						NOT = { has_global_flag = conquest_of_the_desert_rawson }
 					}
 					OR = {
 						owner = {
-							AND = {
-								OR = {
-									tag = ARG
-									tag = ARC
-									tag = LPL
-									tag = VLP
-									AND = {
-										tag = SBA
-										is_vassal = no
-									}
+							OR = {
+								tag = ARG
+								tag = ARC
+								tag = LPL
+								tag = VLP
+								AND = {
+									tag = SBA
+									is_vassal = no
 								}
-								OR = {
-									owns = 2350 #azul
-									owns = 2381 #rio cuarto
-								}
+							}
+							OR = {
+								owns = 2350 #azul
+								owns = 2381 #rio cuarto
 							}
 						}
 						owner = {
-							AND = {
-								OR ={
-									tag = CHL
-									tag = CGC
-								}
-								owns = 2329 #Temuco, Mapuches
-								owns = 2334 #Punta Arenas
+							OR ={
+								tag = CHL
+								tag = CGC
 							}
+							owns = 2329 #Temuco, Mapuches
+							owns = 2334 #Punta Arenas
+						}
+					}
+					OR = {
+						2396 = { owner = { NOT = { tag = THIS vassal_of = THIS war_with = THIS truce_with = THIS } } }
+						2396 = { owner = { vassal_of = THIS } }
+					}
+				}
+				owner = {
+					set_global_flag = conquest_of_the_desert_rawson
+					random_country = {
+						limit = {
+							owns = 2396
+							vassal_of = THIS
+							ai = yes
+						}
+						all_core = { add_core = THIS }
+						annex_to = THIS
+					}
+					random_country = {
+						limit = {
+							owns = 2396
+							vassal_of = THIS
+							ai = no
+						}
+						all_core = { add_core = THIS }
+						country_event = 11101
+					}
+					random_country = {
+						limit = {
+							owns = 2396
+							NOT = { vassal_of = THIS }
+						}
+						all_core = { add_core = THIS }
+						country_event = 100089
+					}
+				}
+			}
+			random_owned = {
+				limit = {
+					owner = {
+						OR = {
+							invention = mission_to_civilize
+							AND = {
+								ai = yes
+								year = 1881
+							}
+						}
+						OR = {
+							NOT = { has_country_flag = y_wladfa_accepted }
+							has_country_flag = y_wladfa_denied
+						}
+						has_global_flag = conquest_of_the_desert_gallegos
+						has_global_flag = conquest_of_the_desert_1
+						has_global_flag = conquest_of_the_desert_2
+						NOT = { has_global_flag = conquest_of_the_desert_rawson }
+					}
+					OR = {
+						owner = {
+							OR = {
+								tag = ARG
+								tag = ARC
+								tag = LPL
+								tag = VLP
+								AND = {
+									tag = SBA
+									is_vassal = no
+								}
+							}
+							OR = {
+								owns = 2350 #azul
+								owns = 2381 #rio cuarto
+							}
+						}
+						owner = {
+							OR ={
+								tag = CHL
+								tag = CGC
+							}
+							owns = 2329 #Temuco, Mapuches
+							owns = 2334 #Punta Arenas
+						}
+					}
+					2396 = { empty = yes }
+				}
+				owner = { set_global_flag = conquest_of_the_desert_rawson }
+				2396 = {
+					secede_province = THIS
+					add_core = THIS
+					life_rating = 10
+					any_pop = { limit = { is_primary_culture = no } literacy = -0.99 }
+				}
+			}
+			random_owned = {
+				limit = {
+					owner = {
+						OR = {
+							invention = mission_to_civilize
+							AND = {
+								ai = yes
+								year = 1881
+							}
+						}
+						has_global_flag = conquest_of_the_desert_gallegos
+						has_global_flag = conquest_of_the_desert_1
+						NOT = {
+							has_global_flag = conquest_of_the_desert_2
+							has_global_flag = conquest_of_the_desert_rawson
+						}
+					}
+					OR = {
+						owner = {
+							OR = {
+								tag = ARG
+								tag = ARC
+								tag = LPL
+								tag = VLP
+								AND = {
+									tag = SBA
+									is_vassal = no
+								}
+							}
+							OR = {
+								owns = 2350 #azul
+								owns = 2381 #rio cuarto
+							}
+						}
+						owner = {
+							OR ={
+								tag = CHL
+								tag = CGC
+							}
+							owns = 2329 #Temuco, Mapuches
+							owns = 2334 #Punta Arenas
 						}
 					}
 					OR = {
@@ -190,139 +378,44 @@ political_decisions = {
 			random_owned = {
 				limit = {
 					owner = {
-						invention = mission_to_civilize
-						has_country_flag = y_wladfa_accepted
-						has_global_flag = conquest_of_the_desert_gallegos
-						has_global_flag = conquest_of_the_desert_1
-						has_global_flag = conquest_of_the_desert_2
-						NOT = { has_global_flag = conquest_of_the_desert_rawson }
-					}
-					OR = {
-						owner = {
-							AND = {
-								OR = {
-									tag = ARG
-									tag = ARC
-									tag = LPL
-									tag = VLP
-									AND = {
-										tag = SBA
-										is_vassal = no
-									}
-								}
-								OR = {
-									owns = 2350 #azul
-									owns = 2381 #rio cuarto
-								}
-							}
-						}
-						owner = {
-							AND = {
-								OR ={
-									tag = CHL
-									tag = CGC
-								}
-								owns = 2329 #Temuco, Mapuches
-								owns = 2334 #Punta Arenas
-							}
-						}
-					}
-					2396 = { owner = { tag = YWL vassal_of = THIS } }
-				}
-				owner = { set_global_flag = conquest_of_the_desert_rawson }
-				YWL = { annex_to = THIS all_core = { add_core = THIS } }
-			}
-			random_owned = {
-				limit = {
-					owner = {
-						invention = mission_to_civilize
 						OR = {
-							NOT = { has_country_flag = y_wladfa_accepted }
-							has_country_flag = y_wladfa_denied
-						}
-						has_global_flag = conquest_of_the_desert_gallegos
-						has_global_flag = conquest_of_the_desert_1
-						has_global_flag = conquest_of_the_desert_2
-						NOT = { has_global_flag = conquest_of_the_desert_rawson }
-					}
-					OR = {
-						owner = {
+							machine_guns = 1
 							AND = {
-								OR = {
-									tag = ARG
-									tag = ARC
-									tag = LPL
-									tag = VLP
-									AND = {
-										tag = SBA
-										is_vassal = no
-									}
-								}
-								OR = {
-									owns = 2350 #azul
-									owns = 2381 #rio cuarto
-								}
+								ai = yes
+								year = 1879
 							}
 						}
-						owner = {
-							AND = {
-								OR ={
-									tag = CHL
-									tag = CGC
-								}
-								owns = 2329 #Temuco, Mapuches
-								owns = 2334 #Punta Arenas
-							}
-						}
-					}
-					2396 = { empty = yes }
-				}
-				owner = { set_global_flag = conquest_of_the_desert_rawson }
-				2396 = {
-					secede_province = THIS
-					add_core = THIS
-					life_rating = 10
-					any_pop = { limit = { is_primary_culture = no } literacy = -0.99 }
-				}
-			}
-			random_owned = {
-				limit = {
-					owner = {
-						machine_guns = 1
 						has_global_flag = conquest_of_the_desert_gallegos
 						NOT = {
 							has_global_flag = conquest_of_the_desert_1
 							has_global_flag = conquest_of_the_desert_2
+							has_global_flag = conquest_of_the_desert_rawson
 						}
 					}
 					OR = {
 						owner = {
-							AND = {
-								OR = {
-									tag = ARG
-									tag = ARC
-									tag = LPL
-									tag = VLP
-									AND = {
-										tag = SBA
-										is_vassal = no
-									}
+							OR = {
+								tag = ARG
+								tag = ARC
+								tag = LPL
+								tag = VLP
+								AND = {
+									tag = SBA
+									is_vassal = no
 								}
-								OR = {
-									owns = 2350 #azul
-									owns = 2381 #rio cuarto
-								}
+							}
+							OR = {
+								owns = 2350 #azul
+								owns = 2381 #rio cuarto
 							}
 						}
 						owner = {
-							AND = {
-								OR ={
-									tag = CHL
-									tag = CGC
-								}
-								owns = 2329 #Temuco, Mapuches
-								owns = 2334 #Punta Arenas
+							OR ={
+								tag = CHL
+								tag = CGC
 							}
+							owns = 2329 #Temuco, Mapuches
+							owns = 2334 #Punta Arenas
 						}
 					}
 					OR = {
@@ -382,41 +475,44 @@ political_decisions = {
 			random_owned = {
 				limit = {
 					owner = {
-						invention = expansionism
+						OR = {
+							invention = expansionism
+							AND = {
+								ai = yes
+								year = 1878
+							}
+						}
 						NOT = {
 							has_global_flag = conquest_of_the_desert_gallegos
 							has_global_flag = conquest_of_the_desert_1
 							has_global_flag = conquest_of_the_desert_2
+							has_global_flag = conquest_of_the_desert_rawson
 						}
 					}
 					OR = {
 						owner = {
-							AND = {
-								OR = {
-									tag = ARG
-									tag = ARC
-									tag = LPL
-									tag = VLP
-									AND = {
-										tag = SBA
-										is_vassal = no
-									}
+							OR = {
+								tag = ARG
+								tag = ARC
+								tag = LPL
+								tag = VLP
+								AND = {
+									tag = SBA
+									is_vassal = no
 								}
-								OR = {
-									owns = 2350 #azul
-									owns = 2381 #rio cuarto
-								}
+							}
+							OR = {
+								owns = 2350 #azul
+								owns = 2381 #rio cuarto
 							}
 						}
 						owner = {
-							AND = {
-								OR ={
-									tag = CHL
-									tag = CGC
-								}
-								owns = 2329 #Temuco, Mapuches
-								owns = 2334 #Punta Arenas
+							OR ={
+								tag = CHL
+								tag = CGC
 							}
+							owns = 2329 #Temuco, Mapuches
+							owns = 2334 #Punta Arenas
 						}
 					}
 					2399 = { empty = yes }
@@ -432,31 +528,9 @@ political_decisions = {
 		}
 		ai_will_do = {
 			factor = 1
-			modifier = { #Rio Gallegos
+			modifier = {
 				factor = 0
-				OR = {
-					has_global_flag = conquest_of_the_desert_gallegos 
-					has_global_flag = conquest_of_the_desert_1 
-					has_global_flag = conquest_of_the_desert_2 
-				}
-				NOT = { year = 1878 }
-			}
-			modifier = { #Pampas
-				factor = 0
-				OR = {
-					has_global_flag = conquest_of_the_desert_1 
-					has_global_flag = conquest_of_the_desert_2 
-				}
-				NOT = { year = 1879 }
-			}
-			modifier = { #Patagonia
-				factor = 0
-				has_global_flag = conquest_of_the_desert_2 
-				NOT = { year = 1881 }
-			}
-			modifier = { #Chile gets fucked
-				factor = 0
-				NOT = { tag = CHL }
+				tag = CHL
 			}
 		}
 	}

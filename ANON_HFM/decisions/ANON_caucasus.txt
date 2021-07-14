@@ -2489,21 +2489,23 @@ political_decisions = {
 		potential = {
 			is_greater_power = yes
 			NOT = {
-				OR = {
-					tag = AZ1
-					tag = AZ2
-					tag = AZ3
-					tag = AZ4
-					tag = AZ5
-					tag = AZ6
-					tag = AZ8
-					tag = AZ9
-					tag = AZZ
-					tag = A0Z
-					tag = A1Z
-					tag = A2Z
-					tag = A3Z
-				}
+				primary_culture = georgian
+				primary_culture = armenian
+				tag = TCA
+				tag = RUS
+				tag = AZ1
+				tag = AZ2
+				tag = AZ3
+				tag = AZ4
+				tag = AZ5
+				tag = AZ6
+				tag = AZ8
+				tag = AZ9
+				tag = AZZ
+				tag = A0Z
+				tag = A1Z
+				tag = A2Z
+				tag = A3Z
 			}
 			NOT = { exists = AZB exists = TCA  }
 			NOT = { has_global_flag = reform_azerbaijan_outside }

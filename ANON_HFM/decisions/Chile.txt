@@ -21,7 +21,10 @@ political_decisions = {
 						tag = CHL
 						tag = CGC
 					}
-					owns = 2329 #Temuco, Mapuches
+					OR = {
+						2329 = { owner = { NOT = { tag = THIS vassal_of = THIS } } }
+						2329 = { owner = { vassal_of = THIS } }
+					}
 					owns = 2332 #Osorno
 				}
 			}
@@ -47,17 +50,52 @@ political_decisions = {
 			war = no
 			OR = {
 				is_greater_power = yes
-				ai = yes
 				AND = { #Punta Arenas
-					state_n_government = 1
+					OR = {
+						state_n_government = 1
+						AND = {
+							ai = yes
+							year = 1843
+						}
+					}
 					NOT = {
 						has_global_flag = occupation_of_araucania_punta_arenas
+						# has_global_flag = occupation_of_araucania_mapuche
 						has_global_flag = occupation_of_araucania_1
 					}
 				}
-				AND = { #patagonia
-					invention = mission_to_civilize
+				AND = { #Araucania
+					OR = {
+						invention = expansionism
+						AND = {
+							breech_loaded_rifles = 1
+							military_plans = 1
+						}
+						AND = {
+							ai = yes
+							year = 1861
+						}
+					}
+					OR = {
+						2329 = { owner = { NOT = { tag = THIS vassal_of = THIS war_with = THIS truce_with = THIS } } }
+						2329 = { owner = { vassal_of = THIS } }
+					}
+					# has_global_flag = occupation_of_araucania_punta_arenas
+					NOT = {
+						has_global_flag = occupation_of_araucania_mapuche
+						has_global_flag = occupation_of_araucania_1
+					}
+				}
+				AND = { #Patagonia Oeste
+					OR = {
+						invention = mission_to_civilize
+						AND = {
+							ai = yes
+							yea = 1881
+						}
+					}
 					has_global_flag = occupation_of_araucania_punta_arenas
+					has_global_flag = occupation_of_araucania_mapuche
 					NOT = { has_global_flag = occupation_of_araucania_1 }
 				}
 			}
@@ -67,35 +105,47 @@ political_decisions = {
 			random_owned = {
 				limit = {
 					owner = {
-						invention = mission_to_civilize
+						OR = {
+							invention = mission_to_civilize
+							AND = {
+								ai = yes
+								yea = 1881
+							}
+						}
 						has_global_flag = occupation_of_araucania_punta_arenas
-						NOT = { has_global_flag = occupation_of_araucania_1 }
+						has_global_flag = occupation_of_araucania_mapuche
+						NOT = {
+							has_global_flag = occupation_of_araucania_1
+						}
 					}
 					OR = {
 						owner = {
-							AND = {
-								OR = {
-									tag = ARG
-									tag = ARC
-									tag = LPL
-									tag = VLP
-									AND = {
-										tag = SBA
-										is_vassal = no
-									}
+							OR = {
+								tag = ARG
+								tag = ARC
+								tag = LPL
+								tag = VLP
+								AND = {
+									tag = SBA
+									is_vassal = no
 								}
-								owns = 2399 #Rio Gallegos
+							}
+							owns = 2399 #Rio Gallegos
+							OR = {
+								2329 = { owner = { NOT = { tag = CHL war_with = THIS } } }
+								2329 = { owner = { vassal_of = THIS } }
 							}
 						}
 						owner = {
-							AND = {
-								OR ={
-									tag = CHL
-									tag = CGC
-								}
-								owns = 2329 #Temuco, Mapuches
-								owns = 2332 #Osorno
+							OR ={
+								tag = CHL
+								tag = CGC
 							}
+							OR = {
+								2329 = { owner = { NOT = { tag = THIS vassal_of = THIS war_with = THIS truce_with = THIS } } }
+								2329 = { owner = { vassal_of = THIS } }
+							}
+							owns = 2332 #Osorno
 						}
 					}
 					OR = {
@@ -120,37 +170,130 @@ political_decisions = {
 			random_owned = {
 				limit = {
 					owner = {
-						state_n_government = 1
+						OR = {
+							invention = expansionism
+							AND = {
+								breech_loaded_rifles = 1
+								military_plans = 1
+							}
+							AND = {
+								ai = yes
+								year = 1861
+							}
+						}
+						# has_global_flag = occupation_of_araucania_punta_arenas
 						NOT = {
-							has_global_flag = occupation_of_araucania_punta_arenas
+							has_global_flag = occupation_of_araucania_mapuche
 							has_global_flag = occupation_of_araucania_1
 						}
 					}
 					OR = {
 						owner = {
-							AND = {
-								OR = {
-									tag = ARG
-									tag = ARC
-									tag = LPL
-									tag = VLP
-									AND = {
-										tag = SBA
-										is_vassal = no
-									}
+							OR = {
+								tag = ARG
+								tag = ARC
+								tag = LPL
+								tag = VLP
+								AND = {
+									tag = SBA
+									is_vassal = no
 								}
-								owns = 2399 #Rio Gallegos
+							}
+							owns = 2399 #Rio Gallegos
+							OR = {
+								2329 = { owner = { NOT = { tag = CHL war_with = THIS } } }
+								2329 = { owner = { vassal_of = THIS } }
 							}
 						}
 						owner = {
-							AND = {
-								OR ={
-									tag = CHL
-									tag = CGC
-								}
-								owns = 2329 #Temuco, Mapuches
-								owns = 2332 #Osorno
+							OR ={
+								tag = CHL
+								tag = CGC
 							}
+							OR = {
+								2329 = { owner = { NOT = { tag = THIS vassal_of = THIS war_with = THIS truce_with = THIS } } }
+								2329 = { owner = { vassal_of = THIS } }
+							}
+							owns = 2332 #Osorno
+						}
+					}
+					OR = {
+						2329 = { owner = { NOT = { tag = THIS vassal_of = THIS war_with = THIS truce_with = THIS } } }
+						2329 = { owner = { vassal_of = THIS } }
+					}
+				}
+				owner = {
+					set_global_flag = occupation_of_araucania_mapuche
+					2329 = { add_core = THIS }
+					random_country = {
+						limit = {
+							owns = 2329
+							vassal_of = THIS
+							ai = yes
+						}
+						annex_to = THIS
+					}
+					random_country = {
+						limit = {
+							owns = 2329
+							vassal_of = THIS
+							ai = no
+						}
+						country_event = 11101
+					}
+					random_country = {
+						limit = {
+							owns = 2329
+							NOT = { vassal_of = THIS }
+						}
+						country_event = 100089
+					}
+				}
+			}
+			random_owned = {
+				limit = {
+					owner = {
+						OR = {
+							state_n_government = 1
+							AND = {
+								ai = yes
+								year = 1843
+							}
+						}
+						NOT = {
+							has_global_flag = occupation_of_araucania_punta_arenas
+							has_global_flag = occupation_of_araucania_1
+							has_global_flag = occupation_of_araucania_mapuche
+						}
+					}
+					OR = {
+						owner = {
+							OR = {
+								tag = ARG
+								tag = ARC
+								tag = LPL
+								tag = VLP
+								AND = {
+									tag = SBA
+									is_vassal = no
+								}
+							}
+							owns = 2399 #Rio Gallegos
+							OR = {
+								2329 = { owner = { NOT = { tag = CHL war_with = THIS } } }
+								2329 = { owner = { vassal_of = THIS } }
+							}
+						}
+						owner = {
+							OR ={
+								tag = CHL
+								tag = CGC
+							}
+							OR = {
+								2329 = { owner = { NOT = { tag = THIS vassal_of = THIS war_with = THIS truce_with = THIS } } }
+								2329 = { owner = { vassal_of = THIS } }
+							}
+							owns = 2332 #Osorno
 						}
 					}
 					2334 = { empty = yes }
@@ -178,7 +321,7 @@ political_decisions = {
 				}
 				NOT = { year = 1843 }
 			}
-			modifier = { #Araucania
+			modifier = { #Patagonia Oeste
 				factor = 0
 				has_global_flag = occupation_of_araucania_1
 				NOT = { year = 1881 }

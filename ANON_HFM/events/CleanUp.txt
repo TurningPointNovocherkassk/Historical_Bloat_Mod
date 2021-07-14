@@ -4992,3 +4992,18 @@ country_event = {
 			}
 	}
 }
+#End war with non-existent nations
+country_event = {
+    id = 1412204
+    title = "End War with non-existent nation"
+    desc = "As the country no longer exists, the war has ceased."
+    picture = "clear_non_existent"
+    is_triggered_only = yes
+    option = {
+        name = "Good"
+		any_country = { limit = { war_with = THIS alliance_with = FROM } end_war = THIS }
+		any_country = { limit = { war_with = FROM alliance_with = THIS } end_war = FROM }
+		FROM = { end_war = THIS }
+		end_war = FROM
+    }
+}

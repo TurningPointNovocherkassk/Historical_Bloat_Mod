@@ -12993,7 +12993,10 @@ political_decisions = {
 						is_culture_group = germanic
 					}
 				}
-				558 = { change_province_name = "Dresden" }    
+				558 = {
+					state_scope = { change_region_name = "Sachsen" }
+					change_province_name = "Dresden"
+				}    
 				owner = { 
 					set_global_flag = german_renamed_dresden
 					clr_global_flag = polish_renamed_dresden
@@ -13082,8 +13085,11 @@ political_decisions = {
 						NOT = { primary_culture = sorbian }
 						NOT = { accepted_culture = sorbian }
 					}
-				}
-				558 = { change_province_name = "Drezno" }    
+				}  
+				558 = {
+					state_scope = { change_region_name = "Saksonia" }
+					change_province_name = "Drezno"
+				}   
 				owner = { 
 					set_global_flag = polish_renamed_dresden
 					clr_global_flag = german_renamed_dresden
@@ -13183,7 +13189,10 @@ political_decisions = {
 						}
 					}
 				}
-				558 = { change_province_name = "Drježdzany" }    
+				558 = {
+					change_province_name = "Drježdzany"
+					state_scope = { change_region_name = "Sakska" }
+				}  
 				owner = { 
 					set_global_flag = sorbian_renamed_dresden
 					clr_global_flag = polish_renamed_dresden
@@ -14153,7 +14162,7 @@ political_decisions = {
 					is_culture_group = germanic
 					NOT = { accepted_culture = sorbian }
 					OR = {
-						AND = { owns = 558 NOT = { has_global_flag = german_renamed_dresden } }
+						# AND = { owns = 558 NOT = { has_global_flag = german_renamed_dresden } }
 						AND = { owns = 559 NOT = { has_global_flag = german_renamed_leipzig } }
 						AND = { owns = 560 NOT = { has_global_flag = german_renamed_chemnitz } }
 					}
@@ -14164,7 +14173,7 @@ political_decisions = {
 						accepted_culture = sorbian
 					}
 					OR = {
-						AND = { owns = 558 NOT = { has_global_flag = sorbian_renamed_dresden } }
+						# AND = { owns = 558 NOT = { has_global_flag = sorbian_renamed_dresden } }
 						AND = { owns = 559 NOT = { has_global_flag = sorbian_renamed_leipzig } }
 						AND = { owns = 560 NOT = { has_global_flag = sorbian_renamed_chemnitz } }
 					}
@@ -14180,23 +14189,23 @@ political_decisions = {
 		effect = {
 		
 			###German - Sachsen###
-			random_owned = {
-				limit = {
-					province_id = 558
-					owner = {
-						is_culture_group = germanic
-						NOT = { accepted_culture = sorbian }
-					}
-				}
-				558 = {
-					change_province_name = "Dresden"
-					state_scope = { change_region_name = "Sachsen" }
-				}
-				owner = { 
-					set_global_flag = german_renamed_dresden
-					clr_global_flag = sorbian_renamed_dresden
-				}
-			}
+			# random_owned = {
+				# limit = {
+					# province_id = 558
+					# owner = {
+						# is_culture_group = germanic
+						# NOT = { accepted_culture = sorbian }
+					# }
+				# }
+				# 558 = {
+					# change_province_name = "Dresden"
+					# state_scope = { change_region_name = "Sachsen" }
+				# }
+				# owner = { 
+					# set_global_flag = german_renamed_dresden
+					# clr_global_flag = sorbian_renamed_dresden
+				# }
+			# }
 			random_owned = {
 				limit = {
 					province_id = 559
@@ -14231,25 +14240,25 @@ political_decisions = {
 			}
 			
 			###Sorbian - Sachsen###
-			random_owned = {
-				limit = {
-					province_id = 558
-					owner = {
-						OR = {
-							primary_culture = sorbian
-							accepted_culture = sorbian
-						}
-					}
-				}
-				558 = {
-					change_province_name = "Drjezdzany"
-					state_scope = { change_region_name = "Sakska" }
-				}
-				owner = { 
-					set_global_flag = sorbian_renamed_dresden
-					clr_global_flag = german_renamed_dresden
-				}
-			}
+			# random_owned = {
+				# limit = {
+					# province_id = 558
+					# owner = {
+						# OR = {
+							# primary_culture = sorbian
+							# accepted_culture = sorbian
+						# }
+					# }
+				# }
+				# 558 = {
+					# change_province_name = "Drježdzany"
+					# state_scope = { change_region_name = "Sakska" }
+				# }
+				# owner = { 
+					# set_global_flag = sorbian_renamed_dresden
+					# clr_global_flag = german_renamed_dresden
+				# }
+			# }
 			random_owned = {
 				limit = {
 					province_id = 559

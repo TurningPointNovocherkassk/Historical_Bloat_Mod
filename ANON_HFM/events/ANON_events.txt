@@ -4602,121 +4602,29 @@ country_event = {
 			}
 		}
 	}
-	#failsafe for zemene mesafint's claim_negusa_nagast
+	#failsafe for ethiopia: is massawa is owned by the egy, it wil be seceded to eth
 	country_event = {
 		id = 100061
-		title = "Zemene Mesafint"
-		desc = "Our current enemies are no longer a threat, thus the ongoing war is forfeited."
+		title = "Egypt loses its hold on Massawa!"
+		desc = "The Khedive of Egypt has lost his grasp on Massawa, which has been quickly overrun by forces loyal to us!"
 		picture = "battle_of_magdala"
+		fire_only_once = yes
 		
 		trigger = {
 			exists = yes
-			OR = {
-				primary_culture = amhara
-				primary_culture = tigray
+			tag = ETH
+			owns = 1851
+			1849 = {
+				NOT = { owned_by = THIS }
+				owner = { ai = yes }
 			}
-			OR = {
-				AND = {
-					war_with = GON
-					GON = {
-						exists = no
-						any_core = { is_core = THIS }
-					}
-				}
-				AND = {
-					war_with = SHW
-					SHW = {
-						exists = no
-						any_core = { is_core = THIS }
-					}
-				}
-				AND = {
-					war_with = TIG
-					TIG = {
-						exists = no
-						any_core = { is_core = THIS }
-					}
-				}
-			}
+			NOT = { has_country_flag = massawa_failsafe }
 		}
 		
 		option = {
-			name = "Very well."
-			random_owned = {
-				limit = {
-					owner = {
-						war_with = GON
-						GON = { exists = no }
-					}
-				}
-				owner = {
-					end_war = GON
-					any_country = {
-						limit = {
-							alliance_with = GON
-							war_with = THIS
-						}
-						end_war = THIS
-					}
-					any_country = {
-						limit = {
-							war_with = GON
-							alliance_with = THIS
-						}
-						end_war = GON
-					}
-				}
-			}
-			random_owned = {
-				limit = {
-					owner = {
-						war_with = SHW
-						SHW = { exists = no }
-					}
-				}
-				owner = {
-					end_war = SHW
-					any_country = {
-						limit = {
-							alliance_with = SHW
-							war_with = THIS
-						}
-						end_war = THIS
-					}
-					any_country = {
-						limit = {
-							war_with = SHW
-							alliance_with = THIS
-						}
-						end_war = SHW
-					}
-				}
-			}
-			random_owned = {
-				limit = {
-					owner = {
-						war_with = TIG
-						TIG = { exists = no }
-					}
-				}
-				owner = {
-					end_war = TIG
-					any_country = {
-						limit = {
-							alliance_with = TIG
-							war_with = THIS
-						}
-						end_war = THIS
-					}
-					any_country = {
-						limit = {
-							war_with = TIG
-							alliance_with = THIS
-						}
-						end_war = TIG
-					}
-				}
-			}
+			name = "Excellent!"
+			set_country_flag = massawa_failsafe
+			1849 = { secede_province = THIS remove_core = EGY remove_core = TUR }
 			ai_chance = {
 				factor = 100
 			}
@@ -6023,7 +5931,7 @@ country_event = {
 				}
 				AND = {
 					owns = 232
-					300 = { is_core = U03 NOT = { has_province_modifier = the_statue_of_liberty } }
+					232 = { is_core = U03 NOT = { has_province_modifier = the_statue_of_liberty } }
 					NOT = { has_global_flag = statue_of_liberty_destroyed }
 				}
 			}
@@ -8838,6 +8746,29 @@ country_event = {
 						}
 					}
 					secede_province = THIS
+				}
+			}
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+	
+	#Notification for war
+	country_event = {
+		id = 100089
+		title = "$FROMCOUNTRY$ declares war!"
+		desc = "$FROMCOUNTRY_ADJ$ wishes to obtain their claimed territories!"
+		is_triggered_only = yes
+		
+		option = {
+			name = "Great!"
+			FROM = {
+				war = {
+					target = THIS
+					attacker_goal = { casus_belli = annex_core_country }
+					defender_goal = { casus_belli = status_quo }
+					call_ally = no
 				}
 			}
 			ai_chance = {
