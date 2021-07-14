@@ -313,22 +313,9 @@ political_decisions = {
 		}
 		ai_will_do = {
 			factor = 1
-			modifier = {  #Punta Arenas
+			modifier = {
 				factor = 0
-				OR = {
-					has_global_flag = occupation_of_araucania_punta_arenas
-					has_global_flag = occupation_of_araucania_1
-				}
-				NOT = { year = 1843 }
-			}
-			modifier = { #Patagonia Oeste
-				factor = 0
-				has_global_flag = occupation_of_araucania_1
-				NOT = { year = 1881 }
-			}
-			modifier = { #Argies get fucked
-				factor = 0
-				NOT = { primary_culture = platinean }
+				primary_culture = platinean
 			}
 		}
 	}
