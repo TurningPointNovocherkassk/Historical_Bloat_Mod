@@ -278,6 +278,7 @@ dutch_east_india = {
 
 vassal_nation = {
 	trigger = {
+        ai = yes
 		exists = yes
 		is_vassal = yes
 		is_substate = no
@@ -287,13 +288,16 @@ vassal_nation = {
 	max_military_spending = -0.25
 	max_loan_modifier = -1.0
 	factory_cost = 0.2
+	
+	icon = 10
 }
 
 substate_nation = {
 	trigger = {
+        ai = yes
 		exists = yes
 		is_substate = yes
-		civilized = yes
+		is_vassal = no
 	}
     prestige = -100
     max_loan_modifier = -1.0
@@ -308,26 +312,32 @@ substate_nation = {
 
 vassal_nation_player = {
     trigger = {
+        ai = no
         exists = yes
         is_vassal = yes
-        civilized = yes
-        ai = no
+        is_substate = no
+		
+        # civilized = yes
     }	
 	icon = 10
-    prestige = -0.25
+    prestige = -0.2
     max_military_spending = -0.25
     max_loan_modifier = -1.0
 	factory_cost = 0.2
+	
+	icon = 10
 }
 
 substate_nation_player = {
     trigger = {
+        ai = no
         exists = yes
         is_substate = yes
-        civilized = yes
-        ai = no
+        is_vassal = no
+		
+        # civilized = yes
     }
-    prestige = -0.25
+    prestige = -0.2
     max_loan_modifier = -1.0
     min_tax = 0.4
     min_tariff = 1.2
@@ -352,6 +362,8 @@ chinese_substate = {
 	icon = 10
 	research_points_modifier = -0.2
 	global_pop_consciousness_modifier = 0.02
+	
+	icon = 10
 }
 
 own_kiel_canal = {
