@@ -11995,6 +11995,7 @@ take_capital = {
 
     can_use = {
         THIS = {
+			ai = no
             NOT = {
                 has_country_flag = in_great_war
                 has_country_modifier = no_more_war
@@ -12037,7 +12038,7 @@ take_capital = {
         OR = {
                 neighbour = THIS
                 AND = {
-                    THIS = { num_of_ports = 1 }
+                    THIS = { any_owned_province = { port = yes } }
                     any_owned_province = { port = yes }
                 }
         }
@@ -12110,6 +12111,7 @@ demand_concession_capital = {
 
     can_use = {
         THIS = {
+			ai = no
             NOT = {
                 has_country_flag = in_great_war
                 has_country_modifier = no_more_war
