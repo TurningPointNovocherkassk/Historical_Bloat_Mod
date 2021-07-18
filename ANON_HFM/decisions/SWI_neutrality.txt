@@ -31,7 +31,21 @@ political_decisions = {
 		picture = declare_neutrality
 		potential = {
 			has_country_modifier = neutrality_modifier
-			NOT = { has_country_flag = abandoned_neutrality }
+			NOT = {
+				tag = HUN
+				primary_culture = polish
+				tag = BOH
+				tag = PNC 
+				tag = PRU
+				tag = NGF
+				tag = GER
+				tag = GCF
+				tag = AUS
+				tag = KUK
+				tag = SGF
+				tag = RUS
+				has_country_flag = abandoned_neutrality
+			}
 		}
 		
 		allow = {
@@ -142,7 +156,20 @@ political_decisions = {
 		potential = {
 			has_country_modifier = neutrality_modifier
 			ai = yes
-			NOT = { tag = BOH }
+			NOT = {
+				tag = HUN
+				primary_culture = polish
+				tag = BOH
+				tag = PNC 
+				tag = PRU
+				tag = NGF
+				tag = GER
+				tag = GCF
+				tag = AUS
+				tag = KUK
+				tag = SGF
+				tag = RUS
+			}
 			#ANON
 		}
 		

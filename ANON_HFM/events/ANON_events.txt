@@ -3546,23 +3546,42 @@ country_event = {
 		option = {
 			name = "..."
 			set_global_flag = serbian_vojvodina
-			any_owned = {
+			any_country = {
 				limit = {
-					OR = {
-						province_id = 2538
-						province_id = 792
-						province_id = 3624
-						province_id = 3295
-						province_id = 3627
-						province_id = 3651
-						province_id = 3620
-						#
-						province_id = 791
-						province_id = 793
+					any_owned_province = {
+						OR = {
+							province_id = 2538
+							province_id = 792
+							province_id = 3624
+							province_id = 3295
+							province_id = 3627
+							province_id = 3651
+							province_id = 3620
+							#
+							province_id = 791
+							province_id = 793
+						}
+						is_core = VOJ
 					}
-					is_core = VOJ
 				}
-				secede_province = VOJ
+				any_owned = {
+					limit = {
+						OR = {
+							province_id = 2538
+							province_id = 792
+							province_id = 3624
+							province_id = 3295
+							province_id = 3627
+							province_id = 3651
+							province_id = 3620
+							#
+							province_id = 791
+							province_id = 793
+						}
+						is_core = VOJ
+					}
+					secede_province = VOJ
+				}
 			}
 			VOJ = {
 				capital = 2538
@@ -3840,7 +3859,13 @@ country_event = {
 		fire_only_once = yes
 		
 		trigger = {
-			has_global_flag = end_of_hungarian_revolution_I
+			OR = {
+				has_global_flag = end_of_hungarian_revolution_I
+				AND = {
+					owns = 641
+					has_global_flag = hungarian_revolution_occurred
+				}
+			}
 			HUN = { exists = no }
 			VOJ = {
 				OR = {
@@ -3853,11 +3878,9 @@ country_event = {
 				tag = KUK
 			}
 			NOT = {
-				OR = {
-					has_global_flag = VOJ_respected_autonomy
-					has_global_flag = VOJ_disrupted_autonomy_join
-					has_global_flag = VOJ_disrupted_autonomy_fight
-				}
+				has_global_flag = VOJ_respected_autonomy
+				has_global_flag = VOJ_disrupted_autonomy_join
+				has_global_flag = VOJ_disrupted_autonomy_fight
 			}
 		}
 		

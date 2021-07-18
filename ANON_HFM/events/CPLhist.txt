@@ -109,6 +109,9 @@ country_event = {
 		}	
 	}
 	
+	#validator says shit shit doesn't work, but it actually does.
+	immediate = { any_country = { limit = { OR = { tag = PZN tag = CPL } ai = no exists = yes } country_event = 666666123 } }
+	
 	option = {
 		name = "EVTOPT500001A"
 		set_global_flag = january_uprising_happened
@@ -350,7 +353,7 @@ country_event = {
 	
 	option = {
 		name = "EVTOPT500002A"		#Help the poles
-		set_country_flag = polish_uprising_voted
+		set_country_flag = polish_uprising_voted_support_POL
 		random_owned = {
 			limit = { owner = { NOT = { check_variable = { which = owed_cash_money value = 1 } } } }
 			owner = { set_variable = { which = owed_cash_money value = 20 } }
@@ -422,6 +425,31 @@ country_event = {
 		
 		ai_chance = {
 			factor = 25
+			# NEW
+			modifier = {
+				factor = 0
+				is_greater_power = yes
+				any_greater_power = { alliance_with = CPL }
+			}
+			modifier = {
+				factor = 0
+				is_greater_power = no
+				part_of_sphere = yes
+				sphere_owner = {
+					OR = {
+						has_country_flag = polish_uprising_voted_condemn_RUS
+						has_country_flag = polish_uprising_voted_neutral
+						has_country_flag = polish_uprising_voted_support_RUS
+					}
+				}
+			}
+			modifier = {
+				factor = 100
+				is_greater_power = no
+				part_of_sphere = yes
+				sphere_owner = { has_country_flag = polish_uprising_voted_support_POL }
+			}
+			# END NEW
 			modifier = { factor = 0 alliance_with = FROM }
 			modifier = { factor = 10 war_with = FROM }
 			modifier = { factor = 2 truce_with = FROM }
@@ -460,7 +488,7 @@ country_event = {
 		
 	option = {
 		name = "EVTOPT500002B" 		#condemn Russia
-		set_country_flag = polish_uprising_voted
+		set_country_flag = polish_uprising_voted_condemn_RUS
 		relation = { who = FROM value = -50 }
 		relation = { who = CPL value = 50 }
 		any_pop = {
@@ -482,6 +510,26 @@ country_event = {
 		
 		ai_chance = {
 			factor = 25
+			# NEW
+			modifier = {
+				factor = 0
+				is_greater_power = no
+				part_of_sphere = yes
+				sphere_owner = {
+					OR = {
+						has_country_flag = polish_uprising_voted_support_POL
+						has_country_flag = polish_uprising_voted_neutral
+						has_country_flag = polish_uprising_voted_support_RUS
+					}
+				}
+			}
+			modifier = {
+				factor = 100
+				is_greater_power = no
+				part_of_sphere = yes
+				sphere_owner = { has_country_flag = polish_uprising_voted_condemn_RUS }
+			}
+			# END NEW
 			modifier = { factor = 0 alliance_with = FROM }
 			modifier = {
 				factor = 1.25
@@ -498,7 +546,7 @@ country_event = {
 		
 	option = {
 		name = "EVTOPT500002C"		#stay neutral
-		set_country_flag = polish_uprising_voted
+		set_country_flag = polish_uprising_voted_neutral
 		relation = { who = CPL value = -25 }
 		any_pop = {
 			limit = { has_pop_culture = polish }
@@ -519,9 +567,33 @@ country_event = {
 		
 		ai_chance = {
 			factor = 25
+			# NEW
+			modifier = {
+				factor = 0
+				is_greater_power = no
+				part_of_sphere = yes
+				sphere_owner = {
+					OR = {
+						has_country_flag = polish_uprising_voted_support_POL
+						has_country_flag = polish_uprising_voted_condemn_RUS
+						has_country_flag = polish_uprising_voted_support_RUS
+					}
+				}
+			}
+			modifier = {
+				factor = 100
+				is_greater_power = no
+				part_of_sphere = yes
+				sphere_owner = { has_country_flag = polish_uprising_voted_neutral }
+			}
+			# END NEW
 			modifier = {
 				factor = 5
 				any_owned_province = { pop_majority_culture = polish }
+			}
+			modifier = {
+				factor = 100
+				tag = SWI
 			}
 			modifier = {
 				factor = 2
@@ -532,7 +604,7 @@ country_event = {
 	}
 	option = {
 		name = "EVTOPT500002D"		#support russia
-		set_country_flag = polish_uprising_voted
+		set_country_flag = polish_uprising_voted_support_RUS
 		relation = { who = FROM value = 25 }
 		relation = { who = CPL value = -150 }
 		any_pop = {
@@ -554,6 +626,26 @@ country_event = {
 		
 		ai_chance = {
 			factor = 25
+			# NEW
+			modifier = {
+				factor = 0
+				is_greater_power = no
+				part_of_sphere = yes
+				sphere_owner = {
+					OR = {
+						has_country_flag = polish_uprising_voted_support_POL
+						has_country_flag = polish_uprising_voted_condemn_RUS
+						has_country_flag = polish_uprising_voted_neutral
+					}
+				}
+			}
+			modifier = {
+				factor = 100
+				is_greater_power = no
+				part_of_sphere = yes
+				sphere_owner = { has_country_flag = polish_uprising_voted_support_RUS }
+			}
+			# END NEW
 			modifier = { factor = 5 alliance_with = FROM }
 			modifier = {
 				factor = 2

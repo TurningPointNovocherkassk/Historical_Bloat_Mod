@@ -19,7 +19,29 @@ political_decisions = {
 	the_grunderzeit2 = {
 		picture = "the_grunderzeit2"
 		potential = {
-			is_culture_group = germanic
+			OR = {
+				AND = {
+					is_culture_group = germanic
+					NOT = {
+						primary_culture = baltic_german
+						primary_culture = volga_german
+						primary_culture = siebenburger
+						primary_culture = danube_german
+						primary_culture = carpathian_german
+						tag = PZN
+					}
+				}
+				AND = {
+					OR = {
+						primary_culture = baltic_german
+						primary_culture = volga_german
+						primary_culture = siebenburger
+						primary_culture = danube_german
+						primary_culture = carpathian_german
+					}
+					ai = no
+				}
+			}
 			NOT = { tag = AUS }
 			NOT = { tag = KUK }
 			NOT = { has_country_flag = grunderzeit_we_have_done }

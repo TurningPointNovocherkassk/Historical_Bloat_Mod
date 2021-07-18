@@ -3609,6 +3609,10 @@ country_event = {
 				name = no_more_war
 				duration = 7
 			}
+			add_country_modifier = {
+				name = neutrality_modifier
+				duration = 7
+			}
 			relation = {
 				who = RUS
 				value = -200
@@ -3669,35 +3673,11 @@ country_event = {
 		}
 		any_pop = {
 			limit = {
-				has_pop_culture = central_italian
-				location = { is_core = ITA }
-			}
-			militancy = 8
-		}
-		any_pop = {
-			limit = {
-				has_pop_culture = north_italian
-				location = { is_core = ITA }
-			}
-			militancy = 8
-		}
-		any_pop = {
-			limit = {
-				has_pop_culture = venetian
-				location = { is_core = ITA }
-			}
-			militancy = 8
-		}
-		any_pop = {
-			limit = {
-				has_pop_culture = south_italian
-				location = { is_core = ITA }
-			}
-			militancy = 8
-		}
-		any_pop = {
-			limit = {
-				has_pop_culture = sicilian
+				is_culture_group = italian
+				NOT = {
+					has_pop_culture = dalmatian
+					has_pop_culture = maltese
+				}
 				location = { is_core = ITA }
 			}
 			militancy = 8

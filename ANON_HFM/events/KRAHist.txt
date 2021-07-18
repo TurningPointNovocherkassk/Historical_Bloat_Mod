@@ -43,6 +43,9 @@ country_event = {
 
 	fire_only_once = yes
 	
+	#validator says shit shit doesn't work, but it actually does.
+	immediate = { any_country = { limit = { OR = { tag = PZN tag = CPL } ai = no exists = yes } country_event = 666666123 } }
+	
 	option = {
 		name = "EVT600051OPTA" #Let the Poles be free! Let's Unite Poland and restore its glory!
 		set_global_flag = krakow_uprising

@@ -71,11 +71,11 @@ political_decisions = {
 			425 = { owner = { country_event = 152009874 } remove_core = U03 }
 		}
         ai_will_do = {
-            factor = 1
-            modifier = {
-                factor = 0
-                NOT = { has_country_modifier = malevolent_ai }
-            }
+            factor = 0
+            # modifier = {
+                # factor = 0
+                # NOT = { has_country_modifier = malevolent_ai }
+            # }
         }
 	}
 	
@@ -144,11 +144,11 @@ political_decisions = {
 			300 = { owner = { country_event = 152009875 } remove_core = U03 }
 		}
         ai_will_do = {
-            factor = 1
-            modifier = {
-                factor = 0
-                NOT = { has_country_modifier = malevolent_ai }
-            }
+            factor = 0
+            # modifier = {
+                # factor = 0
+                # NOT = { has_country_modifier = malevolent_ai }
+            # }
         }
 	}
 	destroy_statue_of_liberty = {
@@ -223,11 +223,11 @@ political_decisions = {
 			232 = { owner = { country_event = 152009876 } remove_core = U03 }
 		}
         ai_will_do = {
-            factor = 1
-            modifier = {
-                factor = 0
-                NOT = { has_country_modifier = malevolent_ai }
-            }
+            factor = 0
+            # modifier = {
+                # factor = 0
+                # NOT = { has_country_modifier = malevolent_ai }
+            # }
         }
 	}
 }

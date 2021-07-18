@@ -10024,21 +10024,41 @@ political_decisions = {
 		
 	}
 	
-	rename_cernauti = {
+	rename_bukovina = {
 		picture = gtfo
 		potential = {
 			OR = {
 				AND = {
 					is_culture_group = germanic
-					AND = { owns = 662 NOT = { has_global_flag = germanic_renamed_cernauti } }
+					NOT = { tag = DNB accepted_culture = romanian }
+					OR = {
+						AND = { owns = 662 NOT = { has_global_flag = germanic_renamed_cernauti } }
+						AND = { owns = 663 NOT = { has_global_flag = germanic_renamed_suceava } }
+					}
 				}
 				AND = {
 					is_culture_group = east_slavic
-					AND = { owns = 662 NOT = { has_global_flag = eastslavic_renamed_cernauti } }
+					OR = {
+						AND = { owns = 662 NOT = { has_global_flag = eastslavic_renamed_cernauti } }
+						AND = { owns = 663 NOT = { has_global_flag = eastslavic_renamed_suceava } }
+					}
 				}
 				AND = {
-					is_culture_group = pan_romanian
-					AND = { owns = 662 NOT = { has_global_flag = romanian_renamed_cernauti } }
+					OR ={
+						is_culture_group = pan_romanian
+						AND = { tag = DNB accepted_culture = romanian }
+					}
+					OR = {
+						AND = { owns = 662 NOT = { has_global_flag = romanian_renamed_cernauti } }
+						AND = { owns = 663 NOT = { has_global_flag = romanian_renamed_suceava } }
+					}
+				}
+				AND = {
+					is_culture_group = polish_culture_group
+					OR = {
+						AND = { owns = 662 NOT = { has_global_flag = polish_renamed_cernauti } }
+						AND = { owns = 663 NOT = { has_global_flag = polish_renamed_suceava } }
+					}
 				}
 			}
 		}
@@ -10055,18 +10075,39 @@ political_decisions = {
 					province_id = 662
 					owner = {
 						is_culture_group = germanic
+						NOT = { tag = DNB accepted_culture = romanian }
 					}
 				}
 				662 = {
 					change_province_name = "Tschernowitz"
-					state_scope = {
-						change_region_name = "Buchenland"
-					}
 				}
 				owner = { 
 					set_global_flag = germanic_renamed_cernauti
 					clr_global_flag = eastslavic_renamed_cernauti
 					clr_global_flag = romanian_renamed_cernauti
+					clr_global_flag = polish_renamed_cernauti
+				}
+			}
+			###german - suceava###
+			random_owned = {
+				limit = {
+					province_id = 663
+					owner = {
+						is_culture_group = germanic
+						NOT = { tag = DNB accepted_culture = romanian }
+					}
+				}
+				663 = {
+					change_province_name = "Sedschopff"
+					state_scope = {
+						change_region_name = "Buchenland"
+					}
+				}
+				owner = { 
+					set_global_flag = germanic_renamed_suceava
+					clr_global_flag = eastslavic_renamed_suceava
+					clr_global_flag = romanian_renamed_suceava
+					clr_global_flag = polish_renamed_suceava
 				}
 			}
 			
@@ -10080,89 +10121,14 @@ political_decisions = {
 				}
 				662 = {
 					change_province_name = "Chernovitsy"
-					state_scope = {
-						change_region_name = "Bukovyna"
-					}
 				}
 				owner = { 
 					set_global_flag = eastslavic_renamed_cernauti
 					clr_global_flag = germanic_renamed_cernauti
 					clr_global_flag = romanian_renamed_cernauti
+					clr_global_flag = polish_renamed_cernauti
 				}
 			}
-			
-			###pan_romanian - cernauti###
-			random_owned = {
-				limit = {
-					province_id = 662
-					owner = {
-						is_culture_group = pan_romanian
-					}
-				}
-				662 = {
-					change_province_name = "Cernautsi"
-					state_scope = {
-						change_region_name = "Bucovina"
-					}
-				}
-				owner = { 
-					set_global_flag = romanian_renamed_cernauti
-					clr_global_flag = germanic_renamed_cernauti
-					clr_global_flag = eastslavic_renamed_cernauti
-				}
-			}
-		}
-		
-		ai_will_do = { factor = 1 }
-		
-	}
-	
-	rename_suceava = {
-		picture = gtfo
-		potential = {
-			OR = {
-				AND = {
-					is_culture_group = germanic
-					AND = { owns = 663 NOT = { has_global_flag = germanic_renamed_suceava } }
-				}
-				AND = {
-					is_culture_group = east_slavic
-					AND = { owns = 663 NOT = { has_global_flag = eastslavic_renamed_suceava } }
-				}
-				AND = {
-					is_culture_group = pan_romanian
-					AND = { owns = 663 NOT = { has_global_flag = romanian_renamed_suceava } }
-				}
-			}
-		}
-		
-		allow = {
-			war = no
-		}
-		
-		effect = {
-			
-			###german - suceava###
-			random_owned = {
-				limit = {
-					province_id = 663
-					owner = {
-						is_culture_group = germanic
-					}
-				}
-				663 = {
-					change_province_name = "Sedschopff"
-					state_scope = {
-						change_region_name = "Buchenland"
-					}
-				}
-				owner = { 
-					set_global_flag = germanic_renamed_suceava
-					clr_global_flag = eastslavic_renamed_suceava
-					clr_global_flag = romanian_renamed_suceava
-				}
-			}
-			
 			###eastslavic - suceava###
 			random_owned = {
 				limit = {
@@ -10181,15 +10147,40 @@ political_decisions = {
 					set_global_flag = eastslavic_renamed_suceava
 					clr_global_flag = germanic_renamed_suceava
 					clr_global_flag = romanian_renamed_suceava
+					clr_global_flag = polish_renamed_suceava
 				}
 			}
 			
+			###pan_romanian - cernauti###
+			random_owned = {
+				limit = {
+					province_id = 662
+					owner = {
+						OR ={
+							is_culture_group = pan_romanian
+							AND = { tag = DNB accepted_culture = romanian }
+						}
+					}
+				}
+				662 = {
+					change_province_name = "Cernautsi"
+				}
+				owner = { 
+					set_global_flag = romanian_renamed_cernauti
+					clr_global_flag = germanic_renamed_cernauti
+					clr_global_flag = eastslavic_renamed_cernauti
+					clr_global_flag = polish_renamed_cernauti
+				}
+			}
 			###pan_romanian - suceava###
 			random_owned = {
 				limit = {
 					province_id = 663
 					owner = {
-						is_culture_group = pan_romanian
+						OR ={
+							is_culture_group = pan_romanian
+							AND = { tag = DNB accepted_culture = romanian }
+						}
 					}
 				}
 				663 = {
@@ -10200,6 +10191,47 @@ political_decisions = {
 				}
 				owner = { 
 					set_global_flag = romanian_renamed_suceava
+					clr_global_flag = germanic_renamed_suceava
+					clr_global_flag = eastslavic_renamed_suceava
+					clr_global_flag = polish_renamed_suceava
+				}
+			}
+			
+			###polish_culture_group - cernauti###
+			random_owned = {
+				limit = {
+					province_id = 662
+					owner = {
+						is_culture_group = polish_culture_group
+					}
+				}
+				662 = {
+					change_province_name = "Czerniowce"
+				}
+				owner = { 
+					set_global_flag = polish_renamed_cernauti
+					clr_global_flag = romanian_renamed_cernauti
+					clr_global_flag = germanic_renamed_cernauti
+					clr_global_flag = eastslavic_renamed_cernauti
+				}
+			}
+			###polish_culture_group - suceava###
+			random_owned = {
+				limit = {
+					province_id = 663
+					owner = {
+						is_culture_group = polish_culture_group
+					}
+				}
+				663 = {
+					change_province_name = "Suczawa"
+					state_scope = {
+						change_region_name = "Bukowina"
+					}
+				}
+				owner = { 
+					set_global_flag = polish_renamed_suceava
+					clr_global_flag = romanian_renamed_suceava
 					clr_global_flag = germanic_renamed_suceava
 					clr_global_flag = eastslavic_renamed_suceava
 				}
@@ -13627,22 +13659,34 @@ political_decisions = {
 			OR = {
 				AND = {
 					is_culture_group = germanic
-					AND = { owns = 696 NOT = { has_global_flag = german_renamed_prussiapoland } }
+					OR = {
+						AND = { owns = 696 NOT = { has_global_flag = german_renamed_prussiapoland } }
+						AND = { owns = 693 NOT = { has_global_flag = german_renamed_prussiapoland2 } }
+					}
 				}
 				AND = {
 					OR = {
 						primary_culture = lithuanian
 						is_culture_group = baltic
 					}
-					AND = { owns = 696 NOT = { has_global_flag = lithuanian_renamed_prussiapoland } }
+					OR = {
+						AND = { owns = 696 NOT = { has_global_flag = lithuanian_renamed_prussiapoland } }
+						AND = { owns = 693 NOT = { has_global_flag = lithuanian_renamed_prussiapoland2 } }
+					}
 				}
 				AND = {
 					is_culture_group = east_slavic
-					AND = { owns = 696 NOT = { has_global_flag = russian_renamed_prussiapoland } }
+					OR = {
+						AND = { owns = 696 NOT = { has_global_flag = russian_renamed_prussiapoland } }
+						AND = { owns = 693 NOT = { has_global_flag = russian_renamed_prussiapoland2 } }
+					}
 				}
 				AND = {
 					is_culture_group = polish_culture_group
-					AND = { owns = 696 NOT = { has_global_flag = polish_renamed_prussiapoland } }
+					OR = {
+						AND = { owns = 696 NOT = { has_global_flag = polish_renamed_prussiapoland } }
+						AND = { owns = 693 NOT = { has_global_flag = polish_renamed_prussiapoland2 } }
+					}
 				}
 			}
 		}
@@ -14725,19 +14769,23 @@ political_decisions = {
 				}
 				AND = {
 					NOT = { OR = { is_culture_group = latin_american_cultures is_culture_group = iberian } }
-					NOT = { OR = { has_global_flag = houston_capital has_global_flag = move_capital_133 } }
-					OR = {
-						AND = { owns = 133 NOT = { has_global_flag = gringo_renamed_austinpre } }
-						AND = { owns = 132 NOT = { has_global_flag = gringo_renamed_houstonpre } }
-					}
+					NOT = { has_global_flag = houston_capital }
+					AND = { owns = 132 NOT = { has_global_flag = gringo_renamed_houstonpre } }
 				}
 				AND = {
 					NOT = { OR = { is_culture_group = latin_american_cultures is_culture_group = iberian } }
-					OR = { has_global_flag = houston_capital has_global_flag = move_capital_133 }
-					OR = {
-						AND = { owns = 133 NOT = { has_global_flag = gringo_renamed_austinpost } }
-						AND = { owns = 132 NOT = { has_global_flag = gringo_renamed_houstonpost } }
-					}
+					NOT = { has_global_flag = move_capital_133 }
+					AND = { owns = 133 NOT = { has_global_flag = gringo_renamed_austinpre } }
+				}
+				AND = {
+					NOT = { OR = { is_culture_group = latin_american_cultures is_culture_group = iberian } }
+					has_global_flag = houston_capital
+					AND = { owns = 132 NOT = { has_global_flag = gringo_renamed_houstonpost } }
+				}
+				AND = {
+					NOT = { OR = { is_culture_group = latin_american_cultures is_culture_group = iberian } }
+					has_global_flag = move_capital_133
+					AND = { owns = 133 NOT = { has_global_flag = gringo_renamed_austinpost } }
 				}
 				AND = {
 					OR = { is_culture_group = latin_american_cultures is_culture_group = iberian }
@@ -14804,6 +14852,7 @@ political_decisions = {
 					owner = {
 						NOT = { OR = { is_culture_group = latin_american_cultures is_culture_group = iberian } }
 						NOT = { has_global_flag = move_capital_133 }
+						NOT = { has_global_flag = gringo_renamed_austinpost }
 					}
 				}
 				133 = {
@@ -14846,6 +14895,7 @@ political_decisions = {
 					owner = {
 						NOT = { OR = { is_culture_group = latin_american_cultures is_culture_group = iberian } }
 						NOT = { has_global_flag = houston_capital }
+						NOT = { has_global_flag = gringo_renamed_houstonpost }
 					}
 				}
 				132 = { change_province_name = "Washington on the Brazos" }

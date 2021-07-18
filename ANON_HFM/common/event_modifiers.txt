@@ -4,25 +4,25 @@
 
 ####AI Personalities
 
-coward_ai = {
-	badboy = -0.01
-	cb_generation_speed_modifier = 0.25
-	icon = 3
-}
+# coward_ai = {
+	# badboy = -0.01
+	# cb_generation_speed_modifier = 0.25
+	# icon = 3
+# }
 
-benefactor_ai = {
-	cb_generation_speed_modifier = 0.1
-	icon = 3
-}
+# benefactor_ai = {
+	# cb_generation_speed_modifier = 0.1
+	# icon = 3
+# }
 
-malevolent_ai = {
-	cb_generation_speed_modifier = -0.05
-	icon = 3
-}
+# malevolent_ai = {
+	# cb_generation_speed_modifier = -0.05
+	# icon = 3
+# }
 
-picking_personality = {
-	icon = 3
-}
+# picking_personality = {
+	# icon = 3
+# }
 
 ####
 
@@ -1233,9 +1233,9 @@ foreign_trading_post = {
 }
 
 silk_famine = {
-	farm_rgo_eff = -0.5
-	pop_militancy_modifier = 0.05
-	icon = 14
+    farm_rgo_eff = -0.5
+    pop_militancy_modifier = 0.05
+    icon = 14
 }
 
 #dissatisfied_workers = {
@@ -1635,10 +1635,6 @@ the_bonnie_blue_flag = {
 }
 
 ##### WORKPLACE EVENTS #####
-silk_famine = {
-	farm_rgo_eff = -0.5
-	icon = 14
-}
 
 blood_and_iron_mine = {
 	mine_rgo_eff = 0.5
@@ -4392,7 +4388,7 @@ persian_cossacks_modifier = {
 	land_unit_start_experience = 1
 	leadership_modifier = 0.5
 	prestige = 0.01
-	icon = 105
+	icon = 15
 }
 secessionist_agitation = {
 	pop_consciousness_modifier = 0.2
@@ -4423,8 +4419,14 @@ futile = {
 	icon = 7
 }
 famine = {
-	population_growth = -0.01
-	icon = 85
+    immigrant_attract = -2
+    pop_militancy_modifier = 0.4
+    pop_consciousness_modifier = 0.3
+    local_artisan_output = -0.5
+    population_growth = -0.001
+    farm_rgo_eff = -0.1
+    mine_rgo_eff = -0.1
+    icon = 4
 }
 
 nationalist_poland = {

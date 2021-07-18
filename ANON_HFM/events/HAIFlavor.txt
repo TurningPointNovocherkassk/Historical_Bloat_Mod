@@ -354,10 +354,10 @@ country_event = {
 		FRA = { country_event = 45107 }
 		ai_chance = {
 			factor = 10
-			modifier = {
-				factor = 3
-				has_country_modifier = malevolent_ai
-			}
+			# modifier = {
+				# factor = 3
+				# has_country_modifier = malevolent_ai
+			# }
 		}
 	}
 }

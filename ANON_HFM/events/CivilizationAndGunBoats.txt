@@ -235,6 +235,10 @@ country_event = {
 	picture = "arrested"
 	
 	trigger = {
+        NOT = {
+            tag = EIC
+            has_country_flag = spectator
+        }
 		civilized = no
 		has_country_modifier = uncivilized_isolationism
 		OR = {
@@ -358,6 +362,10 @@ country_event = {
 	picture = "Opium"
 	
 	trigger = {
+        NOT = {
+            tag = EIC
+            has_country_flag = spectator
+        }
 		civilized = no
 		any_owned_province = {
 			has_province_modifier = foreign_smugglers
@@ -368,10 +376,19 @@ country_event = {
 	
 	mean_time_to_happen = {
 		months = 120
-		modifier = {
-			factor = 0.8
-			has_country_modifier = trade_restrictions
-		}
+        modifier = {
+            factor = 1.5
+            has_country_modifier = uncivilized_isolationism
+        }
+        modifier = {
+            factor = 0.8
+            has_country_modifier = trade_restrictions
+        }
+
+        modifier = {
+            factor = 1.5
+            has_country_modifier = lin_zexu
+        }
 	}
 	
 	option = {
@@ -432,6 +449,10 @@ country_event = {
 	picture = "missionaries"
 	
 	trigger = {
+        NOT = {
+            tag = EIC
+            has_country_flag = spectator
+        }
 		civilized = no
 		is_vassal = no
 		has_country_modifier = uncivilized_isolationism
@@ -531,47 +552,62 @@ country_event = {
 					num_of_ports = 1
 					neighbour = THIS
 				}
-				OR = {
-					AND = {
-						is_secondary_power = yes
-						neighbour = THIS
-					}
-					AND = {
-						is_greater_power = yes
-						any_owned_province = { continent = africa }
-						THIS = { continent = africa }
-					}
-					AND = {
-						is_greater_power = yes
-						any_owned_province = { continent = asia }
-						THIS = { continent = asia }
-					}
-					AND = {
-						is_greater_power = yes
-						any_owned_province = { continent = oceania }
-						THIS = { continent = oceania }
-					}
-					AND = {
-						is_greater_power = yes
-						any_owned_province = { continent = south_america }
-						THIS = { continent = south_america }
-					}
-					AND = {
-						is_greater_power = yes
-						any_owned_province = { continent = north_america }
-						THIS = { continent = north_america }
-					}
-					AND = {
-						is_greater_power = yes
-						any_owned_province = { continent = australia_new_zealand }
-						THIS = { continent = australia_new_zealand }
-					}
-					AND = {
-						is_greater_power = yes
-						any_owned_province = { continent = polynesia }
-						THIS = { continent = polynesia }
-					}
-				}
+                OR = {
+                    AND = {
+                        is_secondary_power = yes
+                        neighbour = THIS
+                    }
+                    AND = {
+                        is_greater_power = yes
+                        any_owned_province = { continent = africa }
+                        THIS = { continent = africa }
+                    }
+                    AND = {
+                        is_greater_power = yes
+                        any_owned_province = { continent = west_africa }
+                        THIS = { continent = west_africa }
+                    }
+                    AND = {
+                        is_greater_power = yes
+                        any_owned_province = { continent = east_africa }
+                        THIS = { continent = east_africa }
+                    }
+                    AND = {
+                        is_greater_power = yes
+                        any_owned_province = { continent = central_africa }
+                        THIS = { continent = central_africa }
+                    }
+                    AND = {
+                        is_greater_power = yes
+                        any_owned_province = { continent = asia }
+                        THIS = { continent = asia }
+                    }
+                    AND = {
+                        is_greater_power = yes
+                        any_owned_province = { continent = oceania }
+                        THIS = { continent = oceania }
+                    }
+                    AND = {
+                        is_greater_power = yes
+                        any_owned_province = { continent = south_america }
+                        THIS = { continent = south_america }
+                    }
+                    AND = {
+                        is_greater_power = yes
+                        any_owned_province = { continent = north_america }
+                        THIS = { continent = north_america }
+                    }
+                    AND = {
+                        is_greater_power = yes
+                        any_owned_province = { continent = australia_new_zealand }
+                        THIS = { continent = australia_new_zealand }
+                    }
+                    AND = {
+                        is_greater_power = yes
+                        any_owned_province = { continent = polynesia }
+                        THIS = { continent = polynesia }
+                    }
+                }
 			}
 			country_event = 13021
 		}
@@ -673,6 +709,10 @@ country_event = {
 	picture = "bazaar"
 	
 	trigger = {
+        NOT = {
+            tag = EIC
+            has_country_flag = spectator
+        }
 		civilized = no
 		has_country_modifier = western_influences
 		is_vassal = no
@@ -963,6 +1003,10 @@ country_event = {
 	picture = "bazaar"
 	
 	trigger = {
+        NOT = {
+            tag = EIC
+            has_country_flag = spectator
+        }
 		any_owned_province = {
 			port = yes
 			NOT = { has_province_modifier = foreign_trading_post }
@@ -1069,6 +1113,10 @@ country_event = {
 	picture = "Opium"
 	
 	trigger = {
+        NOT = {
+            tag = EIC
+            has_country_flag = spectator
+        }
 		civilized = no
 		NOT = { has_country_modifier = trade_restrictions }
 		any_owned_province = {
@@ -1098,6 +1146,11 @@ country_event = {
 			factor = 1.2
 			part_of_sphere = no
 		}
+
+        modifier = {
+            factor = 3.5
+            has_country_modifier = lin_zexu
+        }
 	}
 	
 	option = {
@@ -1153,47 +1206,62 @@ country_event = {
 					num_of_ports = 1
 					neighbour = THIS
 				}
-				OR = {
-					AND = {
-						is_secondary_power = yes
-						neighbour = THIS
-					}
-					AND = {
-						is_greater_power = yes
-						any_owned_province = { continent = africa }
-						THIS = { continent = africa }
-					}
-					AND = {
-						is_greater_power = yes
-						any_owned_province = { continent = asia }
-						THIS = { continent = asia }
-					}
-					AND = {
-						is_greater_power = yes
-						any_owned_province = { continent = oceania }
-						THIS = { continent = oceania }
-					}
-					AND = {
-						is_greater_power = yes
-						any_owned_province = { continent = south_america }
-						THIS = { continent = south_america }
-					}
-					AND = {
-						is_greater_power = yes
-						any_owned_province = { continent = north_america }
-						THIS = { continent = north_america }
-					}
-					AND = {
-						is_greater_power = yes
-						any_owned_province = { continent = australia_new_zealand }
-						THIS = { continent = australia_new_zealand }
-					}
-					AND = {
-						is_greater_power = yes
-						any_owned_province = { continent = polynesia }
-						THIS = { continent = polynesia }
-					}
-				}
+                OR = {
+                    AND = {
+                        is_secondary_power = yes
+                        neighbour = THIS
+                    }
+                    AND = {
+                        is_greater_power = yes
+                        any_owned_province = { continent = africa }
+                        THIS = { continent = africa }
+                    }
+                    AND = {
+                        is_greater_power = yes
+                        any_owned_province = { continent = west_africa }
+                        THIS = { continent = west_africa }
+                    }
+                    AND = {
+                        is_greater_power = yes
+                        any_owned_province = { continent = east_africa }
+                        THIS = { continent = east_africa }
+                    }
+                    AND = {
+                        is_greater_power = yes
+                        any_owned_province = { continent = central_africa }
+                        THIS = { continent = central_africa }
+                    }
+                    AND = {
+                        is_greater_power = yes
+                        any_owned_province = { continent = asia }
+                        THIS = { continent = asia }
+                    }
+                    AND = {
+                        is_greater_power = yes
+                        any_owned_province = { continent = oceania }
+                        THIS = { continent = oceania }
+                    }
+                    AND = {
+                        is_greater_power = yes
+                        any_owned_province = { continent = south_america }
+                        THIS = { continent = south_america }
+                    }
+                    AND = {
+                        is_greater_power = yes
+                        any_owned_province = { continent = north_america }
+                        THIS = { continent = north_america }
+                    }
+                    AND = {
+                        is_greater_power = yes
+                        any_owned_province = { continent = australia_new_zealand }
+                        THIS = { continent = australia_new_zealand }
+                    }
+                    AND = {
+                        is_greater_power = yes
+                        any_owned_province = { continent = polynesia }
+                        THIS = { continent = polynesia }
+                    }
+                }
 			}
 			relation = { 
 				who = THIS
@@ -1214,14 +1282,18 @@ country_event = {
 	picture = "Opium"
 	
 	trigger = {
-		civilized = no
-		has_country_modifier = trade_restrictions
-		any_owned_province = {
-			port = yes
-			NOT = { has_province_modifier = foreign_smugglers }
-			NOT = { has_province_modifier = local_opium_habit }
-			NOT = { has_province_modifier = boxer_presence }
-		}
+        NOT = {
+            tag = EIC
+            has_country_flag = spectator
+        }
+        civilized = no
+        has_country_modifier = trade_restrictions
+        any_owned_province = {
+            port = yes
+            NOT = { has_province_modifier = foreign_smugglers }
+            NOT = { has_province_modifier = local_opium_habit }
+            NOT = { has_province_modifier = boxer_presence }
+        }
 	}
 	
 	mean_time_to_happen = {
@@ -1270,6 +1342,11 @@ country_event = {
 			factor = 0.9
 			num_of_ports = 50
 		}
+
+        modifier = {
+            factor = 1.5
+            has_country_modifier = lin_zexu
+        }
 	}
 	
 	option = {
@@ -1338,7 +1415,13 @@ province_event = {
 	trigger = {
 		port = yes
 		owner = {
-			civilized = no
+            civilized = no
+            NOT = {
+                OR = {
+                    tag = EIC
+                    has_country_flag = spectator
+                }
+            }
 		}
 		any_neighbor_province = {
 			has_province_modifier = local_opium_habit
@@ -1359,6 +1442,11 @@ province_event = {
 			factor = 0.8
 			has_province_modifier = foreign_smugglers
 		}
+		
+        modifier = {
+            factor = 1.5
+            has_country_modifier = lin_zexu
+        }
 	}
 	
 	option = {
@@ -1383,37 +1471,52 @@ province_event = {
 					num_of_ports = 1
 					neighbour = THIS
 				}
-				OR = {
-					AND = {
-						is_secondary_power = yes
-						neighbour = THIS
-					}
-					AND = {
-						is_greater_power = yes
-						any_owned_province = { continent = africa }
-						THIS = { continent = africa }
-					}
-					AND = {
-						is_greater_power = yes
-						any_owned_province = { continent = asia }
-						THIS = { continent = asia }
-					}
-					AND = {
-						is_greater_power = yes
-						any_owned_province = { continent = oceania }
-						THIS = { continent = oceania }
-					}
-					AND = {
-						is_greater_power = yes
-						any_owned_province = { continent = south_america }
-						THIS = { continent = south_america }
-					}
-					AND = {
-						is_greater_power = yes
-						any_owned_province = { continent = north_america }
-						THIS = { continent = north_america }
-					}
-				}
+                OR = {
+                    AND = {
+                        is_secondary_power = yes
+                        neighbour = THIS
+                    }
+                    AND = {
+                        is_greater_power = yes
+                        any_owned_province = { continent = africa }
+                        THIS = { continent = africa }
+                    }
+                    AND = {
+                        is_greater_power = yes
+                        any_owned_province = { continent = west_africa }
+                        THIS = { continent = west_africa }
+                    }
+                    AND = {
+                        is_greater_power = yes
+                        any_owned_province = { continent = east_africa }
+                        THIS = { continent = east_africa }
+                    }
+                    AND = {
+                        is_greater_power = yes
+                        any_owned_province = { continent = central_africa }
+                        THIS = { continent = central_africa }
+                    }
+                    AND = {
+                        is_greater_power = yes
+                        any_owned_province = { continent = asia }
+                        THIS = { continent = asia }
+                    }
+                    AND = {
+                        is_greater_power = yes
+                        any_owned_province = { continent = oceania }
+                        THIS = { continent = oceania }
+                    }
+                    AND = {
+                        is_greater_power = yes
+                        any_owned_province = { continent = south_america }
+                        THIS = { continent = south_america }
+                    }
+                    AND = {
+                        is_greater_power = yes
+                        any_owned_province = { continent = north_america }
+                        THIS = { continent = north_america }
+                    }
+                }
 			}
 			relation = { 
 				who = THIS
@@ -1437,6 +1540,12 @@ province_event = {
 		owner = {
 			civilized = no
 			NOT = { number_of_states = 5 }
+            NOT = {
+                OR = {
+                    tag = EIC
+                    has_country_flag = spectator
+                }
+            }
 		}
 		any_neighbor_province = {
 			has_province_modifier = local_opium_habit
@@ -1461,6 +1570,11 @@ province_event = {
 			factor = 5
 			average_militancy = 5
 		}
+
+        modifier = {
+            factor = 1.5
+            has_country_modifier = lin_zexu
+        }
 	}
 	
 	option = {
@@ -1485,47 +1599,47 @@ province_event = {
 					num_of_ports = 1
 					neighbour = THIS
 				}
-				OR = {
-					AND = {
-						is_secondary_power = yes
-						neighbour = THIS
-					}
-					AND = {
-						is_greater_power = yes
-						any_owned_province = { continent = africa }
-						THIS = { continent = africa }
-					}
-					AND = {
-						is_greater_power = yes
-						any_owned_province = { continent = asia }
-						THIS = { continent = asia }
-					}
-					AND = {
-						is_greater_power = yes
-						any_owned_province = { continent = oceania }
-						THIS = { continent = oceania }
-					}
-					AND = {
-						is_greater_power = yes
-						any_owned_province = { continent = south_america }
-						THIS = { continent = south_america }
-					}
-					AND = {
-						is_greater_power = yes
-						any_owned_province = { continent = north_america }
-						THIS = { continent = north_america }
-					}
-					AND = {
-						is_greater_power = yes
-						any_owned_province = { continent = australia_new_zealand }
-						THIS = { continent = australia_new_zealand }
-					}
-					AND = {
-						is_greater_power = yes
-						any_owned_province = { continent = polynesia }
-						THIS = { continent = polynesia }
-					}
-				}
+                OR = {
+                    AND = {
+                        is_secondary_power = yes
+                        neighbour = THIS
+                    }
+                    AND = {
+                        is_greater_power = yes
+                        any_owned_province = { continent = africa }
+                        THIS = { continent = africa }
+                    }
+                    AND = {
+                        is_greater_power = yes
+                        any_owned_province = { continent = asia }
+                        THIS = { continent = asia }
+                    }
+                    AND = {
+                        is_greater_power = yes
+                        any_owned_province = { continent = oceania }
+                        THIS = { continent = oceania }
+                    }
+                    AND = {
+                        is_greater_power = yes
+                        any_owned_province = { continent = south_america }
+                        THIS = { continent = south_america }
+                    }
+                    AND = {
+                        is_greater_power = yes
+                        any_owned_province = { continent = north_america }
+                        THIS = { continent = north_america }
+                    }
+                    AND = {
+                        is_greater_power = yes
+                        any_owned_province = { continent = australia_new_zealand }
+                        THIS = { continent = australia_new_zealand }
+                    }
+                    AND = {
+                        is_greater_power = yes
+                        any_owned_province = { continent = polynesia }
+                        THIS = { continent = polynesia }
+                    }
+                }
 			}
 			relation = { 
 				who = THIS
@@ -1548,6 +1662,12 @@ province_event = {
 		owner = {
 			civilized = no
 			number_of_states = 5
+            NOT = {
+                OR = {
+                    tag = EIC
+                    has_country_flag = spectator
+                }
+            }
 		}
 		any_neighbor_province = {
 			has_province_modifier = local_opium_habit
@@ -1606,47 +1726,62 @@ province_event = {
 					num_of_ports = 1
 					neighbour = THIS
 				}
-				OR = {
-					AND = {
-						is_secondary_power = yes
-						neighbour = THIS
-					}
-					AND = {
-						is_greater_power = yes
-						any_owned_province = { continent = africa }
-						THIS = { continent = africa }
-					}
-					AND = {
-						is_greater_power = yes
-						any_owned_province = { continent = asia }
-						THIS = { continent = asia }
-					}
-					AND = {
-						is_greater_power = yes
-						any_owned_province = { continent = oceania }
-						THIS = { continent = oceania }
-					}
-					AND = {
-						is_greater_power = yes
-						any_owned_province = { continent = south_america }
-						THIS = { continent = south_america }
-					}
-					AND = {
-						is_greater_power = yes
-						any_owned_province = { continent = north_america }
-						THIS = { continent = north_america }
-					}
-					AND = {
-						is_greater_power = yes
-						any_owned_province = { continent = australia_new_zealand }
-						THIS = { continent = australia_new_zealand }
-					}
-					AND = {
-						is_greater_power = yes
-						any_owned_province = { continent = polynesia }
-						THIS = { continent = polynesia }
-					}
-				}
+                OR = {
+                    AND = {
+                        is_secondary_power = yes
+                        neighbour = THIS
+                    }
+                    AND = {
+                        is_greater_power = yes
+                        any_owned_province = { continent = africa }
+                        THIS = { continent = africa }
+                    }
+                    AND = {
+                        is_greater_power = yes
+                        any_owned_province = { continent = west_africa }
+                        THIS = { continent = west_africa }
+                    }
+                    AND = {
+                        is_greater_power = yes
+                        any_owned_province = { continent = east_africa }
+                        THIS = { continent = east_africa }
+                    }
+                    AND = {
+                        is_greater_power = yes
+                        any_owned_province = { continent = central_africa }
+                        THIS = { continent = central_africa }
+                    }
+                    AND = {
+                        is_greater_power = yes
+                        any_owned_province = { continent = asia }
+                        THIS = { continent = asia }
+                    }
+                    AND = {
+                        is_greater_power = yes
+                        any_owned_province = { continent = oceania }
+                        THIS = { continent = oceania }
+                    }
+                    AND = {
+                        is_greater_power = yes
+                        any_owned_province = { continent = south_america }
+                        THIS = { continent = south_america }
+                    }
+                    AND = {
+                        is_greater_power = yes
+                        any_owned_province = { continent = north_america }
+                        THIS = { continent = north_america }
+                    }
+                    AND = {
+                        is_greater_power = yes
+                        any_owned_province = { continent = australia_new_zealand }
+                        THIS = { continent = australia_new_zealand }
+                    }
+                    AND = {
+                        is_greater_power = yes
+                        any_owned_province = { continent = polynesia }
+                        THIS = { continent = polynesia }
+                    }
+                }
 			}
 			relation = { 
 				who = THIS
@@ -1667,9 +1802,14 @@ country_event = {
 	picture = "asian_administration"
 	
 	trigger = {
-		any_owned_province = {
-			has_province_modifier = local_opium_habit
-		}
+        NOT = {
+            tag = EIC
+            tag = QNG
+            has_country_flag = spectator
+        }
+        any_owned_province = {
+            has_province_modifier = local_opium_habit
+        }
 	}
 	
 	mean_time_to_happen = {
@@ -1756,6 +1896,10 @@ country_event = {
 	picture = "explorers"
 	
 	trigger = {
+        NOT = {
+            tag = EIC
+			has_country_flag = spectator
+        }
 		any_owned_province = { has_province_modifier = foreign_trading_post }
 		NOT = { has_country_modifier = sayings_of_the_dutch }
 	}
@@ -1802,12 +1946,20 @@ country_event = {
 	picture = "Outside_influences"
 	
 	trigger = {
-		any_owned_province = {
-			has_pop_type = aristocrats
-			has_province_modifier = western_presence
-		}
-		government = absolute_monarchy
-		civilized = no
+        NOT = {
+            tag = EIC
+            has_country_flag = spectator
+        }
+        any_owned_province = {
+            has_pop_type = aristocrats
+            has_province_modifier = western_presence
+        }
+        OR = {
+            government = absolute_monarchy
+            government = absolute_empire
+        }
+        civilized = no
+        NOT = { has_country_flag = gave_up_2nd_opium }
 	}
 	
 	mean_time_to_happen = {
@@ -1909,7 +2061,11 @@ country_event = {
 	picture = "bazaar"
 
 	trigger = {
-		any_owned_province = { has_province_modifier = foreign_trading_post }
+        NOT = {
+            tag = EIC
+            has_country_flag = spectator
+        }
+        any_owned_province = { has_province_modifier = foreign_trading_post }
 	}
 	
 	mean_time_to_happen = {
@@ -1961,11 +2117,21 @@ province_event = {
 	news_desc_short = "EVTDESC13100_NEWS_SHORT"
 
 	trigger = {
-		average_militancy = 3
-		OR = {
-			has_province_modifier = foreign_trading_post
-			has_province_modifier = western_presence
-		}
+        owner = {
+            NOT = {
+                OR = {
+                    tag = EIC
+                    has_country_flag = spectator
+                }
+            }
+        }
+        average_militancy = 3
+        OR = {
+            has_province_modifier = foreign_trading_post
+            has_province_modifier = western_presence
+            has_province_modifier = european_military_mission
+        }
+        NOT = { has_country_flag = gave_up_2nd_opium }
 	}
 	mean_time_to_happen = {
 		months = 400
@@ -2041,9 +2207,13 @@ country_event = {
 	picture = "Western_education"
 	
 	trigger = {
-		civilized = no
-		has_country_modifier = western_influences
-		NOT = { has_country_flag = princes_recieve_foreign_education }
+        NOT = {
+            tag = EIC
+			has_country_flag = spectator
+        }
+        civilized = no
+        has_country_modifier = western_influences
+        NOT = { has_country_flag = princes_recieve_foreign_education }
 	}
 	
 	mean_time_to_happen = {
@@ -2102,17 +2272,24 @@ country_event = {
 	picture = "Western_education"
 	
 	trigger = {
-		has_country_flag = princes_recieve_foreign_education
-		OR = {
-			government = hms_government
-			government = prussian_constitutionalism
-			government = absolute_monarchy
-		}
-		OR = {
-			slavery = yes_slavery
-			slavery = freedom_of_womb
-		}
-		NOT = { has_country_flag = educated_princes_refused }
+        NOT = {
+            tag = EIC
+            has_country_flag = spectator
+        }
+        has_country_flag = princes_recieve_foreign_education
+        OR = {
+            government = hms_government
+            government = prussian_constitutionalism
+            government = absolute_monarchy
+            government = absolute_empire
+            government = semi_constitutional_empire
+            government = constitutional_empire
+        }
+        OR = {
+            slavery = yes_slavery
+            slavery = freedom_of_womb
+        }
+        NOT = { has_country_flag = educated_princes_refused }
 	}
 
 	mean_time_to_happen = {
@@ -2149,11 +2326,15 @@ country_event = {
 	picture = "Military_reform"
 	
 	trigger = {
-		civilized = no
-		has_country_modifier = western_influences
-		NOT = { has_country_modifier = european_military_mission }
-		any_owned_province = {
-			NOT = { has_province_modifier = boxer_presence }
+        NOT = {
+            tag = EIC
+            has_country_flag = spectator
+        }
+        civilized = no
+        has_country_modifier = western_influences
+        any_owned_province = {
+            NOT = { has_province_modifier = european_military_mission }
+            NOT = { has_province_modifier = boxer_presence }
 		}
 	}
 	
@@ -2250,8 +2431,14 @@ country_event = {
 	picture = "arrested"
 	
 	trigger = {
-		war = yes
-		has_country_modifier = european_military_mission
+        NOT = {
+            tag = EIC
+            has_country_flag = spectator
+        }
+        war = yes
+        any_owned_province = {
+            has_province_modifier = european_military_mission
+        }
 	}
 	
 	mean_time_to_happen = {
@@ -2295,12 +2482,22 @@ province_event = {
 	desc = "EVTDESC13150"
 	
 	trigger = {
-		OR = {
-			has_province_modifier = western_presence
-			has_province_modifier = foreign_trading_post
-			has_province_modifier = foreign_smugglers
-		}
-		average_militancy = 3
+        owner = {
+            NOT = {
+                OR = {
+                    tag = EIC
+                    has_country_flag = spectator
+                }
+            }
+        }
+        OR = {
+            has_province_modifier = european_military_mission
+            has_province_modifier = western_presence
+            has_province_modifier = foreign_trading_post
+            has_province_modifier = foreign_smugglers
+        }
+        average_militancy = 3
+        NOT = { has_country_flag = gave_up_2nd_opium }
 	}
 
 	mean_time_to_happen = {
@@ -2385,16 +2582,22 @@ country_event = {
 	picture = "arrested"
 	
 	trigger = {
-		any_owned_province = {
-			OR = {
-				has_province_modifier = western_presence
-				has_province_modifier = foreign_trading_post
-				has_province_modifier = foreign_smugglers
-			}
-			NOT = { has_province_modifier = extraterritoriality_granted }
-			port = yes
-		}
-		is_vassal = no
+        NOT = {
+            tag = EIC
+            has_country_flag = spectator
+        }
+        any_owned_province = {
+            OR = {
+                has_province_modifier = european_military_mission
+                has_province_modifier = western_presence
+                has_province_modifier = foreign_trading_post
+                has_province_modifier = foreign_smugglers
+            }
+            NOT = { has_province_modifier = extraterritoriality_granted }
+            port = yes
+        }
+        is_vassal = no
+        NOT = { has_country_flag = gave_up_2nd_opium }
 	}
 	
 	mean_time_to_happen = {
@@ -2666,11 +2869,18 @@ country_event = {
 	picture = "India"
 	
 	trigger = {
-		civilized = no
-		war = no
-		part_of_sphere = no
-		has_country_modifier = western_influences
-		has_country_modifier = legation_quarter
+        NOT = {
+            tag = EIC
+            has_country_flag = spectator
+        }
+        civilized = no
+        war = no
+        part_of_sphere = no
+        has_country_modifier = western_influences
+        any_owned_province = {
+            is_capital = yes
+            has_province_modifier = legation_quarter
+        }
 	}
 	
 	mean_time_to_happen = {
@@ -2803,8 +3013,12 @@ country_event = {
 	picture = "Military_reform"
 	
 	trigger = {
-		has_country_modifier = western_influences
-		NOT = { has_country_modifier = military_reform }
+        NOT = {
+            tag = EIC
+			has_country_flag = spectator
+        }
+        has_country_modifier = western_influences
+        NOT = { has_country_modifier = military_reform }
 	}
 	
 	mean_time_to_happen = {
@@ -2885,20 +3099,24 @@ country_event = {
 	picture = "Military_reform"
 	
 	trigger = {
-		OR = {
-			has_country_modifier = uncivilized_isolationism
-			has_country_modifier = trade_restrictions
-		}
-		civilized = no
-		part_of_sphere = yes
-		sphere_owner = { NOT = { truce_with = THIS } }
-		is_vassal = no
-		NOT = {
-			has_country_modifier = rangaku
-			tag = QNG
-			vassal_of = QNG
-			substate_of = QNG
-		}
+        NOT = {
+            tag = EIC
+            has_country_flag = spectator
+        }
+        OR = {
+            has_country_modifier = uncivilized_isolationism
+            has_country_modifier = trade_restrictions
+        }
+        civilized = no
+        part_of_sphere = yes
+        sphere_owner = { NOT = { truce_with = THIS } }
+        is_vassal = no
+        NOT = {
+            has_country_modifier = rangaku
+            tag = QNG
+            vassal_of = QNG
+            substate_of = QNG
+        }
 	}
 
 	mean_time_to_happen = {
@@ -3178,8 +3396,18 @@ country_event = {
 	picture = "Western_education"
 	
 	trigger = {
-		has_country_modifier = western_influences
-		NOT = { has_country_modifier = educational_reform }
+        NOT = {
+            tag = EIC
+            has_country_flag = spectator
+        }
+        any_owned_province = {
+            is_capital = yes
+            NOT = { has_province_modifier = legation_quarter }
+            NOT = { has_province_modifier = boxer_presence }
+        }
+        has_country_modifier = western_influences
+        is_vassal = no
+        NOT = { has_country_flag = gave_up_2nd_opium }
 	}
 	
 	mean_time_to_happen = {
@@ -3228,13 +3456,18 @@ country_event = {
 	picture = "cairo"
 	
 	trigger = {
-		any_owned_province = {
-			is_capital = yes
-			NOT = { has_province_modifier = boxer_presence }
-		}
-		NOT = { has_country_modifier = legation_quarter }
-		has_country_modifier = western_influences
-		is_vassal = no
+        NOT = {
+            tag = EIC
+            has_country_flag = spectator
+        }
+        any_owned_province = {
+            is_capital = yes
+            NOT = { has_province_modifier = legation_quarter }
+            NOT = { has_province_modifier = boxer_presence }
+        }
+        has_country_modifier = western_influences
+        is_vassal = no
+        NOT = { has_country_flag = gave_up_2nd_opium }
 	}
 	
 	mean_time_to_happen = {
@@ -3387,11 +3620,16 @@ country_event = {
 	picture = "Outside_influences"
 	
 	trigger = {
-		has_country_modifier = legation_quarter
-		any_owned_province = {
-			is_capital = yes
-			average_militancy = 1
-		}
+        NOT = {
+            tag = EIC
+            has_country_flag = spectator
+        }
+        any_owned_province = {
+            is_capital = yes
+            has_province_modifier = legation_quarter
+            average_militancy = 1
+        }
+        NOT = { has_country_flag = gave_up_2nd_opium }
 	}
 	
 	mean_time_to_happen = {
@@ -3527,15 +3765,20 @@ country_event = {
 	picture = "Opiumwar"
 	
 	trigger = {
-		civilized = no
-		is_vassal = no
-		war = no
-		any_owned_province = {
-			port = yes
-			NOT = { has_province_modifier = local_opium_habit }
-			NOT = { has_province_modifier = boxer_presence }
-		}
-		has_country_modifier = trade_restrictions
+        NOT = {
+            tag = EIC
+            has_country_flag = spectator
+            has_country_flag = treaty_of_macao
+        }
+        civilized = no
+        is_vassal = no
+        war = no
+        any_owned_province = {
+            port = yes
+            NOT = { has_province_modifier = local_opium_habit }
+            NOT = { has_province_modifier = boxer_presence }
+        }
+        has_country_modifier = trade_restrictions
 	}
 	
 	mean_time_to_happen = {
@@ -3720,10 +3963,14 @@ country_event = {
 	picture = "Outside_influences"
 	
 	trigger = {
-		civilized = no
-		has_country_modifier = western_influences
-		civilization_progress = 0.1
-		any_owned = { any_pop = { type = aristocrats OR = { militancy = 3 consciousness = 6 } } }
+        NOT = {
+            tag = EIC
+			has_country_flag = spectator
+        }
+        civilized = no
+        has_country_modifier = western_influences
+        civilization_progress = 0.1
+        any_owned = { any_pop = { type = aristocrats OR = { militancy = 3 consciousness = 6 } } }
 	}
 	
 	mean_time_to_happen = {
@@ -3754,9 +4001,13 @@ country_event = {
 	picture = "Opiumwar"
 	
 	trigger = {
-		civilized = no
-		has_country_modifier = uncivilized_isolationism
-		has_recently_lost_war = yes
+        NOT = {
+            tag = EIC
+			has_country_flag = spectator
+        }
+        civilized = no
+        has_country_modifier = uncivilized_isolationism
+        has_recently_lost_war = yes
 	}
 	
 	mean_time_to_happen = {
@@ -3848,45 +4099,60 @@ country_event = {
 	
 	picture = "Rebellion"
 	
-	trigger = {
-		vassal_of = ENG
-		ai = yes
-		NOT = {
-			tag = PAK
-			tag = HND
-			is_cultural_union = yes
-			has_country_flag = no_british_doctrine
-			has_global_flag = eic_spawned
-		}
-		overlord = {
-			is_disarmed = no
-			has_recently_lost_war = no
-			ideological_thought = 1
-			exists = yes
-		}
-		OR = {
-			primary_culture = assamese
-			primary_culture = baluchi
-			primary_culture = bengali
-			primary_culture = bihari
-			primary_culture = manipuri
-			primary_culture = nepali
-			primary_culture = oriya
-			primary_culture = sinhala
-			primary_culture = avadhi
-			primary_culture = kanauji
-			primary_culture = kashmiri
-			primary_culture = panjabi
-			primary_culture = gujarati
-			primary_culture = marathi
-			primary_culture = sindi
-			primary_culture = rajput
-			primary_culture = kannada
-			primary_culture = malayalam
-			primary_culture = tamil
-			primary_culture = telegu
-			tag = CRL
-		}
+	trigger = {		
+        OR = {
+            vassal_of = EIC
+            vassal_of = ENG
+        }
+        ai = yes
+        NOT = {
+            tag = PAK
+            tag = MUG
+            tag = RAJ
+            tag = HYD
+            tag = KAS
+            tag = GWA
+            tag = MYS
+            tag = AFG
+            tag = KAL
+            tag = MAK
+            tag = TRA
+            tag = CRL
+            tag = PNJ
+            tag = MNP
+            tag = BUN
+            tag = BLC
+            tag = HND
+        }
+        NOT = { has_country_flag = no_british_doctrine }
+        OR = {
+            EIC = { ideological_thought = 1 exists = yes }
+            ENG = { ideological_thought = 1 exists = yes }
+        }
+        OR = {
+            primary_culture = assamese
+            primary_culture = baluchi
+            primary_culture = bengali
+            primary_culture = bihari
+            primary_culture = manipuri
+            primary_culture = nepali
+            primary_culture = oriya
+            primary_culture = sinhala
+            primary_culture = avadhi
+            primary_culture = kanauji
+            primary_culture = kashmiri
+            primary_culture = panjabi
+            primary_culture = gujarati
+            primary_culture = marathi
+            primary_culture = sindi
+            primary_culture = rajput
+            primary_culture = kannada
+            primary_culture = malayalam
+            primary_culture = tamil
+            primary_culture = telegu
+            tag = CRL
+        }
+        civilized = no
 	}
 	
 	mean_time_to_happen = {
@@ -3915,14 +4181,28 @@ country_event = {
 			factor = 0.5
 			num_of_revolts = 1
 		}
-		modifier = {
-			factor = 0.9
-			NOT = { prestige = 10 }
-		}
-		modifier = {
-			factor = 0.9
-			NOT = { prestige = 5 }
-		}
+        modifier = {
+            factor = 0.001
+            tag = NAG
+            year = 1853
+        }
+        modifier = {
+            factor = 0.001
+            tag = AWA
+            year = 1856
+        }
+        modifier = {
+            factor = 0.9
+            NOT = {
+                prestige = 10
+            }
+        }
+        modifier = {
+            factor = 0.9
+            NOT = {
+                prestige = 5
+            }
+        }
 		modifier = {
 			factor = 0.1
 			NOT = {
@@ -3942,20 +4222,30 @@ country_event = {
 	}
 	
 	option = {
-		name = "EVTOPTA13357"
-		set_country_flag = no_british_doctrine
-		any_pop = {
-			limit = {
-				OR = {
-					is_accepted_culture = yes
-					is_primary_culture = yes
-				}
-			}
-			militancy = 4
-			consciousness = 1
-		}
-		
-		ENG = { country_event = 13358 }
+        name = "EVTOPTA13357"
+        tech_school = unciv_tech_school
+        set_country_flag = no_british_doctrine
+        any_pop = {
+            limit = { is_primary_culture = yes }
+            militancy = 4
+            consciousness = 1
+        }
+        overlord = { country_event = 13358 }
+        political_reform = peonage
+        any_owned = {
+            limit = {
+                has_pop_type = labourers
+                has_pop_type = serfs
+            }
+            any_pop = { limit = { type = serfs } pop_type = labourers }
+        }
+        any_owned = {
+            limit = {
+                has_pop_type = farmers
+                has_pop_type = serfs
+            }
+            any_pop = { limit = { type = serfs } pop_type = farmers }
+        }
 	}
 }
 
@@ -3975,54 +4265,45 @@ country_event = {
 	
 	option = {
 		name = "EVTOPTA13358"
-		prestige = 5
-		FROM = {
-			tech_school = unciv_tech_school
-			political_reform = peonage
-			any_owned = {
-				limit = {
-					has_pop_type = labourers
-					has_pop_type = serfs
-				}
-				any_pop = { limit = { type = serfs } pop_type = labourers }
-			}
-			any_owned = {
-				limit = {
-					has_pop_type = farmers
-					has_pop_type = serfs
-				}
-				any_pop = { limit = { type = serfs } pop_type = farmers }
-			}
-		}
-		inherit = FROM
-		any_owned = {
-			limit = { is_core = HND }
-			random_list = {
-				34 = {
-					add_province_modifier = {
-						name = nationalist_agitation
-						duration = 730
-					}
-				}
-				33 = {
-					add_province_modifier = {
-						name = nationalist_agitation
-						duration = 365
-					}
-				}
-				33 = {
-				}
-			}
-		}
-		set_global_flag = doctrine_of_lapse_has_been_used
+        prestige = 5
+        inherit = FROM
+        any_owned = {
+            limit = { is_core = HND }
+            any_pop = {
+                limit = { is_culture_group = south_asian }
+                militancy = 4
+                consciousness = 1
+            }
+            random_list = {
+                50 = {
+                    add_province_modifier = {
+                        name = nationalist_agitation
+                        duration = 1825
+                    }
+                }
+                25 = {
+                    add_province_modifier = {
+                        name = nationalist_agitation
+                        duration = 365
+                    }
+                }
+                25 = {
+                }
+            }
+        }
+        set_global_flag = doctrine_of_lapse_has_been_used
+
 	}
 	
 	option = {
 		name = "EVTOPTB13358"
-		prestige = -2
-		FROM = {
-			any_pop = { militancy = -2 }
-		}
+        prestige = -2
+        FROM = {
+            set_country_flag = no_british_doctrine
+            any_pop = {
+                militancy = -2
+            }
+        }
 	}
 }
 
@@ -4206,14 +4487,9 @@ country_event = {
 	option = {				
 		name = "EVTOPTA90950"
 		add_country_modifier = { name = factories_nationalized duration = 365 }
-		random_country = {
-			limit = { tag = FROM }
-			add_casus_belli = {
-				target = THIS
-				type = war_reparations
-				months = 12
-			}
-		}
+        random_country = { limit = { tag = FROM is_greater_power = yes } add_casus_belli = { target = THIS type = humiliate months = 12 } }
+        random_country = { limit = { tag = FROM is_greater_power = no } add_casus_belli = { target = THIS type = make_puppet months = 12 } }
+		random_country = { limit = { tag = FROM } add_casus_belli = { target = THIS type = war_reparations months = 12 } }
 		relation = { who = FROM value = -100 }
 	}
 	
@@ -4353,39 +4629,33 @@ province_event = {
 	mean_time_to_happen = { months = 1 }
 	
 	immediate = {
-		random_list = {
-			40 = { 1497 = { artisans = { move_pop = 1496 } } }
-			10 = { random_neighbor_province = { limit = { owner = { civilized = no } } soldiers = { limit = { has_pop_culture = yue } move_pop = 1496 } } }
-			10 = { random_neighbor_province = { limit = { owner = { civilized = no } } bureaucrats = { limit = { has_pop_culture = yue } move_pop = 1496 } } }
-			40 = { 1493 = { serfs = { limit = { has_pop_culture = yue } move_pop = 1496 } } }
+        1493 = { any_pop = { limit = { type = serfs culture = yue } move_pop = 1496 } }
+        1493 = { any_pop = { limit = { type = bureaucrats culture = yue } move_pop = 1496 } }
+        random_list = {
+            40 = { 1497 = { any_pop = { limit = { type = artisans culture = yue } move_pop = 1496 } } }
+            20 = { 1497 = { any_pop = { limit = { type = soldiers culture = yue } move_pop = 1496 } } }
+            40 = { 1497 = { any_pop = { limit = { type = bureaucrats culture = yue } move_pop = 1496 } } }
 		}
 	}
 	
 	option = {
 		name = "EVTOPTA90956"
 		
-		any_pop = {
-			limit = {
-				is_primary_culture = no
-				is_accepted_culture = no 
-				is_culture_group = east_asian 
-				OR = {
-					type = artisans
-					type = soldiers
-					type = clergymen
-					type = serfs
-					type = labourers
-					}
-				}
-			reduce_pop = 0.9
-		}
-		
-		any_pop = {
-			limit = {
-				culture = hakka
-			}
-			reduce_pop = 2.5
-		}
+        any_pop = {
+            limit = {
+                culture = yue
+                type = serfs
+            }
+            pop_type = labourers
+            reduce_pop = 0.9
+        }
+
+        any_pop = {
+            limit = {
+                culture = hakka
+            }
+            reduce_pop = 2.5
+        }
 	}
 }
 
@@ -4613,8 +4883,13 @@ country_event = {
 			is_greater_power = yes
 			is_secondary_power = yes
 		}
-		ASH = { exists = yes ai = yes neighbour = THIS }
-		owns = 1910 #Kumasi
+		OR = {
+			ASH = { all_core = { owned_by = THIS } }
+			AND = {
+				ASH = { exists = yes ai = yes neighbour = THIS }
+				owns = 1910 #Kumasi
+			}
+		}
 	}
 		
 	fire_only_once = yes	

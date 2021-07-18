@@ -443,6 +443,7 @@ acquire_core_state = {
 		NOT = {
 			has_country_modifier = neutrality_modifier
 			has_country_flag = for_congress_paris
+			has_country_flag = attending_paris_congress
 			has_country_flag = for_congress_warsaw
 			has_country_flag = YUC_ceasefire
 		}
@@ -450,6 +451,7 @@ acquire_core_state = {
 			NOT = {
 				has_country_modifier = neutrality_modifier
 				has_country_flag = for_congress_paris
+				has_country_flag = attending_paris_congress
 				has_country_flag = for_congress_warsaw
 				has_country_flag = YUC_ceasefire
 			}
@@ -532,6 +534,7 @@ acquire_all_cores = {
 		NOT = {
 			has_country_modifier = neutrality_modifier
 			has_country_flag = for_congress_paris
+			has_country_flag = attending_paris_congress
 			has_country_flag = for_congress_warsaw
 			has_country_flag = YUC_ceasefire
 		}
@@ -543,6 +546,7 @@ acquire_all_cores = {
 					war = no
 				}
 				has_country_flag = for_congress_paris
+				has_country_flag = attending_paris_congress
 				has_country_flag = for_congress_warsaw
 				has_country_flag = YUC_ceasefire
 			}
@@ -629,6 +633,7 @@ restore_austrian_empire = {
 			}
 		}
 		is_vassal = no
+		is_substate = no
 		neighbour = THIS
 		any_owned_province = {
 			OR = {
@@ -659,17 +664,18 @@ restore_austrian_empire = {
 			NOT = { tag = ITA }
 			THIS = { NOT = { has_country_flag = accepts_italy } }
 		}
-		NOT = { has_country_modifier = neutrality_modifier }
 		NOT = { in_sphere = THIS }
 		#ANON
 		NOT = {
 			has_country_modifier = neutrality_modifier
 			has_country_flag = for_congress_paris
+			has_country_flag = attending_paris_congress
 			has_country_flag = for_congress_warsaw
 		}
 		THIS = {
 			NOT = {
 				has_country_flag = for_congress_paris
+				has_country_flag = attending_paris_congress
 				has_country_flag = for_congress_warsaw
 				has_country_modifier = neutrality_modifier
 			}
@@ -713,13 +719,15 @@ restore_austrian_empire = {
 	allowed_countries = {
 		FROM = {
 			NOT = {
-				OR = {
-					tag = PNC
-					tag = HPL
-					tag = PRC
-				}
+				tag = PNC
+				tag = HPL
+				tag = PRC
 				has_country_flag = a_habsburg_on_the_throne_POL
 			}
+			# NOT = {
+				# tag = ITF
+				# has_global_flag = austrian_outside_italy
+			# }
 		}
 	}
 	#
@@ -1320,23 +1328,21 @@ annex_core_country = {
 				THIS = {
 					tag = AUS
 					NOT = {
-						OR = {
-							has_country_modifier = great_war
-							has_country_modifier = great_war2
-							has_country_modifier = great_war3
-							has_country_flag = in_great_war
-							has_country_flag = ultimatum_accepted
-							has_country_flag = dismantling_treaty
-						}
-						OR = {
-							has_country_flag = ultimatum_accepted
-							has_country_flag = dismantling_treaty
-						}
-						OR = {
-							has_country_modifier = punitive_effects
-							has_country_modifier = no_more_war
-							has_country_modifier = neutrality_modifier
-						}
+						has_country_modifier = great_war
+						has_country_modifier = great_war2
+						has_country_modifier = great_war3
+						has_country_flag = in_great_war
+						has_country_flag = ultimatum_accepted
+						has_country_flag = dismantling_treaty
+					}
+					NOT = {
+						has_country_flag = ultimatum_accepted
+						has_country_flag = dismantling_treaty
+					}
+					NOT = {
+						has_country_modifier = punitive_effects
+						has_country_modifier = no_more_war
+						has_country_modifier = neutrality_modifier
 					}
 				}
 				NOT = {
@@ -1384,6 +1390,14 @@ annex_core_country = {
 						tag = BOS
 						THIS = { has_country_flag = annexed_bosnia }
 					}
+					AND = {
+						tag = ITF
+						OR = {
+							is_vassal = no
+							is_substate = no
+						}
+						has_global_flag = austrian_outside_italy
+					}
 				}
 			}
 			AND = {
@@ -1396,8 +1410,9 @@ annex_core_country = {
 					}
 				}
 				NOT = { has_country_modifier = neutrality_modifier }
-				THIS = {
-					NOT = { has_country_modifier = neutrality_modifier }
+				OR = {
+					war_with = THIS
+					THIS = { NOT = { has_country_modifier = neutrality_modifier } }
 				}
 				OR = {
 					war_with = THIS
@@ -9856,7 +9871,7 @@ take_puppet = {
         NOT = { is_our_vassal = THIS }
         civilized = yes
         num_of_vassals_no_substates = 1
-        THIS = { NOT = { has_country_modifier = neutrality } }
+        THIS = { NOT = { has_country_modifier = neutrality_modifier } }
         OR = {
             war_with = THIS
             THIS = { NOT = { has_country_modifier = no_more_war } }

@@ -270,7 +270,7 @@ political_decisions = {
 	}
 
 	begin_hungarian_revolution = {
-		#picture = gtfo
+		picture = gtfo
 		potential = {
 			tag = HUN
 			has_global_flag = hungarian_revolution_occurred
@@ -281,6 +281,7 @@ political_decisions = {
 			NOT = {
 				war_with = AUS
 				has_country_modifier = no_more_war
+				has_country_modifier = neutrality_modifier
 			}
 		}
 
@@ -313,17 +314,17 @@ political_decisions = {
 					duration = 1095
 				}
 			}
-			any_owned = {
-				limit = { is_core = VOJ }
-				any_pop = {
-					limit = { has_pop_culture = serb }
-					militancy = 6
-				}
-				add_province_modifier = {
-					name = nationalist_agitation
-					duration = 1095
-				}
-			}
+			# any_owned = {
+				# limit = { is_core = VOJ }
+				# any_pop = {
+					# limit = { has_pop_culture = serb }
+					# militancy = 6
+				# }
+				# add_province_modifier = {
+					# name = nationalist_agitation
+					# duration = 1095
+				# }
+			# }
 			random_owned = {
 				limit = {
 					owner = {
@@ -371,9 +372,8 @@ political_decisions = {
 						}
 					}
 				}
-				country_event = { id = 100041 days = 1 }
 			}
-			country_event = { id = 100041 days = 1 }
+			VOJ = { country_event = 100041 }
 			SER = { country_event = { id = 100044 days = 2 } }
 		}
 
@@ -390,7 +390,7 @@ political_decisions = {
 				NOT = { has_country_flag = austria_let_hungary_go }
 			}
 			NOT = { year = 1860 }
-			ai = yes
+			ai = no #I think ai = yes is what was fucking it up.
 		}
 
 		allow = {
@@ -410,7 +410,7 @@ political_decisions = {
 		effect = {
 			clr_global_flag = hungarian_revolution_occurred
 			end_war = AUS
-			set_country_flag = annex_to_master
+			# set_country_flag = annex_to_master #no longer in use
 			# ANON
 			set_global_flag = end_of_hungarian_revolution_I
 			#
@@ -1232,10 +1232,10 @@ political_decisions = {
 		ai_will_do = {
 			factor = 1
 			#"Benefactor AI will take this decision"
-			modifier = {
-				factor = 0
-				NOT = { has_country_modifier = benefactor_ai }
-			}
+			#modifier = {
+				#factor = 0
+				#NOT = { has_country_modifier = benefactor_ai }
+			#}
 		}
 	}
 

@@ -461,41 +461,51 @@ political_decisions = {
 	#Polish Uprising - Foreign Intervention
 	polish_foreign_intervention = {
 		potential = {
-			OR = {
-				AND = {
-					OR = {
-						tag = KRA
-						tag = PZN
-						tag = CPL
-					}
-					CPL = { ai = yes }
-					KRA = { ai = yes }
-					PZN = { ai = yes }
-				}
+			# OR = {
+				# AND = {
+					# OR = {
+						# tag = KRA
+						# tag = PZN
+						# tag = CPL
+					# }
+					# CPL = { ai = yes }
+					# KRA = { ai = yes }
+					# PZN = { ai = yes }
+				# }
+				# AND = {
+					# tag = KRA
+					# ai = yes
+				# }
+				# AND = {
+					# tag = CPL
+					# ai = yes
+				# }
+				# AND = {
+					# tag = PZN
+					# ai = yes
+				# }
 				tag = PNC
-			}
-			OR = {
-				AND = {
-					exists = CPL
-					exists = KRA
-					exists = PZN
-					NOT = { exists = PNC }
-				}
-				AND = {
-					exists = PNC
-					NOT = {
-						exists = CPL
-						exists = KRA
-						exists = PZN
-					}
-				}
-			}
+			# }
+			# OR = {
+				# AND = {
+					# CPL = { exists = yes }
+					# KRA = { exists = yes }
+					# PZN = { exists = yes }
+					# PNC = { exists = no }
+				# }
+				# AND = {
+					CPL = { exists = no }
+					KRA = { exists = no }
+					PZN = { exists = no }
+					PNC = { exists = yes }
+				# }
+			# }
 			OR = {
 				has_global_flag = january_uprising_happened
 				has_global_flag = krakow_uprising
 				has_global_flag = greater_poland_uprising
-				has_global_flag = form_PNC
 			}
+			has_global_flag = form_PNC
 			NOT = {
 				has_country_flag = polish_foreign_intervention
 				year = 1860
@@ -519,22 +529,104 @@ political_decisions = {
 			set_country_flag = polish_foreign_intervention
 			any_country = {
 				limit = {
+					exists = yes
 					is_greater_power = yes
 					capital_scope = { continent = europe }
 					NOT = {
+						tag = PRU
+						tag = NGF
+						tag = GER
+						tag = GCF
+						tag = AUS
+						tag = KUK
+						tag = SGF
+						tag = RUS
+						tag = SIC
+						tag = SAR
+						tag = PAP
 						tag = TUR
-						OR = {
-							war_with = THIS
-							war_with = KRA
-							war_with = PZN
-							war_with = CPL
-							war_with = PNC
-						}
+						#
+						war_with = THIS
+						war_with = KRA
+						war_with = PZN
+						war_with = CPL
+						war_with = PNC
+						#
+						tag = BEL
+						tag = NET
+						tag = SPA
+						tag = SPC
+						tag = POR
+						tag = DEN
+						tag = SWE
+						tag = BAV
+						primary_culture = polish
 					}
 				}
-				country_event = { id = 666666008 days = 5 }
+				random_list = {
+					25 = { country_event = { id = 666666008 days = 2 } }
+					25 = { country_event = { id = 666666008 days = 4 } }
+					25 = { country_event = { id = 666666008 days = 6 } }
+					25 = { country_event = { id = 666666008 days = 8 } }
+				}
+			}
+			any_country = {
+				limit = {
+					exists = yes
+					OR = {
+						is_secondary_power = yes
+						tag = BEL
+						tag = NET
+						tag = SPA
+						tag = SPC
+						tag = POR
+						tag = DEN
+						tag = SWE
+						tag = BAV
+					}
+					OR = {
+						is_vassal = no
+						is_substate = no
+					}
+					capital_scope = { continent = europe }
+					NOT = {
+						tag = PRU
+						in_sphere = PRU
+						tag = NGF
+						in_sphere = NGF
+						tag = GER
+						in_sphere = GER
+						tag = GCF
+						in_sphere = GCF
+						tag = AUS
+						in_sphere = AUS
+						tag = KUK
+						in_sphere = KUK
+						tag = SGF
+						in_sphere = SGF
+						tag = RUS
+						in_sphere = RUS
+						tag = SIC
+						tag = SAR
+						tag = PAP
+						tag = TUR
+						war_with = THIS
+						war_with = KRA
+						war_with = PZN
+						war_with = CPL
+						war_with = PNC
+						primary_culture = polish
+					}
+				}
+				random_list = {
+					25 = { country_event = { id = 666666008 days = 10 } }
+					25 = { country_event = { id = 666666008 days = 12 } }
+					25 = { country_event = { id = 666666008 days = 14 } }
+					25 = { country_event = { id = 666666008 days = 16 } }
+				}
 			}
 		}
+		ai_will_do = { factor = 0 }
 	}
 	
 	#January Uprising - Foreign Intervention
@@ -553,22 +645,96 @@ political_decisions = {
 			set_country_flag = polish_foreign_intervention2
 			any_country = {
 				limit = {
+					exists = yes
 					is_greater_power = yes
 					capital_scope = { continent = europe }
 					NOT = {
+						tag = PRU
+						tag = NGF
+						tag = GER
+						tag = GCF
+						tag = AUS
+						tag = KUK
+						tag = SGF
+						tag = RUS
+						tag = SIC
+						tag = SAR
+						tag = PAP
 						tag = TUR
-						OR = {
-							war_with = THIS
-							war_with = KRA
-							war_with = PZN
-							war_with = CPL
-							war_with = PNC
-						}
+						#
+						war_with = THIS
+						war_with = KRA
+						war_with = PZN
+						war_with = CPL
+						war_with = PNC
+						#
+						tag = BEL
+						tag = NET
+						tag = SPA
+						tag = SPC
+						tag = POR
+						tag = DEN
+						tag = SWE
+						tag = BAV
+						primary_culture = polish
 					}
 				}
-				country_event = { id = 500002 days = 5 }
+				random_list = {
+					25 = { country_event = { id = 500002 days = 2 } }
+					25 = { country_event = { id = 500002 days = 4 } }
+					25 = { country_event = { id = 500002 days = 6 } }
+					25 = { country_event = { id = 500002 days = 8 } }
+				}
+			}
+			any_country = {
+				limit = {
+					exists = yes
+					OR = {
+						is_secondary_power = yes
+						tag = BEL
+						tag = NET
+						tag = SPA
+						tag = SPC
+						tag = POR
+						tag = DEN
+						tag = SWE
+						tag = BAV
+					}
+					OR = {
+						is_vassal = no
+						is_substate = no
+					}
+					capital_scope = { continent = europe }
+					NOT = {
+						tag = PRU
+						tag = NGF
+						tag = GER
+						tag = GCF
+						tag = AUS
+						tag = KUK
+						tag = SGF
+						tag = RUS
+						tag = SIC
+						tag = SAR
+						tag = PAP
+						tag = TUR
+						war_with = THIS
+						war_with = KRA
+						war_with = PZN
+						war_with = CPL
+						war_with = PNC
+						primary_culture = polish
+					}
+				}
+				random_list = {
+					25 = { country_event = { id = 500002 days = 10 } }
+					25 = { country_event = { id = 500002 days = 12 } }
+					25 = { country_event = { id = 500002 days = 14 } }
+					25 = { country_event = { id = 500002 days = 16 } }
+				}
 			}
 		}
+		ai_will_do = { factor = 1 }
 	}
 	
 	become_HABSBURG_poland = {
@@ -1352,6 +1518,7 @@ political_decisions = {
 				accepted_culture = polish
 			}
 			is_vassal = no
+			NOT = { tag = PNC tag = PZN tag = KRA tag = CPL }			
 			NOT = { has_country_flag = masurian_plan }			
 		}
 				
@@ -1630,7 +1797,18 @@ political_decisions = {
 		potential = {
 			has_country_modifier = neutrality_modifier
 			NOT = {
+				tag = HUN
+				primary_culture = polish
 				tag = SWI
+				tag = PNC 
+				tag = PRU
+				tag = NGF
+				tag = GER
+				tag = GCF
+				tag = AUS
+				tag = KUK
+				tag = SGF
+				tag = RUS
 				has_country_flag = embraced_BOH_neutrality
 				has_country_flag = abandoned_BOH_neutrality
 			}

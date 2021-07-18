@@ -4,6 +4,7 @@ political_decisions = {
 		picture = native_integration_status
 		alert = no
 		potential = {
+			ai = no
 			OR = {
 				NOT = {
 					has_country_flag = native_integration_status_on

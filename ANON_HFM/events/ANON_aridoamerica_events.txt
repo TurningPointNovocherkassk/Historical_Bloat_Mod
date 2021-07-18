@@ -1488,10 +1488,8 @@
 			tag = TEX
 			war = no
 			NOT = {
-				OR = {
-					has_global_flag = houston_capital
-					has_global_flag = not_houston_capital
-				}
+				has_global_flag = houston_capital
+				has_global_flag = not_houston_capital
 			}
 			year = 1837
 		}

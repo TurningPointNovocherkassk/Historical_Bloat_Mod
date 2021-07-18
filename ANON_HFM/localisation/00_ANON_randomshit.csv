@@ -455,7 +455,6 @@ VNZ_2274;Apure;;;;;;;;;x
 VNZ_3605;Perijá;;;;;;;;;x
 CLM_3297;Guajira;;;;;;;;;x
 CLM_2260;Caquetá;;;;;;;;;x
-BRZ_2401;Amazonia;;;;;;;;;x
 DEN_252;Iceland;;;;;;;;;x
 DEN_251;Greenland;;;;;;;;;x
 AUS_663;Bukovina;;;;;;;;;x
@@ -755,6 +754,9 @@ ENG_2219;The Bahamas;The Bahamas;The Bahamas;;The Bahamas;;;;;;;x;;x;;;;;;;;;;;;
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 SPA_2209;Western Cuba;Western Cuba;Western Cuba;;Western Cuba;;;;;;;x;;x;;;;;;;;;;;;;;
 SPA_2211;Eastern Cuba;Eastern Cuba;Eastern Cuba;;Eastern Cuba;;;;;;;x;;x;;;;;;;;;;;;;;
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+PEU_2289;Amazonía Sur;;;;;;;;;;;x;;x;;;;;;;;;;;;;;
+BRZ_2401;Amazonía Norte;;;;;;;;;;;x;;x;;;;;;;;;;;;;;
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 PROV3367;Apolobamba;Apolobamba;Apolobamba;;Apolobamba;;;;;;;x;;x;;;;;;;;;;;;;;
 PROV3368;Magdalena;Magdalena;Magdalena;;Magdalena;;;;;;;x;;x;;;;;;;;;;;;;;
@@ -1231,7 +1233,7 @@ EVTNAME666666037;An End to the Interim Government;;;;;;;;;x
 EVTDESC666666037;The Interim Government of Poland was not build to last, in fact, we must now decide upon a governmental model for the future of our people. It should be noted that not all sectors of the population will be satisfied with the outcome of this decision, whatever it may be.;;;;;;;;;x
 EVTOPT666666037A;A Republican Government as we Promised.;;;;;;;;;x
 EVTOPT666666037B;A Noble Republic like the Commonwealth of old!;;;;;;;;;x
-EVTOPT666666037C;We must make everyone Equal!;;;;;;;;;x
+EVTOPT666666037C;Equality under Socialism!;;;;;;;;;x
 EVTOPT666666037D;Property and Liberty are paramount.;;;;;;;;;x
 EVTOPT666666037E;Old-style absolutism, of course.;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
@@ -1425,6 +1427,7 @@ EVTDESC666666056;We have received word from the $FROMCOUNTRY_ADJ$ that they inte
 EVTNAME666666057;$FROMCOUNTRY$ Calls for Congress;;;;;;;;;x
 EVTDESC666666057;We have received word from the $FROMCOUNTRY_ADJ$ that they intend to hold a congress of European powers in their capital to discuss the ability of discuss the ability of Austria to maintain stability in the Bohemian lands. Some feel we should favor relinquishing all territories of Bohemia-Moravia to the Austrians, as not to upset the balance as much as releasing an independent Bohemia-Moravia. This can and will anger the Czech nonetheless. Others believe releasing the Bohemian Crownlands-Moravia should be the priority, even though this might come at the expense of Austria who will surely not be pleased. Still, others feel we should not take part in this veiled attempt at dismembering sovereign nations.;;;;;;;;;x
 EVT666666057OPTA;We will not risk our relationship with Austria for this.;;;;;;;;;x
+EVT666666057OPTB;Unacceptable! Veto the proposition!;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 EVTNAME666666058;The Congress of $CAPITAL$: Deny Czech Freedom.;;;;;;;;;x
 EVTDESC666666058;The great powers of Europe joined together in $CAPITAL$ to negotiate the future of Bohemia-Moravia. While there was much contention, ultimately it was decided that Bohemia-Moravia were to be fully relinquished back to the Austrians, with the Czech language and customs obtaining a recognized status within the Empire. Some of the attendees were pleased and even though the Congress favored Austria, it remains to be seen whether they will bow to pressure and uphold the Congress's edict.;;;;;;;;;x
@@ -1871,6 +1874,14 @@ native_protection_act_enacted;Native Protection Act;;;;;;;;;x
 EVTNAME666666121;Polish Union;;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
 EVTDESC666666121;Now that a Polish nation has been reborn, $FROMCOUNTRY$ has decided to join them!.;;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,
 EVT666666121OPTA;…;;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+EVTNAME666666122;Union with the $FROMCOUNTRY$;;;;;;;;;x
+EVTDESC666666122;We shall now unite with the other rebels!;;;;;;;;;x
+EVT666666122OPTA;Hurray!;;;;;;;;;x
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
+EVTNAME666666123;Uprising in $FROMCOUNTRY$;;;;;;;;;x
+EVTDESC666666123;Our fellow Poles in $FROMCOUNTRY$ have risen up in arms against their oppressors!;;;;;;;;;x
+EVT666666123OPTA;Interesting…;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 integrate_substates_madagascar_title;Consolidate Imerina rule throughout Madagascar;;;;;;;;;x
 integrate_substates_madagascar_desc;The time has come for the proper integration of all our conquered territories, consolidating our rule throughout the Island of Madagascar and better positioning ourselves for a final campaign against Antankarana to the north. It shall be done.;;;;;;;;;x
@@ -2833,7 +2844,7 @@ EVTNAME666666004_NEWS_TITLE;The Greater Poland uprising of $YEAR$;;;;;;;;;x
 EVTNAME666666006;The Greater Poland uprising of $YEAR$;;;;;;;;;x
 EVTDESC666666006;$FROMCOUNTRY$ attacks the $COUNTRY_ADJ$ rebels!;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
-EVTDESC666666007;$FROMCOUNTRY$ decided to ignore the $COUNTRY_ADJ$ rebels!;;;;;;;;;x
+EVTDESC666666REBEL;$FROMCOUNTRY$ decided to ignore the $COUNTRY_ADJ$ rebels!;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 EVTDESC666666008;Poles in Greater and Lesser Poland and Galicia, together with some other nationalities in the territory of the former Polish-Lithuanian Commonwealth, started a general uprising against the governments ruling their partitions. There is an outcry from some sectors of our population to support Polish freedom, but there wouldn't be any problems if we stayed neutral on this matter either.;;;;;;;;;;;;;;;;;;;;x
 EVTOPT666666008B;Condemn the actions of the Great Powers holding the Polish Partitions.;;;;;;;;;x
@@ -2884,11 +2895,12 @@ EVTDESC666666016;We have received word from the $FROMCOUNTRY_ADJ$ that they inte
 EVTNAME666666017;$FROMCOUNTRY$ Calls for Congress;;;;;;;;;x
 EVTDESC666666017;We have received word from the $FROMCOUNTRY_ADJ$ that they intend to hold a congress of European powers in their capital to discuss the ability of discuss the ability of Russia, Prussia and Austria to maintain stability in their partitions of Poland. Some feel we should favor relinquishing some territories to the Polish National Committee, as not to upset the balance between the great powers as much as undoing the partitions on the Kingdom of Poland. This could potentially lower our relations with the Great Powers nonetheless. Others believe undoing the Partitions on the Kingdom of Poland should be the priority, even though this might come at the expense of the Great Powers involved who will surely not be pleased. Still, others feel we should not take part in this veiled attempt at dismembering sovereign nations.;;;;;;;;;x
 EVT666666017OPTA;We will not risk our relationship with Russia, Prussia and Austria for this.;;;;;;;;;x
+EVT666666017OPTB;Unacceptable! Veto the proposition!;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 EVTNAME666666018;The Congress of $CAPITAL$: Liberate some parts of Poland.;;;;;;;;;x
 EVTDESC666666018;The great powers of Europe joined together in $CAPITAL$ to negotiate the future of Poland. While there was much contention, ultimately it was decided that some parts of Poland were to be liberated, and any demands placed on Russia, Prussia and Austria should not weaken their interests unduly. Few of the attendees were pleased and even though the Congress favored Russia, Prussia and Austria it remains to be seen whether they will bow to pressure and uphold the Congress's edict.;;;;;;;;;x
 EVT666666018OPTA;This is how it must be.;;;;;;;;;x
-EVTNAME666666019;The Congress of $CAPITAL$: Liberate most of the Historical Kingdom of  Poland.;;;;;;;;;x
+EVTNAME666666019;The Congress of $CAPITAL$: Liberate most of the Historical Kingdom of Poland.;;;;;;;;;x
 EVTDESC666666019;The great powers of Europe joined together in $CAPITAL$ to negotiate the future of Poland, with delegates from Russia, Prussia and Austria also in attendance. While there was much contention, ultimately it was decided that creating stability in the region was best even if it came at the expense of the Empire's power. The Polish delegates were pleased, but Russian, Prussian and Austrian delegates left in a rage. It remains to be seen whether they will bow before the Congress's demands.;;;;;;;;;x
 EVTNAME666666018_NEWS_TITLE;The Congress of $CAPITAL$;;;;;;;;;;;;;;x,,
 EVTDESC666666018_NEWS_LONG;The great powers of Europe joined together in $CAPITAL$ to negotiate the future of Poland. While there was much contention, ultimately it was decided that some parts of Poland were to be liberated, and any demands placed on Russia, Prussia and Austria should not weaken their interests unduly. Few of the attendees were pleased and even though the Congress favored Russia, Prussia and Austria it remains to be seen whether they will bow to pressure and uphold the Congress's edict.;;;;;;;;;;;;;;x,,
@@ -2950,9 +2962,9 @@ EVT666666031OPTA;To Arms!;;;;;;;;;x
 EVT666666031OPTB;We shall get to them in due time…;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 EVTNAME666666032;The Congress of $CAPITAL$: Proposition Rejected.;;;;;;;;;x
-EVTDESC666666032;The great powers of Europe joined together in $CAPITAL$ to negotiate the future of Poland. While there was much contention, ultimately it was decided that the proposition had to be completely rejected and the topic forbidden to be mentioned in future congresses. Few of the attendees were pleased and even though the Congress favored the Russia, Prussia and Austria, it could not escape the influence of said Great Powers.;;;;;;;;;x
+EVTDESC666666032;The great powers of Europe joined together in $CAPITAL$ to negotiate the future of Poland. While there was much contention, ultimately it was decided that the proposition had to be completely rejected and the topic forbidden to be mentioned in future congresses. Few of the attendees were pleased and even though the Congress favored Russia, Prussia and Austria, it could not escape the influence of said Great Powers.;;;;;;;;;x
 EVTNAME666666032_NEWS_TITLE;The Congress of $CAPITAL$: Proposition Rejected.;;;;;;;;;x
-EVTDESC666666032_NEWS_LONG;The great powers of Europe joined together in $CAPITAL$ to negotiate the future of Poland. While there was much contention, ultimately it was decided that the proposition had to be completely rejected and the topic forbidden to be mentioned in future congresses. Few of the attendees were pleased and even though the Congress favored the Russia, Prussia and Austria, it could not escape the influence of said Great Powers.;;;;;;;;;x
+EVTDESC666666032_NEWS_LONG;The great powers of Europe joined together in $CAPITAL$ to negotiate the future of Poland. While there was much contention, ultimately it was decided that the proposition had to be completely rejected and the topic forbidden to be mentioned in future congresses. Few of the attendees were pleased and even though the Congress favored Russia, Prussia and Austria, it could not escape the influence of said Great Powers.;;;;;;;;;x
 EVTDESC666666032_NEWS_MEDIUM;The great powers of Europe joined together in $CAPITAL$ to negotiate the future of Poland. While there was much contention, ultimately it was decided that the proposition had to be completely rejected and the topic forbidden to be mentioned in future congresses.;;;;;;;;;x
 EVTDESC666666032_NEWS_SHORT;The great powers of Europe joined together in $CAPITAL$ to negotiate the future of Poland. While there was much contention, ultimately it was decided that the proposition had to be completely rejected.;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
@@ -7627,8 +7639,8 @@ rename_palanga_desc;Palanga is rightfully $COUNTRY_ADJ$, and should use $COUNTRY
 rename_budjak_title;Rename Budjak ;;;;;;;;;;;;;x
 rename_budjak_desc;Budjak is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
-rename_pannonia_title;Rename the Territories Located in Pannonia ;;;;;;;;;;;;;x
-rename_pannonia_desc;The Territories Located in Pannonia are rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;x
+rename_pannonia_title;Rename the Pannonian Territories;;;;;;;;;;;;;x
+rename_pannonia_desc;The Pannonian Territories are rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 rename_moravia_title;Rename Moravia ;;;;;;;;;;;;;x
 rename_moravia_desc;Moravia is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;x
@@ -7675,11 +7687,8 @@ rename_tolmezzo_desc;Tolmezzo is rightfully $COUNTRY_ADJ$, and should use $COUNT
 rename_villach_title;Rename Villach ;;;;;;;;;;;;;x
 rename_villach_desc;Villach is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
-rename_suceava_title;Rename Bukovina ;;;;;;;;;;;;;x
-rename_suceava_desc;Bukovina is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;x
-#;;;;;;;;;;;;;;;;;;;;;;;;;x
-rename_cernauti_title;Rename Bukovina ;;;;;;;;;;;;;x
-rename_cernauti_desc;Bukovina is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;x
+rename_bukovina_title;Rename Bukovina ;;;;;;;;;;;;;x
+rename_bukovina_desc;Bukovina is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 rename_vilnius_title;Rename Vilnius ;;;;;;;;;;;;;x
 rename_vilnius_desc;Vilnius is rightfully $COUNTRY_ADJ$, and should use $COUNTRY_ADJ$ names.;;;;;;;;;;;;;x
@@ -9099,6 +9108,9 @@ intern_atheist_title;Article 3: Atheist Internment Camps;;;;;;;;;;;;;;;x
 intern_atheist_desc;"The first main goal of the $COUNTRY_ADJ$ measures must be strict segregation of the Atheists from the rest of the population. In the execution of this, first of all, is the seizing of the Atheist population by the introduction of a registration order and similar appropriate measures. All rights of freedom for Atheists are to be withdrawn. They are to be placed in internment camps and at the same time are to be separated according to sexes. These internment camps can be placed under the supervision of their own Atheist self-government with Atheist officials. The guarding of the boundaries between the internment camps and the outer world, is, however, the duty of the Police."\n\n§YAdds 6 points to the "slowdown" scale. Starting at 4 points, every 2 points will decrease speed by 20%.;;;;;;;;;;;;;;;;;;x;;;;;;;;;;;;;;x;;;;;;;;;;;;;;x;;;;;;;;;;;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
+TMT;Tuamotu;;;;;;;;;;;;;
+TMT_ADJ;Tuamotu;;;;;;;;;;;;;
+#;;;;;;;;;;;;;;;;;;;;;;;;;x
 U01;Utility - Goods;;;;;;;;;;;;;x
 U01_ADJ;Utility - Goods;;;;;;;;;;;;;x
 U02;Utility - Canals;;;;;;;;;;;;;x
@@ -9123,20 +9135,20 @@ destroy_statue_of_liberty_title;Destroy the Statue of Liberty;;;;;;;;;;;;;;;x
 destroy_statue_of_liberty_desc;By giving the order for our troops occupying New York to destroy the Statue of Liberty we can deal a huge blow to our enemy's prestige and make it so it's more likely for the war to end sooner. This will be seen as an incredible act of aggression, however, and will forever damage our relations with them and some of our citizens, as well as their citizens, will be extremely angry by such heinous act against one of their national monuments.;;;;;;;;;;;;;X,,,,,,,,,,,,,,
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 EVTNAME152009876;The Destruction of the Statue of Liberty;;;;;;;;;;;;;;;x
-EVTDESC152009876;Heavy street fighting erupts in the cramped streets of Manhattan as $FROMCOUNTRY_ADJ$ gunboats blockade the Upper Bay. Artillery is moved to the Port of New York, past improvised barriers while infantry runs away from the harbor and move systematically from building to building, block by block, fighting a running battle against armed irregulars. The Brooklyn Bridge is demolished by $FROMCOUNTRY_ADJ$ engineers while the batteries in the Port of New York set their sights on the Statue of Liberty. For several minutes the city is taken by the fog of war after which a deafening silence befalls... Then, suddenly, a single detonation breaks the stillness, followed by $FROMCOUNTRY_ADJ$ soldiers who shout excitedly as they watch the head of Lady Liberty blow up while several other batteries purposely miss their marks, hitting the city's skyline on the other side of the bay. \n \n Fires rage out of control in the city, lighting up the sky as fighting in the inner city continues well into the early hours of the morning. At Ellis Island, once the fires have subsided, soldiers hoist the $FROMCOUNTRY_ADJ$ flag in what is left of the statue's podium, and turn to see the sun rising behind the smoldering ruins in the horizon. New York is lost.;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,
+EVTDESC152009876;Heavy street fighting erupts in the cramped streets of Manhattan as $FROMCOUNTRY_ADJ$ gunboats blockade the Upper Bay. Artillery is moved to the Port of New York, past improvised barriers while infantry runs away from the harbor and move systematically from building to building, block by block, fighting a running battle against armed irregulars. The Brooklyn Bridge is demolished by $FROMCOUNTRY_ADJ$ engineers while the batteries in the Port of New York set their sights on the Statue of Liberty. For several minutes the city is taken by the fog of war after which a deafening silence befalls… Then, suddenly, a single detonation breaks the stillness, followed by $FROMCOUNTRY_ADJ$ soldiers who shout excitedly as they watch the head of Lady Liberty blow up while several other batteries purposely miss their marks, hitting the city's skyline on the other side of the bay. \n \n Fires rage out of control in the city, lighting up the sky as fighting in the inner city continues well into the early hours of the morning. At Ellis Island, once the fires have subsided, soldiers hoist the $FROMCOUNTRY_ADJ$ flag in what is left of the statue's podium, and turn to see the sun rising behind the smoldering ruins in the horizon. New York is lost.;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,
 EVT152009876OPTA;A dark day for $COUNTRY$.;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 EVTNAME79796000;Atheism in $COUNTRY$;;;;;;;;;;;;;x
 EVTDESC79796000;True to our party's religious policy, the government of $COUNTRY$ shall embrace Atheism.;;;;;;;;;;;;;x
-EVT79796000OPTA;...;;;;;;;;;;;;;x
+EVT79796000OPTA;…;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 EVTNAME79796001;Secularism in $COUNTRY$;;;;;;;;;;;;;x
 EVTDESC79796001;True to our party's religious policy, the government of $COUNTRY$ shall make no distinction between all the faiths of its inhabitants.;;;;;;;;;;;;;x
-EVT79796001OPTA;...;;;;;;;;;;;;;x
+EVT79796001OPTA;…;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 EVTNAME79796002;Religious Policy in $COUNTRY$;;;;;;;;;;;;;x
 EVTDESC79796002;The nation of $COUNTRY$ shall now ensure the adoption of its ruling party's religious policy.;;;;;;;;;;;;;x
-EVT79796002OPTA;...;;;;;;;;;;;;;x
+EVT79796002OPTA;…;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 EVTNAME79796003;Religious Freedom in $COUNTRY$;;;;;;;;;;;;;x
 EVTDESC79796003;Our nation is known as a bastion of Secularism and Religious Freedom.;;;;;;;;;;;;;x
@@ -9150,7 +9162,7 @@ suspend_political_powers_title;Suspend Political Rights;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 EVTNAME100071;Political Rights Restored in $COUNTRY$;;;;;;;;;;;;;x
 EVTDESC100071;Political rights have been restored, but the effects of our decisions shall forever shape the future of $COUNTRY$.;;;;;;;;;;;;;;;;;;;;;;;;;;x
-EVT100071OPTA;...;;;;;;;;;;;;;x
+EVT100071OPTA;…;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 EVTNAME100072;Dismantling the $FROMCOUNTRY_ADJ$ Menace.;;;;;;;;;;;;;x
 EVTDESC100072;$FROMCOUNTRY$ has finally agreed to our terms for peace, in which we have been granted some of their territories.;;;;;;;;;;;;;x

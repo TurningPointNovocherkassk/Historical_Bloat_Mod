@@ -221,6 +221,13 @@ political_decisions = {
 
 		allow = {
 			war = yes
+			YUC = {
+				any_core = {
+					controlled_by = THIS
+					NOT = { is_core = U04 }
+					NOT = { province_id = 2185 province_id = 3360 province_id = 3635 }
+				}
+			}
 		}
 
 		effect = {

@@ -660,7 +660,7 @@ country_event = {
 
 country_event = {
 	id = 9999978
-	title = "sdsdds"
+	title = "instant texas"
 	desc = "sdsdsd"
 	picture = "treaty"
 	
@@ -668,82 +668,18 @@ country_event = {
 	
 	option = {
 		name = "retard"
-			any_pop = {
-				limit = {
-					has_pop_religion = mormon
-					NOT = {
-						location = {
-							OR = {
-								province_id = 166
-								province_id = 150
-								province_id = 146
-								province_id = 149
-								province_id = 167
-								province_id = 152
-								province_id = 168
-							}
-						}
-					}
-				}
-				dominant_issue = { value = moralism factor = 0.5 }
-				consciousness = 5
-				move_pop = 97
+		any_country = {
+			limit = { war_with = THIS }
+			end_war = THIS
+		}
+		any_country = {
+			limit = { any_owned_province = { is_core = TEX } }
+			any_owned = {
+				limit = { is_core = TEX }
+				remove_core = MEX
+				remove_core = USA
+				secede_province = TEX
 			}
-			166 = { #5950
-				any_pop = {
-					limit = { has_pop_religion = mormon }
-					dominant_issue = { value = moralism factor = 0.5 }
-					consciousness = 5
-					move_pop = 97
-				}
-			}
-			150 = { #1750
-				any_pop = {
-					limit = { has_pop_religion = mormon }
-					dominant_issue = { value = moralism factor = 0.5 }
-					consciousness = 5
-					move_pop = 98
-				}
-			}
-			146 = { #1250
-				any_pop = {
-					limit = { has_pop_religion = mormon }
-					dominant_issue = { value = moralism factor = 0.5 }
-					consciousness = 5
-					move_pop = 99
-				}
-			}
-			149 = { #1750
-				any_pop = {
-					limit = { has_pop_religion = mormon }
-					dominant_issue = { value = moralism factor = 0.5 }
-					consciousness = 5
-					move_pop = 96
-				}
-			}
-			167 = { #1275
-				any_pop = {
-					limit = { has_pop_religion = mormon }
-					dominant_issue = { value = moralism factor = 0.5 }
-					consciousness = 5
-					move_pop = 95
-				}
-			}
-			152 = { #1070
-				any_pop = {
-					limit = { has_pop_religion = mormon }
-					dominant_issue = { value = moralism factor = 0.5 }
-					consciousness = 5
-					move_pop = 94
-				}
-			}
-			168 = { #2700
-				any_pop = {
-					limit = { has_pop_religion = mormon }
-					dominant_issue = { value = moralism factor = 0.5 }
-					consciousness = 5
-					move_pop = 3393
-				}
-			}
+		}
 	}
 }

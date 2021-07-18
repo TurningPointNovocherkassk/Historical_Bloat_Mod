@@ -3119,10 +3119,10 @@ political_decisions = {
 				any_owned_province = {
 					province_control_days = 120
 					any_core = {
-						OR = {
-							is_mobilised = yes
-							total_amount_of_ships = 1
-						}
+                        OR = {
+                            is_mobilised = yes
+                            total_amount_of_ships = 1
+                        }
 						capital_scope = { NOT = { province_control_days = 120 } }
 						has_country_flag = existing_country
 						exists = no
@@ -3236,169 +3236,152 @@ political_decisions = {
 		}
 	}
 	
-	tmt_ends = {
-		alert = no
-		potential = {
-			ai = yes
-			tag = TMT
-			owns = 3584
-			owns = 3585
-			owns = 3586
-			owns = 3587
-			has_country_modifier = neutrality_modifier
-		}
+    tmt_ends = {
+        alert = no
+        potential = {
+            ai = yes
+            tag = TMT
+            owns = 3584
+            owns = 3585
+            owns = 3586
+            owns = 3587
+            has_country_modifier = neutrality_modifier
+        }
+
+        allow = {
+            is_mobilised = no
+        }
+
+        effect = {
+            remove_country_modifier = neutrality_modifier
+            political_reform = open_borders
+            clr_country_flag = existing_country
+            clr_global_flag = cleaning_up_ghosts
+            clr_country_flag = cleaning_up_ghosts_country
+            random_country = {
+                limit = {
+                    owns = 2553
+                    NOT = { tag = TMT }
+                }
+                inherit  = TMT
+            }
+            random_owned = {
+                limit = {
+                    owner = { 2553 = { empty = yes } }
+                }
+                # Audax Validator "." Ignore_NEXT
+                FROM = { inherit = THIS }
+            }
+            any_owned = {
+                limit = {
+                    owner = {
+                        NOT = {
+                            any_owned_province = {
+                                OR = {
+                                    province_id = 3584
+                                    province_id = 3585
+                                    province_id = 3586
+                                    province_id = 3587
+                                }
+                            }
+                        }
+                    }
+                }
+                owner = { neutrality = yes }
+            }
+        }
+    }
 	
-		allow = {
-			is_mobilised = no
-		}
-		
-		effect = {
-			remove_country_modifier = neutrality_modifier
-			political_reform = open_borders
-			clr_country_flag = existing_country
-			clr_global_flag = cleaning_up_ghosts
-			clr_country_flag = cleaning_up_ghosts_country
-			random_country = {
-				limit = {
-					owns = 2553
-					NOT = { tag = TMT }
-				}
-				inherit  = TMT
-			}
-			random_owned = {
-				limit = {
-					owner = { 2553 = { empty = yes } }
-				}
-				# Audax Validator "." Ignore_NEXT
-				FROM = { inherit = THIS }
-			}
-			any_owned = {
-				limit = {
-					owner = {
-						NOT = {
-							any_owned_province = {
-								OR = {
-									province_id = 3587
-									province_id = 3586
-									province_id = 3585
-									province_id = 3584
-								}
-							}
-						}
-					}
-				}
-				owner = { neutrality = yes }
-			}
-		}
-	}
-	
-	# ghost_country_ends = {
+	# annex_to_master_cleanup = {
 		# alert = no
 		# potential = {
 			# ai = yes
-			# has_country_flag = cleaning_up_ghosts_country
-			# NOT = { has_country_modifier = law_changed_by_force }
+			# has_country_flag = annex_to_master
+			# is_vassal = yes
+			# OR = {
+				# AND = {
+					# tag = CRT
+					# overlord = { tag = ARC }
+				# }
+				# AND = {
+					# tag = HUN
+					# overlord = { tag = AUS }
+				# }
+				# AND = {
+					# is_culture_group = italian
+					# overlord = { is_culture_group = italian }
+				# }
+				# AND = {
+					# is_culture_group = pan_romanian
+					# overlord = { is_culture_group = pan_romanian }
+				# }
+				# AND = {
+					# primary_culture = japanese
+					# overlord = { primary_culture = japanese }
+				# }
+				# AND = {
+					# tag = CPL
+					# overlord = { tag = RUS }
+				# }
+				# AND = {
+					# tag = POR
+					# overlord = { primary_culture = spanish }
+				# }
+				# AND = {
+					# tag = SBA
+					# overlord = {
+						# OR = {
+							# tag = ARG
+							# tag = ARC
+						# }
+					# }
+				# }
+			# }
 		# }
 	
 		# allow = {
+			# war = no
+			# is_mobilised = no
 		# }
 		
 		# effect = {
-			# clr_global_flag = cleaning_up_ghosts
-			# clr_country_flag = cleaning_up_ghosts_country
+			# clr_country_flag = annex_to_master
+			# remove_country_modifier = neutrality_modifier
+			# political_reform = open_borders
+			# random_owned = {
+				# limit = { has_country_flag = uncivilize_on_conquest }
+				# owner = {
+					# civilized = no
+				# }
+			# }
+			# overlord = { inherit = THIS }
+			# random_owned = {
+				# limit = { has_country_flag = uncivilize_on_conquest }
+				# owner = {
+					# civilized = yes
+					# clr_country_flag = uncivilize_on_conquest
+				# }
+			# }
 		# }
 	# }
 	
-	annex_to_master_cleanup = {
-		alert = no
-		potential = {
-			ai = yes
-			has_country_flag = annex_to_master
-			is_vassal = yes
-			OR = {
-				AND = {
-					tag = CRT
-					overlord = { tag = ARC }
-				}
-				AND = {
-					tag = HUN
-					overlord = { tag = AUS }
-				}
-				AND = {
-					is_culture_group = italian
-					overlord = { is_culture_group = italian }
-				}
-				AND = {
-					is_culture_group = pan_romanian
-					overlord = { is_culture_group = pan_romanian }
-				}
-				AND = {
-					primary_culture = japanese
-					overlord = { primary_culture = japanese }
-				}
-				AND = {
-					tag = CPL
-					overlord = { tag = RUS }
-				}
-				AND = {
-					tag = POR
-					overlord = { primary_culture = spanish }
-				}
-				AND = {
-					tag = SBA
-					overlord = {
-						OR = {
-							tag = ARG
-							tag = ARC
-						}
-					}
-				}
-			}
-		}
+	# annex_to_master_not_vassal_cleanup = {
+		# alert = no
+		# potential = {
+			# ai = yes
+			# has_country_flag = annex_to_master
+			# is_vassal = no
+		# }
 	
-		allow = {
-			war = no
-			is_mobilised = no
-		}
+		# allow = {
+			# war = no
+			# is_mobilised = no
+		# }
 		
-		effect = {
-			clr_country_flag = annex_to_master
-			remove_country_modifier = neutrality_modifier
-			political_reform = open_borders
-			random_owned = {
-				limit = { has_country_flag = uncivilize_on_conquest }
-				owner = {
-					civilized = no
-				}
-			}
-			overlord = { inherit = THIS }
-			random_owned = {
-				limit = { has_country_flag = uncivilize_on_conquest }
-				owner = {
-					civilized = yes
-					clr_country_flag = uncivilize_on_conquest
-				}
-			}
-		}
-	}
-	
-	annex_to_master_not_vassal_cleanup = {
-		alert = no
-		potential = {
-			ai = yes
-			has_country_flag = annex_to_master
-			is_vassal = no
-		}
-	
-		allow = {
-			war = no
-			is_mobilised = no
-		}
-		
-		effect = {
-			clr_country_flag = annex_to_master
-		}
-	}
+		# effect = {
+			# clr_country_flag = annex_to_master
+		# }
+	# }
 	
 	transfer_vassalage = {
 		alert = yes
