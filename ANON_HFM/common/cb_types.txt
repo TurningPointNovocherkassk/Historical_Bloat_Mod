@@ -190,8 +190,8 @@ dismantle_cb = {
 			NOT = { has_country_flag = in_great_war }
 			NOT = { has_country_modifier = no_more_war }
 		}
-		NOT = { has_country_modifier = neutrality_modifier }
-		THIS = { NOT = { has_country_modifier = neutrality_modifier } }
+		NOT = { has_country_modifier = mediating_political_solution has_country_flag = YUC_ceasefire has_country_modifier = neutrality_modifier }
+		THIS = { NOT = { has_country_modifier = mediating_political_solution has_country_flag = YUC_ceasefire has_country_modifier = neutrality_modifier } }
 	}
 	
 	po_disarmament = yes
@@ -241,7 +241,7 @@ dismantle_cb_add = {
 	
 	can_use = {
 		NOT = { is_our_vassal = THIS }
-		NOT = { has_country_modifier = neutrality_modifier }
+		NOT = { has_country_modifier = mediating_political_solution has_country_flag = YUC_ceasefire has_country_modifier = neutrality_modifier }
 		NOT = { has_country_flag = dismantle_declared }
 		has_country_flag = in_great_war
 		OR = {
@@ -255,7 +255,7 @@ dismantle_cb_add = {
 		is_vassal = no
 		war_with = THIS
 		THIS = {
-			NOT = { has_country_modifier = neutrality_modifier }
+			NOT = { has_country_modifier = mediating_political_solution has_country_flag = YUC_ceasefire has_country_modifier = neutrality_modifier }
 			has_country_flag = in_great_war
 			is_greater_power = yes
 			is_disarmed = no
@@ -311,13 +311,13 @@ dismantle_cb_add_new = {
 	can_use = {
 		NOT = { is_our_vassal = THIS }
 		NOT = { has_country_flag = dismantle_declared }
-		NOT = { has_country_modifier = neutrality_modifier }
+		NOT = { has_country_modifier = mediating_political_solution has_country_flag = YUC_ceasefire has_country_modifier = neutrality_modifier }
 		is_greater_power = yes		
 		is_disarmed = no
 		is_vassal = no
 		war_with = THIS
 		THIS = {
-			NOT = { has_country_modifier = neutrality_modifier }
+			NOT = { has_country_modifier = mediating_political_solution has_country_flag = YUC_ceasefire has_country_modifier = neutrality_modifier }
 			NOT = { has_country_flag = in_great_war }
 			is_greater_power = yes
 			is_disarmed = no
@@ -442,18 +442,20 @@ acquire_core_state = {
 		any_owned_province = { is_core = THIS }
 		NOT = {
 			has_country_modifier = neutrality_modifier
+			has_country_modifier = mediating_political_solution
+			has_country_flag = YUC_ceasefire
 			has_country_flag = for_congress_paris
 			has_country_flag = attending_paris_congress
 			has_country_flag = for_congress_warsaw
-			has_country_flag = YUC_ceasefire
 		}
 		THIS = {
 			NOT = {
 				has_country_modifier = neutrality_modifier
+				has_country_modifier = mediating_political_solution
+				has_country_flag = YUC_ceasefire
 				has_country_flag = for_congress_paris
 				has_country_flag = attending_paris_congress
 				has_country_flag = for_congress_warsaw
-				has_country_flag = YUC_ceasefire
 			}
 		}
 		OR = {
@@ -533,14 +535,17 @@ acquire_all_cores = {
 		any_owned_province = { NOT = { is_core = THIS } }
 		NOT = {
 			has_country_modifier = neutrality_modifier
+			has_country_modifier = mediating_political_solution
+			has_country_flag = YUC_ceasefire
 			has_country_flag = for_congress_paris
 			has_country_flag = attending_paris_congress
 			has_country_flag = for_congress_warsaw
-			has_country_flag = YUC_ceasefire
 		}
 		THIS = {
 			NOT = {
 				has_country_modifier = neutrality_modifier
+				has_country_modifier = mediating_political_solution
+				has_country_flag = YUC_ceasefire
 				AND = {
 					war_policy = pacifism
 					war = no
@@ -548,7 +553,6 @@ acquire_all_cores = {
 				has_country_flag = for_congress_paris
 				has_country_flag = attending_paris_congress
 				has_country_flag = for_congress_warsaw
-				has_country_flag = YUC_ceasefire
 			}
 		}
 		OR = {
@@ -668,6 +672,8 @@ restore_austrian_empire = {
 		#ANON
 		NOT = {
 			has_country_modifier = neutrality_modifier
+			has_country_modifier = mediating_political_solution
+			has_country_flag = YUC_ceasefire
 			has_country_flag = for_congress_paris
 			has_country_flag = attending_paris_congress
 			has_country_flag = for_congress_warsaw
@@ -678,6 +684,8 @@ restore_austrian_empire = {
 				has_country_flag = attending_paris_congress
 				has_country_flag = for_congress_warsaw
 				has_country_modifier = neutrality_modifier
+				has_country_modifier = mediating_political_solution
+				has_country_flag = YUC_ceasefire
 			}
 		}
 		#
@@ -1075,7 +1083,7 @@ unification_casus_belli = {
 			nationalism_n_imperialism = 1
 			is_greater_power = yes
 			is_cultural_union = no
-			NOT = { has_country_modifier = neutrality_modifier }
+			NOT = { has_country_modifier = mediating_political_solution has_country_flag = YUC_ceasefire has_country_modifier = neutrality_modifier }
 		}
         OR = {
             war_with = THIS
@@ -1216,7 +1224,7 @@ unification_annex_casus_belli = {
 			culture_has_union_tag = yes
 			nationalism_n_imperialism = 1
 			is_greater_power = yes
-			NOT = { has_country_modifier = neutrality_modifier }
+			NOT = { has_country_modifier = mediating_political_solution has_country_flag = YUC_ceasefire has_country_modifier = neutrality_modifier }
 		}
 		OR = {
 			NOT = { is_culture_group = THIS }
@@ -1321,6 +1329,8 @@ annex_core_country = {
 				# }
 				# NOT = {
 					# has_country_modifier = neutrality_modifier
+					# has_country_modifier = mediating_political_solution
+					# has_country_flag = YUC_ceasefire
 					# is_our_vassal = THIS
 				# }
 			# }
@@ -1343,10 +1353,14 @@ annex_core_country = {
 						has_country_modifier = punitive_effects
 						has_country_modifier = no_more_war
 						has_country_modifier = neutrality_modifier
+						has_country_modifier = mediating_political_solution
+						has_country_flag = YUC_ceasefire
 					}
 				}
 				NOT = {
 					has_country_modifier = neutrality_modifier
+					has_country_modifier = mediating_political_solution
+					has_country_flag = YUC_ceasefire
 					is_our_vassal = THIS
 				}
 				OR = {
@@ -1409,10 +1423,10 @@ annex_core_country = {
 						NOT = { is_core = THIS }
 					}
 				}
-				NOT = { has_country_modifier = neutrality_modifier }
+				NOT = { has_country_modifier = mediating_political_solution has_country_flag = YUC_ceasefire has_country_modifier = neutrality_modifier }
 				OR = {
 					war_with = THIS
-					THIS = { NOT = { has_country_modifier = neutrality_modifier } }
+					THIS = { NOT = { has_country_modifier = mediating_political_solution has_country_flag = YUC_ceasefire has_country_modifier = neutrality_modifier } }
 				}
 				OR = {
 					war_with = THIS
@@ -1482,11 +1496,11 @@ add_to_sphere = {
         part_of_sphere = no
             war_with = THIS
         }
-        NOT = { has_country_modifier = neutrality_modifier }
+        NOT = { has_country_modifier = mediating_political_solution has_country_flag = YUC_ceasefire has_country_modifier = neutrality_modifier }
         OR = {
             war_with = THIS
             THIS = {
-                NOT = { has_country_modifier = neutrality_modifier }
+                NOT = { has_country_modifier = mediating_political_solution has_country_flag = YUC_ceasefire has_country_modifier = neutrality_modifier }
                 military_score = 1
             }
         }
@@ -1555,7 +1569,7 @@ unification_humiliate_cb = {
 			culture_has_union_tag = yes
 			nationalism_n_imperialism = 1
 			is_greater_power = yes
-			NOT = { has_country_modifier = neutrality_modifier }
+			NOT = { has_country_modifier = mediating_political_solution has_country_flag = YUC_ceasefire has_country_modifier = neutrality_modifier }
 			NOT = { tag = KUK }
 			NOT = { tag = UBD }
 			NOT = { tag = DNB }
@@ -1644,12 +1658,12 @@ unification_GP_humiliate = {
 			ai = yes
 			is_greater_power = yes
 			nationalism_n_imperialism = 1
-			NOT = { has_country_modifier = neutrality_modifier }
+			NOT = { has_country_modifier = mediating_political_solution has_country_flag = YUC_ceasefire has_country_modifier = neutrality_modifier }
 			NOT = { tag = KUK }
 			NOT = { tag = UBD }
 			NOT = { tag = DNB }
 		}
-		NOT = { has_country_modifier = neutrality_modifier }
+		NOT = { has_country_modifier = mediating_political_solution has_country_flag = YUC_ceasefire has_country_modifier = neutrality_modifier }
 		is_vassal = no
 		OR = {
 			war_with = THIS
@@ -1713,6 +1727,8 @@ unification_release_puppet_cb = {
 			NOT = {
 				is_cultural_union = yes
 				has_country_modifier = neutrality_modifier
+				has_country_modifier = mediating_political_solution
+				has_country_flag = YUC_ceasefire
 			}
 			NOT = { tag = KUK }
 			NOT = { tag = UBD }
@@ -1780,7 +1796,7 @@ unification_add_to_sphere = {
 		culture_has_union_tag = yes
 		is_culture_group = THIS
 		cultural_union = { exists = no }
-		NOT = { has_country_modifier = neutrality_modifier }
+		NOT = { has_country_modifier = mediating_political_solution has_country_flag = YUC_ceasefire has_country_modifier = neutrality_modifier }
 		THIS = {
 			ai = yes
 			is_greater_power = yes
@@ -1791,6 +1807,8 @@ unification_add_to_sphere = {
 			NOT = {
 				has_country_modifier = no_more_war
 				has_country_modifier = neutrality_modifier
+				has_country_modifier = mediating_political_solution
+				has_country_flag = YUC_ceasefire
 			}
 		}
 	}
@@ -1832,7 +1850,7 @@ take_from_sphere = {
 		NOT = { is_our_vassal = THIS }
 		THIS = { is_greater_power = yes }
 		is_greater_power = yes
-		THIS = { NOT = { has_country_modifier = neutrality_modifier } }
+		THIS = { NOT = { has_country_modifier = mediating_political_solution has_country_flag = YUC_ceasefire has_country_modifier = neutrality_modifier } }
 		OR = {
 			war_with = THIS
 			THIS = { NOT = { has_country_modifier = no_more_war } }
@@ -1949,11 +1967,11 @@ free_peoples = {
         OR = {
             war_with = THIS
             THIS = {
-                NOT = { has_country_modifier = neutrality_modifier }
+                NOT = { has_country_modifier = mediating_political_solution has_country_flag = YUC_ceasefire has_country_modifier = neutrality_modifier }
                 military_score = 1
             }
         }
-		NOT = { has_country_modifier = neutrality_modifier }
+		NOT = { has_country_modifier = mediating_political_solution has_country_flag = YUC_ceasefire has_country_modifier = neutrality_modifier }
 		OR = {
 			war_with = THIS
 			THIS = { NOT = { has_country_modifier = no_more_war } }
@@ -2333,13 +2351,15 @@ liberate_country = {
         NOT = {
             is_our_vassal = THIS
             has_country_modifier = neutrality_modifier
+            has_country_modifier = mediating_political_solution
+			has_country_flag = YUC_ceasefire
         }
         is_vassal = no
         number_of_states = 2
         OR = {
             war_with = THIS
             THIS = {
-                NOT = { has_country_modifier = neutrality_modifier }
+                NOT = { has_country_modifier = mediating_political_solution has_country_flag = YUC_ceasefire has_country_modifier = neutrality_modifier }
                 military_score = 1
             }
         }
@@ -2677,8 +2697,8 @@ free_allied_cores = {
 		NOT = { is_our_vassal = THIS }
 		is_vassal = no
 		number_of_states = 2
-		THIS = { NOT = { has_country_modifier = neutrality_modifier } }
-		NOT = { has_country_modifier = neutrality_modifier }
+		THIS = { NOT = { has_country_modifier = mediating_political_solution has_country_flag = YUC_ceasefire has_country_modifier = neutrality_modifier } }
+		NOT = { has_country_modifier = mediating_political_solution has_country_flag = YUC_ceasefire has_country_modifier = neutrality_modifier }
 		OR = {
 			war_with = THIS
 			THIS = { NOT = { has_country_modifier = no_more_war } }
@@ -2793,7 +2813,7 @@ free_balkans = {
 				}
 			}
 		}
-		NOT = { has_country_modifier = neutrality_modifier }
+		NOT = { has_country_modifier = mediating_political_solution has_country_flag = YUC_ceasefire has_country_modifier = neutrality_modifier }
 		OR = {
 			war_with = THIS
 			THIS = {
@@ -3241,7 +3261,7 @@ oriental_crisis = {
 		civilized = no
 		has_global_flag = oriental_crisis
 		any_owned_province = { is_core = TUR }
-		NOT = { has_country_modifier = neutrality_modifier }
+		NOT = { has_country_modifier = mediating_political_solution has_country_flag = YUC_ceasefire has_country_modifier = neutrality_modifier }
 		NOT = { year = 1860 }
 		OR = {
 			war_with = THIS
@@ -3331,10 +3351,10 @@ release_puppet = {
         # }
 		NOT = { is_our_vassal = THIS }
 		num_of_vassals_no_substates = 1
-		NOT = { has_country_modifier = neutrality_modifier }
+		NOT = { has_country_modifier = mediating_political_solution has_country_flag = YUC_ceasefire has_country_modifier = neutrality_modifier }
         OR = {
             war_with = THIS
-            THIS = { NOT = { has_country_modifier = neutrality_modifier } }
+            THIS = { NOT = { has_country_modifier = mediating_political_solution has_country_flag = YUC_ceasefire has_country_modifier = neutrality_modifier } }
         }
 		OR = {
 			war_with = THIS
@@ -3405,7 +3425,7 @@ release_puppet_AI = {
 		}
 		THIS = {
 			ai = yes
-			NOT = { has_country_modifier = neutrality_modifier }
+			NOT = { has_country_modifier = mediating_political_solution has_country_flag = YUC_ceasefire has_country_modifier = neutrality_modifier }
 		}
 		OR = {
 			war_with = THIS
@@ -3480,7 +3500,7 @@ gunboat = {
 		}
 		THIS = {
 			is_greater_power = yes
-			NOT = { has_country_modifier = neutrality_modifier }
+			NOT = { has_country_modifier = mediating_political_solution has_country_flag = YUC_ceasefire has_country_modifier = neutrality_modifier }
 		}
 		is_vassal = no
 		in_default = THIS
@@ -3546,10 +3566,10 @@ cut_down_to_size = {
 		}
 		is_vassal = no
 		is_disarmed = no
-		NOT = { has_country_modifier = neutrality_modifier }
+		NOT = { has_country_modifier = mediating_political_solution has_country_flag = YUC_ceasefire has_country_modifier = neutrality_modifier }
 		THIS = {
 			civilized = yes
-			NOT = { has_country_modifier = neutrality_modifier }
+			NOT = { has_country_modifier = mediating_political_solution has_country_flag = YUC_ceasefire has_country_modifier = neutrality_modifier }
 		}
 		OR = {
 			war_with = THIS
@@ -3746,7 +3766,7 @@ great_game_cb = {
 				has_country_modifier = punitive_effects
 				badboy = 0.85
 			}
-			NOT = { has_country_modifier = neutrality_modifier }
+			NOT = { has_country_modifier = mediating_political_solution has_country_flag = YUC_ceasefire has_country_modifier = neutrality_modifier }
 		}
 		OR = {
 			war_with = THIS
@@ -3813,6 +3833,8 @@ restore_british_raj = {
 			truce_with = THIS
 			tag = HND
 			has_country_modifier = neutrality_modifier
+			has_country_modifier = mediating_political_solution
+			has_country_flag = YUC_ceasefire
 			has_global_flag = british_dismantled
 		}
 		OR = {
@@ -3846,7 +3868,7 @@ restore_british_raj = {
 				government = prussian_constitutionalism
 				government = hms_government
 			}
-			NOT = { has_country_modifier = neutrality_modifier }
+			NOT = { has_country_modifier = mediating_political_solution has_country_flag = YUC_ceasefire has_country_modifier = neutrality_modifier }
 		}
 		OR = {
 			war_with = THIS
@@ -3894,10 +3916,12 @@ humiliate = {
 	can_use = {
 		NOT = { is_our_vassal = THIS }
 		has_recently_lost_war = no
-		THIS = { NOT = { has_country_modifier = neutrality_modifier } }
+		THIS = { NOT = { has_country_modifier = mediating_political_solution has_country_flag = YUC_ceasefire has_country_modifier = neutrality_modifier } }
 		NOT = {
 			AND = {
 				has_country_modifier = neutrality_modifier
+				has_country_modifier = mediating_political_solution
+				has_country_flag = YUC_ceasefire
 				is_greater_power = no
 			}
 		}
@@ -4002,7 +4026,7 @@ place_in_the_sun = {
 		is_vassal = no
 		any_owned_province = { is_colonial = yes }
         THIS = {
-            NOT = { has_country_modifier = neutrality_modifier }
+            NOT = { has_country_modifier = mediating_political_solution has_country_flag = YUC_ceasefire has_country_modifier = neutrality_modifier }
             OR = {
                 any_owned_province = { port = yes }
                 any_owned_province = {
@@ -4191,6 +4215,8 @@ acquire_state = {
 	can_use = {
 		#ANON, restriction for AI Brazil going fucking nuts
 		NOT = { THIS = { tag = BRZ ai = yes } }
+		#ANON, restriction for AI USA going fucking nuts on MEX
+		NOT = { THIS = { tag = USA ai = yes } }
 		###################################################
 		NOT = { revolution_n_counterrevolution = 1 }
         # OR = {
@@ -4216,6 +4242,8 @@ acquire_state = {
 		NOT = { 
 			is_our_vassal = THIS
 			has_country_modifier = neutrality_modifier
+			has_country_modifier = mediating_political_solution
+			has_country_flag = YUC_ceasefire
 		}
 		any_state = {
 			is_colonial = no
@@ -4228,7 +4256,7 @@ acquire_state = {
         OR = {
             war_with = THIS
             THIS = {
-                NOT = { has_country_modifier = neutrality_modifier }
+                NOT = { has_country_modifier = mediating_political_solution has_country_flag = YUC_ceasefire has_country_modifier = neutrality_modifier }
                 military_score = 1
             }
         }
@@ -4463,6 +4491,8 @@ china_acquire_state = {
 			is_culture_group = east_asian
 			NOT = {
 				has_country_modifier = neutrality_modifier
+				has_country_modifier = mediating_political_solution
+				has_country_flag = YUC_ceasefire
 				#war_policy = pacifism
 			}
 		}
@@ -4710,7 +4740,7 @@ demand_concession_casus_belli = {
             civilized = yes
             NOT = { nationalism_n_imperialism = 1 }
             NOT = { has_global_flag = berlin_conference }
-            NOT = { has_country_modifier = neutrality_modifier }
+            NOT = { has_country_modifier = mediating_political_solution has_country_flag = YUC_ceasefire has_country_modifier = neutrality_modifier }
         }
         OR = {
             war_with = THIS
@@ -4721,6 +4751,8 @@ demand_concession_casus_belli = {
             war_with = THIS
             NOT = {
                 has_country_modifier = neutrality_modifier
+                has_country_modifier = mediating_political_solution
+				has_country_flag = YUC_ceasefire
                 civilization_progress = 0.6
                 has_country_flag = post_colonial_country
             }
@@ -4921,6 +4953,8 @@ demand_concession_NI_casus_belli = {
 					NOT = {
 						has_global_flag = berlin_conference
 						has_country_modifier = neutrality_modifier
+						has_country_modifier = mediating_political_solution
+						has_country_flag = YUC_ceasefire
 					}
 				}
 				AND = {
@@ -4929,6 +4963,8 @@ demand_concession_NI_casus_belli = {
 					NOT = {
 						nationalism_n_imperialism = 1
 						has_country_modifier = neutrality_modifier
+						has_country_modifier = mediating_political_solution
+						has_country_flag = YUC_ceasefire
 					}
 				}
 			}
@@ -4942,6 +4978,8 @@ demand_concession_NI_casus_belli = {
             war_with = THIS
             NOT = {
                 has_country_modifier = neutrality_modifier
+                has_country_modifier = mediating_political_solution
+				has_country_flag = YUC_ceasefire
                 civilization_progress = 0.6
                 has_country_flag = post_colonial_country
             }
@@ -5138,7 +5176,7 @@ demand_concession_BC_casus_belli = {
             civilized = yes
             nationalism_n_imperialism = 1
             has_global_flag = berlin_conference
-            NOT = { has_country_modifier = neutrality_modifier }
+            NOT = { has_country_modifier = mediating_political_solution has_country_flag = YUC_ceasefire has_country_modifier = neutrality_modifier }
         }
         OR = {
             war_with = THIS
@@ -5149,6 +5187,8 @@ demand_concession_BC_casus_belli = {
             war_with = THIS
             NOT = {
                 has_country_modifier = neutrality_modifier
+                has_country_modifier = mediating_political_solution
+				has_country_flag = YUC_ceasefire
                 civilization_progress = 0.6
                 has_country_flag = post_colonial_country
             }
@@ -5324,7 +5364,7 @@ rude_boy = {
         OR = {
             war_with = THIS
             THIS = {
-                NOT = { has_country_modifier = neutrality_modifier }
+                NOT = { has_country_modifier = mediating_political_solution has_country_flag = YUC_ceasefire has_country_modifier = neutrality_modifier }
                 military_score = 1
             }
         }
@@ -5407,10 +5447,12 @@ conquest = {
             }
         }
         is_vassal = no
-        NOT = { has_country_modifier = neutrality_modifier }
+        NOT = { has_country_modifier = mediating_political_solution has_country_flag = YUC_ceasefire has_country_modifier = neutrality_modifier }
         THIS = {
             NOT = {
                 has_country_modifier = neutrality_modifier
+                has_country_modifier = mediating_political_solution
+				has_country_flag = YUC_ceasefire
                 has_country_modifier = disable_conquest_cb
             }
         }
@@ -5626,7 +5668,7 @@ annex_africa = {
 				is_greater_power = yes
 				is_secondary_power = yes
 			}
-		  	NOT = { has_country_modifier = neutrality_modifier }
+		  	NOT = { has_country_modifier = mediating_political_solution has_country_flag = YUC_ceasefire has_country_modifier = neutrality_modifier }
 			civilized = yes
 			has_global_flag = berlin_conference
 		}
@@ -6170,7 +6212,7 @@ annex_africa_full = {
                 is_greater_power = yes
                 is_secondary_power = yes
             }
-              NOT = { has_country_modifier = neutrality_modifier }
+			NOT = { has_country_modifier = mediating_political_solution has_country_flag = YUC_ceasefire has_country_modifier = neutrality_modifier }
             NOT = { has_country_modifier = claimed_africa }
             # NOT = { has_country_flag = congo_award }
             NOT = { has_country_flag = congo_master }
@@ -6719,6 +6761,8 @@ establish_protectorate_casus_belli = {
         NOT = { is_our_vassal = THIS }
         NOT = {
             has_country_modifier = neutrality_modifier
+            has_country_modifier = mediating_political_solution
+			has_country_flag = YUC_ceasefire
             number_of_states = 2
         }
         OR = {
@@ -6754,7 +6798,7 @@ establish_protectorate_casus_belli = {
             civilized = yes
             NOT = { nationalism_n_imperialism = 1 }
             NOT = { has_global_flag = berlin_conference }
-            NOT = { has_country_modifier = neutrality_modifier }
+            NOT = { has_country_modifier = mediating_political_solution has_country_flag = YUC_ceasefire has_country_modifier = neutrality_modifier }
         }
         OR = {
             THIS = { NOT = { nationalism_n_imperialism = 1 } }
@@ -6908,6 +6952,8 @@ establish_protectorate_NI_casus_belli = {
 					NOT = {
 						has_global_flag = berlin_conference
 						has_country_modifier = neutrality_modifier
+						has_country_modifier = mediating_political_solution
+						has_country_flag = YUC_ceasefire
 					}
 				}
 				AND = {
@@ -6916,6 +6962,8 @@ establish_protectorate_NI_casus_belli = {
 					NOT = {
 						nationalism_n_imperialism = 1
 						has_country_modifier = neutrality_modifier
+						has_country_modifier = mediating_political_solution
+						has_country_flag = YUC_ceasefire
 					}
 				}
 			}
@@ -7088,7 +7136,7 @@ establish_protectorate_BC_casus_belli = {
             civilized = yes
             nationalism_n_imperialism = 1
             has_global_flag = berlin_conference
-            NOT = { has_country_modifier = neutrality_modifier }
+            NOT = { has_country_modifier = mediating_political_solution has_country_flag = YUC_ceasefire has_country_modifier = neutrality_modifier }
         }
         OR = {
             war_with = THIS
@@ -7109,6 +7157,8 @@ establish_protectorate_BC_casus_belli = {
             civilized = yes
             war_with = THIS
             has_country_modifier = neutrality_modifier
+            has_country_modifier = mediating_political_solution
+			has_country_flag = YUC_ceasefire
         }
         OR = {
             NOT = { number_of_states = 12 }
@@ -7472,6 +7522,8 @@ make_puppet = {
         NOT = {
             is_our_vassal = THIS
             has_country_modifier = neutrality_modifier
+            has_country_modifier = mediating_political_solution
+			has_country_flag = YUC_ceasefire
             total_pops = 5000000
         }
         OR = {
@@ -7494,7 +7546,7 @@ make_puppet = {
         OR = {
             war_with = THIS
             THIS = {
-                NOT = { has_country_modifier = neutrality_modifier }
+                NOT = { has_country_modifier = mediating_political_solution has_country_flag = YUC_ceasefire has_country_modifier = neutrality_modifier }
                 military_score = 1
             }
         }
@@ -7560,7 +7612,7 @@ become_independent = {
             is_our_vassal = THIS
             THIS = { substate_of = FROM }
         }
-        NOT = { has_country_modifier = neutrality_modifier }
+        NOT = { has_country_modifier = mediating_political_solution has_country_flag = YUC_ceasefire has_country_modifier = neutrality_modifier }
         NOT = { AND = { tag = EGY ai = yes } }
     }
 
@@ -7625,7 +7677,7 @@ uninstall_communist_gov_cb = {
         OR = {
             war_with = THIS
             THIS = {
-                NOT = { has_country_modifier = neutrality_modifier }
+                NOT = { has_country_modifier = mediating_political_solution has_country_flag = YUC_ceasefire has_country_modifier = neutrality_modifier }
                 military_score = 1
             }
         }
@@ -7864,7 +7916,7 @@ install_democracy = {
         OR = {
             war_with = THIS
             THIS = {
-                NOT = { has_country_modifier = neutrality_modifier }
+                NOT = { has_country_modifier = mediating_political_solution has_country_flag = YUC_ceasefire has_country_modifier = neutrality_modifier }
                 military_score = 1
             }
         }
@@ -7942,7 +7994,7 @@ install_fascism = {
         OR = {
             war_with = THIS
             THIS = {
-                NOT = { has_country_modifier = neutrality_modifier }
+                NOT = { has_country_modifier = mediating_political_solution has_country_flag = YUC_ceasefire has_country_modifier = neutrality_modifier }
                 military_score = 1
             }
         }
@@ -8018,11 +8070,11 @@ install_communism = {
         civilized = yes
         NOT = { is_our_vassal = THIS }
         NOT = { government = proletarian_dictatorship }
-        NOT = { has_country_modifier = neutrality_modifier }
+        NOT = { has_country_modifier = mediating_political_solution has_country_flag = YUC_ceasefire has_country_modifier = neutrality_modifier }
         OR = {
             war_with = THIS
             THIS = {
-                NOT = { has_country_modifier = neutrality_modifier }
+                NOT = { has_country_modifier = mediating_political_solution has_country_flag = YUC_ceasefire has_country_modifier = neutrality_modifier }
                 military_score = 1
             }
         }
@@ -8282,12 +8334,14 @@ dismantle_forts = {
         NOT = {
             is_our_vassal = THIS
             has_country_modifier = neutrality_modifier
+            has_country_modifier = mediating_political_solution
+			has_country_flag = YUC_ceasefire
         }
         is_vassal = no
         OR = {
             war_with = THIS
             THIS = {
-                NOT = { has_country_modifier = neutrality_modifier }
+                NOT = { has_country_modifier = mediating_political_solution has_country_flag = YUC_ceasefire has_country_modifier = neutrality_modifier }
                 military_score = 1
             }
         }
@@ -8531,7 +8585,7 @@ treaty_port_casus_belli = {
             civilized = yes
             is_disarmed = no
             any_owned_province = { has_building = naval_base }
-            NOT = { has_country_modifier = neutrality_modifier }
+            NOT = { has_country_modifier = mediating_political_solution has_country_flag = YUC_ceasefire has_country_modifier = neutrality_modifier }
             OR = {
                 naval_plans = 1
                 ai = yes
@@ -8551,7 +8605,7 @@ treaty_port_casus_belli = {
                 war_with = THIS
             }
         }
-        NOT = { has_country_modifier = neutrality_modifier }
+        NOT = { has_country_modifier = mediating_political_solution has_country_flag = YUC_ceasefire has_country_modifier = neutrality_modifier }
         civilized = no
         is_vassal = no
         num_of_cities = 2
@@ -8813,7 +8867,7 @@ colonial_conquest = {
             war_with = THIS
         }
         number_of_states = 2
-        NOT = { has_country_modifier = neutrality_modifier }
+        NOT = { has_country_modifier = mediating_political_solution has_country_flag = YUC_ceasefire has_country_modifier = neutrality_modifier }
         NOT = { in_sphere = THIS }
         is_vassal = no
         civilized = no
@@ -8834,7 +8888,7 @@ colonial_conquest = {
         THIS = {
             civilized = yes
             NOT = { has_country_modifier = no_more_war }
-            NOT = { has_country_modifier = neutrality_modifier }
+            NOT = { has_country_modifier = mediating_political_solution has_country_flag = YUC_ceasefire has_country_modifier = neutrality_modifier }
             NOT = { has_country_modifier = punitive_effects }
             NOT = { has_country_modifier = claimed_africa }
             is_disarmed = no
@@ -9279,7 +9333,7 @@ colonial_conquest_full = {
         }
         NOT = { number_of_states = 2 }
         NOT = { is_our_vassal = THIS }
-        NOT = { has_country_modifier = neutrality_modifier }
+        NOT = { has_country_modifier = mediating_political_solution has_country_flag = YUC_ceasefire has_country_modifier = neutrality_modifier }
         NOT = { in_sphere = THIS }
         is_vassal = no
         civilized = no
@@ -9300,7 +9354,7 @@ colonial_conquest_full = {
         THIS = {
             civilized = yes
             NOT = { has_country_modifier = no_more_war }
-            NOT = { has_country_modifier = neutrality_modifier }
+            NOT = { has_country_modifier = mediating_political_solution has_country_flag = YUC_ceasefire has_country_modifier = neutrality_modifier }
             NOT = { has_country_modifier = punitive_effects }
             NOT = { has_country_modifier = claimed_africa }
             is_disarmed = no
@@ -9601,12 +9655,14 @@ war_reparations = {
         NOT = {
             is_our_vassal = THIS
             has_country_modifier = neutrality_modifier
+            has_country_modifier = mediating_political_solution
+			has_country_flag = YUC_ceasefire
             has_country_modifier = no_more_war
             has_country_flag = in_great_war
         }
         THIS = {
             civilized = yes
-            NOT = { has_country_modifier = neutrality_modifier }
+            NOT = { has_country_modifier = mediating_political_solution has_country_flag = YUC_ceasefire has_country_modifier = neutrality_modifier }
         }
     }
 
@@ -9770,12 +9826,14 @@ dismantle_factories = {
 		NOT = {
 			is_our_vassal = THIS
 			has_country_modifier = neutrality_modifier
+			has_country_modifier = mediating_political_solution
+			has_country_flag = YUC_ceasefire
 		}
 		is_vassal = no
 		number_of_states = 2
 		THIS = {
 			civilized = yes
-			NOT = { has_country_modifier = neutrality_modifier }
+			NOT = { has_country_modifier = mediating_political_solution has_country_flag = YUC_ceasefire has_country_modifier = neutrality_modifier }
 		}
 		OR = {
 			war_with = THIS
@@ -9871,7 +9929,7 @@ take_puppet = {
         NOT = { is_our_vassal = THIS }
         civilized = yes
         num_of_vassals_no_substates = 1
-        THIS = { NOT = { has_country_modifier = neutrality_modifier } }
+        THIS = { NOT = { has_country_modifier = mediating_political_solution has_country_flag = YUC_ceasefire has_country_modifier = neutrality_modifier } }
         OR = {
             war_with = THIS
             THIS = { NOT = { has_country_modifier = no_more_war } }
@@ -9940,10 +9998,12 @@ liberate_puppet = {
 		NOT = {
 			is_our_vassal = THIS
 			has_country_modifier = neutrality_modifier
+			has_country_modifier = mediating_political_solution
+			has_country_flag = YUC_ceasefire
 		}
 		is_vassal = no
 		number_of_states = 2
-		THIS = { NOT = { has_country_modifier = neutrality_modifier } }
+		THIS = { NOT = { has_country_modifier = mediating_political_solution has_country_flag = YUC_ceasefire has_country_modifier = neutrality_modifier } }
 		THIS = { is_greater_power = yes }
 		OR = {
 			war_with = THIS
@@ -10397,6 +10457,8 @@ conquest_low = {
                 has_country_flag = in_great_war
                 has_country_modifier = no_more_war
                 has_country_modifier = neutrality_modifier
+                has_country_modifier = mediating_political_solution
+				has_country_flag = YUC_ceasefire
             }
         }
         OR = {
@@ -10469,6 +10531,8 @@ conquest_tiny = {
                 has_country_flag = in_great_war
                 has_country_modifier = no_more_war
                 has_country_modifier = neutrality_modifier
+                has_country_modifier = mediating_political_solution
+				has_country_flag = YUC_ceasefire
             }
         }
         OR = {
@@ -10540,6 +10604,8 @@ conquest_minuscule = {
                 has_country_flag = in_great_war
                 has_country_modifier = no_more_war
                 has_country_modifier = neutrality_modifier
+                has_country_modifier = mediating_political_solution
+				has_country_flag = YUC_ceasefire
             }
         }
         OR = {
@@ -10667,6 +10733,8 @@ acquire_state_late = {
     can_use = {
 		#ANON, restriction for AI Brazil going fucking nuts
 		NOT = { THIS = { tag = BRZ ai = yes } }
+		#ANON, restriction for AI USA going fucking nuts on MEX
+		NOT = { THIS = { tag = USA ai = yes } }
 		###################################################
 		revolution_n_counterrevolution = 1
         # OR = {
@@ -10692,6 +10760,8 @@ acquire_state_late = {
         NOT = {
             is_our_vassal = THIS
             has_country_modifier = neutrality_modifier
+            has_country_modifier = mediating_political_solution
+			has_country_flag = YUC_ceasefire
         }
         any_state = {
             is_colonial = no
@@ -10704,7 +10774,7 @@ acquire_state_late = {
         OR = {
             war_with = THIS
             THIS = {
-                NOT = { has_country_modifier = neutrality_modifier }
+                NOT = { has_country_modifier = mediating_political_solution has_country_flag = YUC_ceasefire has_country_modifier = neutrality_modifier }
                 military_score = 1
             }
         }
@@ -11246,7 +11316,7 @@ claim_colonial_region = {
             capital_scope = { continent = europe }
             NOT = { tag = RUS }
             NOT = { tag = TUR }
-              NOT = { has_country_modifier = neutrality_modifier }
+			NOT = { has_country_modifier = mediating_political_solution has_country_flag = YUC_ceasefire has_country_modifier = neutrality_modifier }
             NOT = { has_country_flag = congo_award }
             has_global_flag = berlin_conference
         }
@@ -11928,7 +11998,7 @@ claim_colonial_region_full = {
             nationalism_n_imperialism = 1
             capital_scope = { continent = europe }
             NOT = { tag = RUS }
-              NOT = { has_country_modifier = neutrality_modifier }
+			NOT = { has_country_modifier = mediating_political_solution has_country_flag = YUC_ceasefire has_country_modifier = neutrality_modifier }
             NOT = { has_country_flag = congo_award }
             has_global_flag = berlin_conference
         }
@@ -12015,6 +12085,8 @@ take_capital = {
                 has_country_flag = in_great_war
                 has_country_modifier = no_more_war
                 has_country_modifier = neutrality_modifier
+                has_country_modifier = mediating_political_solution
+				has_country_flag = YUC_ceasefire
             }
         }
         # OR = {
@@ -12044,6 +12116,8 @@ take_capital = {
         NOT = {
             is_our_vassal = THIS
             has_country_modifier = neutrality_modifier
+            has_country_modifier = mediating_political_solution
+			has_country_flag = YUC_ceasefire
         }
         number_of_states = 2 # annex if you want their last state
         any_owned_province = {
@@ -12131,6 +12205,8 @@ demand_concession_capital = {
                 has_country_flag = in_great_war
                 has_country_modifier = no_more_war
                 has_country_modifier = neutrality_modifier
+                has_country_modifier = mediating_political_solution
+				has_country_flag = YUC_ceasefire
             }
         }
         NOT = { is_our_vassal = THIS }

@@ -5543,3 +5543,45 @@
 			}
 		}
 	}
+	
+	country_event = { #Failsafe in case Brazil loses its core in Pirara 3380 and venezuela keeps its core in roraima 2532
+		id = 1999998115
+		title = "Border Normalization"
+		desc = "We no longer hold claim on Roraima."
+		fire_only_once = yes
+		
+		trigger = {
+			has_global_flag = BRZ_ENG_pirara_question
+			OR = {
+				primary_culture = north_andean
+				primary_culture = llanero
+			}
+			2532 = { is_core = THIS is_core = BRZ }
+			OR = {
+				3380 = { NOT = { is_core = BRZ is_core = THIS } }
+				3379 = { NOT = { is_core = BRZ is_core = THIS } }
+			}
+			NOT = { has_country_flag = pirara_question_failsafe }
+		}
+
+		option = {
+			name = "EVTOPTA1999998114"
+			set_country_flag = pirara_question_failsafe
+			2532 = {
+				remove_core = VNZ
+				remove_core = FVZ
+				remove_core = USV
+				remove_core = ZLA
+				remove_core = B4R
+				remove_core = CLM
+				remove_core = ANQ
+				remove_core = AR1
+				remove_core = ECU
+				remove_core = GAY
+				remove_core = GCO
+			}
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}

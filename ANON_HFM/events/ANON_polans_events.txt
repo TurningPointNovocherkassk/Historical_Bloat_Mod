@@ -99,7 +99,7 @@ country_event = {
 	}
 	
 	#validator says shit shit doesn't work, but it actually does.
-	immediate = { any_country = { limit = { OR = { tag = PZN tag = CPL } ai = no exists = yes } country_event = 666666123 } }
+	immediate = { any_country = { limit = { OR = { tag = KRA tag = CPL } ai = no exists = yes } country_event = 666666123 } }
 	
 	option = {
 		name = "Let the Poles be free! Let's Unite Poland and restore its glory!"
@@ -1351,7 +1351,7 @@ country_event = {
 			has_global_flag = paris_congress_to_be_held
 			has_country_flag = will_not_hold_congress
 			has_country_flag = hosting_paris_congress
-			has_country_modifier = neutrality_modifier
+			has_country_modifier = mediating_political_solution
 		}
 		OR = {
 			is_greater_power = yes
@@ -1455,7 +1455,7 @@ country_event = {
 			}
 			country_event = 666666016
 			add_country_modifier = { name = no_more_war duration = 1825 }
-			add_country_modifier = { name = neutrality_modifier duration = -1 }
+			add_country_modifier = { name = mediating_political_solution duration = -1 }
 		}
 		any_country = {
 			limit = {
@@ -1959,7 +1959,7 @@ country_event = {
 			modifier = {
 				factor = 0
 				OR = {
-					has_country_modifier = neutrality_modifier
+					has_country_modifier = mediating_political_solution
 					has_country_flag = polish_chimpout_voted_neutral
 				}
 			}
@@ -2058,7 +2058,7 @@ country_event = {
 			modifier = {
 				factor = 0
 				OR = {
-					has_country_modifier = neutrality_modifier
+					has_country_modifier = mediating_political_solution
 					has_country_flag = polish_chimpout_voted_neutral
 				}
 			}
@@ -2073,7 +2073,7 @@ country_event = {
 			modifier = {
 				factor = 10
 				OR = {
-					has_country_modifier = neutrality_modifier
+					has_country_modifier = mediating_political_solution
 					has_country_flag = polish_chimpout_voted_neutral
 				}
 			}
@@ -2224,23 +2224,23 @@ country_event = {
 				has_country_flag = for_congress_paris
 				OR = {
 					has_country_modifier = no_more_war
-					has_country_modifier = neutrality_modifier
+					has_country_modifier = mediating_political_solution
 				}
 			}
 			country_event = 666666020
 			remove_country_modifier = no_more_war
-			remove_country_modifier = neutrality_modifier
+			remove_country_modifier = mediating_political_solution
 		}
 		random_country = {
 			limit = {
 				tag = PNC
 				OR = {
 					has_country_modifier = no_more_war
-					has_country_modifier = neutrality_modifier
+					has_country_modifier = mediating_political_solution
 				}
 			}
 			remove_country_modifier = no_more_war
-			remove_country_modifier = neutrality_modifier
+			remove_country_modifier = mediating_political_solution
 		}
 	}
 
@@ -2329,23 +2329,23 @@ country_event = {
 				has_country_flag = for_congress_paris
 				OR = {
 					has_country_modifier = no_more_war
-					has_country_modifier = neutrality_modifier
+					has_country_modifier = mediating_political_solution
 				}
 			}
 			country_event = 666666021
 			remove_country_modifier = no_more_war
-			remove_country_modifier = neutrality_modifier
+			remove_country_modifier = mediating_political_solution
 		}
 		random_country = {
 			limit = {
 				tag = PNC
 				OR = {
 					has_country_modifier = no_more_war
-					has_country_modifier = neutrality_modifier
+					has_country_modifier = mediating_political_solution
 				}
 			}
 			remove_country_modifier = no_more_war
-			remove_country_modifier = neutrality_modifier
+			remove_country_modifier = mediating_political_solution
 		}
 	}
 }
@@ -3677,23 +3677,23 @@ country_event = {
 				has_country_flag = for_congress_paris
 				OR = {
 					has_country_modifier = no_more_war
-					has_country_modifier = neutrality_modifier
+					has_country_modifier = mediating_political_solution
 				}
 			}
 			country_event = 666666033
 			remove_country_modifier = no_more_war
-			remove_country_modifier = neutrality_modifier
+			remove_country_modifier = mediating_political_solution
 		}
 		random_country = {
 			limit = {
 				tag = PNC
 				OR = {
 					has_country_modifier = no_more_war
-					has_country_modifier = neutrality_modifier
+					has_country_modifier = mediating_political_solution
 				}
 			}
 			remove_country_modifier = no_more_war
-			remove_country_modifier = neutrality_modifier
+			remove_country_modifier = mediating_political_solution
 		}
 	}
 }
@@ -4293,7 +4293,7 @@ country_event = {
 	option = {
 		name = "EVTOPT666666037B"
 		remove_country_modifier = no_more_war
-		remove_country_modifier = neutrality_modifier
+		remove_country_modifier = mediating_political_solution
 		set_country_flag = polans_noble_republic
 		government = prussian_constitutionalism
 		ruling_party_ideology = conservative
@@ -7479,7 +7479,7 @@ country_event = {
 			modifier = {
 				factor = 0
 				OR = {
-					has_country_modifier = neutrality_modifier
+					has_country_modifier = mediating_political_solution
 					has_country_flag = czech_chimpout_voted_neutral
 				}
 			}
@@ -7564,7 +7564,7 @@ country_event = {
 			modifier = {
 				factor = 0
 				OR = {
-					has_country_modifier = neutrality_modifier
+					has_country_modifier = mediating_political_solution
 					has_country_flag = czech_chimpout_voted_neutral
 				}
 			}
@@ -7579,7 +7579,7 @@ country_event = {
 			modifier = {
 				factor = 10
 				OR = {
-					has_country_modifier = neutrality_modifier
+					has_country_modifier = mediating_political_solution
 					has_country_flag = czech_chimpout_voted_neutral
 				}
 			}
@@ -8765,7 +8765,7 @@ country_event = {
 	trigger = {
 		tag = PRC
 		BOH = {
-			has_country_modifier = neutrality_modifier
+			has_country_modifier = mediating_political_solution
 			exists = yes
 		}
 	}
@@ -8796,7 +8796,7 @@ country_event = {
 	picture = "bohemia_event"
 	trigger = {
 		tag = BOH
-		has_country_modifier = neutrality_modifier
+		has_country_modifier = mediating_political_solution
 		ai = no
 		OR = {
 			any_greater_power = { military_access = BOH }
@@ -9146,7 +9146,7 @@ country_event = {
 	option = {
 		name = "EVT666666077OPTA" #debt slavery, become their vassals.
 		PRC = { country_event = 666666078 }
-		remove_country_modifier = neutrality_modifier
+		remove_country_modifier = mediating_political_solution
 		prestige = -50
 		ai_chance = {
 			factor = 95

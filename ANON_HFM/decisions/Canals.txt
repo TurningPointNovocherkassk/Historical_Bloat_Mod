@@ -9,16 +9,24 @@ political_decisions = {
 		potential = {
 			NOT = { has_global_flag = kiel_under_construction }
 			NOT = { is_canal_enabled = 1 }
-			owns = 369
-			is_greater_power = yes
-			interchangeable_parts = 1
+            is_greater_power = yes
+            interchangeable_parts = 1
+            OR = {
+                369 = { owner = { OR = { in_sphere = THIS vassal_of = THIS substate_of = THIS } } }
+                owns = 369
+            }
 		}
 		
 		allow = {
-			invention = machine_tools
-			invention = nitroglycerin
-			iron_steamers = 1
-			money = 75000
+            OR = {
+                AND = {
+					invention = machine_tools
+					invention = nitroglycerin
+					iron_steamers = 1
+					money = 75000
+                }
+                ai = yes
+            }
 		}
 		effect = {
 			set_global_flag = kiel_under_construction
@@ -30,6 +38,10 @@ political_decisions = {
 			modifier = {
 				factor = 0
 				war = yes
+			}
+			modifier = {
+				factor = 0
+				NOT = { year = 1885 }
 			}
 		}
 	}
@@ -46,35 +58,28 @@ political_decisions = {
 			NOT = { has_global_flag = suez_canal_built }
 			NOT = { has_country_flag = build_suez_canal }
 			NOT = { has_country_flag = build_suez_canal_rejected }
-			is_greater_power = yes
-			interchangeable_parts = 1
-			OR = {
-				1755 = { owner = { in_sphere = THIS } }
-				AND = {
-					total_amount_of_ships = 75
-					1755 = { owner = { ai = yes civilized = no part_of_sphere = no } }
-				}
-				owns = 1755
-			}
+            is_greater_power = yes
+            interchangeable_parts = 1
+            OR = {
+                1755 = { owner = { in_sphere = THIS } }
+                AND = {
+                    total_amount_of_ships = 75
+                    1755 = { owner = { ai = yes civilized = no part_of_sphere = no } }
+                }
+                owns = 1755
+            }
 		}
 		
 		allow = {
-			OR = {
-				AND = {
-					invention = machine_tools
-					invention = nitroglycerin		
-					iron_steamers = 1
-					money = 250000
-					#OR = {
-					#	money = 250000
-					#	money = 500000
-					#}
-				}
-				AND = {
-					year = 1859
-					ai = yes
-				}
-			}
+            OR = {
+                AND = {
+                    invention = machine_tools
+                    invention = nitroglycerin
+                    iron_steamers = 1
+                    money = 250000
+                }
+                ai = yes
+            }
 		}
 		
 		effect = {
@@ -106,6 +111,10 @@ political_decisions = {
 			modifier = {
 				factor = 0
 				war = yes
+			}
+			modifier = {
+				factor = 0
+				NOT = { year = 1855 }
 			}
 		}
 	}
@@ -251,18 +260,23 @@ political_decisions = {
 			NOT = { is_canal_enabled = 3 }
 			is_greater_power = yes
 			interchangeable_parts = 1
-		}
-		allow = {
 			OR = {
 				1723 = { owner = { in_sphere = THIS } }
 				owns = 1723
 			}
-			invention = machine_tools
-			invention = nitroglycerin
-			iron_steamers = 1
-			invention = prophylaxis_against_malaria
-			money = 250000
 		}
+        allow = {
+			OR = {
+				ai = yes
+				AND = {
+					invention = machine_tools
+					invention = nitroglycerin
+					iron_steamers = 1
+					invention = prophylaxis_against_malaria
+					money = 250000
+				}
+			}
+        }
 		effect = {			
 			set_country_flag = build_panama_canal
 			random_country = {
@@ -290,6 +304,10 @@ political_decisions = {
 			modifier = {
 				factor = 0
 				war = yes
+			}
+			modifier = {
+				factor = 0
+				NOT = { year = 1900 }
 			}
 		}
 	}

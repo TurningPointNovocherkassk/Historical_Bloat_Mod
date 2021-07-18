@@ -33,6 +33,9 @@ reactionary_rebels = {
 		federal_democracy = presidential_dictatorship
 		theocracy = theocracy
 		colonial_company = absolute_monarchy
+		#
+		provisional_government = absolute_monarchy
+		tibetandual = tibetandual
 	}
 	
 	
@@ -332,6 +335,10 @@ fascist_rebels = {
 		democracy = fascist_dictatorship
 		theocracy = fascist_dictatorship
 		colonial_company = fascist_dictatorship
+		#
+		federal_democracy = fascist_dictatorship
+		provisional_government = fascist_dictatorship
+		tibetandual = fascist_dictatorship
 	}
 	
 	
@@ -621,6 +628,10 @@ communist_rebels = {
 		democracy = proletarian_dictatorship
 		theocracy = proletarian_dictatorship
 		colonial_company = proletarian_dictatorship
+		#
+		federal_democracy = proletarian_dictatorship
+		provisional_government = proletarian_dictatorship
+		tibetandual = proletarian_dictatorship
 	}
 	
 	
@@ -923,6 +934,10 @@ anarcho_liberal_rebels = {
 		democracy = bourgeois_dictatorship
 		theocracy = bourgeois_dictatorship
 		colonial_company = bourgeois_dictatorship
+		#
+		federal_democracy = bourgeois_dictatorship
+		provisional_government = bourgeois_dictatorship
+		tibetandual = bourgeois_dictatorship
 	}
 	
 	
@@ -1241,6 +1256,10 @@ nationalist_rebels = {
 		democracy = democracy
 		theocracy = theocracy
 		colonial_company = democracy
+		#
+		federal_democracy = federal_democracy
+		provisional_government = democracy
+		tibetandual = tibetandual
 	}
 	
 	
@@ -1395,6 +1414,10 @@ nationalist_rebels = {
 				OR = {
 					is_core = ANT
 					is_core = TST
+					is_core = ALE
+					is_core = KHM
+					is_core = ACH
+					is_core = IKO
 				}
 			}
 		}
@@ -1565,6 +1588,10 @@ pan_nationalist_rebels = {
 		democracy = democracy
 		theocracy = theocracy
 		colonial_company = democracy
+		#
+		federal_democracy = federal_democracy
+		provisional_government = democracy
+		tibetandual = tibetandual
 	}
 
 	defection = none			# (It was pan_nationalist) If the country seeks independence, defection specifies what type of provinces it wants.
@@ -1986,6 +2013,10 @@ carlist_rebels = {
 		democracy = absolute_monarchy
 		theocracy = theocracy
 		colonial_company = absolute_monarchy
+		#
+		federal_democracy = absolute_monarchy
+		provisional_government = absolute_monarchy
+		tibetandual = absolute_monarchy
 	}
 	
 	
@@ -2251,6 +2282,10 @@ christino_rebels = {
 		democracy = hms_government
 		theocracy = theocracy
 		colonial_company = hms_government
+		#
+		federal_democracy = hms_government
+		provisional_government = hms_government
+		tibetandual = hms_government
 	}
 	
 	
@@ -2496,6 +2531,10 @@ boxer_rebels = {
 		democracy = absolute_monarchy
 		theocracy = theocracy
 		colonial_company = absolute_monarchy
+		#
+		federal_democracy = absolute_monarchy
+		provisional_government = absolute_monarchy
+		tibetandual = absolute_monarchy
 	}
 	
 	defection = none				
@@ -2767,6 +2806,10 @@ red_shirts = {
 		democracy = democracy
 		theocracy = democracy
 		colonial_company = hms_government
+		#
+		federal_democracy = federal_democracy
+		provisional_government = democracy
+		tibetandual = tibetandual
 	}
 
 	defection = none			# (Was pan_nationalist) If the country seeks independence, defection specifies what type of provinces it wants.
@@ -3017,6 +3060,10 @@ indian_sepoys = {
 		democracy = democracy
 		theocracy = theocracy
 		colonial_company = democracy
+		#
+		federal_democracy = federal_democracy
+		provisional_government = democracy
+		tibetandual = tibetandual
 	}
 
 	defection = pan_nationalist		# If the country seeks independence, defection specifies what type of provinces it wants.
@@ -3281,6 +3328,10 @@ indian_nationalists = {
 		democracy = democracy
 		theocracy = theocracy
 		colonial_company = democracy
+		#
+		federal_democracy = federal_democracy
+		provisional_government = democracy
+		tibetandual = tibetandual
 	}
 
 	defection = none		# If the country seeks independence, defection specifies what type of provinces it wants.
@@ -3498,6 +3549,10 @@ liberal_rebels = {
 		democracy = democracy
 		theocracy = democracy
 		colonial_company = democracy
+		#
+		federal_democracy = federal_democracy
+		provisional_government = democracy
+		tibetandual = hms_government
 	}
 	
 	
@@ -4001,6 +4056,10 @@ unciv_reactionary_rebels = {
 		democracy = absolute_monarchy
 		theocracy = absolute_monarchy
 		colonial_company = colonial_company
+		#
+		federal_democracy = absolute_monarchy
+		provisional_government = absolute_monarchy
+		tibetandual = tibetandual
 	}
 	
 	defection = none					# Will defect to the "best" alternative.
@@ -4297,6 +4356,10 @@ separatist_rebels = {
 		democracy = democracy
 		theocracy = theocracy
 		colonial_company = democracy
+		#
+		federal_democracy = federal_democracy
+		provisional_government = democracy
+		tibetandual = tibetandual
 	}
 	
 	
@@ -4556,6 +4619,10 @@ socialist_rebels = {
 		democracy = democracy
 		theocracy = democracy
 		colonial_company = democracy
+		#
+		federal_democracy = democracy
+		provisional_government = democracy
+		tibetandual = democracy
 	}
 	
 	
@@ -5038,6 +5105,10 @@ independence_rebels = {
 		democracy = democracy
 		theocracy = theocracy
 		colonial_company = democracy
+		#
+		federal_democracy = federal_democracy
+		provisional_government = democracy
+		tibetandual = tibetandual
 	}
 	
 	
@@ -5210,6 +5281,10 @@ turkish_nationalist_rebels = {
 		democracy = democracy
 		theocracy = theocracy
 		colonial_company = democracy
+		#
+		federal_democracy = federal_democracy
+		provisional_government = democracy
+		tibetandual = democracy
 	}
 	
 	
@@ -5455,6 +5530,10 @@ native_rebels = {
 		democracy = democracy
 		theocracy = democracy
 		colonial_company = democracy
+		#
+		federal_democracy = federal_democracy
+		provisional_government = democracy
+		tibetandual = tibetandual
 	}
 	
 	defection = none					# Will defect to the "best" alternative.
@@ -5642,6 +5721,10 @@ sioux_nation = {
 		democracy = democracy
 		theocracy = theocracy
 		colonial_company = democracy
+		#
+		federal_democracy = federal_democracy
+		provisional_government = democracy
+		tibetandual = tibetandual
 	}
 
 	defection = none					# Will defect to the "best" alternative.
@@ -5766,6 +5849,10 @@ apache = {
 		democracy = democracy
 		theocracy = democracy
 		colonial_company = democracy
+		#
+		federal_democracy = federal_democracy
+		provisional_government = democracy
+		tibetandual = tibetandual
 	}
 
 	defection = none					# Will defect to the "best" alternative.
@@ -5895,6 +5982,10 @@ federalist_rebels = {
 		democracy = federal_democracy
 		theocracy = theocracy
 		colonial_company = colonial_company
+		#
+		federal_democracy = federal_democracy
+		provisional_government = federal_democracy
+		tibetandual = tibetandual
 	}
 
 	defection = none					# Will defect to the "best" alternative.
@@ -5948,9 +6039,9 @@ federalist_rebels = {
 						AND = {
 							OR = {
 								tag = PLC
-								tag = PLH
+								tag = HPL
 								tag = PLR
-								tag = C3N
+								tag = PRB
 							}
 							OR = {
 								centralization = confederalism

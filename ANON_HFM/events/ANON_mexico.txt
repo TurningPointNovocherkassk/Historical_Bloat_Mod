@@ -1284,17 +1284,16 @@ country_event = {
 	
 	option = { # Send Quintana Roo to seek a diplomatic compromise
 		name = "EVT1220017OPTA"
-		YUC = { country_event = { id = 1220018 days = 240 } }
-		relation = {
-			who = YUC
-			value = 200
+		YUC = {
+			add_country_modifier = {
+				name = mediating_political_solution
+				duration = 30
+			}
+			add_country_modifier = {
+				name = no_more_war
+				duration = 30
+			}
 		}
-		diplomatic_influence = {
-			who = YUC
-			value = 400
-		}
-		military_access = YUC
-		create_alliance = YUC
 		ai_chance = {
 			factor = 55
 			modifier = {
@@ -1310,6 +1309,7 @@ country_event = {
 	
 	option = { # Last resort
 		name = "EVT1220017OPTB"
+		badboy = 2.5
 		relation = {
 			who = YUC
 			value = -400
@@ -1318,19 +1318,15 @@ country_event = {
 			who = YUC
 			value = -400
 		}
-		leave_alliance = YUC
-		end_military_access = YUC
 		YUC = {
 			any_pop = { militancy = -6 }
 			relation = { who = THIS value = -400 }
-			leave_alliance = THIS
-			end_military_access = THIS
 		}
 		war = {
 			target = YUC
 			attacker_goal = {
-				#casus_belli = civil_war
-				casus_belli = annex_core_country
+				casus_belli = civil_war
+				# casus_belli = annex_core_country
 			}
 			defender_goal = {
 				casus_belli = become_independent
@@ -1371,18 +1367,17 @@ country_event = {
 	
 	option = { # We will support them! (Play as YUC)
 		name = "EVT1220017OPTD"
-		relation = {
-			who = YUC
-			value = 200
+		YUC = {
+			add_country_modifier = {
+				name = mediating_political_solution
+				duration = 30
+			}
+			add_country_modifier = {
+				name = no_more_war
+				duration = 30
+			}
 		}
-		diplomatic_influence = {
-			who = YUC
-			value = 400
-		}
-		military_access = YUC
-		create_alliance = YUC
 		change_tag_no_core_switch = YUC
-		YUC = { country_event = { id = 1220018 days = 240 } }
 		ai_chance = {
 			factor = 0
 		}	
@@ -1395,7 +1390,14 @@ country_event = {
 	title = "EVTNAME1220018"
 	desc = "EVTDESC1220018"
 	picture = "treaty"
-	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		tag = YUC
+		2172 = { owner = { has_country_flag = yucatan_independence } }
+		NOT = { has_country_modifier = mediating_political_solution }
+		NOT = { has_country_modifier = no_more_war }
+	}
 	
 	option = { # Accept
 		name = "EVT1220018OPTA"
@@ -1423,14 +1425,14 @@ country_event = {
 	
 	option = { # Accept their conditions, game over for YUC
 		name = "EVT1220019OPTA"
-		YUC = { country_event = { id = 1220020 days = 5 } }
+		YUC = { country_event = 1220020 }
 		ai_chance = {
 			factor = 0
 		}	
 	}
 	option = { # Refuse, to war with YUC it is (August 1842, MEX troops take over 3443)
 		name = "EVT1220019OPTB"
-		YUC = { country_event = { id = 1220021 days = 5 } }
+		YUC = { country_event = 1220021 }
 		ai_chance = {
 			factor = 100
 		}	
@@ -1447,23 +1449,28 @@ country_event = {
 	
 	option = {
 		name = "EVT1220020OPTA"
+		random_owned = {
+			limit = {
+				owner = { ai = no }
+			}
+			owner = { change_tag_no_core_switch = MEX }
+		}
+		MEX = { inherit = YUC }
 		#add economically positive modifiers to coastal YUC provinces but gives more autonomy (does not avert caste war)
 		#3443 2184 2183 3357 3358 2185
-		any_owned = {
-			limit = {
-				OR = {
-					province_id = 3443
-					province_id = 2184
-					province_id = 2183
-					province_id = 3357
-					province_id = 3358
-					province_id = 2185
-				}
-			}
-			add_province_modifier = { name = YUC_autonomy_modifier duration = 3650 }
-		}
-		change_tag_no_core_switch = MEX
-		MEX = { inherit = YUC }
+		# any_owned = { #These won't work if YUC is annexed
+			# limit = {
+				# OR = {
+					# province_id = 3443
+					# province_id = 2184
+					# province_id = 2183
+					# province_id = 3357
+					# province_id = 3358
+					# province_id = 2185
+				# }
+			# }
+			# add_province_modifier = { name = YUC_autonomy_modifier duration = 3650 }
+		# }
 		ai_chance = {
 			factor = 100
 		}	
@@ -1497,27 +1504,12 @@ country_event = {
 	
 	option = { # War declaration
 		name = "EVT1220022OPTA"
-		relation = {
-			who = YUC
-			value = -400
-		}
-		diplomatic_influence = {
-			who = YUC
-			value = -400
-		}
-		leave_alliance = YUC
-		end_military_access = YUC
-		YUC = {
-			relation = { who = THIS value = -400 }
-			leave_alliance = THIS
-			end_military_access = THIS
-			country_event = 1220023
-		}
+		YUC = { country_event = 1220023 }
 		war = {
 			target = YUC
 			attacker_goal = {
-				#casus_belli = civil_war
-				casus_belli = annex_core_country
+				casus_belli = civil_war
+				# casus_belli = annex_core_country
 			}
 			defender_goal = {
 				casus_belli = status_quo
@@ -2099,6 +2091,7 @@ country_event = {
 	option = { #
 		name = "EVT1220036OPTA"
 		remove_country_modifier = smol_badboy
+		government = dominion
 		relation = {
 			who = MEX
 			value = 400
@@ -2781,13 +2774,19 @@ country_event = {
 		war = {
 			target = CSC
 			attacker_goal = {
-				#casus_belli = civil_war
 				casus_belli = annex_core_country
 			}
 			defender_goal = {
-				#casus_belli = civil_war
-				#casus_belli = annex_core_country
-				casus_belli = acquire_all_cores
+				casus_belli = acquire_core_state
+				state_province_id = 2183 #Campeche
+			}
+			defender_goal = {
+				casus_belli = acquire_core_state
+				state_province_id = 2184 #Merida
+			}
+			defender_goal = {
+				casus_belli = acquire_core_state
+				state_province_id = 3358 #Valladolid
 			}
 			call_ally = yes
 		}
@@ -2847,7 +2846,7 @@ country_event = {
 	option = { # Ask MEX for help
 		name = "EVT1220055OPTA"
 		set_global_flag = YUC_MEX_pls_help
-		MEX = { country_event = { id = 1220056 days = 5 } }
+		2172 = { owner = { country_event = 1220056 } }
 		ai_chance = {
 			factor = 100
 		}	
@@ -2875,8 +2874,8 @@ country_event = {
 	
 	option = { # We will support them!
 		name = "EVT1220056OPTA"
-		FROM = { country_event = { id = 1220057 days = 5 } }
-		CSC = { country_event = { id = 1220059 days = 5 } }
+		FROM = { country_event = 1220057 }
+		CSC = { country_event = 1220059 }
 		ai_chance = {
 			factor = 100
 		}	
@@ -2884,7 +2883,7 @@ country_event = {
 	option = { # No, you're on your own
 		name = "EVT1220056OPTB"
 		FROM = {
-			country_event = { id = 1220058 days = 5 }
+			country_event = 1220058
 			relation = { who = THIS value = -400 }
 		}
 		ai_chance = {
@@ -2901,6 +2900,7 @@ country_event = {
 	
 	option = { # Great!
 		name = "EVT1220057OPTA"
+		government = dominion
 		FROM = {
 			create_alliance = THIS
 			create_vassal = THIS
@@ -3438,7 +3438,7 @@ province_event = {
 			militancy = -2
 			consciousness = -2
 		}
-		badboy = 0.11
+		owner = { badboy = 0.11 }
 		ai_chance = {
 			factor = 100
 		}	
@@ -3718,18 +3718,19 @@ country_event = {
 				owned_by = MEX
 				owned_by = M3X
 				owned_by = MXM
-				owned_by = UCA
-				owned_by = GUA
-				owned_by = T4B
-				owned_by = CHP
+				# owned_by = UCA
+				# owned_by = GUA
+				# owned_by = T4B
+				# owned_by = CHP
 			}
 		}
-		NOT = { has_global_flag = caste_war_begin }
 		NOT = { tag = TMT }
 		NOT = { has_country_flag = ghost_country }
 		TMT = { exists = no }
+		NOT = { has_global_flag = YUC_MEX_peaceful_reincorporation }
+		#
+		# NOT = { has_global_flag = caste_war_begin }
 	}
-	fire_only_once = yes
 	
 	option = { # 
 		name = "Good."
@@ -3739,10 +3740,10 @@ country_event = {
 					tag = MEX
 					tag = M3X
 					tag = MXM
-					tag = UCA
-					tag = GUA
-					tag = T4B
-					tag = CHP
+					# tag = UCA
+					# tag = GUA
+					# tag = T4B
+					# tag = CHP
 				}
 				any_owned_province = {
 					is_core = YUC

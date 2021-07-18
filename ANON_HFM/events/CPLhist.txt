@@ -102,15 +102,13 @@ country_event = {
 			tag = CPL
 			tag = PZN
 			tag = PNC
-			OR = {
-				is_culture_group = polish_culture_group
-				accepted_culture = polish
-			}	
+			is_culture_group = polish_culture_group
+			accepted_culture = polish
 		}	
 	}
 	
 	#validator says shit shit doesn't work, but it actually does.
-	immediate = { any_country = { limit = { OR = { tag = PZN tag = CPL } ai = no exists = yes } country_event = 666666123 } }
+	immediate = { any_country = { limit = { OR = { tag = KRA tag = PZN } ai = no exists = yes } country_event = 666666123 } }
 	
 	option = {
 		name = "EVTOPT500001A"
@@ -186,7 +184,7 @@ country_event = {
 		
 		war = {
 			target = CPL
-			attacker_goal = { casus_belli = conquest_any }
+			attacker_goal = { casus_belli = annex_core_country }
 			defender_goal = { casus_belli = status_quo }
 		}
 		
@@ -402,8 +400,8 @@ country_event = {
 			artillery = 10
 		}
 		create_alliance = CPL
-		leave_alliance = FROM
-		relation = { who = FROM value = -150 }
+		leave_alliance = RUS
+		relation = { who = RUS value = -150 }
 		relation = { who = CPL value = 200 }
 		diplomatic_influence = { who = CPL value = 100 }
 		any_pop = {
@@ -450,20 +448,20 @@ country_event = {
 				sphere_owner = { has_country_flag = polish_uprising_voted_support_POL }
 			}
 			# END NEW
-			modifier = { factor = 0 alliance_with = FROM }
-			modifier = { factor = 10 war_with = FROM }
-			modifier = { factor = 2 truce_with = FROM }
+			modifier = { factor = 0 alliance_with = RUS }
+			modifier = { factor = 10 war_with = RUS }
+			modifier = { factor = 2 truce_with = RUS }
 			modifier = {
 				factor = 2
-				NOT = { relation = { who = FROM value = -150 } }
+				NOT = { relation = { who = RUS value = -150 } }
 			}
 			modifier = {
 				factor = 1.5
-				NOT = { relation = { who = FROM value = -100 } }
+				NOT = { relation = { who = RUS value = -100 } }
 			}
 			modifier = {
 				factor = 1.25
-				NOT = { relation = { who = FROM value = -50 } }
+				NOT = { relation = { who = RUS value = -50 } }
 			}
 			#ANON
 			modifier = {
@@ -489,7 +487,7 @@ country_event = {
 	option = {
 		name = "EVTOPT500002B" 		#condemn Russia
 		set_country_flag = polish_uprising_voted_condemn_RUS
-		relation = { who = FROM value = -50 }
+		relation = { who = RUS value = -50 }
 		relation = { who = CPL value = 50 }
 		any_pop = {
 			limit = { has_pop_culture = polish }
@@ -530,16 +528,16 @@ country_event = {
 				sphere_owner = { has_country_flag = polish_uprising_voted_condemn_RUS }
 			}
 			# END NEW
-			modifier = { factor = 0 alliance_with = FROM }
+			modifier = { factor = 0 alliance_with = RUS }
 			modifier = {
 				factor = 1.25
-				relation = { who = FROM value = -50 }
-				NOT = { relation = { who = FROM value = 0 } }
+				relation = { who = RUS value = -50 }
+				NOT = { relation = { who = RUS value = 0 } }
 			}
 			modifier = {
 				factor = 1.25
-				relation = { who = FROM value = 0 }
-				NOT = { relation = { who = FROM value = 50 } }
+				relation = { who = RUS value = 0 }
+				NOT = { relation = { who = RUS value = 50 } }
 			}
 		}
 	}
@@ -597,15 +595,15 @@ country_event = {
 			}
 			modifier = {
 				factor = 2
-				relation = { who = FROM value = 50 }
-				NOT = { relation = { who = FROM value = 100 } }
+				relation = { who = RUS value = 50 }
+				NOT = { relation = { who = RUS value = 100 } }
 			}
 		}
 	}
 	option = {
 		name = "EVTOPT500002D"		#support russia
 		set_country_flag = polish_uprising_voted_support_RUS
-		relation = { who = FROM value = 25 }
+		relation = { who = RUS value = 25 }
 		relation = { who = CPL value = -150 }
 		any_pop = {
 			limit = { has_pop_culture = polish }
@@ -646,18 +644,18 @@ country_event = {
 				sphere_owner = { has_country_flag = polish_uprising_voted_support_RUS }
 			}
 			# END NEW
-			modifier = { factor = 5 alliance_with = FROM }
+			modifier = { factor = 5 alliance_with = RUS }
 			modifier = {
 				factor = 2
-				relation = { who = FROM value = 190 }
+				relation = { who = RUS value = 190 }
 			}
 			modifier = {
 				factor = 2
-				relation = { who = FROM value = 150 }
+				relation = { who = RUS value = 150 }
 			}
 			modifier = {
 				factor = 2
-				relation = { who = FROM value = 100 }
+				relation = { who = RUS value = 100 }
 			}
 			modifier = {
 				factor = 3

@@ -1623,14 +1623,12 @@ political_decisions = {
 				}
 			}
 			OR = {
-				has_global_flag = schomburgks_line
-				has_global_flag = ENG_declare_schomburgk_frontier
-				OR = {
-					has_global_flag = ENG_schomburgk_historical
-					has_global_flag = ENG_schomburgk_barima
-					has_global_flag = ENG_schomburgk_extended
-					has_global_flag = ENG_schomburgk_pre
-				}
+				# has_global_flag = schomburgks_line
+				# has_global_flag = ENG_declare_schomburgk_frontier
+				has_global_flag = ENG_schomburgk_historical
+				has_global_flag = ENG_schomburgk_barima
+				has_global_flag = ENG_schomburgk_extended
+				has_global_flag = ENG_schomburgk_pre
 			}
 			NOT = { has_global_flag = ENG_schomburgk_denied }
 			NOT = { has_global_flag = BRZ_ENG_pirara_question }
@@ -1687,7 +1685,13 @@ political_decisions = {
 				country_event = 1999998042
 			}
 		}
-		ai_will_do = { factor = 1 }
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { year = 1900 }
+			}
+		}
 	}
 	
 #####################################

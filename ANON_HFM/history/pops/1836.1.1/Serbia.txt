@@ -114,577 +114,867 @@
 }
 
 #Subotica (108000/30000 POPS) #part of Serbia today
-3295 = {
-	aristocrats = {
-		culture = serb
-		religion = orthodox
-		size = 500  
-	}
-	clergymen = {
-		culture = serb
-		religion = orthodox
-		size = 150 
-	}
-
-	artisans = {
-		culture = serb
-		religion = orthodox
-		size = 1750
-	}
-
-	soldiers = {
-		culture = serb
-		religion = orthodox
-		size = 250 
-	}
-
-	farmers = {
-		culture = serb
-		religion = orthodox
-		size = 28350
-	}
-	
-	farmers = {
-		culture = serb
-		religion = catholic
-		size = 500
-	}
-
-	clergymen = {
-		culture = croat
-		religion = catholic
-		size = 75  
-	}
-
-	artisans = {
-		culture = croat
-		religion = catholic
-		size = 200
-	}
-
-	soldiers = {
-		culture = croat
-		religion = catholic
-		size = 50 
-	}
-
-	farmers = {
-		culture = croat
-		religion = catholic
-		size = 3675  
-	}
-
+3295 = { #rough estimate because fuck you - 766779 in the whole historical county, 64000 (spread between 3 provinces) - 48000
+	######Germans, should account for ~21.5% - 10320
 	aristocrats = {
 		culture = danube_german
-		religion = catholic
-		size = 300  
-	}
-
-	clergymen = {
-		culture = danube_german
-		religion = catholic
-		size = 50   
-	}
-
-	artisans = {
-		culture = danube_german
-		religion = catholic
-		size = 350
-	}
-
-	soldiers = {
-		culture = danube_german
-		religion = catholic
-		size = 75     
-	}
-
-	farmers = {
-		culture = danube_german
-		religion = catholic
-		size = 5225  
-	}
-
-	aristocrats = {
-		culture = hungarian
-		religion = catholic
-		size = 400  
-	}
-
-	clergymen = {
-		culture = hungarian
-		religion = catholic
-		size = 300  
-	}
-
-	artisans = {
-		culture = hungarian
-		religion = catholic
-		size = 500
-	}
-
-	soldiers = {
-		culture = hungarian
-		religion = catholic
-		size = 300  
-	}
-
-	farmers = {
-		culture = hungarian
-		religion = catholic
-		size = 10000 
-	}
-	
-	serfs = {
-		culture = gypsy
-		religion = catholic
-		size = 1500 
-	}
-}
-#Pancevo (268000/67000 POPS) #part of Serbia today
-792 = {
-	aristocrats = {
-		culture = serb
-		religion = orthodox
-		size = 250  
-	}
-	
-	clergymen = {
-		culture = serb
-		religion = orthodox
-		size = 250
-	}
-
-	artisans = {
-		culture = serb
-		religion = orthodox
-		size = 3000
-	}
-
-	soldiers = {
-		culture = serb
-		religion = orthodox
-		size = 1100 
-	}
-
-	serfs = {
-		culture = serb
-		religion = orthodox
-		size = 23325
-	}
-	
-	farmers = {
-		culture = serb
-		religion = catholic
-		size = 1000
-	}
-
-	aristocrats = {
-		culture = hungarian
-		religion = catholic
-		size = 600  
-	}
-
-	clergymen = {
-		culture = hungarian
-		religion = catholic
-		size = 100  
-	}
-
-	artisans = {
-		culture = hungarian
-		religion = catholic
-		size = 500
-	}
-
-	soldiers = {
-		culture = hungarian
-		religion = catholic
-		size = 100  
-	}
-
-	farmers = {
-		culture = hungarian
-		religion = catholic
-		size = 8700 
-	}
-
-	aristocrats = {
-		culture = danube_german
-		religion = catholic
-		size = 1100  
-	}
-
-	clergymen = {
-		culture = danube_german
-		religion = catholic
-		size = 200   
-	}
-
-	artisans = {
-		culture = danube_german
-		religion = catholic
-		size = 1100
-	}
-
-	soldiers = {
-		culture = danube_german
-		religion = catholic
-		size = 200     
-	}
-
-	farmers = {
-		culture = danube_german
-		religion = catholic
-		size = 17600  
-	}
-
-	clergymen = {
-		culture = romanian
-		religion = orthodox
-		size = 100 
-	}
-
-	artisans = {
-		culture = romanian
-		religion = orthodox
-		size = 500
-	}
-
-	soldiers = {
-		culture = romanian
-		religion = orthodox
-		size = 100 
-	}
-
-	farmers = {
-		culture = romanian
-		religion = orthodox
-		size = 10300 
-	}
-	
-	clergymen = {
-		culture = bulgarian
-		religion = catholic
-		size = 150   
-	}
-	artisans = {
-		culture = bulgarian
-		religion = catholic
-		size = 850 
-	}
-	soldiers = {
-		culture = bulgarian
-		religion = catholic
-		size = 200
-	}
-	farmers = {
-		culture = bulgarian
-		religion = catholic
-		size = 2000 
-	}
-}
-#Kikinda
-3624 = {
-	aristocrats = {
-		culture = serb
-		religion = orthodox
-		size = 750  
-	}
-	
-	clergymen = {
-		culture = serb
-		religion = orthodox
-		size = 250
-	}
-
-	artisans = {
-		culture = serb
-		religion = orthodox
-		size = 1100
-	}
-
-	soldiers = {
-		culture = serb
-		religion = orthodox
-		size = 1100 
-	}
-
-	serfs = {
-		culture = serb
-		religion = orthodox
-		size = 23325
-	}
-	
-	farmers = {
-		culture = serb
-		religion = catholic
-		size = 1000
-	}
-
-	aristocrats = {
-		culture = hungarian
-		religion = catholic
-		size = 600  
-	}
-
-	clergymen = {
-		culture = hungarian
-		religion = catholic
-		size = 100  
-	}
-
-	artisans = {
-		culture = hungarian
-		religion = catholic
-		size = 500
-	}
-
-	soldiers = {
-		culture = hungarian
 		religion = catholic
 		size = 500  
 	}
-
-	farmers = {
-		culture = hungarian
-		religion = catholic
-		size = 10700 
-	}
-
-	aristocrats = {
+	bureaucrats = {
 		culture = danube_german
 		religion = catholic
-		size = 1100  
+		size = 75 
 	}
-
+	officers = {
+		culture = danube_german
+		religion = catholic
+		size = 75 
+	}
 	clergymen = {
 		culture = danube_german
 		religion = catholic
-		size = 200   
-	}
-
-	artisans = {
-		culture = danube_german
-		religion = catholic
-		size = 1100
-	}
-
-	soldiers = {
-		culture = danube_german
-		religion = catholic
-		size = 200     
-	}
-
-	farmers = {
-		culture = danube_german
-		religion = catholic
-		size = 17600  
-	}
-
-	clergymen = {
-		culture = romanian
-		religion = orthodox
-		size = 100 
-	}
-
-	artisans = {
-		culture = romanian
-		religion = orthodox
 		size = 500
 	}
-
-	soldiers = {
-		culture = romanian
-		religion = orthodox
-		size = 100 
+	artisans = {
+		culture = danube_german
+		religion = catholic
+		size = 1550
 	}
-
+	soldiers = {
+		culture = danube_german
+		religion = catholic
+		size = 1000     
+	}
 	farmers = {
-		culture = romanian
-		religion = orthodox
-		size = 5200 
+		culture = danube_german
+		religion = catholic
+		size = 6620 
 	}
 	
-	clergymen = {
-		culture = bulgarian
-		religion = catholic
-		size = 150   
-	}
-	artisans = {
-		culture = bulgarian
-		religion = catholic
-		size = 850 
-	}
-	soldiers = {
-		culture = bulgarian
-		religion = catholic
-		size = 200
-	}
-	farmers = {
-		culture = bulgarian
-		religion = catholic
-		size = 5000 
-	}
-}
-#Novi Sad (384000/96000 POPS) #part of Serbia today
-2538 = {
-
+	######Serbs, should account for ~42.7% - 20496
 	aristocrats = {
 		culture = serb
 		religion = orthodox
-		size = 750  
+		size = 600  
 	}
-	
 	officers = {
 		culture = serb
 		religion = orthodox
 		size = 75 
 	}
-
 	clergymen = {
 		culture = serb
 		religion = orthodox
 		size = 275
 	}
-
 	artisans = {
 		culture = serb
 		religion = orthodox
 		size = 1250
 	}
-
 	soldiers = {
 		culture = serb
 		religion = orthodox
-		size = 300 
+		size = 3300 
 	}
-
 	serfs = {
 		culture = serb
 		religion = orthodox
-		size = 24175 
+		size = 8585 
 	}
-	
 	farmers = {
 		culture = serb
-		religion = catholic
-		size = 1000 
+		religion = orthodox
+		size = 6410
 	}
-
+	
+	######Hungarians, should account for ~18.2% - 8736
 	aristocrats = {
 		culture = hungarian
 		religion = catholic
-		size = 750  
+		size = 250  
 	}
-
 	clergymen = {
 		culture = hungarian
 		religion = catholic
 		size = 150  
 	}
-
 	artisans = {
 		culture = hungarian
 		religion = catholic
 		size = 750
 	}
-
 	soldiers = {
 		culture = hungarian
 		religion = catholic
 		size = 150  
 	}
-
 	farmers = {
 		culture = hungarian
 		religion = catholic
-		size = 12500 
+		size = 3400 
 	}
-	
-	serfs = {
-		culture = gypsy
-		religion = catholic
-		size = 1500 
+	#Calvinist/Lutheran
+	aristocrats = {
+		culture = hungarian
+		religion = protestant
+		size = 200 
 	}
-	
 	clergymen = {
-		culture = croat
-		religion = catholic
-		size = 75  
+		culture = hungarian
+		religion = protestant
+		size = 100    
 	}
-
 	artisans = {
-		culture = croat
-		religion = catholic
-		size = 250
+		culture = hungarian
+		religion = protestant
+		size = 500   
 	}
-
 	soldiers = {
-		culture = croat
-		religion = catholic
-		size = 50 
+		culture = hungarian
+		religion = protestant
+		size = 100
 	}
-
-	serfs = {
-		culture = croat
-		religion = catholic
-		size = 4625  
+	farmers = {
+		culture = hungarian
+		religion = protestant
+		size = 3200   
 	}
-
+	
+	######Slovak, should account for ~3.9% of the population - 1872
 	clergymen = {
 		culture = slovak
 		religion = catholic
 		size = 75 
 	}
-
 	artisans = {
 		culture = slovak
 		religion = catholic
 		size = 450
 	}
-
 	soldiers = {
 		culture = slovak
 		religion = catholic
 		size = 100 
 	}
-
 	serfs = {
 		culture = slovak
 		religion = catholic
-		size = 9375 
+		size = 1247 
 	}
+	
+	######Croat, should account for ~0.1% of the population - 83 - 250 for now
+	clergymen = {
+		culture = croat
+		religion = catholic
+		size = 75  
+	}
+	artisans = {
+		culture = croat
+		religion = catholic
+		size = 75
+	}
+	serfs = {
+		culture = croat
+		religion = catholic
+		size = 100  
+	}
+	
+	######Ruthenes, should account for ~2% of the population - 1000
+	clergymen = {
+		culture = rusyn
+		religion = maronite
+		size = 100   
+	}
+	artisans = {
+		culture = rusyn
+		religion = maronite
+		size = 225
+	}
+	soldiers = {
+		culture = rusyn
+		religion = maronite
+		size = 75     
+	}
+	serfs = {
+		culture = rusyn
+		religion = maronite
+		size = 600  
+	}
+	
+	######Jews, should account for ~2.5% of the population - 1200
+    aristocrats = {
+        culture = ashkenazi
+        religion = jewish
+        size = 75
+    }
+    clergymen = {
+        culture = ashkenazi
+        religion = jewish
+        size = 75
+    }
+    artisans = {
+        culture = ashkenazi
+        religion = jewish
+        size = 950
+    }
+    farmers = {
+        culture = ashkenazi
+        religion = jewish
+        size = 100
+    }
+	
+	######creatures
+	serfs = {
+		culture = gypsy
+		religion = orthodox
+		size = 1500 
+	}
+}
+#Pancevo (268000/67000 POPS) #part of Serbia today
+792 = { #rough estimate because fuck you - 609362 in the whole historical county, 305000/4 vic2 - 76250
 
+	######Germans, should account for ~30.2% - 23028
 	aristocrats = {
 		culture = danube_german
 		religion = catholic
 		size = 1100  
 	}
-
+	bureaucrats = {
+		culture = south_german
+		religion = catholic
+		size = 75 
+	}
 	clergymen = {
 		culture = danube_german
 		religion = catholic
-		size = 225
+		size = 200   
 	}
-
 	artisans = {
 		culture = danube_german
 		religion = catholic
-		size = 1150
+		size = 2100
 	}
-
 	soldiers = {
 		culture = danube_german
 		religion = catholic
-		size = 250     
+		size = 200     
 	}
-
 	farmers = {
 		culture = danube_german
 		religion = catholic
-		size = 20375 
+		size = 17353  
 	}
 	
+	######Romanians, should account for ~14.4% - 10980
+	clergymen = {
+		culture = romanian
+		religion = orthodox
+		size = 175 
+	}
+	artisans = {
+		culture = romanian
+		religion = orthodox
+		size = 1200
+	}
+	soldiers = {
+		culture = romanian
+		religion = orthodox
+		size = 300
+	}
+	serfs = {
+		culture = romanian
+		religion = orthodox
+        size = 9305
+	}
+
+	######Serbs, should account for ~31.5% - 24019
+    aristocrats = {
+        culture = serb
+        religion = orthodox
+        size = 700
+	}
+	clergymen = {
+		culture = serb
+		religion = orthodox
+		size = 350 
+	}
+	artisans = {
+		culture = serb
+		religion = orthodox
+		size = 2400
+	}
+	soldiers = {
+		culture = serb
+		religion = orthodox
+		size = 6600
+	}
+	farmers = {
+		culture = serb
+		religion = orthodox
+		size = 13000
+	}
+	serfs = {
+		culture = serb
+		religion = orthodox
+        size = 3000
+	}
+	
+	######Hungarians, should account for ~18.8% - 14335
+	#147450
+    aristocrats = {
+        culture = hungarian
+        religion = catholic
+        size = 400
+    }
+    bureaucrats = {
+        culture = hungarian
+        religion = catholic
+        size = 150
+    }
+    clergymen = {
+        culture = hungarian
+        religion = catholic
+        size = 200
+    }
+    artisans = {
+        culture = hungarian
+        religion = catholic
+        size = 500
+    }
+    soldiers = {
+        culture = hungarian
+        religion = catholic
+        size = 500
+    }
+    serfs = {
+        culture = hungarian
+        religion = catholic
+        size = 4000
+    }
+	#Calvinist/Lutheran
+    aristocrats = {
+        culture = hungarian
+        religion = protestant
+        size = 650
+    }
+    clergymen = {
+        culture = hungarian
+        religion = protestant
+        size = 235
+    }
+    artisans = {
+        culture = hungarian
+        religion = protestant
+        size = 750
+    }
+    soldiers = {
+        culture = hungarian
+        religion = protestant
+        size = 700
+    }
+    farmers = {
+        culture = hungarian
+        religion = protestant
+        size = 6000
+    }
+	
+	######Slovaks, should account for ~2.5% of the population - 1907
+	clergymen = {
+		culture = slovak
+		religion = catholic
+		size = 100   
+	}
+	artisans = {
+		culture = slovak
+		religion = catholic
+		size = 500 
+	}
+	soldiers = {
+		culture = slovak
+		religion = catholic
+		size = 100
+	}
+	farmers = {
+		culture = slovak
+		religion = catholic
+        size = 1207
+	}
+	
+	######Croats, should account for ~0.7% of the population - 535
+	clergymen = {
+		culture = croat
+		religion = catholic
+		size = 75   
+	}
+	artisans = {
+		culture = croat
+		religion = catholic
+		size = 100 
+	}
+	soldiers = {
+		culture = croat
+		religion = catholic
+		size = 75
+	}
+	farmers = {
+		culture = croat
+		religion = catholic
+        size = 285
+	}
+	
+	######Banat Bulgarians, shouldn't be more than 19k (4.5k pops) throughout 3624 (kikinda), 792 (pancevo), 653 (reschitz), 652 (temes). ~ 1.2k per province
+	#11200
+	clergymen = {
+		culture = bulgarian
+		religion = catholic
+		size = 100   
+	}
+	artisans = {
+		culture = bulgarian
+		religion = catholic
+		size = 300 
+	}
+	soldiers = {
+		culture = bulgarian
+		religion = catholic
+		size = 100
+	}
+	farmers = {
+		culture = bulgarian
+		religion = catholic
+		size = 700 
+	}
+	
+	######Jews, should account for ~1.1% of the population - 850
+    aristocrats = {
+        culture = ashkenazi
+        religion = jewish
+        size = 200
+    }
+    clergymen = {
+        culture = ashkenazi
+        religion = jewish
+        size = 100
+    }
+    artisans = {
+        culture = ashkenazi
+        religion = jewish
+        size = 475
+    }
+    farmers = {
+        culture = ashkenazi
+        religion = jewish
+        size = 75
+    }
+}
+#Kikinda
+3624 = { #rough estimate because fuck you - 609362 in the whole historical county, 305000/4 vic2 - 76250
+
+	######Germans, should account for ~30.2% - 23028
+	aristocrats = {
+		culture = danube_german
+		religion = catholic
+		size = 1100  
+	}
+	bureaucrats = {
+		culture = south_german
+		religion = catholic
+		size = 75 
+	}
+	clergymen = {
+		culture = danube_german
+		religion = catholic
+		size = 200   
+	}
+	artisans = {
+		culture = danube_german
+		religion = catholic
+		size = 2100
+	}
+	soldiers = {
+		culture = danube_german
+		religion = catholic
+		size = 200     
+	}
+	farmers = {
+		culture = danube_german
+		religion = catholic
+		size = 19353  
+	}
+	
+	######Romanians, should account for ~14.4% - 10980
+	clergymen = {
+		culture = romanian
+		religion = orthodox
+		size = 175 
+	}
+	artisans = {
+		culture = romanian
+		religion = orthodox
+		size = 1200
+	}
+	soldiers = {
+		culture = romanian
+		religion = orthodox
+		size = 300
+	}
+	serfs = {
+		culture = romanian
+		religion = orthodox
+        size = 9305
+	}
+
+	######Serbs, should account for ~31.5% - 24019
+    aristocrats = {
+        culture = serb
+        religion = orthodox
+        size = 700
+	}
+	clergymen = {
+		culture = serb
+		religion = orthodox
+		size = 350 
+	}
+	artisans = {
+		culture = serb
+		religion = orthodox
+		size = 2400
+	}
+	soldiers = {
+		culture = serb
+		religion = orthodox
+		size = 6600
+	}
+	farmers = {
+		culture = serb
+		religion = orthodox
+		size = 11000
+	}
+	serfs = {
+		culture = serb
+		religion = orthodox
+        size = 3000
+	}
+	
+	######Hungarians, should account for ~18.8% - 14335
+	#147450
+    aristocrats = {
+        culture = hungarian
+        religion = catholic
+        size = 400
+    }
+    bureaucrats = {
+        culture = hungarian
+        religion = catholic
+        size = 150
+    }
+    clergymen = {
+        culture = hungarian
+        religion = catholic
+        size = 200
+    }
+    artisans = {
+        culture = hungarian
+        religion = catholic
+        size = 500
+    }
+    soldiers = {
+        culture = hungarian
+        religion = catholic
+        size = 500
+    }
+    serfs = {
+        culture = hungarian
+        religion = catholic
+        size = 4000
+    }
+	#Calvinist/Lutheran
+    aristocrats = {
+        culture = hungarian
+        religion = protestant
+        size = 650
+    }
+    clergymen = {
+        culture = hungarian
+        religion = protestant
+        size = 235
+    }
+    artisans = {
+        culture = hungarian
+        religion = protestant
+        size = 750
+    }
+    soldiers = {
+        culture = hungarian
+        religion = protestant
+        size = 700
+    }
+    farmers = {
+        culture = hungarian
+        religion = protestant
+        size = 6000
+    }
+	
+	######Slovaks, should account for ~2.5% of the population - 1907
+	clergymen = {
+		culture = slovak
+		religion = catholic
+		size = 100   
+	}
+	artisans = {
+		culture = slovak
+		religion = catholic
+		size = 500 
+	}
+	soldiers = {
+		culture = slovak
+		religion = catholic
+		size = 100
+	}
+	farmers = {
+		culture = slovak
+		religion = catholic
+        size = 1207
+	}
+	
+	######Croats, should account for ~0.7% of the population - 535
+	clergymen = {
+		culture = croat
+		religion = catholic
+		size = 75   
+	}
+	artisans = {
+		culture = croat
+		religion = catholic
+		size = 100 
+	}
+	soldiers = {
+		culture = croat
+		religion = catholic
+		size = 75
+	}
+	farmers = {
+		culture = croat
+		religion = catholic
+        size = 285
+	}
+	
+	######Banat Bulgarians, shouldn't be more than 19k (4.5k pops) throughout 3624 (kikinda), 792 (pancevo), 653 (reschitz), 652 (temes). ~ 1.2k per province
+	#11200
+	clergymen = {
+		culture = bulgarian
+		religion = catholic
+		size = 100   
+	}
+	artisans = {
+		culture = bulgarian
+		religion = catholic
+		size = 300 
+	}
+	soldiers = {
+		culture = bulgarian
+		religion = catholic
+		size = 100
+	}
+	farmers = {
+		culture = bulgarian
+		religion = catholic
+		size = 700 
+	}
+	
+	######Jews, should account for ~1.1% of the population - 850
+    aristocrats = {
+        culture = ashkenazi
+        religion = jewish
+        size = 200
+    }
+    clergymen = {
+        culture = ashkenazi
+        religion = jewish
+        size = 100
+    }
+    artisans = {
+        culture = ashkenazi
+        religion = jewish
+        size = 475
+    }
+    farmers = {
+        culture = ashkenazi
+        religion = jewish
+        size = 75
+    }
+}
+#Novi Sad (384000/96000 POPS) #part of Serbia today
+2538 = { #rough estimate because fuck you - 766779 in the whole historical county, 64000 (spread between 3 provinces) - 82560
+	######Germans, should account for ~21.5% - 17750
+	aristocrats = {
+		culture = danube_german
+		religion = catholic
+		size = 1100  
+	}
+	bureaucrats = {
+		culture = danube_german
+		religion = catholic
+		size = 100 
+	}
+	officers = {
+		culture = danube_german
+		religion = catholic
+		size = 100 
+	}
+	clergymen = {
+		culture = danube_german
+		religion = catholic
+		size = 650
+	}
+	artisans = {
+		culture = danube_german
+		religion = catholic
+		size = 2550
+	}
+	soldiers = {
+		culture = danube_german
+		religion = catholic
+		size = 1250     
+	}
+	farmers = {
+		culture = danube_german
+		religion = catholic
+		size = 12000 
+	}
+	
+	######Serbs, should account for ~18.2% - 15025 (achully more because fuck you)
+	aristocrats = {
+		culture = serb
+		religion = orthodox
+		size = 750  
+	}
+	officers = {
+		culture = serb
+		religion = orthodox
+		size = 75 
+	}
+	clergymen = {
+		culture = serb
+		religion = orthodox
+		size = 275
+	}
+	artisans = {
+		culture = serb
+		religion = orthodox
+		size = 1250
+	}
+	soldiers = {
+		culture = serb
+		religion = orthodox
+		size = 3300 
+	}
+	serfs = {
+		culture = serb
+		religion = orthodox
+		size = 14175 
+	}
+	farmers = {
+		culture = serb
+		religion = orthodox
+		size = 10000
+	}
+	
+	######Hungarians, should account for ~42.7% - 35253 (achully less because fuck you)
+	aristocrats = {
+		culture = hungarian
+		religion = catholic
+		size = 750  
+	}
+	clergymen = {
+		culture = hungarian
+		religion = catholic
+		size = 150  
+	}
+	artisans = {
+		culture = hungarian
+		religion = catholic
+		size = 750
+	}
+	soldiers = {
+		culture = hungarian
+		religion = catholic
+		size = 150  
+	}
+	farmers = {
+		culture = hungarian
+		religion = catholic
+		size = 10000 
+	}
+	#Calvinist/Lutheran
+	aristocrats = {
+		culture = hungarian
+		religion = protestant
+		size = 500 
+	}
+	clergymen = {
+		culture = hungarian
+		religion = protestant
+		size = 100    
+	}
+	artisans = {
+		culture = hungarian
+		religion = protestant
+		size = 500   
+	}
+	soldiers = {
+		culture = hungarian
+		religion = protestant
+		size = 100
+	}
+	farmers = {
+		culture = hungarian
+		religion = protestant
+		size = 8000   
+	}
+	
+	######Slovak, should account for ~3.9% of the population - 3220
+	clergymen = {
+		culture = slovak
+		religion = catholic
+		size = 75 
+	}
+	artisans = {
+		culture = slovak
+		religion = catholic
+		size = 450
+	}
+	soldiers = {
+		culture = slovak
+		religion = catholic
+		size = 100 
+	}
+	serfs = {
+		culture = slovak
+		religion = catholic
+		size = 2595 
+	}
+	
+	######Croat, should account for ~0.1% of the population - 83 - 250 for now
+	clergymen = {
+		culture = croat
+		religion = catholic
+		size = 75  
+	}
+	artisans = {
+		culture = croat
+		religion = catholic
+		size = 75
+	}
+	serfs = {
+		culture = croat
+		religion = catholic
+		size = 100  
+	}
+	
+	######Ruthenes, should account for ~2% of the population - 1651
 	clergymen = {
 		culture = rusyn
 		religion = maronite
@@ -698,12 +988,41 @@
 	soldiers = {
 		culture = rusyn
 		religion = maronite
-		size = 150     
+		size = 75     
 	}
 	serfs = {
 		culture = rusyn
 		religion = maronite
-		size = 6000  
+		size = 1000  
+	}
+	
+	######Jews, should account for ~2.5% of the population - 2064
+    aristocrats = {
+        culture = ashkenazi
+        religion = jewish
+        size = 100
+    }
+    clergymen = {
+        culture = ashkenazi
+        religion = jewish
+        size = 100
+    }
+    artisans = {
+        culture = ashkenazi
+        religion = jewish
+        size = 1364
+    }
+    farmers = {
+        culture = ashkenazi
+        religion = jewish
+        size = 500
+    }
+	
+	######creatures
+	serfs = {
+		culture = gypsy
+		religion = orthodox
+		size = 1500 
 	}
 }
 #Serbia Region (180310) - 721.240 people
