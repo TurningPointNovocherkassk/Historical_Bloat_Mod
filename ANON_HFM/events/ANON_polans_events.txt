@@ -7479,7 +7479,7 @@ country_event = {
 			modifier = {
 				factor = 0
 				OR = {
-					has_country_modifier = mediating_political_solution
+					has_country_modifier = neutrality_modifier
 					has_country_flag = czech_chimpout_voted_neutral
 				}
 			}
@@ -7564,7 +7564,7 @@ country_event = {
 			modifier = {
 				factor = 0
 				OR = {
-					has_country_modifier = mediating_political_solution
+					has_country_modifier = neutrality_modifier
 					has_country_flag = czech_chimpout_voted_neutral
 				}
 			}
@@ -7579,7 +7579,7 @@ country_event = {
 			modifier = {
 				factor = 10
 				OR = {
-					has_country_modifier = mediating_political_solution
+					has_country_modifier = neutrality_modifier
 					has_country_flag = czech_chimpout_voted_neutral
 				}
 			}
@@ -8765,7 +8765,7 @@ country_event = {
 	trigger = {
 		tag = PRC
 		BOH = {
-			has_country_modifier = mediating_political_solution
+			has_country_modifier = neutrality_modifier
 			exists = yes
 		}
 	}
@@ -8796,7 +8796,7 @@ country_event = {
 	picture = "bohemia_event"
 	trigger = {
 		tag = BOH
-		has_country_modifier = mediating_political_solution
+		has_country_modifier = neutrality_modifier
 		ai = no
 		OR = {
 			any_greater_power = { military_access = BOH }
@@ -9146,7 +9146,7 @@ country_event = {
 	option = {
 		name = "EVT666666077OPTA" #debt slavery, become their vassals.
 		PRC = { country_event = 666666078 }
-		remove_country_modifier = mediating_political_solution
+		remove_country_modifier = neutrality_modifier
 		prestige = -50
 		ai_chance = {
 			factor = 95
