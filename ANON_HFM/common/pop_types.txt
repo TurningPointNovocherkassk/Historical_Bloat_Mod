@@ -1573,6 +1573,10 @@ assimilation_chance = {
 		not = { country = { has_country_flag = jewish_country_accept_karaite } }
 	}
 	modifier = {
+		factor = -100
+		country = { has_country_flag = utility_country }
+	}
+	modifier = {
 		factor = -0.9
 		has_pop_religion = samaritan
 		not = { country = { has_country_flag = jewish_country_accept_samaritan } }
@@ -1887,6 +1891,11 @@ conversion_chance = {
 			has_pop_religion = zaydi
 			has_pop_religion = ismaili
 		}
+	}
+	
+	modifier = {
+		factor = -100
+		country = { has_country_flag = utility_country }
 	}
 	
 	modifier = {

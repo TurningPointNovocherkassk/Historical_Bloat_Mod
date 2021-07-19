@@ -1329,6 +1329,10 @@ nationalist_rebels = {
 			civilized = no
 			ai = yes
 		}
+		modifier = {
+			factor = 0
+			culture = utility_culture
+		}
 	}
 	
 	# The rebel type with the highest modifier for this pop gets picked
@@ -1489,6 +1493,10 @@ nationalist_rebels = {
 			factor = 1.5
 			culture = irish
 			location = { has_province_modifier = irish_republicans }
+		}
+		modifier = {
+			factor = 0
+			culture = utility_culture
 		}
 	}
  
@@ -1658,6 +1666,10 @@ pan_nationalist_rebels = {
 				civilized = no
 			}
 			factor = 0
+		}
+		modifier = {
+			factor = 0
+			culture = utility_culture
 		}
 	}
 	
@@ -1852,6 +1864,10 @@ pan_nationalist_rebels = {
 				civilized = no
 			}
 			factor = 0
+		}
+		modifier = {
+			factor = 0
+			culture = utility_culture
 		}
 	}
  

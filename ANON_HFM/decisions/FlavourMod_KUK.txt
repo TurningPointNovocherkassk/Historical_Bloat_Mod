@@ -256,6 +256,7 @@ political_decisions = {
 					NOT = { tag = KSM }
 					NOT = { tag = ESG }
 					NOT = { has_country_flag = post_colonial_country }
+					NOT = { has_country_flag = utility_country }
 					OR = {
 						all_core = { owned_by = THIS }
 						tag = NGF
@@ -314,6 +315,7 @@ political_decisions = {
 						vassal_of = PRU
 					}
 					NOT = { has_country_flag = post_colonial_country }
+					NOT = { has_country_flag = utility_country }
 				}
 				country_event = 11101
 			}

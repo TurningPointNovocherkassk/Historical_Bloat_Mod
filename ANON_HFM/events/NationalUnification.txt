@@ -16,6 +16,7 @@ country_event = {
 		NOT = { tag = SMR }
 		NOT = { tag = T4V }
 		NOT = { has_country_flag = post_colonial_country }
+		NOT = { has_country_flag = utility_country }
 		NOT = {
 			cultural_union = { exists = yes }
 			is_culture_group = germanic
@@ -91,6 +92,7 @@ country_event = {
 				NOT = { tag = SMR }
 				NOT = { tag = T4V }
 				NOT = { has_country_flag = post_colonial_country }
+				NOT = { has_country_flag = utility_country }
 				is_culture_group = THIS
 				is_greater_power = no
 				OR = {
@@ -486,6 +488,7 @@ country_event = {
 					tag = T4V
 				}
 				NOT = { has_country_flag = post_colonial_country }
+				NOT = { has_country_flag = utility_country }
 				is_culture_group = THIS
 				is_greater_power = no
 				num_of_cities = 1
@@ -917,6 +920,7 @@ country_event = {
 				NOT = { tag = ESG }
 				NOT = { tag = BAN }
 				NOT = { has_country_flag = post_colonial_country }
+				NOT = { has_country_flag = utility_country }
 				OR = {
 					all_core = { owned_by = THIS }
 					tag = NGF
@@ -972,6 +976,7 @@ country_event = {
 					tag = ESG
 				}
 				NOT = { has_country_flag = post_colonial_country }
+				NOT = { has_country_flag = utility_country }
 			}
 			country_event = 11101
 		}
@@ -1149,6 +1154,7 @@ country_event = {
 				NOT = {
 					tag = THIS
 					has_country_flag = post_colonial_country
+					has_country_flag = utility_country
 					is_cultural_union = no
 				}
 			}
@@ -1716,6 +1722,7 @@ country_event = {
 		NOT = {
 			has_country_flag = does_not_want_to_unify
 			has_country_flag = post_colonial_country
+			has_country_flag = utility_country
 			tag = ALB
 			tag = BUL
 		}

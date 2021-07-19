@@ -1,0 +1,58 @@
+political_decisions = {
+			
+	utility_tag_free = {
+		picture = vassal_payment
+		potential = {
+			exists = yes
+			NOT = {
+				tag = U01
+				tag = U02
+				tag = U03
+				tag = U04
+				tag = U05
+				tag = U06
+			}
+			OR = {
+				U01 = { exists = yes }
+				U02 = { exists = yes }
+				U03 = { exists = yes }
+				U04 = { exists = yes }
+				U05 = { exists = yes }
+				U06 = { exists = yes }
+			}
+			any_core = {
+				OR = {
+					owned_by = U01
+					owned_by = U02
+					owned_by = U03
+					owned_by = U04
+					owned_by = U05
+					owned_by = U06
+				}
+			}
+		}
+		
+		allow = {
+		}
+		
+		effect = {
+			set_country_flag = utility_tag_integrated
+			any_country = {
+				limit = {
+					exists = yes
+					has_country_flag = utility_country
+					any_owned_province = { is_core = THIS }
+				}
+				any_owned = {
+					limit = {
+						is_core = THIS
+					}
+					secede_province = THIS
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+	}
+}

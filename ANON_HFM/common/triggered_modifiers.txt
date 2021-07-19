@@ -114,6 +114,7 @@ islamic_law_triggered = {
         NOT = { has_country_flag = secularized_muslim_society }
         NOT = { has_country_flag = dynamic_tag }
         NOT = { has_country_flag = post_colonial_country }
+		NOT = { has_country_flag = utility_country }
         NOT = { religious_policy = pro_atheism }
     }
     research_points_modifier = -0.05
@@ -1102,199 +1103,199 @@ ai_spend_more_cash = {
 #
 # Effects are fully scriptable here.
 ###Size Modifiers###
-desperate_nation  = {
-	trigger = {
-		NOT = { total_pops = 25000 }  #25 thousand POPs/100 thousand population 
-		NOT = { tag = RUS ai = yes }
-	}
-	global_population_growth = 0.05
-	mobilisation_economy_impact = -0.80
-	supply_consumption = -0.80
-	mobilisation_size = 0.2
-	tax_efficiency = 0.50 #50% boost
-	icon = 9
-}
+# desperate_nation  = {
+	# trigger = {
+		# NOT = { total_pops = 25000 }  #25 thousand POPs/100 thousand population 
+		# NOT = { tag = RUS ai = yes }
+	# }
+	# global_population_growth = 0.05
+	# mobilisation_economy_impact = -0.80
+	# supply_consumption = -0.80
+	# mobilisation_size = 0.2
+	# tax_efficiency = 0.50 #50% boost
+	# icon = 9
+# }
 
-microscopic_nation  = {
-	trigger = {
-		total_pops = 25000 #25 thousand POPs/100 thousand population
-		NOT = { total_pops = 125000 }  #125 thousand POPs/500 thousand population 
-		NOT = { tag = RUS ai = yes }
-	}
-	global_population_growth = 0.004
-	mobilisation_economy_impact = -0.75
-	supply_consumption = -0.75
-	mobilisation_size = 0.1
-	tax_efficiency = 0.40 #40% boost
-	icon = 6
-}
+# microscopic_nation  = {
+	# trigger = {
+		# total_pops = 25000 #25 thousand POPs/100 thousand population
+		# NOT = { total_pops = 125000 }  #125 thousand POPs/500 thousand population 
+		# NOT = { tag = RUS ai = yes }
+	# }
+	# global_population_growth = 0.004
+	# mobilisation_economy_impact = -0.75
+	# supply_consumption = -0.75
+	# mobilisation_size = 0.1
+	# tax_efficiency = 0.40 #40% boost
+	# icon = 6
+# }
 
-tiny_nation  = {
-	trigger = {
-		total_pops = 125000 #125 thousand POPs/500 thousand population
-		NOT = { total_pops = 1000000 } #1 million POPs/4 Million population
-		NOT = { tag = RUS ai = yes }
-	}
-	global_population_growth = 0.003
-	mobilisation_economy_impact = -0.50
-	supply_consumption = -0.50
-	mobilisation_size = 0.04
-	tax_efficiency = 0.25 #25% boost
-	icon = 6
-}
+# tiny_nation  = {
+	# trigger = {
+		# total_pops = 125000 #125 thousand POPs/500 thousand population
+		# NOT = { total_pops = 1000000 } #1 million POPs/4 Million population
+		# NOT = { tag = RUS ai = yes }
+	# }
+	# global_population_growth = 0.003
+	# mobilisation_economy_impact = -0.50
+	# supply_consumption = -0.50
+	# mobilisation_size = 0.04
+	# tax_efficiency = 0.25 #25% boost
+	# icon = 6
+# }
 
-small_nation  = {
-	trigger = {
-		total_pops = 1000000 #1 million POPs/4 Million population
-		NOT = { total_pops = 3500000 } #3.5 million POPs/14 Million population
-		NOT = { tag = RUS ai = yes }
-	}
-	global_population_growth = 0.003
-	mobilisation_economy_impact = -0.25
-	supply_consumption = -0.25
-	mobilisation_size = 0.02
-	tax_efficiency = 0.20 #20% boost
-	icon = 9
-}
+# small_nation  = {
+	# trigger = {
+		# total_pops = 1000000 #1 million POPs/4 Million population
+		# NOT = { total_pops = 3500000 } #3.5 million POPs/14 Million population
+		# NOT = { tag = RUS ai = yes }
+	# }
+	# global_population_growth = 0.003
+	# mobilisation_economy_impact = -0.25
+	# supply_consumption = -0.25
+	# mobilisation_size = 0.02
+	# tax_efficiency = 0.20 #20% boost
+	# icon = 9
+# }
 
-medium_nation  = {
-	trigger = {
-		civilized = yes
-		total_pops = 3500000 #3.5 million POPs/14 Million population
-		NOT = { total_pops = 7500000 } #7.5 million POPs/30 Million population
-		NOT = { tag = RUS ai = yes }
-	}
-	global_population_growth = 0.001
-	mobilisation_economy_impact = -0.10
-	supply_consumption = -0.10
-	mobilisation_size = 0.01
-	tax_efficiency = 0.10 #10% boost
-	icon = 9
-}
+# medium_nation  = {
+	# trigger = {
+		# civilized = yes
+		# total_pops = 3500000 #3.5 million POPs/14 Million population
+		# NOT = { total_pops = 7500000 } #7.5 million POPs/30 Million population
+		# NOT = { tag = RUS ai = yes }
+	# }
+	# global_population_growth = 0.001
+	# mobilisation_economy_impact = -0.10
+	# supply_consumption = -0.10
+	# mobilisation_size = 0.01
+	# tax_efficiency = 0.10 #10% boost
+	# icon = 9
+# }
 
-average_nation  = {
-	trigger = {
-		civilized = yes
-		total_pops = 7500000 #7.5 million POPs/30 Million population 
-		NOT = { total_pops = 12500000 } #12.5 million POPs/50 million population
-		NOT = { tag = RUS ai = yes }
-	}
-	supply_consumption = 0.05
-	#mobilisation_size = -0.01
-	tax_efficiency = -0.05 #5% malus
-	#max_tariff = -0.1 #10% 
-	icon = 9
-}
+# average_nation  = {
+	# trigger = {
+		# civilized = yes
+		# total_pops = 7500000 #7.5 million POPs/30 Million population 
+		# NOT = { total_pops = 12500000 } #12.5 million POPs/50 million population
+		# NOT = { tag = RUS ai = yes }
+	# }
+	# supply_consumption = 0.05
+	# #mobilisation_size = -0.01
+	# tax_efficiency = -0.05 #5% malus
+	# #max_tariff = -0.1 #10% 
+	# icon = 9
+# }
 
-large_nation = {
-	trigger = {
-		civilized = yes
-		total_pops = 12500000 #12.5 million POPs/50 million population
-		NOT = { total_pops = 21250000 } #21.25 million POPs/85 million population
-		NOT = { tag = RUS ai = yes }
-	}
-	#global_population_growth = -0.001
-	supply_consumption = 0.1
-	#mobilisation_size = -0.02
-	tax_efficiency = -0.05 #5% malus
-	max_tariff = -0.05 #5% was 15%
-	mobilisation_economy_impact = 0.1
-	global_immigrant_attract = -0.05
-	icon = 9
-}
+# large_nation = {
+	# trigger = {
+		# civilized = yes
+		# total_pops = 12500000 #12.5 million POPs/50 million population
+		# NOT = { total_pops = 21250000 } #21.25 million POPs/85 million population
+		# NOT = { tag = RUS ai = yes }
+	# }
+	# #global_population_growth = -0.001
+	# supply_consumption = 0.1
+	# #mobilisation_size = -0.02
+	# tax_efficiency = -0.05 #5% malus
+	# max_tariff = -0.05 #5% was 15%
+	# mobilisation_economy_impact = 0.1
+	# global_immigrant_attract = -0.05
+	# icon = 9
+# }
 
-empire = {
-	trigger = {
-		civilized = yes
-		total_pops = 21250000 #21.25 million POPs/85 million population
-		NOT = { total_pops = 37500000 } #37.5 million POPs/150 million population
-		NOT = { tag = RUS ai = yes }
-	}
-	global_population_growth = -0.001
-	#mobilisation_size = -0.02
-	supply_consumption = 0.15
-	tax_efficiency = -0.07 #7% malus
-	max_tariff = -0.10 #10% was 20%
-	factory_owner_cost = -0.10 #10% decrease in cost for buildings
-	mobilisation_economy_impact = 0.2
-	global_immigrant_attract = -0.1
-	icon = 9
-}
+# empire = {
+	# trigger = {
+		# civilized = yes
+		# total_pops = 21250000 #21.25 million POPs/85 million population
+		# NOT = { total_pops = 37500000 } #37.5 million POPs/150 million population
+		# NOT = { tag = RUS ai = yes }
+	# }
+	# global_population_growth = -0.001
+	# #mobilisation_size = -0.02
+	# supply_consumption = 0.15
+	# tax_efficiency = -0.07 #7% malus
+	# max_tariff = -0.10 #10% was 20%
+	# factory_owner_cost = -0.10 #10% decrease in cost for buildings
+	# mobilisation_economy_impact = 0.2
+	# global_immigrant_attract = -0.1
+	# icon = 9
+# }
 
-medium_empire = {
-	trigger = {
-		civilized = yes
-		total_pops = 37500000 #37.5 million POPs/150 million population
-		NOT = { total_pops = 62500000 } #62.5 million POPs/250 million population
-		NOT = { tag = RUS ai = yes }
-	}
-	global_population_growth = -0.002
-	#mobilisation_size = -0.03
-	supply_consumption = 0.2
-	tax_efficiency = -0.09 #9% malus
-	max_tariff = -0.15 #15% was 20%
-	research_points_modifier = 0.1 #10% increase
-	factory_owner_cost = -0.10 #10% decrease in cost for buildings
-	mobilisation_economy_impact = 0.4
-	global_immigrant_attract = -0.2
-	icon = 9
-}
+# medium_empire = {
+	# trigger = {
+		# civilized = yes
+		# total_pops = 37500000 #37.5 million POPs/150 million population
+		# NOT = { total_pops = 62500000 } #62.5 million POPs/250 million population
+		# NOT = { tag = RUS ai = yes }
+	# }
+	# global_population_growth = -0.002
+	# #mobilisation_size = -0.03
+	# supply_consumption = 0.2
+	# tax_efficiency = -0.09 #9% malus
+	# max_tariff = -0.15 #15% was 20%
+	# research_points_modifier = 0.1 #10% increase
+	# factory_owner_cost = -0.10 #10% decrease in cost for buildings
+	# mobilisation_economy_impact = 0.4
+	# global_immigrant_attract = -0.2
+	# icon = 9
+# }
 
-large_empire = {
-	trigger = {
-		civilized = yes
-		total_pops = 62500000 #62.5 million POPs/250 million population
-		NOT = { total_pops = 87500000 } #87.5 million POPs/350 million population
-		NOT = { tag = RUS ai = yes }
-	}
-	global_population_growth = -0.003
-	#mobilisation_size = -0.04
-	supply_consumption = 0.3 #30% increase
-	tax_efficiency = -0.11 #11% malus
-	max_tariff = -0.20 #20% was 25%
-	research_points_modifier = 0.13 #13% increase
-	factory_owner_cost = -0.15 #15% decrease in cost for buildings
-	mobilisation_economy_impact = 0.6
-	global_immigrant_attract = -0.3
-	icon = 9
-}
+# large_empire = {
+	# trigger = {
+		# civilized = yes
+		# total_pops = 62500000 #62.5 million POPs/250 million population
+		# NOT = { total_pops = 87500000 } #87.5 million POPs/350 million population
+		# NOT = { tag = RUS ai = yes }
+	# }
+	# global_population_growth = -0.003
+	# #mobilisation_size = -0.04
+	# supply_consumption = 0.3 #30% increase
+	# tax_efficiency = -0.11 #11% malus
+	# max_tariff = -0.20 #20% was 25%
+	# research_points_modifier = 0.13 #13% increase
+	# factory_owner_cost = -0.15 #15% decrease in cost for buildings
+	# mobilisation_economy_impact = 0.6
+	# global_immigrant_attract = -0.3
+	# icon = 9
+# }
 
-insane_empire = {
-	trigger = {
-		year = 1837
-		civilized = yes
-		total_pops = 87500000 #87.5 million POPs/350 million population
-		NOT = { total_pops = 125000000 } #87.5 million POPs/350 million population
-		NOT = { tag = RUS ai = yes }
-	}
-	global_population_growth = -0.004
-	#mobilisation_size = -0.05
-	supply_consumption = 0.6 #50% increase
-	tax_efficiency = -0.2 #20% malus
-	max_tariff = -0.25 #25% malus
-	factory_owner_cost = -0.15 #15% decrease in cost for buildings
-	mobilisation_economy_impact = 1.0
-	global_immigrant_attract = -0.4
-	icon = 9
-}
+# insane_empire = {
+	# trigger = {
+		# year = 1837
+		# civilized = yes
+		# total_pops = 87500000 #87.5 million POPs/350 million population
+		# NOT = { total_pops = 125000000 } #87.5 million POPs/350 million population
+		# NOT = { tag = RUS ai = yes }
+	# }
+	# global_population_growth = -0.004
+	# #mobilisation_size = -0.05
+	# supply_consumption = 0.6 #50% increase
+	# tax_efficiency = -0.2 #20% malus
+	# max_tariff = -0.25 #25% malus
+	# factory_owner_cost = -0.15 #15% decrease in cost for buildings
+	# mobilisation_economy_impact = 1.0
+	# global_immigrant_attract = -0.4
+	# icon = 9
+# }
 
-insane_empire2 = {
-	trigger = {
-		year = 1837
-		civilized = yes
-		total_pops = 125000000 #125 million POPs/500 million population
-		NOT = { tag = RUS ai = yes }
-	}
-	global_population_growth = -0.006
-	#mobilisation_size = -0.07
-	supply_consumption = 0.6 #60% increase
-	tax_efficiency = -0.2 #25% malus
-	max_tariff = -0.60 #60% malus
-	factory_owner_cost = -0.20 #20% decrease in cost for buildings
-	mobilisation_economy_impact = 1.0
-	global_immigrant_attract = -0.5
-	icon = 9
-}
+# insane_empire2 = {
+	# trigger = {
+		# year = 1837
+		# civilized = yes
+		# total_pops = 125000000 #125 million POPs/500 million population
+		# NOT = { tag = RUS ai = yes }
+	# }
+	# global_population_growth = -0.006
+	# #mobilisation_size = -0.07
+	# supply_consumption = 0.6 #60% increase
+	# tax_efficiency = -0.2 #25% malus
+	# max_tariff = -0.60 #60% malus
+	# factory_owner_cost = -0.20 #20% decrease in cost for buildings
+	# mobilisation_economy_impact = 1.0
+	# global_immigrant_attract = -0.5
+	# icon = 9
+# }
 
 gorkha_kingdom = {
 	trigger = {

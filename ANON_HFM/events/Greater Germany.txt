@@ -1436,6 +1436,7 @@ country_event = {
 				NOT = { tag = DLM }
 				NOT = { tag = RUT }
 				NOT = { tag = UKR }
+				NOT = { has_country_flag = utility_country }
 				any_core = {
 					owned_by = THIS
 					NOT = { is_core = GER }
@@ -1538,6 +1539,7 @@ country_event = {
 				any_core = { owned_by = THIS }
 				exists = no
 				is_cultural_union = no
+				NOT = { has_country_flag = utility_country }
 			}
 			country_event = 31526
 		}

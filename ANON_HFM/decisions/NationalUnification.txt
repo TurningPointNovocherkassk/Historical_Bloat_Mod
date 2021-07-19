@@ -7,6 +7,7 @@ political_decisions = {
 			primary_culture = south_german
 			NOT = {
 				has_country_flag = post_colonial_country
+				has_country_flag = utility_country
 				exists = SGF
 				exists = GER
 				exists = GCF
@@ -67,6 +68,7 @@ political_decisions = {
 						primary_culture = south_german
 						has_country_flag = wants_to_unify
 						NOT = { has_country_flag = post_colonial_country }
+						NOT = { has_country_flag = utility_country }
 					}
 				}
 				add_core = SGF
@@ -90,6 +92,7 @@ political_decisions = {
 					in_sphere = THIS
 					NOT = {
 						has_country_flag = post_colonial_country
+						has_country_flag = utility_country
 						tag = THIS
 						tag = KUK
 						tag = AUS
@@ -221,6 +224,7 @@ political_decisions = {
 						is_core = KUK
 					}
 					NOT = { has_country_flag = post_colonial_country }
+					NOT = { has_country_flag = utility_country }
 				}
 				add_core = SGF
 			}
@@ -247,6 +251,7 @@ political_decisions = {
 			capital_scope = { continent = europe }
 			NOT = {
 				has_country_flag = post_colonial_country
+				has_country_flag = utility_country
 				exists = GER
 				exists = GCF
 				exists = NGF
@@ -308,6 +313,7 @@ political_decisions = {
 						primary_culture = north_german
 						has_country_flag = wants_to_unify
 						NOT = { has_country_flag = post_colonial_country }
+						NOT = { has_country_flag = utility_country }
 					}
 				}
 				add_core = NGF
@@ -342,6 +348,7 @@ political_decisions = {
 					in_sphere = THIS
 					NOT = { tag = THIS }
 					NOT = { has_country_flag = post_colonial_country }
+					NOT = { has_country_flag = utility_country }
 					OR = {
 						is_vassal = no
 						vassal_of = THIS
@@ -372,6 +379,7 @@ political_decisions = {
 			NOT = {
 				cultural_union = { exists = yes }
 				has_country_flag = post_colonial_country
+				has_country_flag = utility_country
 				is_culture_group = germanic
 				is_culture_group = scandinavian
 				is_culture_group = italian
@@ -413,6 +421,7 @@ political_decisions = {
 				limit = {
 					NOT = { is_greater_power = yes }
 					NOT = { has_country_flag = post_colonial_country }
+					NOT = { has_country_flag = utility_country }
 					NOT = { tag = SMR }
 					NOT = { tag = T4V }
 					is_culture_group = THIS
@@ -439,6 +448,7 @@ political_decisions = {
 		potential = {
 			capital_scope = { continent = europe }
 			NOT = { has_country_flag = post_colonial_country }
+			NOT = { has_country_flag = utility_country }
 			OR = {
 				tag = NGF
 				tag = SGF
@@ -669,6 +679,7 @@ political_decisions = {
 					NOT = { tag = KSM }
 					NOT = { tag = ESG }
 					NOT = { has_country_flag = post_colonial_country }
+					NOT = { has_country_flag = utility_country }
 					OR = {
 						all_core = { owned_by = THIS }
 						tag = NGF
@@ -762,6 +773,7 @@ political_decisions = {
 						vassal_of = THIS
 					}
 					NOT = { has_country_flag = post_colonial_country }
+					NOT = { has_country_flag = utility_country }
 				}
 				country_event = 11101
 			}
@@ -890,6 +902,7 @@ political_decisions = {
 					NOT = { tag = KSM }
 					NOT = { tag = ESG }
 					NOT = { has_country_flag = post_colonial_country }
+					NOT = { has_country_flag = utility_country }
 					OR = {
 						all_core = { owned_by = THIS }
 						tag = NGF
@@ -943,6 +956,7 @@ political_decisions = {
 						vassal_of = THIS
 					}
 					NOT = { has_country_flag = post_colonial_country }
+					NOT = { has_country_flag = utility_country }
 				}
 				country_event = 11101
 			}
@@ -1011,7 +1025,9 @@ political_decisions = {
 			capital_scope = { continent = europe }
 			NOT = {
 				has_country_flag = post_colonial_country
+				has_country_flag = utility_country
 				exists = ITA
+				exists = ITF
 			}
 			OR = {
 				NOT = { tag = ITF }
@@ -1085,6 +1101,7 @@ political_decisions = {
 					is_culture_group = italian
 					in_sphere = THIS
 					NOT = { has_country_flag = post_colonial_country }
+					NOT = { has_country_flag = utility_country }
 					NOT = { tag = SMR }
 					#ANON
 					NOT = { tag = T4V }
@@ -1133,6 +1150,7 @@ political_decisions = {
 			NOT = { has_country_flag = mughal_reborn }
 			NOT = {
 				has_country_flag = post_colonial_country
+				has_country_flag = utility_country
 				exists = HND
 			}
 		}
@@ -1221,6 +1239,7 @@ political_decisions = {
 					is_culture_group = south_asian
 					in_sphere = THIS
 					NOT = { has_country_flag = post_colonial_country }
+					NOT = { has_country_flag = utility_country }
 					OR = {
 						is_vassal = no
 						vassal_of = THIS
@@ -1342,6 +1361,7 @@ political_decisions = {
 			capital_scope = { continent = europe }
 			NOT = {
 				has_country_flag = post_colonial_country
+				has_country_flag = utility_country
 				exists = GER
 				exists = GCF
 				exists = NGF
@@ -1398,6 +1418,7 @@ political_decisions = {
 						primary_culture = north_german
 						has_country_flag = wants_to_unify
 						NOT = { has_country_flag = post_colonial_country }
+						NOT = { has_country_flag = utility_country }
 					}
 				}
 				add_core = NGF
@@ -1421,6 +1442,7 @@ political_decisions = {
 						}
 					}
 					NOT = { has_country_flag = post_colonial_country }
+					NOT = { has_country_flag = utility_country }
 					OR = {
 						is_vassal = no
 						vassal_of = THIS
@@ -1446,6 +1468,7 @@ political_decisions = {
 			capital_scope = { continent = europe }
 			NOT = {
 				has_country_flag = post_colonial_country
+				has_country_flag = utility_country
 				exists = SGF
 				exists = GER
 				exists = GCF
@@ -1500,6 +1523,7 @@ political_decisions = {
 						primary_culture = south_german
 						has_country_flag = wants_to_unify
 						NOT = { has_country_flag = post_colonial_country }
+						NOT = { has_country_flag = utility_country }
 					}
 				}
 				add_core = SGF
@@ -1515,6 +1539,7 @@ political_decisions = {
 					NOT = { tag = DNB }
 					NOT = { tag = BAN }
 					NOT = { has_country_flag = post_colonial_country }
+					NOT = { has_country_flag = utility_country }
 					NOT = {
 						AND = {
 							tag = AUS

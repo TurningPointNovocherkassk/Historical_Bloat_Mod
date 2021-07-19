@@ -118,13 +118,16 @@ political_decisions = {
                 tag = DNB
                 tag = SGF
 				AND = {
-					tag = GER
+					OR = {
+						tag = GER
+						tag = GCF
+					}
 					has_country_flag = austrian_greater_germany
 				}
             }
             is_greater_power = yes
             NOT = { exists = ITA }
-            NOT = {  has_country_flag = austrian_outside_italy  }
+            NOT = { has_global_flag = austrian_outside_italy }
             OR = {
                 any_owned_province = { is_core = ITA }
                 SAR = { in_sphere = THIS }
@@ -178,11 +181,16 @@ political_decisions = {
 		}
 		effect = {
 			set_global_flag = austrian_outside_italy
-			prestige = 10
-            badboy = 5
+			prestige = 25
+            badboy = 10
 			any_country = {
 				limit = {
-                    in_sphere = THIS
+					exists = yes
+					OR = {
+						in_sphere = THIS
+						vassal_of = THIS
+						substate_of = THIS
+					}
 					OR = {
 						primary_culture = north_italian
 						primary_culture = central_italian
@@ -375,6 +383,7 @@ political_decisions = {
 						alliance_with = PRU
 						alliance_with = NGF
 						alliance_with = GCF
+						alliance_with = SCF
 						alliance_with = GER
 					}
 				}
@@ -411,6 +420,18 @@ political_decisions = {
 						leave_alliance = GCF
 						relation = {
 							who = GCF
+							value = -200
+						}
+					}
+				}
+				random_owned = {
+					limit = {
+						owner = { neighbour = SGF }
+					}
+					owner = {
+						leave_alliance = SGF
+						relation = {
+							who = SGF
 							value = -200
 						}
 					}
