@@ -15,12 +15,10 @@
 			C4L = {	exists = no }
 			government = presidential_dictatorship
 			NOT = {
-				OR = {
-					has_country_flag = appointed_chico
-					has_country_flag = appointed_vallejo
-					has_country_flag = californio_war_aftermath
-					has_country_flag = mexico_1836_set_up
-				}
+				has_country_flag = appointed_chico
+				has_country_flag = appointed_vallejo
+				has_country_flag = californio_war_aftermath
+				has_country_flag = mexico_1836_set_up
 				year = 1844
 			}
 		}
@@ -47,7 +45,7 @@
 	
 	country_event = {
 		id = 1110001
-		title = "EVTNAME1110001" #News from Alta California, while appointed Governor Mariano Chico was travelling to Mexico City to gather troops against a Californio revolt
+		title = "EVTNAME1110001" #News from Alta California, while appointed Governor Mariano Chico was traveling to Mexico City to gather troops against a Californio revolt
 		desc = "EVTDESC1110001" #The Californios rose up in arms and revolted
 		picture = "alta_california"
 		trigger = {
@@ -56,10 +54,8 @@
 			government = presidential_dictatorship
 			has_country_flag = appointed_chico
 			NOT = {
-				OR = {
-					has_country_flag = californio_revolt
-					has_country_flag = californio_revolt_supported
-				}
+				has_country_flag = californio_revolt
+				has_country_flag = californio_revolt_supported
 			}
 		}
 
@@ -210,7 +206,7 @@
 	
 	country_event = {
 		id = 1110002
-		title = "EVTNAME1110002" #News from Alta California, while appointed Governor Mariano Chico was travelling to Mexico City to gather troops against a Californio revolt
+		title = "EVTNAME1110002" #News from Alta California, while appointed Governor Mariano Chico was traveling to Mexico City to gather troops against a Californio revolt
 		desc = "EVTDESC1110002" #The Californios rose up in arms and revolted
 		picture = "juan_bautista_alvarado"
 		is_triggered_only = yes
@@ -301,14 +297,15 @@
 			tag = MEX
 			C4L = {
 				ai = yes
-				vassal_of = THIS
+				OR = { 
+					vassal_of = THIS
+					substate_of = THIS
+				}
 			}
 			has_country_flag = recognized_alvarado
 			NOT = {
-				OR = {
-					has_country_flag = appoint_carrillo
-					has_country_flag = alvarado_stays
-				}
+				has_country_flag = appoint_carrillo
+				has_country_flag = alvarado_stays
 			}
 			year = 1837
 		}
@@ -391,14 +388,15 @@
 			tag = MEX
 			C4L = {
 				ai = yes
-				vassal_of = THIS
+				OR = { 
+					vassal_of = THIS
+					substate_of = THIS
+				}
 			}
 			has_country_flag = appoint_carrillo
 			NOT = {
-				OR = {
-					has_country_flag = appoint_alvarado_again
-					has_country_flag = carrillo_stays
-				}
+				has_country_flag = appoint_alvarado_again
+				has_country_flag = carrillo_stays
 			}
 		}
 
@@ -438,6 +436,8 @@
 			# }
 			##############
 			prestige = -15
+			release_vassal = C4L
+			leave_alliance = C4L 
 			inherit = C4L
 			any_owned = {
 				limit = {
@@ -471,7 +471,8 @@
 		option = {
 			name = "EVTOPTB1110004" #Carrillo stays, to war it is
 			set_country_flag = carrillo_stays
-			release_vassal = C4L	
+			leave_alliance = C4L
+			release_vassal = C4L
 			relation = {
 				who = C4L
 				value = -400

@@ -178,6 +178,15 @@ country_event = {
 		war_exhaustion = -20
 		relation = { who = MEX value = -200 }
 		diplomatic_influence = { who = MEX value = -400 }
+		random_country = {
+			limit = {
+				exists = yes
+				tag = YUC
+				THIS = { ai = yes }
+			}
+			relation = { who = THIS value = -200 }
+			THIS = { diplomatic_influence = { who = YUC value = -400 leave_alliance = YUC } }
+		}
 		leave_alliance = MEX
         war = {
             target = MEX

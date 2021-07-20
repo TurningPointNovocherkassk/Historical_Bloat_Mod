@@ -78,7 +78,7 @@ greater_california = {
 
 #ANON
 # Rancho
-rancho = {
+rancho_decision = {
 	picture = MEX_rancho
 	potential = {
 		OR = { 
@@ -88,19 +88,70 @@ rancho = {
 			tag = CAL
 			tag = C4L
 		}
-		NOT = {	has_global_flag = rancho }
-		year = 1836
+		OR = {
+			owns = 84
+			owns = 85
+			owns = 86
+			owns = 87
+			owns = 88
+			owns = 89
+			owns = 90
+			owns = 3307
+			owns = 3308
+			owns = 3389
+			owns = 3400
+		}
+		NOT = {	has_country_flag = rancho_flag }
 	}
 		
 	allow = {
-		romanticism = 1
-		money = 5000
+		war = no
+		OR = {
+			owns = 84
+			owns = 85
+			owns = 86
+			owns = 87
+			owns = 88
+			owns = 89
+			owns = 90
+			owns = 3307
+			owns = 3308
+			owns = 3389
+			owns = 3400
+		}
+		OR = {
+			ai = yes
+			# AND = {
+				# romanticism = 1 #this is a detriment.
+				money = 5001
+			# }
+		}
 	}
 		
 	effect = {
-		set_global_flag = rancho
-		treasury = -5000
-
+		set_country_flag = rancho_flag
+        random_owned = {
+            limit = {
+                owner = {
+                    NOT = { money = 5000 }
+                    NOT = { check_variable = { which = owed_cash_money value = 1 } }
+                }
+            }
+            owner = { set_variable = { which = owed_cash_money value = 5 } }
+        }
+        random_owned = {
+            limit = {
+                owner = {
+                    NOT = { money = 5000 }
+                    check_variable = { which = owed_cash_money value = 9 }
+                }
+            }
+            owner = { change_variable = { which = owed_cash_money value = 5 } }
+        }
+        random_owned = {
+            limit = { owner = { money = 5000 } }
+            owner = { treasury = -5000 }
+        }
 		any_owned = {
 			limit = {
 				OR = {
@@ -119,13 +170,14 @@ rancho = {
 				}
 			}
 			add_province_modifier = { 
-				name = rancho 
+				name = rancho_modifier 
 				duration = 2920
 			}
 		}
 	}
-	
-	ai_will_do = { factor = 1 }
+	ai_will_do = {
+		factor = 1
+	}
 }
 
 # Annex the Republic of California

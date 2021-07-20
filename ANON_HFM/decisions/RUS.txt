@@ -1443,12 +1443,14 @@ political_decisions = {
 					}
 					overlord = { is_culture_group = east_slavic }
 				}
-				overlord = { release_vassal = UBD }
+				# overlord = { release_vassal = UBD }
+				THIS = { release_vassal = UBD }
 				remove_accepted_culture = russian
 				clr_country_flag = ubd_substate
 				#all_core = { remove_core = UBD }
 				government = absolute_monarchy
-				overlord = { inherit = UBD }
+				# overlord = { inherit = UBD }
+				THIS = { inherit = UBD }
 					
 			}
 			random_country = {
@@ -1462,7 +1464,8 @@ political_decisions = {
 					}
 					overlord = { is_culture_group = east_slavic }
 				}
-				overlord = { release_vassal = UBD }
+				# overlord = { release_vassal = UBD }
+				THIS = { release_vassal = UBD }
 				remove_accepted_culture = russian
 				remove_accepted_culture = russophile
 				government = absolute_monarchy
@@ -1480,12 +1483,14 @@ political_decisions = {
 					}
 					overlord = { is_culture_group = east_slavic }
 				}
-				overlord = { release_vassal = LVN }
+				# overlord = { release_vassal = LVN }
+				THIS = { release_vassal = LVN }
 				remove_accepted_culture = russian
 				clr_country_flag = ubd_substate
 				#all_core = { remove_core = LVN }
 				government = absolute_monarchy
-				overlord = { inherit = LVN }
+				# overlord = { inherit = LVN }
+				THIS = { inherit = LVN }
 			}
 			random_country = {
 				limit = {
@@ -1498,7 +1503,8 @@ political_decisions = {
 					}
 					overlord = { is_culture_group = east_slavic }
 				}
-				overlord = { release_vassal = LVN }
+				# overlord = { release_vassal = LVN }
+				THIS = { release_vassal = LVN }
 				remove_accepted_culture = russian
 				remove_accepted_culture = russophile
 				government = absolute_monarchy
@@ -1516,12 +1522,14 @@ political_decisions = {
 					}
 					overlord = { is_culture_group = east_slavic }
 				}
-				overlord = { release_vassal = KSM }
+				# overlord = { release_vassal = KSM }
+				THIS = { release_vassal = KSM }
 				remove_accepted_culture = russian
 				clr_country_flag = ubd_substate
 				#all_core = { remove_core = KSM }
 				government = absolute_monarchy
-				overlord = { inherit = KSM }
+				# overlord = { inherit = KSM }
+				THIS = { inherit = KSM }
 			}
 			random_country = {
 				limit = {
@@ -1534,7 +1542,8 @@ political_decisions = {
 					}
 					overlord = { is_culture_group = east_slavic }
 				}
-				overlord = { release_vassal = KSM }
+				# overlord = { release_vassal = KSM }
+				THIS = { release_vassal = KSM }
 				remove_accepted_culture = russian
 				remove_accepted_culture = russophile
 				government = absolute_monarchy
@@ -1552,12 +1561,14 @@ political_decisions = {
 					}
 					overlord = { is_culture_group = east_slavic }
 				}
-				overlord = { release_vassal = ESG }
+				# overlord = { release_vassal = ESG }
+				THIS = { release_vassal = ESG }
 				remove_accepted_culture = russian
 				clr_country_flag = ubd_substate
 				#all_core = { remove_core = ESG }
 				government = absolute_monarchy
-				overlord = { inherit = ESG }
+				# overlord = { inherit = ESG }
+				THIS = { inherit = ESG }
 			}
 			random_country = {
 				limit = {
@@ -1570,7 +1581,8 @@ political_decisions = {
 					}
 					overlord = { is_culture_group = east_slavic }
 				}
-				overlord = { release_vassal = ESG }
+				# overlord = { release_vassal = ESG }
+				THIS = { release_vassal = ESG }
 				remove_accepted_culture = russian
 				remove_accepted_culture = russophile
 				government = absolute_monarchy

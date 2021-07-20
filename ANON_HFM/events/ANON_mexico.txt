@@ -406,7 +406,7 @@
 #	}
 #}
 #####################################################
-#Reinstitution of the constitution of 1824
+#Reinstitution of the 1824 constitution
 country_event = {
 	id = 1220010
 	title = "EVTNAME1220010"
@@ -1285,13 +1285,23 @@ country_event = {
 	option = { # Send Quintana Roo to seek a diplomatic compromise
 		name = "EVT1220017OPTA"
 		YUC = {
-			add_country_modifier = {
-				name = mediating_political_solution
-				duration = 30
-			}
-			add_country_modifier = {
-				name = no_more_war
-				duration = 30
+			random_list = {
+				25 = {
+					add_country_modifier = { name = mediating_political_solution duration = 15 }
+					add_country_modifier = { name = no_more_war duration = 15 }
+				}
+				25 = {
+					add_country_modifier = { name = mediating_political_solution duration = 30 }
+					add_country_modifier = { name = no_more_war duration = 30 }
+				}
+				25 = {
+					add_country_modifier = { name = mediating_political_solution duration = 45 }
+					add_country_modifier = { name = no_more_war duration = 45 }
+				}
+				25 = {
+					add_country_modifier = { name = mediating_political_solution duration = 60 }
+					add_country_modifier = { name = no_more_war duration = 60 }
+				}
 			}
 		}
 		ai_chance = {
@@ -1347,7 +1357,7 @@ country_event = {
 
 	option = { # Simply abandon
 		name = "EVT1220017OPTC"
-		prestige = -5
+		prestige = -25
 		YUC = {
 			any_pop = { militancy = -6 }
 		}
@@ -1368,13 +1378,23 @@ country_event = {
 	option = { # We will support them! (Play as YUC)
 		name = "EVT1220017OPTD"
 		YUC = {
-			add_country_modifier = {
-				name = mediating_political_solution
-				duration = 30
-			}
-			add_country_modifier = {
-				name = no_more_war
-				duration = 30
+			random_list = {
+				25 = {
+					add_country_modifier = { name = mediating_political_solution duration = 15 }
+					add_country_modifier = { name = no_more_war duration = 15 }
+				}
+				25 = {
+					add_country_modifier = { name = mediating_political_solution duration = 30 }
+					add_country_modifier = { name = no_more_war duration = 30 }
+				}
+				25 = {
+					add_country_modifier = { name = mediating_political_solution duration = 45 }
+					add_country_modifier = { name = no_more_war duration = 45 }
+				}
+				25 = {
+					add_country_modifier = { name = mediating_political_solution duration = 60 }
+					add_country_modifier = { name = no_more_war duration = 60 }
+				}
 			}
 		}
 		change_tag_no_core_switch = YUC
@@ -1455,7 +1475,11 @@ country_event = {
 			}
 			owner = { change_tag_no_core_switch = MEX }
 		}
-		MEX = { inherit = YUC }
+		MEX = {
+			release_vassal = YUC
+			leave_alliance = YUC 
+			inherit = YUC
+		}
 		#add economically positive modifiers to coastal YUC provinces but gives more autonomy (does not avert caste war)
 		#3443 2184 2183 3357 3358 2185
 		# any_owned = { #These won't work if YUC is annexed
@@ -1577,12 +1601,21 @@ country_event = {
 	title = "EVTNAME1220025"
 	desc = "EVTDESC1220025"
 	picture = "treaty"
+	fire_only_once = yes
 	
 	trigger = {
 		tag = YUC
 		war_with = MEX
-		national_provinces_occupied = 0.15
-		any_owned_province = { country_units_in_province = MEX }
+		OR = {
+			2172 = {
+				controlled_by = THIS
+				province_control_days = 30
+			}
+			AND = {
+				national_provinces_occupied = 0.15
+				any_owned_province = { country_units_in_province = MEX }
+			}
+		}
 		NOT = {
 			has_country_flag = pena_barragan_surrender
 			has_country_flag = pena_barragan_captured
@@ -1625,7 +1658,7 @@ country_event = { # Peña y Barragán allowed to flee under the condition that he 
 	
 	option = { # Honor his word
 		name = "EVT1220026OPTA"
-		war_exhaustion = 40
+		war_exhaustion = 30
 		prestige = -10
 		end_war = YUC
 		any_country = {
@@ -1650,7 +1683,7 @@ country_event = { # Peña y Barragán allowed to flee under the condition that he 
 	}
 	option = { # lolno
 		name = "EVT1220026OPTB"
-		war_exhaustion = 60
+		war_exhaustion = 50
 		badboy = 5
 		scaled_militancy = {
 			ideology = conservative
@@ -1836,7 +1869,7 @@ country_event = { # Peña y Barragán is executed by the savage army of Yucatan
 	}
 	option = { # Abandon all claims on YUC, we're better off without these savages
 		name = "EVT1220028OPTC"
-		war_exhaustion = 20
+		war_exhaustion = -40
 		prestige = -20
 		end_war = YUC
 		any_country = {
@@ -1943,7 +1976,28 @@ country_event = {
 	
 	option = { # Enact blockade
 		name = "EVT1220033OPTA"
-		treasury = -2500
+        random_owned = {
+            limit = {
+                owner = {
+                    NOT = { money = 3000 }
+                    NOT = { check_variable = { which = owed_cash_money value = 1 } }
+                }
+            }
+            owner = { set_variable = { which = owed_cash_money value = 3 } }
+        }
+        random_owned = {
+            limit = {
+                owner = {
+                    NOT = { money = 3000 }
+                    check_variable = { which = owed_cash_money value = 9 }
+                }
+            }
+            owner = { change_variable = { which = owed_cash_money value = 3 } }
+        }
+        random_owned = {
+            limit = { owner = { money = 3000 } }
+            owner = { treasury = -3000 }
+        }
 		YUC = {
 			add_country_modifier = {
 				name = smol_badboy
@@ -1962,7 +2016,28 @@ country_event = {
 	}
 	option = { # Enact harsher blockade
 		name = "EVT1220033OPTB"
-		treasury = -5000
+        random_owned = {
+            limit = {
+                owner = {
+                    NOT = { money = 5000 }
+                    NOT = { check_variable = { which = owed_cash_money value = 1 } }
+                }
+            }
+            owner = { set_variable = { which = owed_cash_money value = 5 } }
+        }
+        random_owned = {
+            limit = {
+                owner = {
+                    NOT = { money = 5000 }
+                    check_variable = { which = owed_cash_money value = 9 }
+                }
+            }
+            owner = { change_variable = { which = owed_cash_money value = 5 } }
+        }
+        random_owned = {
+            limit = { owner = { money = 5000 } }
+            owner = { treasury = -5000 }
+        }
 		YUC = {
 			add_country_modifier = {
 				name = smol_badboy
@@ -1976,17 +2051,17 @@ country_event = {
 			country_event = 1220111
 		}
 		ai_chance = {
-			factor = 20
+			factor = 25
 			modifier = {
-				factor = 5
-				money = 5100
+				factor = 4
+				money = 5001
 			}
 		}	
 	}
 	option = { # We don't have time for this
 		name = "EVT1220033OPTC"
 		ai_chance = {
-			factor = 5
+			factor = 0
 		}	
 	}
 }
@@ -2117,7 +2192,7 @@ country_event = {
 	}
 }
 
-# MEX_YUC_annexation_1846, MEX conservatives revoke YUC's autonomy
+# MEX_YUC_annexation_1846_flag, MEX conservatives revoke YUC's autonomy
 country_event = {
 	id = 1220038
 	title = "EVTNAME1220038"
@@ -2150,6 +2225,8 @@ country_event = {
 	option = { # Accept fate
 		name = "EVT1220039OPTA"
 		MEX = {
+			release_vassal = YUC
+			leave_alliance = YUC 
 			inherit = YUC
 			country_event = 1220040
 		}
@@ -2167,6 +2244,7 @@ country_event = {
 		MEX = {
 			country_event = 1220041
 			release_vassal = YUC
+			leave_alliance = YUC 
 		}
 		relation = {
 			who = MEX
@@ -2348,6 +2426,8 @@ country_event = {
 	
 	option = { # Accept
 		name = "EVT1220043OPTA"
+		release_vassal = YUC
+		leave_alliance = YUC 
 		inherit = YUC
 		ai_chance = {
 			factor = 100
@@ -2539,6 +2619,8 @@ country_event = {
 	}
 	option = { # ok retard
 		name = "EVT1220049OPTA"
+		release_vassal = YUC
+		leave_alliance = YUC 
 		inherit = YUC
 		MEX = { country_event = 1220051 }
 		YUC = { all_core = { add_core = THIS } }
@@ -3040,6 +3122,8 @@ country_event = {
 		name = "EVT1220062OPTA"
 		MEX = {
 			country_event = 1220063
+			release_vassal = YUC
+			leave_alliance = YUC 
 			inherit = YUC
 		}
 		ai_chance = {

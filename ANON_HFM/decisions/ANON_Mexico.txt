@@ -36,7 +36,7 @@ political_decisions = {
 				name = "Antonio López de Santa Anna"
 				personality = au_fait
 				background = natural_born_leader
-				prestige = 0.5
+				# prestige = 0.5
 			}
 			add_country_modifier = {
 				name = global_liberal_agitation
@@ -176,7 +176,10 @@ political_decisions = {
 
 		allow = {
 			war = no
-			money = 2600
+			OR ={
+				money = 3001
+				ai = yes
+			}
 		}
 
 		effect = {
@@ -189,7 +192,7 @@ political_decisions = {
 	yucatecan_destiny = {
 		potential = {
 			tag = YUC
-			any_neighbor_country = { has_country_flag = YUC_ceasefire }
+			2172 = { owner = { has_country_flag = YUC_ceasefire } }
 			has_country_flag = YUC_has_blockade
 			NOT = { has_global_flag = yucatecan_destiny }
 		}
@@ -252,35 +255,32 @@ political_decisions = {
 			factor = 1
 		}
 	}
-	
+
 	MEX_YUC_annexation_1846 = {
 		potential = {
-			tag = MEX
+			owns = 2172
 			has_global_flag = YUC_autonomous
-			# OR = {
-				# NOT = { has_global_flag = constitution_1824 }
-				has_global_flag = constitution_1824_no
-			# }
-			NOT = { has_global_flag = MEX_YUC_annexation_1846 }
+			NOT = { has_global_flag = MEX_YUC_annexation_1846_flag }
 		}
-
 		allow = {
 			war = no
 			YUC = {
-				vassal_of = THIS
+				exists = yes
+				OR = {
+					vassal_of = THIS
+					substate_of = THIS
+				}
 			}
 			OR = {
 				ruling_party_ideology = conservative
 				ruling_party_ideology = reactionary
 			}
 		}
-
 		effect = {
-			set_global_flag = MEX_YUC_annexation_1846
+			set_global_flag = MEX_YUC_annexation_1846_flag
 			country_event = 1220038
 		}
 		ai_will_do = {
-			factor = 1
 			modifier = {
 				factor = 0
 				NOT = { year = 1845 }
@@ -334,6 +334,8 @@ political_decisions = {
 		allow = {
 			OR = {
 				war_with = MEX
+				war_with = M3X
+				war_with = MXM
 				war_with = USA
 				war_with = YUC
 			}
