@@ -3931,6 +3931,7 @@ province_event = {
 						state_id = 2189
 					}
 					has_global_flag = YUC_becomes_USA_state
+					owner = { NOT = { has_country_flag = manifest_destiny_refuted } }
 				}
 				add_core = CSA
 			}
@@ -3977,6 +3978,7 @@ province_event = {
 					# }
 					# has_global_flag = big_gadsden
 					# NOT = { has_global_flag = gadsden_denied }
+					# NOT = { has_country_flag = manifest_destiny_refuted }
 				# }
 				# add_core = CSA
 				# any_pop = {
@@ -4011,7 +4013,7 @@ province_event = {
 						has_global_flag = big_gadsden
 						has_global_flag = gadsden_bitch
 					}
-					NOT = { has_global_flag = gadsden_denied }
+					owner = { NOT = { has_country_flag = manifest_destiny_refuted has_global_flag = gadsden_denied } }
 				}
 				add_core = CSA
 				any_pop = {
@@ -4049,6 +4051,7 @@ province_event = {
 						# Las Vegas
 						province_id = 96
 					}
+					owner = { NOT = { has_country_flag = manifest_destiny_refuted } }
 				}
 				add_core = CSA
 				any_pop = {

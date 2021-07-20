@@ -85,7 +85,7 @@ permanent_occupation = {
 
 ########## OTHER SHIT ##########
 
-dictatorship = {
+dictatorship = { #NEW
 	trigger = {
 		has_country_flag = new_world_nation
 		OR = {
@@ -312,7 +312,7 @@ substate_nation = {
 	icon = 10
 }
 
-vassal_nation_player = {
+vassal_nation_player = { #NEW
     trigger = {
         ai = no
         exists = yes
@@ -498,7 +498,7 @@ landlocked_nation = {
 	icon = 8
 }
 
-landlocked_nation_import = {
+landlocked_nation_import = { #NEW
 	trigger = {
 		exists = yes
 		NOT = { total_num_of_ports = 1 }
@@ -572,22 +572,23 @@ democratic_nation = {
 	research_points_modifier = 0.05
 	global_population_growth = 0.01
 }
+
 social_reformed_nation = {
-        trigger = {
-            exists = yes
-            wage_reform = good_minimum_wage
-            work_hours = eight_hours
-            safety_regulations = good_safety
-            unemployment_subsidies = good_subsidies
-            pensions = good_pensions
-            health_care = good_health_care
-            school_reforms = good_schools
-            penal_system = rehabilitation
-        }
-        core_pop_militancy_modifier = -0.25
-        war_exhaustion = -0.01
-        research_points_modifier = 0.25
-	    social_reform_desire = -0.3
+	trigger = {
+		exists = yes
+		wage_reform = good_minimum_wage
+		work_hours = eight_hours
+		safety_regulations = good_safety
+		unemployment_subsidies = good_subsidies
+		pensions = good_pensions
+		health_care = good_health_care
+		school_reforms = good_schools
+		penal_system = rehabilitation
+	}
+	core_pop_militancy_modifier = -0.25
+	war_exhaustion = -0.01
+	research_points_modifier = 0.25
+	social_reform_desire = -0.5
     icon = 13
 }
 
@@ -802,7 +803,7 @@ bread_basket = {
 	supply_consumption = -0.1
 }
 
-stop_it_mec = {
+stop_it_mec = { #NEW
 	trigger = {
 		OR = {
 			AND = { 
@@ -867,7 +868,7 @@ stop_it_mec = {
 	global_immigrant_attract = -1.3
 }
 
-free_city = {
+free_city = { #NEW
 	trigger = {
 		NOT = { num_of_cities = 2 }
 		OR = {
@@ -894,7 +895,7 @@ free_city = {
 	supply_consumption = -0.05
 }
 
-free_state = {
+free_state = { #NEW
 	trigger = {
 		OR = { 
 			government = colonial_company
@@ -1098,204 +1099,6 @@ ai_spend_more_cash = {
 	min_social_spending = 1.0
 	min_military_spending = 1.0
 }
-# Triggered modifiers are here.
-# these are checked for each countries once/month and then applied.
-#
-# Effects are fully scriptable here.
-###Size Modifiers###
-# desperate_nation  = {
-	# trigger = {
-		# NOT = { total_pops = 25000 }  #25 thousand POPs/100 thousand population 
-		# NOT = { tag = RUS ai = yes }
-	# }
-	# global_population_growth = 0.05
-	# mobilisation_economy_impact = -0.80
-	# supply_consumption = -0.80
-	# mobilisation_size = 0.2
-	# tax_efficiency = 0.50 #50% boost
-	# icon = 9
-# }
-
-# microscopic_nation  = {
-	# trigger = {
-		# total_pops = 25000 #25 thousand POPs/100 thousand population
-		# NOT = { total_pops = 125000 }  #125 thousand POPs/500 thousand population 
-		# NOT = { tag = RUS ai = yes }
-	# }
-	# global_population_growth = 0.004
-	# mobilisation_economy_impact = -0.75
-	# supply_consumption = -0.75
-	# mobilisation_size = 0.1
-	# tax_efficiency = 0.40 #40% boost
-	# icon = 6
-# }
-
-# tiny_nation  = {
-	# trigger = {
-		# total_pops = 125000 #125 thousand POPs/500 thousand population
-		# NOT = { total_pops = 1000000 } #1 million POPs/4 Million population
-		# NOT = { tag = RUS ai = yes }
-	# }
-	# global_population_growth = 0.003
-	# mobilisation_economy_impact = -0.50
-	# supply_consumption = -0.50
-	# mobilisation_size = 0.04
-	# tax_efficiency = 0.25 #25% boost
-	# icon = 6
-# }
-
-# small_nation  = {
-	# trigger = {
-		# total_pops = 1000000 #1 million POPs/4 Million population
-		# NOT = { total_pops = 3500000 } #3.5 million POPs/14 Million population
-		# NOT = { tag = RUS ai = yes }
-	# }
-	# global_population_growth = 0.003
-	# mobilisation_economy_impact = -0.25
-	# supply_consumption = -0.25
-	# mobilisation_size = 0.02
-	# tax_efficiency = 0.20 #20% boost
-	# icon = 9
-# }
-
-# medium_nation  = {
-	# trigger = {
-		# civilized = yes
-		# total_pops = 3500000 #3.5 million POPs/14 Million population
-		# NOT = { total_pops = 7500000 } #7.5 million POPs/30 Million population
-		# NOT = { tag = RUS ai = yes }
-	# }
-	# global_population_growth = 0.001
-	# mobilisation_economy_impact = -0.10
-	# supply_consumption = -0.10
-	# mobilisation_size = 0.01
-	# tax_efficiency = 0.10 #10% boost
-	# icon = 9
-# }
-
-# average_nation  = {
-	# trigger = {
-		# civilized = yes
-		# total_pops = 7500000 #7.5 million POPs/30 Million population 
-		# NOT = { total_pops = 12500000 } #12.5 million POPs/50 million population
-		# NOT = { tag = RUS ai = yes }
-	# }
-	# supply_consumption = 0.05
-	# #mobilisation_size = -0.01
-	# tax_efficiency = -0.05 #5% malus
-	# #max_tariff = -0.1 #10% 
-	# icon = 9
-# }
-
-# large_nation = {
-	# trigger = {
-		# civilized = yes
-		# total_pops = 12500000 #12.5 million POPs/50 million population
-		# NOT = { total_pops = 21250000 } #21.25 million POPs/85 million population
-		# NOT = { tag = RUS ai = yes }
-	# }
-	# #global_population_growth = -0.001
-	# supply_consumption = 0.1
-	# #mobilisation_size = -0.02
-	# tax_efficiency = -0.05 #5% malus
-	# max_tariff = -0.05 #5% was 15%
-	# mobilisation_economy_impact = 0.1
-	# global_immigrant_attract = -0.05
-	# icon = 9
-# }
-
-# empire = {
-	# trigger = {
-		# civilized = yes
-		# total_pops = 21250000 #21.25 million POPs/85 million population
-		# NOT = { total_pops = 37500000 } #37.5 million POPs/150 million population
-		# NOT = { tag = RUS ai = yes }
-	# }
-	# global_population_growth = -0.001
-	# #mobilisation_size = -0.02
-	# supply_consumption = 0.15
-	# tax_efficiency = -0.07 #7% malus
-	# max_tariff = -0.10 #10% was 20%
-	# factory_owner_cost = -0.10 #10% decrease in cost for buildings
-	# mobilisation_economy_impact = 0.2
-	# global_immigrant_attract = -0.1
-	# icon = 9
-# }
-
-# medium_empire = {
-	# trigger = {
-		# civilized = yes
-		# total_pops = 37500000 #37.5 million POPs/150 million population
-		# NOT = { total_pops = 62500000 } #62.5 million POPs/250 million population
-		# NOT = { tag = RUS ai = yes }
-	# }
-	# global_population_growth = -0.002
-	# #mobilisation_size = -0.03
-	# supply_consumption = 0.2
-	# tax_efficiency = -0.09 #9% malus
-	# max_tariff = -0.15 #15% was 20%
-	# research_points_modifier = 0.1 #10% increase
-	# factory_owner_cost = -0.10 #10% decrease in cost for buildings
-	# mobilisation_economy_impact = 0.4
-	# global_immigrant_attract = -0.2
-	# icon = 9
-# }
-
-# large_empire = {
-	# trigger = {
-		# civilized = yes
-		# total_pops = 62500000 #62.5 million POPs/250 million population
-		# NOT = { total_pops = 87500000 } #87.5 million POPs/350 million population
-		# NOT = { tag = RUS ai = yes }
-	# }
-	# global_population_growth = -0.003
-	# #mobilisation_size = -0.04
-	# supply_consumption = 0.3 #30% increase
-	# tax_efficiency = -0.11 #11% malus
-	# max_tariff = -0.20 #20% was 25%
-	# research_points_modifier = 0.13 #13% increase
-	# factory_owner_cost = -0.15 #15% decrease in cost for buildings
-	# mobilisation_economy_impact = 0.6
-	# global_immigrant_attract = -0.3
-	# icon = 9
-# }
-
-# insane_empire = {
-	# trigger = {
-		# year = 1837
-		# civilized = yes
-		# total_pops = 87500000 #87.5 million POPs/350 million population
-		# NOT = { total_pops = 125000000 } #87.5 million POPs/350 million population
-		# NOT = { tag = RUS ai = yes }
-	# }
-	# global_population_growth = -0.004
-	# #mobilisation_size = -0.05
-	# supply_consumption = 0.6 #50% increase
-	# tax_efficiency = -0.2 #20% malus
-	# max_tariff = -0.25 #25% malus
-	# factory_owner_cost = -0.15 #15% decrease in cost for buildings
-	# mobilisation_economy_impact = 1.0
-	# global_immigrant_attract = -0.4
-	# icon = 9
-# }
-
-# insane_empire2 = {
-	# trigger = {
-		# year = 1837
-		# civilized = yes
-		# total_pops = 125000000 #125 million POPs/500 million population
-		# NOT = { tag = RUS ai = yes }
-	# }
-	# global_population_growth = -0.006
-	# #mobilisation_size = -0.07
-	# supply_consumption = 0.6 #60% increase
-	# tax_efficiency = -0.2 #25% malus
-	# max_tariff = -0.60 #60% malus
-	# factory_owner_cost = -0.20 #20% decrease in cost for buildings
-	# mobilisation_economy_impact = 1.0
-	# global_immigrant_attract = -0.5
-	# icon = 9
-# }
 
 gorkha_kingdom = {
 	trigger = {
@@ -1313,22 +1116,6 @@ tariff_efficiency_boost = {
 	}
 	tariff_efficiency_modifier = 0.1
 	icon = 9
-}
-
-social_reformed_nation = {
-		trigger = {
-			exists = yes
-			wage_reform = good_minimum_wage
-			work_hours = eight_hours
-			safety_regulations = good_safety
-			unemployment_subsidies = good_subsidies
-			pensions = good_pensions
-			health_care = good_health_care
-			school_reforms = good_schools
-		}
-		
-	social_reform_desire = -0.5
-	icon = 13
 }
 
 player_unciv_mobilization = {
@@ -1474,163 +1261,6 @@ classless_society_modifier = {
 	icon = 17 
 }
 
-save_the_nation0.5  = {
-	trigger = {
-		revanchism = 0.05
-		NOT = { revanchism = 0.10 } 
-	}
-	
-	suppression_points_modifier = 0.05
-	
-	land_organisation = 0.0125
-	mobilisation_size = 0.005
-	supply_consumption = -0.025
-	icon = 9
-}
-
-save_the_nation1  = {
-	trigger = {
-		revanchism = 0.10
-		NOT = { revanchism = 0.15 } 
-	}
-	
-	suppression_points_modifier = 0.10
-	
-	land_organisation = 0.025
-	mobilisation_size = 0.01
-	supply_consumption = -0.05
-	icon = 9
-}
-
-save_the_nation1.5  = {
-	trigger = {
-		revanchism = 0.15
-		NOT = { revanchism = 0.20 } 
-	}
-	
-	suppression_points_modifier = 0.10
-	
-	land_organisation = 0.05
-	mobilisation_size = 0.015
-	supply_consumption = -0.1
-	mobilization_impact = 0.125
-	mobilisation_economy_impact = -0.0625
-	icon = 9
-}
-
-save_the_nation2  = {
-	trigger = {
-		revanchism = 0.20
-		NOT = { revanchism = 0.25 } 
-	}
-	
-	suppression_points_modifier = 0.10
-	
-	land_organisation = 0.075
-	mobilisation_size = 0.02
-	supply_consumption = -0.15
-	mobilization_impact = 0.25
-	mobilisation_economy_impact = -0.125
-	icon = 9
-}
-
-save_the_nation2.5  = {
-	trigger = {
-		revanchism = 0.25
-		NOT = { revanchism = 0.30 } 
-	}
-	
-	suppression_points_modifier = 0.10
-	
-	land_organisation = 0.0875
-	mobilisation_size = 0.025
-	supply_consumption = -0.175
-	mobilization_impact = 0.375
-	mobilisation_economy_impact = -0.19
-	icon = 9
-}
-
-save_the_nation3  = {
-	trigger = {
-		revanchism = 0.30
-		NOT = { revanchism = 0.35 } 
-	}
-	
-	suppression_points_modifier = 0.10
-	
-	land_organisation = 0.1
-	mobilisation_size = 0.03
-	supply_consumption = -0.20
-	mobilization_impact = 0.5
-	mobilisation_economy_impact = -0.25
-	icon = 9
-}
-
-save_the_nation3.5  = {
-	trigger = {
-		revanchism = 0.35
-		NOT = { revanchism = 0.40 } 
-	}
-	
-	suppression_points_modifier = 0.10
-	
-	land_organisation = 0.15
-	mobilisation_size = 0.035
-	supply_consumption = -0.25
-	mobilization_impact = 0.75
-	mobilisation_economy_impact = -0.375
-	icon = 9
-}
-
-save_the_nation4  = {
-	trigger = {
-		revanchism = 0.40
-		NOT = { revanchism = 0.45 } 
-	}
-	
-	suppression_points_modifier = 0.10
-	
-	land_organisation = 0.2
-	mobilisation_size = 0.04
-	supply_consumption = -0.30
-	mobilization_impact = 1
-	mobilisation_economy_impact = -0.5
-	icon = 9
-}
-
-save_the_nation4.5  = {
-	trigger = {
-		revanchism = 0.45
-		NOT = { revanchism = 0.50 }
-	}
-	
-	suppression_points_modifier = 0.10
-	
-	land_organisation = 0.225
-	land_unit_start_experience = 2.5
-	mobilisation_size = 0.045
-	supply_consumption = -0.30
-	mobilization_impact = 1
-	mobilisation_economy_impact = -0.58
-	icon = 9
-}
-
-save_the_nation5  = {
-	trigger = {
-		revanchism = 0.50
-	}
-	
-	suppression_points_modifier = 0.10
-	
-	land_organisation = 0.25
-	land_unit_start_experience = 5
-	mobilisation_size = 0.05
-	supply_consumption = -0.30
-	mobilization_impact = 1
-	mobilisation_economy_impact = -0.66
-	icon = 9
-}
-
 help_ai = {
 	trigger = {
 		ai = yes
@@ -1687,7 +1317,7 @@ help_ai_late = {
 	# min_tariff = 0.75
 # }
 
-disable_loans = {
+disable_loans = { #NEW
 	trigger = {
 		ai = yes
 		has_global_flag = loans_disabled_player
@@ -1741,438 +1371,14 @@ fairer_taxation3 = {
 	max_tax = 0.10
 	icon = 9
 }
-#### Pops livelihood impact on nation ####
 
-#Rich
-#rich_needs_1 = {
-#    trigger = {
-#        exists = yes
-#        NOT = { rich_strata_life_needs = 0.5 }
-#        NOT = { rich_strata_everyday_needs = 0.1 }
-#        NOT = { rich_strata_luxury_needs = 0.1 }
-#    }   
-#    rich_income_modifier = -0.5
-#    ruling_party_support = -0.5
-#    icon = 8
-#}
-#
-#rich_needs_2 = {
-#    trigger = {
-#        exists = yes
-#        NOT = { rich_strata_life_needs = 0.9 }
-#        NOT = { rich_strata_everyday_needs = 0.1 }
-#        NOT = { rich_strata_luxury_needs = 0.1 }
-#    }   
-#    rich_income_modifier = -0.4
-#    ruling_party_support = -0.4
-#    icon = 8
-#}
-#
-#rich_needs_3 = {
-#    trigger = {
-#        exists = yes
-#        OR = {
-#              rich_strata_everyday_needs = 0.4
-#              rich_strata_luxury_needs = 0.1 
-#        }
-#    }   
-#    rich_income_modifier = -0.3
-#    ruling_party_support = -0.3
-#    icon = 8
-#}
-#
-#rich_needs_4 = {
-#    trigger = {
-#        exists = yes
-#        OR = {
-#              rich_strata_everyday_needs = 0.6
-#              rich_strata_luxury_needs = 0.1 
-#        }
-#    }   
-#    rich_income_modifier = -0.2
-#    ruling_party_support = -0.2
-#    icon = 8
-#}
-#
-#rich_needs_5 = {
-#    trigger = {
-#        exists = yes
-#        OR = {
-#              rich_strata_everyday_needs = 0.8
-#              rich_strata_luxury_needs = 0.1 
-#        }
-#    }      
-#    rich_income_modifier = 0.5
-#    ruling_party_support = 0.5
-#    goods_demand = 0.5
-#    icon = 8
-#}
-#
-#rich_needs_6 = {
-#    trigger = {
-#        exists = yes
-#        OR = {
-#              rich_strata_everyday_needs = 0.95
-#              rich_strata_luxury_needs = 0.1 
-#        }
-#    }   
-#    rich_income_modifier = 0.6
-#    ruling_party_support = 0.6
-#    goods_demand = 0.6
-#    icon = 8
-#}
-#
-#rich_needs_7 = {
-#    trigger = {
-#        exists = yes
-#        AND = {
-#              rich_strata_luxury_needs = 0.25
-#              rich_strata_everyday_needs = 0.50           
-#        }
-#    }   
-#    rich_income_modifier = 0.7
-#    ruling_party_support = 0.7
-#    goods_demand = 0.7
-#    icon = 8
-#}
-#
-#rich_needs_8 = {
-#    trigger = {
-#        exists = yes
-#        AND = {
-#              rich_strata_luxury_needs = 0.5 
-#              rich_strata_everyday_needs = 0.50
-#        }
-#    }   
-#    rich_income_modifier = 0.8
-#    ruling_party_support = 0.8
-#    goods_demand = 0.8
-#    icon = 8
-#}
-#
-#rich_needs_9 = {
-#    trigger = {
-#        exists = yes
-#        AND = {
-#              rich_strata_luxury_needs = 0.75 
-#              rich_strata_everyday_needs = 0.50
-#        }
-#    }   
-#    rich_income_modifier = 0.9
-#    ruling_party_support = 0.9
-#    goods_demand = 0.9
-#    icon = 8
-#}
-#
-#rich_needs_10 = {
-#    trigger = {
-#        exists = yes
-#        AND = {
-#              rich_strata_luxury_needs = 0.9
-#              rich_strata_everyday_needs = 0.50       
-#        }
-#    }   
-#    rich_income_modifier = 1
-#    ruling_party_support = 1
-#    goods_demand = 1
-#    icon = 8
-#}
-#
-##Middle
-#middle_needs_1 = {
-#    trigger = {
-#        exists = yes
-#        NOT = { middle_strata_life_needs = 0.5 }
-#        NOT = { middle_strata_everyday_needs = 0.1 }
-#        NOT = { middle_strata_luxury_needs = 0.1 }
-#    }   
-#    RGO_throughput = -0.25
-#    factory_throughput = -0.25
-#    middle_income_modifier = -0.25
-#    tax_efficiency = -0.25
-#    icon = 8
-#}
-#
-#middle_needs_2 = {
-#    trigger = {
-#        exists = yes
-#        NOT = { middle_strata_life_needs = 0.9 }
-#        NOT = { middle_strata_everyday_needs = 0.1 }
-#        NOT = { middle_strata_luxury_needs = 0.1 }
-#    }   
-#    RGO_throughput = -0.2
-#    factory_throughput = -0.2
-#    middle_income_modifier = -0.2
-#    tax_efficiency = -0.2
-#    icon = 8
-#}
-#
-#middle_needs_3 = {
-#    trigger = {
-#        exists = yes
-#        OR = {
-#              middle_strata_everyday_needs = 0.4
-#              middle_strata_luxury_needs = 0.1 
-#        }
-#    }   
-#    RGO_throughput = -0.15
-#    factory_throughput = -0.15
-#    middle_income_modifier = -0.15
-#    tax_efficiency = -0.15
-#    icon = 8
-#}
-#
-#middle_needs_4 = {
-#    trigger = {
-#        exists = yes
-#        OR = {
-#              middle_strata_everyday_needs = 0.6
-#              middle_strata_luxury_needs = 0.1 
-#        }
-#    }   
-#    RGO_throughput = -0.1
-#    factory_throughput = -0.1
-#    middle_income_modifier = -0.1
-#    tax_efficiency = -0.1
-#    icon = 8
-#}
-#
-#middle_needs_5 = {
-#    trigger = {
-#        exists = yes
-#        OR = {
-#              middle_strata_everyday_needs = 0.8
-#              middle_strata_luxury_needs = 0.1 
-#        }
-#    }   
-#    RGO_throughput = 0.1
-#    factory_throughput = 0.1
-#    middle_income_modifier = 0.1
-#    tax_efficiency = 0.1
-#    icon = 8
-#}
-#
-#middle_needs_6 = {
-#    trigger = {
-#        exists = yes
-#        OR = {
-#              middle_strata_everyday_needs = 0.95
-#              middle_strata_luxury_needs = 0.1 
-#        }
-#    }   
-#    RGO_throughput = 0.2
-#    factory_throughput = 0.2
-#    middle_income_modifier = 0.2
-#    tax_efficiency = 0.2  
-#    icon = 8
-#}
-#
-#middle_needs_7 = {
-#    trigger = {
-#        exists = yes
-#        AND = {
-#              middle_strata_luxury_needs = 0.25 
-#              middle_strata_everyday_needs = 0.50
-#        }
-#    }   
-#    RGO_throughput = 0.3
-#    factory_throughput = 0.3
-#    middle_income_modifier = 0.3
-#    tax_efficiency = 0.3
-#    icon = 8
-#}
-#
-#middle_needs_8 = {
-#    trigger = {
-#        exists = yes
-#        AND = {
-#              middle_strata_luxury_needs = 0.5
-#              middle_strata_everyday_needs = 0.50             
-#        }
-#    }   
-#    RGO_throughput = 0.4
-#    factory_throughput = 0.4
-#    middle_income_modifier = 0.4
-#    tax_efficiency = 0.4
-#    icon = 8
-#}
-#
-#middle_needs_9 = {
-#    trigger = {
-#        exists = yes
-#        AND = {
-#              middle_strata_luxury_needs = 0.75
-#              middle_strata_everyday_needs = 0.50             
-#        }
-#    }   
-#    RGO_throughput = 0.5
-#    factory_throughput = 0.5
-#    middle_income_modifier = 0.5
-#    tax_efficiency = 0.5
-#    icon = 8
-#}
-#
-#middle_needs_10 = {
-#    trigger = {
-#        exists = yes
-#        AND = {
-#              middle_strata_luxury_needs = 0.9
-#              middle_strata_everyday_needs = 0.50             
-#        }
-#    }   
-#    RGO_throughput = 0.6
-#    factory_throughput = 0.6
-#    middle_income_modifier = 0.6
-#    tax_efficiency = 0.6
-#    icon = 8
-#}
-#
-##Poor
-#poor_needs_1 = {
-#    trigger = {
-#        exists = yes
-#        NOT = { poor_strata_life_needs = 0.5 }
-#        NOT = { poor_strata_everyday_needs = 0.1 }
-#        NOT = { poor_strata_luxury_needs = 0.1 }
-#    }   
-#    global_immigrant_attract = -2.5
-#    global_population_growth = -0.025
-#    education_efficiency_modifier = -0.25
-#    icon = 8
-#}
-#
-#poor_needs_2 = {
-#    trigger = {
-#        exists = yes
-#        NOT = { poor_strata_life_needs = 0.9 }
-#        NOT = { poor_strata_everyday_needs = 0.1 }
-#        NOT = { poor_strata_luxury_needs = 0.1 }
-#    }   
-#    global_immigrant_attract = -2
-#    global_population_growth = -0.02
-#    education_efficiency_modifier = -0.2
-#    icon = 8
-#}
-#
-#poor_needs_3 = {
-#    trigger = {
-#        exists = yes
-#        OR = {
-#              poor_strata_everyday_needs = 0.4
-#              poor_strata_luxury_needs = 0.1 
-#        }
-#    }   
-#    global_immigrant_attract = -1.5
-#    global_population_growth = -0.015
-#    education_efficiency_modifier = -0.15
-#    icon = 8
-#}
-#
-#poor_needs_4 = {
-#    trigger = {
-#        exists = yes
-#        OR = {
-#              poor_strata_everyday_needs = 0.6
-#              poor_strata_luxury_needs = 0.1 
-#        }
-#    }   
-#    global_immigrant_attract = -1
-#    global_population_growth = -0.01
-#    education_efficiency_modifier = -0.1
-#    icon = 8
-#}
-#
-#poor_needs_5 = {
-#    trigger = {
-#        exists = yes
-#        OR = {
-#              poor_strata_everyday_needs = 0.8
-#              poor_strata_luxury_needs = 0.1 
-#        }
-#    }   
-#    global_immigrant_attract = 1
-#    global_population_growth = 0.01
-#    education_efficiency_modifier = 0.1
-#    icon = 8
-#}
-#
-#poor_needs_6 = {
-#    trigger = {
-#        exists = yes
-#        OR = {
-#              poor_strata_everyday_needs = 0.95
-#              poor_strata_luxury_needs = 0.1 
-#        }
-#    }   
-#    global_immigrant_attract = 1.5
-#    global_population_growth = 0.015
-#    education_efficiency_modifier = 0.15
-#    icon = 8
-#}
-#
-#poor_needs_7 = {
-#    trigger = {
-#        exists = yes
-#        AND = {
-#              poor_strata_luxury_needs = 0.25
-#              poor_strata_everyday_needs = 0.50           
-#        }
-#    }   
-#    global_immigrant_attract = 2
-#    global_population_growth = 0.02
-#    education_efficiency_modifier = 0.2
-#    icon = 8
-#}
-#
-#poor_needs_8 = {
-#    trigger = {
-#        exists = yes
-#        AND = {
-#              poor_strata_luxury_needs = 0.5
-#              poor_strata_everyday_needs = 0.50           
-#        }
-#    }   
-#    global_immigrant_attract = 2.5
-#    global_population_growth = 0.025
-#    education_efficiency_modifier = 0.25
-#    icon = 8
-#}
-#
-#poor_needs_9 = {
-#    trigger = {
-#        exists = yes
-#        AND = {
-#              poor_strata_luxury_needs = 0.75
-#              poor_strata_everyday_needs = 0.50           
-#        }
-#    }   
-#    global_immigrant_attract = 3
-#    global_population_growth = 0.03
-#    education_efficiency_modifier = 0.3
-#    icon = 8
-#}
-#
-#poor_needs_10 = {
-#    trigger = {
-#        exists = yes
-#        AND = {
-#              poor_strata_luxury_needs = 0.9
-#              poor_strata_everyday_needs = 0.50           
-#        }
-#    }   
-#    global_immigrant_attract = 3.5
-#    global_population_growth = 0.035
-#    education_efficiency_modifier = 0.35
-#    icon = 8
-#}
-
-ai_taxes = {
-    trigger = {
-        ai = yes
-        money = 5000000 
-    }
-    tax_efficiency = -1
-}
+# ai_taxes = { #NEW
+    # trigger = {
+        # ai = yes
+        # money = 5000000 
+    # }
+    # tax_efficiency = -1
+# }
 ###################ANON
 
 own_volga_don_canal = {
@@ -2405,7 +1611,7 @@ neglected_education = {
 
 ########## DRAFT LAWS ##########
 
-one_year_draft_tm = {
+one_year_draft_tm = { #NEW
 	trigger = {
 		NOT = { has_country_flag = is_chinese_nation }
 		conscription = one_year_draft
@@ -2413,7 +1619,7 @@ one_year_draft_tm = {
 	mobilisation_size = 0.01
 	icon = 15		
 }
-two_year_draft_tm = {
+two_year_draft_tm = { #NEW
 	trigger = {
 		NOT = { has_country_flag = is_chinese_nation }
 		conscription = two_year_draft
@@ -2421,7 +1627,7 @@ two_year_draft_tm = {
 	mobilisation_size = 0.02		
 	icon = 15		
 }	
-four_year_draft_tm = {
+four_year_draft_tm = { #NEW
 	trigger = {
 		NOT = { has_country_flag = is_chinese_nation }
 		conscription = four_year_draft
@@ -2429,7 +1635,7 @@ four_year_draft_tm = {
 	mobilisation_size = 0.04		
 	icon = 15		
 }
-mandatory_service_tm = {
+mandatory_service_tm = { #NEW
 	trigger = {
 		NOT = { has_country_flag = is_chinese_nation }
 		conscription = mandatory_service
@@ -2440,7 +1646,7 @@ mandatory_service_tm = {
 
 ########## Governance ##########
 
-regionalism_tm = {
+regionalism_tm = { #NEW
 	trigger = {
 		NOT = { has_country_flag = is_chinese_nation }
 		centralization = regionalism
@@ -2448,7 +1654,7 @@ regionalism_tm = {
 	mobilisation_size = -0.01		
 	icon = 16		
 }
-confederalism_tm = {
+confederalism_tm = { #NEW
 	trigger = {
 		NOT = { has_country_flag = is_chinese_nation }
 		centralization = confederalism
@@ -2456,7 +1662,7 @@ confederalism_tm = {
 	mobilisation_size = -0.01		
 	icon = 16		
 }
-totalitarianism_tm = {
+totalitarianism_tm = { #NEW
 	trigger = {
 		NOT = { has_country_flag = is_chinese_nation }
 		centralization = totalitarianism
@@ -2466,7 +1672,7 @@ totalitarianism_tm = {
 }
 ########## MOBILIZATION TECHS ##########
 
-mob1_trigger = {
+mob1_trigger = { #NEW
 	trigger = {
 		NOT = { has_country_flag = is_chinese_nation }
 		has_country_flag = mob1_invented
@@ -2475,7 +1681,7 @@ mob1_trigger = {
 	icon = 15		
 }
 
-mob2_trigger = {
+mob2_trigger = { #NEW
 	trigger = {
 		NOT = { has_country_flag = is_chinese_nation }
 		has_country_flag = mob2_invented
@@ -2484,7 +1690,7 @@ mob2_trigger = {
 	icon = 15		
 }
 
-mob3_trigger = {
+mob3_trigger = { #NEW
 	trigger = {
 		NOT = { has_country_flag = is_chinese_nation }
 		has_country_flag = mob3_invented
@@ -2493,7 +1699,7 @@ mob3_trigger = {
 	icon = 15		
 }
 
-mob4_trigger = {
+mob4_trigger = { #NEW
 	trigger = {
 		NOT = { has_country_flag = is_chinese_nation }
 		has_country_flag = mob4_invented
@@ -2502,7 +1708,7 @@ mob4_trigger = {
 	icon = 15		
 }
 
-mob5_trigger = {
+mob5_trigger = { #NEW
 	trigger = {
 		NOT = { has_country_flag = is_chinese_nation }
 		has_country_flag = mob5_invented
@@ -2511,7 +1717,7 @@ mob5_trigger = {
 	icon = 15		
 }
 
-mob1_china_trigger = {
+mob1_china_trigger = { #NEW
 	trigger = {
 		has_country_flag = is_chinese_nation
 		has_country_flag = mob1_invented
@@ -2520,7 +1726,7 @@ mob1_china_trigger = {
 	icon = 15		
 }
 
-mob2_china_trigger = {
+mob2_china_trigger = { #NEW
 	trigger = {
 		has_country_flag = is_chinese_nation
 		has_country_flag = mob2_invented
@@ -2529,7 +1735,7 @@ mob2_china_trigger = {
 	icon = 15		
 }
 
-mob3_china_trigger = {
+mob3_china_trigger = { #NEW
 	trigger = {
 		has_country_flag = is_chinese_nation
 		has_country_flag = mob3_invented
@@ -2538,7 +1744,7 @@ mob3_china_trigger = {
 	icon = 15		
 }
 
-mob4_china_trigger = {
+mob4_china_trigger = { #NEW
 	trigger = {
 		has_country_flag = is_chinese_nation
 		has_country_flag = mob4_invented
@@ -2547,7 +1753,7 @@ mob4_china_trigger = {
 	icon = 15		
 }
 
-mob5_china_trigger = {
+mob5_china_trigger = { #NEW
 	trigger = {
 		has_country_flag = is_chinese_nation
 		has_country_flag = mob5_invented
@@ -2557,7 +1763,7 @@ mob5_china_trigger = {
 }
 
 ########## UNCIV ##########
-unciv_research_points_on_conquer = {
+unciv_research_points_on_conquer = { #NEW
 	trigger = {
 		civilized = no
 	}
@@ -2566,7 +1772,7 @@ unciv_research_points_on_conquer = {
 
 
 ########## Rude boy ##########
-badboy1 = {
+badboy1 = { #NEW
 	trigger = {
 		badboy = 1
 		NOT = { badboy = 1.2 }
@@ -2576,7 +1782,7 @@ badboy1 = {
 	tariff_efficiency_modifier = -0.05
 }
 
-badboy2 = {
+badboy2 = { #NEW
 	trigger = {
 		badboy = 1.2
 		NOT = { badboy = 1.4 }
@@ -2586,7 +1792,7 @@ badboy2 = {
 	tariff_efficiency_modifier = -0.1
 }
 
-badboy3 = {
+badboy3 = { #NEW
 	trigger = {
 		badboy = 1.4
 		NOT = { badboy = 1.6 }
@@ -2596,7 +1802,7 @@ badboy3 = {
 	tariff_efficiency_modifier = -0.15
 }
 
-badboy4 = {
+badboy4 = { #NEW
 	trigger = {
 		badboy = 1.6
 		NOT = { badboy = 1.8 }
@@ -2606,7 +1812,7 @@ badboy4 = {
 	tariff_efficiency_modifier = -0.2
 }
 
-badboy5 = {
+badboy5 = { #NEW
 	trigger = {
 		badboy = 1.8
 		NOT = { badboy = 2 }
@@ -2616,7 +1822,7 @@ badboy5 = {
 	tariff_efficiency_modifier = -0.25
 }
 
-badboy6 = {
+badboy6 = { #NEW
 	trigger = {
 		badboy = 2
 	}
@@ -2627,7 +1833,7 @@ badboy6 = {
 
 ########## IMMIGRATION ATTRACTION ##########
 
-great_power_immigration = {
+great_power_immigration = { #NEW
 	trigger = {
 		ai = no
 		is_greater_power = yes
@@ -2646,7 +1852,7 @@ great_power_immigration = {
 
 ########## SPHERELING BUFF ##########
 
-sphereling_tax_bonus = {
+sphereling_tax_bonus = { #NEW
 	trigger = {
 		part_of_sphere = yes
 		trade_policy = protectionism
@@ -2656,274 +1862,168 @@ sphereling_tax_bonus = {
 	icon = 9
 }
 
-
-########## AI SCRIPTS ##########
-
-# help_ai_literacy = {
-	# trigger = {
-		# ai = yes
-		# NOT = { has_country_flag = jan_mayen }
-		# civilized = yes
-		# OR = {
-			 # has_country_flag = is_austria
-			# NOT = {
-				# primary_culture = south_german
-			# }
-		# }
-	# }
-	# icon = 9
-	# education_efficiency_modifier = 0.35
-# }
-
-# help_ai_admin = {
-	# trigger = {
-		# ai = yes
-		# NOT = { has_country_flag = jan_mayen }
-		# NOT = { has_country_flag = is_chinese_nation }
-		# OR = {
-			 # has_country_flag = is_austria
-			# NOT = {
-				# primary_culture = mexican
-				# primary_culture = south_german
-			# }
-		# }
-		# NOT = { has_country_flag = south_italian }
-	# }
-	# icon = 9
-	# administrative_efficiency_modifier = 0.5
-# }
-
-# help_ai_tax = {
-	# trigger = {
-		# ai = yes
-		# NOT = { has_country_flag = jan_mayen }
-	# }
-	# icon = 9
-	# min_tax = 0.99
-# }
-
-# help_ai_tariffs = {
-	# trigger = {
-		# ai = yes
-		# NOT = { has_country_flag = jan_mayen }
-	# }
-	# icon = 9
-	# min_tariff = 0.5
-# }
-
-# help_ai_social1 = {
-	# trigger = {
-		# ai = yes
-		# money = 1000000
-		# year = 1850
-	# }
-	# icon = 9
-	# min_social_spending = 0.25
-# }
-
-# help_ai_social2 = {
-	# trigger = {
-		# ai = yes
-		# money = 2000000
-		# year = 1865
-	# }
-	# icon = 9
-	# min_social_spending = 0.25
-# }
-
-# help_ai_social3 = {
-	# trigger = {
-		# ai = yes
-		# money = 4000000
-		# year = 1880
-	# }
-	# icon = 9
-	# min_social_spending = 0.25
-# }
-
-# help_ai_social4 = {
-	# trigger = {
-		# ai = yes
-		# money = 8000000
-		# year = 1895
-	# }
-	# icon = 9
-	# min_social_spending = 0.25
-# }
-
-# help_ai_military1 = {
-	# trigger = {
-		# ai = yes
-		# money = 5000000
-		# NOT = {
-			# OR = {
-				# war_policy = anti_military
-				# war_policy = pacifism
-			# }
-		# }
-	# }
-	# icon = 9
-	# min_military_spending = 0.8
-# }
-
-# help_ai_military2 = {
-	# trigger = {
-		# ai = yes
-		# money = 5000000
-		# war_policy = anti_military
-	# }
-	# icon = 9
-	# min_military_spending = 0.8
-	# max_military_spending = 0.1
-# }
-
-
-# help_ai_military3 = {
-	# trigger = {
-		# ai = yes
-		# money = 5000000
-		# war_policy = pacifism
-	# }
-	# icon = 9
-	# min_military_spending = 0.8
-	# max_military_spending = 0.2
-# }
-
-
 ########## REVANCHISM ##########
 
 save_the_nation0.5  = {
 	trigger = {
 		revanchism = 0.05
-		NOT = { revanchism = 0.10 }
-		NOT = { has_country_flag = is_chinese_nation }
+		NOT = { revanchism = 0.10 } 
 	}
 	
-	suppression_points_modifier = 0.10
+	suppression_points_modifier = 0.05
 	
+	land_organisation = 0.0125
 	mobilisation_size = 0.005
-	icon = 15
+	supply_consumption = -0.025
+	icon = 9
 }
 
 save_the_nation1  = {
 	trigger = {
 		revanchism = 0.10
-		NOT = { revanchism = 0.15 }
-		NOT = { has_country_flag = is_chinese_nation }
+		NOT = { revanchism = 0.15 } 
 	}
 	
 	suppression_points_modifier = 0.10
 	
-	mobilisation_size = 0.010
-	icon = 15
+	land_organisation = 0.025
+	mobilisation_size = 0.01
+	supply_consumption = -0.05
+	icon = 9
 }
 
 save_the_nation1.5  = {
 	trigger = {
 		revanchism = 0.15
-		NOT = { revanchism = 0.20 }
-		NOT = { has_country_flag = is_chinese_nation }
+		NOT = { revanchism = 0.20 } 
 	}
 	
 	suppression_points_modifier = 0.10
 	
+	land_organisation = 0.05
 	mobilisation_size = 0.015
-	icon = 15
+	supply_consumption = -0.1
+	mobilization_impact = 0.125
+	mobilisation_economy_impact = -0.0625
+	icon = 9
 }
 
 save_the_nation2  = {
 	trigger = {
 		revanchism = 0.20
-		NOT = { revanchism = 0.25 }
-		NOT = { has_country_flag = is_chinese_nation }
+		NOT = { revanchism = 0.25 } 
 	}
 	
 	suppression_points_modifier = 0.10
 	
-	mobilisation_size = 0.020
-	icon = 15
+	land_organisation = 0.075
+	mobilisation_size = 0.02
+	supply_consumption = -0.15
+	mobilization_impact = 0.25
+	mobilisation_economy_impact = -0.125
+	icon = 9
 }
 
 save_the_nation2.5  = {
 	trigger = {
 		revanchism = 0.25
-		NOT = { revanchism = 0.30 }
-		NOT = { has_country_flag = is_chinese_nation }
+		NOT = { revanchism = 0.30 } 
 	}
 	
 	suppression_points_modifier = 0.10
 	
+	land_organisation = 0.0875
 	mobilisation_size = 0.025
-	icon = 15
+	supply_consumption = -0.175
+	mobilization_impact = 0.375
+	mobilisation_economy_impact = -0.19
+	icon = 9
 }
 
 save_the_nation3  = {
 	trigger = {
 		revanchism = 0.30
-		NOT = { revanchism = 0.35 }
-		NOT = { has_country_flag = is_chinese_nation }
+		NOT = { revanchism = 0.35 } 
 	}
 	
 	suppression_points_modifier = 0.10
 	
-	mobilisation_size = 0.030
-	icon = 15
+	land_organisation = 0.1
+	mobilisation_size = 0.03
+	supply_consumption = -0.20
+	mobilization_impact = 0.5
+	mobilisation_economy_impact = -0.25
+	icon = 9
 }
 
 save_the_nation3.5  = {
 	trigger = {
 		revanchism = 0.35
-		NOT = { revanchism = 0.40 }
-		NOT = { has_country_flag = is_chinese_nation }
+		NOT = { revanchism = 0.40 } 
 	}
 	
 	suppression_points_modifier = 0.10
 	
+	land_organisation = 0.15
 	mobilisation_size = 0.035
-	icon = 15
+	supply_consumption = -0.25
+	mobilization_impact = 0.75
+	mobilisation_economy_impact = -0.375
+	icon = 9
 }
 
 save_the_nation4  = {
 	trigger = {
 		revanchism = 0.40
-		NOT = { revanchism = 0.45 }
-		NOT = { has_country_flag = is_chinese_nation }
+		NOT = { revanchism = 0.45 } 
 	}
 	
 	suppression_points_modifier = 0.10
 	
-	mobilisation_size = 0.040
-	icon = 15
+	land_organisation = 0.2
+	mobilisation_size = 0.04
+	supply_consumption = -0.30
+	mobilization_impact = 1
+	mobilisation_economy_impact = -0.5
+	icon = 9
 }
 
 save_the_nation4.5  = {
 	trigger = {
 		revanchism = 0.45
 		NOT = { revanchism = 0.50 }
-		NOT = { has_country_flag = is_chinese_nation }
 	}
 	
 	suppression_points_modifier = 0.10
 	
+	land_organisation = 0.225
+	land_unit_start_experience = 2.5
 	mobilisation_size = 0.045
-	icon = 15
+	supply_consumption = -0.30
+	mobilization_impact = 1
+	mobilisation_economy_impact = -0.58
+	icon = 9
 }
 
 save_the_nation5  = {
 	trigger = {
 		revanchism = 0.50
-		NOT = { has_country_flag = is_chinese_nation }
 	}
 	
 	suppression_points_modifier = 0.10
 	
+	land_organisation = 0.25
+	land_unit_start_experience = 5
 	mobilisation_size = 0.05
-	icon = 15
+	supply_consumption = -0.30
+	mobilization_impact = 1
+	mobilisation_economy_impact = -0.66
+	icon = 9
 }
 
 ########## CHINK SHIT ##########
 
-one_year_draft_china = {
+one_year_draft_china = { #NEW
 	trigger = {
 		has_country_flag = is_chinese_nation
 		conscription = one_year_draft
@@ -2931,7 +2031,7 @@ one_year_draft_china = {
 	mobilisation_size = 0.002
 	icon = 15		
 }
-two_year_draft_china = {
+two_year_draft_china = { #NEW
 	trigger = {
 		has_country_flag = is_chinese_nation
 		conscription = two_year_draft
@@ -2939,7 +2039,7 @@ two_year_draft_china = {
 	mobilisation_size = 0.004		
 	icon = 15		
 }	
-four_year_draft_china = {
+four_year_draft_china = { #NEW
 	trigger = {
 		has_country_flag = is_chinese_nation
 		conscription = four_year_draft
@@ -2947,7 +2047,7 @@ four_year_draft_china = {
 	mobilisation_size = 0.008		
 	icon = 15		
 }
-mandatory_service_china = {
+mandatory_service_china = { #NEW
 	trigger = {
 		has_country_flag = is_chinese_nation
 		conscription = mandatory_service
@@ -2955,7 +2055,7 @@ mandatory_service_china = {
 	mobilisation_size = 0.012		
 	icon = 15		
 }
-regionalism_china = {
+regionalism_china = { #NEW
 	trigger = {
 		has_country_flag = is_chinese_nation
 		centralization = regionalism
@@ -2963,7 +2063,7 @@ regionalism_china = {
 	mobilisation_size = -0.002		
 	icon = 16		
 }
-confederalism_china = {
+confederalism_china = { #NEW
 	trigger = {
 		has_country_flag = is_chinese_nation
 		centralization = confederalism
@@ -2971,7 +2071,7 @@ confederalism_china = {
 	mobilisation_size = -0.002		
 	icon = 16		
 }
-totalitarianism_china = {
+totalitarianism_china = { #NEW
 	trigger = {
 		has_country_flag = is_chinese_nation
 		centralization = totalitarianism
@@ -2979,7 +2079,7 @@ totalitarianism_china = {
 	mobilisation_size = 0.002		
 	icon = 15		
 }
-mob1_china_trigger = {
+mob1_china_trigger = { #NEW
 	trigger = {
 		has_country_flag = is_chinese_nation
 		has_country_flag = mob1_invented
@@ -2987,7 +2087,7 @@ mob1_china_trigger = {
 	mobilisation_size = 0.004
 	icon = 15		
 }
-mob2_china_trigger = {
+mob2_china_trigger = { #NEW
 	trigger = {
 		has_country_flag = is_chinese_nation
 		has_country_flag = mob2_invented
@@ -2995,7 +2095,7 @@ mob2_china_trigger = {
 	mobilisation_size = 0.002
 	icon = 15		
 }
-mob3_china_trigger = {
+mob3_china_trigger = { #NEW
 	trigger = {
 		has_country_flag = is_chinese_nation
 		has_country_flag = mob3_invented
@@ -3003,7 +2103,7 @@ mob3_china_trigger = {
 	mobilisation_size = 0.002
 	icon = 15		
 }
-mob4_china_trigger = {
+mob4_china_trigger = { #NEW
 	trigger = {
 		has_country_flag = is_chinese_nation
 		has_country_flag = mob4_invented
@@ -3011,7 +2111,7 @@ mob4_china_trigger = {
 	mobilisation_size = 0.002
 	icon = 15		
 }
-mob5_china_trigger = {
+mob5_china_trigger = { #NEW
 	trigger = {
 		has_country_flag = is_chinese_nation
 		has_country_flag = mob5_invented
@@ -3021,7 +2121,7 @@ mob5_china_trigger = {
 }
 
 ########## CHINA NERFs ##########
-yong_ying = {
+yong_ying = { #NEW
 	trigger = {
 		has_country_flag = is_chinese_nation
 		ai = yes
@@ -3033,7 +2133,7 @@ yong_ying = {
 	icon = 16
 }
 
-chinese_pop_nerf1 = {
+chinese_pop_nerf1 = { #NEW
 	trigger = {
 		has_country_flag = is_chinese_nation
 		has_country_flag = medicine_invented
@@ -3043,7 +2143,7 @@ chinese_pop_nerf1 = {
 	icon = 16
 }
 
-chinese_pop_nerf2 = {
+chinese_pop_nerf2 = { #NEW
 	trigger = {
 		has_country_flag = is_chinese_nation
 		has_country_flag = organic_chemistry_invented
@@ -3054,7 +2154,7 @@ chinese_pop_nerf2 = {
 }
 
 
-save_the_nation0.5_china  = {
+save_the_nation0.5_china  = { #NEW
 	trigger = {
 		revanchism = 0.05
 		NOT = { revanchism = 0.10 }
@@ -3067,7 +2167,7 @@ save_the_nation0.5_china  = {
 	icon = 15
 }
 
-save_the_nation1_china  = {
+save_the_nation1_china  = { #NEW
 	trigger = {
 		revanchism = 0.10
 		NOT = { revanchism = 0.15 }
@@ -3080,7 +2180,7 @@ save_the_nation1_china  = {
 	icon = 15
 }
 
-save_the_nation1.5_china  = {
+save_the_nation1.5_china  = { #NEW
 	trigger = {
 		revanchism = 0.15
 		NOT = { revanchism = 0.20 }
@@ -3093,7 +2193,7 @@ save_the_nation1.5_china  = {
 	icon = 15
 }
 
-save_the_nation2_china  = {
+save_the_nation2_china  = { #NEW
 	trigger = {
 		revanchism = 0.20
 		NOT = { revanchism = 0.25 }
@@ -3106,7 +2206,7 @@ save_the_nation2_china  = {
 	icon = 15
 }
 
-save_the_nation2.5_china  = {
+save_the_nation2.5_china  = { #NEW
 	trigger = {
 		revanchism = 0.25
 		NOT = { revanchism = 0.30 }
@@ -3119,7 +2219,7 @@ save_the_nation2.5_china  = {
 	icon = 15
 }
 
-save_the_nation3_china  = {
+save_the_nation3_china  = { #NEW
 	trigger = {
 		revanchism = 0.30
 		NOT = { revanchism = 0.35 }
@@ -3132,7 +2232,7 @@ save_the_nation3_china  = {
 	icon = 15
 }
 
-save_the_nation3.5_china  = {
+save_the_nation3.5_china  = { #NEW
 	trigger = {
 		revanchism = 0.35
 		NOT = { revanchism = 0.40 }
@@ -3145,7 +2245,7 @@ save_the_nation3.5_china  = {
 	icon = 15
 }
 
-save_the_nation4_china  = {
+save_the_nation4_china  = { #NEW
 	trigger = {
 		revanchism = 0.40
 		NOT = { revanchism = 0.45 }
@@ -3158,7 +2258,7 @@ save_the_nation4_china  = {
 	icon = 15
 }
 
-save_the_nation4.5_china  = {
+save_the_nation4.5_china  = { #NEW
 	trigger = {
 		revanchism = 0.45
 		NOT = { revanchism = 0.50 }
@@ -3171,7 +2271,7 @@ save_the_nation4.5_china  = {
 	icon = 15
 }
 
-save_the_nation5_china  = {
+save_the_nation5_china  = { #NEW
 	trigger = {
 		revanchism = 0.50
 		has_country_flag = is_chinese_nation
@@ -3184,7 +2284,7 @@ save_the_nation5_china  = {
 }
 
 #ANON
-martial_society = {
+martial_society = { #NEW
 	trigger = {
 		OR = {
 			primary_culture = cossack
@@ -3202,7 +2302,7 @@ martial_society = {
 	mobilization_impact = -0.5
 }
 
-state_enforced_atheism = {
+state_enforced_atheism = { #NEW
 	trigger = {
 		religion = atheism
 		ruling_party_ideology = communist
@@ -3214,7 +2314,7 @@ state_enforced_atheism = {
 	icon = 5
 }
 
-freedom_of_religion_trig = {
+freedom_of_religion_trig = { #NEW
 	trigger = {
 		NOT = {
 			OR = {

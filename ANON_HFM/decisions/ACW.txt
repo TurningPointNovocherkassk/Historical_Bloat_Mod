@@ -1213,6 +1213,21 @@ political_decisions = {
 				has_country_flag = clay_and_douglas_draft_enacted
 				has_global_flag = american_civil_war_has_happened
 			}
+			any_neighbor_country = { NOT = { has_country_flag = manifest_destiny_refuted } }
+			OR = {
+				MEX = {
+					exists = yes
+					NOT = { has_country_flag = manifest_destiny_refuted is_greater_power = yes }
+				}
+				M3X = {
+					exists = yes
+					NOT = { has_country_flag = manifest_destiny_refuted is_greater_power = yes }
+				}
+				MXM = {
+					exists = yes
+					NOT = { has_country_flag = manifest_destiny_refuted is_greater_power = yes }
+				}
+			}
 		}
 		
 		allow = {
@@ -1253,7 +1268,10 @@ political_decisions = {
 			USA_116 = { is_slave = no remove_core = CSA }
 			USA_91 = { is_slave = no remove_core = CSA }
 			USA_124 = { is_slave = no remove_core = CSA }
-			USA_144 = { is_slave = yes add_core = CSA }
+			random_owned = {
+				limit = { region = USA_144 }
+				owner = { USA_144 = { is_slave = yes add_core = CSA } }
+			}
 			set_country_flag = wilmot_proviso_providing
 		}
 		
@@ -1766,28 +1784,19 @@ political_decisions = {
 			tag = CSA
 			is_vassal = no
 			NOT = { has_country_flag = 36_or_fight }
-			any_neighbor_country = { has_country_flag = hasmanifestdestiny }
+			any_neighbor_country = { has_country_flag = hasmanifestdestiny NOT = { has_country_flag = manifest_destiny_refuted } }
 			OR = {
 				MEX = {
 					exists = yes
-					OR = {
-						NOT = { has_country_flag = manifest_destiny_refuted }
-						NOT = { is_greater_power = yes }
-					}
+					NOT = { has_country_flag = manifest_destiny_refuted is_greater_power = yes }
 				}
 				M3X = {
 					exists = yes
-					OR = {
-						NOT = { has_country_flag = manifest_destiny_refuted }
-						NOT = { is_greater_power = yes }
-					}
+					NOT = { has_country_flag = manifest_destiny_refuted is_greater_power = yes }
 				}
 				MXM = {
 					exists = yes
-					OR = {
-						NOT = { has_country_flag = manifest_destiny_refuted }
-						NOT = { is_greater_power = yes }
-					}
+					NOT = { has_country_flag = manifest_destiny_refuted is_greater_power = yes }
 				}
 			}
 		}
@@ -1800,12 +1809,10 @@ political_decisions = {
 				truce_with = MEX
 				truce_with = M3X
 				truce_with = MXM
-				OR = {
-					in_sphere = USA
-					in_sphere = MEX
-					in_sphere = M3X
-					in_sphere = MXM
-				}
+				in_sphere = USA
+				in_sphere = MEX
+				in_sphere = M3X
+				in_sphere = MXM
 			}
 			invention = manifest_destiny
 			all_core = { owned_by = THIS }
@@ -1856,6 +1863,7 @@ political_decisions = {
 						has_global_flag = gadsden_bitch
 					}
 					NOT = { has_global_flag = gadsden_denied }
+					NOT = { has_country_flag = manifest_destiny_refuted }
 				}
 				any_owned = {
 					limit = {
@@ -1878,6 +1886,7 @@ political_decisions = {
 					# }
 					# has_global_flag = big_gadsden
 					# NOT = { has_global_flag = gadsden_denied }
+					# NOT = { has_country_flag = manifest_destiny_refuted }
 				# }
 				# any_owned = {
 					# limit = {
@@ -1897,6 +1906,7 @@ political_decisions = {
 						is_core = YUC
 						is_core = USA
 					}
+					NOT = { has_country_flag = manifest_destiny_refuted }
 				}
 				any_owned = {
 					limit = {
@@ -2139,16 +2149,41 @@ political_decisions = {
 		
 		effect = {
 			any_pop = { consciousness = -4 }
-			TEX = { all_core = { remove_core = TEX } }
-			TEX_132 = { add_core = TEX is_slave = yes add_core = CSA }
-			TEX_133 = { add_core = TEX is_slave = yes add_core = CSA }
+			random_owned = {
+				limit = {
+					OR = {
+						region = TEX_132
+						region = TEX_133
+					}
+				}
+				owner = {
+					TEX = { all_core = { remove_core = TEX } }
+					TEX_132 = { add_core = TEX is_slave = yes add_core = CSA }
+					TEX_133 = { add_core = TEX is_slave = yes add_core = CSA }
+				}
+			}
+			random_owned = {
+				limit = { region = USA_144 }
+				owner = { USA_144 = { is_slave = yes add_core = CSA } }
+			}
+			random_owned = {
+				limit = { region = USA_148 }
+				owner = { USA_148 = { is_slave = yes add_core = CSA } }
+			}
+			random_owned = {
+				limit = { region = USA_185 }
+				owner = { USA_185 = { is_slave = yes add_core = CSA } }
+			}
+			random_owned = {
+				limit = { region = USA_211 }
+				owner = { USA_211 = { is_slave = yes add_core = CSA } }
+			}
+			random_owned = {
+				limit = { region = USA_218 }
+				owner = { USA_218 = { is_slave = yes add_core = CSA } }
+			}
 			# MEX_100 = { is_slave = yes add_core = CSA }
 			# MEX_103 = { is_slave = yes add_core = CSA }
-			USA_144 = { is_slave = yes add_core = CSA }
-			USA_148 = { is_slave = yes add_core = CSA }
-			USA_185 = { is_slave = yes add_core = CSA }
-			USA_211 = { is_slave = yes add_core = CSA }
-			USA_218 = { is_slave = yes add_core = CSA }
 			
 			any_country = {
 				limit = {
@@ -2164,7 +2199,8 @@ political_decisions = {
 						owns = 3397
 						owns = 2148
 					}
-					THIS = { has_country_flag = hasmanifestdestiny NOT = { has_country_flag = manifest_destiny_refuted } }
+					NOT = { has_country_flag = manifest_destiny_refuted }
+					THIS = { has_country_flag = hasmanifestdestiny }
 				}
 				any_owned = {
 					limit = {
@@ -2179,6 +2215,7 @@ political_decisions = {
 							province_id = 3397
 							province_id = 2148
 						}
+						owner = { NOT = { has_country_flag = manifest_destiny_refuted } }
 					}
 					add_core = CSA
 				}
@@ -2193,6 +2230,7 @@ political_decisions = {
 						has_global_flag = historical_gadsden
 						has_global_flag = gadsden_bitch
 					}
+					NOT = { has_country_flag = manifest_destiny_refuted }
 					NOT = { has_global_flag = gadsden_denied }
 				}
 				any_owned = {
@@ -2201,6 +2239,7 @@ political_decisions = {
 							province_id = 102
 							province_id = 2662
 						}
+						owner = { NOT = { has_country_flag = manifest_destiny_refuted } }
 					}
 					add_core = CSA
 				}
@@ -2215,6 +2254,7 @@ political_decisions = {
 					# }
 					# has_global_flag = big_gadsden
 					# NOT = { has_global_flag = gadsden_denied }
+					# NOT = { has_country_flag = manifest_destiny_refuted }
 				# }
 				# any_owned = {
 					# limit = {
@@ -2224,6 +2264,7 @@ political_decisions = {
 							# province_id = 102
 							# province_id = 2662
 						# }
+						# owner = { NOT = { has_country_flag = manifest_destiny_refuted } }
 					# }
 					# add_core = CSA
 				# }
@@ -2236,17 +2277,17 @@ political_decisions = {
 						is_core = YUC
 						is_core = USA
 					}
+					NOT = { has_country_flag = manifest_destiny_refuted }
 				}
 				any_owned = {
 					limit = {
 						is_core = YUC
 						is_core = USA
+						owner = { NOT = { has_country_flag = manifest_destiny_refuted } }
 					}
 					add_core = CSA
 				}
 			}
-			
-			#
 			MEX_85 = { is_slave = no remove_core = CSA }
 			MEX_104 = { is_slave = no remove_core = CSA }
 			USA_111 = { is_slave = no remove_core = CSA }

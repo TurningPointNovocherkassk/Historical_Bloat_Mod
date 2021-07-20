@@ -4,15 +4,15 @@ start_date = '1836.1.1',
 end_date = '9935.12.21',
 
 country = {
-	YEARS_OF_NATIONALISM 	= 20,   -- Years of Nationalism
-	MONTHS_UNTIL_BROKEN 		= 3,    -- OBSOLETE! (Months until rebel held capital results in broken country.)
+	YEARS_OF_NATIONALISM	 = 20,   -- Years of Nationalism
+	MONTHS_UNTIL_BROKEN		 = 3,	-- OBSOLETE! (Months until rebel held capital results in broken country.)
 	REBEL_ACCEPTANCE_MONTHS = 60,
 	BASE_COUNTRY_TAX_EFFICIENCY = 0.2, -- Basic efficiency for taxes without 'crats and tech
 	BASE_COUNTRY_ADMIN_EFFICIENCY = 0.2,
 	GOLD_TO_CASH_RATE = 1.0, -- Amount of money generated per gold unit
 	GOLD_TO_WORKER_PAY_RATE = 3.0, -- Multiplier for how much money gold pays to pops
 	GREAT_NATIONS_COUNT = 8,
-	GREATNESS_DAYS = 365, 	   -- how many days until country risks losing status as great nation
+	GREATNESS_DAYS = 365,		-- how many days until country risks losing status as great nation
 	BADBOY_LIMIT = 25,
 	MAX_BUREAUCRACY_PERCENTAGE = 0.01, -- More than max percent bureaucrats of population will give no additional benefits
 	BUREAUCRACY_PERCENTAGE_INCREMENT = 0.001, -- For each social administrative reform level, this is added to MAX_BUREAUCRACY_PERCENTAGE
@@ -94,7 +94,7 @@ country = {
 },
 
 economy = {
-	MAX_DAILY_RESEARCH		    = 100,
+	MAX_DAILY_RESEARCH			= 100,
 	LOAN_BASE_INTEREST			= 0.01,
 	BANKRUPTCY_EXTERNAL_LOAN_YEARS	= 10,
 	BANKRUPTCY_FACTOR = 0.2,
@@ -121,9 +121,9 @@ economy = {
 	RGO_SUPPLY_DEMAND_FACTOR_FIRE = 0.2,		-- how fast pops are Fired when there is a low demand
 	EMPLOYMENT_HIRE_LOWEST = 0.01,				-- we Hire pops no slower then x% of total required per day
 	EMPLOYMENT_FIRE_LOWEST = 0.01,				-- we Fire pops no slower then x% of total required per day
-	TRADE_CAP_LOW_LIMIT_LAND = 0.1, 				-- the lowest % the slider can go for land units
-	TRADE_CAP_LOW_LIMIT_NAVAL = 0.2, 			-- the lowest % the slider can go for naval units
-	TRADE_CAP_LOW_LIMIT_CONSTRUCTIONS = 0.15, 		-- the lowest % the slider can go for constructions
+	TRADE_CAP_LOW_LIMIT_LAND = 0.1,				 -- the lowest % the slider can go for land units
+	TRADE_CAP_LOW_LIMIT_NAVAL = 0.2,			 -- the lowest % the slider can go for naval units
+	TRADE_CAP_LOW_LIMIT_CONSTRUCTIONS = 0.15,		 -- the lowest % the slider can go for constructions
 	FACTORY_PURCHASE_MIN_FACTOR = 0.50,			-- the lowest % of its daily needs a factory will purchase
 	FACTORY_PURCHASE_DRAWDOWN_FACTOR = 0.01		-- the % a factory will reduce its input purchases each day if it did not sell all its goods (also used for scaling up production if all goods are sold)
 },
@@ -403,7 +403,7 @@ diplomacy = {
 	DECLAREWAR_DIPLOMATIC_COST = 0,
 	
 	ADDWARGOAL_RELATION_ON_ACCEPT = 0,
-    ADDWARGOAL_DIPLOMATIC_COST = 0,
+	ADDWARGOAL_DIPLOMATIC_COST = 0,
 	ADD_UNJUSTIFIED_GOAL_BADBOY = 1,
 	
 	PEACE_RELATION_ON_ACCEPT = 5,
@@ -414,7 +414,7 @@ diplomacy = {
 	ALLIANCE_RELATION_ON_DECLINE = -50,
 	ALLIANCE_DIPLOMATIC_COST = 1,
 	CANCELALLIANCE_RELATION_ON_ACCEPT = -90,
-	CANCELALLIANCE_DIPLOMATIC_COST = 0,
+	CANCELALLIANCE_DIPLOMATIC_COST = 1,
 
 	CALLALLY_RELATION_ON_ACCEPT = 20,
 	CALLALLY_RELATION_ON_DECLINE = -40,
@@ -462,8 +462,8 @@ diplomacy = {
 
 	REMOVEFROMSPHERE_RELATION_ON_ACCEPT = -10,
 	REMOVEFROMSPHERE_INFLUENCE_COST = 100,
-	REMOVEFROMSPHERE_PRESTIGE_COST = 10, -- only applied if removing country is sphere leader
-	REMOVEFROMSPHERE_INFAMY_COST = 1, -- only applied if removing country is sphere leader
+	REMOVEFROMSPHERE_PRESTIGE_COST = 5, -- only applied if removing country is sphere leader
+	REMOVEFROMSPHERE_INFAMY_COST = 0, -- only applied if removing country is sphere leader
 
 	INCREASEOPINION_RELATION_ON_ACCEPT = 20,
 	INCREASEOPINION_INFLUENCE_COST = 50,
@@ -509,7 +509,7 @@ diplomacy = {
 	
 	GUNBOAT_DIPLOMATIC_COST = 1,
 	GUNBOAT_RELATION_ON_ACCEPT = 1,
-	WARGOAL_JINGOISM_REQUIREMENT = 0.0,
+	WARGOAL_JINGOISM_REQUIREMENT = 0,
 
 	LIBERATE_STATE_RELATION_INCREASE = 50,
 	DISHONORED_CALLALLY_PRESTIGE_PENALTY = -3,
@@ -523,8 +523,8 @@ diplomacy = {
 	
 	-- effects of manually releasing a nation
 	RELEASE_NATION_PRESTIGE = 0,
-	RELEASE_NATION_INFAMY = 0,
-	
+	RELEASE_NATION_INFAMY = -2,
+
 	INFAMY_CLEAR_UNION_SPHERE = 0, -- Infamy for asserting hegemony
 	
 	BREAKTRUCE_INFAMY_CLEAR_UNION_SPHERE = 1, -- Infamy for breaking truce for asserting hegemony
@@ -550,7 +550,7 @@ diplomacy = {
 	CB_GENERATION_BASE_SPEED = 0.5,
 	CB_GENERATION_SPEED_BONUS_ON_COLONY_COMPETITION = 1.0, -- speed bonus when 2 countries compete for colony province
 	CB_GENERATION_SPEED_BONUS_ON_COLONY_COMPETITION_TROOPS_PRESENCE = 1.0, -- even bigger bonus when having
-	MAKE_CB_RELATION_LIMIT = 200,
+	MAKE_CB_RELATION_LIMIT = 100,
 	CB_DETECTION_CHANCE_BASE = 15, -- chance out of 1000 every day
 	INVESTMENT_INFLUENCE_DEFENSE = 0.5,	-- maximum defense factor in sphere of having invested in a country
 	RELATION_INFLUENCE_MODIFIER = 200, -- divisor for relation
@@ -560,7 +560,7 @@ diplomacy = {
 	GW_INTERVENE_MAX_EXHAUSTION = 1, -- max war exhaustion required to intervene in great war
 	GW_JUSTIFY_CB_BADBOY_IMPACT = 0.25, -- % deduction of infamy cost for justify CB in great war
 	GW_CB_CONSTRUCTION_SPEED = 0.25, -- faster CB construction against enemies while at great war
-	GW_WARGOAL_JINGOISM_REQUIREMENT_MOD = 0.2, -- % deduction of required jingoists in country
+	GW_WARGOAL_JINGOISM_REQUIREMENT_MOD = 0, -- % deduction of required jingoists in country
 	GW_WARSCORE_COST_MOD = 0.55, -- cost reduction factor on warscore needed to fulfill goal if great war
 	GW_WARSCORE_COST_MOD_2 = 0.3, -- cost reduction factor on warscore needed to fulfill goal if late game great war
 	GW_WARSCORE_2_THRESHOLD = 50, -- warscore threshold where a GW turns into a world war for winner side
@@ -702,7 +702,7 @@ ai =
 	SOLDIER_FRACTION = 0.045, -- max amount of population AI wants to be soldiers
 	CAPITALIST_FRACTION = 0.007, -- max amount of population AI wants to be capis
 	PRODUCTION_WEIGHT = 0.05, -- ai weight for new production
-	SPAM_PENALTY = 20, -- makes certain diplomatic action less common 
+	SPAM_PENALTY = 20, -- makes certain diplomatic action less common
 	ONE_SIDE_MAX_WARSCORE = 150, -- don't add too many wargoals to one side in a war
 	POP_PROJECT_INVESTMENT_MAX_BUDGET_FACTOR = 0.25, -- how much % of our current budget can be spend on the pop project investments.
 	RELATION_LIMIT_NO_ALLIANCE_OFFER = 0, -- if relation lower then this value, AI will not ally
@@ -710,14 +710,14 @@ ai =
 	CHANCE_BUILD_RAILROAD = 0.5, -- chances in % of AI decisions (max value 1.0)
 	CHANCE_BUILD_NAVAL_BASE = 1.0,
 	CHANCE_BUILD_FORT = 0.5,
-	CHANCE_INVEST_POP_PROJ = 0.25,
+	CHANCE_INVEST_POP_PROJ = 0.4,
 	CHANCE_FOREIGN_INVEST = 0.4,
 	TWS_AWARENESS_SCORE_LOW_CAP = 0.2, -- AI will always add CBs if current warscore is less then that number (including TWS)
 	TWS_AWARENESS_SCORE_ASPECT = 0.5, -- AI will not add any more CBs when TWS is more then X% of total WS. (to not destroy the progress)
 	PEACE_BASE_RELUCTANCE = 20, -- AI base stubbornness to refuse peace (always applied)
 	PEACE_TIME_MONTHS = 30, -- months of additional AI stubbornness in a war
 	PEACE_TIME_FACTOR = 0.6, -- after months of stubbornness the effect of time passed is multiplied by this
-	PEACE_TIME_FACTOR_NO_GOALSPEACE_TIME_FACTOR_NO_GOALS = 2.0, -- this extra time factor is applied after PEACE_TIME_FACTOR if we ahve no wargoals
+	PEACE_TIME_FACTOR_NO_GOALS = 2.0, -- this extra time factor is applied after PEACE_TIME_FACTOR if we ahve no wargoals
 	PEACE_WAR_EXHAUSTION_FACTOR = 0.5, -- AI willingness to peace based on war exhaustion
 	PEACE_WAR_DIRECTION_FACTOR = 1.0, -- AI willingness to peace based on who's making gains in the war
 	PEACE_WAR_DIRECTION_WINNING_MULT = 5.0, -- Multiplies AI emphasis on war direction if it's the one making gains
@@ -729,9 +729,9 @@ ai =
 	PEACE_ALLY_FORCE_BALANCE_MULT = 0, -- Multiplies PEACE_FORCE_BALANCE_FACTOR for allies in a war
 	AGGRESSION_BASE = 8, -- general AI aggression
 	AGGRESSION_UNCIV_BONUS = 15, -- additional AI civ aggression against uncivs
-	FLEET_SIZE = 50, -- AI will attempt to keep fleets of roughly this size (fewer fleets generally results in more competent naval AI)
+	FLEET_SIZE = 30, -- AI will attempt to keep fleets of roughly this size (fewer fleets generally results in more competent naval AI)
 	MIN_FLEETS = 1, -- Minimum amount of main fleets the AI will divide its navy into (does not include specialized fleets such as blockades and naval invasions)
-	MAX_FLEETS = 10, -- Maximal amount of main fleets the AI will divide its navy into (does not include specialized fleets such as blockades and naval invasions)
+	MAX_FLEETS = 20, -- Maximal amount of main fleets the AI will divide its navy into (does not include specialized fleets such as blockades and naval invasions)
 	MONTHS_BEFORE_DISBAND = 8, -- Months from start date before AI will disband armies/navies (to avoid disbands because of early economic turmoil)
 },
 
@@ -747,7 +747,7 @@ graphics =
 	CITIES_MESH_TYPES_COUNT = 3,
 	CITIES_MESH_SIZES_COUNT = 3,
 	CITIES_SPECIAL_BUILDINGS_POOL_SIZE = 64,
-	CITIES_SIZE_MAX_POPULATION_K = 1000 			-- When province population reach 1mln, the city will get it's maximum size.
+	CITIES_SIZE_MAX_POPULATION_K = 1000			 -- When province population reach 1mln, the city will get it's maximum size.
 }
 
 }

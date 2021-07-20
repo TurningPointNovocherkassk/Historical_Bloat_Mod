@@ -1256,10 +1256,31 @@ country_event = {
 		prestige = 5
 		badboy = 2
 		treasury = -1000
-		801 = {
-			secede_province = THIS
-			naval_base = 1
-		}
+        801 = {
+            secede_province = THIS
+            naval_base = 1
+        }
+        random_owned = {
+            limit = {
+                owner = { 2553 = { empty = yes } }
+            }
+            2553 = { secede_province = THIS }
+        }
+        random_owned = {
+            limit = {
+                owner = { 2551 = { empty = yes } }
+            }
+            2551 = { secede_province = THIS }
+        }
+        random_owned = {
+            limit = {
+                owner = {
+                    2552 = { empty = yes }
+                    exists = ENG
+                }
+            }
+            2552 = { secede_province = ENG }
+        }
 		random_country = {
 			limit = {
 				tag = ENG

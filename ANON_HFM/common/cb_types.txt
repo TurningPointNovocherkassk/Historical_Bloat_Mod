@@ -4213,11 +4213,6 @@ acquire_state = {
 	good_relation_militancy_factor = 1
 
 	can_use = {
-		#ANON, restriction for AI Brazil going fucking nuts
-		NOT = { THIS = { tag = BRZ ai = yes } }
-		#ANON, restriction for AI USA going fucking nuts on MEX
-		NOT = { THIS = { tag = USA ai = yes } }
-		###################################################
 		NOT = { revolution_n_counterrevolution = 1 }
         # OR = {
             NOT = { has_country_modifier = war_focus }
@@ -4294,6 +4289,33 @@ acquire_state = {
 	}
 	
 	allowed_states = {
+		
+		#ANON, restriction for AI countries from bullying spics.
+		OR = {
+			THIS = { ai = no }
+			AND = {
+				THIS = { NOT = { tag = BRZ } ai = yes }
+				any_owned_province = { OR = { continent = south_america continent = north_america } owner = { is_culture_group = latin_american_cultures NOT = { primary_culture = brazilian primary_culture = gaucho primary_culture = afro_brazilian } } }
+			}
+			AND = {
+				THIS = { NOT = { tag = ENG } ai = yes }
+				any_owned_province = { OR = { continent = south_america continent = north_america } owner = { is_culture_group = latin_american_cultures } }
+			}
+			AND = {
+				THIS = { NOT = { tag = ENL } ai = yes }
+				any_owned_province = { OR = { continent = south_america continent = north_america } owner = { is_culture_group = latin_american_cultures } }
+			}
+			AND = {
+				THIS = { NOT = { primary_culture = yankee } ai = yes }
+				any_owned_province = { OR = { continent = south_america continent = north_america } owner = { is_culture_group = latin_american_cultures } }
+			}
+			AND = {
+				THIS = { NOT = { primary_culture = dixie } ai = yes }
+				any_owned_province = { OR = { continent = south_america continent = north_america } owner = { is_culture_group = latin_american_cultures } }
+			}
+		}
+		###################################################
+		
         #Countries can't take capitals or cores
         NOT = {
             any_owned_province = { is_core = THIS }
@@ -10731,11 +10753,6 @@ acquire_state_late = {
     good_relation_militancy_factor = 1
 
     can_use = {
-		#ANON, restriction for AI Brazil going fucking nuts
-		NOT = { THIS = { tag = BRZ ai = yes } }
-		#ANON, restriction for AI USA going fucking nuts on MEX
-		NOT = { THIS = { tag = USA ai = yes } }
-		###################################################
 		revolution_n_counterrevolution = 1
         # OR = {
             NOT = { has_country_modifier = war_focus }
@@ -10812,6 +10829,32 @@ acquire_state_late = {
     }
 
     allowed_states = {
+		
+		#ANON, restriction for AI countries from bullying spics.
+		OR = {
+			THIS = { ai = no }
+			AND = {
+				THIS = { NOT = { tag = BRZ } ai = yes }
+				any_owned_province = { OR = { continent = south_america continent = north_america } owner = { is_culture_group = latin_american_cultures NOT = { primary_culture = brazilian primary_culture = gaucho primary_culture = afro_brazilian } } }
+			}
+			AND = {
+				THIS = { NOT = { tag = ENG } ai = yes }
+				any_owned_province = { OR = { continent = south_america continent = north_america } owner = { is_culture_group = latin_american_cultures } }
+			}
+			AND = {
+				THIS = { NOT = { tag = ENL } ai = yes }
+				any_owned_province = { OR = { continent = south_america continent = north_america } owner = { is_culture_group = latin_american_cultures } }
+			}
+			AND = {
+				THIS = { NOT = { primary_culture = yankee } ai = yes }
+				any_owned_province = { OR = { continent = south_america continent = north_america } owner = { is_culture_group = latin_american_cultures } }
+			}
+			AND = {
+				THIS = { NOT = { primary_culture = dixie } ai = yes }
+				any_owned_province = { OR = { continent = south_america continent = north_america } owner = { is_culture_group = latin_american_cultures } }
+			}
+		}
+		###################################################
         #Countries can't take capitals or cores
         NOT = {
             any_owned_province = { is_core = THIS }
