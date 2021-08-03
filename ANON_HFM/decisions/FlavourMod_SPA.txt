@@ -4,10 +4,7 @@ political_decisions = {
 	colonial_reconquista = {
 		picture = spain_reconquest
 		potential = {
-			OR = {
-				tag = IBR
-				tag = SPC
-			}
+			OR = { tag = IBR tag = SPC }
 			NOT = { year = 1890 }
 			NOT = { has_global_flag = reconquista }
 		}
@@ -27,6 +24,11 @@ political_decisions = {
 						capital_scope = { continent = south_america }
 						capital_scope = { continent = north_america }
 					}
+					OR = {
+						is_culture_group = latin_american_cultures
+						is_culture_group = native_american
+						primary_culture = afro_caribeno
+					}
 					NOT = { 
 						tag = USA
 						tag = TEX
@@ -37,7 +39,7 @@ political_decisions = {
 					id = 99988
 					days = 15
 				}
-			}	
+			}
 			any_pop = {
 				limit = { 
 					is_culture_group = iberian
@@ -77,7 +79,7 @@ political_decisions = {
 			}
 			UCA = {
 				exists = yes
-				# num_of_revolts = 1
+				num_of_revolts = 1
 			}
 			NOT = { has_country_flag = reconquista_frca }
 		}
@@ -86,7 +88,7 @@ political_decisions = {
 			is_greater_power = yes
 			war = no
 			war_policy = jingoism
-			UCA = { NOT = { vassal_of = THIS } }
+			UCA = { NOT = { OR = { vassal_of = THIS substate_of = THIS in_sphere = THIS } } }
 		}
 
 		effect = {
@@ -178,6 +180,7 @@ political_decisions = {
 			has_global_flag = reconquista
 			VNS = { exists = no }
 			NOT = { has_country_flag = reconquest_vns }
+            # has_country_flag = viceroyalty_decisions_on
 		}
 
 		allow = {
@@ -440,6 +443,7 @@ political_decisions = {
 			has_global_flag = reconquista
 			VNG = { exists = no }
 			NOT = { has_country_flag = reconquest_vng }
+            # has_country_flag = viceroyalty_decisions_on
 		}
 
 		allow = {
@@ -644,6 +648,7 @@ political_decisions = {
 			has_global_flag = reconquista
 			VOP = { exists = no }
 			NOT = { has_country_flag = reconquest_vop }
+            # has_country_flag = viceroyalty_decisions_on
 		}
 
 		allow = {
@@ -781,6 +786,7 @@ political_decisions = {
 			has_global_flag = reconquista
 			CGC = { exists = no }
 			NOT = { has_country_flag = reconquest_cgc }
+            # has_country_flag = viceroyalty_decisions_on
 		}
 
 		allow = {
@@ -849,6 +855,7 @@ political_decisions = {
 			has_global_flag = reconquista
 			VLP = { exists = no }
 			NOT = { has_country_flag = reconquest_vlp }
+            # has_country_flag = viceroyalty_decisions_on
 		}
 
 		allow = {
@@ -1017,30 +1024,48 @@ political_decisions = {
 		picture = spain_reconquest
 		potential = {
 			OR = {
-				tag = UCA
-				tag = ARG
-				tag = ARC
-				tag = BOL
-				tag = CHL
-				tag = CLM	
-				tag = ECU
-				tag = PRG
-				tag = PEU
-				tag = URU
-				tag = VNZ
+				# tag = UCA
+				# tag = ARG
+				# tag = ARC
+				# tag = BOL
+				# tag = CHL
+				# tag = CLM	
+				# tag = ECU
+				# tag = PRG
+				# tag = PEU
+				# tag = URU
+				# tag = VNZ
+				# 
+				AND = {
+					is_culture_group = latin_american_cultures
+					NOT = {
+						tag = VNG
+						tag = VLP
+						tag = CGC
+						tag = VNS
+						tag = PHL
+						tag = VOP
+					}
+				}
 				tag = VNG
 				tag = VLP
 				tag = CGC
 				tag = VNS
-				tag = PHL
 				tag = VOP
+				tag = CUB
+				tag = PRI
+				tag = PHL
 			}
 			government = colonial_company
 			NOT = {
 				vassal_of = SPC
 				vassal_of = SPA
 				vassal_of = IBR
+				substate_of = SPC
+				substate_of = SPA
+				substate_of = IBR
 			}
+			has_global_flag = reconquista
 			NOT = { has_country_flag = colony_rebel_again }
 		}
 
@@ -1049,7 +1074,36 @@ political_decisions = {
 		}
 
 		effect = {
-			government = democracy
+			any_country = {
+				limit = {
+					is_culture_group = latin_american_cultures
+					NOT = {
+						tag = VNG
+						tag = VLP
+						tag = CGC
+						tag = VNS
+						tag = PHL
+						tag = VOP
+					}
+					exists = yes
+					is_vassal = no
+				}
+				government = democracy
+				remove_accepted_culture = spanish
+				political_reform = no_slavery
+				political_reform = state_equal_weight
+				political_reform = landed_voting
+				political_reform = yes_meeting
+				political_reform = state_press
+				political_reform = no_trade_unions
+				political_reform = jefferson_method
+				political_reform = non_secret_ballots
+				political_reform = open_borders
+				political_reform = federalism
+				political_reform = civilizing
+				political_reform = culture_voting_only
+				political_reform = colonial_transportation
+			}
 			any_country = {
 				limit = {
 					tag = VNG
@@ -1058,6 +1112,22 @@ political_decisions = {
 				}
 				government = democracy
 				change_tag = GCO
+				remove_accepted_culture = spanish
+				primary_culture = north_andean
+				add_accepted_culture = llanero
+				political_reform = no_slavery
+				political_reform = state_equal_weight
+				political_reform = landed_voting
+				political_reform = yes_meeting
+				political_reform = state_press
+				political_reform = no_trade_unions
+				political_reform = jefferson_method
+				political_reform = non_secret_ballots
+				political_reform = open_borders
+				political_reform = federalism
+				political_reform = civilizing
+				political_reform = culture_voting_only
+				political_reform = colonial_transportation
 			}
 			any_country = {
 				limit = {
@@ -1067,6 +1137,22 @@ political_decisions = {
 				}
 				government = democracy
 				change_tag = PBC
+				remove_accepted_culture = spanish
+				primary_culture = south_andean
+				political_reform = no_slavery
+				political_reform = state_equal_weight
+				political_reform = landed_voting
+				political_reform = yes_meeting
+				political_reform = state_press
+				political_reform = no_trade_unions
+				political_reform = jefferson_method
+				political_reform = non_secret_ballots
+				political_reform = culture_voting_only
+				political_reform = open_borders
+				political_reform = federalism
+				political_reform = civilizing
+				political_reform = primary_culture_only
+				political_reform = colonial_transportation
 			}
 			any_country = {
 				limit = {
@@ -1076,6 +1162,22 @@ political_decisions = {
 				}
 				government = democracy
 				change_tag = LPL
+				remove_accepted_culture = spanish
+				primary_culture = platinean
+				add_accepted_culture = gaucho
+				political_reform = no_slavery
+				political_reform = state_equal_weight
+				political_reform = landed_voting
+				political_reform = yes_meeting
+				political_reform = state_press
+				political_reform = no_trade_unions
+				political_reform = jefferson_method
+				political_reform = non_secret_ballots
+				political_reform = open_borders
+				political_reform = federalism
+				political_reform = civilizing
+				political_reform = culture_voting_only
+				political_reform = colonial_transportation
 			}
 			any_country = {
 				limit = {
@@ -1085,6 +1187,21 @@ political_decisions = {
 				}
 				government = democracy
 				change_tag = CHL
+				remove_accepted_culture = spanish
+				primary_culture = south_andean
+				political_reform = no_slavery
+				political_reform = state_equal_weight
+				political_reform = landed_voting
+				political_reform = yes_meeting
+				political_reform = state_press
+				political_reform = no_trade_unions
+				political_reform = jefferson_method
+				political_reform = harassment
+				political_reform = open_borders
+				political_reform = unitary
+				political_reform = civilizing
+				political_reform = primary_culture_only
+				political_reform = colonial_transportation
 			}
 			any_country = {
 				limit = {

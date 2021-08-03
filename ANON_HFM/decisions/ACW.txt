@@ -1272,6 +1272,10 @@ political_decisions = {
 				limit = { region = USA_144 }
 				owner = { USA_144 = { is_slave = yes add_core = CSA } }
 			}
+			random_owned = {
+				limit = { region = USA_188 }
+				owner = { USA_188 = { is_slave = yes add_core = CSA } }
+			}
 			set_country_flag = wilmot_proviso_providing
 		}
 		
@@ -2181,6 +2185,10 @@ political_decisions = {
 			random_owned = {
 				limit = { region = USA_218 }
 				owner = { USA_218 = { is_slave = yes add_core = CSA } }
+			}
+			random_owned = {
+				limit = { region = USA_188 }
+				owner = { USA_188 = { is_slave = yes add_core = CSA } }
 			}
 			# MEX_100 = { is_slave = yes add_core = CSA }
 			# MEX_103 = { is_slave = yes add_core = CSA }
