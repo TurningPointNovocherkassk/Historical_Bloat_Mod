@@ -1,0 +1,279 @@
+country_event = { #If Denmark owns Scania for a long time, they can get cores on their old territory and attempt to integrate the rest.
+	id = 999362000
+	title = "EVTNAME999362000"
+	desc = "EVTDESC999362000"
+	picture = "Danishgovernment"
+	trigger = {
+		tag = DEN
+		owns = 334
+		334 = { NOT = { is_core = THIS } }
+		owns = 335
+		335 = { NOT = { is_core = THIS } }
+		OR = {
+			government = absolute_monarchy
+			government = prussian_constitutionalism
+			government = hms_government
+		}
+	}
+	mean_time_to_happen = {
+		years = 6
+	}
+	fire_only_once = yes
+	immediate = {
+		334 = { add_core = THIS }
+		335 = { add_core = THIS }
+		331 = { add_core = THIS }
+	}
+	option = { #Cede nothing
+		name = "EVTOPTA999362000"
+		any_owned = {
+			limit = {
+				region = SWE_334
+				NOT = { is_core = THIS }
+			}
+			add_province_modifier = {
+				name = core_integration
+				duration = -1
+			}
+		}
+		prestige = 10
+		badboy = 2
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 0
+				badboy = 1
+			}
+			modifier = {
+				factor = 0.5
+				SWE = { military_score = THIS }
+			}
+		}
+	}
+	option = { #Treaty with the Swedes
+		name = "EVTOPTB999362000"
+		random_owned = {
+			limit = {
+				region = SWE_334
+				NOT = { is_core = THIS }
+			}
+			SWE = { country_event = 999362001 }
+		}
+		ai_chance = {
+			factor = 45
+			modifier = {
+				factor = 0
+				NOT = {
+					owns = 332
+					owns = 335
+				}
+			}
+		}
+	}
+}
+
+country_event = { #SWE - DAN wants to negotiate over Scania and Gotland
+	id = 999362001
+	title = "EVTNAME999362001"
+	desc = "EVTDESC999362001"
+	picture = "Danishgovernment"
+	is_triggered_only = yes
+
+	#Renounce claims on Scania and Gotland and get the rest of the south back
+	option = {
+		name = "EVTOPTA999362001"
+		334 = { remove_core = THIS }
+		335 = { remove_core = THIS }
+		331 = { remove_core = THIS }
+		all_core = {
+			limit = {
+				region = SWE_334
+				owner = { tag = FROM }
+			}
+			secede_province = THIS
+		}
+		relation = { who = FROM value = 100 }
+		badboy = -2
+		ai_chance = {
+			factor = 100
+			modifier = {
+				factor = 0
+				war_policy = jingoism
+			}
+		}
+	}
+	#Continue to claim Scania
+	option = {
+		name = "EVTOPTB999362001"
+		badboy = 1
+		relation = { who = FROM value = -50 }
+		any_pop = {
+			dominant_issue = {
+				value = jingoism
+				factor = 0.1
+			}
+		}
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 100
+				war_policy = jingoism
+			}
+		}
+	}
+}
+
+country_event = { #Danish independence
+	id = 999362002
+	title = "EVTNAME999362002"
+	desc = "EVTDESC999362002"
+	picture = "danishgovernment"
+	trigger = {
+		tag = SWE
+		war = no
+		year = 1900
+		any_state = {
+			any_owned_province = { is_core = DEN }
+			average_militancy = 2
+		}
+		average_consciousness = 5
+		revolution_n_counterrevolution = 1
+		is_possible_vassal = DEN
+		NOT = {
+			exists = DEN
+			has_country_flag = danish_independence
+		}
+	}
+	fire_only_once = yes
+	mean_time_to_happen = {
+		months = 120
+		modifier = {
+			factor = 0.5
+			press_rights = free_press
+		}
+		modifier = {
+			factor = 0.75
+			vote_franschise = universal_voting
+		}
+		modifier = {
+			factor = 0.85
+			vote_franschise = universal_weighted_voting
+		}
+		modifier = {
+			factor = 0.95
+			vote_franschise = wealth_voting
+		}
+		modifier = {
+			factor = 1.25
+			press_rights = censored_press
+		}
+		modifier = {
+			factor = 1.5
+			press_rights = state_press
+		}
+	}
+	immediate = { set_country_flag = danish_independence }
+	option = {
+		name = "EVTOPTA999362002"
+		any_owned = {
+			limit = { is_core = DEN }
+			remove_core = SWE
+		}
+		release = DEN
+		DEN = {
+			any_pop = { militancy = -4 }
+			relation = {
+				who = THIS
+				value = 100
+			}
+		}
+	}
+	option = {
+		name = "EVTOPTB999362002"
+		any_pop = {
+			limit = { culture = danish }
+			consciousness = 5
+			militancy = 5
+		}
+	}
+}
+
+country_event = { #North Sea Empire Claims
+	id = 999362003
+	title = "EVTNAME999362003"
+	desc = "EVTDESC999362003"
+	picture = "danishgovernment"
+	major = yes
+	trigger = {
+		OR = {
+			primary_culture = norwegian
+			primary_culture = danish
+		}
+		NOT = { has_country_flag = north_sea_empire_claimed }
+		is_greater_power = yes
+		OR = {
+			government = fascist_dictatorship
+			government = absolute_monarchy
+		}
+		rank = 4
+		NOT = { has_global_flag = extra_flavour_disabled }
+	}
+	mean_time_to_happen = {
+		months = 36
+	}
+	option = {
+		name = "EVTOPTA999362003"
+		set_country_flag = north_sea_empire_claimed
+		badboy = 35
+		prestige = 25
+		relation = { who = ENG value = -400 }
+		relation = { who = ENL value = -400 }
+		relation = { who = SCO value = -400 }
+		relation = { who = IRE value = -400 }
+		relation = { who = ULS value = -400 }
+		relation = { who = CEL value = -400 }
+		relation = { who = WHA value = -400 }
+		relation = { who = M4N value = -400 }
+		relation = { who = KER value = -400 }
+		NOR = { all_core = { add_core = THIS } }
+		ENG_254 = { add_core = THIS } #Ulster
+		ENG_263 = { add_core = THIS } #Leinster
+		ENG_260 = { add_core = THIS } #Munster
+		ENG_258 = { add_core = THIS } #Connacht
+		ENG_266 = { add_core = THIS } #Highlands
+		ENG_271 = { add_core = THIS } #Lowlands
+		ENG_277 = { add_core = THIS } #North West England
+		ENG_280 = { add_core = THIS } #North East England
+		ENG_284 = { add_core = THIS } #Midlands
+		ENG_273 = { add_core = THIS } #Wales
+		ENG_291 = { add_core = THIS } #Eastern Counties
+		ENG_296 = { add_core = THIS } #South West England
+		ENG_300 = { add_core = THIS } #South East England
+		DEN_251 = { add_core = THIS } #Greenland
+		DEN_252 = { add_core = THIS } #Iceland
+		
+		ai_chance = {
+			factor = 100
+			modifier = {
+				factor = 0
+				OR = {
+					alliance_with = ENG
+					alliance_with = ENL
+				}
+			}
+		}
+	}
+	option = {
+		name = "EVTOPTB999362003"
+		ai_chance = {
+			factor = 100
+			modifier = {
+				factor = 0
+				NOT = {
+					alliance_with = ENG
+					alliance_with = ENL
+				}
+			}
+		}
+	}
+}
