@@ -7,8 +7,10 @@ political_decisions = {
 		potential = {
 			tag = PER
 			1212 = { owner = { primary_culture = pashtun } }
-			owns = 1148
-			year = 1837
+			OR = {
+				owns = 1148
+				1148 = { owner = { OR = { vassal_of = THIS substate_of = THIS } } }
+			}
 			NOT = {
 				owns = 1212
 				truce_with = AFG
@@ -16,12 +18,13 @@ political_decisions = {
 				has_global_flag = herat_expedition
 			}
 		}
-		
+
 		allow = {
 			war = no
+			year = 1837
 			1212 = {
 				owner = {
-					war = no 
+					war = no
 					OR = {
 						is_vassal = no
 						is_substate = no
@@ -40,7 +43,7 @@ political_decisions = {
 			prestige = 5
 			1212 = { add_core = PER }
 			random_country = {
-				limit = { 
+				limit = {
 					owns = 1212
 					has_country_modifier = neutrality_modifier
 				}
@@ -48,15 +51,15 @@ political_decisions = {
 				remove_country_modifier = neutrality_modifier
 			}
 			random_country = {
-				limit = { 
-					tag = ENG 
+				limit = {
+					tag = ENG
 					is_greater_power = yes
 					is_disarmed = no
 				}
 				country_event = 99200
 			}
 			random_country = {
-				limit = { 
+				limit = {
 					tag = RUS
 					is_greater_power = yes
 					is_disarmed = no
@@ -64,7 +67,7 @@ political_decisions = {
 				country_event = 992001
 			}
 		}
-		
+
 		ai_will_do = { factor = 1 }
 	}
 	second_herat_expedition = {
@@ -85,12 +88,12 @@ political_decisions = {
 				}
 			}
 			has_global_flag = herat_expedition
-			NOT = { 
+			NOT = {
 				owns = 1212
 				truce_with = AFG
 				truce_with = HER
-				has_global_flag = anglo_persian_war  
-				has_global_flag = second_herat_expedition 
+				has_global_flag = anglo_persian_war
+				has_global_flag = second_herat_expedition
 			}
 			# any_greater_power = { #this is not necessary, event only exists if PER succeeds the first invasion of herat
 				# OR = {
@@ -99,12 +102,12 @@ political_decisions = {
 				# }
 			# }
 		}
-		
+
 		allow = {
 			war = no
 			1212 = {
-				owner = { 
-					war = no 
+				owner = {
+					war = no
 					OR = {
 						is_vassal = no
 						is_substate = no
@@ -116,34 +119,34 @@ political_decisions = {
 			}
 			NOT = { truce_with = ENG }
 		}
-		
+
 		effect = {
 			set_global_flag = second_herat_expedition
 			prestige = 10
 			1212 = {
-				add_core = PER 
+				add_core = PER
 				secede_province = PER
 			}
 			# 2638 = { add_core = PER } #this is from hfme, sistan.
 			random_country = {
-				limit = { 
-					tag = ENG 
+				limit = {
+					tag = ENG
 					is_greater_power = yes
 					is_disarmed = no
 				}
 				country_event = 99202
 			}
 		}
-		
-		ai_will_do = { 
-			factor = 1 
-			modifier = { 
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
 				factor = 0
 				NOT = { year = 1856 }
 			}
 		}
 	}
-	
+
 	treaty_of_paris_anglo_persian = {
 		picture = persia_map
 		potential = {
@@ -159,12 +162,12 @@ political_decisions = {
 				}
 				PER = {
 					truce_with = THIS
-					has_recently_lost_war = yes 
+					has_recently_lost_war = yes
 				}
 			}
 			NOT = { has_country_flag = treaty_of_paris_anglo_persian }
 		}
-		
+
 		allow = {
 			OR = {
 				PER = {
@@ -176,24 +179,24 @@ political_decisions = {
 				}
 				PER = {
 					truce_with = THIS
-					has_recently_lost_war = yes 
+					has_recently_lost_war = yes
 				}
 			}
 		}
-		
+
 		effect = {
 			set_country_flag = treaty_of_paris_anglo_persian
 			prestige = 15
 			badboy = -2
 			PER = { country_event = 99204 }
-			relation = { 
+			relation = {
 				who = AFG
 				value = 100
 			}
 			#Secede Qeshm to Oman
 			random_owned = {
-				limit = { 
-					province_id = 1071 
+				limit = {
+					province_id = 1071
 					OMA = { exists = yes in_sphere = THIS }
 				}
 				secede_province = OMA
@@ -207,10 +210,10 @@ political_decisions = {
 				secede_province = PER
 			}
 		}
-		
+
 		ai_will_do = { factor = 1 }
 	}
-	
+
 	gwadar_treaty = {
 		picture = gwadar_pakistan
 		potential = {
@@ -235,26 +238,27 @@ political_decisions = {
 					ai = yes
 				}
 			}
-			
+
 			NOT = { has_global_flag = gwadar_treaty }
 		}
-		
+
 		allow = {
 			war = no
 			nationalism_n_imperialism = 1
 			invention = the_dark_continent
 			is_greater_power = yes
 		}
-		
+
 		effect = {
 			set_global_flag = gwadar_treaty
+			badboy = 2
 			prestige = 5
-			2640 = { secede_province = THIS add_core = HND }
+			2640 = { secede_province = THIS }
 		}
-		
+
 		ai_will_do = { factor = 0 }
 	}
-	
+
 	persia_treaty = {
 		picture = persia_map
 		potential = {
@@ -263,7 +267,7 @@ political_decisions = {
 			is_disarmed = no
 			OR = {
 				PER = { vassal_of = RUS }
-				1149 = { owned_by = RUS } 
+				1149 = { owned_by = RUS }
 				1108 = { owned_by = RUS }
 				1113 = { owned_by = RUS }
 				1142 = { owned_by = RUS }
@@ -276,52 +280,52 @@ political_decisions = {
 			}
 			NOT = { has_global_flag = persia_treaty }
 		}
-		
+
 		allow = {
 			state_n_government = 1
 			war = no
 			NOT = { truce_with = RUS }
 			NOT = { truce_with = PER }
 		}
-		
+
 		effect = {
 			set_global_flag = persia_treaty
 			RUS = { country_event = 99104 }
 		}
-		
+
 		ai_will_do = { factor = 1 }
 	}
-	
-	anglo_persian_oil_company = { 
+
+	anglo_persian_oil_company = {
 		picture = map_arabia
-		potential = { 
+		potential = {
 			tag = ENG
 			NOT = {	has_country_flag = apoc	}
 			invention = cracking
 			invention = oil_pumping_machinery
 			PER = { exists = yes }
 		}
-		
+
 		allow = {
 			money = 150001
 			PER = {
 				OR = {
 					part_of_sphere = no
-					in_sphere = THIS 
+					in_sphere = THIS
 				}
 			}
 		}
-		
-		effect = { 
+
+		effect = {
 			set_country_flag = apoc
 			treasury = -150000
 			prestige = 25
 			PER = { country_event = 110011 }
 		}
-		
+
 		ai_will_do = { factor = 1 }
 	}
-	
+
 	baluchistan_goldsmid_arbitration = {
 		picture = john_goldsmid
 		potential = {
@@ -351,7 +355,7 @@ political_decisions = {
 			}
 			NOT = { has_global_flag = the_first_goldsmid_arbitration }
 		}
-		
+
 		allow = {
 			nationalism_n_imperialism = 1
 			iron_steamers = 1
@@ -362,7 +366,7 @@ political_decisions = {
 					exists = yes
 					vassal_of = THIS
 				}
-				KAL = { 
+				KAL = {
 					vassal_of = THIS
 					OR = {
 						owns = 1144
@@ -386,21 +390,21 @@ political_decisions = {
 			}
 			NOT = { truce_with = PER }
 		}
-		
+
 		effect = {
 			set_global_flag = the_first_goldsmid_arbitration
 			prestige = 5
 			badboy = -2
 			PER = { country_event = 99205 }
 		}
-		
+
 		ai_will_do = { factor = 1 }
 	}
-	
+
 	#####################################################
 	#Afghanistan#
 	#####################################################
-	
+
 	wakhan_treaty = {
 		picture = map_india
 		potential = {
@@ -419,7 +423,7 @@ political_decisions = {
 			}
 			NOT = { has_global_flag = wakhan_treaty }
 		}
-		
+
 		allow = {
 			state_n_government = 1
 			war = no
@@ -429,15 +433,15 @@ political_decisions = {
 				AFG = { vassal_of = THIS }
 			}
 		}
-		
+
 		effect = {
 			set_global_flag = wakhan_treaty
 			RUS = { country_event = 99103 }
 		}
-		
+
 		ai_will_do = { factor = 1 }
 	}
-	
+
 	durand_line = {
 		picture = mortimer_durand
 		potential = {
@@ -449,12 +453,12 @@ political_decisions = {
 			NOT = { has_country_flag = durand_line }
 			NOT = { year = 1920 }
 		}
-		
+
 		allow = {
 			war = no
-			OR = { 
+			OR = {
 				invention = the_dark_continent
-				AND = { 
+				AND = {
 					AFG = { vassal_of = THIS }
 					revolution_n_counterrevolution = 1
 				}
@@ -462,14 +466,14 @@ political_decisions = {
 			NOT = { year = 1920 }
 			#NOT = { relation = { who = AFG value = 100 } }
 		}
-		
+
 		effect = {
 			set_country_flag = durand_line
 			AFG = { country_event = 3697010 }
 		}
 		ai_will_do = { factor = 1 }
 	}
-	
+
 	anglo_afghan_war = {
 		picture = george_eden
 		potential = {
@@ -495,24 +499,25 @@ political_decisions = {
 			}
 			NOT = { year = 1855 }
 			NOT = { has_country_flag = anglo_afghan_war }
-			year = 1840
-			has_global_flag = herat_expedition
+			#has_global_flag = herat_expedition
 		}
 
 		allow = {
-			ENG = { 
+			year = 1839
+			ENG = {
 				war = no
 				NOT = { truce_with = AFG }
 			}
 			AFG = {
-				OR = { 
+				OR = {
 					neighbour = EIC
 					neighbour = ENG
+					neighbour = PNJ
 					any_neighbor_country = { vassal_of = ENG }
 					any_neighbor_country = { substate_of = ENG }
 				}
-				NOT = { 
-					relation = { who = ENG value = 150 } 
+				NOT = {
+					relation = { who = ENG value = 150 }
 					alliance_with = ENG
 				}
 			}
@@ -522,23 +527,23 @@ political_decisions = {
 			set_country_flag = anglo_afghan_war
 			ENG = { country_event = 99100 }
 		}
-		
+
 		ai_will_do = { factor = 1 }
 	}
-	
+
 	#####################################################
 	#Other Central Asian Decisions#
 	#####################################################
-	
+
 	claim_kokand = {
 		picture = laghouat_algiers
 		potential = {
 			tag = BUK
 			NOT = { has_country_flag = claim_kokand }
 		}
-		
+
 		allow = { war = no }
-		
+
 		effect = {
 			set_country_flag = claim_kokand
 			1195 = { add_core = BUK }
@@ -546,10 +551,10 @@ political_decisions = {
 			1202 = { add_core = BUK }
 			1203 = { add_core = BUK }
 		}
-		
+
 		ai_will_do = { factor = 0 }
 	}
-	
+
 	the_great_game_panjab = {
 		picture = gtfo
 		potential = {
@@ -568,16 +573,16 @@ political_decisions = {
 				ai = yes
 			}
 		}
-		
+
 		allow = {
 			PNJ = { average_militancy = 4 }
 		}
-		
+
 		effect = {
 			PNJ = { annex_to = THIS }
 		}
 	}
-	
+
 	the_great_game_sindh = {
 		picture = gtfo
 		potential = {
@@ -596,16 +601,16 @@ political_decisions = {
 				ai = yes
 			}
 		}
-		
+
 		allow = {
 			SIN = { average_militancy = 3 }
 		}
-		
+
 		effect = {
 			SIN = { annex_to = THIS }
 			badboy = 2
 		}
-		
+
 		ai_will_do = {
 			factor = 1
 		}

@@ -305,7 +305,6 @@ political_decisions = {
 				3554 = { empty = yes }
 				3553 = { empty = yes }
 				3555 = { empty = yes }
-				1172 = { empty = yes }
 			}
 		}
 
@@ -329,7 +328,6 @@ political_decisions = {
 				3554 = { empty = yes }
 				3553 = { empty = yes }
 				3555 = { empty = yes }
-				1172 = { empty = yes }
 			}
 			OR = {
 				post_napoleonic_thought = 1
@@ -422,21 +420,6 @@ political_decisions = {
 			}
 			random_owned = {
 				limit = {
-					1172 = { empty = yes }
-					OR = {
-						province_id = 1157
-						province_id = 1160
-						province_id = 1151
-						province_id = 1178
-						province_id = 1167
-						province_id = 1166
-					}
-					owner = { ai = no }
-				}
-				1172 = { secede_province = THIS add_core = THIS }
-			}
-			random_owned = {
-				limit = {
 					OR = {
 						1161 = { empty = yes }
 						3483 = { empty = yes }
@@ -461,15 +444,11 @@ political_decisions = {
 			}
 			random_owned = {
 				limit = {
-					OR = {
-						3554 = { empty = yes }
-						1172 = { empty = yes }
-					}
+					3554 = { empty = yes }
 					province_id = 1166
 					owner = { ai = yes }
 				}
 				3554 = { secede_province = THIS add_core = THIS }
-				1172 = { secede_province = THIS add_core = THIS }
 			}
 			random_owned = {
 				limit = {
@@ -1145,7 +1124,7 @@ political_decisions = {
 						}
 					}
 				}
-				move_pop = 783 # Sarajevo 
+				move_pop = 783 # Sarajevo
 			}
 			any_owned = {
 				limit = {
@@ -1237,7 +1216,7 @@ political_decisions = {
 			any_owned = {
 				limit = {
 					is_core = BOS
-					NOT = { province_id = 783 } # Sarajevo 
+					NOT = { province_id = 783 } # Sarajevo
 				}
 				remove_core = BOS
 			}
@@ -2684,11 +2663,11 @@ political_decisions = {
 				}
 			}
 			OR = {
-				civilized = yes 
+				civilized = yes
 				AND = {
 					civilization_progress = 0.65
 					1071 = {
-						owner = { 
+						owner = {
 							NOT = { stronger_army_than = THIS }
 							part_of_sphere = no
 						}
@@ -2764,5 +2743,5 @@ political_decisions = {
 			}
 		}
 	}
-	
+
 }

@@ -37,7 +37,7 @@ country_event = {
 		name = "EVT777777000OPTA"
 		3531 = { add_core = PNJ add_core = HND add_core = KAS }
 		3549 = { add_core = HND }
-		3550 = { add_core = PNJ add_core = HND }
+		3550 = { add_core = PNJ add_core = HND add_core = KAS }
 		define_general = {
 			name = "Gulab Singh Jamwal"
 			personality = implacable
@@ -103,7 +103,7 @@ country_event = {
 		prestige = 5
 		QNG = { country_event = 777777002 }
 		ai_chance = {
-			factor = 95
+			factor = 100
 		}
 	}
 
@@ -116,7 +116,7 @@ country_event = {
 		ammunition = 100
 		canned_food = 100
 		ai_chance = {
-			factor = 5
+			factor = 0
 		}
 	}
 }
@@ -154,31 +154,25 @@ country_event = {
 		TIB = {
 			set_global_flag = signed_treaty_of_chushul_PNJ
 			prestige = -5
-			any_owned = {
-				limit = { is_core = PNJ }
-				secede_province = PNJ
-			}
+			#any_owned = {
+			#	limit = { is_core = PNJ }
+			#	secede_province = PNJ
+			#}
 			add_country_modifier = {
 				name = no_more_war
 				duration = 730
 			}
 		}
 		XIN = {
-			any_owned = {
-				limit = { is_core = PNJ }
-				secede_province = PNJ
-			}
+			#any_owned = {
+			#	limit = { is_core = PNJ }
+			#	secede_province = PNJ
+			#}
 		}
 		FROM = {
 			country_event = 777777003
 		}
-		ai_chance = {
-			factor = 20
-			modifier = {
-				factor = 100
-				PNJ = { ai = no }
-			}
-		}
+		ai_chance = { factor = 100 }
 	}
 
 	option = {
@@ -196,13 +190,7 @@ country_event = {
 		FROM = {
 			country_event = 777777004
 		}
-		ai_chance = {
-			factor = 80
-			modifier = {
-				factor = 100
-				TIB = { ai = no }
-			}
-		}
+		ai_chance = { factor = 0 }
 	}
 }
 
@@ -264,7 +252,7 @@ country_event = {
 		prestige = 5
 		PNJ = { country_event = 777777006 }
 		ai_chance = {
-			factor = 95
+			factor = 100
 		}
 	}
 
@@ -277,7 +265,7 @@ country_event = {
 		ammunition = 100
 		canned_food = 100
 		ai_chance = {
-			factor = 5
+			factor = 0
 		}
 	}
 }
@@ -312,24 +300,18 @@ country_event = {
 		relation = { who = QNG value = -150 }
 		set_global_flag = signed_treaty_of_chushul_QNG
 		prestige = -5
-		3531 = { remove_core = PNJ remove_core = HND }
+		3531 = { remove_core = PNJ remove_core = HND remove_core = KAS }
 		3452 = { remove_core = PNJ remove_core = HND secede_province = TIB }
-		3453 = { remove_core = PNJ remove_core = HND }
+		3453 = { remove_core = PNJ remove_core = HND remove_core = KAS }
 		3549 = { remove_core = PNJ remove_core = HND remove_core = KAS secede_province = TIB }
-		3550 = { remove_core = PNJ remove_core = HND }
+		3550 = { remove_core = PNJ remove_core = HND remove_core = KAS }
 		release_vassal = LAD
 
 		QNG = { country_event = 777777007 }
 		LAD = {
 			country_event = 777777009
 		}
-		ai_chance = {
-			factor = 20
-			modifier = {
-				factor = 100
-				QNG = { ai = no }
-			}
-		}
+		ai_chance = { factor = 100 }
 	}
 
 	option = {
@@ -347,13 +329,7 @@ country_event = {
 		FROM = {
 			country_event = 777777008
 		}
-		ai_chance = {
-			factor = 80
-			modifier = {
-				factor = 100
-				TIB = { ai = no }
-			}
-		}
+		ai_chance = { factor = 0	}
 	}
 }
 
@@ -449,7 +425,7 @@ country_event = {
 		prestige = 5
 		PNJ = { country_event = 777777011 }
 		ai_chance = {
-			factor = 95
+			factor = 50
 		}
 	}
 
@@ -461,7 +437,7 @@ country_event = {
 		1226 = { add_core = TIB }
 		PNJ = { country_event = 777777015 }
 		ai_chance = {
-			factor = 95
+			factor = 50
 		}
 	}
 
@@ -470,7 +446,7 @@ country_event = {
 		set_country_flag = tibet_secret_deal
 		war_exhaustion = -30
 		ai_chance = {
-			factor = 5
+			factor = 0
 		}
 	}
 }
@@ -520,13 +496,7 @@ country_event = {
 			country_event = 777777013
 		}
 		set_global_flag = signed_treaty_of_chushul_TIB_secretdeal
-		ai_chance = {
-			factor = 20
-			modifier = {
-				factor = 100
-				TIB = { ai = no }
-			}
-		}
+		ai_chance = { factor = 100 }
 	}
 
 	option = {
@@ -542,13 +512,7 @@ country_event = {
 			}
 			country_event = 777777014
 		}
-		ai_chance = {
-			factor = 80
-			modifier = {
-				factor = 100
-				TIB = { ai = yes }
-			}
-		}
+		ai_chance = { factor = 0 }
 	}
 }
 
@@ -733,6 +697,7 @@ country_event = {
 		OR = {
 			has_country_flag = kashmir_defeated
 			has_country_flag = tibet_defeated
+			has_global_flag = sino_sikh_british_defuse_conflict
 		}
 		NOT = {
 			OR = {
@@ -763,7 +728,7 @@ country_event = {
 			country_event = 777777019
 		}
 		ai_chance = {
-			factor = 95
+			factor = 100
 		}
 	}
 
@@ -837,9 +802,9 @@ country_event = {
 				}
 			}
 		}
-		3531 = { remove_core = PNJ remove_core = HND }
+		3531 = { remove_core = PNJ remove_core = HND remove_core = KAS }
 		3549 = { remove_core = PNJ remove_core = HND remove_core = KAS }
-		3550 = { remove_core = PNJ remove_core = HND }
+		3550 = { remove_core = PNJ remove_core = HND remove_core = KAS }
 		FROM = { country_event = 777777020 }
 		ai_chance = {
 			factor = 100
@@ -1354,9 +1319,6 @@ country_event = {
 		1251 = { #calcutta
 			owner = { set_country_flag = anglo_perfidy_in_sikkim }
 		}
-		1252 = { #Sikkim
-			owner = { country_event = 777777401 }
-		}
 		FROM = {
 			country_event = 777777035
 		}
@@ -1366,9 +1328,6 @@ country_event = {
 	}
 	option = {
 		name = "EVT777777032OPTB" #ok we wont do shit
-		1252 = {
-			owner = { country_event = 777777401 }
-		}
 		FROM = {
 			country_event = 777777036
 		}
@@ -1442,6 +1401,7 @@ country_event = {
 
 	option = {
 		name = "EVT777777034OPTA"
+		1252 = { secede_province = THIS }
 		ai_chance = {
 			factor = 100
 		}
@@ -1467,7 +1427,7 @@ country_event = {
 			war = {
 				target = SIK
 				attacker_goal = {
-					casus_belli = acquire_state
+					casus_belli = acquire_any_state
 					state_province_id = 1252
 				}
 				defender_goal = { casus_belli = status_quo }
@@ -1575,6 +1535,7 @@ country_event = {
 	option = {
 		name = "EVT777777040OPTA"
 		relation = { who = SIK value = -400 }
+		1252 = { secede_province = ENG }
 		ai_chance = {
 			factor = 100
 		}
@@ -2396,6 +2357,7 @@ country_event = {
 	title = "EVTNAME777777062" #A Rival Druk Desi!
 	desc = "EVTDESC777777062"
 	picture = "sikkim_bhutan"
+	fire_only_once = yes
 
 	trigger = {
 		has_country_flag = bhutanese_raid_sepoy
@@ -2431,8 +2393,8 @@ country_event = {
 		set_country_flag = BHU_civil_war_1
 		war = {
 			target = BH0
-			attacker_goal = { casus_belli = civil_war }
-			defender_goal = { casus_belli = civil_war }
+			attacker_goal = { casus_belli = 1st_bhutan_civil_war_cb }
+			defender_goal = { casus_belli = 1st_bhutan_civil_war_cb }
 			# call_ally = yes
 			call_ally = no
 		}
@@ -2596,33 +2558,34 @@ country_event = {
 		}
 	}
 }
-country_event = {
-
-	id = 777777067
-	title = "EVTNAME777777067" #first civil war conclusion
-	desc = "EVTDESC777777067"
-	picture = "sikkim_bhutan"
-
-	trigger = {
-		tag = BH0
-		BHU = { exists = no }
-		has_global_flag = rival_druk_desi
-		BH7 = { alliance_with = BH0 }
-	}
-
-	mean_time_to_happen = {
-		days = 1
-	}
-
-	option = {
-		name = "EVT777777067OPTA"
-		change_tag = BHU
-		set_global_flag = 1st_bhutan_civil_war_end
-		ai_chance = {
-			factor = 100
-		}
-	}
-}
+#country_event = { #Replaced by 1st_bhutan_civil_war_cb CB
+#
+#	id = 777777067
+#	title = "EVTNAME777777067" #first civil war conclusion
+#	desc = "EVTDESC777777067"
+#	picture = "sikkim_bhutan"
+#	fire_only_once = yes
+#
+#	trigger = {
+#		tag = BH0
+#		BHU = { exists = no }
+#		has_global_flag = rival_druk_desi
+#		BH7 = { alliance_with = BH0 }
+#	}
+#
+#	mean_time_to_happen = {
+#		days = 1
+#	}
+#
+#	option = {
+#		name = "EVT777777067OPTA"
+#		change_tag = BHU
+#		set_global_flag = 1st_bhutan_civil_war_end
+#		ai_chance = {
+#			factor = 100
+#		}
+#	}
+#}
 ##########################
 
 country_event = {
@@ -3025,6 +2988,7 @@ country_event = {
 	title = "EVTNAME777777079" #The Rise of Ugyen Wangchuck
 	desc = "EVTDESC777777079"
 	picture = "bootan"
+	fire_only_once = yes
 
 	trigger = {
 		tag = BH7
@@ -3326,6 +3290,7 @@ country_event = {
 	title = "EVTNAME777777087" #Chogyal in TIB, go back?
 	desc = "EVTDESC777777087"
 	picture = "sikkim_bhutan"
+	fire_only_once = yes
 
 	trigger = {
 		tag = SIK
@@ -3468,6 +3433,7 @@ country_event = {
 	title = "EVTNAME777777092" #Chogyal stays in TIB
 	desc = "EVTDESC777777092"
 	picture = "sikkim_bhutan"
+	fire_only_once = yes
 
 	trigger = {
 		tag = ENG
@@ -3951,6 +3917,7 @@ country_event = {
 	title = "EVTNAME777777403"
 	desc = "EVTDESC777777403"
 	picture = "tibet_map"
+	fire_only_once = yes
 
 	trigger = {
 		OR = {
@@ -4040,8 +4007,10 @@ country_event = { #The Saitula Question
 	title = "EVTNAME777777404"
 	desc = "EVTDESC777777404"
 	picture = "tibet_map"
+	fire_only_once = yes
 
 	trigger = {
+		capital_scope = { continent = europe }
 		OR = {
 			KAS = {
 				exists = yes
@@ -4057,7 +4026,10 @@ country_event = { #The Saitula Question
 		}
 		NOT = {
 			3453 = { owned_by = KAS }
+			3453 = { owned_by = EIC }
+			3453 = { owned_by = THIS }
 			has_global_flag = signed_treaty_of_chushul_QNG
+			has_global_flag = signed_treaty_of_chushul_PNJ
 			has_country_flag = settled_saitula_question
 		}
 	}
@@ -4095,7 +4067,7 @@ country_event = { #The Saitula Question
 					}
 				}
 			}
-			owner = { 3453 = { add_core = HND add_core = THIS secede_province = THIS } } 
+			owner = { 3453 = { add_core = HND add_core = THIS secede_province = THIS } }
 		}
 		random_owned = {
 			limit = {
@@ -4107,7 +4079,7 @@ country_event = { #The Saitula Question
 						is_substate = no
 					}
 					is_culture_group = central_asian
-					NOT = { 
+					NOT = {
 						OR = {
 							tag = EIC
 							tag = HND
@@ -4126,7 +4098,7 @@ country_event = { #The Saitula Question
 	option = {
 		name = "EVT777777404OPTB"
 		set_country_flag = settled_saitula_question
-		3453 = { remove_core = HND remove_core = PAK }
+		3453 = { remove_core = HND remove_core = PAK remove_core = KAS }
 	}
 }
 
@@ -4191,6 +4163,7 @@ country_event = {
 	title = "EVTNAME777777408"
 	desc = "EVTDESC777777408"
 	picture = "anglo_afghan_war"
+	fire_only_once = yes
 
 	trigger = {
 		tag = ENG
@@ -4263,36 +4236,36 @@ country_event = {
 	}
 }
 
-country_event = {
-
-	id = 777777410
-	title = "The Conquest of Darjeeling"
-	desc = "Our overlords have conquered Darjeeling, its ownership shall be promptly transferred to us."
-	picture = "sikkim_bhutan"
-
-	trigger = {
-		OR = {
-			vassal_of = ENG
-			substate_of = ENG
-		}
-		overlord = {
-			owns = 1252
-			truce_with = SIK
-		}
-		1252 = { owned_by = ENG }
-		has_country_flag = anglo_perfidy_in_sikkim
-		NOT = {
-			owns = 1252 #Darjeeling
-			has_country_flag = darjeeling_perfidious_switcharoo
-		}
-	}
-	 
-	option = {
-		name = "Excellent."
-		set_country_flag = darjeeling_perfidious_switcharoo
-		1252 = { secede_province = THIS }
-		ai_chance = {
-			factor = 100
-		}
-	}
-}
+#country_event = { #See if disabling this causes problems
+#
+#	id = 777777410
+#	title = "The Conquest of Darjeeling"
+#	desc = "Our overlords have conquered Darjeeling, its ownership shall be promptly transferred to us."
+#	picture = "sikkim_bhutan"
+#
+#	trigger = {
+#		OR = {
+#			vassal_of = ENG
+#			substate_of = ENG
+#		}
+#		overlord = {
+#			owns = 1252
+#			truce_with = SIK
+#		}
+#		1252 = { owned_by = ENG }
+#		has_country_flag = anglo_perfidy_in_sikkim
+#		NOT = {
+#			owns = 1252 #Darjeeling
+#			has_country_flag = darjeeling_perfidious_switcharoo
+#		}
+#	}
+#
+#	option = {
+#		name = "Excellent."
+#		set_country_flag = darjeeling_perfidious_switcharoo
+#		1252 = { secede_province = THIS }
+#		ai_chance = {
+#			factor = 100
+#		}
+#	}
+#}
