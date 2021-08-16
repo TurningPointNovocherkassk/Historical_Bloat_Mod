@@ -665,6 +665,7 @@ country_event = {
 					}
 				}
 				NOT = { has_country_flag = post_colonial_country }
+                NOT = { has_country_flag = utility_country }
 			}
 			all_core = {
 				limit = {
@@ -3475,6 +3476,7 @@ country_event = {
 				}
 				NOT = { is_culture_group = germanic }
 				NOT = { has_country_flag = post_colonial_country }
+                NOT = { has_country_flag = utility_country }
 				NOT = {
 					tag = PZN
 					tag = MSR
@@ -4663,6 +4665,7 @@ country_event = {
 				}
 				NOT = { is_culture_group = east_slavic }
 				NOT = { has_country_flag = post_colonial_country }
+                NOT = { has_country_flag = utility_country }
 			}
 			all_core = {
 				limit = {
@@ -7267,6 +7270,7 @@ country_event = {
 				}
 				NOT = { is_culture_group = american_cultures }
 				NOT = { has_country_flag = post_colonial_country }
+                NOT = { has_country_flag = utility_country }
 			}
 			all_core = {
 				limit = {
@@ -8067,6 +8071,7 @@ country_event = {
 				}
 				NOT = { is_culture_group = british }
 				NOT = { has_country_flag = post_colonial_country }
+                NOT = { has_country_flag = utility_country }
 				NOT = { tag = TTB }
 			}
 			all_core = {
@@ -8735,6 +8740,7 @@ country_event = {
 					tag = ROM
 				}
 				NOT = { has_country_flag = post_colonial_country }
+                NOT = { has_country_flag = utility_country }
 			}
 			all_core = {
 				limit = {
@@ -9578,6 +9584,7 @@ country_event = {
 				}
 				NOT = { is_culture_group = french }
 				NOT = { has_country_flag = post_colonial_country }
+                NOT = { has_country_flag = utility_country }
 			}
 			all_core = {
 				limit = {
@@ -10704,6 +10711,7 @@ country_event = {
 				}
 				NOT = { is_culture_group = germanic }
 				NOT = { has_country_flag = post_colonial_country }
+                NOT = { has_country_flag = utility_country }
 			}
 			all_core = {
 				limit = {
@@ -11570,6 +11578,7 @@ country_event = {
 					tag = ROM
 				}
 				NOT = { has_country_flag = post_colonial_country }
+                NOT = { has_country_flag = utility_country }
 				NOT = {
 					tag = CLC
 					tag = PNT

@@ -751,6 +751,16 @@ restore_austrian_empire = {
 			value = 0.25
 		}
 	}
+
+    on_po_accepted = {
+        random_owned = {
+            limit = {
+                is_core = KRA
+                is_core = GLM
+            }
+            remove_core = KRA
+        }
+    }
 }
 
 colonial_reconquest_cb = {
@@ -9025,7 +9035,7 @@ colonial_conquest = {
                 THIS = {
                     revolution_n_counterrevolution = 1
                     has_global_flag = berlin_conference
-                    has_country_flag = created_my_indochina
+                    has_country_flag = created_french_indochina
                 }
                 any_owned_province = { region = LUA_1356 }
             }
@@ -9034,7 +9044,7 @@ colonial_conquest = {
                 THIS = {
                     revolution_n_counterrevolution = 1
                     has_global_flag = berlin_conference
-                    has_country_flag = created_my_indochina
+                    has_country_flag = created_french_indochina
                 }
                 any_owned_province = { region = SIA_1366 }
             }
@@ -9074,7 +9084,7 @@ colonial_conquest = {
                             owns = 1369
                             revolution_n_counterrevolution = 1
                         }
-                        has_country_flag = created_my_indochina
+                        has_country_flag = created_french_indochina
                     }
                 }
                 any_owned_province = {
@@ -9197,7 +9207,7 @@ colonial_conquest = {
                 THIS = {
                     revolution_n_counterrevolution = 1
                     has_global_flag = berlin_conference
-                    has_country_flag = created_my_indochina
+                    has_country_flag = created_french_indochina
                 }
                 any_owned_province = { region = LUA_1356 }
             }
@@ -9206,7 +9216,7 @@ colonial_conquest = {
                 THIS = {
                     revolution_n_counterrevolution = 1
                     has_global_flag = berlin_conference
-                    has_country_flag = created_my_indochina
+                    has_country_flag = created_french_indochina
                 }
                 any_owned_province = { region = SIA_1366 }
             }
@@ -9246,7 +9256,7 @@ colonial_conquest = {
                             owns = 1369
                             revolution_n_counterrevolution = 1
                         }
-                        has_country_flag = created_my_indochina
+                        has_country_flag = created_french_indochina
                     }
                 }
                 any_owned_province = {
@@ -9500,7 +9510,7 @@ colonial_conquest_full = {
                 THIS = {
                     revolution_n_counterrevolution = 1
                     has_global_flag = berlin_conference
-                    has_country_flag = created_my_indochina
+                    has_country_flag = created_french_indochina
                 }
                 any_owned_province = { region = LUA_1356 }
             }
@@ -9510,7 +9520,7 @@ colonial_conquest_full = {
                 THIS = {
                     revolution_n_counterrevolution = 1
                     has_global_flag = berlin_conference
-                    has_country_flag = created_my_indochina
+                    has_country_flag = created_french_indochina
                 }
                 any_owned_province = { region = SIA_1366 }
             }
@@ -9552,7 +9562,7 @@ colonial_conquest_full = {
                             owns = 1369
                             revolution_n_counterrevolution = 1
                         }
-                        has_country_flag = created_my_indochina
+                        has_country_flag = created_french_indochina
                     }
                 }
                 any_owned_province = {
