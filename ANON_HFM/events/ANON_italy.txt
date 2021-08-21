@@ -4,6 +4,7 @@ country_event = { #French Response to Austrian Meddling
 	title = "EVTNAME777202000"
 	desc = "EVTDESC777202000"
 	picture = "french_on_crimean_war"
+	fire_only_once = yes
 
 	trigger = {
 		OR = {
@@ -123,7 +124,7 @@ country_event = { #Russian response
 			limit = {
 				OR = {
 					owns = 549 #Berlin
-					owns = 695 #Königsberg
+					owns = 695 #Konigsberg
 				}
 				primary_culture = north_german
 			}
@@ -149,7 +150,7 @@ country_event = { #Russian response
 			limit = {
 				OR = {
 					owns = 549 #Berlin
-					owns = 695 #Königsberg
+					owns = 695 #Konigsberg
 				}
 				primary_culture = north_german
 			}
@@ -615,7 +616,7 @@ country_event = { #Savoy & Economic conessions demanded
 				limit = {
 					owner = { neighbour = PRU }
 				}
-				owner = { 
+				owner = {
 					create_alliance = PRU
 					relation = {
 						who = PRU
@@ -627,7 +628,7 @@ country_event = { #Savoy & Economic conessions demanded
 				limit = {
 					owner = { neighbour = NGF }
 				}
-				owner = { 
+				owner = {
 					create_alliance = NGF
 					relation = {
 						who = NGF
@@ -639,7 +640,7 @@ country_event = { #Savoy & Economic conessions demanded
 				limit = {
 					owner = { neighbour = GCF }
 				}
-				owner = { 
+				owner = {
 					create_alliance = GCF
 					relation = {
 						who = GCF
@@ -651,7 +652,7 @@ country_event = { #Savoy & Economic conessions demanded
 				limit = {
 					owner = { neighbour = GER }
 				}
-				owner = { 
+				owner = {
 					create_alliance = GER
 					relation = {
 						who = GER
@@ -809,7 +810,7 @@ country_event = { #Withdrawl demanded
 				limit = {
 					owner = { neighbour = PRU }
 				}
-				owner = { 
+				owner = {
 					create_alliance = PRU
 					relation = {
 						who = PRU
@@ -821,7 +822,7 @@ country_event = { #Withdrawl demanded
 				limit = {
 					owner = { neighbour = NGF }
 				}
-				owner = { 
+				owner = {
 					create_alliance = NGF
 					relation = {
 						who = NGF
@@ -833,7 +834,7 @@ country_event = { #Withdrawl demanded
 				limit = {
 					owner = { neighbour = GCF }
 				}
-				owner = { 
+				owner = {
 					create_alliance = GCF
 					relation = {
 						who = GCF
@@ -845,7 +846,7 @@ country_event = { #Withdrawl demanded
 				limit = {
 					owner = { neighbour = GER }
 				}
-				owner = { 
+				owner = {
 					create_alliance = GER
 					relation = {
 						who = GER
@@ -1110,8 +1111,8 @@ country_event = {
 			any_country = {
 				limit = {
 					OR = {
-						tag = ITA 
-						tag = PAR 
+						tag = ITA
+						tag = PAR
 						tag = SAR
 						tag = LUC
 						tag = MOD
@@ -1128,8 +1129,8 @@ country_event = {
 					}
 				}
 				all_core = {
-					remove_core = ITA 
-					remove_core = PAR 
+					remove_core = ITA
+					remove_core = PAR
 					remove_core = SAR
 					remove_core = LUC
 					remove_core = MOD
@@ -1137,7 +1138,7 @@ country_event = {
 					remove_core = RMG
 					remove_core = T4V
 					remove_core = LOM
-					remove_core = VEN
+					#remove_core = VEN
 					remove_core = SRD
 					remove_core = SIC
 					remove_core = SYC

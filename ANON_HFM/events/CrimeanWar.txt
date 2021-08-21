@@ -485,7 +485,10 @@ country_event = {
 
 		# Any Montenegran lands given to Montenegro, it is freed if vassaled
 		any_owned = {
-			limit = { is_core = MON }
+			limit = {
+				is_core = MON
+				NOT = { province_id = 850 } #Ishkodra
+			}
 			secede_province = MON
 		}
 		random_country = {

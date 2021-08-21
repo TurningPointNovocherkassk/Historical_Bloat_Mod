@@ -108,15 +108,15 @@ political_decisions = {
 
 		ai_will_do = { factor = 1 }
 	}
-	
+
 	federate_italian_states = {
 		picture = italian_islands
 		potential = {
-            OR = {
-                tag = AUS
-                tag = KUK
-                tag = DNB
-                tag = SGF
+      OR = {
+      	tag = AUS
+        tag = KUK
+        tag = DNB
+        tag = SGF
 				AND = {
 					OR = {
 						tag = GER
@@ -124,25 +124,25 @@ political_decisions = {
 					}
 					has_country_flag = austrian_greater_germany
 				}
-            }
-            is_greater_power = yes
-            NOT = { exists = ITA }
-            NOT = { has_global_flag = austrian_outside_italy }
-            OR = {
-                any_owned_province = { is_core = ITA }
-                SAR = { in_sphere = THIS }
-                SIC = { in_sphere = THIS }
-                PAP = { in_sphere = THIS }
-                TUS = { in_sphere = THIS }
-                MOD = { in_sphere = THIS }
-                PAR = { in_sphere = THIS }
-                LUC = { in_sphere = THIS }
-                LOM = { in_sphere = THIS }
-                VEN = { in_sphere = THIS }
-            }
+      }
+      is_greater_power = yes
+      NOT = { exists = ITA }
+      NOT = { has_global_flag = austrian_outside_italy }
+      OR = {
+      	any_owned_province = { is_core = ITA }
+        SAR = { in_sphere = THIS }
+        SIC = { in_sphere = THIS }
+        PAP = { in_sphere = THIS }
+        TUS = { in_sphere = THIS }
+        MOD = { in_sphere = THIS }
+        PAR = { in_sphere = THIS }
+        LUC = { in_sphere = THIS }
+        LOM = { in_sphere = THIS }
+        VEN = { in_sphere = THIS }
+      }
 			has_global_flag = italy_federation_yes
 		}
-		
+
 		allow = {
 			has_global_flag = aus_italy_domination_confirmed
 			war = no
@@ -182,15 +182,10 @@ political_decisions = {
 		effect = {
 			set_global_flag = austrian_outside_italy
 			prestige = 25
-            badboy = 10
+      badboy = 10
 			any_country = {
 				limit = {
 					exists = yes
-					OR = {
-						in_sphere = THIS
-						vassal_of = THIS
-						substate_of = THIS
-					}
 					OR = {
 						primary_culture = north_italian
 						primary_culture = central_italian
@@ -457,5 +452,39 @@ political_decisions = {
 			SAR = { country_event = 777202014 }
 		}
 		ai_will_do = { factor = 1 }
+	}
+
+	sic_claim_papal_exclaves = { #Benevento and Pontecorvo
+		picture = italian_islands
+		potential = {
+			tag = SIC
+			NOT = { 3277 = { is_core = THIS } }
+			NOT = { 3278 = { is_core = THIS } }
+		}
+
+		allow = {
+		}
+
+		effect = {
+			badboy = 4
+			relation = { who = PAP value = -200 }
+			3277 = { add_core = THIS }
+			3278 = { add_core = THIS }
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = { #AI won't do it unless they control Benevento and Pontecorvo
+				factor = 0
+				NOT = {
+					owns = 3277
+					owns = 3278
+				}
+			}
+			modifier = {
+				factor = 0
+				badboy = 0.8
+			}
+		}
 	}
 }

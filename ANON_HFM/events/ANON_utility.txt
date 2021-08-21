@@ -1,1 +1,19 @@
 #reserve id 797997000+
+
+country_event = { #Remove scripted war country modifier after war
+  id = 797997000
+  title = "EVTNAME797997000"
+  desc = "EVTDESC797997000"
+
+  trigger = {
+    has_country_modifier = ai_in_scripted_war
+    war = no
+  }
+
+  mean_time_to_happen = { months = 1 }
+
+  option = {
+    name = "EVT797997000OPTA"
+    remove_country_modifier = ai_in_scripted_war
+  }
+}

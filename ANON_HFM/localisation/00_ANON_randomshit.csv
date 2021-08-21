@@ -964,7 +964,7 @@ levantine_greek;Levantine Greek;;;;;;;;;;;;;x
 italiot;Italiot Greek;;;;;;;;;;;;;x
 pan_greek;Hellenic;;;;;;;;;;;;;x
 karamanli;Karamanli;;;;;;;;;;;;;x
-yoruk;Yoruk;;;;;;;;;;;;;x
+yoruk;Yörük;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 alaskan;Alyaskan;;;;;;;;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
@@ -2257,14 +2257,14 @@ NAR_democracy;Republic of Nagar;;;;;;;;;;;;;;;;;;;;;;x,,,
 NAR_fascist_dictatorship;Free Nagar Republic;;;;;;;;;;;;;;;;;;;;;;x,,,
 NAR_proletarian_dictatorship;Nagar Socialist Republic;;;;;;;;;;;;;;;;;;;;;;x,,,
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
-DHR;Dhir;;;;;;;;;;;;;;;;;;;;;;x,,,
-DHR_ADJ;Dhir;;;;;;;;;;;;;;;;;;;;;;x,,,
-DHR_absolute_monarchy;Dhir;;;;;;;;;;;;;;;;;;;;;;x,,,
-DHR_prussian_constitutionalism;Dhir;;;;;;;;;;;;;;;;;;;;;;x,,,
-DHR_hms_government;Dhir;;;;;;;;;;;;;;;;;;;;;;x,,,
-DHR_democracy;Republic of Dhir;;;;;;;;;;;;;;;;;;;;;;x,,,
-DHR_fascist_dictatorship;Free Dhir Republic;;;;;;;;;;;;;;;;;;;;;;x,,,
-DHR_proletarian_dictatorship;Dhir Socialist Republic;;;;;;;;;;;;;;;;;;;;;;x,,,
+DHR;Dir;;;;;;;;;;;;;;;;;;;;;;x,,,
+DHR_ADJ;Dir;;;;;;;;;;;;;;;;;;;;;;x,,,
+DHR_absolute_monarchy;Dir;;;;;;;;;;;;;;;;;;;;;;x,,,
+DHR_prussian_constitutionalism;Dir;;;;;;;;;;;;;;;;;;;;;;x,,,
+DHR_hms_government;Dir;;;;;;;;;;;;;;;;;;;;;;x,,,
+DHR_democracy;Republic of Dir;;;;;;;;;;;;;;;;;;;;;;x,,,
+DHR_fascist_dictatorship;Free Dir Republic;;;;;;;;;;;;;;;;;;;;;;x,,,
+DHR_proletarian_dictatorship;Dir Socialist Republic;;;;;;;;;;;;;;;;;;;;;;x,,,
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 SWT;Swat;;;;;;;;;;;;;;;;;;;;;;x,,,
 SWT_ADJ;Swati;;;;;;;;;;;;;;;;;;;;;;x,,,
@@ -10014,7 +10014,23 @@ EVT992002OPTA;Splendid!;;;;;;;;;;;;;x
 1st_bhutan_civil_war_cb;Civil War;;;;;;;;;;;;;x
 1st_bhutan_civil_war_cb_desc;Your nation is in a state of civil war;;;;;;;;;;;;;x
 1st_bhutan_civil_war_cb_short;Unite the nation;;;;;;;;;;;;;x
+NORMAL_WAR_TAKE_NAME_PNJ_QNG;The Dogra-Tibetan War;;;;;;;;;;;;;x
+AGRESSION_WAR_TAKE_NAME_PNJ_QNG;The Dogra-Tibetan War;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
+EVTNAME99982099;Development of Arabic Afrikaans;;;;;;;;;;;;;x
+EVTDESC99982099;An Islamic scholar from the Ottoman Empire by the name of Abu Bakr Effendi has arrived in Cape Town to educate the Malays of the Cape in Islamic matters. He has developed an Arabic orthography for the Cape dialect of Dutch and published a book on Islamic law using it, "Bayad al-Din". This book is the first substanial book to be written in the Cape Dutch dialect.;;;;;;;;;;;;;x
+EVT99982099OPTA;Daar is geen God behalwe Allah, en Muhammad is sy Boodskapper;;;;;;;;;;;;;x
+sic_claim_papal_exclaves_title;Claim Papal Exclaves;;;;;;;;;;;;;x
+sic_claim_papal_exclaves_desc;The Papal territories of Benevento and Pontecorvo are surrounded by our territory. They have never been under our nation, but they are small, isolated and speak our dialect. Surely the great powers will not object to it if we formally staked a claim to those territories.;;;;;;;;;;;;;x
+MAT;Kingdom of Mthwakazi;;;;;;;;;;;;;x
+MAT_ADJ;amaNdebele;;;;;;;;;;;;;x
+sino_french_war_cb;Release Puppet;;;;;;;;;;;;;x
+sino_french_war_cb_short;$THIRD$ is released;;;;;;;;;;;;;x
+sino_french_war_cb_setup;Release $THIRD$ from $RECIPIENT$;;;;;;;;;;;;;x
+sino_french_war_cb_desc;Release a §Ycountry§W from its sovereign nation;;;;;;;;;;;;;x
+EVTNAME797997000;AI Only Event;;;;;;;;;;;;;x
+EVTDESC797997000;AI countries receive a country modifier while in a scripted war which prevents them from adding additional wargoals to a scripted war. This event removes that modifier when the war is over;;;;;;;;;;;;;x
+EVT797997000OPTA;If you are seeing this event as a player, report it as a bug;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x

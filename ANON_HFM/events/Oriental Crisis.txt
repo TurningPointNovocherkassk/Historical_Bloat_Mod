@@ -51,7 +51,7 @@ country_event = {
 				war_with = TUR
 				war_with = EGY
 			}
-			end_war = EGY		
+			end_war = EGY
 		}
 		TUR = {
 			release_vassal = EGY
@@ -61,7 +61,7 @@ country_event = {
 			country_event = 90076
 		}
 		any_country = {
-			limit = { is_greater_power = yes }					
+			limit = { is_greater_power = yes }
 			diplomatic_influence = {
 				who = THIS
 				value = -200
@@ -83,7 +83,7 @@ country_event = {
 
 	major = yes
 	is_triggered_only = yes
-	
+
 	immediate = { random_owned = { limit = { owner = { ai = yes } } owner = { prestige = -5 } } }
 
 	option = {
@@ -133,7 +133,7 @@ country_event = {
 				issue = jingoism
 				factor = 6
 			}
-		}			
+		}
 		EGY = { country_event = 90077 }
 		ai_chance = {
 			factor = 5
@@ -146,9 +146,9 @@ country_event = {
 	title = "EVTNAME90077" #Negotiations with the Empire
 	desc = "EVTDESC90077"
 	picture = "ottoman"
-	
+
 	is_triggered_only = yes
-	
+
 	option = {
 		name = "EVT90077OPTA"
 		prestige = 10
@@ -176,7 +176,7 @@ country_event = {
 			militancy = 4
 		}
 	}
-	
+
 	option = {
 		name = "EVT90077OPTB"
 		prestige = -5
@@ -189,9 +189,9 @@ country_event = {
 	title = "EVTNAME90078" #Egypt Has Agreed
 	desc = "EVTDESC90078"
 	picture = "muhammad_ali"
-	
+
 	is_triggered_only = yes
-	
+
 	option = {
 		name = "EVT90078OPTA"
 		set_global_flag = abandoned_holy_land
@@ -234,7 +234,7 @@ country_event = {
 	title = "EVTNAME90079" #Egypt Has Refused
 	desc = "EVTDESC90079"
 	picture = "muhammad_ali"
-	
+
 	trigger = {
 		tag = TUR
 		ai = yes
@@ -249,11 +249,11 @@ country_event = {
 			has_global_flag = egypt_submitted_to_ottomans
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		days = 3
 	}
-	
+
 	option = {
 		name = "EVT90079OPTA"
 		prestige = -25
@@ -311,9 +311,9 @@ country_event = {
 	news_desc_short = "EVTDESC90080_NEWS_SHORT"
 	picture = "cairo"
 	major = yes
-	
+
 	fire_only_once = yes
-	
+
 	trigger = {
 		tag = EGY
 		war = no
@@ -333,7 +333,7 @@ country_event = {
 			}
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		months = 50
 		modifier = {
@@ -348,7 +348,7 @@ country_event = {
 			}
 		}
 	}
-	
+
 	option = {
 		name = "EVT90080OPTA"
 		clr_global_flag = oriental_crisis
@@ -398,7 +398,7 @@ country_event = {
 	title = "EVTNAME90081"
 	desc = "EVTDESC90081"
 	picture = "cairo"
-	
+
 	trigger = {
 		tag = TUR
 		war = no
@@ -408,11 +408,11 @@ country_event = {
 		NOT = { has_country_flag = egypt_restricted }
 		NOT = { has_country_flag = egypt_limited_rule_agreed }
 	}
-	
+
 	mean_time_to_happen = {
 		months = 1
 	}
-	
+
 	option = {
 		name = "EVT90081OPTA"
 		random_country = {
@@ -442,6 +442,7 @@ country_event = {
 					owns = 1160
 				}
 				1156 = { secede_province = NEJ add_core = NEJ }
+				1158 = { secede_province = NEJ add_core = NEJ }
 			}
 			random_country = {
 				limit = {
@@ -449,6 +450,7 @@ country_event = {
 					owns = 1160
 				}
 				1156 = { secede_province = HAL add_core = HAL }
+				1158 = { secede_province = HAL add_core = HAL }
 			}
 			random_country = {
 				limit = {
@@ -456,10 +458,11 @@ country_event = {
 					owns = 1160
 				}
 				1156 = { secede_province = ARA add_core = ARA }
+				1158 = { secede_province = ARA add_core = ARA }
 			}
 		}
-		HDJ = { 
-			all_core = { add_core = TUR } 
+		HDJ = {
+			all_core = { add_core = TUR }
 			government = absolute_monarchy
 		}
 		set_country_flag = egypt_restricted
@@ -469,7 +472,7 @@ country_event = {
 				NOT = { tag = THIS }
 			}
 			diplomatic_influence = { who = EGY value = -100 }
-		}	
+		}
 		diplomatic_influence = { who = EGY value = 350 }
 		relation = { who = RUS value = -200 }
 		leave_alliance = RUS
@@ -525,12 +528,12 @@ country_event = {
 				}
 			}
 			country_event = 90089
-		}		
+		}
 		ai_chance = {
 			factor = 95
 		}
 	}
-	
+
 	option = {
 		name = "EVT90081OPTB"
 		set_country_flag = egypt_rule_restored
@@ -587,11 +590,11 @@ country_event = {
 				# 1156 = { secede_province = NEJ }
 			# }
 		# }
-		HDJ = { 
-			all_core = { add_core = TUR } 
+		HDJ = {
+			all_core = { add_core = TUR }
 			government = absolute_monarchy
 		}
-			
+
 		relation = { who = RUS value = -200 }
 		leave_alliance = RUS
 		any_owned = {
@@ -627,7 +630,7 @@ province_event = {
 	id = 90082
 	title = "EVTNAME90082" #Rebellion Against Ottoman Rule
 	desc = "EVTDESC90082"
-	
+
 	trigger = {
 		is_core = EGY
 		culture = misri
@@ -650,7 +653,7 @@ province_event = {
 			}
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		months = 100
 		modifier = {
@@ -682,7 +685,7 @@ province_event = {
 			owner = { citizens_rights = all_voting_pops }
 		}
 	}
-	
+
 	option = {
 		name = "EVT90082OPTA"
 		state_scope = {
@@ -706,17 +709,17 @@ country_event = {
 	title = "EVTNAME90083"
 	desc = "EVTDESC90083"
 	picture = "cairo"
-	
+
 	trigger = {
 		tag = EGY
 		civilized = no
 		has_country_flag = surrendered_to_OE
 	}
-	
+
 	mean_time_to_happen = {
 		months = 1
 	}
-	
+
 	option = {
 		name = "EVT90083OPTA"
 		clr_country_flag = surrendered_to_OE
@@ -740,7 +743,7 @@ country_event = {
 			factor = 100
 		}
 	}
-	
+
 	option = {
 		name = "EVT90083OPTB"
 		clr_country_flag = surrendered_to_OE
@@ -772,9 +775,9 @@ country_event = {
 	title = "EVTNAME90084" #Ottoman Empire Refuses Egyptian Surrender
 	desc = "EVTDESC90084"
 	picture = "cairo"
-	
+
 	is_triggered_only = yes
-	
+
 	option = {
 		name = "EVT90084OPTA"
 		clr_country_flag = oriental_crisis_support_OE
@@ -795,20 +798,20 @@ country_event = {
 		}
 		ai_chance = { factor = 90 }
 	}
-	
+
 	option = {
 		name = "EVT90084OPTB"
 		relation = { who = FROM value = 50 }
 		ai_chance = { factor = 10 }
 	}
 }
-	
+
 
 #European response to the Oriental Crisis
 country_event = {
 
 	id = 90085
-	
+
 	title = "EVTNAME90085" # The Oriental Crisis (pro-OE reaction)
 	desc = "EVTDESC90085"
 	picture = "cairo"
@@ -871,7 +874,7 @@ country_event = {
 			who = EGY
 			value = -50
 		}
-		casus_belli = {	
+		casus_belli = {
 			target = EGY
 			type = liberate_country
 			months = 12
@@ -977,9 +980,9 @@ country_event = {
 
 #Egyptian surrender
 country_event = {
-	
+
 	id = 90087
-	
+
 	title = "EVTNAME90087" #The Fall of Cairo
 	desc = "EVTDESC90087"
 	picture = "cairo"
@@ -1099,7 +1102,7 @@ country_event = {
 }
 
 country_event = {
-	
+
 	id = 90088
 
 	title = "EVTNAME90088" #The Egyptian Surrender
@@ -1120,7 +1123,7 @@ country_event = {
 		random_country = {
 			limit = {
 				tag = HDJ
-				ai = yes 
+				ai = yes
 			}
 			annex_to = TUR
 		}
@@ -1200,7 +1203,7 @@ country_event = {
 country_event = {
 
 	id = 90089
-	
+
 	title = "EVTNAME90089" #End of the Oriental Crisis
 	desc = "EVTDESC90089"
 	picture = "cairo"
@@ -1253,7 +1256,7 @@ country_event = {
 country_event = {
 
 	id = 90090
-	
+
 	title = "EVTNAME90090" # The Oriental Crisis (pro-Egypt reaction)
 	desc = "EVTDESC90090"
 	picture = "muhammad_ali"
@@ -1276,7 +1279,7 @@ country_event = {
 				}
 			}
 		}
-		NOT = { 
+		NOT = {
 			year = 1860
 			tag = TUR
 			alliance_with = TUR
@@ -1330,7 +1333,7 @@ country_event = {
 		diplomatic_influence = {
 			who = EGY
 			value = 400
-		}		
+		}
 		TUR = { country_event = 90091 }
 		any_country = {
 			limit = {
@@ -1359,7 +1362,7 @@ country_event = {
 					who = EGY
 					value = 100
 				}
-			}	
+			}
 		}
 	}
 
@@ -1426,7 +1429,7 @@ country_event = {
 			factor = 25
 		}
 	}
-}		
+}
 
 country_event = {
 
@@ -1446,7 +1449,7 @@ country_event = {
 		}
 		FROM = { country_event = 90093 }
 		ai_chance = {
-			factor = 75		
+			factor = 75
 		}
 	}
 
@@ -1540,7 +1543,7 @@ country_event = {
 country_event = {
 
 	id = 90094
-	
+
 	title = "EVTNAME90089" #End of the Oriental Crisis
 	desc = "EVTDESC90094"
 	picture = "cairo"

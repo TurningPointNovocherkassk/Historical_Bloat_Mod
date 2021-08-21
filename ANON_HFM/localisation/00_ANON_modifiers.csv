@@ -21,7 +21,7 @@ glory_prussia_desc;Preußens Gloria!;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
 democratic_nation;Fully Democratic nation;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
 democratic_nation_desc;We have reformed our nation to the extent that we are fully democratic.;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
 ryotwari;Ryotwari;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
-democratic_nation_desc;The Ryotwari system was a land revenue system in British India, introduced by Thomas Munro in 1820 based on system administered by Captain Alexander Read in the Baramahal District. It allowed the government to deal directly with the cultivator ('ryot') for revenue collection and gave the peasant freedom to cede or acquire new land for cultivation. The peasant was assessed for only the lands that he cultivated.;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
+ryotwari_desc;The Ryotwari system was a land revenue system in British India, introduced by Thomas Munro in 1820 based on system administered by Captain Alexander Read in the Baramahal District. It allowed the government to deal directly with the cultivator ('ryot') for revenue collection and gave the peasant freedom to cede or acquire new land for cultivation. The peasant was assessed for only the lands that he cultivated.;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
 desperate_nation;Desperate Nation;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
 microscopic_nation;Microscopic Nation;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
 tiny_nation;Tiny Nation;;;;;;;;;;;;;x
@@ -112,7 +112,7 @@ regionalism_china;Regionalism;;;;;;;;;;;;;x
 totalitarianism_china;Totalitarianism;;;;;;;;;;;;;x
 confederalism_china;Confederalism;;;;;;;;;;;;;x
 mob1;Levée en Masse §G+2 Mob Size;;;;;;;;;;;;;x
-mob1_desc;A French term used for a policy of mass national conscription, often in the face of invasion. The concept originated during the French Revolutionary Wars where it formed an integral part of the creation of national identity, making it distinct from forms of conscription which had existed before this date. 
+mob1_desc;A French term used for a policy of mass national conscription, often in the face of invasion. The concept originated during the French Revolutionary Wars where it formed an integral part of the creation of national identity, making it distinct from forms of conscription which had existed before this date.
 mob2;Mobilization Time Tables §G+1 Mob Size;;;;;;;;;;;;;x
 mob2_desc;By pre-planning mobilization, all reserve units had set mobilization areas and time tables for getting equipment, boarding trains, and frontal marching routes. This sped up the mobilization vastly.;;;;;;;;;;;;;x
 mob3;Personnel Category Tables §G+1 Mob Size;;;;;;;;;;;;;x
@@ -189,6 +189,10 @@ yong_ying_desc;Yong Ying were a type of regional army that emerged in the 19th c
 chinese_pop_nerf1;Chinese Pop Growth Nerf 1;;;;;;;;;;;;x
 chinese_pop_nerf2;Chinese Pop Growth Nerf 2;;;;;;;;;;;;x
 sphereling_tax_bonus;Sphereling Tax Buff;;;;;;;;;;;;;x
+ai_in_scripted_war;Ongoing Scripted War;;;;;;;;;;;;;x
+ai_in_scripted_war_desc;This is a modifier for AI to prevent them from adding additional wargoals to a scripted war. If you have this modifier as a player, this is a bug and should be reported.;;;;;;;;;;;;;x
+powerful_vassal_nation;Vassalage;;;;;;;;;;;;;x
+powerful_substate_nation;Substate;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
 #;;;;;;;;;;;;;;;;;;;;;;;;;x
