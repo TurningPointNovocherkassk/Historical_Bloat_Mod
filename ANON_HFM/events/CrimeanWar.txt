@@ -784,6 +784,7 @@ country_event = {
 					region = MOL_673
 					province_id = 678
 					province_id = 3347
+					province_id = 3417
 				}
 			}
 			add_core = ROM
@@ -798,9 +799,10 @@ country_event = {
 		TUR = {
 			release_vassal = URP
 		}
-		675 = { remove_core = URP }
-		674 = { remove_core = URP }
-		818 = { remove_core = URP }
+		675 = { remove_core = URP } #Tulcea
+		674 = { remove_core = URP } #Constanta
+		818 = { remove_core = URP } #Silistre
+		3631 = { remove_core = URP } #Ada Kaleh
 		war_exhaustion = -10
 		ai_chance = {
 			factor = 99

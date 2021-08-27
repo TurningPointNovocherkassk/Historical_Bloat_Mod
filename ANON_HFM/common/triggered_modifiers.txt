@@ -1840,67 +1840,6 @@ unciv_research_points_on_conquer = { #NEW
 	research_points_on_conquer = 1
 }
 
-
-########## Rude boy ##########
-badboy1 = { #NEW
-	trigger = {
-		badboy = 1
-		NOT = { badboy = 1.2 }
-	}
-	non_accepted_pop_militancy_modifier = 0.04
-	administrative_efficiency_modifier = -0.1
-	tariff_efficiency_modifier = -0.05
-}
-
-badboy2 = { #NEW
-	trigger = {
-		badboy = 1.2
-		NOT = { badboy = 1.4 }
-	}
-	non_accepted_pop_militancy_modifier = 0.08
-	administrative_efficiency_modifier = -0.2
-	tariff_efficiency_modifier = -0.1
-}
-
-badboy3 = { #NEW
-	trigger = {
-		badboy = 1.4
-		NOT = { badboy = 1.6 }
-	}
-	non_accepted_pop_militancy_modifier = 0.12
-	administrative_efficiency_modifier = -0.3
-	tariff_efficiency_modifier = -0.15
-}
-
-badboy4 = { #NEW
-	trigger = {
-		badboy = 1.6
-		NOT = { badboy = 1.8 }
-	}
-	non_accepted_pop_militancy_modifier = 0.16
-	administrative_efficiency_modifier = -0.4
-	tariff_efficiency_modifier = -0.2
-}
-
-badboy5 = { #NEW
-	trigger = {
-		badboy = 1.8
-		NOT = { badboy = 2 }
-	}
-	non_accepted_pop_militancy_modifier = 0.2
-	administrative_efficiency_modifier = -0.5
-	tariff_efficiency_modifier = -0.25
-}
-
-badboy6 = { #NEW
-	trigger = {
-		badboy = 2
-	}
-	non_accepted_pop_militancy_modifier = 0.24
-	administrative_efficiency_modifier = -0.6
-	tariff_efficiency_modifier = -0.3
-}
-
 ########## IMMIGRATION ATTRACTION ##########
 
 great_power_immigration = { #NEW

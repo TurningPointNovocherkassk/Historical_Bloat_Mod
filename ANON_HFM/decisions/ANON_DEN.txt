@@ -1,0 +1,68 @@
+political_decisions = {
+	north_sea_empire = {
+		picture = north_sea_empire
+		potential = {
+			OR = {
+				primary_culture = norwegian
+				primary_culture = danish
+				primary_culture = icelandic
+				primary_culture = faroese
+			}
+			NOT = { has_country_flag = north_sea_empire_claimed }
+			is_greater_power = yes
+		}
+
+		allow = {
+			rank = 4
+			OR = {
+				government = fascist_dictatorship
+				government = absolute_monarchy
+			}
+			war = no
+		}
+
+		effect = {
+			set_country_flag = north_sea_empire_claimed
+			badboy = 60
+			prestige = 200
+			relation = { who = ENG value = -400 }
+			relation = { who = ENL value = -400 }
+			relation = { who = SCO value = -400 }
+			relation = { who = IRE value = -400 }
+			relation = { who = ULS value = -400 }
+			relation = { who = CEL value = -400 }
+			relation = { who = WHA value = -400 }
+			relation = { who = M4N value = -400 }
+			relation = { who = KER value = -400 }
+			SWE_309 = { add_core = THIS } #Vestlandet
+			SWE_313 = { add_core = THIS } #Ostlandet
+			SWE_308 = { add_core = THIS } #Nordnorge
+			DEN_372 = { add_core = THIS } #Sjaelland
+			DEN_367 = { add_core = THIS } #Jylland
+			SCH_370 = { add_core = THIS } #Schleswig
+			ENG_254 = { add_core = THIS } #Ulster
+			ENG_263 = { add_core = THIS } #Leinster
+			ENG_260 = { add_core = THIS } #Munster
+			ENG_258 = { add_core = THIS } #Connacht
+			ENG_266 = { add_core = THIS } #Highlands
+			ENG_271 = { add_core = THIS } #Lowlands
+			ENG_277 = { add_core = THIS } #North West England
+			ENG_280 = { add_core = THIS } #North East England
+			ENG_284 = { add_core = THIS } #Midlands
+			ENG_273 = { add_core = THIS } #Wales
+			ENG_291 = { add_core = THIS } #Eastern Counties
+			ENG_296 = { add_core = THIS } #South West England
+			ENG_300 = { add_core = THIS } #South East England
+			DEN_251 = { add_core = THIS } #Greenland
+			DEN_252 = { add_core = THIS } #Iceland
+			319 = { add_core = THIS } #Ostersund (Jamtland)
+			329 = { add_core = THIS } #Goteborg
+			3667 = { add_core = THIS } #Goteborg islands
+			369 = { add_core = THIS } #Kiel
+			334 = { add_core = THIS } #Malmo
+			335 = { add_core = THIS } #Karlskrona
+		}
+
+		ai_will_do = { factor = 0 }
+	}
+}

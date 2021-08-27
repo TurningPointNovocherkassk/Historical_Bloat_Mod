@@ -315,7 +315,7 @@ country_event = {
 		HQJ = { any_pop = { limit = { type = soldiers has_pop_culture = zhuang } reduce_pop = 5 } }
 		war = {
 			target = QNG
-			attacker_goal = { casus_belli = release_puppet country = HQJ }
+			attacker_goal = { casus_belli = sino_french_war_cb country = HQJ }
 			defender_goal = { casus_belli = liberate_country country = DAI }
 		}
 	}
